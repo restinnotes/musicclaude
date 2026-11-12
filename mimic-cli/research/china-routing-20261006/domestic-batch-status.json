@@ -1,0 +1,80 @@
+{
+  "utc": "2026-10-06T21:17:06.259744+00:00",
+  "stage": "domestic-batches",
+  "active": [],
+  "pending": [
+    "W2-B-batch02",
+    "W2-A-batch03",
+    "W2-B-batch03",
+    "W2-A-batch04",
+    "W2-B-batch04",
+    "W2-A-batch05",
+    "W2-B-batch05",
+    "W2-A-batch06",
+    "W2-B-batch06"
+  ],
+  "results": {
+    "W2-A-batch01": {
+      "job_id": "W2-A-batch01",
+      "completed_utc": "2026-10-06T21:08:14.399929+00:00",
+      "transport_success": true,
+      "elapsed_seconds": 478.235,
+      "urls_count": 23,
+      "structured_evidence": true,
+      "web_research_available_claim": true,
+      "source_verification": "pending_coordinator_review",
+      "status": "needs_review",
+      "screenshots_complete": true,
+      "error": null
+    },
+    "W2-B-batch01": {
+      "job_id": "W2-B-batch01",
+      "completed_utc": "2026-10-06T21:08:53.263248+00:00",
+      "transport_success": true,
+      "elapsed_seconds": 471.406,
+      "urls_count": 19,
+      "structured_evidence": true,
+      "web_research_available_claim": true,
+      "source_verification": "pending_coordinator_review",
+      "status": "needs_review",
+      "screenshots_complete": true,
+      "error": null
+    },
+    "W2-A-batch02": {
+      "job_id": "W2-A-batch02",
+      "completed_utc": "2026-10-06T21:15:22.991463+00:00",
+      "transport_success": true,
+      "elapsed_seconds": 427.329,
+      "urls_count": 17,
+      "structured_evidence": true,
+      "web_research_available_claim": true,
+      "source_verification": "pending_coordinator_review",
+      "status": "needs_review",
+      "screenshots_complete": true,
+      "error": null
+    }
+  },
+  "memory": {
+    "utc": "2026-10-06T21:17:06.219782+00:00",
+    "physical_load_percent": 89,
+    "total_physical_gib": 31.497,
+    "available_physical_gib": 3.376,
+    "total_commit_gib": 67.497,
+    "used_commit_gib": 41.715,
+    "available_commit_gib": 25.783,
+    "commit_load_percent": 61.8
+  },
+  "gateway_concurrency": {
+    "max_concurrency": 8,
+    "in_flight": 4,
+    "available": 4,
+    "waiting": 0,
+    "max_active_tabs": 8,
+    "worker_tabs": 5,
+    "max_idle_worker_tabs": 2,
+    "max_queue": 16,
+    "queue_timeout_seconds": 240
+  },
+  "next_gate": "all six category batches per independent replicate, then source review",
+  "scheduler": "hidden local Python; no Codex scheduled task; no automatic resend"
+}

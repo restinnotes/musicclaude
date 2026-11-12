@@ -1,0 +1,12 @@
+【STEP3·A原文归段——批2/2（A-web五件＋A-orig一件续接，合并输出终版）】
+
+本批附件：A06–A10（web五件）＋A11（orig一件），共6个附件。SEGMENTS结构段与批1相同（沿用已确认的C2十四段S01–S14，不再重复上传）：
+S01 1–3 序奏 / S02 4–16 第1主題 / S03 17–23 間句 / S04 24–34 第1主題（確保）/ S05 35–39 間句 / S06 40–50 第2主題前半 / S07 51–61 第2主題前半（確保）/ S08 62–71 第2主題後半 / S09 72–77 間句 / S10 78–83 挿入句 / S11 84–92 第1主題（再現）/ S12 93–102 第2主題後半（再現）/ S13 103–110 第2主題前半（再現）/ S14 111–116 終結句。
+
+本批归段对象（UID沿用批1清单）：
+A06 web gpt56w run106 / A07 web gflash_web run08 / A08 web luna run08 / A09 web opus_web run32 / A10 web sol61_cx_web run57 / A11 orig V2A基线 run16（路径/sha见批1清单）。
+
+任务：对A06–A11同样逐条归段（规则与批1完全相同：不得改段、不得读谱/T/H/Thread/WHY、跨段保留引用不剪断原句、缺小节/错配/超范围进UNRESOLVED/OUT_OF_RANGE并说明原因、整首后见之明进LONG_RANGE、绝不编造归属、对不上放UNRESOLVED不硬塞），然后与批1的A01–A05合并，输出11件完整终版：
+1. 完整A_POOL_MAP.json（可直接复制的JSON代码块）：S01–S14每段PRIMARY/CROSS_SEGMENT/UNCERTAIN/UNRESOLVED/OUT_OF_RANGE/LONG_RANGE；条目含原文摘句、UID、来源模型、通道、原始小节范围、文件路径/sha；跨段引用在各段保留引用。
+2. 完整去向台账（11件每条语义单元去向）。
+3. 中文A_POOL_REVIEW.md正文（markdown代码块）：去向台账摘要、错配处理说明、先复核后生成声明（必须先实际应用复核后的Pool才允许后续生成）。

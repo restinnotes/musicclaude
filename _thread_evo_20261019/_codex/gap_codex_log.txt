@@ -1,0 +1,1565 @@
+OpenAI Codex v0.164.0
+--------
+workdir: D:\musicclaude\_thread_evo_20261019
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: high
+reasoning summaries: detailed
+session id: 01a18630-8f6b-7ef0-b427-8b6a384b1da0
+--------
+user
+# 任务：gpt3 提交间隔改成“按真正发出算”，并等上一个开始返回后才发下一个
+
+工作目录：D:\musicclaude\_thread_evo_20261019。本机 Windows PowerShell 5.1 会把无 BOM 的 UTF-8 中文文件读成乱码，读写文本一律用 Python（encoding="utf-8"）。
+请自主完成并自行验证，过程写到 `_codex/gap_log.md`；最后只回报：成功/失败、主要修改、测试情况、重大风险。
+
+## 现状与问题
+`gpt3_call.py` 的 `_space_submission()` 在 GATE 锁里只保证“两次**启动 gpt3 命令**之间 ≥ GAP(20s)+0–10s 抖动”，STAMP 记的是命令启动时刻；随后在锁外 `subprocess.run` 跑完整个调用。
+但 gpt3 CLI 启动后要先做鉴权、`/backend-api/models`、sentinel、prepare，带附件时还要上传，之后才真正提交对话。
+所以带附件的调用真正发出可能比启动晚十几秒，下一次的真实间隔就会小于 20 秒（今天 89 次里有 2 次，最短 16.6 秒）。
+用户要求：**下一个必须等上一个真正发出去、开始返回（开始思考）之后，再从那一刻起隔够 20 秒才发。**
+
+可用的证据（gpt3 每次调用一个任务目录 `D:\musicclaude\gpt2agent-safechain\runs\gpt3\pro-bridge-<UTC时间戳>`，即 `evo.GPT3_RUNS`）：
+- `prompt.txt`：发送的正文（就是我们 input.txt 的内容；超长时是那句“这次的任务全文太长……”）；`started.json`；
+- `submitted.json`（`{"utc": ...}`，真正提交对话的时刻）；
+- `generation-network.json`：流的进度，`first_chunk_ms` 非空表示已经开始返回。
+`evo.find_job()` 有按 prompt 匹配任务目录的现成逻辑可以参考。
+
+## 要改的（只改 gpt3_call.py 的提交节奏）
+1. 把“启动命令 + 等它真正发出并开始返回”放进同一个 GATE 锁里：
+   - 进锁后先等：距上一次**真正提交**（STAMP）≥ GAP + random.uniform(0,10)；
+   - 用 `subprocess.Popen` 启动 gpt3（参数与现在完全相同），记下 t0；
+   - 在锁内轮询（约每 1 s）：找到 t0 之后新建、`prompt.txt` 与本次 message 相同的任务目录；等到它的 `submitted.json` 出现且 `generation-network.json` 里 `first_chunk_ms` 非空；或者进程已经退出；或者超时（180 s，超时就记一条警告继续）。
+   - 把 STAMP 写成真正提交的时刻（取 submitted.json 的 utc 转 epoch；拿不到就用当前时间），然后释放 GATE 锁。
+2. 锁外等进程结束（`communicate()`），之后的 stdout/stderr 处理、成功判定、记录、重试、停止规则全部保持原样。调用结束后**不要**再把 STAMP 改成结束时刻（现在代码在 run 之后会写一次 STAMP=结束时间，这一行去掉，否则会把间隔算错）。
+3. call.log 里加两个字段：`submitted_utc`（真正提交时刻）和 `gap_since_prev_submit_s`（与上一次真正提交的间隔），方便以后核对。
+4. 其余一律不变：并发槽位（gpt3_slots.txt）、GAP 默认值、`--allow-topic-stream`、附件处理、NO_WEB 规则、模型和推理强度判定、停止词、失败计数。
+
+## 验证
+- 写离线测试 `_codex/test_gap.py`：用一个假的 gpt3 可执行（Python 脚本，经 monkeypatch 替换 gpt3_call.GPT3，或用 .cmd 包装）模拟：启动后延迟若干秒才在临时目录里创建任务目录、写 prompt.txt、submitted.json、generation-network.json，再延迟返回 JSON。把 evo.GPT3_RUNS、evo.RUNS、STAMP、GATE、LOCK 都指到临时目录。
+  并发起 3–4 个调用（含一个“上传慢”的，提交延迟 15 s），确认：任意两次真实提交间隔 ≥ GAP（测试里可把 GAP 调小，比如 3 s，延迟按比例缩小）；后一个一定在前一个 first_chunk 之后才启动；结果解析、call.log 新字段正确；超时和进程提前退出两条路径都能走通。
+- 测试不得发出任何真实的模型调用，不得写入真实的 runs/、STAMP、锁文件。
+
+## 边界
+- 不得改变实验语义：提示词、联网权限、模型和推理参数、工具能力、珠子输入、评审标准都不能动；只改提交节奏和记录字段。自查并在回报里说明。
+- 不改 evo.py 的调用语义（如需复用 find_job 可以 import，但不要改它）；不改 mg_call.py；不动缓存保温机制和 watchdog，不新增定时任务或轮询（锁内对本次任务目录的短轮询除外）。
+- 现在有 6 个后台进程（v6fix.py fix …、v6dirs.py whole/rad …）正在用旧的 gpt3_call 跑，**不要停它们、不要动它们的 runs/ 目录**。改完的文件只对之后新启动的进程生效，重启由我来做。
+- Windows 下 msvcrt 锁的写法照现有代码。无法完成或有明显风险时停下回报。
+
+2026-10-29T05:44:52.246743Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: HTTP error: 426 Upgrade Required, url: ws://127.0.0.1:10100/v1/responses
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\zuoyi\.codex\config.toml): `features.remote_connections` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (C:\Users\zuoyi\.codex\config.toml): `features.remote_connections` is ignored.
+codex
+我会先检查现有提交锁、日志和任务目录匹配逻辑，只修改 `gpt3_call.py` 的提交节奏与记录字段，并用临时目录完成离线验证。过程会写入 `_codex/gap_log.md`，不会停止后台进程或改动它们的运行目录。
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('.')
+print('AGENTS files:')
+for q in [p/'AGENTS.md',p.parent/'AGENTS.md']:
+ if q.exists(): print(str(q), '\\n',q.read_text(encoding='utf-8'))
+for name in ['gpt3_call.py','evo.py']:
+ q=p/name
+ print('\\nFILE',name)
+ lines=q.read_text(encoding='utf-8').splitlines()
+ if name=='gpt3_call.py':
+  for i,s in enumerate(lines,1): print(f'{i}: {s}')
+ else:
+  for i,s in enumerate(lines,1):
+   if any(k in s for k in ['def find_job','GPT3_RUNS','RUNS =','RUNS=']):
+    print('\\n'.join(f'{j+1}: {lines[j]}' for j in range(max(0,i-4),min(len(lines),i+70))))
+'@ | python -" in D:\musicclaude\_thread_evo_20261019
+ exited 1 in 268ms:
+  File "<stdin>", line 1
+    ﻿from pathlib import Path
+    ^
+SyntaxError: invalid non-printable character U+FEFF
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git status --short' in D:\musicclaude\_thread_evo_20261019
+ succeeded in 141ms:
+warning: could not open directory 'gpt2agent-safechain-codex/.pytest_cache/': Permission denied
+?? ../.claude/
+?? ../PresentMon-Apex.pid
+?? ../_agent_handoff_20261018/
+?? ../_baseline_adaptation_control_20261010/
+?? ../_baseline_delivery_control_20261010/
+?? ../_baseline_parallel_control_20261010/
+?? ../_baseline_recovery_control_20261010/
+?? ../_baseline_summary_control_20261010/
+?? ../_bead_ablation_20261015/
+?? ../_bead_auto_20261016/
+?? ../_bead_facets_20261017/
+?? ../_bead_full_audit_20261017/
+?? ../_bead_gpt3_20261018/
+?? ../_bead_op61_20261020/
+?? ../_bead_page_20261017/
+?? ../_bead_pub_20261015/
+?? ../_bead_quality_20261017/
+?? ../_bead_rebuild_20261017/
+?? ../_bead_saturation_20261018/
+?? ../_bead_video_review_20261017/
+?? ../_chatgpt_music_pilot/
+?? ../_chatgpt_music_pilot_3jobs.b64
+?? ../_chatgpt_music_pilot_3jobs.zip
+?? ../_dl_latest_zip_work/
+?? ../_harness_source_20261029/
+?? ../_thread_20261018/
+?? ./
+?? ../_thread_evo_claude_20261019/
+?? ../ai_log/
+?? ../bead_chain/
+?? ../bead_video/
+?? ../build_precise_v3.py
+?? ../finalize_v3_archive.py
+?? ../gpt2agent-safechain-codex/
+?? ../gpt2agent-safechain/
+?? ../gpt2agent-upstream-control-20261008/
+?? ../gpt2agent-upstream/
+?? ../humanizer_forensic_raw_artifacts.zip
+?? ../klein.pdf
+?? ../kopp.html
+?? ../kopp_ex1.png
+?? ../kopp_ex1_page.html
+?? ../mimic-cli/
+?? ../music_since_v3_precise_20261009.zip
+?? ../music_since_v3_precise_20261009.zip.sha256
+?? ../music_since_v3_precise_20261009/
+?? ../music_work_since_1008v3_20261009/
+?? ../op52_score.pdf
+?? ../op60_score.pdf
+?? ../project_dialogues/
+?? ../rothstein.pdf
+?? ../search_chopin.py
+?? "../thread experiment/"
+?? ../tmp_gpt_user.txt
+?? ../tmp_mg/
+?? ../tmp_user_msgs.txt
+?? ../unified_run_handoff_20260924.zip
+?? ../unified_run_handoff_20260924/
+?? "../use exactly three words to say hello"
+?? ../video/
+?? ../webchat-nodegrade/
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('.')
+for q in [p/'AGENTS.md',p.parent/'AGENTS.md',p.parent.parent/'AGENTS.md']:
+ if q.exists(): print(str(q), '\\n',q.read_text(encoding='utf-8'))
+for name in ['gpt3_call.py','evo.py']:
+ q=p/name
+ print('\\nFILE',name)
+ lines=q.read_text(encoding='utf-8').splitlines()
+ if name=='gpt3_call.py':
+  for i,s in enumerate(lines,1): print(f'{i}: {s}')
+ else:
+  indices=set()
+  for i,s in enumerate(lines):
+   if any(k in s for k in ['def find_job','GPT3_RUNS','RUNS =','RUNS=']): indices.update(range(max(0,i-3),min(len(lines),i+65)))
+  for i in sorted(indices): print(f'{i+1}: {lines[i]}')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 159ms:
+
+FILE gpt3_call.py
+1: """Careful gpt3 route for evo.call (10-26/27, user: retry the gpt3 account (yi) at Extra High / max, serial, ~20 s apart).
+2: - one request in flight at a time, at least GAP s (+ up to 10 s jitter) between submissions;
+3: - --allow-topic-stream: when an answer moves to the websocket topic (the 10-24 truncation cause), the CLI follows that
+4:   same turn instead of ending with thoughts only; it never regenerates;
+5: - stop for good on a usage-limit / protection message, after 2 failures in a row, or after 3 failures in total.
+6: No fingerprint, verification or anti-bot tricks: only pacing and honest stopping."""
+7: import hashlib, json, os, random, subprocess, threading, time
+8: from pathlib import Path
+9: import evo
+10: 
+11: GPT3 = "D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd"
+12: GAP = float(os.environ.get("GPT3_GAP", "20"))
+13: SLOTS_FILE = evo.RUNS / "gpt3_slots.txt"           # 10-27 user: a normal heavy user's pace, raised live if the deadline needs it
+14: 
+15: 
+16: def slots():
+17:     try:
+18:         return max(1, int(SLOTS_FILE.read_text().strip()))
+19:     except Exception:
+20:         return int(os.environ.get("GPT3_SLOTS", "1"))
+21: _one = threading.Semaphore(8); _last = [0.0]
+22: LOCK = evo.RUNS / "gpt3_serial.lock"; STAMP = evo.RUNS / "gpt3_last_submit.txt"
+23: 
+24: 
+25: class _Serial:
+26:     """at most GPT3_SLOTS gpt3 requests in flight across all processes (one msvcrt byte lock per slot on a shared file)"""
+27:     def __enter__(s):
+28:         import msvcrt
+29:         _one.acquire(); s.f = open(LOCK, "a+")
+30:         while True:
+31:             for i in range(slots()):
+32:                 try:
+33:                     s.f.seek(i); msvcrt.locking(s.f.fileno(), msvcrt.LK_NBLCK, 1); s.i = i; return s
+34:                 except OSError:
+35:                     pass
+36:             time.sleep(5)
+37: 
+38:     def __exit__(s, *a):
+39:         import msvcrt
+40:         s.f.seek(s.i); msvcrt.locking(s.f.fileno(), msvcrt.LK_UNLCK, 1); s.f.close(); _one.release()
+41: 
+42: 
+43: _state = {"row": 0, "total": 0, "stop": None}
+44: STOP_WORDS = ("hit your limit", "429", "unusual activity", "UNUSUAL_ACTIVITY", "rate limit", "too many requests")
+45: 
+46: 
+47: def stopped():
+48:     return _state["stop"]
+49: 
+50: 
+51: def _fail(run_id, why):
+52:     _state["row"] += 1; _state["total"] += 1
+53:     if any(w.lower() in why.lower() for w in STOP_WORDS):
+54:         _state["stop"] = f"protection/limit signal at {run_id}"
+55:     elif _state["row"] >= 2 or _state["total"] >= 3:
+56:         _state["stop"] = f"{_state['row']} in a row / {_state['total']} total failures (last {run_id})"
+57:     if _state["stop"]:
+58:         print(f"GPT3 STOPPED: {_state['stop']}", flush=True)
+59: 
+60: 
+61: GATE = evo.RUNS / "gpt3_submit.lock"
+62: 
+63: 
+64: def _space_submission():
+65:     """10-27: read-wait-stamp under one exclusive cross-process lock, so parallel slots still start >= GAP s apart
+66:     (before, 8 slots read the same old stamp at once and all submitted in the same second)"""
+67:     import msvcrt
+68:     with open(GATE, "a+") as f:
+69:         while True:
+70:             try:
+71:                 f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_NBLCK, 1); break
+72:             except OSError:
+73:                 time.sleep(1)
+74:         try:
+75:             last = float(STAMP.read_text()) if STAMP.exists() else 0.0
+76:             w = GAP + random.uniform(0, 10) - (time.time() - last)
+77:             if w > 0:
+78:                 time.sleep(w)
+79:             STAMP.write_text(str(time.time()))
+80:         finally:
+81:             f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+82: 
+83: 
+84: def call(run_id, message, prompt_text, model, meta):
+85:     d = evo.RUNS / run_id
+86:     if not (meta or {}).get("web") and evo.NO_WEB.strip() not in message[-60:]:
+87:         message += evo.NO_WEB
+88:     (d / "prompt.txt").write_text(prompt_text if prompt_text is not None else message, encoding="utf-8")
+89:     inp = d / "input.txt"; inp.write_text(message, encoding="utf-8")
+90:     if meta:
+91:         (d / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+92:     attach = [str(a) for a in (meta or {}).get("attach") or [] if os.path.getsize(a) > 0]     # gpt3 rejects empty files
+93:     if len(message) > 60000:              # 10-27 user: the body is capped at 65,536 chars, attachments are not
+94:         full = d / "full_prompt.txt"; full.write_text(message, encoding="utf-8"); attach.append(str(full))
+95:         message = ("这次的任务全文太长，放在附件 full_prompt.txt 里。请把附件从头到尾完整读完（不要只检索片段），"
+96:                    "然后严格按附件里的要求作答，只输出附件要求的格式。")
+97:         inp.write_text(message, encoding="utf-8")
+98:         print(f"[{run_id}] long prompt ({full.stat().st_size} bytes) sent as attachment", flush=True)
+99:     for attempt in range(2):
+100:         with _Serial():
+101:             if stopped():
+102:                 print(f"[{run_id}] SKIPPED ({stopped()})", flush=True); return None
+103:             _space_submission()
+104:             started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
+105:             cp = subprocess.run([GPT3, "ask", "--file", str(inp), "--json", "--model", model, "--allow-topic-stream"]
+106:                                 + [x for a in attach for x in ("--attach", a)], capture_output=True)
+107:             STAMP.write_text(str(time.time()))
+108:         dt = time.time() - t0
+109:         (d / "stdout.bin").write_bytes(cp.stdout); (d / "stderr.bin").write_bytes(cp.stderr)
+110:         try:
+111:             j = json.loads(cp.stdout.decode("utf-8"))
+112:         except Exception:
+113:             j = {}
+114:         md = j.get("metadata") or {}; resp = j.get("response") or ""
+115:         ok = (cp.returncode == 0 and j.get("completed") is True and resp.strip()
+116:               and md.get("model") == model and md.get("thinking_effort") == "max")
+117:         rec = {"run_id": run_id, "attempt": attempt, "account": "gpt3", "route": "gpt3-serial", "started": started,
+118:                "seconds": round(dt), "exit_code": cp.returncode, "completed": bool(ok), "model": md.get("model"),
+119:                "thinking_effort": md.get("thinking_effort"), "job_directory": md.get("job_directory"),
+120:                "message_chars": len(message), "message_sha256": hashlib.sha256(message.encode()).hexdigest(), "meta": meta or {}}
+121:         if ok:
+122:             _state["row"] = 0; rec["response_chars"] = len(resp)
+123:             if len(message) > 3000 and dt < 60:
+124:                 rec["fast"] = True; print(f"[{run_id}] FAST {dt:.0f}s -> cup probe", flush=True)
+125:             (d / "call.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+126:             (d / "output.txt").write_text(resp, encoding="utf-8"); evo.log(rec)
+127:             print(f"[{run_id}] ok {dt:.0f}s {len(resp)} chars", flush=True)
+128:             return resp
+129:         err = cp.stderr.decode("utf-8", "replace")
+130:         rec["stderr_tail"] = err[-800:]
+131:         (d / f"call_fail_{attempt}.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8"); evo.log(rec)
+132:         print(f"[{run_id}] FAILED rc={cp.returncode} {dt:.0f}s {err[-160:]!r}", flush=True)
+133:         _fail(run_id, err + json.dumps(j, ensure_ascii=False)[-400:])
+134:     return None
+
+FILE evo.py
+12: from pathlib import Path
+13: 
+14: ROOT = Path(__file__).resolve().parent
+15: RUNS = ROOT / "runs"; RUNS.mkdir(exist_ok=True)
+16: PKG = ROOT / "inputs" / "pkg"
+17: import os
+18: ACCOUNT = os.environ.get("THREAD_GPT", "gpt3")      # gpt3 = default account, gpt4 = second account (user 10-21)
+19: GPT3 = f"D:/musicclaude/gpt2agent-safechain/bin/{ACCOUNT}.cmd"
+20: GPT3_RUNS = Path(f"D:/musicclaude/gpt2agent-safechain/runs/{ACCOUNT}")
+21: G6, G56 = "gpt-6-thinking", "gpt-5-6-thinking"
+22: ROUTE = os.environ.get("THREAD_ROUTE", "gpt3s")     # 10-27 default: gpt3 max via gpt3_call (spaced, locked); mimic = MimicGate High
+23: MIN_GAP = 7.0
+24: NO_WEB = "\n\n回答时请不要进行联网搜索。"
+25: _gap = threading.Lock(); _last = [0.0]; _logl = threading.Lock()
+26: 
+27: 
+28: def rd(p):
+29:     return Path(p).read_text(encoding="utf-8-sig")
+30: 
+31: 
+32: def log(rec):
+33:     with _logl:
+34:         with (RUNS / "calls.jsonl").open("a", encoding="utf-8") as f:
+35:             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+36: 
+37: 
+38: def find_job(text, t0, attach=(), model=None):
+39:     """Match prompt, all attachment hashes and the requested model.
+40:     GPT-6/GPT-5.6 often review identical text concurrently; latest prompt alone is ambiguous.
+41:     """
+42:     import hashlib as _h
+43:     want = text.strip(); best = None
+44:     want_sha = sorted(_h.sha256(Path(a).read_bytes()).hexdigest() for a in attach)
+45:     for d in GPT3_RUNS.glob("pro-bridge-*"):
+46:         try:
+47:             if d.stat().st_mtime < t0 - 5:
+48:                 continue
+49:             p = d / "prompt.txt"
+50:             if p.exists() and p.read_text(encoding="utf-8-sig").strip() == want:
+51:                 mf = d / "attachment-manifest.json"
+52:                 got = sorted(x.get("sha256") for x in json.loads(mf.read_text(encoding="utf-8"))) if mf.exists() else []
+53:                 if got != want_sha:
+54:                     continue
+55:                 if model:
+56:                     rp=d/'result.json'
+57:                     if not rp.exists() or json.loads(rp.read_text(encoding='utf-8')).get('model')!=model:
+58:                         continue
+59:                 if best is None or d.stat().st_mtime > best.stat().st_mtime:
+60:                     best = d
+61:         except Exception:
+62:             pass
+63:     return str(best) if best else None
+64: 
+65: 
+66: def done(run_id):
+67:     return (RUNS / run_id / "output.txt").exists()
+68: 
+69: 
+70: def output(run_id):
+71:     p = RUNS / run_id / "output.txt"
+72:     return rd(p) if p.exists() else None
+73: 
+74: 
+75: def call(run_id, message, prompt_text=None, attach=(), model=G6, meta=None, cli_args=()):
+76:     """One fresh gpt3 call. Returns response text or None."""
+77:     d = RUNS / run_id; d.mkdir(parents=True, exist_ok=True)
+78:     if done(run_id):
+79:         return output(run_id)
+80:     # 10-27: per-model override, e.g. THREAD_ROUTE_G6=gpt3s THREAD_ROUTE_G56=mimic. Long structured answers (pool / pick)
+81:     # come back empty about half the time on MimicGate High, while gpt3 max finishes them.
+82:     route = os.environ.get("THREAD_ROUTE_" + ("G6" if model == G6 else "G56"), ROUTE)
+83:     if route == "mimic":
+84:         import mg_call
+85:         return mg_call.call(run_id, message, prompt_text, model, meta)
+86:     if route == "nozomi":
+87:         import nz_call
+88:         return nz_call.call(run_id, message, prompt_text, model, meta)
+89:     if route == "gpt3s":
+90:         import gpt3_call
+91:         return gpt3_call.call(run_id, message, prompt_text, model, meta)
+92:     if route == "gpt2":
+93:         import gpt2_call
+94:         return gpt2_call.call(run_id, message, prompt_text, model, meta)
+95:     # 10-24: when the model calls web.run, the rest of the answer moves to a websocket topic the bridge does not follow,
+96:     # so the call ends INCOMPLETE_RESPONSE with only "thoughts" in the stream; none of these tasks needs the web.
+97:     if not (meta or {}).get("web") and NO_WEB.strip() not in message[-60:]:
+98:         message += NO_WEB
+99:     assert len(message) <= 65000, f"{run_id}: message too long ({len(message)})"
+100:     (d / "prompt.txt").write_text(prompt_text if prompt_text is not None else message, encoding="utf-8")
+101:     inp = d / "input.txt"; inp.write_text(message, encoding="utf-8")
+102:     if meta:
+103:         (d / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+104:     for attempt in range(int(os.environ.get("EVO_ATTEMPTS", "4"))):   # long_wait.sh probes with 1 (one message per probe)
+105:         with _gap:
+106:             w = MIN_GAP - (time.time() - _last[0])
+107:             if w > 0:
+108:                 time.sleep(w)
+109:             _last[0] = time.time()
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n --glob '*.py' --glob '*.js' --glob '*.ts' --glob '"'!node_modules/**'"' --glob '"'!runs/**'"' 'first_chunk_ms|submitted.json|generation-network.json' D:/musicclaude/gpt2agent-safechain/src D:/musicclaude/gpt2agent-safechain/scripts" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 1342ms:
+D:/musicclaude/gpt2agent-safechain/src\chatgpt_provider\headless_native_provider.py:304:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain/src\chatgpt_provider\headless_native_provider.py:503:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain/src\chatgpt_provider\headless_native_provider.py:512:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain/src\chatgpt_provider\headless_native_provider.py:539:        submitted = (out / 'submitted.json').is_file()
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('_codex'); p.mkdir(exist_ok=True)
+print('Existing _codex files:', [x.name for x in p.iterdir()])
+q=p/'gap_log.md'
+if q.exists(): print(q.read_text(encoding='utf-8'))
+original=Path('gpt3_call.py').read_text(encoding='utf-8')
+backup=p/'gpt3_call.before_gap.py.txt'
+if backup.exists(): raise RuntimeError('Backup already exists; will not overwrite')
+backup.write_text(original,encoding='utf-8')
+q.write_text('# GPT3 submission pacing change\\n\\n2026-10-29\\n\\n- Scope: only gpt3_call.py submission pacing and log fields; offline tests in _codex/test_gap.py.\\n- Read gpt3_call.py and evo.find_job. Current code stamps both command launch and process completion.\\n- Preserve existing slot byte locks, arguments, prompt/attachments, NO_WEB, model/effort checks, retries and stop rules.\\n- Existing background processes and real run directories must remain untouched.\\n- All text reads/writes use Python with explicit UTF-8. PowerShell stdin BOM is stripped before executing Python snippets.\\n- Original gpt3_call.py saved to _codex/gpt3_call.before_gap.py.txt for exact scope comparison.\\n',encoding='utf-8')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 262ms:
+Existing _codex files: ['codex_log.txt', 'codex_result.md', 'dry_op60_rad_center.txt', 'dry_op60_rad_check.txt', 'dry_op60_rad_first.txt', 'dry_op60_rad_second.txt', 'dry_op60_whole.txt', 'dry_op61_rad_center.txt', 'dry_op61_rad_check.txt', 'dry_op61_rad_first.txt', 'dry_op61_rad_second.txt', 'dry_op61_whole.txt', 'gap_codex_log.txt', 'gap_task.md', 'test_v6dirs.py', 'v6dirs_baseline.json', 'v6dirs_log.md', 'v6dirs_task.md', '__pycache__']
+
+codex
+已确认现有代码会在命令启动和调用结束时各写一次 STAMP，这两处都需要调整。我会让 GATE 锁覆盖命令启动到检测到首个返回片段的阶段，并在锁内保存 `submitted.json` 的真实时间；超时或提前退出时按要求使用回退时间。离线测试会使用独立子进程验证 Windows 跨进程锁，以及“上传慢”的提交场景。
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n --glob '*.py' --glob '*.js' --glob '*.ts' --glob '*.mjs' --glob '"'!node_modules/**'"' --glob '"'!runs/**'"' 'first_chunk_ms|submitted.json|generation-network.json' D:/musicclaude/gpt2agent-safechain" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 253ms:
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\native_prepared_http_probe.py:719:                save(out/'submitted.json', {'utc':utc(), 'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\native_prepared_http_probe.py:865:            with (out/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\native_prepared_http_probe.py:886:            elapsed_seconds=round(time.monotonic()-request_start,3) if request_start is not None else None, submission_marker_exists=(out/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\src\chatgpt_provider\headless_native_provider.py:304:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\src\chatgpt_provider\headless_native_provider.py:503:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\src\chatgpt_provider\headless_native_provider.py:512:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\src\chatgpt_provider\headless_native_provider.py:539:        submitted = (out / 'submitted.json').is_file()
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\linux_native_provider_runner.py:152:                'submitted.json', 'handoff-sealed.json', 'handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\linux_native_provider_runner.py:445:                    or (out/'submitted.json').exists() or (out/'handoff-sealed.json').exists()):
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\tools\chatgpt_web\linux_native_provider_runner.py:454:                            'submitted.json','handoff-sealed.json','handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\dx-queue-before-20261024\gpt3_driver.mjs:560:  writeFileSync(path.join(evidenceDir, "submitted.json"), JSON.stringify({ utc: new Date().toISOString() }), "utf8");
+D:/musicclaude/gpt2agent-safechain\tests\test_chrome_diagnostic_authorization.py:307:                                     'submitted.json','result.json')):
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\src\chatgpt_provider\headless_native_provider.py:292:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\src\chatgpt_provider\headless_native_provider.py:422:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\before-native-attachments-20261015\src\chatgpt_provider\headless_native_provider.py:431:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:31:    p=json.loads((tmp_path/'generation-network.json').read_text())
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:33:    assert p['sse_frames']==2 and p['first_chunk_ms'] is not None
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:35:    assert 'secret answer' not in (tmp_path/'generation-network.json').read_text()
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:42:    p=json.loads((tmp_path/'generation-network.json').read_text())
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:51:    p=json.loads((tmp_path/'generation-network.json').read_text())
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:54:    assert 'secret' not in (tmp_path/'generation-network.json').read_text()
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:61:    p=json.loads((tmp_path/'generation-network.json').read_text())
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:70:    assert json.loads((tmp_path/'generation-network.json').read_text())['done_seen']
+D:/musicclaude/gpt2agent-safechain\tests\test_generation_stream.py:84:    assert 'private-token'not in (tmp_path/'generation-network.json').read_text()
+D:/musicclaude/gpt2agent-safechain\pieces\http-resume-before-20261024\tools\chatgpt_web\generation_stream.py:11:    path=Path(directory)/'generation-network.json'
+D:/musicclaude/gpt2agent-safechain\pieces\http-resume-before-20261024\tools\chatgpt_web\generation_stream.py:13:        first_chunk_ms=None,last_chunk_ms=None,chunks=0,response_bytes=0,sse_frames=0,
+D:/musicclaude/gpt2agent-safechain\pieces\http-resume-before-20261024\tools\chatgpt_web\generation_stream.py:44:            if progress['first_chunk_ms'] is None: progress['first_chunk_ms']=elapsed
+D:/musicclaude/gpt2agent-safechain\pieces\http-resume-before-20261024\tools\chatgpt_web\pro_bridge_http_probe.py:159:                write(out/'submitted.json',dict(utc=utc()))
+D:/musicclaude/gpt2agent-safechain\tests\test_gpt3_contract.py:163:    (job/'submitted.json').write_text('{}')
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:191:                    self.save(out / 'submitted.json', {'native_browser_generation_sent': False})
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:264:            while not all((out / 'submitted.json').exists() for out in outputs):
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:352:            self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:364:        self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:393:            if self.out and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_native_provider.py:552:            if self.out != before and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\tests\test_gpt_usage.py:82:    (job/'submitted.json').write_text(json.dumps({'utc':'2026-10-21T10:00:05Z'}))
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_quality_proof.py:126:    save(directory/'submitted.json',{'utc':utc(start+10),'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_quality_proof.py:222:    'requests.jsonl','headless-initializer/terminal-summary.json','submitted.json','response.txt'])
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_quality_proof.py:390:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\tests\test_headless_quality_proof.py:438:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\src\chatgpt_provider\headless_native_provider.py:304:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\src\chatgpt_provider\headless_native_provider.py:503:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\src\chatgpt_provider\headless_native_provider.py:512:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\src\chatgpt_provider\headless_native_provider.py:539:        submitted = (out / 'submitted.json').is_file()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_chrome_diagnostic_authorization.py:307:                                     'submitted.json','result.json')):
+D:/musicclaude/gpt2agent-safechain\tests\test_music_runner.py:49:    assert not (tmp_path / "meta/queued.submitted.json").exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_initializer_abort.py:39:    assert not (output / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_quality_proof.py:126:    save(directory/'submitted.json',{'utc':utc(start+10),'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_quality_proof.py:222:    'requests.jsonl','headless-initializer/terminal-summary.json','submitted.json','response.txt'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_quality_proof.py:390:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_quality_proof.py:438:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:191:                    self.save(out / 'submitted.json', {'native_browser_generation_sent': False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:264:            while not all((out / 'submitted.json').exists() for out in outputs):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:352:            self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:364:        self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:393:            if self.out and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_headless_native_provider.py:552:            if self.out != before and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_native_composer_lifecycle_scope.py:205:    assert not (out/'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_music_runner.py:49:    assert not (tmp_path / "meta/queued.submitted.json").exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_initializer_abort.py:39:    assert not (output / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_native_submit_authorization.py:24:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_native_submit_authorization.py:27:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_native_submit_authorization.py:36:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_native_submit_authorization.py:42:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_owned_cup_diagnostic_scope.py:151:@pytest.mark.parametrize('name',['submitted.json','result.json','submission-denied.json','initializer-aborted.json'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\windows_native_provider_runner.py:112:        if worker is not None and worker.poll() is None and not (out/'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\tests\test_native_submit_authorization.py:24:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_native_submit_authorization.py:27:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_native_submit_authorization.py:36:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_native_submit_authorization.py:42:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:152:                'submitted.json', 'handoff-sealed.json', 'handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:486:                    or (out/'submitted.json').exists() or (out/'handoff-sealed.json').exists()):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:495:                            'submitted.json','handoff-sealed.json','handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_owned_cup_diagnostic_scope.py:151:@pytest.mark.parametrize('name',['submitted.json','result.json','submission-denied.json','initializer-aborted.json'])
+D:/musicclaude/gpt2agent-safechain\tests\test_native_composer_lifecycle_scope.py:205:    assert not (out/'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_provider_lifecycle_probe.py:68:        assert (tmp_path/'run/turn-02/submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_stability_diagnostics.py:23:    (tmp_path/'submitted.json').write_text('{}')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_same_document_generation_control.py:222:@pytest.mark.parametrize('artifact',['submitted.json','handoff-sealed.json','handoff-ciphertext.pending'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tests\test_provider_lifecycle_probe.py:68:        assert (tmp_path/'run/turn-02/submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\tests\test_same_document_generation_control.py:222:@pytest.mark.parametrize('artifact',['submitted.json','handoff-sealed.json','handoff-ciphertext.pending'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\provider_lifecycle_probe.py:96:                with (directory/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\provider_lifecycle_probe.py:114:                    submission_marker_exists=(directory/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\owned_cup_diagnostic_scope.py:32:TERMINAL_FILES = (SUBMISSION_INTENT_FILE,SUBMISSION_FILE,FAILURE_FILE,'submitted.json','result.json',
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:728:                save(out/'submitted.json', {'utc':utc(), 'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:876:            with (out/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:897:            elapsed_seconds=round(time.monotonic()-request_start,3) if request_start is not None else None, submission_marker_exists=(out/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\music_runner.py:41:            marker = run_dir / "meta" / f"{job_id}.submitted.json"
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\headless_quality_proof.py:374:    submitted = evidence.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\headless_quality_proof.py:436:        _require((directory/'submitted.json').exists() and (directory/'result.json').exists(),
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\headless_quality_proof.py:464:            submit = item.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\tests\test_stability_diagnostics.py:23:    (tmp_path/'submitted.json').write_text('{}')
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\chrome_diagnostic_authorization.py:375:                     'submitted.json', 'result.json'):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\cup_session_probe.py:73:        save(out / 'not-submitted.json', {'utc':utc(), 'reason':'insufficient host headroom for one HTTP worker', 'memory':memory})
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\cup_session_probe.py:133:        path = out / 'submitted.json'
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\cup_session_probe.py:153:                  'submission_marker_exists':(out/'submitted.json').exists()}
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\generation_stream.py:9:def read_generation(session, message, directory, timeout=1200, *, network_name='generation-network.json',on_control=None):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\generation_stream.py:15:        first_chunk_ms=None,last_chunk_ms=None,chunks=0,response_bytes=0,sse_frames=0,
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\generation_stream.py:46:            if progress['first_chunk_ms'] is None: progress['first_chunk_ms']=elapsed
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\cup_session_probe.py:73:        save(out / 'not-submitted.json', {'utc':utc(), 'reason':'insufficient host headroom for one HTTP worker', 'memory':memory})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\cup_session_probe.py:133:        path = out / 'submitted.json'
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\cup_session_probe.py:153:                  'submission_marker_exists':(out/'submitted.json').exists()}
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\windows_native_provider_runner.py:112:        if worker is not None and worker.poll() is None and not (out/'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\gpt_usage.py:181:            submitted=timestamp(read_json(directory/'submitted.json').get('utc'))
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-before-20261016\tools\chatgpt_web\chrome_diagnostic_authorization.py:375:                     'submitted.json', 'result.json'):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\gpt3_cli.py:202:            error.submitted=(directory/'submitted.json').is_file()
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\gpt3_cli.py:207:        if lease:lease.fail(ambiguous=worker_started and (directory is None or (directory/'submitted.json').exists()))
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\linux_native_provider_runner.py:152:                'submitted.json', 'handoff-sealed.json', 'handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\linux_native_provider_runner.py:491:                    or (out/'submitted.json').exists() or (out/'handoff-sealed.json').exists()):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\linux_native_provider_runner.py:500:                            'submitted.json','handoff-sealed.json','handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\provider_lifecycle_probe.py:96:                with (directory/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\provider_lifecycle_probe.py:114:                    submission_marker_exists=(directory/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\owned_cup_diagnostic_scope.py:32:TERMINAL_FILES = (SUBMISSION_INTENT_FILE,SUBMISSION_FILE,FAILURE_FILE,'submitted.json','result.json',
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:728:                save(out/'submitted.json', {'utc':utc(), 'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:876:            with (out/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\native_prepared_http_probe.py:897:            elapsed_seconds=round(time.monotonic()-request_start,3) if request_start is not None else None, submission_marker_exists=(out/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\headless_quality_proof.py:374:    submitted = evidence.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\headless_quality_proof.py:436:        _require((directory/'submitted.json').exists() and (directory/'result.json').exists(),
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\headless_quality_proof.py:464:            submit = item.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\music_runner.py:41:            marker = run_dir / "meta" / f"{job_id}.submitted.json"
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\owned_cup_diagnostic_scope.py:32:TERMINAL_FILES = (SUBMISSION_INTENT_FILE,SUBMISSION_FILE,FAILURE_FILE,'submitted.json','result.json',
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:152:                'submitted.json', 'handoff-sealed.json', 'handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:488:                    or (out/'submitted.json').exists() or (out/'handoff-sealed.json').exists()):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\linux_native_provider_runner.py:497:                            'submitted.json','handoff-sealed.json','handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\native_prepared_http_probe.py:728:                save(out/'submitted.json', {'utc':utc(), 'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\native_prepared_http_probe.py:876:            with (out/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\native_prepared_http_probe.py:897:            elapsed_seconds=round(time.monotonic()-request_start,3) if request_start is not None else None, submission_marker_exists=(out/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\headless_quality_proof.py:374:    submitted = evidence.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\headless_quality_proof.py:436:        _require((directory/'submitted.json').exists() and (directory/'result.json').exists(),
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\headless_quality_proof.py:464:            submit = item.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\music_runner.py:41:            marker = run_dir / "meta" / f"{job_id}.submitted.json"
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\cup_session_probe.py:73:        save(out / 'not-submitted.json', {'utc':utc(), 'reason':'insufficient host headroom for one HTTP worker', 'memory':memory})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\cup_session_probe.py:133:        path = out / 'submitted.json'
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\cup_session_probe.py:153:                  'submission_marker_exists':(out/'submitted.json').exists()}
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tools\chatgpt_web\chrome_diagnostic_authorization.py:375:                     'submitted.json', 'result.json'):
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\pro_bridge_http_probe.py:198:                write(out/'submitted.json',dict(utc=utc()))
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\pro_bridge_http_probe.py:207:                    network_name=f'resume-network-{resume_count:02d}.json' if is_resume else 'generation-network.json',
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\windows_native_provider_runner.py:112:        if worker is not None and worker.poll() is None and not (out/'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\provider_lifecycle_probe.py:96:                with (directory/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\tools\chatgpt_web\provider_lifecycle_probe.py:114:                    submission_marker_exists=(directory/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\src\chatgpt_provider\headless_native_provider.py:299:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\src\chatgpt_provider\headless_native_provider.py:440:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\src\chatgpt_provider\headless_native_provider.py:449:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_stability_diagnostics.py:23:    (tmp_path/'submitted.json').write_text('{}')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_same_document_generation_control.py:222:@pytest.mark.parametrize('artifact',['submitted.json','handoff-sealed.json','handoff-ciphertext.pending'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_provider_lifecycle_probe.py:68:        assert (tmp_path/'run/turn-02/submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_owned_cup_diagnostic_scope.py:151:@pytest.mark.parametrize('name',['submitted.json','result.json','submission-denied.json','initializer-aborted.json'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_native_submit_authorization.py:24:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_native_submit_authorization.py:27:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_native_submit_authorization.py:36:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_native_submit_authorization.py:42:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\windows_native_provider_runner.py:112:        if worker is not None and worker.poll() is None and not (out/'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_native_composer_lifecycle_scope.py:205:    assert not (out/'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_music_runner.py:49:    assert not (tmp_path / "meta/queued.submitted.json").exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\provider_lifecycle_probe.py:96:                with (directory/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\provider_lifecycle_probe.py:114:                    submission_marker_exists=(directory/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_chrome_diagnostic_authorization.py:307:                                     'submitted.json','result.json')):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_quality_proof.py:126:    save(directory/'submitted.json',{'utc':utc(start+10),'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_quality_proof.py:222:    'requests.jsonl','headless-initializer/terminal-summary.json','submitted.json','response.txt'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_quality_proof.py:390:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_quality_proof.py:438:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:191:                    self.save(out / 'submitted.json', {'native_browser_generation_sent': False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:264:            while not all((out / 'submitted.json').exists() for out in outputs):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:352:            self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:364:        self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:393:            if self.out and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_headless_native_provider.py:552:            if self.out != before and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\tests\test_initializer_abort.py:39:    assert not (output / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_same_document_generation_control.py:222:@pytest.mark.parametrize('artifact',['submitted.json','handoff-sealed.json','handoff-ciphertext.pending'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_native_submit_authorization.py:24:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_native_submit_authorization.py:27:        assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_native_submit_authorization.py:36:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_native_submit_authorization.py:42:    assert not (tmp_path / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\owned_cup_diagnostic_scope.py:32:TERMINAL_FILES = (SUBMISSION_INTENT_FILE,SUBMISSION_FILE,FAILURE_FILE,'submitted.json','result.json',
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\native_prepared_http_probe.py:723:                save(out/'submitted.json', {'utc':utc(), 'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\native_prepared_http_probe.py:869:            with (out/'submitted.json').open('x', encoding='utf-8') as file:
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\native_prepared_http_probe.py:890:            elapsed_seconds=round(time.monotonic()-request_start,3) if request_start is not None else None, submission_marker_exists=(out/'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_chrome_diagnostic_authorization.py:307:                                     'submitted.json','result.json')):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_initializer_abort.py:39:    assert not (output / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\music_runner.py:41:            marker = run_dir / "meta" / f"{job_id}.submitted.json"
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_provider_lifecycle_probe.py:68:        assert (tmp_path/'run/turn-02/submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_native_composer_lifecycle_scope.py:205:    assert not (out/'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_quality_proof.py:127:    save(directory/'submitted.json',{'utc':utc(start+10),'native_browser_generation_sent':False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_quality_proof.py:223:    'requests.jsonl','headless-initializer/terminal-summary.json','submitted.json','response.txt'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_quality_proof.py:391:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_quality_proof.py:439:    (directory/'submitted.json').unlink()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:191:                    self.save(out / 'submitted.json', {'native_browser_generation_sent': False})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:264:            while not all((out / 'submitted.json').exists() for out in outputs):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:351:            self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:363:        self.assertFalse((self.out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:392:            if self.out and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_headless_native_provider.py:551:            if self.out != before and (self.out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\linux_native_provider_runner.py:152:                'submitted.json', 'handoff-sealed.json', 'handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\linux_native_provider_runner.py:465:                    or (out/'submitted.json').exists() or (out/'handoff-sealed.json').exists()):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\linux_native_provider_runner.py:474:                            'submitted.json','handoff-sealed.json','handoff-ciphertext.pending'))):
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_music_runner.py:49:    assert not (tmp_path / "meta/queued.submitted.json").exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tests\test_owned_cup_diagnostic_scope.py:151:@pytest.mark.parametrize('name',['submitted.json','result.json','submission-denied.json','initializer-aborted.json'])
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\src\chatgpt_provider\headless_native_provider.py:304:                if out.is_dir() and not (out / 'submit-authorized.json').exists() and not (out / 'submitted.json').exists():
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\src\chatgpt_provider\headless_native_provider.py:503:                               or (out / 'submitted.json').exists())
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\src\chatgpt_provider\headless_native_provider.py:512:        submitted = (out / 'submitted.json').exists()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-privacy-resume-before-20261016\src\chatgpt_provider\headless_native_provider.py:539:        submitted = (out / 'submitted.json').is_file()
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\headless_quality_proof.py:374:    submitted = evidence.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\headless_quality_proof.py:436:        _require((directory/'submitted.json').exists() and (directory/'result.json').exists(),
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\headless_quality_proof.py:464:            submit = item.json('submitted.json')
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\cup_session_probe.py:73:        save(out / 'not-submitted.json', {'utc':utc(), 'reason':'insufficient host headroom for one HTTP worker', 'memory':memory})
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\cup_session_probe.py:133:        path = out / 'submitted.json'
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\cup_session_probe.py:153:                  'submission_marker_exists':(out/'submitted.json').exists()}
+D:/musicclaude/gpt2agent-safechain\pieces\stability-before-20261016\source\tools\chatgpt_web\chrome_diagnostic_authorization.py:375:                     'submitted.json', 'result.json'):
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('evo.py')
+lines=p.read_text(encoding='utf-8').splitlines()
+print('\\n'.join(f'{i+1}: {line}' for i,line in enumerate(lines[:38])))
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 242ms:
+1: """Thread prompt self-evolution: shared runner. Every model call goes through the local `gpt3` CLI.
+2: 
+3: Layout (per handoff spec): runs/<run_id>/{prompt.txt,input.txt,output.txt,call.log,stdout.bin,stderr.bin}
+4: - prompt.txt  = the prompt-version text used (generation) or the judge/mutator instruction
+5: - input.txt   = the exact full message body sent via `gpt3 ask --file`
+6: - output.txt  = model response (only on verified success)
+7: - call.log    = JSON: command, model evidence, timing, exit code, job dir (no credentials)
+8: A run with output.txt is never redone. Any failure (submitted or not) is retried, up to 3 attempts (user 10-21: resubmitting is fine).
+9: """
+10: import hashlib, json, re, subprocess, threading, time
+11: from concurrent.futures import ThreadPoolExecutor
+12: from pathlib import Path
+13: 
+14: ROOT = Path(__file__).resolve().parent
+15: RUNS = ROOT / "runs"; RUNS.mkdir(exist_ok=True)
+16: PKG = ROOT / "inputs" / "pkg"
+17: import os
+18: ACCOUNT = os.environ.get("THREAD_GPT", "gpt3")      # gpt3 = default account, gpt4 = second account (user 10-21)
+19: GPT3 = f"D:/musicclaude/gpt2agent-safechain/bin/{ACCOUNT}.cmd"
+20: GPT3_RUNS = Path(f"D:/musicclaude/gpt2agent-safechain/runs/{ACCOUNT}")
+21: G6, G56 = "gpt-6-thinking", "gpt-5-6-thinking"
+22: ROUTE = os.environ.get("THREAD_ROUTE", "gpt3s")     # 10-27 default: gpt3 max via gpt3_call (spaced, locked); mimic = MimicGate High
+23: MIN_GAP = 7.0
+24: NO_WEB = "\n\n回答时请不要进行联网搜索。"
+25: _gap = threading.Lock(); _last = [0.0]; _logl = threading.Lock()
+26: 
+27: 
+28: def rd(p):
+29:     return Path(p).read_text(encoding="utf-8-sig")
+30: 
+31: 
+32: def log(rec):
+33:     with _logl:
+34:         with (RUNS / "calls.jsonl").open("a", encoding="utf-8") as f:
+35:             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+36: 
+37: 
+38: def find_job(text, t0, attach=(), model=None):
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('gpt3_call.py')
+s=p.read_text(encoding='utf-8')
+s=s.replace('- one request in flight at a time, at least GAP s (+ up to 10 s jitter) between submissions;', '- shared slots limit requests in flight; at least GAP s (+ up to 10 s jitter) between real submissions;\\n- hold the submission gate until the previous request starts returning (or exits / times out);')
+s=s.replace('from pathlib import Path\\n', 'from pathlib import Path\\nfrom datetime import datetime, timezone\\n')
+a=s.index('def _space_submission():')
+b=s.index('\\n\\ndef call(',a)
+s=s[:a]+'''SUBMIT_TIMEOUT = 180
+SUBMIT_POLL = 1
+
+
+def _wait_submission(proc, message, t0, existing, run_id):
+    \"\"\"Observe only this launch's new prompt-matched job while holding GATE.\"\"\"
+    deadline = time.monotonic() + SUBMIT_TIMEOUT
+    job = None; submitted_utc = None; submitted_epoch = None
+    while True:
+        if job is None:
+            for candidate in evo.GPT3_RUNS.glob(\"pro-bridge-*\"):
+                try:
+                    if candidate in existing or candidate.stat().st_ctime < t0:
+                        continue
+                    if (candidate / \"prompt.txt\").read_text(encoding=\"utf-8-sig\") == message:
+                        job = candidate
+                        break
+                except (OSError, UnicodeError):
+                    pass  # The CLI may still be creating the directory / writing the prompt.
+        if job is not None:
+            try:
+                utc = json.loads((job / \"submitted.json\").read_text(encoding=\"utf-8\"))[\"utc\"]
+                parsed = datetime.fromisoformat(utc.replace(\"Z\", \"+00:00\"))
+                if parsed.tzinfo is None:
+                    parsed = parsed.replace(tzinfo=timezone.utc)
+                submitted_epoch = parsed.timestamp(); submitted_utc = utc
+            except (OSError, ValueError, KeyError, TypeError, AttributeError, OverflowError):
+                pass  # Missing or partially written evidence is retried on the next poll.
+            try:
+                network = json.loads((job / \"generation-network.json\").read_text(encoding=\"utf-8\"))
+                if submitted_epoch is not None and network.get(\"first_chunk_ms\") is not None:
+                    break
+            except (OSError, ValueError, AttributeError):
+                pass
+        if proc.poll() is not None:
+            break
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            print(f\"[{run_id}] WARNING: submission/first-chunk wait timed out after {SUBMIT_TIMEOUT}s; releasing GATE\", flush=True)
+            break
+        time.sleep(min(SUBMIT_POLL, remaining))
+    return submitted_utc, submitted_epoch
+
+
+def _space_submission(command, message, run_id):
+    \"\"\"Wait from the previous real submit, launch, and observe first return under GATE.\"\"\"
+    import msvcrt
+    with open(GATE, \"a+\") as f:
+        while True:
+            try:
+                f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_NBLCK, 1); break
+            except OSError:
+                time.sleep(1)
+        try:
+            last = float(STAMP.read_text(encoding=\"utf-8\")) if STAMP.exists() else 0.0
+            w = GAP + random.uniform(0, 10) - (time.time() - last)
+            if w > 0:
+                time.sleep(w)
+            existing = set(evo.GPT3_RUNS.glob(\"pro-bridge-*\"))
+            started = time.strftime(\"%Y-%m-%dT%H:%M:%S\"); t0 = time.time()
+            proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            submitted_utc, submitted_epoch = _wait_submission(proc, message, t0, existing, run_id)
+            STAMP.write_text(str(submitted_epoch if submitted_epoch is not None else time.time()), encoding=\"utf-8\")
+            gap = submitted_epoch - last if submitted_epoch is not None and last else None
+            return proc, started, t0, submitted_utc, gap
+        finally:
+            f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+''' + s[b:]
+old='''            _space_submission()
+            started = time.strftime(\"%Y-%m-%dT%H:%M:%S\"); t0 = time.time()
+            cp = subprocess.run([GPT3, \"ask\", \"--file\", str(inp), \"--json\", \"--model\", model, \"--allow-topic-stream\"]
+                                + [x for a in attach for x in (\"--attach\", a)], capture_output=True)
+            STAMP.write_text(str(time.time()))'''
+new='''            command = [GPT3, \"ask\", \"--file\", str(inp), \"--json\", \"--model\", model, \"--allow-topic-stream\"] \\\\
+                      + [x for a in attach for x in (\"--attach\", a)]
+            proc, started, t0, submitted_utc, gap = _space_submission(command, message, run_id)
+            stdout, stderr = proc.communicate()
+            cp = subprocess.CompletedProcess(command, proc.returncode, stdout, stderr)'''
+assert old in s
+s=s.replace(old,new)
+s=s.replace('\"seconds\": round(dt), \"exit_code\": cp.returncode,', '\"submitted_utc\": submitted_utc, \"gap_since_prev_submit_s\": gap,\\n               \"seconds\": round(dt), \"exit_code\": cp.returncode,')
+p.write_text(s,encoding='utf-8')
+q=Path('_codex/gap_log.md')
+with q.open('a',encoding='utf-8') as f:
+ f.write('\\n- Implemented Popen launch and prompt-matched job polling under GATE, 180 s monotonic timeout, actual submitted UTC -> epoch STAMP, and first_chunk_ms non-null gate. Existing directories are excluded, including directories later touched by another process.\\n- communicate() stays inside the existing slot lifetime but outside GATE; post-completion STAMP write removed. Unknown real submission fields are null rather than inventing evidence.\\n')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 217ms:
+**Testing code efficiency**
+
+I see I'm trying to determine how many tokens are left and plan to write an efficient 400-line test. I'm thinking about loading a real `evo` without side effects by changing the Abstract Syntax Tree (AST). I should focus on ensuring that the expression temp and `GPT3_RUNS` behave properly before executing the tests. My next step is to inspect the `evo` definitions for any potential side effects at the end.
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+s=Path('evo.py').read_text(encoding='utf-8'); print(s[-3000:])
+print('\\nPRODUCTION DIFF:')
+import difflib
+print(''.join(difflib.unified_diff(Path('_codex/gpt3_call.before_gap.py.txt').read_text(encoding='utf-8').splitlines(True),Path('gpt3_call.py').read_text(encoding='utf-8').splitlines(True),fromfile='before',tofile='after')))
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 216ms:
+ndent=1), encoding="utf-8")
+        (d / "output.txt").write_text(resp, encoding="utf-8"); log(rec)
+        print(f"[{run_id}] ok(gemini) {dt:.0f}s {len(resp)} chars", flush=True)
+        return resp
+    rec["stderr_tail"] = cp.stderr.decode("utf-8", "replace")[-600:]; log(rec)
+    (d / "call_fail.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[{run_id}] FAILED(gemini) rc={cp.returncode} {dt:.0f}s {err}", flush=True)
+    return None
+
+
+def call_gemini_direct(run_id, message, prompt_text=None, meta=None, model_name="gemini-3.8-flash-high"):
+    """Gemini via the local Antigravity Tools proxy, non-streaming OpenAI-compatible HTTP (no tools, so offline by
+    construction). Bypasses opencode, whose streaming parser fails on this proxy ('content after the finish reason')."""
+    import os, urllib.request
+    d = RUNS / run_id; d.mkdir(parents=True, exist_ok=True)
+    if done(run_id):
+        return output(run_id)
+    (d / "prompt.txt").write_text(prompt_text if prompt_text is not None else message, encoding="utf-8")
+    (d / "input.txt").write_text(message, encoding="utf-8")
+    cfg = json.loads(Path(os.path.expanduser("~/.config/opencode/opencode.json")).read_text(encoding="utf-8"))
+    o = cfg["provider"]["antigravity-tools"]["options"]
+    body = json.dumps({"model": model_name, "messages": [{"role": "user", "content": message}], "stream": False}).encode()
+    req = urllib.request.Request(o["baseURL"] + "/chat/completions", data=body,
+                                 headers={"Content-Type": "application/json", "Authorization": "Bearer " + o["apiKey"]})
+    t0 = time.time(); started = time.strftime("%Y-%m-%dT%H:%M:%S"); err = None; resp = ""
+    with _gem_sem:
+        try:
+            j = json.loads(urllib.request.urlopen(req, timeout=1200).read().decode("utf-8"))
+            resp = (j["choices"][0]["message"].get("content") or "").strip()
+            fr = j["choices"][0].get("finish_reason")
+            if fr not in ("stop", None):
+                err = f"finish_reason={fr}"
+        except Exception as e:
+            err = repr(e)[:500]
+    dt = time.time() - t0
+    ok = bool(resp) and not err
+    rec = {"run_id": run_id, "command": f"POST {o['baseURL']}/chat/completions (stream=false)", "started": started,
+           "seconds": round(dt), "completed": ok, "model": model_name, "offline": True, "error": err,
+           "message_chars": len(message), "meta": meta or {}}
+    if ok:
+        rec["response_chars"] = len(resp)
+        (d / "call.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+        (d / "output.txt").write_text(resp, encoding="utf-8"); log(rec)
+        print(f"[{run_id}] ok(gemini-direct) {dt:.0f}s {len(resp)} chars", flush=True)
+        return resp
+    log(rec); (d / "call_fail_direct.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[{run_id}] FAILED(gemini-direct) {dt:.0f}s {err}", flush=True)
+    return None
+
+
+PRODUCTION DIFF:
+--- before
++++ after
+@@ -1,11 +1,13 @@
+ """Careful gpt3 route for evo.call (10-26/27, user: retry the gpt3 account (yi) at Extra High / max, serial, ~20 s apart).
+-- one request in flight at a time, at least GAP s (+ up to 10 s jitter) between submissions;
++- shared slots limit requests in flight; at least GAP s (+ up to 10 s jitter) between real submissions;
++- hold the submission gate until the previous request starts returning (or exits / times out);
+ - --allow-topic-stream: when an answer moves to the websocket topic (the 10-24 truncation cause), the CLI follows that
+   same turn instead of ending with thoughts only; it never regenerates;
+ - stop for good on a usage-limit / protection message, after 2 failures in a row, or after 3 failures in total.
+ No fingerprint, verification or anti-bot tricks: only pacing and honest stopping."""
+ import hashlib, json, os, random, subprocess, threading, time
+ from pathlib import Path
++from datetime import datetime, timezone
+ import evo
+ 
+ GPT3 = "D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd"
+@@ -61,9 +63,52 @@
+ GATE = evo.RUNS / "gpt3_submit.lock"
+ 
+ 
+-def _space_submission():
+-    """10-27: read-wait-stamp under one exclusive cross-process lock, so parallel slots still start >= GAP s apart
+-    (before, 8 slots read the same old stamp at once and all submitted in the same second)"""
++SUBMIT_TIMEOUT = 180
++SUBMIT_POLL = 1
++
++
++def _wait_submission(proc, message, t0, existing, run_id):
++    """Observe only this launch's new prompt-matched job while holding GATE."""
++    deadline = time.monotonic() + SUBMIT_TIMEOUT
++    job = None; submitted_utc = None; submitted_epoch = None
++    while True:
++        if job is None:
++            for candidate in evo.GPT3_RUNS.glob("pro-bridge-*"):
++                try:
++                    if candidate in existing or candidate.stat().st_ctime < t0:
++                        continue
++                    if (candidate / "prompt.txt").read_text(encoding="utf-8-sig") == message:
++                        job = candidate
++                        break
++                except (OSError, UnicodeError):
++                    pass  # The CLI may still be creating the directory / writing the prompt.
++        if job is not None:
++            try:
++                utc = json.loads((job / "submitted.json").read_text(encoding="utf-8"))["utc"]
++                parsed = datetime.fromisoformat(utc.replace("Z", "+00:00"))
++                if parsed.tzinfo is None:
++                    parsed = parsed.replace(tzinfo=timezone.utc)
++                submitted_epoch = parsed.timestamp(); submitted_utc = utc
++            except (OSError, ValueError, KeyError, TypeError, AttributeError, OverflowError):
++                pass  # Missing or partially written evidence is retried on the next poll.
++            try:
++                network = json.loads((job / "generation-network.json").read_text(encoding="utf-8"))
++                if submitted_epoch is not None and network.get("first_chunk_ms") is not None:
++                    break
++            except (OSError, ValueError, AttributeError):
++                pass
++        if proc.poll() is not None:
++            break
++        remaining = deadline - time.monotonic()
++        if remaining <= 0:
++            print(f"[{run_id}] WARNING: submission/first-chunk wait timed out after {SUBMIT_TIMEOUT}s; releasing GATE", flush=True)
++            break
++        time.sleep(min(SUBMIT_POLL, remaining))
++    return submitted_utc, submitted_epoch
++
++
++def _space_submission(command, message, run_id):
++    """Wait from the previous real submit, launch, and observe first return under GATE."""
+     import msvcrt
+     with open(GATE, "a+") as f:
+         while True:
+@@ -72,11 +117,17 @@
+             except OSError:
+                 time.sleep(1)
+         try:
+-            last = float(STAMP.read_text()) if STAMP.exists() else 0.0
++            last = float(STAMP.read_text(encoding="utf-8")) if STAMP.exists() else 0.0
+             w = GAP + random.uniform(0, 10) - (time.time() - last)
+             if w > 0:
+                 time.sleep(w)
+-            STAMP.write_text(str(time.time()))
++            existing = set(evo.GPT3_RUNS.glob("pro-bridge-*"))
++            started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
++            proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++            submitted_utc, submitted_epoch = _wait_submission(proc, message, t0, existing, run_id)
++            STAMP.write_text(str(submitted_epoch if submitted_epoch is not None else time.time()), encoding="utf-8")
++            gap = submitted_epoch - last if submitted_epoch is not None and last else None
++            return proc, started, t0, submitted_utc, gap
+         finally:
+             f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+ 
+@@ -100,11 +151,11 @@
+         with _Serial():
+             if stopped():
+                 print(f"[{run_id}] SKIPPED ({stopped()})", flush=True); return None
+-            _space_submission()
+-            started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
+-            cp = subprocess.run([GPT3, "ask", "--file", str(inp), "--json", "--model", model, "--allow-topic-stream"]
+-                                + [x for a in attach for x in ("--attach", a)], capture_output=True)
+-            STAMP.write_text(str(time.time()))
++            command = [GPT3, "ask", "--file", str(inp), "--json", "--model", model, "--allow-topic-stream"] \
++                      + [x for a in attach for x in ("--attach", a)]
++            proc, started, t0, submitted_utc, gap = _space_submission(command, message, run_id)
++            stdout, stderr = proc.communicate()
++            cp = subprocess.CompletedProcess(command, proc.returncode, stdout, stderr)
+         dt = time.time() - t0
+         (d / "stdout.bin").write_bytes(cp.stdout); (d / "stderr.bin").write_bytes(cp.stderr)
+         try:
+@@ -115,6 +166,7 @@
+         ok = (cp.returncode == 0 and j.get("completed") is True and resp.strip()
+               and md.get("model") == model and md.get("thinking_effort") == "max")
+         rec = {"run_id": run_id, "attempt": attempt, "account": "gpt3", "route": "gpt3-serial", "started": started,
++               "submitted_utc": submitted_utc, "gap_since_prev_submit_s": gap,
+                "seconds": round(dt), "exit_code": cp.returncode, "completed": bool(ok), "model": md.get("model"),
+                "thinking_effort": md.get("thinking_effort"), "job_directory": md.get("job_directory"),
+                "message_chars": len(message), "message_sha256": hashlib.sha256(message.encode()).hexdigest(), "meta": meta or {}}
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+source = r'''\"\"\"Offline Windows integration tests. Run: python -B _codex/test_gap.py
+
+Every real module is loaded from UTF-8 source without creating bytecode. evo's
+path assignments are replaced in memory before module execution. Workers audit
+filesystem writes and block networking; their Popen accepts only the temp fake.
+No real GPT executable is launched and no real runs/locks/stamp are written.
+\"\"\"
+import ast
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import time
+import types
+import unittest
+from datetime import datetime, timezone
+
+ROOT = Path(__file__).resolve().parents[1]
+MODEL = \"gpt-6-thinking\"
+NO_WEB = \"\\n\\n\\u56de\\u7b54\\u65f6\\u8bf7\\u4e0d\\u8981\\u8fdb\\u884c\\u8054\\u7f51\\u641c\\u7d22\\u3002\"
+
+FAKE_SOURCE = r\\'\\'\\'
+import json, os, sys, time
+from datetime import datetime, timezone
+from pathlib import Path
+root = Path(__file__).resolve().parent
+args = sys.argv[1:]
+inp = Path(args[args.index(\"--file\") + 1])
+rid = inp.parent.name
+cfg = json.loads((root / \"config.json\").read_text(encoding=\"utf-8\"))[rid]
+message = inp.read_text(encoding=\"utf-8\")
+def save(path, obj):
+    path.write_text(json.dumps(obj, ensure_ascii=False), encoding=\"utf-8\")
+event = {\"run_id\": rid, \"launch\": time.time(), \"args\": args, \"message\": message,
+         \"attempt\": len(list(root.glob(rid + \"-event-*.json\")))}
+ep = root / (rid + \"-event-\" + str(os.getpid()) + \".json\")
+save(ep, event)
+job = None
+if not cfg.get(\"no_job\"):
+    time.sleep(cfg.get(\"delay\", 0))
+    job = root / \"jobs\" / (\"pro-bridge-\" + str(time.time_ns()) + \"-\" + rid)
+    job.mkdir()
+    (job / \"prompt.txt\").write_text(message, encoding=\"utf-8\")
+    save(job / \"started.json\", {\"utc\": datetime.now(timezone.utc).isoformat()})
+    if cfg.get(\"partial\"):
+        (job / \"submitted.json\").write_text('{\"utc\":', encoding=\"utf-8\")
+        (job / \"generation-network.json\").write_text('{', encoding=\"utf-8\")
+        time.sleep(0.12)
+    if not cfg.get(\"no_submit\"):
+        utc = datetime.now(timezone.utc).isoformat().replace(\"+00:00\", \"Z\")
+        event[\"submit\"] = datetime.fromisoformat(utc.replace(\"Z\", \"+00:00\")).timestamp()
+        event[\"submitted_utc\"] = utc
+        save(job / \"submitted.json\", {\"utc\": utc})
+        save(job / \"generation-network.json\", {\"first_chunk_ms\": None})
+        save(ep, event)
+        if not cfg.get(\"no_chunk\"):
+            time.sleep(cfg.get(\"chunk_delay\", 0.05))
+            save(job / \"generation-network.json\", {\"first_chunk_ms\": cfg.get(\"first_chunk_ms\", 5)})
+            event[\"first_chunk\"] = time.time()
+            save(ep, event)
+time.sleep(cfg.get(\"tail\", 0))
+event[\"exit\"] = time.time()
+save(ep, event)
+if cfg.get(\"protection\"):
+    print(\"hit your limit\", file=sys.stderr)
+rc = cfg.get(\"rc\", 0)
+if cfg.get(\"invalid_json\"):
+    print(\"not json\")
+else:
+    print(json.dumps({\"completed\": cfg.get(\"completed\", True), \"response\": \"answer:\" + rid,
+                      \"metadata\": {\"model\": cfg.get(\"result_model\", args[args.index(\"--model\") + 1]),
+                                   \"thinking_effort\": cfg.get(\"effort\", \"max\"),
+                                   \"job_directory\": str(job) if job else None}}))
+sys.exit(rc)
+\\'\\'\\'
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding=\"utf-8\"))
+
+
+def load_sandboxed(root):
+    \"\"\"Load the actual code, replacing only evo path constants before execution.\"\"\"
+    tree = ast.parse((ROOT / \"evo.py\").read_text(encoding=\"utf-8\"))
+    replaced = set()
+    for node in tree.body:
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                if isinstance(target, ast.Name) and target.id in (\"RUNS\", \"GPT3_RUNS\"):
+                    folder = root / (\"runs\" if target.id == \"RUNS\" else \"jobs\")
+                    node.value = ast.parse(\"Path(\" + repr(str(folder)) + \")\", mode=\"eval\").body
+                    replaced.add(target.id)
+    assert replaced == {\"RUNS\", \"GPT3_RUNS\"}
+    ast.fix_missing_locations(tree)
+    evo = types.ModuleType(\"evo\"); evo.__file__ = str(ROOT / \"evo.py\")
+    sys.modules[\"evo\"] = evo
+    exec(compile(tree, evo.__file__, \"exec\"), evo.__dict__)
+    gc = types.ModuleType(\"gpt3_call\"); gc.__file__ = str(ROOT / \"gpt3_call.py\")
+    sys.modules[\"gpt3_call\"] = gc
+    exec(compile((ROOT / \"gpt3_call.py\").read_text(encoding=\"utf-8\"), gc.__file__, \"exec\"), gc.__dict__)
+    gc.GPT3 = str(root / \"fake_gpt3.cmd\")
+    gc.STAMP = root / \"stamp.txt\"; gc.GATE = root / \"gate.lock\"; gc.LOCK = root / \"slots.lock\"
+    gc.SLOTS_FILE = root / \"gpt3_slots.txt\"
+    gc.GAP = read_json(root / \"settings.json\").get(\"gap\", 0.3)
+    gc.SUBMIT_TIMEOUT = read_json(root / \"settings.json\").get(\"timeout\", 8)
+    gc.SUBMIT_POLL = 0.025
+    gc.random.uniform = lambda a, b: 0.0
+    original_popen = subprocess.Popen
+    def safe_popen(command, *args, **kwargs):
+        assert Path(command[0]).resolve() == Path(gc.GPT3).resolve(), command
+        return original_popen(command, *args, **kwargs)
+    gc.subprocess.Popen = safe_popen
+    return evo, gc
+
+
+def worker(root, rid):
+    root = root.resolve()
+    def within(path):
+        if isinstance(path, int):
+            return True
+        return Path(os.fsdecode(path)).resolve().is_relative_to(root)
+    def audit(event, args):
+        if event == \"open\":
+            path, mode, flags = args
+            write = any(c in (mode or \"\") for c in \"wax+\") or flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC)
+            if write and not within(path):
+                raise AssertionError(\"Write escaped sandbox: \" + str(path))
+        elif event in (\"os.mkdir\", \"os.remove\", \"os.rmdir\"):
+            if not within(args[0]):
+                raise AssertionError(\"Mutation escaped sandbox: \" + str(args[0]))
+        elif event in (\"socket.connect\", \"socket.bind\", \"socket.getaddrinfo\"):
+            raise AssertionError(\"Network forbidden in offline test\")
+    sys.addaudithook(audit)
+    evo, gc = load_sandboxed(root)
+    cfg = read_json(root / \"config.json\")[rid]
+    message = cfg.get(\"message\", \"prompt:\" + rid + \" \\u4e2d\\u6587\\n\")
+    meta = cfg.get(\"meta\", {})
+    before = time.time()
+    answer = gc.call(rid, message, cfg.get(\"prompt_text\"), MODEL, meta)
+    after = time.time()
+    if cfg.get(\"check_stopped\"):
+        assert gc.call(rid, message, None, MODEL, meta) is None
+    (root / (rid + \"-result.json\")).write_text(json.dumps({\"answer\": answer, \"before\": before,
+        \"after\": after, \"state\": gc._state, \"input_message\": message}, ensure_ascii=False), encoding=\"utf-8\")
+
+
+class GapTests(unittest.TestCase):
+    def setup_case(self, root, config, gap=0.3, timeout=8, seed=None):
+        (root / \"jobs\").mkdir(); (root / \"runs\").mkdir()
+        (root / \"fake_gpt3.py\").write_text(FAKE_SOURCE, encoding=\"utf-8\")
+        (root / \"fake_gpt3.cmd\").write_text('@echo off\\n\"' + sys.executable + '\" -B \"' + str(root / \"fake_gpt3.py\") + '\" %*\\n', encoding=\"utf-8\")
+        (root / \"config.json\").write_text(json.dumps(config), encoding=\"utf-8\")
+        (root / \"settings.json\").write_text(json.dumps({\"gap\": gap, \"timeout\": timeout}), encoding=\"utf-8\")
+        (root / \"gpt3_slots.txt\").write_text(\"4\", encoding=\"utf-8\")
+        for rid in config:
+            (root / \"runs\" / rid).mkdir()
+        if seed is not None:
+            (root / \"stamp.txt\").write_text(str(seed), encoding=\"utf-8\")
+
+    def start(self, root, rid):
+        return subprocess.Popen([sys.executable, \"-B\", str(Path(__file__).resolve()), \"--worker\", str(root), rid],
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    def finish(self, proc):
+        try:
+            out, err = proc.communicate(timeout=30)
+        except subprocess.TimeoutExpired:
+            proc.kill(); out, err = proc.communicate()
+            self.fail(\"Worker stuck: \" + out.decode(\"utf-8\", \"replace\") + err.decode(\"utf-8\", \"replace\"))
+        self.assertEqual(proc.returncode, 0, out.decode(\"utf-8\", \"replace\") + err.decode(\"utf-8\", \"replace\"))
+        return out.decode(\"utf-8\", \"replace\")
+
+    def wait_event(self, root, rid, field):
+        deadline = time.monotonic() + 10
+        while time.monotonic() < deadline:
+            for ep in root.glob(rid + \"-event-*.json\"):
+                try:
+                    if field in read_json(ep):
+                        return read_json(ep)
+                except (ValueError, OSError):
+                    pass
+            time.sleep(0.02)
+        self.fail(\"Missing event \" + rid + \":\" + field)
+
+    def events(self, root):
+        return sorted((read_json(p) for p in root.glob(\"*-event-*.json\")), key=lambda e: e[\"launch\"])
+
+    def test_four_processes_real_submit_spacing_and_first_chunk(self):
+        with tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+            root = Path(td)
+            config = {\"slow_upload\": {\"delay\": 1.5, \"chunk_delay\": 0.7, \"tail\": 2.5, \"partial\": True},
+                      \"fast_b\": {\"delay\": 0.01, \"chunk_delay\": 0.1, \"tail\": 0.8},
+                      \"fast_c\": {\"delay\": 0.03, \"chunk_delay\": 0.1, \"tail\": 0.6},
+                      \"fast_d\": {\"delay\": 0.02, \"chunk_delay\": 0.1, \"tail\": 0.4, \"first_chunk_ms\": 0}}
+            self.setup_case(root, config)
+            # Same-prompt stale jobs must never satisfy this call, even if modified later.
+            stale = root / \"jobs\" / \"pro-bridge-stale\"; stale.mkdir()
+            (stale / \"prompt.txt\").write_text(\"prompt:slow_upload \\u4e2d\\u6587\\n\" + NO_WEB, encoding=\"utf-8\")
+            (stale / \"submitted.json\").write_text('{\"utc\":\"2026-01-01T00:00:00Z\"}', encoding=\"utf-8\")
+            (stale / \"generation-network.json\").write_text('{\"first_chunk_ms\":0}', encoding=\"utf-8\")
+            procs = [self.start(root, \"slow_upload\")]
+            self.wait_event(root, \"slow_upload\", \"launch\")
+            procs.extend(self.start(root, rid) for rid in (\"fast_b\", \"fast_c\", \"fast_d\"))
+            outputs = [self.finish(p) for p in procs]
+            events = self.events(root)
+            self.assertEqual(len(events), 4)
+            gaps = []
+            for index, e in enumerate(events):
+                self.assertIn(\"--allow-topic-stream\", e[\"args\"])
+                self.assertEqual(e[\"args\"][:1], [\"ask\"])
+                self.assertEqual(e[\"message\"], \"prompt:\" + e[\"run_id\"] + \" \\u4e2d\\u6587\\n\" + NO_WEB)
+                result = read_json(root / (e[\"run_id\"] + \"-result.json\"))
+                self.assertEqual(result[\"answer\"], \"answer:\" + e[\"run_id\"])
+                rec = read_json(root / \"runs\" / e[\"run_id\"] / \"call.log\")
+                self.assertEqual(rec[\"submitted_utc\"], e[\"submitted_utc\"])
+                self.assertEqual(rec[\"message_sha256\"], hashlib.sha256(e[\"message\"].encode()).hexdigest())
+                if index:
+                    prev = events[index - 1]
+                    gap = e[\"submit\"] - prev[\"submit\"]; gaps.append(gap)
+                    self.assertGreaterEqual(gap, 0.3)
+                    self.assertGreaterEqual(e[\"launch\"], prev[\"first_chunk\"])
+                    self.assertAlmostEqual(rec[\"gap_since_prev_submit_s\"], gap, places=5)
+                else:
+                    self.assertIsNone(rec[\"gap_since_prev_submit_s\"])
+            # GATE is released before completion, and completion never overwrites STAMP.
+            self.assertLess(events[1][\"launch\"], events[0][\"exit\"])
+            self.assertAlmostEqual(float((root / \"stamp.txt\").read_text(encoding=\"utf-8\")), events[-1][\"submit\"], places=5)
+            calls = (root / \"runs\" / \"calls.jsonl\").read_text(encoding=\"utf-8\").splitlines()
+            self.assertEqual(len(calls), 4)
+            print(\"four-process actual submit gaps:\", [round(g, 4) for g in gaps], flush=True)
+
+    def test_timeout_releases_gate_and_keeps_real_submit(self):
+        with tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+            root = Path(td)
+            self.setup_case(root, {\"timeout\": {\"delay\": 0.03, \"no_chunk\": True, \"tail\": 2},
+                                   \"follower\": {\"delay\": 0.01}}, timeout=0.45)
+            a = self.start(root, \"timeout\")
+            self.wait_event(root, \"timeout\", \"submit\")
+            b = self.start(root, \"follower\")
+            out = self.finish(a); self.finish(b)
+            self.assertIn(\"WARNING\", out); self.assertIn(\"timed out\", out)
+            events = self.events(root); self.assertEqual(len(events), 2)
+            self.assertLess(events[1][\"launch\"], events[0][\"exit\"])
+            self.assertGreaterEqual(events[1][\"submit\"] - events[0][\"submit\"], 0.3)
+            rec = read_json(root / \"runs\" / \"timeout\" / \"call.log\")
+            self.assertEqual(rec[\"submitted_utc\"], events[0][\"submitted_utc\"])
+            self.assertAlmostEqual(float((root / \"stamp.txt\").read_text(encoding=\"utf-8\")), events[1][\"submit\"], places=5)
+
+    def test_timeout_without_submit_falls_back_to_now(self):
+        with tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+            root = Path(td)
+            self.setup_case(root, {\"unknown\": {\"no_job\": True, \"tail\": 0.9}}, timeout=0.2)
+            out = self.finish(self.start(root, \"unknown\"))
+            self.assertIn(\"WARNING\", out)
+            result = read_json(root / \"unknown-result.json\")
+            stamp = float((root / \"stamp.txt\").read_text(encoding=\"utf-8\"))
+            self.assertGreaterEqual(stamp, result[\"before\"])
+            self.assertLess(stamp, self.events(root)[0][\"exit\"])
+            rec = read_json(root / \"runs\" / \"unknown\" / \"call.log\")
+            self.assertIsNone(rec[\"submitted_utc\"]); self.assertIsNone(rec[\"gap_since_prev_submit_s\"])
+
+    def test_early_exit_retry_and_stop(self):
+        for protected in (False, True):
+            with self.subTest(protected=protected), tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+                root = Path(td)
+                self.setup_case(root, {\"exit\": {\"no_job\": True, \"rc\": 7, \"protection\": protected,
+                                               \"check_stopped\": True}}, timeout=5)
+                out = self.finish(self.start(root, \"exit\"))
+                self.assertNotIn(\"WARNING\", out)
+                self.assertIn(\"GPT3 STOPPED\", out)
+                events = self.events(root)
+                self.assertEqual(len(events), 1 if protected else 2)
+                result = read_json(root / \"exit-result.json\")
+                self.assertIsNone(result[\"answer\"])
+                self.assertEqual(result[\"state\"][\"total\"], len(events))
+                self.assertIsNotNone(result[\"state\"][\"stop\"])
+                for i in range(len(events)):
+                    rec = read_json(root / \"runs\" / \"exit\" / (\"call_fail_\" + str(i) + \".log\"))
+                    self.assertIsNone(rec[\"submitted_utc\"])
+                    self.assertIsNone(rec[\"gap_since_prev_submit_s\"])
+                if not protected:
+                    self.assertGreaterEqual(events[1][\"launch\"] - events[0][\"exit\"], 0.3)
+
+    def test_exit_after_submit_without_chunk(self):
+        with tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+            root = Path(td)
+            seed = time.time() - 1
+            self.setup_case(root, {\"exit_submit\": {\"no_chunk\": True, \"tail\": 0.1}}, seed=seed)
+            out = self.finish(self.start(root, \"exit_submit\"))
+            self.assertNotIn(\"WARNING\", out)
+            event = self.events(root)[0]
+            rec = read_json(root / \"runs\" / \"exit_submit\" / \"call.log\")
+            self.assertEqual(rec[\"submitted_utc\"], event[\"submitted_utc\"])
+            self.assertAlmostEqual(rec[\"gap_since_prev_submit_s\"], event[\"submit\"] - seed, places=5)
+            self.assertAlmostEqual(float((root / \"stamp.txt\").read_text(encoding=\"utf-8\")), event[\"submit\"], places=5)
+
+    def test_prompt_web_attachment_and_long_prompt_semantics(self):
+        with tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+            root = Path(td)
+            attachment = root / \"attachment.txt\"; attachment.write_text(\"payload\", encoding=\"utf-8\")
+            empty = root / \"empty.txt\"; empty.write_text(\"\", encoding=\"utf-8\")
+            config = {\"long\": {\"message\": \"x\" * 60001, \"meta\": {\"web\": True, \"attach\": [str(attachment), str(empty)]}},
+                      \"web\": {\"message\": \"unchanged web prompt\", \"meta\": {\"web\": True}},
+                      \"no_web_existing\": {\"message\": \"already restricted\" + NO_WEB}}
+            self.setup_case(root, config)
+            for rid in config:
+                self.finish(self.start(root, rid))
+            events = {e[\"run_id\"]: e for e in self.events(root)}
+            self.assertEqual(events[\"web\"][\"message\"], config[\"web\"][\"message\"])
+            self.assertEqual(events[\"no_web_existing\"][\"message\"], config[\"no_web_existing\"][\"message\"])
+            long = events[\"long\"]
+            self.assertIn(\"full_prompt.txt\", long[\"message\"])
+            self.assertEqual((root / \"runs\" / \"long\" / \"full_prompt.txt\").read_text(encoding=\"utf-8\"), \"x\" * 60001)
+            attachments = [long[\"args\"][i + 1] for i, arg in enumerate(long[\"args\"]) if arg == \"--attach\"]
+            self.assertEqual(attachments, [str(attachment), str(root / \"runs\" / \"long\" / \"full_prompt.txt\")])
+            self.assertEqual((root / \"runs\" / \"long\" / \"input.txt\").read_text(encoding=\"utf-8\"), long[\"message\"])
+
+    def test_model_and_effort_checks_remain_strict(self):
+        for bad in ({\"result_model\": \"wrong-model\"}, {\"effort\": \"high\"}):
+            with self.subTest(bad=bad), tempfile.TemporaryDirectory(prefix=\"gap_test_\") as td:
+                root = Path(td)
+                self.setup_case(root, {\"bad\": dict(bad, check_stopped=True)})
+                self.finish(self.start(root, \"bad\"))
+                result = read_json(root / \"bad-result.json\")
+                self.assertIsNone(result[\"answer\"])
+                self.assertEqual(result[\"state\"][\"total\"], 2)
+                self.assertFalse((root / \"runs\" / \"bad\" / \"output.txt\").exists())
+
+
+if __name__ == \"__main__\":
+    if len(sys.argv) > 1 and sys.argv[1] == \"--worker\":
+        worker(Path(sys.argv[2]), sys.argv[3])
+    else:
+        if os.name "'!= "nt":
+            raise SystemExit("Run on Windows: tests exercise real msvcrt byte locks")
+        unittest.main(verbosity=2)
+'"'''
+source=source.replace(\"r\\\\'\\\\'\\\\'\", \"r'''\" ).replace(\"\\\\'\\\\'\\\\'\", \"'''\")
+Path('_codex/test_gap.py').write_text(source,encoding='utf-8')
+compile(source,'_codex/test_gap.py','exec')
+print('Wrote test_gap.py:',len(source.splitlines()),'lines')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 106ms:
+Wrote test_gap.py: 339 lines
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python -B _codex/test_gap.py' in D:\musicclaude\_thread_evo_20261019
+ succeeded in 14246ms:
+test_early_exit_retry_and_stop (__main__.GapTests.test_early_exit_retry_and_stop) ... ok
+test_exit_after_submit_without_chunk (__main__.GapTests.test_exit_after_submit_without_chunk) ... ok
+test_four_processes_real_submit_spacing_and_first_chunk (__main__.GapTests.test_four_processes_real_submit_spacing_and_first_chunk) ... four-process actual submit gaps: [1.5903, 1.022, 0.9985]
+ok
+test_model_and_effort_checks_remain_strict (__main__.GapTests.test_model_and_effort_checks_remain_strict) ... ok
+test_prompt_web_attachment_and_long_prompt_semantics (__main__.GapTests.test_prompt_web_attachment_and_long_prompt_semantics) ... ok
+test_timeout_releases_gate_and_keeps_real_submit (__main__.GapTests.test_timeout_releases_gate_and_keeps_real_submit) ... ok
+test_timeout_without_submit_falls_back_to_now (__main__.GapTests.test_timeout_without_submit_falls_back_to_now) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 14.041s
+
+OK
+
+**Clarifying process logging**
+
+I’m thinking about how exceptions in `_wait_submission` shouldn't leave the process hanging. It seems unnecessary to add a broad catch. I need to ensure that test runs store the output properly. It sounds like I should create a complete log of outputs with the Python launcher, capturing everything from subprocesses to a specific output file. It’s important to maintain clarity in logging for current runs without repeating any information.
+codex
+提交节奏修改已完成。离线测试目前已通过四进程并发、提前退出、重试/停止规则和模型/推理强度校验；并发测试中的三段真实提交间隔为 1.5903、1.0220、0.9985 秒，均超过测试 GAP 0.3 秒，且后一个都在前一个首片段出现后才启动。测试也确认了 GATE 会在回答结束前释放，结束时不会覆盖 STAMP。正在完成超时、附件和长提示词验证，并核对修改范围。
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+import ast, difflib, hashlib
+from pathlib import Path
+before=Path('_codex/gpt3_call.before_gap.py.txt').read_text(encoding='utf-8')
+after=Path('gpt3_call.py').read_text(encoding='utf-8')
+btree=ast.parse(before); atree=ast.parse(after)
+def func(tree,name): return next(n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.ClassDef)) and n.name==name)
+def dump(node): return ast.dump(node,include_attributes=False)
+checks=[]
+for name in ('slots','_Serial','stopped','_fail'):
+ assert dump(func(btree,name))==dump(func(atree,name)),name
+ checks.append(name+' unchanged')
+bcall=func(btree,'call'); acall=func(atree,'call')
+assert [dump(n) for n in bcall.body[:-1]] == [dump(n) for n in acall.body[:-1]] if False else True
+bprefix=before[before.index('def call('):before.index('    for attempt in range(2):')]
+aprefix=after[after.index('def call('):after.index('    for attempt in range(2):')]
+assert bprefix==aprefix
+checks.append('prompt, NO_WEB, attachments and long-prompt preparation byte-for-byte unchanged')
+btail=before[before.index('        dt = time.time() - t0'):]
+atail=after[after.index('        dt = time.time() - t0'):]
+atail=atail.replace('               \"submitted_utc\": submitted_utc, \"gap_since_prev_submit_s\": gap,\\n','')
+assert btail==atail
+checks.append('stdout/stderr parsing, validation, logs apart from new fields, retries and stop rules byte-for-byte unchanged')
+for line in ('GAP = float(os.environ.get(\"GPT3_GAP\", \"20\"))','STOP_WORDS =','SLOTS_FILE =','LOCK =','GATE ='):
+ bline=next(x for x in before.splitlines() if x.startswith(line))
+ aline=next(x for x in after.splitlines() if x.startswith(line))
+ assert bline==aline,line
+checks.append('GAP default, STOP_WORDS, slots file and shared lock paths unchanged')
+assert after.count('STAMP.write_text(')==1
+assert 'subprocess.run(' not in after
+checks.append('one STAMP write only; Popen + communicate replace run')
+for p in ('gpt3_call.py','_codex/test_gap.py'):
+ compile(Path(p).read_text(encoding='utf-8'),p,'exec')
+checks.append('Python compile passed without pycache writes')
+diff=''.join(difflib.unified_diff(before.splitlines(True),after.splitlines(True),fromfile='gpt3_call.py (before)',tofile='gpt3_call.py (after)'))
+Path('_codex/gap_diff.patch').write_text(diff,encoding='utf-8')
+with Path('_codex/gap_log.md').open('a',encoding='utf-8') as f:
+ f.write('\\n## Scope verification\\n\\n')
+ for c in checks: f.write('- '+c+'\\n')
+ f.write('- Saved review diff: _codex/gap_diff.patch. No edits to evo.py, mg_call.py, watchdog, cache warming, scheduled tasks, or background processes.\\n')
+ for name in ('evo.py','mg_call.py'):
+  f.write('- Read-only reference SHA256 '+name+': '+hashlib.sha256(Path(name).read_bytes()).hexdigest()+'\\n')
+print('\\n'.join(checks))
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 170ms:
+slots unchanged
+_Serial unchanged
+stopped unchanged
+_fail unchanged
+prompt, NO_WEB, attachments and long-prompt preparation byte-for-byte unchanged
+stdout/stderr parsing, validation, logs apart from new fields, retries and stop rules byte-for-byte unchanged
+GAP default, STOP_WORDS, slots file and shared lock paths unchanged
+one STAMP write only; Popen + communicate replace run
+Python compile passed without pycache writes
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n 'prompt.txt|read_text|strip\\(' D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/gpt3_driver.mjs D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge.py" in D:\musicclaude\_thread_evo_20261019
+ exited 1 in 95ms:
+rg: D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/gpt3_driver.mjs: 系统找不到指定的文件。 (os error 2)
+rg: D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge.py: 系统找不到指定的文件。 (os error 2)
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:77:            active=json.loads((ROOT/'config/active-account.json').read_text(encoding='utf-8-sig'))
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:86:        runtime=json.loads(runtime_path.read_text(encoding='utf-8'))
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:108:    upstream_revision=(json.loads((repository/'provenance.json').read_text())['upstream_revision']
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:109:        if (repository/'provenance.json').exists() else subprocess.check_output(['git','-C',str(repository),'rev-parse','HEAD'],text=True).strip())
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:121:      (args.file or ROOT.parent/'mimic-cli/prompts/cup.txt').read_text(encoding='utf-8-sig')).rstrip()
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:124:    (out/'prompt.txt').write_text(prompt,encoding='utf-8')
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:187:                  validate_message(body,prompt,json.loads((out/'attachment-manifest.json').read_text(encoding='utf-8')))
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:226:                      line.startswith('data:') and line[5:].strip()=='[DONE]' for line in part.splitlines())).rstrip()+'\n\n'+response.text
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py:310:                and cookie.domain.lstrip('.')=='chatgpt.com' and not cookie.is_expired()):
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+for name in ['D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd','D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py']:
+ p=Path(name); lines=p.read_text(encoding='utf-8').splitlines()
+ print('\\n'+name)
+ for i in (range(len(lines)) if p.suffix=='.cmd' else range(113,128)):
+  print(f'{i+1}: {lines[i]}')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 170ms:
+
+D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd
+1: @echo off
+2: "%~dp0..\.venv-local\Scripts\python.exe" "%~dp0..\tools\chatgpt_web\gpt3_cli.py" %*
+3: exit /b %errorlevel%
+
+D:/musicclaude/gpt2agent-safechain/tools/chatgpt_web/pro_bridge_http_probe.py
+114:       repository='https://github.com/Utopia-V/chatgpt-pro-bridge',local_bootstrap=args.local_bootstrap,
+115:       continuation=previous is not None,upstream_revision=upstream_revision,raw_records_saved=args.debug,
+116:       supports_buffering=not args.disable_buffering,allow_topic_stream=args.allow_topic_stream,native_prepare_state=args.native_prepare_state,
+117:       fresh_request_session=args.fresh_request_session,legacy_conversation_endpoint=args.legacy_conversation_endpoint,
+118:       preconnect_presence=args.preconnect_presence))
+119:     is_cup=args.prompt is None and args.file is None
+120:     prompt=(args.prompt if args.prompt is not None else
+121:       (args.file or ROOT.parent/'mimic-cli/prompts/cup.txt').read_text(encoding='utf-8-sig')).rstrip()
+122:     if not prompt:raise ValueError('Prompt is empty')
+123:     if len(prompt)>65536:raise ValueError('prompt exceeds gpt2-compatible 65536 character limit')
+124:     (out/'prompt.txt').write_text(prompt,encoding='utf-8')
+125:     start=time.monotonic();before=snapshot()
+126:     write(out/'started.json',dict(utc=utc(),prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(),memory=before))
+127:     from gpt_usage import UsageRun
+128:     usage=UsageRun(out,args.usage_entry or (evidence_root.name if evidence_root.name in ('gpt3','gpt4') else 'other'),
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "rg -n 'prompt.txt|rstrip\\(|trimEnd\\(|\\.trim\\(' D:/musicclaude/gpt2agent-safechain/tools/gpt3_driver.mjs" in D:\musicclaude\_thread_evo_20261019
+ exited 1 in 73ms:
+rg: D:/musicclaude/gpt2agent-safechain/tools/gpt3_driver.mjs: IO error for operation on D:/musicclaude/gpt2agent-safechain/tools/gpt3_driver.mjs: 系统找不到指定的文件。 (os error 2)
+
+codex
+7 项离线测试已全部通过。最后核对真实 CLI 源码时发现，它保存 `prompt.txt` 前会执行 `rstrip()`；任务目录匹配需要兼容这一行为，否则带尾部换行的提示词可能等到超时。我会只调整匹配比较，并补测这个场景，发送内容保持原样。
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('gpt3_call.py'); s=p.read_text(encoding='utf-8')
+s=s.replace('    job = None; submitted_utc = None; submitted_epoch = None\\n', '    job = None; submitted_utc = None; submitted_epoch = None\\n    want = message.rstrip()  # The CLI rstrips the input before saving prompt.txt.\\n')
+s=s.replace('(candidate / \"prompt.txt\").read_text(encoding=\"utf-8-sig\") == message:', '(candidate / \"prompt.txt\").read_text(encoding=\"utf-8-sig\").rstrip() == want:')
+p.write_text(s,encoding='utf-8')
+p=Path('_codex/test_gap.py');s=p.read_text(encoding='utf-8')
+s=s.replace('(job / \"prompt.txt\").write_text(message, encoding=\"utf-8\")','(job / \"prompt.txt\").write_text(message.rstrip(), encoding=\"utf-8\")')
+s=s.replace('\"unchanged web prompt\", \"meta\": {\"web\": True}', '\"unchanged web prompt \\\\n\\\\n\", \"meta\": {\"web\": True}')
+s=s.replace('self.assertEqual(events[\"web\"][\"message\"], config[\"web\"][\"message\"])','self.assertEqual(events[\"web\"][\"message\"], config[\"web\"][\"message\"])\\n            rec = read_json(root / \"runs\" / \"web\" / \"call.log\")\\n            self.assertIsNotNone(rec[\"submitted_utc\"])')
+s=s.replace('for bad in ({\"result_model\": \"wrong-model\"}, {\"effort\": \"high\"}):', 'for bad in ({\"result_model\": \"wrong-model\"}, {\"effort\": \"high\"}, {\"invalid_json\": True}):')
+p.write_text(s,encoding='utf-8')
+with Path('_codex/gap_log.md').open('a',encoding='utf-8') as f:
+ f.write('\\n## Offline validation\\n\\n- Initial suite: 7 tests passed in 14.041 s. Four real Windows worker processes, real msvcrt byte locks, scaled slow-upload delay 1.5 s and GAP 0.3 s, jitter fixed to zero. Measured actual-submit gaps: 1.5903, 1.0220, 0.9985 s; all >= GAP. Every follower launched after previous first_chunk; next launch overlapped previous response tail.\\n- Covered null and zero first_chunk, partially written JSON, stale same-prompt jobs, timeout with actual-submit evidence, timeout with no job (fallback to current time), exit after submit without chunk, early failure/retry, protection stop, strict model/max checks, web/NO_WEB, nonempty and empty attachments, long-prompt attachment and result/log parsing.\\n- Tests load evo.py with only its RUNS/GPT3_RUNS assignments replaced in memory before execution, redirect all other paths to TemporaryDirectory, audit against writes outside that directory and network activity, restrict Popen to the temporary fake .cmd, and disable bytecode creation. Production code and real model calls are never launched.\\n- Final source inspection found active CLI bin/gpt3.cmd -> tools/chatgpt_web/gpt3_cli.py and pro_bridge_http_probe.py:121 rstrips prompt before writing prompt.txt. Matching now mirrors rstrip without changing input/message. Fake CLI and trailing-whitespace web test updated accordingly; added malformed stdout JSON failure coverage. Re-running only because of these changes.\\n')
+print('Updated matching and regression tests')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 123ms:
+Updated matching and regression tests
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+import subprocess, sys
+result=subprocess.run([sys.executable,'-B','_codex/test_gap.py'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+output=result.stdout.decode('utf-8','replace')
+Path('_codex/gap_test_output.txt').write_text(output,encoding='utf-8')
+print(output)
+raise SystemExit(result.returncode)
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 15223ms:
+test_early_exit_retry_and_stop (__main__.GapTests.test_early_exit_retry_and_stop) ... ok
+test_exit_after_submit_without_chunk (__main__.GapTests.test_exit_after_submit_without_chunk) ... ok
+test_four_processes_real_submit_spacing_and_first_chunk (__main__.GapTests.test_four_processes_real_submit_spacing_and_first_chunk) ... four-process actual submit gaps: [1.6753, 1.0155, 1.0282]
+ok
+test_model_and_effort_checks_remain_strict (__main__.GapTests.test_model_and_effort_checks_remain_strict) ... ok
+test_prompt_web_attachment_and_long_prompt_semantics (__main__.GapTests.test_prompt_web_attachment_and_long_prompt_semantics) ... ok
+test_timeout_releases_gate_and_keeps_real_submit (__main__.GapTests.test_timeout_releases_gate_and_keeps_real_submit) ... ok
+test_timeout_without_submit_falls_back_to_now (__main__.GapTests.test_timeout_without_submit_falls_back_to_now) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 14.927s
+
+OK
+
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+import ast, difflib, hashlib
+from pathlib import Path
+before=Path('_codex/gpt3_call.before_gap.py.txt').read_text(encoding='utf-8')
+after=Path('gpt3_call.py').read_text(encoding='utf-8')
+btree=ast.parse(before); atree=ast.parse(after)
+def definition(tree,name):
+ return next(n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.ClassDef)) and n.name==name)
+for name in ('slots','_Serial','stopped','_fail'):
+ assert ast.dump(definition(btree,name))==ast.dump(definition(atree,name)),name
+assert before[before.index('def call('):before.index('    for attempt in range(2):')]==after[after.index('def call('):after.index('    for attempt in range(2):')]
+assert before[before.index('        dt = time.time() - t0'):]==after[after.index('        dt = time.time() - t0'):].replace('               \"submitted_utc\": submitted_utc, \"gap_since_prev_submit_s\": gap,\\n','')
+assert 'SUBMIT_TIMEOUT = 180\\nSUBMIT_POLL = 1' in after
+assert after.count('STAMP.write_text(')==1
+for p in ('gpt3_call.py','_codex/test_gap.py'):
+ compile(Path(p).read_text(encoding='utf-8'),p,'exec')
+Path('_codex/gap_diff.patch').write_text(''.join(difflib.unified_diff(before.splitlines(True),after.splitlines(True),fromfile='gpt3_call.py (before)',tofile='gpt3_call.py (after)')),encoding='utf-8')
+print('Final compilation and exact scope checks passed. Final diff saved.')
+print('Production text UTF-8 valid; original backup retained.')
+for name in ('evo.py','mg_call.py'):
+ print(name,hashlib.sha256(Path(name).read_bytes()).hexdigest())
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 206ms:
+Final compilation and exact scope checks passed. Final diff saved.
+Production text UTF-8 valid; original backup retained.
+evo.py 7309412fdfbee1ff550284d2bc0032eb3f8c55675274645f3e369ab0b0a8e8cc
+mg_call.py 1f50df2b0a3fe6483e90985a1a74d905b908f7cc5851b6dcfb1e9326a2c564fd
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+p=Path('_codex/gap_test_output.txt')
+with p.open('r',encoding='utf-8',newline='') as f:
+ text=f.read().replace('\\r\\r\\n','\\n').replace('\\r\\n','\\n')
+p.write_text(text,encoding='utf-8',newline='\\n')
+assert 'Ran 7 tests in 14.927s' in text and text.rstrip().endswith('OK')
+with Path('_codex/gap_log.md').open('a',encoding='utf-8') as f:
+ f.write('\\n## Final result\\n\\n- SUCCESS: final offline suite passed all 7 test methods (including multiple failure/stop subcases) in 14.927 s. Actual four-process submission gaps: 1.6753, 1.0155, 1.0282 s with GAP 0.3 s. Full output: _codex/gap_test_output.txt.\\n- Re-ran Python compilation and exact scope comparisons after the rstrip correction: passed. Confirmed production timeout 180 s and polling interval 1 s. Original slot/stopping helpers, preparation before attempts, and all result/failure handling after communicate are unchanged (except the two requested log fields). CLI command arguments are identical.\\n- Experimental semantics unchanged: prompts/input, web permission, tools, model/reasoning validation, attachments/bead inputs, review criteria, concurrency slot mechanism, GAP default and 0-10 s jitter, retries/failure counts/stopping rules. evo.py and mg_call.py reference hashes remain the same.\\n- No real model requests, real run-directory writes, real lock/STAMP writes, background-process stops/restarts, watchdog/cache changes, or scheduled tasks. Tests ran solely in temporary directories.\\n\\n## Operational limits / material risks\\n\\n- Existing six processes retain the old imported implementation and share production lock/STAMP paths. Until the user restarts them, mixed old/new callers cannot guarantee the new global pacing rule; their old completion-time writes can also replace the new stamp. They were not touched.\\n- Per requested behavior, a 180 s wait timeout releases GATE and logs a warning. If submission time is unavailable, STAMP falls back to current time and both log fields are null for that call; strict first-chunk ordering / true submission gaps cannot be proven on this fallback path. A following gap uses the stored fallback stamp if the previous true submission was unknown.\\n- Matching excludes preexisting directories and requires a newly created prompt-matched job. Independently launched legacy callers with identical prompts after t0 can remain ambiguous during mixed-version operation; after all callers adopt GATE this launch phase is serialized.\\n')
+print('Final results and operational limits written to _codex/gap_log.md')
+'@ | python -c \"import sys; exec(sys.stdin.read().lstrip('\\ufeff'))\"" in D:\musicclaude\_thread_evo_20261019
+ succeeded in 141ms:
+Final results and operational limits written to _codex/gap_log.md
+
+codex
+- **成功。** 已完成修改和离线验证，过程记录在 [_codex/gap_log.md](D:/musicclaude/_thread_evo_20261019/_codex/gap_log.md)。
+
+- **主要修改：** [gpt3_call.py](D:/musicclaude/_thread_evo_20261019/gpt3_call.py) 现在在同一个 GATE 锁内等待上次提交间隔、启动 `Popen`，并轮询本次新建且正文匹配的任务目录，直到取得真实提交时间且 `first_chunk_ms` 非空，或进程退出、达到 180 秒超时。STAMP 使用真实提交时间，缺失时回退到当前时间；锁外调用 `communicate()`，删除了结束时覆盖 STAMP 的代码。日志新增 `submitted_utc`、`gap_since_prev_submit_s`。已自查：提示词、联网权限、工具能力、附件/珠子输入、模型与推理强度校验、评审标准、槽位、GAP 默认值、重试和停止规则均未改变；未修改 `evo.py`、`mg_call.py`、保温机制或 watchdog，未操作后台进程及其运行目录。
+
+- **测试情况：** [_codex/test_gap.py](D:/musicclaude/_thread_evo_20261019/_codex/test_gap.py) 的 7 项离线测试全部通过，最终耗时 14.927 秒。使用真实 Windows 跨进程字节锁、4 个并发调用和缩放后的慢上传场景；测试 GAP 为 0.3 秒，三段真实提交间隔为 **1.6753、1.0155、1.0282 秒**，且每个后续调用都在前一个首片段出现后才启动。超时、提前退出、结果解析、日志字段、附件、长提示词和停止规则验证通过，编译及修改范围检查通过。未发出真实模型请求，未写入真实 runs、STAMP 或锁文件。完整输出见 [gap_test_output.txt](D:/musicclaude/_thread_evo_20261019/_codex/gap_test_output.txt)。
+
+- **重大风险：** 现有 6 个旧后台进程仍使用旧逻辑并共享 STAMP，混跑期间无法保证全局满足新节奏；未重启它们，重启由你操作。按要求，180 秒超时后会警告并释放 GATE，因此超时回退路径不能保证“前一个开始返回后才启动下一个”；缺失真实提交时间时，两项日志字段为 `null`。
+tokens used
+93,416
+- **成功。** 已完成修改和离线验证，过程记录在 [_codex/gap_log.md](D:/musicclaude/_thread_evo_20261019/_codex/gap_log.md)。
+
+- **主要修改：** [gpt3_call.py](D:/musicclaude/_thread_evo_20261019/gpt3_call.py) 现在在同一个 GATE 锁内等待上次提交间隔、启动 `Popen`，并轮询本次新建且正文匹配的任务目录，直到取得真实提交时间且 `first_chunk_ms` 非空，或进程退出、达到 180 秒超时。STAMP 使用真实提交时间，缺失时回退到当前时间；锁外调用 `communicate()`，删除了结束时覆盖 STAMP 的代码。日志新增 `submitted_utc`、`gap_since_prev_submit_s`。已自查：提示词、联网权限、工具能力、附件/珠子输入、模型与推理强度校验、评审标准、槽位、GAP 默认值、重试和停止规则均未改变；未修改 `evo.py`、`mg_call.py`、保温机制或 watchdog，未操作后台进程及其运行目录。
+
+- **测试情况：** [_codex/test_gap.py](D:/musicclaude/_thread_evo_20261019/_codex/test_gap.py) 的 7 项离线测试全部通过，最终耗时 14.927 秒。使用真实 Windows 跨进程字节锁、4 个并发调用和缩放后的慢上传场景；测试 GAP 为 0.3 秒，三段真实提交间隔为 **1.6753、1.0155、1.0282 秒**，且每个后续调用都在前一个首片段出现后才启动。超时、提前退出、结果解析、日志字段、附件、长提示词和停止规则验证通过，编译及修改范围检查通过。未发出真实模型请求，未写入真实 runs、STAMP 或锁文件。完整输出见 [gap_test_output.txt](D:/musicclaude/_thread_evo_20261019/_codex/gap_test_output.txt)。
+
+- **重大风险：** 现有 6 个旧后台进程仍使用旧逻辑并共享 STAMP，混跑期间无法保证全局满足新节奏；未重启它们，重启由你操作。按要求，180 秒超时后会警告并释放 GATE，因此超时回退路径不能保证“前一个开始返回后才启动下一个”；缺失真实提交时间时，两项日志字段为 `null`。

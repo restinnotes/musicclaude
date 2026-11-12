@@ -1,0 +1,3226 @@
+你要写一首器乐作品最终使用的 Thread（线）。
+
+Thread 是同一个人在整首作品里经历的一件事。读者只看 Thread，必须能顺畅读懂这个人每一步的具体心思与变化；同时每段要自然接住给定的体验性质（TARGETS），作为这场经历在各段的情感底色。
+
+【段落】
+S01：第 1–3 小节
+S02：第 4–16 小节
+S03：第 17–23 小节
+S04：第 24–34 小节
+S05：第 35–39 小节
+S06：第 40–50 小节
+S07：第 51–61 小节
+S08：第 62–71 小节
+S09：第 72–77 小节
+S10：第 78–83 小节
+S11：第 84–92 小节
+S12：第 93–102 小节
+S13：第 103–110 小节
+S14：第 111–116 小节
+
+【这件事（Center，已经给定，不改）】
+亲密的幸福与留不住它的痛楚难以分开
+它是读者回头看整首时把各段组织起来的那件事，不是每一段都要拿出来背诵的中心思想。
+
+【已经通过宏观评审的人物经历候选】
+<escape>{
+  "routes": [
+    {
+      "route_id": "THREAD_INTIMACY_01",
+      "situation": "同一个人在一段持续的亲密相处中，逐渐意识到自己非常需要对方，也越来越愿意让对方看见自己的喜欢。他从最初只敢露出一点心意，经历了对方没有退开、自己逐渐放松、开始猜测这份亲近或许并非单方面需要，到希望主动回应、长久陪伴并给予对方更多。与此同时，他始终无法确认对方未来是否仍愿意亲近，也无法得到永远不变的保证。即使亲密带来很大的幸福，他仍会想到这份幸福可能留不住，因而产生舍不得、害怕和痛楚。最后，他选择不再隐藏喜欢，也不再催促对方给出永远的保证，愿意等未来真正到来时再面对。",
+      "segments": [
+        {
+          "sec": "S01",
+          "state": [
+            {
+              "state_id": "S01-a",
+              "content": "他忽然发现自己非常想靠近这个人，心里一下热起来，对自己产生这么强烈的靠近愿望也感到意外。",
+              "anchor_ids": ["A01", "A02"],
+              "source_item_ids": ["S01-1"],
+              "certainty": "明确陈述的本人愿望和感受。"
+            },
+            {
+              "state_id": "S01-b",
+              "content": "他担心对方看见自己有多需要这份亲近，会觉得负担太重，因此选择只露出一点点，不让对方完全看见自己的需要。",
+              "anchor_ids": ["A03", "A04"],
+              "source_item_ids": ["S01-2"],
+              "certainty": "明确陈述的顾虑及已经采取的克制方式。"
+            },
+            {
+              "state_id": "S01-c",
+              "content": "即使只有一点亲近，他也已经觉得甜，但还不确定下一次能不能表现得更加坦白。",
+              "anchor_ids": ["A05", "A06"],
+              "source_item_ids": ["S01-3"],
+              "certainty": "甜蜜感受明确；下次能否坦白仍是未知。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "第一次明确意识到自己强烈想靠近对方，同时因为害怕自己的需要成为对方的负担而主动限制心意的显露。即使只得到一点亲近，也已经产生甜蜜感。",
+          "depends_on": [],
+          "still_open": [
+            "对方会如何回应他显露出来的在意。",
+            "下一次自己能否比这次更加坦白。",
+            "如何表达自己的需要而不让对方感到负担。"
+          ]
+        },
+        {
+          "sec": "S02",
+          "state": [
+            {
+              "state_id": "S02-a",
+              "content": "对方看见他露出在意之后没有退开，仍然愿意与他亲近，因此他逐渐放松下来。",
+              "anchor_ids": ["A07", "A08"],
+              "source_item_ids": ["S02-1"],
+              "certainty": "对方没有退开、仍愿亲近是明确事实；放松是明确的本人反应。"
+            },
+            {
+              "state_id": "S02-b",
+              "content": "他也想顺势靠得更近，一度喜欢得几乎藏不住，但仍担心太急会破坏眼下的自在，最后选择收住。",
+              "anchor_ids": ["A01", "A09"],
+              "source_item_ids": ["S02-2"],
+              "certainty": "靠近愿望、顾虑及最终克制均为明确陈述。"
+            },
+            {
+              "state_id": "S02-c",
+              "content": "两个人待在一起让他觉得很好，但他想到这样的时刻终究会过去，因此还没有真正分开就已经有些舍不得。",
+              "anchor_ids": ["A10", "A11", "A12"],
+              "source_item_ids": ["S02-3"],
+              "certainty": "相处愉快、对时刻会过去的认识及预先产生的舍不得均有明确表达。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "对方没有因为他露出在意而退开，这使最初的担忧得到一次实际回应，他开始放松。但他仍没有完全顺着自己的靠近愿望行动，同时第一次明确意识到美好的亲近时刻终究会过去，并产生预先的舍不得。",
+          "depends_on": ["S01-b", "S01-a"],
+          "still_open": [
+            "他是否能进一步坦白自己的喜欢。",
+            "怎样靠近对方才不会破坏当前的自在。",
+            "这份美好的亲近能够持续多久。"
+          ]
+        },
+        {
+          "sec": "S03",
+          "state": [
+            {
+              "state_id": "S03-a",
+              "content": "他难得不再琢磨两个人以后的事情，只想舒服地待在目前的亲近之中。",
+              "anchor_ids": ["A13"],
+              "source_item_ids": ["S03-1"],
+              "certainty": "明确陈述的暂时状态和本人愿望。"
+            },
+            {
+              "state_id": "S03-b",
+              "content": "他一度想告诉对方自己有多喜欢这样的相处，也想问对方是不是同样喜欢，但还没有想好怎样开口，这些念头便慢慢淡去了。",
+              "anchor_ids": ["A14", "A15", "A16", "A17"],
+              "source_item_ids": ["S03-2"],
+              "certainty": "表达愿望和询问愿望明确；如何开口未确定；念头淡去是已经发生的心理过程。"
+            }
+          ],
+          "delta_type": "暂时没在想",
+          "delta": "他暂时放下了对未来的琢磨，把注意力放回当下的亲近。此前没有说出口的表达愿望再次浮现，并出现询问对方是否同样喜欢的念头，但没有形成实际表达，随后淡去。",
+          "depends_on": ["S02-c", "S02-b"],
+          "still_open": [
+            "他是否会告诉对方自己多喜欢这样的相处。",
+            "对方是否也同样喜欢这份亲近。",
+            "如果要表达，应该怎样开口。"
+          ]
+        },
+        {
+          "sec": "S04",
+          "state": [
+            {
+              "state_id": "S04-a",
+              "content": "熟悉的亲近再次使他满心欢喜，他想起此前没有说出口的话，这次更想让对方知道自己有多喜欢。",
+              "anchor_ids": ["A18", "A14", "A19"],
+              "source_item_ids": ["S04-1"],
+              "certainty": "明确陈述的感受、对先前念头的回想及增强的表达愿望。"
+            },
+            {
+              "state_id": "S04-b",
+              "content": "他几乎想把藏着的话全部说出来，希望对方接受自己的坦白，但仍然担心说得太多会让对方感到负担。",
+              "anchor_ids": ["A19", "A20", "A03"],
+              "source_item_ids": ["S04-2"],
+              "certainty": "表达愿望和希望明确；对方是否接受仍未知；顾虑明确。"
+            },
+            {
+              "state_id": "S04-c",
+              "content": "他甚至想通过多说一些来延长这段好时光，但又担心太急会破坏原有的自在，最后仍没有把所有话说出来。",
+              "anchor_ids": ["A21", "A09", "A22"],
+              "source_item_ids": ["S04-3"],
+              "certainty": "延长时光的愿望、破坏自在的顾虑及没有说尽的选择均明确。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "此前淡去的表达愿望重新出现，并发展为几乎想说出所有藏着的话。新增了希望对方接受坦白、想通过表达留住好时光的愿望，但原有的害怕给对方造成负担及害怕破坏自在的顾虑仍然存在，最后依旧有所保留。",
+          "depends_on": ["S03-b", "S02-b", "S02-c", "S04-a"],
+          "still_open": [
+            "对方能否接受更充分的坦白。",
+            "他是否最终会说出全部藏着的话。",
+            "表达多少才不会让对方感到负担。",
+            "能否通过表达让这段好时光持续得更久。"
+          ]
+        },
+        {
+          "sec": "S05",
+          "state": [
+            {
+              "state_id": "S05-a",
+              "content": "这一次他不再时时想着把喜欢藏好，心意在相处中自然流露，等他察觉时，对方已经看出他有多在乎。",
+              "anchor_ids": ["A23", "A24"],
+              "source_item_ids": ["S05-1"],
+              "certainty": "心意自然显露以及对方已经看出他的在乎，均为明确陈述。"
+            },
+            {
+              "state_id": "S05-b",
+              "content": "过去藏着喜欢时，他还可以装作自己没有那么在乎；现在被对方看见之后，他反而不知道该怎么办，心里空落落的。",
+              "anchor_ids": ["A25", "A04"],
+              "source_item_ids": ["S05-2"],
+              "certainty": "过去的隐藏方式、现在的无所适从及空落感均明确。"
+            },
+            {
+              "state_id": "S05-c",
+              "content": "他担心对方会嫌自己太黏，原本熟悉的亲近在他心里也忽然像隔了一层。",
+              "anchor_ids": ["A26", "A27"],
+              "source_item_ids": ["S05-3"],
+              "certainty": "被嫌太黏的担忧明确；隔了一层是本人主观感受，不代表对方实际疏远。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "此前仍有所保留的喜欢这次自然显露，并且已经被对方看见。由此，他失去了原先可以假装不那么在乎的余地，出现空落感和无所适从，同时产生了被嫌太黏的担忧。",
+          "depends_on": ["S01-b", "S04-c"],
+          "still_open": [
+            "对方是否会因为看见他的在乎而改变相处方式。",
+            "对方会不会觉得他太黏。",
+            "他如何面对自己已经显露出来的喜欢。",
+            "原本熟悉的亲近能否重新让他感到自在。"
+          ]
+        },
+        {
+          "sec": "S06",
+          "state": [
+            {
+              "state_id": "S06-a",
+              "content": "对方并没有因为看出他的心意而冷淡，仍然照旧与他亲近，他因此逐渐又能放松地相处。",
+              "anchor_ids": ["A07", "A08", "A24"],
+              "source_item_ids": ["S06-1"],
+              "certainty": "对方保持亲近及他逐渐放松均为明确陈述。"
+            },
+            {
+              "state_id": "S06-b",
+              "content": "安静下来后，他想到对方根本不知道自己刚才有多害怕被嫌弃，因此感到有些孤单。",
+              "anchor_ids": ["A28", "A29"],
+              "source_item_ids": ["S06-2"],
+              "certainty": "对方不知情是他当下明确形成的判断；孤单是明确的本人感受。"
+            },
+            {
+              "state_id": "S06-c",
+              "content": "他又开始想，对方既然一直没有退开，会不会也有一点舍不得结束这份亲近。",
+              "anchor_ids": ["A30", "A07"],
+              "source_item_ids": ["S06-3"],
+              "certainty": "对方没有退开是已陈述事实；对方是否舍不得只是他的疑问和猜测。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "对方继续亲近使他重新放松，但这种放松并没有消除此前的恐惧。他反而意识到对方不知道自己经历过怎样的害怕，因此感到孤单，并开始猜测对方是否也舍不得结束亲近。",
+          "depends_on": ["S05-a", "S05-c", "S06-a", "S02-a"],
+          "still_open": [
+            "对方是否知道他刚才经历的恐惧。",
+            "对方是否也舍不得结束亲近。",
+            "对方是否同样需要这份陪伴。"
+          ]
+        },
+        {
+          "sec": "S07",
+          "state": [
+            {
+              "state_id": "S07-a",
+              "content": "想到这些日子对方一直愿意和自己待在一起，他渐渐觉得这份亲近可能并非只有自己需要，对方有时也可能想让他陪在身边。",
+              "anchor_ids": ["A07", "A31"],
+              "source_item_ids": ["S07-1"],
+              "certainty": "对方一直愿意相处是明确事实；对方也需要陪伴是他逐渐形成的推测。"
+            },
+            {
+              "state_id": "S07-b",
+              "content": "这个念头使他非常高兴，越想两个人亲近的感觉，越舍不得抽身，整个人沉浸在欢喜之中。",
+              "anchor_ids": ["A32", "A12"],
+              "source_item_ids": ["S07-2"],
+              "certainty": "明确陈述的本人感受和舍不得抽身的状态。"
+            },
+            {
+              "state_id": "S07-c",
+              "content": "他开始盼望，以后每当对方想有人陪伴时，自己都能够在对方身边。",
+              "anchor_ids": ["A33"],
+              "source_item_ids": ["S07-3"],
+              "certainty": "明确陈述的本人愿望，不代表未来已经实现。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "他从对方持续愿意相处这一事实中，逐渐形成了亲近可能并非单方面需要的推测。这一推测带来更强烈的欢喜，并使他产生了希望长期陪伴对方的具体愿望。",
+          "depends_on": ["S02-a", "S06-a", "S06-c"],
+          "still_open": [
+            "对方是否真的也会主动需要他的陪伴。",
+            "对方希望他在身边的程度和具体时候。",
+            "自己能否在对方需要时一直陪伴。"
+          ]
+        },
+        {
+          "sec": "S08",
+          "state": [
+            {
+              "state_id": "S08-a",
+              "content": "这一次他不只是不知不觉地让心意露出来，而是开始想主动一些，大大方方地回应对方的亲近。",
+              "anchor_ids": ["A34", "A33"],
+              "source_item_ids": ["S08-1"],
+              "certainty": "主动回应是明确形成的意向，尚未陈述实际完成。"
+            },
+            {
+              "state_id": "S08-b",
+              "content": "他开始期待两个人往后的日子，觉得他们说不定还能这样亲近、这样好很久。",
+              "anchor_ids": ["A35", "A36"],
+              "source_item_ids": ["S08-2"],
+              "certainty": "长期相处是愿望；能够持续很久是可能性推测。"
+            },
+            {
+              "state_id": "S08-c",
+              "content": "但他知道往后的事情不能预先说准，刚刚出现的轻快感又掺进了一点没底。",
+              "anchor_ids": ["A37", "A38"],
+              "source_item_ids": ["S08-3"],
+              "certainty": "未来无法预先确定是明确认识；没底是明确的本人感受。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "他从希望陪伴对方进一步发展出主动回应亲近的意向，也开始期待两个人可以这样好很久。但对未来无法预先确定的认识仍然存在，使轻快感重新带上不确定性。",
+          "depends_on": ["S05-a", "S07-c", "S07-a"],
+          "still_open": [
+            "他是否会真正主动而坦白地回应亲近。",
+            "两个人能否长期维持目前的相处。",
+            "对方未来是否仍然需要这份陪伴。"
+          ]
+        },
+        {
+          "sec": "S09",
+          "state": [
+            {
+              "state_id": "S09-a",
+              "content": "他开始具体害怕，有一天对方不再需要他的陪伴，甚至连和他待在一起也不愿意。",
+              "anchor_ids": ["A39", "A33"],
+              "source_item_ids": ["S09-1"],
+              "certainty": "明确陈述的假设性顾虑，并非已经发生的事情。"
+            },
+            {
+              "state_id": "S09-b",
+              "content": "这个担忧使他一下安静下来，虽然此前已经想到很远，却不敢继续接着想。",
+              "anchor_ids": ["A40"],
+              "source_item_ids": ["S09-2"],
+              "certainty": "明确陈述的心理后果。"
+            },
+            {
+              "state_id": "S09-c",
+              "content": "他仍记得对方至今没有退开，也知道眼前的亲近并没有因为自己的担忧而变得不真实。",
+              "anchor_ids": ["A07"],
+              "source_item_ids": ["S09-3"],
+              "certainty": "对方没有退开及当前亲近仍存在，均为明确陈述的事实和认识。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "此前关于未来的不确定性具体化为失去陪伴需要、甚至失去相处意愿的恐惧。这一恐惧使他停止继续想象，但他同时保留着一个已经成立的事实：对方目前并没有退开，眼前的亲近仍然真实。",
+          "depends_on": ["S07-a", "S08-c", "S08-b", "S06-a"],
+          "still_open": [
+            "对方未来是否有一天不再需要他的陪伴。",
+            "对方未来是否仍愿意和他待在一起。",
+            "眼前的亲近能够持续多久。",
+            "对方目前保持亲近的事实不能回答未来的问题。"
+          ]
+        },
+        {
+          "sec": "S10",
+          "state": [
+            {
+              "state_id": "S10-a",
+              "content": "他终于愿意暂时不去猜那一天是否会到来，而是先享受眼前两个人仍然能够亲近的欢喜。",
+              "anchor_ids": ["A41", "A13", "A07"],
+              "source_item_ids": ["S10-1"],
+              "certainty": "明确陈述的暂时选择及当前相处事实。"
+            },
+            {
+              "state_id": "S10-b",
+              "content": "此前的紧绷逐渐松开，他心里变得明亮，几乎既想笑又想哭。",
+              "anchor_ids": ["A42"],
+              "source_item_ids": ["S10-2"],
+              "certainty": "明确陈述的情绪变化。"
+            }
+          ],
+          "delta_type": "实行已有想法",
+          "delta": "他把此前想舒服地待在亲近之中的愿望落实为一次明确的选择：暂时停止猜测未来，先享受眼前仍然存在的幸福。紧绷因此松动，出现明亮而复杂的情绪。",
+          "depends_on": ["S09-a", "S09-b", "S09-c", "S03-a"],
+          "still_open": [
+            "未来是否会出现他害怕的分离。",
+            "对方是否会一直愿意亲近。",
+            "眼前的欢喜能够持续多久。"
+          ]
+        },
+        {
+          "sec": "S11",
+          "state": [
+            {
+              "state_id": "S11-a",
+              "content": "轻松过去之后，他发现自己并非只想再享受几次亲近，而是真的愿意长久陪伴对方，也不想再躲躲藏藏。",
+              "anchor_ids": ["A43", "A44", "A33"],
+              "source_item_ids": ["S11-1"],
+              "certainty": "明确陈述的长期陪伴意愿和不再隐藏的选择。"
+            },
+            {
+              "state_id": "S11-b",
+              "content": "意识到自己真的愿意长久陪伴后，他高兴得胸口发疼，也不再想为自己如此在乎对方而感到害臊。",
+              "anchor_ids": ["A45", "A46"],
+              "source_item_ids": ["S11-2"],
+              "certainty": "明确陈述的本人感受和态度变化。"
+            },
+            {
+              "state_id": "S11-c",
+              "content": "但他明白自己愿意一直陪伴，不代表对方以后也会这样想，自己无法替对方作决定，因此原本的欢喜变得沉甸甸，心里疼得厉害。",
+              "anchor_ids": ["A47", "A48"],
+              "source_item_ids": ["S11-3"],
+              "certainty": "对未来无法替对方决定是明确认识；沉重和疼痛是明确感受。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "他对自己的感情形成了更明确的认识：这不只是想多享受几次亲近，而是真正愿意长期陪伴，也不再为自己的在乎感到羞耻。但长期陪伴是自己的选择，不能替对方决定未来是否同样愿意，因此幸福感同时承受了无法确认对方心意的重量。",
+          "depends_on": ["S07-c", "S08-a", "S10-b", "S09-a"],
+          "still_open": [
+            "对方未来是否也愿意长期陪伴。",
+            "对方以后是否仍然需要这份亲近。",
+            "两个人是否能够持续保持目前的相处。",
+            "自己愿意给予的陪伴是否会得到相同的回应。"
+          ]
+        },
+        {
+          "sec": "S12",
+          "state": [
+            {
+              "state_id": "S12-a",
+              "content": "想到自己也许能让对方安心一些，他不再那么计较自己能够得到多少，而是想把自己能给的好都给对方。",
+              "anchor_ids": ["A49", "A50", "A51"],
+              "source_item_ids": ["S12-1"],
+              "certainty": "能够让对方安心仍是可能性；不计较所得及愿意给予均为明确的本人选择和愿望。"
+            },
+            {
+              "state_id": "S12-b",
+              "content": "他觉得这样的日子永远不够多，即使知道自己再用心也留不住每一个以后，仍然希望能多陪对方一些。",
+              "anchor_ids": ["A33", "A52", "A53"],
+              "source_item_ids": ["S12-2"],
+              "certainty": "日子不够的感受、无法留住每一个以后的认识及继续陪伴的愿望均明确。"
+            },
+            {
+              "state_id": "S12-c",
+              "content": "那一阵高兴终于整个涌出来，他不再强迫自己收着，只顾痛痛快快地喜欢对方。",
+              "anchor_ids": ["A54", "A55"],
+              "source_item_ids": ["S12-3"],
+              "certainty": "明确陈述的情绪释放和不再压抑喜欢的选择。"
+            }
+          ],
+          "delta_type": "实行已有想法",
+          "delta": "他将此前形成的长期陪伴愿望进一步转向主动给予，不再过多计较自己得到多少。即使已经认识到不能留住每一个以后，仍然希望多陪伴对方。与此同时，他不再强迫自己压住喜欢，让欢喜充分流露。",
+          "depends_on": ["S07-a", "S11-a", "S11-b", "S11-c", "S07-c"],
+          "still_open": [
+            "自己能否让对方感到安心。",
+            "还能陪伴对方多少时间。",
+            "无法留住每一个未来时刻这一限制仍然存在。",
+            "对方未来是否会以同样的心意回应。"
+          ]
+        },
+        {
+          "sec": "S13",
+          "state": [
+            {
+              "state_id": "S13-a",
+              "content": "那阵欢喜过去之后，他又特别想听到一句以后也不会改变的保证，但他知道没有人能够答应永远。",
+              "anchor_ids": ["A56", "A57", "A47"],
+              "source_item_ids": ["S13-1"],
+              "certainty": "希望获得永久保证是明确愿望；无法获得永远保证是他明确持有的认识。"
+            },
+            {
+              "state_id": "S13-b",
+              "content": "因为得不到这样的保证，他心里越来越紧，甚至想把已经显露出来的喜欢往回收一些，仿佛这样可以减少以后可能承受的痛苦。",
+              "anchor_ids": ["A58", "A59", "A24"],
+              "source_item_ids": ["S13-2"],
+              "certainty": "紧绷感和收回喜欢的冲动明确；收回只是愿望，没有实际执行的陈述。"
+            },
+            {
+              "state_id": "S13-c",
+              "content": "但他已经无法像最初那样装作不在乎，而且此前想对对方好的心意确实是真实的，因此现在想收回喜欢反而更难受。",
+              "anchor_ids": ["A60", "A61", "A62", "A51"],
+              "source_item_ids": ["S13-3"],
+              "certainty": "无法假装不在乎、先前心意真实及收回更难受均为明确陈述。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "在充分表达喜欢、享受欢喜之后，他重新出现了想隐藏感情的冲动，但这次的原因已经不同：他希望通过收回已经显露的喜欢，减少未来可能的痛苦。新增了对永远保证的明确索求，也明确认识到自己已经无法恢复最初假装不在乎的状态，而且此前给予对方的心意是真实的，因而收回反而更难受。",
+          "depends_on": ["S11-c", "S12-b", "S12-c", "S05-a", "S09-a", "S01-b", "S12-a"],
+          "still_open": [
+            "对方未来是否仍然愿意亲近。",
+            "是否存在能够让他确信永远不变的保证。",
+            "他是否会真的把已经显露的喜欢收回。",
+            "如何面对无法保证的未来以及可能发生的痛苦。"
+          ]
+        },
+        {
+          "sec": "S14",
+          "state": [
+            {
+              "state_id": "S14-a",
+              "content": "他想起最初连多露出一点喜欢都紧张的自己，再看看一路走到现在的变化，心里变得柔软，也有些发酸。",
+              "anchor_ids": ["A63", "A04", "A23"],
+              "source_item_ids": ["S14-1"],
+              "certainty": "明确陈述的回顾和本人感受；回顾涉及的过去行为已有前文依据。"
+            },
+            {
+              "state_id": "S14-b",
+              "content": "他仍然舍不得，也仍不知道未来会怎样，但眼下两个人还能够亲近，所以他不想再催促对方给出永远不变的保证。",
+              "anchor_ids": ["A12", "A37", "A47", "A07", "A64"],
+              "source_item_ids": ["S14-2"],
+              "certainty": "舍不得、未来未知和目前仍能亲近均明确；不再催促保证是明确的选择。"
+            },
+            {
+              "state_id": "S14-c",
+              "content": "既然喜欢已经让对方看见，他就决定不再把它藏回去。至于往后会怎样，他选择等事情真正到来时再面对。",
+              "anchor_ids": ["A24", "A44", "A65"],
+              "source_item_ids": ["S14-3"],
+              "certainty": "喜欢已经被看见是明确事实；不再隐藏及以后再面对是明确选择，不代表未来结果已知。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "他重新回望最初害怕显露喜欢的自己，但这次没有回到最初的隐藏方式。面对仍然存在的舍不得和未来未知，他选择不再要求对方保证永远，也不再收回已经显露的喜欢，而是把未来留到真正到来时再面对。",
+          "depends_on": ["S01-b", "S05-a", "S13-c", "S09-c", "S11-c", "S13-a", "S13-b"],
+          "still_open": [
+            "对方未来是否仍然愿意亲近。",
+            "两个人是否能够一直保持这份亲密。",
+            "未来是否会出现失去陪伴的时刻。",
+            "他仍然舍不得，但不再要求现在解决所有未来的不确定性。",
+            "不再隐藏喜欢之后，两个人未来的相处仍然未知。"
+          ]
+        }
+      ],
+      "established": [
+        {
+          "claim": "他明确意识到自己非常想靠近对方。",
+          "first_established": "S01",
+          "anchor_id": "A01",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他担心对方看见自己的需要后会感到负担。",
+          "first_established": "S01",
+          "anchor_id": "A03",
+          "certainty": "明确顾虑。"
+        },
+        {
+          "claim": "他最初选择只显露一点喜欢，将更多需要藏起来。",
+          "first_established": "S01",
+          "anchor_id": "A04",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他不确定下一次能否更加坦白。",
+          "first_established": "S01",
+          "anchor_id": "A06",
+          "certainty": "明确未知。"
+        },
+        {
+          "claim": "对方在看见他露出在意后没有退开，仍愿意亲近。",
+          "first_established": "S02",
+          "anchor_id": "A07",
+          "certainty": "明确处境事实。"
+        },
+        {
+          "claim": "他担心太急会破坏目前两个人相处的自在。",
+          "first_established": "S02",
+          "anchor_id": "A09",
+          "certainty": "明确顾虑。"
+        },
+        {
+          "claim": "他认为美好的亲近时刻终究会过去。",
+          "first_established": "S02",
+          "anchor_id": "A11",
+          "certainty": "明确认识。"
+        },
+        {
+          "claim": "他在真正分开之前就已经产生舍不得的感受。",
+          "first_established": "S02",
+          "anchor_id": "A12",
+          "certainty": "明确感受。"
+        },
+        {
+          "claim": "他希望能够舒服地待在目前的亲近之中。",
+          "first_established": "S03",
+          "anchor_id": "A13",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他想告诉对方自己有多喜欢这样的相处。",
+          "first_established": "S03",
+          "anchor_id": "A14",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他想知道对方是否也喜欢这样的相处。",
+          "first_established": "S03",
+          "anchor_id": "A15",
+          "certainty": "明确愿望，尚未得到答案。"
+        },
+        {
+          "claim": "他后来更加希望把藏着的话全部说出来。",
+          "first_established": "S04",
+          "anchor_id": "A19",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他希望对方能够接受自己的坦白。",
+          "first_established": "S04",
+          "anchor_id": "A20",
+          "certainty": "明确愿望，对方是否接受未知。"
+        },
+        {
+          "claim": "他希望通过多说一些话，让这段好时光留得更久。",
+          "first_established": "S04",
+          "anchor_id": "A21",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他最终没有把藏着的话全部说出口。",
+          "first_established": "S04",
+          "anchor_id": "A22",
+          "certainty": "明确已经发生的选择结果。"
+        },
+        {
+          "claim": "他的喜欢后来不再时时被刻意藏住，而是在相处中自然显露。",
+          "first_established": "S05",
+          "anchor_id": "A23",
+          "certainty": "明确陈述，范围为这一次的相处。"
+        },
+        {
+          "claim": "对方已经看出他有多在乎。",
+          "first_established": "S05",
+          "anchor_id": "A24",
+          "certainty": "明确处境事实。"
+        },
+        {
+          "claim": "他担心对方会嫌自己太黏。",
+          "first_established": "S05",
+          "anchor_id": "A26",
+          "certainty": "明确顾虑，不代表对方真的嫌弃。"
+        },
+        {
+          "claim": "他开始猜测对方是否也舍不得结束这份亲近。",
+          "first_established": "S06",
+          "anchor_id": "A30",
+          "certainty": "明确存在的推测，不是对方心理事实。"
+        },
+        {
+          "claim": "他逐渐认为这份亲近可能并非只有自己需要，对方有时也可能需要他的陪伴。",
+          "first_established": "S07",
+          "anchor_id": "A31",
+          "certainty": "明确陈述的本人推测。"
+        },
+        {
+          "claim": "他希望以后对方想有人陪伴时，自己都能在身边。",
+          "first_established": "S07",
+          "anchor_id": "A33",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他开始希望主动、大方地回应对方的亲近。",
+          "first_established": "S08",
+          "anchor_id": "A34",
+          "certainty": "明确形成的行动意向，尚无实际完成的记载。"
+        },
+        {
+          "claim": "他希望两个人以后还能这样亲近很久。",
+          "first_established": "S08",
+          "anchor_id": "A35",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他认识到未来无法预先确定。",
+          "first_established": "S08",
+          "anchor_id": "A37",
+          "certainty": "明确认识。"
+        },
+        {
+          "claim": "他害怕有一天对方不再需要他的陪伴，甚至不愿意和他待在一起。",
+          "first_established": "S09",
+          "anchor_id": "A39",
+          "certainty": "明确的假设性顾虑，并非已经发生的事情。"
+        },
+        {
+          "claim": "他选择暂时不猜测未来，先享受眼前仍然存在的亲近。",
+          "first_established": "S10",
+          "anchor_id": "A41",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他确认自己真正愿意长久陪伴对方，而不只是想多享受几次亲近。",
+          "first_established": "S11",
+          "anchor_id": "A43",
+          "certainty": "明确的本人认识和意愿。"
+        },
+        {
+          "claim": "他不再想躲躲藏藏。",
+          "first_established": "S11",
+          "anchor_id": "A44",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他不再想为自己如此在乎对方而害臊。",
+          "first_established": "S11",
+          "anchor_id": "A46",
+          "certainty": "明确的态度变化。"
+        },
+        {
+          "claim": "他知道自己愿意长期陪伴，并不能决定对方未来也会有相同心意。",
+          "first_established": "S11",
+          "anchor_id": "A47",
+          "certainty": "明确认识。"
+        },
+        {
+          "claim": "他认为自己也许能够让对方安心一些。",
+          "first_established": "S12",
+          "anchor_id": "A49",
+          "certainty": "明确表达的可能性，不是已经实现的结果。"
+        },
+        {
+          "claim": "他开始不那么计较自己能够得到多少，而更愿意给予对方。",
+          "first_established": "S12",
+          "anchor_id": "A50",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他想把自己能够给的好都给对方。",
+          "first_established": "S12",
+          "anchor_id": "A51",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他知道即使再用心，也无法留住每一个以后。",
+          "first_established": "S12",
+          "anchor_id": "A52",
+          "certainty": "明确的本人认识。"
+        },
+        {
+          "claim": "即使知道无法留住所有未来，他仍然希望多陪对方一些。",
+          "first_established": "S12",
+          "anchor_id": "A33",
+          "certainty": "既有愿望在新的限制条件下继续存在。"
+        },
+        {
+          "claim": "他不再强迫自己收住喜欢，而是选择痛快地喜欢对方。",
+          "first_established": "S12",
+          "anchor_id": "A55",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他特别希望听到一句以后也不会改变的保证。",
+          "first_established": "S13",
+          "anchor_id": "A56",
+          "certainty": "明确愿望。"
+        },
+        {
+          "claim": "他认为没有人能够答应永远。",
+          "first_established": "S13",
+          "anchor_id": "A57",
+          "certainty": "明确陈述的本人认识。"
+        },
+        {
+          "claim": "他曾经想把已经显露的喜欢收回一些，以减少未来可能的痛苦。",
+          "first_established": "S13",
+          "anchor_id": "A59",
+          "certainty": "明确的保护性愿望，未实际执行。"
+        },
+        {
+          "claim": "他已经无法像最初那样装作不在乎。",
+          "first_established": "S13",
+          "anchor_id": "A60",
+          "certainty": "明确的自我认识。"
+        },
+        {
+          "claim": "他确认自己此前想对对方好的心意是真实的。",
+          "first_established": "S13",
+          "anchor_id": "A61",
+          "certainty": "明确的本人认识。"
+        },
+        {
+          "claim": "他不想再催促对方给出永远不变的保证。",
+          "first_established": "S14",
+          "anchor_id": "A64",
+          "certainty": "明确选择。"
+        },
+        {
+          "claim": "他决定不再隐藏已经被对方看见的喜欢。",
+          "first_established": "S14",
+          "anchor_id": "A44",
+          "certainty": "此前已成立的选择在结尾再次得到明确实行。"
+        },
+        {
+          "claim": "他选择等未来真正到来时再面对，而不是现在要求解决所有未知。",
+          "first_established": "S14",
+          "anchor_id": "A65",
+          "certainty": "明确选择，未来结果仍未知。"
+        }
+      ],
+      "anchor_threads": [
+        {
+          "anchor_id": "A01",
+          "kind": "本人愿望",
+          "content": "他非常想靠近这个人，并且希望顺势进一步靠近。",
+          "certainty": "明确愿望。",
+          "first_established": "S01",
+          "depends_on": [],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A02",
+          "kind": "本人感受",
+          "content": "想到自己那么想靠近对方时，心里一下热起来，并且对自己的反应感到意外。",
+          "certainty": "明确本人感受。",
+          "first_established": "S01",
+          "depends_on": ["A01"],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A03",
+          "kind": "本人顾虑",
+          "content": "他害怕对方看见自己有多需要亲近，会觉得负担太重或觉得他显露得太多。",
+          "certainty": "明确顾虑。",
+          "first_established": "S01",
+          "depends_on": ["A01"],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A04",
+          "kind": "选择",
+          "content": "最初因为害怕给对方造成负担，他选择只露出一点点喜欢，把更多在乎藏起来。",
+          "certainty": "明确选择及克制方式。",
+          "first_established": "S01",
+          "depends_on": ["A03"],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-2"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-1"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A05",
+          "kind": "本人感受",
+          "content": "即使只得到一点亲近，他也已经觉得甜。",
+          "certainty": "明确感受。",
+          "first_established": "S01",
+          "depends_on": ["A04"],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A06",
+          "kind": "未知",
+          "content": "他还不确定下一次自己能否更加坦白。",
+          "certainty": "明确的未知。",
+          "first_established": "S01",
+          "depends_on": ["A04"],
+          "occurrences": [
+            {
+              "sec": "S01",
+              "source_item_ids": ["S01-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A07",
+          "kind": "处境事实",
+          "content": "对方在看见他流露在意之后没有退开，仍然愿意与他亲近，后来也一直保持相处。",
+          "certainty": "叙述明确陈述的相处事实，不是人物的单方面猜测。",
+          "first_established": "S02",
+          "depends_on": ["A04"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-3"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            },
+            {
+              "sec": "S07",
+              "source_item_ids": ["S07-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S09",
+              "source_item_ids": ["S09-3"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A08",
+          "kind": "本人感受",
+          "content": "对方没有因为他显露在意而退开，使他逐渐放松下来。",
+          "certainty": "明确感受及其前因。",
+          "first_established": "S02",
+          "depends_on": ["A07"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A09",
+          "kind": "本人顾虑",
+          "content": "他担心靠得太急、说得太快会破坏两个人目前的自在。",
+          "certainty": "明确顾虑。",
+          "first_established": "S02",
+          "depends_on": ["A01", "A07"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-3"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A10",
+          "kind": "本人感受",
+          "content": "他觉得两个人待在一起的时刻很好。",
+          "certainty": "明确的本人评价。",
+          "first_established": "S02",
+          "depends_on": ["A07"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A11",
+          "kind": "本人顾虑",
+          "content": "他想到这样的美好时刻终究会过去。",
+          "certainty": "明确陈述的本人认识。",
+          "first_established": "S02",
+          "depends_on": ["A10"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A12",
+          "kind": "本人感受",
+          "content": "即使还没有分开，他已经对这份亲近产生舍不得的感受。",
+          "certainty": "明确感受。",
+          "first_established": "S02",
+          "depends_on": ["A10", "A11"],
+          "occurrences": [
+            {
+              "sec": "S02",
+              "source_item_ids": ["S02-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S07",
+              "source_item_ids": ["S07-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A13",
+          "kind": "本人愿望",
+          "content": "他希望舒服地待在目前这份亲近之中。",
+          "certainty": "明确愿望。",
+          "first_established": "S03",
+          "depends_on": ["A07", "A10"],
+          "occurrences": [
+            {
+              "sec": "S03",
+              "source_item_ids": ["S03-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S10",
+              "source_item_ids": ["S10-1"],
+              "use_type": "选择实行",
+              "actual_change": "他把原先希望舒服地待在亲近里的愿望落实为暂时停止猜测未来、享受眼前相处的选择。"
+            }
+          ]
+        },
+        {
+          "anchor_id": "A14",
+          "kind": "本人愿望",
+          "content": "他想告诉对方自己有多喜欢两个人这样待在一起。",
+          "certainty": "明确愿望。",
+          "first_established": "S03",
+          "depends_on": ["A13"],
+          "occurrences": [
+            {
+              "sec": "S03",
+              "source_item_ids": ["S03-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A15",
+          "kind": "本人愿望",
+          "content": "他想问对方是不是也喜欢这样的相处。",
+          "certainty": "明确愿望，尚未得到回答。",
+          "first_established": "S03",
+          "depends_on": ["A13", "A14"],
+          "occurrences": [
+            {
+              "sec": "S03",
+              "source_item_ids": ["S03-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A16",
+          "kind": "未知",
+          "content": "他还没有想好应该怎样开口表达自己的喜欢。",
+          "certainty": "明确的表达困难和未知。",
+          "first_established": "S03",
+          "depends_on": ["A14", "A15"],
+          "occurrences": [
+            {
+              "sec": "S03",
+              "source_item_ids": ["S03-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A17",
+          "kind": "后果",
+          "content": "因为没有想好怎样开口，想表达和询问的念头慢慢淡去。",
+          "certainty": "明确陈述的心理过程。",
+          "first_established": "S03",
+          "depends_on": ["A16"],
+          "occurrences": [
+            {
+              "sec": "S03",
+              "source_item_ids": ["S03-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A18",
+          "kind": "本人感受",
+          "content": "熟悉的亲近再次使他满心欢喜。",
+          "certainty": "明确感受。",
+          "first_established": "S04",
+          "depends_on": ["A07"],
+          "occurrences": [
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A19",
+          "kind": "本人愿望",
+          "content": "他越来越想让对方知道自己有多喜欢，甚至想把藏着的话全部说出来。",
+          "certainty": "明确愿望，尚未全部实行。",
+          "first_established": "S04",
+          "depends_on": ["A14", "A17", "A18"],
+          "occurrences": [
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A20",
+          "kind": "本人愿望",
+          "content": "他希望对方能够接受自己这样坦白地表达喜欢。",
+          "certainty": "明确愿望，对方是否接受未知。",
+          "first_established": "S04",
+          "depends_on": ["A19"],
+          "occurrences": [
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A21",
+          "kind": "本人愿望",
+          "content": "他想通过多说一些话，让两个人的好时光留得更久。",
+          "certainty": "明确愿望。",
+          "first_established": "S04",
+          "depends_on": ["A19", "A11"],
+          "occurrences": [
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A22",
+          "kind": "选择",
+          "content": "即使很想把话说出来，他最终仍没有把所有藏着的话说出口。",
+          "certainty": "明确的选择结果。",
+          "first_established": "S04",
+          "depends_on": ["A21", "A09"],
+          "occurrences": [
+            {
+              "sec": "S04",
+              "source_item_ids": ["S04-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A23",
+          "kind": "选择",
+          "content": "这一次他不再时时想着把喜欢藏好，心意在相处中自然流露。",
+          "certainty": "明确陈述的当次相处状态和选择倾向，不自动推定为永久改变。",
+          "first_established": "S05",
+          "depends_on": ["A04", "A22"],
+          "occurrences": [
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A24",
+          "kind": "处境事实",
+          "content": "对方已经看出他有多在乎，知道他显露了自己的喜欢。",
+          "certainty": "明确处境事实。",
+          "first_established": "S05",
+          "depends_on": ["A23"],
+          "occurrences": [
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-2"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            },
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-3"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-3"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A25",
+          "kind": "后果",
+          "content": "被对方看见有多在乎之后，他反而不知道该怎么办，心里空落落的。",
+          "certainty": "明确的心理后果。",
+          "first_established": "S05",
+          "depends_on": ["A24", "A04"],
+          "occurrences": [
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A26",
+          "kind": "本人顾虑",
+          "content": "他担心对方会嫌自己太黏。",
+          "certainty": "明确顾虑，不代表对方实际嫌弃。",
+          "first_established": "S05",
+          "depends_on": ["A24"],
+          "occurrences": [
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A27",
+          "kind": "本人感受",
+          "content": "原本熟悉的亲近在他心里忽然像隔了一层。",
+          "certainty": "明确的主观感受，不是对方实际疏远的事实。",
+          "first_established": "S05",
+          "depends_on": ["A24", "A26"],
+          "occurrences": [
+            {
+              "sec": "S05",
+              "source_item_ids": ["S05-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A28",
+          "kind": "推测",
+          "content": "他想到对方根本不知道自己刚才有多害怕被嫌弃。",
+          "certainty": "明确陈述为他的当下判断，但对方实际知道多少没有独立核验。",
+          "first_established": "S06",
+          "depends_on": ["A26", "A27"],
+          "occurrences": [
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A29",
+          "kind": "本人感受",
+          "content": "想到对方不知道自己的恐惧，他感到有些孤单。",
+          "certainty": "明确感受。",
+          "first_established": "S06",
+          "depends_on": ["A28"],
+          "occurrences": [
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A30",
+          "kind": "推测",
+          "content": "他猜测对方是否也有一点舍不得结束这份亲近。",
+          "certainty": "明确的疑问和可能性，不是对方已经表达的事实。",
+          "first_established": "S06",
+          "depends_on": ["A07", "A08"],
+          "occurrences": [
+            {
+              "sec": "S06",
+              "source_item_ids": ["S06-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A31",
+          "kind": "推测",
+          "content": "他逐渐觉得这份亲近可能并非只有自己需要，对方有时也可能想让他陪在身边。",
+          "certainty": "明确的本人推测，依据是对方这些日子一直愿意相处。",
+          "first_established": "S07",
+          "depends_on": ["A07", "A30"],
+          "occurrences": [
+            {
+              "sec": "S07",
+              "source_item_ids": ["S07-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A32",
+          "kind": "本人感受",
+          "content": "想到对方可能也需要这份亲近时，他高兴得有些收不住，沉浸在两个人亲近的欢喜之中。",
+          "certainty": "明确的本人感受。",
+          "first_established": "S07",
+          "depends_on": ["A31"],
+          "occurrences": [
+            {
+              "sec": "S07",
+              "source_item_ids": ["S07-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A33",
+          "kind": "本人愿望",
+          "content": "他希望以后每当对方想有人陪伴时，自己都能够在身边。",
+          "certainty": "明确愿望，尚未成为已实现的长期事实。",
+          "first_established": "S07",
+          "depends_on": ["A31", "A32"],
+          "occurrences": [
+            {
+              "sec": "S07",
+              "source_item_ids": ["S07-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-1"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-2"],
+              "use_type": "代价改变",
+              "actual_change": "即使已经知道无法留住每一个以后，他仍然继续希望多陪对方一些。"
+            }
+          ]
+        },
+        {
+          "anchor_id": "A34",
+          "kind": "选择",
+          "content": "他希望这次主动一些，大大方方地回应对方的亲近。",
+          "certainty": "明确的行动意向，尚未明确记载实际完成。",
+          "first_established": "S08",
+          "depends_on": ["A23", "A33"],
+          "occurrences": [
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A35",
+          "kind": "本人愿望",
+          "content": "他开始盼望两个人以后的日子也能一直这样好。",
+          "certainty": "明确愿望。",
+          "first_established": "S08",
+          "depends_on": ["A33", "A34"],
+          "occurrences": [
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A36",
+          "kind": "推测",
+          "content": "他觉得两个人说不定还能保持这样的亲近很久。",
+          "certainty": "明确为可能性推测，不是已经确定的未来。",
+          "first_established": "S08",
+          "depends_on": ["A33", "A35"],
+          "occurrences": [
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A37",
+          "kind": "未知",
+          "content": "他认识到往后的事情无法预先说准。",
+          "certainty": "明确认识，未来具体结果未知。",
+          "first_established": "S08",
+          "depends_on": ["A11", "A36"],
+          "occurrences": [
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-3"],
+              "use_type": "延续",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A38",
+          "kind": "本人感受",
+          "content": "刚刚觉得轻快之后，他心里又生出一点没底。",
+          "certainty": "明确感受。",
+          "first_established": "S08",
+          "depends_on": ["A36", "A37"],
+          "occurrences": [
+            {
+              "sec": "S08",
+              "source_item_ids": ["S08-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A39",
+          "kind": "本人顾虑",
+          "content": "他害怕有一天对方不再需要他的陪伴，甚至不愿意继续和他待在一起。",
+          "certainty": "明确的假设性顾虑，没有实际发生的证据。",
+          "first_established": "S09",
+          "depends_on": ["A33", "A37"],
+          "occurrences": [
+            {
+              "sec": "S09",
+              "source_item_ids": ["S09-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A40",
+          "kind": "后果",
+          "content": "对失去亲近的担忧具体化后，他一下安静下来，不敢继续往下想。",
+          "certainty": "明确的心理后果。",
+          "first_established": "S09",
+          "depends_on": ["A39"],
+          "occurrences": [
+            {
+              "sec": "S09",
+              "source_item_ids": ["S09-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A41",
+          "kind": "选择",
+          "content": "他选择暂时不猜测那一天会不会到来，先享受眼前仍然能够亲近的欢喜。",
+          "certainty": "明确选择，范围是暂时停止猜测。",
+          "first_established": "S10",
+          "depends_on": ["A39", "A07", "A13"],
+          "occurrences": [
+            {
+              "sec": "S10",
+              "source_item_ids": ["S10-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A42",
+          "kind": "本人感受",
+          "content": "此前的紧绷慢慢松开，心里变得明亮，几乎既想笑又想哭。",
+          "certainty": "明确感受。",
+          "first_established": "S10",
+          "depends_on": ["A40", "A41"],
+          "occurrences": [
+            {
+              "sec": "S10",
+              "source_item_ids": ["S10-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A43",
+          "kind": "选择",
+          "content": "他确认自己真的愿意长久陪伴对方，而不是只想多享受几次这样的亲近。",
+          "certainty": "明确的本人认识和长期陪伴意愿。",
+          "first_established": "S11",
+          "depends_on": ["A33", "A34", "A42"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A44",
+          "kind": "选择",
+          "content": "他不想再躲躲藏藏，不再主动把已经显露的喜欢藏回去。",
+          "certainty": "明确选择。",
+          "first_established": "S11",
+          "depends_on": ["A23", "A43"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-3"],
+              "use_type": "选择实行",
+              "actual_change": "在回顾最初的隐藏之后，他再次明确选择不把已经被看见的喜欢藏回去。"
+            }
+          ]
+        },
+        {
+          "anchor_id": "A45",
+          "kind": "本人感受",
+          "content": "意识到自己愿意长久陪伴对方时，他高兴得胸口发疼。",
+          "certainty": "明确感受。",
+          "first_established": "S11",
+          "depends_on": ["A43"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A46",
+          "kind": "选择",
+          "content": "他不再想为自己如此在乎对方而感到害臊。",
+          "certainty": "明确的态度选择。",
+          "first_established": "S11",
+          "depends_on": ["A25", "A43"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A47",
+          "kind": "未知",
+          "content": "他知道自己愿意一直陪伴，并不能决定对方未来也会这样想，自己无法替对方作决定。",
+          "certainty": "明确认识，包含对方未来心意未知这一限制。",
+          "first_established": "S11",
+          "depends_on": ["A39", "A43"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-2"],
+              "use_type": "延续",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A48",
+          "kind": "本人感受",
+          "content": "因为无法替对方决定未来，他原本的欢喜变得沉甸甸，心里疼得厉害。",
+          "certainty": "明确感受。",
+          "first_established": "S11",
+          "depends_on": ["A43", "A47"],
+          "occurrences": [
+            {
+              "sec": "S11",
+              "source_item_ids": ["S11-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A49",
+          "kind": "推测",
+          "content": "他想到自己也许能够让对方安心一些。",
+          "certainty": "明确表达的可能性，不代表已经产生实际效果。",
+          "first_established": "S12",
+          "depends_on": ["A43", "A31"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A50",
+          "kind": "选择",
+          "content": "他开始不那么计较自己能从这份亲近中得到多少，而是更愿意把重心放在给予对方。",
+          "certainty": "明确选择和态度。",
+          "first_established": "S12",
+          "depends_on": ["A49"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A51",
+          "kind": "本人愿望",
+          "content": "他想把自己能够给的好都给对方。",
+          "certainty": "明确愿望。",
+          "first_established": "S12",
+          "depends_on": ["A49", "A50"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            },
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-3"],
+              "use_type": "重复表达",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A52",
+          "kind": "处境事实",
+          "content": "他知道即使自己再用心，也无法留住每一个以后。",
+          "certainty": "明确的本人认识，不指向某次已经发生的具体失去。",
+          "first_established": "S12",
+          "depends_on": ["A47", "A39"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A53",
+          "kind": "本人感受",
+          "content": "他觉得这样的相处日子总是不够多。",
+          "certainty": "明确感受。",
+          "first_established": "S12",
+          "depends_on": ["A52"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A54",
+          "kind": "本人感受",
+          "content": "那一阵高兴终于整个涌了出来。",
+          "certainty": "明确感受。",
+          "first_established": "S12",
+          "depends_on": ["A51", "A53"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A55",
+          "kind": "选择",
+          "content": "他不再强迫自己收住喜欢，而是痛痛快快地喜欢对方。",
+          "certainty": "明确选择。",
+          "first_established": "S12",
+          "depends_on": ["A23", "A44", "A54"],
+          "occurrences": [
+            {
+              "sec": "S12",
+              "source_item_ids": ["S12-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A56",
+          "kind": "本人愿望",
+          "content": "他特别想听到一句以后也不会改变的保证。",
+          "certainty": "明确愿望。",
+          "first_established": "S13",
+          "depends_on": ["A47", "A52", "A54"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A57",
+          "kind": "处境事实",
+          "content": "他明白没有人能够答应永远。",
+          "certainty": "明确陈述的本人认识，不是实际发生过某次拒绝保证的事件。",
+          "first_established": "S13",
+          "depends_on": ["A47", "A56"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A58",
+          "kind": "本人感受",
+          "content": "得不到永远不变的保证时，他心里越来越紧。",
+          "certainty": "明确感受。",
+          "first_established": "S13",
+          "depends_on": ["A57"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A59",
+          "kind": "本人愿望",
+          "content": "他想把已经显露出来的喜欢往回收一些，仿佛这样能够减少未来可能承受的痛苦。",
+          "certainty": "明确的保护性愿望和冲动，未实际执行。",
+          "first_established": "S13",
+          "depends_on": ["A24", "A39", "A58"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A60",
+          "kind": "处境事实",
+          "content": "他已经无法像最初那样装作自己不在乎。",
+          "certainty": "明确陈述的本人现状。",
+          "first_established": "S13",
+          "depends_on": ["A04", "A59"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A61",
+          "kind": "处境事实",
+          "content": "他确认自己此前想对对方好的心意是真实的。",
+          "certainty": "明确的本人认识。",
+          "first_established": "S13",
+          "depends_on": ["A51", "A60"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A62",
+          "kind": "后果",
+          "content": "因为已经无法假装不在乎，而且先前的心意是真实的，现在想收回喜欢反而更加难受。",
+          "certainty": "明确的心理后果。",
+          "first_established": "S13",
+          "depends_on": ["A51", "A59", "A60", "A61"],
+          "occurrences": [
+            {
+              "sec": "S13",
+              "source_item_ids": ["S13-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A63",
+          "kind": "本人感受",
+          "content": "回想最初的自己并看到一路走到现在的变化时，他心里变得柔软，也有些发酸。",
+          "certainty": "明确感受。",
+          "first_established": "S14",
+          "depends_on": ["A04", "A23", "A60"],
+          "occurrences": [
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-1"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A64",
+          "kind": "选择",
+          "content": "虽然仍然舍不得，也不知道未来如何，但他不想再催促对方给出永远不变的保证。",
+          "certainty": "明确选择，不代表未来未知已经消失。",
+          "first_established": "S14",
+          "depends_on": ["A47", "A56", "A12"],
+          "occurrences": [
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-2"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        },
+        {
+          "anchor_id": "A65",
+          "kind": "选择",
+          "content": "他决定不再把已经显露的喜欢藏回去，至于未来会怎样，等真正到来时再面对。",
+          "certainty": "明确的当前选择和未来应对意向，不是对未来结果的保证。",
+          "first_established": "S14",
+          "depends_on": ["A24", "A44", "A64"],
+          "occurrences": [
+            {
+              "sec": "S14",
+              "source_item_ids": ["S14-3"],
+              "use_type": "首次成立",
+              "actual_change": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_warnings": [
+    {
+      "location": "S06-2 / S06-b / A28",
+      "issue": "对方根本不知道他刚才有多害怕被嫌弃，是人物想到的内容。LINE将其作为他的判断明确陈述，但没有提供对方是否知情的独立依据。",
+      "handling": "保留原有判断，不改成对方一定不知道，也不扩展为对方不理解他的全部感受。"
+    },
+    {
+      "location": "S06-3 / A30",
+      "issue": "对方是否也舍不得结束亲近，只是人物提出的疑问。",
+      "handling": "保留为推测，不作为对方已经产生相同依恋的事实。"
+    },
+    {
+      "location": "S07-1 / A31",
+      "issue": "对方这些日子总愿意与他待在一起，是明确陈述的事实；对方有时也想让他陪在身边，则是人物据此形成的推测。",
+      "handling": "将持续相处事实与对方内心可能存在的陪伴需要分开记录，不把后者确定化。"
+    },
+    {
+      "location": "S08-1 / A34",
+      "issue": "主动、大方地回应对方亲近是人物形成的意向，原文没有明确记载他已经完成这一行动。",
+      "handling": "保留为选择意向，不写成已经主动回应的外部事实。"
+    },
+    {
+      "location": "S08-2 / A35-A36",
+      "issue": "盼望两个人以后还能这样好很久，与认为说不定能持续很久，是愿望和可能性推测，不是已经确定的未来。",
+      "handling": "分别保留愿望与推测，不把长期相处写成已得到保证的结果。"
+    },
+    {
+      "location": "S08-3 / S11-3 / S14-2 / A37-A47",
+      "issue": "未来无法预先确定是持续存在的未知。S11-3进一步明确了对方未来是否仍有相同心意并非他能够决定，但没有出现对方已经改变心意的事实。",
+      "handling": "保留未来未知及无法替对方决定的认识，不把未知替换为实际分离或对方拒绝。"
+    },
+    {
+      "location": "S09-1 / A39",
+      "issue": "对方有一天不再需要陪伴、甚至不愿意继续相处，是人物害怕的假设情形。",
+      "handling": "不能把这项顾虑写成对方已经疏远、不再需要他或已经提出分开。"
+    },
+    {
+      "location": "S09-3 / A07",
+      "issue": "对方至今没有退开、当前亲近仍然真实，是明确成立的事实，与未来未知同时存在。",
+      "handling": "不能因为人物害怕失去，就将眼前仍然存在的亲近降格为单纯希望或不确定猜测。"
+    },
+    {
+      "location": "S10-1 / A41",
+      "issue": "暂时不猜未来是一项有明确时间范围的选择，并不是永久消除了对未来的担忧。",
+      "handling": "保留暂时性。S13重新出现保证愿望，不应被当成与S10矛盾或第二次首次成立。"
+    },
+    {
+      "location": "S11-1 / A43-A44",
+      "issue": "愿意长久陪伴和不想再躲躲藏藏，是人物对自己的心意作出的明确认识和选择，但不能推定对方已经作出相同承诺。",
+      "handling": "保留单方面愿意长期陪伴与双方未来是否一致之间的区别。"
+    },
+    {
+      "location": "S11-3 / A47-A48",
+      "issue": "人物明确认识到自己无法替对方决定未来，这一认识带来欢喜变得沉重的感受，但没有发生对方拒绝陪伴的事件。",
+      "handling": "不把情绪上的疼痛误写成已经遭到拒绝。"
+    },
+    {
+      "location": "S12-1 / A49",
+      "issue": "他想到自己也许能让对方安心一些，但LINE没有证明对方确实因此感到安心。",
+      "handling": "保留也许的确定程度，不新增对方已经获得安全感的事实。"
+    },
+    {
+      "location": "S12-2 / A52",
+      "issue": "留不住每一个以后是人物明确持有的认识，但没有指向某个已经发生的具体失去。",
+      "handling": "作为持续存在的限制性认识记录，不虚构失去事件或实际分离。"
+    },
+    {
+      "location": "S12-2 / A33",
+      "issue": "多陪对方一些并不是新出现的愿望，而是S07已经成立的陪伴愿望在认识到无法留住每个以后之后继续存在。",
+      "handling": "标记为已有愿望在新的限制条件下延续，不重复登记为新的愿望首次成立。"
+    },
+    {
+      "location": "S13-1 / A56-A57",
+      "issue": "想要永远不变的保证是新出现的明确愿望；知道谁也不能答应永远是人物的认识。LINE没有出现对方实际被要求保证后拒绝的事件。",
+      "handling": "分别保留索求愿望和无法获得保证的认识，不虚构对白、请求或拒绝。"
+    },
+    {
+      "location": "S13-2 / A59",
+      "issue": "把已经显露的喜欢往回收，是人物在紧张中产生的保护性愿望，没有明确写出他真的执行了隐藏或疏远。",
+      "handling": "保留为尚未实行的冲动，不将其写成已经撤回感情。"
+    },
+    {
+      "location": "S13-3 / A60-A62",
+      "issue": "无法再装作不在乎、此前想对对方好的心意是真实的，以及收回反而更难受，分别是人物对当前状态、先前心意和心理后果的认识。",
+      "handling": "不把先前的给予愿望与现在的撤回冲动合并为一个相互抵消的选择。"
+    },
+    {
+      "location": "S14-1 / A04-A23",
+      "issue": "回想最初连多露一点喜欢都紧张的自己，是对S01阶段及后来心意自然显露的回顾，不是重新发生一次隐藏行为。",
+      "handling": "只记录回顾及由此产生的柔软、发酸，不重复建立最初的隐藏选择。"
+    },
+    {
+      "location": "S14-2 / A12-A37-A47-A64",
+      "issue": "仍然舍不得、仍然不知道未来怎样、仍然无法决定对方未来心意，是持续存在的内容；不再催促永远保证则是新选择。",
+      "handling": "只将不再催促保证登记为新增选择，不把其余延续内容重复登记为新认识。"
+    },
+    {
+      "location": "S14-3 / A44-A65",
+      "issue": "不再隐藏喜欢以及等未来真正到来再面对，是当前明确选择，但没有提供未来相处结果。",
+      "handling": "保留选择本身，不推导出两个人一定会长久相处，也不推导出人物已经完全不再害怕。"
+    },
+    {
+      "location": "S01至S05 / A04-A23",
+      "issue": "最初只敢露出一点点喜欢，与后来不再时时想着隐藏、心意自然显露，存在时间上的行为变化，不构成事实矛盾。",
+      "handling": "保留先隐藏、后自然显露的顺序，不将两种状态强行合并成一个始终不变的选择。"
+    },
+    {
+      "location": "S03至S04 / A14-A19",
+      "issue": "S03中表达念头逐渐淡去，S04又想起没说出口的话并产生更强的表达愿望，是同一表达愿望的再次浮现和扩展。",
+      "handling": "S03记录念头淡去，S04记录重新浮现及新增的充分表达愿望，不将其误判为前后矛盾。"
+    },
+    {
+      "location": "S05-3 / A27",
+      "issue": "原本熟悉的亲近像隔了一层，是人物自己的感受，不能据此认定对方已经改变相处态度。",
+      "handling": "保留主观感受，同时保留S06对方依然照旧亲近的明确事实。"
+    },
+    {
+      "location": "S05-1 / A23",
+      "issue": "不再时时想着把喜欢藏好，明确发生在这一次相处中；S11及S14才进一步出现有意识、不再躲藏的选择。",
+      "handling": "不把S05的自然显露直接扩张为永久承诺，保留后续选择的实际发展。"
+    }
+  ]
+}</escape>
+
+【从珠子提炼出的体验性质（TARGETS）】
+{
+ "S01": {
+  "beads": [
+   {
+    "bead_id": "S01-B1",
+    "qualities": [
+     "突然而强烈的触动",
+     "初始冲击之后逐渐舒缓，但仍未安定",
+     "带有期待和不确定性的悬置感"
+    ],
+    "temporal_shape": "突然增强 → 逐渐减弱、舒缓 → 仍未获得稳定感",
+    "forbidden_imports": [
+     "人物实际在威尼斯或夏夜观看烟花",
+     "人物实际乘船或置身水面",
+     "将短暂的失稳直接解释为某件现实事件的发生"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S01-B2",
+    "qualities": [
+     "内心已有明确倾向，却暂缓表达",
+     "意识到表达可能带来重要后果，因此格外谨慎",
+     "期待、郑重与克制并存"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物准备向亲近的人告白或坦白某件事",
+     "人物已经思考某件具体事情很久",
+     "人物实际保持了几秒沉默",
+     "某段人物关系即将发生改变"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S01-B3",
+    "qualities": [
+     "刚进入一种尚不熟悉的状态",
+     "短暂失去确定感或控制感",
+     "开始适应新的承托，但尚未完全放心"
+    ],
+    "temporal_shape": "初次进入 → 短暂不稳 → 开始适应，但尚未完全安定",
+    "forbidden_imports": [
+     "人物实际踏上小船",
+     "人物身体真的失去平衡",
+     "人物实际将身体交给水流或船只"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "某种体验刚刚开启，具有突发性或重要性",
+   "初始触动之后仍带有悬置与不确定",
+   "既有进入新状态的期待，也有尚未完全投入的谨慎",
+   "稳定感尚未充分建立"
+  ],
+  "tensions": [
+   "S01-B1侧重突然受到触动后的悬置，S01-B2侧重已有明确内心倾向时的主动克制；两者不能被统一成同一种犹豫。",
+   "S01-B3允许初步的适应与承托感已经出现，S01-B1则更强调尚未落稳；对初始稳定程度的感受不同。"
+  ]
+ },
+ "S02": {
+  "beads": [
+   {
+    "bead_id": "S02-B1",
+    "qualities": [
+     "温暖、亲密且无需戒备的舒适感",
+     "不必刻意维持互动的自然与默契",
+     "亲密感浓厚，甚至略有令人沉醉的包裹感"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "两个人实际肩并肩耳语",
+     "人物彼此依偎或发生身体接触",
+     "人物已经相识多年",
+     "人物实际交换目光或一起安静地坐着"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S02-B2",
+    "qualities": [
+     "被持续承托的安全感与舒适感",
+     "暂时放弃控制、允许自己沉浸其中",
+     "安适之中隐含时间仍在流逝的意识"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际乘船漂流",
+     "人物真实地失去重力或身体控制",
+     "人物决定不靠岸或不去某个目的地",
+     "人物确实正在经历一段具体的等待"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S02-B3",
+    "qualities": [
+     "想要更充分地投入或表达，却主动保留分寸",
+     "对现有安宁的珍惜使人有所克制",
+     "既舍不得停止，又不愿过度推进"
+    ],
+    "temporal_shape": "投入或表达的倾向增强 → 主动收敛 → 仍有继续延展的意愿",
+    "forbidden_imports": [
+     "人物实际准备说话又咽回去",
+     "人物真的对某人说了或没说某句话",
+     "人物明确拒绝进一步的身体或情感亲密",
+     "人物担心自己的某个具体行为破坏气氛"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S02-B4",
+    "qualities": [
+     "甜蜜与轻微伤感同时存在",
+     "因珍惜当下而提前产生不舍",
+     "希望美好体验能够延续，同时意识到它无法永久停留"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际即将与某人分别",
+     "人物已经失去某段关系或某样事物",
+     "人物正在回忆一段具体的幸福往事",
+     "人物明确知道某件坏事即将发生"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S02-B5",
+    "qualities": [
+     "原本克制的感受短暂变得热切",
+     "强烈表达倾向与自我收敛并存",
+     "舒缓之后仍保留未尽之意"
+    ],
+    "temporal_shape": "克制 → 短暂热切、开放 → 重新柔和 → 暂时安定但未完全确定",
+    "forbidden_imports": [
+     "人物实际热烈告白或倾诉",
+     "人物真的呼出一口气",
+     "某个心事已经被说清楚",
+     "某段关系已经完成一次明确推进"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "温暖、自然且有安全感的亲近体验",
+   "愿意沉浸其中，却仍保留一定分寸",
+   "舒适与甜蜜之中包含对时间流逝的敏感",
+   "短暂的情感增强之后仍可回到柔和状态",
+   "珍惜、克制和轻微伤感能够同时存在"
+  ],
+  "tensions": [
+   "S02-B1和S02-B2更强调自在、放心与被承托；S02-B3则强调即使亲近也不愿完全投入。两种体验重心不同。",
+   "S02-B1的安适甜蜜与S02-B4的提前伤感可以并存，但不能将后者消解成单纯的幸福。",
+   "S02-B3侧重收敛，S02-B5突出短暂突破收敛的冲动；两者体现不同程度的开放。"
+  ]
+ },
+ "S03": {
+  "beads": [
+   {
+    "bead_id": "S03-B1",
+    "qualities": [
+     "重要感受过后仍停留在余韵之中",
+     "舒适、沉醉而略微走神",
+     "暂时没有明确方向或继续推进的需求"
+    ],
+    "temporal_shape": "原先较明确的情感参与逐渐退居次位 → 转为松弛、游离的持续状态",
+    "forbidden_imports": [
+     "人物刚刚说过一句重要的话",
+     "人物实际结束了一场亲密交谈",
+     "人物与某人共同沉默",
+     "人物实际乘船漂浮或离开某地"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S03-B2",
+    "qualities": [
+     "平静之中短暂出现急切的表达冲动",
+     "未充分展开便重新收敛",
+     "短暂扰动没有改变整体状态"
+    ],
+    "temporal_shape": "持续平缓 → 突然出现局部急切 → 迅速退回原有状态",
+    "forbidden_imports": [
+     "人物实际开口插话",
+     "人物确实产生某个具体念头",
+     "人物开始又终止了一场倾诉"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S03-B3",
+    "qualities": [
+     "原本顺畅的体验中出现难以排除的阻力",
+     "思绪或感受变得零散、不易整合",
+     "未解决的复杂性使人滞留，却尚未转为彻底的痛苦"
+    ],
+    "temporal_shape": "相对顺畅的持续状态 → 出现迟滞、牵扯或零散感 → 未获得明确化解",
+    "forbidden_imports": [
+     "人物实际遭遇阻碍或被某人拖住",
+     "一场真实交谈触及了具体的关系问题",
+     "人物存在某件已被确认、无法解决的心结",
+     "人物实际与他人发生争执"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "强烈参与之后的余韵与暂时游离",
+   "暂不急于获得结果或推进体验",
+   "平静中可能出现短暂的内在扰动",
+   "舒适和滞留感可以同时存在",
+   "某些感受尚未完全整合"
+  ],
+  "tensions": [
+   "S03-B1将游离体验为舒服、沉醉且无须前进，S03-B3则将类似的停留体验为受阻、纠缠和难以整合。这是本段最明确的不同听法。",
+   "S03-B2的局部急切不能被直接等同于S03-B3的持续性阻滞；前者可能只是短暂冲动，后者则涉及整体顺畅感的改变。"
+  ]
+ },
+ "S04": {
+  "beads": [
+   {
+    "bead_id": "S04-B1",
+    "qualities": [
+     "熟悉的亲密感再次出现，但热切程度更高",
+     "情感表达趋于丰富、迫切和难以收束",
+     "对已经充分感受到的事物仍有进一步展开的冲动"
+    ],
+    "temporal_shape": "熟悉感重新出现 → 情感逐渐增强 → 产生反复延展、难以停止的倾向",
+    "forbidden_imports": [
+     "两个人实际贴近耳语",
+     "人物实际向他人讲述往事",
+     "人物讲述时改变语速或反复补充细节",
+     "人物确实在重复某段对话"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S04-B2",
+    "qualities": [
+     "情感接近充分开放的临界状态",
+     "强烈的投入与尚未完全稳定的满足感并存",
+     "高度紧张过后逐渐平复，但仍留有余韵"
+    ],
+    "temporal_shape": "持续增强 → 短暂接近极致的开放 → 同时出现收敛 → 逐渐平静而未完全落实",
+    "forbidden_imports": [
+     "人物实际说出最深的情意",
+     "人物因告白而哽咽或哭泣",
+     "人物已经完成一次重要的感情表达",
+     "某个现实问题在此得到解决"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S04-B3",
+    "qualities": [
+     "希望牢牢留住珍贵体验的强烈依恋",
+     "不愿失去控制而进一步用力，反而加剧脆弱感",
+     "潜在不安与强烈亲近需求相互强化"
+    ],
+    "temporal_shape": "较为轻松的依恋 → 抓紧和维系的冲动增强 → 不稳定感随之增加",
+    "forbidden_imports": [
+     "人物实际与他人握手",
+     "人物握得越来越紧",
+     "人物真实地拥抱或试图抱紧某人",
+     "人物已经意识到某种具体失去的危险",
+     "人物实际在船上失去平衡"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S04-B4",
+    "qualities": [
+     "强烈甜蜜中伴随提前发生的不舍",
+     "越珍惜当下，越敏感于它的有限性",
+     "尚未失去，却已经感到轻微的悲伤"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物正在经历真实的分别",
+     "人物已经确定某段幸福即将结束",
+     "人物确实失去了重要的人或事物",
+     "人物与某人正处在身体距离极近的状态"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "熟悉的美好体验重新增强，亲近感与迫切感同时存在",
+   "表达或投入的冲动达到较高程度，却未完全获得稳定的满足",
+   "越想维系珍贵体验，越容易感到脆弱",
+   "甜蜜、依恋、热切与预先的不舍可以同时成立",
+   "强烈时刻过后仍有收敛和余韵"
+  ],
+  "tensions": [
+   "S04-B1偏向丰富、热切甚至令人兴奋的再次投入，S04-B3偏向由潜在不安推动的用力维系；不能预设热切一定来自恐惧。",
+   "S04-B2呈现接近充分开放的体验，S04-B3则突出越用力越不稳定的感受；两者对强烈投入的体验性质不同。",
+   "S04-B4强调未失去时就已伤感，这与单纯将S04-B1的增强理解为更加快乐不同。"
+  ]
+ },
+ "S05": {
+  "beads": [
+   {
+    "bead_id": "S05-B1",
+    "qualities": [
+     "原有支撑感突然消失",
+     "孤立、轻飘且缺乏明确方向",
+     "对接下来会如何发展感到不确定"
+    ],
+    "temporal_shape": "原先有所依托 → 突然失去支撑 → 进入孤立而方向不明的状态",
+    "forbidden_imports": [
+     "人物实际独自乘船进入陌生水域",
+     "人物身处大雾或迷路",
+     "人物真的失去身体支撑",
+     "人物现实生活中的依靠已经消失"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S05-B2",
+    "qualities": [
+     "从共同参与的感受转向内在自省",
+     "原本自然的亲近感忽然出现距离",
+     "对美好体验的真实性和持续性产生不确定感"
+    ],
+    "temporal_shape": "亲近、相互参与 → 突然中断 → 转入自省与疑问",
+    "forbidden_imports": [
+     "两个人真实的谈话突然停止",
+     "人物主动退出某段关系",
+     "人物确实独自留下",
+     "人物真的向自己提出了特定问题",
+     "某段幸福已经被证实不真实或难以维持"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S05-B3",
+    "qualities": [
+     "先前强烈的维系冲动逐渐放松",
+     "从过度用力转为允许事态自然发展",
+     "带有舒缓、退让或暂时放下的意味"
+    ],
+    "temporal_shape": "强烈抓紧的倾向 → 主动或自然地松弛 → 恢复较轻的心理负担",
+    "forbidden_imports": [
+     "人物实际松开了另一个人的手",
+     "人物结束拥抱或身体接触",
+     "人物真的深吸一口气",
+     "人物决定放弃某个人或某段关系"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "原先持续的亲近或承托感发生中断",
+   "从较强的投入转向独立、内省或暂时抽离",
+   "对原有体验的确定感减弱",
+   "抽离可能同时带来不安与放松"
+  ],
+  "tensions": [
+   "S05-B1把抽离感体验为支撑丧失、孤立和迷失，S05-B3却将其体验为主动放松和卸下负担；这两种心理意义不能强行等同。",
+   "S05-B2强调对美好真实性的疑虑，S05-B3并不必然包含怀疑；放松不等于否定先前的体验。"
+  ]
+ },
+ "S06": {
+  "beads": [
+   {
+    "bead_id": "S06-B1",
+    "qualities": [
+     "重新获得某种秩序感，但整体体验变得轻盈、疏离",
+     "清澈、纯净而略带清凉的安宁",
+     "带有天真感、初次触动感或怀旧色彩"
+    ],
+    "temporal_shape": "原先悬置、失去依托 → 重新获得较轻柔的稳定感 → 进入清澈而略显陌生的状态",
+    "forbidden_imports": [
+     "人物实际来到新的地点",
+     "人物身处桥下、月夜或乡间",
+     "人物真实地回忆童年",
+     "人物想起年少时某次初恋或心动",
+     "人物确实经历过对应的童年场景"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S06-B2",
+    "qualities": [
+     "表面安静之下仍有反复牵念",
+     "想放下与放不下之间的矛盾",
+     "不再努力维持完整或得体的自我呈现，带有脆弱的真实感"
+    ],
+    "temporal_shape": "趋于安静 → 牵念反复出现 → 亲近与退却的倾向交替",
+    "forbidden_imports": [
+     "两个人真实地相互应答或插话",
+     "人物实际说出算了或还是放不下",
+     "人物正在面对某位旁观者",
+     "人物确实停止了掩饰或向他人袒露心事",
+     "人物存在一段已确定无法放下的关系"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S06-B3",
+    "qualities": [
+     "由外在参与转向私密的内在感受",
+     "美好体验可能在安静中显出酸楚与孤独",
+     "即使存在亲近感，也意识到内在体验无法被完全共享",
+     "美好尚在，却已经具有回顾性的距离感"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物白天确实与某人愉快相处",
+     "人物晚上实际回家独处",
+     "人物拥有某位无法理解自己的亲密伴侣",
+     "人物确实正在回忆当天发生的事情",
+     "人物与他人真实地发生了情感隔阂"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S06-B4",
+    "qualities": [
+     "具有身体性或感官性的沉醉与愉悦",
+     "快感、眷恋和遗憾可能相互混合",
+     "越深入舒适体验，越容易失去清晰的方向感"
+    ],
+    "temporal_shape": "感官沉浸逐渐加深 → 方向感或自我界限趋于模糊",
+    "forbidden_imports": [
+     "人物正在独自回忆一段真实关系",
+     "人物确实经历过某种身体亲密",
+     "人物拥有具体的情色记忆",
+     "人物实际幻想某个特定对象",
+     "人物在现实中发生了任何性或亲密行为"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "先前的悬置转化为较内向、较轻柔的体验",
+   "表面的安宁与未完全放下的牵念可以并存",
+   "感受趋于私人化，可能伴随纯净、怀旧、酸楚或孤独",
+   "美好体验并不排除距离感、遗憾与方向不明"
+  ],
+  "tensions": [
+   "S06-B1侧重清澈、纯净和近乎天真的安宁，S06-B4则侧重身体性快感、欲望与感官沉醉。两者是明确不同的理解，不能将感官性直接消解为纯净，也不能将纯净直接解释成欲望。",
+   "S06-B3强调独处式的内省、酸楚与不可共享感，S06-B4强调贴身的愉悦和沉迷；即使都带有回顾性，也不能假定它们来自同一段真实回忆。",
+   "S06-B1的重新稳定与S06-B2的反复牵念可以共存，但一个偏向平静，一个偏向持续的内在矛盾。"
+  ]
+ },
+ "S07": {
+  "beads": [
+   {
+    "bead_id": "S07-B1",
+    "qualities": [
+     "原本内敛的感受变得强烈而具有推动力",
+     "渴望、执着与生命热情交织",
+     "仅仅安静地满足于现状已不再足够"
+    ],
+    "temporal_shape": "相对内敛 → 内在驱动力持续增强 → 形成更迫切的投入需求",
+    "forbidden_imports": [
+     "人物实际向某人表达情欲",
+     "人物对特定对象产生了已被确认的执念",
+     "人物真实地采取行动追求某段关系",
+     "人物实际经历身体亲密"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S07-B2",
+    "qualities": [
+     "具有身体性、甚至轻微情色意味的愉悦",
+     "快感、遗憾、眷恋与迷失感相互混合",
+     "意识到自己正在深入沉醉，却暂时不愿脱离"
+    ],
+    "temporal_shape": "沉醉加深 → 愉悦与迷失同时增强 → 仍倾向于继续停留",
+    "forbidden_imports": [
+     "人物正在独自回忆一段真实关系",
+     "人物确实闻到某人的气味或感到某种身体接触",
+     "人物拥有具体的情色经历或幻想",
+     "人物在现实中主动选择继续一段关系"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S07-B3",
+    "qualities": [
+     "美好体验仍在，却清楚感到其短暂性",
+     "满足与无法挽留时间的无奈并存",
+     "珍惜当下时产生轻微的预先失落"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际即将与某人分别",
+     "人物确实失去过某件美好的事物",
+     "某段关系已经确定进入倒计时",
+     "人物知道具体的结束时间"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "内在投入和渴望明显增强",
+   "强烈的愉悦可以与迷失、执着或遗憾同时存在",
+   "既舍不得退出美好体验，又意识到它无法永久停留",
+   "热切程度增加并不意味着伤感或不确定感消失"
+  ],
+  "tensions": [
+   "S07-B1侧重渴望推动人继续趋向更充分的体验，S07-B2则侧重沉醉本身的快感和不愿抽身；两者的动力方向不同。",
+   "S07-B1和S07-B2的强烈投入与S07-B3对时间有限性的清醒感形成张力，不能将整体体验简化为无忧无虑的欢愉。"
+  ]
+ },
+ "S08": {
+  "beads": [
+   {
+    "bead_id": "S08-B1",
+    "qualities": [
+     "情感直接、坦率，暂时不再防卫或分析",
+     "舒展、开放且投入程度持续增强",
+     "带有自然而强烈的肯定感"
+    ],
+    "temporal_shape": "较直接的情感开放 → 持续增强、更加充分地投入",
+    "forbidden_imports": [
+     "人物实际向某人坦白感情",
+     "人物确实放弃了某种现实中的防备",
+     "人物与他人的关系获得明确肯定"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S08-B2",
+    "qualities": [
+     "明朗、轻快而富有活力",
+     "身体和心理都显得更自在、有弹性",
+     "带有玩心、轻松互动感或愉快的亲近倾向"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际与某人调情",
+     "人物真实地回应了他人的示好",
+     "人物与某人正在进行愉快互动",
+     "人物实际身处阳光或微风之中"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S08-B3",
+    "qualities": [
+     "愉快体验尚未充分结束便突然中断",
+     "未得到预期的继续或落实",
+     "快乐尚有余温时便已产生怀念与不舍"
+    ],
+    "temporal_shape": "轻快、持续的投入 → 逐渐失去明确的落实感 → 突然中断 → 留下短暂的静意与不舍",
+    "forbidden_imports": [
+     "人物实际停止了一场谈话",
+     "某人突然离开或终止互动",
+     "人物现实中失去了刚刚获得的快乐",
+     "人物确实开始回忆某段已结束的经历"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "情感呈现开放、直接而较少防备的性质",
+   "强烈投入与轻快活力可以同时存在",
+   "愉悦感逐渐增强，却没有获得完全预期中的延续",
+   "短暂而美好的体验能够迅速转化为怀念"
+  ],
+  "tensions": [
+   "S08-B1突出热切、坦率和充分投入，S08-B2突出轻盈、玩心和轻松互动感；两者不能简单归并为同一种情感强度。",
+   "S08-B3所强调的突然中断和提前怀念，使本段不宜被整体理解为持续、完整而没有余憾的快乐。"
+  ]
+ },
+ "S09": {
+  "beads": [
+   {
+    "bead_id": "S09-B1",
+    "qualities": [
+     "强烈的期待或渴望被暂时压住",
+     "高度专注、克制而悬而未决",
+     "内在张力仍然存在，却尚未得到释放"
+    ],
+    "temporal_shape": "原本趋于增强的冲动 → 突然收敛 → 进入持续的期待与悬置",
+    "forbidden_imports": [
+     "两个人实际对视",
+     "人物真实地屏住呼吸",
+     "人物确实在重要时刻停止说话",
+     "人物正在等待某个具体回应或决定"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S09-B2",
+    "qualities": [
+     "原先的明朗感逐渐转为内敛和幽微",
+     "情绪趋于低沉，但未完全失去温和或积极的成分",
+     "外在活跃感减弱，内在注意力反而集中"
+    ],
+    "temporal_shape": "较为明朗 → 逐渐收敛、低沉 → 注意力更加集中",
+    "forbidden_imports": [
+     "人物实际遭遇阴暗或压抑的环境",
+     "人物所处的天气发生变化",
+     "人物已经进入明确的悲伤或绝望处境"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S09-B3",
+    "qualities": [
+     "在强烈体验之后转入自我审视",
+     "暂缓继续推进，转而感受此前体验的余韵",
+     "对已发生的感受及其后续意义产生疑问"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物刚刚真实地说过某些话",
+     "人物正在反听自己的具体发言",
+     "人物确实怀疑某件事件是否真实",
+     "人物实际需要作出某个现实决定"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S09-B4",
+    "qualities": [
+     "从自身的迫切需求中暂时抽离",
+     "产生超越个人愿望的开阔感或敬畏感",
+     "不安仍然存在，但暂时不再主导全部体验"
+    ],
+    "temporal_shape": "个人感受原本占据中心 → 感知范围变得开阔 → 不安暂时退居次位",
+    "forbidden_imports": [
+     "人物实际抬头观看夜空",
+     "人物此前激动地说过很多话",
+     "人物真实地经历某种宗教或精神启示",
+     "人物已经放弃自己的愿望",
+     "现实中的问题已获得解答"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "原先强烈的投入突然转入收敛和停顿",
+   "内在感受仍然活跃，但不急于继续展开",
+   "专注、反思、悬置和未解的不确定感可以同时存在",
+   "暂停推进可能使注意力从个人需求转向更开阔的感受",
+   "安静并不等于渴望消失或问题得到解决"
+  ],
+  "tensions": [
+   "S09-B1强调未释放的渴望和强烈期待，S09-B4则强调个人渴望暂时退居次位、被更开阔的感受取代中心位置；这是不同的体验重心。",
+   "S09-B3偏向反复审视自身体验及其真实性，S09-B4偏向超越这种自我审视；不能将两种安静解释为同一种心理活动。",
+   "S09-B2的低沉、内敛不必然等于S09-B4的敬畏与开阔。"
+  ]
+ },
+ "S10": {
+  "beads": [
+   {
+    "bead_id": "S10-B1",
+    "qualities": [
+     "长时间克制之后获得情感上的松弛",
+     "允许自己感受而不再强迫控制",
+     "舒展、释然和近乎落泪的感动并存，但问题尚未解决"
+    ],
+    "temporal_shape": "持续压抑或紧绷 → 明显松弛、开放 → 获得暂时的情感释放",
+    "forbidden_imports": [
+     "人物实际长长呼气",
+     "人物真的哭泣或流泪",
+     "人物此前说过或没说某句话",
+     "人物已经解决长期困扰自己的事情"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S10-B2",
+    "qualities": [
+     "极度轻盈、纯净而细腻的感受",
+     "清新、通透，几乎没有负担",
+     "轻柔之中短暂出现较充分的畅快与舒展"
+    ],
+    "temporal_shape": "细腻而轻盈的持续感 → 短暂的集中舒展与畅快",
+    "forbidden_imports": [
+     "人物实际看见晨曦、蛛丝或细雨",
+     "人物亲眼目睹瀑布",
+     "人物真实地置身水边",
+     "人物确实经历某个特定的自然景象"
+    ],
+    "confidence": "中"
+   },
+   {
+    "bead_id": "S10-B3",
+    "qualities": [
+     "暂时摆脱持续推进的压力",
+     "获得短暂的自由、喘息和宽裕感",
+     "这种松弛是片刻性的，而非永久安顿"
+    ],
+    "temporal_shape": "持续受推动或受约束 → 突然获得松弛空间 → 短暂持续而不构成永久停留",
+    "forbidden_imports": [
+     "人物实际乘船或停止前行",
+     "人物真实地进入某个避风处",
+     "人物确实获得了一段可以永久逃避现实的生活",
+     "人物实际呼出一口气"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S10-B4",
+    "qualities": [
+     "原先沉重的负担突然变得遥远",
+     "强烈的轻脱感、失重感或与自身负荷暂时分离的感觉",
+     "近乎超脱日常身体限制的自由"
+    ],
+    "temporal_shape": "原先有明显负担 → 负担感突然减弱或变得难以触及 → 进入轻脱状态",
+    "forbidden_imports": [
+     "人物灵魂真实地离开身体",
+     "人物实际悬浮在空中",
+     "人物经历了真实的灵魂出窍事件",
+     "人物的身体负担或现实责任确实消失"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "此前的紧绷和压抑明显减轻",
+   "获得轻盈、舒展、释放和暂时自由的体验",
+   "感动与释然能够同时存在",
+   "主观负担感减轻不意味着现实问题已经解决",
+   "这是一种短暂的开放或超脱，而非永久的安顿"
+  ],
+  "tensions": [
+   "S10-B1偏向强烈但仍具情绪重量的释放和感动，S10-B2偏向几乎没有负担的细腻、纯净感；两者对释放的情绪浓度不同。",
+   "S10-B3偏向获得暂时休息空间，S10-B4则带有更强的脱离原有负荷或自我限制的意味；不能将两种轻松感完全等同。"
+  ]
+ },
+ "S11": {
+  "beads": [
+   {
+    "bead_id": "S11-B1",
+    "qualities": [
+     "原先含蓄的感受变得直接、坚定而强烈",
+     "对自身情感的充分承认与毫不退让",
+     "从不确定或克制转向具有现实重量的投入"
+    ],
+    "temporal_shape": "先前的含蓄与轻脱 → 突然转为直接、强烈、坚定的充分投入",
+    "forbidden_imports": [
+     "人物实际向某人告白",
+     "人物真实地说出不再为自己的感情道歉",
+     "人物做出某项明确承诺",
+     "某段关系发生了确定性的转折",
+     "人物实际经历海上风浪"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S11-B2",
+    "qualities": [
+     "喜悦强烈到近乎难以承受",
+     "灿烂和痛楚并存",
+     "情绪过于充沛，带有压迫感和落泪冲动"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际观看夕阳",
+     "人物因身体疾病而胸口疼痛",
+     "人物确实哭泣",
+     "人物受到现实中的伤害或压迫"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S11-B3",
+    "qualities": [
+     "熟悉的美好重新出现，却不再像最初那样轻松",
+     "因感受到其珍贵而承受更深的情绪重量",
+     "亲切、感动与疼惜并存"
+    ],
+    "temporal_shape": "熟悉感再次出现 → 因体验意义加重而产生更复杂、更深切的感受",
+    "forbidden_imports": [
+     "人物多年后实际重返旧居",
+     "人物经历过一场真实的久别重逢",
+     "人物确实获得了某些具体人生知识",
+     "人物与某人重新建立关系",
+     "过去存在某件已被确认的遗憾事件"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S11-B4",
+    "qualities": [
+     "长期积累的期待获得某种阶段性满足",
+     "强烈的达成感尚未成为最终完成感",
+     "满足之后仍保留继续发展的张力"
+    ],
+    "temporal_shape": "积累的期待 → 阶段性满足 → 短暂悬置，仍预示后续增强",
+    "forbidden_imports": [
+     "人物现实中的长期心愿终于实现",
+     "人物得到了先前未能得到的具体事物",
+     "人物完成一次明确的关系修复",
+     "现实中的某个问题已经得到最终解决"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "先前较为克制的体验转向直接、强烈而具有确定感的投入",
+   "强烈的情感肯定与身体性的压力感可以并存",
+   "熟悉的美好因其重要性而具有新的情绪重量",
+   "长期期待可能得到阶段性满足，但整体体验仍未彻底结束",
+   "喜悦、坚定、疼惜与未尽的张力能够同时成立"
+  ],
+  "tensions": [
+   "S11-B1强调坚定、直接和不再退让，S11-B2强调强烈到几乎令人难以承受的压力；不能把坚定直接等同于轻松或舒畅。",
+   "S11-B4具有阶段性满足的意味，但S11-B2和S11-B3保留明显的痛楚与复杂性；满足不必然意味着情绪上的圆满。",
+   "S11-B1更重视当下的充分确认，S11-B3更重视熟悉体验因积累而获得的新重量。"
+  ]
+ },
+ "S12": {
+  "beads": [
+   {
+    "bead_id": "S12-B1",
+    "qualities": [
+     "从私人、游离的体验转为强烈的当下参与感",
+     "感受到某种超越个人欲望或自我界限的广阔性",
+     "宏大的投入与内部的复杂张力并存"
+    ],
+    "temporal_shape": "较内向、游离的感受 → 聚焦于当下 → 体验范围显著扩大，自我中心感减弱",
+    "forbidden_imports": [
+     "人物实际参加某种英雄行动",
+     "人物进入了宏大的现实历史事件",
+     "人物经历真实的宗教、宇宙或精神启示",
+     "人物确实与某个群体融为一体",
+     "人物的感情在现实中获得超越一切的地位"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S12-B2",
+    "qualities": [
+     "极度强烈、近乎失控的喜悦",
+     "情感充沛到难以维持原有分寸",
+     "快乐与想哭的冲动交织，难以清楚区分"
+    ],
+    "temporal_shape": "尚能维持一定分寸 → 情绪迅速增强 → 接近喜悦与悲伤难以区分的状态",
+    "forbidden_imports": [
+     "人物实际经历久别重逢",
+     "人物与某人寒暄或拥抱",
+     "人物紧紧抱住某人不愿松手",
+     "人物现实中流泪或哭笑交加",
+     "人物确实获得了失而复得的亲密关系"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S12-B3",
+    "qualities": [
+     "强烈投入之中仍存在尚未满足的渴望",
+     "不断趋向充分满足，却受到反复牵制",
+     "持续紧张最终获得一次显著释放"
+    ],
+    "temporal_shape": "投入和渴望增强 → 多次趋近满足却持续受阻 → 紧张延续至段末交界 → 显著释放",
+    "forbidden_imports": [
+     "人物实际反复请求某人",
+     "人物确实遭到拒绝或受到阻拦",
+     "人物现实中的某个愿望在段末实现",
+     "某个具体关系矛盾获得解决"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "情绪投入达到极高程度",
+   "强烈的当下感、广阔感和个人喜悦可以共存",
+   "极度充沛的体验并不排除内部的牵扯与未满足感",
+   "喜悦与痛楚的界限可能模糊",
+   "强烈张力经过延续后获得阶段性释放"
+  ],
+  "tensions": [
+   "S12-B1强调自我暂时退居次位、融入更广阔的体验，S12-B2则强调高度私人化、身体化的狂喜；两种感受不能被统一成同一种个人情感满足。",
+   "S12-B2偏向几乎满溢的喜悦，S12-B3偏向持续未满足的追求和牵制；不能假定强烈的狂喜意味着所有渴望都已满足。",
+   "S12-B1的开阔感不能自动解释为S12-B3的最终释放已经完成。"
+  ]
+ },
+ "S13": {
+  "beads": [
+   {
+    "bead_id": "S13-B1",
+    "qualities": [
+     "获得阶段性满足后仍无法安心停止",
+     "满足感与担心其消失的紧迫感并存",
+     "持续增强的维系和进一步确认需求"
+    ],
+    "temporal_shape": "阶段性抵达或满足 → 继续推进 → 紧迫与压力增强 → 再次接近临界状态",
+    "forbidden_imports": [
+     "人物实际说出了长期未说的心愿",
+     "人物现实中的愿望终于实现",
+     "人物已得到某个珍贵对象",
+     "人物确实害怕失去某个特定的人或事物",
+     "人物实际采取行动防止失去"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S13-B2",
+    "qualities": [
+     "美好和悲伤逐渐交织",
+     "满足之中出现对短暂性或不可永久占有的痛感",
+     "越强烈地确认珍贵，越容易产生疼惜"
+    ],
+    "temporal_shape": "保持灿烂与肯定 → 苦涩和紧张逐渐加深 → 幸福与悲伤同时存在",
+    "forbidden_imports": [
+     "人物实际获得了某个珍贵的人或事物",
+     "人物已经意识到某段关系即将结束",
+     "某个真实拥有的事物必然会失去",
+     "人物正在经历具体的离别或丧失"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S13-B3",
+    "qualities": [
+     "坚定或坚持与内心低沉感同时存在",
+     "表面上的稳定并不能消除内部的牵扯",
+     "持续承受某种反复加深的情绪重量"
+    ],
+    "temporal_shape": "",
+    "forbidden_imports": [
+     "人物实际站在原地不肯移动",
+     "人物拒绝让步或与某人对抗",
+     "人物真实地反复叹息",
+     "人物因现实事件而胸口下沉或感到身体不适"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S13-B4",
+    "qualities": [
+     "强烈肯定之后出现迟来的疑虑",
+     "怀疑与先前的相信并存，并未彻底否定前者",
+     "越认真地投入，疑问可能越具有情感重量"
+    ],
+    "temporal_shape": "较坚定的确认 → 随后浮现质疑 → 肯定与疑虑保持并存",
+    "forbidden_imports": [
+     "人物实际说出肯定或承诺的话",
+     "人物真实地听到他人提出反对",
+     "人物确实改变了某项现实决定",
+     "人物发现某段幸福是虚假的",
+     "人物与他人发生实际争辩"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "阶段性满足之后依然存在继续维系的紧迫需求",
+   "肯定感没有消失，但不再排除疑虑、伤感和压力",
+   "稳定与内在牵扯可以同时存在",
+   "获得感、珍惜、疼惜和对有限性的意识相互交织",
+   "较强的确认并不意味着情绪已彻底安顿"
+  ],
+  "tensions": [
+   "S13-B1强调继续确认、推进和维系的迫切，S13-B3强调坚持中的稳定与内心下沉；两者不是同一种持续状态。",
+   "S13-B2将苦涩更多地联系到珍贵体验的短暂性，S13-B4则突出肯定之后出现的怀疑；不能把伤感直接等同于怀疑。",
+   "S13-B1的阶段性满足与S13-B4的重新质疑形成张力，但质疑并不自动推翻满足感。",
+   "S13-B2的悲喜交织不能被简单理解成幸福已经消失或转为单纯悲伤。"
+  ]
+ },
+ "S14": {
+  "beads": [
+   {
+    "bead_id": "S14-B1",
+    "qualities": [
+     "经历强烈波动之后获得明确的终止感",
+     "决断、沉实而不再延宕",
+     "仍有余波，但整体体验被坚决收束"
+    ],
+    "temporal_shape": "此前仍有波动 → 突然而明确地终止、定住",
+    "forbidden_imports": [
+     "人物实际站起身",
+     "人物整理衣服或关上门",
+     "人物真实地离开某个地点",
+     "人物结束某段关系或作出最后决定",
+     "某个现实生活阶段已经终结"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S14-B2",
+    "qualities": [
+     "强烈投入之后逐渐恢复平静",
+     "原有的温暖与感动没有完全消失",
+     "从高度激动转为柔和、清醒而带有余韵的状态"
+    ],
+    "temporal_shape": "最后一次强烈激发 → 逐渐放松、减轻 → 恢复平静但保留温度",
+    "forbidden_imports": [
+     "人物实际从梦中醒来",
+     "人物确实做过某个美梦",
+     "人物正在回忆梦境或既往经历",
+     "人物身体真实地经历激烈活动后恢复平静"
+    ],
+    "confidence": "高"
+   },
+   {
+    "bead_id": "S14-B3",
+    "qualities": [
+     "趋于平静时重新浮现熟悉而内敛的感受",
+     "带有短暂回顾、沉思或眷恋的意味",
+     "在整体收敛之中仍保留一次轻微的情绪触动"
+    ],
+    "temporal_shape": "逐渐安静 → 短暂出现内省或熟悉感 → 再次出现轻微触动",
+    "forbidden_imports": [
+     "人物实际独自沉思",
+     "人物真实地回望某个人或某件往事",
+     "人物与先前的某个人再次相遇",
+     "人物实际回到了曾经的地点"
+    ],
+    "confidence": "中"
+   },
+   {
+    "bead_id": "S14-B4",
+    "qualities": [
+     "较早出现的未完成感获得呼应",
+     "从长期悬置转向明确收束",
+     "具有完整、回应与终于落实的满足感"
+    ],
+    "temporal_shape": "重新触及先前的悬置感 → 逐渐形成回应 → 最终获得完成感",
+    "forbidden_imports": [
+     "人物实际回应了某人先前说过的话",
+     "人物终于说出了此前未说出口的内容",
+     "两个人完成了一场跨越时间的对话",
+     "人物完成了一项长期未竟的现实心愿",
+     "某段人物关系最终获得圆满结局"
+    ],
+    "confidence": "高"
+   }
+  ],
+  "compatible_bundle": [
+   "强烈情绪经过最后的增强后逐渐平息",
+   "平静之中仍保留温暖、熟悉感和细微余韵",
+   "体验具有明显的结束或完成性质",
+   "柔和的消退与明确的最终收束能够先后成立",
+   "最终完成感不要求现实中的任何矛盾都已解决"
+  ],
+  "tensions": [
+   "S14-B1强调干脆、沉实而不容延宕的终止，S14-B2强调渐进、柔和且保留余温的平静；两者对结束方式的感受不同，不能强行合并成单一的结束质地。",
+   "S14-B3强调结束前仍有短暂回顾和细微眷恋，S14-B1则强调最终不再拖延；余韵和决断应分别保留。",
+   "S14-B4具有对早先未完成感的回应与落实意味，S14-B1只要求明确结束；结束不必然意味着此前的一切都得到了回答。"
+  ]
+ }
+}
+
+你看不到原始珠子，也不要猜原始珠子的画面或具体措辞。
+
+【第一步：确定主干】
+从候选路线中挑出最扎实的一条作为 base_route。全篇只能有一个 base_route，保持从头到尾是同一个人在经历同一件事。
+
+【第二步：一次写完整条线，严格遵循以下规则】
+
+一、线自己先成立，因果从自身经历长出来
+每段此刻为什么这样，只能来自他自己先前的体验、已经承受的后果，或上一段状态的自然延续与反动。
+1. 严禁外部加戏与凭空代度：不新增对方的新动作、具体对白、第三人、具体外部事件、新道具或新场景；同样，严禁凭空断定对方有了什么隐秘心事、或突然对对方的心态做出未经相处检验的新判断。所有认识的推进，只能来自他对自己已有经历的重新打量。
+2. 变化要由内在体验推动，不模仿音乐物理动作：情绪的停顿、沉落、转折，必须由他当时的心思引出。严禁把音乐段落的物理骤停、退弱或强弱对比直接搬成人物心理动作。
+3. 终局决断留到最后：整件事若有明确的落定或答案，不要在结尾前提前兑现。
+
+二、平复不等于“暂时不想”，杜绝机械打转
+整件事的核心矛盾贯穿始终，但人物在各段的心境必须展现不同的生活切面，严禁原地空转：
+1. 不要反复用同一个心理动作（比如劝自己先别想）来收尾或过渡。
+2. 面对音乐中的退弱、悬停或平复，心理处境可以表现为：被当下强烈的具体体验（温存、酸楚、疲倦）完全塞满而顾不上他顾；争辩力竭后的发呆或放空；或是自知没有办法之后无可奈何的承受。不要段段都写成理智上劝自己“先别想”。
+
+三、真正的人话：写具体念头，彻底拆除“心理分析脚手架”
+像一个平常人在讲自己的经历，读者一眼看懂，绝不用力分析自己：
+1. 严禁抽象心理学名词：不写总结性的心理概念。写他心里直接冒出来的念头、犹豫或实在感受。
+2. 拆除认知论述句式：念头直接跳出来，不要每句都带推导脚手架。不要句句都是“先前怎样、如今明白怎样、这让他怎样”这种像在分析人物心理的写法。
+3. 杜绝套路对称句式，特别是“越……越……”。整篇中这类句式极易泛滥，必须换成生活化的自然口吻。
+
+四、TARGETS 是底色温度，绝不是台词本（严防复述）
+TARGETS 规定了本段的情感走向（是紧绷还是舒展、是悬空还是下沉、是热切还是冷却）：
+1. 人物的处境必须在“情感重力与方向”上与 TARGETS 吻合，绝不能向性相反。
+2. 严禁把 TARGETS 里的心理比喻、修辞性描写或自问自答直接套写成人物此刻具体的自白。人物想的是他自己的事，只要那份心思的底色与 TARGETS 相符即可。
+
+五、篇幅精炼，分条清晰
+1. 形态：每段写 2–4 条要点，每条是一句完整、自然的话，只说一件事，连着读仍像一段流畅的经历。一句能说清的不拆成几条，也不合成散文式的长句；小段落（小节少、变化单一）写 2 条就够，宁短勿凑。
+2. 一段内的多条要点，必须是不同时序的具体念头推进，严禁把一个犹豫过程换几个词拆成三句同义反复。
+3. 前面已经成立的事实，后文直接承受其后果，不回头重新解释因果大道理。
+
+六、引用（cite）
+某条提到或依赖更早某一条时，在 cite 里写那一条的编号（如 S02-1）。提到前面的内容就直接提，不必每条都有；只是主题相近、情绪相近不算。
+
+七、段落关系标签（relation）
+写完正文后，严格根据本段正文实际表现出的状态标定：
+- 没在想：注意力完全被当下的具体感受、感官沉浸或力竭疲惫占据，心里根本没有去打量或挂念 Center 那个核心矛盾。
+- 还说不清：处在模糊的情绪波动或本能反应中，尚未理清整件事，也没有形成明确态度。
+- 正在面对：清楚意识到核心矛盾，并在此刻具体权衡、挣扎、承受或做决定。
+（如果正文仍在打量整件事，不能标为“没在想”。）
+
+【输出格式】
+只输出 JSON：
+{
+  "base_route": "route_id",
+  "segments": [
+    {
+      "sec": "S01",
+      "relation": "没在想/还说不清/正在面对",
+      "items": [
+        {
+          "id": "S01-1",
+          "text": "...",
+          "cite": [],
+          "covers": ["bead_id"]
+        }
+      ],
+      "delta_type": "新变化/后果/实行已有想法/延续/回到旧处但有新增/暂时没在想",
+      "delta": "本段真正新增的心理事实，无则留空"
+    }
+  ],
+  "uncovered_targets": [
+    {
+      "bead_id": "...",
+      "reason": "为什么若强行覆盖会伤害人物逻辑（仅限必须编外部事实的情况）"
+    }
+  ],
+  "established": [
+    {
+      "claim": "首次成立的重要认识或状态",
+      "first_established": "Sxx-x"
+    }
+  ]
+}

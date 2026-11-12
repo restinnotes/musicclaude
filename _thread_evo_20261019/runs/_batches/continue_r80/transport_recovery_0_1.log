@@ -1,0 +1,30 @@
+[scr86a_op60_F1] FAILED 63s {"type": "incomplete_response", "message": "Browser automation failed at incomplete_response"}
+MIMIC transient_failure pause 60s until 2026-11-04T18:10:43.342943+00:00
+[scr86a_op61_F1] FAILED 93s {"type": "incomplete_response", "message": "Browser automation failed at incomplete_response"}
+MIMIC transient_failure pause 60s until 2026-11-04T18:11:13.709156+00:00
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\round65_fix.py", line 245, in <module>
+    list(pool.map(lambda w: fn(a, w), F.WORKS))
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\round65_fix.py", line 245, in <lambda>
+    list(pool.map(lambda w: fn(a, w), F.WORKS))
+                            ^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\round65_fix.py", line 179, in one_restore
+    answer = pipe.call(f'sc{a.tag}_{w}_F1', msg, a.model, a.tag)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\pipe.py", line 195, in call
+    raise RuntimeError(f"{rid}: no usable json")
+RuntimeError: scr86a_op60_F1: no usable json

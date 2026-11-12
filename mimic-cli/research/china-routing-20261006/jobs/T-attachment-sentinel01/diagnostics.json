@@ -1,0 +1,52 @@
+{
+  "job_id": "T-attachment-sentinel01",
+  "timestamp": "2026-10-07T02:09:09.862697+00:00",
+  "profile": "yi",
+  "command": "research",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "prompt_sha256": "7a6c1d2c3c43c285487f9a8904f1650fccd23d306b25a4fcff12f948a2c54643",
+  "success": false,
+  "response": "",
+  "diagnostics": {},
+  "prompt": "Read the attached attachment-sentinel.txt and return its file-only secret sentinel. If no file is accessible say INPUT_INCOMPLETE. Do not infer the content from the filename.",
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "attachment_transport": "existing mg client, original browser, isolated request page, retained standard verification",
+  "error": {
+    "type": "TypeError",
+    "message": "Research worker failed; no automatic resend"
+  },
+  "elapsed_seconds": 3.375
+}

@@ -1,0 +1,10 @@
+UNFINISHED (rule: same job 3x consecutive confirmed pre-submit failure -> keep evidence, skip, continue)
+
+- job: D_k02_r05_gengpt56w_judgegpt6w_AB (review phase, judge_model=gpt6w)
+- attempts: 3, all confirmed_pre_submit_failure, phase=pre_submit, error_code=headless_native_result_rejected
+  1. results/reviews/gpt6w/D_k02_r05_gengpt56w_judgegpt6w_AB.attempt01.meta.json (+ .stderr.txt / .raw.json)
+  2. results/reviews/gpt6w/D_k02_r05_gengpt56w_judgegpt6w_AB.attempt02.meta.json (+ .stderr.txt / .raw.json)
+  3. results/reviews/gpt6w/D_k02_r05_gengpt56w_judgegpt6w_AB.meta.json (+ .stderr.txt / .raw.json, current)
+- runner diagnosis: HEALTHY at each retry (gpt2 check ready:true/docker_ready:true). No runner repair needed.
+- action: NO further retry. Main review run PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

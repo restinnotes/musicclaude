@@ -1,0 +1,36 @@
+<escape>{
+  "items": [
+    {
+      "id": "S08-1",
+      "text": "他让喜欢顺着眼前的相处自然流露。",
+      "key": "自然流露",
+      "follows": false,
+      "explains": ["B1", "B2"]
+    },
+    {
+      "id": "S08-2",
+      "text": "他没法把这段亲近当作理所当然。",
+      "key": "理所当然",
+      "follows": true,
+      "explains": ["B3"]
+    }
+  ],
+  "because": [
+    {
+      "from": "S07-1",
+      "to": "S08-1",
+      "rel": "改写"
+    },
+    {
+      "from": "S07-2",
+      "to": "S08-1",
+      "rel": "仍在起作用"
+    },
+    {
+      "from": "S04-3",
+      "to": "S08-2",
+      "rel": "提供理由"
+    }
+  ],
+  "gaps": []
+}</escape>

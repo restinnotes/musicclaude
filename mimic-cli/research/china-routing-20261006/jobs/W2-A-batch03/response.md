@@ -1,0 +1,446 @@
+## 1. 直接回答
+WEB RESEARCH AVAILABLE。仅研究 C07/C08/C09；未查询任何美国/海外价格、销量、供货或 Temu/AliExpress。按“2 个国内头部 + 1 个机会”得到 **9 个候选**。本轮平台价格数字普遍未公开展示，因此全部 `domestic_price=null`，不以搜索摘要、会员价或券后价补写。
+
+## 2. 核心证据
+**C07 外设**：2026-10-06 实际打开京东鼠标排行榜，GPW5 雪豹列 TOP1、约 2 万评论；雷蛇毒蝰 V4 Pro 白色列 TOP2、约 20 万评论。[JD.com](https://www.jd.com/phb/key_6708bc68e76d1c35355.html) [京东鼠标排行榜](https://www.jd.com/phb/key_6708bc68e76d1c35355.html)  
+机会款 ATK RS6+ 白武士雪刃轴 Pro 在实际打开的 68 键榜列 TOP4、约 10 万评论。[JD.com](https://www.jd.com/phb/key_670937e536e2263a650.html)
+
+**C08 可穿戴**：京东智能手环公开页可见华为手环11 NFC 悦动白约 20 万评论、小米手环11 银色约 10 万评论，均标自营。[JD.com](https://www.jd.com/hotitem/65257b387ffd0b71b82.html) vivo WATCH GT 2 原点黑在实际打开的京东品牌页约 10 万评论、自营。[JD.com](https://www.jd.com/brand/652cad3680a94c1bbf5.html)
+
+**C09 智能家居与 IoT**：公开智能门锁页中，京东京造 M30 max 与海尔 T15 均约 20 万评论；鹿客品牌页中 S6 Max 约 1 万评论、自营。[JD.com](https://www.jd.com/hotitem/6520b3baba43fa9adf2.html)
+
+## 3. 一级来源
+本轮头部判断只使用**实际打开的京东公开榜单/品类/品牌页**；品牌官网未用于销量判断。直接 SKU URL 已解析到 item.jd.com，但详情页公开抓取仅返回极少内容，因此卖家 ID、实时普通价不推断。观察日期均为 **2026-10-06**。[JD.com](https://item.jd.com/100323161362.html)
+
+## 4. 社区证据
+ATK RS6+ 有可完整打开的知乎体验文，2026-05-08 编辑，明确讨论 RS6+、雪刃轴 Pro、驱动及使用体验，作为机会层社区证据；不把其中“499元起”转写为平台普通价。[Zhihu Column](https://zhuanlan.zhihu.com/p/2036038611041268963) [ATK RS6+ 知乎体验页](https://zhuanlan.zhihu.com/p/2036038611041268963)  
+C08/C09 的机会款主要采用京东可见消费者评论规模作“消费证据”；尝试打开部分 B 站社区页时返回 412，因此不将搜索摘要当正式型号/价格证明。
+
+## 5. 反向证据
+“评论量”并不等于期间销量，且京东榜单会动态变化；因此 GPW5/毒蝰的 TOP1/TOP2 只描述 **2026-10-06 本次公开页面观察**。另有榜单页在不同抓取时点出现排序变化，说明冻结前应再次截取同一 URL。[JD.com](https://www.jd.com/phb/key_6708bc68e76d1c35355.html)
+
+## 6. 置信度
+C07 头部：**高**；C07 机会：**中高**。C08 头部：**中高**；机会：**中**。C09 头部：**中高**；机会：**中**。主要扣分来自：未登录价格缺失、评论量不是成交量、seller_id 不公开。
+
+## 7. 数据缺口
+`AUTHENTICATED DATA REQUIRED`：普通售价、会员/定向券拆分、店铺 seller_id、若需“销量”而非评论量时的登录态成交字段。另需冻结前复核动态榜位。未因电池、安装、生态兼容或海外可比性删除任何候选。
+
+## 8. 意外发现
+C07 的机会款 ATK RS6+ 同时具有榜单消费者规模和独立社区体验，证据比预期完整。C09 则出现京东京造与海尔各 20 万级评论的强消费信号，不宜只按品牌声量预设小米/鹿客必为头部。[JD.com](https://www.jd.com/phb/key_670937e536e2263a650.html)
+
+## 9. 自我反驳
+本样本可能受京东单平台结构偏差影响；评论累计量还会偏向上市时间较长的 SKU。故“头部”在本报告中严格解释为**本次国内公开平台证据支持的头部样本**，不是全渠道市场份额结论。
+
+## 10. 下一实验
+冻结前只做一轮定点复核：同一 3 个品类页面记录榜位、普通公开价及 seller_id；如登录态可用，再补成交口径。价格分层预先固定为：C07 低＜300/中300–699/高≥700；C08 低＜500/中500–1499/高≥1500；C09 低＜1000/中1000–1999/高≥2000 元；**仅使用公开普通价分层，会员/券后价另列，不反向修改候选集合**。
+
+```json
+{
+  "job_id": "W2-A-batch03",
+  "parent_replicate": "W2-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C07",
+      "name": "外设",
+      "domestic_selection_rule": {
+        "domestic_head": "在2026-10-06实际打开的京东鼠标排行榜中，取前两名可明确到具体型号和版本的实物SKU。",
+        "domestic_opportunity": "取未进入上述头部二席、但在国内榜单具有>=100000条可见评论且有可完整打开国内社区体验证据的具体SKU。",
+        "price_tiers_cny": {
+          "low": "<300",
+          "mid": "300-699",
+          "high": ">=700"
+        },
+        "tier_price_basis": "冻结日公开普通价；会员价、定向券、券后价不参与普通价分层。价格不可见则不强制分层。"
+      }
+    },
+    {
+      "category_id": "C08",
+      "name": "可穿戴设备",
+      "domestic_selection_rule": {
+        "domestic_head": "在实际打开的京东智能手环公开页中，从2026当代明确型号、自营SKU中按可见评论规模选择两个头部样本。",
+        "domestic_opportunity": "选择未纳入头部二席、但在京东自营公开页有>=100000条可见评论的明确智能手表SKU，作为持续消费需求机会样本。",
+        "price_tiers_cny": {
+          "low": "<500",
+          "mid": "500-1499",
+          "high": ">=1500"
+        },
+        "tier_price_basis": "冻结日公开普通价；会员价、定向券、券后价分开。价格不可见则不强制分层。"
+      }
+    },
+    {
+      "category_id": "C09",
+      "name": "智能家居与IoT",
+      "domestic_selection_rule": {
+        "domestic_head": "在实际打开的京东智能门锁公开页中，选择自营、型号版本明确且可见评论量最高的一组头部SKU；并列时均可入样。",
+        "domestic_opportunity": "从品牌公开页选择非头部、型号明确且已有>=10000条可见评论、具差异化智能识别功能的SKU。",
+        "price_tiers_cny": {
+          "low": "<1000",
+          "mid": "1000-1999",
+          "high": ">=2000"
+        },
+        "tier_price_basis": "冻结日公开普通价；会员价、定向券、券后价分开。价格不可见则不强制分层。"
+      }
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C07",
+      "sku_id": "C07-JD-100323161362",
+      "brand": "Logitech G",
+      "model": "GPW5 雪豹",
+      "exact_variant": "GPW5雪豹无线电竞游戏鼠标",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东鼠标排行榜2026-10-06公开页TOP1，约20000条评论。",
+      "domestic_selection_rule": "取本次实际打开京东鼠标排行榜前两名明确实物SKU。",
+      "domestic_product_url": "https://item.jd.com/100323161362.html",
+      "item_id": "100323161362",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "wireless_device",
+        "battery_or_charging_dependency_to_verify",
+        "host_compatibility_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_RANKING_PRICE_UNVERIFIED",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C07",
+      "sku_id": "C07-JD-100328240478",
+      "brand": "Razer",
+      "model": "毒蝰 V4 Pro 专业版",
+      "exact_variant": "无线电竞版，白色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东鼠标排行榜2026-10-06公开页TOP2，约200000条评论。",
+      "domestic_selection_rule": "取本次实际打开京东鼠标排行榜前两名明确实物SKU。",
+      "domestic_product_url": "https://item.jd.com/100328240478.html",
+      "item_id": "100328240478",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "wireless_device",
+        "battery_or_charging_dependency_to_verify",
+        "host_compatibility_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_RANKING_PRICE_UNVERIFIED",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C07",
+      "sku_id": "C07-JD-100246746739",
+      "brand": "ATK",
+      "model": "RS6+",
+      "exact_variant": "白武士，雪刃轴Pro，68键，有线磁轴",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东68键盘排行榜公开页TOP4、约100000条评论；知乎存在2026-05-08可完整读取的RS6+使用体验。",
+      "domestic_selection_rule": "国内榜单>=100000条可见评论且存在可完整打开的国内社区体验证据。",
+      "domestic_product_url": "https://item.jd.com/100246746739.html",
+      "item_id": "100246746739",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "wired_no_battery",
+        "driver_firmware_dependency_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_AND_COMMUNITY_PRICE_UNVERIFIED",
+      "source_ids": ["S02", "S03"]
+    },
+    {
+      "category_id": "C08",
+      "sku_id": "C08-JD-100307274263",
+      "brand": "Xiaomi",
+      "model": "小米手环11",
+      "exact_variant": "银色，标准版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东智能手环公开页约100000条评论、自营。",
+      "domestic_selection_rule": "2026当代明确型号自营智能手环中按公开消费评论规模选取头部样本。",
+      "domestic_product_url": "https://item.jd.com/100307274263.html",
+      "item_id": "100307274263",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "battery_device",
+        "mobile_app_ecosystem_compatibility_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S04"]
+    },
+    {
+      "category_id": "C08",
+      "sku_id": "C08-JD-100244561503",
+      "brand": "Huawei",
+      "model": "华为手环11 NFC版",
+      "exact_variant": "悦动白，铝合金表壳，1.62英寸",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东智能手环公开页约200000条评论、自营。",
+      "domestic_selection_rule": "2026当代明确型号自营智能手环中按公开消费评论规模选取头部样本。",
+      "domestic_product_url": "https://item.jd.com/100244561503.html",
+      "item_id": "100244561503",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "battery_device",
+        "nfc",
+        "mobile_app_ecosystem_compatibility_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S04"]
+    },
+    {
+      "category_id": "C08",
+      "sku_id": "C08-JD-100273273720",
+      "brand": "vivo",
+      "model": "WATCH GT 2",
+      "exact_variant": "原点黑，蓝牙版，33天蓝牙续航标称版本",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "实际打开的京东vivo手表页显示该精确版本约100000条评论、自营。",
+      "domestic_selection_rule": "未占用手环头部二席，但存在>=100000条京东公开消费者评论的明确智能手表SKU。",
+      "domestic_product_url": "https://item.jd.com/100273273720.html",
+      "item_id": "100273273720",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "battery_device",
+        "bluetooth",
+        "mobile_ecosystem_compatibility_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S05"]
+    },
+    {
+      "category_id": "C09",
+      "sku_id": "C09-JD-100154153951",
+      "brand": "京东京造",
+      "model": "M30 max",
+      "exact_variant": "人脸识别+猫眼可视+全自动指纹密码电子锁，上门安装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "实际打开的京东智能门锁公开页显示约200000条评论、自营。",
+      "domestic_selection_rule": "同一公开门锁页中选择自营、明确型号且可见评论量最高的头部SKU。",
+      "domestic_product_url": "https://item.jd.com/100154153951.html",
+      "item_id": "100154153951",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "door_dimensions_and_lock_body_fit_to_verify",
+        "installation_required",
+        "battery_device",
+        "app_or_cloud_dependency_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S06"]
+    },
+    {
+      "category_id": "C09",
+      "sku_id": "C09-JD-100137665952",
+      "brand": "Haier",
+      "model": "T15",
+      "exact_variant": "执手锁，C级锁芯，密码+指纹电子锁",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "实际打开的京东智能门锁公开页显示约200000条评论、自营。",
+      "domestic_selection_rule": "同一公开门锁页中选择自营、明确型号且可见评论量最高的头部SKU。",
+      "domestic_product_url": "https://item.jd.com/100137665952.html",
+      "item_id": "100137665952",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "door_dimensions_and_lock_body_fit_to_verify",
+        "installation_required",
+        "battery_device"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S06"]
+    },
+    {
+      "category_id": "C09",
+      "sku_id": "C09-JD-100103275540",
+      "brand": "鹿客",
+      "model": "S6 Max",
+      "exact_variant": "指脉锁，3D人脸识别，双摄可视大屏猫眼",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "实际打开鹿客京东品牌公开页显示S6 Max约10000条评论、自营。",
+      "domestic_selection_rule": "非头部二席、明确型号、>=10000条国内平台消费评论且具有差异化生物识别能力。",
+      "domestic_product_url": "https://item.jd.com/100103275540.html",
+      "item_id": "100103275540",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "door_dimensions_and_lock_body_fit_to_verify",
+        "installation_required",
+        "battery_device",
+        "app_or_cloud_dependency_to_verify"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_CONSUMER_EVIDENCE_PRICE_UNVERIFIED",
+      "source_ids": ["S07"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_6708bc68e76d1c35355.html",
+      "title": "京东鼠标排行榜",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K06"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/phb/key_670937e536e2263a650.html",
+      "title": "京东68键盘排行榜",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02", "K06"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://zhuanlan.zhihu.com/p/2036038611041268963",
+      "title": "原创好看性能还很强！拿下红点设计大奖的ATKRS6+体验如何？",
+      "published_at": "2026-05-08",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.jd.com/hotitem/65257b387ffd0b71b82.html",
+      "title": "智能运动手环排行 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03", "K06"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/brand/652cad3680a94c1bbf5.html",
+      "title": "vivo手表品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04", "K06"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/hotitem/6520b3baba43fa9adf2.html",
+      "title": "智米智能门锁排行 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05", "K06"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.jd.com/brand/9855f8700c471814ba22.html",
+      "title": "鹿客智能锁怎么样品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05", "K06"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.bilibili.com/video/BV1Gr95BFE6f/",
+      "title": "ATK RS6+白武士标准版值得买吗？",
+      "published_at": "2026-04-01",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "blocked",
+      "claims_supported": []
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "2026-10-06实际打开的京东鼠标排行榜中，GPW5雪豹列TOP1、毒蝰V4 Pro白色列TOP2；页面分别显示约2万和20万条评论。",
+      "classification": "FACT",
+      "source_ids": ["S01"],
+      "confidence": "high",
+      "counterevidence": "京东榜位动态变化，评论量也不等于同期销量。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "ATK RS6+白武士雪刃轴Pro在实际打开的68键盘榜列TOP4、约10万条评论，并存在可完整打开的国内社区体验文章。",
+      "classification": "FACT",
+      "source_ids": ["S02", "S03"],
+      "confidence": "high",
+      "counterevidence": "社区文章属于单一作者体验，不能独立代表总体消费者评价。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "京东智能手环公开页显示华为手环11 NFC悦动白约20万条评论、小米手环11银色约10万条评论，且均标自营。",
+      "classification": "FACT",
+      "source_ids": ["S04"],
+      "confidence": "high",
+      "counterevidence": "页面为动态商品集合，不等同于全渠道市场份额榜。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "实际打开的京东vivo手表页显示WATCH GT 2原点黑为自营并约有10万条评论。",
+      "classification": "FACT",
+      "source_ids": ["S05"],
+      "confidence": "high",
+      "counterevidence": "累计评论量可能受上市时间影响。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "京东公开门锁页中京东京造M30 max和海尔T15各显示约20万条评论；鹿客品牌页中S6 Max显示约1万条评论。",
+      "classification": "FACT",
+      "source_ids": ["S06", "S07"],
+      "confidence": "high",
+      "counterevidence": "评论量不能直接转换为成交量或市场份额。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "本轮实际打开的关键京东榜单/品牌页未提供可稳定核验的公开普通价，因此候选价格均不强行填写。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S02", "S04", "S05", "S06", "S07"],
+      "confidence": "high",
+      "counterevidence": "登录态、App端或地区化页面可能显示价格，但本轮未获得可验证登录态数据。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个候选的冻结日普通价、会员价、定向券/券后价拆分。",
+    "AUTHENTICATED DATA REQUIRED：seller_id；公开抓取页未稳定暴露该字段。",
+    "如最终定义“头部”为成交销量而不是榜位/消费者评论规模，需要京东/天猫/淘宝登录态销量字段重新核验。",
+    "冻结前需对同一榜单URL再次观察，以控制动态排序变化。",
+    "C08、C09部分B站社区页面实际打开被412/访问限制阻断；搜索摘要未用于证明价格、具体型号或榜位。",
+    "本批次只覆盖C07/C08/C09，未扩展研究其他15个品类。"
+  ]
+}
+```

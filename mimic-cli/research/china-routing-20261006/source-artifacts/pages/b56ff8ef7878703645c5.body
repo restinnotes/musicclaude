@@ -1,0 +1,2416 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>12、搜索商品 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="查询同类商品.html" />
+    
+    
+    <link rel="prev" href="批量验证货到付款.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    一、授权
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../授权/获取 Access Token.html">
+            
+                <a href="../授权/获取 Access Token.html">
+            
+                    
+                    1、获取 Access Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../授权/刷新 Access Token.html">
+            
+                <a href="../授权/刷新 Access Token.html">
+            
+                    
+                    2、刷新 Access Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    二、地址
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../地址/查询一级地址.html">
+            
+                <a href="../地址/查询一级地址.html">
+            
+                    
+                    1、查询一级地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../地址/查询二级地址.html">
+            
+                <a href="../地址/查询二级地址.html">
+            
+                    
+                    2、查询二级地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../地址/查询三级地址.html">
+            
+                <a href="../地址/查询三级地址.html">
+            
+                    
+                    3、查询三级地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../地址/查询四级地址.html">
+            
+                <a href="../地址/查询四级地址.html">
+            
+                    
+                    4、查询四级地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../地址/验证地址有效性.html">
+            
+                <a href="../地址/验证地址有效性.html">
+            
+                    
+                    5、验证地址有效性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../地址/地址详情转换京东地址编码.html">
+            
+                <a href="../地址/地址详情转换京东地址编码.html">
+            
+                    
+                    6、地址详情转换京东地址编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    三、商品
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="查询商品池编号.html">
+            
+                <a href="查询商品池编号.html">
+            
+                    
+                    1、查询商品池编号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="查询池内商品编号.html">
+            
+                <a href="查询池内商品编号.html">
+            
+                    
+                    2、查询池内商品编号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="查询商品详情.html">
+            
+                <a href="查询商品详情.html">
+            
+                    
+                    3、查询商品详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="查询商品图片.html">
+            
+                <a href="查询商品图片.html">
+            
+                    
+                    4、查询商品图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="查询商品上下架状态.html">
+            
+                <a href="查询商品上下架状态.html">
+            
+                    
+                    5、查询商品上下架状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="验证商品可售性.html">
+            
+                <a href="验证商品可售性.html">
+            
+                    
+                    6、验证商品可售性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="查询商品区域购买限制.html">
+            
+                <a href="查询商品区域购买限制.html">
+            
+                    
+                    7、查询商品区域购买限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="查询赠品信息.html">
+            
+                <a href="查询赠品信息.html">
+            
+                    
+                    8、查询赠品信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="查询商品延保.html">
+            
+                <a href="查询商品延保.html">
+            
+                    
+                    9、查询商品延保
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="验证货到付款.html">
+            
+                <a href="验证货到付款.html">
+            
+                    
+                    10、验证货到付款
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="批量验证货到付款.html">
+            
+                <a href="批量验证货到付款.html">
+            
+                    
+                    11、批量验证货到付款
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.12" data-path="搜索商品.html">
+            
+                <a href="搜索商品.html">
+            
+                    
+                    12、搜索商品
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="查询同类商品.html">
+            
+                <a href="查询同类商品.html">
+            
+                    
+                    13、查询同类商品
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="查询分类信息.html">
+            
+                <a href="查询分类信息.html">
+            
+                    
+                    14、查询分类信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="商品可采校验.html">
+            
+                <a href="商品可采校验.html">
+            
+                    
+                    15、商品可采校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="第三方关联数据查询.html">
+            
+                <a href="第三方关联数据查询.html">
+            
+                    
+                    16、第三方关联数据查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="商品搜索分词查询.html">
+            
+                <a href="商品搜索分词查询.html">
+            
+                    
+                    17、商品搜索分词查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="商品审核结果反馈.html">
+            
+                <a href="商品审核结果反馈.html">
+            
+                    
+                    18、商品审核结果反馈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="查询商品配送预计送达时间.html">
+            
+                <a href="查询商品配送预计送达时间.html">
+            
+                    
+                    19、查询商品配送预计送达时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="查询商品详情页话术.html">
+            
+                <a href="查询商品详情页话术.html">
+            
+                    
+                    20、查询商品详情页话术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    四、价格
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../价格/查询商品售卖价.html">
+            
+                <a href="../价格/查询商品售卖价.html">
+            
+                    
+                    1、查询商品售卖价
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    五、库存
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../库存/查询商品库存.html">
+            
+                <a href="../库存/查询商品库存.html">
+            
+                    
+                    1、查询商品库存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    六、订单
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../订单/查询运费.html">
+            
+                <a href="../订单/查询运费.html">
+            
+                    
+                    1、查询运费
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../订单/查询预约日历.html">
+            
+                <a href="../订单/查询预约日历.html">
+            
+                    
+                    2、查询预约日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../订单/提交订单.html">
+            
+                <a href="../订单/提交订单.html">
+            
+                    
+                    3、提交订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../订单/反查订单.html">
+            
+                <a href="../订单/反查订单.html">
+            
+                    
+                    4、反查订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../订单/确认预占库存订单.html">
+            
+                <a href="../订单/确认预占库存订单.html">
+            
+                    
+                    5、确认预占库存订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../订单/取消未确认订单.html">
+            
+                <a href="../订单/取消未确认订单.html">
+            
+                    
+                    6、取消未确认订单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../订单/查询订单详情.html">
+            
+                <a href="../订单/查询订单详情.html">
+            
+                    
+                    7、查询订单详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../订单/查询配送信息.html">
+            
+                <a href="../订单/查询配送信息.html">
+            
+                    
+                    8、查询商品配送信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../订单/确认收货.html">
+            
+                <a href="../订单/确认收货.html">
+            
+                    
+                    9、确认收货
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../订单/批量确认收货.html">
+            
+                <a href="../订单/批量确认收货.html">
+            
+                    
+                    10、批量确认收货
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../订单/更新采购单号.html">
+            
+                <a href="../订单/更新采购单号.html">
+            
+                    
+                    11、更新采购单号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../订单/更新订单扩展字段.html">
+            
+                <a href="../订单/更新订单扩展字段.html">
+            
+                    
+                    12、更新订单扩展字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="../订单/查询新建订单列表.html">
+            
+                <a href="../订单/查询新建订单列表.html">
+            
+                    
+                    13、查询新建订单列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="../订单/查询妥投订单列表.html">
+            
+                <a href="../订单/查询妥投订单列表.html">
+            
+                    
+                    14、查询妥投订单列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="../订单/查询拒收订单列表.html">
+            
+                <a href="../订单/查询拒收订单列表.html">
+            
+                    
+                    15、查询拒收订单列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="../订单/查询完成订单列表.html">
+            
+                <a href="../订单/查询完成订单列表.html">
+            
+                    
+                    16、查询完成订单列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="../订单/查询订单货期.html">
+            
+                <a href="../订单/查询订单货期.html">
+            
+                    
+                    17、查询订单货期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="../订单/批量校验订单是否可取消.html">
+            
+                <a href="../订单/批量校验订单是否可取消.html">
+            
+                    
+                    18、批量校验订单是否可取消
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.19" data-path="../订单/分页查询采购单.html">
+            
+                <a href="../订单/分页查询采购单.html">
+            
+                    
+                    19、分页查询采购单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.20" data-path="../订单/订单验收.html">
+            
+                <a href="../订单/订单验收.html">
+            
+                    
+                    20、订单验收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.21" data-path="../订单/查询配送清单.html">
+            
+                <a href="../订单/查询配送清单.html">
+            
+                    
+                    21、查询配送清单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.22" data-path="../订单/订单部分验收.html">
+            
+                <a href="../订单/订单部分验收.html">
+            
+                    
+                    22、订单部分验收
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    七、支付
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../支付/查询余额.html">
+            
+                <a href="../支付/查询余额.html">
+            
+                    
+                    1、查询余额
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../支付/查询余额变动明细.html">
+            
+                <a href="../支付/查询余额变动明细.html">
+            
+                    
+                    2、查询余额变动明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../支付/发起支付.html">
+            
+                <a href="../支付/发起支付.html">
+            
+                    
+                    3、发起支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    八、售后1.0
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../售后/查询可售后商品.html">
+            
+                <a href="../售后/查询可售后商品.html">
+            
+                    
+                    1、查询可售后商品
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../售后/查询商品售后类型.html">
+            
+                <a href="../售后/查询商品售后类型.html">
+            
+                    
+                    2、查询商品售后类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../售后/查询商品逆向配送.html">
+            
+                <a href="../售后/查询商品逆向配送.html">
+            
+                    
+                    3、查询商品逆向配送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../售后/申请售后.html">
+            
+                <a href="../售后/申请售后.html">
+            
+                    
+                    4、申请售后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../售后/填写发运信息.html">
+            
+                <a href="../售后/填写发运信息.html">
+            
+                    
+                    5、填写发运信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../售后/查询服务单概要.html">
+            
+                <a href="../售后/查询服务单概要.html">
+            
+                    
+                    6、查询服务单概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../售后/查询服务单明细.html">
+            
+                <a href="../售后/查询服务单明细.html">
+            
+                    
+                    7、查询服务单明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../售后/取消服务单.html">
+            
+                <a href="../售后/取消服务单.html">
+            
+                    
+                    8、取消服务单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../售后/查询退款明细.html">
+            
+                <a href="../售后/查询退款明细.html">
+            
+                    
+                    9、查询退款明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../售后/确认服务单.html">
+            
+                <a href="../售后/确认服务单.html">
+            
+                    
+                    10、确认服务单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../售后/查询服务单列表.html">
+            
+                <a href="../售后/查询服务单列表.html">
+            
+                    
+                    11、查询服务单列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    九、售后2.0
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../售后2/查询商品售后属性.html">
+            
+                <a href="../售后2/查询商品售后属性.html">
+            
+                    
+                    1、查询商品售后属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../售后2/申请售后.html">
+            
+                <a href="../售后2/申请售后.html">
+            
+                    
+                    2、申请售后
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../售后2/查询售后概要.html">
+            
+                <a href="../售后2/查询售后概要.html">
+            
+                    
+                    3、查询售后概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../售后2/填写运单信息.html">
+            
+                <a href="../售后2/填写运单信息.html">
+            
+                    
+                    4、填写运单信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../售后2/确认售后完成.html">
+            
+                <a href="../售后2/确认售后完成.html">
+            
+                    
+                    5、确认售后完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../售后2/取消售后申请.html">
+            
+                <a href="../售后2/取消售后申请.html">
+            
+                    
+                    6、取消售后申请
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../售后2/查询物流信息.html">
+            
+                <a href="../售后2/查询物流信息.html">
+            
+                    
+                    7、查询物流信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../售后2/查询售后申请单明细.html">
+            
+                <a href="../售后2/查询售后申请单明细.html">
+            
+                    
+                    8、查询售后申请单明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../售后2/查询售后换新单订单号.html">
+            
+                <a href="../售后2/查询售后换新单订单号.html">
+            
+                    
+                    9、查询售后换新单订单号
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    十、发票
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../发票/申请开票.html">
+            
+                <a href="../发票/申请开票.html">
+            
+                    
+                    1、申请开票
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../发票/查询发票第三方申请单号.html">
+            
+                <a href="../发票/查询发票第三方申请单号.html">
+            
+                    
+                    2、查询发票第三方申请单号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../发票/查询发票概要.html">
+            
+                <a href="../发票/查询发票概要.html">
+            
+                    
+                    3、查询发票概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../发票/查询发票明细.html">
+            
+                <a href="../发票/查询发票明细.html">
+            
+                    
+                    4、查询发票明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../发票/查询电子发票明细.html">
+            
+                <a href="../发票/查询电子发票明细.html">
+            
+                    
+                    5、查询电子发票明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../发票/查询发票运单号.html">
+            
+                <a href="../发票/查询发票运单号.html">
+            
+                    
+                    6、查询发票运单号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../发票/查询发票物流信息.html">
+            
+                <a href="../发票/查询发票物流信息.html">
+            
+                    
+                    7、查询发票物流信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../发票/取消发票申请.html">
+            
+                <a href="../发票/取消发票申请.html">
+            
+                    
+                    8、取消发票申请
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../发票/按发票号查询发票物流信息.html">
+            
+                <a href="../发票/按发票号查询发票物流信息.html">
+            
+                    
+                    9、按发票号查询发票物流信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../发票/按发票号码查询数电票OFD.html">
+            
+                <a href="../发票/按发票号码查询数电票OFD.html">
+            
+                    
+                    10、按发票号码查询数电票OFD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    十一、信息推送
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../信息推送/查询推送信息.html">
+            
+                <a href="../信息推送/查询推送信息.html">
+            
+                    
+                    1、查询推送信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../信息推送/删除推送信息.html">
+            
+                <a href="../信息推送/删除推送信息.html">
+            
+                    
+                    2、删除推送信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    十二、账单
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../账单/查询账单明细.html">
+            
+                <a href="../账单/查询账单明细.html">
+            
+                    
+                    1、查询账单明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    十三、特殊申请接口
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../特殊申请接口/咚咚客服.html">
+            
+                <a href="../特殊申请接口/咚咚客服.html">
+            
+                    
+                    1、咚咚客服
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../特殊申请接口/新增专票资质.html">
+            
+                <a href="../特殊申请接口/新增专票资质.html">
+            
+                    
+                    2、新增专票资质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../特殊申请接口/查询金采账单明细.html">
+            
+                <a href="../特殊申请接口/查询金采账单明细.html">
+            
+                    
+                    3、查询金采账单明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../特殊申请接口/京东金融收银台.html">
+            
+                <a href="../特殊申请接口/京东金融收银台.html">
+            
+                    
+                    4、京东金融收银台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../特殊申请接口/查询电子签单.html">
+            
+                <a href="../特殊申请接口/查询电子签单.html">
+            
+                    
+                    6、查询电子签单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../特殊申请接口/重新支付.html">
+            
+                <a href="../特殊申请接口/重新支付.html">
+            
+                    
+                    7、重新支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../特殊申请接口/查询电子发票明细.md">
+            
+                <span>
+            
+                    
+                    8、查询电子发票明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../特殊申请接口/查询电子合同信息.html">
+            
+                <a href="../特殊申请接口/查询电子合同信息.html">
+            
+                    
+                    9、查询电子合同信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" data-path="../特殊申请接口/银企直连-申请结算流水号接口.html">
+            
+                <a href="../特殊申请接口/银企直连-申请结算流水号接口.html">
+            
+                    
+                    10、银企直连-申请结算流水号接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" data-path="../特殊申请接口/银企直连-对公转账付款结果通知.html">
+            
+                <a href="../特殊申请接口/银企直连-对公转账付款结果通知.html">
+            
+                    
+                    11、银企直连-对公转账付款结果通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" data-path="../特殊申请接口/查询商品序列号.html">
+            
+                <a href="../特殊申请接口/查询商品序列号.html">
+            
+                    
+                    12、查询商品序列号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" data-path="../特殊申请接口/签单返审核结果查询接口.html">
+            
+                <a href="../特殊申请接口/签单返审核结果查询接口.html">
+            
+                    
+                    13、签单返审核结果查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.13" data-path="../特殊申请接口/汇款识别码支付.html">
+            
+                <a href="../特殊申请接口/汇款识别码支付.html">
+            
+                    
+                    14、汇款识别码支付
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    十四、智能测试
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../智能测试/测试案例.html">
+            
+                <a href="../智能测试/测试案例.html">
+            
+                    
+                    1、测试案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../智能测试/report.md">
+            
+                <span>
+            
+                    
+                    2、数据分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../错误码.html">
+            
+                <a href="../错误码.html">
+            
+                    
+                    错误码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >12、搜索商品</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E09;&#x3001;&#x641C;&#x7D22;&#x5546;&#x54C1;">&#x4E09;&#x3001;&#x641C;&#x7D22;&#x5546;&#x54C1;</h1>
+<h4 id="1&#x63A5;&#x53E3;&#x63CF;&#x8FF0;"><em>1.&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</em></h4>
+<p>&#x6839;&#x636E;&#x641C;&#x7D22;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x5546;&#x54C1;&#x5217;&#x8868;&#x3002;</p>
+<h4 id="2url"><em>2.URL</em></h4>
+<p><a href="https://api-iop.jd.com/api/search/search" target="_blank">https://api-iop.jd.com/api/search/search</a></p>
+<h4 id="3&#x53C2;&#x6570;&#x683C;&#x5F0F;"><em>3.&#x53C2;&#x6570;&#x683C;&#x5F0F;</em></h4>
+<p>&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF1A;&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;</p>
+<h4 id="4https&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;"><em>4.HTTPS&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</em></h4>
+<p>POST</p>
+<h4 id="5&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><em>5.&#x8BF7;&#x6C42;&#x53C2;&#x6570;</em></h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x662F;&#x5426;&#x5FC5;&#x586B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x6388;&#x6743;&#x65F6;&#x83B7;&#x53D6;&#x7684;access token</td>
+</tr>
+<tr>
+<td>keyword</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x9700;&#x8981;&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>catId</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x5206;&#x7C7B;Id,&#x53EA;&#x652F;&#x6301;&#x4E09;&#x7EA7;&#x7C7B;&#x76EE;Id</td>
+</tr>
+<tr>
+<td>pageIndex</td>
+<td>Integer</td>
+<td>&#x5426;</td>
+<td>&#x5F53;&#x524D;&#x7B2C;&#x51E0;&#x9875;</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>&#x5426;</td>
+<td>&#x5F53;&#x524D;&#x9875;&#x663E;&#x793A;</td>
+</tr>
+<tr>
+<td>min</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4EF7;&#x683C;&#x533A;&#x95F4;&#x641C;&#x7D22;&#xFF0C;&#x4F4E;&#x4EF7;</td>
+</tr>
+<tr>
+<td>max</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4EF7;&#x683C;&#x533A;&#x95F4;&#x641C;&#x7D22;&#xFF0C;&#x9AD8;&#x4EF7;</td>
+</tr>
+<tr>
+<td>brands</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x54C1;&#x724C;&#x641C;&#x7D22; &#x591A;&#x4E2A;&#x54C1;&#x724C;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x9700;&#x8981;&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>cid1</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4E00;&#x7EA7;&#x5206;&#x7C7B;</td>
+</tr>
+<tr>
+<td>cid2</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4E8C;&#x7EA7;&#x5206;&#x7C7B;</td>
+</tr>
+<tr>
+<td>sortType</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x9500;&#x91CF;&#x964D;&#x5E8F;=&quot;sale_desc&quot;;&#x4EF7;&#x683C;&#x5347;&#x5E8F;=&quot;price_asc&quot;;&#x4EF7;&#x683C;&#x964D;&#x5E8F;=&quot;price_desc&quot;;&#x4E0A;&#x67B6;&#x65F6;&#x95F4;&#x964D;&#x5E8F;=&quot;winsdate_desc&quot;;&#x6309;&#x9500;&#x91CF;&#x6392;&#x5E8F;_15&#x5929;&#x9500;&#x552E;&#x989D;=&quot;sort_totalsales15_desc&quot;;&#x6309;15&#x65E5;&#x9500;&#x91CF;&#x6392;&#x5E8F;=&quot;sort_days_15_qtty_desc&quot;;&#x6309;30&#x65E5;&#x9500;&#x91CF;&#x6392;&#x5E8F;=&quot;sort_days_30_qtty_desc&quot;;&#x6309;15&#x65E5;&#x9500;&#x552E;&#x989D;&#x6392;&#x5E8F;=&quot;sort_days_15_gmv_desc&quot;;&#x6309;30&#x65E5;&#x9500;&#x552E;&#x989D;&#x6392;&#x5E8F;=&quot;sort_days_30_gmv_desc&quot;;</td>
+</tr>
+<tr>
+<td>priceCol</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4EF7;&#x683C;&#x6C47;&#x603B; priceCol=&#x201D;yes&#x201D;</td>
+</tr>
+<tr>
+<td>extAttrCol</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x6269;&#x5C55;&#x5C5E;&#x6027;&#x6C47;&#x603B;extAttrCol=&#x201D;yes&#x201D;</td>
+</tr>
+<tr>
+<td>mergeSku</td>
+<td>boolean</td>
+<td>&#x5426;</td>
+<td>true:&#x5408;&#x5E76;&#x540C;&#x4E00;&#x4EA7;&#x54C1;&#x4E0D;&#x540C;&#x89C4;&#x683C;sku;false:&#x4E0D;&#x5408;&#x5E76;&#x540C;&#x4E00;&#x4EA7;&#x54C1;&#x4E0D;&#x540C;&#x89C4;&#x683C;sku</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6&#x8BF7;&#x6C42;&#x793A;&#x4F8B;"><em>6.&#x8BF7;&#x6C42;&#x793A;&#x4F8B;</em></h4>
+<p>&#x4EE5;Post&#x5F62;&#x5F0F;&#x63D0;&#x4EA4;</p>
+<p>1.&#x5173;&#x952E;&#x5B57;&#x641C;&#x7D22;</p>
+<p>url : <a href="https://api-iop.jd.com/api/search/search?token=xxx&amp;keyword=iphone" target="_blank">https://api-iop.jd.com/api/search/search?token=xxx&amp;keyword=iphone</a></p>
+<p>\2. &#x5206;&#x7C7B;Id&#x641C;&#x7D22;</p>
+<p>url : <a href="https://api-iop.jd.com/api/search/search?token=xxx&amp;catId=898873" target="_blank">https://api-iop.jd.com/api/search/search?token=xxx&amp;catId=898873</a></p>
+<p>\3. &#x54C1;&#x724C;&#x641C;&#x7D22;</p>
+<p>url : <a href="https://api-iop.jd.com/api/search/search?token=xxx&amp;brands=&#x534E;&#x4E3A;,&#x82F9;&#x679C;" target="_blank">https://api-iop.jd.com/api/search/search?token=xxx&amp;brands=&#x534E;&#x4E3A;,&#x82F9;&#x679C;</a></p>
+<p>4.&#x5E26;&#x4EF7;&#x683C;&#x7684;&#x7EC4;&#x5408;&#x641C;&#x7D22;(&#x4EF7;&#x683C;&#x533A;&#x95F4;&#xFF0C;&#x4F4E;&#x4EF7;&#x548C;&#x9AD8;&#x4EF7;&#x4E3A;&#x5FC5;&#x987B;)</p>
+<p>url:</p>
+<p><a href="https://api-iop.jd.com/api/search/search?token=xxx&amp;catId=898873&amp;keyword=" target="_blank">https://api-iop.jd.com/api/search/search?token=xxx&amp;catId=898873&amp;keyword=</a> iphone&amp;min=0&amp;max=10000</p>
+<p>5&#xFF0E;&#x5E26;&#x5E93;&#x5B58;&#x6709;&#x8D27;</p>
+<p><a href="https://api-iop.jd.com/api/search/search?token=PFVCtR72Ao2ZqLuJnA7xPlXSY&amp;keyword=&#x9F20;&#x6807;&amp;pageIndex=1&amp;pageSize=100&amp;brands=&#x5C0F;&#x7C73;&amp;areaIds=1,2810,51081&amp;redisStore=true&amp;catId=693" target="_blank">https://api-iop.jd.com/api/search/search?token=PFVCtR72Ao2ZqLuJnA7xPlXSY&amp;keyword=&#x9F20;&#x6807;&amp;pageIndex=1&amp;pageSize=100&amp;brands=&#x5C0F;&#x7C73;&amp;areaIds=1,2810,51081&amp;redisStore=true&amp;catId=693</a></p>
+<h4 id="7&#x54CD;&#x5E94;&#x53C2;&#x6570;"><em>7.&#x54CD;&#x5E94;&#x53C2;&#x6570;</em></h4>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x975E;&#x7A7A;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resultCount</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x603B;&#x8BB0;&#x5F55;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td>pageCount</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x603B;&#x9875;&#x6570;</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x6BCF;&#x9875;&#x5927;&#x5C0F;</td>
+</tr>
+<tr>
+<td>pageIndex</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x5F53;&#x524D;&#x9875;</td>
+</tr>
+<tr>
+<td>brandAggregate</td>
+<td>List<brandvo></brandvo></td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;&#x6C47;&#x603B;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>categoryAggregate</td>
+<td>List<categoryvo></categoryvo></td>
+<td></td>
+<td>&#x76F8;&#x5173;&#x5206;&#x7C7B;&#x6C47;&#x603B;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>hitResult</td>
+<td>List<hitresultvo></hitresultvo></td>
+<td></td>
+<td>&#x641C;&#x7D22;&#x547D;&#x4E2D;&#x6570;&#x636E;json&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x56FE;&#x7247;&#x5730;&#x5740;&#x62FC;&#x63A5;&#x89C4;&#x5219;&#x4E0E;&#x67E5;&#x8BE2;&#x5546;&#x54C1;&#x8BE6;&#x60C5;&#x89C4;&#x5219;&#x4E00;&#x81F4;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>BrandVo&#x5BF9;&#x8C61;&#x8BF4;&#x660E;&#xFF1A;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x53C2;&#x6570;&#x540D;&#x79F0;</td>
+<td>&#x7C7B;&#x578B;</td>
+<td>&#x975E;&#x7A7A;</td>
+<td>&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;id</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>Pinyin</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;&#x9996;&#x5B57;&#x6BCD;&#x62FC;&#x97F3;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>CategoryVo&#x5BF9;&#x8C61;&#x8BF4;&#x660E;&#xFF1A;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x53C2;&#x6570;&#x540D;&#x79F0;</td>
+<td>&#x7C7B;&#x578B;</td>
+<td>&#x975E;&#x7A7A;</td>
+<td>&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>catId</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x5206;&#x7C7B;Id</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x5206;&#x7C7B;&#x4E0B;&#x5546;&#x54C1;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x5206;&#x7C7B;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>Integer</td>
+<td>&#x662F;</td>
+<td>&#x5206;&#x7C7B;&#x6743;&#x91CD;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>hitResult&#x5BF9;&#x8C61;&#x8BF4;&#x660E;&#xFF1A;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x53C2;&#x6570;&#x540D;&#x79F0;</td>
+<td>&#x7C7B;&#x578B;</td>
+<td>&#x975E;&#x7A7A;</td>
+<td>&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>Brand</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>imageUrl</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x5546;&#x54C1;&#x56FE;&#x7247;url</td>
+</tr>
+<tr>
+<td>wareName</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x5546;&#x54C1;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>wareId</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x5546;&#x54C1;id</td>
+</tr>
+<tr>
+<td>warePId</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x5546;&#x54C1;spuid</td>
+</tr>
+<tr>
+<td>brandId</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x54C1;&#x724C;id</td>
+</tr>
+<tr>
+<td>cid1</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x4E00;&#x7EA7;&#x7C7B;&#x76EE;id</td>
+</tr>
+<tr>
+<td>cid2</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x4E8C;&#x7EA7;&#x7C7B;&#x76EE;id</td>
+</tr>
+<tr>
+<td>catId</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x4E09;&#x7EA7;&#x7C7B;&#x76EE;id</td>
+</tr>
+<tr>
+<td>Wstate</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x4E0A;&#x67DC;&#x72B6;&#x6001;&#xFF0C;1.&#x6709;&#x6548;</td>
+</tr>
+<tr>
+<td>Wyn</td>
+<td>String</td>
+<td>&#x662F;</td>
+<td>&#x5546;&#x54C1;&#x72B6;&#x6001;&#xFF0C;1.&#x6709;&#x6548;</td>
+</tr>
+<tr>
+<td>cid1Name</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4E00;&#x7EA7;&#x5206;&#x7C7B;&#x540D;</td>
+</tr>
+<tr>
+<td>cid2Name</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4E8C;&#x7EA7;&#x5206;&#x7C7B;&#x540D;</td>
+</tr>
+<tr>
+<td>catName</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x4E09;&#x7EA7;&#x5206;&#x7C7B;&#x540D;</td>
+</tr>
+<tr>
+<td>Synonyms</td>
+<td>String</td>
+<td>&#x5426;</td>
+<td>&#x5546;&#x54C1;&#x540C;&#x4E49;&#x8BCD;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="8&#x54CD;&#x5E94;&#x793A;&#x4F8B;"><em>8.&#x54CD;&#x5E94;&#x793A;&#x4F8B;</em></h4>
+<pre><code class="lang-json">{
+
+&#x201C;success&#x201D;: true,
+
+&#x201C;resultMessage&#x201D;: &#x201D;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x201D;,
+
+&#x201C;resultCode&#x201D;: &#x201D;0000&#x201D;,
+
+&#x201C;result&#x201D;:
+
+{
+
+&#x200B;    &#x201C;resultCount&#x201D;&#xFF1A;100&#xFF0C;
+
+&#x200B;    &#x201C;pageCount &#x201C;&#xFF1A;10,
+
+&#x200B;    &#x201C;pageSize&#x201D;: 10,
+
+&#x200B;    &#x201C;pageIndex&#x201D;:1,
+
+&#x200B;    &quot;brandAggregate&quot;:{                                 ##&#x54C1;&#x724C;&#x5206;&#x7C7B;&#x6C47;&#x603B;&#x4FE1;&#x606F;
+
+&#x200B;      &quot;brandList&quot;:[                                ##&#x54C1;&#x724C;&#x5217;&#x8868;
+
+&#x200B;        {
+
+&#x200B;          &quot;id&quot;:&quot;1001&quot;,                        ##&#x54C1;&#x724C;id
+
+&#x200B;          &quot;name&quot;:&quot;Apple&quot;,                    ##&#x54C1;&#x724C;&#x540D;&#x79F0;
+
+&#x200B;          &quot;pinyin&quot;:&quot;A&quot;                        ##&#x54C1;&#x724C;&#x9996;&#x5B57;&#x6BCD;&#x62FC;&#x97F3;
+
+&#x200B;        },
+
+&#x200B;        {
+
+&#x200B;          &quot;id&quot;:&quot;10003&quot;,
+
+&#x200B;          &quot;name&quot;:&quot;&#x534E;&#x4E3A;&quot;,
+
+&#x200B;          &quot;pinyin&quot;:&quot;H&quot;
+
+&#x200B;        }
+
+&#x200B;      ],
+
+&#x200B;      &quot;pinyinAggr&quot;:[
+
+&#x200B;        &quot;A&quot;,
+
+&#x200B;        &quot;B&quot;,
+
+&#x200B;        &quot;C&quot;
+
+&#x200B;      ]
+
+&#x200B;    },
+
+&quot;priceIntervalAggregate&quot;:[                            ##&#x4EF7;&#x683C;&#x6C47;&#x603B;
+
+&#x200B;      {
+
+&#x200B;        &quot;max&quot;:1000000,                    ##&#x9AD8;&#x4EF7;
+
+&#x200B;        &quot;min&quot;:0                            ##&#x4F4E;&#x4EF7;
+
+&#x200B;      },
+
+&#x200B;      {
+
+&#x200B;        &quot;max&quot;:0,
+
+&#x200B;        &quot;min&quot;:10000
+
+&#x200B;      }
+
+&#x200B;    ],
+
+&#x200B;     &quot;categoryAggregate&quot;:{                                ##&#x5206;&#x7C7B;&#x6C47;&#x603B;
+
+&#x200B;      &quot;firstCategory&quot;:[                            ##&#x4E00;&#x7EA7;&#x7C7B;&#x76EE;&#x5206;&#x7C7B;
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,                        ##&#x5206;&#x7C7B;Id
+
+&#x200B;          &quot;count&quot;:2000,                        ##&#x5206;&#x7C7B;&#x4E0B;&#x5546;&#x54C1;&#x6570;&#x91CF;
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,                    ##&#x5206;&#x7C7B;&#x540D;&#x79F0;
+
+&#x200B;          &quot;weight&quot;:3                        ##&#x5206;&#x7C7B;&#x6743;&#x91CD;
+
+&#x200B;        }
+
+&#x200B;      ],
+
+&#x200B;      &quot;secondCategory&quot;:[                            ##&#x4E8C;&#x7EA7;&#x7C7B;&#x76EE;&#x5206;&#x7C7B;
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,
+
+&#x200B;          &quot;count&quot;:2,
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,
+
+&#x200B;          &quot;weight&quot;:3
+
+&#x200B;        },
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,
+
+&#x200B;          &quot;count&quot;:2,
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,
+
+&#x200B;          &quot;weight&quot;:3
+
+&#x200B;        }
+
+&#x200B;      ],
+
+&#x200B;      &quot;thridCategory&quot;:[                            ##&#x4E09;&#x7EA7;&#x7C7B;&#x76EE;&#x5206;&#x7C7B;
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,
+
+&#x200B;          &quot;count&quot;:2,
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,
+
+&#x200B;          &quot;weight&quot;:3
+
+&#x200B;        },
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,
+
+&#x200B;          &quot;count&quot;:2,
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,
+
+&#x200B;          &quot;weight&quot;:3
+
+&#x200B;        },
+
+&#x200B;        {
+
+&#x200B;          &quot;catId&quot;:1002,
+
+&#x200B;          &quot;count&quot;:2,
+
+&#x200B;          &quot;name&quot;:&quot;Cloth&quot;,
+
+&#x200B;          &quot;weight&quot;:3
+
+&#x200B;        }
+
+&#x200B;      ]
+
+&#x200B;    },
+
+&#x200B;    &quot;hitResult&#x201D;:[
+
+&#x200B;        {
+
+&#x200B;            &quot;brand&quot;: &quot;&#x60E0;&#x666E;&#xFF08;HP&#xFF09;&quot;,                           ##&#x54C1;&#x724C;&#x540D;&#x79F0;
+
+&#x200B;            &quot;imageUrl&quot;: &quot;6468/e7839f86b26.jpg&quot;,                     ##&#x5546;&#x54C1;&#x56FE;&#x7247;url
+
+&#x200B;            &quot;wareName&quot;:&quot;&#x60E0;&#x666E;&#xFF08;HP&#xFF09;C8766ZZ 855&#x53F7;&#x5F69;&#x8272;&#x58A8;&#x76D2;&#x201D;,    ##&#x5546;&#x54C1;&#x540D;&#x79F0;
+
+&#x200B;            &quot;wareId&quot;: &quot;103890&quot;,                                ##&#x5546;&#x54C1;id
+
+          &quot;warePId&quot;: &quot;196805&quot;,                           ##&#x5546;&#x54C1;spuid
+
+&#x200B;            &quot;brandId&quot;:&quot;14026&quot;,                                    ##&#x54C1;&#x724C;id
+
+&#x200B;      &quot;catId&quot;:&quot;655&quot;,                                        ##&#x4E09;&#x7EA7;&#x7C7B;&#x76EE;id
+
+&#x200B;      &quot;cid1&quot;:&quot;9987&quot;,                                        ##&#x4E00;&#x7EA7;&#x7C7B;&#x76EE;id
+
+&#x200B;      &quot;cid2&quot;:&quot;653&quot;,                                        ##&#x4E8C;&#x7EA7;&#x7C7B;&#x76EE;id
+
+&#x200B;            &quot;wstate&quot; : &quot;1&quot;,                                   ##&#x4E0A;&#x67DC;&#x72B6;&#x6001;&#xFF0C;1.&#x6709;&#x6548;
+
+&#x200B;        &quot;wyn&quot; : &quot;1&quot;,                                 ##&#x5546;&#x54C1;&#x72B6;&#x6001;&#xFF0C;1.&#x6709;&#x6548;
+
+&#x200B;            &quot;catName&quot; : &quot;&#x513F;&#x7AE5;&#x5BB6;&#x5177; &quot;,                         ##&#x4E09;&#x7EA7;&#x5206;&#x7C7B;&#x540D;
+
+&#x200B;      &quot;cid1Name&quot; : &quot;&#x5BB6;&#x5C45;&#x3001;&#x53A8;&#x5177;&#x3001;&#x5BB6;&#x88C5;&quot;,               ##&#x4E00;&#x7EA7;&#x5206;&#x7C7B;&#x540D;
+
+&#x200B;      &quot;cid2Name&quot; : &quot;&#x5BB6;&#x5177;&quot;,                ##&#x4E8C;&#x7EA7;&#x5206;&#x7C7B;&#x540D;
+
+&#x200B;       &quot;synonyms&quot; : &quot;&#x8FEA;&#x65AF;&#x5C3C;&#x6B63;&#x7248;&#x8FEA;&#x58EB;&#x5C3C;&quot;,               ##&#x5546;&#x54C1;&#x540C;&#x4E49;&#x8BCD;
+
+}
+
+]
+
+}
+
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="批量验证货到付款.html" class="navigation navigation-prev " aria-label="Previous page: 11、批量验证货到付款">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="查询同类商品.html" class="navigation navigation-next " aria-label="Next page: 13、查询同类商品">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"12、搜索商品","level":"1.4.12","depth":2,"next":{"title":"13、查询同类商品","level":"1.4.13","depth":2,"path":"商品/查询同类商品.md","ref":"商品/查询同类商品.md","articles":[]},"previous":{"title":"11、批量验证货到付款","level":"1.4.11","depth":2,"path":"商品/批量验证货到付款.md","ref":"商品/批量验证货到付款.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"商品/搜索商品.md","mtime":"2026-08-27T09:39:22.857Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-08-27T09:39:29.874Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

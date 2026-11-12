@@ -1,0 +1,1837 @@
+{
+  "job_id": "W3-A-batch04",
+  "parent_replicate": "W3-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "assigned_sku_ids": [
+    "C10-S01",
+    "C10-S02",
+    "C10-S03",
+    "C11-S01",
+    "C11-S02",
+    "C11-S03",
+    "C12-S01",
+    "C12-S02",
+    "C12-S03"
+  ],
+  "categories": [
+    {
+      "category_id": "C10",
+      "status": "3/3 retained; head=2; prefreeze_exact=3; current_A_CN_price=1; verified_landed=0"
+    },
+    {
+      "category_id": "C11",
+      "status": "3/3 retained; head=2; prefreeze_exact=3; current_A_CN_price=0; verified_landed=0"
+    },
+    {
+      "category_id": "C12",
+      "status": "3/3 retained; head=2; prefreeze_exact=3; current_A_CN_price=0; verified_landed=0"
+    }
+  ],
+  "comparison_endpoint": {
+    "destination": "US ZIP10001",
+    "includes": "observed delivery + mandatory import costs",
+    "excludes": "US state/local sales/use tax",
+    "final_checkout_total_claimed": false
+  },
+  "coverage": {
+    "assigned": 9,
+    "retained": 9,
+    "head_status_verified": 6,
+    "exact_variant_verified_prefreeze": 9,
+    "current_A_CN_public_price_verified": 1,
+    "overseas_A": 0,
+    "overseas_B": 0,
+    "verified_landed": 0,
+    "computed_savings": 0,
+    "GMV_weights": null,
+    "demand_weighted_distribution": null
+  },
+  "tariff_context": {
+    "de_minimis": "globally suspended; do not assume <=USD800 duty-free",
+    "de_minimis_source_ids": [
+      "S16"
+    ],
+    "PRC_forced_labor_301": {
+      "ch99": "9903.05.31",
+      "context_rate": 0.125,
+      "effective_date": "2026-07-24",
+      "exceptions": "9903.05.85-9903.05.92 etc.; SKU applicability not verified",
+      "source_ids": [
+        "S17"
+      ]
+    },
+    "rule": "No rate is applied to any SKU without customs origin, commodity HTS, MFN/legacy301 and exemption verification."
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://mall.roborock.com/",
+      "title": "石头科技官方商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/xinghao/9987301411a4259ee45a.html",
+      "title": "京东 P20 Max/A2950RR 型号页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://app-store.dji.com/cn/product/dji-romo-p-water-tank-version?from=site-nav&set_region=CN&vid=192291",
+      "title": "DJI ROMO P 扫地机器人（水箱版）",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.ebay.com/itm/358264059627",
+      "title": "[NEW] [IN STOCK] DJI ROMO P (Water Tank Version) / Express",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://item.jd.com/100182918074.html",
+      "title": "东成 DZC1050-26BT 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://item.jd.com/100009007521.html",
+      "title": "东成 WJZ1601S 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://item.jd.com/100018901232.html",
+      "title": "WORX WU130X.1 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.ebay.com/itm/406915122550",
+      "title": "WU130X eBay candidate",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://item.jd.com/100064843454.html",
+      "title": "Sony A7C II 银色28-60套装京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.bhphotovideo.com/c/product/1784821-REG/sony_a7c_ii_mirrorless_camera.html?ap=y",
+      "title": "Sony a7C II with 28-60mm Lens (Silver)",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://item.jd.com/product/SS1APtfSyfsn3i7dxGV9DQ.html",
+      "title": "Sony Alpha 7 V 单机身（ILCE-7M5/A7M5）京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.bhphotovideo.com/c/product/1935439-REG/sony_a7_v_mirrorless_camera.html",
+      "title": "Sony a7 V Mirrorless Camera",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://store.insta360.com/cn/product/go-3S",
+      "title": "Insta360 GO 3S 中国官方商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.bhphotovideo.com/c/product/1832560-REG/insta360_cinsaata_go3s06_go_3s_standard_editionarctic.html/accessories?ap=y",
+      "title": "Insta360 GO 3S Standard Bundle (64GB, Arctic White)",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://post.smzdm.com/talk/p/arqgo4wg/",
+      "title": "威克士(Worx)工业级充电无刷电钻 WU130X.1 社区使用帖",
+      "published_at": "2022-06-24T13:32:18+08:00",
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/",
+      "title": "Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries",
+      "published_at": "2026-02-20",
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K11"
+      ]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://ustr.gov/sites/default/files/files/Press/Releases/2026/FLIP%20301%20Investigation%20Final%20Action%20FRN%207-23-26%20FINAL.pdf",
+      "title": "USTR Final Section 301 Forced Labor Notice",
+      "published_at": "2026-07-23",
+      "retrieved_at": "2026-10-06T16:59:00-07:00",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K12"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "9个冻结SKU全部保留；冻结前6个head_status_verified=true、9个exact_variant_verified=true均未改写。",
+      "classification": "FACT",
+      "source_ids": [],
+      "confidence": "high",
+      "counterevidence": "本轮网页不可达不会改变冻结前验证标志。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "DJI中国官方页直接显示ROMO P水箱版透明P配置¥3699并包邮。",
+      "classification": "FACT",
+      "source_ids": [
+        "S03"
+      ],
+      "confidence": "high",
+      "counterevidence": "不是最终checkout总价；美国地区版本等价性未验证。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "Roborock P20 Max两冻结变体本轮未得到可用的公开普通成交价；官方商城打开为JS壳，JD型号页无数字价。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "confidence": "high",
+      "counterevidence": "索引曾显示3999/4399，但按规则snippet/索引价不采信。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "eBay ROMO P水箱版候选显示$2051.52、免费国际配送及进口费包含，但颜色/地区元数据与冻结透明CN组合冲突且目的ZIP不是10001，因此只列C且不作为统一端点。",
+      "classification": "FACT",
+      "source_ids": [
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "页面为缓存抓取，且listing origin/region metadata本身可能是卖家录入。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "三个C11冻结国内item本轮均未核验到当前普通公开价；其中WJZ页被频控。",
+      "classification": "FACT",
+      "source_ids": [
+        "S05",
+        "S06",
+        "S07"
+      ],
+      "confidence": "high",
+      "counterevidence": "不排除登录态/APP内有价格。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "WU130X海外候选原始eBay页本轮打开404，snippet中的价格库存全部排除。",
+      "classification": "FACT",
+      "source_ids": [
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "其他渠道或后续重新上架未被证明不存在。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "B&H A7C II银色28-60套装公开$2398、In Stock、Free Expedited Shipping；因US/CN地区等价未验证，严格分桶为C。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "high",
+      "counterevidence": "若后续有BOM/固件/保修地区等价证据，可重新评估A，但不能在本批次自行升级。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "JD A7V单机身公开列表价¥17999但到手价需登录；B&H US ILCE-7M5/B单机$2898、In Stock、Free Expedited Shipping；均未形成可核验landed。",
+      "classification": "FACT",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "confidence": "high",
+      "counterevidence": "JD卖家/官方标配绑定不完整；US/CN地区等价未验证。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "Insta360 CN配置器显示64GB标准套餐¥1898且列出灵动白选项，但当前激活组合不是灵动白标准版；B&H明确白色64GB标准套装$349.99但暂时缺货。",
+      "classification": "FACT",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "confidence": "high",
+      "counterevidence": "CN价格没有直接绑定到冻结颜色选中态，故不作为A精确价。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "WU130X.1存在可读社区使用反馈，但仅作质量/使用反证，不用于当前价格或库存。",
+      "classification": "FACT",
+      "source_ids": [
+        "S15"
+      ],
+      "confidence": "medium",
+      "counterevidence": "单篇社区帖不能代表总体故障率。"
+    },
+    {
+      "claim_id": "K11",
+      "claim": "截至本研究日，EO 14388继续全球暂停19 USC 1321(a)(2)(C)的duty-free de minimis；低值订单不能按自动免税处理。",
+      "classification": "FACT",
+      "source_ids": [
+        "S16"
+      ],
+      "confidence": "high",
+      "counterevidence": "具体入境方式、例外和后续规则仍需按订单确认。"
+    },
+    {
+      "claim_id": "K12",
+      "claim": "USTR 2026-07-23最终通知对中国设9903.05.31一般+12.5%（除指定豁免），自2026-07-24生效；本批次未核验每个SKU的原产地/商品HTS/豁免，所以未把12.5%作为任何SKU的已应用税率。",
+      "classification": "FACT",
+      "source_ids": [
+        "S17"
+      ],
+      "confidence": "high",
+      "counterevidence": "若具体商品落入9903.05.85-9903.05.92等豁免或原产地非中国，不能套用。"
+    },
+    {
+      "claim_id": "K13",
+      "claim": "四种物流结构均缺至少一个必要成本，因此9/9 landed_total=null、verified landed savings=0个。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S16",
+        "S17"
+      ],
+      "confidence": "high",
+      "counterevidence": "取得真实物流报价、精确分类及强制费用后才可重算。"
+    }
+  ],
+  "data_gaps": [
+    "ZIP10001-specific checkout delivery not observed on overseas pages",
+    "No real agent/forwarder quote",
+    "No complete actual/volumetric package weight or battery/special surcharge",
+    "No SKU-level customs origin+commodity HTS determination",
+    "MFN/legacy301/2026-301 exemption/other additional duties unresolved by SKU",
+    "No mandatory broker/entry/customs fee quote by architecture",
+    "No FX source because landed totals cannot be computed",
+    "No GMV weights for demand-weighted distribution"
+  ],
+  "observations": [
+    {
+      "sku_id": "C10-S01",
+      "category_id": "C10",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100325625266.html",
+          "seller_id": null,
+          "item_id": "100325625266",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确item；本轮原始商品页仅壳，当前普通价/卖家/配送不可读；JD型号页仍列A2950RR水箱版。",
+          "region_variant": "CN A2950RR non-auto-water tank",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S02"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "seller_id",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery/special_handling_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301"
+      ],
+      "evidence_status": "attempted; exact frozen SKU retained; current transaction price inaccessible; no verified overseas A/B/C offer"
+    },
+    {
+      "sku_id": "C10-S02",
+      "category_id": "C10",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100325565100.html",
+          "seller_id": null,
+          "item_id": "100325565100",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确自动上下水A2950RR；本轮直开触发风险/内容不可用；型号页可见变体但无可核验普通价。",
+          "region_variant": "CN A2950RR auto-water-plumbing",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "blocked",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S02"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "seller_id",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery/special_handling_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301"
+      ],
+      "evidence_status": "attempted; exact frozen SKU retained; product page blocked; no verified overseas A/B/C offer"
+    },
+    {
+      "sku_id": "C10-S03",
+      "category_id": "C10",
+      "sampling_stratum": "domestic_opportunity",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "DJI Store CN",
+          "url": "https://app-store.dji.com/cn/product/dji-romo-p-water-tank-version?from=site-nav&set_region=CN&vid=192291",
+          "seller_id": "DJI Store",
+          "item_id": "192291",
+          "match_bucket": "A",
+          "match_evidence": "官方页同名水箱版，P版透明机器人+透明基站，公开显示¥3699及包邮。",
+          "region_variant": "CN Mainland; transparent robot + transparent base; water-tank version",
+          "currency": "CNY",
+          "price": 3699,
+          "delivery_price": 0,
+          "price_type": "ordinary_public_display_price; crossed_reference_price_6799_separate",
+          "access_state": "read_full_page",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S03"
+          ],
+          "stock_state": "add_to_cart_and_buy_buttons_visible"
+        },
+        {
+          "channel": "eBay",
+          "url": "https://www.ebay.com/itm/358264059627",
+          "seller_id": "dw_store13",
+          "item_id": "358264059627",
+          "match_bucket": "C",
+          "match_evidence": "标题同DJI ROMO P Water Tank且220V，但item specifics为White、origin South Korea；与冻结透明CN地区组合不一致，不能A/B。",
+          "region_variant": "Korea-listed 220V; listing color White; target CN hardware/firmware/warranty parity not verified",
+          "currency": "USD",
+          "price": 2051.52,
+          "delivery_price": 0,
+          "price_type": "public_listing_price; import_fees_included_by_listing",
+          "access_state": "read_full_page_cached_listing",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S04"
+          ],
+          "stock_state": "more_than_10_available_on_page",
+          "ships_from": "South Korea",
+          "destination_zip_observed": "78228",
+          "zip10001_verified": false,
+          "account_access": "guest_checkout_shown"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": 3699,
+          "cn_domestic_shipping_cny": 0,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": 3699,
+          "cn_domestic_shipping_cny": 0,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": 3699,
+          "cn_domestic_shipping_cny": 0,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [
+        {
+          "match_bucket": "C",
+          "observed_offer_plus_delivery_usd": 2051.52,
+          "overseas_delivered_usd_ex_sales_tax": null,
+          "landed_total_usd": null,
+          "savings": null,
+          "reason": "eBay页面目的地显示78228且冻结CN精确组合不一致；非ZIP10001可比端点"
+        }
+      ],
+      "missing_components": [
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery/special_handling_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301",
+        "forced_labor_301_exemption_applicability",
+        "other_additional_duties",
+        "customs_mandatory_charges"
+      ],
+      "evidence_status": "CN A public display price verified; overseas only C candidate; no verified landed or savings"
+    },
+    {
+      "sku_id": "C11-S01",
+      "category_id": "C11",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100182918074.html",
+          "seller_id": null,
+          "item_id": "100182918074",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确DZC1050-26BT；直开商品页仅壳，未观察普通价/卖家/配送。",
+          "region_variant": "CN 220V 1050W hammer/chisel with safety clutch",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S05"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "seller_id",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301",
+        "forced_labor_301_exemption_applicability"
+      ],
+      "evidence_status": "attempted; frozen exact retained; current price inaccessible; no verified overseas exact or comparable original-page offer"
+    },
+    {
+      "sku_id": "C11-S02",
+      "category_id": "C11",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100009007521.html",
+          "seller_id": null,
+          "item_id": "100009007521",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确WJZ1601S 16V双电套装；本轮直开被频控/403，价格卖家配送未观察。",
+          "region_variant": "CN 16V dual-battery kit",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "blocked_frequency_control",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S06"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "seller_id",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301"
+      ],
+      "evidence_status": "attempted; frozen exact retained; JD frequency-control blocked; no verified overseas exact offer"
+    },
+    {
+      "sku_id": "C11-S03",
+      "category_id": "C11",
+      "sampling_stratum": "domestic_opportunity",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100018901232.html",
+          "seller_id": null,
+          "item_id": "100018901232",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确WU130X.1 12V 40Nm 2.0Ah单电；商品页内容不可用，当前普通价未观察。",
+          "region_variant": "CN 12V 40Nm 2.0Ah single-battery kit",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "channel": "eBay",
+          "url": "https://www.ebay.com/itm/406915122550",
+          "seller_id": null,
+          "item_id": "406915122550",
+          "match_bucket": "C",
+          "match_evidence": "搜索命中过WU130X 12V 40Nm bare tool，但原始页本轮打开返回404；snippet价格/库存不采用。",
+          "region_variant": "export listing candidate; bare-tool mismatch",
+          "currency": "USD",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "original_open_404; snippet_excluded",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S08"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "seller_id",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301"
+      ],
+      "evidence_status": "attempted; exact frozen retained; community evidence usable but no current exact price; eBay candidate original page 404"
+    },
+    {
+      "sku_id": "C12-S01",
+      "category_id": "C12",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/100064843454.html",
+          "seller_id": null,
+          "item_id": "100064843454",
+          "match_bucket": "A",
+          "match_evidence": "冻结精确银色FE28-60套装；本轮商品页仅壳，当前中国普通价/配送未观察。",
+          "region_variant": "CN silver FE 28-60 kit",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S09"
+          ]
+        },
+        {
+          "channel": "B&H",
+          "url": "https://www.bhphotovideo.com/c/product/1784821-REG/sony_a7c_ii_mirrorless_camera.html?ap=y",
+          "seller_id": "B&H Photo Video",
+          "item_id": "SOA7C22860S",
+          "match_bucket": "C",
+          "match_evidence": "品牌/型号/银色/28-60套装均一致且MFR ILCE-7CM2L/S；但US retail与CN地区BOM/固件/保修等价未核验，按规则降为C。",
+          "region_variant": "US retail ILCE-7CM2L/S; regional equivalence to CN unverified",
+          "currency": "USD",
+          "price": 2398,
+          "delivery_price": 0,
+          "price_type": "public_price; crossed_2798_separate",
+          "access_state": "read_full_page",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S10"
+          ],
+          "stock_state": "in_stock",
+          "account_access": "public_no_login_required_for_price",
+          "delivery_scope": "Free Expedited Shipping shown; ZIP10001 not entered"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "channel": "B&H",
+        "item_id": "SOA7C22860S",
+        "match_bucket": "C",
+        "currency": "USD",
+        "price": 2398,
+        "delivery_price": 0,
+        "stock_state": "in_stock",
+        "zip10001_checkout_verified": false,
+        "source_ids": [
+          "S10"
+        ]
+      },
+      "savings_by_bucket": [
+        {
+          "match_bucket": "C",
+          "observed_offer_plus_delivery_usd": 2398,
+          "overseas_delivered_usd_ex_sales_tax": null,
+          "landed_total_usd": null,
+          "savings": null,
+          "reason": "public free shipping not re-priced to ZIP10001; China landed components missing"
+        }
+      ],
+      "missing_components": [
+        "current_CN_exact_public_price",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301",
+        "forced_labor_301_exemption_applicability"
+      ],
+      "evidence_status": "US same-model-kit page verified but conservatively C; CN exact current price inaccessible; no landed/savings"
+    },
+    {
+      "sku_id": "C12-S02",
+      "category_id": "C12",
+      "sampling_stratum": "domestic_head",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "JD",
+          "url": "https://item.jd.com/product/SS1APtfSyfsn3i7dxGV9DQ.html",
+          "seller_id": null,
+          "item_id": "SS1APtfSyfsn3i7dxGV9DQ",
+          "match_bucket": "C",
+          "match_evidence": "页面明确Alpha 7 V/ILCE-7M5/A7M5单机身并公开¥17999，但到手价需登录；卖家/“官方标配”绑定未充分核验，故不升A。",
+          "region_variant": "CN body-only listing; official-standard seller/bundle binding unverified",
+          "currency": "CNY",
+          "price": 17999,
+          "delivery_price": null,
+          "price_type": "public_list_price; login_required_for_to_hand_price",
+          "access_state": "read_full_page_login_gate",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S11"
+          ]
+        },
+        {
+          "channel": "B&H",
+          "url": "https://www.bhphotovideo.com/c/product/1935439-REG/sony_a7_v_mirrorless_camera.html",
+          "seller_id": "B&H Photo Video",
+          "item_id": "SOA75",
+          "match_bucket": "C",
+          "match_evidence": "ILCE-7M5/B、No Lens/No Kit一致于机身形态，但US retail与CN地区等价未核验，按规则为C。",
+          "region_variant": "US retail ILCE-7M5/B; CN regional equivalence unverified",
+          "currency": "USD",
+          "price": 2898,
+          "delivery_price": 0,
+          "price_type": "public_price",
+          "access_state": "read_full_page",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S12"
+          ],
+          "stock_state": "in_stock",
+          "account_access": "public_no_login_required_for_price",
+          "delivery_scope": "Free Expedited Shipping shown; ZIP10001 not entered"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "channel": "B&H",
+        "item_id": "SOA75",
+        "match_bucket": "C",
+        "currency": "USD",
+        "price": 2898,
+        "delivery_price": 0,
+        "stock_state": "in_stock",
+        "zip10001_checkout_verified": false,
+        "source_ids": [
+          "S12"
+        ]
+      },
+      "savings_by_bucket": [
+        {
+          "match_bucket": "C",
+          "observed_offer_plus_delivery_usd": 2898,
+          "overseas_delivered_usd_ex_sales_tax": null,
+          "landed_total_usd": null,
+          "savings": null,
+          "reason": "ZIP10001配送未单独重定价且中国进口landed成本不完整"
+        }
+      ],
+      "missing_components": [
+        "A_bucket_CN_official-standard_current_price",
+        "CN_delivery",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301",
+        "forced_labor_301_exemption_applicability"
+      ],
+      "evidence_status": "CN and US same-model body pages observed only as C under strict region/bundle rule; no landed/savings"
+    },
+    {
+      "sku_id": "C12-S03",
+      "category_id": "C12",
+      "sampling_stratum": "domestic_opportunity",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "prefreeze_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "offers": [
+        {
+          "channel": "Insta360 CN Store",
+          "url": "https://store.insta360.com/cn/product/go-3S",
+          "seller_id": "Insta360",
+          "item_id": null,
+          "match_bucket": "C",
+          "match_evidence": "官方配置器同时提供灵动白、64GB与标准套餐，标准套餐显示¥1898且包邮；但页面当前激活组合是星曜黑64GB摩托套餐，未把¥1898直接绑定到灵动白选中态，故不升A。",
+          "region_variant": "CN configurator; exact white+64GB+standard selection binding unverified",
+          "currency": "CNY",
+          "price": 1898,
+          "delivery_price": 0,
+          "price_type": "public_configurator_standard_bundle_price",
+          "access_state": "read_full_page",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S13"
+          ],
+          "stock_state": "page says estimated ship within 2 days for active configuration"
+        },
+        {
+          "channel": "B&H",
+          "url": "https://www.bhphotovideo.com/c/product/1832560-REG/insta360_cinsaata_go3s06_go_3s_standard_editionarctic.html/accessories?ap=y",
+          "seller_id": "B&H Photo Video",
+          "item_id": "INGO3SAW64GB",
+          "match_bucket": "C",
+          "match_evidence": "Arctic White/64GB/Standard Bundle明确一致，但US retail地区与CN版本等价未核验；且页面Temporarily Out of Stock。",
+          "region_variant": "US retail MFR CINSAATA_GO3S06; CN regional equivalence unverified",
+          "currency": "USD",
+          "price": 349.99,
+          "delivery_price": 0,
+          "price_type": "public_price",
+          "access_state": "read_full_page",
+          "observed_at": "2026-10-06T16:59:00-07:00",
+          "source_ids": [
+            "S14"
+          ],
+          "stock_state": "temporarily_out_of_stock",
+          "delivery_scope": "Free Expedited Shipping shown; item unavailable"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "consumer_1000_separate_orders_commercial_rate",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "product_price_cny": null,
+          "cn_domestic_shipping_cny": null,
+          "agent_fee_cny": null,
+          "actual_weight_kg": null,
+          "volumetric_weight_kg": null,
+          "package_dims_cm": null,
+          "battery_or_special_surcharge_cny": null,
+          "intl_shipping_usd": null,
+          "customs_origin": null,
+          "hts": null,
+          "mfn_rate": null,
+          "sec301_legacy_rate": null,
+          "sec301_2026_rate_applied": null,
+          "extra_tax_rate": null,
+          "exemption": null,
+          "customs_mandatory_usd": null,
+          "fx_cny_per_usd": null,
+          "landed_total_usd": null,
+          "real_quote": false,
+          "verified_landed": false
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [
+        {
+          "match_bucket": "C",
+          "observed_offer_plus_delivery_usd": 349.99,
+          "overseas_delivered_usd_ex_sales_tax": null,
+          "landed_total_usd": null,
+          "savings": null,
+          "reason": "US offer out of stock and ZIP10001 endpoint not available; landed incomplete"
+        }
+      ],
+      "missing_components": [
+        "A_bucket_CN_exact_selected_combo_price",
+        "agent_fee",
+        "actual_and_volumetric_weight",
+        "package_dimensions",
+        "battery_surcharge",
+        "international_shipping_quote",
+        "customs_origin",
+        "commodity_HTS",
+        "MFN",
+        "legacy_301",
+        "forced_labor_301_exemption_applicability",
+        "other_additional_duties"
+      ],
+      "evidence_status": "CN configurator price only C due selection-binding gap; US exact-looking bundle C by region and currently out of stock; no landed/savings"
+    }
+  ]
+}

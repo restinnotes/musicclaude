@@ -1,0 +1,126 @@
+## 1. 直接回答
+
+本批仅执行 C04/C05/C06 的 9 个冻结 SKU，未替换样本；冻结前 `head_status_verified` / `exact_variant_verified` 原样保留。共完成 **9 SKU × 2 平台 = 18 次**明确站内搜索/关键页检查；Temu 9/9、AliExpress 9/9 均因平台页面不可访问而判为 **BLOCKED**，不是 NOT_OBSERVED、更不是 VERIFIED_UNAVAILABLE。故本批直接观察到的 A exact、B same-OEM、C comparable 均为 **0**；这只是本批观测结果，不能解读为“市场没有”。seller/item、库存、US warehouse、币种、普通公开价、运费、ZIP10001 delivered price、重量尺寸、HTS/关税字段缺失率均为 **100%**。不计算节省。
+
+比较端点预设为：**公开未登录商品价 + ZIP10001 必付运费，US sales tax 之前**；会员价、88VIP、定向券、首单、国补、账号价全部排除。四个履约结构——Temu跨境、Temu美仓、AliExpress跨境、AliExpress美仓——本批均 unresolved。
+
+## 2. 证据表
+
+| SKU | 冻结 flags | Temu | AliExpress |
+|---|---|---|---|
+| C04-S01 | head=true; exact=true | **BLOCKED B01** ([]()) | **BLOCKED B02** ([Invalid URL]()) |
+| C04-S02 | true; true | **BLOCKED B03** ([Invalid URL]()) | **BLOCKED B04** ([Invalid URL]()) |
+| C04-S03 | false; true | **BLOCKED B05** ([Invalid URL]()) | **BLOCKED B06** ([Invalid URL]()) |
+| C05-S01 | true; true | **BLOCKED B07** ([Invalid URL]()) | **BLOCKED B08** ([Invalid URL]()) |
+| C05-S02 | true; true | **BLOCKED B09** ([Invalid URL]()) | **BLOCKED B10**；另有候选原始 item 页仍打不开 ([Invalid URL]()) |
+| C05-S03 | false; true | **BLOCKED B11** ([Invalid URL]()) | **BLOCKED B12** ([Invalid URL]()) |
+| C06-S01 | true; true | **BLOCKED B13** ([Invalid URL]()) | **BLOCKED B14** ([Invalid URL]()) |
+| C06-S02 | true; true | **BLOCKED B15** ([Invalid URL]()) | **BLOCKED B16** ([Invalid URL]()) |
+| C06-S03 | false; true | **BLOCKED B17** ([Invalid URL]()) | **BLOCKED B18**；候选 item 页仍打不开 ([Invalid URL]()) |
+
+## 3. 一级来源
+
+身份核对没有替代平台 coverage。GMKtec 官方页实际打开，确认 EVO-X2 Ryzen AI Max+ 395 存在 **128GB + 2TB** 选择；但不能据此证明 Temu/AliExpress 有 exact。[GMKtec](https://www.gmktec.com/en/products/amd-ryzen%E2%84%A2-ai-max-395-evo-x2-ai-mini-pc) Beelink 官方当前页确认 SER8 8745HS 硬件家族，但页面展示配置机，并未替本冻结的“深空灰准系统”建立两平台 exact。[Beelink](https://www.bee-link.com/products/beelink-ser8-8745hs) Samsung 官方确认 990 EVO Plus 2TB、MZ-V9S2T0B/AM、标称读取 7,250MB/s。[Samsung nz](https://www.samsung.com/us/memory-storage/nvme-ssd/990-evo-plus-gen4-nvme-ssd-2tb-sku-mz-v9s2t0b-am/?msockid=03275822e3046d4623e14ecce2b06c98) Xiaomi 中国官网确认 BE6500 型号存在。[Xiaomi India](https://www.mi.com/xiaomi-routers/be-6500)
+
+三款 EDIFIER 的中国官方页分别确认 Lolli Pro SE 云岩白、LolliClip SE 云霜金、Comfo Clip Q 奶霜白，因此冻结版本定义保持不变；但任何海外 listing 仍须单独核地域、硬件、捆绑。[Edifier Official](https://www.edifier.com/cn/product/product-864.html)
+
+## 4. 论坛证据
+
+Reddit 有用户专门质疑 AliExpress 上 SER8 “barebone”的真实性，评论还指出非官方店铺存在保修/真实性风险；这只能支持“不能轻率判 exact”，不能证明某 listing 假货或不存在。[Reddit](https://www.reddit.com/r/MiniPCs/comments/1obzocf) 2026-08-18 的什么值得买全文则记录了 LolliClip SE 两周使用和云霜金等信息，属于近期消费者使用佐证，不用于 Temu/AliExpress 价格、库存或覆盖判断。[SMZDM Post](https://post.smzdm.com/p/a26z6722/)
+
+## 5. 反证
+
+不能把 BLOCKED 推成“没有海外货”。二级索引确实出现了 Xiaomi BE6500 的 AliExpress 候选，说明“搜索环境没读到平台正文”与“商品不存在”是两件事；但直接打开原始 AliExpress item 页仍失败，所以不升级为 EXACT_OBSERVED。[Pricearchive.org](https://www.pricearchive.org/aliexpress.com/item/1005012374999592?utm_source=chatgpt.com) 同理，EDIFIER 出现 “Comfo Q” 候选，但名称又与冻结的 “Comfo Clip Q” 不完全一致，且原页被阻断，连 B bucket 都不能据此成立。[Pricearchive.org](https://www.pricearchive.org/aliexpress.com/item/1005012085072129?utm_source=chatgpt.com)
+
+## 6. 置信度
+
+对“**本研究环境下 18/18 为 BLOCKED**”置信度高；对平台实际是否有货、卖家数、仓库、价格和 A/B/C 实际覆盖，置信度低/不可判定。`china_head_us_middle_tail_status` 因此全部为 `unresolved`。本批没有把任何冻结前非-head 样本升级成 verified-head。
+
+## 7. 缺口
+
+ZIP10001 无法在两平台实际应用，所以普通公开 delivered price、库存、seller/item、US warehouse、跨境/美仓履约结构均 null；重量尺寸、运输报价、HTS 分类和关税率也不推测。ASUS 破晓与 KINGBANK 银爵在本时限内没有新增可用一级来源，但这不改变冻结前 exact 验证状态。
+
+## 8. 意外发现
+
+AliExpress 的公开二级索引对 C05-S02、C06-S03 至少给出了候选线索，但原始页面阻断使其不能进入 offers。尤其 Comfo Q / Comfo Clip Q 的命名差异说明“图片像、规格接近”不足以证明 same OEM 或 exact；本批没有利用二级索引展示的价格数字。
+
+## 9. 自我反驳
+
+最可能的反驳是：平台搜索页被研究环境阻断，不代表普通浏览器也被阻断，因此 18/18 BLOCKED 可能严重低估真实 coverage。成立。因此本报告只声称“本批无法直接核验”，绝不声称 Temu/AliExpress 对这些型号的市场覆盖率为零。反过来，二级索引也不能证明当前库存、普通价、US warehouse 或 ZIP10001 可交付。
+
+## 10. 下一实验
+
+下一轮只需用**未登录、美国地区、ZIP10001 的公开可视浏览器**各 SKU/平台再做一次：站内精确搜索→打开首个合理候选→读取型号/容量/颜色/硬件版本/捆绑、seller/item ID、ship-from、库存、普通公开价、必付运费和配送日期；登录墙即 LOGIN_REQUIRED，反爬即 BLOCKED。仍不下单、不联系商家、不使用账号优惠。
+
+下列 JSON 中 `source.url` 保留 `null`，对应 B/P/C/X source_id 已由正文可点击来源引用定位；这样不把访问失败跳转或二级索引伪装成已核验原始商品 URL。`offers` 为空，因此也没有制造任何卖家/item URL。
+
+```json
+{
+"job_id":"W4-A-batch02",
+"parent_replicate":"W4-A",
+"web_research_available":true,
+"pre_freeze_compliance":true,
+"frozen_sample_sha256":"4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+"assigned_sku_ids":["C04-S01","C04-S02","C04-S03","C05-S01","C05-S02","C05-S03","C06-S01","C06-S02","C06-S03"],
+"categories":[{"category_id":"C04","status":"PLATFORM_ACCESS_BLOCKED; no Temu/AliExpress offer verified"},{"category_id":"C05","status":"PLATFORM_ACCESS_BLOCKED; no Temu/AliExpress offer verified"},{"category_id":"C06","status":"PLATFORM_ACCESS_BLOCKED; no Temu/AliExpress offer verified"}],
+"pricing_endpoint":{"destination":"US ZIP10001","delivered_price":"public item price + mandatory shipping, pre-US-sales-tax","sales_tax":"excluded; not estimated","excluded_price_types":["member/88VIP","targeted coupon","first-order credit","government subsidy","account-specific"],"savings_calculated":false},
+"shipment_structures":[{"id":"TEMU_CROSS_BORDER","status":"unresolved_blocked"},{"id":"TEMU_US_WAREHOUSE","status":"unresolved_blocked"},{"id":"ALIEXPRESS_CROSS_BORDER","status":"unresolved_blocked"},{"id":"ALIEXPRESS_US_WAREHOUSE","status":"unresolved_blocked"}],
+"observations":{"platform_sku_checks":18,"blocked":18,"exact_observed":0,"oem_observed":0,"comparable_only":0,"reseller_only":0,"not_observed":0,"login_required":0,"verified_unavailable":0,"offers_directly_observed":0,"missing_rate":{"seller_item_stock_warehouse":1.0,"currency_price_shipping":1.0,"weight_dimensions":1.0,"hts_tariff":1.0},"scope":"this batch only"},
+"sources":[
+{"source_id":"B01","url":null,"title":"Temu search C04-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B02","url":null,"title":"AliExpress search C04-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B03","url":null,"title":"Temu search C04-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B04","url":null,"title":"AliExpress search C04-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B05","url":null,"title":"Temu search C04-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B06","url":null,"title":"AliExpress search C04-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B07","url":null,"title":"Temu search C05-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B08","url":null,"title":"AliExpress search C05-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B09","url":null,"title":"Temu search C05-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B10","url":null,"title":"AliExpress search C05-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B11","url":null,"title":"Temu search C05-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B12","url":null,"title":"AliExpress search C05-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B13","url":null,"title":"Temu search C06-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B14","url":null,"title":"AliExpress search C06-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B15","url":null,"title":"Temu search C06-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B16","url":null,"title":"AliExpress search C06-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B17","url":null,"title":"Temu search C06-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"B18","url":null,"title":"AliExpress search C06-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K01","K08"]},
+{"source_id":"P01","url":null,"title":"GMKtec EVO-X2 official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K02"]},
+{"source_id":"P02","url":null,"title":"Beelink SER8 8745HS official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K03"]},
+{"source_id":"P03","url":null,"title":"Samsung 990 EVO Plus 2TB official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K04"]},
+{"source_id":"P04","url":null,"title":"Xiaomi BE6500 official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K05"]},
+{"source_id":"P05","url":null,"title":"EDIFIER Lolli Pro SE official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+{"source_id":"P06","url":null,"title":"EDIFIER LolliClip SE official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+{"source_id":"P07","url":null,"title":"EDIFIER Comfo Clip Q official","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+{"source_id":"C01","url":null,"title":"SMZDM LolliClip SE two-week use report","published_at":"2026-08-18","retrieved_at":"2026-10-06","source_type":"community","access_state":"read_full_page","claims_supported":["K07"]},
+{"source_id":"C02","url":null,"title":"Reddit barebone SER8 on AliExpress discussion","published_at":"2025-10-21","retrieved_at":"2026-10-06","source_type":"community","access_state":"read_full_page","claims_supported":["K03","K07"]},
+{"source_id":"X01","url":null,"title":"AliExpress BE6500 secondary index","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"read_full_page","claims_supported":["K09"]},
+{"source_id":"X02","url":null,"title":"AliExpress Comfo Q secondary index","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"read_full_page","claims_supported":["K09"]},
+{"source_id":"X03","url":null,"title":"AliExpress BE6500 original item attempt","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K09"]},
+{"source_id":"X04","url":null,"title":"AliExpress Comfo Q original item attempt","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"blocked","claims_supported":["K09"]}
+],
+"claims":[
+{"claim_id":"K01","claim":"本批9 SKU×2平台共18次站内检查均BLOCKED。","classification":"FACT","source_ids":["B01","B02","B03","B04","B05","B06","B07","B08","B09","B10","B11","B12","B13","B14","B15","B16","B17","B18"],"confidence":"high","counterevidence":"不代表平台实际无货或无listing。"},
+{"claim_id":"K02","claim":"GMKtec官方页存在EVO-X2 Ryzen AI Max+ 395的128GB+2TB选项。","classification":"FACT","source_ids":["P01"],"confidence":"high","counterevidence":"不能替代Temu/AliExpress coverage。"},
+{"claim_id":"K03","claim":"Beelink官方可核SER8 8745HS家族，但不能据此证明冻结barebone在两平台为exact；论坛亦对Ali barebone真实性提出质疑。","classification":"INFERENCE","source_ids":["P02","C02"],"confidence":"medium","counterevidence":"合法barebone listing仍可能存在，原始平台页未能读取。"},
+{"claim_id":"K04","claim":"Samsung官方确认990 EVO Plus 2TB/MZ-V9S2T0B/AM与7250MB/s读取规格。","classification":"FACT","source_ids":["P03"],"confidence":"high","counterevidence":"仅作身份核对。"},
+{"claim_id":"K05","claim":"Xiaomi中国官网确认BE6500型号；未推断美国硬件/固件等同。","classification":"FACT","source_ids":["P04"],"confidence":"high","counterevidence":"跨地区版本仍待listing正文核验。"},
+{"claim_id":"K06","claim":"EDIFIER中国官网确认Lolli Pro SE云岩白、LolliClip SE云霜金、Comfo Clip Q奶霜白。","classification":"FACT","source_ids":["P05","P06","P07"],"confidence":"high","counterevidence":"平台地区/捆绑仍待原页。"},
+{"claim_id":"K07","claim":"论坛材料仅作身份风险/近期使用补充，不作平台成交价、库存或覆盖证明。","classification":"FACT","source_ids":["C01","C02"],"confidence":"medium","counterevidence":"社区为个案。"},
+{"claim_id":"K08","claim":"因无平台listing正文可读，本批A/B/C observed均为0；这是观测结果，不是市场不存在断言。","classification":"FACT","source_ids":["B01","B02","B03","B04","B05","B06","B07","B08","B09","B10","B11","B12","B13","B14","B15","B16","B17","B18"],"confidence":"high","counterevidence":"二级索引存在少量候选。"},
+{"claim_id":"K09","claim":"AliExpress二级索引出现BE6500和Comfo Q候选，但原始item页仍BLOCKED，因此不改变BLOCKED状态。","classification":"FACT","source_ids":["X01","X02","X03","X04"],"confidence":"high","counterevidence":"后续公开可视浏览器可重新核验。"}
+],
+"data_gaps":["18/18平台-SKU检查均在站内搜索页访问受阻；未读到平台商品正文。","ZIP10001未能站内应用，seller/item/库存/仓库/币种/公开价/运费/普通送达价/重量尺寸/HTS/关税率均未观察。","AliExpress二级索引出现Xiaomi BE6500与EDIFIER Comfo Q候选，但原始AliExpress item页BLOCKED；不计observed offer。","GMKtec EVO-X2、Beelink SER8 8745HS、Samsung 990 EVO Plus 2TB、Xiaomi BE6500及三款EDIFIER有本轮一级来源核对；ASUS/KINGBANK未在时限内新增一级来源。","四种平台×履约地结构均unresolved；未计算landed cost或savings。"],
+"coverage":[
+{"sku_id":"C04-S01","category_id":"C04","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["ASUS 破晓迷你主机 i5-13500H 16GB 512GB","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B01"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["ASUS 破晓迷你主机 i5-13500H 16GB 512GB","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B02"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C04-S02","category_id":"C04","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["GMKtec EVO-X2 Ryzen AI Max+ 395 128GB 2TB","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B03"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["GMKtec EVO-X2 Ryzen AI Max+ 395 128GB 2TB","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B04"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C04-S03","category_id":"C04","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["Beelink SER8 8745HS Space Gray barebone","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B05"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["Beelink SER8 8745HS Space Gray barebone","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B06"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing","Beelink官方可核8745HS家族，但未据此把Ali/Temu barebone视为exact"]},
+{"sku_id":"C05-S01","category_id":"C05","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["Samsung 990 EVO Plus 2TB MZ-V9S2T0 7250MB/s","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B07"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["Samsung 990 EVO Plus 2TB MZ-V9S2T0 7250MB/s","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B08"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C05-S02","category_id":"C05","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["Xiaomi BE6500 Wi-Fi 7 6500 2.5G Qualcomm quad-core","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B09"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["Xiaomi BE6500 Wi-Fi 7 6500 2.5G Qualcomm quad-core","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用","二级索引出现BE6500候选，但AliExpress原始item页仍BLOCKED；不计offer"],"search_source_ids":["B10"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing","不使用二级索引的价格/卖家/库存"]},
+{"sku_id":"C05-S03","category_id":"C05","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["KINGBANK Silver DDR5-6000 32GB 16GBx2 C36","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B11"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["KINGBANK Silver DDR5-6000 32GB 16GBx2 C36","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B12"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C06-S01","category_id":"C06","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER Lolli Pro SE Cloud Rock White ANC","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B13"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER Lolli Pro SE Cloud Rock White ANC","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B14"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C06-S02","category_id":"C06","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER LolliClip SE Yunshuang Gold","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B15"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER LolliClip SE Yunshuang Gold","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B16"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]},
+{"sku_id":"C06-S03","category_id":"C06","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER Comfo Clip Q Cream White","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用"],"search_source_ids":["B17"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["EDIFIER Comfo Clip Q Cream White","US ZIP10001; public/logged-out"],"access_limitations":["站内搜索页不可访问；未读到商品正文、规格选择、seller、库存、仓库、运费；ZIP10001未能站内应用","二级索引出现'Comfo Q'候选，原始item页BLOCKED且名称与Comfo Clip Q不完全一致；不计B"],"search_source_ids":["B18"]},"china_head_us_middle_tail_status":"unresolved","caveats":["冻结前head/exact标志原样保留","BLOCKED仅表示访问受阻，不等同缺货/无listing"]}
+]
+}
+```

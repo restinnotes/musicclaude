@@ -1,0 +1,58 @@
+{
+    "rounds":  [
+                   {
+                       "timing":  "EXIT=0 SEC=16",
+                       "session_prefix":  "0d9365a4",
+                       "round":  1,
+                       "file":  "STEP2_r1_stdout.json",
+                       "note":  "任务指令确认，仅程序性回复，无对照表/JSON"
+                   },
+                   {
+                       "timing":  "EXIT=1 SEC=58",
+                       "session_prefix":  "0d9365a4(resume)",
+                       "round":  2,
+                       "file":  "STEP2_r2_stdout.json",
+                       "note":  "续接喂S1S2失败 pre_submit"
+                   },
+                   {
+                       "timing":  "EXIT=1 SEC=58",
+                       "session_prefix":  "0d9365a4(resume)",
+                       "round":  "2a",
+                       "file":  "STEP2_r2a_stdout.json",
+                       "note":  "续接喂S1单独失败 pre_submit"
+                   },
+                   {
+                       "timing":  "EXIT=1 SEC=21",
+                       "round":  "probe1",
+                       "file":  "STEP2_probe_fresh_stdout.json",
+                       "note":  "fresh极小探测失败，证伪纯链路偶发论"
+                   },
+                   {
+                       "timing":  "EXIT=0 SEC=12",
+                       "session_prefix":  "2cf1b78c",
+                       "round":  "probe2",
+                       "file":  "STEP2_probe2_fresh_stdout.json",
+                       "note":  "fresh极小探测成功，链路恢复"
+                   },
+                   {
+                       "timing":  "EXIT=0 SEC=16",
+                       "session_prefix":  "70c0b9c1",
+                       "round":  "s2r1",
+                       "file":  "STEP2_s2r1_stdout.json",
+                       "note":  "新会话任务指令确认"
+                   },
+                   {
+                       "timing":  "EXIT=1 SEC=58",
+                       "session_prefix":  "70c0b9c1(resume)",
+                       "round":  "s2r2a",
+                       "file":  "STEP2_s2r2a_stdout.json",
+                       "note":  "续接喂S1失败 pre_submit"
+                   },
+                   {
+                       "timing":  "EXIT=1 SEC=62",
+                       "round":  "s2r2b",
+                       "file":  "STEP2_s2r2b_stdout.json",
+                       "note":  "fresh喂S2失败 pre_submit，证伪resume特异论"
+                   }
+               ]
+}

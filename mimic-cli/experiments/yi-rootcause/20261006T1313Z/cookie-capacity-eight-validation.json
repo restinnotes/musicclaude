@@ -1,0 +1,41 @@
+{
+  "real_site_contacted": false,
+  "real_credentials_used": false,
+  "production_profile_touched": false,
+  "observations": [
+    {
+      "added_conversation_cookies": 178,
+      "remaining_cookies": 179,
+      "fake_auth_cookie_present": true
+    },
+    {
+      "added_conversation_cookies": 179,
+      "remaining_cookies": 180,
+      "fake_auth_cookie_present": true
+    },
+    {
+      "added_conversation_cookies": 180,
+      "remaining_cookies": 150,
+      "fake_auth_cookie_present": false
+    },
+    {
+      "added_conversation_cookies": 181,
+      "remaining_cookies": 151,
+      "fake_auth_cookie_present": false
+    }
+  ],
+  "eviction_reproduced": true,
+  "retention_validation": {
+    "cookie_count_before": 161,
+    "cookie_count": 99,
+    "removed": 62,
+    "encrypted_backup": "cookies-before-retention-20261006T141204-7f6299a3.sqlite",
+    "authentication_modified": false,
+    "fake_auth_cookie_preserved_after_100_rounds": true,
+    "repeated_retirement_count": 100,
+    "eight_concurrent_cookie_creations_per_wave": 8,
+    "concurrent_waves": 50,
+    "concurrent_peak_cookie_count": 115,
+    "fake_auth_cookie_preserved_after_concurrent_waves": true
+  }
+}

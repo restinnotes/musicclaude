@@ -1,0 +1,597 @@
+## 独立来源审计结论
+
+截至 **2026-10-06**，W1-B 的核心方法论——“不要把异口径数字硬排成 1–18 GMV 名次”——应保留，但原报告不能视为来源已全部核验。对 18 个机器可读 claims，我判定为：**10 个 VERIFIED_WITH_CAVEAT、4 个 CORRECTION_REQUIRED、1 个 CONFLICT_UNRESOLVED、3 个未核验**。最大的风险确实是 measurement object 混用，但原报告自身仍有若干这类问题：forecast、retail tracking、shipment、store-industry sales、household expenditure、ownership stock、modelled market size 被用于同一 demand tier 叙事，虽然多数地方有免责声明，层级判断本身仍比证据更强。
+
+**首先必须下调 C01 的来源状态。** Counterpoint 原报告所列 S12–S15 四页本次实际打开后只有标题、发布日期和导航，核心数字正文未暴露，属于 `page_shell`，不能因为标题或此前搜索结果视为全文核验；而且原 ledger 的发布日期也有误：实际页面分别显示 2025-08-15、2026-08-13、2026-08-31、2026-08-26。独立可读二手全文确实交叉印证 Q2'25 $17.5B、ASP $647.53、Q2'26 sales -5%，以及 shipment share 54%/30%/11%/3%；但原报告所称 top-5 models≈53% 本轮没有从可读全文重新核实。因此 C01 保持 `UNVERIFIED_PAGE_SHELL`，不是判定数字为假。 [Counterpoint Research](https://counterpointresearch.com/en/insights/us-smartphone-sell-through-up-9-yoy-in-q2-2025)
+
+**最明确的事实错误是 C06。** Circana 原文写的是 **True Wireless 占 2025 headphone dollars 的 65%**，不是“Bluetooth 占 65%”；另一方面，约 $99 才是 Bluetooth headphone ASP，wired ASP 约 $13。且这些数据无法代表 DAC/IEM/portable-audio 全边界。C06 必须纠正。C12 也需降级：可核的是 2025 digital point-and-shoot volume +93%，以及 H1'25 dollar gains >40%；这不足以证明整个 camera/video/accessories 池一定“小于领先电子品类”。 [Circana](https://www.circana.com/post/wired-headphones-growth-is-a-throwback-to-2016)
+
+**C11 的冲突比原报告描述更严重。** Grand View 给 2025 美国 power-tools revenue $7.5414B；Ken Research 同页却同时出现“2025 $11.4B”“2024 $11.4B”“2025 $11.79B”，并明确 $11.4B 是 **producer/importer revenue basis**、约 $84.4 wholesale realization，而非消费者零售 sell-through。因此不能平均、选中位数或拿来做 demand GMV 排名，状态应为 `CONFLICT_UNRESOLVED`。 [Grand View Research](https://www.grandviewresearch.com/horizon/outlook/power-tools-market/united-states)
+
+**C16 的 $245.66B 不能在本轮升级为已核验。** 原 S02 data.census 表实际打开只是 JavaScript 页面壳；Census 官方 AIES 页面确认数据可经 FRED 分发，我能从 Census/FRED 全文核到 sporting-goods 等数据及若干服装店型分项，但没有用搜索 snippet 补齐剩余服装分项，所以精确合计保持 null。更重要的是，Census 明确说按 retailer establishment type 的 sales 是这些店的经营收据，**不用于度量某商品线的总销售额**。因此 $245.66B 即便最终算术正确，也不能称“全渠道商品 GMV”，严格说也不能保证是“加入 pure-play/general merchandise 之前的下限”，因为店型销售本身可能含其他 merchandise。 [Census.gov](https://www.census.gov/data/tables/2024/econ/aies/2024-aies-tables.html)
+
+仍然可靠的高价值证据包括：SEMA 的 2024 specialty-equipment/accessorizing spend 约 **$52.65B**，且称消费者 spending 大体线上/线下各半；Toy Association 明确区分 **$45.6B projected-to-100%-market** 与 **$30.3B Retail Tracking、68% coverage**；OIA 的 **$28B** 是含 apparel、footwear、equipment、accessories 的 outdoor retail universe；BLS 的 $225、$2,001、$2,414 是 **consumer-unit mean expenditures**，不是 PCE、不是零售 TAM。 [SEMA](https://www.sema.org/news-media/press-release/new-sema-research-2025-market-report)
+
+C02/C03 的 Circana 数字也能核实，但必须保持 **forecast** 标签：1 月版本为 2026 consumer-tech $112B；8 月版本才称 PCs 接近 20%，notebooks 增量约 $1.7B。两期不能相乘。Home 同样展示 vintage risk：3 月预测约 $41.8B/-1.2%，9 月已改为 $43.7B/+2.9%，robot vacuum +9.1%，因此 C10/C17 只能是预测证据。 [Circana](https://www.circana.com/post/us-consumer-technology-sales-forecast-to-reach-112-billion-in-2026-reports-circana)
+
+渠道 benchmark 处理基本正确：Census Q2'26 seasonally adjusted e-commerce 为 **17.1%**，而 Circana 的 >25% 是由多种 Checkout/Consumer Tracking/Retail Tracking/CREST 数据拼成的特定 basket、12ME Dec-2025，绝不能平均或外推到 18 类。BLS 也确认 2025 annual CE 要到 **2026-10-29** 才发布。 [Census.gov](https://www.census.gov/retail/ecommerce.html)
+
+18 类至少存在这些实质交叉：**C10↔C17；C14↔C16；C15↔C18；C18↔C16；C09↔C10/C17；C05↔C07；以及 C02/C03/C05/C06/C07/C08/C09/C12 都是更宽 consumer-tech universe 的切片**。因此不能将 parent-market headlines 与子类再求和。四条 Reddit 页本轮确实抓到实际评论正文，而非搜索摘要；它们足以说明多零售商或 ecosystem 行为，却不能证明 GMV、online share 或 HHI。 [Reddit](https://www.reddit.com/r/buildapc/comments/1u5i1g1/where_to_source_parts_from/)
+
+最后，原报告的 `D = 60% spend + 15% online + 10% incidence + 10% fragmentation + 5% growth` **不应再称 demand/spending weight**。fragmentation 是市场结构/机会属性，growth 是 momentum，online share 是 addressability；把它们混进支出权重会让“小而碎、增长快”的类目在“需求规模”里被人为抬升。下一步应先做独立的 comparable **consumer sell-through/product-spend ledger**，其余 channel、incidence、concentration、growth 各自保持正交字段；CTA 的可见 landing page也明确其详细值是 shipment、**wholesale revenue/price**，且需登录/购买，不能代替 retail GMV。 [Consumer Technology Association](https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/)
+
+```json
+{
+  "job_id": "R1-W1-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "audited_job_id": "W1-B",
+  "input_report_sha256": "a6474c4aa74cce05b3f17ac17423941223bd83b9b6b7360e34839ee75702a1d1",
+  "review_performed": true,
+  "all_claims_verified": false,
+  "claim_audits": [
+    {
+      "original_claim_id": "C01",
+      "original_source_ids": ["S12", "S13", "S14", "S15"],
+      "status": "UNVERIFIED_PAGE_SHELL",
+      "supported": null,
+      "correction": null,
+      "caveat": "四个原始 Counterpoint URL 本次均只暴露标题/日期而无核心正文；其实际页面日期分别为 2025-08-15、2026-08-13、2026-08-31、2026-08-26，与原 ledger 有差异。独立可读二手全文交叉印证 Q2 2025 revenue $17.5B、ASP $647.53、Q2 2026 sales -5% 以及 Q2 2026 shipment shares 54/30/11/3，但 top-5 model share 约53%未从可读全文重新核实。shipment share 与 sell-through 不能混为同一需求口径。",
+      "source_ids": ["S12", "S13", "S14", "S15", "S33", "S34", "S35"]
+    },
+    {
+      "original_claim_id": "C02",
+      "original_source_ids": ["S09", "S10", "S11"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Circana 2026-08 页面确实称 PCs 接近2026美国consumer-tech revenue的20%，notebook增量约$1.7B并为最大增长贡献者；但这是forecast且PC含desktop。Jan-2026的$112B与Aug-2026的20%属于不同forecast vintages，不能相乘生成精确PC GMV。CTA细表是wholesale/shipment体系且受登录/付费限制。",
+      "source_ids": ["S09", "S10", "S11"]
+    },
+    {
+      "original_claim_id": "C03",
+      "original_source_ids": ["S09", "S11"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Circana公开页支持tablet为2026第二大consumer-tech增量来源、增量超过$200M；该值是incremental forecast revenue，不是tablet年度GMV，也不足以单独证明绝对市场规模。",
+      "source_ids": ["S09"]
+    },
+    {
+      "original_claim_id": "C04",
+      "original_source_ids": ["S09", "S11"],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "“没有独立公开Mini-PC需求数据”属于穷尽性否定命题；本轮没有做新的全网市场搜寻。CTA公开landing page只显示Computing Hardware等大类，详细付费表可能有更细拆分，因此不能验证不存在更细数据。",
+      "source_ids": ["S11"]
+    },
+    {
+      "original_claim_id": "C05",
+      "original_source_ids": ["S10", "S11", "S28"],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "删去“medium-to-high demand”和“highly fragmented”的强判断；可保留“公开可比retail GMV、online share、HHI未建立”。论坛只证明存在多零售商选择，不量化市场规模或碎片化。",
+      "caveat": "Circana公开内容可支持部分memory/PC相关趋势；CTA详细parts/networking wholesale数据受限。Reddit实际评论可读，但属于社区行为证据。",
+      "source_ids": ["S10", "S11", "S28"]
+    },
+    {
+      "original_claim_id": "C06",
+      "original_source_ids": ["S22", "S09"],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "2025年占headphone dollars 65%的是True Wireless form factor，不是Bluetooth总体；约$99是Bluetooth headphone ASP，wired ASP约$13。",
+      "caveat": "来源覆盖headphones，不足以代表C06所含DAC、IEM及全部portable-audio边界。",
+      "source_ids": ["S22"]
+    },
+    {
+      "original_claim_id": "C07",
+      "original_source_ids": ["S11", "S28"],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "将“meaningful demand/likely high fragmentation”降为“需求规模和concentration未量化；社区评论显示存在Amazon、Newegg、Micro Center、Best Buy、B&H等多零售商行为”。",
+      "caveat": "多渠道存在不等于渠道份额分散，也不等于品牌或SKU HHI低。",
+      "source_ids": ["S11", "S28"]
+    },
+    {
+      "original_claim_id": "C08",
+      "original_source_ids": ["S16", "S11"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Parks页面正文支持nearly 50% of US internet households own and use a wearable，并说明研究样本为8,000个US internet households；但页面本身未可靠暴露发布日期，因此数据vintage不能在本轮升级为2026 current measurement。ownership是stock，不是annual hardware flow。",
+      "source_ids": ["S16"]
+    },
+    {
+      "original_claim_id": "C09",
+      "original_source_ids": ["S17", "S31"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Parks 2026-08-11页面明确给出49% US internet households至少拥有一个smart-home device，并称quarterly surveys覆盖8,000户。该指标受device-universe定义影响，是penetration stock而非annual GMV。Reddit只支持ecosystem compatibility为购买考虑因素。",
+      "source_ids": ["S17", "S31"]
+    },
+    {
+      "original_claim_id": "C10",
+      "original_source_ids": ["S18", "S19", "S06"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "2026-09 Circana公开forecast为Home $43.7B、+2.9%，robotic vacuum dollar sales forecast +9.1%；2026-03同一机构曾forecast约$41.8B、-1.2%。均为forecast，不是actual GMV；且broad Home universe不能整体分配给C10，并与C17重叠。",
+      "source_ids": ["S18", "S19", "S06"]
+    },
+    {
+      "original_claim_id": "C11",
+      "original_source_ids": ["S20", "S21", "S02"],
+      "status": "CONFLICT_UNRESOLVED",
+      "supported": null,
+      "correction": null,
+      "caveat": "Grand View给2025 US power-tools revenue $7.5414B。Ken Research同页内部同时出现2025 $11.4B、2024 $11.4B和2025 $11.79B，并明确2024 $11.4B为producer/importer revenue basis、约$84.4 wholesale realization。两者不仅数值冲突，measurement basis亦不同，不能平均或作为consumer-retail GMV。",
+      "source_ids": ["S20", "S21", "S02"]
+    },
+    {
+      "original_claim_id": "C12",
+      "original_source_ids": ["S22", "S23", "S30"],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "保留“2025 digital point-and-shoot volume +93%、H1 2025 dollar gains >40%、低价段推动增长”等窄口径事实；删除“整个camera/video gear demand pool小于领先电子品类”的未充分支持比较。",
+      "caveat": "百分比高速增长可能来自低基数，且camera bodies、video gear和accessories没有统一GMV。原ledger给S23的2025-01-01发布日期错误；网页显示2025-07-25。",
+      "source_ids": ["S22", "S23", "S30"]
+    },
+    {
+      "original_claim_id": "C13",
+      "original_source_ids": ["S24"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "SEMA正文明确写美国消费者2024年约花费$52.65B用于accessorizing/modifying vehicles，并称spending equally split between offline and online channels。边界是specialty equipment/accessorizing/modifying，不是整个repair/replacement auto-parts aftermarket。",
+      "source_ids": ["S24"]
+    },
+    {
+      "original_claim_id": "C14",
+      "original_source_ids": ["S25", "S02", "S07"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "OIA支持2024 outdoor retail $28B且明确涉及apparel、footwear、equipment、accessories；Census经其官方指定FRED分发可核sporting-goods-store 2024 employer sales为$58.713945B；BLS支持2024每consumer unit sports/recreation/exercise equipment均值$225。三者分别是不同universe/统计对象，不能相加、平均或互相替代，且$28B与C16明显交叉。",
+      "source_ids": ["S25", "S07", "S36", "S37"]
+    },
+    {
+      "original_claim_id": "C15",
+      "original_source_ids": ["S02", "S29"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Census AIES经官方FRED/ALFRED分发可核2024 Hobby, Toy, and Game Stores sales为$17.914046B；这是store-industry employer sales，与C18 toys高度交叉，不能当maker/3D-printing GMV。Reddit实际评论支持Amazon、Micro Center、manufacturer-direct等多渠道存在，但不量化市场。",
+      "source_ids": ["S29", "S36", "S38"]
+    },
+    {
+      "original_claim_id": "C16",
+      "original_source_ids": ["S02", "S06"],
+      "status": "UNVERIFIED_PAGE_SHELL",
+      "supported": null,
+      "correction": "即使后续核实$245.655771B算术无误，也应描述为所选employer retail industries的sales/receipts proxy；不可称商品线全渠道GMV，也不应无条件描述为“加入pure-play/general-merchandise之前的下限”。",
+      "caveat": "原S02 data.census页面本次为JavaScript page shell。若干服装店型分项可经Census指定的FRED渠道核到，但本轮没有用搜索snippet补齐所有八个分项，因此精确$245.66B保持未验证。Census明确说明type-of-retail-store sales不用于测量某commodity/merchandise-line总销售额。BLS $2,001 apparel/services及$461 footwear只是consumer-unit mean expenditure。",
+      "source_ids": ["S02", "S06", "S36"]
+    },
+    {
+      "original_claim_id": "C17",
+      "original_source_ids": ["S18", "S19", "S06"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BLS 2024 household furnishings/equipment mean expenditure $2,414可核；Circana Home $43.7B为2026 forecast且与C10重叠。BLS CE均值不是BEA PCE，也不是C17商品零售GMV。",
+      "source_ids": ["S18", "S19", "S06"]
+    },
+    {
+      "original_claim_id": "C18",
+      "original_source_ids": ["S26"],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Toy Association页面明确区分Circana Checkout projected-to-100%-of-market约$45.6B与Retail Tracking $30.3B、68% market coverage、+6%。这是modelled total market与tracking panel两个不同measurement objects；更广的official merchandise/adult collectibles可能超出传统toy universe。",
+      "source_ids": ["S26"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.census.gov/data/tables/2024/econ/aies/2024-aies-tables.html",
+      "title": "2024 AIES Data",
+      "published_at": "2026-09-03",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14", "C15", "C16"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://data.census.gov/table/AIESBASIC2024.AIES00BASIC?codeset=naics~N0600.44",
+      "title": "AIES00BASIC All Sectors: Summary Statistics for Industry Groups and Industries for Employer Firms in the U.S. and Selected Geographies: 2024",
+      "published_at": "2026-09-03",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S03",
+      "url": "https://data.census.gov/table/AIESMISCSECTOR2024.AIES44PBA?codeset=naics~4541",
+      "title": "AIES44PBA Retail Trade Supplemental Total and E-commerce Sales for Electronic Shopping and Mail-Order Houses by Primary Business Activity: 2024",
+      "published_at": "2026-09-03",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.census.gov/retail/ecommerce.html",
+      "title": "Quarterly Retail E-Commerce Sales, Second Quarter 2026",
+      "published_at": "2026-08-18",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.bls.gov/cex/notices/2025/annual-data-release-2024.htm",
+      "title": "Consumer Expenditure Surveys 2024 Annual Data Release",
+      "published_at": "2025-12-19",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14", "C16", "C17"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-vets-2024.htm",
+      "title": "Consumer Expenditure Surveys 2024 Annual Expenditure Means",
+      "published_at": "2025-12-19",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C10", "C16", "C17"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.bls.gov/opub/ted/2026/the-new-year-and-household-spending.htm",
+      "title": "The New Year and household spending",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.bls.gov/cex/notices/2026/2026-2-year-tables.htm",
+      "title": "Changes with the 2025 annual release of Consumer Expenditure data",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.circana.com/post/us-consumer-technology-sales-forecast-to-reach-112-billion-in-2026-reports-circana",
+      "title": "US Consumer Technology Sales Forecast to Reach $112 Billion in 2026",
+      "published_at": "2026-01-06",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C03"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.circana.com/post/circana-us-consumer-technology-forecast-growth-driven-by-premium-products-2026",
+      "title": "Rising Prices and Americans' Focus on Value Keeps Consumer Technology Revenue Growth on a Moderate Track Through 2028",
+      "published_at": "2026-08-06",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C05"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/",
+      "title": "CTA U.S. Consumer Technology One-Year Industry Forecast, 2022-2027 (July 2026)",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S12",
+      "url": "https://counterpointresearch.com/en/insights/us-smartphone-sell-through-up-9-yoy-in-q2-2025",
+      "title": "US Smartphone Sell-through Up 9% YoY in Q2 2025",
+      "published_at": "2025-08-15",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S13",
+      "url": "https://counterpointresearch.com/default.htm/insights/us-smartphone-sales-fall-5-percent-q2-2026",
+      "title": "US Smartphone Sales Fall 5% YoY in Q2 2026 as Pricing Pressure Squeezes Low-end Segment",
+      "published_at": "2026-08-13",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S14",
+      "url": "https://counterpointresearch.com/sitemap.html/insights/us-smartphone-market-share",
+      "title": "US Smartphone Market Share: Quarterly",
+      "published_at": "2026-08-31",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S15",
+      "url": "https://counterpointresearch.com/mailto%3Apress%40counterpointresearch.com/insights/top-5-smartphone-model-share-8-countries",
+      "title": "Top 5 Smartphone Models Share For 8 Countries",
+      "published_at": "2026-08-26",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.parksassociates.com/blogs/pr-smart-home/nearly-50-of-us-internet-households-own-and-use-a-wearable",
+      "title": "Nearly 50% of US internet households own and use a wearable",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://www.parksassociates.com/blogs/press-releases/parks-associates-to-examine-security-smart-home-and-streaming-video-trends-in-upcoming-webinars",
+      "title": "Parks Associates: 49% of US internet households own at least one smart home device",
+      "published_at": "2026-08-11",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C09"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://www.circana.com/post/circana-forecasts-u-s-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money",
+      "title": "Circana Forecasts U.S. Home Market Growth as Consumers Invest in Products That Help Them Save Money and Simplify Life",
+      "published_at": "2026-09-24",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C10", "C17"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.circana.com/post/stabilization-and-renewed-growth-forecast-for-home-products-industry-beginning-in-late-2026-reports",
+      "title": "Stabilization and Renewed Growth Forecast for Home Products Industry Beginning in Late 2026",
+      "published_at": "2026-03-10",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C10", "C17"]
+    },
+    {
+      "source_id": "S20",
+      "url": "https://www.grandviewresearch.com/horizon/outlook/power-tools-market/united-states",
+      "title": "United States Power Tools Market Outlook",
+      "published_at": "2025-12-16",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C11"]
+    },
+    {
+      "source_id": "S21",
+      "url": "https://www.kenresearch.com/industry-reports/usa-power-tools-market",
+      "title": "USA Power Tools Market",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C11"]
+    },
+    {
+      "source_id": "S22",
+      "url": "https://www.circana.com/post/wired-headphones-growth-is-a-throwback-to-2016",
+      "title": "Wired Headphones Growth Is a Throwback to 2016",
+      "published_at": "2026-02-25",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C12"]
+    },
+    {
+      "source_id": "S23",
+      "url": "https://www.circana.com/post/consumer-technology-growth-that-kicked-off-2025-is-expected-to-soften-in-second-half-of-year-report",
+      "title": "Consumer Technology Growth Expected to Slow in Second Half of 2025",
+      "published_at": "2025-07-25",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C12"]
+    },
+    {
+      "source_id": "S24",
+      "url": "https://www.sema.org/news-media/press-release/new-sema-research-2025-market-report",
+      "title": "New SEMA Research: 2025 Market Report",
+      "published_at": "2025-06-30",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C13"]
+    },
+    {
+      "source_id": "S25",
+      "url": "https://outdoorindustry.org/press-release/new-report-outdoor-market-shows-modest-rebound-to-28b-in-2024-driven-by-casual-consumers/",
+      "title": "Outdoor Market Shows Modest Rebound to $28B in 2024",
+      "published_at": "2025-04-15",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14"]
+    },
+    {
+      "source_id": "S26",
+      "url": "https://toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx?hkey=acea06b5-22e0-4bcc-a3bc-03532459e00d",
+      "title": "U.S. Sales Data",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C18"]
+    },
+    {
+      "source_id": "S27",
+      "url": "https://www.circana.com/post/retail-enters-a-phase-of-continuance",
+      "title": "Next in Retail – Trends in the Mix for '26",
+      "published_at": "2026-02-05",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S28",
+      "url": "https://www.reddit.com/r/buildapc/comments/1u5i1g1/where_to_source_parts_from/",
+      "title": "Where to source parts from",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C07"]
+    },
+    {
+      "source_id": "S29",
+      "url": "https://www.reddit.com/r/3Dprinting/comments/1j1r22e/where_are_you_buying_printer_filament_these_days/",
+      "title": "Where are you buying printer filament these days?",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C15"]
+    },
+    {
+      "source_id": "S30",
+      "url": "https://www.reddit.com/r/photography/comments/1s6kxy9/where_do_you_shop_looking_for_alternatives_to/",
+      "title": "Where do you shop? Looking for alternatives to BH/Adorama/Amazon",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C12"]
+    },
+    {
+      "source_id": "S31",
+      "url": "https://www.reddit.com/r/smarthome/comments/1ln6v60/google_homealexa_homeapple_home_for_2025/",
+      "title": "Google Home/Alexa Home/Apple Home for 2025?",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C09"]
+    },
+    {
+      "source_id": "S32",
+      "url": "https://www.census.gov/programs-surveys/arts/data/tables.html",
+      "title": "Annual Retail Trade Survey Tables",
+      "published_at": "2026-08-31",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S33",
+      "url": "https://www.lightreading.com/smartphones-devices/at-t-t-mobile-and-verizon-s-smartphone-promotions-push-q2-sales-performance-report",
+      "title": "AT&T, T-Mobile and Verizon's smartphone promotions push Q2 sales performance – report",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S34",
+      "url": "https://www.communicationstoday.co.in/us-smartphone-shipments-rise-6-in-q2-amid-global-memory-crunch/",
+      "title": "US smartphone shipments rise 6% in Q2 amid global memory crunch",
+      "published_at": "2026-09-01",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S35",
+      "url": "https://www.techspot.com/news/113473-memory-crisis-killing-off-sub-100-smartphones-us.html",
+      "title": "The memory crisis is killing off sub-$100 smartphones as US sales plunge 64%",
+      "published_at": "2026-08-13",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S36",
+      "url": "https://www.census.gov/programs-surveys/arts/about/glossary.html",
+      "title": "Annual Retail Trade Survey Glossary",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14", "C15", "C16"]
+    },
+    {
+      "source_id": "S37",
+      "url": "https://fred.stlouisfed.org/series/AIES45111RCTUS",
+      "title": "Sporting Goods Stores: Sales",
+      "published_at": "2026-09-10",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C14"]
+    },
+    {
+      "source_id": "S38",
+      "url": "https://alfred.stlouisfed.org/series?seid=AIES45112RCTUS",
+      "title": "Hobby, Toy, and Game Stores: Sales",
+      "published_at": "2026-09-10",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C15"]
+    }
+  ],
+  "claims": [],
+  "data_gaps": [
+    "C01原始Counterpoint正文在当前公开访问中为page shell；Top-5 model share约53%未从可读全文独立复核。",
+    "C16所称八个AIES服装/鞋/箱包店型精确合计$245.655771B未能在本轮从完整可读官方表逐项重算；搜索snippet未被用于补数。",
+    "18类缺同一时期、同一universe的U.S. all-channel consumer retail sell-through/product-spend。",
+    "CTA July-2026详细tech数据仍需登录/购买，且公开说明其核心金额口径为wholesale revenue、average wholesale price和shipments，不能直接代入retail demand。",
+    "多数类目缺category-specific online dollar share；Census 17.1%和Circana >25%属于不同universe，不得平均或外推。",
+    "多数类目缺可比retail ASP、units、12-month purchase incidence及replacement frequency。",
+    "多数类目缺Top-4 revenue share、HHI及Top-SKU sell-through concentration。",
+    "C10与C17存在Home universe重叠。",
+    "C14与C16存在outdoor apparel/footwear重叠。",
+    "C15与C18存在hobby/toy/game重叠；C18 broader collectibles/official merchandise还可能与C16交叉。",
+    "C09与C10/C17在smart appliances/home devices边界存在交叉，C05与C07在parts/peripherals/networking定义上存在交叉。",
+    "C02/C03/C05/C06/C07/C08/C09/C12均可能落入更宽consumer-technology parent universe，不能与$112B parent headline重复求和。",
+    "BLS Consumer Expenditure mean expenditure不是BEA PCE，也不是retail market size；原报告没有提供可比的BEA PCE category ledger。",
+    "C11 secondary market-size estimates同时存在数值、年份和producer/importer-versus-retail basis冲突。",
+    "Demand weighting应与fragmentation、online addressability及growth/opportunity维度分离；现有60/15/10/10/5混合公式不宜作为纯支出权重。"
+  ]
+}
+```

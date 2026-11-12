@@ -1,0 +1,851 @@
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+<!-- begin spin_special_output(head_start) -->
+<script type="text/javascript" src="js/jquery.js" wd_script_id="jquery.js" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA=="></script>
+<style type="text/css" wd_script_id="search_form_style" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA==">
+		.wd_search_form .wd_input_datepicker {
+			margin-right: 2px;
+		}
+		.wd_search_type_checkbox {
+			margin-left: 20px;
+		}
+		</style>
+<script type="text/javascript" src="js/jquery-webdriver.js" wd_script_id="jquery-webdriver.js" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA=="></script>
+<script type="text/javascript" src="js/webdriver.js" wd_script_id="webdriver.js" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA=="></script>
+<script type="text/javascript" wd_script_id="search_form_script" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA==">
+			function wd_toggle_search_form(link, advanced) {
+				var $ = webDriver.jQuery;
+				var $container = $(link).closest(".wd_search_form_container");
+				var basic_form = $container.find(".wd_search_form_basic");
+				var basic_query = basic_form.find('input[name="query"]');
+				var advanced_form = $container.find(".wd_search_form_advanced");
+				var advanced_query = advanced_form.find('input[name="query"]');
+
+				if (advanced) {
+					advanced_query.val(basic_query.val());
+					advanced_form.show();
+					basic_form.hide();
+				} else {
+					basic_query.val(advanced_query.val());
+					basic_form.show();
+					advanced_form.hide();
+				}
+
+				var target_form = advanced ? advanced_form : basic_form;
+				var focus_target = target_form.find('input[name="query"]').filter(":visible:not(:disabled)").get(0);
+				if (!focus_target)
+					focus_target = target_form.find(":input").filter(":visible:not(:disabled)").get(0);
+				if (focus_target)
+					setTimeout(function() { focus_target.focus(); }, 0);
+			}
+
+			function wd_toggle_search_type_checkboxes(radio) {
+				var $ = webDriver.jQuery;
+				var $radio = $(radio);
+				var all = $radio.val() == "All" ? $radio.is(":checked") : !$radio.is(":checked");
+				var $checkboxes = $radio.closest(".wd_form_field").find(".wd_search_type_checkbox");
+				$checkboxes.find('input[type="checkbox"]').prop("disabled", all);
+				$checkboxes.toggle(!all);
+			}
+
+			webDriver.jQuery(function ($) {
+				$('.wd_search_type_radio input[type="radio"]').each(function() {wd_toggle_search_type_checkboxes(this);});
+			});
+		</script>
+<style type="text/css" wd_script_id="featureboxes_style" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA==">
+		.wd_featurebox_icon {
+			display: inline;
+		}
+		.wd_featurebox_icon img {
+			vertical-align: middle;
+		}
+		div.wd_featurebox_group div.wd_tabs_wrapper {
+			border: none;
+			border-bottom: 1px solid #E1E1E1;
+			padding: 0 0 5px 0;
+		}
+		div.wd_featurebox_group div.wd_featurebox {
+			border: none;
+			padding: 8px 0 0 0;
+		}
+		div.wd_featurebox_group li.wd_tab {
+			float: none;
+			color: #666666;
+		}
+		div.wd_featurebox_group li.wd_tab-active {
+			border: none;
+			background-color: transparent;
+			color: #000000;
+			font-weight: bold;
+		}
+		div.wd_featurebox_group li.wd_tab-inactive {
+			cursor: auto;
+		}
+	</style>
+<script type="text/javascript" wd_script_id="view_printable_script" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA==">
+	function view_printable() {
+		var loc = window.location;
+		var sep = (loc.search == "") ? "?" : "&";
+		var url = loc.protocol+"//"+loc.host+loc.pathname+loc.search+sep+"printable"+loc.hash;
+		window.open(url, "_blank", "");
+	}
+</script>
+<link href="thirdparty/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+<style type="text/css" wd_script_id="toolbar_style" nonce="ZjY1ZWY3MzRmM2VmZjViZDdkMjVhNWYyNGY0NTMwYmNiMWRjOGEzZA==">
+			div.wd_toolbar {
+				border-top: 1px solid #cccccc;
+				border-bottom: 1px solid #cccccc;
+				margin: 15px 0px 15px 0px;
+				padding: 5px;
+				line-height: 1;
+			}
+			div.wd_toolbar-page {
+				clear: both;
+			}
+			div.wd_toolbar ul.wd_tools {
+				display: inline-block;
+				width: 100%;
+				margin: 0;
+				padding: 5px 0;
+			}
+			div.wd_toolbar ul.wd_tools li.wd_tool {
+				display: block;
+				list-style-type: none;
+				margin-right: 5px;
+				padding: 0;
+				float: right;
+			}
+			span.wd_tool_icon > a:link,
+			span.wd_tool_icon > a:visited {
+				border-radius: 2px;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 7px;
+				font-size: 16px;
+				line-height: 1;
+				text-align: center;
+				color: #ffffff;
+				background-color: #767676;
+			} 
+			span.wd_tool_icon > a:hover {
+				color: #ffffff;
+				background-color: #666666;
+				text-decoration: none;
+			}
+			div.wd_toolbar ul.wd_tools li.wd_tool-addthis {
+				float: left;
+			}
+		</style>
+<link href="css/wd_wcag.css" type="text/css" rel="stylesheet" wd_script_id="wd_wcag.css">
+
+<!-- end spin_special_output(head_start) -->
+
+	<script src="https://cdn.bttrack.com/universal/44152" async></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Article: PayPal Story Archive - PayPal to Acquire Honey</title>
+	
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter:title" content="PayPal to Acquire Honey" />
+ <meta name="twitter:description" content="Advances PayPal’s leadership in digital commerce Enhances PayPal’s value proposition with an extensive set of consumer commerce capabilities Drives increased sales and conversion for..." />
+ <meta property="og:site_name" content="PayPal Newsroom" />
+ <meta property="og:url" content="https://newsroom.paypal-corp.com/paypal-to-acquire-honey" />
+ <meta property="og:title" content="PayPal to Acquire Honey" />
+ <meta property="og:description" content="Advances PayPal’s leadership in digital commerce Enhances PayPal’s value proposition with an extensive set of consumer commerce capabilities Drives increased sales and conversion for..." />
+
+	<link rel="shortcut icon" href="images/PayPal2024_Favicon.png" type="image/icon">
+
+	<!-- HREF Lang -->
+	<link rel="alternate" hreflang="en-US" href="https://newsroom.paypal-corp.com/" />
+	<link rel="alternate" hreflang="de" href=https://newsroom.deatch.paypal-corp.com/>
+	<link rel="alternate" hreflang="en-CA" href="https://newsroom.ca.paypal-corp.com/" />
+	<link rel="alternate" hreflang="en-GB" href="https://newsroom.uk.paypal-corp.com/" />
+	<link rel="alternate" hreflang="en-AU" href="https://newsroom.au.paypal-corp.com/" />
+	<link rel="alternate" hreflang="es-MX" href="https://newsroom.latam.paypal-corp.com/" />
+	<link rel="alternate" hreflang="es-ES" href="https://newsroom.es.paypal-corp.com/" />
+	<link rel="alternate" hreflang="zh-cn" href="https://newsroom.china.paypal-corp.com/" />
+	<link rel="alternate" hreflang="pt-br" href="https://newsroom.br.paypal-corp.com/" />
+	<link rel="alternate" hreflang="fr-fr" href="https://newsroom.fr.paypal-corp.com/" />
+	<link rel="alternate" hreflang="en-in" href="https://newsroom.in.paypal-corp.com/" />
+	<link rel="alternate" hreflang="it-it" href="https://newsroom.it.paypal-corp.com/" />
+	<link rel="alternate" hreflang="ja-jp" href="https://newsroom.jp.paypal-corp.com/" />
+	<!-- End HREF Lang -->
+
+	<!-- MediaRoom Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" >
+	<link rel="stylesheet" type="text/css" href="fonts/SupremeLLTest/stylesheet.css">
+
+	<!-- Testing to see if this works on production -->
+	
+	<link rel="stylesheet" type="text/css" href="css/wdtypography.css">
+	<link rel="stylesheet" type="text/css" href="css/wdcustomclasses.css">
+	<link rel="stylesheet" type="text/css" href="css/wdheaderandfooter.css">
+	<link rel="stylesheet" type="text/css" href="css/wdbuttonformsandtools.css">
+	<link rel="stylesheet" type="text/css" href="css/wdcontent.css">
+	<link rel="alternate" href="https://newsroom.paypal-corp.com/news?pagetemplate=rss" type="application/rss+xml" title="News  |  PayPal Newsroom">	<!-- END MediaRoom Stylesheets -->
+	
+	
+	
+	
+	
+
+	<script type="application/json" id="policy-data">
+		{
+			"policies": ["CookieBanner"],
+			"nonce":"test",
+			"tenant":"newsroom",
+			"policyData": { "country":"US", "language":"en" }
+		}
+	</script>
+
+	<script src="https://www.paypalobjects.com/ncs/ncs.js"></script>
+
+	<!-- abstracted to a separate file by request -->
+	<script src="js/managecookies.js"></script>
+
+	<!-- Google Tag Manager --> 
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PH333GX');</script> 
+	<!-- End Google Tag Manager -->
+
+
+<!-- begin spin_special_output(head_end) -->
+<!-- OneTrust Cookies Consent Notice start -->
+<script src="" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+	function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+
+<link rel="canonical" href="https://newsroom.paypal-corp.com/paypal-to-acquire-honey" />
+<!-- end spin_special_output(head_end) -->
+</head>
+	
+
+<body class="wd_pageid_34141 wd_item_page wd_item_7" nonce="test">
+
+<!-- Google Tag Manager (noscript) --> 
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH333GX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> 
+<!-- End Google Tag Manager (noscript) -->
+
+	<header class="">
+			
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="wd_logo-wrap"><a class="navbar-brand" href="https://newsroom.paypal-corp.com/home"><img src="images/newsroom-updated.svg"></a></div>
+			<!-- Start Mobile Search  -->
+			<div class="mobile_search-container">
+				<div class="wd_search_form_container"><form name="basic_search" method="get" action="https://newsroom.paypal-corp.com/search-results" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search..." title="Search..." /> <input type="submit" name="submit" value="Search"></form>
+</div>			</div>
+			<!-- END Mobile Search -->
+			<div class="mobile-site-search-bttn">
+				<i class="fas fa-search"></i>
+				<i class="fas fa-times"></i>
+			</div>
+			<button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+<div id="mobileNavbarNavDropdown" class="collapse wd_nav navbar-collapse">
+	<button class="wd_mobile-nav-toggler" aria-label="Close navigation"><span class="wd_close-nav"></span></button>
+
+		<ul class="navbar-nav">
+			<li id="wd_topnav-34137" class="nav-item dropdown " data-child="#wd_topnav-34137">
+				<a href="stories" class="nav-link" target="_self">Stories</a><span class="dropdown-toggle"></span>
+				<div id="categoryNavDropdown" class="wd_category-nav">
+					<div class="wd_featureboxes_dropdown wd_featureboxes-horizontal fr-view">
+<div id="wd_featurebox-standard_3543" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title"></div><div class="wd_featurebox"><div class="container justify-content-center">
+<div class="row py-2" style="width: 100%;">
+<div class="col-sm-3">
+<h4><a href="stories-product">Products</a></h4>
+<a class="dropdown-item" href="stories-paypal">PayPal</a> <a class="dropdown-item" href="stories?cat=11">Honey</a> <a class="dropdown-item" href="stories?cat=8">Venmo</a> <a class="dropdown-item" href="stories?cat=12">PayPal Zettle</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=13">People</a></h4>
+<a class="dropdown-item" href="stories?cat=17">Culture</a> <a class="dropdown-item" href="stories?cat=18">Belonging</a> <a class="dropdown-item" href="stories?cat=19">Volunteerism</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=14">Performance</a></h4>
+<a class="dropdown-item" href="stories?cat=1">Corporate Announcements</a> <a class="dropdown-item" href="stories-public-policy">Public Policy</a> <!-- <a class="dropdown-item" href="stories?cat=21">PayPal Ventures</a> --> <a class="dropdown-item" href="stories?cat=22">Strategic Partnerships</a> <a class="dropdown-item" href="stories?cat=6">Social Impact</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=15">Innovation</a></h4>
+<a class="dropdown-item" href="stories?cat=24">Cryptocurrency</a> <a class="dropdown-item" href="stories?cat=25">Digital Wallet</a> <!--<a class="dropdown-item" href="stories?cat=26">Buy Now, Pay Later</a>--> <!--<a class="dropdown-item" href="stories?cat=27">QR Code</a>--><a class="dropdown-item" href="stories?cat=28"> Credit &amp; Lending</a> <!--<a class="dropdown-item" href="stories?cat=29">Credit</a>--> <a class="dropdown-item" href="stories?cat=30">Technology</a></div>
+</div>
+</div>
+</div></div></div>
+				</div>
+			</li>
+			<li id="wd_topnav-20295" class="nav-item ">
+				<a href="news" class="nav-link" target="_self">News</a>
+			</li>
+			<li id="wd_topnav-20292" class="nav-item ">
+				<a href="media-resources" class="nav-link">Media Resources</a></li>
+			<li id="wd_topnav-20316" class="nav-item ">
+				<a href="https://about.pypl.com/home/default.aspx" class="nav-link ">About <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+			<li id="wd_topnav-20320" class="nav-item ">
+				<a href="contact" class="nav-link ">Contact</a></li>
+		</ul>
+
+</div>
+			
+<div id="navbarNavDropdown" class="collapse wd_nav navbar-collapse">
+
+		<ul class="navbar-nav">
+			<button class="wd_mobile-nav-toggler"><span class="wd_close-nav"></span></button>
+			<li id="wd_topnav-34137" class="nav-item dropdown" data-child="#wd_topnav-34137">
+				<a href="stories" class="nav-link dropdown-toggle" target="_self">Stories</a>
+				<div id="categoryNavDropdown" class="dropdown-menu wd_category-nav">
+					<div class="wd_featureboxes_dropdown wd_featureboxes-horizontal fr-view">
+<div id="wd_featurebox-standard_3543" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title"></div><div class="wd_featurebox"><div class="container justify-content-center">
+<div class="row py-2" style="width: 100%;">
+<div class="col-sm-3">
+<h4><a href="stories-product">Products</a></h4>
+<a class="dropdown-item" href="stories-paypal">PayPal</a> <a class="dropdown-item" href="stories?cat=11">Honey</a> <a class="dropdown-item" href="stories?cat=8">Venmo</a> <a class="dropdown-item" href="stories?cat=12">PayPal Zettle</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=13">People</a></h4>
+<a class="dropdown-item" href="stories?cat=17">Culture</a> <a class="dropdown-item" href="stories?cat=18">Belonging</a> <a class="dropdown-item" href="stories?cat=19">Volunteerism</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=14">Performance</a></h4>
+<a class="dropdown-item" href="stories?cat=1">Corporate Announcements</a> <a class="dropdown-item" href="stories-public-policy">Public Policy</a> <!-- <a class="dropdown-item" href="stories?cat=21">PayPal Ventures</a> --> <a class="dropdown-item" href="stories?cat=22">Strategic Partnerships</a> <a class="dropdown-item" href="stories?cat=6">Social Impact</a></div>
+
+<div class="col-sm-3">
+<h4><a href="stories?cat=15">Innovation</a></h4>
+<a class="dropdown-item" href="stories?cat=24">Cryptocurrency</a> <a class="dropdown-item" href="stories?cat=25">Digital Wallet</a> <!--<a class="dropdown-item" href="stories?cat=26">Buy Now, Pay Later</a>--> <!--<a class="dropdown-item" href="stories?cat=27">QR Code</a>--><a class="dropdown-item" href="stories?cat=28"> Credit &amp; Lending</a> <!--<a class="dropdown-item" href="stories?cat=29">Credit</a>--> <a class="dropdown-item" href="stories?cat=30">Technology</a></div>
+</div>
+</div>
+</div></div></div>
+				</div>
+			</li>
+			<li id="wd_topnav-20295" class="nav-item ">
+				<a href="news" class="nav-link" target="_self">News</a>
+			</li>
+			<li id="wd_topnav-20292" class="nav-item ">
+				<a href="media-resources" class="nav-link " target="_self">Media Resources</a>
+			</li>
+			<li id="wd_topnav-20316" class="nav-item ">
+				<a href="https://about.pypl.com/home/default.aspx" class="nav-link " target="_blank">About<i class="fa fa-external-link" aria-hidden="true"></i></a>
+			</li>
+			<li id="wd_topnav-20294" class="nav-item ">
+				<a href="contact" class="nav-link " target="_self">Contact</a>
+			</li>
+		</ul>
+
+</div>
+
+<div id="globalNavDropdown" class="collapse wd_global navbar-collapse">
+	<ul class="navbar-nav">
+		<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Region</a>
+		<div class="dropdown-menu">
+			<div class="container-fluid">
+				<div class="row py-2 justify-content-end" style="width: 100%;">
+					<div class="col-md-2 ml-auto mr-3">
+						<h4>North America</h4>
+						<a class="dropdown-item" href="https://newsroom.paypal-corp.com">Global / USA (English)</a>
+						<a class="dropdown-item" href="https://newsroom.ca.paypal-corp.com/">Canada (English)</a>
+						<h4>Latin America</h4>
+						<a class="dropdown-item" href="https://newsroom.br.paypal-corp.com/">Brazil (Portuguese)</a>
+						<a class="dropdown-item" href="https://newsroom.latam.paypal-corp.com/">Latin America (Spanish)</a>
+					</div>
+					<div class="col-md-2 mr-3">
+						<h4>Europe</h4>
+						<a class="dropdown-item" href="https://newsroom.fr.paypal-corp.com/">France (French)</a>
+						<a class="dropdown-item" href="https://newsroom.deatch.paypal-corp.com/">Germany (German)</a>
+						<a class="dropdown-item" href="https://newsroom.ie.paypal-corp.com/">Ireland (English)</a>
+						<a class="dropdown-item" href="https://newsroom.it.paypal-corp.com/">Italy (Italian)</a>
+						<a class="dropdown-item" href="https://newsroom.es.paypal-corp.com/">Spain (Spanish)</a>
+						<a class="dropdown-item" href="https://newsroom.uk.paypal-corp.com/">United Kingdom (English)</a>
+					</div>
+					<div class="col-md-2 mr-5">
+						<h4>Asia Pacific</h4>
+						<a class="dropdown-item" href="https://newsroom.apac.paypal-corp.com/">Asia Pacific (English)</a>
+						<a class="dropdown-item" href="https://newsroom.au.paypal-corp.com/">Australia (English)</a>
+						<a class="dropdown-item" href="https://newsroom.china.paypal-corp.com/">China (Simplified Chinese)</a>
+						<a class="dropdown-item" href="https://newsroom.jp.paypal-corp.com/">Japan (Japanese)</a>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+			<!-- Start Desktop Site Search -->
+			<div class="wd_search_wrapper">
+				<div class="wd_search_form_container"><form name="basic_search" method="get" action="https://newsroom.paypal-corp.com/search-results" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search..." title="Search..." /> <input type="submit" name="submit" value="Search"></form>
+</div>				<!-- END Desktop Site SEARCH -->
+				<div class="wd_search-icon"><img src="images/Search_Icon.svg" alt="Search PayPal Newsroom"></div>
+				<div class="wd_close_button"><img src="images/icons/icon-search-close.png" alt="Close Search"></div>
+			</div>
+		</nav>
+	</header>
+
+	
+	<div class = "wd_main-content">
+
+	
+	
+	<div class="wd_hide-me">
+		<div class="wd_global_search">
+			<div class="wd_search_form_container"><form name="basic_search" method="get" action="https://newsroom.paypal-corp.com/search-results" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search" title="Search" /> <input type="submit" name="submit" value="Go"></form>
+</div><!-- END SITE SEARCH -->
+		</div>
+	</div>
+
+	<div class="wd_content-wrapper">
+		<div class="container wd_content-container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<h1 class="page_header">PayPal Stories Archive</h1>
+					<div id="wd_printable_content" class="fr-view">
+<div class="wd_articles-detail">
+<div class="wd_article-head">
+
+			
+		
+
+
+<div class="wd_info-wrap">
+<div class="wd_title">PayPal to Acquire Honey</div>
+<div class="wd_article-info">
+Nov 20, 2019 | <div class="wd_author_name"><a href="https://newsroom.paypal-corp.com/stories-archive?author=4">PayPal  </a></div> 
+</div>
+</div>
+</div>
+<div class="wd_tools-wrap">
+<div class="wd_toolbar wd_toolbar-detail"><ul class="wd_tools"><li class="wd_tool wd_tool-print"><span class="wd_tool_icon"><a onclick="view_printable(); return false;" rel="nofollow" href="#print" title="Print"><span class="fa fa-print"></span><span class="wd_sr-only wd_sr-only-focusable">Print</span></a></span></li><li class="wd_tool wd_tool-email"><span class="wd_tool_icon"><a onclick="window.location.href = 'mailto:?subject=PayPal%20Story%20Archive%20-%20PayPal%20to%20Acquire%20Honey&amp;body='+encodeURIComponent(window.location.href);return false;" href="#email" title="Email link"><span class="fa fa-envelope"></span><span class="wd_sr-only wd_sr-only-focusable">Email link</span></a></span></li></ul></div>
+</div>
+<div class="wd_body fr-view"><div>
+<div><em>Advances PayPal&rsquo;s leadership in digital commerce</em></div>
+
+<div><em>Enhances PayPal&rsquo;s value proposition with an extensive set of consumer commerce capabilities </em></div>
+
+<div><em>Drives increased sales and conversion for PayPal&rsquo;s merchants</em></div>
+
+<div>&nbsp;</div>
+
+<div>SAN JOSE, Calif.&ndash; November 20, 2019 &ndash; <a href="https://www.paypal.com/">PayPal Holdings, Inc.</a> (NASDAQ: PYPL) today announced that it has agreed to acquire <a href="https://www.joinhoney.com/">Honey Science Corporation</a>, a rapidly-growing technology platform for shopping and rewards, for approximately $4 billion. Honey, in combination with PayPal&rsquo;s two-sided network, will transform the shopping experience for PayPal&rsquo;s consumers while increasing sales and customer engagement for its merchants.</div>
+
+<div>&nbsp;</div>
+
+<div>Founded in 2012, Honey is best known as a popular discovery tool that helps consumers find savings as they shop online. Honey has continued to grow and evolve, expanding its suite of products and services to include a mobile shopping assistant, offers and rewards program, and price-tracking tools and alerts. With approximately 17 million monthly active users, Honey has helped millions of people find more than $1 billion in savings in the past year. Honey currently works across approximately 30,000 online retailers ranging from fashion and technology, to travel and pizza delivery.</div>
+
+<div>&nbsp;</div>
+
+<div>The acquisition supports PayPal and Honey&rsquo;s shared mission to simplify and personalize shopping experiences for consumers while driving conversion and increasing consumer engagement and sales for merchants. The combination will help accelerate growth across both companies. Honey will accelerate its growth by driving adoption among PayPal and Venmo&rsquo;s more than 275 million active consumer accounts and sourcing exclusive offers from PayPal&rsquo;s extensive network of 24 million merchant accounts. Honey will enable PayPal to reach consumers at the beginning of their shopping journeys and will enhance PayPal&rsquo;s ability to help merchants acquire and convert consumers by delivering offers that are personalized, timely, and optimized across channels.</div>
+
+<div>&nbsp;</div>
+
+<div>&ldquo;Honey is amongst the most transformative acquisitions in PayPal&rsquo;s history. It provides a broad portfolio of services to simplify the consumer shopping experience, while at the same time making it more affordable and rewarding,&rdquo; said Dan Schulman, president and CEO of PayPal. &ldquo;The combination of Honey&rsquo;s complementary consumer products with our platform will significantly enhance our ability to drive engagement and play a more meaningful role in the daily lives of our consumers. As a partner of choice for our merchants, this is another way that we can help them build and strengthen their customer relationships, provide personalized offers, and drive incremental sales. The combination of Honey and PayPal adds another significant and meaningful dimension to our two-sided platform.&rdquo;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>Following the acquisition, Honey will retain its headquarters and brand in Los Angeles, California. Honey co-founders George Ruan and Ryan Hudson will continue to lead the Honey team as part of PayPal&rsquo;s global consumer product and technology organization, reporting to Senior Vice President John Kunze.</div>
+
+<div>&nbsp;</div>
+
+<div>&ldquo;Honey&rsquo;s vision has always been to give consumers the tools they need to make the best decisions with their money,&rdquo; said Ruan. &ldquo;PayPal shares that vision and together we can build powerful commerce capabilities that create real value for both consumers and retailers around the world.&rdquo;</div>
+
+<div>&nbsp;</div>
+
+<div>&ldquo;Combining PayPal&rsquo;s assets and reach with our technology, we can build powerful new online shopping experiences for consumers and merchants,&rdquo; said Hudson. &ldquo;We&rsquo;ll have the ability to help millions of retailers efficiently reach consumers with offers that deliver more and more value to Honey members.&rdquo;</div>
+
+<div>&nbsp;</div>
+
+<div>Honey was profitable on a net income basis in 2018. Subject to customary closing conditions, including the receipt of regulatory approvals, the transaction is expected to close in the first quarter of 2020. The acquisition is expected to be accretive to PayPal&rsquo;s non-GAAP earnings per share in 2021.</div>
+
+<div>&nbsp;</div>
+
+<div>Perella Weinberg Partners LP is acting as sole financial adviser to PayPal, and Skadden, Arps, Slate, Meagher &amp; Flom LLP is acting as its legal adviser with regard to the transaction. Qatalyst Partners is acting as sole financial adviser to Honey, while Latham &amp; Watkins, LLP is acting as its legal adviser.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>Webcast and Conference Call Information</strong></div>
+
+<div>PayPal will host a conference call to discuss the transaction at 2:00 p.m. Pacific Standard Time (PST) today. A live webcast of the conference call, together with a slide presentation, can be accessed through the company&#39;s investor relations website at https://investor.paypal-corp.com. In addition, an archive of the webcast will be accessible for 90 days through the same link.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>About PayPal</strong></div>
+
+<div>PayPal has remained at the forefront of the digital payment revolution for more than 20 years. By leveraging technology to make financial services and commerce more convenient, affordable, and secure, the PayPal platform is empowering 300 million consumers and merchants in more than 200 markets to join and thrive in the global economy. For more information, visit <a href="https://www.paypal.com/">paypal.com</a>.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>About Honey</strong></div>
+
+<div>Honey Science Corporation is an L.A.-based tech company building tools to help people save time and money when shopping online. What started as a browser extension has grown into a suite of free tools that help everyone shop with confidence. From notifying you when a price drops, to showing you the lowest prices available, Honey provides you with the information that you need to make the best decisions with your money. With approximately 17 million monthly active users, Honey has helped millions of people find more than $1 billion in savings in the past year. Visit <a href="http://www.joinhoney.com">www.joinhoney.com</a> to shop smarter.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>Forward-Looking Statements</strong></div>
+
+<div>This announcement contains &quot;forward-looking&quot; statements within the meaning of applicable securities laws. Forward-looking statements and information relate to future events and future performance and reflect PayPal&#39;s expectations regarding the impact of this transaction on PayPal&#39;s and Honey&#39;s financial and operating results and business, the operation and management of Honey after the acquisition, and the timing of the closing of the acquisition. Forward-looking statements may be identified by words such as &quot;seek&quot;, &quot;believe&quot;, &quot;plan&quot;, &quot;estimate&quot;, &quot;anticipate&quot;, expect&quot;, &quot;project, &quot;forecast&quot;, or &quot;intend&quot;, and statements that an event or result &quot;may&quot;, &quot;will&quot;, &quot;should&quot;, &quot;could&quot;, or &quot;might&quot; occur or be achieved and any other similar expressions.</div>
+
+<div>&nbsp;</div>
+
+<div>Forward-looking statements involve risks and uncertainties which may cause actual results to differ materially from the statements made, and, accordingly, readers should not place undue reliance on forward-looking statements and information. Factors that could cause or contribute to such differences include, but are not limited to, the timing and possible outcome of security holder and regulatory approvals in connection with the transaction, the possibility that the transaction may not close, the reaction to the transaction of Honey&#39;s customers and business partners, the reaction of competitors to the transaction, the retention of Honey&#39;s employees, PayPal&#39;s plans for Honey, economic and political conditions in the global markets in which PayPal and Honey operate, the future growth of PayPal&#39;s and Honey&#39;s businesses and the possibility that integration following the transaction may be more difficult than expected.</div>
+
+<div>&nbsp;</div>
+
+<div>More information about these and other factors that could adversely affect PayPal&rsquo;s results of operations, financial condition and prospects or that could cause actual results to differ materially from those expressed or implied in forward-looking statements can be found in PayPal Holdings, Inc.&#39;s most recent Annual Report on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K and other filings with the Securities and Exchange Commission (the &quot;SEC&quot;), and its future filings with the SEC.</div>
+
+<div>&nbsp;</div>
+
+<div>The forward-looking statements contained in this announcement speak only as of the date hereof.&nbsp; PayPal expressly disclaims any obligation or undertaking to disseminate any updates or revisions to any forward-looking statements contained herein to reflect any change in the expectations with regard thereto or any change in events, conditions or circumstances on which any such statement is based.</div>
+
+<div>&nbsp;</div>
+
+<div><strong>Contacts</strong></div>
+
+<div><em>Investor Relations Contacts&nbsp; </em></div>
+
+<div>Gabrielle Rabinovitch</div>
+
+<div><a href="mailto:grabinovitch@paypal.com">grabinovitch@paypal.com</a></div>
+
+<div>&nbsp;</div>
+
+<div>Akila Moorthy</div>
+
+<div><a href="mailto:amoorthy@paypal.com">amoorthy@paypal.com</a></div>
+
+<div>&nbsp;</div>
+
+<div><em>Media Relations Contact</em></div>
+
+<div>Josh Criscoe</div>
+
+<div><a href="mailto:jcriscoe@paypal.com">jcriscoe@paypal.com</a></div>
+
+<div>646.667.5065</div>
+
+<div>&nbsp;</div>
+
+<div>Amanda Coffee</div>
+
+<div><a href="mailto:acoffee@paypal.com">acoffee@paypal.com</a></div>
+
+<div>408.221.1984</div>
+
+<div>&nbsp;</div>
+
+<div>###</div>
+</div>
+</div>
+
+</div>
+</div>				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	 
+
+	 
+
+	</div> <!-- End Main Content -->
+
+		<div class="container-fluid wd_dkblue-background mt-3">
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center mx-auto">
+						<div class="wd_featureboxes_subscribe wd_featureboxes-vertical fr-view">
+<div id="wd_featurebox-standard_3542" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title">Stay up to date.</div><div class="wd_featurebox"><p>Sign up to receive the latest news to your email.</p>
+
+<p class="wd_white-button"><a href="alerts">Subscribe</a></p>
+</div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="container-fluid wd_footer-wrap">
+		<footer class="" role="contentinfo">
+			<div class="wd_footer-top">
+				<div class="row">
+
+						<div class="col-md-3 col-sm-12">
+							<div class="wd_footer-logo">
+								<img src="images/newsroom-updated.svg" alt="Paypal Logo">
+								<p><a href="https://www.paypal.com/us/home" target="_blank">PayPal.com</a><br>
+								<a href="https://www.venmo.com" target="_blank">Venmo.com</a><br>
+								<a href="https://www.joinhoney.com/paypal" target="_blank">JoinHoney.com</a></p>
+							</div>
+						</div>
+
+						<div class="col-md-6 col-sm-12 wd_link-list">
+							<h4>Our Global Newsrooms</h4>
+
+<ul>
+	<li><a href="https://newsroom.paypal-corp.com/">Global/USA</a></li>
+	<li><a href="https://newsroom.apac.paypal-corp.com/">Asia Pacific</a></li>
+	<li><a href="https://newsroom.au.paypal-corp.com/">Australia</a></li>
+	<li><a href="https://newsroom.br.paypal-corp.com/">Brazil</a></li>
+	<li><a href="https://newsroom.ca.paypal-corp.com/">Canada</a></li>
+</ul>
+
+<ul>
+	<li><a href="https://newsroom.china.paypal-corp.com/">China</a></li>
+	<li><a href="https://newsroom.fr.paypal-corp.com/">France</a></li>
+	<li><a href="https://newsroom.deatch.paypal-corp.com/">Germany</a></li>
+	<li><a href="https://newsroom.ie.paypal-corp.com/">Ireland</a></li>
+	<li><a href="https://newsroom.it.paypal-corp.com/">Italy</a></li>
+</ul>
+
+<ul>
+	<li><a href="https://newsroom.jp.paypal-corp.com/">Japan</a></li>
+	<li><a href="https://newsroom.latam.paypal-corp.com/">Latin America</a></li>
+
+	<li><a href="https://newsroom.es.paypal-corp.com/">Spain</a></li>
+	<li><a href="https://newsroom.uk.paypal-corp.com/">UK</a></li>
+</ul>
+						</div>
+
+						<div class="col-md-3 col-sm-12 wd_social">
+							<h4>Stay Connected</h4>
+							<ul class="wd_social-footer">
+								<li><a href="https://www.facebook.com/PayPalUSA/" target="_blank"><img src="images/icons/FacebookCircleIcon.png"></a></li>
+								<li><a href="https://www.youtube.com/c/paypal" target="_blank"><img src="images/icons/YouTubeCircleIcon.png"></a></li>
+								<li><a href="https://x.com/PayPal" target="_blank"><img src="images/icons/X_DKGRAY.png"></a></li>
+								<li><a href="https://www.instagram.com/paypal/" target="_blank"><img src="images/icons/InstagramCircleIcon.png"></a></li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<div class="wd_footer-bottom">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 col-sm-12 px-0">
+							<p>© PayPal 2026 All rights reserved.</p>
+						</div>
+						<div class="col-md-9 col-sm-12 px-0">
+							<a href="https://www.paypal.com/privacy-center" target="_blank">Privacy</a>
+<a href="https://newsroom.paypal-corp.com/contact" target="_self">Contact Us</a>
+							<a class="wd_cookie-pref" onclick="manageCookiePreferences()">Cookies</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+	<!-- JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+	<!-- MediaRoom Scripts -->
+	<script src="slick/slick.js"></script>
+	<script src="js/wdheaderandfooter.js"></script>
+	<script src="js/wdcontent.js"></script>
+
+	<script>
+	function containsImage() {
+		$('.wd_item:not([class^="wd_asset"]):not(.wd_carousel-item), .item').each(function(){
+		var hasImage = $(this).find('.wd_thumbnail img').attr('src');
+			if(hasImage === undefined) {
+				$(this).addClass('wd_no-image');
+			} else {
+				$(this).addClass('wd_has-image');
+			}
+		});
+	}
+
+	function noImage() {
+		//Add Default Image to items with none
+		$('.wd_no-image').each(function(){
+			if($(this).find('.wd_thumbnail').length){}else{
+				var link = $(this).find('.wd_item_wrapper .wd_title a').attr('href');
+				var text = $(this).find('.wd_item_wrapper .wd_title a').text();
+				var image = new Array ();
+				image[0] = "images/fillers/Library_Monogram_Black.png";
+				image[1] = "images/fillers/Library_Monogram_Gray3.png";
+				image[2] = "images/fillers/Library_PayPal_Black.png";
+				image[3] = "images/fillers/Library_PayPal_BrightBlue.png";
+				image[4] = "images/fillers/Library_PayPal_DeepBlue.png";
+				image[5] = "images/fillers/Library_PayPal_VenmoBlue.png";
+				var size = image.length;
+				var x = Math.floor(size*Math.random());
+				
+				$(this).prepend('<div class="wd_thumbnail"><a href="'+link+'"><img alt="'+text+'" src="'+image[x]+'" border="0"></a></div>');
+			};
+		});
+	}
+
+	function toolbar() {
+	//Adds Toolbar before standard detail content section
+		$('.wd_toolbar.wd_toolbar-detail').clone().prependTo('.wd_standard-detail');	
+	}
+
+	function relatedContent() {
+	//Wraps Related Content Image and p tags
+		$('.wd_related-wrap').each(function(){
+			$(this).find('img').insertBefore($(this).find('p:first-child'));
+		$(this).find('p').wrapAll('<div class="wd_inner"></div>');
+		});
+		//Moves Related Content to container defined in microtemplate
+		$('.wd_related-content').prependTo('.wd_moved-related-wrapper');
+
+	// Replace images with background image elements
+		$('.wd_related-content.wd_rounded-square .wd_related-wrap-new').each(function() {
+			var imgSrc = $(this).find('.wd_related-img-bg img').attr('src');
+			$(this).find('.wd_responsive-img').append('<div class="wd_related-background-img" style="background-image: url('+imgSrc+');"></div>');
+			$(this).find('.wd_related-img-bg img').remove();
+	});
+
+	// Add Read More link to Related Articles
+		$('.wd_related-content.wd_rounded-square .wd_related-wrap-new').each(function() {
+			var link = $(this).find('.wd_related-headline-more a').attr('href');
+			var text = $(this).find('.wd_title a').text();
+			$('<div class="wd_read-more"><a href="'+link+'" aria-label="Read more about '+text+'">Read more</a></div>').insertAfter($(this).find('.wd_related-headline-more'));
+		});
+
+	// Wrap wd_related-headline-more and wd_read-more in one elements
+		$('.wd_related-content.wd_rounded-square .wd_related-wrap-new').each(function() {
+			$(this).find('.wd_related-headline-more, .wd_read-more').wrapAll('<div class="wd_related-headline-content"><div class="related_content-inner"></div></div>');
+		});
+	}
+
+	function globalSearch() {
+		$('.wd_global_search').prependTo('.wd_page-actions-wrap');
+	}
+
+	function movesAssets() {
+		//Moves Assets to container defined in microtemplate
+		$('div[wd_move_after]').prependTo('.wd_moved-assets-wrapper');
+		$('div[wd_move_after]').before('<h4>Related Content</h4>');
+	}
+
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		
+		//Crisis Pages - Add AddThis
+		
+		//Stories, News Releases, Articles - List Pages
+				containsImage();
+		noImage();
+		
+		//Stories, News Releases, Articles Detail pages
+				relatedContent();
+		toolbar();
+		movesAssets();
+				
+		//Stories List Page
+		
+		//New Release List Page - Remove Trailing Thumbnail
+		
+		//News Releases Detail - Move Block Quote
+		
+		//Article Detail - Test for Image
+					var detailImage = $('.wd_captioned_image').length;
+			if(detailImage == 0){
+				$('.wd_article-head').addClass('wd_no-image')
+			} else {
+				$('.wd_article-head').addClass('wd_has-image')
+			};
+		
+		//Multimedia - 20292
+		
+		//About Page - 20285
+		
+		//Contact PayPal - 20294
+		
+		//Search Results Page 
+		
+		
+		$('.wd_stories-teaser .item, wd_newsfeed_releases-teaser .item').each(function(){
+			containsImage();
+			noImage();
+		});
+
+		}); //END Document Ready
+	</script>
+
+	<!-- Twitter universal website tag code -->
+	<script>
+	!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+	},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+	a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+	// Insert Twitter Pixel ID and Standard Event data below
+	twq('init','o7elj');
+	twq('track','PageView');
+	</script>
+	<!-- END Twitter universal website tag code -->
+
+	<!-- LinkedIn tag code -->
+	<script type="text/javascript">
+	_linkedin_partner_id = "1001051";
+	window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+	window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+	</script><script type="text/javascript">
+	(function(l) {
+	if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+	window.lintrk.q=[]}
+	var s = document.getElementsByTagName("script")[0];
+	var b = document.createElement("script");
+	b.type = "text/javascript";b.async = true;
+	b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+	s.parentNode.insertBefore(b, s);})(window.lintrk);
+	</script>
+	<noscript>
+	<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1001051&fmt=gif" />
+	</noscript>
+	<!-- END LinkedIn tag code -->
+
+ 
+
+<!-- begin spin_special_output(body_end) -->
+<script wd_script_id="piwik_tracking_code"></script>
+<!-- Piwik Tracking Code -->
+<script type="text/plain" class="optanon-category-2">
+  var _paq = _paq || [];
+
+  _paq.push(["setCustomVariable", 1, "Content Type", "Articles", "page"]);
+
+  _paq.push(["setCustomVariable", 3, "Navigation Page", "Stories : PayPal Stories Archive", "page"]);
+
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  (function() {
+    var u="//stats.drivetheweb.com/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", 5792]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+    g.type="text/javascript"; g.async=true; g.defer=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+	<img src="https://stats.drivetheweb.com/piwik.php?idsite=5792&rec=1" style="border:0" alt="" />
+</noscript>
+<!-- End Piwik Tracking Code -->
+		
+<!-- end spin_special_output(body_end) -->
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a46859dd6a0387a6',t:'MTc5MTMyODM0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

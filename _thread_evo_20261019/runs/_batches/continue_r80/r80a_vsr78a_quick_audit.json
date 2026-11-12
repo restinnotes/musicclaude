@@ -1,0 +1,104 @@
+{
+  "tag": "r80a",
+  "base": "r78a",
+  "phase": "quick",
+  "total": {
+    "n": 4,
+    "wins": 2,
+    "no_regress": 2,
+    "net": {
+      "alone": -2,
+      "lean": 2,
+      "plain": 4,
+      "cover": -2
+    },
+    "pass": false
+  },
+  "per_work": {
+    "op60": {
+      "n": 2,
+      "wins": 2,
+      "no_regress": 2,
+      "net": {
+        "alone": 6,
+        "lean": 4,
+        "plain": 6,
+        "cover": 8
+      }
+    },
+    "op61": {
+      "n": 2,
+      "wins": 0,
+      "no_regress": 0,
+      "net": {
+        "alone": -8,
+        "lean": -2,
+        "plain": -2,
+        "cover": -10
+      }
+    }
+  },
+  "missing": [],
+  "rows": [
+    {
+      "w": "op60",
+      "j": "g6",
+      "seat": "newX",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 2,
+        "lean": 2,
+        "plain": 2,
+        "cover": 2
+      },
+      "rid": "v6b3_op60_g6_r80a_vsr78a_newX",
+      "output_sha256": "51acace759256b3403ca4419f443fea31b95ecfb7e5d45116a94e514150af8c6"
+    },
+    {
+      "w": "op60",
+      "j": "g56",
+      "seat": "newY",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 4,
+        "lean": 2,
+        "plain": 4,
+        "cover": 6
+      },
+      "rid": "v6b3_op60_g56_r80a_vsr78a_newY",
+      "output_sha256": "d961b14735901733ff99e381d458fa20a7e2a3a1445e9a8e39dce1624dbc9233"
+    },
+    {
+      "w": "op61",
+      "j": "g6",
+      "seat": "newY",
+      "new_win": false,
+      "no_regress": false,
+      "net": {
+        "alone": -2,
+        "lean": 2,
+        "plain": 1,
+        "cover": -4
+      },
+      "rid": "v6b3_op61_g6_r80a_vsr78a_newY",
+      "output_sha256": "27c2425a66251acd83cb46df35d431cfdc6f4c8d4d2aa9f526547e1a72ec8092"
+    },
+    {
+      "w": "op61",
+      "j": "g56",
+      "seat": "newX",
+      "new_win": false,
+      "no_regress": false,
+      "net": {
+        "alone": -6,
+        "lean": -4,
+        "plain": -3,
+        "cover": -6
+      },
+      "rid": "v6b3_op61_g56_r80a_vsr78a_newX",
+      "output_sha256": "72d6106add502bc89c4880699d89f88090f63d32eeda76a913119ed21be8ecbb"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "started_utc": "2026-10-06T05:40:08.350481+00:00",
+  "finished_utc": "2026-10-06T05:40:12.164226+00:00",
+  "in_flight_before_shutdown": 0,
+  "browser_close_confirmed": true,
+  "shutdown_markers": [
+    "2026-10-06 05:40:08 | INFO     | api_server | Shutting down \u2014 closing browser...",
+    "2026-10-06 05:40:09 | INFO     | api_server | Browser closed"
+  ],
+  "container_status": "exited",
+  "exit_code": 0,
+  "oom_killed": false,
+  "volumes_preserved": [
+    {
+      "name": "yi-mimicgate-20261002-state",
+      "destination": "/imports",
+      "writable": false
+    },
+    {
+      "name": "yi-camoufox-browser",
+      "destination": "/app/browser_data",
+      "writable": true
+    },
+    {
+      "name": "yi-camoufox-logs",
+      "destination": "/app/logs",
+      "writable": true
+    },
+    {
+      "name": "yi-camoufox-state",
+      "destination": "/app/state",
+      "writable": true
+    }
+  ]
+}

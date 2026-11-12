@@ -1,0 +1,80 @@
+{
+  "base": "r50progress1rr",
+  "all_inputs_match_frozen": true,
+  "runs": {
+    "scr52trim1_op60_A5": {
+      "route": "gpt3-serial",
+      "model": "gpt-6-thinking",
+      "effort": "max",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "b4129091cefe72e66a32340a730541965a1382aa9321a68b2f7777e329ffb718"
+    },
+    "scr52trim1_op61_A5": {
+      "route": "mimic",
+      "model": "gpt-6",
+      "effort": "high",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "17e20c4f032c6fb05d262b208bf764c49a17e8639efbf7ef3bfd748b5b04a88a"
+    },
+    "scr52trim2_op60_A5": {
+      "route": "gpt3-serial",
+      "model": "gpt-6-thinking",
+      "effort": "max",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "5c25debedde0daa97a3696f2280d3e83537b73c20db7b76d670e3be5fe065812"
+    },
+    "scr52trim2_op61_A5": {
+      "route": "mimic",
+      "model": "gpt-6",
+      "effort": "high",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "db54231410492c90138a802c88eab7f4e61dc21732b77e54c6a1b25f74c09ffb"
+    },
+    "scr53coherence1_op60_A5": {
+      "route": "mimic",
+      "model": "gpt-6",
+      "effort": "high",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "fd667742c33a4db3a9cee82995f998b44b9ac30cb28de645fc80b59301874071"
+    },
+    "scr53coherence1_op61_A5": {
+      "route": "gpt3-serial",
+      "model": "gpt-6-thinking",
+      "effort": "max",
+      "read_complete": true,
+      "approved": false,
+      "output_sha256": "2d1450b5aaeb2c2c19d2e0a0d40a9d2468d629a624e638862d42e0d8833e91cb"
+    },
+    "scr53coherence2_op60_A5": {
+      "route": "gpt3-serial",
+      "model": "gpt-6-thinking",
+      "effort": "max",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "d58f4021c884c5411c5e7ce7833d42545674efbdf21f1848379806315e7f639e"
+    },
+    "scr53coherence2_op61_A5": {
+      "route": "gpt3-serial",
+      "model": "gpt-6-thinking",
+      "effort": "max",
+      "read_complete": true,
+      "approved": true,
+      "output_sha256": "ca13b6585ffba96ca26bdefd0193ec318bd84be41ae62d13663cc2624b690d52"
+    }
+  },
+  "hard_rejected": [
+    "r53coherence1"
+  ],
+  "mixed_route_candidates": [
+    "r52trim1",
+    "r52trim2"
+  ],
+  "gpt3_only_candidates": [
+    "r53coherence2"
+  ]
+}

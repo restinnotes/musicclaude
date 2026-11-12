@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-10T22:26:53.798225+00:00",
+  "steps": {
+    "scripts/analyze_repeats.py": {
+      "rc": 0,
+      "tail": "WROTE D:\\musicclaude\\_dl_latest_zip_work\\reports\\repeated_stability_summary.json\nbase r01-r05: valid 145 missing 0 invalid/failed 15\noptional r06-r12: valid 9 not_run 206\nE5 cases unstable 30 / 72\nThread hypotheses unstable 15 / 34\n\n---STDERR---\n"
+    },
+    "scripts/build_repeat_judges.py": {
+      "rc": 0,
+      "tail": "BUILT {'D': 44, 'G': 44, 'F': 9} review jobs 97 base outputs pending 2 optional future pending 46\n\n---STDERR---\n"
+    },
+    "scripts/summarize_reviews.py": {
+      "rc": 0,
+      "tail": "WROTE D:\\musicclaude\\_dl_latest_zip_work\\reports\\review_and_extension_summary.json\njudge jobs valid 69 / 97 order-sensitive comparisons 1 saturation reviews 6\n\n---STDERR---\n"
+    }
+  },
+  "new_r08_review_jobs_missing": [
+    "D_k02_r08_gengpt6w_judgegpt56w_AB",
+    "D_k02_r08_gengpt6w_judgegpt56w_BA",
+    "D_k02_r08_gengpt56w_judgegpt6w_AB",
+    "D_k02_r08_gengpt56w_judgegpt6w_BA",
+    "G_k02_r08_judgegpt6w_AB",
+    "G_k02_r08_judgegpt6w_BA",
+    "G_k02_r08_judgegpt56w_AB",
+    "G_k02_r08_judgegpt56w_BA",
+    "F_k02_n08_judgegpt56w"
+  ]
+}

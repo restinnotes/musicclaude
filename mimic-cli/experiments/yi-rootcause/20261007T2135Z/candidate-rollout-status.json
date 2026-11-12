@@ -1,0 +1,297 @@
+{
+  "utc": "2026-10-08T03:04:42.117145+00:00",
+  "target": "MimicGate",
+  "candidate_two_verified_answers": [
+    8,
+    8
+  ],
+  "production_candidate_installed": true,
+  "live_source_verified": true,
+  "production_restored": true,
+  "restoration_acceptance_pending": null,
+  "source_completed_answers": [
+    8,
+    8
+  ],
+  "source_failed_trials": [
+    {
+      "label": "native001",
+      "type": "incomplete_response",
+      "answer": null
+    }
+  ],
+  "source_latest_complete_probe": {
+    "started_utc": "2026-10-08T01:24:42.196337+00:00",
+    "container": "yi-mimicgate-20261002",
+    "api_url": "http://127.0.0.1:8652",
+    "source_started_at": "2026-10-08T01:22:56.097428337Z",
+    "command": "mg probe cup",
+    "automatic_replay": false,
+    "cli_started": true,
+    "container_memory_before": {
+      "utc": "2026-10-08T01:24:42.196337+00:00",
+      "current_bytes": 754974720,
+      "peak_bytes": 1427341312,
+      "events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    "success": true,
+    "cli_exit_code": 0,
+    "cli_run": "D:\\musicclaude\\mimic-cli\\runs\\20261008T012442.872642Z-4dcbb81c",
+    "diagnostic_sha256": "83e504948e6dac4ecb18688911e8a5bb3413d7ab277811e84e29a0e7b5406c56",
+    "probe_assessment": {
+      "expected_answer": 8,
+      "observed_answer": 8,
+      "normal": true,
+      "status": "matched",
+      "evidence": [
+        "\\boxed{x=8}",
+        "\\boxed{8}",
+        "\\boxed{x=8}"
+      ],
+      "method": "explicit_conclusion_text",
+      "proof_independently_verified": false
+    },
+    "cli_error": null,
+    "cli_elapsed_seconds": 781.11,
+    "screenshot_evidence_complete": true,
+    "ui_thinking_time": [
+      "Worked for 11m 40s"
+    ],
+    "finished_utc": "2026-10-08T01:37:44.017129+00:00",
+    "total_seconds": 781.328,
+    "memory": {
+      "minimum_windows_available_gib": 1.463,
+      "minimum_windows_commit_available_gib": 6.105,
+      "memory_samples": 158,
+      "sampling_interval_seconds": 5,
+      "minimum_free_before_probe_gib": 1,
+      "minimum_commit_headroom_before_probe_gib": 3,
+      "budget_scope": "one_request_with_existing_browser",
+      "in_flight_generation_automatically_aborted": false
+    },
+    "container_memory_after": {
+      "utc": "2026-10-08T01:37:44.017129+00:00",
+      "current_bytes": 777048064,
+      "peak_bytes": 1620615168,
+      "events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    "oom_kill_delta": 0,
+    "observer_sha256": "3baeb61ca3e9e5bd3e21f59ae0a75dc511d52ebdcd4b29df3ceff1fd5f9a18fb"
+  },
+  "source_post_restart_check": {
+    "utc": "2026-10-08T01:23:57.996533+00:00",
+    "command": "mg check",
+    "exit_code": 0,
+    "stdout": "TEST_OK",
+    "elapsed_seconds": 28.687,
+    "run_paths": [
+      "D:\\musicclaude\\mimic-cli\\runs\\20261008T012329.482476Z-a6e2297a"
+    ]
+  },
+  "active_probe": null,
+  "source_running": true,
+  "source_started_at": "2026-10-08T02:39:32.118065897Z",
+  "native_high_entropy_headers_added": false,
+  "browser_context_injected": false,
+  "additional_stealth_disabled": true,
+  "pre_send_main_world_environment_read": false,
+  "source_profile_or_cookie_reimported": false,
+  "user_chrome_modified": false,
+  "new_subagents_spawned": false,
+  "memory": {
+    "utc": "2026-10-08T01:25:22.042828+00:00",
+    "physical_load_percent": 93,
+    "total_physical_gib": 31.497,
+    "available_physical_gib": 1.91,
+    "total_commit_gib": 67.497,
+    "used_commit_gib": 61.079,
+    "available_commit_gib": 6.418,
+    "commit_load_percent": 90.5
+  },
+  "root_cause_proven": false,
+  "comparison_report": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\candidate-source-wire-comparison.json",
+  "source_second_complete_probe": {
+    "started_utc": "2026-10-08T01:24:42.196337+00:00",
+    "container": "yi-mimicgate-20261002",
+    "api_url": "http://127.0.0.1:8652",
+    "source_started_at": "2026-10-08T01:22:56.097428337Z",
+    "command": "mg probe cup",
+    "automatic_replay": false,
+    "cli_started": true,
+    "container_memory_before": {
+      "utc": "2026-10-08T01:24:42.196337+00:00",
+      "current_bytes": 754974720,
+      "peak_bytes": 1427341312,
+      "events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    "success": true,
+    "cli_exit_code": 0,
+    "cli_run": "D:\\musicclaude\\mimic-cli\\runs\\20261008T012442.872642Z-4dcbb81c",
+    "diagnostic_sha256": "83e504948e6dac4ecb18688911e8a5bb3413d7ab277811e84e29a0e7b5406c56",
+    "probe_assessment": {
+      "expected_answer": 8,
+      "observed_answer": 8,
+      "normal": true,
+      "status": "matched",
+      "evidence": [
+        "\\boxed{x=8}",
+        "\\boxed{8}",
+        "\\boxed{x=8}"
+      ],
+      "method": "explicit_conclusion_text",
+      "proof_independently_verified": false
+    },
+    "cli_error": null,
+    "cli_elapsed_seconds": 781.11,
+    "screenshot_evidence_complete": true,
+    "ui_thinking_time": [
+      "Worked for 11m 40s"
+    ],
+    "finished_utc": "2026-10-08T01:37:44.017129+00:00",
+    "total_seconds": 781.328,
+    "memory": {
+      "minimum_windows_available_gib": 1.463,
+      "minimum_windows_commit_available_gib": 6.105,
+      "memory_samples": 158,
+      "sampling_interval_seconds": 5,
+      "minimum_free_before_probe_gib": 1,
+      "minimum_commit_headroom_before_probe_gib": 3,
+      "budget_scope": "one_request_with_existing_browser",
+      "in_flight_generation_automatically_aborted": false
+    },
+    "container_memory_after": {
+      "utc": "2026-10-08T01:37:44.017129+00:00",
+      "current_bytes": 777048064,
+      "peak_bytes": 1620615168,
+      "events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      }
+    },
+    "oom_kill_delta": 0,
+    "observer_sha256": "3baeb61ca3e9e5bd3e21f59ae0a75dc511d52ebdcd4b29df3ceff1fd5f9a18fb"
+  },
+  "cause_investigation_pending": "Historical last8/first6 observed wire metadata equal; opaque context-cookie changes unrecorded. New passive comparison tested locally, activation awaits safe restart headroom. Exact cause unproven.",
+  "memory_block_user_question_pending": false,
+  "extra_idle_clone_stop_authorized": true,
+  "extra_idle_clone_stopped": true,
+  "additional_stealth_on_answer": 8,
+  "additional_stealth_on_cause_hypothesis_supported": false,
+  "source_after_causal_check": {
+    "utc": "2026-10-08T02:40:30.643717+00:00",
+    "source_started_at": "2026-10-08T02:39:32.118065897Z",
+    "command": "mg check",
+    "automatic_replay": false,
+    "memory_before": {
+      "utc": "2026-10-08T02:40:30.643717+00:00",
+      "physical_load_percent": 96,
+      "total_physical_gib": 31.497,
+      "available_physical_gib": 1.217,
+      "total_commit_gib": 67.497,
+      "used_commit_gib": 60.423,
+      "available_commit_gib": 7.074,
+      "commit_load_percent": 89.5
+    },
+    "exit_code": 0,
+    "stdout": "TEST_OK",
+    "elapsed_seconds": 29.625,
+    "finished_utc": "2026-10-08T02:41:00.271598+00:00",
+    "run": "D:\\musicclaude\\mimic-cli\\runs\\20261008T024031.088041Z-0a8d15fa",
+    "diagnostic_sha256": "45632093a9a741e18de4e41288e03869c9133af6ec96128e4461a0baac64275c",
+    "success": true,
+    "actual_response": "TEST_OK",
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "5.6 Extra High",
+      "selected_effort": "xhigh",
+      "fallback_reason": null,
+      "verified_at": 1791427253.0429428,
+      "verification": "live_slider_and_closed_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "Extra High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 133239679222352,
+      "process_uid": 1000,
+      "process_pid": 1811,
+      "is_conversation": false
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "owned_experiment_and_approved_idle_clone_states": {
+    "yi-mg-storage-control-20261007": {
+      "running": false,
+      "container_preserved": true,
+      "volumes_preserved": true
+    },
+    "yi-mg-storage-ls-20261007": {
+      "running": false,
+      "container_preserved": true,
+      "volumes_preserved": true
+    },
+    "yi-mg-native-identity-20261007": {
+      "running": false,
+      "container_preserved": true,
+      "volumes_preserved": true
+    },
+    "yi-mg-clone-20261007": {
+      "running": false,
+      "container_preserved": true,
+      "volumes_preserved": true
+    }
+  },
+  "live_source_concurrency": {
+    "max_concurrency": 8,
+    "in_flight": 0,
+    "available": 8,
+    "waiting": 0,
+    "max_active_tabs": 8,
+    "worker_tabs": 0,
+    "max_idle_worker_tabs": 2,
+    "max_queue": 16,
+    "queue_timeout_seconds": 240
+  },
+  "functional_source_acceptance_passed": true,
+  "source_cookie_or_profile_reimported": false,
+  "causal_stealth_pair_answers": [
+    8,
+    8
+  ],
+  "causal_stealth_pair_report": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\causal-stealth-pair-result.json",
+  "historical_workload_report": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\historical-workload-0800-1440.json",
+  "historical_last8_first6_report": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\historical-last8-first6-wire-comparison.json",
+  "historical_fast_send_hypothesis_supported": false,
+  "historical_auth_loss_observed": false,
+  "new_cookie_sequence_observer_deployed": false,
+  "new_cookie_sequence_observer_pending": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\pending-cookie-sequence-observer.json"
+}

@@ -1,0 +1,39 @@
+{
+  "rid": "scr58stakes_op61_P3",
+  "failed_at": 1793754534.1219406,
+  "source_failure_sha256": "bb993e0f14d1cba7b324b595fb550315e2cfa03d4e0694bc5eb24bad69b59590",
+  "raw_failure": {
+    "run_id": "scr58stakes_op61_P3",
+    "attempt": 0,
+    "account": "gpt3",
+    "route": "gpt3-serial",
+    "started": "2026-11-03T20:08:21",
+    "submitted_utc": null,
+    "gap_since_prev_submit_s": null,
+    "seconds": 32,
+    "exit_code": 1,
+    "completed": false,
+    "model": null,
+    "thinking_effort": null,
+    "job_directory": null,
+    "message_chars": 55484,
+    "message_sha256": "d431fcab01b19bdb37856de56cc1a941a646328377fa26383c6a1d2cb0b080d3",
+    "meta": {
+      "stage": "round58_upstream-upstream",
+      "web": true
+    },
+    "stderr_tail": "{\"completed\": false, \"error_code\": \"MODEL_CATALOG_FAILED\", \"error_type\": \"RuntimeError\", \"automatic_retry\": false, \"job_directory\": \"D:\\\\musicclaude\\\\gpt2agent-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261104T010822668234Z\", \"submitted\": false, \"message\": \"MODEL_CATALOG_FAILED: ChatGPT model discovery returned HTTP 500.\"}\r\n"
+  },
+  "service_error": {
+    "completed": false,
+    "error_code": "MODEL_CATALOG_FAILED",
+    "error_type": "RuntimeError",
+    "automatic_retry": false,
+    "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\gpt3\\pro-bridge-20261104T010822668234Z",
+    "submitted": false,
+    "message": "MODEL_CATALOG_FAILED: ChatGPT model discovery returned HTTP 500."
+  },
+  "submitted": false,
+  "retry_after": 1793754594.1219406,
+  "rule": "Ordinary availability failure, exactly 60 seconds from original failure artifact; no protection signal, no repeated cooldown reset. Original parent40495 still owns other results; only missing item can be retried after terminal."
+}

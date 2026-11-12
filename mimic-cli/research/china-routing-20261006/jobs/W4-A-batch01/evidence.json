@@ -1,0 +1,640 @@
+{
+  "job_id": "W4-A-batch01",
+  "parent_replicate": "W4-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "assigned_sku_ids": [
+    "C01-S01",
+    "C01-S02",
+    "C01-S03",
+    "C02-S01",
+    "C02-S02",
+    "C02-S03",
+    "C03-S01",
+    "C03-S02",
+    "C03-S03"
+  ],
+  "categories": [
+    {
+      "category_id": "C01",
+      "status": "6/6 platform-SKU checks BLOCKED; 0 qualified offers"
+    },
+    {
+      "category_id": "C02",
+      "status": "6/6 platform-SKU checks BLOCKED; 0 qualified offers"
+    },
+    {
+      "category_id": "C03",
+      "status": "6/6 platform-SKU checks BLOCKED; 0 qualified offers"
+    }
+  ],
+  "batch_counts": {
+    "assigned_skus": 9,
+    "platform_sku_cells": 18,
+    "status_counts": {
+      "BLOCKED": 18,
+      "EXACT_OBSERVED": 0,
+      "OEM_OBSERVED": 0,
+      "COMPARABLE_ONLY": 0,
+      "RESELLER_ONLY": 0,
+      "NOT_OBSERVED": 0,
+      "LOGIN_REQUIRED": 0,
+      "VERIFIED_UNAVAILABLE": 0
+    },
+    "qualified_offer_missing_rate": 1.0
+  },
+  "comparison_scope": {
+    "destination": "US ZIP 10001",
+    "endpoint": "delivered_to_ZIP10001_before_US_sales_tax",
+    "us_sales_tax_treatment": "excluded; checkout not observed",
+    "shipment_structures": [
+      {
+        "structure_index": 1,
+        "definition": null,
+        "status": "unresolved",
+        "item_price": null,
+        "shipping": null,
+        "tariff_classification": null,
+        "tariff_source": null,
+        "tariff_amount": null
+      },
+      {
+        "structure_index": 2,
+        "definition": null,
+        "status": "unresolved",
+        "item_price": null,
+        "shipping": null,
+        "tariff_classification": null,
+        "tariff_source": null,
+        "tariff_amount": null
+      },
+      {
+        "structure_index": 3,
+        "definition": null,
+        "status": "unresolved",
+        "item_price": null,
+        "shipping": null,
+        "tariff_classification": null,
+        "tariff_source": null,
+        "tariff_amount": null
+      },
+      {
+        "structure_index": 4,
+        "definition": null,
+        "status": "unresolved",
+        "item_price": null,
+        "shipping": null,
+        "tariff_classification": null,
+        "tariff_source": null,
+        "tariff_amount": null
+      }
+    ],
+    "note": "Four shipment structures preserved separately; definitions were not supplied in this batch prompt and were not invented."
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": null,
+      "citation_ref": "turn245734view2",
+      "title": "Temu home page",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": null,
+      "citation_refs": [
+        "turn523736view0",
+        "turn523736view1",
+        "turn523736view2",
+        "turn523736view3",
+        "turn523736view4",
+        "turn523736view5"
+      ],
+      "title": "Temu direct exact-query attempts for C01/C02",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": null,
+      "citation_refs": [
+        "turn646733view0",
+        "turn646733view1",
+        "turn646733view2"
+      ],
+      "title": "Temu direct exact-query attempts for C03",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": null,
+      "citation_ref": "turn989333view0",
+      "title": "Temu US tablets/laptops category",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": null,
+      "citation_ref": "turn461178view0",
+      "title": "Temu Switzerland iPad A16 candidate page",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": null,
+      "citation_ref": "turn245734view0",
+      "title": "AliExpress US home page",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": null,
+      "citation_refs": [
+        "turn646733view3",
+        "turn646733view4",
+        "turn646733view5"
+      ],
+      "title": "AliExpress US exact-query attempts for C01",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": null,
+      "citation_refs": [
+        "turn670855view0",
+        "turn670855view1",
+        "turn670855view2",
+        "turn670855view3",
+        "turn670855view4",
+        "turn670855view5"
+      ],
+      "title": "AliExpress US exact-query attempts for C02/C03",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": null,
+      "citation_ref": "turn751917view0",
+      "title": "AliExpress Choice Day Y700 Gen4/Gen5 secondary report",
+      "published_at": "2026-10-05",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03",
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": null,
+      "citation_ref": "turn535114view0",
+      "title": "Reddit: Y700 Gen 5 on AliExpress",
+      "published_at": "2026-04-28",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": null,
+      "citation_ref": "turn535114view1",
+      "title": "Reddit: Y700 Gen5 purchase discussion",
+      "published_at": "2026-07-13",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "Temu exact-query pages for all nine assigned SKUs were inaccessible in this environment; accessible Temu landing/category pages did not yield readable item-level original-page evidence.",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "confidence": "high",
+      "counterevidence": "Search indexing surfaced cached/category content, but snippets and page shells are excluded by protocol."
+    },
+    {
+      "claim_id": "K02",
+      "claim": "AliExpress US first-party access was blocked/403 and the nine assigned direct query pages could not be inspected.",
+      "classification": "FACT",
+      "source_ids": [
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "Community and secondary sources show AliExpress marketplace activity, so this does not prove unavailability."
+    },
+    {
+      "claim_id": "K03",
+      "claim": "Third-party evidence supports that Lenovo Y700 Gen5 has appeared on AliExpress, but does not verify the frozen 12GB+256GB carbon-black variant delivered to ZIP10001 on 2026-10-06.",
+      "classification": "FACT",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "confidence": "medium",
+      "counterevidence": "No readable first-party AliExpress item/checkout page was available."
+    },
+    {
+      "claim_id": "K04",
+      "claim": "A Temu-indexed iPad A16 candidate outside the US region cannot establish US coverage and its opened original page was only a shell.",
+      "classification": "FACT",
+      "source_ids": [
+        "S05"
+      ],
+      "confidence": "high",
+      "counterevidence": "None sufficient for ZIP10001."
+    },
+    {
+      "claim_id": "K05",
+      "claim": "No A-exact, B-OEM or C-comparable offer can be accepted for any of the 18 platform-SKU cells in this batch.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "This is an evidence-availability conclusion, not a claim of marketplace absence."
+    }
+  ],
+  "coverage": [
+    {
+      "sku_id": "C01-S01",
+      "category_id": "C01",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPhone 17; 256GB; white; China mainland dual-SIM; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search URL inaccessible",
+          "no readable item-level original page",
+          "ZIP10001 delivery/warehouse/price not observable"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPhone 17; 256GB; white; China mainland dual-SIM; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform access blocked/403",
+          "direct search inaccessible",
+          "seller/item/stock/price/warehouse not observable"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head and exact-variant flags preserved.",
+        "No absence inference from blocked access."
+      ]
+    },
+    {
+      "sku_id": "C01-S02",
+      "category_id": "C01",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPhone 17 Pro; 256GB; silver; China mainland dual-SIM; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search URL inaccessible",
+          "item-level verification unavailable"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPhone 17 Pro; 256GB; silver; China mainland dual-SIM; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "item-level verification unavailable"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "US eSIM/unlocked hardware cannot substitute for the frozen mainland dual-SIM version."
+      ]
+    },
+    {
+      "sku_id": "C01-S03",
+      "category_id": "C01",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "OnePlus Ace 6T; 12GB+256GB; 闪速黑; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search URL inaccessible",
+          "no seller/item page verified"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "OnePlus Ace 6T; 12GB+256GB; black; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "third-party snippets rejected",
+          "stock/region/ROM/price not verified"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "OnePlus 15R branding/ROM differences were not treated as A-exact or B-OEM without first-party evidence."
+      ]
+    },
+    {
+      "sku_id": "C02-S01",
+      "category_id": "C02",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "ASUS Tianxuan 7 Pro; Core Ultra 7 251HX; 16GB; 1TB; RTX5060; 2.5K 300Hz; 青; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "no exact configuration page verified"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "same exact Tianxuan 7 Pro configuration; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "US delivery/warehouse unavailable"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "TUF/Tianxuan regional branding was not assumed to be exact."
+      ]
+    },
+    {
+      "sku_id": "C02-S02",
+      "category_id": "C02",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "Lenovo Xiaoxin 16SE; Ryzen 7; 16GB; 512GB; expandable SSD slot; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "no exact CPU submodel/region page verified"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "same frozen Xiaoxin 16SE configuration; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "no item page verified"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Other Xiaoxin/IdeaPad regional models were not substituted."
+      ]
+    },
+    {
+      "sku_id": "C02-S03",
+      "category_id": "C02",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "MECHREVO Wujie 14 2026; Core Ultra 5 226V; 16GB; 1TB; 2.8K; grey; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "no exact original item page"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "same Wujie 14 2026 exact configuration; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "no exact original item page"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Wujie 14S/14X/other CPU versions were not substituted."
+      ]
+    },
+    {
+      "sku_id": "C03-S01",
+      "category_id": "C03",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPad 11-inch A16 2025; 128GB; WLAN; silver; Temu exact query"
+        ],
+        "access_limitations": [
+          "US exact search inaccessible",
+          "a non-US indexed candidate was region-mismatched and opened only as page shell",
+          "price/seller/stock not accepted"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPad A16; 128GB; Wi-Fi; silver; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "no first-party offer verified"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Pink or cellular variants cannot substitute for silver Wi-Fi 128GB."
+      ]
+    },
+    {
+      "sku_id": "C03-S02",
+      "category_id": "C03",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPad 11-inch A16 2025; 256GB; WLAN; silver; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "no US item page verified"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "iPad A16; 256GB; Wi-Fi; silver; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "US platform blocked",
+          "no first-party offer verified"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "128GB and 256GB remain separate frozen SKUs."
+      ]
+    },
+    {
+      "sku_id": "C03-S03",
+      "category_id": "C03",
+      "pre_freeze_mg_audit_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "Lenovo Legion Y700 5th; 8.8-inch; 12GB+256GB; Wi-Fi; carbon black; Temu exact query"
+        ],
+        "access_limitations": [
+          "direct search inaccessible",
+          "no item-level offer verified"
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [],
+        "search_scope": [
+          "Lenovo Legion Y700 Gen5/5th; 12GB+256GB; carbon black; AliExpress US exact query"
+        ],
+        "access_limitations": [
+          "first-party AliExpress page blocked",
+          "community/secondary evidence cannot establish current exact US offer",
+          "seller/stock/US warehouse/USD delivered price null"
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Community evidence supports Gen5 marketplace presence only; it does not close exact variant/region/warehouse/price requirements.",
+        "Coupon/Japan-market price evidence excluded from ordinary US delivered price."
+      ]
+    }
+  ],
+  "data_gaps": [
+    "18/18 platform-SKU cells lack readable current first-party item pages.",
+    "No verified seller/item IDs, stock, US warehouse, USD/CNY ordinary delivered prices, shipping components, weight/dimensions, tariff classification/source or checkout tax.",
+    "No A/B/C offer statistics can be computed without fabricating evidence.",
+    "Four shipment-structure definitions were not supplied in the frozen subset; four unresolved slots were preserved rather than renamed or merged."
+  ]
+}

@@ -1,0 +1,42 @@
+[pub3_write_op60_w2] ok 370s 44955 chars
+[pub3_write_op60_w2_fix1] long prompt (92050 bytes) sent as attachment
+[pub3_write_op61_w2] ok 432s 36114 chars
+[pub3_write_op60_w2_fix1] ok 199s 44955 chars
+[pub3_write_op60_w2_fix2] long prompt (92050 bytes) sent as attachment
+[pub3_write_op61_w2_fix1] ok 183s 36114 chars
+[pub3_write_op61_w2_fix2] ok 231s 36114 chars
+[pub3_write_op60_w2_fix2] ok 341s 44955 chars
+[False, False]
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\pub4.py", line 53, in <module>
+    pub3.marks(sys.argv[1])
+  File "D:\musicclaude\_video_public_20261104\pub3.py", line 163, in marks
+    with ThreadPoolExecutor(2) as ex: print(list(ex.map(one, WORKS)), flush=True)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub3.py", line 148, in one
+    d = rd(OUT/f'script_{w}_{tag}.json'); src = {s['sec']: s for s in rd(pub2.OUT/f'{w}_src.json')['sections']}; rows = []
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub2.py", line 29, in rd
+    def rd(p): return json.loads(Path(p).read_text(encoding='utf-8-sig'))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_video_public_20261104\\r3\\script_op60_w2.json'

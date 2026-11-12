@@ -1,0 +1,749 @@
+{
+  "utc": "2026-10-07T23:19:59.065806+00:00",
+  "production_restored": false,
+  "source_container_unchanged": true,
+  "source_browser_or_cookie_modified": false,
+  "same_browser_container_and_profile": true,
+  "single_request_at_a_time": true,
+  "unused_owned_control_page_parked_blank_in_both_trials": true,
+  "browser_hard_cap_bytes": 1610612736,
+  "cgroup_memory_events_after_trials": "low 0\nhigh 0\nmax 46\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "manually_supplied_hints_are_actual_native_linux_metadata": true,
+  "windows_chrome_identity_reproduction_claimed": false,
+  "records": {
+    "baseline": {
+      "run": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-hintsbaseline005",
+      "started_utc": "2026-10-07T23:12:50.407432+00:00",
+      "finished_utc": "2026-10-07T23:14:45.775791+00:00",
+      "elapsed_seconds": 115.375,
+      "answer": 6,
+      "prompt_sha256": "f661ffe25617190d9ea75117b251dd7925095770fea9956d86ea557d6056d189",
+      "actual_model": "gpt-5.6-sol",
+      "actual_effort": "xhigh",
+      "native_hint_evidence": {
+        "mode": "baseline",
+        "actual_native_metadata": null,
+        "supplied_header_names": [],
+        "supplied_headers": {},
+        "original_native_low_entropy_headers_overridden": false,
+        "request_body_edited": false,
+        "opaque_instance_id_injected": false,
+        "applied_by_owning_driver": true
+      },
+      "screenshot_evidence": {
+        "complete": true,
+        "directory": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-hintsbaseline005\\screenshots",
+        "files": [
+          {
+            "filename": "response-viewport.jpg",
+            "sha256": "a13cd38368167047f215e8c0dc5f2d52ec3f42928ba6c44f8422901f08e340b5"
+          },
+          {
+            "filename": "response-full.jpg",
+            "sha256": "a13cd38368167047f215e8c0dc5f2d52ec3f42928ba6c44f8422901f08e340b5"
+          }
+        ],
+        "thinking_time_ui_labels": [
+          "Worked for 1m 26s"
+        ]
+      },
+      "memory": {
+        "minimum_windows_available_gib": 3.027,
+        "minimum_windows_commit_available_gib": 8.197,
+        "memory_samples": 25,
+        "sampling_interval_seconds": 5,
+        "minimum_free_before_probe_gib": 1,
+        "minimum_commit_headroom_before_probe_gib": 3,
+        "budget_scope": "one_request_with_existing_browser",
+        "in_flight_generation_automatically_aborted": false
+      },
+      "diagnostics_sha256": "33d3aa8b9c33d7cfbc8b2a372ccf7ac1214e255d5663c4e50b60282d3c1c2fef",
+      "wire_metadata": {
+        "model": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "history_and_training_disabled": true,
+        "is_do_not_remember": false,
+        "temporary_chat_requests_personalization": false,
+        "browser_context_present": false,
+        "browser_context_is_object": false,
+        "context_shape": {
+          "client_contextual_info": {
+            "app_name": {
+              "type": "str",
+              "characters": 11,
+              "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+            },
+            "app_surface": {
+              "type": "str",
+              "characters": 13,
+              "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+            },
+            "has_web_push_capabilities": true,
+            "web_push_notification_permission": {
+              "type": "str",
+              "characters": 7,
+              "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+            }
+          },
+          "supported_encodings": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 2,
+                "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+              }
+            ]
+          },
+          "local_function_names": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 22,
+                "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+              }
+            ]
+          },
+          "turn_attribution": {
+            "turn_trigger": {
+              "type": "str",
+              "characters": 8,
+              "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+            }
+          }
+        },
+        "timezone_offset_min": 420,
+        "timezone": "America/Los_Angeles",
+        "message_count": 1,
+        "text_characters": 412,
+        "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+      },
+      "actual_sent_ua_hint_names": [
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform"
+      ]
+    },
+    "high_entropy": {
+      "run": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-hintshigh002",
+      "started_utc": "2026-10-07T23:15:14.782140+00:00",
+      "finished_utc": "2026-10-07T23:19:07.666334+00:00",
+      "elapsed_seconds": 232.891,
+      "answer": 8,
+      "prompt_sha256": "f661ffe25617190d9ea75117b251dd7925095770fea9956d86ea557d6056d189",
+      "actual_model": "gpt-5.6-sol",
+      "actual_effort": "xhigh",
+      "native_hint_evidence": {
+        "mode": "high_entropy",
+        "actual_native_metadata": {
+          "architecture": "x86",
+          "bitness": "64",
+          "brands": [
+            {
+              "brand": "Chromium",
+              "version": "153"
+            },
+            {
+              "brand": "Not_A Brand",
+              "version": "8"
+            }
+          ],
+          "fullVersionList": [
+            {
+              "brand": "Chromium",
+              "version": "153.0.8010.12"
+            },
+            {
+              "brand": "Not_A Brand",
+              "version": "8.0.0.0"
+            }
+          ],
+          "mobile": false,
+          "platform": "Linux",
+          "platformVersion": "",
+          "uaFullVersion": "153.0.8010.12"
+        },
+        "supplied_header_names": [
+          "sec-ch-ua-arch",
+          "sec-ch-ua-bitness",
+          "sec-ch-ua-full-version-list",
+          "sec-ch-ua-platform-version"
+        ],
+        "supplied_headers": {
+          "sec-ch-ua-arch": "\"x86\"",
+          "sec-ch-ua-bitness": "\"64\"",
+          "sec-ch-ua-full-version-list": "\"Chromium\";v=\"153.0.8010.12\", \"Not_A Brand\";v=\"8.0.0.0\"",
+          "sec-ch-ua-platform-version": "\"\""
+        },
+        "original_native_low_entropy_headers_overridden": false,
+        "request_body_edited": false,
+        "opaque_instance_id_injected": false,
+        "applied_by_owning_driver": true
+      },
+      "screenshot_evidence": {
+        "complete": true,
+        "directory": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-hintshigh002\\screenshots",
+        "files": [
+          {
+            "filename": "response-viewport.jpg",
+            "sha256": "2a1e583df0c8e725b00db1c30f4afeb15271999d3034294a36724dde7ee76689"
+          },
+          {
+            "filename": "response-full.jpg",
+            "sha256": "2a1e583df0c8e725b00db1c30f4afeb15271999d3034294a36724dde7ee76689"
+          }
+        ],
+        "thinking_time_ui_labels": [
+          "Worked for 3m 21s"
+        ]
+      },
+      "memory": {
+        "minimum_windows_available_gib": 2.838,
+        "minimum_windows_commit_available_gib": 8.022,
+        "memory_samples": 48,
+        "sampling_interval_seconds": 5,
+        "minimum_free_before_probe_gib": 1,
+        "minimum_commit_headroom_before_probe_gib": 3,
+        "budget_scope": "one_request_with_existing_browser",
+        "in_flight_generation_automatically_aborted": false
+      },
+      "diagnostics_sha256": "10604602d0ddb96eafd13d2fc05dbcf151276732033706087f9a98d70f0f583e",
+      "wire_metadata": {
+        "model": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "history_and_training_disabled": true,
+        "is_do_not_remember": false,
+        "temporary_chat_requests_personalization": false,
+        "browser_context_present": false,
+        "browser_context_is_object": false,
+        "context_shape": {
+          "client_contextual_info": {
+            "app_name": {
+              "type": "str",
+              "characters": 11,
+              "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+            },
+            "app_surface": {
+              "type": "str",
+              "characters": 13,
+              "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+            },
+            "has_web_push_capabilities": true,
+            "web_push_notification_permission": {
+              "type": "str",
+              "characters": 6,
+              "sha256": "62d6c2330036f64bcf71b95791743d6c77c38e0d7c8cbedcbc525c77c57cf0ee"
+            }
+          },
+          "supported_encodings": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 2,
+                "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+              }
+            ]
+          },
+          "local_function_names": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 22,
+                "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+              }
+            ]
+          },
+          "turn_attribution": {
+            "turn_trigger": {
+              "type": "str",
+              "characters": 8,
+              "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+            }
+          }
+        },
+        "timezone_offset_min": 420,
+        "timezone": "America/Los_Angeles",
+        "message_count": 1,
+        "text_characters": 412,
+        "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+      },
+      "actual_sent_ua_hint_names": [
+        "sec-ch-ua",
+        "sec-ch-ua-arch",
+        "sec-ch-ua-bitness",
+        "sec-ch-ua-full-version-list",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform",
+        "sec-ch-ua-platform-version"
+      ]
+    }
+  },
+  "received_frontend_asset_hashes": [
+    {
+      "utc": "2026-10-07T23:12:55.560316+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "646436.0f89f34edd.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "77c1e45e11b692b74759cd1148137604700cadcabcb0f16a366b21b0c7d2698f",
+      "body_bytes": 338018,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:12:56.236012+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "7078.903b5a88c7.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "03eaa3a14c5e7e70a18d7abb50644c87388e991a2c8315befd22c508996a9d06",
+      "body_bytes": 1909003,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:12:57.601515+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "646436.fe377d6ccd.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "2d140b73a4c16364f943f64b107f076bb9d29ee141133f9b5d4b4d79715b148f",
+      "body_bytes": 340205,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:12:57.810386+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "7078.1a8f7893d1.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "46db115206cddb8262d93192fcd9331ede79b09d2b73697c1ecd12dab93e34d9",
+      "body_bytes": 1903119,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:15:16.748031+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "646436.fe377d6ccd.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "2d140b73a4c16364f943f64b107f076bb9d29ee141133f9b5d4b4d79715b148f",
+      "body_bytes": 340205,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:15:17.413687+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "7078.1a8f7893d1.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "46db115206cddb8262d93192fcd9331ede79b09d2b73697c1ecd12dab93e34d9",
+      "body_bytes": 1903119,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:15:18.551794+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "646436.fe377d6ccd.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": "2d140b73a4c16364f943f64b107f076bb9d29ee141133f9b5d4b4d79715b148f",
+      "body_bytes": 340205,
+      "body_observed": true,
+      "observation_complete": true,
+      "from_service_worker": false
+    },
+    {
+      "utc": "2026-10-07T23:15:18.693657+00:00",
+      "event": "forensic_frontend_asset",
+      "basename": "7078.1a8f7893d1.js",
+      "page_object_id": 135649995210256,
+      "status": 200,
+      "hash_scope": "received_decoded_response_body",
+      "body_saved": false,
+      "executed_bytecode_verified": false,
+      "body_sha256": null,
+      "body_bytes": null,
+      "body_observed": false,
+      "observation_complete": false,
+      "from_service_worker": false,
+      "error_code": "decoded_body_over_budget"
+    }
+  ],
+  "stream_results": [
+    {
+      "utc": "2026-10-07T23:14:43.977101+00:00",
+      "event": "generation_stream_finished",
+      "source": "cdp",
+      "endpoint": "/backend-api/f/conversation",
+      "page_object_id": 135649995210256,
+      "cdp_request_id": "2056.635",
+      "wire_epoch": 1791414790.091832,
+      "metadata": {
+        "model": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "history_and_training_disabled": true,
+        "is_do_not_remember": false,
+        "temporary_chat_requests_personalization": false,
+        "browser_context_present": false,
+        "browser_context_is_object": false,
+        "context_shape": {
+          "client_contextual_info": {
+            "app_name": {
+              "type": "str",
+              "characters": 11,
+              "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+            },
+            "app_surface": {
+              "type": "str",
+              "characters": 13,
+              "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+            },
+            "has_web_push_capabilities": true,
+            "web_push_notification_permission": {
+              "type": "str",
+              "characters": 7,
+              "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+            }
+          },
+          "supported_encodings": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 2,
+                "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+              }
+            ]
+          },
+          "local_function_names": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 22,
+                "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+              }
+            ]
+          },
+          "turn_attribution": {
+            "turn_trigger": {
+              "type": "str",
+              "characters": 8,
+              "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+            }
+          }
+        },
+        "timezone_offset_min": 420,
+        "timezone": "America/Los_Angeles",
+        "message_count": 1,
+        "text_characters": 412,
+        "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+      },
+      "status": 200,
+      "protocol": "h2",
+      "bytes_observed": 78093,
+      "metadata_records": [
+        {
+          "message_author_role": "user",
+          "message_recipient": "all",
+          "message_status": "finished_successfully"
+        },
+        {
+          "message_author_role": "system",
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "message_end_turn": true
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max"
+        },
+        {
+          "message_author_role": "system",
+          "message_recipient": "all",
+          "message_status": "finished_successfully"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "message_end_turn": false
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "reasoning_status": "unknown"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "unknown",
+          "message_status": "finished_successfully",
+          "message_end_turn": false
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "reasoning_status": "unknown",
+          "finish_details": {
+            "type": "stop",
+            "stop_tokens_type": "list"
+          }
+        },
+        {
+          "message_author_role": "tool",
+          "message_author_name": "unknown",
+          "message_author_name_present": true,
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "tool_aggregate_status": "success",
+          "tool_content_type": "unknown"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "all",
+          "message_status": "in_progress",
+          "message_end_turn": false
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "reasoning_status": "reasoning_ended",
+          "finished_duration_sec": 86
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "all",
+          "message_channel": "final",
+          "message_status": "in_progress"
+        },
+        {
+          "message_status": "finished_successfully"
+        },
+        {
+          "message_end_turn": true
+        },
+        {
+          "finish_details": {
+            "type": "stop",
+            "stop_tokens_type": "list"
+          }
+        },
+        {
+          "server_ste_metadata": {
+            "tool_name": "ContainerTool",
+            "turn_use_case": "coding",
+            "warmup_state": "rewarm",
+            "tool_invoked": true,
+            "conduit_prewarmed": false
+          }
+        },
+        {
+          "model_slug": "gpt-5-6-thinking"
+        }
+      ],
+      "sse_done": true,
+      "truncated": false,
+      "oversized_lines_dropped": 0,
+      "metadata_record_limit_reached": false,
+      "early_buffer_limit_reached": false,
+      "metadata_observation_complete": true,
+      "failed": false,
+      "canceled": true,
+      "network_canceled_after_sse_done": true
+    },
+    {
+      "utc": "2026-10-07T23:18:53.626900+00:00",
+      "event": "generation_stream_finished",
+      "source": "cdp",
+      "endpoint": "/backend-api/f/conversation",
+      "page_object_id": 135649995210256,
+      "cdp_request_id": "2160.631",
+      "wire_epoch": 1791414930.484741,
+      "metadata": {
+        "model": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "history_and_training_disabled": true,
+        "is_do_not_remember": false,
+        "temporary_chat_requests_personalization": false,
+        "browser_context_present": false,
+        "browser_context_is_object": false,
+        "context_shape": {
+          "client_contextual_info": {
+            "app_name": {
+              "type": "str",
+              "characters": 11,
+              "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+            },
+            "app_surface": {
+              "type": "str",
+              "characters": 13,
+              "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+            },
+            "has_web_push_capabilities": true,
+            "web_push_notification_permission": {
+              "type": "str",
+              "characters": 6,
+              "sha256": "62d6c2330036f64bcf71b95791743d6c77c38e0d7c8cbedcbc525c77c57cf0ee"
+            }
+          },
+          "supported_encodings": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 2,
+                "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+              }
+            ]
+          },
+          "local_function_names": {
+            "count": 1,
+            "items": [
+              {
+                "type": "str",
+                "characters": 22,
+                "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+              }
+            ]
+          },
+          "turn_attribution": {
+            "turn_trigger": {
+              "type": "str",
+              "characters": 8,
+              "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+            }
+          }
+        },
+        "timezone_offset_min": 420,
+        "timezone": "America/Los_Angeles",
+        "message_count": 1,
+        "text_characters": 412,
+        "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+      },
+      "status": 200,
+      "protocol": "h2",
+      "bytes_observed": 223793,
+      "metadata_records": [
+        {
+          "message_author_role": "user",
+          "message_recipient": "all",
+          "message_status": "finished_successfully"
+        },
+        {
+          "message_author_role": "system",
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "message_end_turn": true
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max"
+        },
+        {
+          "message_author_role": "system",
+          "message_recipient": "all",
+          "message_status": "finished_successfully"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "message_end_turn": false
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "reasoning_status": "unknown"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "unknown",
+          "message_status": "finished_successfully",
+          "message_end_turn": false
+        },
+        {
+          "model_slug": "gpt-5-6-thinking",
+          "default_model_slug": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "reasoning_status": "unknown",
+          "finish_details": {
+            "type": "stop",
+            "stop_tokens_type": "list"
+          }
+        },
+        {
+          "message_author_role": "tool",
+          "message_author_name": "unknown",
+          "message_author_name_present": true,
+          "message_recipient": "all",
+          "message_status": "finished_successfully",
+          "tool_aggregate_status": "success",
+          "tool_content_type": "unknown"
+        },
+        {
+          "message_author_role": "assistant",
+          "message_recipient": "all",
+          "message_status": "in_progress",
+          "message_end_turn": false
+        }
+      ],
+      "sse_done": false,
+      "truncated": false,
+      "oversized_lines_dropped": 0,
+      "metadata_record_limit_reached": false,
+      "early_buffer_limit_reached": false,
+      "metadata_observation_complete": false,
+      "failed": true,
+      "canceled": false,
+      "network_canceled_after_sse_done": false
+    }
+  ],
+  "caveats": [
+    "Two sequential trials do not establish a unique cause.",
+    "Web-push permission metadata changed between trials; other natural browser state changes may also occur.",
+    "The four tested high-entropy hints do not reproduce the entire native Windows Chrome environment.",
+    "Earlier preparation failures without generation requests are excluded from answer comparison.",
+    "Original last successful MG 8 request had no browser_context."
+  ]
+}

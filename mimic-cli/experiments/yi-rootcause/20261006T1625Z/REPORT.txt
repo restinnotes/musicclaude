@@ -1,0 +1,129 @@
+yi MimicGate 登录与水杯题调查，2026-10-06；持续更新中的实验报告
+
+当前已验证的修复
+Temporary Chat 会产生 conv_key_<GUID> / history_off_<GUID> cookie 对。旧 profile 中这些 cookie 持续积累。
+在真实 Chromium 的隔离环境中，只使用公开假 cookie，即复现了：179 个保留认证，180 个保留认证，加入第 181 个后浏览器自动降到 150 个，并移除了假认证 cookie。
+诊断副本的一次真实生成也记录到认证 cookie 从 1 变成 0，随后 SQLite 中同样为 0，发生在导入设备 cookie 之前。该记录与容量清理机制相容，未捕获服务端删除认证 cookie 的指令。
+这足以证明本工程需要防范 cookie 容量淘汰；不能据此断言历史“4 并发掉登录”的每一次都已查明，因为那些历史轮次没有精确删除原因记录。
+
+已部署到原 yi Docker 的措施
+启动和发送前检查 ChatGPT 整个站点的 cookie 数量；达到 160 时仅回收不在活动页面使用的 Temporary Chat cookie 对，目标约 100。
+回收前通过 SQLite backup 保存 Chrome 加密 cookie 数据库，包括 WAL 状态。
+回收采用精确 name/domain/path 的 CDP 删除，避免 filtered clear_cookies 清空全站再写回造成并发竞态。
+每次临时会话完成、页面退出后，回收该轮自己的临时 cookie 对。
+保留认证、设备、Cloudflare 和普通会话 cookie。没有重置或删除 profile、退出账号、删除持久卷。
+并发上限仍为 8，既有 5 秒发送间隔保留。
+重启后原容器 171 -> 99，回收 72 个旧临时 cookie，认证仍为 1；九份部署源码哈希全部吻合。
+
+验证范围
+真实 Chromium 假 cookie 测试：100 次连续创建/回收；50 轮、每轮 8 个并行临时会话 cookie 创建；每轮峰值 115，认证始终存在。
+这是浏览器 cookie 生命周期的并行验证，不等于已完成 8 个真实模型长请求的压力测试。
+容器内 15 项相关单测、主机 7 项请求观察测试、9 项 CLI 证据与判分测试通过。
+真实原容器重启后单次水杯题完整返回 7，认证保持；截图在页面回收前获取并自动导出，核对 SHA256。
+
+已明确排除或不能成立的解释
+原生 Chrome 和 Docker 均实际发送 gpt-5-6-thinking / max，核心题目摘要一致，Temporary 和非个性化标志一致。
+原生 Chrome 和 Docker 都带 Codex Browser / codex_webview 前端头，不能把这些头当成两侧差异。
+原容器重启后的 7 已收到 SSE [DONE]；前端在 [DONE] 后取消连接属于正常收尾，不是被提前截断的草稿。
+关闭 Stealth 的两次副本测试均为 6；不能宣称关闭防指纹即可恢复。
+单独对齐设备 cookie、仅修复容量也没有稳定恢复 8。
+水杯题逐轮发送、每次只有一个模型请求，故降低并发不能解释当前已重现的能力差异。
+
+证据记录改进
+记录实际发送时间、模型/强度、题目长度和摘要、临时/个性化、时区、发送认证 cookie 数、设备 cookie 摘要、Cookie 头字节数和受限客户端头。
+后续记录还将保存固定白名单内的会话上下文 cookie 名称是否实际被浏览器发送，不保存其值；导入记录保存名称/域/路径和“导入前存在/值相等”的布尔信息。被浏览器拦截的 cookie 不会计为已发送。
+记录 HTTP 状态、响应流中的模型/强度、流字节数、SSE 是否结束、是否在结束后被前端正常取消。
+跟踪 cookie 数、认证存在/轮换/消失、到期和服务端删除指令；疑似容量淘汰明确标记为“原因未最终确认”。
+每次杯题必须保存完整回答、时间、页面最终截图。无法导出/核对截图则杯题证据不算完成；不会自动重发生成请求。
+记录不保存原始 cookie 值、认证头或推理正文。cookie 备份使用 Chrome 加密值。
+旧轮次中把“只能证明下界至少 6”误判成“精确答案 6”的记录保留原件，并另附纠正结果。
+重启前一次没有最终结果的原生生成明确记录为未完成，不计为正常或异常答案。
+
+当前比较实验
+原生正确 yi profile：Joy-group / Business。导入 32 个非会话 cookie 到隔离副本后，在内存中核对认证一致；临时明文传输文件已删除。
+隔离副本同时使用 America/New_York，与原生 Chrome 对齐；Chrome 仍为 153。因此这一轮同时涉及 cookie 集合和时区，不能单凭一轮结果认定哪个因素有因果作用。
+第一轮实际发出于 16:34:34.848414 UTC；15 分钟时等待超时。失败截图显示 Worked for 13m 46s，并已开始输出 x=8，但仍在生成，未获取完整回答，不记为正常通过。
+延长等待、补齐完成检测后的第二轮已完整返回 8：实际发送 16:53:19.027402 UTC，SSE 完成 17:04:57.535230 UTC，约 698.508 秒；网页 Worked for 10m 25s。CLI 总耗时约 718.6 秒。收到 SSE [DONE]，模型/强度仍为 gpt-5-6-thinking / max；完整回答、viewport/full 截图已保存，截图 SHA256 为 3f98a2190c77bc7ebed3e5523d3b99708561271da77962d69ca34e377f5f46fe。该轮为一次完整正常杯题结果，不代表稳定性或具体 cookie 因果已确立。
+17:05:58 UTC，已在同一副本仅将时区恢复 America/Los_Angeles；没有再导入 cookie，Chrome 仍为 153。继续用该条件检验时区混杂。
+洛杉矶时区轮已完整返回 8：实际发送 17:06:41.515293 UTC，SSE 完成 17:17:49.268782 UTC，约 667.753 秒；网页 Worked for 10m 2s。两张最终截图 SHA256 为 7d00a4503759d90aea7bccbbcccf75b61d8a83b0406fb3c7c1dd852692a81a4a。浏览器管理源码恢复后与原生产源码文本完全一致。因此当前观察不要求改浏览器版本、时区或 Stealth。
+17:30 UTC 开始认证单因素对照：从仍未导入完整 cookie 的原生产 profile 离线复制副本，只更新 1 个 __Secure-next-auth.session-token。导入前与原生值不相同，导入后已核对相同；其他 cookie 未导入，原 profile 未修改。用于判断是否仅新认证凭据已足够。
+认证单因素轮完整返回 6：run 20261006T173027.077381Z-b72b5f41，实际发送 17:30:44.355617 UTC，SSE 完成 17:32:40.321386 UTC，网页 Worked for 1m 46s。两张最终截图 SHA256 均为 0f0b5c6c2ed739ded40fe5f2fc20a51d140ca4d5399ffb6cfaa799e8021db5a7。HTTP 200，SSE DONE，gpt-5-6-thinking / max，认证保持；设备 cookie 保持旧摘要。实际发送的会话上下文白名单只有 __oailb、_account，另三项未发送。该观察表明仅刷新认证凭据尚不足，完整非会话 cookie 集合的两次 8 是更强的线索；具体哪项 cookie 或服务端状态起作用仍未确立。
+该轮暴露了标准调用硬编码 900 秒等待上限的问题：推理结束后仍须给答案输出留时间。现新增 STANDARD_RESPONSE_TIMEOUT，默认 1800000 毫秒；CLI HTTP 等待上限同步为 1900 秒。
+验收还发现容器 detector 源码遗漏了本地“Copy 不能覆盖 Stop”修复。已补齐诊断副本和正常停止的原容器；重新验证 9 项提交、认证、标准契约、完成信号单测通过，9 项 CLI 证据测试也通过。
+这两处修改保证等完整答案，不能单独据此声称模型能力已修复。原容器新部署清单见 ../20261006T1313Z/production-timeout-detector-final/deployment.json。
+外层等待也已同步：浏览器 1800 秒，CLI completion HTTP 1900 秒，Windows 后台 Python 子进程及重复测试脚本 2400 秒，已有 MimicGateCupProbe 任务执行上限 PT45M。任务原先 PT30M，其动作和触发器 XML 均核对未变；没有创建新任务或触发额外探针，仍只在 Docker 容器已运行时检测，并保持隐藏窗口。
+已准备官方 Chrome for Testing 154.0.8037.92 的独立比较。若需要运行，将从正常停止的诊断副本离线复制 profile 到新卷；原 profile 不会被新版 Chrome 打开或迁移。
+目前不启动这个比较：原 Chrome 153 已在完整 cookie 条件下连续两轮返回 8，且内存反馈后暂停新增浏览器下载与完整 profile 复制。
+下载来源：https://googlechromelabs.github.io/chrome-for-testing/
+下载 SHA256：ff43322f335e436b2f4dcdfeeec5db032299e335a7e8c1c618b326e100ce8732
+
+运行记录见同目录 TRIAL_INDEX.json 和 RESULTS.csv；未完成试验不会写入为已完成。
+
+内存反馈与处理，17:19 UTC 起
+用户反馈内存高后暂停新增请求，正常关闭新建的认证对照容器。此时所有本轮 yi 诊断容器和原 yi 均停止；其他用户已有容器没有关闭。
+Windows 实测：31.5 GiB 总内存，已用 24.9 GiB，可用 6.59 GiB；VmmemWSL 工作集约 5.1–5.5 GiB，本机 Chrome 28 个进程工作集合计约 4.17 GiB，压缩内存约 2.16 GiB。进程工作集包含共享页，其加总不等同于精确物理归属。
+WSL /proc/meminfo 记录 Cached 4089720 KiB（约 3.9 GiB），AnonPages 1497724 KiB（约 1.4 GiB）；当前无 swap 使用。本轮下载和完整 profile 复制会增加文件缓存，未记录此前历史峰值，不能精确把全部缓存归于某一次操作。
+原 profile 大小只读 du 实测 130044 KiB（约 127 MiB），不能把全部 3.9 GiB 缓存归于复制 profile。
+停止实验容器后 Windows 可用 8.39 GiB；一次 sync + clean page-cache reclaim 后可用 10.18 GiB、VmmemWSL 工作集约 3.0 GiB。没有删除 profile/文件、重启 WSL/Docker 或关闭其他服务。
+暂停后续浏览器下载和完整 profile 复制，后续复用已建副本。实验脚本新增至少 8 GiB Windows 可用内存的发送前条件，生成期间每 5 秒记录物理内存；低于条件不发新请求。
+仅诊断副本加 4 GiB RAM / 6 GiB 含 swap 上限；原生产容器未加此限制、并发仍为 8。未来离线复制辅助容器限制到 256 MiB，避免复制过程无限占用文件缓存。
+详见 memory/ 下的 Windows、Linux、缓存回收及后续连续采样记录。
+
+更关键的 Windows 提交内存证据
+系统日志过去 24 小时留下 7 条 Resource-Exhaustion-Detector / Event 2004，时间为本机纽约 12:29、12:37、12:42、12:49、13:07、13:12、13:18。日志明确诊断虚拟内存不足；多轮 vmmemWSL 提交约 7.4–7.7 GiB，meilisearch.exe 约 2.45 GiB，并列出 Chrome/OpenChamber/opencode 等进程。
+停止全部本轮 yi 容器后，仍记录到物理可用约 7.8–9.1 GiB、提交总量约 31.6–33.1 / 35.5 GiB。说明只检查物理余量会漏掉真实的提交上限风险；此前物理内存门槛不充分。
+Win32_PageFileSetting 原设置为 AutomaticManagedPagefile=False，C:\pagefile.sys 初始/最大均 4096 MB，D:\pagefile.sys 为初始 4096 / 最大 8192 MB。但 Win32_PageFileUsage 实际仅 C 盘 4096 MB，D 盘那份未启用；提交上限因此约 35.5 GiB。没有证据判定 D 盘未启用的原因，不能把已配置容量算作已生效。
+17:41 UTC 进程按名称合计：vmmemWSL 工作集约 2.97 / 私有提交 3.61 GiB；Chrome 30 进程工作集约 4.72 / 私有提交 3.45 GiB；meilisearch 工作集仅 0.03 / 私有提交 2.45 GiB；ChatGPT 私有提交约 1.55 GiB，claude/OpenChamber 各约 1.11 GiB，node 约 1.01 GiB。工作集有共享页，不与系统总量简单相加。meilisearch 路径为 D:\ai-stack\meilisearch\meilisearch.exe，父进程已不在；未发现关联 Windows 服务，监听 127.0.0.1:7700。尚未确认其被哪个现有应用使用，未强制结束。
+完整事件、分页设置、进程快照保存在 memory/windows-commit-audit-*.json；按进程名称合计保存在 memory/windows-process-groups.json。不读取进程命令行、认证值或旧 ai-stack 代码执行链。
+
+已完成内存修复与限制
+RCA 探针发送前同时检查物理可用与全局提交余量，各至少 8 GiB；通过 GetPerformanceInfo 获取真正全局 CommitTotal/CommitLimit。生成期间每 5 秒记录两项余量，不主动截断正在输出的请求。4 项门槛回归测试通过，包括物理充足但提交不足时拒绝启动采样/提交。
+已有 Windows 六小时后台探针也增加相同门槛，低余量记录 skipped_low_memory 并跳过；不将跳过误报成水杯降智，不启动已停止 Docker。任务仍隐藏运行，触发器/动作不变。脚本语法检查通过，没有为了测试额外发杯题。
+新增的会话上下文观察源码已于 17:41 UTC 部署到正常停止的原容器并核对哈希；部署记录 ../20261006T1313Z/production-memory-safe-observer-final/deployment.json。该观察增强尚未重新提交进固定镜像，镜像中其余行为修复保持既有版本。
+用户于 17:42 UTC 授权一次 Windows UAC。已用隐藏 PowerShell 执行 scripts/enable_system_managed_pagefile.ps1：先保存旧策略/设置/有效页文件，再将 AutomaticManagedPagefile 改为 True，并从 CIM 重新核对为 True。没有重启、关闭应用或修改 WSL 全局上限。
+memory/pagefile-before-change-20261006T174242Z.json 与 pagefile-after-change-20261006T174242Z.json 保存真实结果。17:42:49 UTC 有效页文件仍为 4 GiB，提交上限仍 35.497 GiB，不能宣称策略修改已带来运行时扩容。需下次正常重启后验收有效页文件和提交上限；当前提交余量约 3.86 GiB，故不启动原生产或新杯题。
+
+尚未完成的生产验收
+原 yi profile 未重置、未清空、未退出；原 Chrome 登录态未修改。完整 32 个原生非会话 cookie 已在隔离副本验证两轮 8，但尚未导入原生产 yi profile。
+待物理和提交余量均达到门槛，在原容器空闲状态下先保存加密 cookie 备份，再以浏览器正常 cookie 导入方式写入已验证的完整集合，核对认证；用 production 参数的 RCA 包装器完成最终杯题、时间、截图和双内存采样。仍用原 Chrome 153、原时区/Stealth、Temporary、非个性化、Extra High、8 并发上限和 5 秒发送间隔。
+所有本轮 yi 容器当前正常停止，未终止其他用户容器。生产导入和最终 8 验收尚未发生，不以副本实验冒充已完成生产修复。
+
+18:23 UTC 起按用户指令继续，以单浏览器实测预算代替此前统一 8 GiB 门槛
+用户明确要求合理使用内存继续实验。此前门槛未区分单题与八路压力测试，过于保守；单题预算调整为浏览器已启动后物理可用至少 3 GiB、全局提交余量至少 1.5 GiB，保留每 5 秒采样，不自动截断进行中的回答。8 路实验不适用这个单题预算。5 项回归测试通过，包含单题允许但八路预算拒绝的区分。
+18:24:30 UTC 只启动原 yi，所有实验副本保持停止。启动前物理可用 10.234 GiB、提交余量 2.775 GiB；原容器启动约占 1 GiB，第一题生成时约 1.36 GiB。没有下载浏览器、复制完整 profile、启动新的副本或关闭用户其他应用。
+18:24:58 UTC 完成原生产 profile 的 32 个非会话 cookie 导入；105 -> 119，认证值与原生来源在内存核对一致。保存加密备份 cookies-before-retention-20261006T182458-30d70a2d.sqlite，临时明文传输文件均删除。记录 production-native-import.json；原生 Chrome 未修改。
+18:26:26.718167 UTC 发出原链路首个验收杯题：gpt-5-6-thinking / max，原时区 America/Los_Angeles、Chrome 153、Stealth 均保留。实际发送认证 1，设备摘要为原生 957b2613...，会话上下文固定白名单五项全部发出：__Secure-oai-is、__oailb、_account、oai-client-auth-info、oai-client-session-epoch。当前仅一个 in_flight，worker_tabs=1，waiting=0；并发配置仍 8。
+已有 Windows 后台探针增加活动预检：网关正在生成/排队时记录 skipped_gateway_busy，不增加额外诊断生成。这个检查减少撞车，预检与随后发送之间不是原子锁，不宣称绝对排除竞态。任务的动作和触发器未变。
+生产杯题进行中，尚未判定答案；后续结果继续追加，前面的“停止/尚未导入”是对应时间的历史状态。
+
+原 yi 首题已完成正常验收
+run 20261006T182609.078409Z-06673319 完整回答 x=8；CLI 退出 0，response_complete=True，两张最终截图已导出并核对 SHA256 8b41a67a3d430bc7979ae31f211549d957da5ab9474ac57f976ddd62191da490。网页 Worked for 13m 38s。实际发送 18:26:26.718167 UTC，SSE 完成 18:41:03.138970 UTC，实际流耗时 876.421 秒；包装器全程约 899.471 秒。53450 字节流，HTTP 200，SSE DONE，未失败；结束后的前端取消属于正常收尾。
+内存 181 个五秒采样：物理可用最低 8.132 GiB，全局提交余量最低 0.641 GiB。后者说明系统提交压力仍有波动，本实验没有宣称消除了全部主机内存风险。容器独立抽样约 1.2–1.36 GiB，均保存在 memory/production-resource-samples.jsonl；抽样范围不等于精确全程峰值。
+完整回答见 runs/20261006T182609.078409Z-06673319/response.txt；截图为实拍。Docker 缺少完整中文字体，部分中文字形显示方框；数学 8、Worked 时间和 Extra High 档位可见，原始中文文本完整保存。
+
+重启与 Windows 后台探针验收
+18:41:36 UTC 检查 in_flight/waiting 均为零，然后对 API 执行正常 SIGTERM，确认 backend_context_closed、进程退出后才 docker stop；退出 0、OOMKilled=False，启动脚本恢复，持久卷保留。记录 production-first-graceful-restart/shutdown-and-deployment.json。
+在正常停止的原容器上更新本地固定镜像，未复制 profile、未下载浏览器，未推送。新 image sha256:e605dd8731a8d4f089adc4e2f98781ed116e7be5dde02b42e70ca25e2e9b3d68，tag mimicgate-yi-session-guard:20261006。原清单保存在 fixed-image-before-final.json；最新 fixed-image.json 现在含固定会话 cookie 名称观察增强。原生 cookie 明文和登录持久卷不烘入镜像。
+18:42:12 UTC 启动同一个原容器，没有重新导入 cookie；healthz=ok。18:42:22 状态记录认证 cookie=1、SQLite 行=1、site cookies=124。
+18:43:00.490257 UTC 由真实 scripts/cup_scheduler.ps1 隐藏 Windows 后台子进程发出第二题。仍为 gpt-5-6-thinking / max、原时区；认证 1、同一个原生设备摘要，五项上下文 cookie 仍全部实际发出。此轮用于验证重启持久化和原有后台检测链，结果等待中；没有新增定时任务。
+
+原 yi 重启后、真实 Windows 后台检测已完成
+run 20261006T184243.423848Z-0465d289 完整回答 8；网页 Worked for 11m 1s。实际发送 18:43:00.490257 UTC，SSE 完成 18:55:13.912231 UTC，流耗时 733.422 秒；后台脚本记录 elapsed_seconds=756.7，status=normal，actual_effort=xhigh。两张最终截图 SHA256 e752c095c696245d5cd38a1e1a9aa3f7151133d7bb49ca1f820d8e09d6a1a9e0，已核对，真实回答保存在该 run 的 response.txt。
+153 个五秒样本：物理可用最低 8.501 GiB，全局提交余量最低 1.289 GiB；源浏览器容器多次抽样约 1.18–1.59 GiB，未开启新的原生 Chrome。后台子进程 CreateNoWindow=True / WindowStyle=Hidden，真实执行的是既有 scripts/cup_scheduler.ps1，没有触发新建任务。
+18:55:25 UTC 最后认证状态仍 session_cookie_count=1、database_session_rows=1；Temporary 会话 cookie 已回收，旧 Temporary 数恢复 85。两次原链路完成均未掉登录，第二次重启后无需重导 cookie。
+任务本身仍 Ready、PT6H，下一次纽约时间 2026-10-06 16:55；最近任务执行为 04:55，返回 0，记录 Docker 停止所以跳过，另有 1 次 missed run。没有足够事件判断该次遗漏的具体原因。本次手动启动后台脚本成功，不冒充任务计划程序已经触发过新的轮次。
+
+继续缩小 cookie 因素范围
+原链路两次验收后，18:56:07 UTC 正常停止原容器，仅准备复用既有 auth-only 副本进行“认证+设备”的两项对照，不复制新 profile；停止记录 production-second-graceful-stop-for-control/shutdown-and-deployment.json，退出 0 / OOMKilled=False。
+18:57 UTC Linux Cached 实测约 2.48 GiB。为继续一个浏览器的诊断，执行一次 sync + clean page-cache reclaim，Cached 降至约 1.14 GiB；原 17:23 的回收记录保留，新记录 memory/post-image-clean-cache-reclaim.json。没有改变持久 WSL 策略、重启服务或删除文件。Windows 提交余量还需在启动副本前按实测确认；不把 Linux Cached 的下降直接当作 Windows 提交余量已经增加。
+
+最终小对照与用户验收
+18:58:37 UTC 在已有 auth-only 副本只导入认证、oai-did 两项；均取自同一份 16:32 原生 Chrome cookie 采样，与此前各条件使用相同来源，没有再次登录或打开新的原生 Chrome。未导入三项客户端上下文 cookie，也未导入其他非会话 cookie。
+run 20261006T185837.985264Z-f93d0f00 完整回答 6，网页 Worked for 36s。实际发送 18:58:57.403482 UTC，SSE 完成 18:59:42.727076 UTC，HTTP 200，41944 字节，SSE DONE；模型 max，认证 1、设备摘要已对齐。实际五项上下文白名单仍只发出 __oailb、_account，另外三项缺失。两张截图 SHA256 db5d06d9aecae94c3c313df79da96ec6e2fa622f3298b6f5626c706d59871c33，完整回答和截图留存。与已导入完整集合的原生产两次 8 是不同条件，原生产没有回退或被重新改成两项集合。
+此对照期间 Windows 提交余量最低 0.042 GiB（约 43 MiB），物理可用最低 7.37 GiB，说明原先单题提交门槛 1.5 GiB 没有充分给用户同时启动应用留余量。用户反馈 OpenChamber 无法打开，与这个全局提交极低的时间段相容；没有应用崩溃堆栈或分配错误证据，不能把它的每次启动失败都最终归因为本实验。
+系统 24 小时 Resource-Exhaustion-Detector 事件数增至 9，最新记录保存在 memory/windows-commit-audit-20261006T190157Z.json。后续单题探针的提交门槛调为 3 GiB，物理门槛仍 3 GiB；不再追加真实请求进行验证，仅复查门槛回归与脚本语法。原网关的生产并发配置仍 8，没有以此改变用户请求的并发设置。
+用户明确认可原链路两次成功为修复完成标准，并指示等当前轮次做完；因此不再做三项客户端 cookie 的追加分组实验。当前证据支持完整非会话会话状态恢复有效，不能断言究竟哪一项客户端/Cloudflare/其他 cookie 或服务端状态负责；认证+设备两项在这一轮尚不足，且低提交余量也是该轮的限制。
+19:01:49 UTC 对已完成的副本正常关闭 API、浏览器及容器，退出 0、OOMKilled=False，原 profile/持久卷未删除。记录 auth-device-final-stop/shutdown-and-deployment.json。原 yi、所有本轮诊断容器均保持停止以释放资源；其他既有容器未关闭。19:02:47 Windows 物理可用 9.991 GiB，提交余量回升至 2.534 GiB，主机尚有其他工作负载，不宣称 OpenChamber 已成功打开。
+原 yi 修复、完整 cookie 和正常重启验收已保存在原持久卷，固定镜像为 e605dd...；当前 Docker 停止只为释放本轮资源。没有撤回修复、清空登录态或变更账号。下次按需启动同一原容器即可使用既有链路；Windows 六小时探针继续遵守 Docker 未运行时跳过、不自动启动的既有要求。
+
+20:04 UTC：用户授权固定 D 盘 32 GiB 分页文件。管理员隐藏脚本备份设置后，配置 C 初始/最大 4096 MB、D 初始/最大 32768 MB，关闭自动管理。配置及有效容量均核对成功，D 新文件立即启用，无需重启；提交上限 35.497 -> 67.497 GiB。结果见 memory/d32-pagefile-result-20261006T200435Z.json，独立运行时验收 memory/d32-pagefile-runtime-verified.json。没有重启电脑或启动额外实验。

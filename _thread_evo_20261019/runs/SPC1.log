@@ -1,0 +1,17 @@
+SPC1: 4 calls
+[judge_spec_v1_SPC1_s2_gpt6] FAILED rc=1 0s submitted=False job=None
+[judge_spec_v1_SPC1_s2_gpt56] recovered from job 435s 9748 chars
+[judge_spec_v1_SPC1_s1_gpt56] recovered from job 439s 12019 chars
+[judge_spec_v1_SPC1_s1_gpt6] FAILED rc=1 1228s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T083311111888Z
+[judge_spec_v1_SPC1_s2_gpt6] FAILED rc=1 1226s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T083349710535Z
+[judge_spec_v1_SPC1_s1_gpt6] ok 1194s 14130 chars
+[judge_spec_v1_SPC1_s2_gpt6] ok 1176s 11540 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 105, in <module>
+    run(a.eid, a.work, a.names.split(","), a.shuffles, a.judges.split(","), a.workers)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 65, in run
+    collect(eid)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 84, in collect
+    "center": (a.get("center") or {}).get("present"), "center_stmt": (a.get("center") or {}).get("statement"),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get'

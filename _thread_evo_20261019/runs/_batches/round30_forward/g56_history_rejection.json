@@ -1,0 +1,36 @@
+{
+  "advisor": "batch_round30_forward_advisor_g56",
+  "output_sha256": "627c8358b87162e7d3f1cec2361275cf3619e484ae75ae29e96b94d576f2053e",
+  "full_output_read": true,
+  "generic_interface_legal": true,
+  "accepted_for_production": [],
+  "rejected": [
+    {
+      "index": 0,
+      "layer": "A4",
+      "category": "historical_mechanism_duplicate_not_hard_shape_failure",
+      "mechanism": "Before selecting base_route, compare all eligible routes across TARGETS for independent coherence, natural fit, direction, temporal shape and coexistence; choose one and freeze.",
+      "specific_prior_evidence": [
+        {
+          "file": "schemes/Q4_A4.txt",
+          "lines": "39-78",
+          "quote": "选择 base_route 前，先在内部逐段检查每条候选与 TARGETS 的兼容性。方向、同一段内部的变化、可以共存的不同感受；优先自身逻辑完整/多数TARGETS由既有事实产生且不频繁新增心理机制。"
+        },
+        {
+          "file": "schemes/Q7_A4.txt",
+          "lines": "26-46",
+          "quote": "先判断自身成立，再对照整首TARGETS看容纳/冲突/必须新增事实；优先连贯且与全篇多种体验相容路线。"
+        },
+        {
+          "file": "试验记录.md",
+          "lines": "99,112,117",
+          "quote": "Q4与Q7已有实际双曲结果；R/ras1也记载选路看体验性质。"
+        }
+      ],
+      "remaining_difference": "Explicit selected-id eligibility and reprioritized restatement; no independent new generative/information mechanism. Different old upstream does not itself make a paraphrase a novel proposal; an exact old-prompt cross would be a separately justified experiment, not this candidate."
+    }
+  ],
+  "production_calls": 0,
+  "not_counted_as_formal_quality_failure": true,
+  "author_prompt_unchanged": true
+}

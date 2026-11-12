@@ -1,0 +1,54 @@
+{
+  "status": "reject",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 2,
+    "wins": 0,
+    "no_regress": 0,
+    "net_sums": {
+      "alone": -11,
+      "lean": -10,
+      "plain": -27,
+      "cover": 8
+    },
+    "missing": [
+      "v6b2_op60_g56_round28_cross_morec03_vsqurefs",
+      "v6b2_op61_g6_round28_cross_morec03_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 27,
+    "reasons": [
+      "remaining votes cannot reach the required new-version wins"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_round28_cross_morec03_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -4,
+          "lean": -6,
+          "plain": -14,
+          "cover": 11
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_round28_cross_morec03_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -7,
+          "lean": -4,
+          "plain": -13,
+          "cover": -3
+        }
+      }
+    ]
+  },
+  "next": "archive_and_change_direction"
+}

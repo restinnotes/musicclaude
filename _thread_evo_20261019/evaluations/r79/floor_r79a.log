@@ -1,0 +1,29 @@
+[cov2_op60_g6_r79a] SKIPPED (冷却至 2026-11-06T07:45:19.417547+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"})
+[cov2_op61_g6_r79a] SKIPPED (冷却至 2026-11-06T07:45:19.417547+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"})
+[cov2_op60_g56_r79a] SKIPPED (冷却至 2026-11-06T07:45:19.417547+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"})
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\round37_floor.py", line 8, in <module>
+    print(k,json.dumps(F.run_floor(tag,base,k),ensure_ascii=False)[:600],flush=True)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 163, in run_floor
+    submit(jobs, 2)
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 118, in submit
+    return list(pool.map(one, jobs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 115, in one
+    raise RuntimeError(f'{rid}: no complete response; inspect existing receiver before retry')
+RuntimeError: cov2_op60_g6_r79a: no complete response; inspect existing receiver before retry

@@ -1,0 +1,19 @@
+[keys_tg41_n8_op60_r1_r1] FAILED rc=1 35s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T234836133808Z
+[keys_tg41_n8_op61_r2_r2] FAILED rc=1 45s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T234829142524Z
+[keys_tg41_n8_op60_r1_r1] FAILED rc=1 32s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T234955998637Z
+[keys_tg41_n8_op61_r2_r2] FAILED rc=1 35s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T235002964469Z
+[keys_tg41_n8_op60_r1_r1] FAILED rc=1 36s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T235113464582Z
+[keys_tg41_n8_op61_r2_r2] FAILED rc=1 34s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T235122552264Z
+[keys_tg41_n8_op60_r1_r1] FAILED rc=1 37s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T235233987040Z
+[keys_tg41_n8_op61_r2_r2] FAILED rc=1 35s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T235241303499Z
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\tgraph4.py", line 182, in <module>
+    k = evo.parse_json(evo.output(f"keys_{g}"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\evo.py", line 152, in parse_json
+    m = re.findall(r"```json\s*(.*?)```", resp, re.S) or re.findall(r"<CodeBlock[^>]*>(.*?)(?:</CodeBlock>|$)", resp, re.S)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 217, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'

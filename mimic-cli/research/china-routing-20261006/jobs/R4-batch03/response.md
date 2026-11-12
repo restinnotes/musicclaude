@@ -1,0 +1,529 @@
+R4 独立复核保留冻结分母 **9 SKU × 2 平台 = 18 个平台单元**，并对 W4-A/B/C 各保留全部 9 SKU，因此 `observation_audits` 为 27 行。冻结分层也不重算：verified-head 仍为 **5/9**（C07-S01、C08-S01、C08-S02、C09-S01、C09-S02），provisional/head-unverified 为 **4/9**（C07-S02、C07-S03、C08-S03、C09-S03）。
+
+本次实际重开九个 Temu 精确搜索入口，九页均能解析到 Temu URL/标题，但正文 **0 行**，应记 `page_shell`，而不是把它与 HTTP/访问阻断笼统合并为 `BLOCKED`；W4-C 所列若干 Temu 候选商品页也同样只有空动态壳。因此没有任何可复核 seller、variant、库存、仓库、ordinary price 或 ZIP10001 运费；更不能由索引标题证明 exact、OEM 或 comparable。[Temu](https://www.temu.com/search_result.html?search_key=Logitech+G304)
+
+AliExpress 的状态与 Temu 不同：九个美国搜索入口中，除 G304 搜索为直接获取失败外，其余重开均转向不可访问的 `login.aliexpress.com/sync_cookie_read`，应记 **LOGIN_REQUIRED**；美国首页另为 403。W4-B 的 G304、RS6+、Band 11 Pro、Camera 4 候选 item，以及 W4-C 的 GPW5 item 均仍无法读取原交易页；俄区门锁候选只是 0 行 page shell。故这些 item ID 仍只是线索，不能提供实时价格、卖家、库存、美国仓或美国配送。([Invalid URL]()) ([Invalid URL]())
+
+品牌护栏部分大体可复现：Logitech 官方页以 G304/Black 为产品身份，但正文出现 G305；ATK 官方页直接列出 RS6+、White Samurai、Snow Blade Pro、Magnetic、Wired；华为 Band 11 页面闭合悦动白/铝合金/1.62 英寸/NFC，Band 11 Pro 闭合羽砂黑/铝壳，NFC 指南同时列 Band 11/11 Pro 并明确相关功能仅支持中国大陆发售 NFC 版；Aqara 官方参数直接给出 CJPKG01LM、220V~50Hz，并声明该中国站产品仅限中国大陆使用。这些只能作为 exact 判定护栏，不能替代市场覆盖。[Logitech](https://www.logitechg.com/en-in/shop/p/g304-lightspeed-wireless-gaming-mouse)
+
+主要报告级修正有三项。其一，三份报告把 18 格统一压成 `BLOCKED` 不够精确：本轮应拆为 Temu `page_shell` 与 AliExpress `login_required/blocked`。其二，W4-B/C 把 Temu/AliExpress 自身 URL 标成 `secondary`；它们是平台第一方页面，只是不可读。W4-C 的若干 JSON `url` 还把 Markdown 链接语法写入 URL 字符串。其三，W4-A 的 Xiaomi Watch S5 来源 `product_id=25419` 当前直接打开变成小米手环腕带，不能稳定支持 K08；`product_id=21165` 当前则解析为“小米手环8 Pro 原神定制版”，反而支持其“动态 ID 映射不稳定”的 K11。[mi.com](https://www.mi.com/shop/buy/detail?product_id=25419)
+
+因此，本轮没有任何一格可形成 usable exact-price comparison、verified landed savings 或 usable exact-coverage observation。**这不是 18/18 无货；只是 18/18 仍无合格交易级证据。** 未登录、未下单、未付款、未联系卖家，也未改变账户/cookie 设置。
+
+```json
+{
+  "job_id": "R4-batch03",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "review_performed": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "audited_jobs": [
+    "W4-A-batch03",
+    "W4-B-batch03",
+    "W4-C-batch03"
+  ],
+  "observation_audits": [
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C07-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "访问状态应拆分为 Temu=page_shell、AliExpress=blocked/error，不应统一写 BLOCKED。",
+      "caveat": "无可读交易页；exact/OEM/comparable、reseller、库存、仓库、普通价和ZIP10001配送均未验证。",
+      "source_ids": ["S01", "S02", "S19", "S29"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C07-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required，而非统一BLOCKED。",
+      "caveat": "冻结head_status_verified=false保留；无交易级GPW5雪豹覆盖证据。",
+      "source_ids": ["S03", "S04", "S20"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C07-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required。",
+      "caveat": "品牌页可闭合RS6+/White Samurai/Snow Blade Pro/磁轴/有线，但平台价格、seller、stock、warehouse均未验证。",
+      "source_ids": ["S05", "S06", "S21", "S30"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C08-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required。",
+      "caveat": "大陆发售NFC版本约束成立，但没有平台交易页证明exact覆盖。",
+      "source_ids": ["S07", "S08", "S31", "S33"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C08-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required。",
+      "caveat": "华为NFC指南包含Band 11 Pro且限定中国大陆发售NFC版；Ali候选item仍不可读。",
+      "source_ids": ["S09", "S10", "S22", "S32", "S33"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C08-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "平台访问状态需拆分；且W4-A所列Xiaomi product_id=25419当前不能稳定支持Watch S5 41mm来源标题。",
+      "caveat": "冻结SKU不变；海盐蓝+澎湃OS 4的市场覆盖仍未闭合。",
+      "source_ids": ["S11", "S12", "S34"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C09-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required。",
+      "caveat": "Ali候选item不可读；Xiaomi动态product_id映射异常被再次观察到，不能用页面ID或索引标题闭合exact。",
+      "source_ids": ["S13", "S14", "S23", "S35"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C09-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress美国搜索应为login_required。",
+      "caveat": "俄区候选为page_shell且地区错误；美国库存、仓库、锁体兼容和普通价未验证。",
+      "source_ids": ["S15", "S16", "S24", "S36"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "sku_id": "C09-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应为page_shell；AliExpress搜索应为login_required。",
+      "caveat": "CJPKG01LM/220V~50Hz及中国大陆使用限制可验证，但不能推出平台无货或美国exact覆盖。",
+      "source_ids": ["S17", "S18", "S37", "S38"]
+    },
+
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C07-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress搜索=blocked/error；平台第一方URL不应标为secondary。",
+      "caveat": "G304候选item当前仍不可访问；黑色、非G304X、seller、stock、warehouse、price均未闭合。",
+      "source_ids": ["S01", "S02", "S19", "S29"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C07-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "GPW5美国候选403；索引不能证明雪豹变体或交易字段。",
+      "source_ids": ["S03", "S04", "S20"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C07-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "RS6+候选item仍不可访问，无法验证卖家/库存/美国仓/普通价。",
+      "source_ids": ["S05", "S06", "S21", "S30"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C08-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "未验证任何Band 11 NFC平台offer；大陆NFC护栏不得被全球版替代。",
+      "source_ids": ["S07", "S08", "S31", "S33"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C08-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "Ali候选item仍不可访问；羽砂黑/NFC/seller/stock/US warehouse未形成交易级证据。",
+      "source_ids": ["S09", "S10", "S22", "S32", "S33"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C08-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "未取得41mm海盐蓝+澎湃OS 4交易页；冻结head_status_verified=false保持。",
+      "source_ids": ["S11", "S12"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C09-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "8MP/4K候选item仍不可访问；二级索引不得升级为当前offer。",
+      "source_ids": ["S13", "S14", "S23", "S35"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C09-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress美国搜索=login_required；平台URL source_type 应为official。",
+      "caveat": "无美国交易级offer；俄区page_shell不能代替美国覆盖。",
+      "source_ids": ["S15", "S16", "S24", "S36"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "sku_id": "C09-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；平台URL source_type 应为official。",
+      "caveat": "中国区/220V约束被一级来源确认；平台库存及美国适配仍未验证。",
+      "source_ids": ["S17", "S18", "S37", "S38"]
+    },
+
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C07-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu目标页及其候选均应标page_shell；AliExpress为blocked/error；JSON中的平台URL应为纯URL且source_type=official。",
+      "caveat": "G304配件候选原页仍是空壳，不能用其索引标题证明鼠标本体覆盖。",
+      "source_ids": ["S01", "S02", "S25", "S29"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C07-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "Temu防滑贴页为空壳；Ali GPW5美国item为403，均不足以证明雪豹鼠标offer。",
+      "source_ids": ["S03", "S04", "S20", "S26"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C07-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "类似磁轴键盘线索不能证明OEM；品牌规格只能充当matching guardrail。",
+      "source_ids": ["S05", "S06", "S30"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C08-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "保护壳/表带索引不能作为Band 11 NFC本体覆盖；交易字段全未闭合。",
+      "source_ids": ["S07", "S08", "S31", "S33"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C08-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "无可读美国商品页；NFC大陆版本约束仍必须保留。",
+      "source_ids": ["S09", "S10", "S22", "S32", "S33"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C08-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "41mm泛搜索及非美国S5线索都不能闭合海盐蓝+澎湃OS 4的美国exact覆盖。",
+      "source_ids": ["S11", "S12"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C09-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "Temu通用4K/8MP候选为空壳且不能证明小米exact/OEM；Ali候选亦不可读。",
+      "source_ids": ["S13", "S14", "S23", "S27", "S35"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C09-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress美国搜索=login_required；RU候选=page_shell；JSON URL/source_type需修正。",
+      "caveat": "俄区同名线索不能转为美国exact；stock、US warehouse、普通价和锁体兼容均未知。",
+      "source_ids": ["S15", "S16", "S24", "S36"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "sku_id": "C09-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=page_shell、AliExpress=login_required；JSON URL/source_type需修正。",
+      "caveat": "普通Zigbee模块原页为空壳，不能作为S1E comparable/OEM证据；CJPKG01LM中国区限制成立。",
+      "source_ids": ["S17", "S18", "S28", "S37", "S38"]
+    }
+  ],
+  "claim_audits": [
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K01/K02",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "核心的“没有直接核验offer”仍成立，但访问状态必须拆为Temu page_shell与AliExpress login_required/blocked，而非18/18统一BLOCKED。",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "Logitech官方页标题为G304、颜色Black，但正文确实使用G305；因此地区命名交叉警告成立。",
+      "source_ids": ["S29"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K05",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "当前ATK页确认RS6+、White Samurai、Snow Blade Pro、Magnetic、Wired；这仍不是AliExpress/Temu offer证据。",
+      "source_ids": ["S30"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K06/K07",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "Band 11规格与NFC可复现；Band 11 Pro规格页本身未显示NFC字段，但华为NFC指南把Band 11 Pro列为适用产品，并明确功能限中国大陆发售NFC版。",
+      "source_ids": ["S31", "S32", "S33"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K08",
+      "status": "CONFLICT_UNRESOLVED",
+      "correction": "报告所列product_id=25419当前直接打开解析为小米手环腕带，不能作为稳定的Watch S5 41mm直接证据。",
+      "caveat": "这否定的是该URL的当前证据稳定性，不是否定冻结SKU本身。",
+      "source_ids": ["S34"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K09",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "小米官方页面当前仍识别“小米智能门锁4 Pro 双摄版”，但不提供目标平台覆盖。",
+      "source_ids": ["S36"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K10",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "Aqara官方页直接确认CJPKG01LM、220V~50Hz及中国大陆使用范围；论坛亦明确美国region不工作。",
+      "source_ids": ["S37", "S38"]
+    },
+    {
+      "original_job_id": "W4-A-batch03",
+      "claim_id": "K11",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "product_id=21165当前解析为小米手环8 Pro原神定制版，支持动态商品ID不能独立证明摄像机身份的警告。",
+      "source_ids": ["S35"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "claim_id": "K01/K02/K07",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "“没有可用交易页”可保留，但18格访问状态不能统一BLOCKED；Temu为page_shell，AliExpress多数为login_required。",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "claim_id": "K03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "四个AliExpress候选item ID的原页本轮仍不可访问，故继续只能作为候选线索。",
+      "source_ids": ["S19", "S21", "S22", "S23"]
+    },
+    {
+      "original_job_id": "W4-B-batch03",
+      "claim_id": "SOURCE_METADATA",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "temu.com/aliexpress.com/aliexpress.us自身页面应作为平台第一方来源记录为official，而非secondary。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "claim_id": "K01",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "“0个直接核验offer”成立，但访问状态应拆分；BLOCKED不能覆盖page_shell与login_required。",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "claim_id": "K02",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "GPW5美国候选原item当前仍为403；索引价格/卖家不能采用。",
+      "source_ids": ["S20"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "claim_id": "K03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "俄区门锁候选当前为page_shell且地区非美国，不能证明美国coverage。",
+      "source_ids": ["S24"]
+    },
+    {
+      "original_job_id": "W4-C-batch03",
+      "claim_id": "SOURCE_METADATA",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "平台第一方来源不应标secondary；JSON中的URL值还应去掉Markdown的[...](...)包装。",
+      "source_ids": []
+    }
+  ],
+  "sources": [
+    {"source_id":"S01","url":"https://www.temu.com/search_result.html?search_key=Logitech%20G304","title":"Temu search: Logitech G304","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S02","url":"https://www.aliexpress.us/w/wholesale-logitech-g304.html","title":"AliExpress US search: Logitech G304","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S03","url":"https://www.temu.com/search_result.html?search_key=Logitech%20GPW5%20Snow%20Leopard","title":"Temu search: Logitech GPW5 Snow Leopard","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S04","url":"https://www.aliexpress.us/w/wholesale-logitech-gpw5.html","title":"AliExpress US search: Logitech GPW5","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S05","url":"https://www.temu.com/search_result.html?search_key=ATK%20RS6%2B","title":"Temu search: ATK RS6+","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S06","url":"https://www.aliexpress.us/w/wholesale-atk-rs6-plus.html","title":"AliExpress US search: ATK RS6+","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S07","url":"https://www.temu.com/search_result.html?search_key=Huawei%20Band%2011%20NFC","title":"Temu search: Huawei Band 11 NFC","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S08","url":"https://www.aliexpress.us/w/wholesale-huawei-band-11-nfc.html","title":"AliExpress US search: Huawei Band 11 NFC","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S09","url":"https://www.temu.com/search_result.html?search_key=Huawei%20Band%2011%20Pro%20NFC%20black","title":"Temu search: Huawei Band 11 Pro NFC black","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S10","url":"https://www.aliexpress.us/w/wholesale-huawei-band-11-pro-nfc.html","title":"AliExpress US search: Huawei Band 11 Pro NFC","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S11","url":"https://www.temu.com/search_result.html?search_key=Xiaomi%20Watch%20S5%2041mm%20blue","title":"Temu search: Xiaomi Watch S5 41mm blue","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S12","url":"https://www.aliexpress.us/w/wholesale-xiaomi-watch-s5-41mm.html","title":"AliExpress US search: Xiaomi Watch S5 41mm","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S13","url":"https://www.temu.com/search_result.html?search_key=Xiaomi%20Smart%20Camera%204%208MP%204K","title":"Temu search: Xiaomi Smart Camera 4 8MP 4K","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S14","url":"https://www.aliexpress.us/w/wholesale-xiaomi-smart-camera-4-4k.html","title":"AliExpress US search: Xiaomi Smart Camera 4 4K","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S15","url":"https://www.temu.com/search_result.html?search_key=Xiaomi%20Smart%20Door%20Lock%204%20Pro%20dual%20camera","title":"Temu search: Xiaomi Smart Door Lock 4 Pro dual camera","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S16","url":"https://www.aliexpress.us/w/wholesale-xiaomi-smart-door-lock-4-pro.html","title":"AliExpress US search: Xiaomi Smart Door Lock 4 Pro","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+    {"source_id":"S17","url":"https://www.temu.com/search_result.html?search_key=Aqara%20S1E%20CJPKG01LM","title":"Temu search: Aqara S1E CJPKG01LM","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K01","R4-K03"]},
+    {"source_id":"S18","url":"https://www.aliexpress.us/w/wholesale-aqara-s1e-cjpkg01lm.html","title":"AliExpress US search: Aqara S1E CJPKG01LM","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["R4-K02","R4-K03"]},
+
+    {"source_id":"S19","url":"https://www.aliexpress.us/item/1005013028004177.html","title":"AliExpress candidate item 1005013028004177","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02"]},
+    {"source_id":"S20","url":"https://www.aliexpress.us/item/3256812267959899.html","title":"AliExpress GPW5 candidate item 3256812267959899","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02"]},
+    {"source_id":"S21","url":"https://www.aliexpress.us/item/1005012984653410.html","title":"AliExpress candidate item 1005012984653410","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02"]},
+    {"source_id":"S22","url":"https://www.aliexpress.us/item/1005012863923426.html","title":"AliExpress candidate item 1005012863923426","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02"]},
+    {"source_id":"S23","url":"https://www.aliexpress.us/item/1005013099255546.html","title":"AliExpress candidate item 1005013099255546","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["R4-K02"]},
+    {"source_id":"S24","url":"https://aliexpress.ru/item/1005010144381095.html?sku_id=12000051303544838","title":"AliExpress RU Xiaomi Smart Door Lock 4 Pro candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["R4-K02"]},
+
+    {"source_id":"S25","url":"https://www.temu.com/am/%D5%B4%D5%AF%D5%B6%D5%AB%D5%AF%D5%AB-%D5%BA%D5%A1%D5%B5%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D5%AB-%D5%BA%D5%A1%D5%B5%D5%B8%D6%82%D5%BD%D5%A1%D5%AF-logitech-m510-m330-m720-m650-g304-g305-g703-%D5%B4%D5%AF%D5%B6%D5%AB%D5%AF%D5%AB-%D5%BA%D5%A1%D5%B5%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D5%AB-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-%D5%B6%D5%A1%D5%AD%D5%A1%D5%BF%D5%A5%D5%BD%D5%BE%D5%A1%D5%AE-%D5%BA%D5%A1%D5%B5%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D5%B6%D5%A5%D6%80%D5%AB-%D5%BA%D5%A1%D5%B0%D5%A5%D5%BD%D5%BF%D5%A1%D5%BE%D5%B8%D6%80%D5%B4%D5%A1%D5%B6-%D5%B0%D5%A1%D5%B4%D5%A1%D6%80-g-601099539936546.html","title":"Temu G304/G305 accessory candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":[]},
+    {"source_id":"S26","url":"https://www.temu.com/logitech-gpw---light-wireless-gaming-mouse-grip-tape-stickers-non-slip----for--control-and--for--g-601099650400824.html","title":"Temu GPW grip-tape candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":[]},
+    {"source_id":"S27","url":"https://www.temu.com/1pc-4k-8mp-wifi-with-2pcs-4mp-lens-security-camera-2-4ghz-wireless-ip-camera--cctv-surveillance-video-ai-auto-tracking-color-----pan-tilt-tilt-360----compatible-with--for-icsee-app--sd-card-does-not-support-5ghz-g-602522353806066.html","title":"Temu generic 4K/8MP camera candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":[]},
+    {"source_id":"S28","url":"https://www.temu.com/om-en/scimagic-rc-zigbee-smart-switch-module-10a-1ch-relay-breaker-7-32v-hard-wired-compatible-with--smart-life-alexa-google-home-rfid-function-no-battery-required-g-601099572180455.html","title":"Temu generic Zigbee switch-module candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":[]},
+
+    {"source_id":"S29","url":"https://www.logitechg.com/en-in/shop/p/g304-lightspeed-wireless-gaming-mouse","title":"Logitech G304 LIGHTSPEED Wireless Gaming Mouse","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S30","url":"https://www.atk.store/products/atk-rs6-plus-series-aluminum-magnetic-switch-keyboard","title":"ATK RS6+ Aluminum Magnetic Switch Keyboard","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S31","url":"https://consumer.huawei.com/cn/wearables/band11/specs/","title":"华为手环 11 规格参数","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S32","url":"https://consumer.huawei.com/cn/wearables/band11-pro/specs/","title":"华为手环 11 Pro 规格参数","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S33","url":"https://consumer.huawei.com/cn/support/content/zh-cn15996163/","title":"华为手环NFC版交通卡/智闪卡/门禁卡开通指南","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S34","url":"https://www.mi.com/shop/buy/detail?product_id=25419","title":"Xiaomi dynamic product page product_id=25419; currently resolves to wristband accessory","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K05"]},
+    {"source_id":"S35","url":"https://www.mi.com/shop/buy/detail?product_id=21165","title":"Xiaomi dynamic product page product_id=21165; currently resolves to Mi Band 8 Pro Genshin edition","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K05"]},
+    {"source_id":"S36","url":"https://www.mi.com/xiaomi-smartlock-4-pro-dual-camera","title":"小米智能门锁 4 Pro 双摄版","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S37","url":"https://www.aqara.cn/Smart-Magic-Switch-S1E_spec","title":"妙控开关 S1E 产品参数","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["R4-K06"]},
+    {"source_id":"S38","url":"https://forum.aqara.com/t/is-there-any-way-to-integrate-the-s1-switch-into-the-us/69988","title":"Aqara Forum: S1E in US region","published_at":null,"retrieved_at":"2026-10-06","source_type":"community","access_state":"read_full_page","claims_supported":["R4-K06"]}
+  ],
+  "claims": [
+    {
+      "claim_id": "R4-K01",
+      "claim": "All nine SKU-specific Temu search URLs were independently reopened on 2026-10-06 and returned page shells with no readable transactional content.",
+      "source_ids": ["S01", "S03", "S05", "S07", "S09", "S11", "S13", "S15", "S17"]
+    },
+    {
+      "claim_id": "R4-K02",
+      "claim": "All nine AliExpress US SKU search paths remained unusable: eight redirected through an inaccessible login cookie-sync flow and the G304 search failed directly; cited candidate item pages were blocked or page shells.",
+      "source_ids": ["S02", "S04", "S06", "S08", "S10", "S12", "S14", "S16", "S18", "S19", "S20", "S21", "S22", "S23", "S24"]
+    },
+    {
+      "claim_id": "R4-K03",
+      "claim": "No marketplace cell has verified exact/OEM/comparable offer identity, reseller identity, stock, US warehouse evidence, ordinary public price, shipping charge, or ZIP10001 delivered price.",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "claim_id": "R4-K04",
+      "claim": "The frozen denominator remains 9 SKUs and 18 platform-SKU cells, with 5 frozen verified-head SKUs and 4 provisional/head-unverified SKUs; none were replaced.",
+      "source_ids": []
+    },
+    {
+      "claim_id": "R4-K05",
+      "claim": "The Xiaomi dynamic product URLs cited by W4-A are not stable product-identity evidence in the current audit: product_id=25419 and product_id=21165 resolve to products different from the report titles.",
+      "source_ids": ["S34", "S35"]
+    },
+    {
+      "claim_id": "R4-K06",
+      "claim": "Manufacturer sources support several matching guardrails, including G304/G305 naming overlap, ATK RS6+ variant details, Huawei mainland-China NFC constraints, Xiaomi Smart Lock model naming, and Aqara CJPKG01LM 220V/China-region constraints; none establish Temu or AliExpress coverage.",
+      "source_ids": ["S29", "S30", "S31", "S32", "S33", "S36", "S37", "S38"]
+    }
+  ],
+  "data_gaps": [
+    "No readable Temu transaction-level page was obtained for any frozen SKU; all nine exact-search pages were page shells.",
+    "No readable AliExpress US transaction-level page was obtained; eight exact-search pages redirected to an inaccessible login cookie-sync flow and one failed directly.",
+    "Exact, same-OEM, functional-comparable and reseller classifications therefore remain unverified rather than unavailable.",
+    "Seller identity, current inventory, US-warehouse evidence, selected variant, ordinary public price, shipping charge and ZIP10001 delivered price remain unverified for all 18 platform-SKU cells.",
+    "No landed-savings calculation is usable; no sales tax, tariff, membership discount, targeted coupon or checkout-only price was imputed.",
+    "W4-A Xiaomi dynamic product IDs are unstable under direct current retrieval and must not be used alone as exact-product identity evidence.",
+    "W4-B/W4-C platform-first-party source_type metadata requires correction; W4-C Markdown-wrapped URL strings should be normalized to actual URLs.",
+    "No order, payment, seller contact, login, cookie-setting change or account-setting change was performed."
+  ]
+}
+```

@@ -1,0 +1,96 @@
+{
+  "job_id": "S02_FLASH_A_28",
+  "status": "ok",
+  "started": "2026-10-17T17:08:08.993979+00:00",
+  "channel": "opencode",
+  "requested_model": "antigravity-tools/gemini-3.8-flash-high",
+  "manifest_sha256": "3ce8aa3ebfb2dcba74c2a5b4e616b02f7ac9a27950913caa97e05729ba32a3ee",
+  "runner_sha256": "84d7323ee2da0a867c1d42685cc1a945b531d9b55bee9728be499b86e7ccf248",
+  "prompt_source": "D:\\musicclaude\\_bead_quality_20261017\\snapshots\\pilot28\\inputs\\S02_A.txt",
+  "attachments": [],
+  "automatic_retry": false,
+  "automatic_fallback": false,
+  "exit_code": 0,
+  "submission_state": "completed_by_recorded_evidence",
+  "errors": [],
+  "labels": {
+    "source_count": 28,
+    "segment": "S02",
+    "method": "A",
+    "phase": "pilot28"
+  },
+  "prompt_sha256": "08125f8121b0710e23f8343da949f20e1303628abe9203f9d93dc7f5141e87be",
+  "prompt_bytes": 44379,
+  "prompt_characters": 19905,
+  "normalized_prompt_sha256": "8d4b422863361ecd092465241cf410a9db076af15a7dfee443518baf0da1083c",
+  "normalized_prompt_bytes": 43795,
+  "normalized_prompt_characters": 19321,
+  "native_body_limit_bytes": 65536,
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "tools": "deny",
+    "standalone": true,
+    "provider_timeout": false,
+    "effort": "high",
+    "provider_configuration_sha256": "7f8257c997d1d3fa3fa9001ec42699d575c438f80776d63b3c9ba30faf39088c",
+    "process_config": {
+      "permission": "deny",
+      "provider": {
+        "antigravity-tools": {
+          "options": {
+            "timeout": false
+          },
+          "models": {
+            "gemini-3.8-flash-high": {}
+          }
+        }
+      }
+    },
+    "upstream_safety_settings": "inherited_not_independently_verified",
+    "provider_internal_retry_behavior": "not_verified_runner_never_retries"
+  },
+  "observed": {
+    "events": [
+      {
+        "type": "step_start",
+        "timestamp": 1792256903243,
+        "sessionID": "ses_eb52a2a99ffe6HDzTmtHUNFTVh",
+        "part": {
+          "id": "prt_14ad6084b001ZzPtWJxE1uenFg",
+          "sessionID": "ses_eb52a2a99ffe6HDzTmtHUNFTVh",
+          "messageID": "msg_14ad5e20c001blyclSU5lIJTGs",
+          "type": "step-start"
+        }
+      },
+      {
+        "type": "text",
+        "timestamp": 1792256947870,
+        "sessionID": "ses_eb52a2a99ffe6HDzTmtHUNFTVh",
+        "part": {
+          "id": "prt_14ad5e20c001blyclSU5lIJTGs_text-0",
+          "sessionID": "ses_eb52a2a99ffe6HDzTmtHUNFTVh",
+          "messageID": "msg_14ad5e20c001blyclSU5lIJTGs",
+          "type": "text",
+          "time": {
+            "start": 1792256893462,
+            "end": 1792256947870
+          }
+        }
+      }
+    ],
+    "tool_events": [],
+    "completion_basis": "CLI_exit_0_and_text_time_end",
+    "server_completion_verified": false,
+    "actual_server_model_verified": false
+  },
+  "response_chars": 1878,
+  "response_sha256": "bf5b1bc0e0bc3a29e93fd7f62d3e2e445218cd0a25af997495237377aac45752",
+  "stdout.raw_sha256": "bd8217fb0a30769e893ac4976d7474773719a31bad8f3cb42bb4cd0f7def14de",
+  "stdout.raw_bytes": 4729,
+  "stderr.raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr.raw_bytes": 0,
+  "ended": "2026-10-17T17:09:08.529039+00:00",
+  "seconds": 59.531
+}

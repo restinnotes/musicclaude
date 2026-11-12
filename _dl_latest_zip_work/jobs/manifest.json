@@ -1,0 +1,247 @@
+{
+  "schema": "music-baseline-frozen-v1",
+  "created": "2026-10-09",
+  "mode": "user-provided archived textual material, new model calls unrun",
+  "models": [
+    "gpt6w",
+    "gpt56w"
+  ],
+  "pairing": "identical UTF-8 prompt file per job; interleave model order across job IDs",
+  "tracks": {
+    "A_E5": 6,
+    "B_RELATION": 5,
+    "C_E7": 5
+  },
+  "source_zips": [
+    "music_pipeline_chat_findings_20261005(1).zip",
+    "music_pipeline_round_20261007_0608_chat_findings.zip",
+    "music_since_v3_precise_20261009.zip"
+  ],
+  "jobs": [
+    {
+      "job_id": "A01",
+      "track": "A_E5",
+      "cases": [
+        "B046",
+        "B042",
+        "B008",
+        "B024",
+        "B018",
+        "B048"
+      ],
+      "calibration": true,
+      "input_sha256": "e18c14f980b0243ee394b3e2b3195393886ef721e036760f8f6464a85bdf6dd5",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A01.txt",
+        "gpt56w": "jobs/gpt56w/A01.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A02",
+      "track": "A_E5",
+      "cases": [
+        "B014",
+        "B006",
+        "B032",
+        "B016",
+        "B031",
+        "B028"
+      ],
+      "calibration": true,
+      "input_sha256": "305cd4a45a98376d2a29122109b1ae5f4c0f896eaeb92352a8af093bac3b9d99",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A02.txt",
+        "gpt56w": "jobs/gpt56w/A02.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "A03",
+      "track": "A_E5",
+      "cases": [
+        "B044",
+        "B007",
+        "B058",
+        "B038",
+        "B040",
+        "B005"
+      ],
+      "calibration": true,
+      "input_sha256": "c4aaabf37625f092e0dedf0c7c06ebf77a39062227e8450305ab44bf2d4be6b8",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A03.txt",
+        "gpt56w": "jobs/gpt56w/A03.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A04",
+      "track": "A_E5",
+      "cases": [
+        "B034",
+        "B059",
+        "B027",
+        "B010",
+        "B035",
+        "B036"
+      ],
+      "calibration": true,
+      "input_sha256": "c5b177e518e4d2abe631ceb3b7a2b7010c4f81ffeb224d4adb1b3fa331dcce06",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A04.txt",
+        "gpt56w": "jobs/gpt56w/A04.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "A05",
+      "track": "A_E5",
+      "cases": [
+        "B009",
+        "B055",
+        "B002",
+        "B057",
+        "B056",
+        "B025"
+      ],
+      "calibration": false,
+      "input_sha256": "005c37a1293b6cc78481c133c5bed5ca6b2916f618d32f3c8ce78d29c45f3399",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A05.txt",
+        "gpt56w": "jobs/gpt56w/A05.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A06",
+      "track": "A_E5",
+      "cases": [
+        "B004",
+        "B020",
+        "B039",
+        "B049",
+        "B013",
+        "B045"
+      ],
+      "calibration": false,
+      "input_sha256": "b2f449b4d785d59e3d84d2aa8cb33e6f6f2c6458235ca2dd469c35345ddc4002",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/A06.txt",
+        "gpt56w": "jobs/gpt56w/A06.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B02",
+      "track": "B_RELATION",
+      "k": 2,
+      "input_sha256": "71745b89f8c25aa28489c202a997a338306e92843f3a961b2f1755806b9f32f6",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/B02.txt",
+        "gpt56w": "jobs/gpt56w/B02.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C02",
+      "track": "C_E7",
+      "k": 2,
+      "input_sha256": "8cd97cb011aca07986c54e5905cb1331639bb4562141a39073dcb35ec87ef784",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/C02.txt",
+        "gpt56w": "jobs/gpt56w/C02.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B11",
+      "track": "B_RELATION",
+      "k": 11,
+      "input_sha256": "77edda0437158b22e9376a521722e5646aad9495735dbb0aef2140bcdb35df67",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/B11.txt",
+        "gpt56w": "jobs/gpt56w/B11.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C11",
+      "track": "C_E7",
+      "k": 11,
+      "input_sha256": "2ad892b79058884844bdefc5dcad882514db42173ec3b88ebcf02501329271df",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/C11.txt",
+        "gpt56w": "jobs/gpt56w/C11.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B18",
+      "track": "B_RELATION",
+      "k": 18,
+      "input_sha256": "fc391e48a3afc9097bdd4b5dc380ffe407c054330285623a990fb7dbd3f0ba57",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/B18.txt",
+        "gpt56w": "jobs/gpt56w/B18.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C18",
+      "track": "C_E7",
+      "k": 18,
+      "input_sha256": "59066957c71d6748e2f8ae2968c3d5086db88aeb104498fa453d10e13247666e",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/C18.txt",
+        "gpt56w": "jobs/gpt56w/C18.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B20",
+      "track": "B_RELATION",
+      "k": 20,
+      "input_sha256": "93049eadaa439a8edfe6c49646e8da6a73f960a58ab0abfcb6645c87e80d55d0",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/B20.txt",
+        "gpt56w": "jobs/gpt56w/B20.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C20",
+      "track": "C_E7",
+      "k": 20,
+      "input_sha256": "1fcf859ac96513659b0c4dc47c3ae2f27754cab0676dac9aa1298e96a6cb89e1",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/C20.txt",
+        "gpt56w": "jobs/gpt56w/C20.txt"
+      },
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B23",
+      "track": "B_RELATION",
+      "k": 23,
+      "input_sha256": "ec0ae82f879b5451d523ee0dc84401479b85756bcd373a6badfd9cc358c87ce8",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/B23.txt",
+        "gpt56w": "jobs/gpt56w/B23.txt"
+      },
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C23",
+      "track": "C_E7",
+      "k": 23,
+      "input_sha256": "caf6064a1d6629d26b36b0e4b5f28d90ffe763b8f89b717dacab421b5cda00be",
+      "model_prompt_paths": {
+        "gpt6w": "jobs/gpt6w/C23.txt",
+        "gpt56w": "jobs/gpt56w/C23.txt"
+      },
+      "first_model": "gpt56w"
+    }
+  ],
+  "status": "prepared_not_executed"
+}

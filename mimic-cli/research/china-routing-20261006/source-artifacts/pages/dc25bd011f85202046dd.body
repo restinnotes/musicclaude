@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigGo Extension</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/imagefs/favicon-16x16.png">
+<meta name="copyright" content="extension.biggo.com">
+<meta name="Classification" content="Business">
+<meta name="biggo:account-url" content="https://account.biggo.com">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0B9SX9SDW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F0B9SX9SDW');
+  gtag('config', 'G-02M7RM3FVY'); // all-region
+
+  </script>
+  <link rel="stylesheet" href="/style/grid.min.css">
+<link rel="stylesheet" href="/style/layout.css?v=48">
+<link rel="stylesheet" href="/style/third-party/autocomplete.css">
+  <!-- Global site tag (gtag.js) - Google Ads: 973272272 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-973272272"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-973272272');
+  </script>
+
+  <style>
+    .main {
+      padding-top: 0;
+    }
+
+    [href="#aff"]:hover {
+      color: #00808A;
+    }
+
+    .store-item {
+      padding: 48px 40px 38px;
+      border-radius: 29px;
+      box-shadow: 0 3px 8px 0 rgba(36, 52, 63, 0.1);
+      border: solid 1px rgba(102, 118, 128, 0.1);
+      height: 206px;
+      width: 196px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .store-item:hover {
+      box-shadow: 0 3px 8px 0 rgba(36, 52, 63, 0.22);
+    }
+
+    .store-item .img-wrap {
+      max-height: 55px;
+      max-width: 126px;
+      height: 55px;
+      width: 111px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .store-item .img-wrap img {
+      max-height: 55px;
+      max-width: 111px;
+    }
+
+    .popup-tip {
+      z-index: 10;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 19px 22px 30px 31px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
+      background-color: #ffffff;
+      max-width: 340px;
+    }
+
+    .main-top {
+      margin-top: 160px;
+    }
+
+    .main {
+      background-color: #fff;
+    }
+
+    .login-pop-tip {
+      position: fixed;
+      width: 492px;
+      height: 266px;
+      top: 250px;
+      left: 50%;
+      margin-left: -246px;
+      border-radius: 10px;
+      box-shadow: 0 3px 30px 0 rgba(36, 52, 63, 0.3);
+      background-color: #ffffff;
+      padding: 60px 22px 20px;
+      z-index: 100;
+    }
+
+    .full-header {
+      width: 100%;
+      background-image: linear-gradient(69deg, #7c66ef 19%, #10d9e6 81%);
+    }
+
+    .install-btn {
+      padding: 12px 50px 11px;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px 0 rgba(36, 52, 63, 0.1);
+      background-color: #24343f;
+      column-gap: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      width: -moz-fit-content;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .install-btn:hover {
+      box-shadow: 0 5px 10px 0 rgba(36, 52, 63, 0.3);
+    }
+
+    .install-btn * {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    #close-login-tip-x {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    #close-login-tip-x:hover {
+      border-radius: 50px;
+      background-color: rgba(16, 40, 65, 0.08);
+    }
+
+    @media only screen and (max-width: 576px) {
+      .store-item {
+        width: 160px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .store-item .img-wrap {
+        width: 98px;
+      }
+
+      .main-top {
+        margin-top: 40px;
+      }
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .head {
+        min-height: 56px;
+      }
+
+      .mobile-gap {
+        gap: 10px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  
+  
+<div class="head">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center left-side">
+        <a href="/">
+          <img class="logo" src="/images/biggo/header-logo-biggo@2x.png" alt="BigGo">
+        </a>
+        <span class="logo-sub">
+          Shopping Assistant        </span>
+              </div>
+
+      <div class="d-none d-lg-flex align-items-center">
+        <!-- <a href="/store/overview.php" class="store-link account-item">Stores Overview</a> -->
+                  <div class="account-item" data-login-link style="font-size: 16px; font-weight: bold; cursor: pointer">
+            Login/Registration          </div>
+              </div>
+      <div id="mobile-side-menu-trigger" class="d-flex d-lg-none hamburgar"></div>
+    </div>
+      </div>
+</div>
+
+<div id="mobile-side-menu">
+  <div class="top">
+    <div class="d-flex justify-content-end mb-4">
+      <img id="mobile-side-menu-close" src="/images/btn-close@2x.png" height="36">
+    </div>
+
+          <a href="javascript:void(0)" data-login-link>
+        <div>Login/Registration</div>
+      </a>
+      </div>
+  <div class="bottom">
+    <div>
+      <a href="/store/overview.php">
+        <div>Stores Overview</div>
+      </a>
+      <a href="https://account.biggo.com/" target="_blank">
+        <div>Manage your BigGo account</div>
+      </a>
+      <a href="/member/account.php">
+        <div>Function setting</div>
+      </a>
+      <a href="/welcome.php">
+        <div>Support Center</div>
+      </a>
+    </div>
+    <div class="logout">
+      <a href="https://account.biggo.com/logout.php?url=https%3A%2F%2Fextension.biggo.com%2F">
+        Sign out      </a>
+    </div>
+  </div>
+</div>
+      <div class="full-header" data-need-install style="display: none;">
+      <div class="container d-flex align-items-center justify-content-center" style="column-gap: 80px;">
+        <div class="d-flex flex-column" style="row-gap: 30px; max-width: 410px; margin-top: 65px; margin-bottom: 65px">
+          <div class="d-flex align-items-center flex-wrap">
+            <img src="/images/ic-b-enabled@2x.png" height="55" style="margin-right:15px">
+            <img src="/images/header_logo_biggo_white@2x.png" height="55" class="mr-1">
+            <div class="d-flex align-items-center" style="font-size:35px; color:#fff">
+              Shopping Assistant            </div>
+          </div>
+          <div>
+            <div style="color: #fff; font-size: 26px; line-height: 40px">
+              Compare price automatically! <br>Track price history, save your favorites with one tap, and get instant price drop alerts. <br>Start saving more today.            </div>
+          </div>
+          <div>
+            <div class="install-btn" onclick="window.open(`https://biggo.com/ext`)">
+              <img src="/images/browser/ic-chrome@2x.png" height="30" data-browser style="display: none">
+              <div>Install now</div>
+            </div>
+            <div style="color: #fff; font-size: 14px; margin-top: 15px">
+              Available for desktop and laptop webpage.            </div>
+          </div>
+        </div>
+        <img src="/images/img-cover@2x.png?v=202212" height="500">
+      </div>
+    </div>
+  
+  <div class="main">
+    <div class="container">
+      
+      <div class="d-flex align-items-center justify-content-center flex-sm-row flex-column main-top mobile-gap" style="gap: 80px;">
+        <img class="lazy" data-src="/images/welcome/extension_pin.gif" width="250">
+        <div style="max-width: 294px;">
+          <div style="font-size: 26px; font-weight: bold; margin-bottom: 22px;">Tips</div>
+          <div style="font-size: 18px; line-height: 2;">If BigGo Shopping Assistant doesn't show on toolbar automatically. Please click extension function <img src='/images/welcome/ic_extension_chrome@2x.png' height='25px' style='margin: 0 5px; vertical-align: middle;'> to pin it on the toolbar.</div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center flex-column-reverse flex-sm-row main-top">
+        <div class="px-sm-5">
+          <div style="font-size: 26px; font-weight: bold">Price History</div>
+          <div style="margin-top: 22px; font-size: 18px; word-break: break-word; line-height: 36px">BigGo Shopping Assistant not only helps you to find the lowest price, but tracks price drops to give you the cheapest product.</div>
+
+          <div style="font-size: 26px; font-weight: bold; margin-top: 25px">Add to Fav</div>
+          <div style="margin-top: 22px; font-size: 18px; word-break: break-word; line-height: 36px">Add your favorite items to "My favorite" on BigGo with one click. Receive notifications from us when the price drops.</div>
+        </div>
+        <img class="lazy" data-src="/images/2022_Extension.gif" style="max-height: 446px; max-width: calc(100vw - 30px)">
+      </div>
+    </div>
+    <div class="w100" style="background: #DFF7F7; margin-top: 160px;">
+      <div class="container" style="padding-top: 56px; padding-bottom: 100px;">
+        <div class="text-center" style="font-weight: bold; font-size: 26px; margin-bottom: 70px;">
+          BigGo Shopping Assistant icon status tips        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 d-flex align-items-sm-center flex-column flex-sm-row mb-3 mb-sm-5" style="padding-right: 7px">
+            <img src="/images/welcome/img-section-04-green@2x.png" height="140" style="margin-right: 10px">
+            <div style="padding-top: 20px">
+              <div style="color: #1aa1a9; font-size: 22px; margin-bottom: 15px; font-weight: bold">
+                Green light              </div>
+              <div style="font-size: 18px; line-height: 2;">
+                Green light means you're on the supported site, and the number means the available promotions              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-flex align-items-sm-center flex-column flex-sm-row mb-3 mb-sm-5" style="padding-left: 7px">
+            <img src="/images/welcome/img-section-04-gray@2x.png" height="140" style="margin-right: 10px">
+            <div style="padding-top: 20px">
+              <div style="color: #667680; font-size: 22px; margin-bottom: 15px; font-weight: bold">
+                Grey light              </div>
+              <div style="font-size: 18px; line-height: 2;">
+                Grey light means you're on an unsupported site.              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-flex align-items-sm-center flex-column flex-sm-row mb-3 mb-sm-0" style="padding-right: 7px">
+            <img src="/images/welcome/img-section-04-orenge@2x.png" height="140" style="margin-right: 10px">
+            <div style="padding-top: 20px">
+              <div style="color: #7f5af0; font-size: 22px; margin-bottom: 15px; font-weight: bold">
+                Purple light              </div>
+              <div style="font-size: 18px; line-height: 2;">
+                Purple light means you're on the supported site, and cashback is activated.              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 d-flex align-items-sm-center flex-column flex-sm-row mb-3 mb-sm-0" style="padding-left: 7px">
+            <img src="/images/welcome/img-section-04-orenge-2@2x.png" height="140" style="margin-right: 10px;">
+            <div style="padding-top: 20px">
+              <div style="color: #DB8700; font-size: 22px; margin-bottom: 15px; font-weight: bold">
+                Orange light              </div>
+              <div style="font-size: 18px; line-height: 2;">
+                Orange light means you're not signed in and cashback isn't activated yet.              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 130px">
+      <div class="d-flex align-items-center flex-sm-row flex-column-reverse" style="gap: 57px;">
+        <div>
+          <div style="font-size: 26px; margin-bottom: 22px;font-weight: bold">Price comparison of similar products</div>
+          <div style="font-size: 18px; line-height: 1.67; margin-bottom: 22px">
+            <div style="font-weight: bold">Listing the prices of similar products automatically.</div>
+            <div>Listing the prices of similar products from low to high.</div>
+          </div>
+          <div style="font-size: 18px; line-height: 1.67; margin-bottom: 22px">
+            <div style="font-weight: bold">Viewing pages more smoothly</div>
+            <div>Clicking <img src='/images/welcome/btn_close@2x.png' height='36' style='vertical-align: middle;'> in upper right or <img src='/images/welcome/ic_arrow_goleft@2x.png' height='13' style='vertical-align: middle;'><span style='font-size: 14px; margin-left: 4px'>close</span> in lower left to minimize window as <img src='/images/welcome/ic_B_enabled@2x.png' height='25' style='vertical-align: middle;'>. Viewing the page as you want more easily.</div>
+          </div>
+          <div style="font-size: 18px; line-height: 1.67;">
+            <div style="font-weight: bold">See more information by clicking left and right buttons</div>
+            <div>To see more price information, click left button<img src='/images/welcome/ic_arrow@2x.png' height='32' style='vertical-align: middle; margin-left: 3px;'> or right button <img src='/images/welcome/ic_arrow_r@2x.png' height='32' style='vertical-align: middle;'></div>
+          </div>
+        </div>
+        <img class="lazy" data-src="/images/welcome/extension_morelikethis.gif" width="550" style="max-width: 100%">
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 80px;" id="aff">
+      <div style="display: flex; padding: 24px 40px; flex-direction: column; justify-content: center; align-items: center; gap: 16px; background: rgba(199, 216, 240, 0.20); border-radius: 10px">
+        <div style="font-size: 20px; font-weight: 600; color: #24343F;">
+          BigGo Shopping Assistant Affiliate Program Disclosure        </div>
+        <div style="display: flex; width: 100%">
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 12px; border-right: 1px solid #A0AEC6; padding-right: 16px">
+            <div style="font-size: 16px; font-weight: 600; color: #24343F;">
+              Affiliate Links and Commission Disclosure            </div>
+            <div style="font-size: 14px;">
+              To maintain our free price comparison service, BigGo has established affiliate partnerships with various e-commerce platforms. When you complete a purchase through BigGo Shopping Assistant's referral links, we may receive a small commission from our partner merchants. These commissions do not affect your purchase price.            </div>
+            <div style="font-size: 16px; font-weight: 600; color: #24343F;">
+              Transparent Link Mechanism            </div>
+            <div style="font-size: 14px; color: #24343F;">
+              <ul style="padding-left: 16px; margin: 0">
+                <li>
+                  We do not modify cookies or links without users' knowledge                </li>
+                <li>
+                  All affiliate referrals are completed through user confirmation (via cashback reward notifications on e-commerce sites) or by clicking products redirected from the BigGo website                </li>
+                <li>
+                  You are free to choose whether to use our referral links                </li>
+              </ul>
+            </div>
+          </div>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 12px; padding-left: 24px">
+            <div style="font-size: 16px; font-weight: 600; color: #24343F;">
+              Data Collection Statement            </div>
+            <div style="font-size: 14px;">
+              BigGo Shopping Assistant only collects necessary browsing data and cookie information for:              <div style="font-size: 14px; color: #24343F;">
+                <ul style="padding-left: 24px; margin: 0">
+                  <li>
+                    Tracking product price changes to provide accurate price comparisons                  </li>
+                  <li>
+                    Confirming your shopping information with partner merchants                  </li>
+                </ul>
+              </div>
+              <div>Please refer to our Privacy Policy for detailed information.</div>
+            </div>
+            <div style="font-size: 16px; font-weight: 600; color: #24343F;">
+              Transparency Commitment            </div>
+            <div style="font-size: 14px;">
+              Affiliate commissions are a source of revenue that supports BigGo's continued operations, allowing us to continue providing you with free and convenient price comparison services. Thank you for your understanding and support.            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <div style="margin: 130px 15px; display: none !important" data-need-login class="d-flex justify-content-center align-items-center flex-column">
+        <div style="font-size:26px; margin-bottom: 30px;">
+          Log in now❤️Get full features        </div>
+        <div class="event-btn" data-login-link>
+          Login/Registration        </div>
+      </div>
+    
+    <div style="margin: 130px 15px; display: none !important" data-need-install data-not-login class="d-flex justify-content-center align-items-center flex-column">
+      <div data-no-login style="display: none; font-size:26px; margin-bottom: 20px; text-align: center; line-height: 40px">
+        After the installation has successfully❤️<br>
+        Log in now Get full features      </div>
+            <div class="install-btn" onclick="window.open(`https://biggo.com/ext`)">
+        <img src="/images/browser/ic-chrome@2x.png" height="30" data-browser style="display: none">
+        <div>Install now</div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 60px" id="app" v-cloak>
+      <div class="d-flex justify-content-between align-items-center" @click="location.href=`/store/overview`">
+        <div style="font-size: 22px; font-weight: bold">Top Stores</div>
+        <div tabindex="0" id="region-option" class="d-none d-lg-flex align-items-center region-option" style="outline: none; cursor: pointer">
+          <span style="margin: 0 8px 0 0; font-size: 14px" href="/store/overview" class="hover-underline">
+            Stores Overview          </span>
+          <div class="ic-down-arrow" style="transform: rotate(225deg); margin-bottom: 0"></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap" style="margin-top: 28px">
+        <div v-for="store in hotList.slice(0, 10)" class="store-item" @click="gotoDesc(store.id)">
+          <div class="img-wrap">
+            <img v-if="store.image" :src="store.image">
+            <div v-else class="name-img" :style="getBrandStyle(store.name)">
+              {{ getFirstWord(store.name) }}
+            </div>
+          </div>
+          <span>{{ store.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex align-items-center flex-column flex-lg-row justify-content-center justify-content-lg-start">
+        <div class="d-flex align-items-center">
+          <a href="/">
+            <img src="/images/biggo/logo-biggo@2x.png" alt="BigGo" class="logo">
+          </a>
+          <span class="logo-sub">
+            Shopping Assistant          </span>
+        </div>
+
+        <div class="d-flex align-items-center mt-4 mt-lg-0">
+          <a href="https://biggo.com.tw" style="margin-right: 32px;">
+            BigGo Taiwan
+          </a>
+          <a href="/welcome.php" style="margin-right: 32px;">
+            Support Center          </a>
+          <a href="/contactus.php" style="margin-right: 32px;">
+            Contact Us          </a>
+          <a href="/privacy.php">
+            BigGo Privacy Policy          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="/script/third-party/autocomplete.min.js"></script>
+<script type="module" src="/script/global.esm.js?v=4"></script>  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+  <script type="module" src="/script/welcom.esm.js?v=10"></script>
+</body>
+</html>

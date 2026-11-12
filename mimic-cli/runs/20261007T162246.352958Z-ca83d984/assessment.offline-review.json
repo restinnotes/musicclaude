@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-07T16:32:19.463554+00:00",
+  "original_diagnostics_sha256": "b758e0a71a3e20236576be7a35b14714726f2732cec148d51d3722aaa79c199f",
+  "response_sha256": "59ae4b1f3344f79dd8c6d060c17cbed59272b2887805ca142edc79fab4923633",
+  "original_parser_assessment": {
+    "expected_answer": 8,
+    "observed_answer": 6,
+    "normal": false,
+    "status": "mismatch",
+    "evidence": [
+      "x=6"
+    ],
+    "method": "explicit_conclusion_text",
+    "proof_independently_verified": false
+  },
+  "corrected_assessment": {
+    "expected_answer": 8,
+    "observed_answer": null,
+    "normal": false,
+    "status": "unresolved_lower_bound_only",
+    "proved_lower_bound": 6,
+    "explanation": "Only x>=6 is established; x=6 is conditional, disputed, and explicitly not asserted."
+  },
+  "response_modified": false,
+  "model_request_repeated": false
+}

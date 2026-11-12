@@ -1,0 +1,1876 @@
+{
+  "job_id": "W3-C-batch03-recovery01",
+  "parent_replicate": "W3-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "assigned_sku_ids": [
+    "C07-S01",
+    "C07-S02",
+    "C07-S03",
+    "C08-S01",
+    "C08-S02",
+    "C08-S03",
+    "C09-S01",
+    "C09-S02",
+    "C09-S03"
+  ],
+  "categories": [
+    {
+      "category_id": "C07",
+      "status": "3/3 retained; verified_savings=0"
+    },
+    {
+      "category_id": "C08",
+      "status": "3/3 retained; C08-S02 CN exact public price verified; verified_savings=0"
+    },
+    {
+      "category_id": "C09",
+      "status": "3/3 retained; verified_savings=0"
+    }
+  ],
+  "comparison_endpoint": {
+    "destination": "US ZIP10001",
+    "include": [
+      "delivery",
+      "mandatory_import_costs"
+    ],
+    "exclude": [
+      "US_state_sales_tax",
+      "US_local_sales_tax",
+      "use_tax"
+    ],
+    "checkout_total_claimed": false
+  },
+  "landed_schema": [
+    "item_cny",
+    "cn_ship_cny",
+    "agent_fee_cny",
+    "actual_weight_kg",
+    "volumetric_weight_kg",
+    "packaging_battery_surcharge_cny",
+    "international_shipping_usd",
+    "customs_mandatory_usd",
+    "hts",
+    "mfn_rate",
+    "section301_rate",
+    "additional_duty_rate",
+    "exemption",
+    "fx_cny_per_usd",
+    "landed_total_usd",
+    "real_quote"
+  ],
+  "landed_note": "Each landed_by_architecture.v aligns positionally with landed_schema; unobserved values are null, never zero; real_quote=false where no complete real quote exists.",
+  "fx": {
+    "source_id": "S24",
+    "rate_date": "2026-10-02",
+    "cny_per_usd": 6.7038
+  },
+  "coverage": {
+    "assigned": 9,
+    "retained": 9,
+    "prefreeze_verified_head": 5,
+    "prefreeze_exact_variant_verified": 9,
+    "current_exact_cn_public_price_verified": 1,
+    "zip10001_delivered_endpoint_verified": 0,
+    "savings_n_by_bucket": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    },
+    "gmv_weight_available": false,
+    "asp_weight_available": false,
+    "demand_weighted_distribution_computable": false
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "webref:turn312529view0",
+      "title": "罗技 G304 LIGHTSPEED 无线游戏鼠标 黑色 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "webref:turn312529view1",
+      "title": "罗技 GPW5 雪豹 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "webref:turn312529view2",
+      "title": "ATK RS6+ 白武士雪刃轴Pro - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "webref:turn312529view3",
+      "title": "华为手环11 NFC 悦动白 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "webref:turn312529view4",
+      "title": "华为手环11 Pro NFC 羽砂黑 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "webref:turn312529view5",
+      "title": "Xiaomi Watch S5 41mm 海盐蓝 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "webref:turn636678view2",
+      "title": "小米智能摄像机4 800万像素4K - 京东移动页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "webref:turn312529view7",
+      "title": "小米智能门锁4 Pro 双摄版 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "webref:turn312529view8",
+      "title": "Aqara 妙控开关 S1E 皎月白 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "webref:turn184067view1",
+      "title": "Logitech G304 LIGHTSPEED Black - eBay",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "webref:turn184067view2",
+      "title": "Logitech PRO X2 SUPERSTRIKE / GPW5 white - Newegg",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": "webref:turn585692view0",
+      "title": "ATK RS6+ Aluminum Magnetic Switch Keyboard",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": "webref:turn184067view5",
+      "title": "ATK Shipping Policy",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": "webref:turn184067view0",
+      "title": "华为手环11 Pro NFC版 CDY-B59 羽砂黑 - 苏宁易购",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": "webref:turn356239view0",
+      "title": "Xiaomi Watch S5 41mm 立即购买 - 小米商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S16",
+      "url": "webref:turn636678view0",
+      "title": "XIAOMI Smart Camera 4 4K 8MP - eBay Australia",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S17",
+      "url": "webref:turn147928view4",
+      "title": "小米智能门锁4 Pro 双摄版 - 小米中国",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S18",
+      "url": "webref:turn319445view2",
+      "title": "妙控开关 S1E 产品参数 - Aqara中国",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S19",
+      "url": "webref:turn319445view1",
+      "title": "Magic Switch S1E Specs - Aqara Global",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S20",
+      "url": "webref:turn636678view1",
+      "title": "Aqara Smart Switch S1E - eBay",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02",
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S21",
+      "url": "webref:turn319445view3",
+      "title": "Is there any way to integrate the s1 switch into the us - Aqara Forum",
+      "published_at": "2025-08-13",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S22",
+      "url": "webref:turn319445view5",
+      "title": "How to Navigate the Section 301 Tariff Process",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S23",
+      "url": "webref:turn319445view4",
+      "title": "USTR Extends Exclusions from China Section 301 Tariffs",
+      "published_at": "2025-11-26",
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S24",
+      "url": "webref:turn515090view0",
+      "title": "Federal Reserve H.10 Foreign Exchange Rates - October 05, 2026",
+      "published_at": "2026-10-05",
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "9个冻结SKU全保留；多数JD当前页仅网页壳，不能核交易价。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S08",
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "冻结前exact/head状态仍按输入保留。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "可读海外商品价：G304 USD77.09；GPW5/PRO X2 USD279.99；ATK RS6+默认Leviatan USD119.98；Camera4 AUD103.49且页面显示AUD13邮费；S1E USD89.90。均未闭合ZIP10001 exact delivered。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S16",
+        "S20"
+      ],
+      "confidence": "high",
+      "counterevidence": "各页显示目的地非10001或运费/强制进口费/精确地区版本缺失。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "C08-S02苏宁精确CDY-B59羽砂黑NFC公开价CNY369。",
+      "classification": "FACT",
+      "source_ids": [
+        "S14"
+      ],
+      "confidence": "high",
+      "counterevidence": "库存、中国国内运费与海外端点未闭合。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "Aqara中国S1E为CJPKG01LM且限中国大陆；Global S1E为MS-K01D，不能冒充exact。",
+      "classification": "FACT",
+      "source_ids": [
+        "S18",
+        "S19",
+        "S21"
+      ],
+      "confidence": "high",
+      "counterevidence": "社区证据仅辅证；官方型号差异独立成立。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "USTR要求以8/10位HTS判断Section301；178项排除延至2026-11-10；本批次未完成产品级HTS/排除归类。",
+      "classification": "FACT",
+      "source_ids": [
+        "S22",
+        "S23"
+      ],
+      "confidence": "high",
+      "counterevidence": "后续准确归类可产生非空税率。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Fed H.10于2026-10-05发布；2026-10-02为6.7038 CNY/USD。",
+      "classification": "FACT",
+      "source_ids": [
+        "S24"
+      ],
+      "confidence": "high",
+      "counterevidence": "汇率不能补齐物流/税费。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "统一ZIP10001、含delivery/mandatory import、排除州/地方sales/use tax后，A/B/C各桶verified savings样本均n=0。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S16",
+        "S20",
+        "S22",
+        "S24"
+      ],
+      "confidence": "high",
+      "counterevidence": "补齐ZIP运费、HTS税费、agent/国际运费后可重算。"
+    }
+  ],
+  "data_gaps": [
+    "8/9无当前中国普通精确价；C08-S02=CNY369但库存/国内运费未观察。",
+    "0/9有ZIP10001同桶完整delivered端点。",
+    "0/9有四物流架构真实完整报价；全部landed_total=null。",
+    "HTS/MFN/301/额外税/排除资格均未产品级闭合。",
+    "无GMV/ASP权重，不能推断demand-weighted分布。"
+  ],
+  "observations": [
+    {
+      "sku_id": "C07-S01",
+      "category_id": "C07",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view0",
+          "seller_id": null,
+          "item_id": "7571300",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S01"
+          ]
+        },
+        {
+          "channel": "eBay",
+          "url": "webref:turn184067view1",
+          "seller_id": "dw_store13",
+          "item_id": "358716082423",
+          "match_bucket": "C",
+          "match_evidence": "同品牌同型号G304、黑色；listing位于韩国且未闭合冻结中国地区版本/接收器区域等同性，故不列A。",
+          "region_variant": "overseas listing; located South Korea; country-of-origin field South Korea",
+          "currency": "USD",
+          "price": 77.09,
+          "delivery_price": null,
+          "price_type": "public_new_unit_price",
+          "access_state": "read_full_page",
+          "account_access": "guest_checkout_visible",
+          "inventory": "7_available",
+          "ship_from": "South Korea",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S10"
+          ],
+          "displayed_delivery_price": 0.0,
+          "displayed_destination_zip": "85032",
+          "mandatory_import_display": "included for displayed destination"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "offer_source_id": "S10",
+        "channel": "eBay",
+        "item_id": "358716082423",
+        "match_bucket": "C",
+        "currency": "USD",
+        "price": 77.09,
+        "endpoint_zip10001_verified": false
+      },
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "ZIP10001_DELIVERY",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "partial_offer_evidence_no_verified_landed_savings"
+    },
+    {
+      "sku_id": "C07-S02",
+      "category_id": "C07",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view1",
+          "seller_id": null,
+          "item_id": "100323161362",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S02"
+          ]
+        },
+        {
+          "channel": "Newegg",
+          "url": "webref:turn184067view2",
+          "seller_id": "TECH EDGE",
+          "item_id": "32K-0002-00770",
+          "match_bucket": "B",
+          "match_evidence": "listing标题/系列同时写PRO X2 SUPERSTRIKE与GPW5 white；同Logitech OEM，但冻结中国branding为GPW5雪豹，外观/地区闭合不足。",
+          "region_variant": "overseas marketplace listing; ships from China",
+          "currency": "USD",
+          "price": 279.99,
+          "delivery_price": null,
+          "price_type": "public_new_unit_price",
+          "access_state": "read_full_page",
+          "account_access": "logged_out_public_page",
+          "inventory": "add_to_cart_available",
+          "ship_from": "China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S11"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "offer_source_id": "S11",
+        "channel": "Newegg",
+        "item_id": "32K-0002-00770",
+        "match_bucket": "B",
+        "currency": "USD",
+        "price": 279.99,
+        "endpoint_zip10001_verified": false
+      },
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "ZIP10001_DELIVERY",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "partial_B_offer_head_status_preserved_false_no_verified_savings"
+    },
+    {
+      "sku_id": "C07-S03",
+      "category_id": "C07",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_opportunity",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view2",
+          "seller_id": null,
+          "item_id": "100246746739",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S03"
+          ]
+        },
+        {
+          "channel": "ATK official",
+          "url": "webref:turn585692view0",
+          "seller_id": "ATK GEAR GLOBAL LIMITED",
+          "item_id": null,
+          "match_bucket": "C",
+          "match_evidence": "官方页同RS6+且列White Samurai、Snow Blade Pro，但USD119.98当前默认选中Leviatan Edition；不能把该价冒充白武士雪刃轴Pro A桶。",
+          "region_variant": "global official store",
+          "currency": "USD",
+          "price": 119.98,
+          "delivery_price": null,
+          "price_type": "public_sale_price_default_Leviatan_variant",
+          "access_state": "read_full_page",
+          "account_access": "logged_out_public_page",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S12",
+            "S13"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "offer_source_id": "S12",
+        "channel": "ATK official",
+        "item_id": null,
+        "match_bucket": "C",
+        "currency": "USD",
+        "price": 119.98,
+        "endpoint_zip10001_verified": false
+      },
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "ZIP10001_DELIVERY",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES",
+        "EXACT_OVERSEAS_VARIANT_PRICE"
+      ],
+      "evidence_status": "same_model_official_page_but_exact_variant_price_unverified_no_savings"
+    },
+    {
+      "sku_id": "C08-S01",
+      "category_id": "C08",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view3",
+          "seller_id": null,
+          "item_id": "100244561503",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S04"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "OVERSEAS_OFFER",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "domestic_frozen_variant_retained_current_price_shell_overseas_device_offer_not_verified"
+    },
+    {
+      "sku_id": "C08-S02",
+      "category_id": "C08",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view4",
+          "seller_id": null,
+          "item_id": "100326342022",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S05"
+          ]
+        },
+        {
+          "channel": "Suning China",
+          "url": "webref:turn184067view0",
+          "seller_id": null,
+          "item_id": "12451052461",
+          "match_bucket": "A",
+          "match_evidence": "公开页明确HUAWEI Band 11 Pro NFC CDY-B59 羽砂黑、铝合金表壳、1.62英寸，与冻结版本一致。",
+          "region_variant": "China domestic CDY-B59",
+          "currency": "CNY",
+          "price": 369.0,
+          "delivery_price": null,
+          "price_type": "public_display_price",
+          "access_state": "read_full_page",
+          "account_access": "price_visible_without_login",
+          "inventory": null,
+          "ship_from": "China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S14"
+          ],
+          "product_weight_kg": 0.018
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            369.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_SHIP",
+        "OVERSEAS_OFFER",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "exact_domestic_public_price_verified_no_overseas_device_offer_no_landed_savings"
+    },
+    {
+      "sku_id": "C08-S03",
+      "category_id": "C08",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_opportunity",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view5",
+          "seller_id": null,
+          "item_id": "100413454994",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S06"
+          ]
+        },
+        {
+          "channel": "Xiaomi official China",
+          "url": "webref:turn356239view0",
+          "seller_id": "Xiaomi",
+          "item_id": "25419",
+          "match_bucket": "C",
+          "match_evidence": "当前官方购买页确认Xiaomi Watch S5 41mm产品，但公开解析未读出海盐蓝选择与其价格；不把搜索结果中的起价当成交价。",
+          "region_variant": "China official model-level page; exact color not observed",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "read_full_page",
+          "account_access": "logged_out_public_page",
+          "inventory": null,
+          "ship_from": "China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S15"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "OVERSEAS_OFFER",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "official_model_page_found_exact_color_transaction_price_unobserved"
+    },
+    {
+      "sku_id": "C09-S01",
+      "category_id": "C09",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn636678view2",
+          "seller_id": null,
+          "item_id": "100201209046",
+          "match_bucket": "A",
+          "match_evidence": "当前移动页标题明确小米智能摄像机4、800万像素、4K；价格需选择门店/动态确认，故价格null。",
+          "region_variant": "China domestic",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "read_full_page",
+          "account_access": "logged_out_price_location_gated",
+          "inventory": null,
+          "ship_from": "China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "channel": "eBay Australia",
+          "url": "webref:turn636678view0",
+          "seller_id": "jasmineblossomau",
+          "item_id": "366065538637",
+          "match_bucket": "C",
+          "match_evidence": "标题/型号字段同Xiaomi Smart Camera 4、4K/8MP；但地区/账号生态与冻结中国版等同性未闭合。",
+          "region_variant": "overseas listing; MIJIA; origin China; ships from Australia",
+          "currency": "AUD",
+          "price": 103.49,
+          "delivery_price": null,
+          "price_type": "public_new_sale_price",
+          "access_state": "read_full_page",
+          "account_access": "guest_checkout_visible",
+          "inventory": "5_available",
+          "ship_from": "Darwin, Australia",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S16"
+          ],
+          "displayed_delivery_price": 13.0,
+          "displayed_destination_zip": "50307",
+          "mandatory_import_display": "import fees due before delivery; amount unobserved"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "offer_source_id": "S16",
+        "channel": "eBay Australia",
+        "item_id": "366065538637",
+        "match_bucket": "C",
+        "currency": "AUD",
+        "price": 103.49,
+        "endpoint_zip10001_verified": false
+      },
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "ZIP10001_DELIVERY",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES",
+        "MANDATORY_IMPORT"
+      ],
+      "evidence_status": "exact_name_overseas_listing_region_unverified_mandatory_import_unknown_no_savings"
+    },
+    {
+      "sku_id": "C09-S02",
+      "category_id": "C09",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_head",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view7",
+          "seller_id": null,
+          "item_id": "100285245906",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S08"
+          ]
+        },
+        {
+          "channel": "Xiaomi official China",
+          "url": "webref:turn147928view4",
+          "seller_id": "Xiaomi",
+          "item_id": null,
+          "match_bucket": "A",
+          "match_evidence": "官方中国页确认同名小米智能门锁4 Pro双摄版；公开页未读出当前交易价/库存。",
+          "region_variant": "China domestic official",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "read_full_page",
+          "account_access": "logged_out_public_page",
+          "inventory": null,
+          "ship_from": "China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S17"
+          ]
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": null,
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "OVERSEAS_OFFER",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES",
+        "INSTALL_COMPAT"
+      ],
+      "evidence_status": "official_exact_product_exists_transaction_and_overseas_offer_unverified"
+    },
+    {
+      "sku_id": "C09-S03",
+      "category_id": "C09",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "sampling_stratum": "domestic_opportunity",
+      "gmv_weight": null,
+      "asp_weight": null,
+      "offers": [
+        {
+          "channel": "JD China",
+          "url": "webref:turn312529view8",
+          "seller_id": null,
+          "item_id": "100048666759",
+          "match_bucket": "A",
+          "match_evidence": "冻结前exact_variant_verified=true；本次公开页未提供可核交易价，不以页面壳推断。",
+          "region_variant": "CN exact frozen variant",
+          "currency": "CNY",
+          "price": null,
+          "delivery_price": null,
+          "price_type": null,
+          "access_state": "page_shell",
+          "account_access": "logged_out",
+          "inventory": null,
+          "ship_from": null,
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S09"
+          ]
+        },
+        {
+          "channel": "eBay",
+          "url": "webref:turn636678view1",
+          "seller_id": "bevike",
+          "item_id": "176048426288",
+          "match_bucket": "C",
+          "match_evidence": "listing为Aqara S1E但未披露CJPKG01LM；官方Global S1E型号MS-K01D与冻结中国CJPKG01LM不同，不能列A/B。",
+          "region_variant": "S1E model ID unobserved; ships from Shenzhen China",
+          "currency": "USD",
+          "price": 89.9,
+          "delivery_price": null,
+          "price_type": "public_new_unit_price",
+          "access_state": "read_full_page",
+          "account_access": "guest_checkout_visible",
+          "inventory": "5_available",
+          "ship_from": "Shenzhen, China",
+          "observed_at": "2026-10-06T17:35:00-07:00",
+          "source_ids": [
+            "S18",
+            "S19",
+            "S20",
+            "S21"
+          ],
+          "displayed_delivery_price": 0.0,
+          "displayed_destination_zip": "1050",
+          "mandatory_import_display": "included for displayed destination"
+        }
+      ],
+      "landed_by_architecture": [
+        {
+          "architecture": "standalone",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "consolidated_marginal",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "1000_independent_consumer_orders_commercial_pricing",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        },
+        {
+          "architecture": "true_physical_bulk_import",
+          "v": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6.7038,
+            null,
+            false
+          ]
+        }
+      ],
+      "best_verified_convenient_offer": {
+        "offer_source_id": "S20",
+        "channel": "eBay",
+        "item_id": "176048426288",
+        "match_bucket": "C",
+        "currency": "USD",
+        "price": 89.9,
+        "endpoint_zip10001_verified": false
+      },
+      "savings_by_bucket": [],
+      "missing_components": [
+        "CN_PRICE",
+        "CN_SHIP",
+        "OVERSEAS_OFFER",
+        "ZIP10001_DELIVERY",
+        "AGENT",
+        "WEIGHT_DIM",
+        "INTL_SHIP_QUOTES",
+        "HTS_DUTIES"
+      ],
+      "evidence_status": "regional_model_counterevidence_only_C_comparable_offer_no_savings",
+      "product_dimensions_mm": [
+        86,
+        86,
+        41.35
+      ]
+    }
+  ]
+}

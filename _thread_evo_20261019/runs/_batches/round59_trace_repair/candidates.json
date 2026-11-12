@@ -1,0 +1,69 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r59tracebound",
+      "author": "r55_advisor_g56",
+      "author_feedback": "r58trace_feedback_g56_v2",
+      "interface_clarification": "r58trace_feedback_g56_interface_v2",
+      "name": "RecurrenceTrace_EvidenceBoundA4",
+      "hypothesis": "保留原RecurrenceTrace经历整理步骤，仍然以已经验收的LINE为唯一经历来源，产生ROUTES。改变的是ROUTES进入A4之后的使用方式：不再把路线当作可以自由补充和重新解释的故事草稿，而是作为所有心理事实的证据上限。A4只能用路线中实际成立的内容组织最终线，必须服从source_warnings及原文确定程度；TARGETS只决定情感方向，不提供新事实。同时允许A4选择性使用支点，不要求把全部anchor_threads、established和state逐项写入成品。预期收益是保留RecurrenceTrace在独立成立和跨段连续性上的收益，减少无依据的心理补写和重复解释，改善lean而不牺牲plain、alone、cover。",
+      "risk": "原LINE本身可能已经包含回环、抽象表达或不充分的发展。RecurrenceTrace只能整理它，不能修复其来源本身的缺陷。把ROUTES作为严格证据边界，可能使部分段落过于保守，减少原Q15_A4中某些有价值的自然心理连接，也可能因为选择性使用支点而遗漏TARGETS中的某些感受。另一个风险是source_warnings过多时，A4可能过度谨慎，把原本明确的事实也写得含糊。因此必须保留原文的确定程度：事实不降格为猜测，猜测不升级为事实，未知仍然未知。不能以牺牲四维标准换取表面上的零新增。",
+      "mode": "fullgraph",
+      "attempt": 2,
+      "parent_attempt": "r58trace",
+      "route_sources": {
+        "op60": {
+          "rid": "scr58trace_op60_P1",
+          "input_sha256": "0ead8ad35e3cae6eb9d950969e3c995cb484441ffe53d76ed11c7fbcb4744dc6",
+          "output_sha256": "aa87c690f5fdc94bd0ad42f9cc7556dcbc1d5fce60fb92be8f5cae4a74fdb38b",
+          "original_input_verification": {
+            "rid": "scr58trace_op60_P1",
+            "full_input_sha256": "0ead8ad35e3cae6eb9d950969e3c995cb484441ffe53d76ed11c7fbcb4744dc6",
+            "body_sha256": "0ead8ad35e3cae6eb9d950969e3c995cb484441ffe53d76ed11c7fbcb4744dc6",
+            "mode": "message_body"
+          }
+        },
+        "op61": {
+          "rid": "scr58trace_op61_P1",
+          "input_sha256": "588a55714db2f8a4afdc6faa0f68b59f9385a9dfd2c8b1702b162baa89e18a30",
+          "output_sha256": "7eeea1e4207477ddfa9bf4bbf7e21294ddf42388f9ed5c6c95bbb9f47fdd3dc0",
+          "original_input_verification": {
+            "rid": "scr58trace_op61_P1",
+            "full_input_sha256": "588a55714db2f8a4afdc6faa0f68b59f9385a9dfd2c8b1702b162baa89e18a30",
+            "body_sha256": "588a55714db2f8a4afdc6faa0f68b59f9385a9dfd2c8b1702b162baa89e18a30",
+            "mode": "message_body"
+          }
+        }
+      },
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "route_bound_a4",
+          "path": "runs\\_batches\\round59_trace_repair\\prompts\\r59tracebound_P1.txt",
+          "sha256": "06b3d8c5ca63ed475d6f6928e1eb7ba775f4c784173a26a41138546dcbd16104",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "downstream_required": "Any survivor must rerun affected accepted N05e/N05f with actual new inputs and compare final against then-current accepted mainline; checkpoint wins are not final acceptance."
+    }
+  ],
+  "source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "source_route_line_hashes": {
+    "op60": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+    "op61": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+  },
+  "reuse": "Actual approved unchanged P1 ROUTES including all original warnings; no JSON adaptation or P1 regeneration. One new original-author A4 per work."
+}

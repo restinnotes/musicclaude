@@ -1,0 +1,1274 @@
+{
+  "segment": "S02",
+  "experiment_status": "frozen_submitted_for_independent_review",
+  "adopted": false,
+  "inputs": {
+    "inputs/S02.txt": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3",
+    "reference/S02_ledger.json": "e65cc18feb1cddf67694b8d64399bbc3990133681f54fba7da896fbab73e6527",
+    "CONTENT.json": "ec41450447812df2d627017bdf6230699f03c7b2ca2a6b0e9ac29c019f38afff"
+  },
+  "boundary": {
+    "writes": [
+      "drafts/S02_component_experiment.json",
+      "reviews/S02_component_log.json"
+    ],
+    "main_product_modified": false,
+    "source_scope": "主体为S02 mm.4–16；A062依用户追加要求在C11-L02明示12–34跨段读法及32、34原时点。其余跨段来源只取本段可用内容。"
+  },
+  "component_contract": {
+    "canonical_reader_text": "pages[0].blocks[*].text",
+    "structured_lines": "每块component.lines；text为其原序换行拼接。共享前提也在text内显示一次。",
+    "visibility": "所有正文行同时可见，无折叠、附录、旁白及独特意义仅存元数据的安排。",
+    "relations": "parallel_facets为同一场景侧面；nonexclusive_alternatives为并列、不要求互斥、不串为一人经历；source_explicit_sequence只用于原稿明确顺序。",
+    "sequence_note": "C09两条三次读法分别有序；安慰/叹气为交替，不是第三条三次顺序。C10为原文明确的倾诉收回→上涌→回柔和。"
+  },
+  "counts": {
+    "baseline": {
+      "blocks_text": {
+        "han_characters": 1402,
+        "non_whitespace_characters": 1595
+      },
+      "all_reader_text_including_title_labels_intro": {
+        "han_characters": 1520,
+        "non_whitespace_characters": 1720
+      }
+    },
+    "experiment": {
+      "blocks_text": {
+        "han_characters": 1283,
+        "non_whitespace_characters": 1595
+      },
+      "all_reader_text_including_title_labels_intro": {
+        "han_characters": 1332,
+        "non_whitespace_characters": 1648
+      }
+    },
+    "count_definition": "汉字为U+3400–U+9FFF字符；非空白字符含标点、数字。所有可见标题、标签与共享前提均在第二种口径计入；元数据与证据不属于读者正文。",
+    "reduction_percent": {
+      "blocks_text": {
+        "han_characters": 8.49,
+        "non_whitespace_characters": 0.0
+      },
+      "all_reader_text_including_title_labels_intro": {
+        "han_characters": 12.37,
+        "non_whitespace_characters": 4.19
+      }
+    },
+    "interpretation": "只表示可见字符量变化，未显著减量也照实报告；不推断语义覆盖或同步阅读效果。"
+  },
+  "self_report_limits": [
+    "只校验85个旧ID逐项有去向及定位文本存在，不认定语义覆盖率。",
+    "原稿A019的错误起点明确拒用，不减分母、不冒充保留。",
+    "死亡威胁、女高音及调性均据输入保留；不新增外部研究或署名权威。",
+    "读量下降不等于阅读速度或音乐同步体验已经改善，尚未做独立语义复核与使用测试。",
+    "A062的跨段时间在正文明确，不属于本段实时事件；同步阅读是否应显示这行留待独立复核。"
+  ],
+  "entries": [
+    {
+      "meaning_id": "S02-A001",
+      "original_meaning": "疲惫卸下戒备，却把这份安宁感作偷来的",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-L03",
+        "text": "疲惫卸下戒备，“偷来的安宁”。",
+        "shared_premise_id": "S02-C01-P"
+      },
+      "merge_reason": "疲惫、卸防与偷来处境同句保留，不用安全感替代。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A002",
+      "original_meaning": "建立的12/8律动如心跳也如无止境水浪",
+      "disposition": "visible_shared_premise_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-P",
+        "text": "4–5小节，左手12/8摇起：心跳、无止境的水浪，水流在呼吸。"
+      },
+      "merge_reason": "左手律动只交代一次；心跳、无止境水浪、水流自身呼吸三个比喻并列。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A003",
+      "original_meaning": "三度六度双音构成主旋律",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C02",
+        "line_id": "S02-C02-P",
+        "text": "6小节起，右手三度、六度双音，升F大调上第一支完整长歌。"
+      },
+      "merge_reason": "歌声的首次、完整长线、调性、三六度音程共句明写；与C01-P的4–5摇曳合读构成先摇后唱。此句是可见音乐观察，不额外假设共享前提。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A004",
+      "original_meaning": "两人肩贴肩，声音极低，像近身耳语",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L01",
+        "text": "午后暖金斜光，摇晃船舱里肩贴肩耳语；极低声，怕喧哗惊碎幻觉。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "合用午后船舱场景；肩贴肩、低声及保护幻觉的动因都明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A005",
+      "original_meaning": "低声是因为怕喧哗惊碎眼前幻觉",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L01",
+        "text": "午后暖金斜光，摇晃船舱里肩贴肩耳语；极低声，怕喧哗惊碎幻觉。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "合用午后船舱场景；肩贴肩、低声及保护幻觉的动因都明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A006",
+      "original_meaning": "水不可逆地流走就是时间流逝，清醒知幸福留不住才鼻酸",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L03",
+        "text": "水流、时间回不去；清醒知幸福留不住，才鼻酸。幸福浮水无根，不停的水波每秒提醒倒数。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "共享水与时间意象，分别保留不可逆、清醒鼻酸及无根倒数。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A007",
+      "original_meaning": "午后暖金斜光里，两人并肩坐在摇晃船舱",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L01",
+        "text": "午后暖金斜光，摇晃船舱里肩贴肩耳语；极低声，怕喧哗惊碎幻觉。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "合用午后船舱场景；肩贴肩、低声及保护幻觉的动因都明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A008",
+      "original_meaning": "双声线依偎是心照不宣的双向亲密",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L02",
+        "text": "双声线心照不宣地依偎，呼吸、语调同频，肢体相触，容不下第三者；秘密宇宙不供外人看。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用双人亲近前提；同频、触碰、排他及场景不供观看分别出现，不互相顶替。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A009",
+      "original_meaning": "经历过离别的成年人面对温柔会防卫地预问能持续多久",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L01",
+        "text": "成年人经历离别，面对温柔防备地预问：能持续多久？",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留成年人离别前史及期限预问，不与一般怕结束合并。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A010",
+      "original_meaning": "摇曳建立后主动放弃重力控制，把全身交给深不可测而温热的水",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-L01",
+        "text": "放弃重力控制，全身交给深不可测、温热而规律起伏的水；陆地的病痛、琐事、沉重被隔开。",
+        "shared_premise_id": "S02-C01-P"
+      },
+      "merge_reason": "共用水的托举场景；仍明写主动交出重量、水的深度温度与隔绝的具体内容。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A011",
+      "original_meaning": "水把陆地病痛琐碎沉重物理隔绝",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-L01",
+        "text": "放弃重力控制，全身交给深不可测、温热而规律起伏的水；陆地的病痛、琐事、沉重被隔开。",
+        "shared_premise_id": "S02-C01-P"
+      },
+      "merge_reason": "共用水的托举场景；仍明写主动交出重量、水的深度温度与隔绝的具体内容。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A012",
+      "original_meaning": "贴耳双声的语调完全同频，亲密到容不下第三者",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L02",
+        "text": "双声线心照不宣地依偎，呼吸、语调同频，肢体相触，容不下第三者；秘密宇宙不供外人看。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用双人亲近前提；同频、触碰、排他及场景不供观看分别出现，不互相顶替。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A013",
+      "original_meaning": "音色带黄昏倦意和微醺，区别于初恋欢跃",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C04",
+        "line_id": "S02-C04-L01",
+        "text": "黄昏倦意、微醺，非初恋欢跃；温存成熟到近乎颓废，呼吸、体温贴得化不开。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "黄昏音色与成熟温存同场呈现，保留初恋参照、颓废及体温呼吸。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A014",
+      "original_meaning": "夏末傍晚潮湿温热微风裹皮肤，甚至有些黏稠",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C04",
+        "line_id": "S02-C04-L02",
+        "text": "夏末傍晚，威尼斯水面潮湿温热的微风裹着皮肤，有些黏稠。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留季节、时刻、地点和皮肤触感，不以温存概括。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A015",
+      "original_meaning": "成熟到近乎颓废的温存，呼吸和体温贴合得化不开",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C04",
+        "line_id": "S02-C04-L01",
+        "text": "黄昏倦意、微醺，非初恋欢跃；温存成熟到近乎颓废，呼吸、体温贴得化不开。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "黄昏音色与成熟温存同场呈现，保留初恋参照、颓废及体温呼吸。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A016",
+      "original_meaning": "幸福浮水无根，永不停歇水波每秒提醒倒计时",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L03",
+        "text": "水流、时间回不去；清醒知幸福留不住，才鼻酸。幸福浮水无根，不停的水波每秒提醒倒数。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "共享水与时间意象，分别保留不可逆、清醒鼻酸及无根倒数。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A017",
+      "original_meaning": "并行双声像同步呼吸与肢体触碰",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L02",
+        "text": "双声线心照不宣地依偎，呼吸、语调同频，肢体相触，容不下第三者；秘密宇宙不供外人看。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用双人亲近前提；同频、触碰、排他及场景不供观看分别出现，不互相顶替。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A018",
+      "original_meaning": "秘密宇宙属于恋人，场景本身不供外人观看",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L02",
+        "text": "双声线心照不宣地依偎，呼吸、语调同频，肢体相触，容不下第三者；秘密宇宙不供外人看。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用双人亲近前提；同频、触碰、排他及场景不供观看分别出现，不互相顶替。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A019",
+      "original_meaning": "原文将并行双音主题起点写为第4小节",
+      "disposition": "rejected_conflicting_timing",
+      "destination": {
+        "decision": "pages[0].decisions[0]",
+        "corrected_visible_locations": [
+          "S02-C01-P",
+          "S02-C02-P"
+        ]
+      },
+      "merge_reason": "拒用“第4小节右手双音主题开始”的错误起点；本输入多处明确4–5先摇曳、6起歌唱。对应正确定位在C01-P、C02-P可见；A019仍单列，不以纠正后的事实冒充原项保留。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A020",
+      "original_meaning": "水波托举不是机械拍点，而是催眠安全，抚平先前惊悸",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-L02",
+        "text": "水波托举，催眠般安全，抚平惊悸；音乐流动，绷紧的身体慢慢松开。",
+        "shared_premise_id": "S02-C01-P"
+      },
+      "merge_reason": "共享放松语境，惊悸被抚平与身体随流动松开分作两个动作。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A021",
+      "original_meaning": "终于相爱相见时的近乡情怯，尚非自信的倾诉",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L01",
+        "text": "相爱的人终于坐近，近乡情怯；千言万语涌来，第一句轻如叹息。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共享初次开口，保留相爱相见、近乡情怯及千言万语与轻叹。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A022",
+      "original_meaning": "旋律向高处伸展时反而渐弱",
+      "disposition": "visible_shared_premise_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-P",
+        "text": "旋律上伸，反而渐弱。"
+      },
+      "merge_reason": "向上渐弱的听觉前提只交代一次，后面各句不重复介绍记号。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A023",
+      "original_meaning": "相同升A尾音下伴奏变色，反复形成温柔的刺，确认与惆怅并存",
+      "disposition": "visible_shared_premise_proposed",
+      "destination": {
+        "block_id": "S02-C09",
+        "line_id": "S02-C09-P",
+        "text": "7、9、11小节同一升A尾音回来，水波、光影、和声变色；甜蜜确认与惆怅，一根“温柔的刺”。"
+      },
+      "merge_reason": "同一尾音、伴奏变色和温柔的刺作共同前提，只省重复音乐引入。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A024",
+      "original_meaning": "当下美像浮光一碰即散",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L04",
+        "text": "美如水面浮光，一碰就散。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "浮光触碰即散独立于掌托物。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A025",
+      "original_meaning": "久识者靠近无需制造话题，私人柔软舒适并非狂喜",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L01",
+        "text": "久识的人坐近，私人、柔软的舒适，不狂喜；无需找话题，不怕沉默。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留久识、坐近及日常安静，不改为狂喜。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A026",
+      "original_meaning": "成年重见重要的人还能自然笑谈，但知道此时刻并非取之不尽",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L07",
+        "text": "成年后重见重要的人，自然笑谈，已知这样的时刻并非取之不尽。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "重见的重要人物及成年时间感独立，不写成同居之后必然重逢。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A027",
+      "original_meaning": "能够安静地拥有这种感觉",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L06",
+        "text": "独自安静拥有，沉进珍贵体验。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "两项共用独处体验，安静拥有的状态仍可见。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A028",
+      "original_meaning": "不是遇坏事才忧伤，是幸福本身使人害怕结束",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L02",
+        "text": "幸福本身让人怕结束、忧伤；温柔如掌托珍贵易碎的东西。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "幸福引出怕结束与掌托物的具体动作同句，非用易碎概括所有动因。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A029",
+      "original_meaning": "温柔像手掌托着珍贵易碎的东西",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L02",
+        "text": "幸福本身让人怕结束、忧伤；温柔如掌托珍贵易碎的东西。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "幸福引出怕结束与掌托物的具体动作同句，非用易碎概括所有动因。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A030",
+      "original_meaning": "外层稳定从容有礼，内心仍容纳复杂期待重量",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L06",
+        "text": "外表稳定、从容、有礼，内心有复杂期待和重量；夜走熟路，脚步规律，脑中不平静。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "同一来源的表里两层共句，用夜走熟路保留动作与内心差异。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A031",
+      "original_meaning": "规律摇摆像夜走熟路，脚步稳而脑中不平静",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L06",
+        "text": "外表稳定、从容、有礼，内心有复杂期待和重量；夜走熟路，脚步规律，脑中不平静。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "同一来源的表里两层共句，用夜走熟路保留动作与内心差异。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A032",
+      "original_meaning": "共同生活后在普通晚上重认对方在场的珍贵，因非理所当然而珍惜",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L06",
+        "text": "共同生活后的普通晚上：“这个人在这里，真好。”并非理所当然，才珍惜。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留共同生活前史、普通晚上和重认在场价值的动因。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A033",
+      "original_meaning": "靠近仍保留警觉距离，抚脸时骤想到这时刻不永存，尚非悲伤",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L02",
+        "text": "靠近仍警觉、留距离；抚脸时骤想此刻不会永存，尚非悲伤。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留抚脸、骤念及尚非悲伤。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A034",
+      "original_meaning": "双声也可理解为一个人内心的两种声音相依",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L04",
+        "text": "一人内心，两种声音相依。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "主体是一个人的内心双声，与恋人解释并列。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A035",
+      "original_meaning": "12–16呼吸越来越短，情绪跑在理智前",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L01",
+        "text": "8–11本可停，还想把同一感受说充分；12–16呼吸渐短，情绪赶在理智前，期待“接下来会怎样”。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享乐句趋短的语境；8–11继续说的愿望与12–16的急促期待仍分时明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A036",
+      "original_meaning": "此时自我压抑为后面高潮释放建立前提",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L04",
+        "text": "演奏抵住立刻做大的冲动，给后文留余地；此时压住的感情，为后来高潮释放作准备。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共用先克制后释放关系，同时保留演奏分配与内心压抑两层。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A037",
+      "original_meaning": "因为旁边有人，不必把声音投到远方，只需彼此听见",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L02",
+        "text": "旁边有人，不必把声音投远，彼此听见就好。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "低声为近人听见的动因独立于怕惊碎幻觉。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A038",
+      "original_meaning": "幸福有教养有防备，靠近却不愿把全部重量压给对方或粗暴占有",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L03",
+        "text": "有教养、有防备：靠近却不肯把全部重量压给你，不愿粗暴占有。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "人际重量及占有分寸明确有对象，不与交重量给水相混。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A039",
+      "original_meaning": "亲密也可独自沉浸于珍贵体验",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L06",
+        "text": "独自安静拥有，沉进珍贵体验。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "两项共用独处体验，安静拥有的状态仍可见。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A040",
+      "original_meaning": "美好夜晚散步时多看对方一眼，为确认亲近真实",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L05",
+        "text": "美好夜晚散步，主动多看对方一眼，确认亲近真实。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "主动看对方为确认真实，与上行被对方看一眼不合并。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A041",
+      "original_meaning": "幸福逐渐生依恋，希望此刻更久但还非痛苦",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L01",
+        "text": "这个人、这个下午、这份亲近重要，不需做什么，只盼时间慢些。幸福生出依恋，尚非痛苦；太喜欢，便提前舍不得。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "共享未失去的当下；不做事、盼慢些、依恋尚非痛苦与因喜欢提前不舍都留在行内。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A042",
+      "original_meaning": "音乐开始流动后绷紧身体才慢慢松开",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-L02",
+        "text": "水波托举，催眠般安全，抚平惊悸；音乐流动，绷紧的身体慢慢松开。",
+        "shared_premise_id": "S02-C01-P"
+      },
+      "merge_reason": "共享放松语境，惊悸被抚平与身体随流动松开分作两个动作。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A043",
+      "original_meaning": "已知此人此下午重要，不需做事，只盼时间慢些",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L01",
+        "text": "这个人、这个下午、这份亲近重要，不需做什么，只盼时间慢些。幸福生出依恋，尚非痛苦；太喜欢，便提前舍不得。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "共享未失去的当下；不做事、盼慢些、依恋尚非痛苦与因喜欢提前不舍都留在行内。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A044",
+      "original_meaning": "并未失去，因太喜欢就提前舍不得",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L01",
+        "text": "这个人、这个下午、这份亲近重要，不需做什么，只盼时间慢些。幸福生出依恋，尚非痛苦；太喜欢，便提前舍不得。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "共享未失去的当下；不做事、盼慢些、依恋尚非痛苦与因喜欢提前不舍都留在行内。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A045",
+      "original_meaning": "感情深却不愿完全暴露自己",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L04",
+        "text": "深情，不愿完全暴露自己；幸福，仍未完全放心。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享有所保留，情绪深度、主动不暴露及同时不放心各有文本。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A046",
+      "original_meaning": "惯于自我克制的人终于进入不用时刻警惕的地方",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L02",
+        "text": "惯于克制，终于不必时刻警惕，愿意信任、靠近；对方偶尔一望，已满足。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享终于能放心的情境；克制前史、主动信任与被看一眼的满足分别明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A047",
+      "original_meaning": "对方偶尔一望就已经很满足",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L02",
+        "text": "惯于克制，终于不必时刻警惕，愿意信任、靠近；对方偶尔一望，已满足。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享终于能放心的情境；克制前史、主动信任与被看一眼的满足分别明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A048",
+      "original_meaning": "温柔是一种愿意信任和靠近的主动状态",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L02",
+        "text": "惯于克制，终于不必时刻警惕，愿意信任、靠近；对方偶尔一望，已满足。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享终于能放心的情境；克制前史、主动信任与被看一眼的满足分别明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A049",
+      "original_meaning": "满足临近落定又舍不得停，渴望并非缺少而是太值得留恋",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L03",
+        "text": "满足快落定，又舍不得停：并非缺少，是太值得留恋。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留将落未落与因值得而渴望的动因。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A050",
+      "original_meaning": "美好刚出现却不敢用力拥抱",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L03",
+        "text": "美好刚出现，不敢用力抱，怕热情太明显吓跑它；珍惜气氛，选语气怕重动作破坏。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共享不敢用力，拥抱、热情暴露、选择语气和破坏氛围的动因仍逐一明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A051",
+      "original_meaning": "怕自己的热情太明显而惊跑美好",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L03",
+        "text": "美好刚出现，不敢用力抱，怕热情太明显吓跑它；珍惜气氛，选语气怕重动作破坏。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共享不敢用力，拥抱、热情暴露、选择语气和破坏氛围的动因仍逐一明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A052",
+      "original_meaning": "先欲倾诉又收回，再忍不住涌起，随后轻呼气回柔和",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C10",
+        "line_id": "S02-C10-L01",
+        "text": "6–11想倾诉又收回；12–14忍不住上涌；14–16轻呼气，回柔和。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "只在来源明确的三阶段内设顺序，不把别的呼吸读法接在后面。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A053",
+      "original_meaning": "4–5稳定摇曳先出现，6才开始真正歌唱",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C02",
+        "line_id": "S02-C02-P",
+        "text": "6小节起，右手三度、六度双音，升F大调上第一支完整长歌。"
+      },
+      "merge_reason": "歌声的首次、完整长线、调性、三六度音程共句明写；与C01-P的4–5摇曳合读构成先摇后唱。此句是可见音乐观察，不额外假设共享前提。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A054",
+      "original_meaning": "谨慎选语气是怕重动作破坏珍惜的氛围，而非感情浅",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L03",
+        "text": "美好刚出现，不敢用力抱，怕热情太明显吓跑它；珍惜气氛，选语气怕重动作破坏。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共享不敢用力，拥抱、热情暴露、选择语气和破坏氛围的动因仍逐一明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A055",
+      "original_meaning": "最初幸福与尚未完全放心同时存在",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L04",
+        "text": "深情，不愿完全暴露自己；幸福，仍未完全放心。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享有所保留，情绪深度、主动不暴露及同时不放心各有文本。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A056",
+      "original_meaning": "两声彼此回应很近，又各自留空间，亲密不急证明",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L03",
+        "text": "彼此回应，靠近又各留空间，不急着证明。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "和贴身同频是并列观察，不推成由亲密到疏离的过程。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A057",
+      "original_meaning": "8–11本可停却想把同一感受说得更充分",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L01",
+        "text": "8–11本可停，还想把同一感受说充分；12–16呼吸渐短，情绪赶在理智前，期待“接下来会怎样”。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享乐句趋短的语境；8–11继续说的愿望与12–16的急促期待仍分时明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A058",
+      "original_meaning": "16附近忽明忽暗，开始担心眼前美好会变",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L06",
+        "text": "16附近忽明忽暗，开始担心美好会变。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留16附近色彩与担心改变，不提前写成已经失去。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A059",
+      "original_meaning": "摇荡既舒服又暂悬，不怕且享受风景，却知道尚未到岸",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L07",
+        "text": "夜船摇荡舒服，人暂悬着；不怕，享受风景，知道尚未到岸。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "独立保留不怕与未到岸，不强造为警觉或恐惧。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A060",
+      "original_meaning": "说话又收住的悲伤若有，是知道好时光不长而非绝望失恋",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L01",
+        "text": "话又收住；若有悲伤，是知道好时光不长，非绝望、失恋的沉痛。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留说话收住及悲伤的程度边界，是原意而非编辑免责声明。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A061",
+      "original_meaning": "夜聊慢慢靠近，含蓄诱惑，话少却懂",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C05",
+        "line_id": "S02-C05-L04",
+        "text": "夜聊慢慢靠近，暖意、含蓄的诱惑，话少却懂。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "另立夜聊情境，保留诱惑与话少能懂。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A062",
+      "original_meaning": "愉悦加浓使情绪不必藏得那么好，但不能等同问题解决",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L02",
+        "text": "12–34跨段听：愉悦加浓，情绪不必藏好，越美越舍不得，问题未解决；32才完整打开，34放慢退开。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "依用户追加要求，显式标出12–34跨段听法。愉悦加浓、情绪少藏、越美越不舍且未解决仍可见；32完整打开、34退开写在原时点，不前移到S02。",
+      "review_status": "awaiting_independent_review",
+      "scope": "cross_segment_reading_explicitly_labelled_12–34"
+    },
+    {
+      "meaning_id": "S02-A063",
+      "original_meaning": "感官陶醉里不敢相信亲近能持续",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C07",
+        "line_id": "S02-C07-L05",
+        "text": "感官陶醉，仍不敢信亲近能持续。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留感官陶醉与不敢相信持续的同时性。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A064",
+      "original_meaning": "12–16呼吸收紧并产生接下来会怎样的期待",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L01",
+        "text": "8–11本可停，还想把同一感受说充分；12–16呼吸渐短，情绪赶在理智前，期待“接下来会怎样”。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享乐句趋短的语境；8–11继续说的愿望与12–16的急促期待仍分时明写。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A065",
+      "original_meaning": "14–15短暂落稳像相视获回应，很快又漂起，未说死心事",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L04",
+        "text": "14–15短暂落稳，如相视获回应；很快又漂起，心事没说尽。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "来源自身落稳后漂起的顺序独立保留。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A066",
+      "original_meaning": "11–15呼吸逐渐拉长，抬高后松气但未彻底释然",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L03",
+        "text": "11–15呼吸渐长，情绪抬高后松气，未彻底释然。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "拉长作为独立听法，与上行收紧并列，未伪造先后。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A067",
+      "original_meaning": "看黄昏时一边享受一边已难过将消逝，陪喜欢的人时内心有声音说时刻不多",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L05",
+        "text": "看黄昏，享受也难过它快没了；陪喜欢的人坐着，心里说“这种时刻不多了”。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "两个同时享受与预感失去的场景同列，未改作先后。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A068",
+      "original_meaning": "靠船舷望远方，不敢用力看怕看碎此刻",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C06",
+        "line_id": "S02-C06-L06",
+        "text": "靠船舷望远处，不敢用力看，怕看碎此刻。",
+        "shared_premise_id": "S02-C06-P"
+      },
+      "merge_reason": "保留船舷位置、远眺及克制注视，不并入身体触碰。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A069",
+      "original_meaning": "怀念已逝好过去，不想回去，只觉得有过真好而有过意味没了",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L02",
+        "text": "怀念好过去，知回不去，也不想回去：“有过真好，但有过就意味着没了。”暖长旋律像摸头安慰；不停的水上伴奏提醒它托不住。成年人有分寸地怀念，不哭，眼眶热。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用过去完成时的怀念场景，保留不想回去、摸头、伴奏提醒托不住与克制泪水。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A070",
+      "original_meaning": "暖长旋律像摸头安慰，水上不停伴奏提醒这种东西托不住",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L02",
+        "text": "怀念好过去，知回不去，也不想回去：“有过真好，但有过就意味着没了。”暖长旋律像摸头安慰；不停的水上伴奏提醒它托不住。成年人有分寸地怀念，不哭，眼眶热。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用过去完成时的怀念场景，保留不想回去、摸头、伴奏提醒托不住与克制泪水。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A071",
+      "original_meaning": "成年人有分寸地怀念，不哭但眼眶发热",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L02",
+        "text": "怀念好过去，知回不去，也不想回去：“有过真好，但有过就意味着没了。”暖长旋律像摸头安慰；不停的水上伴奏提醒它托不住。成年人有分寸地怀念，不哭，眼眶热。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共用过去完成时的怀念场景，保留不想回去、摸头、伴奏提醒托不住与克制泪水。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A072",
+      "original_meaning": "首次完整长旋律在升F大调上歌唱",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C02",
+        "line_id": "S02-C02-P",
+        "text": "6小节起，右手三度、六度双音，升F大调上第一支完整长歌。"
+      },
+      "merge_reason": "歌声的首次、完整长线、调性、三六度音程共句明写；与C01-P的4–5摇曳合读构成先摇后唱。此句是可见音乐观察，不额外假设共享前提。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A073",
+      "original_meaning": "中年人笑着哄爱人，心知留不住，仍要把歌唱完",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L03",
+        "text": "中年人笑着哄最爱的人，心知留不住，眼眶热，仍笑着唱完这句。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "独立保留哄人的主体及主动完成歌句，不并入泛泛怀念。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A074",
+      "original_meaning": "同一尾音三次从在此确认到是否还在此疑问，再到恐怕待不久",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C09",
+        "line_id": "S02-C09-L02",
+        "text": "第一次“我们在这里”，第二次“我们还在这里吗”，第三次“恐怕待不久了”。",
+        "shared_premise_id": "S02-C09-P"
+      },
+      "merge_reason": "另留确认、疑问、期限预感的顺序，不当作安慰犹豫疼的同义替换。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A075",
+      "original_meaning": "双人唱其实像一个人分饰两角，怕吵醒水面，甜中仍孤独",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C03",
+        "line_id": "S02-C03-L05",
+        "text": "一人分饰两角，怕吵醒水面，甜里有孤独。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "保留扮演两角、怕惊水与孤独，不并入内心两声。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A076",
+      "original_meaning": "克制演奏为后文留发展余地，应抵抗直接做大",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L04",
+        "text": "演奏抵住立刻做大的冲动，给后文留余地；此时压住的感情，为后来高潮释放作准备。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共用先克制后释放关系，同时保留演奏分配与内心压抑两层。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A077",
+      "original_meaning": "女高音般的三六度歌有意大利歌剧质感",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C02",
+        "line_id": "S02-C02-L01",
+        "text": "像意大利歌剧女高音在唱。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享三六度歌唱前提，单留女高音主体和意大利歌剧质感。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A078",
+      "original_meaning": "同尾音和声改变，安慰与叹气反复交替",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C09",
+        "line_id": "S02-C09-L03",
+        "text": "也可一会儿安慰，一会儿叹气。",
+        "shared_premise_id": "S02-C09-P"
+      },
+      "merge_reason": "和前三次单向层次并列；保留反复交替，而非第四阶段。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A079",
+      "original_meaning": "夏夜深绿近黑的水有浑浊凉意，行于其上又怕又爽",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L04",
+        "text": "夏夜深绿近黑的水，浑、凉，行在上面又怕又爽；“幸福的害怕”，夜里独自清醒想念，又暖又凉。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享夏夜水域，保留颜色浑凉、又怕又爽与独自清醒想念；不当作午后暖风的继续。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A080",
+      "original_meaning": "幸福的害怕是独自夜里清醒想念，暖凉同时",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L04",
+        "text": "夏夜深绿近黑的水，浑、凉，行在上面又怕又爽；“幸福的害怕”，夜里独自清醒想念，又暖又凉。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "共享夏夜水域，保留颜色浑凉、又怕又爽与独自清醒想念；不当作午后暖风的继续。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A081",
+      "original_meaning": "恋人二重唱受到死亡威胁",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C12",
+        "line_id": "S02-C12-L05",
+        "text": "也像一对恋人被死亡威胁了一下的二重唱。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "死亡威胁作为明确可见的独立听法保留，不用易碎替代；不继承未核的署名引语。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A082",
+      "original_meaning": "7、9、11同音三次先安慰、再犹豫、最后疼",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C09",
+        "line_id": "S02-C09-L01",
+        "text": "第一次安慰，第二次犹豫，第三次有点疼。",
+        "shared_premise_id": "S02-C09-P"
+      },
+      "merge_reason": "共享尾音三次返回的前提，严格保留安慰、犹豫、疼的顺序。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A083",
+      "original_meaning": "14–15小峰顶后像梯田逐层降落",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C11",
+        "line_id": "S02-C11-L05",
+        "text": "14–15小峰顶后，马上如梯田逐层落下。",
+        "shared_premise_id": null
+      },
+      "merge_reason": "梯田逐层下降独立于松气与漂起。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A084",
+      "original_meaning": "千言万语涌来，出口第一句反而轻如叹息",
+      "disposition": "visible_text_proposed",
+      "destination": {
+        "block_id": "S02-C08",
+        "line_id": "S02-C08-L01",
+        "text": "相爱的人终于坐近，近乡情怯；千言万语涌来，第一句轻如叹息。",
+        "shared_premise_id": "S02-C08-P"
+      },
+      "merge_reason": "共享初次开口，保留相爱相见、近乡情怯及千言万语与轻叹。",
+      "review_status": "awaiting_independent_review"
+    },
+    {
+      "meaning_id": "S02-A085",
+      "original_meaning": "左手摇曳像水流自己在呼吸",
+      "disposition": "visible_shared_premise_proposed",
+      "destination": {
+        "block_id": "S02-C01",
+        "line_id": "S02-C01-P",
+        "text": "4–5小节，左手12/8摇起：心跳、无止境的水浪，水流在呼吸。"
+      },
+      "merge_reason": "左手律动只交代一次；心跳、无止境水浪、水流自身呼吸三个比喻并列。",
+      "review_status": "awaiting_independent_review"
+    }
+  ],
+  "user_steering_checks": [
+    {
+      "meaning_id": "S02-A009",
+      "visible_location": "S02-C07-L01",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A040",
+      "visible_location": "S02-C05-L05",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A043",
+      "visible_location": "S02-C06-L01",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A045",
+      "visible_location": "S02-C07-L04",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A058",
+      "visible_location": "S02-C11-L06",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A063",
+      "visible_location": "S02-C07-L05",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A077",
+      "visible_location": "S02-C02-L01",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A081",
+      "visible_location": "S02-C12-L05",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    },
+    {
+      "meaning_id": "S02-A062",
+      "visible_location": "S02-C11-L02",
+      "note": "按用户强调的具体区别拟议保留；由独立复核判断是否无损。"
+    }
+  ],
+  "freeze": {
+    "instruction": "用户要求当前草稿暂时冻结；本次仅提交作者日志与实验结论。",
+    "draft_sha256": "537cd4b7ec16df16fccd18467c8ed54688fbf2c93bf8f493dc094e519aead25c",
+    "draft_modified_after_freeze": false,
+    "next_revision": "等待独立复核意见；本轮不补标签、不改正文。"
+  },
+  "experiment_conclusion": {
+    "result": "尚未实现显著减量，不能宣称阅读实验成功。",
+    "user_observed_comparison": {
+      "baseline_characters": 1603,
+      "component_draft_characters": 1740,
+      "difference": 137,
+      "increase_percent": 8.55,
+      "provenance": "用户当前可见稿的字数；保留用户比较口径，不以作者另算的较小数字替代。"
+    },
+    "author_counter_note": "counts另列JSON文本的可复算口径，仅供核对计数差异。作者口径下，blocks.text非空白字符前后均为1595；加上标题标签等为1720→1648。汉字减少、标题缩短及换行增加均不能证明总阅读负担下降。用户所见1740/1603与JSON纯文本计数不同，尚未核定渲染或计数差异。",
+    "fair_comparison": "先由独立复核核对两稿实际保留的意思，再在同等覆盖、同等可见内容和同一计数口径下比较。当前稿补入旧稿缺少的内容，不能只凭字数比较断言哪种结构更高效，也不能把更多内容当作减量成功。",
+    "readability": "换行及facets/alternatives/sequence元数据只是表达尝试，未经过同步阅读测试；不据此声称更轻、更快或成功。",
+    "coverage": "85项去向是作者自报映射，不是已验证覆盖。作者不自报最终覆盖率。",
+    "adoption": "保持实验隔离，独立复核通过前不采用，不改主成品。"
+  },
+  "relationship_review_risks": [
+    {
+      "block_id": "S02-C03",
+      "issue": "可见读法之间目前主要靠换行；extra component的关系元数据不能保证实际读者辨认不同主体、并列读法或顺序。",
+      "specific_risk": "贴耳双人、同一人内心双声、分饰两角与独自沉浸的主体不能混成一条经历。",
+      "disposition": "冻结待独立复核；可能需要补可见标签，本轮未补。"
+    },
+    {
+      "block_id": "S02-C05",
+      "issue": "可见读法之间目前主要靠换行；extra component的关系元数据不能保证实际读者辨认不同主体、并列读法或顺序。",
+      "specific_risk": "久识、终于放心、夜聊、散步、共同生活与成年重见并非同一个人的连续剧情；主动看对方与被看不可混淆。",
+      "disposition": "冻结待独立复核；可能需要补可见标签，本轮未补。"
+    },
+    {
+      "block_id": "S02-C09",
+      "issue": "可见读法之间目前主要靠换行；extra component的关系元数据不能保证实际读者辨认不同主体、并列读法或顺序。",
+      "specific_risk": "两组三次顺序与安慰/叹气交替需要可区分；“犹豫”不可被漏读，元数据有序不等于呈现已充分。",
+      "disposition": "冻结待独立复核；可能需要补可见标签，本轮未补。"
+    },
+    {
+      "block_id": "S02-C11",
+      "issue": "可见读法之间目前主要靠换行；extra component的关系元数据不能保证实际读者辨认不同主体、并列读法或顺序。",
+      "specific_risk": "收紧、拉长、相视后漂起、梯田下降是不同观察；A062有明确跨段标签，但还需检查读者是否把后续32/34当成本段事件。",
+      "disposition": "冻结待独立复核；可能需要补可见标签，本轮未补。"
+    }
+  ],
+  "validation": {
+    "json_parse": "passed",
+    "page_scope": [
+      "S02"
+    ],
+    "old_id_mapping_entries": 85,
+    "unique_old_id_entries": 85,
+    "visible_text_and_component_lines_equal": true,
+    "input_hashes_unchanged": true,
+    "semantic_coverage_validation": "not_performed_by_author; independent_review_pending",
+    "relationship_and_music_sync_readability": "not_validated"
+  }
+}

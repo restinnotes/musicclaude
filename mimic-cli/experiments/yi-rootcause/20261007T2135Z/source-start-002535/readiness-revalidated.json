@@ -1,0 +1,39 @@
+{
+  "verified_utc": "2026-10-08T00:27:05.812368+00:00",
+  "container": "yi-mimicgate-20261002",
+  "api": "http://127.0.0.1:8652",
+  "running": true,
+  "started_at": "2026-10-08T00:25:38.371890852Z",
+  "health": {
+    "status": "ok"
+  },
+  "concurrency": {
+    "max_concurrency": 8,
+    "in_flight": 0,
+    "available": 8,
+    "waiting": 0,
+    "max_active_tabs": 8,
+    "worker_tabs": 0,
+    "max_idle_worker_tabs": 2,
+    "max_queue": 16,
+    "queue_timeout_seconds": 240
+  },
+  "native_process_configuration": {
+    "native_identity_loaded": true,
+    "patchright_only": true,
+    "configured_concurrency": 8
+  },
+  "memory_current": {
+    "utc": "2026-10-08T00:27:06.344350+00:00",
+    "physical_load_percent": 91,
+    "total_physical_gib": 31.497,
+    "available_physical_gib": 2.577,
+    "total_commit_gib": 67.497,
+    "used_commit_gib": 60.611,
+    "available_commit_gib": 6.886,
+    "commit_load_percent": 89.8
+  },
+  "readiness_poll_initial_error": "RemoteDisconnected before the just-started HTTP listener was ready",
+  "container_restarted_after_poll_error": false,
+  "profile_or_auth_reimported": false
+}

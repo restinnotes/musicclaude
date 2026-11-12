@@ -1,0 +1,50 @@
+P4a op60 S01 pass=False chosen=1 unexplained=['S01-B2:池子太窄', 'S01-B3:池子太窄']
+P4a op60 S01 back: none (没有。现有内容里没有哪一段候选能在不额外编造设定的情况下，确立“眼前确实有一个已与他亲近的人，并且他担忧这份亲近能否继续)
+P4a op60 S02 pass=False chosen=1 unexplained=['S02-B1:池子太窄', 'S02-B2:池子太窄', 'S02-B5:听感存疑']
+P4a op60 S02 back to S01 via M8: rejected
+P4a op60 S03 pass=False chosen=1 unexplained=['S03-B3:池子太窄']
+P4a op60 S03 back: none (没有。S02里有候选能把“此前确实共同相处/亲近”写得更实，但真正写成对方回应或双方确认的 M15、M22 本身就缺乏依)
+P4a op60 S04 pass=False chosen=2 unexplained=['S04-B1:池子太窄']
+P4a op60 S04 back: none (可在 S02 加上 M37：它明确建立了“强烈快乐达到高峰后实际退下来，并被他感到正在成为过去”的经历，不只是快乐尚在时)
+P4a op60 S05 pass=True chosen=2 unexplained=[]
+P4a op60 S05 back to S01 via M3: rejected
+P4a op60 global@S05 ok=True problems=['S04']
+P4a op60 S06 pass=False chosen=5 unexplained=['S06-B2:池子太窄']
+[syP4a_op60_S04_b3_B] ok 231s 1749 chars
+P4a op60 S06 back to S04 via M1: rejected
+[syP4a_op60_S07_A] ok 439s 5887 chars
+[syP4a_op60_S07_B] ok 327s 1106 chars
+[syP4a_op60_S07_A2] ok 513s 5532 chars
+[syP4a_op60_S07_B2] ok 324s 1340 chars
+P4a op60 S07 pass=False chosen=2 unexplained=['S07-B3:池子太窄']
+[syP4a_op60_S08_A] ok 416s 4777 chars
+[syP4a_op60_S08_B] ok 332s 865 chars
+[syP4a_op60_S08_A2] ok 472s 5634 chars
+[syP4a_op60_S08_B2] ok 266s 245 chars
+P4a op60 S08 pass=True chosen=1 unexplained=[]
+[syP4a_op60_S08_G] ok 211s 1832 chars
+P4a op60 global@S08 ok=True problems=['S06', 'S07', 'S08']
+[syP4a_op60_S09_A] ok 342s 4904 chars
+[syP4a_op60_S09_B] ok 132s 331 chars
+P4a op60 S09 pass=True chosen=1 unexplained=[]
+[syP4a_op60_S10_A] ok 355s 4975 chars
+[syP4a_op60_S10_B] ok 281s 232 chars
+P4a op60 S10 pass=True chosen=1 unexplained=[]
+[syP4a_op60_S11_A] ok 418s 6800 chars
+[syP4a_op60_S11_B] ok 273s 587 chars
+P4a op60 S11 pass=True chosen=2 unexplained=['S11-B4:池子太窄']
+[syP4a_op60_S11_G] ok 321s 1571 chars
+P4a op60 global@S11 ok=True problems=['S07']
+[syP4a_op60_S12_A] ok 506s 5237 chars
+[syP4a_op60_S12_B] ok 169s 815 chars
+[syP4a_op60_S12_A2] ok 469s 5871 chars
+[syP4a_op60_S12_B2] ok 238s 779 chars
+P4a op60 S12 pass=False chosen=2 unexplained=['S12-B3:池子太窄']
+[syP4a_op60_S13_A] ok 278s 5418 chars
+[syP4a_op60_S13_B] ok 156s 258 chars
+P4a op60 S13 pass=True chosen=1 unexplained=[]
+[syP4a_op60_S14_A] ok 334s 6461 chars
+[syP4a_op60_S14_B] ok 301s 320 chars
+P4a op60 S14 pass=True chosen=2 unexplained=[]
+[syP4a_op60_S14_G] ok 175s 2131 chars
+P4a op60 global@S14 ok=True problems=['S04', 'S08', 'S12']

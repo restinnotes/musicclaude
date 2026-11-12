@@ -1,0 +1,16 @@
+SPC2: 4 calls
+[judge_spec_v1_SPC2_s2_gpt56] recovered from job 276s 8418 chars
+[judge_spec_v1_SPC2_s1_gpt56] recovered from job 330s 7360 chars
+[judge_spec_v1_SPC2_s1_gpt6] FAILED rc=1 1215s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T083304104334Z
+[judge_spec_v1_SPC2_s2_gpt6] FAILED rc=1 1218s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T083311103887Z
+[judge_spec_v1_SPC2_s1_gpt6] ok 905s 8644 chars
+[judge_spec_v1_SPC2_s2_gpt6] ok 960s 7706 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 105, in <module>
+    run(a.eid, a.work, a.names.split(","), a.shuffles, a.judges.split(","), a.workers)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 65, in run
+    collect(eid)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 84, in collect
+    "center": (a.get("center") or {}).get("present"), "center_stmt": (a.get("center") or {}).get("statement"),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'get'

@@ -1,0 +1,59 @@
+{
+ "name": "L37g561",
+ "note": "L37g561：11-11 晚 I02 换方向（adv_loop2.py 方案 g561）",
+ "steps": [
+  {
+   "id": "A1",
+   "prompt_file": "L37_g561_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  },
+  {
+   "id": "A2",
+   "prompt_file": "L37_g561_A2.txt",
+   "replace": {
+    "{ROUTES}": "step:A1"
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A3",
+   "prompt_file": "Q6_A3.txt",
+   "replace": {
+    "{SEGMENTS}": "SEGMENTS",
+    "{BEADS_TEXT}": "BEADS_TEXT"
+   },
+   "model": "g6",
+   "after": [
+    "A1"
+   ],
+   "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+  },
+  {
+   "id": "A4",
+   "prompt_file": "L37_g561_A4b.txt",
+   "replace": {
+    "{SECTIONS}": "SEGMENTS",
+    "{ROUTES}": [
+     "step:A1",
+     {
+      "text": "\n\n【宏观评审结果】\n"
+     },
+     "step:A2"
+    ],
+    "{TARGETS}": "step:A3",
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  }
+ ],
+ "final": "A4"
+}

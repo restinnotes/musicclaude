@@ -1,0 +1,54 @@
+{
+  "job_id": "S07_FLASH_A2_30",
+  "status": "failed",
+  "started": "2026-10-17T17:19:18.342426+00:00",
+  "channel": "opencode",
+  "requested_model": "antigravity-tools/gemini-3.8-flash-high",
+  "manifest_sha256": "ff5a37140a91a84ecde920966939ddced137892212e2712e98450fb8920f6a69",
+  "runner_sha256": "84d7323ee2da0a867c1d42685cc1a945b531d9b55bee9728be499b86e7ccf248",
+  "prompt_source": "D:\\musicclaude\\_bead_quality_20261017\\inputs_v2\\S07_A2_30.txt",
+  "attachments": [],
+  "automatic_retry": false,
+  "automatic_fallback": false,
+  "exit_code": null,
+  "submission_state": "not_started",
+  "errors": [],
+  "labels": {
+    "segment": "S07",
+    "method": "A2",
+    "source_count": 30,
+    "phase": "second_revision"
+  },
+  "prompt_sha256": "dfded399f32c5e1cada4dfa1220ef9a4d38f206a6d0303336f5d2130138f00fc",
+  "prompt_bytes": 39208,
+  "prompt_characters": 17363,
+  "normalized_prompt_sha256": "6d6b1d0cddf6392b6b52ce4973ce588ea2d145685979ac2ec04742e509787a24",
+  "normalized_prompt_bytes": 39207,
+  "normalized_prompt_characters": 17362,
+  "native_body_limit_bytes": 65536,
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "tools": "deny",
+    "standalone": true,
+    "provider_timeout": false,
+    "effort": "high",
+    "provider_configuration_sha256": "7f8257c997d1d3fa3fa9001ec42699d575c438f80776d63b3c9ba30faf39088c",
+    "process_config": {
+      "permission": "deny",
+      "provider": {
+        "antigravity-tools": {
+          "options": {
+            "timeout": false
+          },
+          "models": {
+            "gemini-3.8-flash-high": {}
+          }
+        }
+      }
+    },
+    "upstream_safety_settings": "inherited_not_independently_verified",
+    "provider_internal_retry_behavior": "not_verified_runner_never_retries"
+  }
+}

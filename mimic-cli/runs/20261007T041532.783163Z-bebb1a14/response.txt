@@ -1,0 +1,158 @@
+## 结论先行
+
+**[观察] 本轮独立探索共扫了 15 个新型号，其中 9 个能形成足够可用的中美价格配对。**这 9 个不能与旧 54 SKU 合并分母，也不是随机样本；它们的作用是找 price anomaly，而不是估计总体命中率。
+
+在统一假设 **7.0 CNY/USD** 下，仅看商品裸价：
+
+- **2/9 的 `H > 0`**，即理论上还有空间在计入额外成本后保持 ≥25% savings：**AULA WIN60 HE** 和 **Ulanzi UKA01**。
+- **7/9 的 `H ≤ 0`**：即使国际运输、代理费、税费全是 0，也达不到 25% savings。这里包括本轮找到的 **3 个国产 mini PC 配对全部为负**。
+- 最强正例是 **AULA WIN60 HE**：国内普通价约 ¥99、美国严格同变体 $39.99，裸价差约 **64.6%**，但 `H` 只有 **$15.85**；而 AliExpress 聚合已看到更低的混合变体价格，因此它是“值得继续做实际物流报价”的机会，不是已经证明的 landed-cost winner。[SMZDM](https://m.smzdm.com/dynamic_detail/46274906?utm_source=chatgpt.com)
+- **Ulanzi UKA01** 裸价差也很大，但 `H≈$8.01`；AliExpress 已出现约 $18.94 的同名国际报价后，压力情景下 `H` 只剩约 **$4.25**。这更像适合合箱/haul，而不是单件直寄。[什么值得买](https://www.smzdm.com/ju/s6kqz34/?utm_source=chatgpt.com)
+- **反例很强**：GMKtec K12、Beelink SER9 Pro、MINISFORUM M1 Pro、MCHOSE Ace 60 Pro、MelGeek MADE68 Air，以及 SUNLU S4 的普通价都已被国际渠道基本套利；Godox iT30Pro N 虽有约 19% 裸差，但仍没到 25% 门槛。
+
+**[推断]** 这轮结果不支持“China-native 天然有 25%+ 优势”；更像是**少量轻、小、国内价格竞争激烈但国际渠道尚未充分压价的 SKU**才值得路由。尤其 mini PC 已明显表现出品牌自身全球直销在主动压平价差。
+
+**[假设]** 以下所有汇率换算都用 **7.0 CNY/USD 的统一情景参数**，不是 2026-10-06 当日汇率，也没有把美国 sales tax、中国代理费、国际运费或关税偷偷设成 0 来宣称 landed saving。
+
+---
+
+## 1. 9 个可用配对：裸价差与 25% 成本容忍值
+
+定义：
+
+\[
+P_{CN,USD}=P_{CN}/7
+\]
+
+\[
+裸价节省率=1-P_{CN,USD}/P_{best-US}
+\]
+
+\[
+H=0.75\times P_{best-US}-P_{CN}/7
+\]
+
+**`H` 不是实际净节省。**它表示：中国路线的**全部额外成本加总**最多还能有多少美元，同时仍保持相对最佳美国渠道至少 25% 的节省。`H<0` 意味着商品裸价层面就已经失败。
+
+| SKU / 匹配关系 | 中国普通价 | 最佳可用 US 价 | CN 折美元 | 裸价节省 | H | 初筛 |
+|---|---:|---:|---:|---:|---:|---|
+| **GMKtec K12 / H255 / 准系统** — 同款 | ¥2,199 | $359.99 | $314.14 | **12.7%** | **-$44.15** | ❌ 已被国际渠道压平 |
+| **Beelink SER9 Pro H255 / 24GB+1TB** — 同款 | ¥4,679 | $699 | $668.43 | **4.4%** | **-$144.18** | ❌ 明确失败 |
+| **MINISFORUM M1 Pro / Ultra 9 285H / 准系统** — 同款 | ¥4,299 | $589 | $614.14 | **-4.3%** | **-$172.39** | ❌ 中国反而贵 |
+| **AULA WIN60 HE / 黑色 / 灰木磁轴 / 标准版** — 同变体 | ¥99 | $39.99 | $14.14 | **64.6%** | **+$15.85** | ✅ 值得继续报 landed |
+| **MCHOSE Ace 60 Pro / 黑 / KTEK** — 同变体 | ¥299 | $44.10 | $42.71 | **3.1%** | **-$9.64** | ❌ 已国际化定价 |
+| **MelGeek MADE68 Air / TTC mini magnetic** — 同款、本地化轴体命名 | ¥999 | $75 | $142.71 | **-90.3%** | **-$86.46** | ❌ 国际价远低于国内参考价 |
+| **Godox iT30Pro N / Nikon / 黑** — 同款 | ¥423 | $74.90 | $60.43 | **19.3%** | **-$4.25** | ⚠️ 有裸差，但过不了25% |
+| **Ulanzi UKA01 / SKU C007** — 同款 | ¥69.66 | $23.95 | $9.95 | **58.4%** | **+$8.01** | ✅ 仅低运费/合箱有希望 |
+| **SUNLU FilaDryer S4** — 同款 | ¥637.80 | $116.99 | $91.11 | **22.1%** | **-$3.37** | ⚠️ 接近20%，但25%失败 |
+
+### 各配对证据与剩余缺口
+
+**GMKtec K12。**  
+**[观察]** 什么值得买 2026-07-24 的 K12/H255 准系统页面显示活动价 ¥2,099，但同时明确标注其“常卖价 ¥2,199”，活动现已过期；所以我用 **¥2,199**，没有把历史活动价冒充当前普通价。美国 GMKtec 官方 K12 H255 准系统显示 **$359.99**。[什么值得买](https://www.smzdm.com/p/179020289/?utm_source=chatgpt.com)  
+[CN：什么值得买 K12 价格页](https://www.smzdm.com/p/179020289/?utm_source=chatgpt.com) · [US：GMKtec K12 官方页](https://www.gmktec.com/products/gmktec-k12-amd-ryzen%E2%84%A2-7-h-255-mini-pc?utm_source=chatgpt.com)  
+支持范围：型号/CPU/准系统匹配较强。剩余缺口：中国端不是 2026-10-06 实时结算页；因此证据强度 **B**。即便错误地给它用 ¥2,099 优惠价，`H` 仍约 **-$29.86**，不会改变失败结论。
+
+**Beelink SER9 Pro H255。**  
+**[观察]** 国内页面可见京东普通页面价约 **¥4,679**；约 ¥3,974.18 的低价需要 PLUS/政府补贴组合，我明确排除。美国 Beelink 官方 H255、24GB+1TB 为 **$699**。[SMZDM](https://m.smzdm.com/p/183224462/?utm_source=chatgpt.com)  
+[CN：SER9 Pro H255 价格证据](https://m.smzdm.com/p/183224462/?utm_source=chatgpt.com) · [US：Beelink SER9 Pro 官方页](https://us.bee-link.com/products/beelink-ser9-pro-amd-ryzen-7-h-255?utm_source=chatgpt.com)  
+来源访问：2026-10-06。支持范围：容量和 H255 配置可锁。剩余缺口：中国页面正文还出现 ¥4,699，存在约 ¥20 页面展示差异；对结论无实质影响。即使采用有资格限制的 ¥3,974.18，裸节省也仅约 **18.8%**、`H≈-$43.49`。
+
+**MINISFORUM M1 Pro 285H。**  
+**[观察]** 京东检索到 Ultra 9 285H 准系统、无内存硬盘，页面价 **¥4,299**。美国侧 Amazon 价格追踪页在 **2026-09-19** 记录同款 barebone 为 **$589**，且标示前一天从 $623 降至 $589；MINISFORUM 官方 $623 可作交叉检查。[JD.com](https://item.jd.com/product/-gGJhTggqooO1Qtw8KlG1Q.html?utm_source=chatgpt.com)  
+[CN：M1 Pro 285H 京东页](https://item.jd.com/product/-gGJhTggqooO1Qtw8KlG1Q.html?utm_source=chatgpt.com) · [US：Amazon 价格历史页](https://pricehistory.app/p/minisforum-m1-pro-ai-mini-pc-barebone-Uss6MJyp?utm_source=chatgpt.com) · [US：MINISFORUM 官方页](https://www.minisforum.com/products/minisforum-m1-pro-285h-mini-pc?utm_source=chatgpt.com)  
+剩余缺口：$589 来自可信价格追踪而非本轮实际 checkout。即便如此，中国商品裸价已经高于该美国价格，因此不值得优先补交易链。
+
+**AULA WIN60 HE。**  
+**[观察]** 国内当前价格页锁到 WIN60 HE 标准版、RGB、灰木磁轴，4 个京东店价均为 **¥99**，30 天低点约 ¥97；我用更保守的普通价 ¥99。AULA Gear 美国官方可锁到 **HE / Black OEM / Greywood Magnetic**，价格 **$39.99**，但页面提示预购、预计 10 月下旬发货。[SMZDM](https://m.smzdm.com/dynamic_detail/46274906?utm_source=chatgpt.com)  
+[CN：WIN60 HE 国内价格页](https://m.smzdm.com/dynamic_detail/46274906?utm_source=chatgpt.com) · [US：AULA Gear WIN60 HE](https://aulagear.com/products/aula-win60he-max?_pos=3&_ss=r&utm_source=chatgpt.com)  
+另一个重要反证是 AliExpress 价格聚合在 2026-07-21 看到 WIN60 HE/WIN60 HE MAX 混合 listing 约 **$36.35**；聚合页自己提示多版本 listing 展示的可能是最便宜版本，所以不能把它当严格同变体成交价。[Pricearchive.org](https://www.pricearchive.org/aliexpress.com/item/1005008304325973?utm_source=chatgpt.com) [AliExpress 价格压力证据](https://www.pricearchive.org/aliexpress.com/item/1005008304325973?utm_source=chatgpt.com)  
+**[推断]** 这是本轮最值得继续查的一项，但如果 $36.35 最终能锁成同一标准版，则 `H` 会从 $15.85 降到约 **$13.12**。
+
+**MCHOSE Ace 60 Pro。**  
+**[观察]** ZOL 在 **2026-09-29** 给出 Ace 60 Pro KTEK 轴参考价 **¥299**。MCHOSE 官方能锁到 Ace 60 Pro / Black / KTEK Magnetic Switch，现价 **$44.10**、原价 $49。[ZOL](https://detail.zol.com.cn/keyboard/mchose/100/meishan/new_pic.html?utm_source=chatgpt.com)  
+[CN：ZOL Ace 60 Pro KTEK](https://detail.zol.com.cn/keyboard/mchose/100/meishan/new_pic.html?utm_source=chatgpt.com) · [US：MCHOSE Ace60 官方](https://www.mchose.store/products/mchose-ace-60-hall-effect-magnetic-switch-gaming-keyboard?utm_source=chatgpt.com)  
+支持范围：变体匹配强。剩余缺口：ZOL 是市场参考报价、不是登录后结算价。因为 H 已经为负，补该缺口的优先级低。
+
+**MelGeek MADE68 Air。**  
+**[观察]** ZOL **2026-09-23** 对粉/紫光矮磁轴版本给出 **¥999**；MelGeek 官方同款低矮磁轴 MADE68 Air、Pink/Purple、TTC KOM MINI 售价 **$75**，并有全球配送政策。[ZOL](https://detail.zol.com.cn/keyboard/melgeek/ruijin/pic.html?utm_source=chatgpt.com)  
+[CN：ZOL MADE68 Air](https://detail.zol.com.cn/keyboard/melgeek/ruijin/pic.html?utm_source=chatgpt.com) · [Global：MelGeek MADE68 Air](https://www.melgeek.com/collections/keyboards?utm_source=chatgpt.com) · [MelGeek 配送政策](https://www.melgeek.com/pages/shipping?utm_source=chatgpt.com)  
+剩余缺口：国内“TTC迷你万磁王轴”和海外 “TTC KOM MINI”是本地化命名映射，虽高度吻合但仍应视作中等强度身份锁定。无论如何价差方向已经反转得非常大。
+
+**Godox iT30Pro N。**  
+**[观察]** 国内价格页显示 Nikon 黑色版当前比价最低约 **¥423**；同页可看到 2026-09-08 曾有 **¥333、需用券**活动，我没有把后者当普通价。B&H 同款 Nikon 黑色目前 **$74.90**。[SMZDM Wiki](https://wiki.smzdm.com/p/ydjyqpo/?utm_source=chatgpt.com)  
+[CN：Godox iT30Pro N 国内价格页](https://wiki.smzdm.com/p/ydjyqpo/?utm_source=chatgpt.com) · [US：B&H iT30Pro N](https://www.bhphotovideo.com/c/product/1895976-REG/godox_it30pro_n_black_it30pro_n_ttl_mini.html/accessories?utm_source=chatgpt.com)  
+普通价情景 `H=-$4.25`。如果未来再次出现**公开、人人可用且实际可结算**的 ¥333，敏感性分析会变成约 **36.5% 裸节省、H≈$8.60**；这说明它适合做价格提醒，而不是按今天普通价推荐 China-direct。
+
+**Ulanzi UKA01。**  
+**[观察]** 国内近期京东聚合价约 **¥69.66**；Ulanzi 官方 SKU C007 同款 Uka quick-release plate/base kit 为 **$23.95**。[什么值得买](https://www.smzdm.com/ju/s6kqz34/?utm_source=chatgpt.com)  
+[CN：UKA01 国内价格证据](https://www.smzdm.com/ju/s6kqz34/?utm_source=chatgpt.com) · [US：Ulanzi C007 官方页](https://www.ulanzi.com/collections/quick-release-system/products/uka-quick-release-kit-c007?utm_source=chatgpt.com)  
+但 AliExpress 价格历史在 **2026-09-17** 对明确写有 “Original Ulanzi Uka01” 的 listing 看到 **$18.94**。[Pricearchive.org](https://da.pricearchive.org/aliexpress.com/item/1005010439388352?utm_source=chatgpt.com) [AliExpress UKA01 价格历史](https://da.pricearchive.org/aliexpress.com/item/1005010439388352?utm_source=chatgpt.com)  
+剩余缺口：Ali 的具体套件内容、运费和当前 checkout 没锁，因此主表仍用 $23.95。若 $18.94 可重复获得，25% 门槛的 H 只约 **$4.25**——单件 China-direct 基本就失去意义。
+
+**SUNLU FilaDryer S4。**  
+**[观察]** 国内页面普通价约 **¥637.80**，公开满减后可到约 ¥586.91；主表不用券价。SUNLU 美国官方 S4 为 **$116.99**。官方规格还显示机器净/毛重约 **4.8/5.5 kg**，所以这不是适合假设“几美元小包邮费”的产品。[Pinpai](https://pinpai.smzdm.com/183180/youhui/?utm_source=chatgpt.com)  
+[CN：SUNLU S4 国内价格页](https://pinpai.smzdm.com/183180/youhui/?utm_source=chatgpt.com) · [US：SUNLU S4 官方页](https://store.sunlu.com/collections/new-collection/products/sunlu-filadryer-s4?_fid=75e22b58a&_pos=80&_ss=c&variant=48817660723482&utm_source=chatgpt.com) · [SUNLU S4 重量规格](https://www.sunlu.com/products/297?utm_source=chatgpt.com)  
+即使用 ¥586.91 的公开券价，裸节省约 **28.3%**，但 `H` 也只有 **$3.90**；对一个毛重约 5.5kg 的设备，这个空间没有实际吸引力。
+
+---
+
+## 2. 另外 6 个扫描型号：为什么没有强行拼成“可用配对”
+
+| 型号 | 已找到的价格证据 | 本轮状态 | 缺口 |
+|---|---|---|---|
+| **Redmi Book Pro 16 2026 / Ultra X7 358H / 32GB+1TB** | 国内约 ¥9,699；海外 Giztop $1,399，但页面明确缺货 | 不计入9对 | 海外价不是当前可购买 route |
+| **Lenovo 小新 Pro16 / Ryzen 7 H255 / 32GB+1TB** | 联想中国官方约 ¥9,199 | 未配对 | 未找到可信、同配置、当前可买 US import route |
+| **MECHREVO 无界14X Pro / H255 / 32GB+1TB** | ZOL参考约 ¥4,499；另有更低渠道报价但条件未锁 | 未配对 | 精确 US 同配置 route 未找到 |
+| **DAREU A75 HE 全铝磁轴** | CN约 ¥749；dareu.us $169.99；全球站同款又约 $129.99 | route 歧义，不进主表 | $129.99 是否对美国同变体可下单决定结论 |
+| **FNIRSI HS-02A** | CN HS-02 系列实时低价约 ¥174.24；官方海外页为多 tip/工具箱组合 `From` 价 | 变体未锁 | 不能把最便宜 `From` 当 HS-02A 同套装 |
+| **BIGTREETECH Eddy Duo** | 美国官方约 $38.99、全球站约 $25.98、Ali 历史约 $16.88 | 无 CN 普通价，不配 | 本轮没定位可靠人民币普通价 |
+
+具体证据如下。Redmi Book Pro 16 2026 国内近期参考价约 ¥9,699；Giztop 同配置页面标 $1,399 但明确 **out of stock**，因此我没有把 $1,399 当可执行美国价格。[ZOL](https://detail.zol.com.cn/notebook/index2164086.shtml?utm_source=chatgpt.com)  
+[CN：Redmi Book Pro 16 2026](https://detail.zol.com.cn/notebook/index2164086.shtml?utm_source=chatgpt.com) · [海外：Giztop 页面](https://www.giztop.com/redmi-book-pro-16-2026.html?options=cart&utm_source=chatgpt.com)  
+仅作为非交易参考，¥9,699/7≈$1,385.57，本身也说明即便恢复在 $1,399 左右销售，裸差也只有约 1%。
+
+小新 Pro16 H255/32GB/1TB 的联想中国官方当前页面约 **¥9,199**；我没有找到足够可信的精确美国进口同配置价格，因此保留为“有 CN 证据、US 未测出”，不是“美国无货”。[Lenovo](https://s.lenovo.com.cn/search/?key=%E5%B0%8F%E6%96%B0pro16\&source=fromwww\&type=home\&utm_source=chatgpt.com) [Lenovo 中国配置页](https://s.lenovo.com.cn/search/?key=%E5%B0%8F%E6%96%B0pro16&source=fromwww&type=home&utm_source=chatgpt.com)
+
+无界14X Pro H255/32GB/1TB 的 ZOL 当前参考约 **¥4,499**；页面还能看到更低渠道报价，但资格和具体变体没有完全锁定，所以也没有擅自采用。[ZOL](https://detail.zol.com.cn/notebook/index2138621.shtml?utm_source=chatgpt.com) [ZOL 无界14X Pro](https://detail.zol.com.cn/notebook/index2138621.shtml?utm_source=chatgpt.com)
+
+DAREU A75 HE 是一个很好的**渠道解析反例**：国内约 **¥749**，dareu.us 同款从 **$169.99**，但品牌全球站又有约 **$129.99** 的 A75 HE。[SMZDM Wiki](https://wiki.smzdm.com/p/3ymyo58/?utm_source=chatgpt.com)  
+[CN：A75 HE](https://wiki.smzdm.com/p/3ymyo58/?utm_source=chatgpt.com) · [US：DAREU 美国站](https://www.dareu.us/products/dareu-a75-he?utm_source=chatgpt.com) · [Global：DAREU 全球站](https://dareu.com/?utm_source=chatgpt.com)  
+若 $169.99 是真实最佳美国 route，则 ¥749 对应裸节省约 **37.1%、H≈$20.49**；若 $129.99 全球站可向美国提供同变体，则只剩 **17.7%、H≈-$9.51**。所以这里最缺的不是更多商品搜索，而是**美国地址可购买性和同 finish/轴体锁定**。
+
+FNIRSI HS-02 页面存在很典型的变体陷阱：中国 HS-02 系列近期可见约 **¥174.24**，而海外官方同时提供 HS-02A/02B、1/3/6 tip、工具箱/收纳袋等组合，并使用 `From` 价格。[SMZDM](https://m.smzdm.com/dynamic_detail/42803012?utm_source=chatgpt.com)  
+[CN：FNIRSI HS-02 国内页](https://m.smzdm.com/dynamic_detail/42803012?utm_source=chatgpt.com) · [Global：FNIRSI HS-02 官方页](https://fnirsiglobal.shop/products/hs-02?utm_source=chatgpt.com)  
+因此本轮没有把最低 `From` 数字冒充同套装配对。
+
+BIGTREETECH Eddy Duo 已能看到国际渠道的激烈压价：品牌美国站约 **$38.99**、全球站约 **$25.98**，AliExpress 价格历史在 2026-09-13 记录约 **$16.88**。[Biqu Equipment](https://us.biqu.equipment/collections/except-hurakan/products/bigtreetech-eddy?utm_source=chatgpt.com)  
+[US：BIQU Eddy Duo](https://us.biqu.equipment/collections/except-hurakan/products/bigtreetech-eddy?utm_source=chatgpt.com) · [Global：BIQU 全球站](https://biqu.equipment/products/bigtreetech-eddy?utm_source=chatgpt.com) · [AliExpress 价格历史](https://www.pricearchive.org/aliexpress.com/item/1005007062361129?utm_source=chatgpt.com)  
+本轮没定位到可靠人民币普通价，所以不做“CN=未知=0”的错误计算。不过从国际端已经低至十几到二十几美元，可以明确标成**国际套利压力很高**的候选。
+
+---
+
+## 3. 把物流/税费未知变成筛选情景
+
+这些是**[假设] 筛选区间，不是我查到的 Superbuy/Sugargoo 报价**。为了不让“物流未知”把所有结论重新变成 NA，可以先把中国国内运费、代理/service fee、支付/FX 摩擦、国际物流、可能的税费/清关费统称为额外成本 `C_extra`：
+
+| 商品形态 | 筛选用 `C_extra` 情景 | 怎么读 |
+|---|---:|---|
+| 很轻摄影/maker附件 | **$5–10** | H<$5 基本放弃；H>$10 才较舒服 |
+| 紧凑键盘/小工具 | **$10–20** | H 处在区间内 = 边缘候选 |
+| mini PC / 笔记本 | **$20–50** | 但本轮3个mini PC连 H=0 都没过 |
+| 约5kg maker设备 | **$40–80** | SUNLU S4 的 H≈-$3.37，本就无需再精算 |
+
+套入本轮结果，**AULA WIN60 HE 的 H=$15.85 正落在“紧凑键盘”假设区间中间**：可能成立，也可能一报价就消失。**Ulanzi UKA01 的 H=$8.01** 对轻附件属于边缘可行，但 Ali 压力价一旦确认，H 仅约 $4.25，单件 route 很难成立。其余 7 个主配对无需等物流报价才能判断 25% 阈值，因为裸价层面已经 `H≤0`。
+
+---
+
+## 4. 对 Global Shopping Routing 假设最有用的结论
+
+**[观察]** 这一轮最明显的不是“国内价普遍更低”，而是**渠道效率高度 SKU-specific**。GMKtec、Beelink、MINISFORUM 和 MCHOSE 都已经有相当激进的全球直接定价；这正支持 memo 里的 kill-risk：一旦有国际需求，品牌官网/AliExpress 很容易把国内价差吃掉。[GMKtec](https://www.gmktec.com/products/gmktec-k12-amd-ryzen%E2%84%A2-7-h-255-mini-pc?utm_source=chatgpt.com)
+
+**[推断]** 更适合继续挖的并非高客单、高科技本身，而是满足三个条件的 SKU：国内极度竞争、重量/体积小、国际渠道尚未形成同样充分的价格发现。WIN60 HE 比本轮 mini PC 更接近这种结构。
+
+**[观察]** “公开优惠”值得单独作为产品层信号，但不能混入普通价。例如 Godox ¥333 券价和 SUNLU ¥586.91 满减价确实会让数学显著改善，却一个仍只剩约 $8.60 H、另一个只剩约 $3.90 H；即便优惠真实，也不自动产生可落地的 China-direct route。[SMZDM Wiki](https://wiki.smzdm.com/p/ydjyqpo/?utm_source=chatgpt.com)
+
+**[推断]** 因而下一批研究的优先级已经可以很具体：**AULA WIN60 HE 是本轮唯一值得优先拿真实单件/合箱物流报价的 SKU；Ulanzi UKA01 只值得作为合箱附件研究；Godox iT30Pro N 适合监控公开券价；K12、SER9 Pro、M1 Pro、Ace60 Pro、MADE68 Air、SUNLU S4 按 25% 目标可先停。** 三个国内笔记本则应继续作为独立 discovery 样本，因为这里的主要缺口是精确美国购买渠道，而不是已经证明它们没有价差。
+
+最重要的是：**这轮不再是 9 个 NA。我们已经得到 2 个正 H、7 个负 H 的实际价格筛选结果；而且负样本本身很有战略价值——它们证明“China-native”与“值得 China-direct”不是一回事。** 所有结果仍是网页价格证据，不是已执行交易，也没有把它们混入旧 54 SKU 的统计分母。

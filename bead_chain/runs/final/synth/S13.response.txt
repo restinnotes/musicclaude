@@ -1,0 +1,1914 @@
+```json
+{
+  "segment": "S13",
+  "measures": "103–110",
+  "timeline": [
+    {
+      "measures": "103",
+      "basis": "stated",
+      "music": "承接此前强烈的推进，这里出现一次有分量的抵达；但声音并未随之平息。低处保持坚实的支撑，高处展开带有下行倾向的歌唱。",
+      "facet_ids": ["F01", "F02", "F04", "F05"]
+    },
+    {
+      "measures": "103–106",
+      "basis": "stated",
+      "music": "已经出现过的强烈语气继续被反复强调。上方的声音多次下行，低处持续支撑；运动表面上不如前一段猛烈，整体力度和内在紧张却没有解除。",
+      "facet_ids": ["F02", "F03", "F04", "F05", "F06", "F07"]
+    },
+    {
+      "measures": "104–110",
+      "basis": "stated",
+      "music": "这一范围内声音仍然饱满、密集，强烈的歌唱和持续的压力使音乐保持在高度激动的状态，而不是进入安静的尾声。",
+      "facet_ids": ["F08", "F09", "F10", "F11", "F12", "F13"]
+    },
+    {
+      "measures": "106–110",
+      "basis": "inferred",
+      "music": "乐句之间可以听见短暂的整理与重新聚集；从第106小节以后，反复推动和声音的增强更加明显，压力继续朝段末集中。",
+      "facet_ids": ["F02", "F26", "F27"]
+    },
+    {
+      "measures": "107–110",
+      "basis": "stated",
+      "music": "持续增强的音乐中出现更尖锐、暗沉的声音色彩，原先明亮的高涨因此带上明显的不安。这里并未转入已经完成的宁静。",
+      "facet_ids": ["F26", "F28", "F29"]
+    },
+    {
+      "measures": "110",
+      "basis": "inferred",
+      "music": "段末快速的上行动作把此前累积的力量推向110–111的交界。不同演奏可以使这个动作呈现收远或再次爆发的倾向；跨入第111小节的落点与释放不在本段记作已经完成。",
+      "facet_ids": ["F30", "F36", "F37"]
+    }
+  ],
+  "facets": [
+    {
+      "id": "F01",
+      "measures": "103",
+      "dimensions": ["情绪色调", "动因与心理", "时间与变化"],
+      "claim": "第103小节带有强烈的抵达感，像长期悬着的心愿终于获得表达。这是一次真实的确认，但不意味着后面的音乐已经完成释放。",
+      "image": "终于把长久悬着的心愿说出口。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "有很强的抵达感，像终于把长久悬着的心愿说出来"
+        }
+      ],
+      "source_range": ["103"],
+      "placement": "stated",
+      "placement_note": "原稿明确定位第103小节。",
+      "relations": [
+        {
+          "type": "before",
+          "to": "F26",
+          "note": "第103小节的抵达先于第106小节以后更加明显的增压。"
+        },
+        {
+          "type": "coexists",
+          "to": "F02",
+          "note": "抵达感与音乐并未卸力可以同时成立。"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "measures": "103–110",
+      "dimensions": ["感官质地", "身体与动作", "时间与变化"],
+      "claim": "高潮似乎已经抵达，音乐却没有顺势退潮。较强的声音、持续的推进和内部压力仍然维持，使这一段不像通常意义上的结束后的余波。",
+      "image": "巨浪已经到过高处，推动它的力量却仍然没有撤走。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "肖邦却一直保持强烈的力度，而且内部的压力实际上继续增加"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "但音乐没有立刻收手。它仍然向前推"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "这段仍保持很强的力量，但它不只是继续高声欢呼"
+        }
+      ],
+      "source_range": ["103–111", "103–110"],
+      "placement": "stated",
+      "placement_note": "多份原稿明确讨论103–110或从103开始的持续强度；这是音乐的基本走势，不等于要求每位演奏者始终维持同一音量。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F07",
+          "note": "较强的力度可以与表面运动相对收敛并存。"
+        },
+        {
+          "type": "coexists",
+          "to": "F14",
+          "note": "持续的力量并不排除内部的悲伤。"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "measures": "103–106",
+      "dimensions": ["动因与心理", "情绪色调", "时间与变化"],
+      "claim": "抵达之后仍一再坚持和确认刚才的灿烂，像不愿让已经说出的肯定只停留一次。这是一种重复确认的听法，不等于已经开始怀疑或告别。",
+      "image": "一句重要的话已经说出，还要重新郑重地说。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "好像仍然在坚持、确认刚才那种灿烂的感觉。"
+        }
+      ],
+      "source_range": ["103–106"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "before",
+          "to": "F28",
+          "note": "原稿明确把坚持确认放在103–106，把尖锐、暗沉的变化放在107–110。"
+        },
+        {
+          "type": "coexists",
+          "to": "F20",
+          "note": "重复确认也可能与害怕停下来便失去美好的听法共存，但两者来自动因不同的原稿。"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "measures": "103–110",
+      "dimensions": ["感官质地", "身体与动作", "情绪色调"],
+      "claim": "低处持续而坚毅的声音像稳稳踩住地面，也像强烈高潮之后仍然维持的心跳。它带来的不是松软的安定，而是不肯退让、仍有重量的支撑。",
+      "image": "脚步牢牢踩在地上；心跳仍然有力，心事还压在那里。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "用一段长达数小节的坚毅低音"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "音乐的脚步仿佛牢牢踩在地上"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "下面却有一种不肯移动、不肯让步的坚定感。"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "底下持续的声音又让人感到心事还压在那里。"
+        }
+      ],
+      "source_range": ["103–110", "103–111"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "低处的坚持与上方的下行叹息是同时存在的两个听觉层次。"
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "measures": "103–110",
+      "dimensions": ["感官质地", "情绪色调"],
+      "claim": "上方反复出现下行的歌唱形状，近乎一声声叹息。它使强烈的音乐不再只是欢呼，还带有哀诉、悲恸乃至近乎悲剧性的语气。",
+      "image": "一句话带着分量说出口，又一回回垂下来，像反复叹息。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "这里反复下落、近似叹息的声音"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "上方的声音不断出现下行的、近乎叹息的形状。"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "旋律里反复出现像叹息一样的下行语气"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "下行的旋律像叹息"
+        }
+      ],
+      "source_range": ["103–111", "103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F04",
+          "note": "叹息般的上方声音与坚定的低处支撑同时出现。"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "measures": "103–110",
+      "dimensions": ["身体与动作", "感官质地", "情绪色调"],
+      "claim": "低处牢牢站住，上方却反复起伏、纠缠，两种运动方向形成内在拉扯。这里的张力来自它们同时存在，而不只是其中某一方的强度或悲伤。",
+      "image": "脚站得很稳，胸口却还在一阵阵牵动。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "音乐的脚步仿佛牢牢踩在地上，上方的声音却一遍遍起伏、纠缠。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "下面却有一种不肯移动、不肯让步的坚定感。"
+        }
+      ],
+      "source_range": ["103–111", "103–110"],
+      "placement": "segment_wide",
+      "placement_note": "这是同一时刻上下声音相互抵触的整体听感，不细拆成虚构的先后动作。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F04",
+          "note": "低处的坚持是拉扯的一方。"
+        },
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "上方的叹息是拉扯的另一方。"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "measures": "103–110",
+      "dimensions": ["感官质地", "情绪色调", "时间与变化"],
+      "claim": "和93–102相比，表面运动可以听得不那么猛烈，但内在紧张并未减弱。这种外表略有收敛、内部依旧绷紧的质地，不等于真正的平静。",
+      "image": "浪头的形状略微变小，水下的力量却还在拉扯。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "表面上，音乐的运动不像 mm.93–102 那么猛烈了。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "它内部仍然有一种难以消解的紧张。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F02",
+          "note": "外在运动密度或猛烈程度与整体力度、张力不是同一指标。"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "measures": "104–110",
+      "dimensions": ["身体与动作", "动因与心理", "情绪色调"],
+      "claim": "积累的感情越过了心理承受的容量，已经不像自己在主动表达，而像整个人被感情穿透、淹没。强烈的感觉甚至使人无法立即作出正常反应。",
+      "image": "久别重逢时，真正见到了思念的人，反而一句话也说不出来。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "它像是前面一直保存着的东西突然全部越过了心理容量。"
+        }
+      ],
+      "source_range": ["104–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F09",
+          "note": "情绪过载与自我保护暂时失效在同一原稿中同时得到支持。"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "measures": "104–110",
+      "dimensions": ["动因与心理", "身体与动作", "时间与变化"],
+      "claim": "此前的优雅、克制和自我观察短暂失效，像原来一直护着自己的分寸忽然挡不住了。这是不由自主的彻底暴露，不必理解成混乱或失去人格。",
+      "image": "本来还能维持得体的人，忽然再也遮不住自己的表情。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "此前一直存在的优雅、节制、自我观察，在这里短暂失效。"
+        }
+      ],
+      "source_range": ["104–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F10",
+          "note": "本项强调防护不由自主地失效，F10强调主动停止抵抗；两种动因不能混作同一过程，也未必互斥。"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "measures": "104–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "另一种听法不是被动地失去控制，而是终于决定不再抵抗自己的全部感受。快乐、伤感和欲望仍然复杂，但人不再要求先把它们整理清楚才能感受。",
+      "image": "我终于不再抵抗我所感受到的一切。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-3",
+          "quote": "我终于不再抵抗我所感受到的一切。"
+        }
+      ],
+      "source_range": ["104–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F09",
+          "note": "主动允许与保护失效是两种不同的心理方向。"
+        },
+        {
+          "type": "coexists",
+          "to": "F11",
+          "note": "这份接纳可以面对的正是无法清楚分类的悲喜。"
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "measures": "103–110",
+      "dimensions": ["情绪色调", "动因与心理"],
+      "claim": "幸福和痛苦同时达到很高的强度，彼此不再能够清楚区分。拥有与失去、感谢与惋惜、兴奋与超脱可以同时存在，并不是先快乐、后悲伤的简单交替。",
+      "image": "两种本来相反的感受同时挤到最高处，界线被挤得模糊。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-3",
+          "quote": "情绪浓度高到所有分类都失效了。"
+        },
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "几乎是幸福和痛苦同时达到最大值"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "在这一刻，喜悦与哀伤已经不是两件可以分开的事情。"
+        }
+      ],
+      "source_range": ["104–110", "103–110", "103–111"],
+      "placement": "stated",
+      "placement_note": "其中一稿明确标103–110，另一稿标104–110；不强行断定这种交叠从103的某一个音开始。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F12",
+          "note": "悲喜无法分类与狂喜本身带来痛感相近但不等价。"
+        },
+        {
+          "type": "coexists",
+          "to": "F14",
+          "note": "F14侧重悲伤进入仍然存在的狂喜这一变化；本项侧重交叠的状态。"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "measures": "104–110",
+      "dimensions": ["情绪色调", "身体与动作"],
+      "claim": "狂喜本身带着疼痛，而非快乐旁边另外放着一份悲伤。感情越炽烈，其触及身体和内心的感觉就越接近痛感。",
+      "image": "狂喜就是痛感。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "狂喜就是痛感。"
+        }
+      ],
+      "source_range": ["104–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F08",
+          "note": "同一原稿把这种疼痛放在情绪超出容量的体验中。"
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "measures": "104–110",
+      "dimensions": ["身体与动作", "情绪色调"],
+      "claim": "音乐仍然令人振奋，身体却可能出现想哭的反应。这不是因为振奋结束，而是强烈感情使眼泪与激动变得难以分开。",
+      "image": "明明被振奋得胸口发亮，眼眶却忽然发热。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-3",
+          "quote": "既令人振奋，又会让一些听者莫名其妙地想哭。"
+        }
+      ],
+      "source_range": ["104–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F11",
+          "note": "这是悲喜交叠可能引发的一种具体身体反应，但两者不是同义表述。"
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "measures": "103–110",
+      "dimensions": ["情绪色调", "时间与变化"],
+      "claim": "前面的狂喜没有消失，悲恸却进入了狂喜的内部。听感从单纯确认幸福转向必须同时承受其中的疼痛，但不是幸福被悲伤取代。",
+      "image": "明亮的火焰仍在燃烧，火焰内部却出现了哀伤。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "狂喜过度以后出现的悲恸"
+        },
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "幸福没有消失，悲伤却进入了幸福内部。"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "刚刚还在全力确认幸福，现在却不得不面对它里面的疼痛"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "原稿将这一变化放在103–111整体，不能进一步指定悲伤首次出现的音或小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F02",
+          "note": "强烈的音乐持续存在，悲伤从强烈之中浮出。"
+        },
+        {
+          "type": "coexists",
+          "to": "F15",
+          "note": "有限性的觉察是部分原稿赋予这种悲恸的动因，不是所有悲恸读法的必需前提。"
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "真正获得过珍贵的幸福，才如此清楚它不能永久停留。这里的疼痛来自已经抵达后的有限感：越知道这一刻有多珍贵，想到它终究会过去就越尖锐。",
+      "image": "好不容易真正握住珍贵的东西，也同时知道时间不会为它停下。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "你也同时意识到它不能永久停留在这一刻。"
+        },
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "“它终究不能永久存在”这件事才会变得如此尖锐。"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F14",
+          "note": "在这些原稿里，有限性的觉察为狂喜内部的悲伤提供解释。"
+        },
+        {
+          "type": "alternative_to",
+          "to": "F19",
+          "note": "本项侧重因珍贵而疼，F19侧重因珍贵而不甘放手，心理方向不同。"
+        }
+      ]
+    },
+    {
+      "id": "F16",
+      "measures": "103–110",
+      "dimensions": ["感官质地", "场景与画面", "时间与变化"],
+      "claim": "出现近乎幻觉性的怀旧：不是柔和地回想一段往事，而是感情与记忆被过强的光照得失去细节。记忆仿佛在最明亮时反而无法被清楚看见。",
+      "image": "整个记忆被强光照得过曝了。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "整个记忆被强光照得过曝了。"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "这是一种覆盖高潮后状态的感官化比喻，原稿没有细分小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F15",
+          "note": "两者在同一原稿中可共存，但过曝的记忆质地不等于对有限性的理性认识。"
+        }
+      ]
+    },
+    {
+      "id": "F17",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "仿佛已经抵达最向往的地方，内心却仍然存在无法释怀的东西。获得所愿并没有自动解除此前的痛感，也没有让人获得完全的圆满。",
+      "image": "人已经站在自己渴望抵达的地方，心却还没有站稳。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "我仿佛已经抵达了自己最向往的地方，但我仍有一些东西无法释怀。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F04",
+          "note": "原稿用下方不肯让步的声音承载这份不能释怀。"
+        },
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "上方的叹息参与形成这份未获安宁的听感。"
+        }
+      ]
+    },
+    {
+      "id": "F18",
+      "measures": "103–110",
+      "dimensions": ["人物与关系", "动因与心理", "情绪色调"],
+      "claim": "另一种完整的心理画面是：一个人终于坦白了心事，却发现表达本身没有把痛苦带走。这里强调倾诉与疗愈并不等价，而非单纯没有抵达愿望。",
+      "image": "终于说出了心里话，却发现说出来并没有把痛苦一起带走。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "像一个人终于说出了心里话，却发现说出来并没有把痛苦一起带走。"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "原稿以103–111整体描述倾诉后的未释怀，不能确定说出口与发觉疼痛分别属于哪一个小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F04",
+          "note": "这份未解除的痛苦在原稿中有下方持续声音的支撑。"
+        },
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "叹息般的下行声音参与承载这份未释怀。"
+        }
+      ]
+    },
+    {
+      "id": "F19",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "感受过真实的美好，反而更加不甘于它不能被完全拥有。这不是一般的失落，而是珍贵经验本身强化了留住它的愿望。",
+      "image": "世界曾经这样美好，怎么能够甘心让它从手里离开。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "世界曾经如此美好，所以不愿意接受它终究不能被完全拥有。"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F06",
+          "note": "该原稿把不甘心与上下声音的固执拉扯联系在一起。"
+        },
+        {
+          "type": "alternative_to",
+          "to": "F21",
+          "note": "不甘于不能占有，与明知有限仍主动肯定，是不同原稿提出的心理方向；不能编为同一人物的连续转变。"
+        }
+      ]
+    },
+    {
+      "id": "F20",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "身体与动作"],
+      "claim": "在狂喜中仍然急切地推动、重复，因为仿佛害怕自己一停下来，刚刚获得的美好就会消失。这里的坚持来自失去的恐惧，而不只是为了确认力量。",
+      "image": "怕一停下来，刚得到的东西就会从眼前消失。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "好像怕自己一停下来，刚刚得到的东西就会消失。"
+        }
+      ],
+      "source_range": ["103–111"],
+      "placement": "segment_wide",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F26",
+          "note": "同一原稿用不断反复和增压承载这种急切。"
+        }
+      ]
+    },
+    {
+      "id": "F21",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "明知道美好无法永存，依然主动肯定已经经历的一切。这个肯定不是否认疼痛或失去，而是认为有限并不取消美好的价值。",
+      "image": "即使如此，我仍然选择肯定它。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "即使如此，我仍然选择肯定它。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F22",
+          "note": "同一原稿进一步提出有限性反而增加投入价值的理由。"
+        },
+        {
+          "type": "alternative_to",
+          "to": "F19",
+          "note": "主动肯定有限之物与不甘于不能占有，可以是不同而各自成立的完整听法。"
+        }
+      ]
+    },
+    {
+      "id": "F22",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "不仅是不因美好短暂而否定它，更是正因为不能永久存在，才愿意把全部生命投入其中。有限性在此不是必须克服的障碍，而是积极投入的理由。",
+      "image": "正因为不能永久存在，才值得把整个生命投入进去。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "正因为不能永久存在，它才如此值得我把整个生命投入进去。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F21",
+          "note": "两者来自同一原稿，但‘尽管有限仍肯定’与‘由于有限所以投入’是不同的理由。"
+        }
+      ]
+    },
+    {
+      "id": "F23",
+      "measures": "103–110",
+      "dimensions": ["情绪色调", "感官质地", "时间与变化"],
+      "claim": "在先前轻盈、辉煌的感觉中，突然插入苦涩而带有反讽意味的一段话。它像打断了原本确信圆满的语气，使音乐出现不合时宜却无法回避的冷意。",
+      "image": "整部作品中的一段苦涩插话；刚说完一个坚定的‘是’，就听到一声‘可是’。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "像整部作品中的一段“苦涩插话”"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F24",
+          "note": "苦涩插话的具体心理内容，在该原稿中是对一切并无保证的怀疑。"
+        }
+      ]
+    },
+    {
+      "id": "F24",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "在最确信幸福的时候，内心出现对确定性的怀疑：事情也许会完全不同，没有哪种结果是预先受到保证的。这里的怀疑并不证明此前的幸福是假的。",
+      "image": "刚刚坚定地说‘是’，心里另一个声音却问：‘可是呢？’",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "事情完全也可能是另一回事；世界没有任何东西是预先保证好的。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F23",
+          "note": "怀疑是同一原稿苦涩插话的具体内容。"
+        },
+        {
+          "type": "coexists",
+          "to": "F25",
+          "note": "F25解释为什么这种怀疑尤其疼痛。"
+        }
+      ]
+    },
+    {
+      "id": "F25",
+      "measures": "103–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "怀疑之所以如此疼痛，正因为此前确实全身心相信过。这里不是原来没有幸福，而是真实的信任使后来浮出的不确定更加刺痛。",
+      "image": "只有真正相信过，怀疑才会这么疼。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "只有真正相信过，怀疑才会这么疼。"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F24",
+          "note": "这是同一原稿赋予怀疑的疼痛的心理原因。"
+        }
+      ]
+    },
+    {
+      "id": "F26",
+      "measures": "106–110",
+      "dimensions": ["身体与动作", "感官质地", "时间与变化"],
+      "claim": "第106小节以后，音乐不是逐渐卸力，反而在反复强调和越来越强的推动中继续增加压力。与整段维持强度不同，这一体验特别强调后半段仍在进一步增强。",
+      "image": "以为已经登顶，脚下的力量却仍在把人往更高处推。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "m.106 以后甚至还继续增加紧张"
+        },
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "这一段反而出现了全曲几乎前所未有的持续强化，压力还在继续累积。"
+        },
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "反而在反复与渐强中继续蓄力"
+        }
+      ],
+      "source_range": ["103–111", "103–110"],
+      "placement": "stated",
+      "placement_note": "第一份原稿明确指出106以后增压；另两份只支持本段持续强化，不独立证明增强恰在106开始。",
+      "relations": [
+        {
+          "type": "after",
+          "to": "F01",
+          "note": "106以后进一步增压，晚于第103小节的抵达。"
+        },
+        {
+          "type": "coexists",
+          "to": "F28",
+          "note": "增强的压力和107以后出现的暗沉色彩可以同时存在。"
+        }
+      ]
+    },
+    {
+      "id": "F27",
+      "measures": "106–110",
+      "dimensions": ["身体与动作", "感官质地", "时间与变化"],
+      "claim": "高潮之后可听见短暂的整理、收住和重新聚集。它不是安静地退场，而是在持续有力的进程中稍作调整，随后继续推动。",
+      "image": "用力说过一大段话，略略调整一下呼吸，又把力量聚回来。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-2",
+          "quote": "高潮之后，仿佛有短暂的收束与重新聚集"
+        },
+        {
+          "src": "SRC-gpt6w-int-3",
+          "quote": "它有短暂的整理与回转"
+        }
+      ],
+      "source_range": ["106–116", "105–116"],
+      "placement": "inferred",
+      "placement_note": "两稿均先写高潮后的短暂整理、重新聚集，再谈属于终结句的明确收尾。根据先整理后继续推向110–111的音乐过程，将前一动作暂定在106–110；原稿没有逐小节定位，不把它解释成已经轻柔平息。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F26",
+          "note": "乐句间短暂调整与后半段整体继续增压并不冲突。"
+        }
+      ]
+    },
+    {
+      "id": "F28",
+      "measures": "107–110",
+      "dimensions": ["感官质地", "情绪色调", "时间与变化"],
+      "claim": "从第107小节起，先前明亮的高涨中出现越来越尖锐、暗沉的东西。刺痛和不安不是以安静代替热烈，而是直接混入仍然明亮、强烈的声音。",
+      "image": "灿烂的亮光里开始显出发暗、尖锐的边缘。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "音乐里出现了越来越尖锐、暗沉的东西。"
+        }
+      ],
+      "source_range": ["107–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "after",
+          "to": "F03",
+          "note": "原稿将较明亮的持续确认置于103–106，将尖暗变化置于107–110。"
+        },
+        {
+          "type": "coexists",
+          "to": "F29",
+          "note": "同一原稿用尖锐暗沉的变化承载对幸福是否可靠的追问。"
+        }
+      ]
+    },
+    {
+      "id": "F29",
+      "measures": "107–110",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "出现对幸福能否抵挡时间、衰老、失去和未来变化的追问。这种不安具有具体的时间方向：不是怀疑刚才的幸福是否真实，而是怀疑它能否得到长久保护。",
+      "image": "此刻这样好，可它真的能够抵挡时间与失去吗？",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "可这份幸福真的能抵挡时间、失去、衰老"
+        }
+      ],
+      "source_range": ["107–110"],
+      "placement": "stated",
+      "placement_note": "",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F28",
+          "note": "这是该原稿对后半段尖锐暗沉听感提出的心理解释。"
+        },
+        {
+          "type": "coexists",
+          "to": "F24",
+          "note": "两者都涉及不确定，但本项具体指向时间与失去，F24指向世界没有任何预先保证。"
+        }
+      ]
+    },
+    {
+      "id": "F30",
+      "measures": "110",
+      "dimensions": ["身体与动作", "感官质地", "时间与变化"],
+      "claim": "段末出现通向110–111交界的快速上冲和新一轮强烈抵达的趋向。第110小节只能登记这股冲向临界点的力量，不能把跨入111的冲击落点和充分释放都说成本段内已经完成。",
+      "image": "一道亮光突然向高处伸出去，真正的落点还在前方。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "到 m.110–111 才有另一次极具冲击力的抵达。"
+        },
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "直到 mm. 110–111 才真正获得释放"
+        },
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "尤其像最后一次突然的冲击。"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "直到 mm. 110–111 出现强烈的抵达感"
+        },
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "才出现另一种更明确的释放。"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "最后一次冲上天空、重重落下的亮光"
+        }
+      ],
+      "source_range": ["110–111"],
+      "placement": "inferred",
+      "placement_note": "原稿一致把最后的快速动作、冲击或释放写作110–111交界，没有单独证明完整落点位于110。结合原稿对快速上行音型的描述，只在110记录上冲及向交界推进；跨入111的落下、释放与随后的收束均不算S13事件。",
+      "relations": [
+        {
+          "type": "after",
+          "to": "F03",
+          "note": "第110小节的快速上冲晚于103–106的反复确认。"
+        },
+        {
+          "type": "coexists",
+          "to": "F36",
+          "note": "同一快速动作可以有逐渐收远的演奏效果。"
+        },
+        {
+          "type": "coexists",
+          "to": "F37",
+          "note": "同一快速动作也可以突出再次冲起的强烈效果。"
+        }
+      ]
+    },
+    {
+      "id": "F31",
+      "measures": "103–110",
+      "dimensions": ["聆听与演奏差异", "身体与动作", "情绪色调"],
+      "claim": "一种渐渐退下来的演奏处理，以鲁宾斯坦的录音为明确例子，使这一段听起来像强烈情绪后的疲倦与平复。这里的退潮是具体演奏带来的效果，不能误写成谱面要求从103开始骤然安静。",
+      "image": "经历一场强烈倾诉之后，气力渐渐散去，身体终于慢慢松下来。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "从这里逐渐退下来，像一次强烈情感经历后的疲倦与平复。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "高潮之后逐渐减弱，仿佛情绪慢慢沉静下来。"
+        },
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "不少演奏会让这几小节逐渐收远"
+        }
+      ],
+      "source_range": ["103–111", "103–110", "103–116"],
+      "placement": "segment_wide",
+      "placement_note": "这是有录音实例的演奏选择，不是S13统一的必然走势。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F32",
+          "note": "提前渐渐收远与维持张力直到交界，是两种不同的演奏路线。"
+        }
+      ]
+    },
+    {
+      "id": "F32",
+      "measures": "103–110",
+      "dimensions": ["聆听与演奏差异", "身体与动作", "时间与变化"],
+      "claim": "另一种演奏坚持不在103以后提前卸去力量，而让音乐继续积累张力，朝110–111交界的强烈动作推进。Kopp支持这种处理，并指出拉罗查的演奏具有类似倾向。",
+      "image": "话似乎说完了，身体仍然用力，直到最后一刻也不肯提前松手。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "反对把 **mm. 103–110** 演奏成已经卸下力量"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "让张力继续积累，直到 mm. 110–111 才完成最后一次释放"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "将强烈的情绪一直维持到 mm.110–111 的最后一次重大释放。"
+        },
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "但也可以听见它仍在用力"
+        }
+      ],
+      "source_range": ["103–110", "103–111", "110–111", "103–116"],
+      "placement": "segment_wide",
+      "placement_note": "本段只记录维持和蓄力的处理，110–111的最终释放不提前算作已经完成。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F31",
+          "note": "两者是针对同一段的不同演奏选择。"
+        },
+        {
+          "type": "coexists",
+          "to": "F35",
+          "note": "持续用力在另一原稿中伴有深谈后身体激动未散的具体体验。"
+        }
+      ]
+    },
+    {
+      "id": "F33",
+      "measures": "103–110",
+      "dimensions": ["聆听与演奏差异", "感官质地", "场景与画面"],
+      "claim": "历史演奏记述提供一种特殊的弱奏效果：本来强烈的段落被肖邦弹得极轻，却出现异常丰富的层次与色彩，甚至带有梦幻般的幽微感。这不是本段谱面已经转弱，也不能直接当成唯一正确的弹法。",
+      "image": "极轻的声音中浮现出不可思议的梦幻色彩。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "以一种幽微至极的极弱音（pianissimo）来演奏"
+        },
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "其中的层次与色彩如此不可思议"
+        }
+      ],
+      "source_range": ["103–110"],
+      "placement": "segment_wide",
+      "placement_note": "原稿在103–110坚毅低音的讨论后引入1848年的演奏记述；该记述涉及较广的强奏区域，因此只能将其视为包含本段的一种可能效果，而非逐小节的力度证据。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F34",
+          "note": "两者关注同一类历史弱奏记述，但一个强调梦幻色彩，另一个强调内在强度。"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "measures": "103–110",
+      "dimensions": ["聆听与演奏差异", "感官质地", "动因与心理"],
+      "claim": "关于1848年演奏的记述还支持另一层理解：即使谱面要求很强，声音也可能非常纤细，而真正不退让的是内在的精神强度。它与极弱奏法带来的梦幻色彩不是同一个体验重点。",
+      "image": "外面的声音极轻，内里的肯定却丝毫没有退让。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "实际弹得极其纤细，甚至接近 `pp`"
+        },
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "精神上已经无法再退让的强度"
+        },
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "几乎都被他处理在极细腻的弱奏中"
+        }
+      ],
+      "source_range": ["84–111"],
+      "placement": "segment_wide",
+      "placement_note": "所引历史记述覆盖84–111，包含103–110，但没有逐小节区分力度。保留为有条件的演奏听法，不将弱奏等同于情绪平息。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F33",
+          "note": "同一种极轻奏法可以分别突出色彩丰富和精神强度。"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "measures": "103–110",
+      "dimensions": ["身体与动作", "聆听与演奏差异", "情绪色调"],
+      "claim": "在不提前卸力的演奏中，可以听到一种身体性的余震：像一场深谈已经结束，身体里的激动却没有随话音消散。它不是新的高潮故事，而是先前强烈经历留下的持续用力。",
+      "image": "深谈已经结束，身体里仍然激动，胸口还没有松下来。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "像一场深谈结束后，身体里的激动还没散去"
+        }
+      ],
+      "source_range": ["103–116"],
+      "placement": "segment_wide",
+      "placement_note": "原稿将这一身体体验明确归于103以后仍在用力的演奏，未细分其中的小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F32",
+          "note": "同一原稿支持持续用力的演奏方式及其身体余震。"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "measures": "110",
+      "dimensions": ["聆听与演奏差异", "场景与画面", "感官质地"],
+      "claim": "段末快速上行的动作，在一种演奏处理中可以像退场之前逐渐消散的光。这里只记录第110小节开始显露的收远倾向，不把随后跨段的动作全部纳入。",
+      "image": "退场前渐渐消散的光。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "上行的快速音型听作退场前渐渐消散的光"
+        }
+      ],
+      "source_range": ["110–111"],
+      "placement": "inferred",
+      "placement_note": "原稿将整个快速音型定位在110–111；仅把开始于第110小节的演奏趋向归入S13，不把完整消散或落点放在110。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F37",
+          "note": "两种效果针对同一段末快速动作，演奏重心不同。"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "measures": "110",
+      "dimensions": ["聆听与演奏差异", "场景与画面", "身体与动作"],
+      "claim": "同一快速动作也可以被突出为最后一次强烈向上冲起，像亮光再度冲上天空。原稿同时说到随后重重落下，但跨入111的落下不应写成本段已完成。",
+      "image": "最后一次冲上天空的亮光。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "最后一次冲上天空、重重落下的亮光"
+        }
+      ],
+      "source_range": ["110–111"],
+      "placement": "inferred",
+      "placement_note": "原稿的形象跨110–111。这里只保留110开始的上冲；后面的重落属于跨段事件，不擅自提前。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F36",
+          "note": "一个强调光亮收远，一个强调光亮重新爆发。"
+        }
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "R01",
+      "summary": "一种急于留住刚获得之物的听法：第103小节像终于说出了长久悬着的心愿，随后仍不断重复和蓄力，因为仿佛怕一停下来，美好就会消失。最后的推动延伸到110–111交界，而不是在103已经结束。",
+      "anchor_sources": ["SRC-luna-web-2"],
+      "facet_ids": ["F01", "F20", "F26", "F30"],
+      "relation": "与R02可共存，但R01的急切来自害怕失去刚获得的东西，不能把R02对时间与衰老的具体追问写成同一人物必然经历的下一步。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R02",
+      "summary": "一种确认之后受到质疑的听法：103–106仍在坚持刚才的灿烂，107–110却出现尖锐、暗沉的色彩。于是心里追问：如此真实的幸福，究竟能否抵挡时间、衰老和失去？这一音乐先后及心理联结都来自同一原稿。",
+      "anchor_sources": ["SRC-gpt6w-web-1"],
+      "facet_ids": ["F03", "F28", "F29"],
+      "relation": "与R01并列成立；本读法的核心是幸福能否持久，而不是担心自己一停下来幸福便立即消失。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R03",
+      "summary": "一种抵达却未获得安宁的听法：表面运动略有收敛，内部却始终紧张。高处不断下行叹息，低处坚定不动，像已经抵达最向往的地方，仍有东西无法释怀。各层次可以共存，不构成先后发生的心理故事。",
+      "anchor_sources": ["SRC-gpt6w-web-3"],
+      "facet_ids": ["F04", "F05", "F07", "F17"],
+      "relation": "与R04相近但不同：本读法以抵达愿望为心理画面，R04以坦白心事为画面，不互相替换人物经历。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R04",
+      "summary": "一种倾诉之后仍有痛苦的听法：强烈的力量维持着，高处的叹息和低处压着不放的声音同时存在。它像一个人终于把心里话说了出来，却发现说出来并没有把痛苦一起带走。",
+      "anchor_sources": ["SRC-luna-web-3"],
+      "facet_ids": ["F02", "F04", "F05", "F18"],
+      "relation": "与R03可以作为不同比喻并列；不把‘抵达最向往的地方’强行改写为此人的一次坦白经历。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R05",
+      "summary": "一种不甘心的听法：低处牢牢站住，上方反复起伏纠缠，喜悦与哀伤无法分开。其核心不是世界已经残酷地剥夺了什么，而是世界曾经如此美好，才更加无法接受美好终究不能被完全拥有。",
+      "anchor_sources": ["SRC-gpt6w-web-2"],
+      "facet_ids": ["F04", "F05", "F06", "F11", "F19"],
+      "relation": "与R10的主动肯定有限之物形成不同心理方向；二者不构成同一个人先不甘、然后释怀的固定情节。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R06",
+      "summary": "一种情绪过量、被感情击穿的听法：积压已久的感情超过了承受容量，优雅和自我观察暂时失效，人不再能够保护自己；狂喜本身便具有痛感。重逢时反而说不出话，是原稿内部提供的完整比喻。",
+      "anchor_sources": ["SRC-gpt56w-int-2"],
+      "facet_ids": ["F08", "F09", "F12"],
+      "relation": "与R07可共存但不等价：本读法强调不由自主地暴露，R07更强调主动允许所有感受。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R07",
+      "summary": "一种主动停止抵抗的听法：拥有和失去、感谢和惋惜、振奋和悲伤同时涌来，普通的情绪分类已经无效。人不再要求先理清这些感受，而是允许它们一起存在；有些听者因此既振奋又想哭。",
+      "anchor_sources": ["SRC-gpt56w-int-3"],
+      "facet_ids": ["F10", "F11", "F13"],
+      "relation": "与R06是两种不同的心理进入方式，不能把被动崩开防线和主动放下防线写成未经原稿支持的先后步骤。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R08",
+      "summary": "一种幸福内部出现悲恸的听法：强烈的音乐没有立刻退下，幸福仍然真实，悲伤却进入幸福本身。其疼痛与对美好不能永久存在的觉察有关，而不是已经发生了某场明确的失去。",
+      "anchor_sources": ["SRC-gpt56w-web-3"],
+      "facet_ids": ["F02", "F14", "F15"],
+      "relation": "与R09可共存；R09另有非常独特的记忆过曝质地，不能无依据地当作本读法一定出现的下一阶段。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R09",
+      "summary": "一种已经得到因而更加疼痛的听法：音乐在第106小节以后还继续增压，最后的冲击尚在前方。狂喜内部生出悲恸，因为真正拥有之后才感到它无法永远停留；回忆甚至像被强光照得过曝。这些是同一原稿提出的可共存层次。",
+      "anchor_sources": ["SRC-gpt56w-web-2"],
+      "facet_ids": ["F14", "F15", "F16", "F26", "F30"],
+      "relation": "与R08同属有限感造成的痛，但本读法多出记忆近乎幻觉般过曝的特殊感官质地。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R10",
+      "summary": "一种对有限之物主动说‘是’的听法：幸福与痛苦同时达到极致；明知道美好不会永远存在，仍然肯定它，而且恰恰因为它不能永久存在，才更加愿意把全部生命投入其中。这里不是认命式的放手。",
+      "anchor_sources": ["SRC-gpt56w-int-r1"],
+      "facet_ids": ["F11", "F21", "F22"],
+      "relation": "与R05的不甘不能占有、R11的不确定怀疑都可作为独立心理方向成立，不能拼成必然的心理成长顺序。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R11",
+      "summary": "一种苦涩而带反讽的插话：音乐持续强化，却像突然在刚才肯定幸福的语气里插入一个‘可是’。世界没有预先保证的结果，事情也可能完全不同；正因为此前真切相信过，这种怀疑才会疼。",
+      "anchor_sources": ["SRC-gpt56w-web-r1"],
+      "facet_ids": ["F23", "F24", "F25", "F26"],
+      "relation": "与R02的时间性忧虑相近而不相同；本读法更强调结果本身的不确定与信任受到挑战。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R12",
+      "summary": "一种演奏上的提前收远：鲁宾斯坦式的逐渐减弱，使同一段强烈音乐听起来像倾诉之后的疲倦和慢慢平复。它是演奏产生的身体与情绪效果，不意味着乐谱已在103要求宁静。",
+      "anchor_sources": ["SRC-gpt6w-web-2", "SRC-gpt6w-web-3"],
+      "facet_ids": ["F31"],
+      "relation": "与R13在演奏路线方面互为替代；其疲倦感不能推广为所有演奏的必然心理过程。",
+      "depends_on_performance": true
+    },
+    {
+      "id": "R13",
+      "summary": "另一种演奏坚持维持和积累力度，不让高潮之后立即松弛。它也可以听成一场深谈结束后，身体里的激动仍未散去；这份用力延续到110–111交界，释放并不提前。",
+      "anchor_sources": ["SRC-luna-int-3", "SRC-gpt6w-web-2"],
+      "facet_ids": ["F32", "F35"],
+      "relation": "与R12是有实际演奏根据的不同选择；身体余震来自SRC-luna-int-3，不能把它归给未作此比喻的其他演奏记述。",
+      "depends_on_performance": true
+    },
+    {
+      "id": "R14",
+      "summary": "一种由历史演奏记述开启的听法：非常强烈的音乐被弹得极轻，声音因而显出幽微、梦幻而层次丰富的色彩。这不是已经平静地退出情绪，也不是推断肖邦要求所有演奏者如此处理。",
+      "anchor_sources": ["SRC-gflash-web-3"],
+      "facet_ids": ["F33"],
+      "relation": "可与R15理解为同一类历史弱奏的不同感受重点，但不与R12的鲁宾斯坦渐弱处理混为一谈。",
+      "depends_on_performance": true
+    },
+    {
+      "id": "R15",
+      "summary": "历史极轻奏法还可以产生另一种效果：听觉上纤细，精神上却坚决而强烈。这里真正没有退下的是内心的力度，不一定是声音的响度。",
+      "anchor_sources": ["SRC-gpt56w-web-3", "SRC-gpt56w-web-r1"],
+      "facet_ids": ["F34"],
+      "relation": "与R14可共存，但R14着眼于梦幻色彩，本读法着眼于不退让的精神强度。",
+      "depends_on_performance": true
+    },
+    {
+      "id": "R16",
+      "summary": "段末快速上行动作的一种处理：声音在冲向110–111交界时带有逐渐收远的意味，像退场前正在淡去的光。完整落点不在本段内叙述。",
+      "anchor_sources": ["SRC-luna-web-3"],
+      "facet_ids": ["F30", "F36"],
+      "relation": "与R17针对同一快速动作而效果不同，互为演奏选择。",
+      "depends_on_performance": true
+    },
+    {
+      "id": "R17",
+      "summary": "段末快速上行动作的另一种处理：它不显得已经退场，反倒像最后一次强烈冲上天空的亮光。原稿还写到随后重落，但本段只记录第110小节的上冲。",
+      "anchor_sources": ["SRC-luna-web-3"],
+      "facet_ids": ["F30", "F37"],
+      "relation": "与R16互为替代；两条读法都不能将跨入111的落点提前写进S13。",
+      "depends_on_performance": true
+    }
+  ],
+  "carryover": [
+    {
+      "pool_ids": ["P39", "P40", "P41"],
+      "from_range": "97–107",
+      "claim": "前段高潮中的巨大倾诉、悲喜失去边界，以及近乎无法承受的情绪密度。",
+      "why_not_facet": "原稿把整段97–107写成一个高潮整体，其中97–102属于S12，而且所写的情绪顶点与感情向外扩张没有独立定位到103–107。音乐在S13仍然强烈，但不能凭范围交叠便确认这一原稿描述的具体体验发生在S13。相似体验若被其他原稿明确放在S13，已由那些原稿独立支持相应facet。"
+    },
+    {
+      "pool_ids": ["P43", "P44", "P45"],
+      "from_range": "93–105",
+      "claim": "S12高涨期间的喜悦带痛、笑泪难分，以及不再计算投入是否安全的坦诚。",
+      "why_not_facet": "93–105中大部分小节位于S12。原稿所说的是整个高潮的情绪过量，没有指出这些身体反应或心理决定特别发生在103–105，也没有可明确辨识为S13的独立音乐事件。不能仅取末尾三小节就改作本段依据。"
+    },
+    {
+      "pool_ids": ["P47", "P48", "P49"],
+      "from_range": "94–104",
+      "claim": "前段高潮中带颤抖的狂喜、久别重逢时突然紧紧拥抱，以及明知有限仍决定毫无保留投入。",
+      "why_not_facet": "原稿明确把这些形象和决定归于94–104的高潮，大部分在S12。尤其重逢拥抱的动作没有被独立安放在103–104，不能把S12的人物画面移到S13。S13另有独立原稿支持肯定有限之物的听法，但不以本条跨段叙述作为证据。"
+    },
+    {
+      "pool_ids": ["P68"],
+      "from_range": "89–110",
+      "claim": "跨越后段高潮的痛快、喜悦、渴望和近乎承受不住的情绪。",
+      "why_not_facet": "原稿宽范围的中心在S12以前至S12的高涨，没有指出S13内的具体事件。原稿还把后续编号写到143，与全曲116小节不符，进一步降低了将整体情绪精确分配给103–110的可靠性。保留为邻段延续，不依据其错误编号定位。"
+    },
+    {
+      "pool_ids": ["P69"],
+      "from_range": "89–112",
+      "claim": "临近结尾再次积蓄明亮、富有冲劲的力量。",
+      "why_not_facet": "原稿宽范围跨越S11、S12、S13和S14，未指出这次明亮力量具体在哪一小节开始或再度加强。它可能主要描述S12的高涨；不能直接把这条宽范围叙述等同于106以后可明确定位的增压。"
+    },
+    {
+      "pool_ids": ["P70"],
+      "from_range": "89–112",
+      "claim": "高涨使人振奋，却不意味着已经取得彻底的胜利或圆满。",
+      "why_not_facet": "这一判断属于89–112大范围的整体情绪评价，没有指认S13特有的声音或心理事件。S13的未圆满感已由明确定位的叹息、未释怀及怀疑等原稿支持；本条保留为相邻高潮和结尾的宽范围延续。"
+    }
+  ],
+  "ledger": [
+    {
+      "pool_id": "P01",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：原稿断言103–110奔腾迅速退去、光亮与热度开始消散；但本段仍保持强烈力度，并继续积累压力。依附于错误退潮描述的感受不能保留为本段事实。"
+    },
+    {
+      "pool_id": "P02",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：原稿把103以后写成低音落定、上方柔滑漂浮和水波变慢，由此产生狂喜耗尽的虚脱感。这种无条件的虚脱依附于错误的平息描述。具体渐弱演奏造成的疲倦另由F31保存。"
+    },
+    {
+      "pool_id": "P03",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：把103开始的音乐写成如丝绸般柔滑的漂浮琶音、水波重新缓慢，误认本段仍然强烈并继续增压的音乐状态。"
+    },
+    {
+      "pool_id": "P04",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：原稿把不再执着、没有遗憾的安详直接建立在103以后水波放慢、热度退出的描述上；本段持续的叹息和未解决压力并不支持这种无条件的释怀。"
+    },
+    {
+      "pool_id": "P05",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：从103开始小船随退潮驶向远处迷雾的安静退场图景，依赖该原稿对本段已经开始平息的误述。不能把它改写成正确音乐下的新故事而保留。"
+    },
+    {
+      "pool_id": "P06",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：103–110并非只剩细碎水光和偶尔划桨轻响的寂静状态。此画面依附于原稿误判的安静尾声。"
+    },
+    {
+      "pool_id": "P07",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：原稿将情欲宣泄耗尽、看透一切后的温柔平静直接归于103–110，但音乐尚未完成释放。不能不加演奏条件地把本段视为已经平复。"
+    },
+    {
+      "pool_id": "P08",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：第103小节不是原稿所说狂暴海浪骤然平息并恢复轻柔摇晃的地方。"
+    },
+    {
+      "pool_id": "P09",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：虽然本段确有下行声音，但原稿将其描写为安静尾声中冰凉清澈、缓缓下落的水滴式琶音，继而引出船桨滴水画面。此具体画面依附于错误的轻柔水滴声质地，不能仅保留比喻而抹去错误前提。"
+    },
+    {
+      "pool_id": "P10",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：浩劫后的宁静、接受和深沉告别，在该原稿中取决于103即平息的错误音乐描述。不能把这一无条件宁静直接登记为S13体验。"
+    },
+    {
+      "pool_id": "P11",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：把第103小节写成狂喜浪潮已经退去，与音乐此后仍保持并增加压力的走势冲突。"
+    },
+    {
+      "pool_id": "P12",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：原稿以103开始退潮、没有纠缠来支持放手释怀，然而本段仍有反复叹息、持续压力和更强烈的推动。不能在没有具体演奏依据时保留其安详心理结论。"
+    },
+    {
+      "pool_id": "P13",
+      "disposition": "facet",
+      "facet": "F04",
+      "reason": "坚毅低音在本段维持心跳般的支撑，位置明确且符合音乐。"
+    },
+    {
+      "pool_id": "P14",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "与音乐不符：该条的‘巨浪退去后的回光返照’依赖103开始已经退潮的设定。真实存在的持续强度与增压已由F02、F26保存，不把错误退潮前提改写成另一种体验。"
+    },
+    {
+      "pool_id": "P15",
+      "disposition": "facet",
+      "facet": "F33",
+      "reason": "保留原稿所引历史极弱演奏的梦幻色彩和丰富层次；明确标为演奏记述而非谱面从103开始转弱的事实。同一历史记述的另一种内在力度效果见F34。"
+    },
+    {
+      "pool_id": "P16",
+      "disposition": "facet",
+      "facet": "F08",
+      "reason": "情绪超过心理容量、被感情淹没的身体与心理体验独立成立。"
+    },
+    {
+      "pool_id": "P17",
+      "disposition": "facet",
+      "facet": "F09",
+      "reason": "原来的优雅、节制和自我观察短暂失效，与单纯情绪过载不是同义。"
+    },
+    {
+      "pool_id": "P18",
+      "disposition": "facet",
+      "facet": "F12",
+      "reason": "狂喜本身具有痛感，与悲喜同时存在或难以分类有不同的感受重点。"
+    },
+    {
+      "pool_id": "P19",
+      "disposition": "facet",
+      "facet": "F11",
+      "reason": "保留多种相反感受同时涌现、情绪分类失效的体验。"
+    },
+    {
+      "pool_id": "P20",
+      "disposition": "facet",
+      "facet": "F10",
+      "reason": "主动停止抵抗感受，与F09被动失去保护能力分别保存。"
+    },
+    {
+      "pool_id": "P21",
+      "disposition": "facet",
+      "facet": "F13",
+      "reason": "振奋时想哭是具体身体反应，不并入抽象的悲喜混合。"
+    },
+    {
+      "pool_id": "P22",
+      "disposition": "merged",
+      "facet": "F11",
+      "reason": "与F11同为幸福和痛苦同时达到高度、无法分开的体验；保留其两者同时极盛的强度。"
+    },
+    {
+      "pool_id": "P23",
+      "disposition": "facet",
+      "facet": "F21",
+      "reason": "明知有限仍主动肯定，是明确的心理选择。"
+    },
+    {
+      "pool_id": "P24",
+      "disposition": "facet",
+      "facet": "F22",
+      "reason": "正因为有限才加倍投入，与F21的尽管有限仍肯定具有不同的动因。"
+    },
+    {
+      "pool_id": "P25",
+      "disposition": "facet",
+      "facet": "F26",
+      "reason": "原稿明确定位106以后进一步增压，可据此保存后半段变化。"
+    },
+    {
+      "pool_id": "P26",
+      "disposition": "facet",
+      "facet": "F30",
+      "reason": "原稿定位110–111跨段的再次抵达；仅保存110开始冲向交界的力量，不把完整抵达提前。"
+    },
+    {
+      "pool_id": "P27",
+      "disposition": "facet",
+      "facet": "F14",
+      "reason": "狂喜过度后内部出现悲恸，且不是音乐已转为平静。"
+    },
+    {
+      "pool_id": "P28",
+      "disposition": "facet",
+      "facet": "F15",
+      "reason": "真正抵达之后才深切感到幸福不能永久存在，是独立的疼痛动因。"
+    },
+    {
+      "pool_id": "P29",
+      "disposition": "facet",
+      "facet": "F16",
+      "reason": "记忆被强光照得过曝，是具体而特殊的感官化怀旧体验。"
+    },
+    {
+      "pool_id": "P30",
+      "disposition": "facet",
+      "facet": "F02",
+      "reason": "音乐继续保持强烈而非已经进入尾声平静，支持本段持续力度。"
+    },
+    {
+      "pool_id": "P31",
+      "disposition": "merged",
+      "facet": "F14",
+      "reason": "与F14同为幸福未消失而悲伤进入幸福内部；原稿进一步明确这不是简单由喜转悲。"
+    },
+    {
+      "pool_id": "P32",
+      "disposition": "merged",
+      "facet": "F15",
+      "reason": "与F15同为幸福珍贵使不能永存的认识格外刺痛，位置与动因一致。"
+    },
+    {
+      "pool_id": "P33",
+      "disposition": "facet",
+      "facet": "F34",
+      "reason": "历史极轻奏法与内在精神强度的区别成立；明确保留其84–111的原始覆盖范围。"
+    },
+    {
+      "pool_id": "P34",
+      "disposition": "merged",
+      "facet": "F26",
+      "reason": "持续强化与压力进一步累积同F26；本稿只给整段，具体106以后的位置仍以P25为据。"
+    },
+    {
+      "pool_id": "P35",
+      "disposition": "facet",
+      "facet": "F23",
+      "reason": "苦涩、反讽式插话是独特的情绪与表达质地。"
+    },
+    {
+      "pool_id": "P36",
+      "disposition": "facet",
+      "facet": "F24",
+      "reason": "事情可能完全不同、世界没有预先保证，是具体的怀疑内容。"
+    },
+    {
+      "pool_id": "P37",
+      "disposition": "facet",
+      "facet": "F25",
+      "reason": "真切相信使怀疑更疼，是独立于怀疑内容的心理动因。"
+    },
+    {
+      "pool_id": "P38",
+      "disposition": "merged",
+      "facet": "F34",
+      "reason": "同样指向1848年历史记述中强奏区域的极轻演奏及其内在力度，非另一种演奏事件。"
+    },
+    {
+      "pool_id": "P39",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "来自97–107的跨段高潮叙述，主要覆盖S12；没有证据确认‘终于倾吐所有话’具体发生在103–107。见carryover。"
+    },
+    {
+      "pool_id": "P40",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "97–107跨段范围的悲喜交融不能自行局部定位；S13的相同体验另有直接证据。见carryover。"
+    },
+    {
+      "pool_id": "P41",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "97–107整体情绪过量，未独立指出103–107的具体听觉事件。见carryover。"
+    },
+    {
+      "pool_id": "P42",
+      "disposition": "rejected",
+      "facet": null,
+      "reason": "范围不符：原稿在全曲层次谈持续摇荡、时间前行及安慰，没有把这一体验独立定位到103–110；‘情感难以承受’也可指前段高潮。不能仅凭全曲音乐继续流动而建立S13专属facet。"
+    },
+    {
+      "pool_id": "P43",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "93–105的高潮体验主要落在S12，不能仅截取103–105的交叠部分。见carryover。"
+    },
+    {
+      "pool_id": "P44",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "笑泪难分的身体反应归于93–105整体，无法确认具体落在S13。见carryover。"
+    },
+    {
+      "pool_id": "P45",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "不顾安全地投入来自93–105高潮的整体叙述，没有本段内独立定位。见carryover。"
+    },
+    {
+      "pool_id": "P46",
+      "disposition": "facet",
+      "facet": "F27",
+      "reason": "保留高潮后短暂收束与重新聚集，依据先于最后终止的音乐过程推定在106–110；不把它写成平息。"
+    },
+    {
+      "pool_id": "P47",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "94–104的强烈高涨主要属于S12，虽交叠103–104，却无事件可精确落在本段。见carryover。"
+    },
+    {
+      "pool_id": "P48",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "重逢后突然拥抱的具体人物动作属于94–104整体高潮，不能把S12画面挪到S13。见carryover。"
+    },
+    {
+      "pool_id": "P49",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "明知不能永有仍投入归于94–104整体，无法确认具体发生在本段。S13另有独立来源支持相关但不同的肯定动因。见carryover。"
+    },
+    {
+      "pool_id": "P50",
+      "disposition": "merged",
+      "facet": "F27",
+      "reason": "短暂整理与回转同F27；根据它先于终结句的事件次序作有限推定，未把整个105–116都算入本段。"
+    },
+    {
+      "pool_id": "P51",
+      "disposition": "facet",
+      "facet": "F03",
+      "reason": "103–106继续坚持和确认灿烂，位置与心理内容均明确。"
+    },
+    {
+      "pool_id": "P52",
+      "disposition": "facet",
+      "facet": "F28",
+      "reason": "107–110出现尖锐暗沉的变化，位置明确。"
+    },
+    {
+      "pool_id": "P53",
+      "disposition": "facet",
+      "facet": "F29",
+      "reason": "具体追问时间、衰老和失去对幸福的威胁，不并入一般苦涩或抽象怀疑。"
+    },
+    {
+      "pool_id": "P54",
+      "disposition": "facet",
+      "facet": "F32",
+      "reason": "明确针对本段、反对过早卸力的演奏主张；不同于单纯描述谱面强度。"
+    },
+    {
+      "pool_id": "P55",
+      "disposition": "merged",
+      "facet": "F30",
+      "reason": "与F30同属110–111交界的释放；只纳入110朝交界推进的部分。"
+    },
+    {
+      "pool_id": "P56",
+      "disposition": "facet",
+      "facet": "F19",
+      "reason": "因真实美好而不甘于不能完全拥有，是与主动释怀不同的明确心理动因。"
+    },
+    {
+      "pool_id": "P57",
+      "disposition": "facet",
+      "facet": "F06",
+      "reason": "上下声音互相拉扯的整体听感成立；其中低处和高处的独立质地也分别支持F04、F05。"
+    },
+    {
+      "pool_id": "P58",
+      "disposition": "merged",
+      "facet": "F11",
+      "reason": "喜悦与哀伤不可分同F11，范围截取到103–110。"
+    },
+    {
+      "pool_id": "P59",
+      "disposition": "facet",
+      "facet": "F05",
+      "reason": "反复下落的叹息形状明确而具体。"
+    },
+    {
+      "pool_id": "P60",
+      "disposition": "facet",
+      "facet": "F31",
+      "reason": "鲁宾斯坦式渐弱及其疲倦平复效果有明确演奏依据。"
+    },
+    {
+      "pool_id": "P61",
+      "disposition": "merged",
+      "facet": "F32",
+      "reason": "持续积累张力、不提前放手的演奏方式同F32。"
+    },
+    {
+      "pool_id": "P62",
+      "disposition": "facet",
+      "facet": "F07",
+      "reason": "表面运动减轻而内部仍紧张，是不同于音量持续强烈的质地对照。"
+    },
+    {
+      "pool_id": "P63",
+      "disposition": "merged",
+      "facet": "F05",
+      "reason": "同一位置、同一下行叹息的听觉体验。"
+    },
+    {
+      "pool_id": "P64",
+      "disposition": "merged",
+      "facet": "F04",
+      "reason": "低处坚定而不肯让步同F04。"
+    },
+    {
+      "pool_id": "P65",
+      "disposition": "facet",
+      "facet": "F17",
+      "reason": "抵达最向往的地方却仍有无法释怀的东西，是完整的心理画面。"
+    },
+    {
+      "pool_id": "P66",
+      "disposition": "merged",
+      "facet": "F31",
+      "reason": "鲁宾斯坦渐弱造成逐渐平静的效果与F31同义。"
+    },
+    {
+      "pool_id": "P67",
+      "disposition": "merged",
+      "facet": "F32",
+      "reason": "持续保留力量直到110–111的演奏选择同F32；不把跨段释放提前。"
+    },
+    {
+      "pool_id": "P68",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "89–110宽范围的高涨整体主要覆盖此前高潮，且原稿后续小节编号出现超出116的错误；无法独立确认S13内事件。见carryover。"
+    },
+    {
+      "pool_id": "P69",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "89–112中再次明亮蓄力的起点和具体过程不明确，不能等同于S13后半的增压。见carryover。"
+    },
+    {
+      "pool_id": "P70",
+      "disposition": "carryover",
+      "facet": null,
+      "reason": "89–112整体的振奋但非胜利感没有S13内部定位。见carryover。"
+    },
+    {
+      "pool_id": "P71",
+      "disposition": "merged",
+      "facet": "F31",
+      "reason": "部分演奏从这里逐渐收远，同F31的演奏路线；本稿没有独立提供比鲁宾斯坦例子更精确的小节划分。"
+    },
+    {
+      "pool_id": "P72",
+      "disposition": "facet",
+      "facet": "F35",
+      "reason": "保留深谈结束后身体激动未散的独特身体质地；同一原稿也支持F32的持续用力演奏路线。"
+    },
+    {
+      "pool_id": "P73",
+      "disposition": "merged",
+      "facet": "F30",
+      "reason": "110–111的最后一次冲击同F30，S13只记录110的临界推进。"
+    },
+    {
+      "pool_id": "P74",
+      "disposition": "merged",
+      "facet": "F02",
+      "reason": "高潮后音乐没有立即收手而继续向前，同F02。"
+    },
+    {
+      "pool_id": "P75",
+      "disposition": "merged",
+      "facet": "F05",
+      "reason": "叹息般下行的听觉事件同F05。"
+    },
+    {
+      "pool_id": "P76",
+      "disposition": "merged",
+      "facet": "F14",
+      "reason": "确认幸福时面对其内部疼痛，同F14的悲伤进入狂喜。"
+    },
+    {
+      "pool_id": "P77",
+      "disposition": "merged",
+      "facet": "F30",
+      "reason": "110–111强烈抵达的跨段事件同F30；仅保留110部分。"
+    },
+    {
+      "pool_id": "P78",
+      "disposition": "facet",
+      "facet": "F01",
+      "reason": "第103小节明确的抵达与说出心愿的体验。"
+    },
+    {
+      "pool_id": "P79",
+      "disposition": "merged",
+      "facet": "F26",
+      "reason": "抵达后反复增强、继续蓄力与F26相同；具体106起的定位来自P25。"
+    },
+    {
+      "pool_id": "P80",
+      "disposition": "facet",
+      "facet": "F20",
+      "reason": "害怕停下便失去刚获得的美好，是具体而独立的急切动因。"
+    },
+    {
+      "pool_id": "P81",
+      "disposition": "merged",
+      "facet": "F30",
+      "reason": "110–111另一轮明确释放属于同一边界事件，不能写成已在110完整结束。"
+    },
+    {
+      "pool_id": "P82",
+      "disposition": "merged",
+      "facet": "F02",
+      "reason": "仍保持强烈、不只是欢呼，同本段持续强度；更沉重的心理层次由该稿的其他条目独立保存。"
+    },
+    {
+      "pool_id": "P83",
+      "disposition": "merged",
+      "facet": "F05",
+      "reason": "与F05是同一下行叹息的音乐体验。"
+    },
+    {
+      "pool_id": "P84",
+      "disposition": "merged",
+      "facet": "F04",
+      "reason": "下方持续的声音使心事仍被压住，同F04；其未释怀的完整心理画面另由P85支持。"
+    },
+    {
+      "pool_id": "P85",
+      "disposition": "facet",
+      "facet": "F18",
+      "reason": "说出心事却未带走痛苦，是有原稿独立支持的完整人物心理画面。"
+    },
+    {
+      "pool_id": "P86",
+      "disposition": "facet",
+      "facet": "F36",
+      "reason": "快速上行动作被处理为退场前逐渐淡去的光；同一音乐事件也支持F30，但不纳入111的完整落点。"
+    },
+    {
+      "pool_id": "P87",
+      "disposition": "facet",
+      "facet": "F37",
+      "reason": "同一快速动作被处理为最后一次冲天的亮光；与F36是不同演奏效果，只将110开始的上冲纳入本段。"
+    }
+  ],
+  "reader_bead": {
+    "title": "说出来了，心却还没有松开",
+    "body": "刚刚像是终于抵达了盼望已久的地方，声音却没有顺势退下。低处始终坚实地守着，像心跳仍在用力；高处的声音一回回往下落，近乎叹息。一边不肯移动，一边反复牵扯，仿佛一句重要的话已经说出口，仍有说不尽的分量。\n\n感情浓到几乎超过了能够承受的限度，连原先护着自己的优雅和分寸也遮不住了。快乐没有退去，疼痛却已经在里面。也像一个人终于坦白了心事，才发现说出来并没有把痛苦一起带走。\n\n前几小节还像在坚持、确认那份灿烂；走到后半，声音又越聚越紧，明亮里渐渐显出尖锐、暗沉的边缘。有一种听法仿佛在此刻忽然发问：眼前的幸福这样真实，可它真的能够抵挡时间、衰老和失去吗？那份热烈仍在，疑问也没有被压下去。\n\n临近段末，一道急促的声音朝高处卷起，力量还在往前送，并没有在这里真正落定。若演奏者让这段较早收轻，听来会像强烈倾诉之后的疲倦；若始终撑住，又像深谈已结束，胸口的激动却还没有散去。",
+    "facet_ids": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F08",
+      "F09",
+      "F14",
+      "F18",
+      "F26",
+      "F28",
+      "F29",
+      "F30",
+      "F31",
+      "F32",
+      "F35"
+    ]
+  },
+  "diff_vs_short": "保留旧版最有音乐根据的核心：第103小节的强烈抵达并不等于卸力；低处持续坚毅、上方反复下落如叹息；倾诉之后痛苦未必减轻；后半段尖锐、暗沉的色彩混入热烈之中。进一步恢复旧版压缩掉的不同体验：情绪越过承受容量、保护能力不由自主地失效与主动停止抵抗的区别；狂喜与疼痛无法分开、振奋时想哭的身体反应；已抵达却无法释怀、因美好而不甘放手、害怕停下便失去、明知有限仍主动肯定、正因有限才全身投入等不同心理动因；苦涩插话、对未来无保证的怀疑及其疼痛原因；记忆被强光照得过曝的少数感官听法；鲁宾斯坦式渐弱、持续蓄力以及历史极轻奏法造成的不同效果。位置上区分103的抵达、103–106的反复确认、106以后的继续增压、107以后的尖暗变化，以及110通向111的快速上冲。删除旧版‘狂欢最高点的人笑着笑着表情忽然僵了’这一没有原稿独立锚定的具体人物画面，以音乐所支持的尖锐暗沉和怀疑取代；不再把不同原稿的心理解释串成一人的必然经历。尤其改正旧版‘段末那道花饰向高处伸去，再落下来’的跨段问题：在S13只写向高处冲起，不能把110–111的落下与最终释放都提前放进103–110。同时拒收把103起误写为骤然平息、温柔退潮、船已驶向寂静的原稿体验；真正的平复要么属于具体渐弱演奏的条件性效果，要么属于后续终结句。"
+}
+```

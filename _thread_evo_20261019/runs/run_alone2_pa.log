@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\v6alone.py", line 161, in <module>
+    run(sys.argv[1:])
+  File "D:\musicclaude\_thread_evo_20261019\v6alone.py", line 116, in run
+    g = graph(w, tag)
+        ^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\v6alone.py", line 101, in graph
+    return V.v6(w) if tag == "v6" else V.graph_of(w, tag)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\v6fix.py", line 493, in graph_of
+    return tidy(json.loads((OUT / f"{w}_{T}.json").read_text(encoding="utf-8"))["graph"])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_thread_evo_20261019\\evaluations\\v6fix\\op60_pa.json'

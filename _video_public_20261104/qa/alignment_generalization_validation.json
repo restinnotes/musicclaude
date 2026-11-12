@@ -1,0 +1,47 @@
+{
+  "tests": 26,
+  "synthetic_variations": {
+    "tempo_scales": [
+      0.7,
+      1,
+      1.5
+    ],
+    "pitch_transpositions": [
+      -7,
+      0,
+      5,
+      12
+    ]
+  },
+  "scope": "Automated structural/evidence checks, not proof of arbitrary-work or arbitrary-recording accuracy",
+  "actual_samples": {
+    "op60": {
+      "status": "AUTOMATED_CHECKS_PASSED",
+      "issues": []
+    },
+    "op61": {
+      "status": "REVIEW_REQUIRED",
+      "issues": [
+        {
+          "code": "weak_free_run_audio_evidence",
+          "detail": "grace-5",
+          "window": [
+            509.5502947845805,
+            509.5851247165533
+          ]
+        }
+      ]
+    },
+    "op52": {
+      "status": "REVIEW_REQUIRED",
+      "issues": [
+        {
+          "code": "missing_score_events",
+          "detail": "Local search alone cannot validate free score passages",
+          "window": null
+        }
+      ]
+    }
+  },
+  "newly_aligned_op60_candidate": "AUTOMATED_CHECKS_PASSED"
+}

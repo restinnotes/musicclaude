@@ -1,0 +1,65 @@
+"""Content validity, coverage and provenance are separate questions, with traceable prior evidence."""
+import json
+import covjudge
+import evo
+
+VERSION = 'synth-check-v4-frozen'
+
+RULES='''请审查这段 Thread。先判断局部解释有没有内容，再判断整段是否足够。
+
+内容审查：
+- 每条解释要说清一段具体经历怎样使此刻不同。‘因此’两侧都通顺不等于有推导；只是把更强烈换成更深、更投入，仍是结果。只说模糊盼望有了方向、获得满足，却没有说清盼望的内容和亲近为什么改变它，是抽象概括。
+- 简短的真实理由可以成立，一个原因可解释多种感受。不要求每颗听感各有心理步骤，不要代作者补写自我说服、决定和新的认识。
+- 当前和历史中的人物前史、外部事件、对白都要查依据。历史编号和听感编号不是证据本身；须与附上的原始听感核对。原始听感里的‘像’‘可以想成’是类比，不证明人物真的说过某句话、失去过某个人或习惯压抑自己。
+- 处境与感受可以带回忆、失去、时间流逝的性质，不必编出具体往事。初段允许说不清，不要求交代原因的前史。
+- Thread 可以提出珠子未逐字写出的心理理解；只要它在既有历史中说得通、解释当下体验，不能因珠子没有同一句话而否决。查依据是为了防止虚构事实、前史与比喻实化，不是要求线复述珠子。
+- usable 指当前这整条原文能否直接使用，不是其中是否有一小段可救。若沿用未经确立的具体话语、对白、外部事件或人物习惯，即使后半段另有成立的理由，整条也必须 usable=false，并指出可保留的部分；不能默默删去失据的前半句再判通过。
+- 全部音响和比喻不是必须重新解释的对象；检查其承载的感受。不能要求 Thread 描写织体、和声、强弱、光线等声音或意象，以此补足覆盖。
+
+覆盖审查：
+- 每颗给 explained / compatible / alternative / missing。explained 须有原因；compatible 须说明为何可保留独立感受，不能以侧面为由放过重要感受；alternative 须说明与选中故事互斥在哪里，不得把所有难解释的都放这里。
+- 段内同时成立的感受不要自动串成先后步骤。哪个最重要，要读内容，角色标签不是排名。
+- 局部贡献成立和整段合格分开。一条解释可以有效却漏了重要感受；它的 usable 可以 true，但 section_pass 必须 false。
+- 鲜活、具体、独立可读也要检查：读者能否知道具体在乎的是什么，理解前因怎样改变此刻。不要机械禁用抽象词或对照句；有内容的判断和心理矛盾要保留，不得为口语化另加细节。
+- 对现有选择中没有解释的重要感受，分成池子太窄 / 缺前提 / 听感存疑，并说明。允许当前无解。
+
+请只输出 JSON：
+{"mechanisms":[{"index":1,"usable":true,"why":"具体理由","flags":[]}],
+ "coverage":[{"id":"S03-B1","status":"explained","why":"具体理由"}],
+ "section_pass":false,"problems":["只列足以判整段不合格的问题"],
+ "unexplained":[{"id":"S03-B2","why":"池子太窄","note":"理由"}],"reason":"整段判断"}
+'''
+
+
+def message(work, sec, history, chosen, beads_text, candidates=''):
+    source={bid for h in history for bid in h.get('explains',[])}
+    evidence='\n'.join(f"{b['id']}：{b['text']}" for b in covjudge.beads(work) if b['id'] in source)
+    return (RULES+'\n【已选历史（也需核对是否有依据）】\n'+json.dumps(history,ensure_ascii=False)+
+            '\n【历史所依据的原始听感】\n'+(evidence or '第一段，没有历史')+
+            '\n【本段听感】\n'+beads_text+'\n【选中的解释】\n'+json.dumps(chosen,ensure_ascii=False)+
+            ('\n【本段候选，核对有没有加入来源没有的理由】\n'+candidates if candidates else ''))
+
+
+def parse(text):
+    try:return evo.parse_json(text)
+    except (ValueError,TypeError):pass
+    if not isinstance(text,str):raise ValueError('No answer')
+    text=text[text.find('{'):text.rfind('}')+1]
+    # Only repair mismatched missing container closers; never change any word, string or verdict.
+    stack=[];result=[];quoted=False;escaped=False
+    for char in text:
+        if quoted:
+            result.append(char)
+            if escaped:escaped=False
+            elif char=='\\':escaped=True
+            elif char=='"':quoted=False
+            continue
+        if char=='"':quoted=True
+        elif char in '{[':stack.append(char)
+        elif char in '}]':
+            want='{' if char=='}' else '['
+            while stack and stack[-1]!=want:
+                result.append('}' if stack.pop()=='{' else ']')
+            if stack:stack.pop()
+        result.append(char)
+    return json.loads(''.join(result))

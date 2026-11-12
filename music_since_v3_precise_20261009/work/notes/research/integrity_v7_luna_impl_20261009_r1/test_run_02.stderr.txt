@@ -1,0 +1,24 @@
+python.exe : test_cache_write_failure_never_resumes_unsealed_success (test_execution_integrity_v7.AdapterTests.test_cac
+he_write_failure_never_resumes_unsealed_success) ... FAIL
+所在位置 行:5 字符: 7
++ try { & python -B -m unittest test_execution_integrity_v7.AdapterTest ...
++       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_cache_writ...ccess) ... FAIL:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+======================================================================
+FAIL: test_cache_write_failure_never_resumes_unsealed_success (test_execution_integrity_v7.AdapterTests.test_cache_writ
+e_failure_never_resumes_unsealed_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_execution_integrity_v
+7.py", line 214, in test_cache_write_failure_never_resumes_unsealed_success
+    with self.assertRaises(I.ArtifactConflict):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ArtifactConflict not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.088s
+
+FAILED (failures=1)

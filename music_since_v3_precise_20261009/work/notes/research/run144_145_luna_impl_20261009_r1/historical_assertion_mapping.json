@@ -1,0 +1,242 @@
+[
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 1,
+    "legacy_test": "test_import_has_no_environment_io_cli_or_source_import_effects",
+    "legacy_asserted_behavior": "Patched Path reads/writes/mkdir and subprocess calls to fail; asserted unchanged environment/run inventory and no imported legacy run modules.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_import_has_no_environment_io_cli_or_source_import_effects"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 2,
+    "legacy_test": "test_config_and_canonical_self_flags_are_frozen",
+    "legacy_asserted_behavior": "Asserted frozen generator/chooser/auditor/judge models and exact canonical self flags for gflash/gflash_web/luna.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_config_and_canonical_self_flags_are_frozen"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 3,
+    "legacy_test": "test_full_mock_rerun_adds_zero_submissions_and_stays_pending",
+    "legacy_asserted_behavior": "Ran full mock twice; asserted second run has zero new submissions, pending marker only, no DONE, zero real submissions and unknown/unverified legacy producer.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_full_mock_rerun_adds_zero_submissions_and_stays_pending"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 4,
+    "legacy_test": "test_full_collections_exact_identities_packs_and_reader_content",
+    "legacy_asserted_behavior": "Asserted WHY k2..23, MECH/SURFACE k1..23, full audit reviewer and blind compare identity sets, candidate rotation, six valid packs each, and actual expanded/recap text.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_full_collections_exact_identities_packs_and_reader_content"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 5,
+    "legacy_test": "test_parser_failure_retry_appends_attempt_without_overwrite",
+    "legacy_asserted_behavior": "Old implicit retry is explicitly replaced: default completed parse failure is persisted then STOPped; a separate test authorizes one bounded resample and proves attempt 0 raw bytes remain immutable.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_default_parse_failure_stops_and_rerun_submits_zero_new_samples; test_parser_failure_retry_appends_attempt_without_overwrite"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 6,
+    "legacy_test": "test_cache_only_claim_without_exact_artifacts_is_rejected",
+    "legacy_asserted_behavior": "Returned cache-only claim without exact files raises IntegrityError, records FAILED, and cannot be resumed as evidence.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_cache_only_claim_without_exact_artifacts_is_rejected"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 7,
+    "legacy_test": "test_queue_stop_blocks_every_following_submission_and_stage",
+    "legacy_asserted_behavior": "First mock queue_stop writes hold/failure evidence; no stage record is completed and next invocation is blocked with zero submissions.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_queue_stop_blocks_every_following_submission_and_stage"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 8,
+    "legacy_test": "test_exact_artifact_tamper_is_rejected_before_resume",
+    "legacy_asserted_behavior": "Mutated prompt and output bytes separately; resume raises before any new caller submission.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_exact_artifact_tamper_is_rejected_before_resume"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 9,
+    "legacy_test": "test_pack_missing_and_tamper_are_rejected_without_rebuilding",
+    "legacy_asserted_behavior": "Removed or changed a review pack; resume rejects with zero new submissions.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_pack_missing_and_tamper_are_rejected_without_rebuilding"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 10,
+    "legacy_test": "test_source_tamper_is_rejected_using_an_isolated_fixture_root",
+    "legacy_asserted_behavior": "Changed frozen history source in an isolated fixture after a full run; resume rejects before submission.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_source_tamper_is_rejected_using_an_isolated_fixture_root"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 11,
+    "legacy_test": "test_duplicate_reviewer_and_order_identity_sets_are_rejected",
+    "legacy_asserted_behavior": "Validated exact baseline×judge×order set then injected a duplicate, broken mapping, and missing audit reviewer; each is rejected.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_duplicate_reviewer_and_order_identity_sets_are_rejected"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 12,
+    "legacy_test": "test_pack_validator_rejects_placeholder_and_missing_task_id",
+    "legacy_asserted_behavior": "Injected an unfilled template token and removed a required task; exact pack validation rejects both.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_pack_validator_rejects_placeholder_and_missing_task_id"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 13,
+    "legacy_test": "test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held",
+    "legacy_asserted_behavior": "Raw fake results remain pending without a verifier; held two-w slot raises QueueStopped; separate TEST_ONLY receipt path and field-tamper tests exercise bound ingress.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held; test_external_muse_sourcebound_receipt_valid_path_and_binding_rejections"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 14,
+    "legacy_test": "test_missing_terminal_identity_is_rejected_and_producer_stays_unknown",
+    "legacy_asserted_behavior": "Omitted terminal artifact; execution rejects while historical producer remains unknown.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_missing_terminal_identity_is_rejected_and_producer_stays_unknown"
+  },
+  {
+    "legacy_suite": "run139_e7_flash_diag_r3",
+    "ordinal": 15,
+    "legacy_test": "test_direct_real_path_blocks_before_creating_real_run_outputs",
+    "legacy_asserted_behavior": "Recorded run directory before direct real entry; call blocks with unchanged inventory and zero caller submissions.",
+    "mapped_revision": "run144_e7_flash_diag_r5",
+    "r5_test_assertions": "test_direct_real_path_blocks_before_creating_real_run_outputs; captured run144 --real returns 3"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 1,
+    "legacy_test": "test_import_has_no_environment_file_cli_or_write_side_effects",
+    "legacy_asserted_behavior": "Patched environment mutation, builtins/Path I/O and process APIs to fail during import; environment remains byte-for-byte equal.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_import_has_no_environment_file_cli_or_write_side_effects"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 2,
+    "legacy_test": "test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit",
+    "legacy_asserted_behavior": "Asserted 4×23 chain, exact evidence-backed second-run reuse with zero new submissions, pending completion, held real plan, and no music acceptance.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 3,
+    "legacy_test": "test_missing_artifact_is_not_reused",
+    "legacy_asserted_behavior": "A cache record without exact disk artifacts cannot be reused; verifier reports missing metadata.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_missing_artifact_is_not_reused; test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 4,
+    "legacy_test": "test_tampered_output_sha_is_rejected",
+    "legacy_asserted_behavior": "Appended output bytes without matching proof; exact disk verifier rejects SHA mismatch.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_tampered_output_sha_is_rejected"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 5,
+    "legacy_test": "test_prompt_tamper_is_rejected",
+    "legacy_asserted_behavior": "Changed persisted prompt bytes; exact prompt hash/identity verification rejects.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_prompt_tamper_is_rejected"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 6,
+    "legacy_test": "test_full_identity_tamper_is_rejected",
+    "legacy_asserted_behavior": "Changed model identity in metadata; complete request identity verification rejects.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_full_identity_tamper_is_rejected; test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 7,
+    "legacy_test": "test_duplicate_success_in_same_slot_is_ambiguous",
+    "legacy_asserted_behavior": "Two successful records for one slot raise ambiguity rather than selecting either result.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_duplicate_success_in_same_slot_is_ambiguous"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 8,
+    "legacy_test": "test_ambiguous_success_sources_from_two_runs_are_rejected",
+    "legacy_asserted_behavior": "Two successful source-run candidates for the same slot raise ambiguity.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_ambiguous_success_sources_from_two_runs_are_rejected"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 9,
+    "legacy_test": "test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match",
+    "legacy_asserted_behavior": "Same-size wrong identity set and duplicate identities both fail exact set comparison.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 10,
+    "legacy_test": "test_musepack_tampering_and_file_read_reference_are_rejected",
+    "legacy_asserted_behavior": "Mutated mapping, added file-read path, changed seed, and changed template bytes; each invalidates exact frozen pack/hash binding.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_musepack_tampering_and_file_read_reference_are_rejected; test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 11,
+    "legacy_test": "test_muse_return_needs_real_transport_schema_and_exact_quotes",
+    "legacy_asserted_behavior": "Mock transport and unsupported quote are rejected; r5 never promotes raw result and separately tests complete sourcebound receipt binding.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt; test_thread_compare_uses_frozen_schema_and_candidate_specific_exact_quotes"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 12,
+    "legacy_test": "test_queue_stop_stops_current_remaining_jobs_and_all_later_stages",
+    "legacy_asserted_behavior": "After queue stop in match stage, center is never invoked and later stages are marked stopped before start.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_queue_stop_stops_current_remaining_jobs_and_all_later_stages"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 13,
+    "legacy_test": "test_no_longer_valid_without_match_evidence_blocks_history",
+    "legacy_asserted_behavior": "NLV history change without provenance-backed match evidence is rejected; full-chain positive and tamper/None cases exercise integrated retirement.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_no_longer_valid_without_match_evidence_blocks_history; test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 14,
+    "legacy_test": "test_legacy_unknown_producer_is_preserved_without_fabrication",
+    "legacy_asserted_behavior": "Legacy model label without exact producer proof remains recorded=false/value=None.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_legacy_unknown_producer_is_preserved_without_fabrication"
+  },
+  {
+    "legacy_suite": "run141_thread_resume_r3",
+    "ordinal": 15,
+    "legacy_test": "test_strict_preflight_is_pending_without_v4_and_writes_nothing",
+    "legacy_asserted_behavior": "Read-only preflight leaves run tree unchanged and reports blocked/pending with zero writes; absent and present-unverified cases are covered.",
+    "mapped_revision": "run145_thread_resume_r5",
+    "r5_test_assertions": "test_strict_preflight_is_pending_without_v4_acceptance_and_writes_nothing; test_real_preflight_only_checks_presence_and_direct_real_entry_writes_nothing"
+  }
+]

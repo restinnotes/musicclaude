@@ -1,0 +1,57 @@
+{
+  "schema": "v4-r1-main-reproduction/1",
+  "date": "2026-10-09",
+  "real_model_submissions": 0,
+  "rows": [
+    {
+      "check": "codex_unknown_item_status",
+      "reproduced": true,
+      "scope": "synthetic local event, not observed real protocol"
+    },
+    {
+      "check": "codex_conflicting_turn_status",
+      "reproduced": true,
+      "scope": "synthetic local event, not observed real protocol"
+    },
+    {
+      "check": "opencode_conflicting_finish_status",
+      "reproduced": true,
+      "scope": "synthetic local event, not observed real protocol"
+    },
+    {
+      "check": "orphan_finalized_same_sample",
+      "reproduced": true,
+      "mock_process_calls": 2,
+      "scope": "temp ledger removal + retained completion seal; no real repeat"
+    },
+    {
+      "check": "requested_max_returned_low",
+      "reproduced": true,
+      "scope": "local return metadata inconsistency, not proof of remote effort"
+    },
+    {
+      "check": "unbound_environment:HTTPS_PROXY",
+      "reproduced": true,
+      "scope": "synthetic env; actual native worker source path separately inspected"
+    },
+    {
+      "check": "unbound_environment:GPT2AGENT_TURN_TIMEOUT_SECONDS",
+      "reproduced": true,
+      "scope": "synthetic env; actual native worker source path separately inspected"
+    },
+    {
+      "check": "unbound_environment:GPT2AGENT_MAX_ACTIVE_TURNS",
+      "reproduced": true,
+      "scope": "synthetic env; actual native worker source path separately inspected"
+    },
+    {
+      "check": "wrapper_complete_then_parse_failure",
+      "reproduced": true,
+      "mock_process_calls": 2,
+      "parse_ok": true,
+      "scope": "policy ambiguity: original engineering brief permits explicit new sample after complete parse failure; current wrapper does so automatically"
+    }
+  ],
+  "all_reproduced": true,
+  "limits": "No real CLI/model/network. Reproduction is not music acceptance or route health. Gate and old hold untouched."
+}

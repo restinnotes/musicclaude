@@ -1,0 +1,619 @@
+{
+  "status": "verified",
+  "tag": "r54weave",
+  "base": "r49b",
+  "verified_at": "2026-11-03T22:24:50.567401-05:00",
+  "requirements": [
+    {
+      "requirement": "Unique accepted mainline, real parent acceptance and model-only production",
+      "status": "proven",
+      "evidence": [
+        "DAG.md",
+        "runs/_batches/round50_from_r49b/r54weave_acceptance.json"
+      ],
+      "detail": {
+        "parent_balanced8": {
+          "tag": "r54weave",
+          "base": "r50progress1rr",
+          "rows": [
+            {
+              "w": "op60",
+              "j": "g6",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 8,
+                "lean": 0,
+                "plain": -5,
+                "cover": 6
+              },
+              "rid": "v6b3_op60_g6_r54weave_vsr50progress1rr_newX"
+            },
+            {
+              "w": "op60",
+              "j": "g6",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 10,
+                "lean": 2,
+                "plain": -2,
+                "cover": 4
+              },
+              "rid": "v6b3_op60_g6_r54weave_vsr50progress1rr_newY"
+            },
+            {
+              "w": "op60",
+              "j": "g56",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": false,
+              "net": {
+                "alone": 4,
+                "lean": -6,
+                "plain": -3,
+                "cover": 6
+              },
+              "rid": "v6b3_op60_g56_r54weave_vsr50progress1rr_newX"
+            },
+            {
+              "w": "op60",
+              "j": "g56",
+              "seat": "newY",
+              "new_win": false,
+              "no_regress": false,
+              "net": {
+                "alone": -2,
+                "lean": 2,
+                "plain": 0,
+                "cover": 6
+              },
+              "rid": "v6b3_op60_g56_r54weave_vsr50progress1rr_newY"
+            },
+            {
+              "w": "op61",
+              "j": "g6",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 3,
+                "lean": -3,
+                "plain": -1,
+                "cover": 0
+              },
+              "rid": "v6b3_op61_g6_r54weave_vsr50progress1rr_newX"
+            },
+            {
+              "w": "op61",
+              "j": "g6",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 1,
+                "lean": 7,
+                "plain": 9,
+                "cover": -1
+              },
+              "rid": "v6b3_op61_g6_r54weave_vsr50progress1rr_newY"
+            },
+            {
+              "w": "op61",
+              "j": "g56",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 1,
+                "lean": -6,
+                "plain": 1,
+                "cover": -2
+              },
+              "rid": "v6b3_op61_g56_r54weave_vsr50progress1rr_newX"
+            },
+            {
+              "w": "op61",
+              "j": "g56",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": -6,
+                "lean": 5,
+                "plain": 11,
+                "cover": -3
+              },
+              "rid": "v6b3_op61_g56_r54weave_vsr50progress1rr_newY"
+            }
+          ],
+          "pending": [],
+          "net_sums": {
+            "alone": 19,
+            "lean": 1,
+            "plain": 10,
+            "cover": 16
+          },
+          "wins": 7,
+          "no_regress": 6
+        },
+        "model_lineage": [
+          "r50progress1",
+          "r50progress1r",
+          "r50progress1rr",
+          "r54weave"
+        ]
+      }
+    },
+    {
+      "requirement": "Both works retain Center, segmentation, 2–4 complete items, true references and unchanged beads; four delivery documents match model text",
+      "status": "proven",
+      "evidence": [
+        "deliver_20261103_r54weave/integrity.json"
+      ],
+      "detail": {
+        "op60": {
+          "线条数": 40,
+          "字数": 1608,
+          "珠子数": 50,
+          "珠子逐字一致": true,
+          "线逐字在合写内": true,
+          "每段条数": [
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            2,
+            3,
+            3,
+            3,
+            3
+          ],
+          "珠子版本": "N03i display wording, unchanged from accepted baseline delivery",
+          "source_sha256": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959"
+        },
+        "op61": {
+          "线条数": 36,
+          "字数": 1435,
+          "珠子数": 53,
+          "珠子逐字一致": true,
+          "线逐字在合写内": true,
+          "每段条数": [
+            3,
+            3,
+            2,
+            2,
+            2,
+            4,
+            3,
+            2,
+            2,
+            3,
+            4,
+            2,
+            4
+          ],
+          "珠子版本": "N03i display wording, unchanged from accepted baseline delivery",
+          "source_sha256": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+        }
+      }
+    },
+    {
+      "requirement": "Original I14 stop rule after consecutive actual failed rounds, prospectively frozen fresh reviews and specific issue adjudication",
+      "status": "proven",
+      "evidence": [
+        "runs/_batches/i14_after_r62/audit_scope.json",
+        "runs/_batches/i14_after_r62/assessment.json",
+        "runs/_batches/i14_after_r62/specific_matches.json",
+        "runs/_batches/i14_after_r62/specific_subfinding_resolution.json",
+        "runs/_batches/round64_diagnosis/final_disposition.json"
+      ],
+      "detail": {
+        "known": 26,
+        "known_fixed_bead": 1,
+        "unsupported_new_claim_with_direct_counterevidence": 1,
+        "quality_compliance_proven": false,
+        "all_original_severity_and_dissent_retained": true
+      }
+    },
+    {
+      "requirement": "Complete final I02 diagnosis with no remaining independent candidate or author return",
+      "status": "proven",
+      "evidence": [
+        "runs/_batches/round64_diagnosis/final_disposition.json"
+      ],
+      "detail": {
+        "candidates": 0,
+        "all_three_original_replies_read": true
+      }
+    },
+    {
+      "requirement": "Rolling acceptance baseline and separate final r49b comparison; no accumulated parent votes",
+      "status": "proven",
+      "evidence": [
+        "runs/_batches/round61_new_findings/baseline_policy.json",
+        "runs/_batches/round50_from_r49b/r54weave_vsr49b_direct8_verified.json"
+      ],
+      "detail": {
+        "direct_balanced8": {
+          "tag": "r54weave",
+          "base": "r49b",
+          "rows": [
+            {
+              "w": "op60",
+              "j": "g6",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": false,
+              "net": {
+                "alone": 12,
+                "lean": 0,
+                "plain": -3,
+                "cover": 5
+              },
+              "rid": "v6b3_op60_g6_r54weave_vsr49b_newX"
+            },
+            {
+              "w": "op60",
+              "j": "g6",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": false,
+              "net": {
+                "alone": 10,
+                "lean": 8,
+                "plain": 1,
+                "cover": 8
+              },
+              "rid": "v6b3_op60_g6_r54weave_vsr49b_newY"
+            },
+            {
+              "w": "op60",
+              "j": "g56",
+              "seat": "newX",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 12,
+                "lean": 0,
+                "plain": 0,
+                "cover": 2
+              },
+              "rid": "v6b3_op60_g56_r54weave_vsr49b_newX"
+            },
+            {
+              "w": "op60",
+              "j": "g56",
+              "seat": "newY",
+              "new_win": false,
+              "no_regress": false,
+              "net": {
+                "alone": 2,
+                "lean": -6,
+                "plain": -4,
+                "cover": 0
+              },
+              "rid": "v6b3_op60_g56_r54weave_vsr49b_newY"
+            },
+            {
+              "w": "op61",
+              "j": "g6",
+              "seat": "newX",
+              "new_win": false,
+              "no_regress": false,
+              "net": {
+                "alone": -10,
+                "lean": -7,
+                "plain": -3,
+                "cover": -8
+              },
+              "rid": "v6b3_op61_g6_r54weave_vsr49b_newX"
+            },
+            {
+              "w": "op61",
+              "j": "g6",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 1,
+                "lean": 3,
+                "plain": 5,
+                "cover": 5
+              },
+              "rid": "v6b3_op61_g6_r54weave_vsr49b_newY"
+            },
+            {
+              "w": "op61",
+              "j": "g56",
+              "seat": "newX",
+              "new_win": false,
+              "no_regress": true,
+              "net": {
+                "alone": -2,
+                "lean": -7,
+                "plain": -3,
+                "cover": -1
+              },
+              "rid": "v6b3_op61_g56_r54weave_vsr49b_newX"
+            },
+            {
+              "w": "op61",
+              "j": "g56",
+              "seat": "newY",
+              "new_win": true,
+              "no_regress": true,
+              "net": {
+                "alone": 1,
+                "lean": 3,
+                "plain": 7,
+                "cover": 1
+              },
+              "rid": "v6b3_op61_g56_r54weave_vsr49b_newY"
+            }
+          ],
+          "pending": [],
+          "net_sums": {
+            "alone": 26,
+            "lean": -6,
+            "plain": 0,
+            "cover": 12
+          },
+          "wins": 5,
+          "no_regress": 4
+        },
+        "formal_direct_gate_pass": false,
+        "boundary": "Final report must explicitly retain failure to clear the direct r49b gate; accepted parent gate remains valid."
+      }
+    },
+    {
+      "requirement": "User-frozen ZIP and existing source-quoted introduction remain byte-identical",
+      "status": "proven",
+      "evidence": [
+        "runs/_reports/video_pack_r54weave.json"
+      ],
+      "detail": {
+        "zip_sha256": "030d5f734a5295e8ddcff270cb1b7ed3e6ba476028515597c732dd3e824f66aa",
+        "mutations": 0
+      }
+    },
+    {
+      "requirement": "No owned pending collector remains and automatic heartbeat remains disabled",
+      "status": "proven",
+      "evidence": [
+        "runs/_batches/i14_after_r62/scheduler_verification.json",
+        "runs/_batches/round64_diagnosis/collection.json"
+      ],
+      "detail": {
+        "verified_at": "2026-11-03T22:24:50.535314-05:00",
+        "automation_source": "C:\\Users\\zuoyi\\.codex\\automations\\automation\\automation.toml",
+        "automation_bytes_sha256": "4e399dae56f26cdc2da97330d07d1138844f0f25a580cc571e79980fbc33e38a",
+        "status": "PAUSED",
+        "original_final_collector_terminal": true,
+        "tracked_live_python_receivers": [],
+        "scope": "Only this task owned receivers queried; no unrelated services, watchdog or cache warming changed."
+      }
+    },
+    {
+      "requirement": "Version registry, progress table and actual checkpoint/version explanations reflect measured work",
+      "status": "proven",
+      "evidence": [
+        "VERSIONS.md",
+        "进度表.md",
+        "版本说明/r61bridge_vs_r54weave.md",
+        "版本说明/r54sample_vs_qu.md"
+      ],
+      "detail": "R64 produced no version; no invented version, missing vote or missing floor counted as a win or zero."
+    }
+  ],
+  "source_hashes": {
+    "DAG.md": "145270991cda3fc3fdbf60d2a99c6776a8468c8a5207b817ac319cc562f5881a",
+    "VERSIONS.md": "9307e32a0c66460f0c3be051ce1e7cd323e581b11a496a5fee8c7646144d07f9",
+    "audit_r54_convergence.py": "ce0d7a981b6544baa09d68fd3215c110d3292f526c6cee24fc1b45df310a7202",
+    "build_version_comparison.py": "f57237380798482de8d56670a290433d5fc43a5611e504ef9915aca747743563",
+    "deliver_20261103_r50progress1rr/op60_线与珠子_r50progress1rr.md": "749d391aefc77ff157f1d520f57918c1bae6b2cc633f09b0aa8b667e206683f5",
+    "deliver_20261103_r50progress1rr/op61_线与珠子_r50progress1rr.md": "be4ce17c58734371d072d4e5429ce9960980b799dff6b99d6c84853d3cf40dd2",
+    "deliver_20261103_r54weave/integrity.json": "8f334050d52c2a0bfb37fe075c5e94df7aebca93c175e769898ce35bb9f9abb7",
+    "deliver_20261103_r54weave/op60_只看线_r54weave.md": "dbbe13c2a0455c4ddb4a1307c3e4e30863e3d0899d5740aa29543cccb74c3aa4",
+    "deliver_20261103_r54weave/op60_线与珠子_r54weave.md": "ea9a4054431c582df671a2c1af5d1adc055c3d39ab5d3df47355d702d906feb4",
+    "deliver_20261103_r54weave/op61_只看线_r54weave.md": "32e0d722f3038d4beabe68591a7aea6f8248818751d6dc013636c344d850ebec",
+    "deliver_20261103_r54weave/op61_线与珠子_r54weave.md": "c3e7b7ea0162dc5c11b6c2000caf56e572b5b3d15fb1b14d6b3fbc5a41f8d234",
+    "evaluations/beads_clean/op60.json": "fd4d3fd76df611dd279448e75aeab6516c8933fc48289b683031f4ebdd906385",
+    "evaluations/beads_clean/op61.json": "ce25b8fd0a8e4a4c400f8d7166a5ed24e05fcfaaafc1cd8d8b6d528b64475253",
+    "evaluations/beads_lang/op60.json": "6d20a70589a98510be36217b31e1c6270968ad54f310670ad692780d8b74a883",
+    "evaluations/beads_lang/op61.json": "87bdfebe02581cfa212df0abb955f7e64dffafd7b27255bc6a6a51f1ff97b03e",
+    "evaluations/v6fix/op60_r49b.json": "fa476f5329ccb9a9d7bfd7c30ed2916c916e557c90d2ce86a3caf9ddada974ae",
+    "evaluations/v6fix/op60_r50progress1.json": "78fd3b73b11edc5d56ffa9bbce843be8bfb6b9ee352df002d1013ac1146acf67",
+    "evaluations/v6fix/op60_r50progress1r.json": "5b46cb02e4e9b45f4124b57f89bfde932d5a79a3ffe899b5ab8c8a84325fd429",
+    "evaluations/v6fix/op60_r50progress1rr.json": "7941a01cabf6dcf5a0861fc294c508850b894c890d1e51577afeefdbd9a9ffe9",
+    "evaluations/v6fix/op60_r54weave.json": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+    "evaluations/v6fix/op61_r49b.json": "b62e648fd0e072d880a300e068a7f2c406a1a1a29f53e0ed6cce8b9d0160a645",
+    "evaluations/v6fix/op61_r50progress1.json": "cf80dff2a0a921c2b609c97421079dd0e5724751cbf92b38228459fc6759bd77",
+    "evaluations/v6fix/op61_r50progress1r.json": "6af859faa640efe4c9359d5555943aaa7064b7243a081d6be6d202f4fc3b5065",
+    "evaluations/v6fix/op61_r50progress1rr.json": "63b413e14e3dd5efcc9cbe3aa3d3840ac545a929f8489dea558462587f52b64d",
+    "evaluations/v6fix/op61_r54weave.json": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e",
+    "runs/_batches/i14_after_r62/assessment.json": "794346dd252924c8fd6488ee2619ab509c7e07f6221a005f1fd811446735b312",
+    "runs/_batches/i14_after_r62/audit_scope.json": "c4ca245fc0f367e25109b63c75e0ad4abdf520c84cef31ead1c668a1e5535a43",
+    "runs/_batches/i14_after_r62/collection_result.json": "5aa1f7383f92602f445aa671297c11fb74c3fd60092d9ecceebd6dced43b3067",
+    "runs/_batches/i14_after_r62/final_i14_assessment.json": "73764caf82f093f9e84a929da484af409271bc34bc9a3732a75cb075d462d3b1",
+    "runs/_batches/i14_after_r62/scheduler_verification.json": "f32317d5f296f8c52b5f596665a1ad324f1867ee80726390d891c647a4615fa0",
+    "runs/_batches/i14_after_r62/specific_matches.json": "f5cef1a8ab8be48c0ac80eda49a09045e46a1f00335b0dbbc88fce8e604f5daa",
+    "runs/_batches/i14_after_r62/specific_subfinding_resolution.json": "7cdf6e28ed2529429cec7b184ce44eea66baddf33e2626401e7a408843026b24",
+    "runs/_batches/round50_from_r49b/r50progress1_applied.json": "9a171616ea6c57aea5e7088a786d70f809ba02980bbbcc87a6200729ea21007a",
+    "runs/_batches/round50_from_r49b/r50progress1r_applied.json": "e40bda577ea99ae24facf756f7b8e2d49c6af8625b836fc60bcf0f48d2558066",
+    "runs/_batches/round50_from_r49b/r50progress1rr_applied.json": "c98933ac9243e00e748f410d67a800f9b44c0bdba06785873588a0d4b9777945",
+    "runs/_batches/round50_from_r49b/r54weave_acceptance.json": "1d6db7d6dfc6b5d2e4af6ad1ca39c24fe25da7ff2688be92c74813ee7171eb6e",
+    "runs/_batches/round50_from_r49b/r54weave_vsr49b_direct8_verified.json": "e07a6264e3d9d5cd41e392acffd49dd0049574e7d13887e5fa24828051ff31f6",
+    "runs/_batches/round54_broader/r54weave_applied.json": "e332c060934d251a29f61d7239df5bea93fc105fd66b41d2fef696fbab5efd35",
+    "runs/_batches/round55_current/r55restored_final_disposition.json": "e58a4cefef57de84a03b1fe59754d7fd42df51a8d6e2d997621ad97c416ee9e9",
+    "runs/_batches/round55_current/r55shell_final_disposition.json": "e6923e24113d606b9475aee79b65753f3329381ec5416d444b91e3fd8fc0b8e4",
+    "runs/_batches/round56_paired/r56paired_final_disposition.json": "c5c9cc9aca5f2d75a1c29878fb0d573feb7cd0931e6abef0ba952cde274aeb8f",
+    "runs/_batches/round61_boundary/r61bridge_final_disposition.json": "9bffafbe67bea455366020a21566839091007954e6e41bffc9717ec41d750c4f",
+    "runs/_batches/round61_new_findings/baseline_policy.json": "abc4e9fb6b0bceacbd874a3a77bede7405e44fa380413b2974e6da4d7159c964",
+    "runs/_batches/round62_sample_checkpoint/r54sample_final_disposition.json": "d41f1dad51c83caeeb1026fed912bfe5f9b85f87bbf7a9c616b329424bac0c73",
+    "runs/_batches/round64_diagnosis/collection.json": "9317b365596470a7bc352160e5f218091cff3ea2a94a6051480de4c6d01259bb",
+    "runs/_batches/round64_diagnosis/final_disposition.json": "e4fbd98a179999c5a9c594ddd487d62d099a8aab4361f6b717e3088a34191001",
+    "runs/_reports/video_pack_r54weave.json": "3762f354845b85838f5d5222878261ae70b25b1376df818dc44e7a6418244f8f",
+    "runs/al2_op60_g56_r50progress1rr/inspection.json": "35e6376cfb7c1e5120f5f86b7b26756f50da74e1a6ffec0f3ca9bc92cfb6a9e4",
+    "runs/al2_op60_g56_r50progress1rr/output.txt": "2a6058ba143cfbc5b58e6b58164f2bd3227bf3c706596fc8376bd05bc2b9338e",
+    "runs/al2_op60_g56_r54weave/inspection.json": "20477a17c911d1dea37830f85216c4f0978a7a6622e8ac3ebd067aa8a1ec45aa",
+    "runs/al2_op60_g56_r54weave/output.txt": "2b335d2fd2e32b100ab0476cf44a950f5afeb1d9a8096a35dc153f2ccc9658d4",
+    "runs/al2_op60_g6_r50progress1rr/inspection.json": "366654fdb67f59bb000aa987a446b807779b930aeb8445991f854aa6a3a83536",
+    "runs/al2_op60_g6_r50progress1rr/output.txt": "2e06b024aec213cd64cc63fcd897fb4d125452f1af5afcefcc947d23b89117fe",
+    "runs/al2_op60_g6_r54weave/inspection.json": "a1d8d6a66f879d3a3e5c980a1e04a410ab8e0071a89beb603dd89a547e693334",
+    "runs/al2_op60_g6_r54weave/output.txt": "ba69f8446b16164a604dc9cc4b982fc95d9a1442cd3f924479b50a50b7ffd862",
+    "runs/al2_op61_g56_r50progress1rr/inspection.json": "d473db2039d30f652d86a4003cd39878ce63d3fe0cb758cc6d28c8eef4b232e6",
+    "runs/al2_op61_g56_r50progress1rr/output.txt": "56ee6390924a12f9de8752783e7ea39ba73c8a69b60b5140ac704e5800b5c57e",
+    "runs/al2_op61_g56_r54weave/inspection.json": "5f88dc497e21a167a6bbbb955a672888592408e732989bd159be0ed9d1c6f47c",
+    "runs/al2_op61_g56_r54weave/output.txt": "ce4f58696e154d1bef9fd47688f5f2b65264893efee93eb4c5add6ac24004fdf",
+    "runs/al2_op61_g6_r50progress1rr/inspection.json": "23ee4f84ae179e54a1b564c4840312de8acd19f9599f20c73db2a4a6992478e1",
+    "runs/al2_op61_g6_r50progress1rr/output.txt": "74c9b6bce121b967095e1e62df15ae95520a8b24fe1da85f5c85768fe070e0d7",
+    "runs/al2_op61_g6_r54weave/inspection.json": "e25f52f7b1d8d044d7d15dc9ddc72b3acae71df9d788c7c599cbd9838abed6e3",
+    "runs/al2_op61_g6_r54weave/output.txt": "5c8b2d8a49f57da09811e1c37d8058c84afd0f5605176cb6c5ad34c17b01e2b5",
+    "runs/cov2_op60_g56_r50progress1rr/inspection.json": "9a8a0f008570461c7202ff2e194a157fd1f3416620cb85ff4415eed17e89cf46",
+    "runs/cov2_op60_g56_r50progress1rr/output.txt": "07ff9cff6ff05763465f500fc88302f064f01a5b34bf909d64520fbde0d77d8d",
+    "runs/cov2_op60_g56_r54weave/inspection.json": "1ad1ee9f00d794ad3e827c2e0ac2b78f2a82746ea0d69cc0ff2a3f210de16d49",
+    "runs/cov2_op60_g56_r54weave/output.txt": "8e295b40ec3051edbdb6e57d750e77c4ba860413f11d90a47e8419585986cecb",
+    "runs/cov2_op60_g6_r50progress1rr/inspection.json": "fadcd04d84070fa23111f4671958bf40f5527aff4e4158daef43b4e5504f6bae",
+    "runs/cov2_op60_g6_r50progress1rr/output.txt": "872df4a5cb5fde2755789c518a0d4916c94b3d82a4a2f355aa7ed4285db22f44",
+    "runs/cov2_op60_g6_r54weave/inspection.json": "9197f9b0eae1ca300151df731a5d44fba6de9e202286c3489e1fd16796432ffd",
+    "runs/cov2_op60_g6_r54weave/output.txt": "80ec082822c0bbc0ecbb036ee902e8088d5141ef7ccc8e1a60e6c3493f8b8668",
+    "runs/cov2_op61_g56_r50progress1rr/inspection.json": "157f2244cfd2b3ff7811a2a24c6f65ed50a116abf5c839226074feb3785a926f",
+    "runs/cov2_op61_g56_r50progress1rr/output.txt": "e6f41e0474de1246e84d15743a1aaf36fdb08d684df5e22ea4520ce7f2e05d90",
+    "runs/cov2_op61_g56_r54weave/inspection.json": "ee28db18de18ea772fc34491af7b4062e5bd67365977c54d2a05c472c9119619",
+    "runs/cov2_op61_g56_r54weave/output.txt": "348f256b800232843ff10bee229154cb179d4b0b6341d99664a93682d0bb73d1",
+    "runs/cov2_op61_g6_r50progress1rr/inspection.json": "c3d538c868b21d3a1430036caa29ea62d6563f01593f57f36e01f719396a0eb1",
+    "runs/cov2_op61_g6_r50progress1rr/output.txt": "27645e465107d9f1e2fa8655c239ff00c227bd18bf65e1163ae564ab769e6457",
+    "runs/cov2_op61_g6_r54weave/inspection.json": "59540a9af82b16a85e5c859a821d8bbd1792f7d9cd47e59042436244e1cd3aaa",
+    "runs/cov2_op61_g6_r54weave/output.txt": "0e6cb5d478f09bb15802f99f183d67c914194004feada450612b3782bf4837da",
+    "runs/eo2_i14r63_op60_r54weave_g56_r1/inspection.json": "881f2faaeadb846c412a37146d5c062f75120cca2343cc5a100110f18ca9ee0b",
+    "runs/eo2_i14r63_op60_r54weave_g56_r1/output.txt": "57b101d3389d262e48f8ca4ed2c36ddc1281edb7814fb6bf3277a10888139e69",
+    "runs/eo2_i14r63_op60_r54weave_g56_r1/prepared_input.txt": "742c2f7d8a782c0956b9b4fd212beedab27a9c075f9b16c3a13b868d6219a35c",
+    "runs/eo2_i14r63_op60_r54weave_g56_r2/inspection.json": "6d60969d1488038d6d50081a86c03a15a1618111fc2b77b7a75459b7e7352e4b",
+    "runs/eo2_i14r63_op60_r54weave_g56_r2/output.txt": "61bb4c751c8648436fa0686a3e9d50f30ef5a2b1f49b0f720a1d48e6af18db4b",
+    "runs/eo2_i14r63_op60_r54weave_g56_r2/prepared_input.txt": "c83db5a33361cd9c70588a3dbf85985ea71c7d5a29953ffc8ffdbf765d6420eb",
+    "runs/eo2_i14r63_op60_r54weave_g6_r1/inspection.json": "805b012004386e5bd3c3b2de9774da5b7f4bc15f79ba60a44a177ffa13bf8ee9",
+    "runs/eo2_i14r63_op60_r54weave_g6_r1/output.txt": "bc600b1d00a1ec625b5c81bf3f3da8ab0d8da19b7c4e7f7f51c73b4117a24ae9",
+    "runs/eo2_i14r63_op60_r54weave_g6_r1/prepared_input.txt": "742c2f7d8a782c0956b9b4fd212beedab27a9c075f9b16c3a13b868d6219a35c",
+    "runs/eo2_i14r63_op60_r54weave_g6_r2/inspection.json": "d848678f40b6e4c7478b3cd8eeb643983c742f54026d8e8385aa96a53eb7f01d",
+    "runs/eo2_i14r63_op60_r54weave_g6_r2/output.txt": "e7e12961a2182c3d52456f865dec205d3686da43e60348fc3376a9a526a94e9b",
+    "runs/eo2_i14r63_op60_r54weave_g6_r2/prepared_input.txt": "c83db5a33361cd9c70588a3dbf85985ea71c7d5a29953ffc8ffdbf765d6420eb",
+    "runs/eo2_i14r63_op60_r54weave_gem_r1/inspection.json": "969764d311d449835d07d276309a25726869e0a4249c740e6c1e9297085fba96",
+    "runs/eo2_i14r63_op60_r54weave_gem_r1/output.txt": "4a8df0f71e862c872ac80dcadb1119024ff8ee69c406849c9d7e74931065e9dc",
+    "runs/eo2_i14r63_op60_r54weave_gem_r1/prepared_input.txt": "742c2f7d8a782c0956b9b4fd212beedab27a9c075f9b16c3a13b868d6219a35c",
+    "runs/eo2_i14r63_op61_r54weave_g56_r1/inspection.json": "de5983da15b56edc5508c14dc3c6436399db4044c8cd5cd316c9187d1a34efb5",
+    "runs/eo2_i14r63_op61_r54weave_g56_r1/output.txt": "ec1f4253310e67208464dbb4c5965db212aa48b88d743b76e694e98c3855697e",
+    "runs/eo2_i14r63_op61_r54weave_g56_r1/prepared_input.txt": "a3c4b2bf07adf943c6383bd3a82dd81d14c19942a3953ca3bf3a13c5766c6947",
+    "runs/eo2_i14r63_op61_r54weave_g56_r2/inspection.json": "0942c1625a727425685b118458f2879ecf910d834414ce20b0fa0da4d0da2f69",
+    "runs/eo2_i14r63_op61_r54weave_g56_r2/output.txt": "1fdd16249c0e07650dd4ca6ce9d6e33414df32175922fbe3e86191fa14bbdc58",
+    "runs/eo2_i14r63_op61_r54weave_g56_r2/prepared_input.txt": "e2a095eccad99de9daffd3da99e132d3bf624889a1c84599181106864bde98f7",
+    "runs/eo2_i14r63_op61_r54weave_g6_r1/inspection.json": "7836c8a4348dd1f66850df10ae6b2d3a233626f040b407a1a28b6fc87caa3b68",
+    "runs/eo2_i14r63_op61_r54weave_g6_r1/output.txt": "7902aa51f95b4dd4982269af8b3af46cee3ddbc53274f8b2a21a9ee35a4ccf4c",
+    "runs/eo2_i14r63_op61_r54weave_g6_r1/prepared_input.txt": "a3c4b2bf07adf943c6383bd3a82dd81d14c19942a3953ca3bf3a13c5766c6947",
+    "runs/eo2_i14r63_op61_r54weave_g6_r2/inspection.json": "4fe1e4e1590241f1b95b59fb68bf6de329c760fd95075ede499b1c8fb746fcae",
+    "runs/eo2_i14r63_op61_r54weave_g6_r2/output.txt": "65bf20d4489fec32e1123a80405e5dd28a687418e72e20afce24c6004a29b6fd",
+    "runs/eo2_i14r63_op61_r54weave_g6_r2/prepared_input.txt": "e2a095eccad99de9daffd3da99e132d3bf624889a1c84599181106864bde98f7",
+    "runs/eo2_i14r63_op61_r54weave_gem_r1/inspection.json": "511118ff943a2ca863e385318fac8fc745a3eba2e08a8ca6464bebf968e81a78",
+    "runs/eo2_i14r63_op61_r54weave_gem_r1/output.txt": "61c34ef7b386fc1d532e5428ba5d46c9cacdffaea7eb8f88e0588880a5c43cf2",
+    "runs/eo2_i14r63_op61_r54weave_gem_r1/prepared_input.txt": "a3c4b2bf07adf943c6383bd3a82dd81d14c19942a3953ca3bf3a13c5766c6947",
+    "runs/r64_advisor_g56/inspection.json": "7ffcaa9e0116dac9a7e139cde147dbb75793b4b640820c227db928c3e02896b1",
+    "runs/r64_advisor_g56/output.txt": "e39a72acc950fcd059803463b9091c30dcc6372dbe7c1e395909fa19f07403bb",
+    "runs/r64_advisor_g6a/inspection.json": "d731e1b74112d517c375f7846d1fea3087161a6f9620e09ff3ca986dbd0d71d9",
+    "runs/r64_advisor_g6a/output.txt": "0cbd9dd83f83fd8b0f57af73c885417c6a208bd9c3dc8d07f2656cebd5df148b",
+    "runs/r64_advisor_g6b/inspection.json": "cf09832a6a7937d57588e232a09afc170bbb6d9141795ff88f0582fe2a54d3de",
+    "runs/r64_advisor_g6b/output.txt": "4b29c88fd617763f9b4a4618f5faf98e1315339223995c9e3a36363d514dbe64",
+    "runs/scr50progress1_op60_A5/inspection.json": "c12b25273d481801b2cdc05f72f7c13b5db44f6b30edeef370713c3f9cc08613",
+    "runs/scr50progress1_op60_A5/output.txt": "99e77e3767d54e5208b18175aaa414681c674e114f1462daf085a6f03ec41fde",
+    "runs/scr50progress1_op60_A5/prepared_input.txt": "6a52886d4685d5b5bd1bbbc8b7ae8a4ef4df5110203dc2d2af537651d13a9594",
+    "runs/scr50progress1_op61_A5/inspection.json": "5c1a416581b28f103dd1e02e8a0f32d1509c1120673a0c9b54abfa938e43c723",
+    "runs/scr50progress1_op61_A5/output.txt": "698884461bd342891640448bdbd795972466559998c865ec7c64aee5a0d0f7f5",
+    "runs/scr50progress1_op61_A5/prepared_input.txt": "5531f151db05aba5904b0cd6f41083322af747eb9f90089e1e8f7d9daab106d3",
+    "runs/scr50progress1r_op60_A5/inspection.json": "bc7cdc371f152d5b51e2e04273247bd0df356bb77af160368f3df9b5f567fbdd",
+    "runs/scr50progress1r_op60_A5/output.txt": "6ccd1bf997724fb38dd0ec73103fd85027994e32f22659dbbf64d7a46d8f1d34",
+    "runs/scr50progress1r_op60_A5/prepared_input.txt": "57728d0920408bb4a28e58f49779a06122152fdf48892655963592d0faa6ab0d",
+    "runs/scr50progress1r_op61_A5/inspection.json": "4552fc27fdf071288d613eeeda3a2cdfdd6df68f40f3b7085b93c688452b8be7",
+    "runs/scr50progress1r_op61_A5/output.txt": "08ef596a6a5439fd7f4cdfaa00535eeca6357f00d95c385e13fddd9d4ccc70c3",
+    "runs/scr50progress1r_op61_A5/prepared_input.txt": "cd1d5ae8dfef671aac77fe76d80589551a6017760aade5b6c24618e4dc952ffb",
+    "runs/scr50progress1rr_op60_A5/inspection.json": "6a28c87bba8763f6f53275ea2278897faf3b22f430f12122f13a2ae00b6ac39a",
+    "runs/scr50progress1rr_op60_A5/output.txt": "513ac1026d6d5db3c63c5c0f68b56556348bb22bee0eff49441a2464751b3689",
+    "runs/scr50progress1rr_op60_A5/prepared_input.txt": "54e653e348a34368a38a79b232d76b6e97f0c96b981045b3f9492665f9f3b0a0",
+    "runs/scr50progress1rr_op61_A5/inspection.json": "9d93ab2692638a9c9148b661a9c36fdf6e2da70eede5078458d2544a3851087d",
+    "runs/scr50progress1rr_op61_A5/output.txt": "6b0cc614f475eb1f29736e4f5f6f542923801d4cefe93ce7f90689bbbf0f1b14",
+    "runs/scr50progress1rr_op61_A5/prepared_input.txt": "11abdcc7e6b49fa02e4e2c99f326e4e5add83502645d0f99c3b2c6de4b4df95b",
+    "runs/scr54weave_op60_P1/inspection.json": "f86c394b460b506b1b261afa02e8ea6b48a78c9d137cca10c1661e1f0102dfe9",
+    "runs/scr54weave_op60_P1/output.txt": "71b8b06557e70b47dbc090170f5e6e93e4d7ae9b4179f0afdd131a0d741abeac",
+    "runs/scr54weave_op60_P1/prepared_input.txt": "a3731ac6813abbb63510b3c10968cd6bad5cca4fac400b366b5addf042ee6593",
+    "runs/scr54weave_op61_P1/inspection.json": "b8eeb70e1c4ea8a50a5d55b202140c230fa8371289a51cdecb6520f4d8e9640b",
+    "runs/scr54weave_op61_P1/output.txt": "43cb3471be3e9edd6c8282b1258ccde337942529bc9f48c41fc703766def33c3",
+    "runs/scr54weave_op61_P1/prepared_input.txt": "28e33c71ae4670a7e047477cd94fb2e27231e195e2b7dac46d240dc12df000f1",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newX/inspection.json": "66fdec916fa979d3c83f944a461d8243875ce180a6da733fc07c06f0a002bb39",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newX/output.txt": "7c37ceeead76721cdfc70dc9187b1245890e956c17ceeb8ca06cce381a34c18a",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newX/prepared_input.txt": "5b7d1ae8ab6acaca3ffc9595a3bd9fbfe1754a7fb6c8a941f35a541a1806b785",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newY/inspection.json": "42098d2fb152de1bb12640cac97d6aecb268b5fb944b091963e369c0cfe6d396",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newY/output.txt": "37df462df221488c282a9865546c2a21732eaa9914996bfe437f4fe6fb7aba4a",
+    "runs/v6b3_op60_g56_r54weave_vsr49b_newY/prepared_input.txt": "824b23f0bee33fbd074a5db67284a61d1963961d7fd00fe132d2b390825a1251",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newX/inspection.json": "bcb1e814561e648bfad0d313706548024d286c8dc2d57418835de568022276cf",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newX/output.txt": "04cc77b382e7bc3c6b98a8cd6f58419251af9bc967014491b62bed466268370f",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newX/prepared_input.txt": "6d4757b80defc3ec178f56f0ec2974143a0057cdc30f04edd2cbff43cdbdde7d",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newY/inspection.json": "8c7876152821732447d745af8da9a1e9f6fa0245fe86a202eba36b94d98bde08",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newY/output.txt": "439e37ae0aee042f28204bff8197706d79de944749e16491534d552524ad6c97",
+    "runs/v6b3_op60_g56_r54weave_vsr50progress1rr_newY/prepared_input.txt": "e9028d5afa4790e425d326bf5ff8d8d9b2bb4151abc9031c488cf3e246132b8c",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newX/inspection.json": "7dd1ca760a28b419443d1196ac9c0e7f65af669593dbcd716a07b77fa1778b0d",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newX/output.txt": "ebcfd960f74647c265ad7fbb800b96231b671cb43f624852539bf3099f0d4b7e",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newX/prepared_input.txt": "5b7d1ae8ab6acaca3ffc9595a3bd9fbfe1754a7fb6c8a941f35a541a1806b785",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newY/inspection.json": "20db35df6a73ed25cc8f10c8518de2d93879949aa1fb7e44c3777beac0540221",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newY/output.txt": "402553e37cc35674a14f228fed24e4d25ff01dfda90b10c92c14a202ba7750c6",
+    "runs/v6b3_op60_g6_r54weave_vsr49b_newY/prepared_input.txt": "824b23f0bee33fbd074a5db67284a61d1963961d7fd00fe132d2b390825a1251",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newX/inspection.json": "36a648946a544356dc8a88d91f15e22434ac422ce8782c491172cb2714d83132",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newX/output.txt": "24c3c9438fec48a0131e391969f88fc1cff4317e2b8b9bf2063df7f44ff9d5f5",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newX/prepared_input.txt": "6d4757b80defc3ec178f56f0ec2974143a0057cdc30f04edd2cbff43cdbdde7d",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newY/inspection.json": "11ae82b3802943da3f69380043a6f753aa5e133cfb38f556badfd18c8f9bfdcb",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newY/output.txt": "5a0b5a78bda439fbcdf9a3db18e61f0948cd3e060f75553b8f5494f67b30d5d4",
+    "runs/v6b3_op60_g6_r54weave_vsr50progress1rr_newY/prepared_input.txt": "e9028d5afa4790e425d326bf5ff8d8d9b2bb4151abc9031c488cf3e246132b8c",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newX/inspection.json": "f2f5179f284c2ecdce29d87abeee5ee487cb6089d13fca4f5ecad785138e04ae",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newX/output.txt": "5cbc0fceb5c670e2b7d63252127674a904a1b10ed5e46de67f91378cba36f5d0",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newX/prepared_input.txt": "0a0c16c497bb5813a566dda596400ddca93d3e4adf9aa016f1b8c475be2a75d7",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newY/inspection.json": "aacd3e9cd39ce6091f55b41abdf1b32c25f0f278ac4519c1cd3ebb35a20bba74",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newY/output.txt": "7e47113b114fcff4cbc598f51bb2d0869df936384096c3db784f0be21651f7f9",
+    "runs/v6b3_op61_g56_r54weave_vsr49b_newY/prepared_input.txt": "1349a29161b4d9d014930fc098ac4f052bf556b5c40b5b992288b3fdf341a16b",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newX/inspection.json": "2f9cb90659d50d4d09cd6d406694f6c66158b704f8051a4b60b1592922be8bd2",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newX/output.txt": "30433488a9b332be4813f946a7451d3973c468b76eab48cecdac415f7388cd6b",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newX/prepared_input.txt": "edcc1e49e4af031bb016e78309634efe4eade5031e5dec6f49d4034b8730b9cd",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newY/inspection.json": "7d0fe3ba399a30d511f25f18b5a9ca1af59dba8a88e67c222ab2de62c43b3456",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newY/output.txt": "741b5179c3e1d10114c79cc2d8743bd2f7ae606027367ed38b52d68291eccb87",
+    "runs/v6b3_op61_g56_r54weave_vsr50progress1rr_newY/prepared_input.txt": "82a4a178d25307532d1e8f67067fbecf6e3b0e90a7bab6024b3d9039ffc68584",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newX/inspection.json": "8735a7db9feff1443cfe67fe6c7796f577a72823dcf8a1f149dc54e6353f4ea8",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newX/output.txt": "d35b1efdcdca073ffd38242ffecaff942e711a96ed64950159856a2cc2b832f1",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newX/prepared_input.txt": "0a0c16c497bb5813a566dda596400ddca93d3e4adf9aa016f1b8c475be2a75d7",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newY/inspection.json": "2fa6bd74968a3b82325e434c008e13484cb711868853da449f7a57e0a6b15c33",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newY/output.txt": "c4072c672d09f73dc830bf02cd824e2d2ecb574db2c7eed52a6c5456aab320a4",
+    "runs/v6b3_op61_g6_r54weave_vsr49b_newY/prepared_input.txt": "1349a29161b4d9d014930fc098ac4f052bf556b5c40b5b992288b3fdf341a16b",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newX/inspection.json": "6a2646c7028bfe776bd3de5ba4f4be4948024d0f96c3596ef5236cf9d44d0aaf",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newX/output.txt": "8f1fe9a5db590371c543f8b9810207f8be482c96ba0a97c2988f4e5a05368bd7",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newX/prepared_input.txt": "edcc1e49e4af031bb016e78309634efe4eade5031e5dec6f49d4034b8730b9cd",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newY/inspection.json": "21df9d9dda452b1c5f9589d9c84e2258797a761809aa56da5d20e00810cb177e",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newY/output.txt": "54a9ce2c7ccd9093f8ae7aa3a208fc01ceab787a40cba09751f479e590778c1a",
+    "runs/v6b3_op61_g6_r54weave_vsr50progress1rr_newY/prepared_input.txt": "82a4a178d25307532d1e8f67067fbecf6e3b0e90a7bab6024b3d9039ffc68584",
+    "标准.md": "68bb0c9192b8b492b69c2461c091e80fc22f8a1b5f72add1585756d7ba66ba45",
+    "版本说明/r54sample_vs_qu.md": "1dd94375f30234efaad05f02259c3ea36c41a0e00e3bb89e07a59982c6a17f62",
+    "版本说明/r61bridge_vs_r54weave.md": "f0d1fae7e39970de4261df28b5fa7c16f847ea7608f5d1c4e7690d7efe78535e",
+    "进度表.md": "5f080e8d69270f739c18108527c91c52695c67784d5c8945a3f12d22cba376a4",
+    "迭代准则.md": "725362d4905fc6eadb4bdb4e35dc85881b85cda03a5c66c7252bb25dd8d42f1d"
+  },
+  "quality_compliance_proven": false,
+  "globally_best_proven": false,
+  "final_report_generation_pending": true,
+  "limitations": [
+    "Known medium/severe issues and all dissent remain.",
+    "r54 is accepted against r50 but does not pass its direct eight-vote r49b comparison.",
+    "r49b span annotations remain bound to r49b, not migrated to the changed r54 text; ZIP unchanged.",
+    "Only two works measured; no automatic stable generalization claim."
+  ]
+}

@@ -1,0 +1,64 @@
+[v6b2_op60_g6_r35mrg_vsqurefs] ok 408s 9265 chars
+[v6b2_op61_g56_r35mrg_vsqurefs] ok 459s 7249 chars
+[v6b2_op60_g56_r35mrg_vsqurefs] ok 542s 8587 chars
+[v6b2_op61_g6_r35mrg_vsqurefs] ok 442s 7869 chars
+[cov2_op60_g6_r35mrg] ok 316s 10152 chars
+[cov2_op60_g56_r35mrg] ok 389s 10394 chars
+[cov2_op61_g6_r35mrg] ok 332s 10794 chars
+[cov2_op61_g56_r35mrg] ok 267s 10997 chars
+qurefs op60_g6 说清 44/50 偏弱 6 相反 0 没有 0 未判 0 | 主体验说清 13/14
+qurefs op60_g56 说清 44/50 偏弱 4 相反 0 没有 2 未判 0 | 主体验说清 12/14
+qurefs op61_g6 说清 47/53 偏弱 5 相反 0 没有 1 未判 0 | 主体验说清 13/13
+qurefs op61_g56 说清 51/53 偏弱 2 相反 0 没有 0 未判 0 | 主体验说清 13/13
+r35mrg op60_g6 说清 40/50 偏弱 6 相反 1 没有 3 未判 0 | 主体验说清 11/14
+r35mrg op60_g56 说清 42/50 偏弱 6 相反 1 没有 1 未判 0 | 主体验说清 12/14
+r35mrg op61_g6 说清 41/53 偏弱 11 相反 0 没有 1 未判 0 | 主体验说清 10/13
+r35mrg op61_g56 说清 41/53 偏弱 11 相反 0 没有 1 未判 0 | 主体验说清 11/13
+[al2_op60_g56_qurefs] ok 341s 5023 chars
+[al2_op60_g6_qurefs] ok 373s 5023 chars
+[al2_op61_g6_qurefs] ok 272s 4183 chars
+[al2_op61_g56_qurefs] ok 332s 4261 chars
+[al2_op60_g6_r35mrg] ok 328s 5179 chars
+[al2_op60_g56_r35mrg] ok 363s 4592 chars
+[al2_op61_g6_r35mrg] ok 294s 4373 chars
+[al2_op61_g56_r35mrg] ok 297s 4504 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\round31_screen.py", line 8, in <module>
+    results = dict(zip(tags, pool.map(lambda t: F.screen(t, 'qurefs'), tags)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\round31_screen.py", line 8, in <lambda>
+    results = dict(zip(tags, pool.map(lambda t: F.screen(t, 'qurefs'), tags)))
+                                                ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 223, in screen
+    state = run_blind(tag, base, acceptance)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 123, in run_blind
+    state = blind_state(tag, base, acceptance)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\screen_flow.py", line 35, in blind_state
+    expected = [s['sec'] for s in V.graph_of(w, tag)['segments']]
+                                  ^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\v6fix.py", line 497, in graph_of
+    return tidy(json.loads((OUT / f"{w}_{T}.json").read_text(encoding="utf-8"))["graph"])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_thread_evo_20261019\\evaluations\\v6fix\\op61_r35rep.json'

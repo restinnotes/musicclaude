@@ -1,0 +1,3389 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="ie ie6 lt8 lt9 lt10"><![endif]-->
+<!--[if IE 7]>
+<html class="ie ie7 lt8 lt9 lt10"><![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 lt9 lt10"><![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9 lt10"><![endif]-->
+<!--[if (gt IE 9) | !(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Aqara"/>
+
+                    <title>妙控开关 S1E｜产品参数｜Aqara 全屋智能</title>
+
+
+
+
+    <meta name="baidu-site-verification" content="code-RlhIowEoCo"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" name="viewport"/>
+
+    <link rel="shortcut icon" href="https://static-resource.aqara.com/img/favicon.ico?1,790,145,622,346"
+          type="image/x-icon"/>
+    <script>
+        if ( /*@cc_on!@*/ false && document.documentMode === 10) document.documentElement.className += ' ie10';
+    </script>
+    <script>
+        if ( /*@cc_on!@*/ false && document.documentMode === 11) document.documentElement.className += ' ie11';
+    </script>
+    <!-- 添加IE10+Class -->
+    <link rel="stylesheet" href="https://static-resource.aqara.com/css/style.css?1,790,145,622,346">
+    <link rel="stylesheet" href="https://static-resource.aqara.com/css/sup_btn.css?1,790,145,622,347">
+    <link rel="stylesheet" href="https://static-resource.aqara.com/css/spec.css?1,790,145,622,347">
+    <!--[if lt IE 9]>
+		<script src="https://static-resource.aqara.com/js/html5.js?1,790,145,622,347"></script>
+		<script src="https://static-resource.aqara.com/js/respond.src.js?1,790,145,622,347"></script>
+		<![endif]-->
+    <!--公用文件 END-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?2df419cadb3951597d5f6df3a9e563d1";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+	<script src="https://www.googletagmanager.com/gtag/js?id=G-4JP6H2ZTJC"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-4JP6H2ZTJC');
+	</script>
+    <meta property="og:image" content="https://static-resource.aqara.com/img/fenlogo.png">
+
+<meta name="google-site-verification" content="50fJ-8SHLXA8Bi-0gg2gzd_ui6n8oJwVTmLxrfissvw" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.aqara.com/"/>
+<link rel="alternate" hreflang="ko" href="https://www.aqara.com/kr/"/>
+<link rel="alternate" hreflang="en-RU" href="https://www.aqara.com/ru/"/>
+<link rel="alternate" hreflang="en-us" href="https://www.aqara.com/us/"/>
+<link rel="alternate" hreflang="en" href="https://www.aqara.com/en/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.aqara.com/en/"/>
+<link rel="alternate" hreflang="en-AL" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-AD" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-AM" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-AT" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-AZ" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-BY" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-BE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-BA" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-BG" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-HR" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-CY" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-CZ" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-DK" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-EE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-FI" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-FR" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-GE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-DE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-GI" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-GR" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-GG" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-HU" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-IS" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-IE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-IM" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-IT" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-JE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-LV" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-LI" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-LT" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-LU" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-MT" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-MD" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-MC" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-ME" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-NL" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-NO" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-PL" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-PT" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-RO" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-RS" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-SK" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-SI" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-ES" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-SE" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-CH" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-TR" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-UA" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-GB" href="https://www.aqara.com/eu/"/>
+<link rel="alternate" hreflang="en-VA" href="https://www.aqara.com/eu/"/>
+<link rel="stylesheet" type="text/css" href="https://static-resource.aqara.com/css/common.css?1,790,145,622,385">
+<link rel="stylesheet" type="text/css" href="https://static-resource.aqara.com/css/animate.min.css?1,790,145,622,385"/>
+<link rel="stylesheet" type="text/css" href="https://static-resource.aqara.com/css/swiper.min.css?1,790,145,622,385"/>
+<link rel="stylesheet" type="text/css" href="https://static-resource.aqara.com/css/header_footer.css?1,790,145,622,385"/>
+<link rel="stylesheet" type="text/css" href="https://static-resource.aqara.com/css/mo_header.css?1,790,145,622,385"/>
+<link type="text/css" rel="stylesheet" href="https://static-resource.aqara.com/css/project_pop.css?1,790,145,622,385"/>
+<link type="text/css" rel="stylesheet" href="https://static-resource.aqara.com/css/iconfont.css?1,790,145,622,385"/>
+<link type="text/css" rel="stylesheet" href="https://static-resource.aqara.com/css/jquery.mCustomScrollbar.css?1,790,145,622,385"/>
+
+<link type="text/css" rel="stylesheet" href="https://static-resource.aqara.com/css/xiugai.css?1,790,145,622,385"/>
+
+<script type="text/javascript" src="https://static-resource.aqara.com/js/jquery-1.11.1.min.js?1,790,145,622,385"></script>
+
+
+<script type="text/javascript" src="https://static-resource.aqara.com/js/base.js?1,790,145,622,385"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/wow.min.js?1,790,145,622,385"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/common.js?1,790,145,622,385"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/swiper4.5.0.min.js?1,790,145,622,385" charset="utf-8"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/pop.js?1,790,145,622,385"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/business_address.js?1,790,145,622,385"></script>
+<script type="text/javascript" src="https://static-resource.aqara.com/js/jquery.mCustomScrollbar.concat.min.js?1,790,145,622,385"></script>
+
+<script type="text/javascript">
+    $(function () {
+        var ooo_lock = true;
+        function ajax_city_other(){
+            $.ajax({
+                type: "GET",
+                async: false,
+                url: "https://gw.aqaramaster.com/usercenter/base/address/listAll",
+                dataType: "json",
+                success: function(data){
+                    if(data.code == 200 && data.data.length){
+                        Address = data.data;
+                    }
+                }
+            })
+        }
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function normalizeNavLink(link) {
+            var normalized = (link || '').trim();
+            if (!normalized) {
+                return normalized;
+            }
+            if (/^(https?:)?\/\//i.test(normalized) || /^(javascript|data|vbscript):/i.test(normalized)) {
+                return normalized;
+            }
+            if (normalized.charAt(0) !== '/') {
+                normalized = '/' + normalized;
+            }
+            return normalized;
+        }
+
+        navTopClick = function(tId,tHref,tText){
+            // var tHref = $.trim($('.nav_top a').attr('href'))
+            // console.log(tHref)
+            // var tId = $.trim($('.nav_top a').attr('id'))
+            // console.log(tId)
+            // var tText = $.trim($('.nav_top a').text())
+            // console.log(tText)
+            var link = normalizeNavLink(tHref);
+            if((link != undefined && link.length>0) && (tId != undefined && tId.length>0)){
+                setTopVisits(tId, link, tText)
+            }
+        }
+
+        function setTopVisits(id,link,name){
+            $.ajax({
+                // url: 'http://localhost:8082/jeecg-boot/navigation/setClick',
+                url: '/jeecg-boot/navigation/setClick',
+                data: JSON.stringify({
+                    navId: id,
+                    navName: name,
+                    navLink: link,
+                    // 1头部；2底部
+                    navType: 1,
+                }),
+                type: 'post',
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (res) {
+                    // 仅做点击统计，不再接管跳转，避免打包环境中点击被脚本阻断。
+                },
+                error: function (xhr, errorMessage, e) {
+                    // 统计失败不影响页面跳转。
+                }
+            })
+        }
+
+        $('.header .nav ul.clearfix li').click(function () {
+            var NName = $.trim($(this).text());
+            setCookie("NavName", NName, 1);
+        })
+        $('.footer .footer_top ul li dt').click(function () {
+            var NName = $.trim($(this).text());
+            setCookie("NavName", NName, 1);
+        })
+        $('.footer .footer_top ul li dd').click(function () {
+            var NName = $.trim($(this).parent().find('dt').text());
+            setCookie("NavName", NName, 1);
+        })
+        $('.logo').click(function () {
+            var NName = "wu";
+            setCookie("NavName", NName, 1);
+        })
+        $('.header .nav ul.clearfix li').each(function (inn, ell) {
+            if ($.trim($(ell).text()) == getCookie('NavName')) {
+                $(ell).addClass('active').siblings().removeClass('active')
+            }
+        })
+
+
+        $(".search_input input").keydown(function (e) {
+            if (e.which == 13) {
+                //导航 PC端 触发后执行
+                let val = $('#seek1').val();
+                if (val != null && val != '') {
+                    window.location.href = "search_prod?search=" + val
+                }
+            }
+        });
+        $(".mo_s_input input").keydown(function (e) {
+            if (e.which == 13) {
+                //导航 移动端  触发后执行
+                let val = $('#seek2').val();
+                if (val != null && val != '') {
+                    window.location.href = "search_prod?search=" + val
+                }
+            }
+        });
+
+
+        $(".get_code").on("click", function () {
+            var phone = $(".cphone").val() ? $(".cphone").val() : $("[name='cphone']").val()
+            $.ajax({
+                url: '/jeecg-boot/form/sendCode',
+                data: {
+                    phone: phone,
+                },
+                type: 'post',
+                contentType: "application/x-www-form-urlencoded",
+                dataType: 'json',
+                success: function (res) {
+                    console.log(res)
+                },
+                error: function (xhr, errorMessage, e) {
+                    alert(e)
+                }
+            })
+        })
+
+
+        $("#fancy_reg").find(".reg_close_inner").on("click", function () {
+            $("#fancy_reg").fadeOut();
+            $("html").removeClass("fancy_fixed");
+            $("body>*:not('.fancy_cover_lang')").removeClass("fancy_dim");
+        });
+
+        $(".header .btn_lang").find(".lang_selected").on("click", function () {
+            $(".fancy_cover_lang").height($(window).height());
+            $("#fancy_reg").find(".fancy_wrapper_lang").css("height", $(window).height() * 0.8);
+            $("#fancy_reg").find(".fancy_box").mCustomScrollbar();
+            $("body>*:not('.fancy_cover_lang')").addClass("fancy_dim");
+            $("#fancy_reg").fadeIn();
+            $("html").addClass("fancy_fixed");
+        });
+
+        $('.mo_nav .nav_btn').click(function () {
+            $('.mo_searchCon').removeClass('active')
+            $(this).toggleClass('active')
+            $('.mo_headerCon').toggleClass('active')
+            $('.mo_navCon').toggleClass('active')
+            $('body').toggleClass('active')
+        })
+        $('.mo_langu').click(function () {
+            $('.mo_nav .nav_btn').removeClass('active')
+            $('.mo_navCon').removeClass('active')
+            $('.mo_languCon').addClass('active')
+            $('.mo_languNav').addClass('active')
+            $('.mo_headerCon').addClass('active')
+            $('body').addClass('active')
+        })
+        $('.mo_search').click(function () {
+            $('.mo_nav .nav_btn').removeClass('active')
+            $('.mo_navCon').removeClass('active')
+            $('.mo_searchCon').addClass('active')
+            $('.mo_searchNav').addClass('active')
+            $('.mo_headerCon').addClass('active')
+            $('body').addClass('active')
+        })
+        $('.mo_s_clock').click(function () {
+            $('.mo_searchCon').removeClass('active')
+            $('.mo_searchNav').removeClass('active')
+            $('.mo_headerCon').removeClass('active')
+            $('.mo_languCon').removeClass('active')
+            $('.mo_languNav').removeClass('active')
+            $('body').removeClass('active')
+        })
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            mousewheel: true,
+            keyboard: true,
+        });
+
+
+        //初始化省
+        function province() {
+            $('.form_cover_top .area_city').html('');
+            $('.form_cover_top .area_province').html('');
+            $('.form_cover_top .area_area').html('');
+            $.each(Address, function (i, item) {
+                var opt = $('<li data-code="'+ item.code + '">' + item.addressName + '</li>');
+                $('.form_cover_top .area_province').append(opt);
+            })
+            $(".form_cover_top .area_province").mCustomScrollbar();
+        }
+
+        //点击选择框时，显示省市区县下拉
+        $('.form_cover_top .sel_result.top').on("click", function (ev) {
+            $('.form_cover_top .area_city li').hide();
+            $('.form_cover_top .area_area li').hide();
+
+            ev.stopPropagation();
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next().slideUp();
+            } else {
+                $(this).addClass("active");
+                $(this).next().slideDown();
+                $(this).parents(".pro_con").removeClass("c_error");
+                $(this).siblings(".form_tip").removeClass("active");
+                if ($("[name='carea']").val()) {
+                    // console.log($(".area_province li.active")[0].offsetTop)
+                    $(".form_cover_top .area_province").mCustomScrollbar("scrollTo", $(".area_province li.active")[0].offsetTop);
+                    // $(".form_cover_top .area_city").mCustomScrollbar("scrollTo",$(".area_city li.active")[0].offsetTop);
+                    // $(".form_cover_top .area_area").mCustomScrollbar("scrollTo",$(".area_area li.active")[0].offsetTop);
+                }
+            }
+        });
+        //点击请选择省份
+        $(document).on("click", '.form_cover_top .sel_province', function () {
+            $(".form_cover_top .sel_city").removeClass("active");
+            $(".form_cover_top .sel_shop").removeClass("active");
+            $(".form_cover_top .sel_shop").next().slideUp();
+            $(".form_cover_top .sel_city").next().slideUp();
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next().slideUp();
+            } else {
+                $(this).addClass("active");
+                $(this).next().slideDown();
+            }
+        });
+        //省份选择
+        $(document).on("click", '.form_cover_top .area_province li', function () {
+
+            var d_c1 = $(this).attr('data-code');
+            var d_t2 = $(this).text();
+            $('.in_hide1').val(d_c1)
+            $('.in_hide2').val(d_t2)
+
+            $('.form_cover_top .area_city li').show()
+            if ($(window).width() <= 479) {
+                $(this).parents(".area_province").hide();
+                $(this).parents(".area_province").siblings('.sel_province').removeClass("active");
+                $(this).parents(".area_province").siblings('.sel_province').find("span").text($(this).text());
+                $(this).parents(".area_province").siblings('.sel_city span').html('<li>请选择城市</li>');
+                $(this).parents(".area_province").siblings('.sel_area span').html('<li>请选择区县</li>');
+            }
+
+            $(this).parents('.area_all').find(".area_city").mCustomScrollbar("destroy");
+            $(this).parents('.area_all').find(".area_area").mCustomScrollbar("destroy");
+
+            // $(this).parents(".area_province").siblings(".area_city").mCustomScrollbar("destroy");
+            $(this).parents(".area_province").siblings(".area_city").empty();
+            // $(this).parents(".area_province").siblings(".area_area").mCustomScrollbar("destroy");
+            $(this).parents(".area_province").siblings(".area_area").empty();
+            $(this).parents(".area_all").siblings('.sel_result').find("span").text("请选择");
+            $(this).parents(".area_all").siblings("[name='carea']").val('');
+            $(this).parents(".area_all").find("li").removeClass("active");
+            if (!$(this).hasClass("active")) {
+                $(this).addClass("active").siblings().removeClass("active");
+            }
+            $.each(Address, function (i, item) {
+                if (item.addressName == $(".form_cover_top .area_province li.active").text()) {
+                    cityJson = item.childs;
+
+                    $.each(cityJson, function (i, item) {
+                        var opt = $('<li data-code="'+item.code+'">' + item.addressName + '</li>');
+                        $('.area_city').append(opt);
+                    });
+                }
+            })
+
+            $(".form_cover_top .area_city").mCustomScrollbar();
+
+        });
+        //点击请选择城市
+        $(document).on("click", '.form_cover_top .sel_city', function () {
+            $('.form_cover_top .area_area li').show();
+            if ($(this).siblings('.sel_province').find("span").text() == "请选择省份") {
+                return false;
+            }
+            $(this).siblings(".sel_province").removeClass("active");
+            $(this).siblings(".sel_area").removeClass("active");
+            $(this).siblings(".sel_area").next().slideUp();
+            $(this).siblings(".sel_province").next().slideUp();
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next().slideUp();
+            } else {
+                $(this).addClass("active");
+                $(this).next().slideDown();
+            }
+        });
+        //市选择
+        $(document).on("click", ".form_cover_top .area_city li", function () {
+
+            var d_c3 = $(this).attr('data-code');
+            var d_t4 = $(this).text();
+            $('.in_hide3').val(d_c3)
+            $('.in_hide4').val(d_t4)
+
+            if ($(window).width() <= 479) {
+                $(this).parents(".area_city").hide();
+                $(this).parents(".area_city").siblings('.sel_city').removeClass("active");
+                $(this).parents(".area_city").siblings('.sel_city').find("span").text($(this).text());
+                $(this).parents(".area_city").siblings('.sel_area').find("span").text("请选择区县");
+            }
+            $(this).parents(".area_city").siblings(".area_area").mCustomScrollbar("destroy");
+            $(this).parents(".area_city").siblings('.area_area').empty();
+            if (!$(this).hasClass("active")) {
+                $(this).addClass("active").siblings().removeClass("active");
+            }
+            $.each(Address, function (i, item) {
+
+                if (item.addressName == $(".form_cover_top .area_province li.active").text()) {
+                    cityJson = item.childs
+                    $.each(cityJson, function (i, item) {
+
+                        if (item.addressName == $(".form_cover_top .area_city li.active").text()) {
+
+                            areaJson = item.childs
+
+                            $.each(areaJson, function (i, item) {
+                                var opt = $('<li data-code="'+item.code+'">' + item.addressName + '</li>');
+                                $('.form_cover_top .area_area').append(opt);
+                            });
+                        }
+                    });
+                }
+            })
+            $(".form_cover_top .area_area").mCustomScrollbar();
+        });
+        //点击请选择区县
+        $(document).on("click", '.form_cover_top .sel_area', function () {
+            if ($(this).siblings('.sel_province').find("span").text() == "请选择省份" || $(this).siblings('.sel_city').find("span").text() == "请选择城市") {
+                return false;
+            }
+            $(this).siblings(".sel_province").removeClass("active");
+            $(this).siblings(".sel_city").removeClass("active");
+            $(this).siblings(".sel_province").next().slideUp();
+            $(this).siblings(".sel_city").next().slideUp();
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next().slideUp();
+            } else {
+                $(this).addClass("active");
+                $(this).next().slideDown();
+            }
+        });
+        //区县选择
+        $(document).on("click", ".form_cover_top .area_area li", function () {
+            var pron = $(this).parents(".area_area").siblings(".area_province").find("li.active").text();
+            var city = $(this).parents(".area_area").siblings(".area_city").find("li.active").text();
+            if (!$(this).hasClass("active")) {
+                $(this).addClass("active").siblings().removeClass("active");
+            }
+            var area = $(this).text();
+            $('.in_hide5').val(area)
+
+            if ($(window).width() <= 479) {
+                $(this).parents(".area_area").hide();
+                $(this).parents(".area_area").siblings('.sel_area').removeClass("active");
+                $(this).parents(".area_area").siblings('.sel_area').find("span").text($(this).text());
+            }
+            $(this).parents(".pro_con").removeClass("c_error");
+            $(this).parents(".area_all").siblings(".sel_result").find("span").text(pron + city + area);
+            $(this).parents(".area_all").siblings("[name='carea']").val(pron + city + area);
+            $(this).parents(".area_all").siblings('.sel_result').removeClass("active");
+            $(this).parents(".area_all").siblings('.sel_result').next().hide();
+        });
+
+        // $('.sel_result').on("click",function(){
+        // 	if($(this).hasClass("active")){
+        // 		$(this).removeClass("active");
+        // 		$(this).next().hide();
+        // 	}else{
+        // 		$(this).addClass("active");
+        // 		$(this).next().show();
+        // 	}
+        // });
+
+        //点击空白处隐藏弹出层
+        $(document).click(function (event) {
+            var _con = $('.form_cover_top .sel_result.top,.area_all'); // 设置目标区域
+            if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+                $('.form_cover_top .sel_result.top').removeClass("active");
+                $('.form_cover_top .area_all').hide();
+                if ($(".form_cover_top").find(".form_wrapper.open").find(".sel_result.top span").text() == "请选择") {
+                    $('.form_cover_top .area_all').find("li.active").removeClass("active");
+                    $(".form_cover_top .area_city").empty();
+                    $(".form_cover_top .area_area").empty();
+                }
+
+                if ($(window).width() <= 479) {
+                    $(".form_cover_top .sel_province").removeClass("active");
+                    $(".form_cover_top .sel_city").removeClass("active");
+                    $(".form_cover_top .sel_area").removeClass("active");
+                    $('.form_cover_top .area_province').hide();
+                    $('.form_cover_top .area_city').hide();
+                    $('.form_cover_top .area_area').hide();
+                }
+            }
+        });
+
+        var oTextarea = $(".form_item_textarea").find("textarea");
+        oTextarea.on("focus", function () {
+            $(this).parents("dd").addClass("txt_focus")
+        });
+        oTextarea.on("blur", function () {
+            $(this).parents("dd").removeClass("txt_focus")
+        });
+        oTextarea.on("keyup", function () {
+            $("#word_now").text(oTextarea.val().length);
+        });
+
+        var _oTextarea = $("#fancy_prew").find(".txt_con textarea");
+        _oTextarea.on("keyup", function () {
+            $("#fancy_prew").find(".sel_length i").text(_oTextarea.val().length);
+        });
+        _oTextarea.on("focus", function () {
+            $(this).closest("div").addClass("txt_focus");
+        });
+        _oTextarea.on("blur", function () {
+            $(this).closest("div").removeClass("txt_focus");
+        });
+
+        $("#open_customized").on("click", function () {
+
+            if(ooo_lock){
+                ajax_city_other();
+                province();
+                ooo_lock = false;
+            }
+            $(".form_cover_top").height($(window).height());
+
+            if ($(window).width() > 960) {
+                if ($(window).height() < 780) {
+
+                    $("#form_customized").css("height", $(window).height() * 0.8);
+
+                    $("#form_customized").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#form_customized").addClass("autoH")
+                }
+
+
+            } else if ($(window).width() <= 960 && $(window).width() > 768) {
+
+                if ($(window).height() < 730) {
+
+                    $("#form_customized").css("height", $(window).height() * 0.8);
+
+                    $("#form_customized").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#form_customized").addClass("autoH")
+                }
+
+            } else {
+                if ($(window).height() < 700) {
+
+                    $("#form_customized").css("height", $(window).height() * 0.8);
+
+                    $("#form_customized").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#form_customized").addClass("autoH")
+                }
+            }
+            $("body>*:not('.form_cover_top')").addClass("fancy_dim");
+            $(".form_cover_top").fadeIn();
+            $("#form_customized").fadeIn();
+            $("html").addClass("fancy_fixed");
+
+
+        });
+
+        $("#open_prew").on("click", function () {
+
+            if(ooo_lock){
+                ajax_city_other();
+                province();
+                ooo_lock = false;
+            }
+            $(".form_cover_top").height($(window).height());
+
+            if ($(window).width() > 960) {
+                if ($(window).height() < 800) {
+
+                    $("#fancy_prew").css("height", $(window).height() * 0.8);
+
+                    $("#fancy_prew").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#fancy_prew").addClass("autoH")
+                }
+
+
+            } else if ($(window).width() <= 960 && $(window).width() > 640) {
+
+                if ($(window).height() < 750) {
+
+                    $("#fancy_prew").css("height", $(window).height() * 0.8);
+
+                    $("#fancy_prew").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#fancy_prew").addClass("autoH")
+                }
+
+            } else {
+                if ($(window).height() < 700) {
+
+                    $("#fancy_prew").css("height", $(window).height() * 0.8);
+
+                    $("#fancy_prew").find(".form_box").mCustomScrollbar();
+                } else {
+                    $("#fancy_prew").addClass("autoH")
+                }
+            }
+            $("body>*:not('.form_cover_top')").addClass("fancy_dim");
+            $(".form_cover_top").fadeIn();
+            $("#fancy_prew").fadeIn();
+            $("html").addClass("fancy_fixed");
+
+        });
+
+        // 正则验证姓名
+        var userPattern = /^[a-zA-Z0-9_]{1,16}$/;
+        // 正则验证手机号
+        // var phonePattern = /^[1][3,4,5,7,8,9][0-9]{9}$/
+        var phonePattern = /^\d*$/
+        var userInp = $("#form_customized").find(".form_user input");
+        var phoneInp = $("#form_customized").find(".form_phone input");
+        var verifInp = $("#form_customized").find(".form_verif input");
+        var regInp = $("#form_customized").find(".form_reg input");
+        var describe = $("#form_customized").find(".form_text textarea");
+
+        $(".form_box").find("input").on("focus", function () {
+            $(this).parent("dd").siblings(".form_tip").removeClass("active");
+            $(this).closest("dd").addClass("txt_focus")
+        });
+
+        $(".form_box").find("input").on("blur", function () {
+            $(this).closest("dd").removeClass("txt_focus")
+        });
+
+
+        $(".form_reg").find("dd").on("click", function () {
+            $(this).siblings(".form_tip").removeClass("active")
+        });
+
+
+        //获取验证码倒计时
+        var time = 60;
+        var interval;
+        $(".form_verif .get_verif").click(function () {
+            var time = 60
+            $(this).attr("disabled", "disabled"); //点击一次不可再点
+            var that = $(this);
+            interval = setInterval(function () { //定义定时器
+                that.text("重新发送" + time + "s");
+                time--;
+                if (time == 0) {
+                    clearInterval(interval); //清除定时器
+                    that.text("获取验证码");
+                    that.removeAttr("disabled"); //删除这个属性
+                    time = 60;
+                }
+            }, 1000);
+        });
+
+        //获取验证码倒计时
+
+        $(".yzm_all button").click(function () {
+            var time = 60
+            $(this).attr("disabled", "disabled"); //点击一次不可再点
+            var that = $(this);
+            interval = setInterval(function () { //定义定时器
+                that.text("重新发送" + time + "s");
+                time--;
+                if (time == 0) {
+                    clearInterval(interval); //清除定时器
+                    that.text("获取验证码");
+                    that.removeAttr("disabled"); //删除这个属性
+                    time = 60;
+                }
+            }, 1000);
+        });
+
+        var form_flag = true;
+
+
+        $("#form_submit").on("click", function () {
+            var provinceCode = $.trim($(".in_hide1").val());
+            var province = $.trim($(".in_hide2").val());
+            var cityCode = $.trim($(".in_hide3").val());
+            var city = $.trim($(".in_hide4").val());
+            var area_ = $.trim($(".in_hide5").val());
+
+            var infoCount = 0
+
+            if ($.trim(userInp.val()) == "") {
+                $("#form_customized").find(".form_user .form_tip_blank").addClass("active");
+            } else {
+
+                infoCount++
+            }
+
+
+            if ($.trim(phoneInp.val()) == "") {
+                $("#form_customized").find(".form_phone .form_tip_blank").addClass("active")
+            } else {
+                if (!phonePattern.test($.trim(phoneInp.val()))) {
+                    $("#form_customized").find(".form_phone .form_tip_error").addClass("active")
+                } else {
+                    infoCount++
+                }
+            }
+
+            if ($.trim(verifInp.val()) == "") {
+                $("#form_customized").find(".form_verif .form_tip_blank").addClass("active")
+            } else {
+                infoCount++
+            }
+            ;
+
+            //地区
+            if ($.trim($("#form_customized").find("[name='carea']").val()) == "") {
+                $("#form_customized").find("[name='carea']").closest("div").addClass("c_error");
+                $("#form_customized").find("[name='carea']").siblings(".form_tip").addClass("active")
+
+            } else {
+                $("#form_customized").find("[name='carea']").closest("div").removeClass("c_error");
+                $("#form_customized").find("[name='carea']").siblings(".form_tip").removeClass("active")
+                infoCount++
+            }
+
+            $("#form_customized").find(".form_tip").each(function () {
+                if ($(this).hasClass("active")) {
+                    form_flag = false
+                }
+            });
+            if ($("#form_customized").find(".form_box input").length == infoCount) {
+                form_flag = true
+            }
+
+            //隐私协议校验
+            if ($("#form_customized").find("[name='privacy']").prop("checked") == false) {
+                $("#form_customized").find("[name='privacy']").closest("div").addClass("c_error");
+                $("#form_customized").find("[name='privacy']").siblings(".form_tip").addClass("active");
+                form_flag = false;
+            } else {
+                $("#form_customized").find("[name='privacy']").closest("div").removeClass("c_error");
+                form_flag = true;
+            }
+
+
+            if (form_flag) {
+
+
+                // 发送表单数据
+                $.ajax({
+                    // url: 'http://localhost:8082/jeecg-boot/form/formSubmit',
+                    url: '/jeecg-boot/form/formSubmit',
+                    data: JSON.stringify({
+                        type: 1,
+                        name: userInp.val(),
+                        phone: phoneInp.val(),
+                        code: verifInp.val(),
+                        region: regInp.val(),
+                        describes: describe.val(),
+                        province: province,
+                        provinceCode: provinceCode,
+                        city: city,
+                        cityCode: cityCode,
+                        area: area_
+                    }),
+                    type: 'post',
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.result) {
+                            $(".form_suc").fadeIn();
+                            $("#form_customized").fadeOut();
+                            $("#form_customized").find(".form_box input").val("");
+                            $("#form_customized").find(".form_item_slc input").data("id", "")
+                            $("#form_customized").find(".form_item_textarea textarea").val("");
+                            $("#word_now").text("0");
+                            $("#form_customized").find(".form_box .form_tip").removeClass("active")
+                            setTimeout(function () {
+                                $(".form_suc").fadeOut();
+                                $(".form_cover_top").fadeOut();
+                                $("body>*:not('form_cover_top')").removeClass("fancy_dim");
+                            }, 1000)
+                        } else {
+                            alert(res.message)
+                        }
+
+                    },
+                    error: function (xhr, errorMessage, e) {
+                        alert(e)
+                    }
+                });
+
+
+            }
+
+        });
+
+        var prew_flag = true;
+
+        function checkPhone(phone) {
+            var reg = /^\d*$/
+            // var reg=/^[1][3,4,5,7,8,9][0-9]{9}$/;
+            if (!reg.test(phone)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $("#fancy_submit").on("click", function () {
+            var infoCount = 0
+            var name = $.trim($("[name='cname']").val());
+            var phone = $.trim($("[name='cphone']").val());
+            var code = $.trim($("[name='ccode']").val());
+            var area = $.trim($("#fancy_prew").find("[name='carea']").val());
+            var content = $.trim($("[name='content']").val());
+
+            var provinceCode = $.trim($(".in_hide1").val());
+            var province = $.trim($(".in_hide2").val());
+            var cityCode = $.trim($(".in_hide3").val());
+            var city = $.trim($(".in_hide4").val());
+            var area_ = $.trim($(".in_hide5").val());
+
+            //姓名
+            if (!name) {
+                $("[name='cname']").closest("div").addClass("c_error");
+            } else {
+                $("[name='cname']").closest("div").removeClass("c_error");
+                infoCount++
+            }
+            //手机号
+            if (!checkPhone(phone)) {
+
+                $("[name='cphone']").closest("div").addClass("c_error");
+            } else {
+                $("[name='cphone']").closest("div").removeClass("c_error");
+                infoCount++
+            }
+
+            //验证码
+            if (!code) {
+                $("[name='ccode']").parent().parent().addClass("c_error");
+            } else {
+                $("[name='ccode']").parent().parent().removeClass("c_error");
+                infoCount++
+            }
+            //地区
+            if (!area) {
+                $("#fancy_prew").find("[name='carea']").closest("div").addClass("c_error");
+
+            } else {
+                $("#fancy_prew").find("[name='carea']").closest("div").removeClass("c_error");
+                infoCount++
+            }
+            //需求描述
+            // if(!content){
+            // 	$("[name='content']").closest(".sel_bot").addClass("c_error");
+            // }else{
+            // 	$("[name='content']").closest(".sel_bot").removeClass("c_error");
+            // 	infoCount ++
+            // }
+
+
+            if ($("#fancy_prew").find(".c_error").length > 0) {
+                prew_flag = false
+            }
+            ;
+
+            if ($("#fancy_prew").find("input").length == infoCount) {
+                prew_flag = true
+            }
+
+
+            if (prew_flag) {
+                // 发送表单数据
+                $.ajax({
+                    // url: 'http://localhost:8082/jeecg-boot/form/formSubmit',
+                    url: '/jeecg-boot/form/formSubmit',
+                    data: JSON.stringify({
+                        type: 2,
+                        name: name,
+                        phone: phone,
+                        code: code,
+                        region: area,
+                        describes: content,
+                        province: province,
+                        provinceCode: provinceCode,
+                        city: city,
+                        cityCode: cityCode,
+                        area: area_
+                    }),
+                    type: 'post',
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.result) {
+                            $(".form_suc").fadeIn();
+                            $("#fancy_prew").fadeOut();
+                            $("#fancy_prew").find("input").val("");
+                            $("#fancy_prew").find(".sel_result.top span").text("");
+                            $("#fancy_prew").find(".txt_con textarea").val("");
+                            $("#fancy_prew").find(".sel_length i").text("0");
+                            $(".c_error").removeClass("c_error");
+                            setTimeout(function () {
+                                $(".form_suc").fadeOut();
+                                $(".form_cover_top").fadeOut();
+                                $("body>*:not('.form_cover_top')").removeClass("fancy_dim");
+                            }, 1000)
+                        } else {
+                            alert(res.message)
+                        }
+
+                    },
+                    error: function (xhr, errorMessage, e) {
+                        alert(e)
+                    }
+                });
+            }
+        });
+
+        $(".form_close_inner").on("click", function () {
+            var cl_btn = $(this)
+            var form_open = cl_btn.parents(".form_wrapper");
+            form_open.find('.sel_result').removeClass("active");
+            form_open.find('.sel_result span').text("请选择");
+            form_open.find('.area_all li.active').removeClass("active");
+            form_open.find("input").val("");
+            form_open.find("textarea").val("");
+            $("#word_now").text("0");
+            form_open.find('.area_all').hide();
+            form_open.find(".form_tip").removeClass("active");
+            form_open.find(".pro_con").removeClass("c_error");
+            form_open.fadeOut().removeClass("open");
+            $(".form_cover_top").fadeOut();
+            $("html").removeClass("fancy_fixed");
+            $("body>*:not('.form_cover')").removeClass("fancy_dim");
+            if ($(window).width() <= 479) {
+                form_open.find(".sel_province").removeClass("active");
+                form_open.find(".sel_city").removeClass("active");
+                form_open.find(".sel_area").removeClass("active");
+                form_open.find('.area_province').hide();
+                form_open.find('.area_city').hide();
+                form_open.find('.area_area').hide();
+            }
+            ;
+            clearInterval(interval);
+            $(".form_verif .get_verif").text("获取验证码");
+            $(".form_verif .get_verif").removeAttr("disabled");
+
+
+        });
+
+        $("#fancy_close").on("click", function () {
+            var fancy_prew = $("#fancy_prew");
+            fancy_prew.find('.sel_result').removeClass("active");
+            fancy_prew.find('.sel_result span').text("请选择");
+            fancy_prew.find('.area_all li.active').removeClass("active");
+            fancy_prew.find("input").val("");
+            fancy_prew.find("textarea").val("");
+            fancy_prew.find(".sel_length i").text("0")
+            fancy_prew.find('.area_all').hide();
+            fancy_prew.find(".c_error").removeClass("c_error");
+            fancy_prew.fadeOut().removeClass("open");
+            $(".form_cover_top").fadeOut();
+            $("html").removeClass("fancy_fixed");
+            $("body>*:not('.form_cover_top')").removeClass("fancy_dim");
+            if ($(window).width() <= 479) {
+                fancy_prew.find(".sel_province").removeClass("active");
+                fancy_prew.find(".sel_city").removeClass("active");
+                fancy_prew.find(".sel_area").removeClass("active");
+                fancy_prew.find('.area_province').hide();
+                fancy_prew.find('.area_city').hide();
+                fancy_prew.find('.area_area').hide();
+            }
+            clearInterval(interval);
+            $(".yzm_all button").text("获取验证码");
+            $(".yzm_all button").removeAttr("disabled");
+        });
+
+        if (IsPC()) {
+            $(".float_btn").hover(function () {
+                $(".float_bar").stop().animate({
+                    width: 270
+                });
+                $(".float_bar").addClass("open")
+            }, function () {
+                $(".float_bar").stop().animate({
+                    width: 0
+                });
+                $(".float_bar").removeClass("open")
+            })
+        } else {
+            $(".float_btn").click(function () {
+                if (!$(".float_bar").hasClass('open')) {
+                    $(".float_bar").stop().animate({
+                        width: 270,
+                        opacity: 1
+                    });
+                    $(".float_bar").addClass("open")
+                } else {
+                    $(".float_bar").stop().animate({
+                        width: 0,
+                        opacity: 0
+                    });
+                    $(".float_bar").removeClass("open")
+                }
+            })
+        }
+
+    })
+</script>
+</head>
+
+<body>
+<!--[if lt IE 9]>
+  <p class="browserupgrade">您在使用&nbsp;<strong></strong>&nbsp;标准浏览本网站。请 <a href="http://browsehappy.com/" target="_blank">升级Internet Explorer浏览器</a> 来更好的体验本网站.</p>
+<![endif]-->
+
+<!--header begin-->
+
+
+<style>
+    .aqara-nav-header {
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .aqara-nav-header * {
+        box-sizing: border-box;
+    }
+
+    .aqara-nav-header .desktop-header {
+        height: 64px;
+        padding: 0 60px;
+        background: #fff;
+        backdrop-filter: blur(18px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .aqara-nav-header .brand img {
+        display: block;
+        height: auto;
+        filter: invert(1);
+    }
+
+    .aqara-nav-header .desktop-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        flex: 1;
+        margin: 0 28px 0 44px;
+        min-width: 0;
+        height: 100%;
+    }
+
+    .aqara-nav-header .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 64px;
+        white-space: nowrap;
+    }
+
+    .aqara-nav-header .nav-link,
+    .aqara-nav-header .mobile-nav-link {
+        color: rgba(0, 0, 0, 0.88);
+        text-decoration: none;
+        transition: color .2s ease;
+        font-size: 16px;
+    }
+
+    .aqara-nav-header .nav-item:hover > .nav-link,
+    .aqara-nav-header .nav-link:hover {
+        color: #4660FF;
+    }
+
+    .aqara-nav-header .nav-link.is-active,
+    .aqara-nav-header .sub-link.is-active,
+    .aqara-nav-header .mobile-accordion-link.is-active,
+    .aqara-nav-header .mobile-sub-link.is-active {
+        color: #4660FF;
+        font-weight: 600;
+    }
+
+    .aqara-nav-header .nav-item.is-active > .nav-link,
+    .aqara-nav-header .mobile-accordion.is-active > .mobile-accordion-head > .mobile-accordion-link {
+        color: #4660FF;
+        font-weight: 600;
+    }
+
+    .aqara-nav-header .dropdown-menu {
+        --join-radius: 10px;
+
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        background: #ffffff;
+        border-radius: 0 0 12px 12px;
+        padding: 16px;
+        min-width: 140px;
+        overflow: visible;
+
+        /* 下拉动画：以顶部为轴，hover 时向下展开，离开时向上收起 */
+        opacity: 0;
+        visibility: hidden;
+        transform-origin: top center;
+        transform: translateX(-50%) translateY(-6px) scaleY(0.82);
+        transition:
+            opacity 0.20s ease,
+            transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0s linear 0.28s;
+        will-change: transform, opacity;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /*
+     * 下拉框顶部两侧的“反向圆角 / 内凹倒角”。
+     * 伪元素本身保持透明，利用白色 box-shadow 补出与顶部导航栏
+     * 连续的圆弧，因此下拉框和导航栏看起来像一个整体。
+     */
+    .aqara-nav-header .dropdown-menu::before,
+    .aqara-nav-header .dropdown-menu::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: var(--join-radius);
+        height: var(--join-radius);
+        pointer-events: none;
+    }
+
+    .aqara-nav-header .dropdown-menu::before {
+        left: calc(-1 * var(--join-radius));
+        border-top-right-radius: var(--join-radius);
+        box-shadow: calc(var(--join-radius) / 2) calc(-1 * var(--join-radius) / 2) 0 calc(var(--join-radius) / 2) #ffffff;
+    }
+
+    .aqara-nav-header .dropdown-menu::after {
+        right: calc(-1 * var(--join-radius));
+        border-top-left-radius: var(--join-radius);
+        box-shadow: calc(-1 * var(--join-radius) / 2) calc(-1 * var(--join-radius) / 2) 0 calc(var(--join-radius) / 2) #ffffff;
+    }
+
+    .aqara-nav-header .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0) scaleY(1);
+        transition-delay: 0s;
+    }
+
+    .aqara-nav-header .dropdown-list {
+        display: grid;
+        gap: 16px;
+    }
+
+    .aqara-nav-header .sub-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(0, 0, 0, 0.82);
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 1.2;
+        transition: color .2s ease;
+    }
+
+    .aqara-nav-header .sub-link:hover {
+        color: #4660FF;
+    }
+
+    .aqara-nav-header .sub-mark {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #d6dbff;
+        flex: 0 0 auto;
+    }
+
+    .aqara-nav-header .sub-icon-img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        flex: 0 0 auto;
+        display: block;
+    }
+
+    .aqara-nav-header .desktop-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex: 0 0 auto;
+        height: 100%;
+    }
+
+    .aqara-nav-header .icon-btn {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: rgba(0, 0, 0, 0.82);
+        cursor: pointer;
+        transition: background-color .2s ease, color .2s ease;
+    }
+
+    .aqara-nav-header .icon-btn:hover {
+        background: rgba(70, 96, 255, 0.08);
+        color: #4660FF;
+    }
+
+    .aqara-nav-header .icon-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .aqara-nav-header .lang-selector {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .aqara-nav-header .lang-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        height: 40px;
+        padding: 0 16px;
+        border-radius: 999px;
+        border: 0;
+        background: #f4f5f7;
+        color: rgba(0, 0, 0, 0.86);
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .aqara-nav-header .lang-trigger svg {
+        width: 18px;
+        height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+    }
+
+    .aqara-nav-header .lang-dropdown,
+    .aqara-nav-header .search-overlay {
+        position: absolute;
+        top: 64px;
+        background: #fff;
+        border-radius: 0 0 16px 16px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity .2s ease, transform .25s ease, visibility 0s linear .25s;
+    }
+
+    .aqara-nav-header .nav-backdrop {
+        position: fixed;
+        inset: 64px 0 0 0;
+        background: rgba(9, 12, 24, 0.26);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .22s ease, visibility 0s linear .22s;
+        z-index: 2300;
+    }
+
+    .aqara-nav-header .nav-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+
+    .aqara-nav-header .lang-selector:hover .lang-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scaleY(1);
+        transition-delay: 0s;
+    }
+
+    .aqara-nav-header .lang-dropdown {
+        --join-radius: 10px;
+
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 460px;
+        background: #ffffff;
+        border-radius: 0 0 16px 16px;
+        padding: 24px;
+        overflow: visible;
+
+        /* 下拉动画：从导航栏底部向下展开，离开 hover 后向上收起 */
+        opacity: 0;
+        visibility: hidden;
+        transform-origin: top right;
+        transform: translateY(-6px) scaleY(0.82);
+        transition:
+            opacity 0.20s ease,
+            transform 0.30s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0s linear 0.30s;
+        will-change: transform, opacity;
+    }
+
+    .aqara-nav-header .lang-dropdown::before,
+    .aqara-nav-header .lang-dropdown::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: var(--join-radius);
+        height: var(--join-radius);
+        pointer-events: none;
+    }
+
+    .aqara-nav-header .lang-dropdown::before {
+        left: calc(-1 * var(--join-radius));
+        border-top-right-radius: var(--join-radius);
+        box-shadow: calc(var(--join-radius) / 2) calc(-1 * var(--join-radius) / 2) 0 calc(var(--join-radius) / 2) #ffffff;
+    }
+
+    .aqara-nav-header .lang-dropdown::after {
+        right: calc(-1 * var(--join-radius));
+        border-top-left-radius: var(--join-radius);
+        box-shadow: calc(-1 * var(--join-radius) / 2) calc(-1 * var(--join-radius) / 2) 0 calc(var(--join-radius) / 2) #ffffff;
+    }
+
+    .aqara-nav-header .lang-group + .lang-group {
+        margin-top: 18px;
+    }
+
+    .aqara-nav-header .lang-group-title {
+        font-size: 14px;
+        color: #767676;
+        margin-bottom: 10px;
+    }
+
+    .aqara-nav-header .lang-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .aqara-nav-header .lang-card {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.88);
+        background: #f8f9fb;
+        transition: background-color .2s ease;
+    }
+
+    .aqara-nav-header .lang-card:hover {
+        background: #eef1ff;
+    }
+
+    .aqara-nav-header .lang-card .country {
+        font-size: 15px;
+    }
+
+    .aqara-nav-header .lang-card .language {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.52);
+        white-space: nowrap;
+    }
+
+    .aqara-nav-header .search-overlay {
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        border-radius: 0 0 16px 16px;
+        overflow: hidden;
+        z-index: 2300;
+    }
+
+    .aqara-nav-header .search-overlay-inner {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px 40px 32px;
+    }
+
+    .aqara-nav-header .search-overlay.is-open,
+    .aqara-nav-header .lang-dropdown.is-open,
+    .aqara-nav-header .mobile-panel.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scaleY(1);
+        transition-delay: 0s;
+    }
+
+    .aqara-nav-header .search-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 52px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: #f3f4f7;
+    }
+
+    .aqara-nav-header .search-box svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: #333;
+        stroke-width: 1.9;
+    }
+
+    .aqara-nav-header .search-box input {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: transparent;
+        font-size: 15px;
+        min-width: 0;
+    }
+
+    .aqara-nav-header .search-box-clear {
+        width: 28px;
+        height: 28px;
+        flex: 0 0 auto;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.06);
+        color: rgba(0, 0, 0, 0.56);
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .aqara-nav-header .search-box.has-value .search-box-clear {
+        display: inline-flex;
+    }
+
+    .aqara-nav-header .search-box-clear:hover {
+        background: rgba(0, 0, 0, 0.10);
+        color: rgba(0, 0, 0, 0.82);
+    }
+
+    .aqara-nav-header .hot-search {
+        margin-top: 18px;
+    }
+
+    .aqara-nav-header .hot-search-title {
+        font-size: 13px;
+        color: #7b7b7b;
+        margin-bottom: 10px;
+    }
+
+    .aqara-nav-header .hot-search-list {
+        display: grid;
+        gap: 8px;
+    }
+
+    .aqara-nav-header .hot-search-list a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(0, 0, 0, 0.84);
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .aqara-nav-header .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        padding: 0 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        color: #4660FF;
+        background: rgba(70, 96, 255, 0.10);
+        flex: 0 0 auto;
+    }
+
+    .aqara-nav-header .tag.tag-product {
+        color: #4660FF;
+        background: rgba(70, 96, 255, 0.10);
+    }
+
+    .aqara-nav-header .tag.tag-video {
+        color: #0F9D58;
+        background: rgba(15, 157, 88, 0.12);
+    }
+
+    .aqara-nav-header .tag.tag-news {
+        color: #F59E0B;
+        background: rgba(245, 158, 11, 0.14);
+    }
+
+    .aqara-nav-header .search-trigger-icon,
+    .aqara-nav-header .search-close-icon {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .aqara-nav-header .search-close-icon {
+        opacity: 0;
+        position: absolute;
+        transform: scale(0.75);
+    }
+
+    .aqara-nav-header .js-search-open {
+        position: relative;
+    }
+
+    .aqara-nav-header .js-search-open.is-open .search-trigger-icon {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    .aqara-nav-header .js-search-open.is-open .search-close-icon {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .aqara-nav-header .mobile-nav-bar,
+    .aqara-nav-header .mobile-panel,
+    .aqara-nav-header .mobile-spacer {
+        display: none;
+    }
+
+    .aqara-nav-header .mobile-trigger-icon,
+    .aqara-nav-header .mobile-trigger-close-icon {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .aqara-nav-header .mobile-trigger-close-icon {
+        opacity: 0;
+        position: absolute;
+        transform: scale(0.75);
+    }
+
+    .aqara-nav-header .js-mobile-menu-open,
+    .aqara-nav-header .js-mobile-search-open,
+    .aqara-nav-header .js-mobile-lang-open {
+        position: relative;
+    }
+
+    .aqara-nav-header .js-mobile-menu-open.is-open .mobile-trigger-icon,
+    .aqara-nav-header .js-mobile-search-open.is-open .mobile-trigger-icon,
+    .aqara-nav-header .js-mobile-lang-open.is-open .mobile-trigger-icon {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    .aqara-nav-header .js-mobile-menu-open.is-open .mobile-trigger-close-icon,
+    .aqara-nav-header .js-mobile-search-open.is-open .mobile-trigger-close-icon,
+    .aqara-nav-header .js-mobile-lang-open.is-open .mobile-trigger-close-icon {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    @media (max-width: 1100px) {
+        body.nav-overlay-open {
+            overflow: hidden;
+        }
+
+        .aqara-nav-header .desktop-header {
+            display: none;
+        }
+
+        .aqara-nav-header .mobile-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 0 16px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .aqara-nav-header .mobile-left,
+        .aqara-nav-header .mobile-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .aqara-nav-header .mobile-right {
+            gap: 0;
+        }
+
+        .aqara-nav-header .mobile-logo img {
+            display: block;
+            height: auto;
+            filter: invert(1);
+        }
+
+        .aqara-nav-header .mobile-panel {
+            display: block;
+            position: fixed;
+            inset: 64px 0 0 0;
+            background: #fff;
+            overflow-y: auto;
+            z-index: 2401;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: opacity .22s ease, transform .28s ease, visibility 0s linear .28s;
+        }
+
+        .aqara-nav-header .mobile-panel-body {
+            padding: 16px 20px 36px;
+        }
+
+        .aqara-nav-header .mobile-accordion {
+            border-bottom: 1px solid #ececec;
+        }
+
+    .aqara-nav-header .mobile-accordion-btn {
+        width: 100%;
+        min-height: 58px;
+        border: 0;
+        background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 0;
+            text-align: left;
+            color: rgba(0, 0, 0, 0.88);
+            font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .aqara-nav-header .mobile-accordion-head {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 58px;
+    }
+
+    .aqara-nav-header .mobile-accordion-link {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .aqara-nav-header .mobile-accordion-toggle {
+        flex: 0 0 42px;
+        width: 42px;
+        border: 0;
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .aqara-nav-header .mobile-accordion-btn svg {
+        width: 18px;
+        height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            transition: transform .24s ease;
+        }
+
+        .aqara-nav-header .mobile-accordion.open .mobile-accordion-btn {
+            color: #4660FF;
+        }
+
+        .aqara-nav-header .mobile-accordion.open .mobile-accordion-btn svg {
+            transform: rotate(180deg);
+        }
+
+        .aqara-nav-header .mobile-accordion.open .mobile-accordion-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .aqara-nav-header .mobile-accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+            transition: grid-template-rows .28s ease;
+        }
+
+        .aqara-nav-header .mobile-accordion.open .mobile-accordion-content {
+            grid-template-rows: 1fr;
+        }
+
+        .aqara-nav-header .mobile-accordion-inner {
+            min-height: 0;
+            overflow: hidden;
+            padding-bottom: 0;
+            transition: padding-bottom .28s ease;
+        }
+
+        .aqara-nav-header .mobile-accordion.open .mobile-accordion-inner {
+            padding-bottom: 10px;
+        }
+
+        .aqara-nav-header .mobile-sub-list {
+            display: grid;
+            gap: 8px;
+            padding: 0 0 8px 10px;
+        }
+
+        .aqara-nav-header .mobile-sub-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 42px;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.82);
+            font-size: 14px;
+        }
+
+        .aqara-nav-header .mobile-sub-link .sub-mark {
+            width: 8px;
+            height: 8px;
+        }
+
+        .aqara-nav-header .mobile-sub-link .sub-icon-img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .aqara-nav-header .mobile-search-box {
+            margin-top: 2px;
+        }
+
+        .aqara-nav-header .mobile-search-box input {
+            font-size: 15px;
+        }
+
+        .aqara-nav-header .mobile-lang-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .aqara-nav-header .mobile-lang-group-title {
+            font-size: 14px;
+            color: #767676;
+            margin-bottom: 10px;
+        }
+
+        .aqara-nav-header .mobile-lang-card {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            background: #f8f9fb;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.84);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .aqara-nav-header .mobile-lang-card .language {
+            color: rgba(0, 0, 0, 0.52);
+        }
+
+        .aqara-nav-header .mobile-search-panel,
+        .aqara-nav-header .mobile-lang-panel {
+            z-index: 2400;
+        }
+
+        .aqara-nav-header .mobile-lang-panel {
+            inset: 0;
+            z-index: 2402;
+        }
+
+        .aqara-nav-header .mobile-lang-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .aqara-nav-header .mobile-lang-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.88);
+        }
+
+        .aqara-nav-header .mobile-lang-close {
+            border: 0;
+            background: transparent;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.68);
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .aqara-nav-header .mobile-spacer {
+            display: block;
+            height: 64px;
+        }
+    }
+    </style>
+
+    <div class="aqara-nav-header">
+        <div class="nav-backdrop js-nav-backdrop"></div>
+    <header class="desktop-header">
+        <a class="brand" href="/index" data-nav-id="1531106115493441537" data-nav-href="/index" data-nav-title="首页">
+            <img src="https://static-resource.aqara.com/img/navigation_logo.png?1,790,145,618,765" alt="logo">
+        </a>
+
+        <nav class="desktop-nav">
+                        <div class="nav-item">
+                            <a class="nav-link" href="/spatial-intelligence" data-nav-id="1531106926873161730" data-nav-href="/spatial-intelligence" data-nav-title="空间智能">空间智能</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="/prodCenter" data-nav-id="1531106521799864321" data-nav-href="/prodCenter" data-nav-title="产品中心">产品中心</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="/homekit" data-nav-id="1531106632638541826" data-nav-href="/homekit" data-nav-title="Apple Home">Apple Home</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="/service_provider" data-nav-id="1531106868459089921" data-nav-href="/service_provider" data-nav-title="服务体验">服务体验</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="/tech_prod" data-nav-id="1531107086336405506" data-nav-href="/tech_prod" data-nav-title="技术支持">技术支持</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="javascript:;" data-nav-id="1531107818036994049" data-nav-href="javascript:;" data-nav-title="探索更多">探索更多</a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-list">
+                                            <a class="sub-link" href="/matter" data-nav-id="2093227786927714306" data-nav-href="/matter" data-nav-title="Matter">
+                                                    <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/matter-icon_1787899362496.png" alt="Matter">
+                                                <span>Matter</span>
+                                            </a>
+                                            <a class="sub-link" href="https://ankasa.cn/" data-nav-id="1569638611103977474" data-nav-href="https://ankasa.cn/" data-nav-title="用户社区">
+                                                    <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/comments-icon_1787899302156.png" alt="用户社区">
+                                                <span>用户社区</span>
+                                            </a>
+                                            <a class="sub-link" href="/prod" data-nav-id="2093227922525622273" data-nav-href="/prod" data-nav-title="视频中心">
+                                                    <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/video-icon_1787899390814.png" alt="视频中心">
+                                                <span>视频中心</span>
+                                            </a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="nav-item">
+                            <a class="nav-link" href="/brand_introduction" data-nav-id="1962691980390244354" data-nav-href="/brand_introduction" data-nav-title="关于我们">关于我们</a>
+                        </div>
+        </nav>
+
+        <div class="desktop-actions">
+            <button type="button" class="icon-btn js-search-open" aria-label="搜索" aria-expanded="false">
+                <svg class="search-trigger-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                </svg>
+                <svg class="search-close-icon" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12"></path>
+                    <path d="M18 6L6 18"></path>
+                </svg>
+            </button>
+            <div class="lang-selector">
+                <button type="button" class="lang-trigger js-lang-open">
+                    <span>选择您的国家/地区</span>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="lang-dropdown js-lang-dropdown">
+                            <div class="lang-group">
+                                <div class="lang-group-title">亚太</div>
+                                <div class="lang-grid">
+                                            <a class="lang-card" href="https://www.aqara.com/cn/">
+                                                <span class="country">中国大陆</span>
+                                                <span class="language">简体中文</span>
+                                            </a>
+                                            <a class="lang-card" href="https://www.aqaralife.kr/">
+                                                <span class="country">대한민국</span>
+                                                <span class="language">한글</span>
+                                            </a>
+                                            <a class="lang-card" href="https://www.aqara.com/jp/">
+                                                <span class="country">日本</span>
+                                                <span class="language">日本語</span>
+                                            </a>
+                                </div>
+                            </div>
+                            <div class="lang-group">
+                                <div class="lang-group-title">欧洲</div>
+                                <div class="lang-grid">
+                                            <a class="lang-card" href="https://www.aqara.com/eu/">
+                                                <span class="country">Europe</span>
+                                                <span class="language">English</span>
+                                            </a>
+                                            <a class="lang-card" href="https://www.aqara.com/de/">
+                                                <span class="country">Deutschland</span>
+                                                <span class="language">Deutsch</span>
+                                            </a>
+                                </div>
+                            </div>
+                            <div class="lang-group">
+                                <div class="lang-group-title">北美</div>
+                                <div class="lang-grid">
+                                            <a class="lang-card" href="https://www.aqara.com/us/">
+                                                <span class="country">United States</span>
+                                                <span class="language">English</span>
+                                            </a>
+                                </div>
+                            </div>
+                            <div class="lang-group">
+                                <div class="lang-group-title">其他国家与地区</div>
+                                <div class="lang-grid">
+                                            <a class="lang-card" href="https://www.aqara.com/en/">
+                                                <span class="country">Global</span>
+                                                <span class="language">English</span>
+                                            </a>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-overlay js-search-overlay">
+        <div class="search-overlay-inner">
+            <div class="search-box">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                </svg>
+                <input type="text" id="seek1" class="search_input" placeholder="输入关键词后回车搜索">
+                <button type="button" class="search-box-clear js-search-clear" aria-label="清除搜索">×</button>
+            </div>
+            <div class="hot-search">
+                <div class="hot-search-title">热门搜索</div>
+                <div class="hot-search-list">
+                                <a href="./search_prod?search=智能晾衣机 H1">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>智能晾衣机 H1</span>
+                                </a>
+                                <a href="./search_prod?search=筒射灯 T2">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>筒射灯 T2</span>
+                                </a>
+                                <a href="./search_prod?search=全自动智能猫眼锁 星耀">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>全自动智能猫眼锁 星耀</span>
+                                </a>
+                                <a href="./search_video?search=Aqara 怎么样？来听听他们怎么说">
+                                    <span class="tag tag-video">视频</span>
+                                    <span>Aqara 怎么样？来听听他们怎么说</span>
+                                </a>
+                                <a href="./search_news?search=Aqara 绿米亮相 Google I/O 大会">
+                                    <span class="tag tag-news">新闻</span>
+                                    <span>Aqara 绿米亮相 Google I/O 大会</span>
+                                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-nav-bar">
+        <div class="mobile-left">
+            <button type="button" class="icon-btn js-mobile-menu-open" aria-label="菜单">
+                <svg class="mobile-trigger-icon" viewBox="0 0 24 24">
+                    <path d="M4 7h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 17h16"></path>
+                </svg>
+                <svg class="mobile-trigger-close-icon" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12"></path>
+                    <path d="M18 6L6 18"></path>
+                </svg>
+            </button>
+            <a class="mobile-logo" href="/index" data-nav-id="1531106115493441537" data-nav-href="/index" data-nav-title="首页">
+                <img src="https://static-resource.aqara.com/img/navigation_logo.png?1,790,145,618,784" alt="logo">
+            </a>
+        </div>
+        <div class="mobile-right">
+            <button type="button" class="icon-btn js-mobile-search-open" aria-label="搜索">
+                <svg class="mobile-trigger-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                </svg>
+                <svg class="mobile-trigger-close-icon" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12"></path>
+                    <path d="M18 6L6 18"></path>
+                </svg>
+            </button>
+            <button type="button" class="icon-btn js-mobile-lang-open" aria-label="语言">
+                <svg class="mobile-trigger-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M3 12h18"></path>
+                    <path d="M12 3c2.5 2.4 4 5.5 4 9s-1.5 6.6-4 9c-2.5-2.4-4-5.5-4-9s1.5-6.6 4-9z"></path>
+                </svg>
+                <svg class="mobile-trigger-close-icon" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12"></path>
+                    <path d="M18 6L6 18"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-panel mobile-menu-panel js-mobile-menu-panel">
+        <div class="mobile-panel-body">
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/spatial-intelligence" data-nav-id="1531106926873161730" data-nav-href="/spatial-intelligence" data-nav-title="空间智能">
+                                    <span>空间智能</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/prodCenter" data-nav-id="1531106521799864321" data-nav-href="/prodCenter" data-nav-title="产品中心">
+                                    <span>产品中心</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/homekit" data-nav-id="1531106632638541826" data-nav-href="/homekit" data-nav-title="Apple Home">
+                                    <span>Apple Home</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/service_provider" data-nav-id="1531106868459089921" data-nav-href="/service_provider" data-nav-title="服务体验">
+                                    <span>服务体验</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/tech_prod" data-nav-id="1531107086336405506" data-nav-href="/tech_prod" data-nav-title="技术支持">
+                                    <span>技术支持</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="mobile-accordion">
+                                <div class="mobile-accordion-head">
+                                    <a class="mobile-accordion-link" href="javascript:;" data-nav-id="1531107818036994049" data-nav-href="javascript:;" data-nav-title="探索更多">
+                                        <span>探索更多</span>
+                                    </a>
+                                    <button type="button" class="mobile-accordion-toggle mobile-accordion-btn" aria-label="展开子菜单">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M6 9l6 6 6-6"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mobile-accordion-content">
+                                    <div class="mobile-accordion-inner">
+                                        <div class="mobile-sub-list">
+                                                <a class="mobile-sub-link" href="/matter" data-nav-id="2093227786927714306" data-nav-href="/matter" data-nav-title="Matter">
+                                                        <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/matter-icon_1787899362496.png" alt="Matter">
+                                                    <span>Matter</span>
+                                                </a>
+                                                <a class="mobile-sub-link" href="https://ankasa.cn/" data-nav-id="1569638611103977474" data-nav-href="https://ankasa.cn/" data-nav-title="用户社区">
+                                                        <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/comments-icon_1787899302156.png" alt="用户社区">
+                                                    <span>用户社区</span>
+                                                </a>
+                                                <a class="mobile-sub-link" href="/prod" data-nav-id="2093227922525622273" data-nav-href="/prod" data-nav-title="视频中心">
+                                                        <img class="sub-icon-img" src="https://static-resource.aqara.com/temp/video-icon_1787899390814.png" alt="视频中心">
+                                                    <span>视频中心</span>
+                                                </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile-accordion" style="border-bottom: 1px solid #ececec;">
+                                <a class="mobile-accordion-btn mobile-accordion-link" href="/brand_introduction" data-nav-id="1962691980390244354" data-nav-href="/brand_introduction" data-nav-title="关于我们">
+                                    <span>关于我们</span>
+                                    <svg viewBox="0 0 24 24" style="opacity: 0;">
+                                        <path d="M6 9l6 6 6-6"></path>
+                                    </svg>
+                                </a>
+                            </div>
+        </div>
+    </div>
+
+    <div class="mobile-panel mobile-search-panel js-mobile-search-panel">
+        <div class="mobile-panel-body">
+            <div class="search-box mobile-search-box">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                </svg>
+                <input type="text" id="seek2" class="mo_s_input" placeholder="输入关键词后回车搜索">
+            </div>
+            <div class="hot-search">
+                <div class="hot-search-title">热门搜索</div>
+                <div class="hot-search-list">
+                                <a href="./search_prod?search=智能晾衣机 H1">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>智能晾衣机 H1</span>
+                                </a>
+                                <a href="./search_prod?search=筒射灯 T2">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>筒射灯 T2</span>
+                                </a>
+                                <a href="./search_prod?search=全自动智能猫眼锁 星耀">
+                                    <span class="tag tag-product">产品</span>
+                                    <span>全自动智能猫眼锁 星耀</span>
+                                </a>
+                                <a href="./search_video?search=Aqara 怎么样？来听听他们怎么说">
+                                    <span class="tag tag-video">视频</span>
+                                    <span>Aqara 怎么样？来听听他们怎么说</span>
+                                </a>
+                                <a href="./search_news?search=Aqara 绿米亮相 Google I/O 大会">
+                                    <span class="tag tag-news">新闻</span>
+                                    <span>Aqara 绿米亮相 Google I/O 大会</span>
+                                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-panel mobile-lang-panel js-mobile-lang-panel">
+        <div class="mobile-panel-body">
+            <div class="mobile-lang-head">
+                <div class="mobile-lang-title">选择您的国家/地区</div>
+                <button type="button" class="mobile-lang-close js-mobile-close" aria-label="关闭">×</button>
+            </div>
+            <div class="mobile-lang-list">
+                        <div>
+                            <div class="mobile-lang-group-title">亚太</div>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/cn/">
+                                        <span class="country">中国大陆</span>
+                                        <span class="language">简体中文</span>
+                                    </a>
+                                    <a class="mobile-lang-card" href="https://www.aqaralife.kr/">
+                                        <span class="country">대한민국</span>
+                                        <span class="language">한글</span>
+                                    </a>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/jp/">
+                                        <span class="country">日本</span>
+                                        <span class="language">日本語</span>
+                                    </a>
+                        </div>
+                        <div>
+                            <div class="mobile-lang-group-title">欧洲</div>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/eu/">
+                                        <span class="country">Europe</span>
+                                        <span class="language">English</span>
+                                    </a>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/de/">
+                                        <span class="country">Deutschland</span>
+                                        <span class="language">Deutsch</span>
+                                    </a>
+                        </div>
+                        <div>
+                            <div class="mobile-lang-group-title">北美</div>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/us/">
+                                        <span class="country">United States</span>
+                                        <span class="language">English</span>
+                                    </a>
+                        </div>
+                        <div>
+                            <div class="mobile-lang-group-title">其他国家与地区</div>
+                                    <a class="mobile-lang-card" href="https://www.aqara.com/en/">
+                                        <span class="country">Global</span>
+                                        <span class="language">English</span>
+                                    </a>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        function getSearchTarget(value) {
+            var val = (value || '').trim();
+            if (!val) {
+                return '';
+            }
+            return './search_prod?search=' + encodeURIComponent(val);
+        }
+
+        function trimTrailingSlash(pathname) {
+            if (!pathname) {
+                return '';
+            }
+            return pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+        }
+
+        function getPathnameFromHref(href) {
+            if (!href) {
+                return '';
+            }
+            try {
+                return trimTrailingSlash(new URL(href, window.location.origin).pathname || '');
+            } catch (err) {
+                var normalized = href.split('#')[0].split('?')[0];
+                if (!normalized) {
+                    return '';
+                }
+                if (normalized.indexOf('http://') === 0 || normalized.indexOf('https://') === 0) {
+                    return '';
+                }
+                return trimTrailingSlash(normalized.charAt(0) === '/' ? normalized : '/' + normalized);
+            }
+        }
+
+        function isPathMatch(currentPath, targetPath) {
+            if (!currentPath || !targetPath) {
+                return false;
+            }
+            if (targetPath === '/') {
+                return currentPath === '/';
+            }
+            return currentPath === targetPath || currentPath.endsWith(targetPath);
+        }
+
+        function markActiveNavItem(anchor) {
+            if (!anchor) {
+                return;
+            }
+            anchor.classList.add('is-active');
+            anchor.setAttribute('aria-current', 'page');
+            var desktopNavItem = anchor.closest('.nav-item');
+            if (desktopNavItem) {
+                desktopNavItem.classList.add('is-active');
+            }
+            var mobileAccordion = anchor.closest('.mobile-accordion');
+            if (mobileAccordion) {
+                mobileAccordion.classList.add('is-active');
+            }
+        }
+
+        function syncNavActiveState() {
+            var currentPath = trimTrailingSlash(window.location.pathname || '');
+            if (!currentPath) {
+                return;
+            }
+            // 首页不做任何菜单高亮，避免 index 页面误命中其它导航项。
+            if (currentPath === '/index' || currentPath === '/index.html' || currentPath === '/') {
+                document.querySelectorAll('.aqara-nav-header a[data-nav-href]').forEach(function (anchor) {
+                    anchor.classList.remove('is-active');
+                    anchor.removeAttribute('aria-current');
+                });
+                document.querySelectorAll('.aqara-nav-header .nav-item, .aqara-nav-header .mobile-accordion').forEach(function (item) {
+                    item.classList.remove('is-active');
+                });
+                return;
+            }
+
+            document.querySelectorAll('.aqara-nav-header a[data-nav-href]').forEach(function (anchor) {
+                anchor.classList.remove('is-active');
+                anchor.removeAttribute('aria-current');
+            });
+            document.querySelectorAll('.aqara-nav-header .nav-item, .aqara-nav-header .mobile-accordion').forEach(function (item) {
+                item.classList.remove('is-active');
+            });
+
+            document.querySelectorAll('.aqara-nav-header a[data-nav-href]').forEach(function (anchor) {
+                var targetPath = getPathnameFromHref(anchor.getAttribute('data-nav-href') || anchor.getAttribute('href'));
+                if (!targetPath) {
+                    return;
+                }
+                if (isPathMatch(currentPath, targetPath)) {
+                    markActiveNavItem(anchor);
+                }
+            });
+        }
+
+        function bindNavTracking() {
+            document.querySelectorAll('.aqara-nav-header a[data-nav-id]').forEach(function (anchor) {
+                anchor.addEventListener('click', function () {
+                    if (!window.navTopClick) {
+                        return;
+                    }
+                    var navId = anchor.getAttribute('data-nav-id') || '';
+                    var navHref = anchor.getAttribute('data-nav-href') || anchor.getAttribute('href') || '';
+                    var navTitle = anchor.getAttribute('data-nav-title') || '';
+                    setTimeout(function () {
+                        window.navTopClick(navId, navHref, navTitle);
+                    }, 0);
+                });
+            });
+        }
+
+        function closeAllPanels() {
+            document.querySelectorAll('.aqara-nav-header .search-overlay, .aqara-nav-header .js-lang-dropdown, .aqara-nav-header .js-mobile-menu-panel, .aqara-nav-header .js-mobile-search-panel, .aqara-nav-header .js-mobile-lang-panel')
+                .forEach(function (panel) {
+                    panel.classList.remove('is-open');
+                });
+            var desktopSearchBtn = document.querySelector('.aqara-nav-header .js-search-open');
+            if (desktopSearchBtn) {
+                desktopSearchBtn.classList.remove('is-open');
+                desktopSearchBtn.setAttribute('aria-expanded', 'false');
+            }
+            document.querySelectorAll('.aqara-nav-header .js-mobile-menu-open, .aqara-nav-header .js-mobile-search-open, .aqara-nav-header .js-mobile-lang-open').forEach(function (btn) {
+                btn.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+            });
+            var backdrop = document.querySelector('.aqara-nav-header .js-nav-backdrop');
+            if (backdrop) {
+                backdrop.classList.remove('is-open');
+            }
+            document.body.classList.remove('nav-overlay-open');
+        }
+
+        function openPanel(selector, useBackdrop) {
+            closeAllPanels();
+            var panel = document.querySelector(selector);
+            if (panel) {
+                panel.classList.add('is-open');
+            }
+            if (selector === '.js-search-overlay') {
+                var desktopSearchBtn = document.querySelector('.aqara-nav-header .js-search-open');
+                if (desktopSearchBtn) {
+                    desktopSearchBtn.classList.add('is-open');
+                    desktopSearchBtn.setAttribute('aria-expanded', 'true');
+                }
+            } else if (selector === '.js-mobile-menu-panel') {
+                var mobileMenuOpen = document.querySelector('.aqara-nav-header .js-mobile-menu-open');
+                if (mobileMenuOpen) {
+                    mobileMenuOpen.classList.add('is-open');
+                    mobileMenuOpen.setAttribute('aria-expanded', 'true');
+                }
+            } else if (selector === '.js-mobile-search-panel') {
+                var mobileSearchOpen = document.querySelector('.aqara-nav-header .js-mobile-search-open');
+                if (mobileSearchOpen) {
+                    mobileSearchOpen.classList.add('is-open');
+                    mobileSearchOpen.setAttribute('aria-expanded', 'true');
+                }
+            } else if (selector === '.js-mobile-lang-panel') {
+                var mobileLangOpen = document.querySelector('.aqara-nav-header .js-mobile-lang-open');
+                if (mobileLangOpen) {
+                    mobileLangOpen.classList.add('is-open');
+                    mobileLangOpen.setAttribute('aria-expanded', 'true');
+                }
+            }
+            if (useBackdrop !== false) {
+                var backdrop = document.querySelector('.aqara-nav-header .js-nav-backdrop');
+                if (backdrop) {
+                    backdrop.classList.add('is-open');
+                }
+            }
+            document.body.classList.add('nav-overlay-open');
+            refreshSearchBoxState();
+        }
+
+        function refreshSearchBoxState() {
+            var searchBox = document.querySelector('.aqara-nav-header .js-search-overlay .search-box');
+            var input = document.querySelector('#seek1');
+            if (!searchBox || !input) {
+                return;
+            }
+            if (input.value && input.value.trim()) {
+                searchBox.classList.add('has-value');
+            } else {
+                searchBox.classList.remove('has-value');
+            }
+        }
+
+        function bindSearch(inputSelector) {
+            var input = document.querySelector(inputSelector);
+            if (!input) {
+                return;
+            }
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    var target = getSearchTarget(input.value);
+                    if (target) {
+                        window.location.href = target;
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            bindSearch('#seek1');
+            bindSearch('#seek2');
+            bindNavTracking();
+            refreshSearchBoxState();
+            syncNavActiveState();
+
+            var desktopSearchInput = document.querySelector('#seek1');
+            if (desktopSearchInput) {
+                desktopSearchInput.addEventListener('input', refreshSearchBoxState);
+            }
+
+            var searchClearBtn = document.querySelector('.js-search-clear');
+            if (searchClearBtn) {
+                searchClearBtn.addEventListener('click', function () {
+                    var input = document.querySelector('#seek1');
+                    if (!input) {
+                        return;
+                    }
+                    input.value = '';
+                    refreshSearchBoxState();
+                    input.focus();
+                });
+            }
+
+            var desktopSearchBtn = document.querySelector('.js-search-open');
+            if (desktopSearchBtn) {
+                desktopSearchBtn.addEventListener('click', function () {
+                    var overlay = document.querySelector('.js-search-overlay');
+                    if (overlay && overlay.classList.contains('is-open')) {
+                        closeAllPanels();
+                        return;
+                    }
+                    openPanel('.js-search-overlay', false);
+                    var input = document.querySelector('#seek1');
+                    if (input) {
+                        setTimeout(function () {
+                            input.focus();
+                        }, 50);
+                    }
+                });
+            }
+
+            var langSelector = document.querySelector('.aqara-nav-header .lang-selector');
+            var langDropdown = document.querySelector('.aqara-nav-header .js-lang-dropdown');
+            if (langSelector && langDropdown) {
+                langSelector.addEventListener('mouseenter', function () {
+                    langDropdown.classList.add('is-open');
+                });
+                langSelector.addEventListener('mouseleave', function () {
+                    langDropdown.classList.remove('is-open');
+                });
+            }
+
+            var mobileMenuOpen = document.querySelector('.js-mobile-menu-open');
+            if (mobileMenuOpen) {
+                mobileMenuOpen.addEventListener('click', function () {
+                    var panel = document.querySelector('.js-mobile-menu-panel');
+                    if (panel && panel.classList.contains('is-open')) {
+                        closeAllPanels();
+                        return;
+                    }
+                    openPanel('.js-mobile-menu-panel', true);
+                });
+            }
+
+            var mobileSearchOpen = document.querySelector('.js-mobile-search-open');
+            if (mobileSearchOpen) {
+                mobileSearchOpen.addEventListener('click', function () {
+                    var panel = document.querySelector('.js-mobile-search-panel');
+                    if (panel && panel.classList.contains('is-open')) {
+                        closeAllPanels();
+                        return;
+                    }
+                    openPanel('.js-mobile-search-panel', true);
+                    var input = document.querySelector('#seek2');
+                    if (input) {
+                        setTimeout(function () {
+                            input.focus();
+                        }, 50);
+                    }
+                });
+            }
+
+            var mobileLangOpen = document.querySelector('.js-mobile-lang-open');
+            if (mobileLangOpen) {
+                mobileLangOpen.addEventListener('click', function () {
+                    var panel = document.querySelector('.js-mobile-lang-panel');
+                    if (panel && panel.classList.contains('is-open')) {
+                        closeAllPanels();
+                        return;
+                    }
+                    openPanel('.js-mobile-lang-panel', true);
+                });
+            }
+
+            document.querySelectorAll('.js-mobile-close').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeAllPanels();
+                });
+            });
+
+            var navBackdrop = document.querySelector('.js-nav-backdrop');
+            if (navBackdrop) {
+                navBackdrop.addEventListener('click', closeAllPanels);
+            }
+
+            document.querySelectorAll('.mobile-accordion-toggle').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var accordion = btn.closest('.mobile-accordion');
+                    if (!accordion) {
+                        return;
+                    }
+                    accordion.classList.toggle('open');
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeAllPanels();
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                var inside = e.target.closest('.aqara-nav-header');
+                if (!inside) {
+                    return;
+                }
+                if (e.target.closest('.search-overlay') || e.target.closest('.mobile-panel') || e.target.closest('.nav-backdrop')) {
+                    return;
+                }
+                var openPanelEl = inside.querySelector('.search-overlay.is-open, .js-lang-dropdown.is-open, .js-mobile-menu-panel.is-open, .js-mobile-search-panel.is-open, .js-mobile-lang-panel.is-open');
+                if (!openPanelEl) {
+                    return;
+                }
+                if (
+                    e.target.closest('.js-search-open') ||
+                    e.target.closest('.js-lang-open') ||
+                    e.target.closest('.js-mobile-menu-open') ||
+                    e.target.closest('.js-mobile-search-open') ||
+                    e.target.closest('.js-mobile-lang-open')
+                ) {
+                    return;
+                }
+                if (!e.target.closest('.nav-item') && !e.target.closest('.lang-selector')) {
+                    closeAllPanels();
+                }
+            });
+        });
+    })();
+</script>
+<!--header end-->
+
+<div class="breadcrumb breadcrumb_prod">
+    <div class="w1280 clearfix prz">
+        <div class="wap_wrap clearfix">
+            <h4 class="fnt_24">妙控开关 S1E</h4>
+
+                    <a href="https://item.jd.com/10058903349987.html" class="wap_buy_btn fr">购买</a>
+        </div>
+        <div class="cleargap bread_wrap fnt_14">
+                <a href="Smart-Magic-Switch-S1E_overview" class="ibox">概览</a>
+            <a class="ibox active">产品参数</a>
+
+                    <a href="https://community.aqara.com/pc/#/post/postDetail/213" class="ibox">玩法攻略</a>
+                    <a href="https://item.jd.com/10058903349987.html" class="ibox buy_btn">购买</a>
+        </div>
+    </div>
+</div>
+<div class="main prod_detail">
+    <div class="w1280">
+        <div class="req_prog">
+            <h2 class="fnt_32">产品参数</h2>
+            <div class="req_detail_info_list">
+                        <dl>
+                            <dt class="fnt_16 fl">产品型号</dt>
+                            <dd class="fnt_16">CJPKG01LM</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">产品尺寸</dt>
+                            <dd class="fnt_16">86×86×41.35mm</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">无线连接</dt>
+                            <dd class="fnt_16">Wi-Fi IEEE 802.11 b/g/n 2.4GHz</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">额定参数</dt>
+                            <dd class="fnt_16">220V~, 50Hz</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">额定负载</dt>
+                            <dd class="fnt_16">白炽灯 ≤ 2200W(共三路)，节能灯、LED灯、 荧光灯 ≤ 400W(共三路)</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">工作温度</dt>
+                            <dd class="fnt_16">-10~40°C </dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">工作湿度</dt>
+                            <dd class="fnt_16">0~95% RH</dd>
+                        </dl>
+                        <dl>
+                            <dt class="fnt_16 fl">执行标准</dt>
+                            <dd class="fnt_16">GB/T 16915.1-2014，GB/T 16915.2-2012</dd>
+                        </dl>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="prod_related prz">
+        <ul class="w1440">
+                <li>
+                    <a href="prod" class="related_icon prz">
+                        <img src="https://static-resource.aqara.com/temp/icon_scene_1654048795604.png" alt="了解更多" class="pra">
+                    </a>
+                    <div class="related_item fnt_24">产品场景</div>
+                    <p class="related_exp fnt_14">想要了解更多场景应用视频？</p>
+                    <a href="prod" class="spec_bottom related_more fnt_14 prz">进一步了解<i>&gt;</i></a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="specClick('https://community.aqara.com/','用户社区')" class="related_icon prz">
+                        <img src="https://static-resource.aqara.com/temp/icon_community_1654048912718.png" alt="敬请期待" class="pra">
+                    </a>
+                    <div class="related_item fnt_24">用户社区</div>
+                    <p class="related_exp fnt_14">更多精彩在路上</p>
+                    <a href="javascript:void(0)" onclick="specClick('https://community.aqara.com/','用户社区')" class="spec_bottom related_more fnt_14 prz">进一步了解<i>&gt;</i></a>
+                </li>
+                <li>
+                    <a href="tech_prod" class="related_icon prz">
+                        <img src="https://static-resource.aqara.com/temp/icon_support_1654048921852.png" alt="了解更多" class="pra">
+                    </a>
+                    <div class="related_item fnt_24">产品支持</div>
+                    <p class="related_exp fnt_14">产品 DIY 支持?</p>
+                    <a href="tech_prod" class="spec_bottom related_more fnt_14 prz">进一步了解<i>&gt;</i></a>
+                </li>
+        </ul>
+    </div>
+
+
+<!--footer begin-->
+
+<div class="footer">
+    <div class="wrap">
+        <div class="footer_top">
+
+            <ul class="clearfix">
+                                        <li>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">空间智能</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1542420409109053442','https://building.aqara.com/intelligent','成功案例','1518417946167988225','','空间智能')">成功案例</a>
+                                                    </dd>
+                                    </dl>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">Matter</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1646810024634015746','https://sit-tw-www.aqara.com/matter','Matter 全屋智能','1646790298679189505','','Matter')">Matter 全屋智能</a>
+                                                    </dd>
+                                    </dl>
+                        </li>
+                        <li>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">Aqara HomeKit</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531524616842612737','homekit#1','HomeKit 独家功能','1531522209953845250','','Aqara HomeKit')">HomeKit 独家功能</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531524873043283970','homekit#2','Aqara 苹果全屋智能体验','1531522209953845250','','Aqara HomeKit')">Aqara 苹果全屋智能体验</a>
+                                                    </dd>
+                                    </dl>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">产品中心</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613354493386137602','prodCenter#controller','集悦妙控','1518417067792650242','','产品中心')">集悦妙控</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613354965014650881','prodCenter#switch-plug','开关插座','1518417067792650242','','产品中心')">开关插座</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355058409218050','prodCenter#door-lock','智能门锁','1518417067792650242','','产品中心')">智能门锁</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355141766815746','prodCenter#lighting','智能照明','1518417067792650242','','产品中心')">智能照明</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355429584150529','prodCenter#hub','智能网关','1518417067792650242','','产品中心')">智能网关</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355521733009409','prodCenter#sensor','传感监测','1518417067792650242','','产品中心')">传感监测</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355569267056641','prodCenter#camera','摄像监控','1518417067792650242','','产品中心')">摄像监控</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1613355710975811586','prodCenter#appliance','生活电器','1518417067792650242','','产品中心')">生活电器</a>
+                                                    </dd>
+                                    </dl>
+                        </li>
+                        <li>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">技术支持</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1518430130990206978','tech_prod','产品支持','1518417668597338114','','技术支持')">产品支持</a>
+                                                    </dd>
+                                    </dl>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">用户社区</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1569640426340028418','https://ankasa.cn/','全屋入门','1569639344398340097','','用户社区')">全屋入门</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1569640613871554562','https://ankasa.cn/','产品百科','1569639344398340097','','用户社区')">产品百科</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1569640688920236034','https://ankasa.cn/','搭建指南','1569639344398340097','','用户社区')">搭建指南</a>
+                                                    </dd>
+                                    </dl>
+                        </li>
+                        <li>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">购买渠道</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1518429822650142721','https://aqara.tmall.com/','天猫旗舰店','1518417323414507521','','购买渠道')">天猫旗舰店</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1518429865910194177','http://aqarapop.jd.com','京东旗舰店','1518417323414507521','','购买渠道')">京东旗舰店</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1518429919974772738','https://www.aqara.com/business_store.html','线下体验店','1518417323414507521','','购买渠道')">线下体验店</a>
+                                                    </dd>
+                                    </dl>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">服务体验</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531524969902346242','service_provider','成为服务商','1531524485808361473','','服务体验')">成为服务商</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1536993893330624513','business_store.html','授权门店查询','1531524485808361473','','服务体验')">授权门店查询</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531534016865079298','https://saas.aqara.cn/booking/apple/banner.html','全屋定制','1531524485808361473','','服务体验')">全屋定制</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531534069973356545','https://www.aqara.com/business_process','服务流程','1531524485808361473','','服务体验')">服务流程</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1650428819495772162','./business_charge','收费标准','1531524485808361473','','服务体验')">收费标准</a>
+                                                    </dd>
+                                    </dl>
+                        </li>
+                        <li>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">关于我们</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531530210139934721','brand_introduction','品牌简介','1518417777389195266','','关于我们')">品牌简介</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531530302225879041','news','新闻动态','1518417777389195266','','关于我们')">新闻动态</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531530439421562882','about_info','联系我们','1518417777389195266','','关于我们')">联系我们</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531530561333202945','https://aqara.zhiye.com/','加入我们','1518417777389195266','','关于我们')">加入我们</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531530657789612033','envir','环境责任','1518417777389195266','','关于我们')">环境责任</a>
+                                                    </dd>
+                                    </dl>
+                                    <dl class="nav_bottom">
+                                            <dt><a href="javascript:;">视频中心</a></dt>
+
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531532595570642945','prod','产品','1531526176083513346','','视频中心')">产品</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531532656388050945','brand','品牌','1531526176083513346','','视频中心')">品牌</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531532708254814209','case','案例','1531526176083513346','','视频中心')">案例</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531533497325031425','column','栏目','1531526176083513346','','视频中心')">栏目</a>
+                                                    </dd>
+                                                    <dd class="second_nav">
+                                                        <a href="javascript:void(0)" onclick="navSecondClick('1531533553457401858','vlog','短视频','1531526176083513346','','视频中心')">短视频</a>
+                                                    </dd>
+                                    </dl>
+                        </li>
+            </ul>
+        </div>
+        <div class="footer_center clearfix">
+            <div class="fl left">
+                <a href="##" class="footer_logo">
+                    <img src="https://static-resource.aqara.com/img/footer_logo.png" class="f_l_w"/>
+                </a>
+                        <a href="tel:400-990-7930" class="footer_ph fnt_16">客服热线：400-990-7930</a>
+            </div>
+            <div class="fr right">
+                <ul class="clearfix">
+                                <li>
+                                    <div class="img wexin"><a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyMjY0MDQwMw==&scene=124#wechat_redirect" target="_blank"></a></div>
+                                    <div class="ewm"><img src="https://static-resource.aqara.com/temp/官网-微信公众号_1655284715246.jpg" alt="" /></div>
+                                </li>
+                                <li>
+                                    <div class="img shipinhao"></div>
+                                    <div class="ewm"><img src="https://static-resource.aqara.com/temp/官网-视频号_1655284725948.png" alt="" /></div>
+                                </li>
+                                <li>
+                                    <div class="img weibo"><a href="https://weibo.com/5861541263?refer_flag=1001030103_" target="_blank"></a></div>
+                                    <div class="ewm"><img src="https://static-resource.aqara.com/temp/官网-微博_1655284735711.png" alt="" /></div>
+                                </li>
+                                <li>
+                                    <div class="img douyin"><a href="https://www.douyin.com/user/MS4wLjABAAAAolTgHTvrsPY_86S3DW5o8tJaIJprSF1QJCEeM3nq_b8" target="_blank"></a></div>
+                                    <div class="ewm"><img src="https://static-resource.aqara.com/temp/抖音-05_1655287980121.jpg" alt="" /></div>
+                                </li>
+                                <li>
+                                    <div class="img bili"><a href="https://space.bilibili.com/434317688?spm_id_from=333.337.0.0" target="_blank"></a></div>
+                                    <div class="ewm"><img src="https://static-resource.aqara.com/temp/官网-B站_1655285009400.png" alt="" /></div>
+                                </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bottom clearfix">
+                <div class="fl left">
+                    <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">Copyright © 2022 深圳绿米联创科技有限公司 版权所有     粤ICP备15041247号</a>
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502001722" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                        <img src="	https://static-resource.aqara.com/img/recordimg.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">深公网安备 44030502001722号</p>
+                    </a>
+                    <a href="https://cdn.aqara.com/cdn/luoshu/mainland/static/docs/aqara_user_account_privacy_policy_zh.pdf" target="_blank" style="margin-left: 10px;">| &nbsp;Aqara用户账号隐私政策</a>
+                </div>
+        </div>
+        <div class="footer_bottom clearfix"><div class="fl left">根据区域销售政策与服务范围，本官网所示产品仅限在中国大陆地区（不含港澳台）使用。</div></div>
+    </div>
+</div>
+<div class="wap_footer">
+    <div class="wap_footer_top">
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">空间智能</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1542420409109053442','https://building.aqara.com/intelligent','成功案例','1518417946167988225','','空间智能')">成功案例</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">Matter</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1646810024634015746','https://sit-tw-www.aqara.com/matter','Matter 全屋智能','1646790298679189505','','Matter')">Matter 全屋智能</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">Aqara HomeKit</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531524616842612737','homekit#1','HomeKit 独家功能','1531522209953845250','','Aqara HomeKit')">HomeKit 独家功能</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531524873043283970','homekit#2','Aqara 苹果全屋智能体验','1531522209953845250','','Aqara HomeKit')">Aqara 苹果全屋智能体验</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">产品中心</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613354493386137602','prodCenter#controller','集悦妙控','1518417067792650242','','产品中心')">集悦妙控</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613354965014650881','prodCenter#switch-plug','开关插座','1518417067792650242','','产品中心')">开关插座</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355058409218050','prodCenter#door-lock','智能门锁','1518417067792650242','','产品中心')">智能门锁</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355141766815746','prodCenter#lighting','智能照明','1518417067792650242','','产品中心')">智能照明</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355429584150529','prodCenter#hub','智能网关','1518417067792650242','','产品中心')">智能网关</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355521733009409','prodCenter#sensor','传感监测','1518417067792650242','','产品中心')">传感监测</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355569267056641','prodCenter#camera','摄像监控','1518417067792650242','','产品中心')">摄像监控</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1613355710975811586','prodCenter#appliance','生活电器','1518417067792650242','','产品中心')">生活电器</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">技术支持</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1518430130990206978','tech_prod','产品支持','1518417668597338114','','技术支持')">产品支持</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">用户社区</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1569640426340028418','https://ankasa.cn/','全屋入门','1569639344398340097','','用户社区')">全屋入门</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1569640613871554562','https://ankasa.cn/','产品百科','1569639344398340097','','用户社区')">产品百科</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1569640688920236034','https://ankasa.cn/','搭建指南','1569639344398340097','','用户社区')">搭建指南</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">购买渠道</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1518429822650142721','https://aqara.tmall.com/','天猫旗舰店','1518417323414507521','','购买渠道')">天猫旗舰店</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1518429865910194177','http://aqarapop.jd.com','京东旗舰店','1518417323414507521','','购买渠道')">京东旗舰店</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1518429919974772738','https://www.aqara.com/business_store.html','线下体验店','1518417323414507521','','购买渠道')">线下体验店</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">服务体验</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531524969902346242','service_provider','成为服务商','1531524485808361473','','服务体验')">成为服务商</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1536993893330624513','business_store.html','授权门店查询','1531524485808361473','','服务体验')">授权门店查询</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531534016865079298','https://saas.aqara.cn/booking/apple/banner.html','全屋定制','1531524485808361473','','服务体验')">全屋定制</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531534069973356545','https://www.aqara.com/business_process','服务流程','1531524485808361473','','服务体验')">服务流程</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1650428819495772162','./business_charge','收费标准','1531524485808361473','','服务体验')">收费标准</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">关于我们</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531530210139934721','brand_introduction','品牌简介','1518417777389195266','','关于我们')">品牌简介</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531530302225879041','news','新闻动态','1518417777389195266','','关于我们')">新闻动态</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531530439421562882','about_info','联系我们','1518417777389195266','','关于我们')">联系我们</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531530561333202945','https://aqara.zhiye.com/','加入我们','1518417777389195266','','关于我们')">加入我们</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531530657789612033','envir','环境责任','1518417777389195266','','关于我们')">环境责任</a>
+                        </div>
+                </div>
+                <div class="nav_bottom ft_item prz">
+                    <p class="one_nav ft_item_top prz">
+                            <a href="javascript:;">视频中心</a>
+
+                        <span class="pra ft_item_arrow"></span>
+                    </p>
+                        <div class="second_nav ft_list">
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531532595570642945','prod','产品','1531526176083513346','','视频中心')">产品</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531532656388050945','brand','品牌','1531526176083513346','','视频中心')">品牌</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531532708254814209','case','案例','1531526176083513346','','视频中心')">案例</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531533497325031425','column','栏目','1531526176083513346','','视频中心')">栏目</a>
+                                <a href="javascript:void(0)" onclick="navSecondClick('1531533553457401858','vlog','短视频','1531526176083513346','','视频中心')">短视频</a>
+                        </div>
+                </div>
+
+    </div>
+    <div class="footer_center clearfix">
+        <div class="left">
+            <a href="##" class="footer_logo">
+                <img src="https://static-resource.aqara.com/img/footer_logo.png" class="f_l_w"/>
+                <img src="https://static-resource.aqara.com/img/footer_logo_w.png" class="f_l_b"/>
+            </a>
+                    <a href="tel:400-990-7930" class="footer_ph fnt_16">客服热线：400-990-7930</a>
+        </div>
+        <div class="right">
+            <ul class="clearfix">
+
+                            <li>
+                                <div class="img wexin"><a
+                                            href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyMjY0MDQwMw==&scene=124#wechat_redirect"
+                                            target="_blank"></a></div>
+                                <div class="ewm"><img src="https://static-resource.aqara.com/img/ewm.png" alt=""/></div>
+                            </li>
+
+
+
+                            <li>
+                                <div class="img shipinhao"></div>
+                                <div class="ewm"><img src="https://static-resource.aqara.com/img/ewm.png" alt=""/></div>
+                            </li>
+
+
+                            <li>
+                                <div class="img weibo"><a href="https://weibo.com/5861541263?refer_flag=1001030103_"
+                                                          target="_blank"></a></div>
+                                <div class="ewm"><img src="https://static-resource.aqara.com/img/ewm.png" alt=""/></div>
+                            </li>
+
+
+                            <li>
+                                <div class="img douyin"><a
+                                            href="https://www.douyin.com/user/MS4wLjABAAAAolTgHTvrsPY_86S3DW5o8tJaIJprSF1QJCEeM3nq_b8"
+                                            target="_blank"></a></div>
+                                <div class="ewm"><img src="https://static-resource.aqara.com/img/ewm.png" alt=""/></div>
+                            </li>
+
+
+                            <li>
+                                <div class="img bili"><a
+                                            href="https://space.bilibili.com/434317688?spm_id_from=333.337.0.0"
+                                            target="_blank"></a></div>
+                                <div class="ewm"><img src="https://static-resource.aqara.com/img/ewm.png" alt=""/></div>
+                            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer_bottom clearfix">
+            <div class="fl left">
+                <div class="footer_bottom_marsk" style="position: absolute;width: 100%;height: 80px;z-index: 1;display: none;"></div>
+                <a href="https://beian.miit.gov.cn/#/Integrated/index"
+                                    target="_blank">Copyright © 2022 深圳绿米联创科技有限公司 版权所有     粤ICP备15041247号</a>
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502001722"
+                   style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                    <img src="	https://static-resource.aqara.com/img/recordimg.png" style="float:left;"/>
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">新公网安备
+                        44030502001722号</p></a>
+                <a href="https://cdn.aqara.com/cdn/luoshu/mainland/static/docs/aqara_user_account_privacy_policy_zh.pdf"  target="_blank" style="margin-left: 10px;">| &nbsp;Aqara用户账号隐私政策</a>
+            </div>
+        <div class="fr "><a href="##">语言</a><span> | </span><a href="##">简体中文</a></div>
+    </div>
+    <div class="footer_bottom clearfix"><div class="fl left">根据区域销售政策与服务范围，本官网所示产品仅限在中国大陆地区（不含港澳台）使用。</div></div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+        var hideEl = function() {
+            // 隐藏用户社区 22-4
+            // 隐藏多语言切换
+            $('.mo_headerCon .mo_langu').hide()
+            $('.mo_navCon .nav_top a:contains("用户社区")').hide()
+            // 隐藏matter 页面了解更多按钮
+            $('.box_matter .banner .banner_toMore a:contains("了解更多")').parent().hide()
+            // 隐藏homekit banner 了解更多
+            $('.banner .banner_homekit_txt a:contains("了解更多")').hide()
+            // 隐藏产品详情 产品支持 产品手册
+            $('.main.prod_detail .tech_tab_bar p:contains("产品手册")').parent().parent().hide()
+            // 隐藏全屋定制入口
+            $('.sub_nav.about_sub_nav.sub_nav_service .sub_nav_wrap dd:contains("全屋智能定制")').parent().parent().hide()
+            // 隐藏行业应用-前往平台 按钮
+            $('.indus_software .swiper-wrapper .swiper-slide .swiper_btn_wrapper a:contains("前往平台")').hide()
+            // 技术支持 产品手册隐藏
+            $('.main .tech_tab_bar p:contains("产品手册")').parent().hide()
+            // 隐藏底部 购买渠道
+            $('.wap_footer .nav_bottom a:contains("购买渠道")').parent().parent().hide()
+            //  隐藏底部 用户社区
+            $('.wap_footer .nav_bottom a:contains("用户社区")').parent().parent().hide()
+            //  隐藏底部 微信 抖音等入口
+            $('.wap_footer .footer_center .right').hide()
+            // 隐藏底部 关于我们  加入我们
+            $('.wap_footer .nav_bottom a:contains("加入我们")').hide()
+            // 隐藏底部 aqara 体验馆 全屋智能定制
+            $('.wap_footer .nav_bottom .second_nav a:contains("全屋定制")').hide()
+            // 隐藏底部版权信息跳转
+            $('.footer_bottom .footer_bottom_marsk').show()
+            // 隐藏底部matter
+            // $('.wap_footer .nav_bottom .one_nav a:contains("Matter")').parent().parent().hide()
+            // 隐藏 aqara 体验馆 授权门店 收费标准按钮
+            $('.charge_ul a:contains("服务商收费标准")').hide()
+            
+
+            // homekit
+            if (window.location.pathname === '/homekit') {
+                $('.advt_more a:contains("全屋智能定制")').parent().hide()
+                // 隐藏了解更多
+                $('.banner_homekit_txt .banner_homekit_logo a:contains("了解更多")').hide()
+                $('.main .inner_txt span:contains("进一步了解")').hide()
+            }
+            // aqara 体验馆
+            if (window.location.pathname === '/aqara-experience-hall') {
+                $('.sub_nav.about_sub_nav.sub_nav_service  dd:contains("全屋智能定制")').parent().parent().hide()
+
+                // 隐藏联系我们
+                $('.povider-banner .btn-bd a:contains("联系我们")').hide()
+
+            }
+            // 授权门店
+            if (window.location.pathname === '/business_store.html') {
+                // 隐藏全屋智能定制
+                $('.sub_nav .sub_nav_wrap a dd:contains("全屋智能定制")').parent().parent().hide()
+                // 隐藏全屋定制
+                $('.main .tech_tab_bar a:contains("全屋定制")').hide()
+                
+            }
+
+            // 关于我们 隐藏 
+            if (
+                window.location.pathname === '/brand_introduction'
+                || window.location.pathname === '/about_info'
+                || window.location.pathname === '/news'
+                || window.location.pathname === '/envir'
+            ) {
+                // 隐藏加入我们
+                $('.about_sub_nav .swiper-slide a:contains("加入我们")').parent().hide()
+                // 隐藏 全屋定制预约
+                $('.brand_aqarahome .more a:contains("全屋智能定制预约")').hide()
+                // 隐藏加入我们
+                $('.brand_related li .related_item:contains("加入我们")').parent('li').hide()
+                // 隐藏用户社区
+                $('.brand_related li .related_item:contains("用户社区")').parent('li').hide()
+            }
+
+            // 产品中心
+            if (window.location.pathname === '/prodCenter') {
+                $('.prod_related li .related_item:contains("用户社区") ').parent('li').hide()
+            }
+
+            // 技术支持
+            if (window.location.pathname === '/tech_prod') {
+               
+                // 隐藏用户社区
+                $('.prod_related li div:contains("用户社区")').parent().hide()
+            }
+
+            // 新闻动态
+            if (window.document.title === '新闻动态' || window.document.title === 'aqara') {
+                // 隐藏新媒体联系方式
+                $('.news_page .news_contact .news_media dt:contains("新媒体联系")').parent().hide()
+                // 隐藏新闻动中的分享链接
+                $('.news_page .news_share').hide()
+            }
+
+            // Matter
+            if (window.location.pathname === '/matter') {
+                // 隐藏底部联系信息
+                $('.wap_footer .footer_center .right .wexin').parent().parent().hide()
+
+                // 隐藏了解升级计划
+                $('.box_matter .con_four a:contains("点击了解升级计划")').parent().hide()
+            }
+            // 隐藏产品详情 部分按钮
+            $('.wap_wrap a:contains("购买")').hide()
+            $('.bread_wrap a:contains("玩法攻略")').hide()
+            $('.prod_related div:contains("用户社区")').parent().hide()
+
+            setTimeout(function(){
+                // 移动端浮动全局按钮
+                $('.float_btn .float_bar a:contains("全屋智能定制")').parent('.float_bar').parent().hide()
+            },300)
+        }
+        // 页面加载时判断是否在小程序环境中
+        var isSmartApp = function () {
+            var isWebView = /swan\//.test(window.navigator.userAgent) || /^webswan-/.test(window.name);
+            return isWebView;
+        };
+        // 小程序环境影藏部分dom 元素
+        if (isSmartApp()) {
+            hideEl()
+        }
+        
+    })();
+    $(function(){
+        $('.wap_footer .footer_center .right li').click(function(e){
+            e.stopPropagation();
+            if($(this).find('.shipinhao').length){
+                if($(this).find('.ewm').hasClass('wf_li')){
+                    $(this).find('.ewm').removeClass('wf_li');
+                }else{
+                    $(this).find('.ewm').addClass('wf_li');
+                }
+            }
+        })
+        $(document).on('click','.touch_body .footer .footer_center .right li',function(e){
+            e.stopPropagation();
+            if($(this).find('.shipinhao').length){
+                if($(this).find('.ewm').hasClass('wf_li')){
+                    $(this).find('.ewm').removeClass('wf_li');
+                }else{
+                    $(this).find('.ewm').addClass('wf_li');
+                }
+            }
+        })
+        $(document).on('click',function(){
+            $('.wap_footer .footer_center .right li').find('.ewm').removeClass('wf_li');
+            $('.touch_body .footer .footer_center .right li').find('.ewm').removeClass('wf_li');
+        })
+
+        // $('.nav_bottom .one_nav a')
+        navFirstClick = function(aId,aHref,aText){
+            if((aHref != undefined && aHref.length>0) && (aId != undefined && aId.length>0) && (aText != undefined && aText.length>0)){
+                setBottomVisits(aId,aHref,aText,null,null,null)
+            }
+        }
+
+        // $('.nav_bottom .second_nav a')
+        navSecondClick = function(aId,aHref,aText,pId,pHref,pText){
+            if((aHref != undefined && aHref.length>0) && (aId != undefined && aId.length>0) && (aText != undefined && aText.length>0)){
+                setBottomVisits(aId,aHref,aText,pId,pHref,pText)
+            }
+        }
+
+        function setBottomVisits(id,link,name,pid,plink,pname){
+            $.ajax({
+                // url: 'http://localhost:8082/jeecg-boot/navigation/setClick',
+                url: '/jeecg-boot/navigation/setClick',
+                data: JSON.stringify({
+                    navId: id,
+                    navName: name,
+                    navLink: link,
+                    // 底部的一级导航栏信息
+                    prNavId: pid,
+                    prNavName: pname,
+                    prNavLink: plink,
+                    // 1头部；2底部
+                    navType: 2,
+                }),
+                type: 'post',
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (res) {
+                    // console.log(res)
+                    window.location.href = link
+                },
+                error: function (xhr, errorMessage, e) {
+                    window.location.href = link
+                }
+            })
+        }
+    })
+</script>
+<!--footer end-->
+
+
+<script>
+    $(function () {
+        //常见问题
+        $(".tech_faq").find("li").each(function (index) {
+            $(this).on("click", function () {
+                $(this).addClass("open").siblings("li").removeClass("open");
+                $(this).find(".tech_faq_answer").stop().slideDown().end().siblings("li").find(".tech_faq_answer").stop().slideUp()
+            });
+            if (index == 0) {
+                $(this).addClass("open");
+                $(this).find(".tech_faq_answer").show()
+            }
+        });
+
+        // a标签调用方法
+        specClick = function(tHref,tText){
+            // var tHref = $(this).attr('href')
+            // console.log(tHref)
+            // var tText = $.trim($('.spec_bottom').parent().children(".related_item").text())
+            // console.log(tText)
+            var ind = tText.indexOf("社区")
+            // console.log(ind)
+            // debugger
+            if(ind>=0 && tHref != undefined && tHref.length>0){
+                setSpecVisits(2,'产品详情-底部信息栏',tHref)
+            }
+        }
+
+        function setSpecVisits(type,name,tHref){
+            $.ajax({
+                // url: 'http://localhost:8082/jeecg-boot/community/setClick',
+                url: '/jeecg-boot/community/setClick',
+                data: JSON.stringify({
+                    type: type,
+                    name: name,
+                }),
+                type: 'post',
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (res) {
+                    // console.log(res)
+                    window.location.href = tHref
+                },
+                error: function (xhr, errorMessage, e) {
+                    window.location.href = tHref
+                }
+            })
+        }
+    })
+</script>
+</body>
+
+</html>

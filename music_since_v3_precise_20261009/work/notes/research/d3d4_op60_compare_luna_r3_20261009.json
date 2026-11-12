@@ -1,0 +1,209 @@
+{
+  "record_id": "d3d4_op60_compare_luna_r3_20261009",
+  "created_date_utc": "2026-10-09",
+  "role": "Luna Max independent score/source researcher",
+  "scope": {
+    "work": "Chopin Barcarolle Op.60",
+    "stage": "Step A notation evidence only",
+    "audio_status": "audio-unverified",
+    "audio_opened_or_listened": false,
+    "full_melody_transcription": false,
+    "semantic_boundary_or_music_verdict": false
+  },
+  "evidence_levels": {
+    "cfeo_page_locator": "CFEO pageview page/bar-span locator; not by itself a note reading.",
+    "direct_first_edition_score_read": "Notation visually inspected in the saved or existing high-resolution first-edition page image.",
+    "commentary": "Author prose kept separate from direct score reading.",
+    "asset_byte_check": "Bytes, SHA-256 and JPEG header dimensions only.",
+    "derived_inspection_view": "Local crop of cited page for inspection; not an independent source."
+  },
+  "page_and_system_map": [
+    {
+      "printed_page": 2,
+      "pageview_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66643/",
+      "page_title_locator": "60-1-BR p. 2, bs 14-23; British Library",
+      "iip_image_id": "jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2",
+      "method": "The pageview Image link resolved to this IIP ID. The saved image visibly shows printed page 2 and plate B. et Cie. 4609. Five systems with two measures each were counted from CFEO bars 14-23 and printed barlines.",
+      "systems": [
+        {"system": 1, "bars": "14-15"},
+        {"system": 2, "bars": "16-17"},
+        {"system": 3, "bars": "18-19"},
+        {"system": 4, "bars": "20-21"},
+        {"system": 5, "bars": "22-23"}
+      ],
+      "evidence": ["cfeo_page_locator", "direct_first_edition_score_read"]
+    },
+    {
+      "printed_page": 3,
+      "pageview_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66644/",
+      "page_title_locator": "60-1-BR p. 3, bs 24-33; British Library",
+      "iip_image_id": "jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2",
+      "method": "Existing r2 image reused read-only. Five systems with two measures each counted from CFEO bars 24-33 and printed barlines.",
+      "systems": [
+        {"system": 1, "bars": "24-25"},
+        {"system": 2, "bars": "26-27"},
+        {"system": 3, "bars": "28-29"},
+        {"system": 4, "bars": "30-31"},
+        {"system": 5, "bars": "32-33"}
+      ],
+      "evidence": ["cfeo_page_locator", "direct_first_edition_score_read"]
+    }
+  ],
+  "score_assets": [
+    {
+      "id": "op60-first-edition-page-2",
+      "pageview_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66643/",
+      "image_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "iip_image_id": "jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2",
+      "source_institution": "British Library",
+      "acquired_completed_utc": "2026-10-09T10:15:56Z",
+      "content_type": "image/jpeg",
+      "http_status": "download succeeded; numerical status code not separately logged",
+      "saved_path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/op60_p2_b14-23.jpg",
+      "bytes": 1608495,
+      "sha256": "93A1FF56895D3372F20960A60122DB6683237B6356C3ECA539AEDBDA5C86384D",
+      "dimensions_px": {"width": 3895, "height": 5000},
+      "page_system_bar_locator": "Printed p.2, CFEO bars 14-23; systems 14-15, 16-17, 18-19, 20-21, 22-23.",
+      "evidence": ["cfeo_page_locator", "direct_first_edition_score_read", "asset_byte_check"]
+    },
+    {
+      "id": "op60-first-edition-page-3-existing-r2",
+      "pageview_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66644/",
+      "image_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "iip_image_id": "jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2",
+      "source_institution": "British Library",
+      "acquired_date_utc": "2026-10-09",
+      "acquired_time_utc": null,
+      "acquired_time_note": "Existing r2 record has no exact acquisition time; not downloaded again.",
+      "saved_path": "research_assets/d3d4_20261009_luna_r2/cfeo_op60_60-1-BR_BritishLibrary/op60_p3_b24-33.jpg",
+      "bytes": 1565202,
+      "sha256": "3E0A0CF4BA5197FF515D10159C8DD6B482DAEF43CC39F31C0AF27496EF7DEEB2",
+      "dimensions_px": {"width": 3895, "height": 5000},
+      "page_system_bar_locator": "Printed p.3, CFEO bars 24-33; focus system 1 m.24-25 and system 2 m.26-27.",
+      "evidence": ["cfeo_page_locator", "direct_first_edition_score_read", "asset_byte_check"],
+      "reuse_note": "Existing r2 file read-only; no redownload and no r2 report modification."
+    }
+  ],
+  "op60_mm16_23_claim_check": {
+    "claim_under_test": "F-web wording that the main melody temporarily retreats/disappears during mm.16-23.",
+    "original_claim_provenance": "Exact originating F-web source/URL was not identified in permitted local notes; the requested wording was tested against the first-edition notation.",
+    "narrowest_directly_supported_wording": "Local upper-staff rests occur during mm.16-23 while lower-staff motion continues; upper-staff note groups and sustained/trill notation also remain visible.",
+    "strict_disposition": "A literal claim that all upper-staff or melodic/ornamental material disappears across mm.16-23 is contradicted. A claim that a specific thematic main melody recedes in prominence remains pending because the score does not label that identity and no motif-by-motif transcription was made.",
+    "separated_observations": {
+      "local_upper_staff_rests": "Visible, including p.2 system 2, mm.16-17; not a full-measure or full-score rest.",
+      "ornamented_or_grouped_upper_staff_material": "Visible in systems 3-5, mm.18-23, including short beamed groups and sustained/trill notation.",
+      "accompaniment_continues": "Lower-staff note movement and pedal marks remain visible in systems 2-5, mm.16-23.",
+      "specific_main_melody_absent": "Not established; thematic identity and foreground status remain pending."
+    },
+    "counterexamples": [
+      {"locator": "Printed p.2, system 4, mm.20-21", "fact": "Upper staff has dense beamed groups; lower staff continues.", "evidence": "direct_first_edition_score_read"},
+      {"locator": "Printed p.2, system 5, mm.22-23, especially m.23", "fact": "Upper staff has note groups and sustained/trill notation; lower staff continues.", "evidence": "direct_first_edition_score_read"}
+    ],
+    "audio_status": "audio-unverified"
+  },
+  "op60_mm24_27_comparison": [
+    {
+      "measure": 24,
+      "locator": "Printed p.3, system 1, first measure; CFEO pageview 66644 bars 24-33",
+      "a_explicit_notation_change": ["Upper staff opens with longer chordal value and extended trill wave.", "Printed f, dim. and diminuendo-type hairpin are visible.", "Shorter beamed figure follows later in the measure."],
+      "b_continues": ["Lower staff has moving grouped notes, slurs and pedal markings."],
+      "c_unreadable_or_pending": ["No pitches/chord names transcribed; dynamic marks are not sound-level facts."],
+      "evidence": "direct_first_edition_score_read"
+    },
+    {
+      "measure": 25,
+      "locator": "Printed p.3, system 1, second measure",
+      "a_explicit_notation_change": ["Upper staff shifts to dotted attack and shorter beamed groups.", "Longer slur; no new trill wave visible in this measure."],
+      "b_continues": ["Lower-staff movement and pedal marks continue."],
+      "c_unreadable_or_pending": ["Independent higher-level event status is pending."],
+      "evidence": "direct_first_edition_score_read"
+    },
+    {
+      "measure": 26,
+      "locator": "Printed p.3, system 2, first measure",
+      "a_explicit_notation_change": ["Upper staff has short opening note, local rest, then longer chordal value with tr. and extended trill wave.", "Printed cresc. and crescendo-type hairpin."],
+      "b_continues": ["Lower-staff movement, slurs and pedal marks continue."],
+      "c_unreadable_or_pending": ["Local upper-staff rest does not identify a missing thematic melody."],
+      "evidence": "direct_first_edition_score_read"
+    },
+    {
+      "measure": 27,
+      "locator": "Printed p.3, system 2, second measure",
+      "a_explicit_notation_change": ["Upper staff shifts from m.26 long trilled sonority to more continuous short beamed groups.", "No new tr. wave visible; slur and crescendo-type hairpin continue."],
+      "b_continues": ["Lower-staff movement and pedal marks continue."],
+      "c_unreadable_or_pending": ["Local notation change retained; higher-level significance pending."],
+      "evidence": "direct_first_edition_score_read"
+    }
+  ],
+  "commentary_only": [
+    {
+      "source": "David Kopp, On Performing Chopin's Barcarolle",
+      "url": "https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html",
+      "checked_date_utc": "2026-10-09",
+      "bytes": null,
+      "sha256": null,
+      "saved_locally": false,
+      "locator": "paragraph 17",
+      "claim": "Kopp says theme A (Rink A-prime) returns at m.24 with double trills, melodic diminution and textural amplification.",
+      "classification": "Commentary only; not an independent full melody transcription.",
+      "evidence": "commentary"
+    },
+    {
+      "source": "David Kopp, On Performing Chopin's Barcarolle",
+      "url": "https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html",
+      "checked_date_utc": "2026-10-09",
+      "bytes": null,
+      "sha256": null,
+      "saved_locally": false,
+      "locator": "paragraph 16",
+      "claim": "Kopp describes an A-sharp pedal in mm.20-22 and return to F-sharp at m.24.",
+      "classification": "Kopp analysis, not a new reduction.",
+      "evidence": "commentary"
+    }
+  ],
+  "rights_notes": {
+    "historical_underlying_score": {
+      "url": "https://imslp.org/wiki/Barcarolle_Op.60_(Chopin,_Frederic)",
+      "checked_date_utc": "2026-10-09",
+      "bytes": null,
+      "sha256": null,
+      "saved_locally": false,
+      "metadata_checked": "IMSLP identifies the French First Edition, Paris 1846, plate B. et Cie. 4609, and labels it Public Domain.",
+      "limit": "Edition metadata cross-check, not a jurisdiction-specific legal opinion."
+    },
+    "digital_image": {
+      "about_url": "https://chopinonline.ac.uk/cfeo/about/",
+      "licensing_url": "https://chopinonline.ac.uk/cfeo/about/licensing/",
+      "checked_date_utc": "2026-10-09",
+      "bytes": null,
+      "sha256": null,
+      "saved_locally": false,
+      "metadata_checked": "CFEO describes open online access without password/subscription/payment. Licensing page says the image server uses Kakadu JPEG2000 under license, but does not state a confirmed overall image reuse grant.",
+      "reuse_permission": "not independently confirmed; distinct from underlying score metadata"
+    }
+  },
+  "derived_inspection_views": [
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_op60_p3_mm24-27.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:20:49Z", "bytes": 9210431, "sha256": "E1C286A6D8C6009AAC6D03DD8AA3829AC40B61E86EFE295CD48D6856DFA35B82", "locator": "Existing r2 p.3 systems 1-2, mm.24-27, plus adjacent area.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_op60_p3_mm26-27.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:21:03Z", "bytes": 5893698, "sha256": "3E8A25232FCB49B08FFE2F243742AD1BD5718B6DF9B00DA092C5500125C48EFA", "locator": "Exploratory p.3 system 2 lower portion and adjacent system/page area.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_op60_p3_mm26-27b.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:21:21Z", "bytes": 4094308, "sha256": "517EAC608B926B100D78C1BF20E3323FE1A5B770DD6409F0D15ABAE895FEE59D", "locator": "p.3 system 2 mm.26-27 with adjacent system edge.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_p2_s2.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:22:50Z", "bytes": 3291269, "sha256": "B66660CB02FDB9539EB07185BC9986C84192DB30C8C6C36E9FF291EA329CDA64", "locator": "p.2 system 2 mm.16-17 with prior-system edge.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_p2_s3.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:22:50Z", "bytes": 3657364, "sha256": "27E7E3B46288DC9BCDC1DBC4C9B79994928E099C266DDD40FA9A1E2CDE13DF7D", "locator": "p.2 system 3 mm.18-19 with adjacent system edges.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_p2_s4.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:22:50Z", "bytes": 3674059, "sha256": "A5385D0D75030D92C2161A63D5FCDD48AD8383C3036C1F3754C597188791971C", "locator": "p.2 system 4 mm.20-21 with system 5 edge.", "evidence": "derived_inspection_view"},
+    {"path": "research_assets/d3d4_op60_compare_luna_r3_20261009/cfeo_op60_60-1-BR_BritishLibrary/.inspection_p2_s5.png", "source_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p02.jp2&WID=4312&HEI=6496&CVT=JPG", "created_utc": "2026-10-09T10:22:50Z", "bytes": 3276291, "sha256": "E9FEA047FD10C2EFF95A8740131ED14B5EF5CAB0E9BA977EE126FA88A12F6498", "locator": "p.2 system 5 mm.22-23 with page-bottom edge.", "evidence": "derived_inspection_view"}
+  ],
+  "metadata_script": {
+    "path": "tools/probes/d3d4_op60_compare_luna_r3_20261009.py",
+    "created_utc": "2026-10-09T10:17:11Z",
+    "bytes": 1755,
+    "sha256": "30697EAA8BA9049BBECF0BBFAD342E330FD6BB9835049A25A2C67E1E69ED06DF",
+    "purpose": "Read-only standard-library JPEG header, byte count and SHA-256 inspection of new p.2 and existing r2 p.3. Run with python -I -B. No network and no downloaded code execution."
+  },
+  "limitations": [
+    "No pitch-by-pitch transcription, thematic identity tracing or harmonic reduction.",
+    "A local upper-staff rest cannot be equated with absent main melody.",
+    "Whether a specific thematic main melody recedes during mm.16-23 remains pending.",
+    "m.27 local notation contrast is recorded without structural conclusion.",
+    "All sound-level propositions are audio-unverified.",
+    "CFEO digital image reuse permission was not independently confirmed."
+  ]
+}

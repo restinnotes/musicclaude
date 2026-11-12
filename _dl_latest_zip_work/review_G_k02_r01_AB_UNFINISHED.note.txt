@@ -1,0 +1,11 @@
+UNFINISHED (rule: ambiguous/post-submit -> NEVER retry, record as unfinished, rerun continues skipping)
+
+- job: G_k02_r01_judgegpt6w_AB (review phase, judge_model=gpt6w)
+- attempts: 1
+  1. failure_or_ambiguous, phase=null (not pre_submit), 83.6s, 0 chars
+     (results/reviews/gpt6w/G_k02_r01_judgegpt6w_AB.meta.json + .stderr.txt / .raw.json)
+- reason no retry: failure_or_ambiguous -- request may have reached the model;
+  a retry could double-submit and corrupt the independent-repeat design.
+- runner: HEALTHY (gpt2 check ready:true/docker_ready:true).
+- action: NO retry. Parallel review run PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\thread_fair.py", line 8, in <module>
+    with ThreadPoolExecutor(8) as ex: rows = [r for r in ex.map(lambda a: thread_vote(a[0], a[1], tag, a[2]), FAIR) if r]
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\thread_fair.py", line 8, in <lambda>
+    with ThreadPoolExecutor(8) as ex: rows = [r for r in ex.map(lambda a: thread_vote(a[0], a[1], tag, a[2]), FAIR) if r]
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub2.py", line 463, in thread_vote
+    a, b = thread_view(w, 'FINAL'), thread_view(w, tag); x, y = (b, a) if seat == 'newX' else (a, b)
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub2.py", line 452, in thread_view
+    for s in rd(OUT/f'script_{w}_{tag}.json')['sections']:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub2.py", line 29, in rd
+    def rd(p): return json.loads(Path(p).read_text(encoding='utf-8-sig'))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_video_public_20261104\\r2\\script_op52_f1.json'

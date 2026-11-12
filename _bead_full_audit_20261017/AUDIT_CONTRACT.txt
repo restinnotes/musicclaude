@@ -1,0 +1,17 @@
+审计对象：冻结30份A原稿（units.json 353 UID），对照 FINAL_BEADS.json 14段当前母稿。母稿不修改。旧213意义族清单只能在独立读原文后作为漏项反查，不能充当本次清单。
+
+文件：D:\musicclaude\_bead_quality_20261017\sources\units.json；production_context\pools\Sxx.txt；editorial\FINAL_BEADS.json；sources\SOURCE_MANIFEST.json。
+
+目标不是关键词命中率。按独立、不能互相替代的完整意思建账：感受、意象、行为/动因、视角、同时矛盾、先后变化、条件、特殊措辞各自保住。不要拆成脱离语境的心理原子，也不要把相近大主题当作同义。每一个来源单元全部阅读，注意继承标题和跨段归属。
+例：安慰/犹豫/疼三次变化，不能用安慰里有疼代表全保留；喜欢细看vs怕结束用力不同；深谈后语言跟不上vs重新回放谈话不同。
+
+输出 JSON 顶层 {segments:[], meanings:[], unit_reviews:[], merges:[], limitations:[]}。
+meanings 每项：
+ {id:'S02-A001', segment:'S02', meaning:'完整的独立意思', dimension:'体验|意象|动因|关系|时间变化|视角|音乐事实|表演条件|措辞', distinctive_terms:[], evidence:[{uid,quote}], status:'full|partial|omitted|altered|pending|not_applicable', current_spans:[], lost:'没有保留的具体差别', rationale:'为什么，不用评分', relation:{kind:'facet|alternative|sequence|condition|standalone',with:[],explanation:''}, repair:'一句自然、保留特点的补回候选或处理方法'}。
+quote 必须是 units[uid].text 的精确连续子串。current_spans 必须是该S母稿正文的精确连续子串。full必须可从正文读出全部区别，不得把来源引用当覆盖。partial 是含一部分但没有全保住；altered 是改成不同意思；pending 是定位/事实有问题需要核实，不因为主观隐喻不同而判错；not_applicable 是本段不适用或纯元信息，具体理由。疑似事实错误仅隔离错误依赖，不连带吞掉独立主观体验。
+各段独立意义去重后计数。多来源同义可一个meaning并列evidence；有独特差别必须新增meaning，或明确拆出差异项。强烈避免一个meaning包5个独立意思然后给一个partial。相似意象若观察位置/动作/主体/动因变化，不当同义。事实另外统计，不混入体验异质性。
+unit_reviews: 对每一个出现在负责段Pool中的UID都必须逐段记账 {segment,uid,meaning_ids:[],disposition:'accounted|boundary_only|metadata|pending', residual:'本UID还有哪些部分不在本段；若均入账写清。不能空泛说已审阅'}。跨段不能把整段复制到每S并重复算同一个意思；只提本S适用内容，边界不明入pending。
+merges: 每个实际合并点或你审计时建议同义合并的点 {id,segment,current_spans:[],source_meaning_ids:[],verdict:'lossless|lossy|false_equivalence|invented_link|not_a_merge', preserved:[],lost:[],reason,repair}。必须检查母稿每个有多来源内涵的句子/段落，不能只挑典型三例。无法复原编辑历史，称“结果中的合并”不能编造当时决策。lossless需说明被合并各原意都从现稿读得出；同一母稿句子吸收多个意义但丢了一部分就是lossy。
+
+至少自检：每个Pool UID有unit_review；各意义有精确原句；完整/部分/改义有当前精确句；保留来源个别独特用词；没有漏掉alternative；没有把片段之外错计为遗漏；合并的条件、方向、程度、先后、主体、动因是否改变。原句引用可长以保留语境，但不能靠一个长quote假装所有意思已登记。
+逐项完成后，反查旧 MEANING_INVENTORY.json 是否有本次遗漏；保留你独立判断。不要给上层一个漂亮的全覆盖保证。只汇报实际完成、数量、仍不确定处。

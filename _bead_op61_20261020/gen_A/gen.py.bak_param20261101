@@ -1,0 +1,38 @@
+"""Generate missing Op.61 A originals via gpt3 (same A_int_v1 / A_web_v2 prompts as the A corpus)."""
+import json, re, subprocess, sys, threading, time
+from pathlib import Path
+D = Path(__file__).resolve().parent
+GPT3 = "D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd"
+JOBS = [(f"gpt6w-int-{i}", "A_int_v1", "gpt-6-thinking") for i in (1, 2, 3)] + \
+       [(f"gpt6w-web-{i}", "A_web_v2", "gpt-6-thinking") for i in (1, 2, 3)] + \
+       [(f"gpt56w-int-{i}", "A_int_v1", "gpt-5-6-thinking") for i in (2, 3)] + \
+       [(f"gpt56w-web-{i}", "A_web_v2", "gpt-5-6-thinking") for i in (2, 3)]
+lock = threading.Lock(); last = [0.0]
+def run(name, pv, model):
+    out = D / "out"; out.mkdir(exist_ok=True)
+    if (out / f"{name}.md").exists() or (out / f"{name}.submitted").exists():
+        print(f"[{name}] skip (exists/submitted)", flush=True); return
+    with lock:
+        w = 7 - (time.time() - last[0])
+        if w > 0: time.sleep(w)
+        last[0] = time.time()
+    (out / f"{name}.submitted").write_text(time.ctime())
+    cp = subprocess.run([GPT3, "ask", "--file", str(D / f"{pv}.op61.txt"), "--model", model, "--json"], capture_output=True)
+    (out / f"{name}.stdout.bin").write_bytes(cp.stdout); (out / f"{name}.stderr.bin").write_bytes(cp.stderr)
+    m = re.search(rb'"job_directory":\s*"((?:[^"\]|\.)*)"', cp.stdout)
+    job = Path(json.loads(b'"' + m.group(1) + b'"')) if m else None
+    if cp.returncode == 0 and job and (job / "response.txt").exists() and b'"completed": true' in cp.stdout:
+        resp = (job / "response.txt").read_text(encoding="utf-8")
+        tv = json.loads((job / "terminal-verification.json").read_text(encoding="utf-8"))
+        jr = json.loads((job / "result.json").read_text(encoding="utf-8"))
+        fm = (tv.get("final_messages") or [{}])[0]
+        meta = {"name": name, "prompt": pv, "model_req": model, "model": fm.get("model"), "effort": fm.get("effort"),
+                "tools_used": jr.get("toolsUsed"), "temporary": jr.get("temporary"), "unpersonalized": jr.get("unpersonalized"),
+                "elapsed_seconds": jr.get("elapsed_seconds"), "job_directory": str(job)}
+        (out / f"{name}.meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+        (out / f"{name}.md").write_text(resp, encoding="utf-8")
+        print(f"[{name}] ok {meta['model']}/{meta['effort']} tools={meta['tools_used']} {len(resp)}ch", flush=True)
+    else:
+        print(f"[{name}] FAILED rc={cp.returncode} job={job}", flush=True)
+ts = [threading.Thread(target=run, args=j) for j in JOBS]
+[t.start() for t in ts]; [t.join() for t in ts]

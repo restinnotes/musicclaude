@@ -1,0 +1,142 @@
+{
+  "schema": "music-web-baseline-repeated-v2",
+  "version": "2026-10-09-v2",
+  "source_manifest": "jobs/manifest.json",
+  "source_prompts_frozen": true,
+  "models": {
+    "gpt6w": "gpt-6-thinking",
+    "gpt56w": "gpt-5-6-thinking"
+  },
+  "base_repeats": 5,
+  "adaptive_repeats": [
+    8,
+    12
+  ],
+  "base_jobs_per_model": 16,
+  "base_model_calls": 160,
+  "judge_preselected_repeats": [
+    1,
+    5
+  ],
+  "adaptive_judge_repeats": [
+    8,
+    12
+  ],
+  "minimum_quality_comparisons": "all C stations at preselected r01/r05, no winner picking",
+  "legacy_pilot_archive": "D:\\musicclaude\\_chatgpt_music_pilot\\results (import after hash/route checks only)",
+  "statistical_unit": "A=distinct case, B/C=distinct station; repeats are within-item measures, not independent samples",
+  "tracks": {
+    "A_E5": 6,
+    "B_RELATION": 5,
+    "C_E7": 5
+  },
+  "jobs": [
+    {
+      "job_id": "A01",
+      "track": "A_E5",
+      "input_sha256": "e18c14f980b0243ee394b3e2b3195393886ef721e036760f8f6464a85bdf6dd5",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A02",
+      "track": "A_E5",
+      "input_sha256": "305cd4a45a98376d2a29122109b1ae5f4c0f896eaeb92352a8af093bac3b9d99",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "A03",
+      "track": "A_E5",
+      "input_sha256": "c4aaabf37625f092e0dedf0c7c06ebf77a39062227e8450305ab44bf2d4be6b8",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A04",
+      "track": "A_E5",
+      "input_sha256": "c5b177e518e4d2abe631ceb3b7a2b7010c4f81ffeb224d4adb1b3fa331dcce06",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "A05",
+      "track": "A_E5",
+      "input_sha256": "005c37a1293b6cc78481c133c5bed5ca6b2916f618d32f3c8ce78d29c45f3399",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "A06",
+      "track": "A_E5",
+      "input_sha256": "b2f449b4d785d59e3d84d2aa8cb33e6f6f2c6458235ca2dd469c35345ddc4002",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B02",
+      "track": "B_RELATION",
+      "input_sha256": "71745b89f8c25aa28489c202a997a338306e92843f3a961b2f1755806b9f32f6",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C02",
+      "track": "C_E7",
+      "input_sha256": "8cd97cb011aca07986c54e5905cb1331639bb4562141a39073dcb35ec87ef784",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B11",
+      "track": "B_RELATION",
+      "input_sha256": "77edda0437158b22e9376a521722e5646aad9495735dbb0aef2140bcdb35df67",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C11",
+      "track": "C_E7",
+      "input_sha256": "2ad892b79058884844bdefc5dcad882514db42173ec3b88ebcf02501329271df",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B18",
+      "track": "B_RELATION",
+      "input_sha256": "fc391e48a3afc9097bdd4b5dc380ffe407c054330285623a990fb7dbd3f0ba57",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C18",
+      "track": "C_E7",
+      "input_sha256": "59066957c71d6748e2f8ae2968c3d5086db88aeb104498fa453d10e13247666e",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B20",
+      "track": "B_RELATION",
+      "input_sha256": "93049eadaa439a8edfe6c49646e8da6a73f960a58ab0abfcb6645c87e80d55d0",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C20",
+      "track": "C_E7",
+      "input_sha256": "1fcf859ac96513659b0c4dc47c3ae2f27754cab0676dac9aa1298e96a6cb89e1",
+      "first_model": "gpt56w"
+    },
+    {
+      "job_id": "B23",
+      "track": "B_RELATION",
+      "input_sha256": "ec0ae82f879b5451d523ee0dc84401479b85756bcd373a6badfd9cc358c87ce8",
+      "first_model": "gpt6w"
+    },
+    {
+      "job_id": "C23",
+      "track": "C_E7",
+      "input_sha256": "caf6064a1d6629d26b36b0e4b5f28d90ffe763b8f89b717dacab421b5cda00be",
+      "first_model": "gpt56w"
+    }
+  ],
+  "execution": {
+    "force_independent_sessions": true,
+    "no_resume": true,
+    "max_parallel_cli_initializers": 1,
+    "no_automatic_retry": true,
+    "no_auto_prompts_evolution": true,
+    "strict_metadata_validation": true
+  },
+  "adaptive_extension_rule": "after r05, extend both models for an item when key verdict unstable, cross-model conflict with decision impact, meaningful semantic novelty still appears in r04/r05, or results suspicious; evaluate r08 and optionally r12; report unsaturated if still changing",
+  "judge_protocol": "preselected r01 and r05, both A/B orders, direct 6w-vs-5.6w judged by each model; old-vs-new judged by opposite model; no comparison that confounds judge identity with candidate identity",
+  "description": "A/B/C initial prompts unchanged byte-for-byte. Repetitions are independent new gpt2 ask calls. Model routing via gpt2, not claude proxy. T3 Muse can execute and aggregate."
+}

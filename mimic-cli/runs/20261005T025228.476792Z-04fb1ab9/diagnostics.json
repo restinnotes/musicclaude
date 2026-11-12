@@ -1,0 +1,64 @@
+{
+  "run_id": "20261005T025228.476792Z-04fb1ab9",
+  "timestamp": "2026-10-05T02:52:28.476792+00:00",
+  "command": "check",
+  "profile": "shiyan",
+  "probe": null,
+  "prompt": "Reply with exactly TEST_OK. No other text.",
+  "prompt_sha256": "cf4962f651ef6b8f38225f175cb6b3ed712224ced56dc4111b9173aa2ee0c314",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": false,
+  "response": "",
+  "http_status": 502,
+  "actual_model": null,
+  "actual_reasoning_effort": null,
+  "diagnostics": {
+    "preparation_started_at": 1791168752.7681212,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791168756.2176685
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791168756.8889327
+    },
+    "generation_stop_verified": true,
+    "elapsed_seconds": 8.624,
+    "response_complete": false,
+    "exception_class": "RuntimeError"
+  },
+  "error": {
+    "type": "model_state",
+    "message": "Browser automation failed at model_state"
+  },
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro"
+    ]
+  },
+  "elapsed_seconds": 12.266
+}

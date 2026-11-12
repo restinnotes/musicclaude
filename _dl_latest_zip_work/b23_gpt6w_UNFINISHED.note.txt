@@ -1,0 +1,11 @@
+UNFINISHED (rule: ambiguous/post-submit -> NEVER retry, record as unfinished, rerun continues skipping)
+
+- job: B23:r01:gpt6w (model_requested=gpt-6-thinking)
+- evidence: results/trials/gpt6w/B23/r01.meta.json (+ .stderr.txt / .raw.json)
+  status=failure_or_ambiguous, phase=post_submit_ambiguous,
+  error_code=headless_native_result_rejected, elapsed 141.7s, utc 2026-10-10T06:20Z
+- reason no retry: post-submit ambiguous -- request may have reached the model;
+  a retry could double-submit and corrupt the independent-repeat design.
+- action: main rerun (no --retry flag) PRESERVEs this evidence and continues with B23:r01:gpt56w onward.
+  B23 gpt6w r02-r05 still to be sampled normally.
+- recorded by: implementation sub-agent, 2026-10-10

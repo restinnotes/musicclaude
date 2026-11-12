@@ -1,0 +1,467 @@
+{
+  "job_id": "W2-B-batch04",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C10",
+      "name": "扫地机器人与家电",
+      "sampling_rule": "头部：实际打开的京东榜单中排除明显非自主扫地机器人后，取排名最前的两个可精确识别SKU；机会：2026国内社区明确讨论/推荐且京东公开页存在明确购买信号的非重复SKU。价格分层因未登录数值价格不可见而PROVISIONAL。",
+      "confidence": "medium"
+    },
+    {
+      "category_id": "C11",
+      "name": "电动工具与维修",
+      "sampling_rule": "先从京东电动工具榜排除理发器等错误品类，再取排名最前的两个维修/施工电动工具；机会SKU要求2026社区实测/开箱证据。定位词含重型/工业/专业视为高端，家用小型/入门视为低端，其余中端，待登录价重算。",
+      "confidence": "medium"
+    },
+    {
+      "category_id": "C12",
+      "name": "相机与视频设备",
+      "sampling_rule": "头部取当前京东微单榜中可精确识别的高排名机型，不以国际知名度筛选；机会取国内社区实拍支持且京东国内列表存在的型号。旗舰/专业级为高端、入门级为低端、其余暂列中端，待实际价格重算。",
+      "confidence": "medium"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C10",
+      "候选sku_id": "C10-H1",
+      "brand": "石头 roborock",
+      "model": "P30 Pro",
+      "exact_variant": "自动上下水版，A3060RR",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东扫拖机器人排行榜榜3；为榜页中排名最高的明确自主扫地机器人候选，公开显示10000+评论。",
+      "domestic_selection_rule": "排除榜1-2手持洗地机后取最高排名自主机器人；定位为高端/PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100299842625.html",
+      "item_id": "100299842625",
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_voltage_base_station",
+        "app_firmware_dependency",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_VARIANT; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C10",
+      "候选sku_id": "C10-H2",
+      "brand": "石头 roborock",
+      "model": "P20 Max",
+      "exact_variant": "扫拖洗烘一体机，A2950RR，非页面另列的自动上下水版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东扫拖机器人排行榜榜5，公开显示100000+评论。",
+      "domestic_selection_rule": "同一有效机器人榜中取第二个高购买信号且版本可区分的SKU；定位中端/PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100325625266.html",
+      "item_id": "100325625266",
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_voltage_base_station",
+        "app_firmware_dependency",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C10",
+      "候选sku_id": "C10-O1",
+      "brand": "追觅 Dreame",
+      "model": "S60Pro",
+      "exact_variant": "高速滚筒水箱版，RVS52DE",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "2026年10月国内社区文章将S60 Pro列为主推型号；京东公开分类页观察日显示S60Pro水箱版自营且20000+评论。",
+      "domestic_selection_rule": "社区当年明确推荐/讨论且公开京东页有实质中国消费者评论信号；不与头部SKU重复。",
+      "domestic_product_url": "https://item.jd.com/100232001485.html",
+      "item_id": "100232001485",
+      "seller_id": null,
+      "access_state": "read_full_page_category_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_voltage_base_station",
+        "app_firmware_dependency",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_MODEL_AND_WATER_TANK_VARIANT; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER",
+      "source_ids": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "候选sku_id": "C11-H1",
+      "brand": "大有 DEVON",
+      "model": "5209U",
+      "exact_variant": "JC系列12V无刷冲击手电钻/电动螺丝刀，塑盒装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东电动工具榜全榜2；过滤榜首错误品类理发器后为排名最高有效维修电动工具，公开显示50000+评论。",
+      "domestic_selection_rule": "过滤非维修/施工工具后按榜位取首个有效SKU；中端/PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100109800710.html",
+      "item_id": "100109800710",
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "battery_platform_compatibility",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_CURRENT_RANK_AND_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "候选sku_id": "C11-H2",
+      "brand": "东成",
+      "model": "DZC1050-26BT",
+      "exact_variant": "1050W电锤电镐两用，带安全离合",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东电动工具榜全榜3，公开显示20000+评论。",
+      "domestic_selection_rule": "过滤错误品类后取第二个排名最高有效维修/施工SKU；标题含重型施工用途，暂列高端/PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100182918074.html",
+      "item_id": "100182918074",
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "mains_voltage",
+        "plug_standard",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_CURRENT_RANK_AND_EXACT_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "候选sku_id": "C11-O1",
+      "brand": "威克士 WORX",
+      "model": "WU385",
+      "exact_variant": "20V集尘锂电电锤，4.0Ah双电套装",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "什么值得买2026-06-11专题围绕WU385集尘、重量与续航，并引用2026年B站开箱；京东存在对应WU385商品URL。",
+      "domestic_selection_rule": "要求2026国内社区出现型号级使用/开箱证据；因专题为AIGC汇总且具体4.0双电商品深页不可读，版本标PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100325574706.html",
+      "item_id": "100325574706",
+      "seller_id": null,
+      "access_state": "community_read_full_page_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "battery_platform_compatibility",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_PACKAGE; MODEL_VERIFIED; AUTHENTICATED_DATA_REQUIRED",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "候选sku_id": "C12-H1",
+      "brand": "索尼 SONY",
+      "model": "ILCE-7M5 / Alpha 7 V",
+      "exact_variant": "A7M5单机身，官方标配",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东当前微单排行榜榜1，公开显示约200评论。",
+      "domestic_selection_rule": "当前微单榜最高排名、型号和机身版本明确；旗舰/高端定位。因商品链接风控失败，不用搜索到的其他卖家SKU替代。",
+      "domestic_product_url": null,
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_link_failed",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "firmware_dependency",
+        "lens_mount_compatibility",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_VARIANT; PRODUCT_ITEM_ID_PROVISIONAL_NULL; AUTHENTICATED_DATA_REQUIRED",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "候选sku_id": "C12-H2",
+      "brand": "索尼 SONY",
+      "model": "Alpha 7C II / A7C2 / A7CM2",
+      "exact_variant": "银色，FE 28-60mm镜头套装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东当前微单排行榜榜3，公开显示50000+评论；全画幅分类页亦显示同一28-60银色套装50000+评价。",
+      "domestic_selection_rule": "当前榜高位且跨京东榜页/分类页重复出现并有高评论量；暂列中端/PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100064843454.html",
+      "item_id": "100064843454",
+      "seller_id": null,
+      "access_state": "read_full_page_rank_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "firmware_dependency",
+        "lens_mount_compatibility",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "VERIFIED_RANK_EXACT_KIT_AND_CROSS_PAGE_CONSUMER_SIGNAL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE",
+      "source_ids": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "候选sku_id": "C12-O1",
+      "brand": "尼康 Nikon",
+      "model": "Z5II / Z52",
+      "exact_variant": "全画幅微单单机，京东QY71列表版本",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东全画幅分类页实际列出Z5II单机并有17条评价；什么值得买2026-06-22发布同镜头实拍对比，报告Z5II日常画质、高感与握持取舍。",
+      "domestic_selection_rule": "国内社区有型号级实拍、京东国内列表存在可购买SKU；因商品详情被风控且社区测试并非该卖家套餐，exact_variant保持PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/10233781340201.html",
+      "item_id": "10233781340201",
+      "seller_id": null,
+      "access_state": "read_full_page_category_product_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "lithium_battery",
+        "firmware_dependency",
+        "lens_mount_compatibility",
+        "regional_warranty_unknown"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_SELLER_PACKAGE; MODEL_AND_DOMESTIC_LISTING_VERIFIED",
+      "source_ids": [
+        "S07",
+        "S08"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_7372189afc9d7feaefa.html",
+      "title": "扫拖机器人排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C10 P30 Pro与P20 Max当前榜位、精确型号/版本、公开评论量",
+        "C10榜单类目污染"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://zhuanlan.zhihu.com/p/2068016618635056879",
+      "title": "2026年扫地机器人推荐(10月)，详说扫地机器人哪个品牌好,哪款好用？",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "追觅S60 Pro在2026年10月国内社区被列为主推型号",
+        "科沃斯/追觅/石头社区讨论背景"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/hprm/131868b1a09825341e2b.html?electedExtAttrSet=15348%2C&extAttrValue=expand_name%2C%40156984%3A%3A15348&sort_type=sort_default",
+      "title": "京东扫地机器人公开分类页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "追觅S60Pro水箱版/上下水版/平嵌版均有国内自营列表",
+        "观察日S60Pro版本公开显示20000+评论"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.jd.com/phb/key_98557dbd2cc9c2d402a0.html",
+      "title": "京东电动工具排行榜",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "大有5209U全榜2",
+        "东成DZC1050-26BT全榜3",
+        "榜首混入理发器导致类目污染"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://post.smzdm.com/p/a6z2nmd0/",
+      "title": "威克士WU385真能解决打孔灰大手酸？实测集尘效果与续航真相",
+      "published_at": "2026-06-11",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "WU385存在2026国内社区使用/开箱讨论",
+        "该页为AIGC汇总并列出B站等原始参考来源"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/phb/key_652fd4713cf64b87260.html",
+      "title": "微单排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "A7M5当前榜1",
+        "A7C II 28-60银色套机当前榜3及50000+评论",
+        "榜位与累计评论不完全一致"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.jd.com/chanpin/560334.html",
+      "title": "全画幅微单数码相机 - 京东商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "A7C II 28-60银色套机50000+评价",
+        "Nikon Z5II单机国内列表及17条评价"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://post.smzdm.com/p/anvo929p/",
+      "title": "尼康鸡头vs凤尾｜Z50Ⅱ对比Z5Ⅱ同镜头实测",
+      "published_at": "2026-06-22",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "Z5II国内社区同镜头实拍体验",
+        "作者明确标注非专业实拍测评"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "C10可保留P30 Pro A3060RR与P20 Max A2950RR作为冻结前国内头部候选。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "medium",
+      "counterevidence": "京东扫拖榜前部混入手持洗地机，因此名次不是严格的自主扫地机器人市场份额。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "追觅S60Pro满足C10国内机会SKU门槛：有当年社区型号级推荐且京东自营公开页显示较强消费者评论信号。",
+      "classification": "FACT",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区文章可能含导购商业偏差；不同水箱/上下水/平嵌版本不能合并为一个SKU。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "过滤错误品类后，大有5209U与东成DZC1050-26BT是C11当前京东榜内最靠前的两个有效维修/施工电动工具。",
+      "classification": "FACT",
+      "source_ids": [
+        "S04"
+      ],
+      "confidence": "high",
+      "counterevidence": "京东榜本身存在理发器等类目污染，不能外推为整个中国市场份额排名。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "WU385可作为C11机会样本，但证据等级应低于头部榜单样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S05"
+      ],
+      "confidence": "low",
+      "counterevidence": "主要可读社区来源明确标为AIGC汇总，B站原视频在本工具中被阻断。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "当前京东微单榜中A7M5榜1、A7C II 28-60银色套机榜3。",
+      "classification": "FACT",
+      "source_ids": [
+        "S06"
+      ],
+      "confidence": "high",
+      "counterevidence": "A7M5评论量明显少于A7C II，榜位可能强烈受新品和促销排序影响。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Nikon Z5II满足C12机会SKU标准：京东国内分类页有具体单机列表，且2026国内社区存在同型号实拍体验。",
+      "classification": "FACT",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区实拍不能证明该具体卖家套餐销量，商品深页又被京东风控拦截。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "本轮无法可靠记录任何候选的当前普通价、会员价或定向券。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S04",
+        "S06",
+        "S07"
+      ],
+      "confidence": "high",
+      "counterevidence": "部分社区文章出现促销数字，但并非观察日可直接核验的京东登录态价格，故未采用。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个候选的观察日普通价、会员价、定向券/国补拆分。",
+    "AUTHENTICATED DATA REQUIRED：seller_id及旗舰店实际成交/销量字段；公开页评论数不能替代销量。",
+    "冻结前需用登录态普通价对每个品类重新执行高/中/低价格三分位；当前定位分层仅PROVISIONAL。",
+    "需对京东头部结果做一次天猫/淘宝同型号交叉验证，尤其C11榜单存在明显类目污染。",
+    "C12 A7M5榜单商品链接触发访问失败，因此item_id和具体seller保持null。",
+    "WU385的4.0Ah双电具体包装深页不可读，需登录态确认后才能从PROVISIONAL升级。",
+    "Z5II社区证据支持型号而非特定京东卖家套餐；冻结前需核对exact_variant与seller。",
+    "未扩展到其他15个品类，也未查询任何海外价格、销量、供货或Temu/AliExpress覆盖。"
+  ]
+}

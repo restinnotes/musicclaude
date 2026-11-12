@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\v6fix.py", line 659, in <module>
+    blind(a[1] if len(a) > 1 else "r1", a[2] if len(a) > 2 else "v6")
+  File "D:\musicclaude\_thread_evo_20261019\v6fix.py", line 499, in blind
+    A = v6(w) if base == "v6" else graph_of(w, base); B = graph_of(w, T)
+                                                          ^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\v6fix.py", line 493, in graph_of
+    return tidy(json.loads((OUT / f"{w}_{T}.json").read_text(encoding="utf-8"))["graph"])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_thread_evo_20261019\\evaluations\\v6fix\\op60_pa.json'

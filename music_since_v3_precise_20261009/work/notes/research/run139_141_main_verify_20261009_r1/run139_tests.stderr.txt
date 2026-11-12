@@ -1,0 +1,36 @@
+test_cache_only_claim_without_exact_artifacts_is_rejected (__main__.Run139Tests.test_cache_only_claim_without_exact_artifacts_is_rejected) ... ok
+test_config_and_canonical_self_flags_are_frozen (__main__.Run139Tests.test_config_and_canonical_self_flags_are_frozen) ... ok
+test_direct_real_path_blocks_before_creating_real_run_outputs (__main__.Run139Tests.test_direct_real_path_blocks_before_creating_real_run_outputs) ... ERROR
+test_duplicate_reviewer_and_order_identity_sets_are_rejected (__main__.Run139Tests.test_duplicate_reviewer_and_order_identity_sets_are_rejected) ... ok
+test_exact_artifact_tamper_is_rejected_before_resume (__main__.Run139Tests.test_exact_artifact_tamper_is_rejected_before_resume) ... ok
+test_full_collections_exact_identities_packs_and_reader_content (__main__.Run139Tests.test_full_collections_exact_identities_packs_and_reader_content) ... ok
+test_full_mock_rerun_adds_zero_submissions_and_stays_pending (__main__.Run139Tests.test_full_mock_rerun_adds_zero_submissions_and_stays_pending) ... ok
+test_import_has_no_environment_io_cli_or_source_import_effects (__main__.Run139Tests.test_import_has_no_environment_io_cli_or_source_import_effects) ... ok
+test_missing_terminal_identity_is_rejected_and_producer_stays_unknown (__main__.Run139Tests.test_missing_terminal_identity_is_rejected_and_producer_stays_unknown) ... ok
+test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held (__main__.Run139Tests.test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held) ... ok
+test_pack_missing_and_tamper_are_rejected_without_rebuilding (__main__.Run139Tests.test_pack_missing_and_tamper_are_rejected_without_rebuilding) ... ok
+test_pack_validator_rejects_placeholder_and_missing_task_id (__main__.Run139Tests.test_pack_validator_rejects_placeholder_and_missing_task_id) ... ok
+test_parser_failure_retry_appends_attempt_without_overwrite (__main__.Run139Tests.test_parser_failure_retry_appends_attempt_without_overwrite) ... ok
+test_queue_stop_blocks_every_following_submission_and_stage (__main__.Run139Tests.test_queue_stop_blocks_every_following_submission_and_stage) ... ok
+test_source_tamper_is_rejected_using_an_isolated_fixture_root (__main__.Run139Tests.test_source_tamper_is_rejected_using_an_isolated_fixture_root) ... ok
+
+======================================================================
+ERROR: test_direct_real_path_blocks_before_creating_real_run_outputs (__main__.Run139Tests.test_direct_real_path_blocks_before_creating_real_run_outputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run139_e7_flash_diag_r3.py", line 437, in test_direct_real_path_blocks_before_creating_real_run_outputs
+    self.go.run_all(caller=None)
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run139_e7_flash_diag\go.py", line 1578, in run_all
+    _load_v4_lazily_then_block()
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run139_e7_flash_diag\go.py", line 1568, in _load_v4_lazily_then_block
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\experiment_calls_v4.py", line 5, in <module>
+    import runner_v4 as runner
+ModuleNotFoundError: No module named 'runner_v4'
+
+----------------------------------------------------------------------
+Ran 15 tests in 32.477s
+
+FAILED (errors=1)

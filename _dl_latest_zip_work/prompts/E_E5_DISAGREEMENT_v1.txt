@@ -1,0 +1,6 @@
+# E / E5 分歧反证（可选，冻结 v1）
+同一 E5 案例里，两个评审模型给出了不同结论。此任务不做投票，不假定其中某个模型较强。
+逐条审查两种判断：指出双方最有力的 source item 原文依据、是否把已在 source 的因果当成新增、是否把无依据的推断当作新机制。
+不能把旧历史主会话裁决当作音乐事实；没有谱面/音频时只裁 input-level。
+所有候选和先前判词都不是证据本身，必须回到原 case items。戏剧化/笃定/单故事不自动扣分。
+只输出 JSON：{"blind_id":"Bxxx","strongest_case_for_1":"","strongest_case_for_2":"","most_decisive_source_quote":"","recommended_resolution":"insight|restatement|manufactured|imported|undetermined","remaining_uncertainty":""}

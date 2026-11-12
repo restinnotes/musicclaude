@@ -1,0 +1,76 @@
+## 独立只读工程审查完整终局（run146/run147 r6，中文）
+
+**审查对象**：`runs/run146_e7_flash_diag_r6/{go.py,manifest.json,README.md}`、`runs/run147_thread_resume_r6/{go.py,manifest.json,README.md}`、`tools/tests/test_run146_e7_flash_diag_r6.py`、`tools/tests/test_run147_thread_resume_r6.py`；只读比对 r5（`run144/run145`）旧文件。**未写文件、未调模型 CLI、未联网、未复跑 suite、未碰宪法/验收/正式 prompt/历史/memory/ACTIVE/index。**不作音乐验收；戏剧化、笃定、因果写满、单一情感故事均不涉及扣分（本审查不评内容）。
+
+---
+
+### 一、CONFIRMED（静态代码确认；非动态执行断言）
+
+**C0 — 四文件 SHA 与 brief 一致，manifest 自洽，r5 未被覆盖**
+- `run146/go.py=3066d97c…438869`、`run147/go.py=27e00867…c969349`、`test146=0b98b0d3…5ff`、`test147=98a86bcb…079`，与任务 brief 给出的四个 SHA 逐字一致。
+- 两 manifest 的 `based_on.source_driver_sha256/source_tests_sha256` 与磁盘上 r5 四文件当前 SHA 完全一致（run144 driver `84dbd541…`、tests `55908306…`；run145 driver `709e383b…`、tests `c070b161…`）→ **r5 旧文件未被覆盖**。两 README 实际 SHA 与 manifest `artifacts.readme_sha256` 一致。
+
+**C1 — r5→r6 驱动差异仅为机械改名 + 精确类型循环**
+- 全文件 diff：除 run 名/命名空间/schema/异常类名/内部文案改名外，`run146` 唯一语义改动一行（`go.py:1870`），`run147` 唯一语义改动两处（`go.py:1295` 收据循环；`go.py:979` match 模板标签 `run145-exact-source-match-v1`→`run147-exact-source-match-v1`，见 C7）。
+- r6 原文（与 manifest `changes` 声明逐字相符）：
+  - `runs/run146_e7_flash_diag_r6/go.py:1869-1871`：`for field, expected_value in expected.items():` / `if type(receipt.get(field)) is not type(expected_value) or receipt.get(field) != expected_value:` / `raise IntegrityError("trusted Muse receipt is not source-bound for field " + field)`
+  - `runs/run147_thread_resume_r6/go.py:1294-1296`：`for key, value in expected.items():` / `if type(receipt.get(key)) is not type(value) or receipt.get(key) != value:` / `raise IntegrityError("trusted archive receipt is not bound to exact task bytes/identity: " + key)`
+- r5 旧循环原文确为纯 `==`（`run144/go.py:1870`：`if receipt.get(field) != expected_value:`；`run145/go.py:1295`：`if receipt.get(key) != value:`）→ 本次修复点精确命中。
+
+**C2 — 冻结输入/prompt 与 r5 完全相同，磁盘逐项 OK**
+- 两 manifest `frozen_input_sha256`/`frozen_prompt_sha256` 与 r5 manifest 键集与值**完全 identical**；对磁盘实际冻结文件逐项验 SHA，run146 12 项、run147 7 项全部 OK，无 MISMATCH。正式 prompt、宪法、旧证据零改动。
+
+**C3 — 字段集未缩减，26/27 exact 接口保留**
+- run146 receipt `required` 26 字段（含 `attestation_class`），测试 `test_run146:587` 断言 `len==26`；run147 `required` 27 字段，测试 `test_run147:386` 断言 `len==27`。缺字段/多余字段仍拒（exact field set 检查保留）。
+
+**C4 — 新增测试只是 subTest，test 数 25/24 不变**
+- `def test_` 计数：146 为 25（r5 同为 25），147 为 24（r5 同为 24）。新增各为一块 13 行 subTest 插入（146 `test:573-585` 覆盖 `verified/source_bound/seed/raw_output_size`；147 `test:372-384` 覆盖 `verified/bytes_verified/source_bound/seed/raw_response_size`），且均为 **helper 直接调用 + full ingress 双路径**（`_validate_external_muse_receipt`/`_validate_trusted_muse_receipt` 与 `validate_external_review_results`/`validate_muse_return`）。符合“不可称新增 25/24 条”。
+
+**C5 — C5 类恶意输入在收据层静态全拒**
+- bool 期望字段遇 `1/1.0/False/"true"/None`：`type()` 精确比较必不等（`type(1) is int ≠ bool` 等），False 则值不等 → 全 raise。`seed/size` int 期望遇 `True/float`：`type(True) is bool ≠ int` → raise。缺字段→`None` 类型不等 → raise。`attestation_class` 白名单、`raw_output_size is int`（拒 bool）、`terminal_id` 非空 str 检查均保留。
+
+**C6 — C1–C4/P1/P2 旧合同逐行保留（diff-identical）**
+- C1（execute 当前绑定/冲突 0 submit/相同 0 reuse）、C2（parse 失败 durable + default STOP，`go.py:1019-1021/1103-1105`）、C3（transport source-bound verifier 绑定与 hold，`go.py:1056-1081`，`is True` 严格同一性保留）、C4（run147 match/inventory/retire/Center 逻辑）、P1（canonical alias 单处、requested/actual 绑定语义、`real_return_count` TEST_ONLY 恒 0）、P2（Q3 sole single-line、`confidence strict int` 拒 bool）—— diff 显示这些区域零改动。
+
+**C7 — run147 新标签 `run147-exact-source-match-v1` 为 run 内自洽，不污染历史 lineage**
+- `go.py:979` 仅用作 match 任务 `template_sha256` 的名义常量，创建（`_build_mock_chain`）与校验（同 fingerprint 链）同源；frozen 输入 SHA 全等（C2），历史 lineage 键未动。
+
+**C8 — 主 probe preflight 标签问题已识别，不误认**
+- `notes/research/run146147_main_verify_20261009_r1/preflight/` 内为 `run144_real/run145_real/run145_strict` 旧名标签；r6 自身 direct-entry 测试存在于 r6 suite 内部（146 `test:661-699`、147 `test:500-537`）。本审查不把该 preflight 当作两 r6 direct CLI 证据。
+
+---
+
+### 二、PLAUSIBLE（残留疑点：静态成立、未执行、r5 既有、r6 未覆盖）
+
+**P-A — run146 pack/result 层的 `seed`/`order_index` 仍用 `==` 比较，float/bool 等值可通过 pack 校验**
+- 位置：`runs/run146_e7_flash_diag_r6/go.py:1757`，原文：`if task.get("set") != set_name or task.get("order_index") != order or task.get("seed") != seed:`
+- 位置：`go.py:1912-1913`，原文：`result.get("mapping") != task["mapping"] or result.get("seed") != task["seed"] or`
+- 可复现输入→错误接受（静态语义，Python `==` 等值规则确定）：
+  1. 外部 pack task 置 `seed=139060.0`（float，与 `SEED_COMPARE` 等值）→ `139060.0 != 139060` 为 False → pack 通过；随后 receipt 置 `seed=139060.0` → r6 循环的 expected 即取自该 pack（float），`type`+`==` 全过 → 产生携带 float seed 的“source-bound”收据（pack 层本应拒）。
+  2. 外部 pack task 置 `order_index=True`（order=1 时，`True != 1` 为 False）或 `order_index=False`（order=0）或 `1.0/0.0/2.0` → pack 通过；`order_index` 不在 receipt 字段集内，下游无类型复核 → 接受携带 bool order_index 的 pack。
+- 说明：bool `True` 不能冒充 seed（量级 139060/139160 下 `True != seed` 恒成立），故 seed 残留仅 float 等值；`order_index`（0/1/2）则 bool/float 均可冒充。严重度低：`seed/order_index` 不进入 `source_bundle_sha256`/`mapping_sha256`/prompt 任一 hash，receipt 其余绑定仍有效，仅污染记录类型。**r5 既有、非 r6 引入、r6 新测试未覆盖 pack 层**。run147 无此问题（`validate_musepack` 用 `type(pack.get("seed")) is not int` 严格校验，`go.py:1176`）。
+
+---
+
+### 三、REJECTED（经核验不成立的疑虑）
+
+- **R1** “精确循环漏嵌套 seed/order/request”：receipt 层 expected 全为标量（str/bool/int），无嵌套结构，逐字段 `type+==` 全覆盖 → receipt 层 REJECTED（残留仅 pack 层，见 P-A）。
+- **R2** “callable verifier 当新后端绕过”：无 verifier 仍 `RealExecutionBlocked`/`CompletionPending`（146:`1898-1900`；147:`1311-1312`），r6 未动 → REJECTED。
+- **R3** “TEST_ONLY 计入 real”：`real_return_count` 逻辑 diff 零改动，TEST_ONLY 恒 0 → REJECTED。
+- **R4** “raw size 不精确”：`len(raw_bytes)` 精确字节比较保留（146:`1860-1861`；147:`1287`）→ REJECTED。
+- **R5** “新 schema/domain 洗历史 lineage”：frozen SHA 全等（C2），仅 C7 自洽标签 → REJECTED。
+- **R6** “bound slots/`_mode` 被洗”：run147 `execution_mode` 校验区 diff 零改动 → REJECTED。
+- **R7** “hold 同/异步、跨 process 语义变化”：queue/hold 路径 diff 零改动 → REJECTED。
+- **R8** “fixture 语义映射变化”：`MockCaller` 与 `_mock_artifact` 逻辑 diff 仅改名 → REJECTED。
+- **R9** “0writes/提前建目录破坏”：import 无副作用测试保留，`run()` 建目录为原有行为且 direct-entry 0 写测试保留 → REJECTED。
+- **R10** “hash scope 泛化”：仍为精确字节 `sha256_bytes`/`sha256_text`，无放宽 → REJECTED。
+
+---
+
+### 四、终局处置
+
+- **C5 实证修复静态确认**：r6 精确类型循环正确拒收 brief 所述 10 定向反例类输入，旧合同保留，r5 未覆盖，冻结输入未动。
+- **但按规则 19：新 review 与主亲跑前不 ACCEPTED** → 本终局为 **STATIC_FIX_CONFIRMED / NOT_ACCEPTED（待主动态核验与主亲跑）**。
+- **r5 仍 NOT_ACCEPTED**（原 C1–C4 结论不受本修订影响，不因 r6 而改变）。
+- **不给任何 music 或 production ACCEPTED**：两 manifest `boundaries` 均为 `COMPLETION_PENDING / music NOT_PERFORMED / production false / real 0`；代码内无 DONE 路径（DONE 仍拒收）。
+- 唯一残留 P-A 请主会话裁决是否值得再开修订（建议：pack 层 `seed/order_index` 加 `type() is int` 严格比较；属 pre-existing 低严重问题，不阻塞 C5）。

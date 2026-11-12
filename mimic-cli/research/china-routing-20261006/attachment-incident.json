@@ -1,0 +1,17 @@
+{
+  "incident": "Judge attachment was selected on an inactive duplicated composer file input",
+  "scope": "Research-only attachment adapter; existing gateway, browser and authentication preserved",
+  "observations": [
+    "J1 through J4 recovery01 returned INPUT_INCOMPLETE and attested no file available.",
+    "Sentinel02 selected the first general file input, had no visible attachment chip in the pre-send screenshot, and returned INPUT_INCOMPLETE.",
+    "Page had six file inputs including two empty-accept general inputs.",
+    "Sentinel03 selected the last general input, required a visible filename outside editable text, displayed an attachment chip, and returned the file-only sentinel SILVER-OTTER-73914 in 37.468 seconds.",
+    "J1 recovery02 explicitly reported reading all 24 raw report boundaries, all 25 audit boundaries, and matching the 24 manifest report hashes."
+  ],
+  "repair": "Use final general attachment input and fail closed unless every filename is visible outside editable content; preserve upload DOM and pre-send screenshot",
+  "limitations": "Active input selection uses observed current DOM ordering. Visible chip validation prevents silent submission if this ordering changes. Transport success alone still does not prove a judge read all inputs.",
+  "previous_attempts_preserved": true,
+  "browser_or_container_restarted": false,
+  "login_or_cookies_modified_by_this_repair": false,
+  "research_evidence_pack_unchanged": true
+}

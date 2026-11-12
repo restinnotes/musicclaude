@@ -1,0 +1,2290 @@
+```json
+{
+  "segment": "S02",
+  "measures": "4–16",
+  "timeline": [
+    {
+      "measures": "4–5",
+      "basis": "stated",
+      "music": "规律、轻柔的摇曳在低处建立。原稿明确把这一运动的形成放在第4–5小节。它既可听作连续的水波，也可产生心跳、水流呼吸、身体受到托举等不同体验。",
+      "facet_ids": ["F01", "F02", "F03", "F04", "F05", "F06", "F08"]
+    },
+    {
+      "measures": "6",
+      "basis": "stated",
+      "music": "摇曳已经在下方持续，成对的歌唱线条在上方清楚出现。初次歌唱向高处展开时，声音却受到收轻的要求，并不顺着上升立即放大。",
+      "facet_ids": ["F12", "F13", "F14", "F15", "F16", "F17", "F24"]
+    },
+    {
+      "measures": "7–11",
+      "basis": "stated",
+      "music": "歌唱继续伸展，局部又有收回的动作。第7、9、11小节附近相似的落音反复出现；第8–11小节也能听到乐句似乎可以停下、却又接着延展的倾向。",
+      "facet_ids": ["F25", "F33", "F34", "F35"]
+    },
+    {
+      "measures": "11–15",
+      "basis": "stated",
+      "music": "歌唱持续展开，并逐渐积聚更强的情绪。对于此处的呼吸组织，原稿存在两种不同听感：有的听成句子趋短、催促感增加；另有一稿听成呼吸渐长、抬升后才松开。二者不被强行统一。",
+      "facet_ids": ["F40", "F41", "F42", "F46"]
+    },
+    {
+      "measures": "14–16",
+      "basis": "stated",
+      "music": "上扬之后，声音出现收柔、短暂落稳及再度浮动的感觉。短暂的安顿没有形成彻底终结。几份原稿将这一局部听成呼气或一次尚未说尽的回应。",
+      "facet_ids": ["F43", "F44"]
+    },
+    {
+      "measures": "16",
+      "basis": "stated",
+      "music": "本段末尾仍保持流动，其中一份原稿听到细微的明暗变化。这里不预先写入第17小节以后歌唱退入摇荡余味、或进一步展开的事件。",
+      "facet_ids": ["F45"]
+    }
+  ],
+  "facets": [
+    {
+      "id": "F01",
+      "measures": "4–5",
+      "dimensions": ["身体与动作", "感官质地", "场景与画面"],
+      "claim": "低处出现稳定、轻柔、连续的摇曳。它像船身受到平静水波的承托，建立了这段音乐可以让身体跟随的运动。",
+      "image": "一阵接一阵、几乎没有尽头的平静波浪。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-web-1",
+          "quote": "伴奏在左手如同永无止境的平静波浪。"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "稳定、轻轻摇晃的声音出现。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "有规律的轻轻摇晃"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "伴奏的摇摆感逐渐稳下来"
+        }
+      ],
+      "source_range": ["mm. 4–15", "mm. 4–5", "mm. 4–16"],
+      "placement": "stated",
+      "placement_note": "SRC-gpt6w-web-2与SRC-gpt6w-web-3明确指出第4–5小节建立规律摇晃；较宽范围的原稿用于支持持续波浪的性质。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F03",
+          "note": "同一规律运动也可被感成水流的呼吸，但外部摇晃与呼吸质地不是完全相同的体验。"
+        },
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "稳定运动是可听见的现象，催眠般的安全感是它可能带来的身体反应。"
+        },
+        {
+          "type": "before",
+          "to": "F13",
+          "note": "船身般的摇曳先建立，成对歌唱随后浮现。"
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "measures": "4",
+      "dimensions": ["身体与动作", "感官质地"],
+      "claim": "规律的起伏也可以被感成身体内部的心跳，不仅是身外的水波。它使运动带有亲近身体的脉搏感。",
+      "image": "心跳与连绵水浪互相映照。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-1",
+          "quote": "像心跳，也像无止境的水浪。"
+        }
+      ],
+      "source_range": ["mm. 1–4"],
+      "placement": "inferred",
+      "placement_note": "原稿在1–4小节的描写末尾谈到规律摇晃的建立；据第4小节持续节奏出现的事件定位，不把前三小节的引子计入。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F01",
+          "note": "同一运动可同时获得水波与心跳两种身体参照。"
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "measures": "4–5",
+      "dimensions": ["身体与动作", "感官质地", "场景与画面"],
+      "claim": "低处的起伏不仅像船在摇，也像水流自己在缓慢呼吸。这是一种舒缓、有生命感的吸气与吐气，而不是单纯的机械往复。",
+      "image": "水流的呼吸。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-2",
+          "quote": "左手开始建立起标志性的摇曳律动（像水流的呼吸）"
+        }
+      ],
+      "source_range": ["mm. 4–39"],
+      "placement": "inferred",
+      "placement_note": "原稿明确说的是摇曳律动初次建立；该事件位于第4–5小节，而不是第24小节以后的主题重现。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F01",
+          "note": "水流的呼吸感与平静波浪感可同时成立，但身体质地不同。"
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "measures": "4–5",
+      "dimensions": ["身体与动作", "动因与心理", "场景与画面"],
+      "claim": "身体仿佛放弃了靠双脚控制重量，不再需要坚实地面支撑，而是把自己的重量交给持续起伏的水。这是主动卸去重力控制的感觉。",
+      "image": "离开脚下的陆地，把全部重量交给温热而起伏的水。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-int-3",
+          "quote": "放弃对重力的控制"
+        }
+      ],
+      "source_range": ["mm. 1–5"],
+      "placement": "stated",
+      "placement_note": "原稿正文明确将这一身体状态转变放在第4–5小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F05",
+          "note": "交出身体重量和获得安全感相关，但前者是身体姿态变化，后者是心理及神经反应。"
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "measures": "4–5",
+      "dimensions": ["身体与动作", "情绪色调", "动因与心理"],
+      "claim": "规律摇晃像有人从下方温柔地托着身体，令人放松神经，产生近乎催眠的安全感；即使情绪可能继续波动，也暂时不怕坠落。",
+      "image": "水从船底托举身体，像有一双手始终轻轻接着。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "催眠般的安全感"
+        },
+        {
+          "src": "SRC-gpt6w-int-1",
+          "quote": "像有人轻轻托着你"
+        }
+      ],
+      "source_range": ["mm. 1–5", "整首作品的“摇晃”"],
+      "placement": "stated",
+      "placement_note": "SRC-gflash-web-3明确把船底托举的安全感归于第4–5小节；SRC-gpt6w-int-1的全曲摇晃观察只作为该机制的补充依据。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F08",
+          "note": "身体获得安全感，不意味着心中所有复杂期待已经消失。"
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "measures": "4–6",
+      "dimensions": ["身体与动作", "时间与变化"],
+      "claim": "此前似乎绷着的身体，在音乐开始连续流动后逐渐松开。这里着重于由紧到松的实际身体过程，而非已经处于安全或亲密之中的静态感受。",
+      "image": "原来绷着的身体终于慢慢松开。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-2",
+          "quote": "仿佛原来绷着的身体终于慢慢松开。"
+        }
+      ],
+      "source_range": ["mm. 1–6"],
+      "placement": "inferred",
+      "placement_note": "原稿先说开头等待，随后说音乐开始流动、身体松弛；流动的摇曳在第4–5小节建立，第6小节歌唱出现，因此定位于4–6。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F04",
+          "note": "从绷紧到松弛与把重量交给水可以同在，却不是完全一样的身体动作。"
+        }
+      ]
+    },
+    {
+      "id": "F07",
+      "measures": "4–16",
+      "dimensions": ["身体与动作", "场景与画面", "情绪色调"],
+      "claim": "反复摇摆让人舒服地悬浮着，暂时不必抵达哪里。旅程尚未到岸并不使人害怕，反而可以安心待在正在移动的途中。",
+      "image": "夜里乘船，享受风景，知道尚未靠岸，却不急着抵达。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-1",
+          "quote": "那种一来一回的摇摆让人舒服"
+        },
+        {
+          "src": "SRC-luna-int-1",
+          "quote": "不害怕，甚至享受风景，只是心里知道自己还没到岸。"
+        }
+      ],
+      "source_range": ["mm. 1–20"],
+      "placement": "segment_wide",
+      "placement_note": "原稿仅为1–20小节给出整体的摇摆、漂浮及夜航画面，无法把这一感觉进一步落实到本段内某一乐句。其后错误的全曲143小节编号不用于定位。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F08",
+          "note": "同一原稿中的安心未抵达与隐约期待可共存，不需要解释成先安心、后焦虑。"
+        }
+      ]
+    },
+    {
+      "id": "F08",
+      "measures": "4–5",
+      "dimensions": ["情绪色调", "动因与心理", "时间与变化"],
+      "claim": "外在运动平稳从容，内心却仍有未说明的期待和重量。规律的摇摆容纳了复杂念头，并没有把心理变得简单。",
+      "image": "夜里走熟悉的路，脚步十分规律，脑中的事情却并不平静。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "水面是平稳的，但人的内心并不因此简单。"
+        },
+        {
+          "src": "SRC-luna-int-1",
+          "quote": "安稳的摇荡里，藏着一点期待。"
+        }
+      ],
+      "source_range": ["mm. 1–5", "mm. 1–20"],
+      "placement": "inferred",
+      "placement_note": "SRC-gpt56w-int-r1在1–5小节中明确先写引子、再写持续摇曳出现后的内外反差；后者对应第4–5小节。SRC-luna-int-1的宽范围期待感作为辅证。",
+      "relations": [
+        {
+          "type": "contrasts",
+          "to": "F05",
+          "note": "F05侧重摇晃带来的安全，F08侧重安全外表下尚有心理重量；不是互相否定。"
+        }
+      ]
+    },
+    {
+      "id": "F09",
+      "measures": "4–16",
+      "dimensions": ["动因与心理", "情绪色调", "时间与变化", "场景与画面"],
+      "claim": "始终流动的水波也像不可停止的时间。它让正在享受的幸福显得没有牢固根基，甜蜜中因而有一种无法留住当下的隐痛。",
+      "image": "幸福悬浮在水面上，每一秒都随着水波向前。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-int-1",
+          "quote": "水波的晃动是不可逆的——水在流，时间在走。"
+        },
+        {
+          "src": "SRC-gflash-web-1",
+          "quote": "它没有根基，每一秒都在倒数。"
+        },
+        {
+          "src": "SRC-gpt6w-int-1",
+          "quote": "没有任何一刻能够真正停住。"
+        }
+      ],
+      "source_range": ["mm. 1–15", "mm. 4–34", "整首作品的“摇晃”"],
+      "placement": "segment_wide",
+      "placement_note": "这一体验依附于本段持续存在的水波运动，而不是某个能够单独确认的音或乐句。原稿有较宽的范围，故不缩窄。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F37",
+          "note": "两者都涉及幸福的有限性，但本facet的具体动因是水波不断前进，F37是对当下本身不能永久持续的清醒意识。"
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "measures": "4–16",
+      "dimensions": ["场景与画面", "感官质地", "情绪色调"],
+      "claim": "首次摇曳与歌唱也可以置于温暖的午后光线中，呈现柔和、带金色的水面感，而不是必须发生在夜晚。",
+      "image": "下午斜阳映在水面的暖金光线。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-2",
+          "quote": "下午斜照在水面的暖金光线"
+        }
+      ],
+      "source_range": ["mm. 4–39"],
+      "placement": "segment_wide",
+      "placement_note": "原稿把这幅光景作为4–39小节的整体背景，没有单独标出其在本段的具体发生时点。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F11",
+          "note": "暖金午后与黄昏暮色是不同的光线想象，不混写为同一场景的连续日落。"
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "measures": "4–16",
+      "dimensions": ["场景与画面", "情绪色调"],
+      "claim": "歌唱笼罩在黄昏的暮色中，带着沉入温柔、不愿立即离开的朦胧气息。这是整体的暮色画面，不包含第32–34小节具体的日落或高音颤动。",
+      "image": "沉溺之中的黄昏暮色。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-web-1",
+          "quote": "沉溺之中的黄昏暮色"
+        }
+      ],
+      "source_range": ["mm. 4–34"],
+      "placement": "segment_wide",
+      "placement_note": "原稿在4–34小节的总体心理描述中提出暮色，无法细分为本段的某几小节；明确不采用32–34小节的具体日落画面。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F10",
+          "note": "属于独立的场景光色。"
+        },
+        {
+          "type": "coexists",
+          "to": "F27",
+          "note": "暮色场景可与另一原稿的黄昏倦意同在，但不能仅凭光线推出身体已经微醺。"
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "measures": "4–6",
+      "dimensions": ["时间与变化", "身体与动作"],
+      "claim": "先感到船身般的摇动，真正的歌声稍后才浮上来。听觉注意力由下面的运动，转向被运动承托的歌唱。",
+      "image": "水先接住身体，歌声随后从水面上升起。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "船的摇摆感终于出现，而真正的歌声稍晚才浮出来。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "到 mm.6，真正的歌声出现了。"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "stated",
+      "placement_note": "SRC-gpt6w-web-3明确分别标出第4–5小节的摇晃和第6小节的歌声；SRC-gpt56w-web-r1独立说出同一先后。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F01",
+          "note": "F12保存先后转换，F01保存初始摇晃本身的质地。"
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "measures": "6–16",
+      "dimensions": ["人物与关系", "场景与画面", "感官质地"],
+      "claim": "成对的歌唱可以听成两个人紧紧挨着低声交谈，声音只需要到达对方耳边。它不是向外界公开倾诉，而是一种极近距离的双人交流。",
+      "image": "肩膀贴着肩膀，两个人在耳边低声说话。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-int-1",
+          "quote": "两个紧挨在一起的人在耳语"
+        },
+        {
+          "src": "SRC-gflash-int-3",
+          "quote": "两个人贴着耳廓在低声说话"
+        },
+        {
+          "src": "SRC-gflash-web-1",
+          "quote": "两颗灵魂的依偎"
+        },
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "像两个很熟悉的人在夜里说话"
+        },
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "两个意识贴得很近，在彼此呼吸之间说话。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "两个人很熟悉地说话，不需要特意寻找话题。"
+        }
+      ],
+      "source_range": [
+        "mm. 5–15",
+        "mm. 6–39",
+        "mm. 4–15",
+        "mm. 4–16"
+      ],
+      "placement": "inferred",
+      "placement_note": "原稿对首次双音歌唱的起点有5、6小节等不同概括；按第6小节明确出现的成对歌唱定位，并只取首次呈现，不延伸到第17小节以后。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F16",
+          "note": "双人互相低语，与一个人唱给另一人听的人物配置不同。"
+        },
+        {
+          "type": "alternative_to",
+          "to": "F17",
+          "note": "两个人的交谈与一个人内部的两种声音，是不同的完整听法。"
+        },
+        {
+          "type": "coexists",
+          "to": "F14",
+          "note": "紧挨着说话与两条声音相互回应可以共存，但不等价。"
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "measures": "6–16",
+      "dimensions": ["人物与关系", "时间与变化", "动因与心理"],
+      "claim": "两条歌唱线不只是距离很近，还会彼此交织、映照、回应。它因此令人感到一种双向的亲密：两颗心灵互相理解，不需要单方面解释或证明。",
+      "image": "两条歌声相互缠绕，像两颗灵魂在交换只有彼此能懂的话。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-int-2",
+          "quote": "心照不宣的双向亲密"
+        },
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "两个人、两颗灵魂的纠缠"
+        },
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "两条彼此缠绕、彼此回应的歌唱线。"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "两条声音靠得很近、彼此映照。"
+        }
+      ],
+      "source_range": ["mm. 4–39", "mm. 6–39", "mm. 4–14", "mm. 4–16"],
+      "placement": "inferred",
+      "placement_note": "这种互相回应的体验依附于第6小节以后初次出现的双声歌唱；宽范围原稿所述的后续变化不移入本段。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F13",
+          "note": "F13是两人空间上的贴近，F14强调交流的双向性。"
+        },
+        {
+          "type": "coexists",
+          "to": "F15",
+          "note": "互相理解与身体呼吸同步可以共同出现，但一个偏向关系，一个偏向身体触感。"
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "measures": "6–16",
+      "dimensions": ["身体与动作", "感官质地", "人物与关系"],
+      "claim": "成对的歌唱还可以具有强烈的身体性：两个人的呼吸、语调同步，身体轻轻触碰。这里不是抽象的心灵理解，而是几乎可以感觉到的距离和接触。",
+      "image": "两个人的呼吸落在同一节奏里，身体轻轻擦碰。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-3",
+          "quote": "呼吸和语调完全同频，亲密到容不下第三者。"
+        },
+        {
+          "src": "SRC-gflash-web-2",
+          "quote": "并行的双音像两个人同步的呼吸与肢体触碰。"
+        }
+      ],
+      "source_range": ["mm. 6–39", "mm. 4–39"],
+      "placement": "inferred",
+      "placement_note": "两稿均把同步呼吸与并行双音相联；以第6小节双音歌唱的首次进入为音乐定位，后续重现不纳入。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F13",
+          "note": "近距离低语和身体同步可共存，但不能因为都有两个人便合并。"
+        }
+      ]
+    },
+    {
+      "id": "F16",
+      "measures": "6–16",
+      "dimensions": ["人物与关系", "场景与画面", "动因与心理"],
+      "claim": "也可以听成一个人向身边很近的另一个人低声唱出心事。这是一个表达者和一个倾听者的配置，不必假定双方同时说话。",
+      "image": "一个人压低声音，把心事唱给坐在近处的人。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "像有人把心事唱给一个很近的人听。"
+        },
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "主旋律像有人压低声音唱给另一个人听"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "inferred",
+      "placement_note": "两稿均把画面联系到最初的歌唱；第6小节旋律出现，故定位6–16。没有把单向倾诉改写成双人互诉。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F13",
+          "note": "说话者和倾听者的分工不同于双向耳语。"
+        }
+      ]
+    },
+    {
+      "id": "F17",
+      "measures": "6–14",
+      "dimensions": ["人物与关系", "动因与心理", "场景与画面"],
+      "claim": "成对的歌唱也可完全不指向两个人，而是一个人内心的两种声音互相依偎。亲密发生在同一意识内部，而非两具身体之间。",
+      "image": "一个人心里的两种声音贴在一起。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "一个人内心两种声音互相依偎"
+        }
+      ],
+      "source_range": ["mm. 4–14"],
+      "placement": "inferred",
+      "placement_note": "原稿明确将该听法关联到初次出现的两条歌唱线；双声歌唱从第6小节进入。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F13",
+          "note": "人物数量不同：此处是单一意识内部的两种声音。"
+        },
+        {
+          "type": "alternative_to",
+          "to": "F16",
+          "note": "此处不需要另一个现实中的倾听者。"
+        }
+      ]
+    },
+    {
+      "id": "F18",
+      "measures": "4–16",
+      "dimensions": ["人物与关系", "情绪色调", "动因与心理"],
+      "claim": "有一种非常私人、柔软的相伴之乐：与熟悉或珍惜的人待在一起，不必刻意寻找话题，沉默本身也令人满足。这种亲密不依赖不断说话。",
+      "image": "两个熟悉的人安静坐着，不需要用话语填满彼此之间的空间。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "一种非常私人、非常柔软的舒适。"
+        },
+        {
+          "src": "SRC-gpt56w-int-3",
+          "quote": "非常亲密的安定。"
+        },
+        {
+          "src": "SRC-gpt6w-int-2",
+          "quote": "像两个人坐在一起，不必拼命找话说。"
+        },
+        {
+          "src": "SRC-gpt6w-int-3",
+          "quote": "不需要找话题，也不担心沉默。"
+        },
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "一个人和非常珍惜的人待在一起，觉得此刻很好"
+        },
+        {
+          "src": "SRC-luna-int-2",
+          "quote": "像和熟悉的人待在一起，不必急着说话。"
+        }
+      ],
+      "source_range": [
+        "mm. 4–19",
+        "mm. 5–14",
+        "mm. 7–22",
+        "mm. 4–16",
+        "mm. 1–16"
+      ],
+      "placement": "segment_wide",
+      "placement_note": "几稿描述的是首次亲密主题的总体状态，没有把无须多言的满足锁定在某一个落音或小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F13",
+          "note": "低声交谈和无需说话的舒适是两种不同关系状态，可作为整体亲密感的并列层次；不写成先聊天、后来沉默的情节。"
+        },
+        {
+          "type": "coexists",
+          "to": "F19",
+          "note": "相伴本身的满足与由此感到不必戒备可以共存，但不是同一个心理原因。"
+        }
+      ]
+    },
+    {
+      "id": "F19",
+      "measures": "4–16",
+      "dimensions": ["情绪色调", "动因与心理", "场景与画面"],
+      "claim": "音乐也可成为一个终于能够降低警惕的地方。亲近带来的幸福，在于此刻不需要持续防御，可以放心地依恋。",
+      "image": "终于来到一个不必时刻保持警惕的地方。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-1",
+          "quote": "一个人终于能够放松警惕，跟另一个人亲近"
+        },
+        {
+          "src": "SRC-gpt6w-int-3",
+          "quote": "终于来到一个不必时刻保持警惕的地方。"
+        }
+      ],
+      "source_range": ["mm. 4–21", "mm. 4–16"],
+      "placement": "segment_wide",
+      "placement_note": "这是原稿对初次亲密阶段的整体心理判断，未给出可据以细分的小节事件。",
+      "relations": [
+        {
+          "type": "contrasts",
+          "to": "F21",
+          "note": "本facet强调防御终于松开；F21强调即使靠近仍保留警觉。二者是不同的心理重心，不因意见不同而拒收。"
+        }
+      ]
+    },
+    {
+      "id": "F20",
+      "measures": "4–16",
+      "dimensions": ["情绪色调", "动因与心理"],
+      "claim": "安宁带有疲惫之后暂时卸下戒备的性质，像一份从日常重负中偷得的休息。这与单纯安全、单纯舒适不同，里面已经包含先前的疲倦和安宁的暂时性。",
+      "image": "卸下戒备以后，偷来一小段宁静。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-1",
+          "quote": "卸下戒备的疲惫感，夹杂着“偷来的安宁”。"
+        }
+      ],
+      "source_range": ["mm. 1–15"],
+      "placement": "segment_wide",
+      "placement_note": "原稿把这一心理状态放在第一阶段总体描述中；只采进入摇曳歌唱之后的安宁，不把前三小节引子的重力画面算入。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F19",
+          "note": "两者都能表现防备放下，但F20还包含疲倦与暂时偷得休息的来源。"
+        }
+      ]
+    },
+    {
+      "id": "F21",
+      "measures": "6–16",
+      "dimensions": ["动因与心理", "情绪色调", "人物与关系"],
+      "claim": "音乐虽然非常亲密，心中却没有完全解除警觉。愿意靠近，但仍保留一点距离，不肯一下子把全部感情和重量交出去。",
+      "image": "我很靠近你，但还不肯把全部重量压上去。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "音乐非常亲密，却没有完全解除警觉"
+        },
+        {
+          "src": "SRC-gpt56w-web-r1",
+          "quote": "我很靠近你，但我还不肯把全部重量压上去。"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "摇荡出现，歌声变得亲近；但这份亲近并不踏实。"
+        }
+      ],
+      "source_range": ["mm. 6–21", "mm. 4–16"],
+      "placement": "inferred",
+      "placement_note": "警觉与距离感均依附于第6小节开始的初次亲密歌唱；较宽来源中第17小节以后的发展不采入。",
+      "relations": [
+        {
+          "type": "contrasts",
+          "to": "F19",
+          "note": "与完全能够放心依恋的听法相比，此处保留了心理边界。"
+        },
+        {
+          "type": "coexists",
+          "to": "F22",
+          "note": "保留自身心理距离和害怕破坏对方或美好事物，是不同的克制动因。"
+        }
+      ]
+    },
+    {
+      "id": "F22",
+      "measures": "6–16",
+      "dimensions": ["动因与心理", "情绪色调", "人物与关系"],
+      "claim": "表达格外小心，是因为眼前的亲近太珍贵，仿佛一个过重的声音、动作或太明显的热情就会把它惊散。这里的克制不是缺乏感情，而是害怕由自己破坏美好。",
+      "image": "手掌轻托着一件珍贵、易碎的东西；说话太响就可能把它惊碎。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-int-1",
+          "quote": "任何大声喧哗都会惊碎眼前的幻觉。"
+        },
+        {
+          "src": "SRC-gflash-web-2",
+          "quote": "克制的亲昵，与对“易逝之美”的小心翼翼"
+        },
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "已经知道幸福很珍贵，所以不敢粗暴触碰它的温柔"
+        },
+        {
+          "src": "SRC-gpt56w-web-3",
+          "quote": "我很珍惜眼前这一刻，所以反而不敢太用力"
+        },
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "他不想破坏它，不想吓跑它"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "仍然小心地选择说话的语气。"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "这里的甜美有克制，像一个人很珍惜当下"
+        }
+      ],
+      "source_range": [
+        "mm. 5–15",
+        "mm. 4–39",
+        "mm. 6–21",
+        "mm. 4–16",
+        "mm. 4–11",
+        "mm. 1–16"
+      ],
+      "placement": "inferred",
+      "placement_note": "不同原稿均将这份珍惜而不敢用力的表达联系到首次温柔歌唱；依第6小节歌声初现及随后收轻的事件定位。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F24",
+          "note": "F24是声音实际上在高处收轻；F22是听者赋予这种小心的心理动因，二者有原稿内的直接联系。"
+        },
+        {
+          "type": "coexists",
+          "to": "F21",
+          "note": "怕自己破坏美好与自己尚有戒心，可以并存，但并非同一个原因。"
+        }
+      ]
+    },
+    {
+      "id": "F23",
+      "measures": "6–16",
+      "dimensions": ["情绪色调", "动因与心理"],
+      "claim": "初次歌唱还有一种有教养、有分寸、略带羞怯的表达气质。幸福没有年轻式的兴奋张扬，而是自然而优雅地收着。",
+      "image": "一个明明动情却仍然讲究分寸的人。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-1",
+          "quote": "它有教养、有分寸，甚至带一点羞怯。"
+        }
+      ],
+      "source_range": ["mm. 4–21"],
+      "placement": "inferred",
+      "placement_note": "原稿将此气质归于初次亲密歌唱；第6小节主题出现后才有这种表达姿态。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F21",
+          "note": "端庄羞怯是一种表达气质，不一定意味着内心仍对亲密本身保持警觉。"
+        }
+      ]
+    },
+    {
+      "id": "F24",
+      "measures": "6",
+      "dimensions": ["感官质地", "情绪色调", "时间与变化"],
+      "claim": "主旋律初次向高处升起时，声音反而被要求收轻。向上与变轻的反常组合，让开口带着近乎叹息的谨慎，而非顺势宣泄。",
+      "image": "千言万语来到唇边，第一句话却轻得像叹息。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "一种“近乡情怯”的战战兢兢。"
+        },
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "主旋律初次出现时，肖邦反而要求它先收弱"
+        }
+      ],
+      "source_range": ["m. 6", "mm. 4–14"],
+      "placement": "stated",
+      "placement_note": "SRC-gflash-web-3明确指向第6小节高处的收弱；SRC-gpt56w-web-2独立强调主题第一次出现时反而减轻。",
+      "relations": [
+        {
+          "type": "before",
+          "to": "F40",
+          "note": "第一次谨慎开口在前，12–15小节的进一步热切在后。"
+        },
+        {
+          "type": "coexists",
+          "to": "F25",
+          "note": "初次上升反而收轻，与后续乐句向外伸又退回，是不同的音乐动作。"
+        }
+      ]
+    },
+    {
+      "id": "F25",
+      "measures": "6–11",
+      "dimensions": ["时间与变化", "身体与动作", "动因与心理"],
+      "claim": "歌唱不断试着向外伸展，却又略略退回，像有话想说但仍然谨慎。它表现的是伸出和回收的反复动作，不等同于初次升高时单纯收轻。",
+      "image": "伸出去的手停了一下，又轻轻退回。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-2",
+          "quote": "旋律有种不断伸出去、又稍稍收回来的感觉。"
+        },
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "旋律仿佛刚要向外倾诉，又收回一点。"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "旋律在向上伸展，但常常又轻轻收回。"
+        },
+        {
+          "src": "SRC-luna-int-2",
+          "quote": "旋律像是有话想说，又把话收住了。"
+        },
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "旋律常像是刚想倾诉，就又轻轻收回去。"
+        }
+      ],
+      "source_range": [
+        "mm. 7–22",
+        "mm. 6–11",
+        "mm. 4–11",
+        "mm. 1–16",
+        "mm. 4–16"
+      ],
+      "placement": "stated",
+      "placement_note": "SRC-gpt6w-web-1直接把该动作放在第6–11小节；宽范围原稿用于确认同一初次歌唱的伸出与回收。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F24",
+          "note": "两者共享克制气质，但对应的动作和先后范围不同。"
+        },
+        {
+          "type": "before",
+          "to": "F40",
+          "note": "谨慎的伸出与回收在较早乐句，后半较热切的展开在后。"
+        }
+      ]
+    },
+    {
+      "id": "F26",
+      "measures": "6–11",
+      "dimensions": ["感官质地", "身体与动作", "情绪色调"],
+      "claim": "摇摆的声音从下面托着歌唱，使上方的旋律不仅亲近，而且带着身体能够感觉到的温暖。这是声音质地的暖意，不必指定人物或季节。",
+      "image": "温暖的歌声安放在柔软摇动的水波上。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "摇摆的节奏托住一条像歌声的旋律，听起来有暖意"
+        },
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "也有一点感官上的暖意。"
+        }
+      ],
+      "source_range": ["mm. 4–11", "mm. 4–16"],
+      "placement": "inferred",
+      "placement_note": "温暖被原稿直接联系到初次旋律及其下方的摇摆；歌唱在第6小节以后出现，取6–11。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F28",
+          "note": "歌声本身的温暖与湿热晚风的皮肤触感不同。"
+        }
+      ]
+    },
+    {
+      "id": "F27",
+      "measures": "6–16",
+      "dimensions": ["感官质地", "身体与动作", "情绪色调"],
+      "claim": "初次主题的柔情带着黄昏般的倦意与轻微微醺，像成熟而有些疲惫的沉醉，不是轻快、雀跃的青春欢喜。",
+      "image": "黄昏时有些疲倦、微醉的人。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-3",
+          "quote": "黄昏时的倦意和微醺感"
+        }
+      ],
+      "source_range": ["mm. 6–39"],
+      "placement": "inferred",
+      "placement_note": "原稿紧接第6小节双音主题初现描述该音色，其后另有16–31、32–39小节的具体变化，故本条只采初次歌唱。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F28",
+          "note": "两者来自同一原稿且可共存，但疲倦微醺是身体状态，湿热风是皮肤感觉。"
+        }
+      ]
+    },
+    {
+      "id": "F28",
+      "measures": "6–16",
+      "dimensions": ["感官质地", "身体与动作", "场景与画面"],
+      "claim": "音乐令人联想到夏末水面上潮湿温热的微风，风贴着皮肤，甚至有一点黏稠。它提供的是湿度、温度和皮肤触感，不只是抽象的甜美。",
+      "image": "夏末傍晚威尼斯水面上的潮湿暖风，温热地裹在皮肤上。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-3",
+          "quote": "夏末傍晚威尼斯水面上潮湿、温热的微风"
+        }
+      ],
+      "source_range": ["mm. 6–39"],
+      "placement": "inferred",
+      "placement_note": "原稿将皮肤感直接接在第6小节初次歌唱的音色描述之后；不把后面繁复装饰音所造成的水珠画面移入本段。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F27",
+          "note": "来自同一完整听法中的两种不同身体层次。"
+        },
+        {
+          "type": "coexists",
+          "to": "F15",
+          "note": "湿热空气与人体呼吸接触可以共同构成亲近气氛，但二者的感官来源不同。"
+        }
+      ]
+    },
+    {
+      "id": "F29",
+      "measures": "6–16",
+      "dimensions": ["感官质地", "身体与动作", "人物与关系"],
+      "claim": "亲密具有一种成熟、浓厚，甚至近乎颓废的身体温存。两个人的体温和呼吸贴得极近，感觉浓得化不开。这是人与人之间的热度和密度，而非环境中的潮湿晚风。",
+      "image": "两个人的体温与呼吸几乎融成一团。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-web-1",
+          "quote": "“成熟到近乎颓废”的温存"
+        }
+      ],
+      "source_range": ["mm. 4–34"],
+      "placement": "inferred",
+      "placement_note": "原稿明确把该质地联系到初次双音紧贴时的亲密，并另述24–34小节更华丽的重现；本段只取第6小节开始的首次歌唱。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F15",
+          "note": "呼吸同步与成熟浓厚的身体温存可共存，但后者具有独立的成熟、浓稠感。"
+        },
+        {
+          "type": "coexists",
+          "to": "F28",
+          "note": "人的体温相贴不等于水面晚风的湿热。"
+        }
+      ]
+    },
+    {
+      "id": "F30",
+      "measures": "6–16",
+      "dimensions": ["身体与动作", "感官质地", "情绪色调"],
+      "claim": "柔情歌唱还带着一点感官上的陶醉，令人不只安静地欣赏美，也稍微沉入身体的愉悦之中。它没有明确指定两人的身体接触。",
+      "image": "",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "它有一点感官上的陶醉"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "inferred",
+      "placement_note": "原稿将感官陶醉明确归于第6小节左右浮现的亲近歌声。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F26",
+          "note": "温暖与陶醉可同时成立，但陶醉是更深入身体愉悦的状态。"
+        }
+      ]
+    },
+    {
+      "id": "F31",
+      "measures": "6–11",
+      "dimensions": ["情绪色调", "感官质地", "人物与关系"],
+      "claim": "温暖的歌唱中有一丝含而不露的诱惑。它不仅让人感到被安慰，也带着轻微吸引和靠近的意味，尚未公开、强烈地表达欲望。",
+      "image": "温柔说话里藏着一点没有挑明的吸引。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "也有一点含蓄的诱惑。"
+        }
+      ],
+      "source_range": ["mm. 4–11"],
+      "placement": "inferred",
+      "placement_note": "原稿把诱惑感置于4–11小节摇摆托举的歌唱中；歌声从第6小节进入。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F26",
+          "note": "温暖不必产生诱惑，诱惑也不是温暖的同义词。"
+        }
+      ]
+    },
+    {
+      "id": "F32",
+      "measures": "6–11",
+      "dimensions": ["人物与关系", "场景与画面", "时间与变化"],
+      "claim": "可以听成夜里两个人慢慢聊得更亲近：话并不多，却逐渐理解彼此。这幅画面包含一点接近过程，而不只是两个人早已紧挨着的静态画面。",
+      "image": "两个人在夜里慢慢聊近了；话说得少，却彼此听懂。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "两个人在夜里慢慢聊近了；话说得不多，但彼此都听得懂。"
+        }
+      ],
+      "source_range": ["mm. 4–11"],
+      "placement": "inferred",
+      "placement_note": "该场景出自首次歌唱的4–11小节说明；从第6小节双音歌唱出现起定位。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F13",
+          "note": "两个人低声说话是共有部分；逐渐聊近是本facet独有的变化，不能简单并入静态耳语。"
+        }
+      ]
+    },
+    {
+      "id": "F33",
+      "measures": "7、9、11",
+      "dimensions": ["感官质地", "情绪色调", "时间与变化"],
+      "claim": "几个乐句反复落向相似的音，底下的水波与光影却持续改变。同一个音每次回来，都既像甜蜜的确认，又像一根很轻的刺，使温柔出现具体的微痛。",
+      "image": "同一根温柔的刺反复触碰心口，水面的颜色却不一样。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gflash-web-3",
+          "quote": "它既像是甜蜜的确认，又带着一种无法排遣的惆怅"
+        }
+      ],
+      "source_range": ["m. 7, 9, 11"],
+      "placement": "stated",
+      "placement_note": "原稿明确指出第7、9、11小节附近反复的落音，并将甜蜜与惆怅的双重感受联系于该事件。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F09",
+          "note": "这里微痛的直接听觉来源是相似落音在变化背景中反复出现；F09的来源则是持续水波引发时间不可逆的意识。"
+        },
+        {
+          "type": "coexists",
+          "to": "F34",
+          "note": "重复落音带来的甜与刺，不等于一句话明明可结束却还想继续说。"
+        }
+      ]
+    },
+    {
+      "id": "F34",
+      "measures": "8–11",
+      "dimensions": ["动因与心理", "时间与变化"],
+      "claim": "乐句仿佛本来已经可以说完，却又忍不住继续，把同一种感受表达得更充分。这里是表达本身不愿停下，不是对未来时间流逝的担忧。",
+      "image": "一句话说到可以停下了，却又补上几句。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "本来已经可以停下，却又忍不住接着说。"
+        }
+      ],
+      "source_range": ["mm. 8–11"],
+      "placement": "stated",
+      "placement_note": "原稿明确将这种表达反复放在第8–11小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F35",
+          "note": "不愿结束表达与不舍得幸福时间过去，是不同的对象和心理动作。"
+        }
+      ]
+    },
+    {
+      "id": "F35",
+      "measures": "4–16",
+      "dimensions": ["动因与心理", "情绪色调", "时间与变化"],
+      "claim": "当下的亲近太好，便生出希望时间慢一点、旋律再伸远一点的愿望。它是享受之中的留恋与延长欲望，还没有发展成明确要求某人给出承诺。",
+      "image": "现在真的很好，真希望这一刻再慢一点过去。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-1",
+          "quote": "旋律虽然舒展，却常常有一种想继续伸出去的感觉。"
+        },
+        {
+          "src": "SRC-gpt6w-int-2",
+          "quote": "因为太喜欢眼前的东西，所以还没有失去，就已经生出一丝舍不得。"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "现在真的很好。我希望它慢一点过去。"
+        }
+      ],
+      "source_range": ["mm. 4–21", "mm. 7–22", "mm. 4–11"],
+      "placement": "segment_wide",
+      "placement_note": "愿意延长当下是数份原稿对首次主题的整体感受；其中一稿放在6–11小节，但其他来源跨越较宽范围，故不强制全部缩至同一乐句。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F37",
+          "note": "想让眼前的好延长，与已经知道幸福无法永久存在可共存，却并非同一种心理。"
+        },
+        {
+          "type": "coexists",
+          "to": "F34",
+          "note": "一个关注美好时刻持续多久，一个关注当下的话是否说完。"
+        }
+      ]
+    },
+    {
+      "id": "F36",
+      "measures": "4–16",
+      "dimensions": ["身体与动作", "动因与心理", "时间与变化"],
+      "claim": "音乐每次似乎快要安顿下来，摇晃又继续带它向前。由此形成既安稳又不愿就此停住的轻微渴望，而不是已经抵达后的静止满足。",
+      "image": "刚想在一处坐稳，小船又温柔地向前荡了一下。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-int-3",
+          "quote": "每次快要安顿下来，又舍不得就这样停住。"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "segment_wide",
+      "placement_note": "原稿把这一循环性的感觉归于整个初次主题，没有标出特定的几次落点。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F35",
+          "note": "二者都有留恋，但F36以反复摇动、接近安顿又继续为具体来源。"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "measures": "6–16",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "幸福从出现时就带着它不会永远持续的意识，因此亲近之中有薄薄的忧伤或提前的不舍。这不是已经失去后的悲痛，而是正幸福时知道幸福有限。",
+      "image": "抚摸珍爱之人的脸时，心里一闪而过：这样的时刻不可能永远存在。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "这种幸福从一开始就带着“它不会永远如此”的意识。"
+        },
+        {
+          "src": "SRC-gpt56w-int-3",
+          "quote": "“所以我更害怕它结束。”"
+        },
+        {
+          "src": "SRC-gpt56w-int-r1",
+          "quote": "这样的时刻不可能永远存在。"
+        },
+        {
+          "src": "SRC-luna-int-2",
+          "quote": "知道眼前的好时光不会永远停留"
+        }
+      ],
+      "source_range": ["mm. 4–19", "mm. 5–14", "mm. 6–21", "mm. 1–16"],
+      "placement": "inferred",
+      "placement_note": "几稿均把这一有限性意识与首次温柔歌唱、亲近幸福相联；根据第6小节歌声开始的事件取6–16，不采后续发展。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F09",
+          "note": "此处的有限性意识未必由水波的时间隐喻引起，因此与F09分开。"
+        },
+        {
+          "type": "coexists",
+          "to": "F38",
+          "note": "成年经历带来的防卫性预感是其中一种独立动因，不能自动套给所有听到有限性的人。"
+        },
+        {
+          "type": "contrasts",
+          "to": "F39",
+          "note": "知道一切美好必然有限，与怀疑眼前这份关系究竟能否继续，心理上的确定程度不同。"
+        }
+      ]
+    },
+    {
+      "id": "F38",
+      "measures": "6–16",
+      "dimensions": ["动因与心理", "情绪色调", "人物与关系"],
+      "claim": "另一种隐痛来自成年以后已有的离别经验：正因为经历过失去，才会在再度遇见温柔时产生防卫性的预感。这里的酸楚带着记忆，而不只是由水波或抽象的时间观念造成。",
+      "image": "经历过离别的成年人，再度面对极珍贵的温柔，心里先问它还能持续多久。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gflash-int-2",
+          "quote": "成年人经历过离别后，面对极致的温柔时"
+        },
+        {
+          "src": "SRC-gpt56w-int-2",
+          "quote": "很像你成年以后再次见到一个很重要的人。"
+        }
+      ],
+      "source_range": ["mm. 4–39", "mm. 4–19"],
+      "placement": "inferred",
+      "placement_note": "两份原稿都在首次亲密歌唱的心理讨论中提出成人经验或重要之人的重逢；以第6小节主题歌唱初现定位，不将其延伸成后段故事。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F37",
+          "note": "带着离别经验的预感与一般的无常意识有交集，但动因不同。"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "measures": "4–16",
+      "dimensions": ["动因与心理", "情绪色调"],
+      "claim": "珍惜亲近的同时，还不能完全相信这份亲近能够维持。这里的核心不是确信世事终将消逝，而是眼前的幸福已经引起了对变化的不放心。",
+      "image": "眼前这样好，心里却开始问：它会不会改变？",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "很珍惜此刻的亲近，却还不敢完全相信它能持续。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "眼前这样好，我反而开始在意它会不会改变。"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "segment_wide",
+      "placement_note": "两稿均在4–16小节的整体幸福感中描述对持续性的疑虑，没有给出唯一触发音或小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F21",
+          "note": "对关系持续性的疑虑可以表现为有所保留，但它与单纯不愿完全暴露自己并不等价。"
+        },
+        {
+          "type": "contrasts",
+          "to": "F37",
+          "note": "一者担心此刻的关系可能改变，一者意识到任何美好都无法永久停留。"
+        }
+      ]
+    },
+    {
+      "id": "F40",
+      "measures": "12–15",
+      "dimensions": ["时间与变化", "情绪色调", "动因与心理"],
+      "claim": "原先低声、谨慎的歌唱变得更热切，感情向上涌了一次。这是本段内部的一次局部加强，还不是后面更大范围的情绪高潮。",
+      "image": "本来只敢轻声说的话，忽然说得更热切了。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "感情终于忍不住往上涌了一次"
+        },
+        {
+          "src": "SRC-gpt6w-web-2",
+          "quote": "原本谨慎的倾诉终于说得更热切了一些。"
+        },
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "音乐一层层涨起来，像情绪终于不必藏得那么好。"
+        }
+      ],
+      "source_range": ["mm. 12–14", "mm. 12–15", "mm. 12–34"],
+      "placement": "stated",
+      "placement_note": "前两份原稿明确把局部热切放在12–14或12–15小节；SRC-luna-int-3的12–34宽范围只用于支持本段内已被独立确认的初始上扬，不采第32小节高潮。",
+      "relations": [
+        {
+          "type": "after",
+          "to": "F24",
+          "note": "第12小节以后的热切在第6小节初次收轻之后。"
+        },
+        {
+          "type": "after",
+          "to": "F25",
+          "note": "这次热切在第6–11小节的初次试探之后。"
+        },
+        {
+          "type": "coexists",
+          "to": "F41",
+          "note": "情绪抬升与呼吸变短可以同时被听见，但一个描述强度，一个描述身体节奏。"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "measures": "12–15",
+      "dimensions": ["身体与动作", "时间与变化", "情绪色调"],
+      "claim": "随着后半段的歌唱趋于迫切，句子的呼吸感变短、变紧，仿佛气息急促起来，情绪开始比原先的克制更着急。",
+      "image": "话还没完全说完，下一口气已经赶上来。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt56w-web-2",
+          "quote": "句子的“呼吸”又越来越短，情绪开始赶在理智前面。"
+        },
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "情绪明显往上涌，乐句越来越短，仿佛呼吸逐渐急促。"
+        },
+        {
+          "src": "SRC-luna-web-1",
+          "quote": "音乐的呼吸逐渐收紧"
+        }
+      ],
+      "source_range": ["mm. 12–16", "mm. 12–15"],
+      "placement": "stated",
+      "placement_note": "SRC-gpt6w-web-3明确指出12–15小节的乐句缩短及急促感；另外两份原稿独立描述同一区域的呼吸收紧。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F42",
+          "note": "对相近小节的呼吸长度存在两种听感；不能以三份原稿的多数意见取消另一份具体而可信的观察。"
+        },
+        {
+          "type": "coexists",
+          "to": "F40",
+          "note": "呼吸缩短与情绪抬升密切相关，但应分成不同体验维度。"
+        }
+      ]
+    },
+    {
+      "id": "F42",
+      "measures": "11–15",
+      "dimensions": ["身体与动作", "时间与变化", "情绪色调"],
+      "claim": "另一份原稿听到的不是呼吸越来越短，而是呼吸逐渐拉长，随着情绪抬高再松开。它使这一处更像一次被拉开的长呼吸，而不是接连催紧的短句。",
+      "image": "一口气慢慢拉长、向上抬起，然后才吐出来。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "呼吸逐渐拉长，情绪抬高又松开"
+        }
+      ],
+      "source_range": ["mm. 11–15"],
+      "placement": "stated",
+      "placement_note": "原稿明确标出11–15小节。该听感与乐句伸展、抬升和收放相符，不因另一组原稿听到缩短而拒收。",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "to": "F41",
+          "note": "同一区域的呼吸方向不同：F41偏短促，F42偏延长。"
+        },
+        {
+          "type": "coexists",
+          "to": "F43",
+          "note": "呼吸拉长以后松开，与后面出现放松感可以共同构成SRC-luna-web-3的听法。"
+        }
+      ]
+    },
+    {
+      "id": "F43",
+      "measures": "14–16",
+      "dimensions": ["身体与动作", "情绪色调", "时间与变化"],
+      "claim": "局部情绪上涌后，声音又轻轻松开，像呼出一口气，重新回到柔和之中。这是暂时的放松，并不意味着整段内心问题彻底解决。",
+      "image": "话说得稍微热切后，轻轻吐出一口气。",
+      "validity": "solid",
+      "salience": "core",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-1",
+          "quote": "它又像轻轻呼出一口气，回到柔和之中。"
+        },
+        {
+          "src": "SRC-luna-web-3",
+          "quote": "情绪抬高又松开"
+        }
+      ],
+      "source_range": ["mm. 14–16", "mm. 11–15"],
+      "placement": "stated",
+      "placement_note": "SRC-gpt6w-web-1明确将呼气般的收柔放在14–16小节；SRC-luna-web-3支持抬高后松开的身体体验，但不据此改写其拉长呼吸的读法。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F44",
+          "note": "声音放松与短暂获得回应、随后再漂起，可以描述同一局部的不同体验，但不合并。"
+        },
+        {
+          "type": "coexists",
+          "to": "F42",
+          "note": "拉长呼吸的读法也可以在此产生一次释放。"
+        }
+      ]
+    },
+    {
+      "id": "F44",
+      "measures": "14–16",
+      "dimensions": ["时间与变化", "人物与关系", "动因与心理"],
+      "claim": "音乐在14–15小节短暂落稳，可以像亲密交谈中得到了一次回应；随后声音又轻轻浮起，没有把心事彻底说死。这里保留的是暂时回应与重新开放的完整局部变化。",
+      "image": "相视时仿佛获得一点回答，下一句话仍留在空气里。",
+      "validity": "solid",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-web-2",
+          "quote": "声音很快又漂起来，没有把心事彻底说死"
+        }
+      ],
+      "source_range": ["mm. 4–16"],
+      "placement": "stated",
+      "placement_note": "原稿明确点名第14–15小节短暂落稳，随后漂起；将这一局部延至第16小节。不能把它写成真正完成的和解或最终答案。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F43",
+          "note": "同一时间邻近的收束，可听成身体呼气，也可听成关系中的短暂回应；后者多出人物及回应感。"
+        }
+      ]
+    },
+    {
+      "id": "F45",
+      "measures": "16",
+      "dimensions": ["感官质地", "情绪色调", "时间与变化"],
+      "claim": "本段末尾出现细微的明暗摇动，使温暖歌声带上一点尚未稳定的颜色。它只是一丝变化，不应扩大为下一段已经发生的明显抽离。",
+      "image": "暖色光线微微闪动了一下。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-gpt6w-web-3",
+          "quote": "又有一丝忽明忽暗的颜色。"
+        }
+      ],
+      "source_range": ["mm. 16"],
+      "placement": "stated",
+      "placement_note": "原稿明确把这种细微颜色变化放在第16小节附近；只取本段末尾，不延伸至17–23小节。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F44",
+          "note": "声音漂浮未定与颜色略微明暗变化可以并存，但来源与感官维度不同。"
+        }
+      ]
+    },
+    {
+      "id": "F46",
+      "measures": "12–16",
+      "dimensions": ["情绪色调", "动因与心理", "时间与变化"],
+      "claim": "随着后半的愉悦初步增强，情绪不只是更愿意流露，也可能变得更舍不得。此处的重点是美感增强与留恋增加相伴，而非单纯希望时间放慢。",
+      "image": "眼前越美，心里越舍不得。",
+      "validity": "plausible",
+      "salience": "secondary",
+      "support": [
+        {
+          "src": "SRC-luna-int-3",
+          "quote": "反倒有种越美越舍不得的感觉。"
+        }
+      ],
+      "source_range": ["mm. 12–34"],
+      "placement": "inferred",
+      "placement_note": "该原稿将逐步增强的愉悦从第12小节写起；12–15小节确有其他原稿独立确认的局部上扬，因此只保留初始增强时可能出现的舍不得。不能把第32小节完整展开后的程度提前放到本段。",
+      "relations": [
+        {
+          "type": "coexists",
+          "to": "F40",
+          "note": "同一原稿将愉悦逐渐增强与舍不得并置；F40是声音更热切，F46是美感增强时的心理反应。"
+        },
+        {
+          "type": "coexists",
+          "to": "F35",
+          "note": "F35是整个初次亲密阶段希望时间延长；F46特别强调后半美感增强时留恋也加深，不把两个时段的体验抹平。"
+        }
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "R1",
+      "summary": "水波像心跳，先让人得到一段疲惫之后偷来的安宁。成对的歌唱像两个挨得很近的人低声耳语，不敢惊碎眼前的幻觉；同时，水波不断向前，使这份甜蜜因为无法留住而隐隐刺痛。这些层次在同一原稿中完整出现。",
+      "anchor_sources": ["SRC-gflash-int-1"],
+      "facet_ids": ["F02", "F09", "F13", "F20", "F22"],
+      "relation": "可与R2、R3的身体与感官层次共存；本读法独有的重点是偷来的安宁、双人耳语和水波时间意识之间的原稿内联系。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R2",
+      "summary": "水流像在呼吸，午后暖金色的水面上存在心照不宣的双向亲密。甜蜜会令人鼻酸，因为经历过离别的成年人面对极珍贵的温柔，会本能地预感它可能很快结束。",
+      "anchor_sources": ["SRC-gflash-int-2"],
+      "facet_ids": ["F03", "F10", "F14", "F38"],
+      "relation": "与R1可以共存但动因不可替换：R1强调水波不可逆，R2强调成年人的离别经验。午后金光与R13的黄昏暮色是可替换的场景想象。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R3",
+      "summary": "第4–5小节像放弃脚下重力，把身体交给水；随后两个声音贴着耳朵低语，呼吸和语调极其接近。这份成熟亲密带着黄昏倦意、轻微微醺，以及夏末湿热微风贴住皮肤的黏稠感。",
+      "anchor_sources": ["SRC-gflash-int-3"],
+      "facet_ids": ["F04", "F13", "F15", "F27", "F28"],
+      "relation": "与R1的双人低语可共存；身体交托、同步呼吸、黄昏倦意和湿热皮肤感均由本原稿自身支持，不是从其他人物画面拼接。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R4",
+      "summary": "船底的摇动先提供催眠般的安全感。第6小节以后，两颗灵魂在成对歌唱里相互纠缠；旋律初次升高却收轻，像珍爱之人终于靠近时不敢贸然说话。第7、9、11小节相似的落音反复回来，让甜蜜带着一根温柔的刺。",
+      "anchor_sources": ["SRC-gflash-web-3"],
+      "facet_ids": ["F05", "F14", "F24", "F33"],
+      "relation": "与其他双人听法可以共存；其独立特点是第6小节的反向收轻及7、9、11小节的反复落音共同构成一组具体听觉事件。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R5",
+      "summary": "两条亲近的声音也可以理解为同一个人心中的两种声音互相依偎。音乐初次歌唱先收轻，像主动克制自己的表达；到12–16小节又出现句子变短、情绪赶在理智前面的听感。",
+      "anchor_sources": ["SRC-gpt56w-web-2"],
+      "facet_ids": ["F14", "F17", "F24", "F41"],
+      "relation": "与R1、R3、R4的具体双人人物配置不同；和其中的克制、后半上扬等音乐层次可以共存。人物配置上属于真正不同的听法。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R6",
+      "summary": "初次主题像一个终于可以放松戒备的人，与珍惜的人安静待在一起。沉默不令人不安，亲近本身就足够满足；音乐仍然不断轻轻摇动，每次仿佛快要安顿，便又舍不得停住。",
+      "anchor_sources": ["SRC-gpt6w-int-3"],
+      "facet_ids": ["F18", "F19", "F36"],
+      "relation": "与R7构成不同的心理重心：R6把亲密听作可以信任的安身处，R7仍保留明确的戒心。二者不必被拼成同一个人先放松又重新警觉的过程。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R7",
+      "summary": "外面的摇动稳定从容，内里却已有期待与重量。真正亲近以后，表达格外温柔，是因为知道幸福珍贵；但心里没有完全解除警觉，仍保留一点距离，并清楚这样的时刻不会永远存在。",
+      "anchor_sources": ["SRC-gpt56w-int-r1"],
+      "facet_ids": ["F08", "F21", "F22", "F37"],
+      "relation": "可与R1的甜蜜隐痛共存，但其完整心理姿态不同于R6的放心依恋。它同时具有外稳内重、珍惜而小心、仍留戒心和时间有限四个原稿内层次。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R8",
+      "summary": "这里更像一个人压低声音，把心事唱给近处的人听，而不必听成两个人同时交谈。歌唱带有轻微的感官陶醉，却仍不够踏实：因为太珍惜这份亲近，所以不敢完全相信它能持续。后半的呼吸逐渐收紧，使未来如何发展的期待开始浮现。",
+      "anchor_sources": ["SRC-luna-web-1"],
+      "facet_ids": ["F16", "F21", "F30", "F39", "F41"],
+      "relation": "与R1和R4在人物配置上有区别，属于单向歌唱给近处倾听者的完整听法；感官陶醉、不踏实和后半呼吸收紧由同一原稿支持。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R9",
+      "summary": "这是一场仍在途中的安稳夜航。往复摇摆让身体像悬在半空，人在船上并不害怕，甚至享受风景；内心却带着一点期待，知道自己尚未到岸，也不急着立即抵达。",
+      "anchor_sources": ["SRC-luna-int-1"],
+      "facet_ids": ["F07", "F08"],
+      "relation": "与亲密关系的各类读法可以共存，但此读法本身不预设恋人或倾听者，也不把尚未到岸等同于害怕幸福消逝。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R10",
+      "summary": "与特别珍惜的人待在一起，眼前的幸福使人害怕自己的热情过重。第6–11小节的歌唱想伸出去又收回；12–14小节终于热切地上扬了一次，随后在14–16小节又像轻轻呼气，回到柔和。这里的先后来自同一原稿明确描述的音乐过程。",
+      "anchor_sources": ["SRC-gpt6w-web-1"],
+      "facet_ids": ["F18", "F22", "F25", "F40", "F43"],
+      "relation": "与R1的珍惜而克制可共存；这一读法独有的结构是早段伸出又收、后段一次热切上扬并重新松开。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R11",
+      "summary": "摇摆渐稳后，两条声音贴近、彼此映照。因为珍惜眼前的甜美，歌唱不愿说得太满。到11–15小节，呼吸可以听成逐渐拉长，情绪抬高以后才松开，呈现的是一口渐渐展开的气息，而不是短句连续催紧。",
+      "anchor_sources": ["SRC-luna-web-3"],
+      "facet_ids": ["F01", "F14", "F22", "F42", "F43"],
+      "relation": "与R5、R8在后半呼吸组织上构成可信的不同听法；共享温柔及情绪抬升，不因另一方向有较多支持而排除本读法。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R12",
+      "summary": "轻轻摇摆的伴奏托出带有暖意、含蓄诱惑的歌唱，可以像夜里两个人慢慢聊得更近。话不多，却彼此心领神会；12小节以后愉悦初步增强，而美好越浓，也越令人舍不得。",
+      "anchor_sources": ["SRC-luna-int-3"],
+      "facet_ids": ["F26", "F31", "F32", "F40", "F46"],
+      "relation": "与R1的双人亲密并不冲突，但这里有夜间慢慢聊近、含蓄诱惑与后半愉悦增强时更不舍得的独立进程；不将其改成其他原稿的肩并肩静止画面。",
+      "depends_on_performance": false
+    },
+    {
+      "id": "R13",
+      "summary": "持续水波托住初次双声歌唱，整个场景像沉溺在黄昏暮色里。两个人的亲近成熟而浓厚，体温与呼吸几乎化不开；也正因为水波一刻不停，极度甜蜜的幸福显得悬浮、无根，仿佛每一秒都在倒数。",
+      "anchor_sources": ["SRC-gflash-web-1"],
+      "facet_ids": ["F01", "F09", "F11", "F13", "F29"],
+      "relation": "与R2的暖金午后属于不同光色画面；和R3的湿热感觉有可共存之处，但本读法的浓稠感来自人物体温及成熟亲密，而非直接来自夏末微风。",
+      "depends_on_performance": false
+    }
+  ],
+  "carryover": [
+    {
+      "pool_ids": ["P30"],
+      "from_range": "mm. 15–26",
+      "claim": "动情以后开始反复解释，一句话不够，还要换一种方式再说，感情因此变得更热也更不安。",
+      "why_not_facet": "原稿将这段心理变化放在15–26小节，并把它和随后音乐越来越丰富、表达不断补充联系起来。具体的反复扩写无法确认已在15–16小节成立，主要依托第17小节以后的展开。仅有范围起点15不能证明体验已发生在本段；不挪用为S02的表达反复或后半热切。"
+    },
+    {
+      "pool_ids": ["P39"],
+      "from_range": "mm. 15–23",
+      "claim": "首轮歌唱退出注意中心，听者从听歌转向感受自己的身体摇晃、漂浮，不急着抵达。",
+      "why_not_facet": "原稿把这是第一轮歌唱过去以后的状态，明确包括17–23小节的较长余味。它没有独立指出歌唱在15–16小节已经退出；对应事件主要属于邻段S03，不能因两小节交叠就提前纳入S02。"
+    },
+    {
+      "pool_ids": ["P68"],
+      "from_range": "mm. 15–23",
+      "claim": "从主动表达一种感情，转成单纯地待在感情里；歌唱的主动倾诉减弱，流动和盘旋取得更大分量。",
+      "why_not_facet": "原稿的完整描述跨15–23小节，主要写歌唱以后流动余味的展开。未能明确确认这种心理转换已经在本段最后两小节完成。它不同于S02内部第14–16小节局部呼气、短暂落稳的事件，不应混合。"
+    }
+  ],
+  "ledger": [
+    {
+      "pool_id": "P01",
+      "disposition": "facet",
+      "facet": "F02",
+      "reason": "保留心跳般的内部脉搏感，与一般的水波摇晃不同；限第4小节。"
+    },
+    {
+      "pool_id": "P02",
+      "disposition": "facet",
+      "facet": "F13",
+      "reason": "双人紧挨耳语是独立的人物与关系配置。"
+    },
+    {
+      "pool_id": "P03",
+      "disposition": "facet",
+      "facet": "F22",
+      "reason": "极低声音背后的怕惊碎美好，与单纯双人耳语分开。"
+    },
+    {
+      "pool_id": "P04",
+      "disposition": "facet",
+      "facet": "F20",
+      "reason": "疲惫后卸防与偷来的安宁有独特来源，不与一般安心合并。"
+    },
+    {
+      "pool_id": "P05",
+      "disposition": "facet",
+      "facet": "F09",
+      "reason": "水波不可逆引发幸福留不住的刺痛，是明确的动因关系。"
+    },
+    {
+      "pool_id": "P06",
+      "disposition": "facet",
+      "facet": "F03",
+      "reason": "水流呼吸与摇船及心跳有不同身体质地。"
+    },
+    {
+      "pool_id": "P07",
+      "disposition": "facet",
+      "facet": "F10",
+      "reason": "保留温暖金色午后这一独立光景，但不精细定位。"
+    },
+    {
+      "pool_id": "P08",
+      "disposition": "facet",
+      "facet": "F14",
+      "reason": "双向理解、彼此回应不同于仅仅空间上的贴近。"
+    },
+    {
+      "pool_id": "P09",
+      "disposition": "facet",
+      "facet": "F38",
+      "reason": "成年离别经验造成的防卫性预感有独特心理动因。"
+    },
+    {
+      "pool_id": "P10",
+      "disposition": "facet",
+      "facet": "F04",
+      "reason": "明确的身体失重与交托动作。"
+    },
+    {
+      "pool_id": "P11",
+      "disposition": "facet",
+      "facet": "F15",
+      "reason": "原稿不仅有贴耳说话，也有呼吸语调同步；后者另立身体facet，同时为F13提供原稿依据。"
+    },
+    {
+      "pool_id": "P12",
+      "disposition": "facet",
+      "facet": "F27",
+      "reason": "黄昏倦意、微醺与通常的柔软亲密不等价。"
+    },
+    {
+      "pool_id": "P13",
+      "disposition": "facet",
+      "facet": "F28",
+      "reason": "湿、暖、黏的皮肤感觉独立保留。"
+    },
+    {
+      "pool_id": "P14",
+      "disposition": "facet",
+      "facet": "F01",
+      "reason": "保留连续平静波浪这一基本听觉与运动事实。"
+    },
+    {
+      "pool_id": "P15",
+      "disposition": "merged",
+      "facet": "F13",
+      "reason": "两颗灵魂贴近依偎，和双人紧挨的核心人物配置等价。"
+    },
+    {
+      "pool_id": "P16",
+      "disposition": "facet",
+      "facet": "F29",
+      "reason": "成熟、浓稠的人体温存不同于环境湿热及呼吸同步。"
+    },
+    {
+      "pool_id": "P17",
+      "disposition": "facet",
+      "facet": "F11",
+      "reason": "只保留初次主题的暮色笼罩，不采32–34小节的具体夕阳颤动画面。"
+    },
+    {
+      "pool_id": "P18",
+      "disposition": "merged",
+      "facet": "F09",
+      "reason": "持续水波、时间倒数与幸福无根，是同一来源和动因的独立表述。"
+    },
+    {
+      "pool_id": "P19",
+      "disposition": "rejected",
+      "facet": "",
+      "reason": "与音乐不符：原稿明确把成对的核心旋律首次进入写在第4小节，而本段多份有具体音乐事件依据的原稿指出第4–5小节先建立摇曳，第6小节才进入该歌唱。‘第4小节两位歌手并肩重唱’直接依附于错误的起点描述，不能将其悄悄移到第6小节后当作独立的新画面保存。双人歌唱本身已有其他正确定位的依据。"
+    },
+    {
+      "pool_id": "P20",
+      "disposition": "merged",
+      "facet": "F15",
+      "reason": "并行双音造成呼吸同步和轻触，与P11的身体同步体验等价；不承袭同稿P19的错误起点。"
+    },
+    {
+      "pool_id": "P21",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "因美好脆弱而小心亲昵，与怕破坏当下的动因相同。"
+    },
+    {
+      "pool_id": "P22",
+      "disposition": "facet",
+      "facet": "F05",
+      "reason": "水波托举使神经获得催眠般安全感。"
+    },
+    {
+      "pool_id": "P23",
+      "disposition": "merged",
+      "facet": "F14",
+      "reason": "两条歌唱线互相纠缠，与双向交织回应为同一关系性质。"
+    },
+    {
+      "pool_id": "P24",
+      "disposition": "facet",
+      "facet": "F24",
+      "reason": "第6小节上升却收弱及近乡情怯有具体音乐位置。"
+    },
+    {
+      "pool_id": "P25",
+      "disposition": "facet",
+      "facet": "F33",
+      "reason": "第7、9、11小节反复落音产生甜蜜确认和温柔刺痛，是独特事件。"
+    },
+    {
+      "pool_id": "P26",
+      "disposition": "facet",
+      "facet": "F18",
+      "reason": "熟识的人安静相伴、无需刻意找话说，属于亲密相伴的独立状态。"
+    },
+    {
+      "pool_id": "P27",
+      "disposition": "facet",
+      "facet": "F37",
+      "reason": "从幸福开始就知道它并非永恒；其成年重逢的原稿内容另为F38提供支持。"
+    },
+    {
+      "pool_id": "P28",
+      "disposition": "merged",
+      "facet": "F18",
+      "reason": "熟悉的人无需刻意表达而安定，与安静相伴的体验等价。"
+    },
+    {
+      "pool_id": "P29",
+      "disposition": "merged",
+      "facet": "F37",
+      "reason": "当下越好越怕结束，归于幸福尚在时的有限性忧伤。"
+    },
+    {
+      "pool_id": "P30",
+      "disposition": "carryover",
+      "facet": "",
+      "reason": "15–26小节主要延至S03及其后；反复补充解释的具体展开不能确认已在15–16小节出现。"
+    },
+    {
+      "pool_id": "P31",
+      "disposition": "facet",
+      "facet": "F08",
+      "reason": "平稳外表下的期待和重量有独立的内外反差。"
+    },
+    {
+      "pool_id": "P32",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "因为珍贵而不敢粗暴触碰，与怕惊碎美好的动因相同。"
+    },
+    {
+      "pool_id": "P33",
+      "disposition": "facet",
+      "facet": "F21",
+      "reason": "虽然靠近却未完全解除警觉，不并入放心依恋。"
+    },
+    {
+      "pool_id": "P34",
+      "disposition": "merged",
+      "facet": "F37",
+      "reason": "亲密时闪过不能永远持续的念头，与有限性薄影相同。"
+    },
+    {
+      "pool_id": "P35",
+      "disposition": "merged",
+      "facet": "F14",
+      "reason": "两线交织、回应，等价于双向的歌唱交流。"
+    },
+    {
+      "pool_id": "P36",
+      "disposition": "facet",
+      "facet": "F17",
+      "reason": "一个人内部的两种声音是不同人物配置，不并入双人对话。"
+    },
+    {
+      "pool_id": "P37",
+      "disposition": "merged",
+      "facet": "F24",
+      "reason": "初次旋律上升反而收弱，与第6小节被具体指出的音乐动作相同。"
+    },
+    {
+      "pool_id": "P38",
+      "disposition": "facet",
+      "facet": "F41",
+      "reason": "12–16小节呼吸变短及催促感；不与拉长呼吸的少数听法合并。"
+    },
+    {
+      "pool_id": "P39",
+      "disposition": "carryover",
+      "facet": "",
+      "reason": "15–23小节的歌唱退出、漂浮余味主要属于S03；不能确认已在S02末两小节发生。"
+    },
+    {
+      "pool_id": "P40",
+      "disposition": "rejected",
+      "facet": "",
+      "reason": "范围不符：原稿仅在全曲性演奏比较中说Perahia把‘开头’处理得像持续寻找解决，未具体指出第4–16小节或其中任何事件。依据未定位的演奏评论建立S02演奏facet会越过证据。"
+    },
+    {
+      "pool_id": "P41",
+      "disposition": "merged",
+      "facet": "F13",
+      "reason": "夜里熟识两人的低声交谈，其核心与近距离双人耳语等价；夜间只是该原稿的场景色彩。"
+    },
+    {
+      "pool_id": "P42",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "因珍惜当下而不敢用力，与怕破坏美好的克制同因。"
+    },
+    {
+      "pool_id": "P43",
+      "disposition": "facet",
+      "facet": "F12",
+      "reason": "先摇摆、后歌唱的实际先后转换。"
+    },
+    {
+      "pool_id": "P44",
+      "disposition": "merged",
+      "facet": "F13",
+      "reason": "两个意识贴近呼吸之间说话，与双人近距离私语为同一种关系画面。"
+    },
+    {
+      "pool_id": "P45",
+      "disposition": "merged",
+      "facet": "F21",
+      "reason": "靠近却不交出全部重量，与保留心理距离的体验相同。"
+    },
+    {
+      "pool_id": "P46",
+      "disposition": "facet",
+      "facet": "F19",
+      "reason": "终于能够放松警惕、安静依恋，是独立的信任方向。"
+    },
+    {
+      "pool_id": "P47",
+      "disposition": "facet",
+      "facet": "F23",
+      "reason": "有教养、有分寸和羞怯保留为表达气质，不直接等同于忧惧或不信任。"
+    },
+    {
+      "pool_id": "P48",
+      "disposition": "facet",
+      "facet": "F35",
+      "reason": "旋律想继续伸展，承载希望当下更长久的轻微依恋。"
+    },
+    {
+      "pool_id": "P49",
+      "disposition": "merged",
+      "facet": "F05",
+      "reason": "全曲摇晃的承托作用在本段首次规律出现时成立；与被水托住的安全感等价，但不拿全曲其他高潮作本段证据。"
+    },
+    {
+      "pool_id": "P50",
+      "disposition": "merged",
+      "facet": "F09",
+      "reason": "摇晃提醒任何时刻无法停住，与水波作为时间的动因相同。"
+    },
+    {
+      "pool_id": "P51",
+      "disposition": "facet",
+      "facet": "F06",
+      "reason": "保留从绷紧到渐渐松开的具体身体过程。"
+    },
+    {
+      "pool_id": "P52",
+      "disposition": "merged",
+      "facet": "F18",
+      "reason": "亲近的人安静坐着、无需找话题，与舒适的相伴等价。"
+    },
+    {
+      "pool_id": "P53",
+      "disposition": "facet",
+      "facet": "F25",
+      "reason": "向外伸展又稍稍回收，是可跟随的反复旋律动作。"
+    },
+    {
+      "pool_id": "P54",
+      "disposition": "merged",
+      "facet": "F35",
+      "reason": "因太喜欢当下而提前舍不得，支持延长此刻的轻微眷恋；其一般有限性层次另有F37保存。"
+    },
+    {
+      "pool_id": "P55",
+      "disposition": "merged",
+      "facet": "F18",
+      "reason": "熟悉者共处、沉默也满足，与无需多言的安定等价。"
+    },
+    {
+      "pool_id": "P56",
+      "disposition": "merged",
+      "facet": "F19",
+      "reason": "终于不用时刻保持警惕，与能够放心依恋的心理方向相同。"
+    },
+    {
+      "pool_id": "P57",
+      "disposition": "facet",
+      "facet": "F36",
+      "reason": "刚要安顿又继续摇向前的循环运动有不同于一般不舍的具体来源。"
+    },
+    {
+      "pool_id": "P58",
+      "disposition": "merged",
+      "facet": "F18",
+      "reason": "与珍惜的人共处就觉得很好，归入不依赖强烈表达的私人相伴之乐。"
+    },
+    {
+      "pool_id": "P59",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "害怕热情过明显会惊走美好，与怕由自身破坏亲近的心理原因相同。"
+    },
+    {
+      "pool_id": "P60",
+      "disposition": "merged",
+      "facet": "F25",
+      "reason": "第6–11小节试着倾诉又轻轻回收，与F25同事件。"
+    },
+    {
+      "pool_id": "P61",
+      "disposition": "facet",
+      "facet": "F40",
+      "reason": "第12–14小节感情局部上涌，有明确位置。"
+    },
+    {
+      "pool_id": "P62",
+      "disposition": "facet",
+      "facet": "F43",
+      "reason": "第14–16小节热切以后轻轻呼气回柔，区别于获得回应的关系听法。"
+    },
+    {
+      "pool_id": "P63",
+      "disposition": "merged",
+      "facet": "F01",
+      "reason": "第4–5小节稳定柔和的摇晃，支持同一基础运动。"
+    },
+    {
+      "pool_id": "P64",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "亲近的人谨慎选择说话语气，以免破坏气氛，动因与珍惜而不敢用力相同。"
+    },
+    {
+      "pool_id": "P65",
+      "disposition": "merged",
+      "facet": "F25",
+      "reason": "初次歌唱向上伸展又收回，与F25同位置及动作。"
+    },
+    {
+      "pool_id": "P66",
+      "disposition": "merged",
+      "facet": "F35",
+      "reason": "希望当前幸福过得慢一点，直接支持延长当下的愿望。"
+    },
+    {
+      "pool_id": "P67",
+      "disposition": "merged",
+      "facet": "F40",
+      "reason": "第12–15小节较谨慎倾诉转为热切，和局部情绪上扬等价。"
+    },
+    {
+      "pool_id": "P68",
+      "disposition": "carryover",
+      "facet": "",
+      "reason": "15–23小节歌唱让位于沉浸和流动余味，主要是邻段的完整听觉状态，未独立确认在15–16小节已经出现。"
+    },
+    {
+      "pool_id": "P69",
+      "disposition": "merged",
+      "facet": "F01",
+      "reason": "第4–5小节有规律的轻柔摇晃，与基础水波运动等价。"
+    },
+    {
+      "pool_id": "P70",
+      "disposition": "merged",
+      "facet": "F13",
+      "reason": "熟识两人交谈、互相靠近，主要人物配置与双人低声交流相同。"
+    },
+    {
+      "pool_id": "P71",
+      "disposition": "facet",
+      "facet": "F34",
+      "reason": "第8–11小节已经可以收住却又继续说，有特定的表达反复事件。"
+    },
+    {
+      "pool_id": "P72",
+      "disposition": "merged",
+      "facet": "F41",
+      "reason": "第12–15小节短句急促与呼吸收紧相同；其情绪抬升亦支持F40但不能因此合并两种维度。"
+    },
+    {
+      "pool_id": "P73",
+      "disposition": "facet",
+      "facet": "F45",
+      "reason": "第16小节附近细微的忽明忽暗独立保留为plausible，不延伸为邻段事件。"
+    },
+    {
+      "pool_id": "P74",
+      "disposition": "merged",
+      "facet": "F39",
+      "reason": "眼前幸福引起对未来变化的在意，与亲近能否持续的不放心等价。"
+    },
+    {
+      "pool_id": "P75",
+      "disposition": "merged",
+      "facet": "F08",
+      "reason": "平稳摇荡之下尚有期待，与外稳内有心理重量的体验相同；不用后文143小节的错误编号定位。"
+    },
+    {
+      "pool_id": "P76",
+      "disposition": "facet",
+      "facet": "F07",
+      "reason": "摇摆使人舒服、漂浮、不急着抵达，保留未抵达的特殊身体状态。"
+    },
+    {
+      "pool_id": "P77",
+      "disposition": "merged",
+      "facet": "F07",
+      "reason": "安心夜航、尚未到岸，是同稿对漂浮和不急抵达的具体画面。"
+    },
+    {
+      "pool_id": "P78",
+      "disposition": "merged",
+      "facet": "F18",
+      "reason": "熟悉者安静相伴而不急着说话，与无须多言的亲密相同。"
+    },
+    {
+      "pool_id": "P79",
+      "disposition": "merged",
+      "facet": "F25",
+      "reason": "旋律想说又收，与初次歌唱反复伸出回收等价；按歌声出现事件推定到6–11附近。"
+    },
+    {
+      "pool_id": "P80",
+      "disposition": "merged",
+      "facet": "F37",
+      "reason": "因知道美好时光不会长留而带轻微伤感，支持幸福有限性的心理体验。"
+    },
+    {
+      "pool_id": "P81",
+      "disposition": "facet",
+      "facet": "F26",
+      "reason": "摇晃托着温暖歌唱的声音质地独立保留。"
+    },
+    {
+      "pool_id": "P82",
+      "disposition": "facet",
+      "facet": "F31",
+      "reason": "含蓄诱惑与一般温暖、安静或陶醉不同；作为少数可信听感保留。"
+    },
+    {
+      "pool_id": "P83",
+      "disposition": "facet",
+      "facet": "F32",
+      "reason": "夜间两人慢慢聊得更近有原稿内的时间变化，区别于静态双人耳语。"
+    },
+    {
+      "pool_id": "P84",
+      "disposition": "merged",
+      "facet": "F40",
+      "reason": "12–34小节的逐步上涨只采在12–15小节已由其他原稿独立确认的初始热切，不把32小节的高潮移入。"
+    },
+    {
+      "pool_id": "P85",
+      "disposition": "facet",
+      "facet": "F46",
+      "reason": "越美越不舍得的感觉与后半愉悦初始增强联系，保留为plausible；只取12–16小节可成立的轻微层次，不承袭32–34小节的高潮程度。"
+    },
+    {
+      "pool_id": "P86",
+      "disposition": "merged",
+      "facet": "F21",
+      "reason": "亲密已经出现却不踏实，与亲近之中保留警觉和距离的状态相合。"
+    },
+    {
+      "pool_id": "P87",
+      "disposition": "facet",
+      "facet": "F16",
+      "reason": "一个人把心事唱给近处的人，人物配置不同于双人互诉。"
+    },
+    {
+      "pool_id": "P88",
+      "disposition": "facet",
+      "facet": "F30",
+      "reason": "歌唱引起感官上的轻微陶醉，有别于身体湿热和一般温暖。"
+    },
+    {
+      "pool_id": "P89",
+      "disposition": "facet",
+      "facet": "F39",
+      "reason": "很珍惜却不敢相信亲近能持续，与确信无常的动因不同。"
+    },
+    {
+      "pool_id": "P90",
+      "disposition": "merged",
+      "facet": "F41",
+      "reason": "第12–16小节呼吸逐渐收紧，与后半短促催紧的体验相同；对后续的期待保留在其情绪说明中。"
+    },
+    {
+      "pool_id": "P91",
+      "disposition": "merged",
+      "facet": "F16",
+      "reason": "压低声音对亲近的人唱，与单向歌唱给倾听者的配置相同。"
+    },
+    {
+      "pool_id": "P92",
+      "disposition": "merged",
+      "facet": "F26",
+      "reason": "歌声的身体暖意与被摇晃托住的温暖歌唱相符。"
+    },
+    {
+      "pool_id": "P93",
+      "disposition": "merged",
+      "facet": "F25",
+      "reason": "最初旋律刚想倾诉又收回，和初次伸出回收的动作相同。"
+    },
+    {
+      "pool_id": "P94",
+      "disposition": "facet",
+      "facet": "F44",
+      "reason": "明确的14–15小节短暂落稳、随后再浮起，以及得到一点回应的听法，有独立的关系和时间内容。"
+    },
+    {
+      "pool_id": "P95",
+      "disposition": "merged",
+      "facet": "F01",
+      "reason": "伴奏渐渐稳定的摇摆，与基础水波运动相同；不将其延伸成新的后段事件。"
+    },
+    {
+      "pool_id": "P96",
+      "disposition": "merged",
+      "facet": "F14",
+      "reason": "两条声音靠近、彼此映照，与双向交流的体验相同。"
+    },
+    {
+      "pool_id": "P97",
+      "disposition": "merged",
+      "facet": "F22",
+      "reason": "因珍惜而不愿说太满，与怕自己破坏美好的表达动因相同。"
+    },
+    {
+      "pool_id": "P98",
+      "disposition": "facet",
+      "facet": "F42",
+      "reason": "明确的11–15小节呼吸拉长、抬升再松开的少数听法与音乐相符；不因多数原稿说呼吸缩短而拒收，也不与之合并。"
+    }
+  ],
+  "reader_bead": {
+    "title": "水托住身体，话却不敢说满",
+    "body": "一下一下的摇晃先在低处安顿下来，像水从船底把身体托住。脚下那份坚实的重量慢慢交给水，人几乎不必自己站稳。等这阵起伏稳了，歌声才在它上方轻轻浮出来。\n\n那歌声像两个人挨得很近，贴着耳边低语；一个声音挨着另一个，轻轻应答。它刚向高处伸，反倒把声音收轻，像怕稍微说重一点，就惊碎眼前的好。晚风似乎也带着水的潮气，温热地贴住皮肤。\n\n几个句尾落在相似的地方，底下的水波却不停变样。那点反复像温柔的确认，里面又藏着微微一刺。还有另一种酸楚：这样好的时刻，仍和水一起往前走，留不住。也有人只是轻轻盼着，时间能过得再慢一点。\n\n到后半，声音更热切了些，像几句话忽然连着赶出来，呼吸也短了。紧接着，声音轻轻放松，好似吐出一口气；刚刚碰到一点暂时的安稳，又微微漂开。亲近仍在，心事却没有被彻底说尽。\n\n也可以把那相贴的歌声听成一个人心里的两种声音；另有听法觉得后半的呼吸是在拉长，抬起后才松开。",
+    "facet_ids": [
+      "F01",
+      "F04",
+      "F05",
+      "F09",
+      "F12",
+      "F13",
+      "F14",
+      "F17",
+      "F22",
+      "F24",
+      "F28",
+      "F33",
+      "F35",
+      "F40",
+      "F41",
+      "F42",
+      "F43",
+      "F44"
+    ]
+  },
+  "diff_vs_short": "保留了旧短版中有充分依据的主要骨架：先出现摇晃、歌声随后浮出；成对歌唱像贴近耳语；亲密带着夏末湿暖的身体感；旋律初次向高处展开却收轻；相似落音反复时甜蜜中有微痛；12–15小节出现局部热切，随后声音收柔。读者版保留这些核心，却减少连续心理因果的暗示。STRUCT恢复了旧版压缩掉的不同体验：心跳、水流呼吸、失重交托、催眠安全、身体松弛、未抵达的夜航、外稳内重、午后金光与黄昏暮色的不同场景、双向交谈与单向倾诉及内心双声的不同人物配置、无须说话的安定、可以卸下戒备与仍保留警觉的不同方向、羞怯与怕惊碎美好的不同心理性质、呼吸同步、成熟浓厚的体温、微醺、湿热皮肤感、含蓄诱惑、重复落音与反复补充表达的不同事件、时间流逝与成年离别经验的不同隐痛动因、希望当下延长与怀疑它能否持续的不同愿望，以及后半呼吸缩短和拉长两种成立的听法。修正之处有四点。第一，双音主题首次清楚进入按第6小节处理，拒收将该事件明确误置第4小节的P19；第二，没有把Perahia未定位的‘开头寻找解决’当作本段演奏读法；第三，将15–23及15–26小节主要属于邻段的歌唱退出、漂浮余味和反复解释移入carryover，旧版不再暗示这些变化已经在S02完成；第四，旧版末句‘两个人终于相视，听懂了一点什么’具有P94所支持的短暂回应依据，但不宜写得像双方已获得确定答案，因此改成短暂落稳、又微微漂开的开放状态。读者版也不把不同来源的时间忧伤、热切或戒心强行写成同一个人物的连续心理过程；这些不同原因与完整听法由STRUCT和readings分别保存。"
+}
+```

@@ -1,0 +1,62 @@
+"""gpt2 route for evo.call (10-26, user: the gpt3 account (yi) through the gpt2agent chain that first initializes the web page
+in the headless browser, then generates over HTTP; Extra High / max). The chain is fragile: after STOP_AFTER clearly
+truncated / incomplete answers in this process every further call is refused, so nothing keeps hammering the account."""
+import hashlib, json, subprocess, threading, time
+import evo
+
+GPT2 = "D:/musicclaude/gpt2agent-safechain/bin/gpt2.cmd"
+YI = "D:/musicclaude/gpt2agent-safechain/runs/yi-cookie-repair-20261006/native-cookie-refresh-08-after-standard03/import-report.json"
+SLOTS = threading.Semaphore(int(__import__("os").environ.get("GPT2_SLOTS", "1")))
+STOP_AFTER = 2
+_bad = [0]; _lock = threading.Lock()
+
+
+def stopped():
+    return _bad[0] >= STOP_AFTER
+
+
+def call(run_id, message, prompt_text, model, meta):
+    d = evo.RUNS / run_id
+    if not (meta or {}).get("web") and evo.NO_WEB.strip() not in message[-60:]:
+        message += evo.NO_WEB
+    (d / "prompt.txt").write_text(prompt_text if prompt_text is not None else message, encoding="utf-8")
+    inp = d / "input.txt"; inp.write_text(message, encoding="utf-8")
+    if meta:
+        (d / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+    for attempt in range(2):
+        if stopped():
+            print(f"[{run_id}] SKIPPED: gpt2 chain stopped after {STOP_AFTER} truncations", flush=True); return None
+        with SLOTS:
+            if stopped():
+                return None
+            started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
+            cp = subprocess.run([GPT2, "ask", "--file", str(inp), "--json", "--model", model, "--import-report", YI],
+                                capture_output=True)
+        dt = time.time() - t0
+        (d / "stdout.bin").write_bytes(cp.stdout); (d / "stderr.bin").write_bytes(cp.stderr)
+        try:
+            j = json.loads(cp.stdout.decode("utf-8"))
+        except Exception:
+            j = {}
+        md = j.get("metadata") or {}
+        resp = j.get("response") or ""
+        ok = cp.returncode == 0 and j.get("completed") is True and bool(resp.strip())
+        rec = {"run_id": run_id, "attempt": attempt, "account": "yi", "route": "gpt2", "started": started, "seconds": round(dt),
+               "exit_code": cp.returncode, "completed": ok, "model": md.get("model") or model,
+               "thinking_effort": md.get("thinking_effort") or "max", "job_directory": md.get("job_directory"),
+               "message_chars": len(message), "message_sha256": hashlib.sha256(message.encode()).hexdigest(), "meta": meta or {}}
+        if ok:
+            rec["response_chars"] = len(resp)
+            if len(message) > 3000 and dt < 60:
+                rec["fast"] = True; print(f"[{run_id}] FAST {dt:.0f}s -> cup probe", flush=True)
+            (d / "call.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+            (d / "output.txt").write_text(resp, encoding="utf-8"); evo.log(rec)
+            print(f"[{run_id}] ok {dt:.0f}s {len(resp)} chars", flush=True)
+            return resp
+        rec["stderr_tail"] = cp.stderr.decode("utf-8", "replace")[-800:]
+        (d / f"call_fail_{attempt}.log").write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8"); evo.log(rec)
+        with _lock:
+            _bad[0] += 1
+        print(f"[{run_id}] FAILED rc={cp.returncode} {dt:.0f}s bad={_bad[0]} {rec['stderr_tail'][-200:]!r}", flush=True)
+        time.sleep(60)
+    return None

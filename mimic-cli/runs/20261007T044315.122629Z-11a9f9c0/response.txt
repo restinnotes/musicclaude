@@ -1,0 +1,40 @@
+## 结论（截至 2026-10-07）
+
+**1）$800 de minimis 对这类商业小包目前不能用，无论邮政还是非邮政。** EO 14388 于 2026-02-20 继续暂停 19 U.S.C. §1321(a)(2)(C)；随后 CBP 又以规则形式分别对非邮政和国际邮政作了无限期行政暂停。非邮政规则 **2026-06-24** 生效；邮政的 de minimis 暂停也自 6/24 落入规则，新邮政 informal-entry 流程则自 **2026-07-24** 生效。[The White House](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?trk=article-ssr-frontend-pulse_little-text-block)
+
+### 当前邮政税率：能确认什么
+
+**不能确认一个“当前邮政统一税率”；但可以明确排除旧的 10%。** EO 14388 的过渡邮政机制规定：邮政件按 2026-02-20 Section 122 Proclamation 的税率征收，但只持续到“临时 surcharge 到期”或“CBP 新邮政 entry process 生效”两者中较早者。Section 122 Proclamation 的 10% surcharge 明定仅持续至 **2026-07-24 00:01 EDT**；USITC HTS 的 compiler note 也明确 9903.03.01–9903.03.11 于 **7月23日结束时失效**。与此同时，新邮政流程正好 7/24 生效。因此，**2026-10-07 再按 10% 计算邮政件是错误的。** [The White House](https://www.whitehouse.gov/presidential-actions/2026/02/imposing-a-temporary-import-surcharge-to-address-fundamental-international-payments-problems/?utm_source=chatgpt.com)
+
+7/24 后的规则是另一套逻辑：CBP 明言新流程是为收取 **all applicable duties, taxes, and other fees**；19 CFR 145.12 要求报送 10 位 HTSUS、Duty Rate、Total Duty Owed，并规定适用的是 entry 完成时有效的税率。也就是说，当前邮政税负取决于商品实际 HTS 以及当日仍有效、确实适用于该商品的其他 HTS/Chapter 99 等税层。**在不做 SKU 分类的前提下，没有一个可以合法替代它的“中国小包统一百分比”。** [GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/FR-2026-06-24.pdf)
+
+### 2026-10-22 边界：旧材料把它理解错了
+
+**10/22 不是新邮政流程的生效日。** Federal Register 明确写的是：规则/新 postal informal entry process **7/24 生效**；**10/22 只是 19 CFR 145.12(a)(2)(v)、(vi) 的 compliance date**。这两项主要涉及 PGA，以及 Chapter 98/99、FTA 等货物的流程资格。[GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/FR-2026-06-24.pdf)
+
+CBP 的实施指引更直接：**10/22 前**，Chapter 98/99、FTA/PGA 类货物因延迟执行仍可走新的 postal informal process，但必须提交相应额外数据，且应付的 Chapter 99 等税并没有被延期；**10/22 起**，这类货物不能继续依靠该简化流程，要转用合适的 Entry Type 13 测试流程或 formal entry。故 **10/22 是报关路径/数据合规切换点，不是加税生效点。** [GovDelivery](https://content.govdelivery.com/attachments/USDHSCBP/2026/07/08/file_attachments/3708650/Updated%20Global%20Guidance%20for%20International%20Mail-7.7.26.pdf)
+
+### 非邮政与费用
+
+非邮政 <=$800 自 6/24 起同样没有 de minimis，主要 informal 路径为 **Entry Type 11**，否则走 formal entry，并缴纳实际适用的全部税费。[GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12670.pdf)
+
+FY2027 CBP user fees 已于 **2026-10-01** 生效：普通自动 informal entry fee 为 **$2.77**；express consignment/centralized hub 的单独设施费规则为 **$1.38/waybill**；非邮政 formal entry 的 MPF 仍是 **0.3464%**，但 FY27 最低 **$34.58**、最高 **$670.86**。这些路径不能简单全部叠加。国际邮政本身属于 MPF 豁免；FY27 另有 **$7.61 dutiable-mail fee**，但法规触发条件是“CBP officer prepares documentation”，而新 postal informal 流程明确说 CBP officer 不替该流程准备 entry forms，因此不应把 $7.61 当作每个邮政包裹必收费用。[GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-07-31/pdf/2026-15530.pdf)
+
+| 成本情景 | 预算方式 |
+|---|---|
+| **邮政，10/07–10/21** | `申报价值 × 实际适用税率组合` + bond/broker/平台清关费；**不要加旧10%**。Chapter 99/PGA 等若涉及，现在仍要计税，只是暂可留在 postal informal 流程。 |
+| **邮政，10/22 起** | 税率逻辑不因 10/22 自动改变；但 Chapter 98/99/PGA/FTA 货物要预算 ET13/formal 等更高的操作/报关成本。 |
+| **非邮政 informal** | `价值 × 实际税率组合` + 对应 CBP fee（例如普通自动 ET11 $2.77，或适用的 express-hub 规则）+ 私营 broker/carrier fee。 |
+| **非邮政 formal fallback** | `价值 × 实际税率组合` + 0.3464% MPF（$34.58–$670.86）+ broker/bond。 |
+
+实际建模时，先让 Superbuy/BuckyDrop 对每条线路确认它究竟是 **UPU/国际邮政网络→USPS**，还是商业快递/非邮政；“小包”“专线”这些营销名称本身不足以决定美国海关路径。税率变量则用你们真实 SKU 组合抽样后的低/中/高三个 `D` 情景，而不要塞一个“通用中国税率”。
+
+**直接来源（8个）：**
+- [White House — EO 14388](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?trk=article-ssr-frontend-pulse_little-text-block)
+- [White House — 2026-02-20 Section 122 Temporary Import Surcharge Proclamation](https://www.whitehouse.gov/presidential-actions/2026/02/imposing-a-temporary-import-surcharge-to-address-fundamental-international-payments-problems/?utm_source=chatgpt.com)
+- [GovInfo — 邮政 IFR，91 FR 37801](https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12669.pdf?utm_source=chatgpt.com)
+- [CBP — Updated Global Guidance for International Mail](https://content.govdelivery.com/attachments/USDHSCBP/2026/07/08/file_attachments/3708650/Updated%20Global%20Guidance%20for%20International%20Mail-7.7.26.pdf)
+- [GovInfo — 非邮政 de minimis IFR，91 FR 37789](https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12670.pdf?utm_source=chatgpt.com)
+- [USITC HTS — Section 122/邮政条款及失效 compiler note](https://hts.usitc.gov/search?query=9903.01.66&utm_source=chatgpt.com)
+- [GovInfo — FY2027 Customs User Fees](https://www.govinfo.gov/content/pkg/FR-2026-07-31/pdf/2026-15530.pdf?utm_source=chatgpt.com)
+- [CBP — Merchandise Processing Fee / 国际邮政豁免说明](https://www.help.cbp.gov/s/article/Article-1128?language=en_US&utm_source=chatgpt.com)

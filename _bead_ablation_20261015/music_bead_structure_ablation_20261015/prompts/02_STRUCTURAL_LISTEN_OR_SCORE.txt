@@ -1,0 +1,24 @@
+【通用提示词｜独立音乐换气复查｜仅依据真正可访问的声音/乐谱】
+
+作品：{{WORK_TITLE}}
+范围：{{MOVEMENT_OR_SECTION}}
+可直接访问的乐谱文件／页面：{{SCORE_PATHS}}
+可直接访问的录音文件／时间轴：{{RECORDING_PATHS}}
+版本/小节对应信息：{{EDITION_AND_MAPPING}}
+
+请独立回答：一个正常听者会把哪里听成**完整一口气结束、另一口气开始**，或一段音乐材料真正发生重大转场？你的工作是核验音乐段落，不是尽可能多列局部声音事件。
+
+**必须遵守访问事实**：如果当前工具没有能力直接读谱或播放录音，明确写 NO_DIRECT_SCORE_ACCESS 或 NO_DIRECT_AUDIO_ACCESS；不能凭常识、网页摘要或先前回答伪称“我听到了”。如果两者都无访问权限，返回 INSUFFICIENT_DIRECT_EVIDENCE，停止，不补造分句列表。只可根据实际可读的材料给出可核证的位置。
+
+独立性要求：不得读取任何 A/T/H 情感解释、Thread 故事、历史切点或研究者提出的片段数。只输出音乐边界及可复核的听觉/谱面依据。
+
+请挑选少而重要的 MACRO 边界，同时记录必要的 SECONDARY 变化；不要按每个音型变化切。对每个 MACRO 说明：如果不在这里分，一个自然、完整的音乐过程是否会被强行连成一段？若只有局部技巧变化而没有主要换气，应降级 SECONDARY/MICRO。
+
+对于渐变、重叠、无清楚终止的过渡，允许边界为模糊范围（例如前后几小节待定），不能为了 JSON 强行编造唯一精确点。不同录音的呼吸、速度、踏板会使时间锚点不同；乐谱与录音不一致要记录，不许把主观演奏处理写成作品固定事实。
+
+输出格式：
+1. 访问了什么资料、没有访问什么；
+2. 逐个 MACRO 段落：小节/时间范围、可听或可见的分句证据、信心级别；
+3. 少数 SECONDARY 的位置及不升级成 MACRO 的理由；
+4. 与乐谱版本/录音有关的疑点；
+5. 机器可读 JSON：{"work":"...","scope":"...","score_used":[...],"recordings_used":[...],"macro_segments":[{"start_measure":null,"end_measure":null,"start_time":null,"end_time":null,"audible_or_score_reason":"...","confidence":"high|medium|low"}],"secondary_boundaries":[...],"unknowns":[...]}。

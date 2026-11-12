@@ -1,0 +1,22 @@
+SPG61b: 4 calls
+[judge_spec_v2_SPG61b_s1_gpt56] recovered from job 322s 5718 chars
+[judge_spec_v2_SPG61b_s2_gpt56] recovered from job 329s 7705 chars
+[judge_spec_v2_SPG61b_s2_gpt6] FAILED rc=1 921s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T095558526105Z
+[judge_spec_v2_SPG61b_s1_gpt6] FAILED rc=1 993s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T095544523162Z
+[judge_spec_v2_SPG61b_s2_gpt6] FAILED rc=1 823s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T101204610251Z
+[judge_spec_v2_SPG61b_s1_gpt6] FAILED rc=1 977s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T101302943332Z
+[judge_spec_v2_SPG61b_s2_gpt6] FAILED rc=1 915s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T102633073330Z
+[judge_spec_v2_SPG61b_s1_gpt6] FAILED rc=1 1047s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T103005307740Z
+[judge_spec_v2_SPG61b_s1_gpt6] FAILED rc=1 1s submitted=False job=None
+[judge_spec_v2_SPG61b_s2_gpt6] FAILED rc=1 986s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt4\pro-bridge-20261021T104233346111Z
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 105, in <module>
+    run(a.eid, a.work, a.names.split(","), a.shuffles, a.judges.split(","), a.workers)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 65, in run
+    collect(eid)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 93, in collect
+    (EV / eid / "rows.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1048, in write_text
+    return f.write(data)
+           ^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device

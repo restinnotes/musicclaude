@@ -1,0 +1,165 @@
+{
+  "run_id": "20261006T224843.169112Z-ba01a7fd",
+  "timestamp": "2026-10-06T22:48:43.169112+00:00",
+  "command": "ask",
+  "profile": "yi",
+  "probe": null,
+  "prompt": "下面是关于 肖邦《船歌》升F大调 Op.60 中 mm.1–3 已经收集到的一组核心内容单元（A 组），以及另外几位作者从别的角度写的若干条新单元（B 组）。请对 B 组的每一条判断：和 A 组相比，它是什么。\n\n对每条 B：\n1. overlap：列出 A 组里和它说同一件事、或部分相同的单元序号（可以为空）。\n2. class：只能选一种——\n   - duplicate：A 组已经有同样的理解，扣掉之后什么都不剩；\n   - rendering：理解是 A 组已有的，只是换了不同或更好的比喻、场景、说法；\n   - support：理解是 A 组已有的，它只多给了一个听得见的依据或位置，可以附在 A 组那一条后面；\n   - new：会让听者注意到或理解到 A 组里没有的东西；\n   - alternative：对 A 组某一条说的同一处声音给出另一种解释，两者不能同时成立。\n3. residual：class 是 new 或 alternative 时，用一句话写出多出来的那部分；其他写\"无\"。\n4. needs_future：这条要听过后面的音乐才说得出来，写 true；只凭已经听到的就能产生，写 false。\n\n写得戏剧化、具体、笃定都不影响分类。\n\n只输出一个 JSON 数组，不要输出其他任何文字：[{\"b\": B组序号, \"overlap\": [A组序号...], \"class\": \"duplicate|rendering|support|new|alternative\", \"residual\": \"...\", \"needs_future\": true或false}]\n\n【A 组】\n[1] (1-3) 引子是现实与梦境的结界，低音推开沉重陆地而水流托起失重身体，让紧绷神经松弛深呼吸只剩水与风。\n[2] (mm.1-4) 一开始不是唱而是试水，左右摇的伴奏像船轻碰码头、水光在晃。\n[3] (mm.1-4) 心理上想把自己交给摇晃但肩膀还是紧的，像半坐躺不平听水声、大脑还在转没允许自己进去。\n[4] (mm.1-3) 开头是一声低音接往上跳跃，再连一串下落和弦，最后停在没有落定的音上。\n[5] (1-3) 这像一个人站在岸边深吸一口气要讲很重要的事，话到嘴边又停住了。\n[6] (1-3) 这里没有明确情绪，只有悬着的感觉，知道接下来会动人但还没准备好。\n[7] (1-3) 这三小节为全曲定下回望而非当下即兴的基调。\n[8] (mm.1–3) 开头很响低音接往下落而悬住的声音不是从零讲故事，而是像深吸一口气叹出或踏上船晃一下般被直接带进已有诸多感受的时刻，好比一句“你知道吗”后的停顿。\n[9] (1–2) 还没有旋律摇晃就先开始了，像踏上船时脚下已经在动，身体先被节奏接管进入半催眠的松弛。\n[10] (mm.1-4) 右手那几个小装饰音还不成调子，是注意力还没聚焦。\n[11] (mm.1-4) 情绪不是悲伤也不是快乐，而是介于睡醒之间的松。\n[12] (mm.1-4) 那种睡醒之间的松很重要，后面所有的浓烈都是从这里浮起来的。\n[13] (mm. 1–3) 开头没有急着表露快乐或忧愁，而是带着已决定往前走、心却还留在岸边的悬而未决的期待。\n[14] (mm.1-3) 时间还没开始摇、身体还没坐进船只是梦开始前那口气，肖邦以一大弓连句不分小拍正是要先别摇先飘。\n[15] (mm.1-3) 那个颤动是平静上的第一点活气，你知道接下来会牵动你，所以心口先紧了一下又还愿意等。\n[16] (1-3) 第一个又低又响的突然音像把船从岸边实实推开，也像夜里回不去的小决断宣告这次不设防。\n[17] (1-3) 忽略这一下整首只剩好听，听进则会感到柔软是选择出来的。\n[18] (mm. 1–3) 同一段开头在Lipatti听来从一开始就在水上摇，在Rubinstein听来则先漂在空中、摇荡稍后才出现，分别对应“已经进入回忆”与“还在迟疑要不要开始”两种状态。\n[19] (mm. 1–3) 开头并非轻柔飘来，而是沉重深沉的低音八度敲击接向上攀爬又缓缓落下的琶音，直到第二小节后半左手才摇出标志性12/8拍水波律动。\n[20] (mm.1-3) 右手又高又散如撒出缓飘之物，具体如夏夜威尼斯节日烟花自下打上空中炸开而碎片以不同速度下落。\n[21] (mm. 1–3) 此时还没上船也没有歌，更像记忆被突然勾起那一秒般心先亮了一下却说不清是什么。\n[22] (mm.1–3) 随后摇荡感真正出现时像心里那句话终于有了依托。\n[23] (mm.1-3) 开头两下很硬很突兀的重音加一串往下掉的和弦像演奏家Anderszewski吐槽的一碗意面、喝醉的船夫和蹩脚法国小调，是故意反讽捉弄、甜得有点假的玩笑好像在说你以为是明信片吗不是，就像明明很难过还要先跟客人开玩笑般体面却让人一听就知道心里有事。\n[24] (1-3) 伊瓦什凯维奇把这一下听成很久没有满足过的一声呼唤，像猛吸进一口特别干净的空气而一下站进有森林有水的空地里。\n[25] (1-3) 这里甜同时有一点站不稳，已经埋下后面那种美到让人微微害怕的底子。\n[26] (mm. 1–3) 开头三小节不是前奏而是换气与踏上船板的物理动作，沉重低音伴随升起落下的和弦像把脚从水泥码头抽出踩进晃荡木船而膝盖微曲放弃对抗去适应浮力。\n[27] (mm.1-3) 开头低沉声接几串往下落的音像站在岸边往水面看一眼又像深深吸一口气，还没有船也没有歌，只有一个要开始的姿态，表明全曲从略带犹豫的停顿开始而非直接开唱。\n[28] (mm.1–3) 开头没有歌，先是一下夜里拨琴般清楚音自己抖成细颤，再起低一下上跟着晃的摇，而会唱歌的两条声音还没有出现。\n[29] (mm.1-4) 这一段定下规矩：后面所有的美都是在这个摇晃上发生的，摇晃一停美就没了。\n[30] (mm.1–3) 曲子不是从船开始，而是从高处落下的一声低沉响亮的八度，随后声音像水花一样往下散开、铺平。\n[31] (mm.1–3) 这三小节是全曲唯一没有摇摆的时刻，此后一百多小节水再没停过，其意义要到很后面才显出来。\n[32] (无) 开头的摇晃声让人有地方安身，却始终没有终于站稳的感觉。\n[33] (mm.1-3) 开头是单独清楚甚至有点响的一响让人等一等，接着一小串很轻的音符像手指先碰了碰水面，此时还没有稳定的摇晃，也没有两条贴在一起的歌。\n[34] (mm.1-3) 开头那一下像是被叫了一下，意味着有人愿意先出声，事情才有地方开始。\n[35] (mm.1-3) 更要紧是它开始于摇晃之前，低音一下像把船推离岸或夜里先喊一声般悬空没落家，使后面很久歌还在碰没收住的边。\n[36] (mm.1–3) 走到最后回头会知道整首要过的事都还没出生，而那些事最后还是得回到这种比真话更耐久的动里。\n[37] (m.1) 第1小节突然而有力的低音C♯后接一串从高处往下飘的叠音，可像水面荡开般弹（Lipatti）也可像烟花从下往上冲在空中散开般弹（鲁宾斯坦）\n[38] (mm. 1–3) 不同于传统船歌明快的荡桨声，这开头如把沉重木桨深深插进幽暗冰冷的水底般带着沉重记忆闭眼推开岸划入无边水域，定下平静水面下潜伏巨大重力与命运感的底色。\n[39] (m.1) 开头从C♯往上的跳进像一声没人回应的悬空呼唤，要记住它因为它后面会回来两次\n[40] (无) 开头孤零零的C♯→G♯上跳是一个悬着没落地的向上够的动作。\n[41] (mm. 1-3) 此时还听不出开头那个上跳是个没答完的问句。\n\n【B 组】\n[1] (mm.1-3) 开头没有安稳的摇篮感，高处一个和弦像光闪了一下往下散开又停一下，低音沉一下像一只脚刚踩上船板、身体从踩实地换成适应浮力。\n[2] (mm.1-4) 不同钢琴家起点不一样，有的从第一声水已经在摇像早就坐在回忆里，有的先让声音飘在空中到mm.4才落进水里像还在迟疑要不要出发，听时就留意是摇起来了还是还浮着。\n[3] (mm.1-3, mm.111-116) 这三小节是全曲抛出去的悬在半空、没有妥帖收住的问句，后面好几次像是回答都没答死，要到最后mm.111-116才真正合上，所以再听会多一层悬念感、等着这个没落定的东西后面去哪了。\n[4] (mm.1-3, mm.14-15) 开头高处洒下的C#-G#落到G#是全曲酵母，原样倒成G#-C#以同样节奏出现在mm.14-15第一个大段落收尾处，像在回答开头的问题。\n[5] (mm.1-4) 开头不在水里而在空中，像Kopp说的威尼斯节日夜晚烟花从下往上打炸开碎片慢慢飘下，Lipatti带摇晃感直接进水里而Rubinstein弹得非常平均没有摇晃直到左手mm.4起才接过水波。\n[6] (mm. 1–3) 开头别找旋律，先听很低很深的一声落点向上散开，形成下面很深上面很空中间有声荡过的很大空间。\n[7] (mm. 1–3) 要听落下去升起来悬住的感觉，开头没有稳定脚下感而让人自然等待。\n[8] (mm. 1–3) 此刻不是漂亮，而是世界刚刚被打开但故事还没发生。\n[9] (mm. 1-3) 开头最重要是响一下然后让它在空气里活着，厚重的低中部声音击出后让共鸣自己散开，要听发声后旧声音仍悬着的空白，因为曲子也发生在音与音之间\n[10] (mm. 1-3) 此时还没有持续摇晃，体验不是坐船而像站在岸边被突然打开很大空间，声音有重量但不忙\n[11] (mm.1-3) mm.1-3不是开船而是把周围空间打开，像几下声音落进很大的空间里等回声散开。\n[12] (mm.1-3) 这里的水不是轻巧的小波纹，而是有纵深有距离，预先让人意识到全曲的尺度。\n[13] (mm.1–4) mm.1–4最重要的不是引子而是悬着，声音已出现却没给可安稳跟随的流动，像刚坐上船知道会动但身体还没适应节律，时间显空且声音间距离特别易被听见。\n[14] (mm.1–3) 脚还没站稳，先试一试水的摇晃。\n[15] (mm.1–3) 关系刚刚建立共同节奏，重要的不是谁说什么，而是先确认能否待在同一种摇晃里。\n[16] (mm.1–3) 像第一次站上船，身体还在找平衡，本能希望别动却很快发现那是不可能的。\n[17] (mm.1–3) 把开头听成事情被启动，像踏进一个已经会移动的空间。\n[18] (mm.1–3) 把开头听成两个人还没开始谈话，先确认在同一个空间里，保持距离而不立即扑向对方以建立共同的地面。\n[19] (mm.1–3) 把开头听成时间先于我们开始，不是决定让水流动而是突然发现它已经在流，真正问题还没出现但无法停住的条件已出现。\n[20] (mm.1–3) 把开头听成先把自己安顿好，像开口谈很重要的事以前先整理衣服、坐稳、确认语气。\n[21] (mm.1–3) 把开头听成还不敢立刻进入，像站在非常好的天气里先试探真的可以吗。\n[22] (mm.1-3) 开头不像立即端出主题，而像船刚被推离岸边有动作却无持续航行感，让你期待某种稳定的摆动出现且真正要唱的东西还在后面。\n[23] (mm.1–4) 最初几小节像有东西被打开但还没展开、前言说完真正故事应该来了，制造的不是船而是等待。\n[24] (mm.1–4) 开头偷偷教会到达可以被拖一拖，这个经验以后会越来越重要。\n[25] (mm.1–3) mm.1–3不是前奏而是一次把时间打开、教你怎么等的动作，话不是立刻说完，那几个停顿本身已有意义并已预先规定整首会怎样呼吸。\n[26] (mm.1–3, mm.94–103) 因为知道mm.94–103会发展得那么充盈密集，mm.1–3的空旷不再只是安静，而带上这么大的东西原来从这么少的声音里长出来的尺度感与重量。\n[27] (mm.1–4) mm.1–4从船开水面出现的开场变成整首悬而未决的缩影，预告的不是主题而是不断靠近某个地方又不断被水带开、打开空间却迟迟不真正落地、始终还在水上没有真正站稳的命运，因而显得更孤单也更重要\n[28] (mm. 1–4) 开头不是船开了而是夜里安静中说重要事前沉默几秒钟的私人庄重，带着终于承认接下来之事不能随便对待的郑重。\n[29] (mm. 1–4) 脚下虽已有稳定摆动但心理尚未真正落脚，因而这不是宁静而是带着预感的宁静，像知道记忆一旦打开便未必还能保持此刻平静。\n[30] (mm.1–3) 开头不是温柔哄入的开始唱歌，而是以醒目带距离感继而散开的声音先呈现空间距离和悬空感，如隔水听见的钟声水花或夜空焰火，而非明确的情绪陈述。\n[31] (mm.1–3) 这里不宜听成忧伤，而更像现实声音突然退远、注意力被抽离出来的被打开一块心理空间，预感某件事要发生了却还不知道是什么。\n[32] (mm.1–3) 事情还没开始，mm.1–3先告诉听者这里没有真正的静止。\n[33] (mm.1–3) mm.1–3的开头不像一个人已舒服坐在船里唱歌，更像郑重甚至略显突然地把空间打开，把人带进这个世界。\n[34] (mm.1–3) 后来真正柔软的摇荡出现时不应只听成风景真美，而应听成被安放在比个人感情更大的运动里的柔软，即不是感情制造了水流而是水流早就在那儿。\n[35] (mm.1-3) 开头没有直接摇起来，而是几个相隔很远如钟声或水面暗示的声音且最后一音悬而未决，应听成人物还没说话而世界已更大的宽阔动作而非轻盈摇船节拍。\n[36] (mm.1-3) 低音试探C#跳到G#、高音向下散开后A#独自悬置，像人坐在船边脚刚碰到水、还没开始摇。\n[37] (mm.1-3) 没有稳定摇晃感所以没有安全感、只有观望，这种孤单不是难过而是要不要把心里事说出来的犹豫。\n[38] (mm. 1–3) 引子先听到低音C♯跳到较高的G♯，随后高音以短音往下展开。\n[39] (mm. 1–3) 此时还没有后面那种持续的低音伴奏。\n[40] (mm. 3) 第3小节末的A♯单独停住，没有接成一个明确的和弦落点。\n",
+  "prompt_sha256": "329a7fd3c38872bc0633fc563dd24c33b232d55e0a06c1e90e968f09c452c51a",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": true,
+  "response": "[{\"b\":1,\"overlap\":[4,20,26,32],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":2,\"overlap\":[18,37],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":true},{\"b\":3,\"overlap\":[4,35,39,41],\"class\":\"new\",\"residual\":\"后续几次仿佛作答仍未真正封口，直到mm.111–116才把开头悬着的问句真正合上。\",\"needs_future\":true},{\"b\":4,\"overlap\":[4,39,40],\"class\":\"new\",\"residual\":\"mm.14–15以G♯–C♯的倒置和同样节奏回应开头C♯–G♯，把开头材料听成可被后来回答的动机。\",\"needs_future\":true},{\"b\":5,\"overlap\":[18,20,37],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":true},{\"b\":6,\"overlap\":[4,10,27],\"class\":\"new\",\"residual\":\"低处的重音与高处散开的声音之间形成巨大的纵向声场，使人直接听见“下面很深、上面很空”的空间尺度。\",\"needs_future\":false},{\"b\":7,\"overlap\":[4,6,32],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":8,\"overlap\":[5,21,24],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":9,\"overlap\":[4,33],\"class\":\"new\",\"residual\":\"发声后的共鸣衰减和音与音之间的空白本身被当作音乐事件来听。\",\"needs_future\":false},{\"b\":10,\"overlap\":[14,24,27,38],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":11,\"overlap\":[24,33],\"class\":\"new\",\"residual\":\"重点从具体动作转到声场本身：几下声音落入巨大空间，并让回声的消散成为可听的内容。\",\"needs_future\":false},{\"b\":12,\"overlap\":[38],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":13,\"overlap\":[3,6,14,32,33],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":false},{\"b\":14,\"overlap\":[2,32],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":15,\"overlap\":[28],\"class\":\"new\",\"residual\":\"把开场理解成关系先通过共同节律被建立：在谁真正开口之前，先确认彼此能否待在同一种摇晃里。\",\"needs_future\":false},{\"b\":16,\"overlap\":[3,26,32],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":17,\"overlap\":[8,9,34],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":18,\"overlap\":[28],\"class\":\"new\",\"residual\":\"把引子解释成两个人在谈话前先确认共同空间、距离和相处方式的关系动作。\",\"needs_future\":false},{\"b\":19,\"overlap\":[8,9,29],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":20,\"overlap\":[5,27],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":21,\"overlap\":[3,13,27],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":22,\"overlap\":[14,16,22,27],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":23,\"overlap\":[5,6,21],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":24,\"overlap\":[35],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":25,\"overlap\":[5,14,35],\"class\":\"new\",\"residual\":\"停顿不只是悬住情绪，而被理解成一种时间规则：它从一开始就规定了整首作品延宕、换气和等待的方式。\",\"needs_future\":true},{\"b\":26,\"overlap\":[12],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":true},{\"b\":27,\"overlap\":[31,32,35,38],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":28,\"overlap\":[5,16,27],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":29,\"overlap\":[3,21,25,32],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":30,\"overlap\":[6,20,27,33],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":31,\"overlap\":[1,6,21],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":32,\"overlap\":[15,21],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":33,\"overlap\":[8,21,24,27],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":34,\"overlap\":[9,29,38],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":35,\"overlap\":[4,14,24,27,38],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":36,\"overlap\":[4,40],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":false},{\"b\":37,\"overlap\":[5,6,14,27,32],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":38,\"overlap\":[4,40],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":39,\"overlap\":[19],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":true},{\"b\":40,\"overlap\":[4],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":false}]",
+  "http_status": 200,
+  "actual_model": "gpt-5.6-sol",
+  "actual_reasoning_effort": "xhigh",
+  "diagnostics": {
+    "preparation_started_at": 1791326924.4601693,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791326935.7308156
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791326935.9302237
+    },
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "5.6 Extra High",
+      "selected_effort": "xhigh",
+      "fallback_reason": null,
+      "verified_at": 1791326935.7032495,
+      "verification": "live_slider_and_closed_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "Extra High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 134308625147920,
+      "process_uid": 1000,
+      "process_pid": 1809,
+      "is_conversation": false
+    },
+    "verification_stage": "immediately_before_submission",
+    "authentication": {
+      "session_cookie_count": 1,
+      "expiries": [
+        1799102924.14075
+      ],
+      "device_cookie_present": true,
+      "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+      "site_cookie_count": 134,
+      "root_cookie_count": 131,
+      "cookie_header_bytes_estimate": 17264,
+      "temporary_cookie_count": 95
+    },
+    "storage_capacity": {
+      "cookie_count": 134,
+      "removed": 0
+    },
+    "submission_pacing": {
+      "minimum_interval_seconds": 5.0,
+      "waited_seconds": 0.0,
+      "send_attempt_at": 1791326935.9636188,
+      "previous_attempt_gap_seconds": 14.36
+    },
+    "prompt_content_verified": true,
+    "submitted_at": 1791326936.304675,
+    "response_timeout_ms": 1800000,
+    "response_validation": {
+      "nonempty": true,
+      "transient_text": false,
+      "generation_active": false,
+      "response_characters": 3627
+    },
+    "screenshot_evidence": {
+      "directory": "/app/state/probe-artifacts/55e12c482d344f1a82baa977e3410cbb",
+      "stage": "response",
+      "request_id": "55e12c482d344f1a82baa977e3410cbb",
+      "captured_at": 1791327164.8374498,
+      "source": "live browser page owned by this standard request",
+      "files": [
+        {
+          "filename": "response-viewport.jpg",
+          "sha256": "09921fefa1712223a106092dc2213f55d3b09454582e3d223b61f7fe50f59b1f"
+        },
+        {
+          "filename": "response-full.jpg",
+          "sha256": "09921fefa1712223a106092dc2213f55d3b09454582e3d223b61f7fe50f59b1f"
+        }
+      ],
+      "thinking_time_ui_labels": [
+        "Worked for 3m 25s"
+      ],
+      "success": true,
+      "capture_seconds": 0.199
+    },
+    "prompt_submitted": true,
+    "response_complete": true,
+    "elapsed_seconds": 241.25,
+    "thread_id": "6ac57ad6-4a14-83e9-93e6-ba3405d1bbbf",
+    "conversation_restore": false,
+    "request_id": "55e12c482d344f1a82baa977e3410cbb",
+    "worker_page_id": 134308625147920,
+    "queue_seconds": 0.673,
+    "completed_at": 1791327164.8373618,
+    "concurrency": {
+      "max_concurrency": 8,
+      "in_flight": 6,
+      "available": 2,
+      "waiting": 0,
+      "max_active_tabs": 8,
+      "worker_tabs": 6,
+      "max_idle_worker_tabs": 2,
+      "max_queue": 16,
+      "queue_timeout_seconds": 240
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "error": null,
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "completion_id": "chatcmpl-f0135b039fc3476e8a29cc6c",
+  "transport_success": true,
+  "elapsed_seconds": 242.859
+}

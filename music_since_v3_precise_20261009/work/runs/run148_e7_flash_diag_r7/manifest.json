@@ -1,0 +1,51 @@
+{
+  "schema": "offline-main-revision-manifest/1",
+  "date": "2026-10-09",
+  "revision": "run148_e7_flash_diag_r7",
+  "based_on": {
+    "source_revision": "run146_e7_flash_diag_r6",
+    "source_driver_sha256": "3066d97cb0c67f44260c5c0626da34f17b65e3a38cc3632b7c5bb6f592438869",
+    "source_tests_sha256": "0b98b0d37969fa351de6327d30e5ccc16b5195fb5f4577885244b861f65f35ff"
+  },
+  "artifacts": {
+    "go_py_sha256": "796f1add81d47b4e0f9808497f57de0d601e42df95b05f12b0f92d952b796010",
+    "test_py_sha256": "17c4f7d3797ccb98fec7f00a9b693e7239d70de86cab6a086a283b9e3938e428",
+    "readme_sha256": "58355884b7e412dc2c8e93381d0a4b7d095fdb42e7976921999348d89089e174"
+  },
+  "frozen_input_sha256": {
+    "prompts/tooling/E7_COMPARE_v0.txt": "2a3630b12ec92df4b75bb2637f5a447ab199a7f6d680bf8cd7116a41be60a30b",
+    "prompts/tooling/MECH_AUDIT_v0.txt": "e48278e4aa7a4ddef314f3f072839dcb0f64ab575d21914cb546b5c7b4ecc99b",
+    "prompts/tooling/MECH_v1.txt": "a7759ed5a4387bb0f8a10c5840dd0c4290aa6943213218a03d900e64aff7414a",
+    "prompts/versions/E7_SURFACE_v0.txt": "e401eee186056377426ea773427057b9f2b1503476e3530f6df506ec54d44b5a",
+    "prompts/versions/WHY_GATE_v4.txt": "6e3d042d2e40be2c7f53ebd7faa971dc794590aa9cec5831074afe3c9e7e6ce1",
+    "runs/run124_render/surface__B__gpt56w__op60.md": "8436c931b0e6c54e0a62d845d3cacc22dba05bc62ee75a2d4ec113535b4feb78",
+    "runs/run130_thread_e6/beads_clean.md": "a04346e4aed47b41a31902c035bac34b8ac8fa443b578bbc7f8fa7ae4659d02d",
+    "runs/run130_thread_e6/steps.json": "6c5a0a2d769ff4c73e655d2a08fdbb2884cb435816e147e87e44d83b714dd8e9",
+    "runs/run132_v2a_gemini_baseline/meta/run132__op60__gflash_web__s1.json": "f946dec337e879e842426de5c46d370fce2f1874acb54503040edfd60c87d54a",
+    "runs/run132_v2a_gemini_baseline/meta/run132__op60__gpro_web__s3.json": "f2e9a4fdb25586d6a31da663cbf65b9062a1f80ab66a048d4c1b86bea6648693",
+    "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gflash_web__s1.md": "f4fe7880f3b01aa2b00e7de1718253328ac577b11ba468986cd241bf7cca772c",
+    "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gpro_web__s3.md": "cd98a3278d847a399219d28832d40fd3e88989453efe35178cd340d5349b4df9"
+  },
+  "frozen_prompt_sha256": {
+    "prompts/tooling/E7_COMPARE_v0.txt": "2a3630b12ec92df4b75bb2637f5a447ab199a7f6d680bf8cd7116a41be60a30b",
+    "prompts/tooling/MECH_AUDIT_v0.txt": "e48278e4aa7a4ddef314f3f072839dcb0f64ab575d21914cb546b5c7b4ecc99b",
+    "prompts/tooling/MECH_v1.txt": "a7759ed5a4387bb0f8a10c5840dd0c4290aa6943213218a03d900e64aff7414a",
+    "prompts/versions/E7_SURFACE_v0.txt": "e401eee186056377426ea773427057b9f2b1503476e3530f6df506ec54d44b5a",
+    "prompts/versions/WHY_GATE_v4.txt": "6e3d042d2e40be2c7f53ebd7faa971dc794590aa9cec5831074afe3c9e7e6ce1"
+  },
+  "changes": [
+    "Mechanical namespace/run rename; run124/run130/run132 lineage untouched.",
+    "C6: exact recursive JSON identity in external pack/result/meta/terminal/receipt and same-domain internal pack validation.",
+    "Frozen strict integer coordinates before deriving receipt expected; frozen seed independently recomputed.",
+    "Existing 25 methods/assertions retained; new 16x6 ingress mutation subtests and helper controls."
+  ],
+  "boundaries": {
+    "completion": "COMPLETION_PENDING",
+    "independent_review": "required",
+    "music_acceptance": "NOT_PERFORMED",
+    "production_ready": false,
+    "real_model_submissions": 0,
+    "provider_or_model_cli_invocations": 0
+  },
+  "verification": "PENDING_AT_CREATION; append evidence without rewriting creation-time manifest."
+}

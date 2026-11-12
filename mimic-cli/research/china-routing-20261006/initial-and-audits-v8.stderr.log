@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\coordinator.py", line 555, in <module>
+    elif args.command in ('pre-freeze', 'domestic-batches', 'structural', 'mg-audits', 'initial-and-audits', 'post-freeze-batches','post-freeze', 'judges', 'synthesis','final-quality-audit'): run_stage(args.command)
+                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\coordinator.py", line 461, in run_stage
+    pending.sort(key=dependency_priority)
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\coordinator.py", line 458, in dependency_priority
+    return (2,int(j.rsplit('batch',1)[1]),j)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '05-recovery01'

@@ -1,0 +1,68 @@
+[syP4a_op61_S01_A] ok 253s 5212 chars
+[syP4a_op61_S01_B] FAST 19s -> cup probe
+[syP4a_op61_S01_B] ok 19s 990 chars
+[syP4a_op61_S01_A2] ok 316s 5902 chars
+[syP4a_op61_S01_B2] FAST 30s -> cup probe
+[syP4a_op61_S01_B2] ok 30s 1013 chars
+P4a op61 S01 pass=False chosen=2 unexplained=['S01-B3:听感存疑', 'S01-B4:听感存疑']
+[syP4a_op61_S01_C1] ok 11s 121 chars
+P4a op61 S01 back: none (当前消息里没有实际附上“前面各段的候选解释（以及当时选中的）”，因此无法判断哪一段能在不编造设定的前提下补出“曾短暂靠近)
+[syP4a_op61_S02_A] ok 342s 5340 chars
+[syP4a_op61_S02_B] FAST 16s -> cup probe
+[syP4a_op61_S02_B] ok 16s 245 chars
+P4a op61 S02 pass=True chosen=2 unexplained=[]
+[syP4a_op61_S02_C1] FAST 9s -> cup probe
+[syP4a_op61_S02_C1] ok 9s 163 chars
+P4a op61 S02 back: none (没有。M9、M30等最多能提前确立“在乎指向具体的人、对方是否知道仍不确定”，但都没有在不编造的情况下提供“他曾认真试图)
+[syP4a_op61_S03_A] ok 404s 5340 chars
+[syP4a_op61_S03_B] FAST 23s -> cup probe
+[syP4a_op61_S03_B] ok 23s 1031 chars
+[syP4a_op61_S03_A2] ok 292s 5616 chars
+[syP4a_op61_S03_B2] FAST 22s -> cup probe
+[syP4a_op61_S03_B2] ok 22s 889 chars
+P4a op61 S03 pass=False chosen=1 unexplained=['S03-B1:池子太窄', 'S03-B2:池子太窄']
+[syP4a_op61_S03_C1] FAST 21s -> cup probe
+[syP4a_op61_S03_C1] ok 21s 168 chars
+[syP4a_op61_S02_b1_A] ok 346s 5967 chars
+[syP4a_op61_S02_b1_B] FAST 33s -> cup probe
+[syP4a_op61_S02_b1_B] ok 33s 729 chars
+P4a op61 S03 back to S02 via M20: rejected
+[syP4a_op61_S03_G] ok 14s 773 chars
+P4a op61 global@S03 ok=True problems=['S03', 'S03']
+[syP4a_op61_S04_A] ok 295s 5985 chars
+[syP4a_op61_S04_B] FAST 29s -> cup probe
+[syP4a_op61_S04_B] ok 29s 496 chars
+P4a op61 S04 pass=True chosen=2 unexplained=['S04-B4:缺前提']
+[syP4a_op61_S04_C2] FAST 21s -> cup probe
+[syP4a_op61_S04_C2] ok 21s 170 chars
+P4a op61 S04 back: none (没有单条候选能合法补齐这个前提。最接近的是 S01-M12（有特定的人、旧日亲近主要从过去回来），但它自己就以前置事实“)
+[syP4a_op61_S05_A] ok 273s 6111 chars
+[syP4a_op61_S05_B] FAST 34s -> cup probe
+[syP4a_op61_S05_B] ok 34s 1023 chars
+[syP4a_op61_S05_A2] ok 318s 6667 chars
+[syP4a_op61_S05_B2] FAST 20s -> cup probe
+[syP4a_op61_S05_B2] ok 20s 559 chars
+P4a op61 S05 pass=False chosen=2 unexplained=[]
+[syP4a_op61_S05_C2] FAST 27s -> cup probe
+[syP4a_op61_S05_C2] ok 27s 210 chars
+P4a op61 S05 back: none (没有一条候选能单独、稳妥地补齐这整个前提。最接近的是 S01-M12（具体的人、过去的亲近、如今不确定是否仍属两人），但)
+[syP4a_op61_S06_A] ok 246s 6372 chars
+[syP4a_op61_S06_B] FAST 24s -> cup probe
+[syP4a_op61_S06_B] ok 24s 292 chars
+P4a op61 S06 pass=True chosen=2 unexplained=[]
+[syP4a_op61_S06_C2] FAILED rc=1 0s '{"completed": false, "error_code": "prompt_must_contain_1_to_65536_characters", "error_type": "ValueError", "automatic_retry": false}\r\n'
+[syP4a_op61_S06_C2] FAILED rc=1 0s '{"completed": false, "error_code": "prompt_must_contain_1_to_65536_characters", "error_type": "ValueError", "automatic_retry": false}\r\n'
+GPT3 STOPPED: 2 in a row / 2 total failures (last syP4a_op61_S06_C2)
+[syP4a_op61_S06_C2_x] SKIPPED (2 in a row / 2 total failures (last syP4a_op61_S06_C2))
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\synth3.py", line 89, in <module>
+    Run(sys.argv[1], sys.argv[2], "g6", sys.argv[3]).run(sys.argv[4] if len(sys.argv) > 4 else None)
+  File "D:\musicclaude\_thread_evo_20261019\synth.py", line 248, in run
+    if s.back(sec, pk, ck):
+       ^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\synth.py", line 209, in back
+    r = s.call(f"{sec}_C{s.backs + 1}", BACK.format(K=k + 1, TEXT=text, MISSING=missing, EARLIER=earlier), s.b, {"sec": sec, "step": "C"})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\synth.py", line 165, in call
+    raise RuntimeError(f"{rid}: no parsable answer")
+RuntimeError: syP4a_op61_S06_C2: no parsable answer

@@ -1,0 +1,91 @@
+{
+  "run_id": "20261016T003916.315547Z-b1960c27",
+  "timestamp": "2026-10-16T00:39:16.315547+00:00",
+  "command": "check",
+  "profile": "yi",
+  "probe": null,
+  "prompt": "Reply with exactly TEST_OK. No other text.",
+  "prompt_sha256": "cf4962f651ef6b8f38225f175cb6b3ed712224ced56dc4111b9173aa2ee0c314",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": false,
+  "response": "",
+  "http_status": 502,
+  "actual_model": null,
+  "actual_reasoning_effort": null,
+  "diagnostics": {
+    "preparation_started_at": 1792111168.420035,
+    "generation_stop_verified": true,
+    "native_hint_experiment": {
+      "mode": "baseline",
+      "actual_native_metadata": null,
+      "supplied_header_names": [],
+      "supplied_headers": {},
+      "original_native_low_entropy_headers_overridden": false,
+      "request_body_edited": false,
+      "opaque_instance_id_injected": false,
+      "applied_by_owning_driver": true
+    },
+    "screenshot_evidence": {
+      "directory": "/app/state/probe-artifacts/5f6605e96c434b5881fb2fe52dea874e",
+      "stage": "failure",
+      "request_id": "5f6605e96c434b5881fb2fe52dea874e",
+      "captured_at": 1792111192.4812407,
+      "source": "live browser page owned by this standard request",
+      "files": [
+        {
+          "filename": "failure-viewport.jpg",
+          "sha256": "71f7864ff4d3bfa5b8b0c3a62745d7f11a4ca1b18e613adc4c1b1cd1b95d81e8"
+        },
+        {
+          "filename": "failure-full.jpg",
+          "sha256": "71f7864ff4d3bfa5b8b0c3a62745d7f11a4ca1b18e613adc4c1b1cd1b95d81e8"
+        }
+      ],
+      "thinking_time_ui_labels": [],
+      "success": true,
+      "capture_seconds": 0.08
+    },
+    "authentication": {
+      "session_cookie_count": 1,
+      "expiries": [
+        1799887168.219616
+      ],
+      "device_cookie_present": true,
+      "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+      "site_cookie_count": 63,
+      "root_cookie_count": 63,
+      "cookie_header_bytes_estimate": 11785,
+      "temporary_cookie_count": 31
+    },
+    "elapsed_seconds": 24.676,
+    "request_id": "5f6605e96c434b5881fb2fe52dea874e",
+    "protocol_error_tags": [],
+    "response_complete": false,
+    "exception_class": "StandardStateError"
+  },
+  "error": {
+    "type": "ui_selector",
+    "message": "Temporary Chat activation control was not found"
+  },
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro"
+    ]
+  },
+  "elapsed_seconds": 36.312
+}

@@ -1,0 +1,2712 @@
+你要写一首器乐作品最终使用的 Thread（线）。
+
+Thread 是同一个人在整首作品里经历的一件事。读者只看 Thread，必须能顺畅读懂这个人每一步的具体心思与变化；同时每段要自然接住给定的体验性质（TARGETS），作为这场经历在各段的情感底色。
+
+【段落】
+S01：第 1–23 小节
+S02：第 24–65 小节
+S03：第 66–91 小节
+S04：第 92–115 小节
+S05：第 116–147 小节
+S06：第 148–180 小节
+S07：第 181–205 小节
+S08：第 206–213 小节
+S09：第 214–215 小节
+S10：第 216–225 小节
+S11：第 226–241 小节
+S12：第 242–253 小节
+S13：第 254–288 小节
+
+【这件事（Center，已经给定，不改）】
+维持尊严的行动与对旧日生活及归属的怀念反复拉扯
+它是读者回头看整首时把各段组织起来的那件事，不是每一段都要拿出来背诵的中心思想。
+
+【已经通过宏观评审的人物经历候选】
+<escape>{
+  "routes": [
+    {
+      "route_id": "R01",
+      "situation": "他已经离开一段熟悉的生活，离开的原因是此前反复承受委屈与难堪，不愿再继续忍让。旧日生活中既有自在的时光，也有与人亲近、被当作自己人、不必时时防备的经历。离开后，他一方面想继续维护不再委屈自己的底线，另一方面舍不得旧日生活及其中的亲近。离开后的独自应对使失去陪伴的代价逐渐具体化。他反复考虑是否回去，却不能确定回去能否恢复原有亲近，也不愿仅凭怀念重新接受过去的忍让。后来，他开始考虑先把现在的日子过稳，同时保留未来重新拥有亲近关系的愿望，并形成了不为留住任何人而吞下委屈的选择。",
+      "segments": [
+        {
+          "sec": "S01",
+          "measure_range": "1–23",
+          "state": [
+            {
+              "state_id": "S01-ST1",
+              "content": "他已经离开熟悉的生活。过去曾反复委屈自己，离开之初，他觉得自己总算不用再一再委屈自己，对离开抱有初步的笃定。",
+              "anchor_ids": ["A01", "A02", "A03"],
+              "source_item_ids": ["S01-1"],
+              "certainty": "明确的既有处境与离开之初的本人感受。"
+            },
+            {
+              "state_id": "S01-ST2",
+              "content": "最初的笃定没有维持多久，他开始感到空落落的，却一时说不清自己究竟舍不得什么。",
+              "anchor_ids": ["A04", "A05"],
+              "source_item_ids": ["S01-2"],
+              "certainty": "明确的本人感受；舍不得的具体对象仍未知。"
+            },
+            {
+              "state_id": "S01-ST3",
+              "content": "他仍然想往前过，但不知道以后靠什么才能让自己安下心来。",
+              "anchor_ids": ["A06", "A07"],
+              "source_item_ids": ["S01-3"],
+              "certainty": "向前生活的愿望明确；获得安定的途径未知。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "离开后的初步笃定很快转为失落和不确定。人物开始同时面对向前生活的愿望与不知道如何安定下来的问题。",
+          "depends_on": [],
+          "still_open": [
+            "他究竟舍不得从前生活中的什么。",
+            "离开以后靠什么才能安下心来。"
+          ]
+        },
+        {
+          "sec": "S02",
+          "measure_range": "24–65",
+          "state": [
+            {
+              "state_id": "S02-ST1",
+              "content": "他明确舍不得从前自在的时光，想到以后可能不能再像以前那样生活，心里会慌。",
+              "anchor_ids": ["A08", "A09"],
+              "source_item_ids": ["S02-1"],
+              "certainty": "对过去自在生活的留恋和对未来生活方式改变的顾虑均明确。"
+            },
+            {
+              "state_id": "S02-ST2",
+              "content": "当他开始留恋过去时，会提醒自己当初经历过的难堪，避免因为心软而忘记离开的原因。",
+              "anchor_ids": ["A02", "A10"],
+              "source_item_ids": ["S02-2"],
+              "certainty": "既有难堪经历明确；主动提醒自己是明确表达的内在选择。"
+            },
+            {
+              "state_id": "S02-ST3",
+              "content": "他仍不甘心为了不再受那些气，就必须连以前的好日子也一起舍弃，对两者是否只能取其一没有答案。",
+              "anchor_ids": ["A08", "A11"],
+              "source_item_ids": ["S02-3"],
+              "certainty": "不甘心的感受明确；是否必须舍弃过去的好日子仍是未解决的问题。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "对过去的留恋具体化为对自在生活的舍不得，并与不愿再受委屈的理由形成直接冲突。他开始主动提醒自己为什么离开，但仍不接受必须连过去的好也一并放弃这一结果。",
+          "depends_on": ["S01-ST1", "S01-ST2", "S01-ST3"],
+          "still_open": [
+            "能否在不再承受过去难堪的同时，保留对过去美好生活的认可。",
+            "不再忍让是否必然意味着失去过去的自在生活。"
+          ]
+        },
+        {
+          "sec": "S03",
+          "measure_range": "66–91",
+          "state": [
+            {
+              "state_id": "S03-ST1",
+              "content": "他心里仍然憋着一股气，但想起过去与人在一起、有人把他当作自己人的时候，还是会短暂地高兴。",
+              "anchor_ids": ["A12", "A13", "A14"],
+              "source_item_ids": ["S03-1"],
+              "certainty": "不甘与过去被人当作自己人的相处事实、短暂高兴均为明确表达。"
+            },
+            {
+              "state_id": "S03-ST2",
+              "content": "那点高兴很快变了味。他已经离开，即使仍然记得过去的亲近，也无法在眼下继续像以前那样生活。",
+              "anchor_ids": ["A01", "A13", "A15"],
+              "source_item_ids": ["S03-2"],
+              "certainty": "离开及目前不能照旧生活均为明确处境；高兴转为复杂感受是明确表达。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "过去被当作自己人的经历带来短暂高兴，但离开这一既成事实使他无法继续过原来的生活，回忆因此从单纯的高兴转为带有失落的感受。",
+          "depends_on": ["S01-ST1", "S02-ST1", "S02-ST3"],
+          "still_open": [
+            "过去的亲近是否还能以某种方式延续。",
+            "如何面对过去的亲近与眼下无法照旧生活之间的落差。"
+          ]
+        },
+        {
+          "sec": "S04",
+          "measure_range": "92–115",
+          "state": [
+            {
+              "state_id": "S04-ST1",
+              "content": "想起过去亲近的时光，他不只是舍不得，还真心盼望一切能够继续像从前那样。",
+              "anchor_ids": ["A13", "A16"],
+              "source_item_ids": ["S04-1"],
+              "certainty": "对旧日亲近的留恋及希望继续照旧的愿望明确。"
+            },
+            {
+              "state_id": "S04-ST2",
+              "content": "希望一切照旧又使他怀疑自己当初是不是走错了。他不知道如果当初没有离开，生活会变成什么样，也无法确定自己究竟后不后悔。",
+              "anchor_ids": ["A17", "A18"],
+              "source_item_ids": ["S04-2"],
+              "certainty": "怀疑和不确定均明确；未离开后的生活及是否后悔均属于未知的反事实问题。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "对过去的留恋进一步成为希望一切恢复原样的愿望，同时开始动摇对离开决定的判断，并产生无法回答的反事实问题。",
+          "depends_on": ["S01-ST1", "S02-ST2", "S03-ST1", "S03-ST2"],
+          "still_open": [
+            "当初离开是否是错误的选择。",
+            "如果当初没有离开，生活究竟会变成什么样。",
+            "自己是否真的后悔离开。"
+          ]
+        },
+        {
+          "sec": "S05",
+          "measure_range": "116–147",
+          "state": [
+            {
+              "state_id": "S05-ST1",
+              "content": "他仍然不服气，但也意识到自己连过去开心的事情都不敢多想，实际上是在过分为难自己。",
+              "anchor_ids": ["A02", "A12", "A19"],
+              "source_item_ids": ["S05-1"],
+              "certainty": "不服气与对自我压抑的明确感受均成立。"
+            },
+            {
+              "state_id": "S05-ST2",
+              "content": "反复争辩使他失去力气。他开始切实感到，那些曾经陪在身边的人如今已经不在身边，因此心里难受。",
+              "anchor_ids": ["A20", "A21"],
+              "source_item_ids": ["S05-2"],
+              "certainty": "疲惫、难受及过去有人陪伴而如今不在身边均为明确表达。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "持续在不甘与留恋之间争辩使他疲惫，同时，过去陪伴者如今不在身边这一失落变得具体。他也开始意识到，连过去开心的记忆都不允许自己想起，是对自己的过度为难。",
+          "depends_on": ["S02-ST2", "S02-ST3", "S03-ST1", "S04-ST2"],
+          "still_open": [
+            "如何面对过去的人如今不在身边的失落。",
+            "如何在不否认过去难堪的情况下，允许自己保留快乐的回忆。"
+          ]
+        },
+        {
+          "sec": "S06",
+          "measure_range": "148–180",
+          "state": [
+            {
+              "state_id": "S06-ST1",
+              "content": "他重新想起过去与人在一起、不必时时防备的日子。这一次，他没有急着用过去受过的难堪打断自己的回忆。",
+              "anchor_ids": ["A12", "A23", "A24"],
+              "source_item_ids": ["S06-1"],
+              "certainty": "过去的相处状态与这一次没有急于打断回忆的选择均明确。"
+            },
+            {
+              "state_id": "S06-ST2",
+              "content": "离开以后，遇到难熬的事情，他常常只能靠自己挺过去。对照过去有人在身边的生活，他越来越清楚有人陪伴曾经能让自己轻松多少。",
+              "anchor_ids": ["A22", "A25"],
+              "source_item_ids": ["S06-2"],
+              "certainty": "独自应对难事的现状及对过去陪伴作用的认识均明确。"
+            },
+            {
+              "state_id": "S06-ST3",
+              "content": "他想再次拥有那种不用多说也知道彼此亲近的日子，却害怕自己再也找不到这样的亲近。想到那样的日子毕竟真实经历过，他的心里又暖和了一点。",
+              "anchor_ids": ["A13", "A14", "A26", "A27"],
+              "source_item_ids": ["S06-3", "S06-4"],
+              "certainty": "重新拥有亲近的愿望、找不到的顾虑及回忆带来的温暖均明确；无法找到仍是担忧而非事实。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "重新回忆过去的亲近时，他不再急于用难堪打断自己。与此同时，离开后的独自应对使过去有人陪伴的价值变得具体，怀念进一步形成重新获得亲近的愿望及可能再也找不到的担忧。",
+          "depends_on": ["S01-ST1", "S03-ST1", "S05-ST1", "S05-ST2"],
+          "still_open": [
+            "未来是否还能重新拥有不用多说就彼此亲近的关系。",
+            "以后遇到难熬的事情是否仍只能独自承担。",
+            "自己是否能够适应缺少陪伴的生活。"
+          ]
+        },
+        {
+          "sec": "S07",
+          "measure_range": "181–205",
+          "state": [
+            {
+              "state_id": "S07-ST1",
+              "content": "刚刚因为过去的温暖而有了一点安心，他又想到以后如果遇到难事仍然只能一个人承担，自己究竟能不能撑得住。",
+              "anchor_ids": ["A22", "A28"],
+              "source_item_ids": ["S07-1"],
+              "certainty": "未来独自面对困难的担忧明确；能否撑住仍未知。"
+            },
+            {
+              "state_id": "S07-ST2",
+              "content": "他回想当初离开时，只顾着不再忍受那些难堪，没有料到往后会这么孤单。他开始追问，如果当初知道会这么孤单，自己是否还会离开。",
+              "anchor_ids": ["A01", "A02", "A29", "A30"],
+              "source_item_ids": ["S07-2"],
+              "certainty": "当初没有预料孤单是明确的回顾性认识；如果早知道是否仍离开属于未知。"
+            },
+            {
+              "state_id": "S07-ST3",
+              "content": "他想回头找回过去的亲近，但想到以前受过的气又不甘愿。更让他难受的是，当初离开时的那股决心，如今已经找不到了。",
+              "anchor_ids": ["A02", "A03", "A26"],
+              "source_item_ids": ["S07-3"],
+              "certainty": "回头愿望、不甘及原有决心消退均为明确的本人感受。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "离开带来的代价进一步具体化为对未来独自承担困难的担忧。他开始意识到当初没有预料到孤单，并反问自己如果早知道是否还会离开。与此同时，回头的愿望与不愿重新忍受难堪发生冲突，最初的离开决心也已不再清晰。",
+          "depends_on": ["S01-ST1", "S06-ST2", "S06-ST3"],
+          "still_open": [
+            "如果当初知道以后会孤单，自己是否还会离开。",
+            "未来独自面对难事时，自己是否能够撑住。",
+            "是否回头，以及回头后能否避免重新陷入过去的忍让。"
+          ]
+        },
+        {
+          "sec": "S08",
+          "measure_range": "206–213",
+          "state": [
+            {
+              "state_id": "S08-ST1",
+              "content": "他暂时不再追问该不该回头，只想了一会儿从前亲近的时光，并从中获得片刻安慰。",
+              "anchor_ids": ["A13", "A14", "A31"],
+              "source_item_ids": ["S08-1"],
+              "certainty": "暂时搁下问题的选择及回忆带来的片刻安慰明确。"
+            },
+            {
+              "state_id": "S08-ST2",
+              "content": "他知道，想起过去有人陪伴，并不等于眼下真的有人可以依靠，因此心里仍然无法安定。",
+              "anchor_ids": ["A22", "A32", "A33"],
+              "source_item_ids": ["S08-2"],
+              "certainty": "对回忆与现实依靠之间区别的认识明确；现实依靠尚未得到解决。"
+            }
+          ],
+          "delta_type": "暂时没在想",
+          "delta": "他暂时搁下是否回头的问题，借助回忆获得安慰。但这份安慰没有转化成眼下真实的陪伴或依靠，原有的不安仍然存在。",
+          "depends_on": ["S06-ST1", "S06-ST2", "S07-ST3"],
+          "still_open": [
+            "是否回头仍没有决定。",
+            "眼下是否能够获得真实的陪伴与依靠。",
+            "回忆带来的安慰能否转化为现实中的安定。"
+          ]
+        },
+        {
+          "sec": "S09",
+          "measure_range": "214–215",
+          "state": [
+            {
+              "state_id": "S09-ST1",
+              "content": "他忽然分不清自己想回去，究竟是舍不得原来的生活，还是只是希望难受的时候有人在旁边。",
+              "anchor_ids": ["A05", "A34"],
+              "source_item_ids": ["S09-1"],
+              "certainty": "动机不明是明确的未知；两种可能均未被确认。"
+            },
+            {
+              "state_id": "S09-ST2",
+              "content": "他无法回答这个问题，因此一时心慌，甚至不敢继续顺着这个念头往下想。",
+              "anchor_ids": ["A34", "A35"],
+              "source_item_ids": ["S09-2"],
+              "certainty": "无法回答、心慌及停止继续思考均明确。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "原先笼统的舍不得进一步变成一个明确但无法回答的问题：想回去究竟是因为舍不得旧生活，还是因为希望难受时有人陪伴。这个问题使他心慌，并暂时中止了思考。",
+          "depends_on": ["S06-ST2", "S07-ST3", "S08-ST1"],
+          "still_open": [
+            "自己想回去的真正原因是什么。",
+            "对旧日生活的留恋与对现实陪伴的需要分别占有多大分量。"
+          ]
+        },
+        {
+          "sec": "S10",
+          "measure_range": "216–225",
+          "state": [
+            {
+              "state_id": "S10-ST1",
+              "content": "他进一步想到，即使真的回去，从前那种被人当作自己人的亲近，也未必还能重新拥有。",
+              "anchor_ids": ["A13", "A36"],
+              "source_item_ids": ["S10-1"],
+              "certainty": "对重新获得亲近的可能性存疑；结果仍未知。"
+            },
+            {
+              "state_id": "S10-ST2",
+              "content": "当初那些让他难受的事情不能当作没有发生过。即使仍然舍不得过去，他也无法只凭这份留恋就放心回去。",
+              "anchor_ids": ["A02", "A37", "A38"],
+              "source_item_ids": ["S10-2"],
+              "certainty": "过去的难堪明确存在；重新回去的不安与顾虑明确。"
+            },
+            {
+              "state_id": "S10-ST3",
+              "content": "反复思考让他感到疲惫，仍然没有答案，连眼下的生活也过得不踏实。",
+              "anchor_ids": ["A20", "A33", "A39"],
+              "source_item_ids": ["S10-3"],
+              "certainty": "思虑疲惫、问题未解及当前不踏实均明确。"
+            }
+          ],
+          "delta_type": "后果",
+          "delta": "对是否回去的顾虑进一步具体化：即使回去，也不能确定能否找回原来的亲近；而过去受过的难堪又不能被抹去。两方面的不确定使他持续思虑，既没有答案，也无法安稳地过眼下的生活。",
+          "depends_on": ["S03-ST1", "S03-ST2", "S09-ST1", "S09-ST2", "S02-ST2"],
+          "still_open": [
+            "回去以后是否还能恢复过去被当作自己人的亲近。",
+            "如何面对回去以后仍可能存在的过去难堪。",
+            "是否应该回去。",
+            "怎样让眼下的生活安定下来。"
+          ]
+        },
+        {
+          "sec": "S11",
+          "measure_range": "226–241",
+          "state": [
+            {
+              "state_id": "S11-ST1",
+              "content": "他明知道回去未必能够找回原来的亲近，却仍然忍不住抱有一点希望，想着万一可以呢。",
+              "anchor_ids": ["A36", "A40"],
+              "source_item_ids": ["S11-1"],
+              "certainty": "恢复亲近的结果仍不确定；抱有希望的感受明确。"
+            },
+            {
+              "state_id": "S11-ST2",
+              "content": "即使这个希望仍然让他心动，他也不愿仅凭这点指望，就把自己重新放回过去那种忍让之中。他开始考虑，不必等到彻底决定回不回去，可以先试着把现在的日子过稳一点。",
+              "anchor_ids": ["A02", "A37", "A41", "A42"],
+              "source_item_ids": ["S11-2", "S11-3"],
+              "certainty": "拒绝重新忍让的选择明确；先过稳眼下日子的想法明确，但仍处于初步考虑阶段。"
+            },
+            {
+              "state_id": "S11-ST3",
+              "content": "他知道以后遇到难事仍可能只能自己熬，心里依然害怕，但这一次没有立即收回先把眼下日子过稳的想法。",
+              "anchor_ids": ["A22", "A28", "A43"],
+              "source_item_ids": ["S11-4"],
+              "certainty": "未来独自面对困难的顾虑明确；没有立即收回想法的选择明确。"
+            }
+          ],
+          "delta_type": "新变化",
+          "delta": "他没有解决是否回去的问题，却开始形成新的处理方式：不再仅凭恢复亲近的希望接受过去的忍让，而是考虑先稳定现在的生活。即使仍害怕未来独自面对困难，也没有立刻放弃这个想法。",
+          "depends_on": ["S06-ST2", "S07-ST1", "S10-ST1", "S10-ST2", "S10-ST3"],
+          "still_open": [
+            "回去是否能够恢复过去的亲近。",
+            "是否最终回去仍未决定。",
+            "眼下的生活能否逐渐稳定。",
+            "未来独自面对困难时是否能够撑住。"
+          ]
+        },
+        {
+          "sec": "S12",
+          "measure_range": "242–253",
+          "state": [
+            {
+              "state_id": "S12-ST1",
+              "content": "他这次心里有了底：当初那些让自己难受的事情确实不该忍，过去和人在一起时的开心也确实发生过，两者都不需要被说成假的。",
+              "anchor_ids": ["A02", "A13", "A44"],
+              "source_item_ids": ["S12-1"],
+              "certainty": "对过去难堪和过去快乐均真实存在的确认明确。"
+            },
+            {
+              "state_id": "S12-ST2",
+              "content": "想到过去的好，他仍然会心软，但不再像以前那样急着责怪自己，也不再因此怀疑当初离开的理由。",
+              "anchor_ids": ["A08", "A17", "A45"],
+              "source_item_ids": ["S12-2"],
+              "certainty": "心软及不再自责、不再因此怀疑离开理由的变化均明确。"
+            }
+          ],
+          "delta_type": "回到旧处但有新增",
+          "delta": "对过去的认识发生了整合：过去受过的难堪不该忍，过去真实存在的快乐也不必否认。怀念不再自动转化为自责或对离开理由的怀疑。",
+          "depends_on": ["S01-ST1", "S03-ST1", "S05-ST1", "S06-ST3", "S11-ST2"],
+          "still_open": [
+            "未来是否还能重新获得亲近的相处。",
+            "未来的生活是否能够获得真实的陪伴。",
+            "是否回到原来的生活仍没有明确决定。"
+          ]
+        },
+        {
+          "sec": "S13",
+          "measure_range": "254–288",
+          "state": [
+            {
+              "state_id": "S13-ST1",
+              "content": "他想起从前自然亲近的日子，心里再次暖起来，不再只是觉得自己失去了什么，也开始盼望以后还能拥有那样的相处。",
+              "anchor_ids": ["A13", "A14", "A44", "A46"],
+              "source_item_ids": ["S13-1"],
+              "certainty": "回忆带来的温暖及对未来亲近关系的愿望明确；未来是否实现仍未知。"
+            },
+            {
+              "state_id": "S13-ST2",
+              "content": "想到以后也可能拥有那样的亲近，他有了继续生活的劲头，想把往后的日子好好过起来，不再整天与过去的事情较劲。",
+              "anchor_ids": ["A06", "A42", "A47", "A48"],
+              "source_item_ids": ["S13-2"],
+              "certainty": "积极生活的愿望、动力及不再持续与过去较劲的选择明确。"
+            },
+            {
+              "state_id": "S13-ST3",
+              "content": "他也知道以后仍可能有孤单的时候，想要的亲近关系不知道什么时候才能出现，心里因此渐渐静下来。对于未来，他形成了明确的条件性选择：如果有人愿意亲近自己，就好好珍惜；如果一直没有，就自己生活，也不再为了留住谁而把委屈咽下去。",
+              "anchor_ids": ["A22", "A27", "A49", "A50", "A51", "A52", "A53", "A54"],
+              "source_item_ids": ["S13-3", "S13-4"],
+              "certainty": "未来仍可能孤单是明确的预期；亲近关系出现的时间未知；珍惜或独自生活均为尚待条件触发的选择，不是已经发生的结果。"
+            }
+          ],
+          "delta_type": "实行已有想法",
+          "delta": "先把眼下日子过稳的想法进一步转化为积极生活的愿望。他不再只围绕过去是否值得离开反复争辩，而是将亲近关系的愿望转向未来，同时承认孤单仍可能出现。最终形成两种条件性选择：有亲近关系就珍惜，没有就自己生活，但不再为留住谁而吞下委屈。",
+          "depends_on": ["S06-ST2", "S06-ST3", "S07-ST3", "S11-ST2", "S11-ST3", "S12-ST1", "S12-ST2"],
+          "still_open": [
+            "未来是否真的有人愿意与他建立亲近关系。",
+            "这样的亲近关系什么时候才可能出现。",
+            "未来仍可能出现的孤单时刻将如何面对。",
+            "未来是否有人愿意亲近仍未确定，但不再为留住别人而吞下委屈的选择已经明确。"
+          ]
+        }
+      ],
+      "established": [
+        {
+          "claim": "他已经离开那段熟悉的生活。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "anchor_id": "A01",
+          "certainty": "明确的既成事实。"
+        },
+        {
+          "claim": "过去的生活中，他曾反复委屈自己、承受难堪。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "anchor_id": "A02",
+          "certainty": "明确的既有处境。"
+        },
+        {
+          "claim": "离开之初，他曾觉得自己终于不用再一再委屈自己，对离开抱有笃定。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "anchor_id": "A03",
+          "certainty": "明确的初始感受；后来这一决心发生变化。"
+        },
+        {
+          "claim": "离开后，他很快产生空落落的感觉。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-2"]},
+          "anchor_id": "A04",
+          "certainty": "明确的本人感受。"
+        },
+        {
+          "claim": "他一开始说不清自己究竟舍不得什么。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-2"]},
+          "anchor_id": "A05",
+          "certainty": "明确表达的未知。"
+        },
+        {
+          "claim": "他仍然想往前生活。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-3"]},
+          "anchor_id": "A06",
+          "certainty": "明确的本人愿望。"
+        },
+        {
+          "claim": "他不知道以后靠什么才能让自己安下心。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-3"]},
+          "anchor_id": "A07",
+          "certainty": "明确表达的未知。"
+        },
+        {
+          "claim": "他舍不得过去那些自在的时光。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-1"]},
+          "anchor_id": "A08",
+          "certainty": "明确的本人感受。"
+        },
+        {
+          "claim": "他担心以后不能再像从前那样自在地生活。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-1"]},
+          "anchor_id": "A09",
+          "certainty": "明确的本人顾虑。"
+        },
+        {
+          "claim": "他会主动提醒自己当初受过的难堪，以免忘记离开的原因。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-2"]},
+          "anchor_id": "A10",
+          "certainty": "明确的内在选择。"
+        },
+        {
+          "claim": "他不甘心为了不再受气，就必须连过去的好日子也一并舍弃。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-3"]},
+          "anchor_id": "A11",
+          "certainty": "不甘心的感受明确；是否必须舍弃仍未知。"
+        },
+        {
+          "claim": "他对过去受过的气仍然有不甘和怨气。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "anchor_id": "A12",
+          "certainty": "明确的本人感受。"
+        },
+        {
+          "claim": "过去他曾与人在一起，有人把他当作自己人。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "anchor_id": "A13",
+          "certainty": "明确的既往相处事实。"
+        },
+        {
+          "claim": "回忆过去被当作自己人的经历，曾使他短暂高兴，后来也能带来温暖和安慰。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "anchor_id": "A14",
+          "certainty": "明确的本人感受。"
+        },
+        {
+          "claim": "离开以后，他已经不能像过去那样生活。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-2"]},
+          "anchor_id": "A15",
+          "certainty": "明确的现实处境及离开后的结果。"
+        },
+        {
+          "claim": "他真心盼望过去的生活与亲近能够继续像从前一样。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-1"]},
+          "anchor_id": "A16",
+          "certainty": "明确的本人愿望。"
+        },
+        {
+          "claim": "他开始怀疑自己当初离开是否走错。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-2"]},
+          "anchor_id": "A17",
+          "certainty": "明确的本人顾虑；后来有所变化。"
+        },
+        {
+          "claim": "他不知道如果当初没有离开，生活会变成什么样，也不能确定自己是否后悔。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-2"]},
+          "anchor_id": "A18",
+          "certainty": "明确表达的反事实未知。"
+        },
+        {
+          "claim": "他意识到连过去开心的事情都不敢多想，是在过分为难自己。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-1"]},
+          "anchor_id": "A19",
+          "certainty": "明确的本人感受与认识。"
+        },
+        {
+          "claim": "在不甘与怀念之间反复争辩，会使他疲惫、失去力气。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-2"]},
+          "anchor_id": "A20",
+          "certainty": "明确的经历后果。"
+        },
+        {
+          "claim": "他难受于过去曾陪在身边的人如今不在身边。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-2"]},
+          "anchor_id": "A21",
+          "certainty": "明确的本人感受及现状表达。"
+        },
+        {
+          "claim": "离开以后，遇到难熬的事情，他常常只能自己挺过去。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-2"]},
+          "anchor_id": "A22",
+          "certainty": "明确的持续性现实处境。"
+        },
+        {
+          "claim": "过去与人在一起时，他曾有不必时时防备的相处体验。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-1"]},
+          "anchor_id": "A23",
+          "certainty": "明确的既往相处事实。"
+        },
+        {
+          "claim": "这一次回忆过去时，他没有急着用难堪打断自己。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-1"]},
+          "anchor_id": "A24",
+          "certainty": "明确的内在选择。"
+        },
+        {
+          "claim": "他认识到过去有人陪伴能让自己轻松很多。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-2"]},
+          "anchor_id": "A25",
+          "certainty": "明确的本人认识。"
+        },
+        {
+          "claim": "他希望重新拥有不用多说也知道彼此亲近的日子。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-3"]},
+          "anchor_id": "A26",
+          "certainty": "明确的本人愿望。"
+        },
+        {
+          "claim": "他害怕自己再也找不到过去那样的亲近。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-3"]},
+          "anchor_id": "A27",
+          "certainty": "明确的本人顾虑，不代表未来必然找不到。"
+        },
+        {
+          "claim": "他害怕以后再次独自面对难事时，自己未必能够撑住。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-1"]},
+          "anchor_id": "A28",
+          "certainty": "明确的本人顾虑；未来能否撑住未知。"
+        },
+        {
+          "claim": "他回顾当初离开时，确认自己没有预料到往后会这么孤单。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-2"]},
+          "anchor_id": "A29",
+          "certainty": "明确的回顾性认识。"
+        },
+        {
+          "claim": "他不知道如果当初预料到孤单，自己是否还会离开。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-2"]},
+          "anchor_id": "A30",
+          "certainty": "明确表达的反事实未知。"
+        },
+        {
+          "claim": "他曾暂时搁下是否回头的问题，只回想过去亲近的时光。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-1"]},
+          "anchor_id": "A31",
+          "certainty": "明确的暂时性选择。"
+        },
+        {
+          "claim": "他认识到，回忆过去有人陪伴，不等于眼下真的有人可以依靠。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-2"]},
+          "anchor_id": "A32",
+          "certainty": "明确的本人认识；不进一步推定现实中完全没有任何人。"
+        },
+        {
+          "claim": "即使回忆能够带来安慰，他的心里仍然无法安定。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-2"]},
+          "anchor_id": "A33",
+          "certainty": "明确的持续性本人感受。"
+        },
+        {
+          "claim": "他无法分清自己想回去是舍不得原来的生活，还是希望难受时有人陪伴。",
+          "first_established": {"sec": "S09", "source_item_ids": ["S09-1"]},
+          "anchor_id": "A34",
+          "certainty": "明确表达的动机未知，两种可能均未被证实。"
+        },
+        {
+          "claim": "面对无法回答的动机问题，他会心慌，并不敢继续想下去。",
+          "first_established": {"sec": "S09", "source_item_ids": ["S09-2"]},
+          "anchor_id": "A35",
+          "certainty": "明确的本人感受与反应。"
+        },
+        {
+          "claim": "他不知道即使真的回去，是否还能找回过去被当作自己人的亲近。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-1"]},
+          "anchor_id": "A36",
+          "certainty": "明确表达的未知。"
+        },
+        {
+          "claim": "他认识到过去那些让自己难受的事情不能当作没有发生过。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-2"]},
+          "anchor_id": "A37",
+          "certainty": "明确的本人认识。"
+        },
+        {
+          "claim": "他不能只凭对过去的舍不得，就放心地重新回去。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-2"]},
+          "anchor_id": "A38",
+          "certainty": "明确的本人顾虑。"
+        },
+        {
+          "claim": "反复思考使他疲惫，问题仍无答案，眼下的生活也不踏实。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-3"]},
+          "anchor_id": "A39",
+          "certainty": "明确的经历后果与本人感受。"
+        },
+        {
+          "claim": "即使回去未必能恢复亲近，他仍抱有万一能够恢复的希望。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-1"]},
+          "anchor_id": "A40",
+          "certainty": "希望明确，但实现的可能性未知。"
+        },
+        {
+          "claim": "他不愿仅凭恢复亲近的希望，就重新把自己放回过去的忍让之中。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-2"]},
+          "anchor_id": "A41",
+          "certainty": "明确的本人选择。"
+        },
+        {
+          "claim": "他开始考虑不必先解决是否回去的问题，可以先把现在的生活过稳。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-3"]},
+          "anchor_id": "A42",
+          "certainty": "明确的初步想法与生活选择。"
+        },
+        {
+          "claim": "即使害怕未来独自面对难事，他也没有立即收回先把眼下生活过稳的想法。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-4"]},
+          "anchor_id": "A43",
+          "certainty": "明确的持续选择。"
+        },
+        {
+          "claim": "他确认过去受过的难堪不该忍，过去与人在一起的快乐也真实存在，两者不必互相否定。",
+          "first_established": {"sec": "S12", "source_item_ids": ["S12-1"]},
+          "anchor_id": "A44",
+          "certainty": "明确的本人认识与立场。"
+        },
+        {
+          "claim": "想到过去的好时，他虽然仍会心软，但不再急着责怪自己，也不再因此怀疑离开的理由。",
+          "first_established": {"sec": "S12", "source_item_ids": ["S12-2"]},
+          "anchor_id": "A45",
+          "certainty": "明确的本人感受及态度变化。"
+        },
+        {
+          "claim": "他希望未来还能拥有过去那样自然亲近的相处。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-1"]},
+          "anchor_id": "A46",
+          "certainty": "明确的未来愿望，不是已经实现的事实。"
+        },
+        {
+          "claim": "他重新有了劲头，希望把往后的日子好好过起来。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-2"]},
+          "anchor_id": "A47",
+          "certainty": "明确的本人愿望与感受。"
+        },
+        {
+          "claim": "他不想再整天与过去的事情较劲。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-2"]},
+          "anchor_id": "A48",
+          "certainty": "明确的本人选择。"
+        },
+        {
+          "claim": "他认为未来仍会有孤单的时候。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "anchor_id": "A49",
+          "certainty": "明确表达的未来预期，不是已经发生的事实。"
+        },
+        {
+          "claim": "他不知道未来想要的亲近关系什么时候才能出现。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "anchor_id": "A50",
+          "certainty": "明确表达的时间未知。"
+        },
+        {
+          "claim": "想到未来仍有孤单和等待，他的心里渐渐静下来。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "anchor_id": "A51",
+          "certainty": "明确的本人感受。"
+        },
+        {
+          "claim": "如果未来有人愿意与他亲近，他会好好珍惜。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "anchor_id": "A52",
+          "certainty": "明确的条件性选择，条件尚未发生。"
+        },
+        {
+          "claim": "如果未来一直没有人愿意亲近，他就自己生活。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "anchor_id": "A53",
+          "certainty": "明确的条件性选择，尚不能视为已经发生的生活结果。"
+        },
+        {
+          "claim": "他不想再为了留住谁而把委屈咽下去。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "anchor_id": "A54",
+          "certainty": "明确的本人选择与底线。"
+        }
+      ],
+      "anchor_threads": [
+        {
+          "anchor_id": "A01",
+          "kind": "处境事实",
+          "content": "他已经离开那段熟悉的生活。",
+          "certainty": "明确的既成事实。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "depends_on": [],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S03", "source_item_ids": ["S03-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-2", "S07-3"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A02",
+          "kind": "处境事实",
+          "content": "过去的生活中，他曾反复委屈自己、承受难堪和忍让。",
+          "certainty": "明确的既有处境。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "depends_on": [],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S02", "source_item_ids": ["S02-2", "S02-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S05", "source_item_ids": ["S05-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-2", "S07-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S10", "source_item_ids": ["S10-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-1", "S12-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A03",
+          "kind": "本人感受",
+          "content": "离开之初，他曾觉得自己终于不用再一再委屈自己，对离开抱有笃定。",
+          "certainty": "明确的初始感受。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-1"]},
+          "depends_on": ["A01", "A02"],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-3"], "use_type": "后果", "actual_change": "原先离开时的决心如今已经找不到，初始笃定发生消退。"}
+          ]
+        },
+        {
+          "anchor_id": "A04",
+          "kind": "本人感受",
+          "content": "离开后，他很快产生空落落的感觉。",
+          "certainty": "明确的本人感受。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-2"]},
+          "depends_on": ["A01", "A03"],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A05",
+          "kind": "未知",
+          "content": "他一开始说不清自己究竟舍不得什么。",
+          "certainty": "明确表达的未知。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-2"]},
+          "depends_on": ["A04"],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S09", "source_item_ids": ["S09-1"], "use_type": "后果", "actual_change": "原本笼统的舍不得具体化为舍不得旧生活或希望难受时有人陪伴两种可能，但仍无法分辨。"},
+            {"sec": "S09", "source_item_ids": ["S09-2"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A06",
+          "kind": "本人愿望",
+          "content": "他仍然想往前生活。",
+          "certainty": "明确的本人愿望。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-3"]},
+          "depends_on": ["A01"],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-2"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A07",
+          "kind": "未知",
+          "content": "他不知道以后靠什么才能让自己安下心。",
+          "certainty": "明确表达的未知。",
+          "first_established": {"sec": "S01", "source_item_ids": ["S01-3"]},
+          "depends_on": ["A06"],
+          "occurrences": [
+            {"sec": "S01", "source_item_ids": ["S01-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S08", "source_item_ids": ["S08-2"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A08",
+          "kind": "本人感受",
+          "content": "他舍不得过去自在的时光和曾经的好日子。",
+          "certainty": "明确的本人感受。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-1"]},
+          "depends_on": ["A01"],
+          "occurrences": [
+            {"sec": "S02", "source_item_ids": ["S02-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S02", "source_item_ids": ["S02-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S04", "source_item_ids": ["S04-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S05", "source_item_ids": ["S05-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-2"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A09",
+          "kind": "本人顾虑",
+          "content": "他担心以后不能再像从前那样自在地生活。",
+          "certainty": "明确的本人顾虑。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-1"]},
+          "depends_on": ["A08"],
+          "occurrences": [
+            {"sec": "S02", "source_item_ids": ["S02-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A10",
+          "kind": "选择",
+          "content": "他会主动提醒自己当初受过的难堪，以免忘记离开的原因。",
+          "certainty": "明确的内在选择。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-2"]},
+          "depends_on": ["A01", "A02"],
+          "occurrences": [
+            {"sec": "S02", "source_item_ids": ["S02-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A11",
+          "kind": "未知",
+          "content": "他不甘心为了不再受气，就必须连过去的好日子也一并舍弃。",
+          "certainty": "不甘心的感受明确，是否必须舍弃仍未知。",
+          "first_established": {"sec": "S02", "source_item_ids": ["S02-3"]},
+          "depends_on": ["A08", "A10"],
+          "occurrences": [
+            {"sec": "S02", "source_item_ids": ["S02-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S05", "source_item_ids": ["S05-1"], "use_type": "后果", "actual_change": "他开始意识到连快乐回忆都不敢想，是在过分为难自己。"},
+            {"sec": "S12", "source_item_ids": ["S12-1"], "use_type": "后果", "actual_change": "他确认过去难堪与过去快乐可以同时为真，不必否定任何一边。"}
+          ]
+        },
+        {
+          "anchor_id": "A12",
+          "kind": "本人感受",
+          "content": "他对过去受过的气仍然有不甘和怨气。",
+          "certainty": "明确的本人感受。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "depends_on": ["A02"],
+          "occurrences": [
+            {"sec": "S03", "source_item_ids": ["S03-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S05", "source_item_ids": ["S05-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-3"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A13",
+          "kind": "处境事实",
+          "content": "过去他曾与人在一起，有人把他当作自己人。",
+          "certainty": "明确的既往相处事实。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "depends_on": ["A01"],
+          "occurrences": [
+            {"sec": "S03", "source_item_ids": ["S03-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S03", "source_item_ids": ["S03-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S04", "source_item_ids": ["S04-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S06", "source_item_ids": ["S06-1", "S06-2", "S06-3", "S06-4"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S10", "source_item_ids": ["S10-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A14",
+          "kind": "本人感受",
+          "content": "回忆过去被当作自己人的经历，曾使他短暂高兴，后来也能带来温暖和安慰。",
+          "certainty": "明确的本人感受。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-1"]},
+          "depends_on": ["A13"],
+          "occurrences": [
+            {"sec": "S03", "source_item_ids": ["S03-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S06", "source_item_ids": ["S06-4"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S08", "source_item_ids": ["S08-1"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-1"], "use_type": "后果", "actual_change": "回忆带来的温暖不再只是短暂安慰，也开始与对未来亲近关系的愿望相连。"}
+          ]
+        },
+        {
+          "anchor_id": "A15",
+          "kind": "后果",
+          "content": "离开以后，他已经不能像过去那样生活。",
+          "certainty": "明确的现实处境及离开后的结果。",
+          "first_established": {"sec": "S03", "source_item_ids": ["S03-2"]},
+          "depends_on": ["A01", "A13"],
+          "occurrences": [
+            {"sec": "S03", "source_item_ids": ["S03-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A16",
+          "kind": "本人愿望",
+          "content": "他真心盼望过去的生活与亲近能够继续像从前一样。",
+          "certainty": "明确的本人愿望。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-1"]},
+          "depends_on": ["A13", "A15"],
+          "occurrences": [
+            {"sec": "S04", "source_item_ids": ["S04-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A17",
+          "kind": "本人顾虑",
+          "content": "他开始怀疑自己当初离开是否走错。",
+          "certainty": "明确的本人顾虑。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-2"]},
+          "depends_on": ["A01", "A02", "A16"],
+          "occurrences": [
+            {"sec": "S04", "source_item_ids": ["S04-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-2"], "use_type": "后果", "actual_change": "想到过去的好时，他不再因此怀疑当初离开的理由。"}
+          ]
+        },
+        {
+          "anchor_id": "A18",
+          "kind": "未知",
+          "content": "他不知道如果当初没有离开，生活会变成什么样，也不能确定自己是否后悔。",
+          "certainty": "明确表达的反事实未知。",
+          "first_established": {"sec": "S04", "source_item_ids": ["S04-2"]},
+          "depends_on": ["A01", "A17"],
+          "occurrences": [
+            {"sec": "S04", "source_item_ids": ["S04-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A19",
+          "kind": "本人感受",
+          "content": "他意识到连过去开心的事情都不敢多想，是在过分为难自己。",
+          "certainty": "明确的本人感受与认识。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-1"]},
+          "depends_on": ["A08", "A11"],
+          "occurrences": [
+            {"sec": "S05", "source_item_ids": ["S05-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A20",
+          "kind": "后果",
+          "content": "在不甘与怀念之间反复争辩、反复思考，会使他疲惫、失去力气。",
+          "certainty": "明确的经历后果。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-2"]},
+          "depends_on": ["A11", "A17"],
+          "occurrences": [
+            {"sec": "S05", "source_item_ids": ["S05-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S10", "source_item_ids": ["S10-3"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A21",
+          "kind": "本人感受",
+          "content": "他难受于过去曾陪在身边的人如今不在身边。",
+          "certainty": "明确的本人感受及现状表达。",
+          "first_established": {"sec": "S05", "source_item_ids": ["S05-2"]},
+          "depends_on": ["A01", "A13"],
+          "occurrences": [
+            {"sec": "S05", "source_item_ids": ["S05-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S06", "source_item_ids": ["S06-2"], "use_type": "后果", "actual_change": "过去陪伴者如今不在身边的失落，进一步具体表现为遇到难熬的事情常常只能自己承担。"}
+          ]
+        },
+        {
+          "anchor_id": "A22",
+          "kind": "处境事实",
+          "content": "离开以后，遇到难熬的事情，他常常只能自己挺过去。",
+          "certainty": "明确的持续性现实处境。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-2"]},
+          "depends_on": ["A01", "A21"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-1"], "use_type": "代价改变", "actual_change": "眼下独自应对难事的现实，进一步成为对未来能否独自撑住的担忧。"},
+            {"sec": "S11", "source_item_ids": ["S11-4"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A23",
+          "kind": "处境事实",
+          "content": "过去与人在一起时，他曾有不必时时防备的相处体验。",
+          "certainty": "明确的既往相处事实。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-1"]},
+          "depends_on": ["A13"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A24",
+          "kind": "选择",
+          "content": "这一次回忆过去时，他没有急着用难堪打断自己。",
+          "certainty": "明确的内在选择。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-1"]},
+          "depends_on": ["A19", "A23"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A25",
+          "kind": "本人感受",
+          "content": "他认识到过去有人陪伴能让自己轻松很多。",
+          "certainty": "明确的本人认识。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-2"]},
+          "depends_on": ["A22", "A23"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A26",
+          "kind": "本人愿望",
+          "content": "他希望重新拥有不用多说也知道彼此亲近的日子。",
+          "certainty": "明确的本人愿望。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-3"]},
+          "depends_on": ["A13", "A25"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S07", "source_item_ids": ["S07-3"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A27",
+          "kind": "本人顾虑",
+          "content": "他害怕自己再也找不到过去那样的亲近。",
+          "certainty": "明确的本人顾虑，不代表未来必然找不到。",
+          "first_established": {"sec": "S06", "source_item_ids": ["S06-3"]},
+          "depends_on": ["A26"],
+          "occurrences": [
+            {"sec": "S06", "source_item_ids": ["S06-3"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A28",
+          "kind": "本人顾虑",
+          "content": "他害怕以后再次独自面对难事时，自己未必能够撑住。",
+          "certainty": "明确的本人顾虑；未来能否撑住未知。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-1"]},
+          "depends_on": ["A22", "A25"],
+          "occurrences": [
+            {"sec": "S07", "source_item_ids": ["S07-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-4"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A29",
+          "kind": "本人感受",
+          "content": "他回顾当初离开时，确认自己没有预料到往后会这么孤单。",
+          "certainty": "明确的回顾性认识。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-2"]},
+          "depends_on": ["A01", "A22"],
+          "occurrences": [
+            {"sec": "S07", "source_item_ids": ["S07-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A30",
+          "kind": "未知",
+          "content": "他不知道如果当初预料到孤单，自己是否还会离开。",
+          "certainty": "明确表达的反事实未知。",
+          "first_established": {"sec": "S07", "source_item_ids": ["S07-2"]},
+          "depends_on": ["A29"],
+          "occurrences": [
+            {"sec": "S07", "source_item_ids": ["S07-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A31",
+          "kind": "选择",
+          "content": "他曾暂时搁下是否回头的问题，只回想过去亲近的时光。",
+          "certainty": "明确的暂时性选择。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-1"]},
+          "depends_on": ["A26", "A03"],
+          "occurrences": [
+            {"sec": "S08", "source_item_ids": ["S08-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A32",
+          "kind": "本人感受",
+          "content": "他认识到，回忆过去有人陪伴，不等于眼下真的有人可以依靠。",
+          "certainty": "明确的本人认识；不进一步推定现实中完全没有任何人。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-2"]},
+          "depends_on": ["A22", "A31"],
+          "occurrences": [
+            {"sec": "S08", "source_item_ids": ["S08-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A33",
+          "kind": "本人感受",
+          "content": "即使回忆能够带来安慰，他的心里仍然无法安定。",
+          "certainty": "明确的持续性本人感受。",
+          "first_established": {"sec": "S08", "source_item_ids": ["S08-2"]},
+          "depends_on": ["A32"],
+          "occurrences": [
+            {"sec": "S08", "source_item_ids": ["S08-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S10", "source_item_ids": ["S10-3"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A34",
+          "kind": "未知",
+          "content": "他无法分清自己想回去是舍不得原来的生活，还是希望难受时有人陪伴。",
+          "certainty": "明确表达的动机未知，两种可能均未被证实。",
+          "first_established": {"sec": "S09", "source_item_ids": ["S09-1"]},
+          "depends_on": ["A26", "A32"],
+          "occurrences": [
+            {"sec": "S09", "source_item_ids": ["S09-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S09", "source_item_ids": ["S09-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S10", "source_item_ids": ["S10-3"], "use_type": "重复表达", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A35",
+          "kind": "本人感受",
+          "content": "面对无法回答的动机问题，他会心慌，并不敢继续想下去。",
+          "certainty": "明确的本人感受与反应。",
+          "first_established": {"sec": "S09", "source_item_ids": ["S09-2"]},
+          "depends_on": ["A34"],
+          "occurrences": [
+            {"sec": "S09", "source_item_ids": ["S09-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A36",
+          "kind": "未知",
+          "content": "他不知道即使真的回去，是否还能找回过去被当作自己人的亲近。",
+          "certainty": "明确表达的未知。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-1"]},
+          "depends_on": ["A13", "A34"],
+          "occurrences": [
+            {"sec": "S10", "source_item_ids": ["S10-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A37",
+          "kind": "本人感受",
+          "content": "他认识到过去那些让自己难受的事情不能当作没有发生过。",
+          "certainty": "明确的本人认识。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-2"]},
+          "depends_on": ["A02", "A01"],
+          "occurrences": [
+            {"sec": "S10", "source_item_ids": ["S10-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A38",
+          "kind": "本人顾虑",
+          "content": "他不能只凭对过去的舍不得，就放心地重新回去。",
+          "certainty": "明确的本人顾虑。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-2"]},
+          "depends_on": ["A36", "A37", "A26"],
+          "occurrences": [
+            {"sec": "S10", "source_item_ids": ["S10-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-2"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A39",
+          "kind": "后果",
+          "content": "反复思考使他疲惫，问题仍无答案，眼下的生活也不踏实。",
+          "certainty": "明确的经历后果与本人感受。",
+          "first_established": {"sec": "S10", "source_item_ids": ["S10-3"]},
+          "depends_on": ["A34", "A36", "A38"],
+          "occurrences": [
+            {"sec": "S10", "source_item_ids": ["S10-3"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A40",
+          "kind": "本人愿望",
+          "content": "即使回去未必能恢复亲近，他仍抱有万一能够恢复的希望。",
+          "certainty": "希望明确，但实现的可能性未知。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-1"]},
+          "depends_on": ["A36", "A26"],
+          "occurrences": [
+            {"sec": "S11", "source_item_ids": ["S11-1"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A41",
+          "kind": "选择",
+          "content": "他不愿仅凭恢复亲近的希望，就重新把自己放回过去的忍让之中。",
+          "certainty": "明确的本人选择。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-2"]},
+          "depends_on": ["A02", "A37", "A40"],
+          "occurrences": [
+            {"sec": "S11", "source_item_ids": ["S11-2"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "选择实行", "actual_change": "这一不重新忍让的立场进一步落实为不为留住任何人而吞下委屈的明确底线。"}
+          ]
+        },
+        {
+          "anchor_id": "A42",
+          "kind": "选择",
+          "content": "他开始考虑不必先解决是否回去的问题，可以先把现在的生活过稳。",
+          "certainty": "明确的初步想法与生活选择。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-3"]},
+          "depends_on": ["A38", "A41"],
+          "occurrences": [
+            {"sec": "S11", "source_item_ids": ["S11-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S11", "source_item_ids": ["S11-4"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-2"], "use_type": "选择实行", "actual_change": "先过稳眼下生活的想法进一步转化为有劲头地把往后的日子好好过起来。"}
+          ]
+        },
+        {
+          "anchor_id": "A43",
+          "kind": "选择",
+          "content": "即使害怕未来独自面对难事，他也没有立即收回先把眼下生活过稳的想法。",
+          "certainty": "明确的持续选择。",
+          "first_established": {"sec": "S11", "source_item_ids": ["S11-4"]},
+          "depends_on": ["A28", "A42"],
+          "occurrences": [
+            {"sec": "S11", "source_item_ids": ["S11-4"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A44",
+          "kind": "本人感受",
+          "content": "他确认过去受过的难堪不该忍，过去与人在一起的快乐也真实存在，两者不必互相否定。",
+          "certainty": "明确的本人认识与立场。",
+          "first_established": {"sec": "S12", "source_item_ids": ["S12-1"]},
+          "depends_on": ["A02", "A13", "A23", "A42"],
+          "occurrences": [
+            {"sec": "S12", "source_item_ids": ["S12-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S12", "source_item_ids": ["S12-2"], "use_type": "延续", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-1"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A45",
+          "kind": "本人感受",
+          "content": "想到过去的好时，他虽然仍会心软，但不再急着责怪自己，也不再因此怀疑离开的理由。",
+          "certainty": "明确的本人感受及态度变化。",
+          "first_established": {"sec": "S12", "source_item_ids": ["S12-2"]},
+          "depends_on": ["A08", "A17", "A44"],
+          "occurrences": [
+            {"sec": "S12", "source_item_ids": ["S12-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A46",
+          "kind": "本人愿望",
+          "content": "他希望未来还能拥有过去那样自然亲近的相处。",
+          "certainty": "明确的未来愿望，不是已经实现的事实。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-1"]},
+          "depends_on": ["A13", "A44", "A45"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-1"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A47",
+          "kind": "本人愿望",
+          "content": "他重新有了劲头，希望把往后的日子好好过起来。",
+          "certainty": "明确的本人愿望与感受。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-2"]},
+          "depends_on": ["A42", "A46"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A48",
+          "kind": "选择",
+          "content": "他不想再整天与过去的事情较劲。",
+          "certainty": "明确的本人选择。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-2"]},
+          "depends_on": ["A42", "A47"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-2"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A49",
+          "kind": "推测",
+          "content": "他认为未来仍会有孤单的时候。",
+          "certainty": "明确表达的未来预期，不是已经发生的事实。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "depends_on": ["A28", "A46"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-3"], "use_type": "首次成立", "actual_change": ""},
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "延续", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A50",
+          "kind": "未知",
+          "content": "他不知道未来想要的亲近关系什么时候才能出现。",
+          "certainty": "明确表达的时间未知。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "depends_on": ["A46", "A49"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-3"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A51",
+          "kind": "本人感受",
+          "content": "想到未来仍有孤单和等待，他的心里渐渐静下来。",
+          "certainty": "明确的本人感受。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-3"]},
+          "depends_on": ["A49", "A50"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-3"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A52",
+          "kind": "选择",
+          "content": "如果未来有人愿意与他亲近，他会好好珍惜。",
+          "certainty": "明确的条件性选择，条件尚未发生。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "depends_on": ["A46", "A51", "A02"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A53",
+          "kind": "选择",
+          "content": "如果未来一直没有人愿意亲近，他就自己生活。",
+          "certainty": "明确的条件性选择，尚不能视为已经发生的生活结果。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "depends_on": ["A46", "A49", "A02"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        },
+        {
+          "anchor_id": "A54",
+          "kind": "选择",
+          "content": "他不想再为了留住谁而把委屈咽下去。",
+          "certainty": "明确的本人选择与底线。",
+          "first_established": {"sec": "S13", "source_item_ids": ["S13-4"]},
+          "depends_on": ["A02", "A41", "A53"],
+          "occurrences": [
+            {"sec": "S13", "source_item_ids": ["S13-4"], "use_type": "首次成立", "actual_change": ""}
+          ]
+        }
+      ]
+    }
+  ],
+  "source_warnings": [
+    {
+      "location": "S02-1",
+      "source_item_ids": ["S01-3", "S02-1"],
+      "issue": "S02-1的自在时光具体内容，在所引用的S01-3中没有明确写出。S01-3只提到从前熟悉的日子。因此，自在时光的具体内容首次成立位置保留为S02-1，不提前到S01。"
+    },
+    {
+      "location": "S03-1",
+      "source_item_ids": ["S02-1", "S02-3", "S03-1"],
+      "issue": "有人把他当作自己人、过去与人亲近的具体相处事实，在S02-1和S02-3中没有明确出现。该事实首次成立于S03-1，不将其提前认定为S02已经建立的内容。"
+    },
+    {
+      "location": "S04-2",
+      "source_item_ids": ["S01-1", "S02-2", "S04-1", "S04-2"],
+      "issue": "如果当初没有离开会怎样，以及自己是否后悔，是S04-2首次提出的未知问题。前文能够支持离开、离开的原因及对旧日生活的留恋，但不能直接证明这一反事实问题此前已经成立。"
+    },
+    {
+      "location": "S05-1",
+      "source_item_ids": ["S02-2", "S02-3", "S04-2", "S05-1"],
+      "issue": "不敢多想过去开心的事情，是S05-1首次明确表达的自我限制。前文已经有提醒自己难堪、担心失去好日子的内容，但没有明确写出此前持续主动压制快乐回忆的行为。"
+    },
+    {
+      "location": "S05-2",
+      "source_item_ids": ["S03-1", "S05-1", "S05-2"],
+      "issue": "过去陪在身边的人如今不在身边，是S05-2首次明确表达的现状。S03-1只能支持过去有人亲近，不能提前证明这些人已经不在身边。"
+    },
+    {
+      "location": "S06-1",
+      "source_item_ids": ["S03-1", "S05-1", "S05-2", "S06-1"],
+      "issue": "过去与人在一起时不必时时防备，以及这次没有急着用难堪打断回忆，均在S06-1首次明确出现。此前的亲近、快乐记忆及不敢多想，不能完全等同于这两项具体经历和选择。"
+    },
+    {
+      "location": "S06-2",
+      "source_item_ids": ["S01-1", "S03-1", "S06-1", "S06-2"],
+      "issue": "离开后遇到难熬的事情常常只能自己挺过去，是S06-2首次明确建立的持续性现实处境。此前离开及过去有人陪伴，并不能单独证明这一具体后果。"
+    },
+    {
+      "location": "S07-2",
+      "source_item_ids": ["S01-1", "S06-2", "S07-1", "S07-2"],
+      "issue": "当初离开时没有预料到往后会这么孤单，是S07-2首次明确的回顾性认识。不能仅凭此前已经感到孤单，就推定人物当初一定没有预料到这一结果。"
+    },
+    {
+      "location": "S07-3",
+      "source_item_ids": ["S01-1", "S06-3", "S07-2", "S07-3"],
+      "issue": "最初离开时的决心如今已经找不到，是S07-3首次明确出现的变化。它表示原有决心消退，不等于人物已经决定回去，也不等于已经撤销离开选择。"
+    },
+    {
+      "location": "S09-1",
+      "source_item_ids": ["S06-2", "S07-3", "S08-1", "S09-1"],
+      "issue": "想回去的动机究竟是舍不得原生活，还是希望难受时有人陪伴，是S09-1首次明确提出的区分。此前的孤单、回头愿望和回忆安慰能够提供背景，但不能提前认定人物已经认识到这两种动机。"
+    },
+    {
+      "location": "S10-1",
+      "source_item_ids": ["S03-1", "S03-2", "S09-1", "S10-1"],
+      "issue": "即使回去也未必能够恢复过去被当作自己人的亲近，是S10-1首次明确提出的未知。不能把此前无法照旧生活的事实直接改写成回去后也一定无法恢复亲近。"
+    },
+    {
+      "location": "S10-2",
+      "source_item_ids": ["S01-1", "S02-2", "S10-1", "S10-2"],
+      "issue": "过去的难堪不能当作没有发生，以及仅凭留恋不能放心回去，是S10-2首次明确建立的判断和顾虑。此前存在难堪事实，但没有直接提出这项针对回去的具体顾虑。"
+    },
+    {
+      "location": "S11-3",
+      "source_item_ids": ["S10-3", "S11-2", "S11-3"],
+      "issue": "不必先彻底决定是否回去，可以先把眼下生活过稳，是S11-3首次成立的具体生活思路。不能提前把S10的疲惫或S11-2的拒绝忍让直接解释成已经形成这一思路。"
+    },
+    {
+      "location": "S12-1",
+      "source_item_ids": ["S01-1", "S03-1", "S05-1", "S06-4", "S11-3", "S12-1"],
+      "issue": "过去的难堪不该忍与过去的快乐也真实存在，可以同时成立且不必互相否定，是S12-1首次明确形成的整合认识。前文分别建立了两类经历，但不能把它们提前视为已经完成整合。"
+    },
+    {
+      "location": "S13-1",
+      "source_item_ids": ["S06-3", "S06-4", "S12-1", "S12-2", "S13-1"],
+      "issue": "希望未来还能拥有那样自然亲近的相处，是S13-1首次明确提出的面向未来的愿望。此前主要是希望恢复过去的亲近或回到过去，不能直接等同于已经形成面向未来的新关系愿望。"
+    },
+    {
+      "location": "S13-3",
+      "source_item_ids": ["S06-2", "S06-3", "S11-4", "S13-2", "S13-3"],
+      "issue": "以后还会有孤单的时候，是人物明确表达的未来预期，不是已经发生的孤单事件；不知道亲近关系何时出现，是时间未知，不能改写为永远不会出现。"
+    },
+    {
+      "location": "S13-4",
+      "source_item_ids": ["S01-1", "S07-3", "S11-2", "S13-1", "S13-3", "S13-4"],
+      "issue": "未来有人亲近就珍惜、一直没有就自己生活，属于条件性选择，不代表人物已经进入独自生活的最终状态。拒绝为了留住谁吞下委屈，则是明确成立的选择，不应降格为尚未确定的愿望。"
+    },
+    {
+      "location": "S04-2、S07-2、S06-3、S10-1、S11-1",
+      "source_item_ids": ["S04-2", "S07-2", "S06-3", "S10-1", "S11-1"],
+      "issue": "这些位置包含不同层次的未知与担忧：是否后悔、如果早知道孤单是否还离开、能否再找到亲近、回去能否恢复亲近，以及万一能否恢复的希望。均保留各自的确定程度，不将顾虑变成已经发生的事实，也不将希望变成确定结果。"
+    }
+  ]
+}</escape>
+
+【从珠子提炼出的体验性质（TARGETS）】
+{
+ "sections": [
+  {
+   "section_id": "S01",
+   "beads": [
+    {
+     "bead_id": "S01-B1",
+     "qualities": [
+      "郑重的意向已经出现，却缺乏持续承载它的力量",
+      "期待某种回应或确认，但仍处于悬而未决的状态",
+      "起初的分量感转为轻微的疏离与不确定"
+     ],
+     "temporal_shape": "由强烈、郑重的起始感，迅速转向减弱、散失与悬置。",
+     "forbidden_imports": [
+      "某人实际发出召唤、宣告或请求",
+      "某人正在等待另一个人的回应",
+      "存在一个确定的召唤对象或未回应者"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S01-B2",
+     "qualities": [
+      "尚未辨明原因和对象的失落",
+      "情绪有所萌生，却难以持续表达或获得释放",
+      "愤怒、遗憾与怀念之间的情绪未分化状态"
+     ],
+     "temporal_shape": "感受短暂浮现，又反复中断、消退，始终未获得明确形态。",
+     "forbidden_imports": [
+      "某人已经失去特定的人或事物",
+      "某人正在怀念一件确定发生过的往事",
+      "某人已经明确知道自己愤怒、遗憾或悲伤的原因"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S01-B3",
+     "qualities": [
+      "意识与情绪尚未充分清晰的恍惚",
+      "身体性的紧缩、脆弱与无所依凭",
+      "尚未发展为明确悲伤的孤立和不安"
+     ],
+     "temporal_shape": "由迟钝、模糊的感知，逐渐转向对自身无所依凭的觉察，但未形成清晰判断。",
+     "forbidden_imports": [
+      "某人真的从昏迷或长睡中醒来",
+      "某人身处寒冷、空旷的实际环境",
+      "某人伸手寻找某个人或物件却没有摸到",
+      "某人已经遭遇了可以确定的遗弃或失去"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S01-B4",
+     "qualities": [
+      "熟悉感短暂变得鲜明，同时伴随不可复得的距离感",
+      "对既有经验或状态的隐约重新接近",
+      "尚未稳固成形的行动倾向或方向感"
+     ],
+     "temporal_shape": "先是模糊的熟悉感变得清晰，并显出与当下的距离；随后出现初步的向前倾向，但尚未稳定。",
+     "forbidden_imports": [
+      "某人确实回忆起一幕具体的旧场景",
+      "过去某个人的声音、某处光线或某件往事真实地重新浮现",
+      "某人曾经学习、参加或正在重新跳某种舞蹈",
+      "某人已经实际决定前进或恢复行动"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S01-B5",
+     "qualities": [
+      "自我维持与内在动摇并存",
+      "尊严感或自我要求尚存，但意志和方向不稳",
+      "不愿放弃与渴望停歇之间的拉扯"
+     ],
+     "temporal_shape": "短暂形成自我约束和挺立感，随即显露犹疑与力气不足。",
+     "forbidden_imports": [
+      "某人实际挺直背脊或强迫自己保持某种姿势",
+      "某人明确对自己说过不能倒下",
+      "某人正承担某项必须坚持到底的具体责任",
+      "某人实际上已经准备停下某项行动"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "存在尚未稳定的郑重感、自我维持意向或期待",
+    "失落与不安已经存在，但原因、对象和表达方式均不明确",
+    "熟悉感、距离感与无所依凭的感觉可以并存",
+    "虽出现向前或重新凝聚的倾向，仍不足以构成确定的方向"
+   ],
+   "tensions": [
+    "B1与B5偏向郑重意向和自我维持，B2与B3则偏向失落、无措和承载能力不足；不能将前者直接视为已经实现的坚定。",
+    "B4中的熟悉感逐渐清晰，与B2、B3中的情绪模糊和定向困难属于不同的体验维度；不必认定整体状态已经清晰。",
+    "B1的期待回应与B3的无所依凭可以同时存在，但前者不意味着已有明确对象，后者也不意味着确有对象缺席。"
+   ]
+  },
+  {
+   "section_id": "S02",
+   "beads": [
+    {
+     "bead_id": "S02-B1",
+     "qualities": [
+      "面向外部的庄重感与私密的怀旧感并存",
+      "对珍视之物仍有情感联系，却感到无法如昔拥有",
+      "熟悉、温情与距离感相互交织"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人曾经参加过公开庆典、仪式或集体活动",
+      "某人实际听见或哼唱了一首旧歌",
+      "某人拥有过并失去了某个确定的人或物",
+      "某人正在经历英雄凯旋或归来"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S02-B2",
+     "qualities": [
+      "外在的庄严或傲然与内在的脆弱不一致",
+      "维持姿态所需的力量不足",
+      "不安持续潜伏在相对规整的自我呈现之下"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人是士兵或正在行军",
+      "某人腿脚无力、患病或行动受损",
+      "某人正在回忆或实际进行舞蹈",
+      "某人具有确定的傲慢性格"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S02-B3",
+     "qualities": [
+      "力图推进却反复受挫的迫切感",
+      "力量重新聚集时伴随焦灼与不稳定",
+      "持续增强的紧迫、身体性催逼和难以安顿"
+     ],
+     "temporal_shape": "先出现明显增强又回落；随后再次积聚力量，焦灼加深，最终仍未获得充分松弛或安定。",
+     "forbidden_imports": [
+      "某人实际发起过数次行动并遭遇失败",
+      "某人正在奔跑、追赶或逃避具体危险",
+      "某人出现了客观可确认的呼吸异常",
+      "存在一个明确阻止其行动的外部对手"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S02-B4",
+     "qualities": [
+      "以自我控制维持体面，不愿充分暴露动摇",
+      "自我安抚与真实不安之间存在距离",
+      "越努力维持稳定，越显出稳定感本身的脆弱"
+     ],
+     "temporal_shape": "由相对可信的自我维持，逐渐变为需要主动强化的自我安抚，最后显露出其背后的在意与不安。",
+     "forbidden_imports": [
+      "某人实际整理衣服、抬头或掩饰表情",
+      "某人曾向自己或别人重复说过我没事",
+      "某人正在有意欺骗特定旁观者",
+      "某人拥有必须维持的特定社会身份或公众形象"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S02-B5",
+     "qualities": [
+      "面对消退或丧失可能性的强烈不甘",
+      "尚未恢复安全感时仍坚持抵抗的意志",
+      "抗拒与无力感并存，而非轻松的自信"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人实际面临死亡、毁灭或消亡",
+      "某人正在与具体敌人或外部力量对抗",
+      "某人明确宣告过不愿消亡",
+      "某人已经采取了确定的反抗行动"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "外在庄重、自我控制与内在脆弱可以同时成立",
+    "对珍视之物的眷恋，与无法恢复原有状态的失落相伴",
+    "不安和焦灼并未被有分量的自我呈现消除",
+    "保持体面、努力自我说服与不甘退让可以共同构成体验"
+   ],
+   "tensions": [
+    "B4将强势表现理解为控制和自我安抚，B5则强调主动的不甘与抵抗；两者可以并存，但不能被压缩为唯一确定的动机。",
+    "B1偏向温情、怀旧与珍惜，B3偏向不断增强的焦灼和催逼；两者可能交叠，但情绪重心不同。",
+    "B2中的傲然是一种感受到的姿态，不等于B5中抵抗意志已经形成稳定自信。"
+   ]
+  },
+  {
+   "section_id": "S03",
+   "beads": [
+    {
+     "bead_id": "S03-B1",
+     "qualities": [
+      "带有愤怒或抗拒色彩的紧绷",
+      "活跃的行动冲动与缺乏稳定方向并存",
+      "难以平静作出选择的悬心与不安"
+     ],
+     "temporal_shape": "可能由突发的强烈抗拒，转向更持续、活跃却缺乏明确方向的躁动。",
+     "forbidden_imports": [
+      "某人遭到了实际打击或伤害",
+      "某人与具体对象发生了愤怒的冲突",
+      "某人正在决定一条实际的行进路线",
+      "某人已经展开具体的反抗行动"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S03-B2",
+     "qualities": [
+      "焦躁迫切与柔和亲切之间的明显反差",
+      "短暂感受到轻松、熟悉和不必防备",
+      "温柔或怀恋反而强化了与当下的距离及失落"
+     ],
+     "temporal_shape": "由焦躁、急切转向柔和、亲近和轻盈；随之可能显露因距离感而产生的刺痛。",
+     "forbidden_imports": [
+      "某人回到了故乡或曾经的乡间环境",
+      "某人确实经历过某个具体夏日场景",
+      "某人正在回忆确定的亲密关系或无忧生活",
+      "某人已经失去一个能够具体指认的安全环境"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S03-B3",
+     "qualities": [
+      "多种内在感受或念头相互缠绕",
+      "缺少明确中心与可依靠的判断",
+      "思绪持续活动却难以获得出口"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "有多个人实际在某人耳边交谈",
+      "某人正卷入一场具体的争论或对话",
+      "某人同时受到多个现实人物的劝说",
+      "存在实际无法离开的场所"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S03-B4",
+     "qualities": [
+      "暂时脱离沉重关注所带来的真实轻松",
+      "注意力的转移，而非根本问题的解决",
+      "短暂缓解与未完成的内在牵挂并存"
+     ],
+     "temporal_shape": "由持续面对沉重感，转向短暂的注意力松动；轻松成立，但未延伸为彻底的安定。",
+     "forbidden_imports": [
+      "某人实际离开了某个地方",
+      "某人外出散步或与他人闲聊",
+      "某人主动采取了某种明确的逃避行为",
+      "某人正在回避一件可以确定的创伤事件"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S03-B5",
+     "qualities": [
+      "先前的昂扬感逐渐减弱",
+      "由外向的自我肯定转向含蓄的内省",
+      "对自身信念是否真实稳固产生怀疑"
+     ],
+     "temporal_shape": "由较强的自我肯定或昂扬状态，转向减弱、收敛与反思。",
+     "forbidden_imports": [
+      "某人实际对自己提出了某句具体问题",
+      "某人先前曾作出一项明确的承诺或宣言",
+      "某人已经确认自己过去在自欺欺人",
+      "某人正回顾一次确定发生过的交谈"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "活跃、不安与方向不明可以同时存在",
+    "熟悉和亲切可能带来真实轻松，也可能激发失落",
+    "思绪活动、注意力转移与未解决的内在疑问相容",
+    "柔和的感受并不自动意味着稳定或恢复"
+   ],
+   "tensions": [
+    "B1强调活跃、抗拒与躁动，B5则将整体方向理解为先前昂扬的退潮和内省；不能统一为单纯恢复活力。",
+    "B4将变化理解为暂时转移注意力，B5则理解为转向对原有信念的检视；两者的心理机制不同。",
+    "B2中的柔和可以伴随强烈怀恋与刺痛，B4中的轻松则可以独立而真实，不必一律解释为悲伤的另一种形式。",
+    "B3的持续缠绕与B4的暂时松动不必互相否定，但不能抹去各自对心理活动状态的不同强调。"
+   ]
+  },
+  {
+   "section_id": "S04",
+   "beads": [
+    {
+     "bead_id": "S04-B1",
+     "qualities": [
+      "熟悉感重新鲜活，带来温情、亲密感或感激",
+      "外在的自我维持与内在柔软、易受伤并存",
+      "坚定可能带有愿望和努力维持的成分，而非绝对确信"
+     ],
+     "temporal_shape": "熟悉感重新变得鲜明，并由较端正的自我维持转向更柔软、情感更外露的状态。",
+     "forbidden_imports": [
+      "某人实际回忆起特定人物或具体往事",
+      "某人正在与另一个人私下交谈",
+      "某人曾受到某人的恩惠而产生感激",
+      "某人经历过一段确定的幸福关系",
+      "某人实际恢复了某种旧有身份或行动方式"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S04-B2",
+     "qualities": [
+      "温暖感突然转入剧烈的刺痛和紧绷",
+      "越努力抵抗，越感到难以稳住自身",
+      "对不可复得之物的眷恋可能加重痛感，并伴随疲惫或退缩"
+     ],
+     "temporal_shape": "由柔和、温暖转向强烈的紧迫和撕扯；力量虽加强，稳定感却减弱，并显出抵抗的疲惫。",
+     "forbidden_imports": [
+      "某人确实回忆了美好却无法重现的具体事件",
+      "某人失去了确定的爱人、家园或旧生活",
+      "某人实际遭遇风暴或其他危险",
+      "某人正在被迫撤退或进行具体的抵抗行动"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S04-B3",
+     "qualities": [
+      "强烈的身体性紧迫和被催逼感",
+      "难以停止或自主减缓的紧张",
+      "持续活动却无法因此获得安全感"
+     ],
+     "temporal_shape": "紧迫感不断持续并加剧，停歇的可能性越来越弱。",
+     "forbidden_imports": [
+      "某人实际被追逐或遭遇时间期限的逼迫",
+      "某人正在奔跑、逃亡或逃离危险",
+      "某人的心跳或身体动作出现了客观异常",
+      "存在一个真实的追赶者"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S04-B4",
+     "qualities": [
+      "反复自问与反事实思考",
+      "试图理解却始终无法形成定论",
+      "以持续的心理活动抵御停顿或直面未解感受"
+     ],
+     "temporal_shape": "思绪反复展开、盘旋和强化，却没有形成相应的理解进展或确定结论。",
+     "forbidden_imports": [
+      "某人过去作出过一个确定的错误决定",
+      "某人确实错过了某次机会",
+      "某人正在反省某件已经确定的具体往事",
+      "某人曾实际说出如果当时或究竟为什么等话语"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "鲜活的熟悉感与温情可以增加脆弱性，而非必然提供安慰",
+    "自我维持的努力与强烈的紧张可以并存",
+    "身体性催逼和反复思考可以同时出现",
+    "持续增强的活动感不等于真正取得进展或恢复稳定"
+   ],
+   "tensions": [
+    "B1的温暖、感激和亲密感，与B2后段的激烈刺痛形成段内反差，不能把整段处理为单一温柔状态。",
+    "B3将难以停下理解为身体性的被催逼，B4则强调思绪自身的反复运转；两者不能被简化成同一种实际追赶处境。",
+    "B2强调抵抗中的疲惫和退缩，B3强调越来越强的催逼感；两者可以并存，却不是同一个变化方向。"
+   ]
+  },
+  {
+   "section_id": "S05",
+   "beads": [
+    {
+     "bead_id": "S05-B1",
+     "qualities": [
+      "柔和、亲近且克制的情感表达",
+      "从紧张转向较私密、较易接近的感受状态",
+      "亲近感中仍留有分寸和未充分表达的部分"
+     ],
+     "temporal_shape": "起始处出现明显的柔化，随后维持较亲近而克制的状态。",
+     "forbidden_imports": [
+      "有另一个人实际开始说话",
+      "两个人在私下低声交谈",
+      "存在一对确定的人物及其对话关系",
+      "某人实际对另一个人表达了亲密情感"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S05-B2",
+     "qualities": [
+      "柔和感与不愿退让的坚决同时存在",
+      "愤怒、悲伤及自我维护的冲动可能交织",
+      "受到压力时产生更直接的表达需要"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人实际向别人提出抗议或要求",
+      "某人说过这件事不能就这样算了",
+      "某人已经遭遇具体的不公正对待",
+      "存在一个明确的责任方或冲突对象"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S05-B3",
+     "qualities": [
+      "持续的内在活动逐渐减弱",
+      "原有的支撑感或承托感暂时撤去",
+      "情感表达变得更加孤立、直接和无所遮蔽"
+     ],
+     "temporal_shape": "由较连续、密集的活动逐渐转为稀疏和缓慢；原本被支撑的感受更独立地显露。",
+     "forbidden_imports": [
+      "某人脚下的地面实际消失或失去立足点",
+      "某人突然被别人留下而独处",
+      "某人实际开始独白、告白或对话",
+      "某人确实失去了一个具体依靠者"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S05-B4",
+     "qualities": [
+      "不安与躁动再次加深",
+      "高度紧绷后的暂时松弛",
+      "松弛可能来自疲惫和抵抗能力减弱，而非真正释然"
+     ],
+     "temporal_shape": "先重新积累不安和紧绷，随后短暂放松；是否获得内在平静仍不确定。",
+     "forbidden_imports": [
+      "某人实际进行了数次深呼吸或叹息",
+      "某人因某次具体抗争失败而筋疲力尽",
+      "某人已经想通、原谅或接受了某件事",
+      "某人已经决定停止抵抗"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S05-B5",
+     "qualities": [
+      "熟悉而温暖的怀恋",
+      "珍惜与无法复得的失落相伴",
+      "情感对象并不确定的温柔眷恋"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人正在回忆某位具体亲人或爱人",
+      "某人确实离开了故乡",
+      "某人曾拥有一段确定的旧日生活",
+      "某人正在与已经失去的人重新建立联系"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "柔和、亲近、克制与不愿退让可以同时存在",
+    "表达变得直接，不等于已有具体表达对象",
+    "温暖的怀恋与悲伤、愤怒和自我维护相容",
+    "活动减弱和紧绷松动不必意味着情绪问题获得解决"
+   ],
+   "tensions": [
+    "B1和B5偏向亲近、柔情及怀恋，B2强调压力下的坚决与不甘；不能将温柔等同于顺从。",
+    "B3的活动减弱可能使感受更无遮蔽，B4的松弛则可能主要来自疲惫；两种性质不必归结为同一种释然。",
+    "B2较直接的表达需求，与B4后段抵抗能力可能减弱之间存在张力，但不构成已经放弃的确定结论。"
+   ]
+  },
+  {
+   "section_id": "S06",
+   "beads": [
+    {
+     "bead_id": "S06-B1",
+     "qualities": [
+      "与先前紧张状态明显隔开的安宁",
+      "温柔、被安抚感和暂时降低的戒备",
+      "宁静虽真实，却带有暂时性或脆弱性"
+     ],
+     "temporal_shape": "起始时突然脱离此前的紧张，进入持续而相对从容、近乎停驻的状态。",
+     "forbidden_imports": [
+      "某人实际进入了一个安静、隔绝的地方",
+      "母亲实际在某人身边安抚或哼唱",
+      "某人正受到某位具体亲人的照顾",
+      "外部处境已经真实改善",
+      "某人已经获得持久的安全与庇护"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S06-B2",
+     "qualities": [
+      "不再需要自我辩护或维持强硬姿态的松动",
+      "被压抑的愿望、委屈与思念获得显露空间",
+      "真切的期盼与回应不确定感并存"
+     ],
+     "temporal_shape": "由较内敛的安静逐渐显露深层情感；局部出现短暂而鲜明的向往或亲近感，但没有真正获得所盼之物的确定性。",
+     "forbidden_imports": [
+      "某人实际上向特定对象祈祷或求助",
+      "某人曾被迫向他人解释自己的悲伤",
+      "某人确实隐藏过某个具体秘密",
+      "某人曾离开家园并在梦中看见故乡",
+      "某人实际得到或没有得到某个人的回应"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S06-B3",
+     "qualities": [
+      "从谨慎试探到逐渐敞开的情感",
+      "表达的勇气、充实感与迫切性逐步增强",
+      "充分展开后仍保留未竟之感"
+     ],
+     "temporal_shape": "先含蓄、试探，继而逐渐开放；随后感受进一步充实、迫切，最终停留在尚未完成或尚待回应的状态。",
+     "forbidden_imports": [
+      "某人实际鼓起勇气向别人告白",
+      "某人说出了此前隐瞒的秘密",
+      "某人向某个对象提出了明确请求",
+      "某段真实谈话在结尾被打断"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S06-B4",
+     "qualities": [
+      "温和、连续而有承托感的情绪起伏",
+      "自然的舒展与回落",
+      "不需要强烈宣泄也能成立的细腻感受"
+     ],
+     "temporal_shape": "在柔和的延续中反复轻微增强、回落，整体保持克制。",
+     "forbidden_imports": [
+      "某人实际托起、拥抱或扶住另一个人",
+      "某人正在经历具体的照护行为",
+      "某人发生了夸张的情绪崩溃或戏剧性事件",
+      "某人获得了现实中可以确认的支持"
+     ],
+     "confidence": "中"
+    },
+    {
+     "bead_id": "S06-B5",
+     "qualities": [
+      "承认某些事可能不可挽回的清醒",
+      "不急于重新占有或改变的珍惜",
+      "带有温柔、距离感和有限接纳的凝视式体验"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人实际注视某个人或物件",
+      "某人确实永久失去了某个具体对象",
+      "某人已经明确放弃挽回一段关系",
+      "某人对某件实际发生的往事完成了接受或和解"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "安宁与温柔为先前压抑的情感提供了显露空间",
+    "自我防备暂时降低，但并不证明现实困难已经解除",
+    "期盼、怀恋、不确定与有限的接纳可以并存",
+    "深层情感逐渐敞开，不必依靠激烈宣泄或具体人际互动来成立"
+   ],
+   "tensions": [
+    "B2和B3偏向愿望逐渐显露、迫切性增强，B5强调不急于重新获得所珍惜之物；这是主动趋近与温柔观照的不同倾向。",
+    "B1的被安抚感与B2的回应不确定感可以共存，但不能据此推断安抚来自一个实际回应者。",
+    "B4强调克制、自然的情绪起伏，B3则容许感受明显增强；不能将整段一律解释为完全静止或持续高涨。"
+   ]
+  },
+  {
+   "section_id": "S07",
+   "beads": [
+    {
+     "bead_id": "S07-B1",
+     "qualities": [
+      "短促、突然且强烈的惊悸",
+      "原有安宁或保护感被骤然打断",
+      "伴随寒意、紧缩和警觉升高的身体性感受"
+     ],
+     "temporal_shape": "由柔和安宁骤然转入高度警觉和惊慌，几乎没有缓慢过渡。",
+     "forbidden_imports": [
+      "某人实际被寒风吹醒",
+      "某人刚从真实梦境中惊醒",
+      "某人身处寒冷环境或窗边",
+      "某人遭遇了某次具体惊吓事件",
+      "某人的脉搏客观上出现异常"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S07-B2",
+     "qualities": [
+      "既有心理状态被突兀截断",
+      "注意和情绪方向突然改变，连续性减弱",
+      "新出现的活动感并不保证安稳或好转"
+     ],
+     "temporal_shape": "从较安静、内向且连续的感受，突然切换到性质不同、较活跃的状态；转换本身带有中断感。",
+     "forbidden_imports": [
+      "某人实际到了另一个场景或地点",
+      "某人开始参与某种舞蹈",
+      "某段真实谈话或思考被外人打断",
+      "某人决定彻底摆脱先前的情绪",
+      "某人已经成功改善处境"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S07-B3",
+     "qualities": [
+      "突发变化之后持续残留的紧张",
+      "反复盘旋、难以自主平息的内在活动",
+      "表面可能已经过去，身体与情绪仍缺乏结束感"
+     ],
+     "temporal_shape": "紧张并未随先前的突然变化结束，而是持续积累、反复强化，始终难以彻底释放。",
+     "forbidden_imports": [
+      "某人实际经历过一场已经结束的危险事件",
+      "某人出现了明确的心理创伤后症状",
+      "某人正在尝试从某个实际场所逃离",
+      "某人确实受到限制或无法离开",
+      "某人正在压抑一项明确的行动"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S07-B4",
+     "qualities": [
+      "曾有的郑重或自我维持感似乎重新接近",
+      "熟悉的秩序感有所显露，却不完整",
+      "重新建立稳定的倾向与尚未稳固的状态并存"
+     ],
+     "temporal_shape": "在突然转换之后，出现某种熟悉的较郑重状态，但没有充分发展为完整而稳定的秩序。",
+     "forbidden_imports": [
+      "某人实际恢复了过去的社会身份",
+      "某人重新站直或恢复了特定身体姿态",
+      "某人已经找回旧日的自己",
+      "某人完成了确定的自我重建",
+      "某人因某段真实经历而重新振作"
+     ],
+     "confidence": "中"
+    },
+    {
+     "bead_id": "S07-B5",
+     "qualities": [
+      "具体而亲切的熟悉感突然进入深沉状态",
+      "日常性的亲近感与当前的疏离感形成反差",
+      "熟悉带来的不是纯粹安慰，也可能是更明显的失落"
+     ],
+     "temporal_shape": "熟悉和亲切感突然变得突出，随后可能强化对不可复得或已疏远之物的意识。",
+     "forbidden_imports": [
+      "某人实际回忆起一次具体舞蹈",
+      "某人正在回忆某个熟悉人物的动作",
+      "某人曾经长期过着某种确定的日常生活",
+      "某人已经失去了特定的家园、亲人或生活方式",
+      "某段具体往事真的闯入了某人的意识"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "突然的中断感可以与强烈身体惊悸同时出现",
+    "状态转换之后仍可能残留持续紧张，而非立即恢复稳定",
+    "熟悉感重新接近，并不意味着旧有秩序或安全感真正恢复",
+    "亲切、失落、警觉和未平息的不安可以交叠"
+   ],
+   "tensions": [
+    "B2突出与前一状态不连续的突兀转向，B4则强调某种既有的郑重感重新接近；两者对熟悉性与断裂性的强调不同。",
+    "B1强调突然发生的惊悸，B3强调随后持续积累的紧张；不能合并为同一个瞬时反应。",
+    "B5的亲切熟悉感与B1的寒意和惊悸形成显著反差，但不能仅凭此认定亲切感一定先于或消除了惊悸。",
+    "B4中的重新建立秩序的倾向与B3中难以平息的状态可以共存，不能将前者解释为稳定已经恢复。"
+   ]
+  },
+  {
+   "section_id": "S08",
+   "beads": [
+    {
+     "bead_id": "S08-B1",
+     "qualities": [
+      "沉思与温柔感短暂重新接近",
+      "内向而近乎祈愿的情感状态",
+      "熟悉的安宁感再次可被感知"
+     ],
+     "temporal_shape": "此前较难接近的柔和状态短暂恢复可感性。",
+     "forbidden_imports": [
+      "某人实际开始祈祷或提出请求",
+      "某人重新联系上一位具体亲密对象",
+      "某人真实回到了此前的安全环境",
+      "某人的生活已经重新变得安宁"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S08-B2",
+     "qualities": [
+      "温柔与不舍并存",
+      "短暂重新接近珍惜之物，却无法充分停留",
+      "尚未重新安顿便再次出现的距离感"
+     ],
+     "temporal_shape": "刚重新接近柔和与安宁，便迅速转入退离和不舍，未形成持久停驻。",
+     "forbidden_imports": [
+      "某人实际准备离开某个地方",
+      "某人在临别时回头看了一眼",
+      "某人与另一个人发生了告别",
+      "某人正在告别一段确定的关系或生活",
+      "存在一个真实的离开目的地"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S08-B3",
+     "qualities": [
+      "持续紧绷之间获得瞬间舒缓",
+      "身体性的松动和暂时喘息感",
+      "缓解尚不足以发展为整体安定"
+     ],
+     "temporal_shape": "从较紧张的状态短暂转向舒缓，但这种松动很快失去持续性。",
+     "forbidden_imports": [
+      "某人实际深吸了一口气",
+      "某人刚从现实危险中脱离",
+      "某人因具体身体问题而呼吸困难",
+      "某人已经获得了真正的休息或安全"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "熟悉的温柔与沉思状态短暂重新可及",
+    "短暂的安宁既可能表现为情感上的不舍，也可能表现为身体性的缓解",
+    "缓解、眷恋和无法长久停驻可以同时成立"
+   ],
+   "tensions": [
+    "B2强调不舍及重新拉开的距离，B3强调短暂获得的舒缓；两者情绪重心不同，但并不互斥。",
+    "B1中的安宁重新可感，不等于B2、B3所强调的停留不足和整体未安顿已经得到解决。"
+   ]
+  },
+  {
+   "section_id": "S09",
+   "beads": [
+    {
+     "bead_id": "S09-B1",
+     "qualities": [
+      "熟悉的沉重和不确定感再次浮现",
+      "短暂的稳定随即失去",
+      "重新面对既有问题时的悬置感"
+     ],
+     "temporal_shape": "沉重的熟悉感短暂重新出现，一度趋于稳定，随后迅速消散，未形成持续方向。",
+     "forbidden_imports": [
+      "某人实际回到某扇门前或跨过门槛",
+      "某人再次发起现实中的召唤",
+      "某人重新抵达某个具体地点",
+      "某人已经决定采取下一步行动"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S09-B2",
+     "qualities": [
+      "曾经的无措或根本疑问重新浮现",
+      "相似的不确定因已有的情感积累而呈现不同分量",
+      "对未获解答之事的再次面对"
+     ],
+     "temporal_shape": "旧有的疑问重新变得鲜明，但不再完全具有初次出现时的陌生性；答案仍未确定。",
+     "forbidden_imports": [
+      "某人实际遇见了过去的自己",
+      "某人确实经历了某组可以确定的现实事件",
+      "某人正在回忆自己经历过的具体遭遇",
+      "某人已经获得对过去全部经历的清晰理解"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S09-B3",
+     "qualities": [
+      "低落或荒凉状态中的突发惊悸",
+      "短暂而尖锐的紧张增强",
+      "强烈反应迅速消退，未持续转为稳定的力量"
+     ],
+     "temporal_shape": "在低落的延续中突然出现强烈惊跳，随后迅速减弱。",
+     "forbidden_imports": [
+      "某人实际被突发声响或外部事件吓到",
+      "某人受到攻击、威胁或打击",
+      "某人真实地惊叫或做出防御动作",
+      "存在导致惊吓的具体人物或事件"
+     ],
+     "confidence": "中"
+    }
+   ],
+   "compatible_bundle": [
+    "熟悉的不确定和沉重感重新可感",
+    "已有的情绪积累可能使相似的无措带上不同的分量",
+    "短暂稳定、突发紧张与未解决感可以同时出现",
+    "重新接近既有问题并不等于已经找到方向"
+   ],
+   "tensions": [
+    "B1偏向短暂稳定后再度悬置，B3则容许突然尖锐的惊悸；两者的强度变化不同，后者还取决于具体呈现条件。",
+    "B2强调相似问题因情感积累而产生的新分量，B1强调未解决感的重现；不能直接将它们视为毫无变化的重复。"
+   ]
+  },
+  {
+   "section_id": "S10",
+   "beads": [
+    {
+     "bead_id": "S10-B1",
+     "qualities": [
+      "熟悉感零散重现，却无法完整恢复",
+      "曾有的亲近或稳定状态只留下片段性的可及感",
+      "不完整感中可能含有悲哀和脆弱"
+     ],
+     "temporal_shape": "由短暂接近既有熟悉状态，转为断续、零散和无法充分展开。",
+     "forbidden_imports": [
+      "某人真实回忆起一首旧歌或具体舞蹈",
+      "某人实际听见某位亲人哼唱",
+      "某段现实中的关系或生活已经破裂",
+      "某人正在重述一段确定的往事",
+      "某人曾经拥有的生活只能以碎片形式被真实记起"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S10-B2",
+     "qualities": [
+      "突然失去支撑和着落的身体性感受",
+      "方向感和稳定感减弱",
+      "悬置、无依凭和难以定位自身状态"
+     ],
+     "temporal_shape": "后部出现更明显的失重和方向迷失感。",
+     "forbidden_imports": [
+      "某人实际从高处坠落或悬浮",
+      "某人发生了真实的平衡障碍",
+      "某人身处没有方向标记的环境",
+      "某人确实失去了具体住所或庇护"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S10-B3",
+     "qualities": [
+      "经过情绪消耗后仍存在的根本迟疑",
+      "对如何继续的无解感与疲惫",
+      "重复出现的不确定带有更多沉重和反思"
+     ],
+     "temporal_shape": "熟悉的迟疑重新出现，但体验性质由较初始的茫然转向带有积累性疲惫的未解感。",
+     "forbidden_imports": [
+      "某人实际向自己询问怎样继续生活",
+      "某人正在作出现实中的人生重大决定",
+      "某人已经经历了某组确定的艰难事件",
+      "某人正面临实际无法继续生活的处境"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S10-B4",
+     "qualities": [
+      "对重要之物仍有清晰的情感分量",
+      "表达和重新整理的能力不足",
+      "疲惫、留恋与无力充分展开感受并存"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人实际上正在回忆一件具体往事",
+      "某人曾向别人讲述过这段往事",
+      "某人因为身体疲劳而无法说话",
+      "某人正在隐瞒一段明确而重要的经历"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "熟悉感可以存在，却无法充分恢复成完整而稳定的体验",
+    "对重要之物的情感分量与表达能力不足并存",
+    "积累性的疲惫、根本迟疑和无所依凭可以相互强化",
+    "重新面对既有问题不意味着已经找到答案"
+   ],
+   "tensions": [
+    "B1侧重熟悉感的不完整恢复，B2侧重身体性的失重与方向迷失；两者不可互相替代。",
+    "B3将不完整和迟疑理解为经过消耗后的根本疑问，B4则强调虽知其重要却缺乏重新展开的力量；两者不必归为同一具体心理原因。",
+    "B1容许不同的熟悉感来源，不能把其中任一种确定为实际经历或唯一的心理对象。"
+   ]
+  },
+  {
+   "section_id": "S11",
+   "beads": [
+    {
+     "bead_id": "S11-B1",
+     "qualities": [
+      "由犹疑向逐渐明确的行动意向转变",
+      "柔软、私密的情感开始与坚决意志结合",
+      "方向感逐步增强，但并非一开始就稳固"
+     ],
+     "temporal_shape": "起初谨慎试探，随后意志逐步聚集，到后部形成越来越难以忽视的向前倾向。",
+     "forbidden_imports": [
+      "某人实际开始行走、寻找道路或继续旅程",
+      "某人曾经祈祷并在此获得回应",
+      "某人将某项宗教信念转化为具体行动",
+      "某人已经作出明确的人生决定",
+      "某人确实找到了此前缺失的出路"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S11-B2",
+     "qualities": [
+      "反复面对压力的强烈抵抗",
+      "每次用力之后仍无法充分解除紧张",
+      "带有困境感、消耗感的坚持，而非顺畅的胜利"
+     ],
+     "temporal_shape": "压力反复增强，短暂释放后又重新积聚，未彻底缓解。",
+     "forbidden_imports": [
+      "某人实际被困在绝境之中",
+      "某人正在与敌人或施压者搏斗",
+      "某人真实地遭遇多次身体冲击",
+      "某人正在实施具体的突围或逃脱",
+      "某人已经处于客观上无路可退的境地"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S11-B3",
+     "qualities": [
+      "恐惧或紧张尚在，却已出现前进意愿",
+      "行动意向不再完全依赖情绪先行好转",
+      "停滞稍有解除带来的有限解脱感"
+     ],
+     "temporal_shape": "在紧张未消失的情况下，前进意向逐渐占据更大分量，停滞感因此有所松动。",
+     "forbidden_imports": [
+      "某人实际迈出脚步或踏上道路",
+      "某人已作出特定的勇敢行为",
+      "某人已经克服某种明确的恐惧症或现实危险",
+      "某人已经解决了此前的具体困境",
+      "某人完成了确定的自我救赎"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "恐惧、压力和不安可以在意志逐渐增强时继续存在",
+    "前进倾向的形成不必以获得安全感或确定答案为前提",
+    "反复抵抗、逐渐聚集的意愿与有限的解脱感相容",
+    "柔软的内在情感可以与更坚定的自我维持结合"
+   ],
+   "tensions": [
+    "B1强调意志逐步聚集、方向渐趋明确，B2强调每次用力之后压力仍旧存在；不能将前者简化为已经摆脱困境。",
+    "B2的困兽式抵抗与B3的有限解脱感具有不同情绪重心，但可以同时成立。",
+    "B3中的前进意愿不等于恐惧消失，也不证明任何具体行动已经发生。"
+   ]
+  },
+  {
+   "section_id": "S12",
+   "beads": [
+    {
+     "bead_id": "S12-B1",
+     "qualities": [
+      "强烈、鲜明而外向的自我确立感",
+      "具有公开性或共同性意味的昂扬",
+      "坚定的推进感与较充分的落定感"
+     ],
+     "temporal_shape": "起始即强烈显现较稳固的昂扬状态，随后维持有力的推进倾向。",
+     "forbidden_imports": [
+      "某人实际参加公开集会、庆典或仪式",
+      "某人正在带领群体前进",
+      "某人真实获得胜利或凯旋",
+      "某人已经赢得社会承认",
+      "某项集体行动确实取得成功"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S12-B2",
+     "qualities": [
+      "在脆弱与犹疑仍被承认的情况下主动维持坚定",
+      "并非毫无伤痛，而是有意识地选择自我姿态",
+      "主动性和自我接纳之间的相容"
+     ],
+     "temporal_shape": "",
+     "forbidden_imports": [
+      "某人实际经历过某项明确的创伤",
+      "某人已经作出了具体的人生承诺",
+      "某人采取了某个确定的行动决定",
+      "某人已经完成对过往伤痛的治愈或和解",
+      "某人向别人公开宣告了自己的选择"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S12-B3",
+     "qualities": [
+      "强势推进中的短暂不稳定",
+      "既有信心受到轻微扰动",
+      "不稳定出现后，整体向前倾向仍得以维持"
+     ],
+     "temporal_shape": "由较稳固的昂扬短暂转入失衡或异样感，随后重新延续推进。",
+     "forbidden_imports": [
+      "某人实际脚下打滑或失去平衡",
+      "某人遭遇了具体阻碍或意外",
+      "某项现实行动发生了短暂失败",
+      "某人成功克服了一个确定的外部难题"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "强烈的自我确立与仍然存在的脆弱意识可以并存",
+    "外向、公开性的昂扬不一定对应现实中的集体事件",
+    "坚定可以是一种主动维持的状态，而非从未动摇",
+    "短暂不稳不足以抹去整体推进感"
+   ],
+   "tensions": [
+    "B1突出近乎充分落定的强势感，B2提醒这种坚定不必排除犹疑和伤感；两者对确定性的理解不同。",
+    "B3的短暂失稳与B1的强烈稳定感形成局部反差，不能将整段理解为毫无波动。",
+    "B1的公开性、共同性感受与B2的内在主动选择属于不同体验维度，不能直接推导出集体行为或个人决定。"
+   ]
+  },
+  {
+   "section_id": "S13",
+   "beads": [
+    {
+     "bead_id": "S13-B1",
+     "qualities": [
+      "柔软、珍惜与强大力量同时达到较高强度",
+      "私密的情感获得更开放、更具共同性的表达空间",
+      "昂扬、庄重与希望感并存，但不指向确定的胜利"
+     ],
+     "temporal_shape": "原本较内向、柔和的感受转为充分展开，并与不断增强的力量感结合，形成高强度的情感充盈。",
+     "forbidden_imports": [
+      "某人实际向公众表达私人情感",
+      "某人正在参加宗教仪式或集体庆典",
+      "某人回到或成功收复故土",
+      "某个群体已经获得共同胜利",
+      "某人经历了一项确定的历史或政治事件",
+      "某人的祈愿已经得到现实回应"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S13-B2",
+     "qualities": [
+      "长期积累的力量迅速释放",
+      "高昂的兴奋、速度感和身体性催逼",
+      "几乎难以停顿的强烈向前倾向"
+     ],
+     "temporal_shape": "由积累和蓄势转入迅猛释放，兴奋与推进感迅速增强。",
+     "forbidden_imports": [
+      "某人实际开始奔跑或冲刺",
+      "某人正在追逐一个具体目标",
+      "某人受到外部力量推动",
+      "某人因胜利而兴奋地采取行动",
+      "某人正经历真实的呼吸急促或身体过载"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S13-B3",
+     "qualities": [
+      "强烈推进之后的收敛与喘息感",
+      "暂时的从容与细微不安并存",
+      "完成感受到轻微质疑，稳定程度仍有余地"
+     ],
+     "temporal_shape": "由高强度的推进转入减弱、收敛和较从容的状态；其间仍可能保留或重新显露轻微不确定。",
+     "forbidden_imports": [
+      "某人实际取得了一项成功",
+      "某人已经完成某个具体任务",
+      "某人说完了一段真实讲话",
+      "某人正在现实中休息或喘气",
+      "某人已确认自己的胜利不牢固",
+      "某个外部问题确实重新出现"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S13-B4",
+     "qualities": [
+      "高强度活动之后的突然静定",
+      "放松、耗尽或最终释放的感觉",
+      "收束之中仍具有突出的孤悬感与清醒感"
+     ],
+     "temporal_shape": "由强烈活动骤然转向安静与松放；在近乎结束的状态中，又突然显出鲜明、独立而未必完全安稳的终点感。",
+     "forbidden_imports": [
+      "某人实际呼出最后一口气",
+      "某人死亡、失去意识或彻底精疲力尽",
+      "某人听到了真实的钟声",
+      "某人看见了星星或其他实际景物",
+      "某人真实地离开某个场所",
+      "某件现实事件已经获得明确结局"
+     ],
+     "confidence": "高"
+    },
+    {
+     "bead_id": "S13-B5",
+     "qualities": [
+      "意志突然凝定或获得决定感",
+      "也可能是突如其来的清醒与重新觉察",
+      "终点感较鲜明，但其意义并不唯一"
+     ],
+     "temporal_shape": "在终结处呈现突发性的心理转变；可以理解为意向凝定，也可以理解为骤然清醒，两者不是连续的两个阶段。",
+     "forbidden_imports": [
+      "某人实际作出了一个具体决定",
+      "某人真实从梦中醒来",
+      "某人先做决定、随后醒来",
+      "某人已经明白全部经历的意义",
+      "某人完成了确定的人生转折",
+      "某人已经获得永久的内在安宁"
+     ],
+     "confidence": "高"
+    }
+   ],
+   "compatible_bundle": [
+    "柔软和珍惜并没有被高强度的力量感排除，反而可以共同充分展开",
+    "昂扬、希望、兴奋与强烈的释放感可以同时成立",
+    "强烈推进之后可以出现明显收敛，但收敛不必等同于疑问消失",
+    "终结处可以同时具有鲜明的终点感与尚未完全解释清楚的意义"
+   ],
+   "tensions": [
+    "B3同时容许轻微不安与从容结束，两者不应被强行统一为彻底胜利或彻底怀疑。",
+    "B5中的意志凝定与骤然清醒是不同的终结理解，不能改写为先后发生的两项人物经历。",
+    "B1的庄重希望、B2的兴奋催逼与B4的安静孤悬形成显著的强度和状态变化，不能将整个结尾概括为持续高昂。",
+    "B4中的终点感与B3残留的不确定可以并存，不必据此确认疑问已解决或最终决定已作出。",
+    "B1中的共同性和希望感与B5中的个人意志凝定并非同一解释层面，不能由前者推导出集体胜利，再由后者推导出具体个人抉择。"
+   ]
+  }
+ ]
+}
+
+你看不到原始珠子，也不要猜原始珠子的画面或具体措辞。
+
+【第一步：确定主干】
+从候选路线中挑出最扎实的一条作为 base_route。全篇只能有一个 base_route，保持从头到尾是同一个人在经历同一件事。
+
+【第二步：一次写完整条线，严格遵循以下规则】
+
+一、线自己先成立，因果从自身经历长出来
+每段此刻为什么这样，只能来自他自己先前的体验、已经承受的后果，或上一段状态的自然延续与反动。
+1. 严禁外部加戏与凭空代度：不新增对方的新动作、具体对白、第三人、具体外部事件、新道具或新场景；同样，严禁凭空断定对方有了什么隐秘心事、或突然对对方的心态做出未经相处检验的新判断。所有认识的推进，只能来自他对自己已有经历的重新打量。
+2. 变化要由内在体验推动，不模仿音乐物理动作：情绪的停顿、沉落、转折，必须由他当时的心思引出。严禁把音乐段落的物理骤停、退弱或强弱对比直接搬成人物心理动作。
+3. 终局决断留到最后：整件事若有明确的落定或答案，不要在结尾前提前兑现。
+
+二、平复不等于“暂时不想”，杜绝机械打转
+整件事的核心矛盾贯穿始终，但人物在各段的心境必须展现不同的生活切面，严禁原地空转：
+1. 不要反复用同一个心理动作（比如劝自己先别想）来收尾或过渡。
+2. 面对音乐中的退弱、悬停或平复，心理处境可以表现为：被当下强烈的具体体验（温存、酸楚、疲倦）完全塞满而顾不上他顾；争辩力竭后的发呆或放空；或是自知没有办法之后无可奈何的承受。不要段段都写成理智上劝自己“先别想”。
+
+三、真正的人话：写具体念头，彻底拆除“心理分析脚手架”
+像一个平常人在讲自己的经历，读者一眼看懂，绝不用力分析自己：
+1. 严禁抽象心理学名词：不写总结性的心理概念。写他心里直接冒出来的念头、犹豫或实在感受。
+2. 拆除认知论述句式：念头直接跳出来，不要每句都带推导脚手架。不要句句都是“先前怎样、如今明白怎样、这让他怎样”这种像在分析人物心理的写法。
+3. 杜绝套路对称句式，特别是“越……越……”。整篇中这类句式极易泛滥，必须换成生活化的自然口吻。
+
+四、TARGETS 是底色温度，绝不是台词本（严防复述）
+TARGETS 规定了本段的情感走向（是紧绷还是舒展、是悬空还是下沉、是热切还是冷却）：
+1. 人物的处境必须在“情感重力与方向”上与 TARGETS 吻合，绝不能向性相反。
+2. 严禁把 TARGETS 里的心理比喻、修辞性描写或自问自答直接套写成人物此刻具体的自白。人物想的是他自己的事，只要那份心思的底色与 TARGETS 相符即可。
+
+五、篇幅精炼，分条清晰
+1. 形态：每段写 2–4 条要点，每条是一句完整、自然的话，只说一件事，连着读仍像一段流畅的经历。一句能说清的不拆成几条，也不合成散文式的长句；小段落（小节少、变化单一）写 2 条就够，宁短勿凑。
+2. 一段内的多条要点，必须是不同时序的具体念头推进，严禁把一个犹豫过程换几个词拆成三句同义反复。
+3. 前面已经成立的事实，后文直接承受其后果，不回头重新解释因果大道理。
+
+六、引用（cite）
+某条提到或依赖更早某一条时，在 cite 里写那一条的编号（如 S02-1）。提到前面的内容就直接提，不必每条都有；只是主题相近、情绪相近不算。
+
+七、段落关系标签（relation）
+写完正文后，严格根据本段正文实际表现出的状态标定：
+- 没在想：注意力完全被当下的具体感受、感官沉浸或力竭疲惫占据，心里根本没有去打量或挂念 Center 那个核心矛盾。
+- 还说不清：处在模糊的情绪波动或本能反应中，尚未理清整件事，也没有形成明确态度。
+- 正在面对：清楚意识到核心矛盾，并在此刻具体权衡、挣扎、承受或做决定。
+（如果正文仍在打量整件事，不能标为“没在想”。）
+
+【输出格式】
+只输出 JSON：
+{
+  "base_route": "route_id",
+  "segments": [
+    {
+      "sec": "S01",
+      "relation": "没在想/还说不清/正在面对",
+      "items": [
+        {
+          "id": "S01-1",
+          "text": "...",
+          "cite": [],
+          "covers": ["bead_id"]
+        }
+      ],
+      "delta_type": "新变化/后果/实行已有想法/延续/回到旧处但有新增/暂时没在想",
+      "delta": "本段真正新增的心理事实，无则留空"
+    }
+  ],
+  "uncovered_targets": [
+    {
+      "bead_id": "...",
+      "reason": "为什么若强行覆盖会伤害人物逻辑（仅限必须编外部事实的情况）"
+    }
+  ],
+  "established": [
+    {
+      "claim": "首次成立的重要认识或状态",
+      "first_established": "Sxx-x"
+    }
+  ]
+}

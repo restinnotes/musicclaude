@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Referrer" content="unsafe-url">
+    <meta content="True" name="HandheldFriendly">
+    
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="detectify-verification" content="d0264f228155c7a1f72c3d91c17ce8fb" />
+<meta name="p:domain_verify" content="b87e3b55b409494aab88c1610b05a5f0"/>
+<meta name="alexaVerifyID" content="OFc8dmwZo7ttU4UCnDh1rKDtLlY" />
+<meta name="baidu-site-verification" content="D00WizvYyr" />
+<meta name="msvalidate.01" content="D9B08FEA08E3DA402BF07ABAB61D77DE" />
+<meta property="wb:webmaster" content="f2f4cb229bda06a4" />
+<meta name="google-site-verification" content="LM_cJR94XJIqcYJeOCscGVMWdaRUvmyz6cVOqkFplaU" />
+<meta name="wwads-cn-verify" content="c8ffe9a587b126f152ed3d89a146b445" />
+<script type="text/javascript" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5060390720525238"
+     crossorigin="anonymous"></script>
+<script defer data-site="388d5c063206" src="https://stats.v2core.com/js/s.js"></script>
+    
+    <title>反杀熟的开源小工具 PriceDoge - V2EX</title>
+    <link rel="dns-prefetch" href="https://static.v2ex.com/" />
+<link rel="dns-prefetch" href="https://cdn.v2ex.com/" />
+<link rel="dns-prefetch" href="https://i.v2ex.co/" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com/" />    
+    <style>
+        body {
+            min-width: 820px;
+            font-family: "Helvetica Neue", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo";
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/454ba781472b4ab23e236c2c9ddaf9f150f5519b-combo.css?t=1791328200">
+    
+    <script>
+        const SITE_NIGHT = 0;
+    </script>
+    <link rel="stylesheet" href="/static/css/vendor/tomorrow.css?v=3c006808236080a5d98ba4e64b8f323f" type="text/css">
+    
+    <link rel="icon" sizes="192x192" href="/static/icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180.png?v=91e795b8b5d9e2cbf2d886c3d4b7d63c">
+    
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/png">
+    
+    
+    <link rel="manifest" href="/manifest.webmanifest">
+    <script>
+        const LANG = 'enus';
+        const FEATURES = ['search', 'favorite-nodes-sort'];
+    </script>
+    <script src="/assets/be64d74d5348efe4bfa36ec47ec23158fc1bcb2c-combo.js?t=1791328200" defer></script>
+    <meta name="description" content="程序员 - @Tedko - https://github.com/DimensionFoundation/PriceDoge这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。">
+    
+    
+    <link rel="canonical" href="https://www.v2ex.com/t/547246">
+    
+    
+
+<script>
+    const address = "24ywRTze3X2fUez6mkC9WCaKPVdMF6ykgzLq7wavjvap";
+
+async function reloadTopicTips() {
+    $.get("/t/547246/tips.html")
+    .done(function(data) {
+        let last = $('#topic-tip-box').children().last();
+        if (!last.hasClass('inner')) {
+            last.addClass('inner');
+            last.addClass('flex-one-row');
+            last.addClass('gap10');
+        }
+        last.replaceWith(data);
+        // Flash the element to indicate update
+        let newLast = $('#topic-tip-box').children().last();
+        newLast.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    })
+    .fail(function() {
+        console.error('Failed to fetch /t/547246/tips.html');
+    });
+}
+</script>
+
+
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="反杀熟的开源小工具 PriceDoge - V2EX" />
+<meta property="og:description" content="程序员 - @Tedko - https://github.com/DimensionFoundation/PriceDoge这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。" />
+<meta property="og:url" content="https://www.v2ex.com/t/547246" />
+<meta property="og:site_name" content="V2EX" />
+
+<meta property="article:tag" content="programmer" />
+<meta property="article:section" content="程序员" />
+<meta property="article:published_time" content="2019-03-21T22:07:41Z" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="程序员 - @Tedko - https://github.com/DimensionFoundation/PriceDoge这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。" />
+<meta name="twitter:title" content="反杀熟的开源小工具 PriceDoge - V2EX" />
+<meta name="twitter:image" content="https://cdn.v2ex.com/avatar/710c/ecdc/59282_large.png?m=1781508588" />
+<meta name="twitter:site" content="@V2EX" />
+<meta name="twitter:creator" content="@V2EX" />
+
+<script type="application/ld+json">{"comment": [{"text": "有别于惠惠等其他比价插件的是：我们的所有数据来源都来自本地机器对其他网站的 query，没有任何中心化服务，比如说，想要对比一个在某东上的商品在 TB 或 Amazon 或 Newegg （这是我们目前支持的四个电商，但可以很简单的拓展，我之后会说）上的价格，具体的 query 是把当前商品页面的商品名在其他的网站上进行搜索，然后返回的是其它网站上类似商品的价格信息。\n在我们不支持的网站上，用户可以自行贡献价格信息，具体操作是找到页面上的价格信息，选中之后右键点击 [这个 css/element 是价格] ，然后按照引导将商品名和缩略图的路径选中，就可以显示本产品的全网价格信息了。在同一个 domain 下的同类型网页只需做一次贡献，就可以自动适配其他页面了（具体方法就是记录价格 /商品名 /缩略图的 selector ）。\n对于真正的 P2P 价格分享（用户看到的价格可以直接分享给正在看相同 /相似商品的用户），我们暂时没有时间做了，由于没有足够多的用户量，所以没有办法直接一开始就用上用户的力量。更多的技术细节可以参考我们的 README。", "datePublished": "2019-03-21T22:15:53Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}}, {"text": "我想问个问题，怎么保证“用户”分享的数字是正确的？\n换个角度说，如果我有意抓包修改分享的数据，如何防范？", "interactionStatistic": {"userInteractionCount": 1, "@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction"}, "datePublished": "2019-03-21T22:27:10Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/bearqq", "@type": "Person", "name": "bearqq"}}, {"text": "惠惠也是去中心化都是用户端的价格", "datePublished": "2019-03-21T23:06:11Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/hellojay", "@type": "Person", "name": "hellojay"}}, {"text": "现在商家很贼的。价格一样但是领的优惠券不一样", "interactionStatistic": {"userInteractionCount": 5, "@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction"}, "datePublished": "2019-03-21T23:29:25Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/tj646", "@type": "Person", "name": "tj646"}}, {"text": "@hellojay 但是惠惠有利益关系，一到 618，双 11 这种关键时期就不工作了", "datePublished": "2019-03-22T00:11:55Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/ronman", "@type": "Person", "name": "ronman"}}, {"text": "保持关注", "datePublished": "2019-03-22T00:13:03Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/ronman", "@type": "Person", "name": "ronman"}}, {"text": "@ronman 这个和利益关系没关系。不工作有技术和法律方面的原因", "datePublished": "2019-03-22T00:45:55Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/hellojay", "@type": "Person", "name": "hellojay"}}, {"text": "@ronman 不工作是为了平时更好的工作，如果曝光了大型活动价格比平时还贵，不被电商封杀才怪。", "datePublished": "2019-03-22T00:55:32Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/fstab", "@type": "Person", "name": "fstab"}}, {"text": "@bearqq\n@hellojay #3\n实际测试结果是，如果服务器上已经有价格信息了，你传过去的价格发生了变化，别人的爬虫会自己来尝试请求是否真实变了，并不会完全信任用户传过来的值", "datePublished": "2019-03-22T01:02:21Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/letitbesqzr", "@type": "Person", "name": "letitbesqzr"}}, {"text": "关注一下", "datePublished": "2019-03-22T01:02:59Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/missdeer", "@type": "Person", "name": "missdeer"}}, {"text": "我觉得这类工具没意义，很多促销活动的时候，都是靠什么优惠卷 满减 或者收货后返现来优惠，查到的历史价格也是偏高，比较热门的商品去 smzdm 查一下是最靠谱的。。", "datePublished": "2019-03-22T01:06:19Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/letitbesqzr", "@type": "Person", "name": "letitbesqzr"}}, {"text": "先 star 再慢慢看", "datePublished": "2019-03-22T02:10:21Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/kylix", "@type": "Person", "name": "kylix"}}, {"text": "不同规格用同一个商品 id, 这种就跪了", "datePublished": "2019-03-22T02:15:08Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/tuding", "@type": "Person", "name": "tuding"}}, {"text": "@letitbesqzr 优惠券可以直接 p2p exchange.（一般都是通用的，也就是一个字段）", "datePublished": "2019-03-22T02:48:09Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}}, {"text": "@hellojay 对。我的意思是我们逐渐会没有中心化服务器的，这样就没有法律问题了（ you know ）", "datePublished": "2019-03-22T02:49:12Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}}, {"text": "@tuding 不光用 id 区分，名字啥的都区分", "datePublished": "2019-03-22T03:04:49Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}}, {"text": "商家越来越鸡贼\n1. 最开始直接抢购价\n2. 后来价格不变, 放优惠券\n3. 再后来商品不停换内部 id\n我先 star 下", "datePublished": "2019-03-22T03:42:36Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/lzlee", "@type": "Person", "name": "lzlee"}}, {"text": "@lzlee @letitbesqzr 这个我来解释一下 我们有一个 feature 是想要做 跨平台（比如说 tb 和 jd ）购物车总价优化，结合不同平台的优惠券等方式来组合优化 但后来由于时间紧 所以就没有写这个逻辑 如果大家觉得有必要 我们可以继续开发下去", "datePublished": "2019-03-22T03:57:25Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/yisiliu", "@type": "Person", "name": "yisiliu"}}, {"text": "购物党的比价数据挺好的", "datePublished": "2019-03-22T04:01:03Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/flowersing", "@type": "Person", "name": "flowersing"}}, {"text": "恶魔张大妈 信息比较靠谱", "datePublished": "2019-03-22T04:12:29Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/mattx", "@type": "Person", "name": "mattx"}}, {"text": "然后我们主要想做的是一个 去中心化的 serverless 的 用户互相共享信息的 工具\n现阶段的比价方式是用户本地 query 我们完全没有什么三方跳转之类的东西在 所以这还是有别于惠惠这类服务的 我们完全没有任何利益冲突 and 利益关系 所以更倾向于做成了一个工具而不是服务\n下一个阶段想要做的是在用户基数高一点之后 能够让用户贡献自己的信息 信任问题会出现在两个阶段：1. 中间人恶意抓包改包篡改信息 -\u003e 这边我们的做法是做 ECDHE 保证通信端的安全 我们一开始让用户生成的 ECC 的 key pair 也是为了身份认证考虑的 2. “共享人”恶意发布虚假信息 -\u003e 这点的话我觉得只要有人想做 我们一定是防不了的 我们这边有一个没做进来的 feature 是 每次在搜索价格的时候 会用干净的环境和 cookie query 当前页面来对比“熟客”和“新人”有没有差别 这个 feature 至少可以保障不会被更高的价格所“歧视” 如果”共享人“恶意发布更低的价格的话 我认为也不会对用户造成伤害\n这些是我们的一些思考 大家帮忙看看 谢谢～", "datePublished": "2019-03-22T04:17:57Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/yisiliu", "@type": "Person", "name": "yisiliu"}}, {"text": "@yisiliu 先做个简单的吧, 一上来就想太复杂没有一点好处, 祝你们成功", "datePublished": "2019-03-22T06:24:47Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/lzlee", "@type": "Person", "name": "lzlee"}}, {"text": "@lzlee cool", "datePublished": "2019-03-23T06:24:28Z", "@type": "Comment", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}}], "interactionStatistic": [{"userInteractionCount": 6728, "@type": "InteractionCounter", "interactionType": "https://schema.org/ViewAction"}, {"userInteractionCount": 33, "@type": "InteractionCounter", "interactionType": "https://schema.org/LikeAction"}, {"userInteractionCount": 23, "@type": "InteractionCounter", "interactionType": "https://schema.org/ReplyAction"}], "text": "https://github.com/DimensionFoundation/PriceDoge\n这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。", "datePublished": "2019-03-21T22:07:41Z", "commentCount": 23, "mainEntityOfPage": "https://www.v2ex.com/t/547246", "author": {"url": "https://www.v2ex.com/member/Tedko", "@type": "Person", "name": "Tedko"}, "headline": "反杀熟的开源小工具 PriceDoge", "@type": "DiscussionForumPosting", "url": "https://www.v2ex.com/t/547246", "isPartOf": {"url": "https://www.v2ex.com/go/programmer", "@type": "WebPage", "name": "程序员"}, "@context": "https://schema.org", "dateModified": "2019-03-21T22:08:20Z"}</script>
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "itemListElement": [{"position": 1, "@type": "ListItem", "item": "https://www.v2ex.com/go/programmer", "name": "程序员"}, {"position": 2, "@type": "ListItem", "item": "https://www.v2ex.com/t/547246", "name": "反杀熟的开源小工具 PriceDoge"}], "@type": "BreadcrumbList"}</script>
+
+<link rel="top" title="Back to Top" href="#">
+
+
+<link rel="amphtml" href="https://www.v2ex.com/amp/t/547246" />
+<script>
+const topicId = 547246;
+var once = "72314";
+
+document.addEventListener("DOMContentLoaded", () => {
+    protectTraffic();
+    expandHubPostCards(document.getElementById('Main'));
+
+    if (typeof reloadTopicTips !== 'undefined') {
+        window.reloadTopicTips = reloadTopicTips;
+    }
+
+    const observer = new IntersectionObserver(
+        ([e]) => e.target.toggleAttribute('stuck', e.intersectionRatio < 1),
+        {threshold: [1]}
+    );
+
+    observer.observe(document.getElementById('reply-box'));
+
+    
+    hljs.initHighlightingOnLoad();
+    
+
+    $('#Main').on('click', '.no, .ago', function () {
+        location.hash = $(this).parents('.cell').prop('id');
+    });
+
+    
+
+    // refresh once
+    document.addEventListener('visibilitychange', e => {
+        if (document.visibilityState === 'visible') {
+            fetchOnce().then(once => {
+                $('#once').val(once);
+            });
+        }
+    });
+
+    if (location.search.indexOf('p=') > -1) {
+    const p = Number(location.search.split('p=')[1].split('&')[0]);
+    if (p) {
+        const key = 'tp547246';
+        if (lscache.set(key, p, 60 * 24 * 30)) { // 30 days
+            console.log(`Saved topic page number to ${key}: ` + p);
+        }
+    }
+}
+
+    
+const tipButton = document.getElementById('tip-button');
+
+if (tipButton) {
+    tipButton.onclick = function(e) {
+        e.preventDefault();
+        tipV2EXToken();
+    };
+}
+
+// Save and restore tip amount preference
+const tipAmounts = document.getElementById('tip-amounts');
+const tipAmountElement = document.getElementById('tip-amount');
+
+if (tipAmounts) {
+    const allRadios = tipAmounts.querySelectorAll('input[type="radio"]');
+
+    // Function to update tip-amount value
+    function updateTipAmount(value) {
+        if (tipAmountElement) {
+            tipAmountElement.value = value;
+        }
+    }
+
+    // Restore last used amount from localStorage
+    const lastAmount = localStorage.getItem('lastTipAmount');
+    if (lastAmount) {
+        const radioButton = document.getElementById('amount-' + lastAmount);
+        if (radioButton) {
+            // Uncheck all radio buttons first
+            allRadios.forEach(radio => radio.checked = false);
+            // Check the last used amount
+            radioButton.checked = true;
+            // Set the tip-amount value
+            updateTipAmount(lastAmount);
+        }
+    } else {
+        // If no previous value, check the first radio button
+        if (allRadios.length > 0) {
+            allRadios.forEach(radio => radio.checked = false);
+            allRadios[0].checked = true;
+            // Set the tip-amount value to first radio button value
+            updateTipAmount(allRadios[0].value);
+        }
+    }
+
+    // Listen for changes and save to localStorage
+    tipAmounts.addEventListener('change', function(e) {
+        if (e.target.type === 'radio' && e.target.name === 'amount') {
+            localStorage.setItem('lastTipAmount', e.target.value);
+            // Update tip-amount value
+            updateTipAmount(e.target.value);
+        }
+    });
+}
+
+});
+</script>
+<script type="text/javascript">
+function format(tpl) {
+    var index = 1, items = arguments;
+    return (tpl || '').replace(/{(\w*)}/g, function(match, p1) {
+        return items[index++] || p1 || match;
+    });
+}
+function loadCSS(url, callback) {
+    return $('<link type="text/css" rel="stylesheet"/>')
+        .attr({ href: url })
+        .on('load', callback)
+        .appendTo(document.head);
+}
+function lazyGist(element) {
+    var $btn = $(element);
+    var $self = $(element).parent();
+    var $link = $self.find('a');
+    $btn.prop('disabled', 'disabled').text('Loading...');
+    $.getJSON(format('{}.json?callback=?', $link.prop('href').replace($link.prop('hash'), '')))
+        .done(function(data) {
+            loadCSS(data.stylesheet, function() {
+                $self.replaceWith(data.div);
+                $('.gist .gist-file .gist-meta a').filter(function() { return this.href === $link.prop('href'); }).parents('.gist-file').siblings().remove();
+            });
+        })
+        .fail(function() { $self.replaceWith($('<a>').attr('href', url).text(url)); });
+}
+</script>
+
+
+    
+</head>
+<body>
+    
+    
+    <div id="Top">
+        <div class="content">
+            <div class="site-nav">
+                <a href="/" name="top" title="way to explore"><div id="Logo"></div></a>
+                <div id="search-container">
+                    <input id="search" type="text" maxlength="128" autocomplete="off" tabindex="1">
+                    <div id="search-result" class="box"></div>
+                </div>
+                <div class="tools" style="font-size: 13px;">
+                
+                    <a href="/" class="top">Home</a>
+                    <a href="https://edge.v2ex.com/signup" class="top">Sign Up</a>
+                    <a href="https://edge.v2ex.com/signin" class="top">Sign In</a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Wrapper">
+        <div class="content">
+            
+            <div id="Leftbar"></div>
+            <div id="Rightbar">
+                <div class="sep20"></div>
+                
+
+
+
+<div class="box" id="pro-campaign-container">
+    <!-- Campaign content will be loaded here -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function escapeHtml(text) {
+        if (text === null || text === undefined) return '';
+        return String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function safeHttpsUrl(url) {
+        if (url === null || url === undefined) return '';
+        var value = String(url);
+        if (!/^https:\/\//i.test(value)) return '';
+        try {
+            var parsed = new URL(value);
+            if (parsed.protocol !== 'https:') return '';
+            return parsed.href;
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function safeMemberUsername(username) {
+        if (username === null || username === undefined) return '';
+        username = String(username);
+        if (!/^[A-Za-z0-9_-]+$/.test(username)) return '';
+        return username;
+    }
+
+    function bindCampaignLinks(container) {
+        var items = container.querySelectorAll('[data-pro-link]');
+        for (var i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', function() {
+                var link = this.getAttribute('data-pro-link');
+                if (link) {
+                    window.open(link, '_blank', 'noopener');
+                }
+            });
+        }
+    }
+
+    function renderCampaign(campaign) {
+        let html = '';
+        let displayFormat = campaign.display_format || 'text-only';
+        let linkUrl = safeHttpsUrl(campaign.link);
+        if (!linkUrl) return '';
+
+        let title = escapeHtml(campaign.title);
+        let description = escapeHtml(campaign.description);
+        let callToAction = escapeHtml(campaign.call_to_action);
+        let link = escapeHtml(linkUrl);
+        let imgSmallUrl = safeHttpsUrl(campaign.img_small_url);
+        let imgBannerUrl = safeHttpsUrl(campaign.img_banner_url);
+        let imgBigUrl = safeHttpsUrl(campaign.img_big_url);
+        let memberUsername = safeMemberUsername(campaign.member && campaign.member.username);
+        let promotedBy = memberUsername ? `Promoted by <a href="/member/${encodeURIComponent(memberUsername)}" target="_blank" rel="noopener noreferrer">${escapeHtml(memberUsername)}</a>` : 'Promoted by V2EX member';
+
+        if (displayFormat === 'small-with-description' && !imgSmallUrl) {
+            displayFormat = 'text-only';
+        } else if (displayFormat === 'banner-only' && !imgBannerUrl) {
+            displayFormat = 'text-only';
+        } else if ((displayFormat === 'big-only' || displayFormat === 'big-with-description' || displayFormat === 'big-with-title-description-button') && !imgBigUrl) {
+            displayFormat = 'text-only';
+        }
+
+        html = `<div class="pro-unit-title">${title}</div>`;
+        switch(displayFormat) {
+            case 'text-only':
+                html += `
+                    <div class="pro-unit">
+                    <div class="pro-unit-description flex-one-row gap10">
+                        <div data-pro-link="${link}">${description}</div>
+                        <div><a href="${link}" class="pro-unit-go" target="_blank" rel="noopener noreferrer">›</a>
+                        </div>
+                    </div>
+                    </div>
+                `;
+                break;
+
+            case 'small-with-description':
+                html += `<div class="pro-unit flex-one-row">
+                    ${imgSmallUrl ? `<div class="pro-unit-small-image">
+                        <a href="${link}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(imgSmallUrl)}" class="pro-unit-img" style="max-width: 130px; max-height: 100px;" alt="" /></a>
+                    </div>` : ''}
+                    <div data-pro-link="${link}" class="pro-unit-description">${description}</div>
+                </div>`;
+                break;
+
+            case 'banner-only':
+                html += `<div class="cell"><a href="${link}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(imgBannerUrl)}" class="pro-unit-img" style="max-width: 250px; max-height: 60px; display: block; vertical-align: bottom;" alt="" /></a></div>`;
+                break;
+
+            case 'big-only':
+                html += `<div class="cell"><a href="${link}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(imgBigUrl)}" class="pro-unit-img" style="max-width: 500px; max-height: 500px; width: 100%; display: block; vertical-align: bottom;" alt="" /></a></div>`;
+                break;
+
+            case 'big-with-description':
+                html += `<div class="inner" style="padding-bottom: 0px;"><a href="${link}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(imgBigUrl)}" class="pro-unit-img" style="max-width: 500px; max-height: 500px; width: 100%; display: block; vertical-align: bottom;" alt="" /></a></div>`;
+                html += `<div class="pro-unit-description flex-one-row gap10">
+                    <div data-pro-link="${link}">${description}</div>
+                    <div><a href="${link}" class="pro-unit-go" target="_blank" rel="noopener noreferrer">›</a></div></div>`;
+                break;
+
+            case 'big-with-title-description-button':
+                html += `<div class="inner" style="padding-bottom: 0px;"><a href="${link}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(imgBigUrl)}" class="pro-unit-img" style="max-width: 500px; max-height: 500px; width: 100%; display: block; vertical-align: bottom;" alt="" /></a></div>`;
+                html += `<div class="pro-unit-description">
+                    <div style="text-align: center" data-pro-link="${link}">${description}</div>
+                    </div>`;
+                html += `<div class="pro-unit-cta-container"><a href="${link}" target="_blank" rel="noopener noreferrer" class="pro-unit-cta">${callToAction}</a></div>`;
+                break;
+
+            default:
+                html += `
+                    <div class="pro-unit-description flex-one-row gap10">
+                        <div data-pro-link="${link}">${description}</div>
+                        <div><a href="${link}" class="pro-unit-go" target="_blank" rel="noopener noreferrer">›</a></div>
+                    </div>
+                `;
+        }
+
+        html += `<div class="pro-unit-from flex-one-row gap10">
+        <div>${promotedBy}</div>
+        <div><a href="/pro/about" target="_blank" rel="noopener noreferrer" class="fade"><i class="fa fa-question-circle fade"></i> <span style="font-size: 12px; color: var(--color-fade)">PRO</span></a></div>
+        </div>`
+
+        return html;
+    }
+
+    // Load campaign from emitter
+    var emitterUrl = '/pro/emitter';
+    var proMemberId = null;
+    if (proMemberId) {
+        emitterUrl += '?member_id=' + encodeURIComponent(proMemberId);
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', emitterUrl, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    var campaign = JSON.parse(xhr.responseText);
+                    if (campaign && campaign.id) {
+                        var html = renderCampaign(campaign);
+                        var container = document.getElementById('pro-campaign-container');
+                        if (html) {
+                            container.innerHTML = html;
+                            bindCampaignLinks(container);
+                            container.style.display = '';
+                        } else {
+                            container.style.display = 'none';
+                        }
+                    } else {
+                        document.getElementById('pro-campaign-container').style.display = 'none';
+                    }
+                } catch (e) {
+                    document.getElementById('pro-campaign-container').style.display = 'none';
+                    console.log('Error parsing campaign data: ' + e.message);
+                }
+            } else {
+                document.getElementById('pro-campaign-container').style.display = 'none';
+                console.log('Error loading campaign: HTTP ' + xhr.status);
+            }
+        }
+    };
+
+    xhr.send();
+});
+</script>
+
+
+        
+        <div class="sep"></div>
+        <div class="box">
+            <div class="inner" id="node_sidebar">
+                • 请不要在回答技术问题时复制粘贴 AI 生成的内容
+
+<style type="text/css">
+  #Wrapper {
+    background-color: #e2e2e2;
+    background-image: url("/static/img/shadow_light.png"), url("//cdn.v2ex.com/assets/bgs/circuit.png");
+    background-repeat: repeat-x, repeat-x;
+  }
+  #Wrapper.Night {
+  	background-color: #1f2e3d;
+	background-image: url("/static/img/shadow.png"), url("//cdn.v2ex.com/assets/bgs/circuit_night.png");
+	background-repeat: repeat-x, repeat-x;
+  	background-size: 20px 20px, 162.5px 162.5px;
+  }
+</style>
+                
+            </div>
+            
+        </div>
+        
+    
+
+
+            </div>
+            <div id="Main">
+                <div class="sep20"></div>
+                
+<div class="box" style="border-bottom: 0px;">
+    
+    <div class="header"><div class="fr"><a href="/member/Tedko"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_large.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></a></div>
+    <div class="flex-one-row gap10">
+        <div><a href="/">V2EX</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="/go/programmer">程序员</a></div>
+        
+    </div>
+    <div class="sep10"></div>
+    <h1>反杀熟的开源小工具 PriceDoge</h1>
+    <div id="topic_547246_votes" class="votes">
+<a href="javascript:" onclick="upVoteTopic(547246);" class="vote"><li class="fa fa-chevron-up"></li> &nbsp;1</a> &nbsp;<a href="javascript:" onclick="downVoteTopic(547246);" class="vote"><li class="fa fa-chevron-down"></li></a></div> &nbsp; <small class="gray"><a href="/member/Tedko">Tedko</a> · <div style="vertical-align: text-bottom; width: 14px; height: 14px; display: inline-block; background-image: url('/static/img/social_github.png'); background-size: 14px 14px; margin-right: 5px;"></div><a href="https://github.com/Tedko" target="_blank">Tedko</a> · <span title="2019-03-22 06:07:41 +08:00">Mar 22, 2019</span> · 6728 views</small>
+    </div>
+    
+    
+    <div class="outdated">This topic created in 2756 days ago, the information mentioned may be changed or developed.</div>
+    
+    
+    <div class="cell">
+        
+        <div class="topic_content"><div class="markdown_body"><p><a href="https://github.com/DimensionFoundation/PriceDoge" rel="nofollow">https://github.com/DimensionFoundation/PriceDoge</a></p>
+<p>这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。</p>
+</div></div>
+        
+    </div>
+    
+    
+    
+    
+</div>
+
+<!-- SOL tip topic -->
+
+<div class="sep" id="topic-tip-sep"></div>
+<div class="box" id="topic-tip-box">
+    
+        
+            <!-- Not logged in -->
+                
+    
+    <!--
+Input Variables:
+  tips: ResultSet of SolanaTip objects associated with the topic
+  tip_sum: Total sum of tips received for the topic
+  tip_summary: A summary string of the tips (e.g., "5 patrons tipped a total of 100 $V2EX")
+-->
+
+<div></div>
+
+</div>
+
+
+<div class="sep20"></div>
+
+
+<div class="box">
+    <div class="cell"><div class="fr" style="margin: -3px -5px 0px 0px;"><a href="/tag/pricedoge" class="tag"><li class="fa fa-tag"></li> pricedoge</a><a href="/tag/P2P" class="tag"><li class="fa fa-tag"></li> P2P</a><a href="/tag/工具" class="tag"><li class="fa fa-tag"></li> 工具</a><a href="/tag/比价" class="tag"><li class="fa fa-tag"></li> 比价</a></div><span class="gray">23 replies &nbsp;<strong class="snow">•</strong> &nbsp;2019-03-23 14:24:28 +08:00</span>
+    </div>
+    
+
+    
+        
+        <div id="r_7062913" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_normal.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">1</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/Tedko" class="dark">Tedko</a></strong> &nbsp; <div class="badges"><div class="badge op">OP</div></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 06:15:53 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">有别于惠惠等其他比价插件的是：我们的所有数据来源都来自本地机器对其他网站的 query，没有任何中心化服务，比如说，想要对比一个在某东上的商品在 TB 或 Amazon 或 Newegg （这是我们目前支持的四个电商，但可以很简单的拓展，我之后会说）上的价格，具体的 query 是把当前商品页面的商品名在其他的网站上进行搜索，然后返回的是其它网站上类似商品的价格信息。<br />在我们不支持的网站上，用户可以自行贡献价格信息，具体操作是找到页面上的价格信息，选中之后右键点击 [这个 css/element 是价格] ，然后按照引导将商品名和缩略图的路径选中，就可以显示本产品的全网价格信息了。在同一个 domain 下的同类型网页只需做一次贡献，就可以自动适配其他页面了（具体方法就是记录价格 /商品名 /缩略图的 selector ）。<br />对于真正的 P2P 价格分享（用户看到的价格可以直接分享给正在看相同 /相似商品的用户），我们暂时没有时间做了，由于没有足够多的用户量，所以没有办法直接一开始就用上用户的力量。更多的技术细节可以参考我们的 README。</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7062917" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/bc2eb8a7f8bf631ffc4bae3effc50887?s=48&d=retro" class="avatar" border="0" align="default" alt="bearqq" data-uid="15269" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">2</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/bearqq" class="dark">bearqq</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 06:27:10 +08:00">Mar 22, 2019 via Android</span>  &nbsp; <span class="small fade"><img src="/static/img/heart_20250818.png?v=c3415183a0b3e9ab1576251be69d7d6d" width="14" align="absmiddle" alt="❤️" /> 1</span>
+                    <div class="sep5"></div>
+                    <div class="reply_content">我想问个问题，怎么保证“用户”分享的数字是正确的？<br />换个角度说，如果我有意抓包修改分享的数据，如何防范？</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7062957" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/d4b4/c9f5/233598_normal.png?m=1753839071" class="avatar" border="0" align="default" alt="hellojay" data-uid="233598" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">3</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/hellojay" class="dark">hellojay</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 07:06:11 +08:00">Mar 22, 2019 via iPhone</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">惠惠也是去中心化都是用户端的价格</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7062981" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/e5e83e813fe832bcf8ded835ce9d0dd2?s=48&d=retro" class="avatar" border="0" align="default" alt="tj646" data-uid="164784" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">4</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/tj646" class="dark">tj646</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 07:29:25 +08:00">Mar 22, 2019 via iPhone</span>  &nbsp; <span class="small fade"><img src="/static/img/heart_20250818.png?v=c3415183a0b3e9ab1576251be69d7d6d" width="14" align="absmiddle" alt="❤️" /> 5</span>
+                    <div class="sep5"></div>
+                    <div class="reply_content">现在商家很贼的。价格一样但是领的优惠券不一样</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063036" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/a0bc/c259/227469_normal.png?m=1764777062" class="avatar" border="0" align="default" alt="ronman" data-uid="227469" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">5</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/ronman" class="dark">ronman</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 08:11:55 +08:00">Mar 22, 2019 via Android</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/hellojay">hellojay</a> 但是惠惠有利益关系，一到 618，双 11 这种关键时期就不工作了</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063039" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/a0bc/c259/227469_normal.png?m=1764777062" class="avatar" border="0" align="default" alt="ronman" data-uid="227469" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">6</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/ronman" class="dark">ronman</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 08:13:03 +08:00">Mar 22, 2019 via Android</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">保持关注</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063166" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/d4b4/c9f5/233598_normal.png?m=1753839071" class="avatar" border="0" align="default" alt="hellojay" data-uid="233598" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">7</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/hellojay" class="dark">hellojay</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 08:45:55 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/ronman">ronman</a> 这个和利益关系没关系。不工作有技术和法律方面的原因</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063198" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/7df7/0242/76856_normal.png?m=1767580416" class="avatar" border="0" align="default" alt="fstab" data-uid="76856" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">8</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/fstab" class="dark">fstab</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 08:55:32 +08:00">Mar 22, 2019 via Android</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/ronman">ronman</a> 不工作是为了平时更好的工作，如果曝光了大型活动价格比平时还贵，不被电商封杀才怪。</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063234" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/ede3/df7d/45418_normal.png?m=1747794583" class="avatar" border="0" align="default" alt="letitbesqzr" data-uid="45418" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">9</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/letitbesqzr" class="dark">letitbesqzr</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 09:02:21 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/bearqq">bearqq</a> <br />@<a href="/member/hellojay">hellojay</a> #3 <br /><br />实际测试结果是，如果服务器上已经有价格信息了，你传过去的价格发生了变化，别人的爬虫会自己来尝试请求是否真实变了，并不会完全信任用户传过来的值</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063237" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/0aad5ec57bc352dde435a7bf627304c0?s=48&d=retro" class="avatar" border="0" align="default" alt="missdeer" data-uid="5178" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">10</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/missdeer" class="dark">missdeer</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 09:02:59 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">关注一下</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063262" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/ede3/df7d/45418_normal.png?m=1747794583" class="avatar" border="0" align="default" alt="letitbesqzr" data-uid="45418" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">11</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/letitbesqzr" class="dark">letitbesqzr</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 09:06:19 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">我觉得这类工具没意义，很多促销活动的时候，都是靠什么优惠卷 满减 或者收货后返现来优惠，查到的历史价格也是偏高，比较热门的商品去 smzdm 查一下是最靠谱的。。</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063725" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/49c735e314c9b39f6c936220c1fd01ee?s=48&d=retro" class="avatar" border="0" align="default" alt="kylix" data-uid="47561" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">12</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/kylix" class="dark">kylix</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 10:10:21 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">先 star 再慢慢看</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7063781" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/c422/8a8a/256843_normal.png?m=1670597285" class="avatar" border="0" align="default" alt="tuding" data-uid="256843" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">13</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/tuding" class="dark">tuding</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 10:15:08 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">不同规格用同一个商品 id, 这种就跪了</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064022" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_normal.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">14</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/Tedko" class="dark">Tedko</a></strong> &nbsp; <div class="badges"><div class="badge op">OP</div></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 10:48:09 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/letitbesqzr">letitbesqzr</a> 优惠券可以直接 p2p exchange.（一般都是通用的，也就是一个字段）</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064036" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_normal.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">15</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/Tedko" class="dark">Tedko</a></strong> &nbsp; <div class="badges"><div class="badge op">OP</div></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 10:49:12 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/hellojay">hellojay</a> 对。我的意思是我们逐渐会没有中心化服务器的，这样就没有法律问题了（ you know ）</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064155" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_normal.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">16</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/Tedko" class="dark">Tedko</a></strong> &nbsp; <div class="badges"><div class="badge op">OP</div></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 11:04:49 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/tuding">tuding</a> 不光用 id 区分，名字啥的都区分</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064414" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/8112481cfbe831de548190079be7fe08?s=48&d=retro" class="avatar" border="0" align="default" alt="lzlee" data-uid="289433" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">17</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/lzlee" class="dark">lzlee</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 11:42:36 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">商家越来越鸡贼<br />1. 最开始直接抢购价<br />2. 后来价格不变, 放优惠券<br />3. 再后来商品不停换内部 id<br /><br />我先 star 下</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064493" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/cf46/3c90/130451_normal.png?m=1647414611" class="avatar" border="0" align="default" alt="yisiliu" data-uid="130451" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">18</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/yisiliu" class="dark">yisiliu</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 11:57:25 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/lzlee">lzlee</a> @<a href="/member/letitbesqzr">letitbesqzr</a> 这个我来解释一下 我们有一个 feature 是想要做 跨平台（比如说 tb 和 jd ）购物车总价优化，结合不同平台的优惠券等方式来组合优化 但后来由于时间紧 所以就没有写这个逻辑 如果大家觉得有必要 我们可以继续开发下去</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064515" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/9082/c3be/287774_normal.png?m=1656516540" class="avatar" border="0" align="default" alt="flowersing" data-uid="287774" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">19</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/flowersing" class="dark">flowersing</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 12:01:03 +08:00">Mar 22, 2019 via iPhone</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">购物党的比价数据挺好的</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064571" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/306f82872a5649190336d99481619234?s=48&d=retro" class="avatar" border="0" align="default" alt="mattx" data-uid="181215" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">20</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/mattx" class="dark">mattx</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 12:12:29 +08:00">Mar 22, 2019 via iPhone</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">恶魔张大妈 信息比较靠谱</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7064602" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/cf46/3c90/130451_normal.png?m=1647414611" class="avatar" border="0" align="default" alt="yisiliu" data-uid="130451" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">21</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/yisiliu" class="dark">yisiliu</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 12:17:57 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">然后我们主要想做的是一个 去中心化的 serverless 的 用户互相共享信息的 工具<br />现阶段的比价方式是用户本地 query 我们完全没有什么三方跳转之类的东西在 所以这还是有别于惠惠这类服务的 我们完全没有任何利益冲突 and 利益关系 所以更倾向于做成了一个工具而不是服务<br />下一个阶段想要做的是在用户基数高一点之后 能够让用户贡献自己的信息 信任问题会出现在两个阶段：1. 中间人恶意抓包改包篡改信息 -&gt; 这边我们的做法是做 ECDHE 保证通信端的安全 我们一开始让用户生成的 ECC 的 key pair 也是为了身份认证考虑的 2. “共享人”恶意发布虚假信息 -&gt; 这点的话我觉得只要有人想做 我们一定是防不了的 我们这边有一个没做进来的 feature 是 每次在搜索价格的时候 会用干净的环境和 cookie query 当前页面来对比“熟客”和“新人”有没有差别 这个 feature 至少可以保障不会被更高的价格所“歧视” 如果”共享人“恶意发布更低的价格的话 我认为也不会对用户造成伤害<br /><br />这些是我们的一些思考 大家帮忙看看 谢谢～</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7065290" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/gravatar/8112481cfbe831de548190079be7fe08?s=48&d=retro" class="avatar" border="0" align="default" alt="lzlee" data-uid="289433" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">22</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/lzlee" class="dark">lzlee</a></strong> &nbsp; <div class="badges"></div>&nbsp; &nbsp;<span class="ago" title="2019-03-22 14:24:47 +08:00">Mar 22, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/yisiliu">yisiliu</a> 先做个简单的吧, 一上来就想太复杂没有一点好处, 祝你们成功</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+    
+        
+        <div id="r_7069973" class="cell">
+        
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+                <td width="48" valign="top" align="center"><img src="https://cdn.v2ex.com/avatar/710c/ecdc/59282_normal.png?m=1781508588" class="avatar" border="0" align="default" alt="Tedko" data-uid="59282" /></td>
+                <td width="10" valign="top"></td>
+                <td width="auto" valign="top" align="left"><div class="fr"> &nbsp; &nbsp; <span class="no">23</span></div>
+                    <div class="sep3"></div>
+                    <strong><a href="/member/Tedko" class="dark">Tedko</a></strong> &nbsp; <div class="badges"><div class="badge op">OP</div></div>&nbsp; &nbsp;<span class="ago" title="2019-03-23 14:24:28 +08:00">Mar 23, 2019</span> 
+                    <div class="sep5"></div>
+                    <div class="reply_content">@<a href="/member/lzlee">lzlee</a> cool</div>
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    
+
+
+</div>
+<div class="sep20"></div>
+
+
+
+<div class="sep20"></div>
+<div style="box-sizing: border-box"><div class="wwads-cn wwads-horizontal" data-id="98" style="max-width: 100%; padding-top: 10px; margin-top: 0px; text-align: left; box-shadow: 0 2px 3px rgb(0 0 0 / 10%); border-bottom: 1px solid var(--box-border-color); background-color: var(--box-background-color); color: var(--box-foreground-color);"></div></div>
+<style type="text/css">.wwads-cn { border-radius: 3px !important; } .wwads-text { color: var(--link-color) !important; }</style>
+
+
+
+
+
+
+            </div>
+            
+            
+        </div>
+        <div class="c"></div>
+        <div class="sep20"></div>
+    </div>
+    <div id="Bottom">
+        <div class="content">
+            <div class="inner">
+                <div class="sep10"></div>
+                    <div class="fr">
+                        <a href="https://www.digitalocean.com/?refcode=1b51f1a7651d" target="_blank"><div id="DigitalOcean"></div></a>
+                    </div>
+                    <strong><a href="/about" class="dark" target="_self">About</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://edge.v2ex.com/help" class="dark" target="_self">Help</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/pro/about" class="dark" target="_self">Advertise</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://blog.v2ex.com/" class="dark" target="_blank">Blog</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://edge.v2ex.com/help/api" class="dark" target="_self">API</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/faq" class="dark" target="_self">FAQ</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="/privacy" class="dark" target="_self">Privacy</a> &nbsp; <span class="snow">·</span> &nbsp; <a href="https://edge.v2ex.com/solana" class="dark" target="_self">Solana</a> &nbsp; <span class="snow">·</span> &nbsp; 899 Online</strong> &nbsp; <span class="fade">Highest 6679</span> &nbsp; <span class="snow">·</span> &nbsp; <a href="/select/language" class="f11"><img src="/static/img/language.png?v=6a5cfa731dc71a3769f6daace6784739" width="16" align="absmiddle" id="ico-select-language" /> &nbsp; Select Language</a>
+                    <div class="sep20"></div>
+                    创意工作者们的社区
+                    <div class="sep5"></div>
+                    World is powered by solitude
+                    <div class="sep20"></div>
+                    <span class="small fade">VERSION: 3.9.8.5 · 62ms · <a href="/worldclock#utc">UTC 23:12</a> · <a href="/worldclock#pvg">PVG 07:12</a> · <a href="/worldclock#lax">LAX 16:12</a> · <a href="/worldclock#jfk">JFK 19:12</a><br />♥ Do have faith in what you're doing.</span>
+                <div class="sep10"></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+    <script src="/b/i/2RMC8XR1tFWNRAzZg9uQ31XzkaobLZpQoptF_tDXi0qk0MEvSxmjxxsBRpAxN4hx4eZk2EmxglFTkxOsGA--hToAiWoY1bEdBA57znjsrabV7cky_gOhHBkOM1vhBPk1vtr64B41UAccuOUnzoZJ4Z0bwLaya5bdhYBIb21eyXc="></script>
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11940834-2', 'v2ex.com');
+      ga('send', 'pageview');
+      
+
+ga('send', 'event', 'Node', 'topic', 'programmer');
+
+
+
+    </script>
+    
+
+    
+<button class="scroll-top" data-scroll="up" type="button"><span>❯<span></button>
+</body>
+</html>

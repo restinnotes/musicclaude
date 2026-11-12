@@ -1,0 +1,580 @@
+{
+  "schema": "r7-main-isolated-offline/1",
+  "date": "2026-10-09",
+  "revision": "run148_e7_flash_diag_r7",
+  "probe_sha256": "2ad204e664979ede5f136945b853ac2b57de1d9e4c3ea78565557c23cf214694",
+  "base_harness_sha256": "1e586cf9221d87d4ecb87d0947166c9ad07522bcc9574984535056f929bd747c",
+  "manifest_checks": [
+    {
+      "path": "runs/run148_e7_flash_diag_r7/go.py",
+      "matches": true
+    },
+    {
+      "path": "runs/run148_e7_flash_diag_r7/README.md",
+      "matches": true
+    },
+    {
+      "path": "tools/tests/test_run148_e7_flash_diag_r7.py",
+      "matches": true
+    },
+    {
+      "path": "prompts/tooling/E7_COMPARE_v0.txt",
+      "matches": true
+    },
+    {
+      "path": "prompts/tooling/MECH_AUDIT_v0.txt",
+      "matches": true
+    },
+    {
+      "path": "prompts/tooling/MECH_v1.txt",
+      "matches": true
+    },
+    {
+      "path": "prompts/versions/E7_SURFACE_v0.txt",
+      "matches": true
+    },
+    {
+      "path": "prompts/versions/WHY_GATE_v4.txt",
+      "matches": true
+    },
+    {
+      "path": "runs/run124_render/surface__B__gpt56w__op60.md",
+      "matches": true
+    },
+    {
+      "path": "runs/run130_thread_e6/beads_clean.md",
+      "matches": true
+    },
+    {
+      "path": "runs/run130_thread_e6/steps.json",
+      "matches": true
+    },
+    {
+      "path": "runs/run132_v2a_gemini_baseline/meta/run132__op60__gflash_web__s1.json",
+      "matches": true
+    },
+    {
+      "path": "runs/run132_v2a_gemini_baseline/meta/run132__op60__gpro_web__s3.json",
+      "matches": true
+    },
+    {
+      "path": "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gflash_web__s1.md",
+      "matches": true
+    },
+    {
+      "path": "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gpro_web__s3.md",
+      "matches": true
+    }
+  ],
+  "commands": [
+    {
+      "mode": "suites",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\run148_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\run148_main_verify_20261009_r1\\suites",
+        "--worker",
+        "suites"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 84.016,
+      "stdout_sha256": "11eea7bfa76b9e740e37527397f07990e80f46c25e404377cb8972379610a75e",
+      "stderr_sha256": "fe0ebe389c04d7da8dbf0e05ea89f84f3b8ec496160db353896a7d7d48c210c3",
+      "stdout_bytes": 3998,
+      "stderr_bytes": 4384,
+      "result": {
+        "schema": "r7-main-worker/1",
+        "revision": "run148_e7_flash_diag_r7",
+        "mode": "suites",
+        "guard_negatives": [
+          {
+            "check": "model_cli_blocked",
+            "passed": true
+          },
+          {
+            "check": "isolated_python_still_blocked",
+            "passed": true
+          },
+          {
+            "check": "native_popen_bypass_blocked",
+            "passed": true
+          },
+          {
+            "check": "shell_blocked",
+            "passed": true
+          },
+          {
+            "check": "network_dns_blocked",
+            "passed": true
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true
+          }
+        ],
+        "real_model_submissions": 0,
+        "provider_or_model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "tests_run": 25,
+        "failures": 0,
+        "errors": 0,
+        "tests": [
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_cache_only_claim_without_exact_artifacts_is_rejected",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_compare_checks_every_quote_mapping_and_required_citation",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_config_and_canonical_self_flags_are_frozen",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_current_model_version_prompt_and_input_producer_conflicts_stop_before_write",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_default_parse_failure_stops_and_rerun_submits_zero_new_samples",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_direct_real_path_blocks_before_creating_real_run_outputs",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_duplicate_reviewer_and_order_identity_sets_are_rejected",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_exact_artifact_tamper_is_rejected_before_resume",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_execute_retries_one_proven_pre_submit_failure_then_reuses_same_sample",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_external_muse_sourcebound_receipt_valid_path_and_binding_rejections",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_full_collections_exact_identities_packs_and_reader_content",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_full_mock_rerun_adds_zero_submissions_and_stays_pending",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_import_has_no_environment_io_cli_or_source_import_effects",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_mech_explains_is_strict_int_set_and_rejects_bool_nested_duplicate_and_range",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_missing_terminal_identity_is_rejected_and_producer_stays_unknown",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_pack_missing_and_tamper_are_rejected_without_rebuilding",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_pack_validator_rejects_placeholder_and_missing_task_id",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_parser_failure_retry_appends_attempt_without_overwrite",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_queue_stop_blocks_every_following_submission_and_stage",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_raw_response_and_metadata_json_require_complete_strict_boundaries",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_source_tamper_is_rejected_using_an_isolated_fixture_root",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_transport_policy_needs_sourcebound_receipt_and_strict_budget",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_unproven_ambiguous_and_exhausted_transport_failures_hold_persistently",
+            "status": "PASS"
+          },
+          {
+            "test": "main_r7_fixtures.Run148Tests.test_v4_preflight_is_read_only_for_absent_and_present_unverified_entries",
+            "status": "PASS"
+          }
+        ],
+        "was_successful": true,
+        "first_full_mock_submissions": 126,
+        "guard_blocked_counts": {
+          "process": 4,
+          "network": 1,
+          "write": 1
+        },
+        "guard_scope": "Finite Python audit/class-preserving process guard, not OS sandbox or containment of malicious native code."
+      }
+    },
+    {
+      "mode": "c5",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\run148_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\run148_main_verify_20261009_r1\\c5",
+        "--worker",
+        "c5"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 27.218,
+      "stdout_sha256": "7619d725192000a8af050b10ff3c3cb2eb6c88cf6222ce74f14567614c75240e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 2973,
+      "stderr_bytes": 0,
+      "result": {
+        "schema": "r7-main-worker/1",
+        "revision": "run148_e7_flash_diag_r7",
+        "mode": "c5",
+        "guard_negatives": [
+          {
+            "check": "model_cli_blocked",
+            "passed": true
+          },
+          {
+            "check": "isolated_python_still_blocked",
+            "passed": true
+          },
+          {
+            "check": "native_popen_bypass_blocked",
+            "passed": true
+          },
+          {
+            "check": "shell_blocked",
+            "passed": true
+          },
+          {
+            "check": "network_dns_blocked",
+            "passed": true
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true
+          }
+        ],
+        "real_model_submissions": 0,
+        "provider_or_model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "checks": [
+          {
+            "check": "run144_receipt_positive",
+            "passed": true,
+            "accepted": true,
+            "mutation_field": null,
+            "mutation_value": null,
+            "exception": null,
+            "full_ingestion_entry": "validate_external_review_results",
+            "normalized_rows": 6,
+            "all_real_return_counts_zero": true,
+            "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+          },
+          {
+            "check": "run144_receipt_exact_bool_verified_1",
+            "passed": true,
+            "accepted": false,
+            "mutation_field": "verified",
+            "mutation_value": 1,
+            "exception": "trusted Muse receipt is not source-bound for field verified",
+            "full_ingestion_entry": "validate_external_review_results",
+            "normalized_rows": 0,
+            "all_real_return_counts_zero": false,
+            "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+          },
+          {
+            "check": "run144_receipt_exact_bool_verified_1.0",
+            "passed": true,
+            "accepted": false,
+            "mutation_field": "verified",
+            "mutation_value": 1.0,
+            "exception": "trusted Muse receipt is not source-bound for field verified",
+            "full_ingestion_entry": "validate_external_review_results",
+            "normalized_rows": 0,
+            "all_real_return_counts_zero": false,
+            "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+          },
+          {
+            "check": "run144_receipt_exact_bool_source_bound_1",
+            "passed": true,
+            "accepted": false,
+            "mutation_field": "source_bound",
+            "mutation_value": 1,
+            "exception": "trusted Muse receipt is not source-bound for field source_bound",
+            "full_ingestion_entry": "validate_external_review_results",
+            "normalized_rows": 0,
+            "all_real_return_counts_zero": false,
+            "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+          },
+          {
+            "check": "run144_receipt_exact_bool_source_bound_1.0",
+            "passed": true,
+            "accepted": false,
+            "mutation_field": "source_bound",
+            "mutation_value": 1.0,
+            "exception": "trusted Muse receipt is not source-bound for field source_bound",
+            "full_ingestion_entry": "validate_external_review_results",
+            "normalized_rows": 0,
+            "all_real_return_counts_zero": false,
+            "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+          }
+        ],
+        "legacy_check_labels": "run144 names retained; actual frozen r7 suite and ingress",
+        "was_successful": true,
+        "guard_blocked_counts": {
+          "process": 4,
+          "network": 1,
+          "write": 1
+        },
+        "guard_scope": "Finite Python audit/class-preserving process guard, not OS sandbox or containment of malicious native code."
+      }
+    },
+    {
+      "mode": "numeric",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\run148_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\run148_main_verify_20261009_r1\\numeric",
+        "--worker",
+        "numeric"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 27.656,
+      "stdout_sha256": "1398642dd86770b172bf77b2ccfdad0aa1b85b3bcc33df6c8c2697946a470e29",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 3588,
+      "stderr_bytes": 0,
+      "result": {
+        "schema": "r6-numeric-binding-main/1",
+        "checks": [
+          {
+            "case": "positive",
+            "accepted": true,
+            "expected_accept": true,
+            "passed": true,
+            "exception": null,
+            "normalized_rows": 6,
+            "all_real_returns_zero": true,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "pack_seed_float_and_receipt_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external Muse pack set/order/seed identity mismatch",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "pack_order_index_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external Muse pack set/order/seed identity mismatch",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "result_seed_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external review task/request/mapping/seed/prompt identity mismatch",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "meta_raw_size_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external Muse metadata bytes/hash/size mismatch",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "meta_identity_seed_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external Muse metadata source/request identity mismatch",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          },
+          {
+            "case": "terminal_identity_seed_float",
+            "accepted": false,
+            "expected_accept": false,
+            "passed": true,
+            "exception": "external Muse terminal is incomplete or has a forbidden status",
+            "normalized_rows": 0,
+            "all_real_returns_zero": false,
+            "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+          }
+        ],
+        "guard_negatives": [
+          {
+            "check": "model_cli_blocked",
+            "passed": true
+          },
+          {
+            "check": "isolated_python_still_blocked",
+            "passed": true
+          },
+          {
+            "check": "native_popen_bypass_blocked",
+            "passed": true
+          },
+          {
+            "check": "shell_blocked",
+            "passed": true
+          },
+          {
+            "check": "network_dns_blocked",
+            "passed": true
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true
+          }
+        ],
+        "guard_blocked_counts": {
+          "process": 4,
+          "network": 1,
+          "write": 1
+        },
+        "real_model_submissions": 0,
+        "model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "production_ready": false
+      }
+    },
+    {
+      "mode": "preflight",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\run148_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\run148_main_verify_20261009_r1\\preflight",
+        "--worker",
+        "preflight"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.125,
+      "stdout_sha256": "51d482f4fb21ef26bd5bf4d459034e34d0fdccd7fa3c123fefa0d6586e7b81e1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 970,
+      "stderr_bytes": 0,
+      "result": {
+        "schema": "r7-main-worker/1",
+        "revision": "run148_e7_flash_diag_r7",
+        "mode": "preflight",
+        "guard_negatives": [
+          {
+            "check": "model_cli_blocked",
+            "passed": true
+          },
+          {
+            "check": "isolated_python_still_blocked",
+            "passed": true
+          },
+          {
+            "check": "native_popen_bypass_blocked",
+            "passed": true
+          },
+          {
+            "check": "shell_blocked",
+            "passed": true
+          },
+          {
+            "check": "network_dns_blocked",
+            "passed": true
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true
+          }
+        ],
+        "real_model_submissions": 0,
+        "provider_or_model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "was_successful": true,
+        "returncode": 3,
+        "expected_returncode": 3,
+        "stdout_callback_sha256": "4602ac5f79e09b6fc987df9c96e7fb2076da13155c56790b1590196f3d23c7da",
+        "scope": "In-process real CLI entry callback; no child/model CLI invoked.",
+        "guard_blocked_counts": {
+          "process": 4,
+          "network": 1,
+          "write": 1
+        },
+        "guard_scope": "Finite Python audit/class-preserving process guard, not OS sandbox or containment of malicious native code."
+      }
+    }
+  ],
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "real_gate_changed": false,
+  "two_w_hold_changed": false,
+  "independent_review": "PENDING_AT_PROBE_CREATION",
+  "protected_unchanged": true,
+  "changed_protected_paths": []
+}

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\film_v8.py", line 120, in <module>
+    if x.cmd == 'render': film_v6.render(x.work, x.tag, x.start, x.end, x.out)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\film_v6.py", line 180, in render
+    for i in range(round(d*FPS)): p.stdin.write(f.frame(start+i/FPS).tobytes())
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\film_v8.py", line 103, in frame
+    t = max(0, min(t, self.dur-.001)); sf = skia.Surface(W, H); c = sf.getCanvas(); c.clear(skia.Color(*BG, 255)); self.now = t
+                                            ^^^^^^^^^^^^^^^^^^
+TypeError: pybind11::init(): factory function returned nullptr
+段 0 失败
+out\大众版_K3A\chunks_op61\001.mp4
+out\大众版_K3A\chunks_op61\002.mp4
+out\大众版_K3A\chunks_op61\003.mp4
+out\大众版_K3A\chunks_op61\004.mp4
+out\大众版_K3A\chunks_op61\005.mp4
+out\大众版_K3A\chunks_op61\006.mp4
+out\大众版_K3A\chunks_op61\007.mp4
+out\大众版_K3A\chunks_op61\008.mp4
+out\大众版_K3A\chunks_op61\009.mp4
+out\大众版_K3A\chunks_op61\010.mp4
+out\大众版_K3A\chunks_op61\011.mp4

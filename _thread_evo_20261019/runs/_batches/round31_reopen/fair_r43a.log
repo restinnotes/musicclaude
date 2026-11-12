@@ -1,0 +1,36 @@
+[v6b3_op60_g6_r43a_vsqurefs_newX] ok 385s 8133 chars
+[v6b3_op60_g56_r43a_vsqurefs_newX] ok 403s 8203 chars
+[v6b3_op60_g56_r43a_vsqurefs_newY] ok 356s 8021 chars
+[v6b3_op60_g6_r43a_vsqurefs_newY] ok 448s 8145 chars
+[v6b3_op61_g6_r43a_vsqurefs_newY] ok 327s 7329 chars
+[v6b3_op61_g6_r43a_vsqurefs_newX] ok 409s 7826 chars
+[v6b3_op61_g56_r43a_vsqurefs_newX] ok 395s 8530 chars
+[v6b3_op61_g56_r43a_vsqurefs_newY] ok 461s 6511 chars
+r43a 通过 7/8 不退步 7 {'alone': 52, 'lean': 81, 'plain': 99, 'cover': 1}
+  op60 g6 newX 新胜 不退步 {'alone': 8, 'lean': 8, 'plain': 12, 'cover': 5}
+  op60 g6 newY 旧胜 退步 {'alone': -4, 'lean': 10, 'plain': 14, 'cover': -10}
+  op60 g56 newX 新胜 不退步 {'alone': 10, 'lean': 12, 'plain': 13, 'cover': -4}
+  op60 g56 newY 新胜 不退步 {'alone': 11, 'lean': 14, 'plain': 12, 'cover': 1}
+  op61 g6 newX 新胜 不退步 {'alone': 5, 'lean': 8, 'plain': 12, 'cover': -5}
+  op61 g6 newY 新胜 不退步 {'alone': 12, 'lean': 10, 'plain': 12, 'cover': 8}
+  op61 g56 newX 新胜 不退步 {'alone': 3, 'lean': 10, 'plain': 12, 'cover': 0}
+  op61 g56 newY 新胜 不退步 {'alone': 7, 'lean': 9, 'plain': 12, 'cover': 6}
+[cov2_op60_g56_r43a] ok 216s 9750 chars
+[cov2_op60_g6_r43a] ok 283s 10536 chars
+[cov2_op61_g6_r43a] ok 250s 10685 chars
+[cov2_op61_g56_r43a] ok 259s 10796 chars
+qurefs op60_g6 说清 44/50 偏弱 6 相反 0 没有 0 未判 0 | 主体验说清 13/14
+qurefs op60_g56 说清 44/50 偏弱 4 相反 0 没有 2 未判 0 | 主体验说清 12/14
+qurefs op61_g6 说清 47/53 偏弱 5 相反 0 没有 1 未判 0 | 主体验说清 13/13
+qurefs op61_g56 说清 51/53 偏弱 2 相反 0 没有 0 未判 0 | 主体验说清 13/13
+r43a op60_g6 说清 40/50 偏弱 8 相反 0 没有 2 未判 0 | 主体验说清 12/14
+r43a op60_g56 说清 42/50 偏弱 7 相反 0 没有 1 未判 0 | 主体验说清 11/14
+r43a op61_g6 说清 44/53 偏弱 7 相反 0 没有 2 未判 0 | 主体验说清 13/13
+r43a op61_g56 说清 43/53 偏弱 9 相反 0 没有 1 未判 0 | 主体验说清 12/13
+coverage {"status": "reject", "failures": ["op60 S01 coverage drops >=2 for both judges"], "missing": []}
+[al2_op60_g6_r43a] ok 262s 4514 chars
+[al2_op60_g56_r43a] ok 267s 4278 chars
+[al2_op61_g56_r43a] ok 150s 4828 chars
+[al2_op61_g6_r43a] ok 190s 4272 chars
+alone {"status": "pass", "failures": [], "missing": []}
+all {"status": "reject", "failures": ["op60 S01 coverage drops >=2 for both judges"], "missing": []}

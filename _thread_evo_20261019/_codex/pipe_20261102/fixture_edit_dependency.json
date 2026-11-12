@@ -1,0 +1,69 @@
+{
+  "name": "Q",
+  "note": "方案 Q（GPT-5.6 顾问方案一）：三条经历骨架+账本（不看珠子，不给 Center）→ 宏观选路 → 珠子去词化 → 一次成图；无后续改写",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "Q_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        }
+      },
+      "model": "g6"
+    },
+    {
+      "id": "A2",
+      "prompt_file": "Q_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}"
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "Q_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3"
+      },
+      "model": "g6"
+    }
+  ],
+  "final": "A4",
+  "edits": [
+    {
+      "prompt_file": "Q_A3.txt",
+      "old": "只输出结构化结果。",
+      "new": [
+        "step:A2",
+        {
+          "text": "CENTER"
+        }
+      ]
+    }
+  ]
+}

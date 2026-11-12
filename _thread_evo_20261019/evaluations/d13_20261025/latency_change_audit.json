@@ -1,0 +1,123 @@
+{
+  "created_utc": "2026-10-25T23:55:00.390300+00:00",
+  "breakpoint": "2026-10-25T17:54:00-04:00, first ASYNC_TOPIC_REQUIRED start; not a proven model-routing change",
+  "group_assignment": "Request start time; successful backend jobs on gpt4 only",
+  "snapshot_source": "latency_change_initial_rows.json, collected before new ModelTrace probes",
+  "groups": {
+    "before": {
+      "all_successful_tasks": {
+        "n": 156,
+        "median_seconds": 38.3905,
+        "mean_seconds": 90.72202564102564,
+        "min_seconds": 12.234,
+        "max_seconds": 859.187,
+        "median_response_characters": 839.5
+      },
+      "music_generation_only": {
+        "n": 88,
+        "median_seconds": 22.8745,
+        "mean_seconds": 24.970761363636363,
+        "min_seconds": 12.234,
+        "max_seconds": 57.766,
+        "median_response_characters": 749.5
+      },
+      "music_excluding_invalid_v5_v6": {
+        "n": 88,
+        "median_seconds": 22.8745,
+        "mean_seconds": 24.970761363636363,
+        "min_seconds": 12.234,
+        "max_seconds": 57.766,
+        "median_response_characters": 749.5
+      },
+      "v2_only": {
+        "n": 58,
+        "median_seconds": 23.6565,
+        "mean_seconds": 25.68539655172414,
+        "min_seconds": 13.875,
+        "max_seconds": 57.766,
+        "median_response_characters": 737.0
+      }
+    },
+    "after": {
+      "all_successful_tasks": {
+        "n": 48,
+        "median_seconds": 46.703500000000005,
+        "mean_seconds": 47.55108333333333,
+        "min_seconds": 20.406,
+        "max_seconds": 88.797,
+        "median_response_characters": 1029.0
+      },
+      "music_generation_only": {
+        "n": 47,
+        "median_seconds": 47.469,
+        "mean_seconds": 48.12231914893617,
+        "min_seconds": 20.406,
+        "max_seconds": 88.797,
+        "median_response_characters": 1031
+      },
+      "music_excluding_invalid_v5_v6": {
+        "n": 28,
+        "median_seconds": 55.4375,
+        "mean_seconds": 53.58089285714286,
+        "min_seconds": 26.047,
+        "max_seconds": 88.797,
+        "median_response_characters": 1095.5
+      },
+      "v2_only": {
+        "n": 16,
+        "median_seconds": 47.4925,
+        "mean_seconds": 51.9208125,
+        "min_seconds": 26.047,
+        "max_seconds": 88.797,
+        "median_response_characters": 1129.5
+      }
+    }
+  },
+  "same_section_controls": [
+    {
+      "variant": "B",
+      "work": "op61",
+      "section": "02",
+      "before": {
+        "n": 1,
+        "median_seconds": 29.0,
+        "mean_seconds": 29.0,
+        "min_seconds": 29.0,
+        "max_seconds": 29.0,
+        "median_response_characters": 846
+      },
+      "after": {
+        "n": 1,
+        "median_seconds": 45.531,
+        "mean_seconds": 45.531,
+        "min_seconds": 45.531,
+        "max_seconds": 45.531,
+        "median_response_characters": 1352
+      },
+      "runs": [
+        {
+          "rid": "D13_d13v2B_56_op61_r2_S02_66bf18ddccab",
+          "t": "2026-10-25T17:53:46.029193-04:00",
+          "side": "before",
+          "sec": 29.0,
+          "chars": 846
+        },
+        {
+          "rid": "D13_d13v2B_56_op61_r1_S02_3dd113343460_attempt2",
+          "t": "2026-10-25T18:01:58.229523-04:00",
+          "side": "after",
+          "sec": 45.531,
+          "chars": 1352
+        }
+      ],
+      "control_limit": "Same version/variant/work/section; distinct self-generated histories, not identical full input."
+    }
+  ],
+  "limitations": [
+    "Elapsed wall time includes waiting/transport/output; internal thinking time and reasoning-token usage are unavailable.",
+    "Post-breakpoint successful answers are a selected subset; incomplete calls cannot be treated as fast answers.",
+    "v1/v2/v3 versus v4-v8 differ in prompt and context; full same-input pre/post pairs were not found.",
+    "The completed independent quality reviews do not supply a balanced matched pre/post sample; quality change is not statistically established.",
+    "No claim that preserved requested/returned model slugs authenticate serving weights or compute allocation."
+  ]
+}

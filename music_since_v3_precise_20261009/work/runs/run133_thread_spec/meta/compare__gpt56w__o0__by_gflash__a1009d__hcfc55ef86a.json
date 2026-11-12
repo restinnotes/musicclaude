@@ -1,0 +1,126 @@
+{
+  "job_id": "compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a",
+  "branch": "compare",
+  "model_key": "gflash",
+  "model_name": "gemini-3.8-flash-high",
+  "argv": [
+    "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE",
+    "run",
+    "--standalone",
+    "--format",
+    "json",
+    "--model",
+    "antigravity-tools/gemini-3.8-flash-high"
+  ],
+  "stdin_mode": "raw",
+  "prompt_file": "prompts/compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a.txt",
+  "prompt_version": "THREAD_COMPARE_v0",
+  "prompt_template": "prompts/tooling/THREAD_COMPARE_v0.txt",
+  "work_key": "op60",
+  "work_name": "肖邦《船歌》升F大调 Op.60",
+  "sample": 1,
+  "started": "2026-10-09T14:40:00",
+  "ended": "2026-10-09T14:42:34",
+  "seconds": 154.5,
+  "exit_code": 0,
+  "status": "ok",
+  "error": null,
+  "attempts": 1,
+  "output_file": "outputs/compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a.md",
+  "stdout_file": "outputs/raw/compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a.stdout.txt",
+  "stderr_file": "outputs/raw/compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a.stderr.txt",
+  "output_chars": 1108,
+  "replacement_chars": 0,
+  "tool_counts": {},
+  "extra": {
+    "gen_model": "gpt56w",
+    "order": 0,
+    "attempt": 0
+  },
+  "request_identity": {
+    "schema": "20261009.1",
+    "producer": {
+      "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a",
+      "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+      "route": "raw",
+      "model_name": "gemini-3.8-flash-high",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE",
+        "run",
+        "--standalone",
+        "--format",
+        "json",
+        "--model",
+        "antigravity-tools/gemini-3.8-flash-high"
+      ],
+      "cli_files": {
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE": "9200532515a146e5b0788c8d32df9beb07d95c90900111062c9ff7ba04883c65"
+      },
+      "gemini_config_sha256": "f6e91950fa4638c4ff94599f5f494b3e1efd8963397abc1533b5d561faca9ac6"
+    },
+    "model_key": "gflash",
+    "prompt_sha256": "cfc55ef86ab0cd5c24fb8cdf5aba7fca06804b1ae09c50474f03cefd65419603",
+    "prompt_version": "THREAD_COMPARE_v0",
+    "prompt_template": "prompts/tooling/THREAD_COMPARE_v0.txt",
+    "work_key": "op60",
+    "sample": 1,
+    "forbid_tools": [
+      "bash",
+      "edit",
+      "glob",
+      "grep",
+      "read",
+      "webfetch",
+      "websearch",
+      "write"
+    ],
+    "extra_sha256": "916fac790632e22bda89e80719f59959edf3de2aa2d7b9c15a6f340756330584",
+    "image_sha256": {},
+    "sampling_key": "compare__gpt56w__o0__by_gflash__a1009d__hcfc55ef86a"
+  },
+  "producer_identity": {
+    "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a",
+    "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+    "route": "raw",
+    "model_name": "gemini-3.8-flash-high",
+    "argv": [
+      "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE",
+      "run",
+      "--standalone",
+      "--format",
+      "json",
+      "--model",
+      "antigravity-tools/gemini-3.8-flash-high"
+    ],
+    "cli_files": {
+      "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE": "9200532515a146e5b0788c8d32df9beb07d95c90900111062c9ff7ba04883c65"
+    },
+    "gemini_config_sha256": "f6e91950fa4638c4ff94599f5f494b3e1efd8963397abc1533b5d561faca9ac6"
+  },
+  "response_sha256": "c449988389f5d1da07bee90b05bfaee458a224019c22618b920b2fc899762c4b",
+  "prompt_sha256": "cfc55ef86ab0cd5c24fb8cdf5aba7fca06804b1ae09c50474f03cefd65419603",
+  "automatic_retry": false,
+  "retry_safe": null,
+  "queue_stop": false,
+  "raw_redacted": true,
+  "consumer_identity": {
+    "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a",
+    "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+    "route": "raw",
+    "model_name": "gemini-3.8-flash-high",
+    "argv": [
+      "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE",
+      "run",
+      "--standalone",
+      "--format",
+      "json",
+      "--model",
+      "antigravity-tools/gemini-3.8-flash-high"
+    ],
+    "cli_files": {
+      "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.EXE": "9200532515a146e5b0788c8d32df9beb07d95c90900111062c9ff7ba04883c65"
+    },
+    "gemini_config_sha256": "f6e91950fa4638c4ff94599f5f494b3e1efd8963397abc1533b5d561faca9ac6"
+  },
+  "attempts_requested": 1
+}

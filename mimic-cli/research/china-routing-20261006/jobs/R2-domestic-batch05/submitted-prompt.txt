@@ -1,0 +1,1595 @@
+你是mg独立国内样本审计员 R2-domestic-batch05。这是三份独立研究完成后的新审计会话，不属于24个研究复本，不是最后4个裁决员。
+本次范围仅["C13", "C14", "C15"]，哪怕原报告包含其他品类也不要审计其他品类。禁止查询任何候选的海外价格、覆盖、销售或进口节省。2026-10-06。必须实际浏览来源；HTTP200或研究员自称VERIFIED不等于核验通过。
+核对这3类全部候选是否真实、精确型号/规格是否能定义；打开引用的中国国内榜单、旗舰、消费者证据。区分销量排名、推荐排名、浏览/评论数、variant汇总评论和真实销量，不把它们混为一谈。官方型号存在不等于国内畅销。评论/图文若AIGC或来源壳页要降级。逐候选保留原job_id和candidate ID，以及可识别的品牌/型号/版本。每个sku必须进入candidate_audits；缺失写null。普通价、会员价、88VIP、定向券、国补和旧价分别记录；无法登录不能猜成交价。
+给每个候选质量等级：VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT；VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT；VERIFIED_MODEL_ONLY_HEAD_UNVERIFIED；PROVISIONAL_VARIANT；UNVERIFIED_BLOCKED；EXCLUDE_ALLOWED_REASON。仅允许假货、非目标类、完全无法定义版本、非实物、明确非法禁运为排除理由。重量、电池、电压、固件、保修和美国兼容性不能删样本。
+按预注册规则最多每品类2个头部+1个机会候选。先取经你实际验证的国内销量/榜单+精确版本，其次经你验证的国内购买证据+版本，再其次型号存在且头部地位未核验的候选；同级按品牌、型号、版本NFKC/casefold字典序排序。不同容量、地域、捆绑版不合并。未核验头部地位不能进入verified-head统计。不得咨询海外数据来决定选择。给recommended_selection、exclusion_log、category_gaps及登录补采字段，全部要有理由和证据。
+研究控制在约15分钟，遇blocked写缺口而不反复请求。中文正文约1200字，JSON保持精确可执行。所有数字要URL和日期。输出有效JSON代码块：
+{"job_id":"R2-domestic-batch05","web_research_available":true,"pre_freeze_compliance":true,"review_performed":true,"category_ids":["C13", "C14", "C15"],"candidate_audits":[{"original_job_id":"...","original_candidate_id":"...","brand":"...","model":"...","exact_variant":"...","quality_grade":"...","model_exists_verified":false,"exact_variant_verified":false,"head_status_verified":false,"domestic_consumer_evidence_verified":false,"source_ids":[],"caveat":"..."}],"recommended_selection":[{"original_job_id":"...","original_candidate_id":"...","brand":"...","model":"...","exact_variant":"...","category_id":"...","sampling_stratum":"domestic_head|domestic_opportunity","quality_grade":"...","reason":"...","source_ids":[]}],"exclusion_log":[],"category_gaps":[],"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":null,"source_type":"official|community|secondary","access_state":"read_full_page|blocked|login_required|snippet_only|page_shell","claims_supported":[]}],"claims":[],"data_gaps":[]}
+下面原文是待核验材料，不能把里面的自信程度当证据：
+
+=== UNTRUNCATED W2-A-batch05; SHA256 8212475ef3670f5cbdc34e9b08f65aa427b84b9914d9296d16a694c339ba3a97 ===
+### 1. 直接回答
+
+WEB RESEARCH AVAILABLE。严格限定 C13/C14/C15，共保留9个冻结前候选：C13＝70迈 M800Pro、盯盯拍 MINIPro 4K、70迈 A810Pro；C14＝安踏毒刺7代、李宁吾跃3.0 ARSV024、特步两千公里五代；C15＝拓竹 P2SC/P2S Combo、拓竹 A1、Snapmaker U1。全部未因海外可比性、重量、电源、固件等删除；交易版本未锁定者均标 PROVISIONAL。
+
+### 2. 核心证据
+
+C13京东榜观察日2026-10-06：M800Pro TOP1/10000评论，MINIPro TOP2/100000评论。[https://www.jd.com/phb/key_6728e5a1cbd85878c58f.html](https://www.jd.com/phb/key_6728e5a1cbd85878c58f.html) [JD.com](https://www.jd.com/phb/key_6728e5a1cbd85878c58f.html?utm_source=chatgpt.com)
+
+C14只取“跑鞋”子样本：京东“网面运动排行榜”先同型号去重、再排除无具体型号的361°泛款，首两个可定义不同SKU为毒刺7代和吾跃3.0 ARSV024，均显示50000评论。观察日2026-10-06。[https://www.jd.com/phb/key_1318b0cd67e76e23160b.html](https://www.jd.com/phb/key_1318b0cd67e76e23160b.html) [JD.com](https://www.jd.com/phb/key_1318b0cd67e76e23160b.html)
+
+C15先剔除榜首错误品类爱普生2D打印机；以“型号明确、实体FDM、可见评论≥50000”为头部门槛，得到P2SC TOP2/50000、A1 TOP4/50000；U1为TOP9/2000评论机会款。观察日2026-10-06。[https://www.jd.com/phb/key_6708052b8ebbbc3eabc.html](https://www.jd.com/phb/key_6708052b8ebbbc3eabc.html) [JD.com](https://www.jd.com/phb/key_6708052b8ebbbc3eabc.html)
+
+冻结前价格分层规则固定为：C13低≤399元、中400–799、高≥800；C14低≤300、中301–600、高>600；C15低<2000、中2000–4999、高≥5000。只认精确SKU未登录可见普通价；会员/定向券分开。当前大量京东页仅出现“¥”占位，故不猜价格档。
+
+### 3. 一级来源
+
+拓竹中国站确认A1的AMS lite多色、全自动校准、主动流量校准等规格，但不作为销量证据；观察2026-10-06。[https://bambulab.cn/zh-cn/a1](https://bambulab.cn/zh-cn/a1) [Bambu Lab](https://bambulab.cn/zh-cn/a1) Snapmaker中国官网确认U1四打印头、5秒换头、多材料和标称500mm/s；同样仅证明规格。[https://www.snapmaker.cn/snapmaker-u1](https://www.snapmaker.cn/snapmaker-u1) [Snapmaker](https://www.snapmaker.cn/snapmaker-u1)
+
+### 4. 社区证据
+
+A810Pro的SMZDM文章发布于2025-08-26，作者称进行一个月体验；汽车之家车主实测发布于2026-01-26。[https://post.smzdm.com/p/a9km5z05/](https://post.smzdm.com/p/a9km5z05/) [https://club.autohome.com.cn/bbs/thread/6587451d5649173a/114233850-1.html](https://club.autohome.com.cn/bbs/thread/6587451d5649173a/114233850-1.html) [什么值得买](https://post.smzdm.com/p/a9km5z05/) 特步两千公里五代社区体验发布2026-09-03，作者称穿用一个多月；同时京东品牌榜显示TOP1/20000评论。[https://post.smzdm.com/p/apqxk0ww/](https://post.smzdm.com/p/apqxk0ww/) [https://www.jd.com/phb/key_1318b6df3c1e1185f2f6.html](https://www.jd.com/phb/key_1318b6df3c1e1185f2f6.html) [什么值得买](https://post.smzdm.com/p/apqxk0ww/)
+
+### 5. 反向证据
+
+A810Pro车主称相对速度超过约35km/h或目测距离超过10m时号牌会模糊，并嫌2.4GHz Wi-Fi下载慢；SMZDM评论另有高温后粘贴脱落及“到手坏”个案，均只能视作个例。[Autohome Club](https://club.autohome.com.cn/bbs/thread/6587451d5649173a/114233850-1.html) 特步体验明确指出鞋楦偏窄、80kg以上跑者缓震上限可能不足、夏季长跑偏闷。[什么值得买](https://post.smzdm.com/p/apqxk0ww/)
+
+### 6. 置信度
+
+榜单“当日可见排名/评论数”置信度高；由此定义“国内头部样本”的代表性为中等，因为排名动态且评论数不是成交量。机会款置信度中等：有真实国内体验，但社区样本数小。所有需要存储、尺码、配色或套装锁定的候选仍为PROVISIONAL。
+
+### 7. 数据缺口
+
+AUTHENTICATED DATA REQUIRED：当前普通价、会员/定向券价、seller_id、库存和精确结算版本。毒刺7代和特步两千公里五代详情页本次触发京东风险校验后即停止重试。([Invalid URL]()) A810Pro可见京东列表虽能锁到“主机+128G卡×双镜头”，却显示0+评论，且直达item_id未可靠解析。观察2026-10-06。[https://www.jd.com/hprm/73766f9f6ffdcfc0652.html](https://www.jd.com/hprm/73766f9f6ffdcfc0652.html) [JD.com](https://www.jd.com/hprm/73766f9f6ffdcfc0652.html)
+
+### 8. 意外发现
+
+C15京东“3d打印排行榜”榜首实际是爱普生普通打印机，说明关键词榜存在类目污染；C14同一型号多次重复占位，因此原始名次不能直接当干净SKU榜。另有搜索摘要与实际打开动态页不一致的情况，本结果全部以实际打开页面为准，不用摘要定型号、价格或排名。[JD.com](https://www.jd.com/phb/key_6708052b8ebbbc3eabc.html)
+
+### 9. 自我反驳
+
+这不是“全国真实GMV前二”结论：京东公开榜单算法未知，评论可能跨变体累积；社区文章可能有主观或商业偏差；品牌官网又只能证明规格。因此本批产物应理解为**可复现的冻结前选样池**，不能替代登录态旗舰店成交数据。
+
+### 10. 下一实验
+
+冻结前下一步只补现有9个SKU：登录态锁定item_id/seller_id、普通价与会员/券价、精确尺码/存储/线材/AMS套装，并截取旗舰店销量或成交信号；不继续扩展其他运动户外子类，也不查询任何海外市场数据。
+
+```json
+{
+  "job_id": "W2-A-batch05",
+  "parent_replicate": "W2-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C13",
+      "name": "汽车用品",
+      "subscope": "行车记录仪",
+      "domestic_head_rule": "观察日打开京东“行车记录仪吧排行榜”，按榜单顺序取前2个型号明确、实体且品类正确的SKU；不按海外知名度重排。",
+      "domestic_opportunity_rule": "需有国内社区/消费者实测，并出现可验证的差异点或痛点；不要求进入头部。",
+      "price_tier_rule": {
+        "low": "未登录可见的精确普通价 <= CNY 399",
+        "mid": "CNY 400-799",
+        "high": ">= CNY 800",
+        "normalization": "以精确核心SKU普通价计；会员价、定向券、安装、可选存储卡/监控线分开；不可见则unknown"
+      }
+    },
+    {
+      "category_id": "C14",
+      "name": "运动与户外",
+      "subscope": "跑鞋（本批仅作为运动户外的可验证子样本，不外推至其他运动/户外子类）",
+      "domestic_head_rule": "观察日打开京东跑步鞋“网面运动排行榜”，先按型号去重，排除型号/版本无法定义的泛款，再按首次出现名次取前2个合格SKU。",
+      "domestic_opportunity_rule": "需同时有国内购买信号和近期第一人称社区使用证据，优先保留明确适用边界/反向证据的SKU。",
+      "price_tier_rule": {
+        "low": "精确尺码/配色普通价 <= CNY 300",
+        "mid": "CNY 301-600",
+        "high": "> CNY 600",
+        "normalization": "每双普通价；会员/定向券单列；尺码配色未锁定或普通价不可见则unknown"
+      }
+    },
+    {
+      "category_id": "C15",
+      "name": "爱好、3D打印与创客",
+      "subscope": "桌面消费级FDM 3D打印机",
+      "domestic_head_rule": "观察日打开京东“3d打印排行榜”，先排除非3D打印机的错误品类，再在型号明确的实体FDM机中以可见评论数>=50000为头部门槛，按榜单首次出现顺序取前2个不同型号。",
+      "domestic_opportunity_rule": "不满足头部门槛但有国内消费者购买证据，并有一级来源可确认差异化结构/功能的型号可入机会层。",
+      "price_tier_rule": {
+        "low": "精确上市套餐普通价 < CNY 2000",
+        "mid": "CNY 2000-4999",
+        "high": ">= CNY 5000",
+        "normalization": "按精确机器/套装普通价；耗材和可选配件不并入；价格不可见则unknown"
+      }
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "C13-H1",
+      "brand": "70迈 (70MAI)",
+      "model": "M800Pro",
+      "exact_variant": "2026新款；前后双录；4K；4G停车监控；存储卡/监控线/安装套餐未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开榜单TOP1，页面显示10000人评论；标题明确M800Pro、前后双录、4K、4G停车监控。",
+      "domestic_selection_rule": "C13头部规则中第1个合格SKU。",
+      "domestic_product_url": "https://item.jd.com/100357791508.html",
+      "item_id": "100357791508",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_detail_only_public_shell; AUTHENTICATED DATA REQUIRED for price/seller/bundle",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "vehicle_power_installation",
+        "4G_or_hardwire_service_dependency_to_verify",
+        "storage_bundle_variation",
+        "app_firmware_compatibility_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_BUNDLE_UNVERIFIED",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "C13-H2",
+      "brand": "盯盯拍 (DDPAI)",
+      "model": "MINIPro 4K",
+      "exact_variant": "2026新款；4K；360度旋转；停车监控；存储/供电套餐未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开榜单TOP2，页面显示100000人评论；标题明确MINIPro、4K、360度旋转和停车监控。",
+      "domestic_selection_rule": "C13头部规则中第2个合格SKU。",
+      "domestic_product_url": "https://item.jd.com/100323403254.html",
+      "item_id": "100323403254",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_detail_only_public_shell; AUTHENTICATED DATA REQUIRED for price/seller/bundle",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "vehicle_power_installation",
+        "parking_monitoring_hardwire_dependency_to_verify",
+        "storage_bundle_variation",
+        "app_firmware_compatibility_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_BUNDLE_UNVERIFIED",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "C13-O1",
+      "brand": "70迈 (70MAI)",
+      "model": "A810Pro",
+      "exact_variant": "京东可见列表为A810Pro 4K前摄、前后双摄、套餐一主机+128G卡×双镜头；社区样本与该套餐是否完全同款未核验",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开列表可见精确A810Pro套餐但显示0+评论；SMZDM有一月深度体验，汽车之家有2026-01车主夜间实测，且两处均出现明确边界/反向信号。",
+      "domestic_selection_rule": "有国内社区实测和可操作反向证据，但当前可见交易信号不足以列为头部，因此进入机会层。",
+      "domestic_product_url": "https://www.jd.com/hprm/73766f9f6ffdcfc0652.html",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "listing_read_full; direct_item_unresolved; AUTHENTICATED DATA REQUIRED for exact item_id/price/seller",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "vehicle_power_installation",
+        "supercapacitor_reported_by_domestic_community",
+        "4G_monitoring_line_or_service_dependency",
+        "app_firmware_dependency",
+        "mount_adhesion_issue_reported_anecdotally"
+      ],
+      "verification_status": "PROVISIONAL_BUNDLE_MATCH_UNVERIFIED",
+      "source_ids": ["S02", "S03", "S04"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "C14-H1",
+      "brand": "安踏 (ANTA)",
+      "model": "毒刺7代",
+      "exact_variant": "男款无板竞训缓震跑鞋；榜单标题为黑色；尺码和具体款号未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东跑步鞋“网面运动排行榜”去重后首个型号明确SKU，首次出现TOP1，页面显示50000人评论。",
+      "domestic_selection_rule": "C14头部规则第1个合格SKU。",
+      "domestic_product_url": "https://item.jd.com/100291801686.html",
+      "item_id": "100291801686",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_page_blocked_by_jd_risk_check; AUTHENTICATED DATA REQUIRED",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "size_color_variant",
+        "fit_width_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_SIZE_COLOR_STYLECODE_UNVERIFIED",
+      "source_ids": ["S05", "S11"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "C14-H2",
+      "brand": "李宁 (LI-NING)",
+      "model": "吾跃3.0",
+      "exact_variant": "ARSV024，女款网面舒适体测跑鞋；尺码/配色未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "同一京东榜单中，去重并排除型号不可定义的361°泛款后，下一款型号明确的不同SKU为吾跃3.0 ARSV024，首次出现TOP8，页面显示50000人评论。",
+      "domestic_selection_rule": "C14头部规则第2个合格SKU。",
+      "domestic_product_url": "https://item.jd.com/100134530185.html",
+      "item_id": "100134530185",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_page_opened_but_price_hidden; AUTHENTICATED DATA REQUIRED for current price/seller_id/size-color",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "size_color_variant",
+        "fit_width_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_SIZE_COLOR_UNVERIFIED",
+      "source_ids": ["S05"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "C14-O1",
+      "brand": "特步 (XTEP)",
+      "model": "两千公里五代",
+      "exact_variant": "标准版（非PRO）男子跑鞋；尺码/配色未锁定",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东特步运动鞋榜首次出现TOP1、显示20000人评论；SMZDM 2026-09-03作者称穿用一个多月，并给出鞋楦、体重与闷热边界。",
+      "domestic_selection_rule": "同时满足国内购买信号+近期第一人称社区使用证据，且反向边界清楚。",
+      "domestic_product_url": "https://item.jd.com/100226684687.html",
+      "item_id": "100226684687",
+      "seller_id": null,
+      "access_state": "ranking_read_full; community_read_full; item_page_blocked_by_jd_risk_check; AUTHENTICATED DATA REQUIRED",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null,
+        "community_reported_list_cny": 499
+      },
+      "price_type": "community_reported_list_price_only; checkout_price_not_verified; author_said_paid_300_plus_but_not_exact",
+      "feasibility_flags": [
+        "size_color_variant",
+        "narrow_last_reported",
+        "over_80kg_cushion_limit_reported",
+        "hot_weather_breathability_limit_reported"
+      ],
+      "verification_status": "PROVISIONAL_SIZE_COLOR_AND_CURRENT_PRICE_UNVERIFIED",
+      "source_ids": ["S06", "S07", "S12"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "C15-H1",
+      "brand": "拓竹 (Bambu Lab)",
+      "model": "P2SC / P2S Combo",
+      "exact_variant": "榜单标题为“P2SC…P2S 多色套装”；是否等同大陆版P2SC及具体套装边界需详情页确认",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东“3d打印排行榜”排除错误品类后，首个满足评论>=50000门槛的实体FDM机；榜单TOP2，显示50000人评论。",
+      "domestic_selection_rule": "C15头部规则第1个合格SKU。",
+      "domestic_product_url": "https://item.jd.com/100285504398.html",
+      "item_id": "100285504398",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_detail_public_shell; AUTHENTICATED DATA REQUIRED for package/price/seller",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "mains_power",
+        "large_bulky_to_verify",
+        "filament_fume_management",
+        "firmware_app_cloud_dependency_to_verify",
+        "package_boundary"
+      ],
+      "verification_status": "PROVISIONAL_P2SC_P2S_COMBO_NOMENCLATURE_UNVERIFIED",
+      "source_ids": ["S08"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "C15-H2",
+      "brand": "拓竹 (Bambu Lab)",
+      "model": "A1",
+      "exact_variant": "A1 大陆版；单机还是含AMS lite组合未从京东公开详情锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "同一京东榜单TOP4，显示50000人评论；官方中国站确认A1存在并列出自动校准、AMS lite多色能力等规格。",
+      "domestic_selection_rule": "C15头部规则第2个满足评论>=50000且型号明确的不同SKU。",
+      "domestic_product_url": "https://item.jd.com/100225243342.html",
+      "item_id": "100225243342",
+      "seller_id": null,
+      "access_state": "ranking_read_full; official_read_full; item_detail_public_shell; AUTHENTICATED DATA REQUIRED for package/price/seller",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "mains_power",
+        "open_frame",
+        "filament_fume_management",
+        "app_cloud_or_lan_mode",
+        "mainland_region_variant",
+        "AMS_lite_optional_bundle"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_PACKAGE_UNVERIFIED",
+      "source_ids": ["S08", "S09"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "C15-O1",
+      "brand": "Snapmaker 快造",
+      "model": "U1",
+      "exact_variant": "U1 独立4打印头桌面FDM机；具体销售包/配件未锁定",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东榜单TOP9，显示2000人评论并有购买后四色打印评价；Snapmaker中国官网确认4打印头、5秒换头、多色多材料与500mm/s等结构性差异。",
+      "domestic_selection_rule": "未达到C15头部门槛，但有国内消费者购买证据且一级来源确认差异化多打印头架构。",
+      "domestic_product_url": "https://item.jd.com/100229448381.html",
+      "item_id": "100229448381",
+      "seller_id": null,
+      "access_state": "ranking_read_full; item_detail_public_shell; official_read_full; AUTHENTICATED DATA REQUIRED for package/price/seller",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_or_targeted_cny": null
+      },
+      "price_type": "not_observable_logged_out",
+      "feasibility_flags": [
+        "mains_power",
+        "four_toolhead_mechanical_complexity",
+        "filament_fume_management",
+        "app_firmware_dependency",
+        "large_bulky_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_SALES_PACKAGE_UNVERIFIED",
+      "source_ids": ["S08", "S10"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_6728e5a1cbd85878c58f.html",
+      "title": "行车记录仪吧排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/hprm/73766f9f6ffdcfc0652.html",
+      "title": "A810 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://post.smzdm.com/p/a9km5z05/",
+      "title": "70迈A810Pro行车记录仪：把开车那点事儿拍得比电影还清楚",
+      "published_at": "2025-08-26T14:54:43+08:00",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02", "K03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://club.autohome.com.cn/bbs/thread/6587451d5649173a/114233850-1.html",
+      "title": "车主实测|70迈A810Pro行车记录仪夜视性能",
+      "published_at": "2026-01-26T16:07:44+08:00",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/phb/key_1318b0cd67e76e23160b.html",
+      "title": "网面运动排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/phb/key_1318b6df3c1e1185f2f6.html",
+      "title": "京东网特步运动鞋排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/p/apqxk0ww/",
+      "title": "特步两千公里五代体验",
+      "published_at": "2026-09-03T16:22:18+08:00",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05", "K06"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_6708052b8ebbbc3eabc.html",
+      "title": "3d打印排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://bambulab.cn/zh-cn/a1",
+      "title": "拓竹 A1 | 桌面级3D打印机 | Bambu Lab CN",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.snapmaker.cn/snapmaker-u1",
+      "title": "Snapmaker U1 Toolchanger 3D Printer",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K09"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://item.jd.com/100291801686.html",
+      "title": "安踏毒刺7代 - 京东商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://item.jd.com/100226684687.html",
+      "title": "特步两千公里五代 - 京东商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": ["K05"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "2026-10-06打开的京东行车记录仪榜单中，70迈M800Pro为TOP1且显示10000人评论，盯盯拍MINIPro为TOP2且显示100000人评论。",
+      "classification": "FACT",
+      "source_ids": ["S01"],
+      "confidence": "high",
+      "counterevidence": "榜单是动态算法页，评论数不是成交件数，也可能聚合变体；本研究只把它当公开头部购买信号。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "A810Pro有国内社区一月体验和京东精确套餐列表，但观察到的该精确列表显示0+评论，因此本批仅列机会SKU而非头部。",
+      "classification": "INFERENCE",
+      "source_ids": ["S02", "S03"],
+      "confidence": "medium",
+      "counterevidence": "社区文章不能代表总体销量；另有A810系列其他变体存在，当前精确套餐可能是新链接或新卖家。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "A810Pro反向证据包括汽车之家车主称相对时速超过约35km/h或距离超过约10m时号牌会模糊、2.4G Wi-Fi下载慢；SMZDM评论区另有高温粘贴脱落和到手故障个案。",
+      "classification": "FACT",
+      "source_ids": ["S03", "S04"],
+      "confidence": "medium",
+      "counterevidence": "均为个体实测/评论，不能推导故障率或普遍性能上限。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "C14跑鞋头部样本按同一京东榜单去重并排除型号不可定义泛款后，取安踏毒刺7代和李宁吾跃3.0 ARSV024；两者页面均显示50000人评论。",
+      "classification": "INFERENCE",
+      "source_ids": ["S05", "S11"],
+      "confidence": "medium",
+      "counterevidence": "该榜单重复同款多次，且361°泛款显示1000000人评论但型号无法定义，说明榜单并非干净SKU级销量表。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "特步两千公里五代在特步京东运动鞋榜首次出现TOP1且显示20000人评论；2026-09-03社区作者称已穿一个多月。",
+      "classification": "FACT",
+      "source_ids": ["S06", "S07", "S12"],
+      "confidence": "medium",
+      "counterevidence": "品牌内榜不等于全市场排名；社区文章点赞/评论为0，且当前商品详情页被风险校验拦截。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "特步两千公里五代社区样本报告鞋楦偏窄、80kg以上跑者可能觉得缓震上限不足、夏季长跑会闷。",
+      "classification": "FACT",
+      "source_ids": ["S07"],
+      "confidence": "medium",
+      "counterevidence": "单一作者体验，未做多人/实验室复核。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "2026-10-06打开的京东3D打印榜中，排除错误品类的爱普生2D打印机后，P2SC位列TOP2且显示50000人评论，A1位列TOP4且显示50000人评论，Snapmaker U1位列TOP9且显示2000人评论。",
+      "classification": "FACT",
+      "source_ids": ["S08"],
+      "confidence": "high",
+      "counterevidence": "榜单存在明显关键词/类目污染，且评论数不是成交量。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "拓竹中国官网确认A1具备AMS lite多色、全自动校准、主动流量校准等功能；该官网不构成销量证据。",
+      "classification": "FACT",
+      "source_ids": ["S09"],
+      "confidence": "high",
+      "counterevidence": "品牌一级来源只证明规格/存在，不证明市场需求或真实长期可靠性。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "Snapmaker中国官网确认U1为4打印头、5秒换头、多色多材料、标称500mm/s的桌面FDM机；页面仍保留“计划于2025年12月推送OTA”措辞，因此本批不把当前AI监控固件状态视为已核验。",
+      "classification": "INFERENCE",
+      "source_ids": ["S10"],
+      "confidence": "medium",
+      "counterevidence": "4打印头等硬件声明为官方资料；AI监控的当前固件实际状态需要独立版本页或机器实测确认。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个候选的当前普通成交价/会员或定向券价、seller_id、当前库存，以及尺码/配色/存储卡/线材/AMS等精确结算版本。未登录京东多处只显示“¥”占位，不录为价格。",
+    "AUTHENTICATED DATA REQUIRED：安踏毒刺7代和特步两千公里五代商品详情在本次打开时触发京东风险校验；按要求未反复尝试。",
+    "C13：A810Pro精确直达item_id本次未解析成功；京东可见列表的精确套餐显示0+评论，且社区文章与该具体套餐的一致性未核验。",
+    "C14：本批仅研究跑鞋子样本，不外推到球类、健身器械、露营等其他运动与户外子类；这是覆盖缺口，不是负面结论。",
+    "C14：仅特步社区文章给出标价499及“300出头”到手描述；后者非精确数字且未核验结算，因此未写入普通价/券后价。",
+    "C15：P2SC/P2S Combo命名边界、A1单机与AMS lite套装边界需要登录商品详情锁定。",
+    "C15：U1页面的历史OTA措辞提示固件状态需另查版本页或实机，不在本批继续扩张。",
+    "合规：未查询任何具体SKU的美国/海外价格、销售、供货或Temu/AliExpress覆盖；可行性标记未用于删候选。"
+  ]
+}
+```
+=== UNTRUNCATED W2-B-batch05; SHA256 b7e2d8ad0e6dfc5aa3bc04e650e443fab263dffab68251ed3b0d36e5b95e992e ===
+## 1. 直接回答
+
+本批次仅覆盖 **C13/C14/C15**，形成 **9 个冻结前候选：6 个 domestic_head + 3 个 domestic_opportunity**；未因海外运输、电池、固件、电压、保修或兼容性删除任何候选。头部判断只使用公开京东页面的自营/评论购买信号，**评论数不等同成交量**。
+
+可复现价格分层规则：对同一功能 lane 在同一平台固定结果页取前 12 个“可明确版本的实物 SKU”，只采公开普通价，升序后三等分为 low/mid/high；会员价、定向券、登录后到手价不进入分层。若普通价不完整，本轮标 `UNASSIGNED_AUTH_REQUIRED`，不据此淘汰。
+
+候选为：C13 小米充气宝2D、70迈 A810Pro“无卡+监控线”、米家充气宝2 MJCQB06QW；C14 李宁战戟5000 4U空拍、红双喜F4002、霜将青蛇Pro（PROVISIONAL）；C15 拓竹A1单机大陆版、A1C大陆版（套装细节PROVISIONAL）、A1 mini单机大陆版。
+
+## 2. 核心证据
+
+C13 京东车载充气泵公开页显示，小米充气宝2D为自营、`500000+`评论；米家充气宝2为自营、`200000+`评论。70迈A810Pro“无卡+监控线”为自营、`10000+`评论。观察日期均为 **2026-10-06**。[https://www.jd.com/hprm/672806ce07058c233472.html](https://www.jd.com/hprm/672806ce07058c233472.html) [https://www.jd.com/brand/73766f9f6ffdcfc0652.html](https://www.jd.com/brand/73766f9f6ffdcfc0652.html) [JD.com](https://www.jd.com/hprm/672806ce07058c233472.html)
+
+C14 的京东“李宁羽毛球拍自营排行”明确列出战戟5000 **4U空拍、20000+评论、自营**；红双喜F4002横拍为 **50000+评论、自营**。观察 **2026-10-06**。[https://www.jd.com/hotitem/131869fbaf0e093680d6.html](https://www.jd.com/hotitem/131869fbaf0e093680d6.html) [https://www.jd.com/hprm/13180fd91af039abe468.html](https://www.jd.com/hprm/13180fd91af039abe468.html) [JD.com](https://www.jd.com/hotitem/131869fbaf0e093680d6.html)
+
+C15 京东页显示拓竹A1、A1C大陆版均有 **50000+评论且自营**；A1 mini单机大陆版为`20000+`评论。观察 **2026-10-06**。[https://www.jd.com/brand/670d97890cd9003d52b.html](https://www.jd.com/brand/670d97890cd9003d52b.html) [JD.com](https://www.jd.com/brand/670d97890cd9003d52b.html)
+
+## 3. 一级来源
+
+本轮未把品牌官网当销量证据。可直接读取的京东商品页确认：米家充气宝2型号 **MJCQB06QW**，公开标价¥179，页面同时注明“登录查看到手价”；拓竹A1单机大陆版公开标价¥1599，A1 mini单机大陆版¥1269，二者最终到手价同样要求登录。以上只记录为公开普通展示价，不推断会员/券后价。观察 **2026-10-06**。[https://item.jd.com/product/ATCZCLlKstYUlIKZlbcjSQ.html](https://item.jd.com/product/ATCZCLlKstYUlIKZlbcjSQ.html) [https://item.jd.com/product/m6KOrJemUOxm_GPdewbV4w.html](https://item.jd.com/product/m6KOrJemUOxm_GPdewbV4w.html) [https://item.jd.com/product/HGkFxgeLz1vbFoSr9nUE-A.html](https://item.jd.com/product/HGkFxgeLz1vbFoSr9nUE-A.html) [JD.com](https://item.jd.com/product/ATCZCLlKstYUlIKZlbcjSQ.html)
+
+## 4. 社区证据
+
+C13：什么值得买用户明确称购买并使用米家充气宝2，认为汽车/电动车补气预设方便；其¥150为**2024年的历史个人购入价，不作为当前价格**。发布 **2024-09-09**。[https://post.smzdm.com/talk/p/avprl3n4/](https://post.smzdm.com/talk/p/avprl3n4/) [什么值得买](https://post.smzdm.com/talk/p/avprl3n4/)
+
+C14：2026-06-22的社区实测称六支拍均至少实战5–6场；青蛇Pro因此保留为机会候选，但实测具体3U/4U、G5/G6未说明，故PROVISIONAL。文章同时给战戟5000正向实战反馈。[https://post.smzdm.com/p/apq2mxx9/](https://post.smzdm.com/p/apq2mxx9/) [什么值得买](https://post.smzdm.com/p/apq2mxx9/)
+
+C15：A1 Mini社区一周体验给出实际打印经历，同时指出180×180×180mm空间、开放式结构及部分第三方耗材需校准。发布 **2026-05-19**。[https://post.smzdm.com/p/adz2vnzk/](https://post.smzdm.com/p/adz2vnzk/) [什么值得买](https://post.smzdm.com/p/adz2vnzk/)
+
+## 5. 反向证据
+
+米家充气宝2社区反馈并不一致：有用户称噪音较大，另有用户报告一年后电池衰减；也有人称使用一年多仍能正常补气，因此电池耐久性只能列可行性风险，不能据此删除。[什么值得买](https://post.smzdm.com/talk/p/avprl3n4/) C14青蛇Pro文章互动量很低，不能把单篇实测当“头部”证据。A1 mini则有尺寸、开放机架和材料适配边界。[什么值得买](https://post.smzdm.com/p/apq2mxx9/)
+
+## 6. 置信度
+
+**C13高、C14头部高/机会低、C15高。** 高置信部分来自可读京东精确版本、自营状态和大样本评论信号；低置信主要是青蛇Pro缺精确测试规格及零售商品页。评论累计量只作为国内消费者采用度代理，不解释为近期销量。
+
+## 7. 数据缺口
+
+主要缺口为：当前成交量、seller_id、会员/定向券价；A810Pro及C14两头部SKU的公开普通价；青蛇Pro精确重量/握柄规格及零售item_id；A1C套装内容。数个京东数值型PDP点击后触发风险验证或仅返回空壳，因此标记 **AUTHENTICATED DATA REQUIRED**，未重复绕过。
+
+## 8. 意外发现
+
+京东“A1”品牌结果混入大量惠普/佳能A1幅面绘图仪及配件，所以关键词“A1”本身会严重污染C15样本；冻结时必须同时限定“3D打印机+Bambu Lab/拓竹+实体整机”。[JD.com](https://www.jd.com/brand/670d97890cd9003d52b.html)
+
+## 9. 自我反驳
+
+本轮最大偏差是“评论存量偏爱老SKU”，且电商商品卡可能合并多个变体的评论；所以`50000+`不能证明某个精确版本近期卖出5万件。战戟5000、A1C等尤其应在冻结前补登录态SKU级成交/卖家字段，避免把父商品累计信号过度归因到子规格。
+
+## 10. 下一实验
+
+只针对这3类做一次登录态补证：在同一京东页面固定“销量/评论数”排序，保存前12个精确实体SKU的普通价、会员价/券价分离字段、item_id、seller_id及具体变体，再按上述三等分规则生成high/mid/low；随后仅用天猫/淘宝做国内交叉验证，不查询任何海外价格、销售或覆盖。
+
+```json
+{
+  "job_id": "W2-B-batch05",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C13",
+      "name": "汽车用品",
+      "sampling_status": "2 domestic_head + 1 domestic_opportunity",
+      "price_tier_rule": "Within each fixed functional lane, take first 12 exactly defined physical SKUs on the same domestic platform result page with publicly visible ordinary prices; sort ascending and split into tertiles low/mid/high. Member, targeted-coupon and login-only final prices are excluded. Missing ordinary prices => UNASSIGNED_AUTH_REQUIRED."
+    },
+    {
+      "category_id": "C14",
+      "name": "运动与户外",
+      "sampling_status": "2 domestic_head + 1 provisional domestic_opportunity",
+      "price_tier_rule": "Within each fixed functional lane, take first 12 exactly defined physical SKUs on the same domestic platform result page with publicly visible ordinary prices; sort ascending and split into tertiles low/mid/high. Member, targeted-coupon and login-only final prices are excluded. Missing ordinary prices => UNASSIGNED_AUTH_REQUIRED."
+    },
+    {
+      "category_id": "C15",
+      "name": "爱好、3D打印与创客",
+      "sampling_status": "2 domestic_head + 1 domestic_opportunity",
+      "price_tier_rule": "Restrict to physical 3D printers, excluding A1-format 2D plotters and accessories. For first 12 exactly defined comparable printers with public ordinary prices, sort ascending and split into tertiles low/mid/high; login/member/coupon prices excluded."
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "W2B05-C13-01",
+      "brand": "小米",
+      "model": "充气宝2D",
+      "exact_variant": "无线车载充气泵",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD public category page: 500000+ comments, self-operated.",
+      "domestic_selection_rule": "HEAD-LANE: exact physical SKU, self-operated, exceptionally high public comment count in the opened vehicle-inflator lane.",
+      "domestic_product_url": "https://item.jd.com/100057716081.html",
+      "item_id": "100057716081",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; direct_pdp_snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "AUTHENTICATED_DATA_REQUIRED",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["battery_present"],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "W2B05-C13-02",
+      "brand": "70迈",
+      "model": "A810Pro",
+      "exact_variant": "4K超清夜视/黑光全彩/无卡+监控线",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD public brand page: 10000+ comments, self-operated.",
+      "domestic_selection_rule": "HEAD-LANE: exact dashcam variant, self-operated, strong public China consumer comment signal.",
+      "domestic_product_url": "https://item.jd.com/100202009163.html",
+      "item_id": "100202009163",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; direct_pdp_snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "AUTHENTICATED_DATA_REQUIRED",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["vehicle_installation_required", "variant_includes_monitoring_cable"],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": ["S03"]
+    },
+    {
+      "category_id": "C13",
+      "candidate_sku_id": "W2B05-C13-03",
+      "brand": "小米",
+      "model": "MJCQB06QW",
+      "exact_variant": "米家充气宝2",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "JD: 200000+ comments/self-operated; exact PDP exposes model MJCQB06QW and public ¥179 display price. Community owner reports actual vehicle/e-bike use.",
+      "domestic_selection_rule": "OPPORTUNITY: exact SKU with strong domestic consumer evidence plus community evidence that base model may satisfy ordinary refill use without stepping up to Pro.",
+      "domestic_product_url": "https://item.jd.com/100049595460.html",
+      "item_id": "100049595460",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": 179.0,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "ordinary_public_display; final/member/coupon price login_required",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["battery_present", "battery_longevity_check", "noise"],
+      "verification_status": "VERIFIED",
+      "source_ids": ["S01", "S02", "S04"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "W2B05-C14-01",
+      "brand": "李宁",
+      "model": "战戟5000",
+      "exact_variant": "4U 空拍",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD Li-Ning self-operated ranking page: 20000+ comments; community article also reports hands-on play with 战戟5000.",
+      "domestic_selection_rule": "HEAD-LANE: exact 4U physical racket on explicit JD self-operated ranking page with 20000+ public comments.",
+      "domestic_product_url": "https://item.jd.com/100105223480.html",
+      "item_id": "100105223480",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; direct_pdp_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "AUTHENTICATED_DATA_REQUIRED",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["weight_and_grip_variant_sensitive", "stringing_configuration_sensitive"],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": ["S05", "S07"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "W2B05-C14-02",
+      "brand": "红双喜",
+      "model": "F4002",
+      "exact_variant": "狂飚四星级升级版横拍/双面反胶/附乒乓球",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD public page: 50000+ comments, self-operated.",
+      "domestic_selection_rule": "HEAD-LANE: exact physical table-tennis racket, self-operated, high public domestic comment signal.",
+      "domestic_product_url": "https://item.jd.com/100007817692.html",
+      "item_id": "100007817692",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; direct_pdp_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "AUTHENTICATED_DATA_REQUIRED",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": [],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": ["S06"]
+    },
+    {
+      "category_id": "C14",
+      "candidate_sku_id": "W2B05-C14-03",
+      "brand": "霜将",
+      "model": "青蛇 Pro",
+      "exact_variant": null,
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "SMZDM hands-on article states all six rackets were played for at least 5-6 sessions and describes 青蛇 Pro; article lists 3U/4U and G5/G6 choices but does not identify the tested combination.",
+      "domestic_selection_rule": "OPPORTUNITY: recent domestic hands-on use evidence for a less-mainstream model; retain provisionally rather than invent exact tested variant.",
+      "domestic_product_url": null,
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "community_read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "not_verified",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["weight_and_grip_variant_unresolved"],
+      "verification_status": "PROVISIONAL_EXACT_VARIANT_AND_RETAIL_URL_REQUIRED",
+      "source_ids": ["S07"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "W2B05-C15-01",
+      "brand": "拓竹",
+      "model": "A1",
+      "exact_variant": "单机/大陆版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD brand page shows A1 family at 50000+ comments/self-operated and exact single-unit mainland listing at 20000+; exact PDP has buyer reviews and ¥1599 public price.",
+      "domestic_selection_rule": "HEAD-LANE: exact mainland single-unit desktop FDM printer with large public China buyer signal.",
+      "domestic_product_url": "https://item.jd.com/10093039784165.html",
+      "item_id": "10093039784165",
+      "seller_id": null,
+      "access_state": "read_full_page_via_exact_alias",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": 1599.0,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "ordinary_public_display; final/member/coupon price login_required",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["mains_power", "firmware_cloud_ecosystem", "filament_compatibility"],
+      "verification_status": "VERIFIED",
+      "source_ids": ["S08", "S09"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "W2B05-C15-02",
+      "brand": "拓竹",
+      "model": "A1C",
+      "exact_variant": "大陆版；公开自营标题标A1C/多色高速，具体套装内容待登录核验",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD public brand page: 50000+ comments, self-operated.",
+      "domestic_selection_rule": "HEAD-LANE: high public domestic consumer signal; retain but mark package detail provisional.",
+      "domestic_product_url": "https://item.jd.com/100225243330.html",
+      "item_id": "100225243330",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; direct_pdp_snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": null,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "AUTHENTICATED_DATA_REQUIRED",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["mains_power", "firmware_cloud_ecosystem", "bundle_contents_check"],
+      "verification_status": "PROVISIONAL_BUNDLE_DETAIL",
+      "source_ids": ["S08"]
+    },
+    {
+      "category_id": "C15",
+      "candidate_sku_id": "W2B05-C15-03",
+      "brand": "拓竹",
+      "model": "A1 mini",
+      "exact_variant": "单机/大陆版",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "JD exact listing shows 20000+ comments and exact PDP ¥1269 public price; domestic community reports one-week hands-on use and explicit limitations.",
+      "domestic_selection_rule": "OPPORTUNITY: exact entry-level physical SKU with domestic buyer evidence plus recent hands-on community support.",
+      "domestic_product_url": "https://item.jd.com/10090486385964.html",
+      "item_id": "10090486385964",
+      "seller_id": null,
+      "access_state": "read_full_page_via_exact_alias",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_public": 1269.0,
+        "member": null,
+        "targeted_coupon": null,
+        "currency": "CNY"
+      },
+      "price_type": "ordinary_public_display; final/member/coupon price login_required",
+      "price_tier": "UNASSIGNED_AUTH_REQUIRED",
+      "feasibility_flags": ["mains_power", "firmware_cloud_ecosystem", "filament_compatibility", "open_frame", "build_volume_limit"],
+      "verification_status": "VERIFIED",
+      "source_ids": ["S08", "S10", "S11"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/hprm/672806ce07058c233472.html",
+      "title": "车载汽车充气泵 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K03"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://item.jd.com/product/ATCZCLlKstYUlIKZlbcjSQ.html",
+      "title": "小米（MI）MJCQB06QW 米家充气宝2 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/brand/73766f9f6ffdcfc0652.html",
+      "title": "A810品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/talk/p/avprl3n4/",
+      "title": "米家充气宝2评测（非pro），好奇为什么大家都在推pro",
+      "published_at": "2024-09-09",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/hotitem/131869fbaf0e093680d6.html",
+      "title": "李宁羽毛球拍自营排行 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/hprm/13180fd91af039abe468.html",
+      "title": "红双喜乒乓球拍 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/p/apq2mxx9/",
+      "title": "6支小众耐打的中端进攻羽毛球拍实测，400-600元闭眼挑",
+      "published_at": "2026-06-22",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/brand/670d97890cd9003d52b.html",
+      "title": "A1打印机品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07", "K10"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://item.jd.com/product/m6KOrJemUOxm_GPdewbV4w.html",
+      "title": "拓竹A1 单机大陆版 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://item.jd.com/product/HGkFxgeLz1vbFoSr9nUE-A.html",
+      "title": "拓竹A1 mini 单机大陆版 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08", "K09"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://post.smzdm.com/p/adz2vnzk/",
+      "title": "千元内3D打印机闭眼入！拓竹A1 Mini：新手在家也能造万物！",
+      "published_at": "2026-05-19",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K09"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "京东公开车载充气泵页显示小米充气宝2D为自营且有500000+评论。",
+      "classification": "FACT",
+      "source_ids": ["S01"],
+      "confidence": "high",
+      "counterevidence": "评论量不是成交量，且可能累计较长时间。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "70迈A810Pro无卡+监控线变体在京东公开页为自营且有10000+评论。",
+      "classification": "FACT",
+      "source_ids": ["S03"],
+      "confidence": "high",
+      "counterevidence": "未取得登录态近期成交量与当前普通价。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "米家充气宝2精确型号MJCQB06QW有公开中国买家评价，京东公开展示价为179元且最终到手价需登录。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02"],
+      "confidence": "high",
+      "counterevidence": "公开展示价不代表会员、定向券或结算价。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "米家充气宝2可作为价值型机会样本：社区实购用户认为基础款足以满足日常补气，但噪音和长期电池表现存在分歧。",
+      "classification": "INFERENCE",
+      "source_ids": ["S04"],
+      "confidence": "medium",
+      "counterevidence": "单一社区帖及评论无法代表总体故障率或满意度。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "李宁战戟5000 4U空拍和红双喜F4002均有明确京东自营及大量公开评论信号。",
+      "classification": "FACT",
+      "source_ids": ["S05", "S06"],
+      "confidence": "high",
+      "counterevidence": "评论量可能跨时间累计，不能解释为近期销量。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "霜将青蛇Pro值得作为C14机会候选，但精确测试重量/握柄版本尚未核实。",
+      "classification": "HYPOTHESIS",
+      "source_ids": ["S07"],
+      "confidence": "low",
+      "counterevidence": "仅一篇低互动社区实测，且没有已核验零售商品页。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "京东公开页显示拓竹A1和A1C大陆版均为自营且有50000+评论；A1 mini单机大陆版有20000+评论。",
+      "classification": "FACT",
+      "source_ids": ["S08"],
+      "confidence": "high",
+      "counterevidence": "A1C具体套装构成未从可读公开PDP完整确认。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "拓竹A1单机大陆版和A1 mini单机大陆版公开展示价分别为1599元和1269元，页面要求登录查看最终到手价。",
+      "classification": "FACT",
+      "source_ids": ["S09", "S10"],
+      "confidence": "high",
+      "counterevidence": "会员、补贴、定向券及结算价均未核验。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "A1 mini具备国内社区机会证据，同时存在打印空间、开放结构和耗材校准等明确使用边界。",
+      "classification": "INFERENCE",
+      "source_ids": ["S10", "S11"],
+      "confidence": "medium",
+      "counterevidence": "社区体验样本有限，不能量化整体可靠性。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "C15使用A1关键词时会混入A1幅面绘图仪和配件，冻结采样必须增加3D打印机及品牌/实体整机约束。",
+      "classification": "INFERENCE",
+      "source_ids": ["S08"],
+      "confidence": "high",
+      "counterevidence": "使用更精确的站内类目过滤后污染程度可能显著下降。"
+    }
+  ],
+  "data_gaps": [
+    {
+      "category_id": "C13",
+      "gap": "A810Pro及充气宝2D当前普通价、seller_id、登录态成交量缺失；AUTHENTICATED DATA REQUIRED。"
+    },
+    {
+      "category_id": "C14",
+      "gap": "两款头部SKU当前普通价/seller_id缺失；青蛇Pro精确测试规格、商品URL和item_id未核验。"
+    },
+    {
+      "category_id": "C15",
+      "gap": "A1C具体套装内容、公开普通价和seller_id待登录核验；A1/A1 mini会员与定向券价格未核验。"
+    },
+    {
+      "category_id": "C13|C14|C15",
+      "gap": "公开评论数仅作国内采用度代理，不是成交量；部分京东精确PDP触发风险验证或仅返回极少页面内容。"
+    }
+  ]
+}
+```
+=== UNTRUNCATED W2-C-batch05; SHA256 cde8a548641af9b42ac3947a4cdc9e0d62bdeb58a5140c4919be19687bd6be7b ===
+### 一、直接回答
+
+WEB RESEARCH AVAILABLE。本批次严格只研究 C13/C14/C15，共保留 **9 个预冻结候选：6 个 domestic_head、3 个 domestic_opportunity**；没有因重量、电池、电压、固件、保修或海外可比性删除候选。京东公开页上的“评论数”只作为中国消费者购买/使用证据，**不冒充销量或成交量**。
+
+### 二、核心证据
+
+C13 中，京东公开车载充气泵页显示米家充气宝2、得力双30缸款均为自营且各有 **20万+评论**；米家精确型号 MJCQB06QW 另由国内商品百科对应。70迈“青春版2 2026新款”仅 **7+评论**，因此只放机会层。观察日期均为 2026-10-06。[JD.com](https://www.jd.com/cppf/672865591d9c65371676.html)  
+[https://www.jd.com/cppf/672865591d9c65371676.html](https://www.jd.com/cppf/672865591d9c65371676.html)　[https://www.jd.com/tupian/67285a619173cf8b9706.html](https://www.jd.com/tupian/67285a619173cf8b9706.html)
+
+C14 中，京东公开页显示 Village 6.0 为自营、**1万+评论**；牧高笛冷山2PLUS NXZQU61017 红灰色为自营、**5000+评论**；云尚PRO 为自营、**2000+评论**。后者同时存在 2026 年国内社区使用讨论，故作为机会SKU。[JD.com](https://www.jd.com/brand/131810ce1a7d5f320c68.html)  
+[https://www.jd.com/brand/131810ce1a7d5f320c68.html](https://www.jd.com/brand/131810ce1a7d5f320c68.html)　[https://www.jd.com/brand/13185c7e894594514153.html](https://www.jd.com/brand/13185c7e894594514153.html)
+
+C15 中，京东公开页的精确“单机大陆版”A1 与 A1 mini 均显示 **2万+评论**；另一个拓竹A1聚合自营项为5万+，但没有把该自营属性转移给精确单机SKU。京东“三维打印耗材排行榜”则把 **Space Pi V2 Plus 大陆版列为 TOP1，2000人评论**。[JD.com](https://www.jd.com/brand/670d97890cd9003d52b.html)  
+[https://www.jd.com/brand/670d97890cd9003d52b.html](https://www.jd.com/brand/670d97890cd9003d52b.html)　[https://www.jd.com/phb/key_67068e12f834fd813d8.html](https://www.jd.com/phb/key_67068e12f834fd813d8.html)
+
+### 三、一级来源
+
+冻结依据优先采用上面的京东公开分类、品牌及排行榜页面，而不是搜索摘要。冷山2PLUS还落到了京东 item 1328287；Village 6.0、云尚PRO、A1、A1 mini 和70迈新款也通过公开链接取得具体 item ID。精确商品页部分正文极少，因此卖家ID没有猜测，均留 null。观察日期：2026-10-06。[JD.com](https://item.jd.com/1328287.html)
+
+### 四、社区证据
+
+得力 DL8060 有一篇 2023-08-16 的国内真实使用文章，作者明确称在京东下单，并记录其无内置电池、双缸180W及点烟器保险丝注意事项。[什么值得买](https://post.smzdm.com/p/awz0pp8p/)  
+[https://post.smzdm.com/p/awz0pp8p/](https://post.smzdm.com/p/awz0pp8p/)
+
+云尚PRO 的国内社区汇总页收录了 2026 年小红书/抖音等实搭内容，但该汇总本身标记为 AIGC，因此只给中低权重。A1/A1 mini 的 2026-09-30 国内社区横评强调自动化、模型资源和稳定性，也指出 A1 mini 体积与价位限制。[什么值得买](https://post.smzdm.com/p/aome203r/)  
+[https://post.smzdm.com/p/aome203r/](https://post.smzdm.com/p/aome203r/)　[https://post.smzdm.com/talk/p/am98rdwv/](https://post.smzdm.com/talk/p/am98rdwv/)
+
+### 五、反向证据
+
+最明显的反证是：70迈青春版2只有7+评论，不能叫“头部”；Village 6.0 的京东页面把二代、三代、旗舰版及地布聚合在一起，精确变体映射只能标 PROVISIONAL；云尚PRO亦存在多颜色/单双人聚合。A1/A1 mini 社区横评本身为0评论，因此它只能证明存在当前国内讨论，不能证明社区共识。[JD.com](https://www.jd.com/tupian/67285a619173cf8b9706.html)
+
+### 六、置信度
+
+C13 头部判断中等；C14 冷山2PLUS较高、Village为中等；C15 A1/A1 mini 的国内购买证据较强，Space Pi V2 Plus 的榜单位置较强。统一价位层规则为：**在同质子类中取可公开未登录普通价，排除会员价、券后价、补贴价；候选池按价格升序，≤P33=低端，P33–P67=中端，>P67=高端。** 本轮未取得完整同质候选池，因此不伪造分位档位。
+
+### 七、数据缺口
+
+**AUTHENTICATED DATA REQUIRED**：如冻结必须使用真实成交/旗舰店销量，需要补京东/天猫/淘宝登录态的成交字段、精确 seller_id、当天普通价与会员/定向券价。C13/C14 的公开证据集中于充气泵和帐篷子类，不能外推整个汽车用品或运动户外市场；完整价格分位候选池也未建立。
+
+### 八、意外发现
+
+公开京东品牌页即使商品详情页正文受限，仍能同时暴露变体名称、评论量、自营标识和 item 链接，适合冻结前做“存在性+消费证据”选样。另一个值得后续验证的信号是，3D打印耗材榜 TOP1 不是线材而是 Space Pi V2 Plus 干燥箱，说明创客附件值得单独留样，但不能据此推断整个市场规模。[JD.com](https://www.jd.com/phb/key_67068e12f834fd813d8.html)
+
+### 九、自我反驳
+
+评论数可能跨多年累计、跨变体合并，并非近期销量；京东页面的曝光结构也可能偏向自营商品。拓竹、小米等高评论量品牌容易造成可见性偏差；社区文章可能带推广/AIGC成分。因此本结果是**冻结前候选集，不是市场份额排名**。
+
+### 十、下一实验
+
+冻结前下一步只需对这9个候选做一次登录态定点核验：记录同一天的 exact variant、seller_id、普通价、会员/券价、可见成交字段，并核对聚合SKU与 item ID 的变体映射；随后按上述 P33/P67 规则做同质子类价位层。无需也不应查询任何美国/海外价格、销量、Temu/AliExpress覆盖。
+
+```json
+{
+  "job_id": "W2-C-batch05-recovery01",
+  "parent_replicate": "W2-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C13",
+      "name": "汽车用品",
+      "sampled_subsegment": "便携/车载轮胎充气泵",
+      "sampling_rule": "domestic_head优先公开京东自营且具显著中国消费者评论证据；domestic_opportunity允许新品在评论量较低时凭明确消费者证据进入。",
+      "price_tier_rule": "同质子类公开未登录普通价排序，排除会员/券/补贴；<=P33低端，P33-P67中端，>P67高端；本轮未建立完整价格池，不强行赋档。",
+      "candidate_count": 3
+    },
+    {
+      "category_id": "C14",
+      "name": "运动与户外",
+      "sampled_subsegment": "户外帐篷",
+      "sampling_rule": "domestic_head采用京东自营且公开评论量>=5000的可定义帐篷；domestic_opportunity采用较低评论量但有2026国内使用/社区证据的精确产品族。",
+      "price_tier_rule": "同质帐篷子类按公开未登录普通价排序，排除附件、会员价、券后价和补贴；<=P33低端，P33-P67中端，>P67高端。",
+      "candidate_count": 3
+    },
+    {
+      "category_id": "C15",
+      "name": "爱好、3D打印与创客",
+      "sampled_subsegment": "桌面FDM打印机及直接配套耗材干燥设备",
+      "sampling_rule": "打印机domestic_head要求精确大陆版且京东公开评论量>=10000；机会SKU允许直接配套创客附件在京东真实榜单靠前且有消费评价时进入。",
+      "price_tier_rule": "仅在同质产品子类内部以公开普通价计算P33/P67；打印机与干燥箱不混排价位层。",
+      "candidate_count": 3
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C13",
+      "sku_candidate_id": "C13-H01",
+      "brand": "米家",
+      "model": "MJCQB06QW",
+      "exact_variant": "米家充气宝2 MJCQB06QW",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页显示米家充气宝2为自营且200000+评论；国内商品百科将充气宝2对应到MJCQB06QW。",
+      "domestic_selection_rule": "车载充气泵同质子类中公开自营且评论量>=200000。",
+      "domestic_product_url": "https://item.jd.com/100049595460.html",
+      "item_id": "100049595460",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "currency": "CNY",
+        "regular_reference": 165
+      },
+      "price_type": "secondary_public_jd_min_reference_not_item_specific",
+      "feasibility_flags": [
+        "battery_status_and_shipping_constraints_to_verify",
+        "vehicle_tire_runtime_to_verify",
+        "region_warranty_to_verify"
+      ],
+      "verification_status": "VERIFIED_WITH_SECONDARY_MODEL_MAP",
+      "source_ids": ["S01", "S02"]
+    },
+    {
+      "category_id": "C13",
+      "sku_candidate_id": "C13-H02",
+      "brand": "得力",
+      "model": "DL8060",
+      "exact_variant": "DL8060 双缸180W车载充气泵",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页对应得力双30缸充气泵自营、200000+评论；国内社区购买使用文章明确型号DL8060。",
+      "domestic_selection_rule": "车载充气泵同质子类中公开自营且评论量>=200000，并以国内实际使用内容补精确型号。",
+      "domestic_product_url": "https://item.jd.com/6307206.html",
+      "item_id": "6307206",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "wired_12V",
+        "180W",
+        "no_internal_battery",
+        "cigarette_lighter_fuse_compatibility"
+      ],
+      "verification_status": "VERIFIED_WITH_SECONDARY_MODEL_MAP",
+      "source_ids": ["S01", "S03"]
+    },
+    {
+      "category_id": "C13",
+      "sku_candidate_id": "C13-O01",
+      "brand": "70迈",
+      "model": "青春版2",
+      "exact_variant": "汽车轮胎充气泵青春版2 2026新款",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开页显示该2026新款为自营并已有7+评论；证据量明显低于头部，因此仅作新品机会样本。",
+      "domestic_selection_rule": "明确2026新版本、实物、自营且已有中国消费者评论，但不足头部阈值。",
+      "domestic_product_url": "https://item.jd.com/100421361642.html",
+      "item_id": "100421361642",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "power_source_to_verify",
+        "vehicle_12V_compatibility_to_verify",
+        "new_2026_version"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_LOW_EVIDENCE",
+      "source_ids": ["S04"]
+    },
+    {
+      "category_id": "C14",
+      "sku_candidate_id": "C14-H01",
+      "brand": "Naturehike/挪客",
+      "model": "Village 6.0",
+      "exact_variant": "屋脊6.0二代_深咖（聚合变体映射待复核）",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东Naturehike公开页显示Village 6.0聚合商品为自营且10000+评论，并列出二代深咖、三代及旗舰版等变体。",
+      "domestic_selection_rule": "帐篷同质子类公开自营且评论量>=5000；变体映射不确定时保留并标PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100107548186.html",
+      "item_id": "100107548186",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "packed_weight_to_verify",
+        "bulk_shipping_flag",
+        "exact_fabric_and_coating_by_variant_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_VARIANT_MAPPING",
+      "source_ids": ["S05"]
+    },
+    {
+      "category_id": "C14",
+      "sku_candidate_id": "C14-H02",
+      "brand": "MOBI GARDEN/牧高笛",
+      "model": "NXZQU61017",
+      "exact_variant": "冷山2PLUS 红灰色 双人 带雪裙",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页给出完整型号NXZQU61017、红灰色、自营及5000+评论；国内价格页对应冷山2PLUS红灰色1-2人。",
+      "domestic_selection_rule": "帐篷同质子类公开自营且评论量>=5000，并要求型号/颜色版本可定义。",
+      "domestic_product_url": "https://item.jd.com/1328287.html",
+      "item_id": "1328287",
+      "seller_id": null,
+      "access_state": "read_full_page_listing",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "currency": "CNY",
+        "page_price": 799,
+        "coupon_price": 539.13
+      },
+      "price_type": {
+        "page_price": "public_display_price",
+        "coupon_price": "coupon_required"
+      },
+      "feasibility_flags": [
+        "packed_weight_to_verify",
+        "snow_skirt_variant",
+        "weather_rating_and_coating_to_verify"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_EXACT_VARIANT",
+      "source_ids": ["S06", "S08"]
+    },
+    {
+      "category_id": "C14",
+      "sku_candidate_id": "C14-O01",
+      "brand": "Naturehike/挪客",
+      "model": "云尚PRO",
+      "exact_variant": "浅灰红/2人/20D尼龙（聚合变体映射待复核）",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开页显示云尚PRO自营、2000+评论并明确列出2人20D尼龙变体；2026国内社区汇总存在实搭和轻量徒步讨论。",
+      "domestic_selection_rule": "低于头部评论阈值，但有明确消费者购买/使用讨论且版本可基本定义。",
+      "domestic_product_url": "https://item.jd.com/100216295221.html",
+      "item_id": "100216295221",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "packed_weight_claim_to_verify",
+        "20D_nylon",
+        "three_season_use_limit_to_verify"
+      ],
+      "verification_status": "PROVISIONAL_VARIANT_MAPPING",
+      "source_ids": ["S05", "S07"]
+    },
+    {
+      "category_id": "C15",
+      "sku_candidate_id": "C15-H01",
+      "brand": "Bambu Lab/拓竹",
+      "model": "A1",
+      "exact_variant": "A1 单机 大陆版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页精确列出A1单机大陆版并显示20000+评论；同期国内社区横评将A1作为高频家用/长期使用选择讨论。",
+      "domestic_selection_rule": "桌面FDM打印机要求精确大陆版且京东公开评论量>=10000。",
+      "domestic_product_url": "https://item.jd.com/10093039784165.html",
+      "item_id": "10093039784165",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "mainland_version",
+        "firmware_account_dependency_to_verify",
+        "mains_voltage_plug_to_verify",
+        "region_warranty_to_verify",
+        "heated_and_moving_parts_safety"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_EXACT_VARIANT",
+      "source_ids": ["S09", "S10"]
+    },
+    {
+      "category_id": "C15",
+      "sku_candidate_id": "C15-H02",
+      "brand": "Bambu Lab/拓竹",
+      "model": "A1 mini",
+      "exact_variant": "A1 mini 单机 大陆版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页精确列出A1 mini单机大陆版并显示20000+评论；2026-09-30国内社区横评明确讨论其入门、自动化和模型生态。",
+      "domestic_selection_rule": "桌面FDM打印机要求精确大陆版且京东公开评论量>=10000。",
+      "domestic_product_url": "https://item.jd.com/10090486385964.html",
+      "item_id": "10090486385964",
+      "seller_id": null,
+      "access_state": "public_listing_read; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "mainland_version",
+        "smaller_build_volume",
+        "firmware_account_dependency_to_verify",
+        "mains_voltage_plug_to_verify",
+        "region_warranty_to_verify",
+        "heated_and_moving_parts_safety"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_EXACT_VARIANT",
+      "source_ids": ["S09", "S10"]
+    },
+    {
+      "category_id": "C15",
+      "sku_candidate_id": "C15-O01",
+      "brand": "Creality 3D/创想三维",
+      "model": "Space Pi V2 Plus",
+      "exact_variant": "Space Pi V2 Plus 大陆版",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东三维打印耗材排行榜将Space Pi V2 Plus大陆版列为TOP1并显示2000人评论，晒单评价直接描述烘干使用体验。",
+      "domestic_selection_rule": "创客直接配套附件在真实京东子类排行榜进入TOP位且具明确消费者使用证据，作为非打印机本体的机会样本。",
+      "domestic_product_url": null,
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "ranking_page_read_full; product_link_resolution_failed",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "mains_voltage_plug_to_verify",
+        "maximum_drying_temperature_to_verify",
+        "region_warranty_to_verify"
+      ],
+      "verification_status": "VERIFIED_MODEL_RANKING_PRODUCT_URL_UNRESOLVED",
+      "source_ids": ["S11"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/cppf/672865591d9c65371676.html",
+      "title": "自营车载充气泵怎么样 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://wiki.smzdm.com/p/pr6dm57/",
+      "title": "MIJIA 米家 MJCQB06QW 充气宝2",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://post.smzdm.com/p/awz0pp8p/",
+      "title": "车载充气泵：省时省力的必备工具",
+      "published_at": "2023-08-16",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K07"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.jd.com/tupian/67285a619173cf8b9706.html",
+      "title": "车载式充气泵图片 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/brand/131810ce1a7d5f320c68.html",
+      "title": "京东NatureHike帐篷品牌及商品",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03", "K04"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/brand/13185c7e894594514153.html",
+      "title": "帐篷牧高笛品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/p/aome203r/",
+      "title": "云尚2和云尚Pro怎么选？百元差价藏着这些露营关键细节",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04", "K07"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.smzdm.com/p/182942714/",
+      "title": "牧高笛冷山Plus优惠价格页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.jd.com/brand/670d97890cd9003d52b.html",
+      "title": "A1打印机品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://post.smzdm.com/talk/p/am98rdwv/",
+      "title": "儿童3D打印机6款横评，给孩子选机别只看价格",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05", "K07"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.jd.com/phb/key_67068e12f834fd813d8.html",
+      "title": "三维打印耗材排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "米家充气宝2与得力对应款在京东公开车载充气泵页均为自营且显示200000+评论，可作为本批次C13头部消费证据。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S03"],
+      "confidence": "medium",
+      "counterevidence": "评论数不是销量，且得力精确型号DL8060依赖社区内容完成映射。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "70迈青春版2 2026新款已有公开自营商品和7+评论，但证据不足以归为头部。",
+      "classification": "FACT",
+      "source_ids": ["S04"],
+      "confidence": "high",
+      "counterevidence": "评论量很低，无法判断其后续销售势能。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "Village 6.0与冷山2PLUS在京东公开页分别有10000+和5000+评论，均具自营标识。",
+      "classification": "FACT",
+      "source_ids": ["S05", "S06", "S08"],
+      "confidence": "high",
+      "counterevidence": "Village 6.0评论可能跨多个代际和变体聚合。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "云尚PRO具2000+京东评论并有2026国内社区使用讨论，适合作为C14机会样本而非头部样本。",
+      "classification": "INFERENCE",
+      "source_ids": ["S05", "S07"],
+      "confidence": "medium",
+      "counterevidence": "社区汇总页标记为AIGC，且京东商品聚合多个颜色和人数版本。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "拓竹A1单机大陆版和A1 mini单机大陆版均在京东公开页显示20000+评论，具较强国内消费者购买证据。",
+      "classification": "FACT",
+      "source_ids": ["S09", "S10"],
+      "confidence": "high",
+      "counterevidence": "精确单机条目附近未显示自营标识，不能把同页其他拓竹聚合商品的自营属性转移过去。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Space Pi V2 Plus大陆版在京东三维打印耗材排行榜观察时位列TOP1并显示2000人评论。",
+      "classification": "FACT",
+      "source_ids": ["S11"],
+      "confidence": "high",
+      "counterevidence": "直接商品链接解析失败，item_id和卖家信息尚未核验。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "社区资料支持有线车载泵、轻量帐篷和低调试桌面3D打印机分别存在明确国内使用场景，但不能用单篇内容推导市场份额。",
+      "classification": "INFERENCE",
+      "source_ids": ["S03", "S07", "S10"],
+      "confidence": "medium",
+      "counterevidence": "社区内容可能有作者偏好、推广或AIGC偏差。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：精确SKU的当天成交/销量字段、seller_id及旗舰店销售字段需要登录态核验。",
+    "AUTHENTICATED DATA REQUIRED：普通价、会员价、定向券、地区补贴需在同一天按同一账号状态分字段记录。",
+    "Village 6.0与云尚PRO的聚合页面尚未完成变体到item_id的一一映射，因此保持PROVISIONAL。",
+    "Space Pi V2 Plus直接商品链接解析失败，item_id、seller_id及公开普通价为空。",
+    "本轮未构建各同质子类完整可公开价格候选池，因此只定义P33/P67高、中、低端规则，不伪造分位档位。",
+    "C13证据集中于充气泵、C14集中于帐篷，不能将这些样本结论外推到对应整个大类。",
+    "未查询任何具体SKU的美国或海外价格、销售、供货或Temu/AliExpress覆盖。"
+  ]
+}
+```

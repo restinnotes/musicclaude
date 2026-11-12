@@ -1,0 +1,363 @@
+
+<!-- include file = "companyinfo_inc.asp" -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Media Statement: ezbuy.sg - Update On Service Disruption</title>
+<meta charset="utf-8" />
+<meta name="keywords" content="acn newswire" />
+<meta name="description" content="On behalf of the entire team at ezbuy.sg, we would like to apologise to all our customers who are affected by the recent delays in receiving their orders, and to our merchants, partners, family and friends who were unintentionally involved in this issue for lending their support." />
+<link href="https://www.acnnewswire.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://www.acnnewswire.com/css/css.css" rel="stylesheet">
+<script language="javascript" type="text/javascript" src="https://www.acnnewswire.com/scripts/jcn.js"></script>
+<script type="text/javascript" src="https://www.acnnewswire.com/jquery/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://www.acnnewswire.com/jquery/jquery.fancybox.pack.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="https://www.acnnewswire.com/jquery/jquery.fancybox.css?v=2.1.5" media="screen">
+<script type="text/javascript">
+
+var weekdaystxt=["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+
+function showLocalTime(container, servermode, offsetMinutes, displayversion){
+if (!document.getElementById || !document.getElementById(container)) return
+this.container=document.getElementById(container)
+this.displayversion=displayversion
+var servertimestring=(servermode=="s")? '10/7/2026 7:12:34 AM' : ''
+this.localtime=this.serverdate=new Date(servertimestring)
+this.localtime.setTime(this.serverdate.getTime()+offsetMinutes*60*1000) //add user offset to server time
+this.updateTime()
+this.updateContainer()
+}
+
+showLocalTime.prototype.updateTime=function(){
+var thisobj=this
+this.localtime.setSeconds(this.localtime.getSeconds()+1)
+setTimeout(function(){thisobj.updateTime()}, 1000) //update time every second
+}
+
+showLocalTime.prototype.updateContainer=function(){
+var thisobj=this
+if (this.displayversion=="long")
+this.container.innerHTML=this.localtime.toLocaleString()
+else{
+var hour=this.localtime.getHours()
+var minutes=this.localtime.getMinutes()
+var seconds=this.localtime.getSeconds()
+var ampm=(hour>=12)? "PM" : "AM"
+var dayofweek=weekdaystxt[this.localtime.getDay()]
+//this.container.innerHTML=formatField(hour, 1)+":"+formatField(minutes)+":"+formatField(seconds)+" "+ampm+" ("+dayofweek+")"
+this.container.innerHTML=formatField(hour, 1)+":"+formatField(minutes)+":"+formatField(seconds)+" "+ampm + " HKT"
+}
+setTimeout(function(){thisobj.updateContainer()}, 1000) //update container every second
+}
+
+function formatField(num, isHour){
+if (typeof isHour!="undefined"){ //if this is the hour field
+var hour=(num>12)? num-12 : num
+return (hour==0)? 12 : hour
+}
+return (num<=9)? "0"+num : num//if this is minute or sec field
+}
+</script>
+
+<style>
+.leftTable {
+    border-left: 1px solid #E7E6E6;
+	border-right: none;
+	border-top: 1px solid #E7E6E6;
+	border-bottom: 1px solid #E7E6E6;
+    background-color: #ffffff;
+}
+.rightside {
+    border-left: none; 
+    background-color: #ffffff;
+    border-bottom: 1px solid #E7E6E6;
+    border-right: 1px solid #E7E6E6;
+}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<table class="container">
+  <tr><td>
+	<!-- Top -->
+<table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+  <td align="left">
+<!-- ENGLISH -->
+
+<tr><td>
+<table width="960" border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr valign= "top">
+  <td align="left">
+<table width="100%" cellpadding="0" cellspacing="0" class="TopBanner_Border">
+  <tr><td class="span6">
+<Table width="96%" align="center">
+<tr><td style="padding-bottom:18px;"></td></tr>
+<tr><td>
+  <a href="https://www.acnnewswire.com" title="Back to Home Page"><img src="/images/hp_top.gif" width="250" height="33" border=0></a>
+  </td></tr>
+<tr><td style="padding-bottom:18px;"></td></tr>
+  </Table>
+  </td>
+  <td class="span6" align="right" valign="top">
+  <table width="100%" cellpadding=0 cellspacing=0>
+  <tr><td>
+  <table width="70%" align="right" style="margin-top:10px;">
+  <tr valign="top" height="">
+  <td align="center" class="langBtn"><a href="https://en.acnnewswire.com" class="NlangBtnLNK" title="English">English</a></td>
+  <td class="langBtn1">|</td>
+  <td class="langBtn" align="center"><a href="https://ch.acnnewswire.com" class="NlangBtnLNK" title="Simp. Chinese">简体中文</a></td>
+  <td class="langBtn1">|</td>
+  <td class="langBtn" align="center"><a href="https://ct.acnnewswire.com" class="NlangBtnLNK" title="Trad. Chinese">繁體中文</a></td>
+  <td class="langBtn1">|</td>
+  <td align="center" class="langBtn"><a href="https://kr.acnnewswire.com" class="NlangBtnLNK" title="Korean">한국어</a></td>
+  <td class="langBtn1">|</td>
+  <td align="center" class="langBtn"><a href="https://www.jcnnewswire.com/japanese/" target="_blank" class="NlangBtnLNK" title="Japanese">日本語</a></td>
+  </tr>
+  </table>
+</td></tr>
+</table>
+  </td>
+  </tr>
+   <tr><td style="padding-bottom:5px;" colspan="2"></td></tr>
+  </table>
+   </td>
+  </tr>
+<tr><td style="padding-bottom:3px;background-color:#ccc;"></td></tr>
+  <tr><td bgcolor="#3e63a5">
+  <div class="row">
+<span class="span12">
+<div class="navbar">
+    <ul class="nav">
+      <li><a href="/" title="Home">Home</a></li>
+		<li class="line">|</li>
+      <li><a href="/aboutus/" title="About us">About us</a></li>
+	  <li class="line">|</li>
+      <li><a href="/services/" title="Services">Services</a></li>
+	  <li class="line">|</li>
+	  <li><a href="/partners/" title="Partners">Partners</a></li>
+	  <li class="line">|</li>
+	  <li><a href="/allevents/" title="Events">Events</a></li>
+	  <li class="line">|</li>
+	  <li><a href="/contactus/" title="Contact us">Contact us</a></li>
+	  <li class="line">|</li>
+	  <li><a href="/client/login.aspx" title="Login">Login</a></li>
+    </ul>
+	<ul class="nav pull-right">
+	<li>
+	<span style="font-family:verdana;font-size:10px;color:#fff;">Wednesday, October 7, 2026 
+  <!--Live Time-->
+  <span id="timecontainer"></span>
+  <script type="text/javascript">
+  //new showLocalTime("timecontainer", "s", -60, "short")
+	new showLocalTime("timecontainer", "s", 0, "short")
+  </script>
+  </span>
+	</li>
+	</ul>
+</div>
+</span>
+</div>
+</td></tr> 
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td align="center" bgcolor="#f2f2f2" style="border:1px solid #cccccc;height:104px;">
+<img src="/images/banners/acn_banner.gif" width="800" height="100">
+</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+	<!-- Body -->
+  <tr><td><table width="960"  border="0" cellspacing="0" cellpadding="0" class="borderLine">
+  <tr valign="top">
+  <td class="span8-1 leftTable">
+<table cellpadding="4">
+<tr valign="top"><td>
+<table class="bodytext">
+<tr><td style="padding: 3px;"></td></tr>
+
+
+<tr><td>
+<table cellpadding="0" cellspacing="0" width="100%" align="center" style="font-size:10px;font-weight:none;color:#666;"><tr><td><table cellpadding="0" cellspacing="0" width="100%"><tr><td width="50%">Friday, 8 December 2017, 10:00 HKT/SGT</td><td align="right" width="50%"><table width="60%" align="right"><tr><td style="font-size:10px;font-weight:none;color:#666;">Share: </td><td align="right"><div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_email"></a><a class="addthis_button_google"></a><a class="addthis_button_linkedin"></a><a class="addthis_button_compact"></a></div><script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script><script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=jcnnewswire"></script></td></tr></table></td></tr></table></td></tr><tr><td style="padding: 3px;"></td></tr><tr><td align="left"><img src=https://www.acnnewswire.com/images/company/EZBUY.jpg>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><tr><td style="padding: 3px;"></td></tr><tr><td><BR>Source: <a href ="http://ezbuy.sg" target="_blank">ezbuy.sg</a> </td></tr><tr><td style="padding: 3px;"></td></tr></table>
+</td></tr>
+<tr><td style="padding: 5x;"></td></tr>
+<tr><td class="header">Media Statement: ezbuy.sg - Update On Service Disruption</td></tr>
+
+
+
+
+<tr><td>
+		
+		<BR>		
+		<span class="bodytext">SINGAPORE, Dec 8, 2017&nbsp;-&nbsp;(Media OutReach)&nbsp;-&nbsp;</span>On behalf of the entire team at ezbuy.sg, we would like to apologise to all our customers who are affected by the recent delays in receiving their orders, and to our merchants, partners, family and friends who were unintentionally involved in this issue for lending their support. We regret the problems that had transpired in the last few weeks, specifically in the multiple delays that many of our customers had faced. It has come to a point where it is necessary that we address several things that have happened.<BR /><BR />We first faced an issue of not being able to place orders through many of our purchasing accounts on 4 November 2017, the launch date of our '11.11' campaign. Since then, we had recruited a few hundreds of purchasing agents including small companies and individuals to overcome the issue. Due to the overwhelming customer queries, we have also added 40 new Customer Service Officers (CSO) within 2 weeks. Below is a chronological timeline of the incident from 4 November to 4 December 2017.<BR /><BR />4 November 2017: On 4 November 2017, 161 purchasing accounts on Taobao begun to have issues while checking out the items in the e-shopping cart, with the following error message: "As there are overwhelming customers checking out, kindly try again later". <BR /><BR />Our immediate resolution to this issue was to clarify directly with the Taobao CSOs, which was conducted through our purchasing agents. Multiple queries were subsequently directed to Taobao CSOs over the next few days, however, we observed that more purchasing accounts started to receive the same error message. Subsequent replies received from the Taobao CSOs had the following message: "Your account looks abnormal and cannot be used; however, we can't disclose the reason behind it". <BR /><BR />These purchasing accounts have been actively operating for several years, without any issues before 4 November 2017.<BR /><BR />8 November 2017: Our 4 days '11.11' event was scheduled to start on 8 November 2017. We had set up 210 new purchasing accounts to facilitate a smooth order process. However, all 210 accounts were unable to carry out the processing of orders and seemed to be facing technical restrictions. We were unable to assist customers in completing their order from Taobao and had to put up an announcement on our website to inform our customers that our purchasing agents are blocked by an e-commerce website, and have to stop taking orders through 'Buy-For-Me' service for China.  <BR /><BR />11 November 2017: Our 2 main warehouses in China, specifically in Jia Xing and Dong Guan were blocked on the Taobao system. Our purchasing agent and 'Ship-For-Me' customers who were using their own Taobao accounts who had indicated similar shipping addresses, were also unable to process the checkout.<BR /><BR />Our purchasing agents and customers clarified this directly with the Taobao CSOs but did not receive any response. Subsequently, only a few customers received a reply with the following message: "This is a system bug, they need 5-7 days to resolve". Since then, we have changed our warehouse addresses and recruited a new batch of purchasing agents.<BR /><BR />13 November 2017: From 1pm to 10pm, another 200 purchasing accounts which directed all our customer's orders to new warehouses were facing technical restrictions one by one.<BR /><BR />At the same time, our purchasing agents received messages from sellers on Taobao asking if they were purchasing on behalf of ezbuy. Our purchasing agents were also notified that Taobao had informed them that our warehouse addresses in China was involved in "abnormal" activities, and the sellers' shops have had their credit points deducted by Taobao.<BR /><BR />14 November to 30 November 2017: We sourced for additional 4 new warehouse addresses. However, 180 purchasing accounts which were directed to ship to 2 of these new warehouses were facing technical restrictions as well.<BR /><BR />1 December to 3 December 2017: Another round of purchasing accounts was blocked. More than 300 purchasing accounts were also facing technical restrictions, as long as these accounts had indicated our warehouse addresses.<BR /><BR />Before this incident, we used to process orders, finish inspection and repacking within a few hours to a day. However, with the constraints raised during the past few weeks, it took us much longer to process our customers' orders and we are very sorry about the inconvenience caused.<BR /><BR />At ezbuy.sg, our intention is for customers to enjoy access to millions of products and make things easier and convenient for everyone. We started the "Buy-For-Me" service for China to help customers in Singapore to buy from Taobao and several other e-commerce platforms in early 2010. On a rough estimate, we have delivered hundreds of millions of orders to customers in Singapore for the past 7 years and have contributed a significant amount to Taobao's business. <BR /><BR />Our only wish is that after the Christmas winter season has passed, the ice would have melted off our "frozen" purchasing accounts so that we can resume the 'Buy-For-Me' service China to our customers. Not forgetting the personal accounts graciously provided by our colleagues, friends and families, which were inadvertently faced with technical restrictions as well, that their accounts may return to normal.<BR /><BR />About ezbuy.sg <BR /><BR />ezbuy.sg is Singapore's first and largest global shopping platform by page views and number of distribution points. In 2016, ezbuy.sg was the 9th top search made by Singaporeans according to Google's "Year in Search" ranking which analyses over one trillion search queries Google receives annually. Founded in Singapore in 2010 by Singaporean Wendy Liu and a consortium of like-minded entrepreneurs, ezbuy.sg allows consumers to shop for items direct from overseas online stores out of China, Korea, Malaysia, Taiwan and the USA. A global marketplace for online retailers, Singapore consumers enjoy access to millions of products worldwide while paying the least in itemized costs. ezbuy.sg is also the first platform in Southeast Asia to provide the 'Buy-For-Me' service, helping customers facilitate their purchases from China, USA and other widely known e-commerce websites. ezbuy.sg's cutting-edge algorithm captures first-hand information on the latest deals on offer and in real time, enabling consumers to gain savings of up to 80 per cent as compared to buying retail. As of this month, ezbuy.sg has more than 1 million registered users in Singapore.<BR /><BR />Issued on behalf of: ezbuy.sg<BR />Through: Nadia Chan / Keith Jonathan <BR />PR Communications Pte Ltd<BR />Tel: (65) 6227 2135 Fax: (65) 6227 3915<BR />Email: <a href="/cdn-cgi/l/email-protection#99f7f8fdf0f8d9e9ebfaf6f4f4b7faf6f4b7eafe" Target=_BLANK><span class="__cf_email__" data-cfemail="016f60656860417173626e6c6c2f626e6c2f7266">[email&#160;protected]</span></a> / <a href="/cdn-cgi/l/email-protection#b4dfd1ddc0dcf4c4c6d7dbd9d99ad7dbd99ac7d3" Target=_BLANK><span class="__cf_email__" data-cfemail="f398969a879bb38381909c9e9edd909c9edd8094">[email&#160;protected]</span></a>
+
+
+	<!-- ########################## Contact #############################-->
+
+		<!-- ########################## END Contact #############################-->
+
+<br /><br />
+<span class="smallbodytext">
+<i>Topic:&nbsp;Press release summary</i>
+
+<i><BR>Source: <a href ="http://ezbuy.sg" target="_blank">ezbuy.sg</a> </i><br>
+
+
+<i></i>
+
+<br><i><a href="https://www.acnnewswire.com">https://www.acnnewswire.com</a></i>
+<BR><i>From the Asia Corporate News Network</i>
+</span>
+<BR><br><p class=bodytext><i>Copyright &copy; 2026 ACN Newswire. All rights reserved. A division of Asia Corporate News Network.</i></p>
+ </span>
+	</P>	 
+		</td>
+		</tr>
+<tr><td>
+
+<table width="100%"><tr><td>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<!--<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>-->
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_google"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=jcnnewswire"></script>
+<!-- AddThis Button END -->
+</td></tr></table>
+
+</td></tr>
+
+</table></td></tr>
+
+
+<tr><td align="center">
+<a href="https://www.jcnnewswire.com" Alt="JCN Newswire" target="_blank">
+<img src="https://www.acnnewswire.com/images/banners/jcn_banner_ads_eng.gif" width=468 height=60 border=0></a>
+</td></tr>
+<tr><td style="padding:7px;"></td></tr>
+
+
+
+</table>
+	</td>
+    <td class="span4-1 rightside">
+    
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" height="70">
+	<tr><td>&nbsp;</td></tr>
+	
+	<tr><Td>
+
+
+<!--AttachFile-->
+
+
+<br />
+
+
+<table cellpadding="3" cellspacing="2" width="95%" align="center" style="border:1px solid #E3E2E2;">
+<tr><td class="TableHeadText" align="center">ezbuy.sg Related News</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td class="note">Aug 27, 2018 11:55 HKT/SGT</td></tr>
+<tr><td><a href="https://www.acnnewswire.com/press-release/english/45692/spoil-market-deals-you-can-score-at-ezbuy-[now-till-end-august-2018]" class="newslink">Spoil Market Deals You Can Score At Ezbuy [Now till end-August 2018]</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td class="note">June 1, 2018 10:00 HKT/SGT</td></tr>
+<tr><td><a href="https://www.acnnewswire.com/press-release/english/43828/ezbuy-hails-the-annual-65eday-with-enormous-price-reductions-across-millions-of-products" class="newslink">Ezbuy Hails The Annual 65eday With Enormous Price Reductions Across Millions Of Products</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td class="note">May 24, 2018 14:30 HKT/SGT</td></tr>
+<tr><td><a href="https://www.acnnewswire.com/press-release/english/43617/ezbuy-raises-us$17.6-million-in-pre-series-c-funding" class="newslink">Ezbuy Raises US$17.6 Million In Pre-Series C Funding</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td class="note">Apr 27, 2018 17:15 HKT/SGT</td></tr>
+<tr><td><a href="https://www.acnnewswire.com/press-release/english/43113/ezbuy-announces-dollar-deals-with-huge-savings---for-two-days-only-[29-30-april-2018]" class="newslink">Ezbuy Announces Dollar Deals With Huge Savings - For Two Days Only [29-30 April 2018]</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td class="note">Mar 13, 2018 15:40 HKT/SGT</td></tr>
+<tr><td><a href="https://www.acnnewswire.com/press-release/english/41994/ezbuy-celebrates-2nd-year-anniversary-with-social-commerce,-friends-deal" class="newslink">Ezbuy Celebrates 2nd Year Anniversary With Social Commerce, Friends Deal</td></tr>
+<tr><td style="padding: 3px;"></td></tr>
+
+<tr><td align="center"><a href="/company_news/3375/ezbuy.sg" class="notelink"><b>More news >></b></a></td></tr>
+<tr><td align="center" style="padding: 3px;"></td></tr>
+</table>
+
+</Td></tr>
+</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr><td style="padding: 3px;"></td></tr>
+</table>
+	</td>
+  </tr>
+</table>
+<!--Footer-->
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr><td style="padding: 3px;"></td></tr>
+</table>
+	</td>
+  </tr>
+  <tr><td><table width="960" cellpadding="0" cellspacing="0"  align="center" border="0">
+<tr height=20 valign="middle"><td bgcolor="#3e63a5" align="center" colspan="2"><span class="fotter">Copyright &copy; 2026 ACN Newswire - Asia Corporate News Network</span></td></tr>
+<tr>
+<td class="span8">
+<table width="100%">
+<tr><td colspan=5 bgcolor="#f2f2f2" style="padding-bottom:5px;"></td></tr>
+
+ <tr><td align="center" class="fotter">
+ <span class="afoter"><font color="#808080">
+<a href="/" title="Home">Home</a> | <a href="/aboutus/" title="About us">About us</a> | <a href="/services/" title="Services">Services</a> | <a href="/partners/" title="Partners">Partners</a> | <a href="/allevents/" title="Events">Events</a> | <a href="/client/login.aspx" title="Login">Login</a>  | <a href="/contactus/" title="Contact us">Contact us</a>  | <a href="/cookies/" title="Cookies Policy">Cookies Policy</a> | <a href="/privacy/" title="Privacy Policy">Privacy Policy</a> | <a href="/disclaimer/" title="Disclaimer">Disclaimer</a> | <a href="/terms/" title="Terms of Use">Terms of Use</a> | <a href="/rss/" title="RSS">RSS</a></font></span>
+</td></tr>
+<tr><td colspan=5 bgcolor="#f2f2f2" style="padding-bottom:2px;"></td></tr>
+<tr><td align="center">
+<span class="fotter"><font color="gray">
+US: +1 214 890 4418 | China: +86 181 2376 3721 | Hong Kong: +852 8192 4922 | Singapore: +65 6549 7068 |  Tokyo: +81 3 6859 8575</font>
+</span>
+ </td></tr>
+ <tr><td colspan=5 bgcolor="#f2f2f2" style="padding-bottom:5px;"></td></tr>
+ </td>
+  </tr></table>
+  </td>
+ <td class="span4" align="center"><br />&nbsp;
+ <a href="https://twitter.com/acnnewswire" target="_blank"><i class="fa-brands fa-square-x-twitter fa-lg"></i></a>&nbsp;
+ <a href="https://www.facebook.com/acnnewswire" target="_blank"><i class="fa-brands fa-facebook-f fa-lg"></i></a>&nbsp;
+  <a href="https://www.linkedin.com/company/acnnewswire/" target="_blank"><i class="fa-brands fa-linkedin fa-lg"></i></a>&nbsp;
+ <a href="/rss"><i class="fa-solid fa-square-rss fa-lg"></i></a>
+ </td>
+</tr>
+</table>
+
+<script src="https://kit.fontawesome.com/9e8b40900a.js" crossorigin="anonymous"></script>
+</td></tr>
+</table>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $("#single_1").fancybox({
+	          helpers: {
+	              title : {
+	                  type : 'float'
+	              }
+	          }
+	      });
+	});
+	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-568736-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4685a06ae84d2b1',t:'MTc5MTMyODM1NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"7d1f47ecb8314da4b640392ba94223e8","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

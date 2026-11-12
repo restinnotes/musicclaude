@@ -1,0 +1,24 @@
+# v7 测试失败与修复记录
+
+所有测试进程均为离线验证；运行器的 RUN_PROCESS 入口在测试夹具中全量 mock。失败日志保存在 test_run_01/02.stderr.txt，完整 stdout/stderr 以单独日志文件保存。
+
+## RUN 01：首次完整运行，61 tests，return code 1
+
+首次失败有两个独立问题：
+
+1. test_pre_submit_contract_not_just_phase 的版本化测试夹具在负例循环中引用了循环外未定义的 identity，触发 NameError。修复为按该保护原意调用 pre_submit_payload 拒绝缺少完整来源证明的负例；正例夹具改为构造精确 request/producer/source 文件绑定的结构化证明。原保护断言未删除或放宽。
+2. test_cache_write_failure_never_resumes_unsealed_success 发现 cache 写入失败后，已 seal 的 completion 在缺少 exact cache ownership index 时仍可被 resume() 当成成功。修复为恢复成功必须同时验证 exact schema、identity、source 与 state == ok 的 cache index；否则 fail closed。
+
+## RUN 02：缓存故障单测复现，1 test，return code 1
+
+单测确认首次 cache 写入失败已正确抛错；复现了第二次只读 resume 错把无 cache index 的记录当成功。按 RUN 01 的第二项修复后，RUN 03 的完整套件通过。
+
+## RUN 03：修复后完整运行，61 tests，return code 0
+
+确认两个首次失败都关闭。随后为避免任何测试导入路径调用 legacy _ensure_init()（该函数会复制完整环境），RunnerFixture 改为 mock v7 自己的 build_task；私有 inline-config 防护夹具改为验证仅凭变量名 fail closed，Guard 会在读取其值时直接失败。未读取私有值。
+
+## RUN 04：冻结代码后的最终完整运行，63 tests，return code 0
+
+最终运行包含原 v4 的 34 个测试方法名及 29 个新增 v7 对抗/故障注入测试；34 个原测试方法均可在 v7 suite 中找到，旧 v4 测试文件 SHA-256 保存在 report.json。最终 stdout/stderr、实际 argv、return code、测试数、运行时间和日志 SHA-256 见 tests_run_manifest.txt 与 test_run_04.*。
+
+另有一次 PowerShell stdin 脚本在测试启动前因 UTF-8 BOM 被 Python 拒绝；该命令没有启动 unittest，也没有触碰 provider。将脚本管道改为无 BOM UTF-8 后执行 RUN 04。该启动问题没有改动被测代码。

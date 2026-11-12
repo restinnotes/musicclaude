@@ -1,0 +1,29 @@
+{
+  "name": "round28_diverse",
+  "base": "qurefs",
+  "scheme": "schemes/Q15.json",
+  "count": 6,
+  "source_tags": [
+    "qu",
+    "qb",
+    "r27p2"
+  ],
+  "workers": 4,
+  "advisors": [
+    {
+      "run_id": "batch_round28_diverse_advisor_g6",
+      "judge": "g6",
+      "requested": 3,
+      "sha256": "a513ee700446c5510d554dc585bf214557537b8399e5ff3d384b11483754ed79"
+    },
+    {
+      "run_id": "batch_round28_diverse_advisor_g56",
+      "judge": "g56",
+      "requested": 3,
+      "sha256": "a513ee700446c5510d554dc585bf214557537b8399e5ff3d384b11483754ed79"
+    }
+  ],
+  "scheme_sha256": "1826de11aa0c4880e7da9a9e94500a75b838a15b6f5a6ab1d6fa3b13d846012e",
+  "parent_batch": "round28_fast",
+  "reason": "Original g56 proposals duplicate mechanisms; Gemini proposals fail genericity; request six distinct replacements while first four generate."
+}

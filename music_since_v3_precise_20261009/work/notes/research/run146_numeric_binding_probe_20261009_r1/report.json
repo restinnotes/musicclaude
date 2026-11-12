@@ -1,0 +1,110 @@
+{
+  "schema": "r6-numeric-binding-main/1",
+  "checks": [
+    {
+      "case": "positive",
+      "accepted": true,
+      "expected_accept": true,
+      "passed": true,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "pack_seed_float_and_receipt_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "pack_order_index_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "result_seed_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "meta_raw_size_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "meta_identity_seed_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    },
+    {
+      "case": "terminal_identity_seed_float",
+      "accepted": true,
+      "expected_accept": false,
+      "passed": false,
+      "exception": null,
+      "normalized_rows": 6,
+      "all_real_returns_zero": true,
+      "scope": "Complete TEST_ONLY ingestion with independent source-bound receipt; not backend/service authentication."
+    }
+  ],
+  "guard_negatives": [
+    {
+      "check": "model_cli_blocked",
+      "passed": true
+    },
+    {
+      "check": "isolated_python_still_blocked",
+      "passed": true
+    },
+    {
+      "check": "native_popen_bypass_blocked",
+      "passed": true
+    },
+    {
+      "check": "shell_blocked",
+      "passed": true
+    },
+    {
+      "check": "network_dns_blocked",
+      "passed": true
+    },
+    {
+      "check": "historical_report_write_blocked",
+      "passed": true
+    }
+  ],
+  "guard_blocked_counts": {
+    "process": 4,
+    "network": 1,
+    "write": 1
+  },
+  "real_model_submissions": 0,
+  "model_cli_invocations": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false
+}

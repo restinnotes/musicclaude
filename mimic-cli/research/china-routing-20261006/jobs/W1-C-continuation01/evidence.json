@@ -1,0 +1,858 @@
+{
+  "job_id": "W1-C-continuation01",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.census.gov/retail/ecommerce.html",
+      "title": "Quarterly Retail E-Commerce Sales",
+      "published_at": "2026-08-18",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL01",
+        "CL02"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.census.gov/programs-surveys/e-stats/about/faqs.html",
+      "title": "E-Stats FAQs",
+      "published_at": "2021-10-08",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL02"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://fred.stlouisfed.org/series/DCLORC1A027NBEA",
+      "title": "PCE: Clothing and footwear",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL03",
+        "C16"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://fred.stlouisfed.org/series/DTCERC1A027NBEA",
+      "title": "PCE: Telephone and related communication equipment",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C01"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://fred.stlouisfed.org/series/DIPERC1A027NBEA",
+      "title": "PCE: Information processing equipment",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://fred.stlouisfed.org/series/DVAARC1A027NBEA",
+      "title": "PCE: Video and audio equipment",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C06"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://fred.stlouisfed.org/series/DAPPRC1A027NBEA",
+      "title": "PCE: Household appliances",
+      "published_at": "2026-04-09",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C10"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://fred.stlouisfed.org/series/DTOORC1A027NBEA",
+      "title": "PCE: Tools and equipment for house and garden",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C11"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://fred.stlouisfed.org/series/DMVPRC1A027NBEA",
+      "title": "PCE: Motor vehicle parts and accessories",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C13"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://fred.stlouisfed.org/series/DUTERC1A027NBEA",
+      "title": "PCE: Glassware, tableware, and household utensils",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C17"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://fred.stlouisfed.org/series/DFFFRC1A027NBEA",
+      "title": "PCE: Furniture and furnishings",
+      "published_at": "2026-09-30",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C17"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.circana.com/post/us-consumer-technology-sales-forecast-to-reach-112-billion-in-2026-reports-circana",
+      "title": "US Consumer Technology Sales Forecast to Reach $112 Billion in 2026",
+      "published_at": "2026-01-06",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL04",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://counterpointresearch.com/insights-sitemap.xml/insights/us-smartphone-market-share",
+      "title": "US Smartphone Market Share: Quarterly",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL05",
+        "C01"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://counterpointresearch.com/default.htm/insights/us-smartphone-sales-fall-5-percent-q2-2026",
+      "title": "US Smartphone Sales Fall 5% YoY in Q2 2026",
+      "published_at": "2026-08-12",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL05",
+        "C01"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://omdia.tech.informa.com/pr/2026/sep/us-pc-shipments-grew-1point0percent-in-2q26-while-full-year-market-forecast-to-decline-10point7-percent",
+      "title": "US PC shipments grew 1.0% in 2Q26",
+      "published_at": "2026-09-09",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL06",
+        "C02"
+      ]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.idc.com/resource-center/blog/the-tablet-market-hits-a-wall/",
+      "title": "The Tablet Market Hits a Wall",
+      "published_at": "2026-08-13",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL07",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://www.circana.com/post/spending-on-fitness-trackers-grows-88-in-2025-circana-reports",
+      "title": "Spending on Fitness Trackers Grows 88% in 2025",
+      "published_at": "2025-09-18",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C08"
+      ]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://shop.cta.tech/products/cta-u-s-consumer-technology-one-year-industry-forecast-2022-2027-july-2026",
+      "title": "CTA U.S. Consumer Technology One-Year Industry Forecast, July 2026",
+      "published_at": "2026-06-01",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "login_required",
+      "claims_supported": [
+        "CL08",
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C12"
+      ]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.cta.tech/articles/from-connected-to-intelligent-how-ai-is-transforming-the-smart-home/",
+      "title": "From Connected to Intelligent",
+      "published_at": "2026-07-21",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C09"
+      ]
+    },
+    {
+      "source_id": "S20",
+      "url": "https://www.circana.com/post/circana-forecasts-u-s-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money",
+      "title": "Circana Forecasts U.S. Home Market Growth",
+      "published_at": "2026-09-24",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL09",
+        "C10",
+        "C17"
+      ]
+    },
+    {
+      "source_id": "S21",
+      "url": "https://www.sema.org/news-media/enews/2026/29/want-grow-your-aftermarket-business-start-2026-sema-market-report",
+      "title": "2026 SEMA Market Report summary",
+      "published_at": "2026-07-07",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL03",
+        "C13"
+      ]
+    },
+    {
+      "source_id": "S22",
+      "url": "https://outdoorindustry.org/2025-outdoor-retail-sales-trends-report/",
+      "title": "2025 Outdoor Retail Sales Trends Report",
+      "published_at": "2025-04-15",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL03",
+        "C14"
+      ]
+    },
+    {
+      "source_id": "S23",
+      "url": "https://www.toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx",
+      "title": "U.S. Sales Data",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL03",
+        "C18"
+      ]
+    },
+    {
+      "source_id": "S24",
+      "url": "https://www.circana.com/post/us-toy-industry-posts-strongest-first-half-in-six-years-circana-reports",
+      "title": "US Toy Industry Posts Strongest First Half in Six Years",
+      "published_at": "2026-08-12",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL10",
+        "C18"
+      ]
+    },
+    {
+      "source_id": "S25",
+      "url": "https://www.cipa.jp/e/stats/dc.html",
+      "title": "CIPA Digital Camera Statistics",
+      "published_at": "2026-08-03",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "CL11",
+        "C12"
+      ]
+    },
+    {
+      "source_id": "S26",
+      "url": "https://www.reddit.com/r/buildapc/comments/1u5i1g1/where_to_source_parts_from/",
+      "title": "Where to source parts from",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C05",
+        "C07"
+      ]
+    },
+    {
+      "source_id": "S27",
+      "url": "https://www.reddit.com/r/3Dprinting/comments/1ttj9ij/purchase_advice_megathread_june_2026/",
+      "title": "Purchase Advice Megathread - June 2026",
+      "published_at": "2026-06-01",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C15"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CL01",
+      "claim": "Q2 2026 U.S. adjusted retail e-commerce sales were $340.2B, 17.1% of total retail, but Census flagged the release as no longer containing the latest estimates as of 2026-09-28.",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "The figures are pending revision in the Q3 2026 release."
+    },
+    {
+      "claim_id": "CL02",
+      "claim": "Census store-industry e-commerce ratios should not be treated as product-category online penetration because separate e-commerce divisions can be classified in NAICS 4541.",
+      "classification": "FACT",
+      "source_ids": [
+        "S02"
+      ],
+      "confidence": "high",
+      "counterevidence": "A product-based commercial dataset could still measure category online penetration accurately; Census store-type tables do not."
+    },
+    {
+      "claim_id": "CL03",
+      "claim": "Among relatively target-adjacent public U.S. dollar baselines, C16 is clearly larger than C13, C18 and C14; C13 and C18 are both tens-of-billions markets and C14 is also large.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S03",
+        "S21",
+        "S22",
+        "S23"
+      ],
+      "confidence": "high",
+      "counterevidence": "The four sources use different category boundaries, years and retail/PCE definitions, so only coarse ordering is defensible."
+    },
+    {
+      "claim_id": "CL04",
+      "claim": "U.S. consumer technology revenue was forecast at $112B for 2026, with computers contributing over $600M of incremental revenue and tablets over $200M.",
+      "classification": "FACT",
+      "source_ids": [
+        "S12"
+      ],
+      "confidence": "high",
+      "counterevidence": "This is a January forecast, not realized full-year sales; later tablet shipment data deteriorated sharply."
+    },
+    {
+      "claim_id": "CL05",
+      "claim": "Q2 2026 U.S. smartphone sell-in and sell-through moved in opposite directions: shipments rose 6% YoY while consumer sales fell 5% YoY.",
+      "classification": "FACT",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "confidence": "high",
+      "counterevidence": "Different trackers/methodologies measure different channel stages, so the exact magnitude is not directly comparable."
+    },
+    {
+      "claim_id": "CL06",
+      "claim": "Q2 2026 U.S. PC shipments rose only 1.0%, while market revenue rose 13.1% and sell-in ASP exceeded $1,000, demonstrating strong price/mix effects.",
+      "classification": "FACT",
+      "source_ids": [
+        "S15"
+      ],
+      "confidence": "high",
+      "counterevidence": "PC data includes commercial demand and desktops/workstations, not only consumer laptops."
+    },
+    {
+      "claim_id": "CL07",
+      "claim": "U.S. tablet shipments fell 31.6% YoY in Q2 2026, contradicting a simple interpretation of early-2026 revenue-growth forecasts.",
+      "classification": "FACT",
+      "source_ids": [
+        "S16",
+        "S12"
+      ],
+      "confidence": "high",
+      "counterevidence": "Revenue can rise even if units fall when ASP rises; forecast and shipment measures are not identical."
+    },
+    {
+      "claim_id": "CL08",
+      "claim": "CTA has a potentially decisive product-level U.S. technology dataset covering shipments, wholesale revenue, average wholesale price and household penetration, but the complete report requires authenticated/paid access.",
+      "classification": "FACT",
+      "source_ids": [
+        "S18"
+      ],
+      "confidence": "high",
+      "counterevidence": "CTA measures wholesale revenue, so even authenticated data would still require a retail/PCE crosswalk."
+    },
+    {
+      "claim_id": "CL09",
+      "claim": "Circana's 2026 Home forecast shows dollar growth to $43.7B despite pressured unit demand, reinforcing the need to separate dollar demand from units.",
+      "classification": "FACT",
+      "source_ids": [
+        "S20"
+      ],
+      "confidence": "high",
+      "counterevidence": "The Circana Home universe overlaps C10 and C17 and is not identical to either target category."
+    },
+    {
+      "claim_id": "CL10",
+      "claim": "The U.S. toy market has unusually strong current momentum: H1 2026 dollars +17%, units +12%, ASP +4%, with licensed toys 39% of sales.",
+      "classification": "FACT",
+      "source_ids": [
+        "S24"
+      ],
+      "confidence": "high",
+      "counterevidence": "Trading cards and collectibles are major growth drivers and may make the current period atypical."
+    },
+    {
+      "claim_id": "CL11",
+      "claim": "The current CIPA official page reviewed in this continuation verifies digital-camera statistics through June 2026, published August 3, 2026; it does not by itself provide U.S. retail GMV.",
+      "classification": "FACT",
+      "source_ids": [
+        "S25"
+      ],
+      "confidence": "high",
+      "counterevidence": "A newer file may exist outside the currently indexed/public page, but it was not verified in this session."
+    },
+    {
+      "claim_id": "CL12",
+      "claim": "A complete 1-18 numeric demand ranking is not currently supportable without manufacturing weights for missing categories.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S18"
+      ],
+      "confidence": "high",
+      "counterevidence": "Authenticated CTA/Circana/IDC product-level data could materially close the missing-data problem."
+    }
+  ],
+  "categories": [
+    {
+      "category_id": "C01",
+      "name": "Smartphones",
+      "demand_value_usd_b": 35.942,
+      "metric": "BEA PCE proxy: telephone and related communication equipment",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure",
+      "online_share": null,
+      "latest_signal": "Q2 2026 shipments +6% YoY; consumer sales -5% YoY",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": "Q2 2026 shipment share Apple 54%, Samsung 30%, Motorola 11%",
+      "confidence": "medium",
+      "limitations": "PCE proxy is broader than smartphones; sell-in differs from sell-through",
+      "source_ids": [
+        "S04",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "category_id": "C02",
+      "name": "Laptops",
+      "demand_value_usd_b": null,
+      "metric": "No clean laptop-only U.S. GMV",
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "Q2 2026 U.S. PCs excluding tablets: 18.8M shipments, +1.0% YoY; consumer +2.8%",
+      "asp": "PC sell-in ASP >$1,000 in Q2 2026",
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium",
+      "limitations": "PC figures combine notebooks, desktops and workstations; consumer/commercial mixed",
+      "source_ids": [
+        "S15",
+        "S12",
+        "S18"
+      ]
+    },
+    {
+      "category_id": "C03",
+      "name": "Tablets",
+      "demand_value_usd_b": null,
+      "metric": "No clean U.S. retail GMV",
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "Q2 2026 U.S. shipments -31.6% YoY",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": "Global top five vendors 79.8%, not U.S.-specific",
+      "confidence": "medium",
+      "limitations": "January revenue forecast conflicted with later shipment weakness",
+      "source_ids": [
+        "S16",
+        "S12"
+      ]
+    },
+    {
+      "category_id": "C04",
+      "name": "Mini PCs / small desktops",
+      "demand_value_usd_b": null,
+      "metric": null,
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "IDC identifies low-cost mini-PCs as competition for sub-$200 tablets",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "low",
+      "limitations": "No U.S. mini-PC market-size series found",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "name": "PC components / storage / networking",
+      "demand_value_usd_b": null,
+      "metric": "BEA information-processing equipment $326.628B is only a broad shared upper proxy",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure proxy",
+      "online_share": null,
+      "latest_signal": null,
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": "Enthusiast community shows multi-retailer purchasing; not quantifiable",
+      "confidence": "low",
+      "limitations": "Broad proxy overlaps C02/C03/C04/C07; authenticated CTA data required",
+      "source_ids": [
+        "S05",
+        "S18",
+        "S26"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "name": "Headphones / IEM / DAC / portable audio",
+      "demand_value_usd_b": null,
+      "metric": "BEA video and audio equipment $92.593B is a broad upper proxy",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure proxy",
+      "online_share": null,
+      "latest_signal": "Wired headphone 2025 revenue +3%; first six weeks 2026 +20%",
+      "asp": "Wired approximately $13 vs Bluetooth $99 in 2025",
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium-low",
+      "limitations": "BEA bucket includes substantial video products; Circana signal covers headphones only",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "category_id": "C07",
+      "name": "PC peripherals",
+      "demand_value_usd_b": null,
+      "metric": null,
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": null,
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": "Multi-retailer behavior visible in enthusiast community",
+      "confidence": "low",
+      "limitations": "AUTHENTICATED DATA REQUIRED for product-level CTA values",
+      "source_ids": [
+        "S18",
+        "S26"
+      ]
+    },
+    {
+      "category_id": "C08",
+      "name": "Wearables",
+      "demand_value_usd_b": null,
+      "metric": "Partial fitness-tracker evidence only",
+      "year": 2025,
+      "channel": "U.S. retail tracking",
+      "online_share": null,
+      "latest_signal": "Jan-Jul 2025 >1.3M fitness trackers; revenue +88%; smart-ring revenue $217M",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium-low",
+      "limitations": "Does not include full smartwatch market",
+      "source_ids": [
+        "S17"
+      ]
+    },
+    {
+      "category_id": "C09",
+      "name": "Smart home / security / IoT",
+      "demand_value_usd_b": null,
+      "metric": null,
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "CTA says four of five fastest-growing tech products are smart-home products",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium-low",
+      "limitations": "Full ownership/purchase-intent data are authenticated/paid; category is heterogeneous",
+      "source_ids": [
+        "S19",
+        "S18"
+      ]
+    },
+    {
+      "category_id": "C10",
+      "name": "Robot vacuums / small appliances",
+      "demand_value_usd_b": null,
+      "metric": "Household appliances PCE $89.654B is a broad proxy; Circana Home 2026 forecast $43.7B is a different broad universe",
+      "year": 2026,
+      "channel": "mixed PCE/retail forecast",
+      "online_share": null,
+      "latest_signal": "Robotic vacuum dollar sales forecast +9.1% in 2026 while overall unit demand remains pressured",
+      "asp": null,
+      "purchase_frequency": "Replacement important: e.g. 54% of recent upright-vacuum purchasers replaced an existing unit",
+      "concentration": null,
+      "confidence": "medium",
+      "limitations": "Broad overlapping universes cannot be added",
+      "source_ids": [
+        "S07",
+        "S20"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "name": "Power tools / electronics tools / repair tools",
+      "demand_value_usd_b": 61.557,
+      "metric": "BEA PCE proxy: tools and equipment for house and garden",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure",
+      "online_share": null,
+      "latest_signal": null,
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium",
+      "limitations": "Includes garden tools and does not fully capture electronics-repair tools",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "name": "Camera / video gear and accessories",
+      "demand_value_usd_b": null,
+      "metric": null,
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "CIPA public page verified through June 2026 shipments",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "low",
+      "limitations": "CIPA is production/shipment data, not U.S. retail GMV",
+      "source_ids": [
+        "S25",
+        "S18"
+      ]
+    },
+    {
+      "category_id": "C13",
+      "name": "Automotive accessories",
+      "demand_value_usd_b": 52.92,
+      "metric": "SEMA specialty-equipment accessory and performance parts retail sales",
+      "year": 2025,
+      "channel": "U.S. retail",
+      "online_share": null,
+      "latest_signal": "Approximately one in four vehicle owners purchased accessory/performance products in 2025",
+      "asp": null,
+      "purchase_frequency": "Purchase incidence approximately 25% of vehicle owners in 2025",
+      "concentration": null,
+      "confidence": "high",
+      "limitations": "Does not include the whole replacement-parts market; broader BEA motor-parts PCE is $130.530B",
+      "source_ids": [
+        "S21",
+        "S09"
+      ]
+    },
+    {
+      "category_id": "C14",
+      "name": "Sports / outdoor goods",
+      "demand_value_usd_b": 28.0,
+      "metric": "Outdoor retail sales",
+      "year": 2024,
+      "channel": "chain, e-commerce and specialty retail universe",
+      "online_share": null,
+      "latest_signal": "2024 sales +1%; footwear/accessories strongest, equipment declined, apparel flat",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "high",
+      "limitations": "Overlaps C16 apparel/footwear; data year older than most other anchors",
+      "source_ids": [
+        "S22"
+      ]
+    },
+    {
+      "category_id": "C15",
+      "name": "Hobby / models / 3D printing / maker electronics",
+      "demand_value_usd_b": null,
+      "metric": null,
+      "year": null,
+      "channel": null,
+      "online_share": null,
+      "latest_signal": "Persistent monthly purchase-advice activity in 3D-printing community",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "low",
+      "limitations": "Community activity cannot estimate GMV or ranking",
+      "source_ids": [
+        "S27"
+      ]
+    },
+    {
+      "category_id": "C16",
+      "name": "Apparel / shoes / bags",
+      "demand_value_usd_b": 559.768,
+      "metric": "BEA PCE: clothing and footwear",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure",
+      "online_share": null,
+      "latest_signal": "2024 $529.730B to 2025 $559.768B",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "high",
+      "limitations": "Bags are not fully covered; overlaps outdoor apparel/footwear in C14",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C17",
+      "name": "Home / organization / household goods",
+      "demand_value_usd_b": null,
+      "metric": "Multiple non-additive proxies: utensils $61.565B; furniture/furnishings $291.665B",
+      "year": 2025,
+      "channel": "all-channel consumer expenditure proxies",
+      "online_share": null,
+      "latest_signal": "Circana Home 2026 forecast $43.7B with replacement-led growth",
+      "asp": null,
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "medium",
+      "limitations": "Taxonomy is very broad; substantial overlap with C10; proxies must not be summed",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S20"
+      ]
+    },
+    {
+      "category_id": "C18",
+      "name": "Toys / collectibles / official merchandise",
+      "demand_value_usd_b": 45.6,
+      "metric": "Projected total U.S. toy market",
+      "year": 2025,
+      "channel": "U.S. retail market",
+      "online_share": null,
+      "latest_signal": "H1 2026 dollars +17%, units +12%, ASP +4%; licensed toys 39% of sales",
+      "asp": "H1 2026 industry ASP +4% YoY",
+      "purchase_frequency": null,
+      "concentration": null,
+      "confidence": "high",
+      "limitations": "Official merchandise outside toy taxonomy is not fully covered; trading cards/collectibles are unusually strong growth drivers",
+      "source_ids": [
+        "S23",
+        "S24"
+      ]
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "Product-based U.S. online GMV/share for all 18 categories",
+      "required": "Paid product taxonomy dataset or retailer/marketplace panel; Census store-industry ratios are insufficient"
+    },
+    {
+      "gap": "Clean retail GMV/units/ASP for C01-C09 and C12",
+      "required": "AUTHENTICATED DATA REQUIRED: CTA/Circana/IDC or equivalent product-level data"
+    },
+    {
+      "gap": "Purchase/replacement frequency",
+      "required": "CTA lifecycle/ownership research or category-specific consumer panel"
+    },
+    {
+      "gap": "SKU concentration and middle-tail fragmentation",
+      "required": "SKU-level marketplace/retailer sell-through dataset; category GMV alone cannot answer it"
+    },
+    {
+      "gap": "C04 mini-PC and C15 hobby/maker clean market definitions",
+      "required": "Manual taxonomy construction plus paid/retailer data"
+    },
+    {
+      "gap": "CIPA latest post-June-2026 release",
+      "required": "Re-check official CIPA update page/files; the continuation verified only through June 2026"
+    }
+  ],
+  "pre_freeze_compliance": true
+}

@@ -1,0 +1,636 @@
+补做结果先给结论：**目前我没有找到任何一家具备公开可核验能力，能在“中国商品尚未采购/尚未入仓”时，仅凭商品 URL/确定 SKU + 美国地址，就返回包含商品价、国内运费、仓储/操作费、包装后的计费重、国际运费、关税/清关费、末端费在内且具有约束力的 all-in quote。** BuckyDrop 最接近可系统集成；Superbuy、Sugargoo 的公开标准流程仍明显是“先买到中国仓，再形成更可靠的国际运费”。这不等于能力不存在，而是**本轮没有公开证据证明已可用**。
+
+同时，国内平台 API 并非完全封闭：淘宝全球开放平台、海外淘宝客、1688 跨境方案、京东联盟都存在正式官方接入路径。但它们是**供销/导购/联盟/商家生态中的授权数据能力**，不是“任意美国 comparison engine 可匿名拿中国全货架实时价”的通用数据许可证。Amazon 的约束反而更明确：当前 Creators API/Associates 条款与一个“中立、必要时推荐非 Amazon 路线”的产品存在实质冲突，尤其是 browser extension、价格提醒、聚合分析和用 Amazon 内容推广其他零售渠道。
+
+旧 54 SKU 样本我不作任何重新解释：**CN transaction verified=0/54、完整 landed=0/54 仍然只表示未测出，不是 54 个反例。** 本次是基础设施独立探索，没有加入 SKU 分母。
+
+---
+
+# 一、结论分层
+
+### Observation｜公开证据直接支持
+
+**O1. BuckyDrop 有真正面向系统对接的 API 基础。** 官方 Solution API 公开说明包含 Product / Order / Parcel / Logistics 等模块，申请方需提交资质，经审核后取得 `APPcode/APPsecret` 和控制台内 API 文档、测试环境；公开 API 页面还能看到商品链接解析/查询形态，例如：
+
+`POST {{domain}}/api/rest/v2/adapt/adaptation/product/query?...`
+
+请求体可传淘宝商品链接。它因此是三家 agent 中目前公开证据最接近“可做 routing backend”的一家。具体物流报价 endpoint、quote schema、SLA 和生产权限仍未公开证明。访问：2026-10-06。 [BuckyDrop](https://solution-api.buckydrop.com/?utm_source=chatgpt.com)  
+[BuckyDrop Solution API](https://solution-api.buckydrop.com/en?utm_source=chatgpt.com)
+
+**O2. BuckyDrop 的公开 shipping quote 是 estimate，不是最终锁价。** 当前定价页称可按“destination + estimated package specs”取得实时 carrier quotes，但同页又明确国际运费按承运商**最终重量/体积**结算，承运商账单最终确认后再补/退差额；2026-09-08 官方文章也直接称 calculator 是 planning tool，实际包裹和 carrier 数据决定最终收费。官方 FAQ 更明确说，不能在买家输入 ZIP 下单时实时计算精确 shipping，只能预估后将运费吸收到商品价格等。支持范围：国际物流估算。剩余缺口：是否存在 B2B 私有“锁价/误差上限”产品。 [BuckyDrop](https://www.buckydrop.com/en/services/pricing/)  
+[BuckyDrop Pricing](https://www.buckydrop.com/en/services/pricing/?utm_source=chatgpt.com)  
+[BuckyDrop 2026 shipping-cost guide](https://blog.buckydrop.com/dropshipping-shipping-costs-from-china/?utm_source=chatgpt.com)
+
+**O3. BuckyDrop 当前公开基础费用可以计算，但不能把它直接叫 landed cost。** 截至访问日，Free 为 ¥0/store、Pro 为 ¥199/月/store；标准淘宝/1688 sourcing 为 ¥0；fulfillment ¥9.90/parcel，超过 5 件和 8kg 后有附加费；国际物流另外收承运商实际费用，并另有每包 ¥9.9 服务费。该页只证明这些公开费用项，不能证明关税、清关、美国税费已包含。访问：2026-10-06。 [BuckyDrop](https://www.buckydrop.com/en/services/pricing/)
+
+**O4. Superbuy 的国际运费标准流程是入仓后更可靠，而非采购前锁定。** 当前 Fee Structure 明确把 Stage 1 定义为商品从中国商家到 Superbuy 仓库；Stage 2 则写明“once items arrive at the warehouse”，系统基于**最终包裹重量、线路、目的地**计算国际物流；提交包裹时先按 estimated weight 收费，最终由物流商正式账单决定，多退少补。页面同时把目的国关税列为 recipient 承担。访问：2026-10-06。 [Superbuy](https://login.superbuy.com/en/page/guide/feecomposition/)  
+[Superbuy Fee Structure](https://www.superbuy.com/en/page/guide/feecomposition/?utm_source=chatgpt.com)
+
+**O5. Superbuy 有采购前运费计算器，但公开页面没有证明它形成有约束力的 all-in。** Shipping Calculator 支持美国、仓库、重量、尺寸、商品属性等输入；多数空运体积重计算可使用长×宽×高/6000。与此同时，最终费用仍按实际打包/物流商账单校准。因此它适合 sensitivity estimate，不足以给 UI 标“$16.80 guaranteed landed”。访问：2026-10-06。 [Superbuy](https://login.superbuy.com/en/page/query/freight/?utm_source=chatgpt.com)  
+[Superbuy Shipping Calculator](https://login.superbuy.com/en/page/query/freight/?utm_source=chatgpt.com)
+
+**O6. Superbuy 对企业/drop-ship 有专门 SBS 业务，但本轮没有找到公开 API endpoint 文档。** 官方 Business Service 明确有淘宝/Tmall/1688/JD sourcing、drop-ship、全球配送、Shopify 接入和商业合作；公开合作页要求提交公司/平台/品类等资料后商谈。支持范围是“存在 B2B 合作路径”；剩余缺口是 API schema、quote API、费率、SLA。 [Superbuy](https://www.superbuy.com/en/page/businessservice/?tab=channel\&utm_source=chatgpt.com)  
+[Superbuy Business Services](https://www.superbuy.com/en/page/businessservice/?tab=channel&utm_source=chatgpt.com)
+
+**O7. Sugargoo 的标准公开流程同样是：先付商品价→中国仓→Packing Center→选择国际线路→支付国际运费。** 官方流程页面明确写“PAY PRODUCT COST ONLY”，货物到仓/QC 后才在 Packing Center 填海外地址、选线路并付国际运费。其 freight calculator 可采购前估算，但不能据此推出最终包裹费用。访问：2026-10-06。 [Sugargoo Blog](https://blog.sugargoo.com/shipping-services/?utm_source=chatgpt.com)  
+[Sugargoo shipping workflow](https://blog.sugargoo.com/shipping-services/?utm_source=chatgpt.com)  
+[Sugargoo Freight Calculator guide](https://blog.sugargoo.com/sugargoo-freight-calculator/?utm_source=chatgpt.com)
+
+**O8. Sugargoo 的 rehearsal/pre-shipment simulation 也发生在商品已进入 Packing Center 以后。** 官方 guide 给出的 rehearsal fee 为 ¥18，并以实际重/体积重及不同 carrier divisor 计算；这能提高出库前运费精度，但不是“购买中国商品前”的尺寸确认服务。来源约 2025-09，访问 2026-10-06。 [Sugargoo Blog](https://blog.sugargoo.com/sugargoo-pre-shipment-package-simulation-guide/?utm_source=chatgpt.com)  
+[Sugargoo Pre-shipment Simulation](https://blog.sugargoo.com/sugargoo-pre-shipment-package-simulation-guide/?utm_source=chatgpt.com)
+
+我没有把 Sugargoo 2025 年文章里的美国线路名称和美元示例价当成 2026-10-06 的当前普通价；它们最多证明历史上存在过相关路线。当前具体路线和价仍应通过当前 calculator/账户 quote 重新取得。
+
+---
+
+# 二、采购代理 / 物流能力矩阵
+
+状态定义：**公开证明** = 无需臆测即可由官方页确认；**需账户** = 能力存在但生产数据/API 权限需注册审核；**需商谈** = 官方有合作入口但产品能力/商务条件没有公开；**缺失** = 本轮没有找到官方公开证据，不代表不存在。
+
+| 能力 | BuckyDrop | Superbuy | Sugargoo |
+|---|---|---|---|
+| 商品 URL 解析/采购 | **公开证明 + 需账户**。Solution API、商品 URL query 已见公开 endpoint | **公开证明**普通网页代理；企业自动化 **需商谈** | **公开证明**网页代理 |
+| 正式公开 API | **公开证明**，完整 docs **需审核账户** | **缺失公开 endpoint**；SBS **需商谈** | **缺失公开 endpoint** |
+| 采购前国际运费估算 | **公开证明** | **公开证明** | **公开证明** |
+| 美国 destination | **公开证明**，官方文章明确支持 US | **公开证明** calculator 可选 USA | 国际配送能力公开；**当前 US route 表需实时查询** |
+| ZIP/postcode 输入 | **公开证明** calculator 支持 postcode | 目的地/地址支持；ZIP 粒度公开证明弱于 Bucky | calculator 能做目的地估算；ZIP schema未公开核实 |
+| 包裹体积重 | **公开证明**，最终按实际/体积数据 | **公开证明** | **公开证明** |
+| 入仓前准确包装尺寸 | **缺失** | **缺失** | **缺失** |
+| 入仓后 rehearsal/精确包装 | 仓库实际打包流程 **公开证明** | **公开证明** | **公开证明，¥18 rehearsal** |
+| 采购前 binding freight | **缺失**；官方反而强调 estimate/final reconciliation | **缺失**；final carrier bill | **缺失** |
+| 采购前 binding all-in landed | **缺失** | **缺失** | **缺失** |
+| 关税/清关一定包含 | **未证明**；必须看具体 route | 默认流程不能这样理解 | 未证明；必须看具体 route |
+| DDP / IOR 明确 API 字段 | **缺失公开证明** | **缺失公开证明** | **缺失公开证明** |
+| 退货 API | 完整细节 **需账户/商谈** | 消费者退换有页面，但 B2B/API **需商谈** | **需账户/商谈** |
+| webhook/tracking 自动化 | **公开证明** API/store integration | 企业方案有履约集成；具体 webhook **需商谈** | API 证据不足 |
+| 公开 referral/分账 | **公开 affiliate**；另有 B2B 条件需商谈 | **公开 affiliate 5.5–8.5% shipping bonus** | **公开 affiliate**，具体当前 rate 要账户确认 |
+| 平台级 revenue share | **需商谈** | **需商谈** | **需商谈** |
+
+分账方面需要特别区分“affiliate”与“基础设施 partner revenue share”。Superbuy 当前官方 affiliate 明确按被邀请用户国际包裹实际运费计算，公开等级 5.5%–8.5%；这不是 API 平台合作合同。访问 2026-10-06。 [Superbuy](https://www.superbuy.com/en/page/about/affiliate/?utm_source=chatgpt.com)  
+[Superbuy Affiliate Program](https://www.superbuy.com/en/page/about/affiliate/?utm_source=chatgpt.com)
+
+Sugargoo 官方 affiliate 文档证明会按被推荐用户国际运费发佣金，且需账户进入 Affiliate Center；本轮公开页没有足够可靠的当前固定比例，所以我不填百分比。官方文章 2025-07-11、更新 2025-10-15；访问 2026-10-06。 [Sugargoo Blog](https://blog.sugargoo.com/turn-your-influence-into-income-join-the-sugargoo-affiliate-program-today/?utm_source=chatgpt.com)  
+[Sugargoo Affiliate Program](https://blog.sugargoo.com/turn-your-influence-into-income-join-the-sugargoo-affiliate-program-today/?utm_source=chatgpt.com)
+
+**Inference I1：三家里面，BuckyDrop 最适合优先做 RFP/技术验证。** 原因不是它已经解决 all-in，而是它至少已经公开证明存在 product/order/parcel/logistics API、可定制 API 和包裹自动化；Superbuy/Sugargoo 当前更像“成熟 consumer agent + 可商谈企业能力”。这是基于上述公开资料的工程判断，不是供应商承诺。 [BuckyDrop](https://www.buckydrop.com/en/services/pricing/)
+
+---
+
+# 三、Taobao / Tmall：真正有用的是两条不同轨道
+
+## A. Taobao Global Open Platform：采购/供销轨道
+
+**Observation.** 官方开发手册更新时间为 **2023-09-11**，目前仍在线，访问 2026-10-06。它明确要求申请“全球供销平台”应用类型、审核 API 权限；卖家业务数据按具体接口还可能需要 seller OAuth。网关为 `https://api.taobao.global/rest`。 [Alibaba Developer](https://developer.alibaba.com/docs/doc.htm?articleId=120906\&docType=1\&treeId=735)  
+[Taobao Global Open Platform manual](https://developer.alibaba.com/docs/doc.htm?articleId=120906&docType=1&treeId=735&utm_source=chatgpt.com)
+
+已能从官方手册核验的相关 API 包括：
+
+| 能力 | 官方证明 | 对本项目的支持范围 | 剩余缺口 |
+|---|---|---|---|
+| 按淘宝 item ID 取商品 | `/product/get` | SKU/价格/库存/邮费等结构化采购数据 | 非跨境供货商品可能被裁剪素材 |
+| 批量撞库 | `/batch/src/products/check` | 从已知 item ID 建 identity graph | 不是全网 consumer search |
+| 同款/相似 | `/product/similar/get`、`/product/recommend` | 图片/商品关联、低价候选 | 文档不同章节对商品池范围描述不完全一致，需真账号测试 |
+| 下单预检查 | `/purchase/order/render` | 可返回库存/下架、优惠、应付价 | 文档标注过“灰度中”；当前生产权限需重新确认 |
+| 创建订单 | `/purchase/order/create` | 可做代购/导购业务流 | 需要获准应用/商品身份 |
+| 订单/退款 | 有正式订单及退款接口 | 可构成采购 lifecycle | 国际售后/美国退货不是这些接口本身解决的 |
+
+API 请求示例甚至直接展示 `/product/get`、价格、`promotion_price`、SKU 数量和 `postFee` 等字段。 [Alibaba Developer](https://developer.alibaba.com/docs/doc.htm?articleId=120906\&docType=1\&treeId=735)
+
+一个很关键的限制：Taobao Global 文档历史升级说明称 `/product/get` 曾扩展到淘宝/天猫全量商品，但**非跨境供货商品可能返回 `WITHOUT_MATERIAL`，不提供图片、描述及部分素材字段**。所以“可采购某 item ID”不等于“被授权拿完整全站商品内容做美国 comparison catalog”。
+
+另一个关键点是 `/purchase/order/create` 的地址数据包含 distributor 的**中国境内收货仓地址**。因此这套采购 API 本身不提供“中国 SKU → 美国消费者 landed quote”；国际运输层仍需要 BuckyDrop/Superbuy/其他 forwarder 衔接。
+
+### B. 海外淘宝客：站外发现/归因轨道
+
+这是本轮比较有价值的新发现。
+
+官方当前正式版 `taobao.ovs.tbk.material.item.optional`：
+
+- 标注“免费”“不需要授权”，这里的“不需要授权”指**不需要终端淘宝用户 session/OAuth**，不是无需 TOP AppKey/推广位；
+- 请求仍需 `app_key`、签名、`adzone_id`；
+- 搜索的是**海外联盟商品库**；
+- 支持关键词、价格过滤、是否天猫、推广链接、禁限售/运过滤、语言、本地化价格；
+- `site` 官方枚举包括 TW/HK/MY/SG/AU/CA/MO/GLOBAL，我没有看到专门 `US` 枚举，因此**不能写成“已证明美国站支持”**；
+- 搜不到联盟商品时还可请求“similar recommendation”，这不能被当成“同款已验证”。访问：2026-10-06。 [Alibaba Developer](https://developer.alibaba.com/docs/api.htm?apiId=72807)  
+[海外淘宝客正式版商品搜索 API](https://developer.alibaba.com/docs/api.htm?apiId=72807&utm_source=chatgpt.com)
+
+对应详情接口是 `taobao.ovs.tbk.material.item.info.get`。访问：2026-10-06。 [Alibaba Developer](https://developer.alibaba.com/docs/api.htm?apiId=72811)  
+[海外淘宝客商品详情 API](https://developer.alibaba.com/docs/api.htm?apiId=72811&utm_source=chatgpt.com)
+
+国内淘宝客 `taobao.tbk.dg.material.optional` 也仍是正式官方 material search，接口页写“免费、不需要授权”，但仍属于联盟/推广语境，不应把它解释成通用商业数据授权。 [Alibaba Developer](https://developer.alibaba.com/docs/api.htm?apiId=35896)  
+[淘宝客物料搜索 API](https://developer.alibaba.com/docs/api.htm?apiId=35896&utm_source=chatgpt.com)
+
+**Inference I2：海外淘宝客可以成为 v0 的“合法可展示候选池”，但不能用来验证 thesis 中的“中国国内 head catalog”。** 它解决的是海外联盟已纳入商品的发现、价格和归因；真正的“国内-first head SKU”仍需 Global Supply、代理商或另一份正式数据许可。
+
+**Remaining gap：** 海外淘宝客的 API 文档本身没有证明你可以在“同时强烈推广 Amazon/Temu/AliExpress/agent route 的中立价格比较器”里无限制使用这些素材。这个用途应在应用审核/联盟协议或书面商务确认中锁死。
+
+---
+
+# 四、1688：官方跨境 API 存在，但定位明显偏卖家/采购系统
+
+1688 官方开放平台目前明确有“跨境电商”解决方案，描述对象是**在下游跨境电商平台开店的 1688 采购商**，与 ISV 对接智能选款、一键铺货、自动下单、批量支付、订单同步；公开 API 分类包括会员、商品、订单、支付、物流。访问：2026-10-06。 [Alibaba Open Platform](https://aop.alibaba.com/)  
+[1688 开放平台](https://aop.alibaba.com/?utm_source=chatgpt.com)
+
+这证明的是：
+
+**Observation：** 正式 B2B procurement API ecosystem 存在。
+
+**不证明：**
+
+- 存在无需合作身份的 1688 全站 consumer-search API；
+- 存在可直接授权给美国消费者 price-comparison engine 的全货架实时价；
+- 存在公开、无需审核的图片同款 API；
+- 当前所有 method name、调用额度和收费均无需账号即可确认。
+
+官方公告/技术文档入口仍在线，平台还有合作伙伴协议、应用审核规范等。 [Alibaba Open Platform](https://aop.alibaba.com/doc/notice.htm)  
+[1688 开放平台公告/文档入口](https://aop.alibaba.com/doc/notice.htm?utm_source=chatgpt.com)
+
+本轮检索还看到 2026 年有接口治理、批发价体系等公告，说明 API 和价格语义在变化。因此生产方案不能按某篇旧博客固化 method/schema；必须用获批账号重新做一遍 capability inventory。
+
+**Inference I3：** 对本项目，1688 更适合作为“供应/采购 backend 或后续替代品发现”，而不是第一阶段的 consumer-facing exact-match price source。原因是 1688 的商品往往还有 MOQ、批发阶梯价、规格/包装数量等 identity 差异，容易把“相似供应品”误判成“美国同款”。
+
+---
+
+# 五、京东：2026 年接口体系刚完成迁移，旧 JOS 文档不能直接当生产保证
+
+京东官方 2026 年公告明确：**JOS 于 2026-07-01 融合至京东商家开放平台，旧 JOS 在 2026-08-30 前关闭；京东联盟走独立的 Union Open Platform。** 新接入京东商家开放平台只允许企业账号创建应用；自研/合作方存在软件著作权等要求，境外企业无法提供中国软著时可提交《数据安全承诺函》和《自开发运维说明》；敏感外部 API 还涉及云鼎部署要求。 [JD Zeus Developer Center](https://jos.jd.com/faq/list.htm?id=847\&utm_source=chatgpt.com)  
+[京东 JOS 迁移公告](https://jos.jd.com/faq/list.htm?id=847&utm_source=chatgpt.com)  
+[京东商家开放平台](https://open.jd.com?utm_source=chatgpt.com)  
+[京东联盟开放平台](https://union.jd.com/openplatform?utm_source=chatgpt.com)
+
+旧的官方京东联盟说明仍可作为**能力历史/迁移参考**，其中列过：
+
+- `jd.union.open.goods.query`：关键词/SKU/优惠等推广商品查询；
+- `jd.union.open.promotion.common.get`：推广链接生成；
+- `jd.union.open.goods.promotiongoodsinfo.query`：商品价格、图片、物流、自营标记、近 30 天订单等；
+- 旧 API 列表还出现过 image-shopping / snapshop 类接口。
+
+京东官方把联盟定位为面向导购、返利、工具商等合作媒体的广告/CPS 生态。 [JD Zeus Developer Center](https://jos.jd.com/jdunion?utm_source=chatgpt.com)  
+[京东联盟旧官方方案说明](https://jos.jd.com/jdunion?utm_source=chatgpt.com)
+
+**Remaining gap：** 由于 JOS 已迁移，本轮没有在无需登录的当前 Union portal 中核实上述每一个 method 的 2026-10 生产连续性、权限等级、调用费率、缓存条款和“美国 consumer comparison”许可。因此这些 endpoint **不能标为“现在已可直接上线”**。
+
+---
+
+# 六、Amazon：当前接口本身不是最大问题，许可证才是
+
+这是本轮最需要改变产品路线的部分。
+
+### 1. PA-API 5 已经 deprecated
+
+Amazon 当前官方文档明确说 Product Advertising API 5.0 已 deprecated，Creators API 是 successor；继续调用 PA-API 5 可返回 403 `AccessDeniedException`。访问 2026-10-06。 [Amazon Associates](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/paapiv5-deprecation)  
+[Amazon PA-API 5 Deprecation Notice](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/paapiv5-deprecation?utm_source=chatgpt.com)
+
+Creators API 当前 endpoint 形态为：
+
+`https://creatorsapi.amazon/catalog/v1/*`
+
+并采用 OAuth 2.0。 [Amazon Associates](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/migrating-to-creatorsapi-from-paapi)  
+[Amazon Creators API migration guide](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/migrating-to-creatorsapi-from-paapi?utm_source=chatgpt.com)
+
+当前 onboarding 文档还要求目标 marketplace 的 Associates 身份，并写有过去 30 天至少 10 个 qualifying sales 才能访问相应 API。 [Amazon Associates](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction)  
+[Creators API Introduction](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction?utm_source=chatgpt.com)
+
+### 2. Comparison 本身不是绝对禁止，但条件非常苛刻
+
+Amazon Program Policies 当前标注 **Updated: April 14, 2026**。它明确承认 comparison format：若把 Amazon 商品价格与非 Amazon 渠道同款/相似商品价格一起展示，必须显示 Amazon 的 lowest new price，并在 Amazon 提供时显示 lowest used price。 [Amazon Associates](https://affiliate-program.amazon.com/help/operating/policies)  
+[Amazon Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies?utm_source=chatgpt.com)
+
+但新的 `OffersV2` 又明确说：
+
+- 只提供 retail detail page 的 **featured listings**；
+- 旧 `Offers.Summaries` 被取消；
+- `HighestPrice`、`LowestPrice`、`OfferCount` 均标为 **Not Available**；
+- shipping charges、Prime eligibility 等若干旧字段也不再提供。 [Amazon Associates](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/resources/offersV2)  
+[Amazon Creators API OffersV2](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/resources/offersV2?utm_source=chatgpt.com)
+
+所以有一个需要 Amazon 澄清的实际接口/条款缺口：**政策要求 comparison 中展示 lowest new，但当前公开 OffersV2 已没有旧的 LowestPrice summary。** 我不会推断出一个并不存在的替代 endpoint。
+
+### 3. 更致命的是 usage restrictions
+
+当前 Amazon 条款还明确规定：
+
+- Creators/PA Program Content 的应用**主要目的必须是 advertising/marketing Amazon 并驱动 Amazon 销售**；
+- Product Advertising Content 的每次使用原则上只能链接到 Amazon；
+- 未经 Amazon **express prior written approval**，不得为 aggregating / analyzing / extracting / repurposing Product Advertising Content 使用 Creators API；
+- 不得用 Amazon Program Content 去 advertise/promote 非 Amazon 站点的产品；
+- 网站默认不能有 price tracking / price alerting，除非 Amazon 另行同意。 [Amazon Associates](https://affiliate-program.amazon.com/help/operating/policies)
+
+更直接的是 browser extension：条款明确禁止把 Program Content / Special Links 用在 browser plug-in、helper、toolbar、extension 等 client-side software 中，Approved Mobile Application 是另一个例外类别。 [Amazon Associates](https://affiliate-program.amazon.com/help/operating/policies)
+
+缓存也很严格：图片本身不得 cache，image link 最多 24h；其他 Product Advertising Content 最多 24h，之后必须刷新；若价格/库存刷新不足每小时一次，还要显示 timestamp 和指定免责声明。 [Amazon Associates](https://affiliate-program.amazon.com/help/operating/policies)
+
+### Inference I4
+
+**用标准 Amazon Associates/Creators 许可证直接实现“Google Flights for all retailers”风险很高，尤其不能把当前 memo 里的 browser extension 当成默认首发载体。**
+
+这不是说“Amazon comparison 永远不能做”，而是说标准许可更像 **Amazon affiliate publisher license**，不是中立 retail-pricing data license。真正可走的路径是：
+
+1. 向 Amazon 取得明确的书面特殊许可；或
+2. Amazon 一栏改用另一家有权授权跨零售比较的独立数据提供商；或
+3. v0 让用户自行提供 Amazon URL/价格，只把不受 Amazon Program Content 许可证约束的最小识别信息用于 match——这里仍需单独做法律/ToS 设计。
+
+---
+
+# 七、当前“能力矩阵”汇总
+
+| 系统 | 商品搜索/详情 | 图片/同款 | 当前价 | 下单 | 美国 landed quote | 美国 comparison 使用权 |
+|---|---|---|---|---|---|---|
+| **BuckyDrop** | **公开证明/API需审核** | 产品映射能力公开，具体 endpoint部分需账户 | 采购端能力存在 | **公开证明/API** | **仅 estimate 公开；binding all-in 缺失** | **需商谈** |
+| **Superbuy** | 网页代理公开 | 有 sourcing 能力 | 有 | 有 | **入仓后更可靠；采购前仅估算** | **需商谈** |
+| **Sugargoo** | 网页代理公开 | 有平台链接解析 | 有 | 有 | **入仓/packing 后形成最终运费** | **需商谈** |
+| **Taobao Global** | item ID/product API公开 | 同款/推荐 API 文档存在 | 有采购价格字段 | render/create | **没有国际 US landed 层** | **应用审核/数据范围受限** |
+| **海外淘宝客** | **公开正式 API**，但限海外联盟库 | similar recommendation | 有联盟/促销价字段 | 跳转/导购 | 无 | **联盟用途；中立比较需确认** |
+| **1688 Open** | 正式商品 API 生态存在 | 当前公开精确权限未核实 | 有采购生态 | 有订单/支付 | 无 US consumer all-in 证明 | **偏跨境卖家/采购，需审核商谈** |
+| **JD Union** | 联盟历史/官方能力明确 | 历史有图搜类能力 | 联盟价能力 | CPS 跳转 | 无 | **当前 2026 新平台需重新审核** |
+| **Amazon Creators** | **公开正式 API** | ASIN/variation | Featured offer | 跳 Amazon | Amazon 本身 | **标准条款与中立 routing 有重大冲突** |
+
+---
+
+# 八、美国 landed cost 已不能继续用“<$800 基本零关税”的旧假设
+
+这一点会直接影响最小架构。
+
+2026-02-20 白宫行政命令继续暂停所有国家的 duty-free de minimis treatment；此前的全局暂停已使美国低价值进口不能简单按旧 `$800 = duty free` 模型处理。对非邮政件，适用的 duties/taxes/fees 仍需按商品、原产地、入境方式等计算。 [The White House](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?trk=article-ssr-frontend-pulse_little-text-block)  
+[White House — Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?utm_source=chatgpt.com)
+
+因此真正的 `landed()` 至少要知道：
+
+`SKU identity + country of origin + HTS/classification + customs value + entry mode + carrier/line + DDP/DAP + broker/clearance rule + actual/volumetric parcel weight`
+
+**Inference I5：** 在 2026 年监管环境下，“采购前 all-in quote”的难度已经不只是体积重，而是**体积重 + 线路资格 + HS/关税 + importer/DDP 角色**共同决定。只做 freight calculator 不够。
+
+---
+
+# 九、不自营进口情况下，我认为可行的最小架构
+
+可以做到**不持库存、不先买货、不建美国仓、不自己成为传统零售 importer**，但第一版最好是 **web app，而不是 Amazon browser extension**。
+
+建议的数据流是：
+
+`用户提交美国商品 URL / 搜索意图`
+→ `Identity service`
+→ `US channel quote adapters`
+→ `China catalog adapters`
+→ `Agent procurement quote`
+→ `Pre-landed estimator`
+→ `risk/confidence gate`
+→ `只有 savings 足够大才展示 China route`
+→ `handoff 到 agent/其 checkout`
+→ `agent 采购/入仓/发货`
+
+其中几个模块必须严格分开：
+
+**Identity graph** 只输出 `EXACT / VERSION-CONFLICT / SUBSTITUTE`，相似品永远不能自动升级成“同款”。像中国 ROM、频段、电压、插头、容量、套装、保修区域、大陆版/国际版都进入 identity key。
+
+**China discovery** 第一阶段可以用海外淘宝客作为合法候选池，用 Taobao Global/BuckyDrop 作为采购验证层；1688 用于 supply discovery，但默认标 substitute/source，而不是 exact retail equivalent。
+
+**Quote engine** 初期不要输出一个假装精确的单数字。应该输出类似：
+
+`Estimated landed: $18.40–$21.20`
+`confidence: medium`
+`freight locked: no`
+`duty locked: no`
+`packed dimensions verified: no`
+`quote timestamp: …`
+
+只有供应商给到真正有约束力的 API 后，才升级为：
+
+`Guaranteed landed through YYYY-MM-DD HH:MM`
+
+**Checkout/进口角色** 则交给有合同的 buying agent / logistics partner。你的软件可以收 routing/service fee 或 referral，而不碰 title to goods；但谁是 Importer of Record、谁承担 duties、拒收/退运和消费者退款义务，必须在供应商合同和美国法律审阅中明确，不能仅凭“我们只是软件”推定免责。
+
+---
+
+# 十、真正的阻塞，按优先级排序
+
+**1. 最大阻塞：采购前 binding landed quote。**  
+不是“有没有运费计算器”。三家都有。真正缺的是：
+
+`exact SKU + US ZIP → product + domestic + service + packed billable weight + eligible line + duty/clearance + last mile → binding total / validity / variance cap`
+
+目前公开证据是 **0 家证明完成这个闭环**。
+
+**2. 中国 catalog 的“合法、稳定、可在美国 comparison UI 中展示”的权利。**  
+API 技术上比预想乐观，但授权语境都是联盟、供销、商家、跨境分销；这和“中立美国购物比较器”不是同一个许可问题。
+
+**3. Amazon 数据权利。**  
+标准 Creators/Associates 许可与产品最核心的 neutral routing logic 存在结构性冲突；如果不先解决，extension + cross-retailer comparison + price alerts 三件事会同时撞条款。
+
+**4. 入仓前 packaging prediction。**  
+轻小件差别可能小，大盒子、鞋盒、玩具、家电、显示器、机器人、帐篷等可能被 volume weight 彻底改变 economics。目前没有看到三家公开承诺“按 SKU 历史数据在采购前给保证尺寸”。
+
+**5. 美国 duty/IOR/DDP。**  
+de minimis 已不能当兜底。必须把 customs computation 变成正式 quote dependency。
+
+**6. Returns。**  
+“中国商家退款”“中国仓拒收/退货”“已出口后的美国消费者退货”是三个不同流程。目前公开标准 agent 页面不足以证明后两者可以低摩擦 API 化。
+
+换句话说，**matching AI 反而不是当前最硬的 blocker；quote truth 和 data/license truth 才是。**
+
+---
+
+# 十一、建议下一步的判定标准
+
+我会把 Phase 0 的 infra gate 改成一句非常硬的测试：
+
+> 给供应商 20 个确定规格 SKU + 20 个美国 ZIP，要求在**不先购买商品**的情况下，通过 API 返回可审计的 landed-cost breakdown；随后实际跑少量允许的测试订单，比较 quoted vs invoiced。
+
+成功门槛可以预先规定，例如“90% 包裹最终总履约费用落在 pre-buy quote 的 +10% / -5% 内”，但这个数目前只是**产品假设**，不是供应商现有 SLA。
+
+如果三家都只能给 ±30–50% estimate，那么 v0 可以做“price anomaly discovery”，却还不能诚信地做 memo 里 `$16.80 all-in · 9–13天` 那种确定性 UI。
+
+---
+
+# 十二、可直接发给供应商的中文 RFP 草稿
+
+下面是草稿；**我没有发送，也没有提交任何表单。**
+
+您好，
+
+我们正在开发一个面向美国消费者的跨市场商品价格比较与路由产品。产品会比较美国本地渠道与中国国内渠道，并且只有在中国直购路线的真实到手成本、时效与风险具有明显优势时才向用户展示。
+
+第一阶段我们不自营库存、不自建中国或美国仓库，也不计划自行承担传统零售进口商角色。我们希望通过贵司现有的采购、仓储、国际物流及 API 基础设施完成中国商品的采购和履约。
+
+本次评估最重要的问题不是“商品入仓后能否计算国际运费”，而是：
+
+**在商品尚未采购、尚未进入贵司仓库之前，贵司是否可以根据确定商品/SKU和美国收货地址，通过 API 返回足够可靠、可审计的预购 landed-cost quote？**
+
+希望贵司按以下项目提供书面说明及 API 文档。
+
+## 1. 采购前报价能力
+
+请说明是否支持以下输入：
+
+- 中国商品平台及商品 URL / item ID
+- 确定 SKU / variant
+- 数量
+- 美国收货州、市、ZIP Code
+- 期望物流等级
+- 商品属性，例如含电池、磁性、液体、品牌商品等
+
+请说明报价是否可以返回以下字段：
+
+- 当前商品售价
+- 价格类型：普通公开价 / 活动价 / 会员价 / 定向优惠 / 优惠券价
+- 中国国内运费
+- 采购服务费
+- 入库/出库/操作费
+- 包材或包装费
+- 预计商品实际重量
+- 预计打包后实际重量
+- 预计打包后长、宽、高
+- 体积重及计算 divisor
+- 计费重
+- 当前可用美国物流线路
+- 每条线路国际运费
+- 燃油、偏远地区等附加费
+- 预计关税
+- 清关费 / broker fee
+- 末端派送费
+- 其他强制费用
+- 总预计 landed cost
+- 币种及汇率
+- ETA
+- 报价生成时间
+- 报价有效期
+
+## 2. Estimate 与 Binding Quote
+
+请明确区分：
+
+A. 仅供参考的 estimate  
+B. 在一定期限内具有约束力的 quote
+
+如支持 B，请说明：
+
+- 报价有效时间
+- 最终账单允许偏差
+- 超过偏差后由哪一方承担差额
+- 哪些事件允许重新报价
+- 商品价格变化如何处理
+- 最终实际重/体积重与预估不同时如何处理
+- carrier 临时附加费如何处理
+
+如果目前只能提供 estimate，也请说明过去订单中 quote-to-final 的误差分布或可提供的历史统计。
+
+## 3. 入仓前重量和体积预测
+
+我们特别关注采购前 volumetric-weight uncertainty。
+
+请说明：
+
+- 是否保存同一 SKU 的历史入仓重量、商品尺寸、包装后尺寸
+- 是否有 SKU-level predicted packed dimensions API
+- 是否可以在实际购买前进行人工或供应商侧尺寸确认
+- 是否可以设置指定包装规则后再返回预测尺寸
+- 是否有“预包装/rehearsal”服务
+- rehearsal 是否必须等商品已经进入贵司仓库
+- rehearsal 收费和 SLA
+
+## 4. 美国物流线路
+
+请提供当前美国线路 API 或线路表，并对每条线路说明：
+
+- route ID
+- Express / Standard / Economy
+- 可达 ZIP 范围
+- ETA 定义
+- 实重/体积重规则
+- 体积重 divisor
+- 首重/续重或其他计费模型
+- 偏远地区费
+- 长边/超尺寸费
+- 电池/磁性/液体/粉末/品牌商品限制
+- 最高申报价值
+- 丢失/损坏赔付
+- DDP / DAP 或其他税费模式
+- customs clearance 是否包含
+- 谁是 Importer of Record
+- duties/taxes 如何预估、收取和最终对账
+
+我们不会假设低于某一货值的美国包裹自动免税，因此希望关税处理规则明确进入 quote schema。
+
+## 5. 商品与库存 API
+
+请提供：
+
+- 商品 URL 解析 endpoint
+- 商品详情 endpoint
+- SKU/variant endpoint
+- 实时售价 endpoint
+- 库存/可采购状态 endpoint
+- 中国国内运费 endpoint
+- 商品变价 webhook 或 polling 建议
+- 商品下架 webhook
+- 图片及详情素材的展示权限
+- 缓存期限
+- API 数据是否允许用于面向美国消费者的跨零售商 price comparison
+
+对于优惠价格，希望能够区分：
+
+- 所有人可取得的普通售价
+- 平台会员价格
+- 新客价格
+- 定向优惠
+- 满减/凑单价
+- 需领取优惠券价格
+- 补贴价格
+
+我们不会把会员价、定向价、补贴价或历史价当作普通消费者当前可购买价格。
+
+## 6. 下单与订单生命周期
+
+请提供：
+
+- 创建采购订单 API
+- 支付模式
+- order status
+- 入仓通知
+- QC 状态
+- 包裹创建
+- 线路选择
+- 国际发货
+- tracking
+- delivered
+- exception
+- cancellation
+- refund
+- return
+
+并请说明是否有 webhook，以及 webhook delivery / retry / signature 机制。
+
+## 7. 退货与售后
+
+请分别说明：
+
+1. 中国卖家尚未发货时取消
+2. 已发货但尚未到贵司仓库
+3. 已入贵司仓库但尚未出口
+4. 已出口至美国途中
+5. 美国消费者签收后
+
+每种场景下：
+
+- 是否可退
+- 谁承担中国国内退货费
+- 是否支持美国→中国 reverse logistics
+- 是否有美国本地退货地址
+- 是否可以销毁/弃件
+- refund SLA
+- API 是否可自动发起和查询状态
+
+## 8. API 商业条件
+
+请提供：
+
+- API 接入资格
+- sandbox
+- production approval
+- authentication
+- rate limits
+- monthly/API fees
+- minimum monthly volume
+- SLA / uptime
+- technical support
+- account manager
+- webhook
+- API versioning/deprecation policy
+- 单包履约收费
+- 仓储费
+- 采购费
+- 国际物流服务费
+- 其他强制费用
+
+## 9. Referral / Revenue Share
+
+如我们将订单或用户导向贵司，请说明：
+
+- 是否有 affiliate/referral program
+- 佣金计算基础
+- 国际运费分成比例
+- 采购/履约/value-added service 是否有分成
+- attribution window
+- 多设备归因规则
+- refund/cancellation clawback
+- payout currency及周期
+- 是否可提供 B2B 定制 revenue share
+- 是否允许 API/white-label 场景归因
+
+## 10. 数据和展示许可
+
+这是我们的关键审核项。
+
+请明确书面确认贵司提供的数据是否允许用于：
+
+- 美国消费者可见网页
+- 与 Amazon、AliExpress、Temu、eBay、品牌官网等其他渠道同屏比较
+- 显示中国商品价格、库存、图片、标题、SKU 和 ETA
+- 商品 identity matching
+- 生成 price spread
+- 缓存价格/图片/商品 ID
+- 价格提醒
+- AI 辅助商品匹配
+
+如存在禁止用途、缓存时限、商标要求或归因要求，请一并提供。
+
+## 11. 小规模验证
+
+在签署长期合作前，我们希望使用约 10–20 个确定 SKU、多个美国 ZIP 做一次受控测试。
+
+希望针对每个测试订单保存：
+
+- pre-purchase quote
+- quote timestamp
+- 商品实际采购价
+- 中国国内运费
+- 最终包装尺寸和重量
+- 实际所选线路
+- 实际国际运费
+- duty / customs / clearance
+- 最终实际总费用
+- 实际 ETA
+- 异常和退款情况
+
+目标是量化采购前 quote 与最终 invoice 的偏差，而不是只比较运费计算器的理论输出。
+
+## 12. 请按以下状态标记每项能力
+
+- A：公开标准能力
+- B：注册/审核账户后可用
+- C：需要商务合同或白名单
+- D：需要定制开发
+- E：目前不支持
+
+如方便，也请附：
+
+- 最新 API 文档
+- sandbox 文档
+- 当前价格表
+- 美国线路说明
+- 数据使用协议
+- 退货政策
+- affiliate / partner policy
+- 典型 API response 样例
+
+谢谢。
+
+这个 RFP 最关键的是**强迫供应商把“estimate”和“binding”分开回答**，同时把数据展示权、DDP/IOR、体积重和 quote-to-invoice variance 一次问清，而不是只问“有没有 API”。
+
+---
+
+## 最终判断
+
+这个创业假设目前**没有被基础设施层证伪**，但基础设施并没有像 memo 中一句“利用现成 Superbuy/Sugargoo/BuckyDrop”那么即插即用。
+
+最值得继续验证的组合是：
+
+**BuckyDrop API/商务合作 + Taobao Global/海外淘宝客合法商品源 + 独立 customs/landed engine + Web app。**
+
+而不是：
+
+**直接抓淘宝/JD + Amazon Creators API + browser extension + 把运费 calculator 数字写成 all-in。**
+
+后一个组合同时踩中了四个尚未解决的问题：Amazon 许可、国内数据授权、入仓前体积重、美国关税。
+
+如果只选一个接下来最能杀死或强化 thesis 的实验，我会选 **20 SKU × 20 ZIP 的 pre-buy quote → actual invoice reconciliation**。只要供应商连结构化 pre-buy quote 都给不了，产品第一阶段就应该明确叫 **“estimated China route”**，而不是“真实到手价”；如果 BuckyDrop 或定制合作能把最终偏差压到可控范围，才真正出现可以产品化的 routing primitive。

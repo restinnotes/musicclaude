@@ -1,0 +1,5232 @@
+{
+  "generated_by": "inspect_adaptation.py (mechanical only: frozen verdicts + slot statuses; no model calls)",
+  "frozen_inputs": {
+    "manifest": "jobs/manifest.json",
+    "stability": "reports/repeated_stability_summary.json",
+    "reviews": "reports/review_and_extension_summary.json",
+    "rules": "docs/04_REPEATABILITY_AND_SATURATION.md"
+  },
+  "frozen_rules": {
+    "stage_targets": [
+      8,
+      12
+    ],
+    "stage_rule": "r04/r05 late new valuable unit or judgement/order/routing divergence -> both models to r08; still new/oscillating at r08 -> both models to r12; still growing at r12 -> NOT_SATURATED, master decides",
+    "trigger_sources": [
+      "F recommend_more/late_new_unit_ids",
+      "unstable flag in frozen summaries",
+      "order_disagreement=true",
+      "adaptation_candidates"
+    ],
+    "paired_dual_model": "expansion always covers both gpt6w and gpt56w together; never top up one side alone",
+    "ambiguous_slots_not_reissued": "failure_or_ambiguous / invalid slots are frozen gaps; never regenerate that position, never edit originals; only add new r-numbers",
+    "not_evidence": "word counts, token frequencies, source-ID sets are NOT saturation proof; music/drama/single-story writing is NOT a defect and is never penalised"
+  },
+  "invalid_audit_145_vs_146": {
+    "n_valid_in_summary_r01_r05": 145,
+    "n_valid_all_slots": 154,
+    "canonical_meta_success_r01_r05": 146,
+    "plus_one_slot": "B18/gpt6w/r02",
+    "plus_one_detail": [
+      {
+        "slot": "B18/gpt6w/r02",
+        "validator_reason": "invalid:Invalid control character at: line 157 column 261 (char 7803)",
+        "canonical_meta": "success",
+        "txt_bytes": 18562
+      }
+    ],
+    "action": "do_not_regenerate; keep as frozen invalid gap; expand only via new r-numbers",
+    "all_invalid_slots": [
+      {
+        "slot": "A01/gpt6w/r03",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "A01/gpt6w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "A02/gpt56w/r02",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "A03/gpt56w/r03",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "A05/gpt6w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "A06/gpt6w/r01",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "B02/gpt56w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "B02/gpt6w/r02",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "B11/gpt6w/r03",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "B18/gpt6w/r02",
+        "validator_reason": "invalid:Invalid control character at: line 157 column 261 (char 7803)",
+        "canonical_meta": "success",
+        "txt_bytes": 18562
+      },
+      {
+        "slot": "B18/gpt6w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "B23/gpt6w/r01",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C02/gpt56w/r06",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C11/gpt56w/r08",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C11/gpt6w/r08",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C18/gpt6w/r03",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C18/gpt6w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C20/gpt6w/r04",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt56w/r06",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt56w/r07",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt56w/r08",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt6w/r06",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt6w/r07",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      },
+      {
+        "slot": "C23/gpt6w/r08",
+        "validator_reason": "invalid:",
+        "canonical_meta": "failure_or_ambiguous",
+        "txt_bytes": null
+      }
+    ]
+  },
+  "A_jobs": {
+    "A05": {
+      "job_id": "A05",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B002",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 1,
+            "manufactured": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "manufactured"
+            ],
+            [
+              3,
+              "manufactured"
+            ],
+            [
+              4,
+              "manufactured"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B009",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 4,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B025",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B055",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B056",
+          "n_valid": 5,
+          "verdict_counts": {
+            "manufactured": 3,
+            "restatement": 2
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "manufactured"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B057",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 2,
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A05/r01.txt",
+            "results/trials/gpt56w/A05/r02.txt",
+            "results/trials/gpt56w/A05/r03.txt",
+            "results/trials/gpt56w/A05/r04.txt",
+            "results/trials/gpt56w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B002",
+          "n_valid": 4,
+          "verdict_counts": {
+            "manufactured": 2,
+            "insight": 1,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B025",
+          "n_valid": 4,
+          "verdict_counts": {
+            "manufactured": 3,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "manufactured"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B057",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt6w",
+          "blind_id": "B009",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B055",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B056",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A05/r01.txt",
+            "results/trials/gpt6w/A05/r02.txt",
+            "results/trials/gpt6w/A05/r03.txt",
+            "results/trials/gpt6w/A05/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [
+        "B025",
+        "B055",
+        "B056"
+      ],
+      "modal_table": {
+        "B002": {
+          "gpt56w": {
+            "modal": "manufactured",
+            "n": 5,
+            "counts": {
+              "restatement": 1,
+              "manufactured": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "manufactured",
+            "n": 4,
+            "counts": {
+              "manufactured": 2,
+              "insight": 1,
+              "restatement": 1
+            }
+          }
+        },
+        "B009": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 4,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          }
+        },
+        "B025": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 3,
+              "insight": 2
+            }
+          },
+          "gpt6w": {
+            "modal": "manufactured",
+            "n": 4,
+            "counts": {
+              "manufactured": 3,
+              "restatement": 1
+            }
+          }
+        },
+        "B055": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 3,
+              "insight": 2
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          }
+        },
+        "B056": {
+          "gpt56w": {
+            "modal": "manufactured",
+            "n": 5,
+            "counts": {
+              "manufactured": 3,
+              "restatement": 2
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          }
+        },
+        "B057": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "insight": 2,
+              "restatement": 3
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 3,
+              "insight": 1
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "A06": {
+      "job_id": "A06",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B020",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 1,
+            "manufactured": 3,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "manufactured"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "manufactured"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B004",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B013",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B039",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B045",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B049",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A06/r01.txt",
+            "results/trials/gpt56w/A06/r02.txt",
+            "results/trials/gpt56w/A06/r03.txt",
+            "results/trials/gpt56w/A06/r04.txt",
+            "results/trials/gpt56w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B004",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B013",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B020",
+          "n_valid": 4,
+          "verdict_counts": {
+            "manufactured": 4
+          },
+          "trials": [
+            [
+              2,
+              "manufactured"
+            ],
+            [
+              3,
+              "manufactured"
+            ],
+            [
+              4,
+              "manufactured"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B039",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B045",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B049",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A06/r02.txt",
+            "results/trials/gpt6w/A06/r03.txt",
+            "results/trials/gpt6w/A06/r04.txt",
+            "results/trials/gpt6w/A06/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [],
+      "modal_table": {
+        "B004": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          }
+        },
+        "B013": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          }
+        },
+        "B020": {
+          "gpt56w": {
+            "modal": "manufactured",
+            "n": 5,
+            "counts": {
+              "insight": 1,
+              "manufactured": 3,
+              "restatement": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "manufactured",
+            "n": 4,
+            "counts": {
+              "manufactured": 4
+            }
+          }
+        },
+        "B039": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          }
+        },
+        "B045": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          }
+        },
+        "B049": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "A03": {
+      "job_id": "A03",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B005",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 3,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B007",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 1,
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B040",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B044",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 3,
+            "manufactured": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B058",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B040",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 4,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B044",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 2,
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B058",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B038",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A03/r01.txt",
+            "results/trials/gpt56w/A03/r02.txt",
+            "results/trials/gpt56w/A03/r04.txt",
+            "results/trials/gpt56w/A03/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B005",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B007",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B038",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A03/r01.txt",
+            "results/trials/gpt6w/A03/r02.txt",
+            "results/trials/gpt6w/A03/r03.txt",
+            "results/trials/gpt6w/A03/r04.txt",
+            "results/trials/gpt6w/A03/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [
+        "B040"
+      ],
+      "modal_table": {
+        "B005": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 3,
+              "restatement": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B007": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "insight": 1,
+              "restatement": 3
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        },
+        "B038": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B040": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 3,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 4,
+              "restatement": 1
+            }
+          }
+        },
+        "B044": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 3,
+              "manufactured": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "insight": 2,
+              "restatement": 3
+            }
+          }
+        },
+        "B058": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 3,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 3,
+              "insight": 2
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "A02": {
+      "job_id": "A02",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B006",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B031",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 2,
+            "undetermined": 1,
+            "manufactured": 1
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "undetermined"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B014",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B016",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B028",
+          "n_valid": 4,
+          "verdict_counts": {
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B032",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A02/r01.txt",
+            "results/trials/gpt56w/A02/r03.txt",
+            "results/trials/gpt56w/A02/r04.txt",
+            "results/trials/gpt56w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B006",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B014",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B016",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B028",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B031",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B032",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A02/r01.txt",
+            "results/trials/gpt6w/A02/r02.txt",
+            "results/trials/gpt6w/A02/r03.txt",
+            "results/trials/gpt6w/A02/r04.txt",
+            "results/trials/gpt6w/A02/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [],
+      "modal_table": {
+        "B006": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 3,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        },
+        "B014": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B016": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        },
+        "B028": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B031": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 4,
+            "counts": {
+              "insight": 2,
+              "undetermined": 1,
+              "manufactured": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B032": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 4,
+            "counts": {
+              "restatement": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "A01": {
+      "job_id": "A01",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B024",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 4,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B046",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 1,
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B024",
+          "n_valid": 3,
+          "verdict_counts": {
+            "restatement": 1,
+            "insight": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B048",
+          "n_valid": 3,
+          "verdict_counts": {
+            "manufactured": 2,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B008",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B018",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B042",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B048",
+          "n_valid": 5,
+          "verdict_counts": {
+            "manufactured": 5
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "manufactured"
+            ],
+            [
+              3,
+              "manufactured"
+            ],
+            [
+              4,
+              "manufactured"
+            ],
+            [
+              5,
+              "manufactured"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A01/r01.txt",
+            "results/trials/gpt56w/A01/r02.txt",
+            "results/trials/gpt56w/A01/r03.txt",
+            "results/trials/gpt56w/A01/r04.txt",
+            "results/trials/gpt56w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B008",
+          "n_valid": 3,
+          "verdict_counts": {
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B018",
+          "n_valid": 3,
+          "verdict_counts": {
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B042",
+          "n_valid": 3,
+          "verdict_counts": {
+            "insight": 3
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B046",
+          "n_valid": 3,
+          "verdict_counts": {
+            "insight": 3
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A01/r01.txt",
+            "results/trials/gpt6w/A01/r02.txt",
+            "results/trials/gpt6w/A01/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [
+        "B024"
+      ],
+      "modal_table": {
+        "B008": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 3,
+            "counts": {
+              "restatement": 3
+            }
+          }
+        },
+        "B018": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 3,
+            "counts": {
+              "restatement": 3
+            }
+          }
+        },
+        "B024": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 4,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 3,
+            "counts": {
+              "restatement": 1,
+              "insight": 2
+            }
+          }
+        },
+        "B042": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 3,
+            "counts": {
+              "insight": 3
+            }
+          }
+        },
+        "B046": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "restatement": 1,
+              "insight": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 3,
+            "counts": {
+              "insight": 3
+            }
+          }
+        },
+        "B048": {
+          "gpt56w": {
+            "modal": "manufactured",
+            "n": 5,
+            "counts": {
+              "manufactured": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "manufactured",
+            "n": 3,
+            "counts": {
+              "manufactured": 2,
+              "insight": 1
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "A04": {
+      "job_id": "A04",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B010",
+          "n_valid": 5,
+          "verdict_counts": {
+            "manufactured": 1,
+            "insight": 4
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B027",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 3,
+            "insight": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B035",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 2,
+            "insight": 3
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B036",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 4,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "blind_id": "B059",
+          "n_valid": 5,
+          "verdict_counts": {
+            "manufactured": 2,
+            "insight": 3
+          },
+          "trials": [
+            [
+              1,
+              "manufactured"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "manufactured"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B036",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 4,
+            "insight": 1
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "blind_id": "B034",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/A04/r01.txt",
+            "results/trials/gpt56w/A04/r02.txt",
+            "results/trials/gpt56w/A04/r03.txt",
+            "results/trials/gpt56w/A04/r04.txt",
+            "results/trials/gpt56w/A04/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B010",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B027",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B034",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B035",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "blind_id": "B059",
+          "n_valid": 5,
+          "verdict_counts": {
+            "insight": 5
+          },
+          "trials": [
+            [
+              1,
+              "insight"
+            ],
+            [
+              2,
+              "insight"
+            ],
+            [
+              3,
+              "insight"
+            ],
+            [
+              4,
+              "insight"
+            ],
+            [
+              5,
+              "insight"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/A04/r01.txt",
+            "results/trials/gpt6w/A04/r02.txt",
+            "results/trials/gpt6w/A04/r03.txt",
+            "results/trials/gpt6w/A04/r04.txt",
+            "results/trials/gpt6w/A04/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "cross_model_modal_flips": [],
+      "modal_table": {
+        "B010": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "manufactured": 1,
+              "insight": 4
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B027": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 3,
+              "insight": 2
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        },
+        "B034": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 5
+            }
+          }
+        },
+        "B035": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "restatement": 2,
+              "insight": 3
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        },
+        "B036": {
+          "gpt56w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 4,
+              "insight": 1
+            }
+          },
+          "gpt6w": {
+            "modal": "restatement",
+            "n": 5,
+            "counts": {
+              "restatement": 4,
+              "insight": 1
+            }
+          }
+        },
+        "B059": {
+          "gpt56w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "manufactured": 2,
+              "insight": 3
+            }
+          },
+          "gpt6w": {
+            "modal": "insight",
+            "n": 5,
+            "counts": {
+              "insight": 5
+            }
+          }
+        }
+      },
+      "trigger": "E5_label_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    }
+  },
+  "B_jobs": {
+    "B02": {
+      "job_id": "B02",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M2_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "unsupported_causality": 3,
+            "valuable_new_link": 1
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B02/r01.txt",
+            "results/trials/gpt56w/B02/r02.txt",
+            "results/trials/gpt56w/B02/r03.txt",
+            "results/trials/gpt56w/B02/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R2_2",
+          "n_valid": 4,
+          "verdict_counts": {
+            "premature_lock": 3,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B02/r01.txt",
+            "results/trials/gpt56w/B02/r02.txt",
+            "results/trials/gpt56w/B02/r03.txt",
+            "results/trials/gpt56w/B02/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "W2",
+          "n_valid": 4,
+          "verdict_counts": {
+            "valuable_new_link": 1,
+            "restatement": 3
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B02/r01.txt",
+            "results/trials/gpt56w/B02/r02.txt",
+            "results/trials/gpt56w/B02/r03.txt",
+            "results/trials/gpt56w/B02/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R2_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "valuable_new_link": 4
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B02/r01.txt",
+            "results/trials/gpt56w/B02/r02.txt",
+            "results/trials/gpt56w/B02/r03.txt",
+            "results/trials/gpt56w/B02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M2_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "unsupported_causality": 4
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B02/r01.txt",
+            "results/trials/gpt6w/B02/r03.txt",
+            "results/trials/gpt6w/B02/r04.txt",
+            "results/trials/gpt6w/B02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R2_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "valuable_new_link": 4
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B02/r01.txt",
+            "results/trials/gpt6w/B02/r03.txt",
+            "results/trials/gpt6w/B02/r04.txt",
+            "results/trials/gpt6w/B02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R2_2",
+          "n_valid": 4,
+          "verdict_counts": {
+            "premature_lock": 4
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B02/r01.txt",
+            "results/trials/gpt6w/B02/r03.txt",
+            "results/trials/gpt6w/B02/r04.txt",
+            "results/trials/gpt6w/B02/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "W2",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 4
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B02/r01.txt",
+            "results/trials/gpt6w/B02/r03.txt",
+            "results/trials/gpt6w/B02/r04.txt",
+            "results/trials/gpt6w/B02/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "trigger": "B_relation_verdict_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "B11": {
+      "job_id": "B11",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R11_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "valuable_new_link": 4,
+            "premature_lock": 1
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B11/r01.txt",
+            "results/trials/gpt56w/B11/r02.txt",
+            "results/trials/gpt56w/B11/r03.txt",
+            "results/trials/gpt56w/B11/r04.txt",
+            "results/trials/gpt56w/B11/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R11_2",
+          "n_valid": 5,
+          "verdict_counts": {
+            "premature_lock": 4,
+            "unsupported_causality": 1
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B11/r01.txt",
+            "results/trials/gpt56w/B11/r02.txt",
+            "results/trials/gpt56w/B11/r03.txt",
+            "results/trials/gpt56w/B11/r04.txt",
+            "results/trials/gpt56w/B11/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "W11",
+          "n_valid": 4,
+          "verdict_counts": {
+            "restatement": 2,
+            "valuable_new_link": 2
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B11/r01.txt",
+            "results/trials/gpt6w/B11/r02.txt",
+            "results/trials/gpt6w/B11/r04.txt",
+            "results/trials/gpt6w/B11/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M11_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "unsupported_causality": 5
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B11/r01.txt",
+            "results/trials/gpt56w/B11/r02.txt",
+            "results/trials/gpt56w/B11/r03.txt",
+            "results/trials/gpt56w/B11/r04.txt",
+            "results/trials/gpt56w/B11/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "W11",
+          "n_valid": 5,
+          "verdict_counts": {
+            "valuable_new_link": 5
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B11/r01.txt",
+            "results/trials/gpt56w/B11/r02.txt",
+            "results/trials/gpt56w/B11/r03.txt",
+            "results/trials/gpt56w/B11/r04.txt",
+            "results/trials/gpt56w/B11/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M11_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "unsupported_causality": 4
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B11/r01.txt",
+            "results/trials/gpt6w/B11/r02.txt",
+            "results/trials/gpt6w/B11/r04.txt",
+            "results/trials/gpt6w/B11/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R11_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "valuable_new_link": 4
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B11/r01.txt",
+            "results/trials/gpt6w/B11/r02.txt",
+            "results/trials/gpt6w/B11/r04.txt",
+            "results/trials/gpt6w/B11/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R11_2",
+          "n_valid": 4,
+          "verdict_counts": {
+            "premature_lock": 4
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B11/r01.txt",
+            "results/trials/gpt6w/B11/r02.txt",
+            "results/trials/gpt6w/B11/r04.txt",
+            "results/trials/gpt6w/B11/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "trigger": "B_relation_verdict_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "B18": {
+      "job_id": "B18",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M18_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "unsupported_causality": 3,
+            "valuable_new_link": 2
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B18/r01.txt",
+            "results/trials/gpt56w/B18/r02.txt",
+            "results/trials/gpt56w/B18/r03.txt",
+            "results/trials/gpt56w/B18/r04.txt",
+            "results/trials/gpt56w/B18/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M18_2",
+          "n_valid": 5,
+          "verdict_counts": {
+            "unsupported_causality": 4,
+            "valuable_new_link": 1
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B18/r01.txt",
+            "results/trials/gpt56w/B18/r02.txt",
+            "results/trials/gpt56w/B18/r03.txt",
+            "results/trials/gpt56w/B18/r04.txt",
+            "results/trials/gpt56w/B18/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M18_1",
+          "n_valid": 3,
+          "verdict_counts": {
+            "valuable_new_link": 1,
+            "unsupported_causality": 1,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B18/r01.txt",
+            "results/trials/gpt6w/B18/r03.txt",
+            "results/trials/gpt6w/B18/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M18_2",
+          "n_valid": 3,
+          "verdict_counts": {
+            "unsupported_causality": 2,
+            "valuable_new_link": 1
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B18/r01.txt",
+            "results/trials/gpt6w/B18/r03.txt",
+            "results/trials/gpt6w/B18/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R18_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "premature_lock": 5
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B18/r01.txt",
+            "results/trials/gpt56w/B18/r02.txt",
+            "results/trials/gpt56w/B18/r03.txt",
+            "results/trials/gpt56w/B18/r04.txt",
+            "results/trials/gpt56w/B18/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R18_1",
+          "n_valid": 3,
+          "verdict_counts": {
+            "premature_lock": 3
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B18/r01.txt",
+            "results/trials/gpt6w/B18/r03.txt",
+            "results/trials/gpt6w/B18/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "trigger": "B_relation_verdict_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "B20": {
+      "job_id": "B20",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M20_2",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 2,
+            "unsupported_causality": 3
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B20/r01.txt",
+            "results/trials/gpt56w/B20/r02.txt",
+            "results/trials/gpt56w/B20/r03.txt",
+            "results/trials/gpt56w/B20/r04.txt",
+            "results/trials/gpt56w/B20/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "W20",
+          "n_valid": 5,
+          "verdict_counts": {
+            "valuable_new_link": 4,
+            "restatement": 1
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B20/r01.txt",
+            "results/trials/gpt6w/B20/r02.txt",
+            "results/trials/gpt6w/B20/r03.txt",
+            "results/trials/gpt6w/B20/r04.txt",
+            "results/trials/gpt6w/B20/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M20_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "unsupported_causality": 5
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B20/r01.txt",
+            "results/trials/gpt56w/B20/r02.txt",
+            "results/trials/gpt56w/B20/r03.txt",
+            "results/trials/gpt56w/B20/r04.txt",
+            "results/trials/gpt56w/B20/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R20_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "premature_lock": 5
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B20/r01.txt",
+            "results/trials/gpt56w/B20/r02.txt",
+            "results/trials/gpt56w/B20/r03.txt",
+            "results/trials/gpt56w/B20/r04.txt",
+            "results/trials/gpt56w/B20/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "W20",
+          "n_valid": 5,
+          "verdict_counts": {
+            "valuable_new_link": 5
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B20/r01.txt",
+            "results/trials/gpt56w/B20/r02.txt",
+            "results/trials/gpt56w/B20/r03.txt",
+            "results/trials/gpt56w/B20/r04.txt",
+            "results/trials/gpt56w/B20/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M20_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "unsupported_causality": 5
+          },
+          "trials": [
+            [
+              1,
+              "unsupported_causality"
+            ],
+            [
+              2,
+              "unsupported_causality"
+            ],
+            [
+              3,
+              "unsupported_causality"
+            ],
+            [
+              4,
+              "unsupported_causality"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B20/r01.txt",
+            "results/trials/gpt6w/B20/r02.txt",
+            "results/trials/gpt6w/B20/r03.txt",
+            "results/trials/gpt6w/B20/r04.txt",
+            "results/trials/gpt6w/B20/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M20_2",
+          "n_valid": 5,
+          "verdict_counts": {
+            "restatement": 5
+          },
+          "trials": [
+            [
+              1,
+              "restatement"
+            ],
+            [
+              2,
+              "restatement"
+            ],
+            [
+              3,
+              "restatement"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B20/r01.txt",
+            "results/trials/gpt6w/B20/r02.txt",
+            "results/trials/gpt6w/B20/r03.txt",
+            "results/trials/gpt6w/B20/r04.txt",
+            "results/trials/gpt6w/B20/r05.txt"
+          ],
+          "unstable": false
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R20_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "premature_lock": 5
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B20/r01.txt",
+            "results/trials/gpt6w/B20/r02.txt",
+            "results/trials/gpt6w/B20/r03.txt",
+            "results/trials/gpt6w/B20/r04.txt",
+            "results/trials/gpt6w/B20/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "trigger": "B_relation_verdict_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    },
+    "B23": {
+      "job_id": "B23",
+      "unstable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "M23_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "valuable_new_link": 4,
+            "unsupported_causality": 1
+          },
+          "trials": [
+            [
+              1,
+              "valuable_new_link"
+            ],
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "valuable_new_link"
+            ],
+            [
+              5,
+              "unsupported_causality"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B23/r01.txt",
+            "results/trials/gpt56w/B23/r02.txt",
+            "results/trials/gpt56w/B23/r03.txt",
+            "results/trials/gpt56w/B23/r04.txt",
+            "results/trials/gpt56w/B23/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "M23_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "valuable_new_link": 2,
+            "restatement": 2
+          },
+          "trials": [
+            [
+              2,
+              "valuable_new_link"
+            ],
+            [
+              3,
+              "valuable_new_link"
+            ],
+            [
+              4,
+              "restatement"
+            ],
+            [
+              5,
+              "restatement"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B23/r02.txt",
+            "results/trials/gpt6w/B23/r03.txt",
+            "results/trials/gpt6w/B23/r04.txt",
+            "results/trials/gpt6w/B23/r05.txt"
+          ],
+          "unstable": true
+        },
+        {
+          "model": "gpt6w",
+          "hypothesis_id": "R23_1",
+          "n_valid": 4,
+          "verdict_counts": {
+            "premature_lock": 3,
+            "valuable_new_link": 1
+          },
+          "trials": [
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "valuable_new_link"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt6w/B23/r02.txt",
+            "results/trials/gpt6w/B23/r03.txt",
+            "results/trials/gpt6w/B23/r04.txt",
+            "results/trials/gpt6w/B23/r05.txt"
+          ],
+          "unstable": true
+        }
+      ],
+      "stable": [
+        {
+          "model": "gpt56w",
+          "hypothesis_id": "R23_1",
+          "n_valid": 5,
+          "verdict_counts": {
+            "premature_lock": 5
+          },
+          "trials": [
+            [
+              1,
+              "premature_lock"
+            ],
+            [
+              2,
+              "premature_lock"
+            ],
+            [
+              3,
+              "premature_lock"
+            ],
+            [
+              4,
+              "premature_lock"
+            ],
+            [
+              5,
+              "premature_lock"
+            ]
+          ],
+          "answer_paths": [
+            "results/trials/gpt56w/B23/r01.txt",
+            "results/trials/gpt56w/B23/r02.txt",
+            "results/trials/gpt56w/B23/r03.txt",
+            "results/trials/gpt56w/B23/r04.txt",
+            "results/trials/gpt56w/B23/r05.txt"
+          ],
+          "unstable": false
+        }
+      ],
+      "trigger": "B_relation_verdict_variability",
+      "decision": "expand_to_r08_paired",
+      "stage_target": 8
+    }
+  },
+  "C_jobs": {
+    "C02": {
+      "job_id": "C02",
+      "F": [
+        {
+          "k": 2,
+          "writer": "gpt6w",
+          "sample_count": 5,
+          "judge": "gpt56w",
+          "assessment": "NOT_SATURATED",
+          "recommend_more": "YES",
+          "late_new_valuable_units": [
+            "U04"
+          ],
+          "best_trial_candidate_UNVERIFIED": "T5",
+          "n_semantic_units": 5
+        }
+      ],
+      "valid_trials_per_model": {
+        "gpt56w/C02": 7,
+        "gpt6w/C02": 8
+      },
+      "r08_slots": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r07",
+          "status": "success"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "success"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r06",
+          "status": "success"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r07",
+          "status": "success"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "success"
+        }
+      ],
+      "r08_remaining_nonsuccess": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "decision": "continue_r08_paired_no_duplicates",
+      "reason": "F recommend_more=YES/late_new present; r08 already started"
+    },
+    "C11": {
+      "job_id": "C11",
+      "F": [
+        {
+          "k": 11,
+          "writer": "gpt6w",
+          "sample_count": 5,
+          "judge": "gpt56w",
+          "assessment": "NOT_SATURATED",
+          "recommend_more": "YES",
+          "late_new_valuable_units": [
+            "U05",
+            "U06",
+            "U07"
+          ],
+          "best_trial_candidate_UNVERIFIED": "T5",
+          "n_semantic_units": 7
+        },
+        {
+          "k": 11,
+          "writer": "gpt56w",
+          "sample_count": 5,
+          "judge": "gpt6w",
+          "assessment": "NOT_SATURATED",
+          "recommend_more": "YES",
+          "late_new_valuable_units": [
+            "U07"
+          ],
+          "best_trial_candidate_UNVERIFIED": "T5",
+          "n_semantic_units": 7
+        }
+      ],
+      "valid_trials_per_model": {
+        "gpt56w/C11": 7,
+        "gpt6w/C11": 7
+      },
+      "r08_slots": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "success"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r07",
+          "status": "success"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r06",
+          "status": "success"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r07",
+          "status": "success"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "r08_remaining_nonsuccess": [
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "decision": "continue_r08_paired_no_duplicates",
+      "reason": "F recommend_more=YES/late_new present; r08 already started"
+    },
+    "C18": {
+      "job_id": "C18",
+      "F": [],
+      "valid_trials_per_model": {
+        "gpt56w/C18": 5,
+        "gpt6w/C18": 3
+      },
+      "r08_slots": [],
+      "r08_remaining_nonsuccess": [],
+      "decision": "hold_pending_two_judge_F",
+      "reason": "no valid F row; saturation unjudgeable"
+    },
+    "C20": {
+      "job_id": "C20",
+      "F": [
+        {
+          "k": 20,
+          "writer": "gpt56w",
+          "sample_count": 5,
+          "judge": "gpt6w",
+          "assessment": "SATURATED_WITHIN_SAMPLE",
+          "recommend_more": "NO",
+          "late_new_valuable_units": [],
+          "best_trial_candidate_UNVERIFIED": "T2",
+          "n_semantic_units": 4
+        }
+      ],
+      "valid_trials_per_model": {
+        "gpt56w/C20": 5,
+        "gpt6w/C20": 4
+      },
+      "r08_slots": [],
+      "r08_remaining_nonsuccess": [],
+      "decision": "hold_pending_F_pair_complete",
+      "reason": "F pair incomplete across writers/judges"
+    },
+    "C23": {
+      "job_id": "C23",
+      "F": [
+        {
+          "k": 23,
+          "writer": "gpt6w",
+          "sample_count": 5,
+          "judge": "gpt56w",
+          "assessment": "NOT_SATURATED",
+          "recommend_more": "YES",
+          "late_new_valuable_units": [
+            "U08"
+          ],
+          "best_trial_candidate_UNVERIFIED": "T2",
+          "n_semantic_units": 8
+        },
+        {
+          "k": 23,
+          "writer": "gpt56w",
+          "sample_count": 5,
+          "judge": "gpt6w",
+          "assessment": "SATURATED_WITHIN_SAMPLE",
+          "recommend_more": "NO",
+          "late_new_valuable_units": [],
+          "best_trial_candidate_UNVERIFIED": "T4",
+          "n_semantic_units": 4
+        }
+      ],
+      "valid_trials_per_model": {
+        "gpt56w/C23": 5,
+        "gpt6w/C23": 5
+      },
+      "r08_slots": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "r08_remaining_nonsuccess": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "decision": "continue_r08_paired_no_duplicates",
+      "reason": "F recommend_more=YES/late_new present; r08 already started"
+    }
+  },
+  "order_sensitivity_true": [
+    {
+      "kind": "D",
+      "comparison_key": "('D', 23, 1, 'gpt56w', 'gpt6w')",
+      "results": [
+        [
+          "AB",
+          "legacy"
+        ],
+        [
+          "BA",
+          "new"
+        ]
+      ],
+      "order_disagreement": true
+    }
+  ],
+  "order_incomplete_pairs_n": 9,
+  "order_incomplete_pairs": [
+    {
+      "kind": "D",
+      "comparison_key": "('D', 20, 5, 'gpt56w', 'gpt6w')",
+      "results": [
+        [
+          "BA",
+          "legacy"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "D",
+      "comparison_key": "('D', 20, 5, 'gpt6w', 'gpt56w')",
+      "results": [
+        [
+          "AB",
+          "new"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "D",
+      "comparison_key": "('D', 23, 1, 'gpt6w', 'gpt56w')",
+      "results": [
+        [
+          "AB",
+          "new"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 18, 1, 'gpt56w')",
+      "results": [
+        [
+          "BA",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 18, 1, 'gpt6w')",
+      "results": [
+        [
+          "AB",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 18, 5, 'gpt56w')",
+      "results": [
+        [
+          "AB",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 18, 5, 'gpt6w')",
+      "results": [
+        [
+          "AB",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 20, 1, 'gpt6w')",
+      "results": [
+        [
+          "AB",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    },
+    {
+      "kind": "G",
+      "comparison_key": "('G', 23, 1, 'gpt6w')",
+      "results": [
+        [
+          "AB",
+          "gpt6w"
+        ]
+      ],
+      "order_disagreement": false
+    }
+  ],
+  "F_review_gaps": [
+    {
+      "job_id": "F_k02_n05_judgegpt6w",
+      "kind": "F",
+      "judge": "gpt6w",
+      "status": "recorded_failure_or_missing_txt"
+    },
+    {
+      "job_id": "F_k02_n08_judgegpt56w",
+      "kind": "F",
+      "judge": "gpt56w",
+      "status": "missing"
+    },
+    {
+      "job_id": "F_k18_n05_judgegpt6w",
+      "kind": "F",
+      "judge": "gpt6w",
+      "status": "recorded_failure_or_missing_txt"
+    }
+  ],
+  "executable_set": {
+    "A_expand_r06_r08_paired": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06"
+    ],
+    "B_expand_r06_r08_paired": [
+      "B02",
+      "B11",
+      "B18",
+      "B20",
+      "B23"
+    ],
+    "C_continue_r08_remaining": {
+      "C02": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "C11": [
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ],
+      "C23": [
+        {
+          "model": "gpt56w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt56w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r06",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r07",
+          "status": "failure_or_ambiguous"
+        },
+        {
+          "model": "gpt6w",
+          "r": "r08",
+          "status": "failure_or_ambiguous"
+        }
+      ]
+    },
+    "reviews_needed_two_webGPT": [
+      "F_k18 gpt56w-writer x both judges (5 valid trials, no F row yet)",
+      "F_k02 gpt6w-judge re-run (recorded_failure_or_missing_txt)"
+    ],
+    "blocked_sample_insufficient_no_reissue": [
+      "F_k18 gpt6w-writer (only 3 valid trials r01/r02/r05; r03/r04 invalid)",
+      "F_k20 gpt6w-writer (only 4 valid trials; r04 invalid)"
+    ]
+  }
+}

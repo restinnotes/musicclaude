@@ -1,0 +1,21 @@
+{
+  "type": "tool_use",
+  "id": "call_c17IlMacXipNbV5c8uEYrLMb",
+  "name": "mcp__t3-code__delegate_task",
+  "input": {
+    "task": "你是新一轮独立只读工程审查者，不是实现者，不是音乐候选。日期2026-10-09。ROOT=D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924。仅审tools/execution_integrity_v8.py、gpt2_adapter_v8.py、runner_v8.py、experiment_calls_v8.py、tests/test_execution_integrity_v8.py；必要对照v4/v7与既有主证据只读。不调用Opus/Sol/任何模型CLI，不联网，不递归委派，不清hold，不改实现/历史/prompt/production/CLAUDE/memory/ACTIVE/index。只返回完整中文报告，不写任何文件；不运行未经核的旧审查probe。主会话另做mock主验，你不要重复跑稳定suite；以只读调用链、断言/fixture/失败路径审查为主，必要反例写入返回文本而非执行。\n\n原实现brief和五项验收：新增独立revision，旧v4/v5/v6/v7 source/run/tests/prompt只读，目标冲突STOP，保firstfail/final argv/stdout/stderr/rc；REAL_EXECUTION_APPROVED持久False，模型RUN_PROCESS仅mock，不真实提交。原v4 34保护逐断言/fixture/行为映射，不以同名代替。1 parse_codex event/item阶段和status allowlist：item.completed+reasoning in_progress拒、unknown/矛盾/incomplete/failed/afterterminal/IDs/forbiddentools保护。2 completed parsefail默认STOP保raw，只有explicit allow+非空reason+新sampling identity+strictint max_attempts=2才可新immutable sample，同冻结prompt合法，第二次失败仍存完整attempt/reason/identity；预算不暗许。3 proven pre_submit retry_safe须source-bound proof并执行预算闭环，新transport attempt同sampling identity，缺第二prompt不误阻；默认无new-sample max_attempts=3保留，不能把所有transport改<=2；ambiguous/queue/unknownsubmitted永不retry，持久hold跨job/stage/process。4 cache/reserve exact seal/ownership：legacy缺identity、坏schema/jobid/identity/nonobject/unreadableledger、prompt/output-only、badseal failclosed；unrelatedvalid不误封；alias不转移原source；reserve查finalized。5 use_cache=False不得绕ledger再submit；可truthful cache_hit=true/cache_requested=false原来源0submit或controlledreject0writes，不能先alias再失败。\n\n继承保护：v5原34为32PASS2ERROR，seam2/2不洗原失败；自身classify_stop绑定本revision.hold，hold写失败ticket跨进程。exact producer/request/input/prompt/output/terminal、strictJSONL、fsync inflight、no fallback。GPT2 requested/returned effort exact max不等backend认证；actual只认source-bound server_metadata_summary根model_slug/resolved_model_slugs，clientrequested不认证。非私密env/argv/CLI/inlineconfig绑定；unknownGPT2AGENT拒，credentials值不读hashpersist、proxyuserinfo/query拒。活跃provider源绑定；privateglobal/external/Docker未冻结，remote BOM/CRLF/rstrip未验。旧hold/ticket不迁移删除，SHA可重算非MAC。\n\n上轮v7 Muse独立review原任务还要求亲读原v4/v7 tests、report/firstfailure/fixrecord，逐五gap和原34断言覆盖、有具体反例、不得根据实现者63PASS背书。该任务已completed但终局仅“probe 脚本已写。现在运行（只写本轮新目录与临时目录）。”目录仅tools_probe_p1.py，无完整review；这是terminal部分交付，不当仍running，也没有可采纳结论。\n\nprior main v7证据：notes/research/integrity_v7_main_verify_20261009_r2/report.json为11challenges5PASS6FAIL；r3探针Popen函数破坏asyncio未启动suite；r4保Popen类exactargv/native audit，主63PASS，6negative guards全PASS，仅一个isolatedlocalreadonlyqueue child。v7仍NOT_ACCEPTED，两confirmed：C1 proof五flags仅==使retryable=1/其他=0全误接受（源execution_integrity_v7.py:267-309）。C2 allow=True max_attempts=3错误接受并执行2mockprocess/newsample_taken=True（experiment_calls_v7.py:57-81），违反exact2。\n\n本轮v8实现者修复响应：五files已落盘，报告notes/research/integrity_v8_luna_impl_20261009_r1/report.json；声称最终70PASS，v4 34/v7 63 mapping+7newregress，strictbool五flags/requestproducer/source绑定、explicit exactbudget2、defaulttransport3保留；41selected old hashes unchanged。主已亲读v8 I/E/R/tests，源码I:310先strictbool，E:70预算!=2拒。未进行主suite，独立验收未做。firsttest1 FAIL+1ERROR保留；fix_record称fixtureticket faultpath和timeoutkw修后PASS。run03 helper TOOLS.parent.parent曾写ROOT上级queue_child_run，实现者自述删除生成file和空dirs；run04改TOOLS.parent并PASS，不把该删除冒称授权或主核。当前test:120-132仍每次写固定历史impl-report/queue_child_run.json，直接重复suite会覆盖历史，主验将process-local重定向该唯一helper到新主目录，不能默认接受历史写入。test结尾双unittest.main也请区分真实影响和风格，不机械报缺陷。\n\n未决反证重点：修复是否仅覆盖synthetic而实际adapter paths仍宽松；失败/resume/newsample状态丢失或错误重试；proof仅hash自述不升级远端认证；旧34/63 assertion weakening/fixture行为变化；历史helper写入边界；namespace/source/proven transport集成，cachealias/terminal绑定。不要把有意closed realgate/knownunverified normalization称已验真实路由，也不以尚无real proof producer泛化否定离线修复。报告确认/可疑/驳回分层，具体file:line+输入状态→错误结果，明确静态范围。重大音乐结论未涉及；戏剧化、笃定、因果写满、单一故事本身不扣分。完整终局包含各保护覆盖、prior findings修复处置、剩余阻塞。不得ACCEPTED/music acceptance/productionready自封。",
+    "target": {
+      "providerInstanceId": "claude-proxy",
+      "model": "muse-spark-1.3-contributor-free",
+      "options": {
+        "effort": "xhigh"
+      }
+    },
+    "title": "v8 原缺口修复独立审查",
+    "role": "review",
+    "mode": "async",
+    "clientRequestId": "music-20261009-integrity-v8-muse-review-r2",
+    "runtimeMode": "inherit",
+    "interactionMode": "default"
+  }
+}

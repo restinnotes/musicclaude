@@ -1,0 +1,804 @@
+{
+  "schema": "integrity-v7-main-isolated-offline/2",
+  "date": "2026-10-09",
+  "commands": [
+    {
+      "mode": "suite",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\integrity_v7_main_verify_20261009_r2.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--worker",
+        "suite"
+      ],
+      "returncode": 1,
+      "timed_out": false,
+      "elapsed_seconds": 5.031,
+      "stdout_bytes": 366,
+      "stderr_bytes": 10414,
+      "stdout_sha256": "554c0b7426d97b5459f7dce0ff5a53f6b58e7dd1697572f756fc1392d5139d51",
+      "stderr_sha256": "9a736f9413034194c1c550e1c108446ffb7228804a622826cb123f377ee34d9f",
+      "result": {
+        "tests_run": 63,
+        "failures": 0,
+        "errors": 1,
+        "was_successful": false,
+        "provider_processes": "mocked; unallowlisted real spawn blocked by Python audit hook",
+        "model_cli_invocations": 0,
+        "real_model_submissions": 0,
+        "local_readonly_queue_children": [],
+        "real_gate_after": false,
+        "limit": "Local isolated mock evidence, not backend attestation or music acceptance."
+      }
+    },
+    {
+      "mode": "challenges",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\integrity_v7_main_verify_20261009_r2.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--worker",
+        "challenges"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.719,
+      "stdout_bytes": 2412,
+      "stderr_bytes": 0,
+      "stdout_sha256": "39e3467f78a3c8805ea1cfd6222a6bb608628e62d04a1057463eaac07b3822af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result": {
+        "checks": [
+          {
+            "check": "complete_parse_failure_same_slot_rerun",
+            "passed": true,
+            "mock_process_calls": 1,
+            "second_new_model_submissions": 0,
+            "original_attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "changed_model",
+            "passed": true,
+            "rejected": true,
+            "exception": "ArtifactConflict",
+            "new_mock_process_calls": 0,
+            "attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "changed_version",
+            "passed": true,
+            "rejected": true,
+            "exception": "ArtifactConflict",
+            "new_mock_process_calls": 0,
+            "attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "explicit_resample_budget_above_two",
+            "contract": "Explicit resample budget must be exact int <= 2, otherwise reject before a process.",
+            "passed": false,
+            "rejected": false,
+            "exception": null,
+            "mock_process_calls": 2,
+            "new_sample_taken": true,
+            "finding": "Budget=3 accepted although the declared explicit-resample contract caps it at 2."
+          },
+          {
+            "check": "source_bound_proof_positive_mock_control",
+            "passed": true,
+            "limit": "Synthetic proof; no actual CLI proof producer was exercised."
+          },
+          {
+            "check": "integer_in_boolean_proof_retryable",
+            "passed": false,
+            "accepted": true,
+            "supplied_type": "int",
+            "finding": "Non-boolean proof flag accepted.",
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_ambiguous",
+            "passed": false,
+            "accepted": true,
+            "supplied_type": "int",
+            "finding": "Non-boolean proof flag accepted.",
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_submit_callback_reached",
+            "passed": false,
+            "accepted": true,
+            "supplied_type": "int",
+            "finding": "Non-boolean proof flag accepted.",
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_model_request_sent",
+            "passed": false,
+            "accepted": true,
+            "supplied_type": "int",
+            "finding": "Non-boolean proof flag accepted.",
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_automatic_retry",
+            "passed": false,
+            "accepted": true,
+            "supplied_type": "int",
+            "finding": "Non-boolean proof flag accepted.",
+            "mock_process_calls": 0
+          },
+          {
+            "check": "ambiguous_hold_blocks_same_and_different_local_run",
+            "passed": true,
+            "mock_process_calls": 1,
+            "second_new_model_submissions": 0,
+            "different_run_new_model_submissions": 0
+          }
+        ],
+        "provider_processes": "mocked; unallowlisted real spawn blocked by Python audit hook",
+        "model_cli_invocations": 0,
+        "real_model_submissions": 0,
+        "local_readonly_queue_children": [],
+        "real_gate_after": false,
+        "limit": "Local isolated mock evidence, not backend attestation or music acceptance."
+      }
+    }
+  ],
+  "assertion_mapping": {
+    "old_count": 34,
+    "new_count": 63,
+    "mapping": [
+      {
+        "test": "AdapterTests.test_backend_unknown_or_wrong_not_success",
+        "old_line": 270,
+        "new_line": 309,
+        "old_assertions": [
+          "self.assertEqual(meta[\"status\"], \"failed\")",
+          "self.assertTrue(meta[\"terminal_verified\"])"
+        ],
+        "new_assertions": [
+          "self.assertEqual(meta[\"status\"], \"failed\")",
+          "self.assertTrue(meta[\"terminal_verified\"])"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_body_protection_words_are_content",
+        "old_line": 228,
+        "new_line": 249,
+        "old_assertions": [
+          "self.assertEqual(self.call()[\"status\"], \"ok\")"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.call()[\"status\"], \"ok\")"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_cache_write_failure_never_resumes_unsealed_success",
+        "old_line": 206,
+        "new_line": 227,
+        "old_assertions": [
+          "self.assertFalse(I.queue_open(A.HOLD_FILE))",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "new_assertions": [
+          "self.assertFalse(I.queue_open(A.HOLD_FILE))",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_completed_strict_and_terminal_metadata_required",
+        "old_line": 239,
+        "new_line": 260,
+        "old_assertions": [
+          "self.assertRaises(ValueError)",
+          "self.assertTrue(self.call()[\"queue_stop\"])"
+        ],
+        "new_assertions": [
+          "self.assertRaises(ValueError)",
+          "self.assertTrue(self.call()[\"queue_stop\"])"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_hold_write_failure_next_job_stays_blocked",
+        "old_line": 183,
+        "new_line": 204,
+        "old_assertions": [
+          "self.assertTrue(first[\"queue_stop\"])",
+          "self.assertIn(\"OSError\", first[\"hold_write_error\"])",
+          "self.assertFalse(A.HOLD_FILE.exists())",
+          "self.assertTrue(second[\"queue_stop\"])",
+          "self.assertEqual(second[\"attempts\"], 0)",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(first[\"queue_stop\"])",
+          "self.assertIn(\"OSError\", first[\"hold_write_error\"])",
+          "self.assertFalse(A.HOLD_FILE.exists())",
+          "self.assertTrue(second[\"queue_stop\"])",
+          "self.assertEqual(second[\"attempts\"], 0)",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_metadata_handles_never_persist",
+        "old_line": 219,
+        "new_line": 240,
+        "old_assertions": [
+          "self.assertEqual(self.call()[\"status\"], \"ok\")",
+          "self.assertNotIn(fake.encode(), path.read_bytes())"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.call()[\"status\"], \"ok\")",
+          "self.assertNotIn(fake.encode(), path.read_bytes())"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_missing_cache_no_resubmit",
+        "old_line": 153,
+        "new_line": 174,
+        "old_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_pending_without_cache_no_resubmit",
+        "old_line": 160,
+        "new_line": 181,
+        "old_assertions": [
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_post_submit_unknown_timeout_and_protection_hold",
+        "old_line": 258,
+        "new_line": 297,
+        "old_assertions": [
+          "self.assertTrue(self.call()[\"queue_stop\"])",
+          "self.assertTrue(self.call()[\"queue_stop\"])"
+        ],
+        "new_assertions": [
+          "self.assertTrue(self.call()[\"queue_stop\"])",
+          "self.assertTrue(self.call()[\"queue_stop\"])"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_pre_submit_contract_not_just_phase",
+        "old_line": 248,
+        "new_line": 269,
+        "old_assertions": [
+          "self.assertTrue(meta[\"retry_safe\"])",
+          "self.assertFalse(meta[\"queue_stop\"])",
+          "self.assertTrue(I.queue_open(A.HOLD_FILE))",
+          "self.assertFalse(A.pre_submit_payload(obj))"
+        ],
+        "new_assertions": [
+          "self.assertTrue(meta[\"retry_safe\"])",
+          "self.assertFalse(meta[\"queue_stop\"])",
+          "self.assertTrue(I.queue_open(A.HOLD_FILE))",
+          "self.assertFalse(A.pre_submit_payload(obj))"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "ALL_OLD_ASSERTION_EXPRESSIONS_RETAINED_BODY_CHANGED"
+      },
+      {
+        "test": "AdapterTests.test_real_gate_closed_and_route_blocked",
+        "old_line": 278,
+        "new_line": 317,
+        "old_assertions": [
+          "self.assertTrue(meta[\"queue_stop\"])",
+          "self.assertEqual(meta[\"attempts\"], 0)",
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(meta[\"queue_stop\"])",
+          "self.assertEqual(meta[\"attempts\"], 0)",
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_sensitive_body_rejected_not_rewritten",
+        "old_line": 232,
+        "new_line": 253,
+        "old_assertions": [
+          "self.assertTrue(self.call()[\"queue_stop\"])",
+          "self.assertNotIn(b\"FICTIONAL_HANDLE\", path.read_bytes())"
+        ],
+        "new_assertions": [
+          "self.assertTrue(self.call()[\"queue_stop\"])",
+          "self.assertNotIn(b\"FICTIONAL_HANDLE\", path.read_bytes())"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_success_resume_readonly_and_cache_reference",
+        "old_line": 139,
+        "new_line": 158,
+        "old_assertions": [
+          "self.assertTrue(self.call(sampling_key=\"shared\")[\"resumed\"])",
+          "self.assertEqual(first[\"status\"], \"ok\")",
+          "self.assertTrue(second[\"cache_hit\"])",
+          "self.assertEqual(before, (self.out / \"meta/one.json\").read_bytes())",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertEqual(cache[\"source_job_id\"], \"one\")",
+          "self.assertNotIn(\"response\", cache)",
+          "self.assertTrue(I.queue_open(A.HOLD_FILE))"
+        ],
+        "new_assertions": [
+          "self.assertTrue(self.call(sampling_key=\"shared\")[\"resumed\"])",
+          "self.assertEqual(first[\"status\"], \"ok\")",
+          "self.assertTrue(second[\"cache_hit\"])",
+          "self.assertEqual(before, (self.out / \"meta/one.json\").read_bytes())",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertEqual(cache[\"source_job_id\"], \"one\")",
+          "self.assertNotIn(\"response\", cache)",
+          "self.assertTrue(I.queue_open(A.HOLD_FILE))",
+          "self.assertEqual(completion[\"execution_argv_sha256\"], I.digest(completion[\"execution_argv\"]))"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "ALL_OLD_ASSERTION_EXPRESSIONS_RETAINED_BODY_CHANGED"
+      },
+      {
+        "test": "AdapterTests.test_tampered_body",
+        "old_line": 176,
+        "new_line": 197,
+        "old_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_tampered_source_and_finalization",
+        "old_line": 167,
+        "new_line": 188,
+        "old_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertRaises(I.ArtifactConflict)",
+          "self.assertRaises(I.ArtifactConflict)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "AdapterTests.test_ticket_write_failure_never_launches",
+        "old_line": 196,
+        "new_line": 217,
+        "old_assertions": [
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(OSError)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(self.process.call_count, 0)",
+          "self.assertRaises(OSError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "ExperimentTests.test_wrapper_exact_rerun_zero_new_submissions",
+        "old_line": 364,
+        "new_line": 412,
+        "old_assertions": [
+          "self.assertTrue(first[\"parse_ok\"])",
+          "self.assertTrue(second[\"cached\"])",
+          "self.assertEqual(first[\"new_model_submissions\"], 1)",
+          "self.assertEqual(second[\"new_model_submissions\"], 0)",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(first[\"parse_ok\"])",
+          "self.assertTrue(second[\"cached\"])",
+          "self.assertEqual(first[\"new_model_submissions\"], 1)",
+          "self.assertEqual(second[\"new_model_submissions\"], 0)",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "ExperimentTests.test_wrapper_fake_log_and_parser_error_never_success",
+        "old_line": 375,
+        "new_line": 423,
+        "old_assertions": [
+          "self.assertFalse(result[\"parse_ok\"])",
+          "self.assertIsNone(result[\"parsed\"])",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "new_assertions": [
+          "self.assertFalse(result[\"parse_ok\"])",
+          "self.assertIsNone(result[\"parsed\"])",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_backend_root_contract_only",
+        "old_line": 89,
+        "new_line": 89,
+        "old_assertions": [
+          "self.assertEqual(I.model_evidence({\"server_metadata_summary\": {\"model_slug\": \"gpt-5-6-thinking\"}},\n                                         \"gpt-5-6-thinking\")[\"verdict\"], \"match\")",
+          "self.assertEqual(I.model_evidence({\"server_metadata_summary\": {\"model_slug\": \"gpt-6-thinking\"}},\n                                         \"gpt-5-6-thinking\")[\"verdict\"], \"mismatch\")",
+          "self.assertEqual(I.model_evidence(obj, \"gpt-5-6-thinking\")[\"verdict\"], \"unverified\")"
+        ],
+        "new_assertions": [
+          "self.assertEqual(I.model_evidence({\"server_metadata_summary\": {\"model_slug\": \"gpt-5-6-thinking\"}},\n                                         \"gpt-5-6-thinking\")[\"verdict\"], \"match\")",
+          "self.assertEqual(I.model_evidence({\"server_metadata_summary\": {\"model_slug\": \"gpt-6-thinking\"}},\n                                         \"gpt-5-6-thinking\")[\"verdict\"], \"mismatch\")",
+          "self.assertEqual(I.model_evidence(obj, \"gpt-5-6-thinking\")[\"verdict\"], \"unverified\")"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_body_preserved_or_rejected_not_scrubbed",
+        "old_line": 82,
+        "new_line": 82,
+        "old_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "new_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_cancelled_item_rejected",
+        "old_line": 56,
+        "new_line": 56,
+        "old_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "new_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_handle_keys_and_strings_redacted",
+        "old_line": 72,
+        "new_line": 72,
+        "old_assertions": [
+          "self.assertNotIn(fake, json.dumps(I.safe_metadata(obj)))",
+          "self.assertNotIn(fake, I.safe_records(value))"
+        ],
+        "new_assertions": [
+          "self.assertNotIn(fake, json.dumps(I.safe_metadata(obj)))",
+          "self.assertNotIn(fake, I.safe_records(value))"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_policy",
+        "old_line": 99,
+        "new_line": 99,
+        "old_assertions": [
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "new_assertions": [
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_strict_json",
+        "old_line": 67,
+        "new_line": 67,
+        "old_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "new_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_success_and_after_terminal",
+        "old_line": 62,
+        "new_line": 62,
+        "old_assertions": [
+          "self.assertEqual(I.parse_codex(codex().decode())[0], \"完整离线回答\")",
+          "self.assertRaises(ValueError)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(I.parse_codex(codex().decode())[0], \"完整离线回答\")",
+          "self.assertRaises(ValueError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process",
+        "old_line": 104,
+        "new_line": 104,
+        "old_assertions": [
+          "self.assertTrue(ticket.is_file())",
+          "self.assertFalse(I.queue_open(hold))",
+          "self.assertEqual(result.returncode, 0, result.stderr.decode())",
+          "self.assertIn(\"OSError\", I.classify_stop(hold, \"a\", \"run\", \"test\"))",
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(ticket.is_file())",
+          "self.assertFalse(I.queue_open(hold))",
+          "self.assertEqual(result.returncode, 0, result.stderr.decode())",
+          "self.assertIn(\"OSError\", I.classify_stop(hold, \"a\", \"run\", \"test\"))",
+          "self.assertRaises(I.PolicyBlocked)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "ALL_OLD_ASSERTION_EXPRESSIONS_RETAINED_BODY_CHANGED"
+      },
+      {
+        "test": "IntegrityTests.test_unknown_codex_events_rejected",
+        "old_line": 51,
+        "new_line": 51,
+        "old_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "new_assertions": [
+          "self.assertRaises(ValueError)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_codex_success_exact_resume",
+        "old_line": 308,
+        "new_line": 345,
+        "old_assertions": [
+          "self.assertEqual(first[\"status\"], \"ok\")",
+          "self.assertTrue(R.run_job(self.root / \"run\", self.job())[\"resumed\"])",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(first[\"status\"], \"ok\")",
+          "self.assertTrue(R.run_job(self.root / \"run\", self.job())[\"resumed\"])",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_final_argv_identity_contains_sandbox_and_images",
+        "old_line": 337,
+        "new_line": 385,
+        "old_assertions": [
+          "self.assertIn(\"-i\", argv)",
+          "self.assertIn(\"workspace-write\", argv)",
+          "self.assertIn(\"sandbox_workspace_write.network_access=true\", argv)",
+          "self.assertNotEqual(ident, changed)"
+        ],
+        "new_assertions": [
+          "self.assertIn(\"-i\", argv)",
+          "self.assertIn(\"workspace-write\", argv)",
+          "self.assertIn(\"sandbox_workspace_write.network_access=true\", argv)",
+          "self.assertNotEqual(ident, changed)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_forbidden_tool_failed_with_complete_terminal",
+        "old_line": 348,
+        "new_line": 396,
+        "old_assertions": [
+          "self.assertEqual(result[\"status\"], \"failed\")",
+          "self.assertTrue(result[\"terminal_verified\"])",
+          "self.assertFalse(result[\"queue_stop\"])"
+        ],
+        "new_assertions": [
+          "self.assertEqual(result[\"status\"], \"failed\")",
+          "self.assertTrue(result[\"terminal_verified\"])",
+          "self.assertFalse(result[\"queue_stop\"])"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_hold_write_failure_retains_ticket",
+        "old_line": 329,
+        "new_line": 377,
+        "old_assertions": [
+          "self.assertTrue(second[\"queue_stop\"])",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertTrue(R.run_job(self.root / \"run\", self.job())[\"queue_stop\"])"
+        ],
+        "new_assertions": [
+          "self.assertTrue(second[\"queue_stop\"])",
+          "self.assertEqual(self.process.call_count, 1)",
+          "self.assertTrue(R.run_job(self.root / \"run\", self.job())[\"queue_stop\"])"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_opencode_success_handles_redacted",
+        "old_line": 314,
+        "new_line": 362,
+        "old_assertions": [
+          "self.assertEqual(result[\"status\"], \"ok\")",
+          "self.assertNotIn(\"FICTIONAL_SESSION\", raw)",
+          "self.assertNotIn(\"FICTIONAL_MESSAGE\", raw)"
+        ],
+        "new_assertions": [
+          "self.assertEqual(result[\"status\"], \"ok\")",
+          "self.assertNotIn(\"FICTIONAL_SESSION\", raw)",
+          "self.assertNotIn(\"FICTIONAL_MESSAGE\", raw)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_real_gate_never_process",
+        "old_line": 356,
+        "new_line": 404,
+        "old_assertions": [
+          "self.assertTrue(result[\"queue_stop\"])",
+          "self.assertEqual(self.process.call_count, 0)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(result[\"queue_stop\"])",
+          "self.assertEqual(self.process.call_count, 0)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      },
+      {
+        "test": "RunnerTests.test_unknown_event_stops_later_provider_job",
+        "old_line": 322,
+        "new_line": 370,
+        "old_assertions": [
+          "self.assertTrue(results[0][\"queue_stop\"])",
+          "self.assertEqual(results[1][\"status\"], \"skipped_queue_stop\")",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "new_assertions": [
+          "self.assertTrue(results[0][\"queue_stop\"])",
+          "self.assertEqual(results[1][\"status\"], \"skipped_queue_stop\")",
+          "self.assertEqual(self.process.call_count, 1)"
+        ],
+        "old_assertions_not_textually_retained": [],
+        "disposition": "EXACT_AST_AFTER_VERSION_NAMESPACE_SUBSTITUTION"
+      }
+    ],
+    "limit": "Assertion expressions and AST compare are supporting evidence, not fixture-equivalence or acceptance by themselves."
+  },
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "real_gate_changed": false,
+  "two_w_hold_changed": false,
+  "implementation_claim_parity": {
+    "tools/execution_integrity_v7.py": {
+      "reported_sha256": "d8d5f088812309f3d70166dc5a3fe34b1a3231a209bf534a384f49ebaee902e6",
+      "current_sha256": "d8d5f088812309f3d70166dc5a3fe34b1a3231a209bf534a384f49ebaee902e6",
+      "matches": true
+    },
+    "tools/gpt2_adapter_v7.py": {
+      "reported_sha256": "ecde4fb1edf1abb08fa74324d6d289e8b29403d5533d0e8a4dfeb8c371a21e64",
+      "current_sha256": "ecde4fb1edf1abb08fa74324d6d289e8b29403d5533d0e8a4dfeb8c371a21e64",
+      "matches": true
+    },
+    "tools/runner_v7.py": {
+      "reported_sha256": "5cc2033befd86ac4292b23e1c7ae5e855019fd0476e20497bf296b32407796af",
+      "current_sha256": "5cc2033befd86ac4292b23e1c7ae5e855019fd0476e20497bf296b32407796af",
+      "matches": true
+    },
+    "tools/experiment_calls_v7.py": {
+      "reported_sha256": "53c956030ad72fff02ddd69fc05cce29ca169f601cb2b061b37416ab48d5af36",
+      "current_sha256": "53c956030ad72fff02ddd69fc05cce29ca169f601cb2b061b37416ab48d5af36",
+      "matches": true
+    },
+    "tools/tests/test_execution_integrity_v7.py": {
+      "reported_sha256": "7744896c31ba2119a41b163f147189266258f942735e9ce8637ab91367e17640",
+      "current_sha256": "7744896c31ba2119a41b163f147189266258f942735e9ce8637ab91367e17640",
+      "matches": true
+    }
+  },
+  "agent_stream_hash_parity": {
+    "安全README.md": {
+      "matches": true
+    },
+    "fix_record.txt": {
+      "matches": true
+    },
+    "first_failure.txt": {
+      "matches": true
+    },
+    "tests_run_manifest.txt": {
+      "matches": true
+    },
+    "test_run_01.stdout.txt": {
+      "matches": true
+    },
+    "test_run_01.stderr.txt": {
+      "matches": true
+    },
+    "test_run_02.stdout.txt": {
+      "matches": true
+    },
+    "test_run_02.stderr.txt": {
+      "matches": true
+    },
+    "test_run_03.stdout.txt": {
+      "matches": true
+    },
+    "test_run_03.stderr.txt": {
+      "matches": true
+    },
+    "test_run_04.stdout.txt": {
+      "matches": true
+    },
+    "test_run_04.stderr.txt": {
+      "matches": true
+    }
+  },
+  "protected_unchanged": true,
+  "changed_protected_paths": [],
+  "main_disposition": "NOT_ACCEPTED_PENDING_CONFIRMED_GAPS_AND_INDEPENDENT_REVIEW",
+  "limits": [
+    "SHA is local consistency, not remote authentication.",
+    "Real CLI event/proof compatibility and remote input normalization remain unverified.",
+    "Private config, external services, Docker and all three music acceptances remain unverified."
+  ]
+}

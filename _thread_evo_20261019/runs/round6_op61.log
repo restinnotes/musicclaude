@@ -1,0 +1,36 @@
+3 jobs
+3 jobs
+[g_P0_op61_orig_D0_r4] FAILED rc=1 0s submitted=False job=None
+[g_Q1_op61_note_D0_r6] ok 251s 5176 chars
+[g_P0_op61_orig_D0_r5] ok 325s 8206 chars
+[g_Q1_op61_note_D0_r5] ok 347s 5063 chars
+[g_Q1_op61_note_D0_r4] ok 364s 5419 chars
+{
+ "g_Q1_op61_note_D0_r4": true,
+ "g_Q1_op61_note_D0_r5": true,
+ "g_Q1_op61_note_D0_r6": true
+}
+[g_P0_op61_orig_D0_r6] ok 372s 7465 chars
+{
+ "g_P0_op61_orig_D0_r4": false,
+ "g_P0_op61_orig_D0_r5": true,
+ "g_P0_op61_orig_D0_r6": true
+}
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\late.py", line 29, in <module>
+    msg = message(v, work, style, cond, did)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\late.py", line 13, in message
+    draft = arts.clean(evo.output(draft_id))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\arts.py", line 7, in clean
+    t = re.sub(r"<WritingBlock[^>]*>", "", t); t = t.replace("</WritingBlock>", "")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\re\__init__.py", line 186, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+3 jobs
+[l_Q1_op61_note_D0_from-g_Q1_op61_note_D0_r5] ok 331s 8711 chars
+[l_Q1_op61_note_D0_from-g_Q1_op61_note_D0_r4] ok 400s 9562 chars
+[l_Q1_op61_note_D0_from-g_Q1_op61_note_D0_r6] ok 426s 9275 chars

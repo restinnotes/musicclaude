@@ -1,0 +1,21 @@
+{
+  "job_id": "S02_G6_relations_r1_attachment",
+  "channel": "gpt2",
+  "model": "gpt-6-thinking",
+  "prompt_file": "inputs/S02_gpt_envelope.txt",
+  "prompt_sha256": "c03bde1072e11d46072bd4abba1c618ff6a3f184a99bcb3a11055b95158a1077",
+  "attachments": [
+    {
+      "path": "inputs/S02.txt",
+      "sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3"
+    }
+  ],
+  "timeout_seconds": 1800,
+  "min_response_chars": 500,
+  "labels": {
+    "segment": "S02",
+    "method": "source_distinctions_relations",
+    "round": 1,
+    "input_content": "same full S02.txt as Flash; native attachment envelope differs"
+  }
+}

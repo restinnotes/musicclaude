@@ -1,0 +1,23 @@
+{
+ "run_id": "eo2_op61_m6w_g6_r1",
+ "attempt": 0,
+ "account": "mimicgate-yi",
+ "route": "mimic",
+ "started": "2026-11-02T01:31:31",
+ "seconds": 41,
+ "completed": false,
+ "model": "gpt-6",
+ "thinking_effort": "high",
+ "remote_id": null,
+ "http_status": null,
+ "receiver_seconds": null,
+ "message_chars": 11070,
+ "message_sha256": "d53de9cb38835cac850328f1e23e4ec2bd905b410d770f3a20d236b438e612ad",
+ "meta": {
+  "stage": "e2e_open"
+ },
+ "error": {
+  "kind": "client",
+  "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'python', '-c', \"from pathlib import Path;p=Path('/app/state/music-result-spool-v1/71122a1b4262840b7cb1/result.json');print(p.read_text() if p.exists() else 'null')\"])"
+ }
+}

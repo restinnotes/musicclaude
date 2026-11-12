@@ -1,0 +1,37 @@
+{
+  "base": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r61bridge",
+      "author": "r61_advisor_g6a",
+      "author_index": 0,
+      "name": "Event-State Bridge",
+      "hypothesis": "通过明确区分人物心理意愿与实际发生的表达、行动及他人察觉，修复相邻段落中已经存在的心理支点没有被写成可读过渡的问题。其机制不是删重复、重建全篇语义库存或改变A4综合顺序，而是对每个相邻段落的状态边界进行一次事件状态核对。重点是使已有的愿望能够自然延续到已有的实际表现，不把未完成的表达误读成完全没有表达，也不把自然显露扩大成完整告白。预期收益是提高单独成立和连读自然度，且不增加人物经历事实。代价是修改范围很窄，不能解决S06-B1/B4覆盖缺口，也不能保证单个新评委提出的意见足以代表整体阅读体验。",
+      "risk": "最大的风险是过度响应单个新评委，把原本已经可以理解的心理过程重新解释一遍，造成S04和S05内容重复，或把人物自然显露心意的过程改写成刻意选择、完整告白或新的行为。此前直接盲比已有认为原过渡自然的相反读法，因此必须允许空edits。第二个风险是模型可能把事件状态分类写成心理分析句式，反而损害人话。第三个风险是仅改善S04/S05的局部清晰度，不一定改善四维整体表现。不得因快筛通过而忽略no_regress、覆盖和单独阅读底线，也不得将qu检查点结果当作r54weave正式验收。",
+      "mode": "edits",
+      "attempt": 1,
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "event_state_boundary_patch",
+          "path": "runs\\_batches\\round61_boundary\\prompts\\r61bridge_P1.txt",
+          "sha256": "0ec94160b95db10ff08ef299eca0eb8a579ee6a35764083a3faa123f51303fd1",
+          "placeholders": [
+            "CENTER",
+            "LINE",
+            "SECTIONS"
+          ]
+        }
+      ],
+      "checkpoint_base": "r54weave",
+      "final_mainline_at_freeze": "r54weave",
+      "downstream_required": [],
+      "edit_contract": "replace only; at most one entry in the later segment for each adjacent boundary; all metadata unchanged; empty edits permitted"
+    }
+  ],
+  "source_hashes": {
+    "op60": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+    "op61": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+  }
+}

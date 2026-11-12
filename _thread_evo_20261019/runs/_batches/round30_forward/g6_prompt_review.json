@@ -1,0 +1,31 @@
+{
+  "advisor": "batch_round30_forward_advisor_g6",
+  "output_sha256": "980012bc6f2a829390d99456aeddf162b6c9f45fa2ea7495db298e4bb035abdd",
+  "full_read": true,
+  "accepted_indices": [
+    1
+  ],
+  "rejected": [
+    {
+      "index": 0,
+      "layer": "A4",
+      "category": "historical_core_mechanism_overlap",
+      "specific_prior": [
+        {
+          "file": "schemes/Q5_A4.txt",
+          "evidence": "同一处境同时存在几种感受，不一定多次转折；不要把TARGETS排成必须依次完成心理动作；2–4条各一句；不要求结尾彻底解决。"
+        },
+        {
+          "file": "schemes/round28_fastc03_A4.txt",
+          "evidence": "不同条可相继或并存/后果/延续，不硬造段内转折。"
+        },
+        {
+          "file": "schemes/round28_extrac03_A4.txt",
+          "evidence": "在实际R27P2交叉round28_cross_morec03中已允许复杂体验并存、不要求每段突破/终局解决，正式0/2。"
+        }
+      ],
+      "difference_assessed": "Only explicit temporal-support guard and reprioritized restatement; no sufficiently separate positive mechanism. Not labelled a hard shape failure or new quality negative."
+    }
+  ],
+  "production_candidates": 1
+}

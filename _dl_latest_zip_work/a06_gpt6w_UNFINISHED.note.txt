@@ -1,0 +1,12 @@
+UNFINISHED (rule: same job 3x consecutive confirmed pre-submit failure -> keep evidence, skip, continue rerun)
+
+- job: A06:r01:gpt6w (model_requested=gpt-6-thinking)
+- attempts: 3, all confirmed_pre_submit_failure, phase=pre_submit, error_code=headless_native_result_rejected
+  1. results/trials/gpt6w/A06/r01.attempt01.meta.json (+ .stderr.txt / .raw.json), utc 2026-10-10T04:12Z
+  2. results/trials/gpt6w/A06/r01.attempt02.meta.json (+ .stderr.txt / .raw.json), utc 2026-10-10T04:36Z
+  3. results/trials/gpt6w/A06/r01.meta.json (+ .stderr.txt / .raw.json), utc 2026-10-10T04:42Z (current)
+- runner diagnosis at 2026-10-10 ~05:00 UTC: HEALTHY (gpt2 CLI ok, chrome processes alive, no zombie gpt2;
+  sibling call A06:r01:gpt56w succeeded on same runner 99.1s). No runner repair needed.
+- action: NO further retry for A06:r01:gpt6w. Main rerun (no --retry flag) will PRESERVE this failure
+  evidence and continue with B02:r01 onward. A06 gpt6w r02-r05 still to be sampled normally.
+- recorded by: implementation sub-agent, 2026-10-10

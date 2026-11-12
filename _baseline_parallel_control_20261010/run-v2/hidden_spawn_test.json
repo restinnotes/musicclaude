@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-10T22:33:23.796989+00:00",
+  "tests": [
+    {
+      "name": "create_no_window_set",
+      "ok": true,
+      "detail": "flags=134217728"
+    },
+    {
+      "name": "no_detached_process",
+      "ok": true,
+      "detail": "DETACHED must stay clear or CREATE_NO_WINDOW is ignored"
+    },
+    {
+      "name": "startupinfo_swhide",
+      "ok": true,
+      "detail": "STARTUPINFO SW_HIDE present"
+    },
+    {
+      "name": "real_child_echo",
+      "ok": true,
+      "detail": "rc=0 elapsed=0.05s out='hidden-child-ok'"
+    },
+    {
+      "name": "no_cmd_exe_in_argv",
+      "ok": true,
+      "detail": "argv0=python.exe argv1=gpt2_cli.py"
+    },
+    {
+      "name": "real_cli_check_hidden",
+      "ok": true,
+      "detail": "rc=0 elapsed=0.2s docker_ready=True"
+    }
+  ],
+  "all_ok": true
+}

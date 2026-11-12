@@ -1,0 +1,63 @@
+{
+  "name": "round29_g56c01",
+  "note": "现有证据支持的起点是：R27P2 的合法路线经六套不同写线交叉后仍普遍被评为抽象、心理调节化、相邻阶段重复，而原 A2 已经识别这些风险却只能在现有供给里选。假说是把 A1 的生成中心从“stake + phase 的阶段结论”改成“前面亲历留下的条件如何改变后面同一 stakes 的实际分量”，可以在不补外部事实的前提下产生更强的时序依赖和更具体的人物处境。可证伪预期：固定原 R27P2 A2、A3、Q15 A4 后，新 A1 若仍大量生成可被一句‘改变自己的判断/调节自己的感受’概括的路线，或后半 phase 删除后对后文没有实质影响，且正式盲比仍集中批评抽象与心理办法循环，则该假说失败；若路线事实合规但 A2 把明显更有路径依赖的路线淘汰，也会暴露选择层而非生成层成为下一瓶颈。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "round29_g56c01_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R27P2_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "Q15_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4",
+  "edits": []
+}

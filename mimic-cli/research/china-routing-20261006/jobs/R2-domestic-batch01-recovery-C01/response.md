@@ -1,0 +1,356 @@
+审计结论：可复现4条“榜单+精确版本”head记录，但 iPhone 17 两条实际指向同一京东 item，推荐时去重。两个京东自营榜URL当前口径确有冲突：A榜为 iPhone 17 Pro/17 TOP1/2，B榜为 iPhone 18 Pro/17 TOP1/2，因此只认各自榜页，不外推成统一销量榜。[jd.com](https://www.jd.com/phb/key_9987dadff159556152fd.html)
+
+OnePlus、REDMI K90、vivo X300均复现国内精确版本零售条目；评论数不作为销量排名。一加原称“20000+”未在给定完整页复现，当前该页为0+，但精确款仍存在。[JD.com](https://www.jd.com/hprm/98478710c0c450aa4d9a.html) W2-C两个head不进入verified-head：Mate 80“12+512雪域白”未闭环；Xiaomi 17 Pro“白色12+256普通版”只复现到合约专享，不能与普通版合并。[JD.com](https://www.jd.com/hprm/998798f39c6efd1fa6e4.html)
+
+推荐去重后：iPhone 17、iPhone 17 Pro；机会样本同级按字典序取 OnePlus Ace 6T。未用壳页、评论数或社区转述推断成交价/销量。
+
+```json
+{
+  "job_id": "R2-domestic-batch01-recovery-C01",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "review_performed": true,
+  "category_ids": ["C01"],
+  "candidate_audits": [
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-H01",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro",
+      "exact_variant": "256GB 银色，中国大陆京东自营双卡双待版本",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": true,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S01"],
+      "caveat": "S01当前明确TOP1并给出精确款及item链接；商品详情为JS壳，未核验当日普通成交价。"
+    },
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-H02",
+      "brand": "Apple",
+      "model": "iPhone 17",
+      "exact_variant": "256GB 白色，中国大陆京东自营双卡双待5G版本",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": true,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S01"],
+      "caveat": "S01当前明确TOP2；与W2-B C01-H02同一京东item 100209267857，推荐阶段去重。"
+    },
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-O01",
+      "brand": "OnePlus",
+      "model": "Ace 6T",
+      "exact_variant": "12GB+256GB 闪速黑",
+      "quality_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": false,
+      "domestic_consumer_evidence_verified": true,
+      "source_ids": ["S03", "S04"],
+      "caveat": "京东完整列表复现精确新机款；该给定列表当前显示0+评价，原20000+不沿用。社区对榜首的转述不作为销量/排名证据。"
+    },
+    {
+      "original_job_id": "W2-B-batch01",
+      "original_candidate_id": "C01-H01",
+      "brand": "Apple",
+      "model": "iPhone 18 Pro",
+      "exact_variant": "256GB 勃艮第酒红色，5G双卡双待",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": true,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S02"],
+      "caveat": "S02当前明确TOP1；仅认该具体榜页口径，不与S01合成为统一销量榜。当前成交价未核验。"
+    },
+    {
+      "original_job_id": "W2-B-batch01",
+      "original_candidate_id": "C01-H02",
+      "brand": "Apple",
+      "model": "iPhone 17",
+      "exact_variant": "256GB 白色，5G双卡双待",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": true,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S02"],
+      "caveat": "S02当前明确TOP2；与W2-A C01-H02指向同一京东item，推荐阶段不重复抽样。"
+    },
+    {
+      "original_job_id": "W2-B-batch01",
+      "original_candidate_id": "C01-O01",
+      "brand": "REDMI",
+      "model": "K90",
+      "exact_variant": "12GB+256GB 白色，骁龙8至尊版，7100mAh",
+      "quality_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": false,
+      "domestic_consumer_evidence_verified": true,
+      "source_ids": ["S05", "S06", "S07"],
+      "caveat": "国内自营完整列表复现精确款；原item购买页需先选门店才能确认价格且当前无评价。原“推荐榜TOP1”不作为本次销量排名证据。"
+    },
+    {
+      "original_job_id": "W2-C-batch01",
+      "original_candidate_id": "C01-H1",
+      "brand": "HUAWEI",
+      "model": "Mate 80",
+      "exact_variant": "全网通版 12GB+512GB 雪域白",
+      "quality_grade": "PROVISIONAL_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": false,
+      "head_status_verified": false,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S08", "S09"],
+      "caveat": "官方确认Mate 80及12GB+512GB容量；当前京东完整页复现其他12+512颜色/雪域白其他配置，但未闭环该精确组合。评论量不能证明head。"
+    },
+    {
+      "original_job_id": "W2-C-batch01",
+      "original_candidate_id": "C01-H2",
+      "brand": "Xiaomi",
+      "model": "Xiaomi 17 Pro",
+      "exact_variant": "12GB+256GB 白色 5G",
+      "quality_grade": "PROVISIONAL_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": false,
+      "head_status_verified": false,
+      "domestic_consumer_evidence_verified": false,
+      "source_ids": ["S10", "S11", "S12"],
+      "caveat": "普通自营页可见17 Pro的12+256黑色/冷烟紫及白色其他容量；白色12+256仅复现“重合约专享”，按规则不得与普通版合并。"
+    },
+    {
+      "original_job_id": "W2-C-batch01",
+      "original_candidate_id": "C01-O1",
+      "brand": "vivo",
+      "model": "X300",
+      "exact_variant": "V2509A 全网通 12GB+256GB 惬意紫",
+      "quality_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "model_exists_verified": true,
+      "exact_variant_verified": true,
+      "head_status_verified": false,
+      "domestic_consumer_evidence_verified": true,
+      "source_ids": ["S13", "S14", "S15"],
+      "caveat": "京东完整自营页复现12+256惬意紫；vivo官方参数确认V2509A、容量与配色，国内社区有长期使用体验；不以评论数证明销量。"
+    }
+  ],
+  "recommended_selection": [
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-H02",
+      "brand": "Apple",
+      "model": "iPhone 17",
+      "exact_variant": "256GB 白色，中国大陆京东自营双卡双待5G版本",
+      "category_id": "C01",
+      "sampling_stratum": "domestic_head",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "reason": "榜单+精确版本已核验；同一物理SKU跨研究去重后保留W2-A记录；同级按brand/model/variant字典序优先。",
+      "source_ids": ["S01"]
+    },
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-H01",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro",
+      "exact_variant": "256GB 银色，中国大陆京东自营双卡双待版本",
+      "category_id": "C01",
+      "sampling_stratum": "domestic_head",
+      "quality_grade": "VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT",
+      "reason": "榜单+精确版本已核验；在剩余同级唯一SKU中按NFKC/casefold字典序优先于iPhone 18 Pro。",
+      "source_ids": ["S01"]
+    },
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_candidate_id": "C01-O01",
+      "brand": "OnePlus",
+      "model": "Ace 6T",
+      "exact_variant": "12GB+256GB 闪速黑",
+      "category_id": "C01",
+      "sampling_stratum": "domestic_opportunity",
+      "quality_grade": "VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT",
+      "reason": "精确国内零售款及社区来源均可复现；与REDMI、vivo同级时按brand/model/variant NFKC/casefold字典序最先。",
+      "source_ids": ["S03", "S04"]
+    }
+  ],
+  "exclusion_log": [],
+  "category_gaps": [
+    "W2-C的两个domestic_head均无可复现的销量/榜单位次，因此不计入verified-head。",
+    "两个京东自营手机榜URL当前TOP排序不同；本审计不把任一榜页解释成全站统一销量排名。",
+    "未用评论数、推荐榜、社区转述替代销量排名。"
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_9987dadff159556152fd.html",
+      "title": "自营手机排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/phb/key_9987edf2c0f03f1afc7f.html",
+      "title": "京东手机自营手机排行榜",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/hprm/98478710c0c450aa4d9a.html",
+      "title": "一加6T 256g商城 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/p/a5rdwdkl/",
+      "title": "一加Ace 6T，骁龙8 Gen5+8300mAh大电池",
+      "published_at": "2026-08-31T23:58:18+08:00",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/hprm/17329832487437f65220b.html",
+      "title": "REDMI K90京东公开商品列表",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://item.m.jd.com/product/100215674663.html",
+      "title": "REDMI K90 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04", "K08"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/p/aog30mgn/",
+      "title": "倒反天罡还是金玉其外？红米K90评测",
+      "published_at": "2025-12-25",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://consumer.huawei.com/cn/support/content/zh-cn16075602/",
+      "title": "HUAWEI Mate 80 用户指南适用产品",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.jd.com/hprm/998798f39c6efd1fa6e4.html",
+      "title": "京东 HUAWEI Mate 系列公开商品列表",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.jd.com/hprm/17329969fd646058e5007.html",
+      "title": "京东 Xiaomi 17 系列公开商品列表",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.jd.com/hprm/99878754483b6d828074.html",
+      "title": "小米合约机套餐 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.mi.com/shop/buy/detail?product_id=21932",
+      "title": "Xiaomi 17 Pro立即购买-小米商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.jd.com/hprm/6706f331bf4044a6c1b.html",
+      "title": "京东 vivo X300 公开商品列表",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.vivo.com.cn/vivo/param/x300",
+      "title": "vivo X300 官方规格参数",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://post.smzdm.com/p/awwzn20p/",
+      "title": "vivo X300半年使用体验报告",
+      "published_at": "2026-09-08",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    }
+  ],
+  "claims": [
+    {"claim_id": "K01", "text": "S01当前明确iPhone 17 Pro 256GB银色TOP1、iPhone 17 256GB白色TOP2。", "source_ids": ["S01"]},
+    {"claim_id": "K02", "text": "S02当前明确iPhone 18 Pro 256GB勃艮第TOP1、iPhone 17 256GB白色TOP2；榜序与S01不同。", "source_ids": ["S02"]},
+    {"claim_id": "K03", "text": "OnePlus Ace 6T 12GB+256GB闪速黑国内精确零售条目及社区来源可复现；社区榜首转述不计作排名。", "source_ids": ["S03", "S04"]},
+    {"claim_id": "K04", "text": "REDMI K90 12GB+256GB白色、骁龙8至尊版、7100mAh精确零售款可复现；当前item价格需选门店。", "source_ids": ["S05", "S06", "S07"]},
+    {"claim_id": "K05", "text": "Mate 80及12GB+512GB型号容量存在，但12GB+512GB雪域白精确组合未闭环。", "source_ids": ["S08", "S09"]},
+    {"claim_id": "K06", "text": "Xiaomi 17 Pro白色12GB+256GB仅复现合约专享；不得与普通版合并。", "source_ids": ["S10", "S11", "S12"]},
+    {"claim_id": "K07", "text": "vivo X300 V2509A、12GB+256GB惬意紫及国内精确自营条目可闭环，并有国内长期使用社区证据。", "source_ids": ["S13", "S14", "S15"]},
+    {"claim_id": "K08", "text": "未把评论数、未登录页、壳页、社区转述或补贴标识当作当日普通成交价或销量排名。", "source_ids": ["S01", "S02", "S03", "S06", "S10", "S13"]}
+  ],
+  "data_gaps": [
+    "本轮未核验任何候选的2026-10-06普通非会员实际成交价；会员价、券价、国补价、历史/首发价均未拿来替代，未知保持null。",
+    "Apple若干精确item详情为JS壳；head结论仅依可读京东榜页。",
+    "OnePlus给定完整京东列表当前显示0+评价，原研究的20000+未在该页复现；评价数未参与裁决。",
+    "HUAWEI Mate 80 12GB+512GB雪域白精确组合仍缺可读闭环证据。",
+    "Xiaomi 17 Pro白色12GB+256GB普通版仍缺可读精确购买证据；已找到的合约专享版本不合并。"
+  ]
+}
+```

@@ -1,0 +1,438 @@
+<escape>{
+  "candidate_reviews": [
+    {
+      "route_id": "R1",
+      "coherence": 8,
+      "forward_motion": 5,
+      "prerequisite_integrity": 5,
+      "non_repetition": 4,
+      "human_plausibility": 7,
+      "section_contribution": 5,
+      "recurrence_clusters": [
+        {
+          "meaning": "已经获得亲密之后，持续沉浸在幸福和满足之中。",
+          "first_appears": "S05",
+          "later_appears": [
+            "S07"
+          ],
+          "classification": "语义重复",
+          "new_basis": ""
+        },
+        {
+          "meaning": "希望已经获得的亲密能够继续存在。",
+          "first_appears": "S06",
+          "later_appears": [
+            "S07",
+            "S12",
+            "S14"
+          ],
+          "classification": "合法延续",
+          "new_basis": ""
+        },
+        {
+          "meaning": "知道幸福无法得到永久保证，因此无法完全摆脱失去的担忧。",
+          "first_appears": "S09",
+          "later_appears": [
+            "S11"
+          ],
+          "classification": "语义重复",
+          "new_basis": ""
+        },
+        {
+          "meaning": "暂时放下对失去的担忧，重新享受已经得到的亲密，随后又回到幸福与不安并存的状态。",
+          "first_appears": "S09",
+          "later_appears": [
+            "S10",
+            "S11",
+            "S12"
+          ],
+          "classification": "语义重复",
+          "new_basis": "S10只改变了人物当下的注意力，没有产生新的认识、选择或事实。S11重新出现的担忧已经在S09成立，S12也没有进一步改变人物对这一问题的理解。"
+        },
+        {
+          "meaning": "幸福仍然真实，但珍惜幸福与害怕失去无法分开。",
+          "first_appears": "S11",
+          "later_appears": [
+            "S12",
+            "S13",
+            "S14"
+          ],
+          "classification": "语义重复",
+          "new_basis": "S13增加了不愿否定幸福的态度，但此前没有建立人物想要否定幸福的倾向。其余内容主要重复S11已经成立的双重感受。"
+        }
+      ],
+      "critical_loops": [
+        "S05→S07：两段都在享受已经获得的亲密，S07没有增加新的体验条件或心理认识。",
+        "S09→S10→S11：失去担忧进入幸福体验，人物暂时不去想它，随后担忧重新出现。重新出现没有新事实或新代价，属于想解决、暂时放下、再次回到原问题的循环。",
+        "S11→S12：S11已经明确幸福和不安同时存在，S12再次回到幸福之中并知道无法保证未来，没有新增认识。",
+        "S13→S14：S13已经建立珍惜幸福与承受失去忧虑并存的状态，S14只是重新描述这一状态，没有新的后果或实行行为。",
+        "S02：从单方面渴望突然转向相信彼此可能互相接纳，没有出现对方实际回应的事实。人物的相信缺少足够的前置根据。",
+        "S13：突然增加不愿把幸福视为错误或不值得的价值判断。此前没有建立人物曾经考虑否定幸福，也没有明确呈现这一新立场产生的具体原因。"
+      ],
+      "section_contributions": [
+        {
+          "sec": "S01",
+          "contribution": "建立亲密愿望和回应尚不确定的起点，并明确人物尚未考虑失去。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S02",
+          "contribution": "引入对相互接纳的相信，是一个不同于单方面愿望的新认识，但缺少对方回应这一事实作为根据。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S03",
+          "contribution": "人物开始允许自己接受亲密，把愿望转化为实际意愿。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S04",
+          "contribution": "亲密从可能性变成真实经历，人物实际获得幸福。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S05",
+          "contribution": "呈现获得幸福之后的安然享受，是对S04的体验性延续。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S06",
+          "contribution": "人物第一次明确希望幸福能够持续，新增一个此前没有明确表达的所求。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S07",
+          "contribution": "再次呈现已经成立的满足和幸福，没有独立于S05的体验功能。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S08",
+          "contribution": "新增无法保证幸福延续的认识，是路线的重要转折，但缺少具体触发事实。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S09",
+          "contribution": "将对未来的不确定转化为当下满足感受到的影响，是认识产生的实际后果。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S10",
+          "contribution": "人物暂时停止考虑未来风险，重新享受亲密，但没有产生新的选择或认识。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S11",
+          "contribution": "再次呈现失去担忧伴随幸福的状态，主要是S09已有后果的重复。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S12",
+          "contribution": "重新进入幸福体验，同时保留无法保证未来的认识，但S11已经呈现两者并存。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S13",
+          "contribution": "提出不愿否定幸福的新态度，但没有充分铺垫人物为什么需要作出这一价值判断。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S14",
+          "contribution": "延续幸福与失去忧虑并存的状态，没有进一步落实新选择或产生新后果。",
+          "is_distinct": false
+        }
+      ],
+      "gate_pass": false,
+      "主要问题": "路线整体围绕同一段正在发生的亲密关系，coherence尚可，但后半段出现明显的语义打转。S09已经确立失去担忧进入幸福体验的事实，S10暂时搁置，S11重新出现，S12再次沉浸，S13和S14继续描述幸福与忧虑并存。这个循环没有增加足够的新事实、新代价或新选择。S02的相互接纳认识缺少事实根据，S13又引入此前没有铺垫的反否定立场。14段实际承担的不同经历功能不足，不能因为人物越来越清楚地感受到不安，就将其算作连续的新推进。未通过forward_motion、prerequisite_integrity、non_repetition和section_contribution门槛。"
+    },
+    {
+      "route_id": "R2",
+      "coherence": 9,
+      "forward_motion": 6,
+      "prerequisite_integrity": 6,
+      "non_repetition": 5,
+      "human_plausibility": 8,
+      "section_contribution": 6,
+      "recurrence_clusters": [
+        {
+          "meaning": "重新进入过去亲密的记忆，重新感受到曾经的幸福和温暖。",
+          "first_appears": "S02",
+          "later_appears": [
+            "S03",
+            "S09",
+            "S10"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S09重新体验记忆时，已经具有S06确立的不可复得认识，因此温暖与失去可以同时进入体验。但S10再次完全沉浸于记忆，与S03的心理动作高度相似，没有充分体现第二次沉浸的独立经历功能。"
+        },
+        {
+          "meaning": "记忆中的温暖无法消除现实中的缺席，过去的幸福同时带来失去的痛楚。",
+          "first_appears": "S07",
+          "later_appears": [
+            "S11"
+          ],
+          "classification": "语义重复",
+          "new_basis": "S11新增的依据是S09、S10再次体验记忆，但新增结果主要是空缺感更加具体。S07已经建立温暖与失去并存，S11没有产生新的认识或新的代价，只是加重了同一痛感。"
+        },
+        {
+          "meaning": "不愿意因为亲密已经结束、回忆令人痛苦，就否定曾经拥有的幸福。",
+          "first_appears": "S08",
+          "later_appears": [
+            "S12"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S11再次让现实缺席变得具体，S12在此基础上产生了新的意义理解：痛苦不是幸福不值得，而是幸福曾经真实而珍贵。这一解释比S08单纯希望保留记忆的态度增加了新的认识。"
+        },
+        {
+          "meaning": "记忆可以保留过去的意义，却不能使过去重新成为现在。",
+          "first_appears": "S06",
+          "later_appears": [
+            "S13",
+            "S14"
+          ],
+          "classification": "语义重复",
+          "new_basis": ""
+        },
+        {
+          "meaning": "希望珍惜记忆，同时承认记忆不能恢复过去，温暖与痛苦可以同时存在。",
+          "first_appears": "S09",
+          "later_appears": [
+            "S13",
+            "S14"
+          ],
+          "classification": "语义重复",
+          "new_basis": "S12确实增加了对痛楚来源的理解，但S13再次把S06、S08和S09已经成立的认识及愿望组合起来，并没有形成新的选择。S14继续重复同一综合状态。"
+        }
+      ],
+      "critical_loops": [
+        "S02→S03与S09→S10：两组段落都在重复沉浸于记忆中的幸福、暂时不考虑过去已经结束的事实。第二次沉浸虽然发生在S06之后，但S10没有体现这种认识对沉浸方式产生的独立变化。",
+        "S07→S11：两次都表现记忆温暖与现实缺席带来的痛楚。S11的空缺感更具体，但主要是同一种感受增强，不足以构成新的经历变化。",
+        "S08→S12：存在有价值的新解释，但S08已经明确不愿因痛苦否定幸福。S12必须被理解为对痛楚来源的重新认识，而不能再被当成第一次产生珍惜过去的愿望。",
+        "S09→S13：S09已经同时呈现记忆温暖和不可复得的事实，S13又把两者作为新的综合认识提出，属于重新宣布已成立的认识。",
+        "S13→S14：连续两段都停留在珍惜记忆、承受失去、既不忘记也不相信过去能够回来的状态，没有新的行动、选择或后果。"
+      ],
+      "section_contributions": [
+        {
+          "sec": "S01",
+          "contribution": "建立亲密已经结束、温暖仍留在记忆中的基本处境。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S02",
+          "contribution": "过去的亲近在记忆中重新鲜明，人物主动靠近温暖而不是立即分析失去。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S03",
+          "contribution": "让人物进一步沉浸于过去的幸福，形成第一次记忆体验的延续。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S04",
+          "contribution": "重新确认幸福曾经真实发生过，但此前没有建立人物怀疑这段经历是幻想或单方面想象，因此作为新认识的必要性不足。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S05",
+          "contribution": "呈现确认过去真实之后的安慰，记忆从缺席的对象转化为当下可以依靠的温暖。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S06",
+          "contribution": "明确认识到记忆无法让过去重新成为现在，建立了不可复得的核心事实。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S07",
+          "contribution": "呈现不可复得的认识所产生的实际痛楚，温暖开始与现实空缺同时存在。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S08",
+          "contribution": "新增保留幸福意义的愿望，不愿因为失去就否定过去。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S09",
+          "contribution": "重新体验记忆，但这次不可复得的认识也进入体验，构成一次有依据的回访。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S10",
+          "contribution": "再次暂时沉浸于记忆，主要重复S03的体验功能，没有充分增加新的经历内容。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S11",
+          "contribution": "重新面对现实缺席，空缺感更加具体，但与S07的经历功能高度接近。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S12",
+          "contribution": "重新解释痛苦的来源，认识到痛苦恰恰来自曾经拥有的幸福真实而珍贵。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S13",
+          "contribution": "重新组合珍惜记忆与承认不可复得这两项已经成立的认识，没有形成独立的新选择。",
+          "is_distinct": false
+        },
+        {
+          "sec": "S14",
+          "contribution": "继续描述温暖和痛楚并存的状态，重复S13的心理立场，没有新的经历后果。",
+          "is_distinct": false
+        }
+      ],
+      "gate_pass": false,
+      "主要问题": "这是三条路线中整体情境最稳定的一条，人物一直在面对同一段已经结束的亲密关系。S06的不可复得认识、S08保留幸福意义的愿望、S12对痛楚来源的重新理解，都具有真实推进价值。但S04试图重新确认一件此前并未被怀疑的事实，S07和S11主要重复同一种失去痛感，S03和S10重复记忆沉浸，S13又把S06、S08、S09已经成立的内容重新包装成综合认识。尤其S13和S14连续重复同一两难，缺少独立的经历功能。虽然具有一定的认识推进，但14段无法保持足够的非重复性和段落贡献度。未通过prerequisite_integrity、non_repetition和section_contribution门槛。"
+    },
+    {
+      "route_id": "R3",
+      "coherence": 9,
+      "forward_motion": 8,
+      "prerequisite_integrity": 8,
+      "non_repetition": 8,
+      "human_plausibility": 8,
+      "section_contribution": 8,
+      "recurrence_clusters": [
+        {
+          "meaning": "渴望亲密，但由于害怕受到伤害而保留距离、迟迟不敢完全相信。",
+          "first_appears": "S01",
+          "later_appears": [
+            "S03"
+          ],
+          "classification": "合法延续",
+          "new_basis": "S02出现了可能被接纳的迹象，但这种可能性尚不足以立即消除人物原有的防备。S03呈现的是旧有心理习惯在新证据面前仍然存在，而不是重新第一次产生恐惧。"
+        },
+        {
+          "meaning": "人物相信自己可能被接纳，并逐渐确认亲密确实已经成为自己的真实经历。",
+          "first_appears": "S02",
+          "later_appears": [
+            "S06"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S04实际允许亲密进入生活，S05产生真实的满足感。S02的内容只是相信可能被接纳，S06则依据已经发生的体验确认自己确实正在得到亲密，信息层级发生了变化。"
+        },
+        {
+          "meaning": "害怕失去已经得到的亲密，以及这份担忧对继续靠近产生的影响。",
+          "first_appears": "S08",
+          "later_appears": [
+            "S09",
+            "S11"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S09新增了具体的预期代价：越深入地靠近，将来失去时可能越难承受。S11又新增了对恐惧来源的理解，即担忧来自已经产生的珍惜，而不是仍然怀疑自己是否被接纳。两次重访分别增加代价和认识。"
+        },
+        {
+          "meaning": "决定接受亲密，不再完全退守。",
+          "first_appears": "S04",
+          "later_appears": [
+            "S13"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S04是在仍然担心受伤时允许自己靠近；S13则是在已经认识到失去可能性、并明确不愿否定幸福之后，继续实行这一选择。S13不是重新宣布第一次决定，而是在新的风险认识下落实已有选择。"
+        },
+        {
+          "meaning": "不愿意为了避免未来痛苦而否定已经得到的幸福。",
+          "first_appears": "S12",
+          "later_appears": [
+            "S13",
+            "S14"
+          ],
+          "classification": "合法重访",
+          "new_basis": "S12形成新的价值判断，S13将这一判断落实为不因恐惧而撤回信任的行为。S14呈现行为和立场的持续结果，并没有把原有决定重新包装成一次新决定。"
+        },
+        {
+          "meaning": "享受已经得到的亲密，不必时时检查自己是否应该相信它。",
+          "first_appears": "S05",
+          "later_appears": [
+            "S07",
+            "S10",
+            "S14"
+          ],
+          "classification": "合法延续",
+          "new_basis": "S07是实际享受亲密的沉浸阶段；S10是在失去担忧已经出现之后暂时放下风险衡量；S14则是在已经知道没有未来保证的情况下继续接受亲密。三者的心理背景不同，不是简单重复同一种无忧状态。"
+        }
+      ],
+      "critical_loops": [],
+      "section_contributions": [
+        {
+          "sec": "S01",
+          "contribution": "建立人物渴望亲密却保留距离的初始矛盾，同时明确其防备来自害怕相信幸福后受到伤害。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S02",
+          "contribution": "出现眼前亲近这一事实，人物第一次相信自己可能真正得到接纳，建立后续选择的事实基础。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S03",
+          "contribution": "展示新的可能性并没有立即消除原有防备，人物仍然在渴望和犹豫之间停留。这是有独立功能的心理延续，而非新发现。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S04",
+          "contribution": "人物不再完全退守，将接受亲密从愿望和可能性转化为实际选择，是全篇第一次明确的行动立场变化。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S05",
+          "contribution": "呈现接受亲密带来的直接后果，人物第一次实际获得此前渴望的满足。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S06",
+          "contribution": "人物依据实际体验确认自己确实正在被接纳，从可能性转向对现实处境的确认。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S07",
+          "contribution": "呈现人物开始真正享受亲密，不再持续检查自己是否应该相信它，是实际接受之后的生活性延续。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S08",
+          "contribution": "担忧对象发生实质变化，从害怕得不到亲密转为害怕失去已经得到的幸福，是重要的新心理问题。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S09",
+          "contribution": "使失去担忧产生具体的预期代价：越深入靠近，将来可能承受的失去就越难以忍受。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S10",
+          "contribution": "人物暂时不再衡量亲密的风险，重新体验已经得到的幸福。它没有解决担忧，但提供了担忧出现之后的一次真实体验性停顿。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S11",
+          "contribution": "人物重新面对失去担忧，并首次理解恐惧来自已经产生的珍惜，而非对自己是否被接纳仍然存疑，形成新的因果认识。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S12",
+          "contribution": "人物重新衡量避免痛苦与珍惜幸福之间的关系，不愿通过否定幸福来保护自己，形成新的价值判断。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S13",
+          "contribution": "将S12的价值判断落实为继续接受亲密的实际立场。这次实行发生在已经明确知道失去可能性的条件下，具有不同于S04的经历功能。",
+          "is_distinct": true
+        },
+        {
+          "sec": "S14",
+          "contribution": "呈现选择实行之后的持续状态：人物没有获得未来保证，也没有消除恐惧，但不再要求恐惧必须先消失才允许自己接受亲密。",
+          "is_distinct": true
+        }
+      ],
+      "gate_pass": true,
+      "主要问题": "这条路线具有最完整的经历推进。S01建立防备，S02提供新的接纳可能，S03让防备在新证据面前继续存在，S04形成实际选择，S05和S06分别呈现选择的情感后果与新的现实认识。S08之后，人物面对的已经不是最初能否得到亲密，而是如何面对已经得到的东西可能失去这一新问题。S09增加预期代价，S11重新理解恐惧的来源，S12形成新的价值判断，S13再将其落实为具体立场。S03、S07、S10、S14虽然主要承担延续和沉浸功能，但它们分别呈现防备持续、享受亲密、暂时放下风险衡量以及带着不确定继续接受，不是连续两段重复同一两难。S04和S13也没有构成无依据地重复决定：后者是在新增失去风险和价值判断之后实行已有选择。S12关于不愿否定幸福的态度，可以由S01的自我保护倾向和S11对恐惧来源的理解支持。需要注意的是，S14是结果性延续，不应再被解释成一次新的心理成长。整体达到全部硬性门槛。"
+    }
+  ],
+  "selected_routes": [
+    "R3"
+  ],
+  "needs_regeneration": false,
+  "regeneration_reason": ""
+}</escape>

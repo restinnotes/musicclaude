@@ -1,0 +1,15 @@
+UNFINISHED (rule: same job 3x consecutive confirmed pre-submit failure -> keep evidence, skip, continue)
+
+- job: G_k18_r05_judgegpt6w_BA (review phase, judge_model=gpt6w)
+- attempts: 3, all confirmed_pre_submit_failure, phase=pre_submit
+  1. initial (web account .codex-web), 0.7s, error_code=headless_runner_or_evidence_failed
+     (results/reviews/gpt6w/G_k18_r05_judgegpt6w_BA.attempt01.meta.json + .stderr.txt / .raw.json)
+  2. explicit retry (web account), 0.5s, same error
+     (results/reviews/gpt6w/G_k18_r05_judgegpt6w_BA.attempt02.meta.json + .stderr.txt / .raw.json)
+  3. cross-account probe (default .codex account), 0.6s, same error
+     (results/reviews/gpt6w/G_k18_r05_judgegpt6w_BA.meta.json + .stderr.txt / .raw.json, current)
+- note: instant local rejection (~0.5s) on BOTH accounts; prompt hash matches manifest,
+  17KB under limit. Job-side/evidence-side issue, NOT account-specific.
+- runner diagnosis: HEALTHY (both accounts gpt2 check ready:true/docker_ready:true).
+- action: NO further retry. Parallel review run PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

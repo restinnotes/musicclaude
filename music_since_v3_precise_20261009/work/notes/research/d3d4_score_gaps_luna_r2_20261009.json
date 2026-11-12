@@ -1,0 +1,313 @@
+﻿{
+  "record_id": "d3d4_score_gaps_luna_r2_20261009",
+  "date": "2026-10-09",
+  "role": "independent Luna Max score/source researcher",
+  "scope": {
+    "purpose": [
+      "Supplement legible public-domain first-edition score evidence for Chopin Op.52 mm.191-203 and Op.61 m.24",
+      "Cross-check existing Op.60 m.24 and m.34 claims against the first edition and David Kopp paras.16-17 / Example 5 locator",
+      "Byte/source verification of the existing JSON and UConn PDF"
+    ],
+    "read_only_inputs": [
+      "notes/research/d3d4_score_sources_luna_20261009.md",
+      "notes/research/d3d4_score_sources_luna_20261009.json"
+    ],
+    "prohibited_or_out_of_scope": [
+      "No new Opus/Sol content",
+      "No modification of historical source/run/prompt/memory/CLAUDE",
+      "No hold clearance, production cut, or boundary selection",
+      "No Affect content or judgment",
+      "No H4/H5/Center",
+      "No subagents",
+      "No access to login credentials/cookies or circumvention of controls"
+    ],
+    "audio_status": "audio-unverified",
+    "audio_opened_or_listened": false,
+    "affect_or_boundary_decision": false,
+    "downloaded_scripts_executed": false,
+    "modern_commercial_score_excerpt_saved_or_copied": false
+  },
+  "evidence_labels": {
+    "page_locator": "CFEO catalog/pageview page and measure-span locator; establishes where a passage is, not an independent note reading.",
+    "direct_score_read": "Notation visibly inspected in the saved high-resolution public first-edition page image.",
+    "commentary": "Author or secondary prose; kept separate from first-edition notation claims.",
+    "byte_source_check": "File length and SHA-256 comparison only; no content interpretation."
+  },
+  "bar_count_basis": [
+    {
+      "work": "Op.52",
+      "page_locator": "CFEO p.11 bars 185-202; p.12 bars 203-222",
+      "method": "The nineteenth-century score does not print continuous bar numbers. CFEO supplies each page span; count printed barlines sequentially from the page's first measure. P.11 contains 18 measures; m.191 begins after its first two 3-measure systems. P.12 first measure is m.203.",
+      "status": "page_locator_plus_visual_barline_count"
+    },
+    {
+      "work": "Op.61",
+      "page_locator": "CFEO p.2 bars 20-43",
+      "method": "Count four measures in the first system; the first measure of the second system is m.24.",
+      "status": "page_locator_plus_visual_barline_count"
+    },
+    {
+      "work": "Op.60",
+      "page_locator": "CFEO p.3 bars 24-33; p.4 bars 34-45",
+      "method": "CFEO continuous page-span numbering; the first system of p.3 begins at m.24 and the first system of p.4 begins at m.34.",
+      "status": "page_locator_plus_visual_barline_count"
+    }
+  ],
+  "observations": [
+    {
+      "id": "op52-mm191-202-texture",
+      "work": "Op.52 Ballade No.4",
+      "bar_locator": "mm.191-202, CFEO p.11; overall range locator, not every detail mapped to a unique bar",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "Across the target page segment, upper-staff writing alternates chordal attacks with shorter slurred or beamed figures.",
+        "Lower-staff writing shows rapid grouped notes, low-register bass attacks, and broken-note motion.",
+        "Pedal marks, slurs/ties, and hairpin-shaped dynamic marks are visible."
+      ],
+      "limit": "This is a range-level notation description. It is not a bar-by-bar transcription, pitch transcription, or harmonic reduction."
+    },
+    {
+      "id": "op52-mm191-202-late-markings",
+      "work": "Op.52 Ballade No.4",
+      "bar_locator": "mm.191-202, CFEO p.11 later portion; exact single-bar placement not asserted",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "The later portion of the target page span visibly prints the word stretto.",
+        "The closing portion visibly includes the dynamic marking fff."
+      ],
+      "limit": "These are printed score markings only; no affect or segmentation interpretation is made, and exact bar assignment is left open."
+    },
+    {
+      "id": "op52-m203-opening",
+      "work": "Op.52 Ballade No.4",
+      "bar_locator": "m.203, CFEO p.12 first system, first measure",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "The marking pp is visible.",
+        "The opening has longer-value chordal sonorities in both staves, ties/sustain, and a pedal mark."
+      ],
+      "limit": "No exact pitches, chord name, or functional-harmony claim is supplied."
+    },
+    {
+      "id": "op61-m24-notation",
+      "work": "Op.61 Polonaise-Fantaisie",
+      "bar_locator": "m.24, CFEO p.2 second system, first measure",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "The upper staff begins with a rest, then enters with longer slurred notes.",
+        "The lower staff has more closely grouped moving notes, low-register noteheads, and a pedal mark.",
+        "The two staves visibly contrast a higher sustained/slurred line with a lower moving part."
+      ],
+      "limit": "No pitch transcription, harmonic function, or event/boundary interpretation."
+    },
+    {
+      "id": "op60-m24-score-texture",
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "m.24, CFEO p.3 first system beginning",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "A high-staff sustained sonority and printed trill continuation are visible with f.",
+        "The lower part has active broken-note/arpeggiated motion and pedal marks."
+      ],
+      "limit": "Score description only; the thematic/harmonic interpretation below is Kopp commentary."
+    },
+    {
+      "id": "op60-m34-rallent",
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "m.34, CFEO p.4 first system beginning",
+      "evidence": ["page_locator", "direct_score_read"],
+      "facts": [
+        "The primary score visibly prints rallent."
+      ],
+      "limit": "Do not replace the printed rallent. with rit. The primary mark alone is not used to assert a beat-level onset."
+    }
+  ],
+  "commentary_checks": [
+    {
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "mm.20-24",
+      "source": "David Kopp, On Performing Chopin's Barcarolle, para.16",
+      "commentary_claim": "Kopp describes an extended A-sharp pedal in mm.20-22 and a direct return to F-sharp at m.24 after an A-sharp major triad.",
+      "classification": "Kopp's harmonic analysis; not a new reduction in this supplement."
+    },
+    {
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "m.24 and following return span; Kopp Example 5 spans mm.23-35",
+      "source": "David Kopp, On Performing Chopin's Barcarolle, para.17 and Example 5",
+      "commentary_claim": "Kopp describes theme A / Rink A-prime as returning at m.24 with double trills, melodic diminution, and textural amplification.",
+      "classification": "Kopp's prose analysis; Example 5 heading/span checked only. Henle Urtext image not saved or copied."
+    },
+    {
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "m.35",
+      "source": "David Kopp, On Performing Chopin's Barcarolle, para.17",
+      "commentary_claim": "Kopp says inner-voice A-sharp 4 becomes A-natural at m.35.",
+      "classification": "Kopp commentary only; no new chromatic voice-leading reduction."
+    },
+    {
+      "work": "Op.60 Barcarolle",
+      "bar_locator": "m.34",
+      "source": "PTNA practice commentary; secondary source",
+      "commentary_claim": "PTNA says the rallentando indication begins on beat 2.",
+      "classification": "Secondary commentary, not established from the primary score word alone."
+    }
+  ],
+  "sources": [
+    {
+      "id": "cfeo-op52",
+      "title": "Chopin's First Editions Online, Ballade Op.52, 52-1-Sm, French first edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/ballade-opus-52/521-sm/",
+      "pageviews": [
+        {"page": 11, "bars": "185-202", "url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74780/"},
+        {"page": 12, "bars": "203-222", "url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74781/"}
+      ],
+      "source_institution": "CFEO impression record; p.11 plate mark M.S.3957",
+      "iip_urls": [
+        "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/newjp2/6756.jp2&WID=4312&HEI=6496&CVT=JPG",
+        "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/newjp2/6757.jp2&WID=4312&HEI=6496&CVT=JPG"
+      ],
+      "public_domain_cross_check": "https://imslp.org/wiki/Ballade_No.4,_Op.52_(Chopin,_Frederic)"
+    },
+    {
+      "id": "cfeo-op61",
+      "title": "Chopin's First Editions Online, Polonaise-Fantaisie Op.61, 61-1-BR, French first edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/polonaise-fantasy-opus-61/611-br/",
+      "pageview": {"page": 2, "bars": "20-43", "url": "https://chopinonline.ac.uk/cfeo/browse/pageview/61907/"},
+      "source_institution": "University of Chicago Library; plate mark B. et Cie. 4610",
+      "iip_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/ocvejp2-proc/61/35/02/61-1-BR_USCu_p02.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "public_domain_cross_checks": [
+        "https://imslp.org/wiki/Polonaise-Fantasie,_Op.61_(Chopin,_Frederic)",
+        "https://commons.wikimedia.org/wiki/File:Polonaise-fantaisie,_Op.61_(IA_imslp-op61-chopin-frdric).pdf"
+      ]
+    },
+    {
+      "id": "cfeo-op60",
+      "title": "Chopin's First Editions Online, Barcarolle Op.60, 60-1-BR, French first edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/barcarolle-opus-60/601-br/",
+      "pageviews": [
+        {"page": 3, "bars": "24-33", "url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66644/"},
+        {"page": 4, "bars": "34-45", "url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66645/"}
+      ],
+      "source_institution": "British Library; plate mark B. et Cie. 4609",
+      "iip_urls": [
+        "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG",
+        "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p04.jp2&WID=4312&HEI=6496&CVT=JPG"
+      ],
+      "public_domain_cross_check": "https://imslp.org/wiki/Barcarolle_Op.60_(Chopin,_Frederic)"
+    },
+    {
+      "id": "kopp-article",
+      "title": "David Kopp, On Performing Chopin's Barcarolle, Music Theory Online 20(4), 2014",
+      "url": "https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html",
+      "checked_location": "paras.16-17"
+    },
+    {
+      "id": "kopp-example-5",
+      "title": "Kopp score examples PDF",
+      "url": "https://www.mtosmt.org/issues/mto.14.20.4/kopp_examples.pdf",
+      "checked_location": "Example 5, page 4, measures 23-35",
+      "edition": "Henle Urtext, E. Herttrich ed. (1978), modern commercial edition",
+      "saved_or_copied": false
+    },
+    {
+      "id": "ptna-op60",
+      "title": "PTNA Chopin Barcarolle Op.60",
+      "url": "https://enc.piano.or.jp/en/musics/543",
+      "checked_location": "secondary structure/practice commentary",
+      "commentary_only": true
+    },
+    {
+      "id": "uconn-author-pdf",
+      "title": "Memory and Expression, author-hosted PDF",
+      "url": "https://musiclab.media.uconn.edu/wp-content/uploads/sites/290/2024/11/Memory-and-Expression-11-18-24.pdf",
+      "verification_only": true,
+      "content_read_or_interpreted": false
+    },
+    {
+      "id": "cfeo-about",
+      "title": "CFEO About",
+      "url": "https://chopinonline.ac.uk/cfeo/about/",
+      "use": "Archive/source context; does not establish an independently confirmed blanket reuse license for CFEO digitization."
+    }
+  ],
+  "assets": [
+    {
+      "path": "research_assets/d3d4_20261009_luna_r2/cfeo_op52_52-1-Sm/op52_p11_b185-202.jpg",
+      "source": "CFEO Op.52 p.11",
+      "pixel_dimensions": "3298x5000",
+      "bytes": 1847152,
+      "sha256": "0D55CD506F6AC1BEBF9AEA99549B525629F7598BA1D7F01E1AF6EE694F1028EB",
+      "source_page_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74780/",
+      "iip_download_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/newjp2/6756.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "license_note": "Underlying nineteenth-century first-edition score cross-checked as public domain via IMSLP; separate CFEO image-reuse license not independently confirmed."
+    },
+    {
+      "path": "research_assets/d3d4_20261009_luna_r2/cfeo_op52_52-1-Sm/op52_p12_b203-222.jpg",
+      "source": "CFEO Op.52 p.12",
+      "pixel_dimensions": "3319x5000",
+      "bytes": 2032235,
+      "sha256": "04FA23F9964E236F18FADF1296CE744AE3D530705BBE320A13E021FF21303AEA",
+      "source_page_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74781/",
+      "iip_download_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/newjp2/6757.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "license_note": "Underlying nineteenth-century first-edition score cross-checked as public domain via IMSLP; separate CFEO image-reuse license not independently confirmed."
+    },
+    {
+      "path": "research_assets/d3d4_20261009_luna_r2/cfeo_op61_61-1-BR_USCh/op61_p2_b20-43.jpg",
+      "source": "CFEO Op.61 p.2, University of Chicago Library",
+      "pixel_dimensions": "3581x5000",
+      "bytes": 1937455,
+      "sha256": "5B345AD02686A66CFF05E1D9B2138220F3EFEBB7A50CE7FFDEC89EBA57C2009B",
+      "source_page_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/61907/",
+      "iip_download_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/ocvejp2-proc/61/35/02/61-1-BR_USCu_p02.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "license_note": "Underlying nineteenth-century first-edition score cross-checked as public domain via IMSLP/Wikimedia; separate CFEO image-reuse license not independently confirmed."
+    },
+    {
+      "path": "research_assets/d3d4_20261009_luna_r2/cfeo_op60_60-1-BR_BritishLibrary/op60_p3_b24-33.jpg",
+      "source": "CFEO Op.60 p.3, British Library",
+      "pixel_dimensions": "3895x5000",
+      "bytes": 1565202,
+      "sha256": "3E0A0CF4BA5197FF515D10159C8DD6B482DAEF43CC39F31C0AF27496EF7DEEB2",
+      "source_page_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66644/",
+      "iip_download_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p03.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "license_note": "Underlying nineteenth-century first-edition score cross-checked as public domain via IMSLP; separate CFEO image-reuse license not independently confirmed."
+    },
+    {
+      "path": "research_assets/d3d4_20261009_luna_r2/cfeo_op60_60-1-BR_BritishLibrary/op60_p4_b34-45.jpg",
+      "source": "CFEO Op.60 p.4, British Library",
+      "pixel_dimensions": "3895x5000",
+      "bytes": 1495075,
+      "sha256": "7F44392B19592C8EEC38E016D60E23DB8367ED09429584934D654298BF967810",
+      "source_page_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66645/",
+      "iip_download_url": "https://chopinonline.ac.uk/iipsrv/fcgi-bin/iipsrv.fcgi?FIF=jp2/cfeojp2-proc/60-1-BR/60-1-BR_GBLbl_p04.jp2&WID=4312&HEI=6496&CVT=JPG",
+      "license_note": "Underlying nineteenth-century first-edition score cross-checked as public domain via IMSLP; separate CFEO image-reuse license not independently confirmed."
+    }
+  ],
+  "byte_source_checks": [
+    {
+      "path": "notes/research/d3d4_score_sources_luna_20261009.json",
+      "bytes": 11227,
+      "sha256": "593EC4BA96DD3B239021EA22F1B35956F5AD92FC03501CAAB7C08AA65E0B3480",
+      "use": "Local byte hash only; old JSON not modified."
+    },
+    {
+      "path": "research_assets/d3d4_20261009_luna/uconn_author_pdf/Memory-and-Expression-11-18-24.pdf",
+      "source_url": "https://musiclab.media.uconn.edu/wp-content/uploads/sites/290/2024/11/Memory-and-Expression-11-18-24.pdf",
+      "local_bytes": 2200228,
+      "local_sha256": "D2364894B6BA53909795419D8E0DBC2DB0CD83599A5C179748B8D60830CDD1FB",
+      "remote_http_status": 200,
+      "remote_content_type": "application/pdf",
+      "remote_content_length": 2200228,
+      "remote_last_modified": "Tue, 19 Nov 2024 00:25:02 GMT",
+      "remote_stream_sha256": "D2364894B6BA53909795419D8E0DBC2DB0CD83599A5C179748B8D60830CDD1FB",
+      "remote_streamed_to_memory_only": true,
+      "content_parsed_or_used_for_music_psychology": false
+    }
+  ],
+  "rights_and_limits": {
+    "historical_score_rights_check": "IMSLP first-edition metadata identifies the underlying nineteenth-century scores as public domain; Op.61 also cross-checked against Wikimedia Commons.",
+    "digitized_image_rights": "A separate blanket reuse license for CFEO's digitized images was not independently confirmed.",
+    "page_image_output": "Public CFEO IIP image service returned JPEG page images at the requested width/height parameters with actual maximum height 5000 pixels.",
+    "no_audio": "Every sound-level claim remains audio-unverified.",
+    "not_a_pipeline_acceptance": "This research is not music-pipeline service health, three-work StepB/C evidence, original acceptance, or hold clearance."
+  }
+}

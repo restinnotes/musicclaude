@@ -1,0 +1,535 @@
+"""
+Browser lifecycle manager — launch, persist, close.
+
+Uses a persistent Chrome context so the user only signs in once.
+Session data (cookies, localStorage, IndexedDB) survives restarts.
+"""
+
+from __future__ import annotations
+
+import datetime
+import os
+import platform
+import random
+import socket
+from pathlib import Path
+from patchright.async_api import async_playwright, BrowserContext, Page, Playwright
+
+from src.config import Config
+from src.browser.stealth import apply_stealth
+from src.log import setup_logging
+
+log = setup_logging("browser")
+
+
+def _is_docker_runtime() -> bool:
+    """Return whether Chrome is running inside the Docker/Xvfb environment."""
+    if os.path.exists("/.dockerenv"):
+        return True
+    return platform.system() != "Windows" and os.environ.get("DISPLAY") == ":99"
+
+
+def _resolve_domains_for_chrome() -> str:
+    """
+    Pre-resolve key domains via the OS and return a --host-resolver-rules
+    string for Chrome.
+
+    Chrome's built-in DNS client (even with --disable-features=AsyncDns)
+    is unreliable — it can return DNS_PROBE_FINISHED_NXDOMAIN for domains
+    that the OS resolver handles fine.  By pre-resolving here and passing
+    the IPs via --host-resolver-rules, Chrome bypasses its own resolver
+    entirely and the problem disappears.
+
+    Returns empty string if all resolutions fail.
+    """
+    # Only needed in Docker (check for /.dockerenv or DISPLAY=:99).
+    if not _is_docker_runtime():
+        return ""
+
+    common_domains = [
+        "challenges.cloudflare.com",
+        "static.cloudflareinsights.com",
+    ]
+    chatgpt_domains = [
+        "chatgpt.com",
+        "cdn.oaistatic.com",
+        "ab.chatgpt.com",
+        "auth.openai.com",
+        "auth0.openai.com",
+        "openai.com",
+        "api.openai.com",
+        "platform.openai.com",
+        "tcr9i.chat.openai.com",
+    ]
+    claude_domains = [
+        "claude.ai",
+        "api.claude.ai",
+        "cdn.claude.ai",
+        "anthropic.com",
+        "www.anthropic.com",
+    ]
+    gemini_domains = [
+        "gemini.google.com",
+        "accounts.google.com",
+        "myaccount.google.com",
+        "google.com",
+        "www.google.com",
+        "google.ca",
+        "www.google.ca",
+        "ssl.gstatic.com",
+        "www.gstatic.com",
+        "gemini.gstatic.com",
+        "fonts.gstatic.com",
+        "fonts.googleapis.com",
+        "apis.google.com",
+        "lh3.googleusercontent.com",
+        "play.google.com",
+        "clients6.google.com",
+        "signaler-pa.clients6.google.com",
+        "push.clients6.google.com",
+        "content-push.googleapis.com",
+        "recaptcha.net",
+        "www.recaptcha.net",
+    ]
+    if Config.PROVIDER == "claude":
+        domains = common_domains + claude_domains
+    elif Config.PROVIDER == "gemini":
+        domains = common_domains + gemini_domains
+    else:
+        domains = common_domains + chatgpt_domains
+    rules = []
+    for domain in domains:
+        try:
+            ip = socket.gethostbyname(domain)
+            rules.append(f"MAP {domain} {ip}")
+            log.debug(f"DNS pre-resolve: {domain} -> {ip}")
+        except Exception as e:
+            log.warning(f"DNS pre-resolve failed: {domain} -> {e}")
+
+    if rules:
+        result = ", ".join(rules)
+        log.info(f"Chrome host-resolver-rules: {len(rules)} domains mapped")
+        return result
+    return ""
+
+
+def _cleanup_stale_locks(data_dir: Path) -> None:
+    """Remove only stale singleton markers; preserve all browser data.
+
+    SQLite journals and WAL are committed data, not disposable lock files.
+    Never kill a browser, remove cookie database companions, or erase caches,
+    service workers, localStorage or IndexedDB during startup.
+    """
+    profile = data_dir.resolve()
+    # Refuse to touch singleton markers when this profile is still in use.
+    # The production browser runs on Linux; read process metadata only.
+    proc = Path('/proc')
+    if proc.is_dir():
+        for entry in proc.iterdir():
+            if not entry.name.isdigit():
+                continue
+            try:
+                executable = (entry / 'exe').resolve().name.lower()
+                if 'chrome' not in executable and 'chromium' not in executable:
+                    continue
+                args = (entry / 'cmdline').read_bytes().split(b'\0')
+                profile_args = [arg.split(b'=', 1)[1].decode(errors='replace')
+                                for arg in args if arg.startswith(b'--user-data-dir=')]
+                if any(Path(arg).resolve() == profile for arg in profile_args):
+                    raise RuntimeError('Browser profile is already in use; startup will not modify it')
+            except (OSError, PermissionError):
+                continue
+    for name in ('SingletonLock', 'SingletonSocket', 'SingletonCookie'):
+        marker = profile / name
+        if marker.is_symlink() or marker.is_file():
+            marker.unlink()
+            log.info('Removed stale browser singleton marker: %s', name)
+
+
+def _env_int(name: str, default: int) -> int:
+    """Read a positive integer from the environment."""
+    try:
+        value = int(os.environ.get(name, "") or default)
+    except ValueError:
+        return default
+    return value if value > 0 else default
+
+
+class BrowserManager:
+    """Manages a single persistent Chromium browser context."""
+
+    def __init__(self) -> None:
+        self._playwright: Playwright | None = None
+        self._context: BrowserContext | None = None
+        self._page: Page | None = None
+
+    async def start(self) -> Page:
+        """
+        Launch a persistent Chrome context with stealth and human-like settings.
+
+        Automatically cleans up stale lock files from previous crashed sessions.
+        Returns the active page ready for navigation.
+        """
+        Config.ensure_dirs()
+
+        # Clean up stale locks from previous sessions
+        _cleanup_stale_locks(Config.BROWSER_DATA_DIR)
+
+        log.info("Launching browser...")
+        self._playwright = await async_playwright().start()
+
+        in_docker = _is_docker_runtime()
+        display_width = _env_int("DISPLAY_WIDTH", Config.VIEWPORT_WIDTH)
+        display_height = _env_int("DISPLAY_HEIGHT", Config.VIEWPORT_HEIGHT)
+
+        # Randomize local headed launches slightly to avoid fingerprint consistency.
+        # In Docker/VNC, use the Xvfb size so Chrome fills the visible remote desktop.
+        if in_docker:
+            width = display_width
+            height = display_height
+        else:
+            width = Config.VIEWPORT_WIDTH + random.randint(-20, 20)
+            height = Config.VIEWPORT_HEIGHT + random.randint(-20, 20)
+
+        chrome_args = [
+            "--remote-debugging-address=127.0.0.1",
+            "--remote-debugging-port=9222",
+            "--disable-blink-features=AutomationControlled",
+            "--no-first-run",
+            "--no-default-browser-check",
+            # Disable Chrome's built-in DNS client entirely.  Even with
+            # AsyncDns off, Chrome's stub resolver can return NXDOMAIN for
+            # domains the OS resolves fine.  We also pre-resolve domains
+            # via --host-resolver-rules (see _resolve_domains_for_chrome).
+            "--disable-features=AsyncDns,DnsOverHttps",
+            "--dns-prefetch-disable",
+            # Local system extensions/ad blockers can break OpenAI auth flows
+            # even with a fresh user-data-dir.
+            "--disable-extensions",
+            "--disable-component-extensions-with-background-pages",
+            "--hide-crash-restore-bubble",
+            "--disable-session-crashed-bubble",
+        ]
+
+        # Docker-specific flags
+        if in_docker:
+            chrome_args.extend([
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-gpu",
+                "--start-maximized",
+                "--window-position=0,0",
+                f"--window-size={width},{height}",
+            ])
+
+        # Pre-resolve domains via the OS and hardcode the IPs for Chrome.
+        # This prevents Chrome's built-in DNS client from ever being used.
+        resolver_rules = _resolve_domains_for_chrome()
+        if resolver_rules:
+            chrome_args.append(f"--host-resolver-rules={resolver_rules}")
+
+        launch_kwargs = dict(
+            user_data_dir=str(Config.BROWSER_DATA_DIR),
+            headless=Config.HEADLESS,
+            slow_mo=Config.SLOW_MO,
+            locale="en-US",
+            timezone_id="America/Los_Angeles",
+            args=chrome_args,
+        )
+        if in_docker:
+            launch_kwargs["no_viewport"] = True
+        else:
+            launch_kwargs["viewport"] = {"width": width, "height": height}
+
+        browser_channel = Config.BROWSER_CHANNEL
+        try:
+            if browser_channel in {"", "chromium", "bundled"}:
+                self._context = await self._playwright.chromium.launch_persistent_context(
+                    **launch_kwargs
+                )
+                log.info("Launched with bundled Chromium")
+            else:
+                self._context = await self._playwright.chromium.launch_persistent_context(
+                    channel=browser_channel, **launch_kwargs
+                )
+                log.info("Launched with browser channel: %s", browser_channel)
+        except Exception:
+            if browser_channel in {"", "chromium", "bundled"}:
+                raise
+            log.info("Browser channel %r not available, using bundled Chromium", browser_channel)
+            self._context = await self._playwright.chromium.launch_persistent_context(
+                **launch_kwargs
+            )
+
+        # Observe auth-cookie response metadata before any first navigation.
+        # The collector never records cookie values or request/response bodies.
+        from src.session_observer import attach_context_audit
+        attach_context_audit(self._context)
+        if Config.PROVIDER == 'chatgpt':
+            from src.cookie_capacity import ensure_cookie_headroom
+            await ensure_cookie_headroom(self._context, Config.BROWSER_DATA_DIR)
+
+        # NOTE: Stealth patches are applied AFTER the first navigation.
+        # In Docker, applying stealth init scripts before navigation
+        # causes Chrome's DNS resolver to fail (ERR_NAME_NOT_RESOLVED).
+        # Call apply_stealth_patches() after navigating to the target page.
+
+        # Use existing page or create one
+        if self._context.pages:
+            self._page = self._context.pages[0]
+        else:
+            self._page = await self._context.new_page()
+
+        # NOTE: We intentionally do NOT flush Chrome's DNS cache here.
+        # The --host-resolver-rules flag handles DNS resolution for all
+        # mapped domains.  Previously, _clear_dns_cache() would navigate
+        # to chrome://net-internals and flush the host cache + socket
+        # pools — but this destroyed working connection state and caused
+        # DNS_PROBE_FINISHED_NXDOMAIN on subsequent navigations.
+
+        log.info(f"Browser ready — viewport {width}x{height}")
+        return self._page
+
+    async def new_page(self) -> Page:
+        """Open an extra tab in the persistent context for concurrent requests."""
+        if self._context is None:
+            raise RuntimeError("Browser not started. Call start() first.")
+        page = await self._context.new_page()
+        log.info("Opened additional browser tab")
+        return page
+
+    async def _clear_dns_cache(self) -> None:
+        """Clear Chrome's in-memory DNS host cache via chrome://net-internals."""
+        import asyncio as _asyncio
+
+        if self._page is None:
+            return
+
+        try:
+            await self._page.goto(
+                "chrome://net-internals/#dns",
+                wait_until="domcontentloaded",
+                timeout=10000,
+            )
+            await _asyncio.sleep(0.5)
+
+            # The "Clear host cache" button ID in chrome://net-internals/#dns
+            cleared = await self._page.evaluate(
+                """
+                () => {
+                    // Try the standard button
+                    const btn = document.getElementById('dns-view-clear-cache');
+                    if (btn) { btn.click(); return 'clicked-dns-view-clear-cache'; }
+                    // Newer Chrome: look for any button that says "Clear"
+                    const buttons = Array.from(document.querySelectorAll('button'));
+                    for (const b of buttons) {
+                        if (b.textContent.toLowerCase().includes('clear')) {
+                            b.click();
+                            return 'clicked-' + b.textContent.trim();
+                        }
+                    }
+                    return 'no-clear-button-found';
+                }
+                """
+            )
+            log.info(f"Chrome DNS cache flush: {cleared}")
+            await _asyncio.sleep(0.3)
+
+            # Also try to flush socket pools
+            try:
+                await self._page.goto(
+                    "chrome://net-internals/#sockets",
+                    wait_until="domcontentloaded",
+                    timeout=5000,
+                )
+                await _asyncio.sleep(0.3)
+                await self._page.evaluate(
+                    """
+                    () => {
+                        const buttons = Array.from(document.querySelectorAll('button'));
+                        for (const b of buttons) {
+                            if (b.textContent.toLowerCase().includes('flush') ||
+                                b.textContent.toLowerCase().includes('close')) {
+                                b.click();
+                            }
+                        }
+                    }
+                    """
+                )
+                log.info("Chrome socket pools flushed")
+            except Exception:
+                pass  # Best-effort
+
+        except Exception as e:
+            log.warning(f"Could not clear Chrome DNS cache: {e}")
+
+    async def apply_stealth_patches(self) -> None:
+        """
+        Apply stealth patches to the browser context.
+
+        Must be called AFTER the first page navigation, not before.
+        In Docker containers, applying stealth init scripts before any
+        navigation causes Chrome's DNS resolver to fail.
+        """
+        if self._context is None:
+            raise RuntimeError("Browser not started. Call start() first.")
+        await apply_stealth(self._context)
+
+    @property
+    def page(self) -> Page:
+        """Get the active page. Raises if browser not started."""
+        if self._page is None:
+            raise RuntimeError("Browser not started. Call start() first.")
+        return self._page
+
+    @property
+    def context(self) -> BrowserContext:
+        """Get the browser context."""
+        if self._context is None:
+            raise RuntimeError("Browser not started. Call start() first.")
+        return self._context
+
+    async def navigate(self, url: str) -> None:
+        """Navigate to a URL and wait for page load."""
+        log.info(f"Navigating to {url}")
+        await self.page.goto(url, wait_until="domcontentloaded")
+        log.info("Page loaded")
+
+    async def get_session_info(self) -> dict:
+        """
+        Read ChatGPT session cookies from the browser context.
+
+        Returns a dict with:
+          exists       (bool)            — True if a session cookie was found
+          expires      (datetime | None) — expiry of the most important cookie
+          cookie_count (int)             — number of session cookies found
+          email        (str | None)      — masked account email (from JWT)
+        """
+        if self._context is None:
+            return {"exists": False, "expires": None, "cookie_count": 0, "email": None}
+
+        try:
+            cookies = await self._context.cookies("https://chatgpt.com")
+        except Exception as e:
+            log.debug(f"Could not read session cookies: {e}")
+            return {"exists": False, "expires": None, "cookie_count": 0, "email": None}
+
+        # Key session cookies OpenAI uses
+        session_cookie_names = {"__Secure-next-auth.session-token", "__cf_bm", "cf_clearance", "oai-did"}
+        found = [c for c in cookies if c.get("name") in session_cookie_names]
+
+        if not found:
+            return {"exists": False, "expires": None, "cookie_count": 0, "email": None}
+
+        # Find the latest expiry among session cookies (most meaningful)
+        latest_expiry: datetime.datetime | None = None
+        for c in found:
+            exp = c.get("expires")
+            if exp and exp > 0:
+                dt = datetime.datetime.fromtimestamp(exp, tz=datetime.timezone.utc)
+                if latest_expiry is None or dt > latest_expiry:
+                    latest_expiry = dt
+
+        # Try to extract email from the next-auth session JWT
+        email: str | None = None
+        try:
+            import base64, json as _json
+            session_cookie = next(
+                (c for c in cookies if c.get("name") == "__Secure-next-auth.session-token"), None
+            )
+            if session_cookie:
+                token = session_cookie.get("value", "")
+                parts = token.split(".")
+                if len(parts) >= 2:
+                    payload_b64 = parts[1]
+                    # Fix padding
+                    payload_b64 += "=" * (4 - len(payload_b64) % 4)
+                    payload = _json.loads(base64.urlsafe_b64decode(payload_b64))
+                    raw_email = payload.get("email") or payload.get("user", {}).get("email")
+                    if raw_email and "@" in raw_email:
+                        local, domain = raw_email.split("@", 1)
+                        masked_local = local[0] + "***" if len(local) > 1 else "***"
+                        email = f"{masked_local}@{domain}"
+        except Exception as e:
+            log.debug(f"Could not decode session JWT for email: {e}")
+
+        return {"exists": True, "expires": latest_expiry, "cookie_count": len(found), "email": email}
+
+
+    async def is_logged_in(self) -> bool:
+        """
+        Check if user is logged in by looking for chat input vs login indicators.
+
+        Returns True if the chat interface is visible, False if login page detected.
+        """
+        from src.selectors import Selectors
+        from src.claude.selectors import ClaudeSelectors
+
+        if Config.PROVIDER == "claude":
+            chat_inputs = ClaudeSelectors.CHAT_INPUT
+            login_indicators = ClaudeSelectors.LOGIN_INDICATORS
+            logged_in_indicators = ClaudeSelectors.LOGGED_IN_INDICATORS
+        elif Config.PROVIDER == "gemini":
+            from src.gemini.selectors import GeminiSelectors
+            chat_inputs = GeminiSelectors.CHAT_INPUT
+            login_indicators = GeminiSelectors.LOGIN_INDICATORS
+            logged_in_indicators = GeminiSelectors.LOGGED_IN_INDICATORS
+        else:
+            chat_inputs = Selectors.CHAT_INPUT
+            login_indicators = Selectors.LOGIN_INDICATORS
+            logged_in_indicators = []
+
+        try:
+            # Logged-out ChatGPT can still show a guest composer, so visible
+            # login controls must win over chat-input detection.
+            for selector in login_indicators:
+                try:
+                    el = await self.page.wait_for_selector(selector, timeout=2000)
+                    if el:
+                        log.warning("Login check: NOT LOGGED IN (login button found)")
+                        return False
+                except Exception:
+                    continue
+
+            # Try to find the chat input
+            for selector in chat_inputs:
+                try:
+                    el = await self.page.wait_for_selector(selector, timeout=3000)
+                    if el:
+                        log.info("Login check: LOGGED IN (chat input found)")
+                        return True
+                except Exception:
+                    continue
+
+            # Claude: also check for user-menu-button as a logged-in signal
+            for selector in logged_in_indicators:
+                try:
+                    el = await self.page.wait_for_selector(selector, timeout=2000)
+                    if el:
+                        log.info("Login check: LOGGED IN (user menu found)")
+                        return True
+                except Exception:
+                    continue
+
+            log.warning("Login check: UNCERTAIN — no chat input or login button found")
+            return False
+
+        except Exception as e:
+            log.error(f"Login check error: {e}")
+            return False
+
+    async def close(self) -> None:
+        """Gracefully close the browser context and playwright instance."""
+        log.info("Closing browser...")
+        try:
+            if self._context:
+                await self._context.close()
+            if self._playwright:
+                await self._playwright.stop()
+        except Exception as e:
+            log.error(f"Error closing browser: {e}")
+        finally:
+            self._context = None
+            self._page = None
+            self._playwright = None
+            log.info("Browser closed")

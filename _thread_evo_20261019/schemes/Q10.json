@@ -1,0 +1,62 @@
+{
+  "name": "Q10",
+  "note": "Q10：方案 R 的前三步（骨架不靠对方新举动、不靠心理动作推进；选路也看体验性质）+ Q5 的写线层（GPT-6）",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "R_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6"
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1",
+        "{TARGETS}": "step:A3"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}\n\n【逐段的体验性质】\n{TARGETS}",
+      "after": [
+        "A1",
+        "A3"
+      ]
+    },
+    {
+      "id": "A3",
+      "prompt_file": "R_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "Q5_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6"
+    }
+  ],
+  "final": "A4"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "max_workers": 2,
+  "output_dir": "scripts/call_results",
+  "jobs": [
+    {
+      "job_id": "S02_FLASH_A_28",
+      "channel": "opencode",
+      "model": "antigravity-tools/gemini-3.8-flash-high",
+      "prompt_file": "snapshots/pilot28/inputs/S02_A.txt",
+      "prompt_sha256": "08125f8121b0710e23f8343da949f20e1303628abe9203f9d93dc7f5141e87be",
+      "min_response_chars": 100,
+      "timeout_seconds": 7200,
+      "labels": {
+        "source_count": 28,
+        "segment": "S02",
+        "method": "A",
+        "phase": "pilot28"
+      }
+    },
+    {
+      "job_id": "S02_G6_B_28",
+      "channel": "gpt2",
+      "model": "gpt-6-thinking",
+      "prompt_file": "snapshots/pilot28/inputs/S02_B.txt",
+      "prompt_sha256": "be9d63049615bcb48e1327a9014a23e040509517fa9e4d33ba6e01aa147934ca",
+      "min_response_chars": 100,
+      "timeout_seconds": 7200,
+      "labels": {
+        "source_count": 28,
+        "segment": "S02",
+        "method": "B",
+        "phase": "pilot28"
+      }
+    },
+    {
+      "job_id": "S02_G6_C_28",
+      "channel": "gpt2",
+      "model": "gpt-6-thinking",
+      "prompt_file": "snapshots/pilot28/inputs/S02_C.txt",
+      "prompt_sha256": "9a1200f406809092958c23f95ac4198f2cca9da7b00811c4eea1cad952c8d676",
+      "min_response_chars": 100,
+      "timeout_seconds": 7200,
+      "labels": {
+        "source_count": 28,
+        "segment": "S02",
+        "method": "C",
+        "phase": "pilot28"
+      }
+    }
+  ]
+}

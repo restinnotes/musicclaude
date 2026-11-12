@@ -1,0 +1,110 @@
+{
+  "schema": "partial-v5-main-offline-verification/1",
+  "date": "2026-10-09",
+  "source_hashes_before": {
+    "tools\\execution_integrity_v4.py": "c63da113c13917566461fe88a85449180aa04f549dddafd8a249c2dd6befd207",
+    "tools\\gpt2_adapter_v4.py": "222089bff913139ff9dbbe85068326829dc973c57a41cde08d523d57c9c4411f",
+    "tools\\runner_v4.py": "81744b9c3fa6f567a0e95f3de9586560e32621dbcee050d6dead64747abb2c4e",
+    "tools\\experiment_calls_v4.py": "5dbb28ead4c536cf02e9618f60c560ecb40b5d1f952d73e763ce7e3db2494495",
+    "tools\\execution_integrity_v5.py": "b2cda2d890185e75eb34408fa381a89a1b5bc3b2ff70bd0a78b81a2c4053f222",
+    "tools\\gpt2_adapter_v5.py": "842ca1b8902cc1fb329e90daf835818b8fe8e490eb987284fb9941d507c52fda",
+    "tools\\runner_v5.py": "df9b909b8e1dfcafe43e1c6616fef8378e5d5d10a5dd2037480b162d063fb1f9",
+    "tools\\experiment_calls_v5.py": "8bcbbac6b4781845a269166e2e6ea7f37ccaa8fc3c38120589eaec67c7555334",
+    "tools\\tests\\test_execution_integrity_v4.py": "057587233b53e868775058a70fbb2085b42dcdc52889317223942d3a02bde38e"
+  },
+  "source_hashes_after": {
+    "tools\\execution_integrity_v4.py": "c63da113c13917566461fe88a85449180aa04f549dddafd8a249c2dd6befd207",
+    "tools\\gpt2_adapter_v4.py": "222089bff913139ff9dbbe85068326829dc973c57a41cde08d523d57c9c4411f",
+    "tools\\runner_v4.py": "81744b9c3fa6f567a0e95f3de9586560e32621dbcee050d6dead64747abb2c4e",
+    "tools\\experiment_calls_v4.py": "5dbb28ead4c536cf02e9618f60c560ecb40b5d1f952d73e763ce7e3db2494495",
+    "tools\\execution_integrity_v5.py": "b2cda2d890185e75eb34408fa381a89a1b5bc3b2ff70bd0a78b81a2c4053f222",
+    "tools\\gpt2_adapter_v5.py": "842ca1b8902cc1fb329e90daf835818b8fe8e490eb987284fb9941d507c52fda",
+    "tools\\runner_v5.py": "df9b909b8e1dfcafe43e1c6616fef8378e5d5d10a5dd2037480b162d063fb1f9",
+    "tools\\experiment_calls_v5.py": "8bcbbac6b4781845a269166e2e6ea7f37ccaa8fc3c38120589eaec67c7555334",
+    "tools\\tests\\test_execution_integrity_v4.py": "057587233b53e868775058a70fbb2085b42dcdc52889317223942d3a02bde38e"
+  },
+  "source_bytes_unchanged": true,
+  "inherited_fixture": {
+    "original_sha256": "057587233b53e868775058a70fbb2085b42dcdc52889317223942d3a02bde38e",
+    "in_memory_transformed_sha256": "54bd2156c108dd540f0ae1e7ddf7c590947894508b3a965b51e14379c97d808a",
+    "changes": [
+      "v4 module imports and child-process module to v5",
+      "inflight_v4 ticket expectation to inflight_v5",
+      "synthetic GPT2 payload includes thinking_effort=max"
+    ],
+    "disk_test_modified": false
+  },
+  "inherited_tests": {
+    "run": 34,
+    "failures": 0,
+    "errors": 2,
+    "skipped": 0,
+    "passed": 32
+  },
+  "probes": [
+    {
+      "check": "codex_completed_item_in_progress",
+      "observed": {
+        "accepted_incomplete_terminal_item": true
+      }
+    },
+    {
+      "check": "explicit_new_sample",
+      "observed": {
+        "parse_ok": false,
+        "new_sample_taken": false,
+        "stop_reason": "complete terminal but parse failed; STOP (no silent new-sample retry)",
+        "runner_calls": 1,
+        "mock_process_calls": 1,
+        "parser_calls": 1
+      }
+    },
+    {
+      "check": "safe_pre_submit_retry",
+      "observed": {
+        "parse_ok": false,
+        "new_sample_taken": false,
+        "stop_reason": "no declared new sample for attempt 1; max_attempts does not imply retry",
+        "runner_calls": 1,
+        "mock_process_calls": 0,
+        "parser_calls": 0
+      }
+    },
+    {
+      "check": "legacy_seal_ownership",
+      "observed": {
+        "first_status": "ok",
+        "second_status": "ok",
+        "error": null,
+        "mock_process_calls": 2,
+        "cache_sources": [
+          "two"
+        ],
+        "second_meta_written": true,
+        "second_seal_written": true
+      }
+    },
+    {
+      "check": "use_cache_false_source_preserved",
+      "observed": {
+        "first_status": "ok",
+        "second_status": null,
+        "error": {
+          "type": "ArtifactConflict",
+          "message": "cannot redirect original sample source"
+        },
+        "mock_process_calls": 1,
+        "cache_sources": [
+          "one"
+        ],
+        "second_meta_written": true,
+        "second_seal_written": false
+      }
+    }
+  ],
+  "real_model_submissions": 0,
+  "network_calls": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "limits": "Synthetic fixtures/temp-only. No real CLI/backend attestation. Old holds/gates/production untouched."
+}

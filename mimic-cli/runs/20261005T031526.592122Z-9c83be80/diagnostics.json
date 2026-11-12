@@ -1,0 +1,110 @@
+{
+  "run_id": "20261005T031526.592122Z-9c83be80",
+  "timestamp": "2026-10-05T03:15:26.592122+00:00",
+  "command": "ask",
+  "profile": "shiyan",
+  "probe": null,
+  "prompt": "请不要联网，也不要写代码。给出完整严谨证明：所有正整数三元组(a,b,c)满足 a²+b²+c²=3abc 的解，是否都能从(1,1,1)通过置换和替换c为3ab-c得到？请证明替换保持正整数性，构造严格下降过程并分析所有边界和等号情形；还要解释如何逆向枚举，以及为什么这不会漏解。写出完整推导，不能只引用已知定理。\n回答第一行必须原样写出本次标识：PARALLEL_8_20261005T031526Z_1",
+  "prompt_sha256": "dcacf66bf14c10610670050aa6f8cdc6df8cdeace009eb111499cc9dc6099266",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": true,
+  "response": "PARALLEL_8_20261005T031526Z_1\n\n是。下面完全从方程本身证明：\n\n\\[\na^2+b^2+c^2=3abc,\\qquad a,b,c\\in \\mathbf Z_{>0}\n\\tag{1}\n\\]\n\n的每一个正整数解，都可以从 \\((1,1,1)\\) 出发，只用\n\n\\[\n\\text{坐标置换},\\qquad\n(a,b,c)\\longmapsto (a,b,3ab-c)\n\\tag{2}\n\\]\n\n得到。反过来，这两种操作也始终把正整数解变成正整数解。\n\n---\n\n## 1. Vieta 替换保持方程，而且保持正整数性\n\n设 \\((a,b,c)\\) 是正整数解，定义\n\n\\[\nc'=3ab-c.\n\\tag{3}\n\\]\n\n先证明 \\(c'\\) 仍然是正整数。\n\n整数性显然，因为 \\(a,b,c\\) 都是整数。关键是证明 \\(c'>0\\)。\n\n由原方程，\n\n\\[\na^2+b^2+c^2=3abc,\n\\]\n\n移项得\n\n\\[\n3abc-c^2=a^2+b^2.\n\\]\n\n左边因式分解：\n\n\\[\nc(3ab-c)=a^2+b^2.\n\\]\n\n即\n\n\\[\ncc'=a^2+b^2.\n\\tag{4}\n\\]\n\n由于 \\(a,b,c>0\\)，所以\n\n\\[\na^2+b^2>0,\\qquad c>0,\n\\]\n\n故由 (4)\n\n\\[\nc'=\\frac{a^2+b^2}{c}>0.\n\\]\n\n又因为 \\(c'=3ab-c\\in\\mathbf Z\\)，所以\n\n\\[\nc'\\in\\mathbf Z_{>0}.\n\\]\n\n这已经证明了“替换不会产生 \\(0\\) 或负数”。\n\n现在验证新三元组仍满足原方程。由 \\(c'=3ab-c\\)，\n\n\\[\n(c')^2-3abc'\n=(3ab-c)^2-3ab(3ab-c).\n\\]\n\n展开：\n\n\\[\n(c')^2-3abc'\n=9a^2b^2-6abc+c^2-9a^2b^2+3abc\n=c^2-3abc.\n\\]\n\n因此\n\n\\[\na^2+b^2+(c')^2-3abc'\n=a^2+b^2+c^2-3abc=0.\n\\]\n\n即\n\n\\[\na^2+b^2+(c')^2=3abc'.\n\\]\n\n所以 \\((a,b,c')\\) 仍是正整数解。\n\n还有一个非常重要的事实：这个操作是**对合**。因为再做一次，\n\n\\[\n3ab-c'=3ab-(3ab-c)=c.\n\\tag{5}\n\\]\n\n所以替换自身就是它自己的逆操作。\n\n---\n\n## 2. 把解排序，并寻找严格下降的替换\n\n任取一个正整数解。利用置换，可设\n\n\\[\n1\\le a\\le b\\le c.\n\\tag{6}\n\\]\n\n我们要证明：\n\n> 除了 \\((1,1,1)\\) 外，把最大坐标 \\(c\\) 换成\n> \\[\n> c'=3ab-c\n> \\]\n> 后，新三元组的最大坐标严格小于原来的 \\(c\\)。\n\n这是整个下降法的核心。\n\n把原方程看成关于第三个变量 \\(x\\) 的二次方程：\n\n\\[\nF(x)=x^2-3abx+a^2+b^2.\n\\tag{7}\n\\]\n\n因为 \\(c\\) 是一个根，而\n\n\\[\nc'=3ab-c\n\\]\n\n正是另一个根，所以\n\n\\[\nF(x)=(x-c)(x-c').\n\\tag{8}\n\\]\n\n现在计算 \\(F(b)\\)：\n\n\\[\n\\begin{aligned}\nF(b)\n&=b^2-3ab\\cdot b+a^2+b^2\\\\\n&=a^2+2b^2-3ab^2\\\\\n&=a^2+(2-3a)b^2.\n\\end{aligned}\n\\tag{9}\n\\]\n\n我们逐个分析边界。\n\n### 情形 A：\\(a=1\\)\n\n此时\n\n\\[\nF(b)=1-b^2\\le0,\n\\tag{10}\n\\]\n\n并且等号成立当且仅当\n\n\\[\nb=1.\n\\]\n\n### 情形 B：\\(a\\ge2\\)\n\n因为\n\n\\[\n2-3a\\le -4,\n\\]\n\n所以\n\n\\[\nF(b)\n\\le a^2-4b^2.\n\\]\n\n又由 \\(b\\ge a\\)，\n\n\\[\na^2-4b^2\n\\le a^2-4a^2\n=-3a^2<0.\n\\]\n\n因此\n\n\\[\nF(b)<0.\n\\tag{11}\n\\]\n\n综合两种情况，\n\n\\[\nF(b)\\le0,\n\\tag{12}\n\\]\n\n且\n\n\\[\nF(b)=0\n\\iff a=b=1.\n\\tag{13}\n\\]\n\n---\n\n## 3. 由 \\(F(b)\\le0\\) 得到 \\(c'\\le b\\le c\\)\n\n因为\n\n\\[\nF(x)=(x-c)(x-c')\n\\]\n\n是首项系数为正的二次多项式，所以在两个实根之间函数值非正。\n\n而\n\n\\[\nF(b)\\le0,\n\\]\n\n故 \\(b\\) 位于两个根 \\(c,c'\\) 之间，即\n\n\\[\n\\min(c,c')\\le b\\le\\max(c,c').\n\\tag{14}\n\\]\n\n另一方面我们已经排序，使得\n\n\\[\nc\\ge b.\n\\]\n\n需要仔细处理 \\(c=b\\) 和 \\(c>b\\)。\n\n### 若 \\(c=b\\)\n\n因为 \\(c\\) 是根，所以\n\n\\[\nF(b)=F(c)=0.\n\\]\n\n由 (13) 必有\n\n\\[\na=b=1.\n\\]\n\n而 \\(c=b=1\\)，所以三元组就是\n\n\\[\n(1,1,1).\n\\tag{15}\n\\]\n\n因此：\n\n> 除 \\((1,1,1)\\) 外，排序后的解必满足\n> \\[\n> c>b.\n> \\tag{16}\n> \\]\n\n这也证明了非平凡解的最大坐标是唯一的。\n\n### 现在设解不是 \\((1,1,1)\\)\n\n于是 \\(c>b\\)。\n\n由 \\(b\\) 位于两根之间，而根 \\(c\\) 已经严格大于 \\(b\\)，可知 \\(c\\) 必是较大的根。因此另一个根 \\(c'\\) 满足\n\n\\[\n0<c'\\le b<c.\n\\tag{17}\n\\]\n\n于是替换最大元后，\n\n\\[\n(a,b,c)\\longmapsto(a,b,c')\n\\]\n\n中的三个坐标全部不超过 \\(b\\)，所以新三元组的最大值至多是 \\(b\\)。而\n\n\\[\nb<c.\n\\]\n\n故最大坐标严格下降：\n\n\\[\n\\max(a,b,c')<\\max(a,b,c)=c.\n\\tag{18}\n\\]\n\n这就是所需的严格下降。\n\n---\n\n## 4. 等号 \\(c'=b\\) 何时发生？\n\n用户特别要求分析等号情形。由 (17) 我们已有 \\(c'\\le b\\)。\n\n若\n\n\\[\nc'=b,\n\\]\n\n则 \\(b\\) 是 \\(F\\) 的一个根，所以\n\n\\[\nF(b)=0.\n\\]\n\n由 (13) 得\n\n\\[\na=b=1.\n\\]\n\n此时关于 \\(x\\) 的方程是\n\n\\[\nx^2-3x+2=0,\n\\]\n\n即\n\n\\[\n(x-1)(x-2)=0.\n\\]\n\n两个根是 \\(1,2\\)。\n\n由于我们正在讨论非平凡解并且 \\(c>b=1\\)，所以\n\n\\[\nc=2,\\qquad c'=1.\n\\]\n\n因此\n\n\\[\nc'=b\n\\]\n\n在非平凡排序解中**仅仅**发生于\n\n\\[\n(1,1,2).\n\\tag{19}\n\\]\n\n在除此之外的所有非平凡排序解中，实际上都有更强结论\n\n\\[\n0<c'<b<c.\n\\tag{20}\n\\]\n\n而对于 \\((1,1,2)\\)，\n\n\\[\n(1,1,2)\\longmapsto(1,1,1),\n\\]\n\n最大元仍由 \\(2\\) 严格降到 \\(1\\)。\n\n至于 \\((1,1,1)\\)，若替换任一坐标，则\n\n\\[\n3\\cdot1\\cdot1-1=2,\n\\]\n\n所以会得到 \\((1,1,2)\\)；它正是下降过程唯一的“根节点”，不能再沿“替换最大元”的规则向下。\n\n---\n\n## 5. 严格下降过程一定有限终止\n\n现在任取正整数解 \\(T_0=(a,b,c)\\)。\n\n先排序为\n\n\\[\na_0\\le b_0\\le c_0.\n\\]\n\n如果它不是 \\((1,1,1)\\)，根据上面的结论，把唯一最大元 \\(c_0\\) 替换成\n\n\\[\nc_0'=3a_0b_0-c_0>0,\n\\]\n\n再重新排序，得到另一个正整数解 \\(T_1\\)。\n\n而且\n\n\\[\n\\max T_1<\\max T_0.\n\\]\n\n若 \\(T_1\\ne(1,1,1)\\)，继续同样操作。\n\n于是得到一个正整数严格下降序列\n\n\\[\n\\max T_0>\\max T_1>\\max T_2>\\cdots .\n\\tag{21}\n\\]\n\n但正整数不存在无限严格下降链，因此过程经过有限步必定停止。\n\n设终止于一个排序解\n\n\\[\nx\\le y\\le z.\n\\]\n\n如果它不是 \\((1,1,1)\\)，上面的严格下降结论告诉我们仍然可以把最大元 \\(z\\) 替换掉，并使最大值进一步变小，这与“已经终止”矛盾。\n\n因此唯一可能的终点就是\n\n\\[\n\\boxed{(1,1,1)}.\n\\tag{22}\n\\]\n\n也可从最大值直接看出：下降过程最后必到达最大值 \\(1\\)，而三个坐标均为正整数，故此时只能全为 \\(1\\)。\n\n---\n\n## 6. 因此每个解都能从 \\((1,1,1)\\) 逆向得到\n\n假设某个解经过下降过程为\n\n\\[\nT_n\\to T_{n-1}\\to\\cdots\\to T_1\\to T_0=(1,1,1).\n\\tag{23}\n\\]\n\n每一步都是：\n\n1. 进行某个坐标置换；\n2. 把当前最大坐标 \\(c\\) 换成 \\(3ab-c\\)；\n3. 再排序。\n\n但替换是对合，因为 (5) 给出\n\n\\[\nc\\mapsto3ab-c\\mapsto c.\n\\]\n\n置换显然也可逆。\n\n因此把 (23) 中的每一步逆过来，就得到\n\n\\[\n(1,1,1)=T_0\\to T_1\\to\\cdots\\to T_n.\n\\tag{24}\n\\]\n\n所以任意正整数解都可以从 \\((1,1,1)\\) 经有限次允许操作得到。\n\n这里虽然题目只写了“替换 \\(c\\)”，但若想替换 \\(a\\) 或 \\(b\\)，先把那个坐标置换到第三位即可。因此允许“置换+\\(c\\)-替换”等价于允许三个坐标中的任意一个做 Vieta 替换：\n\n\\[\n\\begin{aligned}\n(a,b,c)&\\mapsto(3bc-a,b,c),\\\\\n(a,b,c)&\\mapsto(a,3ac-b,c),\\\\\n(a,b,c)&\\mapsto(a,b,3ab-c).\n\\end{aligned}\n\\tag{25}\n\\]\n\n所以已经证明：\n\n\\[\n\\boxed{\n\\text{所有正整数解恰好都由 }(1,1,1)\n\\text{ 经置换和上述替换得到。}}\n\\]\n\n---\n\n# 7. 如何从 \\((1,1,1)\\) 向上枚举？\n\n还可以把上面的证明变成一个严格的枚举算法，而不仅是存在性证明。\n\n对每个解先按\n\n\\[\nx\\le y\\le z\n\\]\n\n排序，只记录排序后的三元组。\n\n对非根节点 \\((x,y,z)\\ne(1,1,1)\\)，我们已经证明\n\n\\[\nz>y,\n\\]\n\n所以最大元 \\(z\\) 是唯一的。\n\n它的“父节点”定义为\n\n\\[\nP(x,y,z)\n=\n\\operatorname{sort}(x,y,\\,3xy-z).\n\\tag{26}\n\\]\n\n由下降结论，\n\n\\[\n0<3xy-z\\le y<z,\n\\]\n\n故\n\n\\[\n\\max P(x,y,z)<z.\n\\tag{27}\n\\]\n\n所以每个非根解都有一个确定的、最大值更小的父节点。\n\n---\n\n## 8. 为什么非最大坐标的替换一定向上？\n\n这一点能把所有解组织成一棵以 \\((1,1,1)\\) 为根的树。\n\n设\n\n\\[\nx\\le y\\le z\n\\]\n\n是一个解。\n\n若替换最小坐标 \\(x\\)，新值为\n\n\\[\nx'=3yz-x.\n\\]\n\n由和 (4) 完全类似的关系，\n\n\\[\nxx'=y^2+z^2.\n\\]\n\n所以\n\n\\[\nx'=\\frac{y^2+z^2}{x}.\n\\]\n\n因为 \\(x\\le y\\)，\n\n\\[\nx'\n\\ge\\frac{y^2+z^2}{y}\n=y+\\frac{z^2}{y}.\n\\]\n\n而 \\(z\\ge y>0\\)，故\n\n\\[\n\\frac{z^2}{y}\\ge z.\n\\]\n\n实际上\n\n\\[\ny+\\frac{z^2}{y}>z,\n\\]\n\n所以\n\n\\[\nx'>z.\n\\tag{28}\n\\]\n\n同理，若替换中间坐标 \\(y\\)，得到\n\n\\[\ny'=\\frac{x^2+z^2}{y}.\n\\]\n\n要比较它和 \\(z\\)，注意\n\n\\[\nx^2+z^2-yz\n=x^2+z(z-y)>0.\n\\]\n\n于是\n\n\\[\nx^2+z^2>yz,\n\\]\n\n除以 \\(y>0\\) 得\n\n\\[\ny'>z.\n\\tag{29}\n\\]\n\n因此，对于非根的排序解：\n\n- 替换唯一最大元 \\(z\\)：最大值严格下降，这是唯一的“向父节点”操作；\n- 替换 \\(x\\) 或 \\(y\\)：新产生的坐标严格大于原来的 \\(z\\)，所以是“向子节点”操作。\n\n这把方向完全区分开了。\n\n---\n\n## 9. 一个无遗漏的递归枚举规则\n\n因此可以这样枚举全部排序后的正整数解。\n\n从\n\n\\[\n(1,1,1)\n\\]\n\n开始。\n\n若当前已有一个排序解\n\n\\[\nx\\le y\\le z,\n\\]\n\n考虑替换两个非最大坐标：\n\n\\[\n\\operatorname{sort}(3yz-x,\\ y,\\ z),\n\\tag{30}\n\\]\n\n以及\n\n\\[\n\\operatorname{sort}(x,\\ 3xz-y,\\ z).\n\\tag{31}\n\\]\n\n它们都是正整数解，而且新最大值严格大于 \\(z\\)。\n\n如果 \\(x=y\\)，这两个操作可能给出同一个排序三元组，只需去重即可。\n\n根节点 \\((1,1,1)\\) 的三个坐标相等，任意替换一个坐标都得到\n\n\\[\n(1,1,2).\n\\]\n\n之后继续。\n\n例如开头是\n\n\\[\n(1,1,1)\n\\longrightarrow\n(1,1,2)\n\\longrightarrow\n(1,2,5).\n\\]\n\n从 \\((1,2,5)\\) 出发：\n\n替换 \\(1\\)：\n\n\\[\n3\\cdot2\\cdot5-1=29,\n\\]\n\n得到\n\n\\[\n(2,5,29).\n\\]\n\n替换 \\(2\\)：\n\n\\[\n3\\cdot1\\cdot5-2=13,\n\\]\n\n得到\n\n\\[\n(1,5,13).\n\\]\n\n而替换最大元 \\(5\\)：\n\n\\[\n3\\cdot1\\cdot2-5=1,\n\\]\n\n恰好返回父节点\n\n\\[\n(1,1,2).\n\\]\n\n---\n\n# 10. 为什么这个向上枚举绝不会漏掉任何解？\n\n这是下降论证的直接逆向，但可以严格写成归纳证明。\n\n设 \\(T=(a,b,c)\\) 是任意一个排序后的正整数解。\n\n若\n\n\\[\nT=(1,1,1),\n\\]\n\n它已经在枚举起点中。\n\n否则，因 \\(T\\) 非平凡，可写为\n\n\\[\na\\le b<c.\n\\]\n\n令\n\n\\[\nd=3ab-c.\n\\]\n\n我们已经证明\n\n\\[\n0<d\\le b<c.\n\\]\n\n于是\n\n\\[\nP(T)=\\operatorname{sort}(a,b,d)\n\\]\n\n也是正整数解，并且\n\n\\[\n\\max P(T)<\\max T.\n\\]\n\n不断取父节点，最大值严格下降，所以经过有限次一定到达\n\n\\[\n(1,1,1).\n\\]\n\n即存在有限链\n\n\\[\nT=T_n,\\quad\nT_{n-1}=P(T_n),\\quad\n\\dots,\\quad\nT_0=(1,1,1).\n\\tag{32}\n\\]\n\n现在把这条链反过来：\n\n\\[\n(1,1,1)=T_0\\to T_1\\to\\cdots\\to T_n=T.\n\\tag{33}\n\\]\n\n由于每次父节点操作都是一次 Vieta 替换，而这种替换是对合，所以每一步反向都是同一种允许操作。\n\n更具体地说，若\n\n\\[\nT=(a,b,c)\n\\]\n\n下降成\n\n\\[\n(a,b,d),\\qquad d=3ab-c,\n\\]\n\n那么从 \\((a,b,d)\\) 再替换 \\(d\\)：\n\n\\[\n3ab-d\n=3ab-(3ab-c)\n=c.\n\\]\n\n就精确回到 \\(T\\)。\n\n而在父节点 \\((a,b,d)\\) 中，除根节点的特殊等号情形外，\n\n\\[\nd<b,\n\\]\n\n所以 \\(d\\) 确实是一个非最大坐标；因此它正会被向上的枚举规则 (30)–(31) 考虑到。\n\n特殊情形\n\n\\[\n(1,1,1)\\to(1,1,2)\n\\]\n\n也已经单独包含。\n\n所以任何目标解的下降路径反转之后，都是枚举过程中的一条路径。\n\n故：\n\n\\[\n\\boxed{\\text{枚举不会漏掉任何正整数解。}}\n\\]\n\n---\n\n## 11. 事实上，每个非根排序解还有唯一父节点\n\n这个结论比“不漏解”更强。\n\n我们已经证明，每个非平凡排序解满足\n\n\\[\na\\le b<c,\n\\]\n\n即最大坐标唯一。\n\n而只有替换这个唯一最大坐标，才会使最大值下降；替换另外两个坐标都会产生比 \\(c\\) 更大的新坐标。\n\n所以每个非根节点恰有一个向下邻居，即\n\n\\[\n\\operatorname{sort}(a,b,3ab-c).\n\\]\n\n因此在忽略坐标排列之后，所有正整数解由这些变换组成一个以\n\n\\[\n(1,1,1)\n\\]\n\n为根的有向树状结构：每个非根节点都有唯一父节点；从根不断做向上替换便能遍历全部节点。若两个坐标相等，不同坐标的替换有时会给出同一个排序节点，这只是同一个边的重复表示，去重即可。\n\n---\n\n综上，\n\n\\[\n\\boxed{\na^2+b^2+c^2=3abc\n}\n\\]\n\n的所有正整数三元组解，**恰好**是从\n\n\\[\n\\boxed{(1,1,1)}\n\\]\n\n出发，通过有限次坐标置换以及\n\n\\[\n\\boxed{c\\mapsto3ab-c}\n\\]\n\n得到的解。核心事实是：替换保持正整数解；对任一非平凡排序解 \\(a\\le b<c\\)，替换唯一最大元后有\n\n\\[\n\\boxed{0<3ab-c\\le b<c},\n\\]\n\n其中等号 \\(3ab-c=b\\) 仅发生于 \\((1,1,2)\\)。所以最大坐标严格下降，下降过程必在有限步后且只能在 \\((1,1,1)\\) 终止；再利用替换的对合性逆转路径，即得到完整且无遗漏的生成过程。",
+  "http_status": 200,
+  "actual_model": "gpt-5.6-sol",
+  "actual_reasoning_effort": "high",
+  "diagnostics": {
+    "preparation_started_at": 1791170231.013356,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791170247.923226
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791170248.1364982
+    },
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "High",
+      "selected_effort": "high",
+      "fallback_reason": "extra_high_unavailable_high_authorized",
+      "verified_at": 1791170247.8932014,
+      "verification": "live_slider_and_reopened_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 124421089166352,
+      "process_uid": 1000,
+      "process_pid": 1817,
+      "is_conversation": false
+    },
+    "verification_stage": "immediately_before_submission",
+    "prompt_content_verified": true,
+    "submitted_at": 1791170248.5718906,
+    "response_validation": {
+      "nonempty": true,
+      "transient_text": false,
+      "generation_active": false,
+      "response_characters": 7478
+    },
+    "prompt_submitted": true,
+    "response_complete": true,
+    "elapsed_seconds": 195.567,
+    "thread_id": "6ac316bc-4484-83ea-96ae-80c62f46355a",
+    "conversation_restore": false,
+    "request_id": "6402a360d70b4026952f592310b375f5",
+    "worker_page_id": 124421089166352,
+    "queue_seconds": 19.781,
+    "completed_at": 1791170406.7999496,
+    "concurrency": {
+      "max_concurrency": 8,
+      "in_flight": 2,
+      "available": 6,
+      "waiting": 0,
+      "max_active_tabs": 8,
+      "worker_tabs": 4,
+      "max_idle_worker_tabs": 2,
+      "max_queue": 16,
+      "queue_timeout_seconds": 240
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "error": null,
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro"
+    ]
+  },
+  "completion_id": "chatcmpl-903cdc91dde1418a8c283639",
+  "transport_success": true,
+  "elapsed_seconds": 280.234
+}

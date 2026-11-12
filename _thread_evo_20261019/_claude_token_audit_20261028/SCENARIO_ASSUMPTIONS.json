@@ -1,0 +1,140 @@
+{
+  "baseline": 514.733106165,
+  "context_prefix_tokens": 430392.0,
+  "packages": {
+    "A": 111,
+    "B": 128,
+    "C": 176
+  },
+  "params": {
+    "A": {
+      "conservative": {
+        "poll": 0.55,
+        "F": 0.05,
+        "I": 0,
+        "expiry": 0.05,
+        "escalation": 0.02,
+        "regression": 0.005,
+        "packet": 900,
+        "full_review": 0.1,
+        "factor": 1.3
+      },
+      "central": {
+        "poll": 0.8,
+        "F": 0.2,
+        "I": 0.1,
+        "expiry": 0.02,
+        "escalation": 0.01,
+        "regression": 0.002,
+        "packet": 600,
+        "full_review": 0,
+        "factor": 1
+      },
+      "optimistic": {
+        "poll": 0.95,
+        "F": 0.35,
+        "I": 0.2,
+        "expiry": 0,
+        "escalation": 0.005,
+        "regression": 0,
+        "packet": 350,
+        "full_review": 0,
+        "factor": 0.75
+      }
+    },
+    "B": {
+      "conservative": {
+        "C": 0.55,
+        "D": 0.5,
+        "poll": 0.7,
+        "Eother": 0.3,
+        "F": 0.3,
+        "I": 0.05,
+        "expiry": 0.2,
+        "escalation": 0.12,
+        "regression": 0.04,
+        "packet": 1800,
+        "full_review": 0.7,
+        "factor": 1.25
+      },
+      "central": {
+        "C": 0.8,
+        "D": 0.75,
+        "poll": 0.9,
+        "Eother": 0.55,
+        "F": 0.6,
+        "I": 0.15,
+        "expiry": 0.1,
+        "escalation": 0.06,
+        "regression": 0.02,
+        "packet": 600,
+        "full_review": 0.25,
+        "factor": 1
+      },
+      "optimistic": {
+        "C": 0.95,
+        "D": 0.9,
+        "poll": 0.98,
+        "Eother": 0.8,
+        "F": 0.8,
+        "I": 0.25,
+        "expiry": 0.02,
+        "escalation": 0.02,
+        "regression": 0.005,
+        "packet": 350,
+        "full_review": 0.1,
+        "factor": 0.85
+      }
+    },
+    "C": {
+      "conservative": {
+        "C": 0.65,
+        "D": 0.6,
+        "poll": 0.8,
+        "Eother": 0.5,
+        "F": 0.55,
+        "B": 0,
+        "I": 0.1,
+        "expiry": 0.4,
+        "escalation": 0.18,
+        "regression": 0.07,
+        "packet": 3000,
+        "full_review": 0.8,
+        "factor": 1.3
+      },
+      "central": {
+        "C": 0.9,
+        "D": 0.85,
+        "poll": 0.95,
+        "Eother": 0.8,
+        "F": 0.85,
+        "B": 0.15,
+        "I": 0.25,
+        "expiry": 0.2,
+        "escalation": 0.1,
+        "regression": 0.04,
+        "packet": 1800,
+        "full_review": 0.35,
+        "factor": 1
+      },
+      "optimistic": {
+        "C": 0.98,
+        "D": 0.95,
+        "poll": 0.99,
+        "Eother": 0.95,
+        "F": 0.95,
+        "B": 0.25,
+        "I": 0.35,
+        "expiry": 0.03,
+        "escalation": 0.03,
+        "regression": 0.01,
+        "packet": 600,
+        "full_review": 0.1,
+        "factor": 0.8
+      }
+    }
+  },
+  "all_probabilities_are_assumptions": true,
+  "no_claim_of_quality_equivalence": true,
+  "external_GPT_Codex_token_cost": 0
+}

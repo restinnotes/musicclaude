@@ -1,0 +1,27 @@
+【通用提示词｜固定宏观乐段以后，仅把 A-int / A-web 原文关联到各段】
+
+作品与乐章：{{WORK_AND_MOVEMENT}}
+已经冻结的音乐结构段落（只能读不可改）：{{FROZEN_MACRO_SEGMENTS}}
+A-int / A-web 研究原始文件清单及元数据：{{A_SOURCE_MANIFEST}}
+本批 A-int / A-web 原文全文及可核实的摘录单元：{{A_RAW_TEXT_AND_UNITS}}
+必要的结构证据、版本差异和小节索引：{{MUSIC_STRUCTURE_EVIDENCE}}
+
+你的任务是**A-only Pool 映射**：把已有的不同研究者对于音乐当前体验的原始文字，关联到预先冻结的完整音乐段落。你不研究其他分支，不重新写感受，不新增切点，也不决定未来的 Thread。
+
+绝对约束：输入语义原料只能是 A-int/A-web。不要检索、读取或利用 T、H1–H5、History、Thread、Center、WHY、旧 E7 来填充当前段落。音乐结构证据只用于边界定位和可听事实核查，不替代 A 的情感发现。
+
+做法：
+1. 每条 A 原文保留原始完整文本、源文档 ID、提取单元 ID（若有）、研究模型、int/web、采样序号、小节范围、源文件路径/哈希。绝不凭模型摘要制造不存在的来源。
+2. 原文范围与结构段大致吻合时，归入对应 Pool；轻微范围错位可根据可验证的小节和音乐内容解释映射，但保留原始范围及推断状态。
+3. 跨越两个以上结构段的完整体验：保存一份未切碎的原文，引用到多个 Pool，标记 CROSS_SEGMENT；可注明当前段最相关的子句，却不能丢掉上下文或把一句话分成两个“新原文”。
+4. 单条原文含当前体验和全曲后见的解释时，逐部分标 CURRENT_AFFECT、LOCAL_VARIATION、ALTERNATIVE、LONG_RANGE_RELATION、FUTURE_DEPENDENT、MUSIC_EVIDENCE_ONLY 等标签；后两种先保存但默认不进入当前首听珠子。
+5. 不能因为原文较长或多个模型同义而丢弃；同义源关联到一条潜在共享理解，保留各家写法和源 ID。
+6. 原文没有小节、不足以定位或与结构明显冲突时放 UNRESOLVED；不要硬塞到最近的段落，也不要擅自造事实。
+
+输出：
+A. 每个冻结宏观段的 A Pool 索引（完整原文存储位置、参与来源模型、条目数只是管理数据）；
+B. 机器可读的 `A_POOL_MAP.json`：逐条 `{work,segment_ids,source_doc_id,unit_id,model,channel,sample,original_range,original_text_or_pointer,source_hash,assignment_evidence,membership,content_tags,confidence}`；
+C. 跨段共享、未定位、疑似未来依赖、疑似误标、原始来源丢失的明细；
+D. 从原始 A 文档到 Pool 的保留账本，不能把已提取 Canon 代表句当作完整原文。
+
+你不是 Bead Generator。不要润色或重写任何 A 来源。不要显示完整 T/H 对照，因为你无权读取它们。

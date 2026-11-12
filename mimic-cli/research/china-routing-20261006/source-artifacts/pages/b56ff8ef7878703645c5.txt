@@ -1,0 +1,446 @@
+12、搜索商品 · GitBook
+Introduction
+一、授权
+1、获取 Access Token
+2、刷新 Access Token
+二、地址
+1、查询一级地址
+2、查询二级地址
+3、查询三级地址
+4、查询四级地址
+5、验证地址有效性
+6、地址详情转换京东地址编码
+三、商品
+1、查询商品池编号
+2、查询池内商品编号
+3、查询商品详情
+4、查询商品图片
+5、查询商品上下架状态
+6、验证商品可售性
+7、查询商品区域购买限制
+8、查询赠品信息
+9、查询商品延保
+10、验证货到付款
+11、批量验证货到付款
+12、搜索商品
+13、查询同类商品
+14、查询分类信息
+15、商品可采校验
+16、第三方关联数据查询
+17、商品搜索分词查询
+18、商品审核结果反馈
+19、查询商品配送预计送达时间
+20、查询商品详情页话术
+四、价格
+1、查询商品售卖价
+五、库存
+1、查询商品库存
+六、订单
+1、查询运费
+2、查询预约日历
+3、提交订单
+4、反查订单
+5、确认预占库存订单
+6、取消未确认订单
+7、查询订单详情
+8、查询商品配送信息
+9、确认收货
+10、批量确认收货
+11、更新采购单号
+12、更新订单扩展字段
+13、查询新建订单列表
+14、查询妥投订单列表
+15、查询拒收订单列表
+16、查询完成订单列表
+17、查询订单货期
+18、批量校验订单是否可取消
+19、分页查询采购单
+20、订单验收
+21、查询配送清单
+22、订单部分验收
+七、支付
+1、查询余额
+2、查询余额变动明细
+3、发起支付
+八、售后1.0
+1、查询可售后商品
+2、查询商品售后类型
+3、查询商品逆向配送
+4、申请售后
+5、填写发运信息
+6、查询服务单概要
+7、查询服务单明细
+8、取消服务单
+9、查询退款明细
+10、确认服务单
+11、查询服务单列表
+九、售后2.0
+1、查询商品售后属性
+2、申请售后
+3、查询售后概要
+4、填写运单信息
+5、确认售后完成
+6、取消售后申请
+7、查询物流信息
+8、查询售后申请单明细
+9、查询售后换新单订单号
+十、发票
+1、申请开票
+2、查询发票第三方申请单号
+3、查询发票概要
+4、查询发票明细
+5、查询电子发票明细
+6、查询发票运单号
+7、查询发票物流信息
+8、取消发票申请
+9、按发票号查询发票物流信息
+10、按发票号码查询数电票OFD
+十一、信息推送
+1、查询推送信息
+2、删除推送信息
+十二、账单
+1、查询账单明细
+十三、特殊申请接口
+1、咚咚客服
+2、新增专票资质
+3、查询金采账单明细
+4、京东金融收银台
+6、查询电子签单
+7、重新支付
+8、查询电子发票明细
+9、查询电子合同信息
+10、银企直连-申请结算流水号接口
+11、银企直连-对公转账付款结果通知
+12、查询商品序列号
+13、签单返审核结果查询
+14、汇款识别码支付
+十四、智能测试
+1、测试案例
+2、数据分析
+错误码
+Published with GitBook
+12、搜索商品
+三、搜索商品
+1.接口描述
+根据搜索条件查询符合要求的商品列表。
+2.URL
+https://api-iop.jd.com/api/search/search
+3.参数格式
+访问方式："Content-Type", "application/x-www-form-urlencoded"
+4.HTTPS请求方式
+POST
+5.请求参数
+参数名称
+类型
+是否必填
+描述
+token
+String
+是
+授权时获取的access token
+keyword
+String
+否
+搜索关键字，需要编码
+catId
+String
+否
+分类Id,只支持三级类目Id
+pageIndex
+Integer
+否
+当前第几页
+pageSize
+Integer
+否
+当前页显示
+min
+String
+否
+价格区间搜索，低价
+max
+String
+否
+价格区间搜索，高价
+brands
+String
+否
+品牌搜索 多个品牌以逗号分隔，需要编码
+cid1
+String
+否
+一级分类
+cid2
+String
+否
+二级分类
+sortType
+String
+否
+销量降序="sale_desc";价格升序="price_asc";价格降序="price_desc";上架时间降序="winsdate_desc";按销量排序_15天销售额="sort_totalsales15_desc";按15日销量排序="sort_days_15_qtty_desc";按30日销量排序="sort_days_30_qtty_desc";按15日销售额排序="sort_days_15_gmv_desc";按30日销售额排序="sort_days_30_gmv_desc";
+priceCol
+String
+否
+价格汇总 priceCol=”yes”
+extAttrCol
+String
+否
+扩展属性汇总extAttrCol=”yes”
+mergeSku
+boolean
+否
+true:合并同一产品不同规格sku;false:不合并同一产品不同规格sku
+6.请求示例
+以Post形式提交
+1.关键字搜索
+url : https://api-iop.jd.com/api/search/search?token=xxx&keyword=iphone
+\2. 分类Id搜索
+url : https://api-iop.jd.com/api/search/search?token=xxx&catId=898873
+\3. 品牌搜索
+url : https://api-iop.jd.com/api/search/search?token=xxx&brands=华为,苹果
+4.带价格的组合搜索(价格区间，低价和高价为必须)
+url:
+https://api-iop.jd.com/api/search/search?token=xxx&catId=898873&keyword= iphone&min=0&max=10000
+5．带库存有货
+https://api-iop.jd.com/api/search/search?token=PFVCtR72Ao2ZqLuJnA7xPlXSY&keyword=鼠标&pageIndex=1&pageSize=100&brands=小米&areaIds=1,2810,51081&redisStore=true&catId=693
+7.响应参数
+参数名称
+类型
+非空
+描述
+resultCount
+Integer
+是
+搜索结果总记录数量
+pageCount
+Integer
+是
+总页数
+pageSize
+Integer
+是
+每页大小
+pageIndex
+Integer
+是
+当前页
+brandAggregate
+List
+是
+品牌汇总信息
+categoryAggregate
+List
+相关分类汇总信息
+hitResult
+List
+搜索命中数据json字符串，返回的图片地址拼接规则与查询商品详情规则一致
+BrandVo对象说明：
+参数名称
+类型
+非空
+描述
+Id
+String
+是
+品牌id
+Name
+String
+是
+品牌名称
+Pinyin
+String
+是
+品牌首字母拼音
+CategoryVo对象说明：
+参数名称
+类型
+非空
+描述
+catId
+Integer
+是
+分类Id
+Count
+Integer
+是
+分类下商品数量
+Name
+String
+是
+分类名称
+Weight
+Integer
+是
+分类权重
+hitResult对象说明：
+参数名称
+类型
+非空
+描述
+Brand
+String
+是
+品牌名称
+imageUrl
+String
+是
+商品图片url
+wareName
+String
+是
+商品名称
+wareId
+String
+是
+商品id
+warePId
+String
+否
+商品spuid
+brandId
+String
+是
+品牌id
+cid1
+String
+是
+一级类目id
+cid2
+String
+是
+二级类目id
+catId
+String
+是
+三级类目id
+Wstate
+String
+是
+上柜状态，1.有效
+Wyn
+String
+是
+商品状态，1.有效
+cid1Name
+String
+否
+一级分类名
+cid2Name
+String
+否
+二级分类名
+catName
+String
+否
+三级分类名
+Synonyms
+String
+否
+商品同义词
+8.响应示例
+{
+“success”: true,
+“resultMessage”: ”操作成功”,
+“resultCode”: ”0000”,
+“result”:
+{
+​    “resultCount”：100，
+​    “pageCount “：10,
+​    “pageSize”: 10,
+​    “pageIndex”:1,
+​    "brandAggregate":{                                 ##品牌分类汇总信息
+​      "brandList":[                                ##品牌列表
+​        {
+​          "id":"1001",                        ##品牌id
+​          "name":"Apple",                    ##品牌名称
+​          "pinyin":"A"                        ##品牌首字母拼音
+​        },
+​        {
+​          "id":"10003",
+​          "name":"华为",
+​          "pinyin":"H"
+​        }
+​      ],
+​      "pinyinAggr":[
+​        "A",
+​        "B",
+​        "C"
+​      ]
+​    },
+"priceIntervalAggregate":[                            ##价格汇总
+​      {
+​        "max":1000000,                    ##高价
+​        "min":0                            ##低价
+​      },
+​      {
+​        "max":0,
+​        "min":10000
+​      }
+​    ],
+​     "categoryAggregate":{                                ##分类汇总
+​      "firstCategory":[                            ##一级类目分类
+​        {
+​          "catId":1002,                        ##分类Id
+​          "count":2000,                        ##分类下商品数量
+​          "name":"Cloth",                    ##分类名称
+​          "weight":3                        ##分类权重
+​        }
+​      ],
+​      "secondCategory":[                            ##二级类目分类
+​        {
+​          "catId":1002,
+​          "count":2,
+​          "name":"Cloth",
+​          "weight":3
+​        },
+​        {
+​          "catId":1002,
+​          "count":2,
+​          "name":"Cloth",
+​          "weight":3
+​        }
+​      ],
+​      "thridCategory":[                            ##三级类目分类
+​        {
+​          "catId":1002,
+​          "count":2,
+​          "name":"Cloth",
+​          "weight":3
+​        },
+​        {
+​          "catId":1002,
+​          "count":2,
+​          "name":"Cloth",
+​          "weight":3
+​        },
+​        {
+​          "catId":1002,
+​          "count":2,
+​          "name":"Cloth",
+​          "weight":3
+​        }
+​      ]
+​    },
+​    "hitResult”:[
+​        {
+​            "brand": "惠普（HP）",                           ##品牌名称
+​            "imageUrl": "6468/e7839f86b26.jpg",                     ##商品图片url
+​            "wareName":"惠普（HP）C8766ZZ 855号彩色墨盒”,    ##商品名称
+​            "wareId": "103890",                                ##商品id
+"warePId": "196805",                           ##商品spuid
+​            "brandId":"14026",                                    ##品牌id
+​      "catId":"655",                                        ##三级类目id
+​      "cid1":"9987",                                        ##一级类目id
+​      "cid2":"653",                                        ##二级类目id
+​            "wstate" : "1",                                   ##上柜状态，1.有效
+​        "wyn" : "1",                                 ##商品状态，1.有效
+​            "catName" : "儿童家具 ",                         ##三级分类名
+​      "cid1Name" : "家居、厨具、家装",               ##一级分类名
+​      "cid2Name" : "家具",                ##二级分类名
+​       "synonyms" : "迪斯尼正版迪士尼",               ##商品同义词
+}
+]
+}
+}
+results matching ""
+No results matching ""

@@ -1,0 +1,131 @@
+{
+  "job_id": "surf150__gpt56w__k23__retry2__h82c41feb91",
+  "run_id": "run150_e7_diag",
+  "route": "gpt2",
+  "adapter_version": "r2_20261009",
+  "model_key": "gpt56w",
+  "requested_effort": "max",
+  "effort_is_request_not_backend_proof": true,
+  "prompt_file": "prompts/surf150__gpt56w__k23__retry2__h82c41feb91.txt",
+  "prompt_chars": 2307,
+  "prompt_sha256": "82c41feb91207a8e049ef60bbd57da6562426adb124d6fb7c753ca982b73bff8",
+  "output_file": "outputs/surf150__gpt56w__k23__retry2__h82c41feb91.md",
+  "stdout_file": "outputs/raw/surf150__gpt56w__k23__retry2__h82c41feb91.stdout.txt",
+  "stderr_file": "outputs/raw/surf150__gpt56w__k23__retry2__h82c41feb91.stderr.txt",
+  "started": "2026-10-09T14:56:12",
+  "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+  "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+  "producer_identity": {
+    "route": "gpt2",
+    "adapter_version": "r2_20261009",
+    "adapter_sha256": "a40903de253fb1735a288bb70a4a489d6e17faa85213887089b65643893ff212",
+    "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+    "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+    "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+    "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+    "cli_source": {
+      "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+      "files": 96,
+      "missing": false
+    }
+  },
+  "consumer_identity": {
+    "route": "gpt2",
+    "adapter_version": "r2_20261009",
+    "adapter_sha256": "a40903de253fb1735a288bb70a4a489d6e17faa85213887089b65643893ff212",
+    "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+    "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+    "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+    "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+    "cli_source": {
+      "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+      "files": 96,
+      "missing": false
+    }
+  },
+  "request_identity": {
+    "producer": {
+      "route": "gpt2",
+      "adapter_version": "r2_20261009",
+      "adapter_sha256": "a40903de253fb1735a288bb70a4a489d6e17faa85213887089b65643893ff212",
+      "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+      "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+      "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+      "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+      "cli_source": {
+        "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+        "files": 96,
+        "missing": false
+      }
+    },
+    "model_key": "gpt56w",
+    "requested_model": "gpt-5-6-thinking",
+    "requested_effort": "max",
+    "prompt_sha256": "82c41feb91207a8e049ef60bbd57da6562426adb124d6fb7c753ca982b73bff8",
+    "sampling_key": "surf150__gpt56w__k23__retry2__h82c41feb91",
+    "request_context": {
+      "schema": "20261009.1",
+      "producer": {
+        "route": "gpt2",
+        "adapter_version": "r2_20261009",
+        "adapter_sha256": "a40903de253fb1735a288bb70a4a489d6e17faa85213887089b65643893ff212",
+        "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+        "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+        "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+        "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+        "cli_source": {
+          "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+          "files": 96,
+          "missing": false
+        },
+        "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a"
+      },
+      "model_key": "gpt56w",
+      "prompt_sha256": "82c41feb91207a8e049ef60bbd57da6562426adb124d6fb7c753ca982b73bff8",
+      "prompt_version": "E7_SURFACE_v0",
+      "prompt_template": "prompts/versions/E7_SURFACE_v0.txt",
+      "work_key": "op60",
+      "sample": 1,
+      "forbid_tools": [
+        "bash",
+        "edit",
+        "glob",
+        "grep",
+        "read",
+        "webfetch",
+        "websearch",
+        "write"
+      ],
+      "extra_sha256": "cc2b466bf10290fa814d09a13b64a5790bfb49e59b367f46ce4604e9938ea826",
+      "image_sha256": {},
+      "sampling_key": "surf150__gpt56w__k23__retry2__h82c41feb91"
+    }
+  },
+  "cache_key": "dbaef4b76e05eba7380b70aa26447ae4a43323693a625d61b910b5e3a5aafeae",
+  "cache_hit": false,
+  "raw_redacted": true,
+  "automatic_retry": false,
+  "tool_counts": {},
+  "requested_model": "gpt-5-6-thinking",
+  "status": "failed",
+  "ended": "2026-10-09T14:56:12",
+  "seconds": 0.0,
+  "error": "gpt2 queue held: inspect D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\runs\\_call_slots\\gpt2web\\queue_hold.json",
+  "response_sha256": null,
+  "output_chars": 0,
+  "attempts": 0,
+  "returncode": null,
+  "queue_stop": true,
+  "retry_safe": false,
+  "branch": "surface",
+  "prompt_version": "E7_SURFACE_v0",
+  "prompt_template": "prompts/versions/E7_SURFACE_v0.txt",
+  "work_key": "op60",
+  "work_name": "肖邦《船歌》升F大调 Op.60",
+  "sample": 1,
+  "extra": {
+    "k": 23,
+    "attempt": 2
+  },
+  "model_name": "gpt-5.6-thinking (web, gpt2)"
+}

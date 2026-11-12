@@ -1,0 +1,163 @@
+{
+  "run_id": "20261006T230826.363632Z-7c372768",
+  "timestamp": "2026-10-06T23:08:26.363632+00:00",
+  "command": "ask",
+  "profile": "yi",
+  "probe": null,
+  "prompt": "下面是关于 肖邦《船歌》升F大调 Op.60 中 mm.84–102 已经收集到的一组核心内容单元（A 组），以及另外几位作者从别的角度写的若干条新单元（B 组）。请对 B 组的每一条判断：和 A 组相比，它是什么。\n\n对每条 B：\n1. overlap：列出 A 组里和它说同一件事、或部分相同的单元序号（可以为空）。\n2. class：只能选一种——\n   - duplicate：A 组已经有同样的理解，扣掉之后什么都不剩；\n   - rendering：理解是 A 组已有的，只是换了不同或更好的比喻、场景、说法；\n   - support：理解是 A 组已有的，它只多给了一个听得见的依据或位置，可以附在 A 组那一条后面；\n   - new：会让听者注意到或理解到 A 组里没有的东西；\n   - alternative：对 A 组某一条说的同一处声音给出另一种解释，两者不能同时成立。\n3. residual：class 是 new 或 alternative 时，用一句话写出多出来的那部分；其他写\"无\"。\n4. needs_future：这条要听过后面的音乐才说得出来，写 true；只凭已经听到的就能产生，写 false。\n\n写得戏剧化、具体、笃定都不影响分类。\n\n只输出一个 JSON 数组，不要输出其他任何文字：[{\"b\": B组序号, \"overlap\": [A组序号...], \"class\": \"duplicate|rendering|support|new|alternative\", \"residual\": \"...\", \"needs_future\": true或false}]\n\n【A 组】\n[1] (mm. 84–92) 此处的巨变是因为经历78小节彻底放下，开头怯生生怕失去的旋律变成即使明天化为乌有、因曾深切活过爱过就足够的生命与爱赞歌，小船与翻滚金色海洋融为一体。\n[2] (m. 84) 最初在第四小节出现过的温柔情歌以Fortissimo极强力度轰然回归，被覆盖整个键盘的丰厚高低声部托举得宏大如管风琴与管弦齐鸣。\n[3] (mm. 93–102) 情绪持续处于高烧般狂喜，肉体与精神达到完全合一巅峰。\n[4] (mm.84-92) 喊完后在水里扑腾左右乱抓，音流往下掉，怎么划都回不到刚才的亮。\n[5] (mm.93-102) 同样温柔但没了刚才的抓，像大吵后和解不再说漂亮话却握更紧，悲伤还在但不慌而有了尊严、仍要好好唱完这一句。\n[6] (mm.84–92) 开头温暖主题以更响更厚更丰满伴奏回来，不是再回忆而是大声确定重说“那就是真的那就是我的”，像远归站回家乡街脚踏实地般少天真多分量，有别于初现的隔距离回望。\n[7] (mm.84-93) 溢出来的地方颤音像水面上一层数不清的碎光，旋律被抬得很高而音量到了全曲顶点。\n[8] (mm. 93–102) 到mm.93–102情绪更明亮有冲劲，可听成一种急切的确认：“这一刻是真的，我要把它抓住”。\n[9] (mm. 93–102) 在远方飘着没能落地的那段宽广旋律如今回到主调，成为自强到极强的全曲最高潮，原来够不着的东西好像终于属于自己。\n[10] (mm. 94–105) 高潮要听得很灿烂却不是胜利后踏实的欢呼，更像有人终于把长久压在心里的话一口气说出、声音越来越亮到自己也快承受不住。\n[11] (93-102) 可听成真正胜利，也可听成用尽全力的肯定如告别前点亮最亮的光，两种同时存在恰是动人处。\n[12] (mm.93–102) mm.78–83那段悄悄话回主调以全曲最辉煌最强出现，把最私密脆弱的心里话放大成拥抱全世界的狂喜肯定。\n[13] (84-102) 阿劳称此段为极度神圣与极度情欲的合一，其狂喜非胜利欢呼而是濒死回光返照，因知是最后狂欢才放肆决绝耗尽一生爱意。\n[14] (93-102) 巨大是溢出肯定感官心意齐满刺痛喉咙分不清哭笑抱紧，痛因幸福音量超平稳承受而非受伤。\n[15] (mm.85-102) 中间经历动摇、逃、焦虑、讽刺和沉默，使对感情的态度从看看变成认领，所以不是变loud而是变真了。\n[16] (mm. 84–103) 坦白带着冒险感，说出口后就不能再假装无所谓。\n[17] (mm. 78–93) 温柔中既有喜悦也有近乎疼痛的珍惜，因为投入得越深人也越容易受伤。\n[18] (84–约96) Poco più mosso加快后摇晃还在却从摇篮变成船被浪推着跑，狂喜和慌乱几乎分不出，分不清是高兴得发抖还是怕得发抖。\n[19] (84–约96) 它不是崩溃也不是悲剧性爆发，而是拼命想抓住快溜走的美好越抓越急能量烧到最亮，把前面积累的想留住全部释放出来。\n[20] (约97–100) 结尾几小节不同演奏者处理差别很大，可有意比较有人听似坦然有人听似倔强的微笑。\n[21] (mm.93-102) 火变成仍暖的余烬而仍说比较长的句子却不再往上抢，是盛满后的退潮，既舍不得又庆幸没有错过。\n[22] (mm.84-93) 有的演奏把那个高点推得更烫更急，有的更稳余光更长，体温可以不一样而心里路线是同一条。\n[23] (84-92) 可听成与另一人同说一句或小心给予的自己与被点燃的自己并排，精神是认出回应就是这件事。\n[24] (93-102) 顶点嵌着矛盾即抵达也是见顶、下一步只能离开，下坡在最响中已开始而非响完突换。\n[25] (mm.84-102) 前面所有主题都变短变响变厚地回来，学者Cone称为穿素衣换华服登场的apotheosis，其中mm84-92是开头主题去犹豫直接ff加大滚八度回归，mm93-102是赞歌主题搬回主调一次比一次用力推向mm103大终止。\n[26] (mm.93-102) mm93-102乃第二歌回来而将A大调乖结尾变为每结撞向同一更紧张之音且一次比一次dissonant舍不得放，并以渐弱渐慢要求含泪用足力气而非砸。\n[27] (84-92) 纸面上这里要响，但据在场的阿莱回忆，1848年2月16日巴黎普莱耶尔厅最后一场公开音乐会上肖邦反而从这里起全程用很轻的声音弹而层次细得让人怀疑也许这样更好，所以这种大可以是当众燃烧也可以是贴着耳朵的内在亮度，同样不是凯旋而是保留已不再可能。\n[28] (93-102) 心理上的变化是认出不是征服，野一些的喜悦不再是中途的出轨而和最初那首克制的歌原是一件事，让人晚到地踏实于想要的和已拥有的原来是同一句。\n[29] (mm. 4, 84) 当sfogato晶莹音符如水滴落回琴键时m84迎回最初第一主题，却由m4两手温柔抚摸的小声窃语变为fortissimo管弦乐式饱满和弦加巨浪翻滚低音海潮，被林克定义为神化。\n[30] (mm.84-92) mm.84-92旧歌回来左手沉厚且首次不再带开头减弱像解除约束，对照mm.6初靠近羞涩分寸，经暗行暖光飞走吐气后同一首歌不必缩小而获准完整站立。\n[31] (mm.84–91) mm.84–91第一首歌回F♯大调不再渐弱而被Kopp说解开束缚且只保留最后十小节不再从头讲，像终于敞开唱出一直低声说的话。\n[32] (mm.84–92) 回来时更厚更响更有力、低音更深，开头慵懒私语如今带着整段旅程的重量，像离家很久回来推同一扇门、门没变人变了，且已知道它能变得多大、会在恍惚中变得不真实。\n[33] (mm.84–99) 我们知道它们能通向亲近也知道亲近会带来急切和不安，因此这里的回返不像把故事倒回开头，更像回到同一条船上却已知道彼此可能经历什么。\n[34] (mm. 84–102) 若在开头第4小节就用震耳欲聋的ff特强和声弹奏只会是粗俗肤浅喧嚣，而第84小节同样旋律巨大爆发却令人热泪盈眶的原因是它已走过呼出放下的精神蜕变，使力量不再是盲目肉欲自大而是经历留恋焦虑挣扎与彻底放下后重新面对生命的全心全意赞美肯定，即罗森与林克所说世俗主题与梦境主题浓缩融合的Apotheosis神化使梦境现实合一而脆弱温存锻成永恒光芒。\n[35] (mm. 93–102) 双三度的奔涌如巨大海浪般推进，把盛开推向近乎痛楚的狂喜巅峰，不再是一叶扁舟而是整片海都在伴奏。\n[36] (mm.84–约100) 高潮不是突然爆发也不是从外面闯进来，而是第一段舍不得、第二段原来可以这么大、第三段想守住的累积到不再克制，是这份温柔自己长大的结果。\n[37] (mm.78-102) 顶点处摇晃常被浪盖住，使你更多在身体里感到节拍而非清清楚楚听见，这是关系最险的一刻，即心情大到几乎淹没托着它的节拍。\n[38] (mm.78-102) 它回到最初那首共享的句子来盛这么大，是因只有那一句能证明变大变亮发晕仍属同一摇晃，须把远方交还给我们的那一句，而顶点就是开头终于说完自己的实话。\n[39] (mm.84–92) 缝被填上、声音大到不像两人小声说话，像终于在说同一句完整话、又像一人用全身力气说那句、心平时分开的声音一齐响，到达是在家里可说而不必永远留在别种光里。\n[40] (mm.93–102) 这里仍是亮的，装不住因太满，两种亲近叠一起只能站一小会儿，站过就散成光、散成抖、再落回可住大小。\n[41] (mm.93–102) 这是从刚才说满里长出的，话到那尺寸嗓还在振而词已不需，一路过了mm.84–92、这里的颤就是真话身体还没停。\n[42] (mm.93–102) 会想起mm.1开头也是无句子的颤，那时亲近未始、颤是夜自己响，现在还是颤、意思是最大话已说完、人声回到和夜一样的抖，同一动作被整首经历改写。\n[43] (mm.93-102) 大约mm.93后浪头落下使耳朵里有一阵空，顶点上几乎分不清两条声音还是一整片，退下来后两条又分开仍靠很近，而还能分成两个本身变成温柔，即刚才那么满也没有把彼此抹掉。\n[44] (mm.84-92前后) 这是全曲转折点，开头静是没开始，这里静是经历大声和远行后的累和梦，船自由漂人在做梦\n[45] (mm.84-92前后) 高潮后摇晃几乎停下来，低音一个人慢慢说像独白\n[46] (mm.84-92前后) 从很低处升起一条发光颤抖的快速音流，拉威尔说从低处升起颤抖飘在珍贵温柔和声上像神秘升天\n[47] (mm. 84–102) 第84小节最初摇曳主题以极宏大全键盘震响的ff特强姿态轰然回归，到第92至93小节梦境天国的中段抒情主题同样被移植回升F大调以火山喷发般光辉响彻全场。\n[48] (mm.93–102) 高潮用的不是新材料也不是第一主题，而是mm.62–70在别处压嗓说不出下文的歌，被移到家里调上用最强力度以彻底意大利式壮丽抒情唱出，像在外面偷想的东西站在自家门口说出来\n[49] (mm.93–101) mm.93–101把原属别处的第二首歌搬回F♯并把句尾从C♯改成与第一首一样的A♯，别处没有被丢掉而是被带回家，这是全曲最重要的从前面长出后面的地方。\n[50] (m.96、97、100) m.96、97、100把A♯推进越来越尖锐的处境，像在替最后落下积蓄压力。\n[51] (mm.93-103) 虽要求很大力量但落地克制使句子收紧到mm.103才按下且按下前又减弱稍慢，非砸下胜利而是两份经历叠至同点落到且知不可张扬。\n[52] (mm. 84–102) 归来后温柔承载太多终于放声，声音更宽阔更炽烈仿佛原来私下说的话终于必须大声说出来。\n[53] (无) 明朗读法如Tomaszewski称回归为“感情的神化”，Ohlsson的演奏也常被听成光辉顶点。\n[54] (mm. 84–102) Ohlsson多年反复重学重想表明同一条旋律怎样变成高潮会随演奏者理解而改变。\n[55] (mm.84-102) 1848年最后音乐会从mm.84往后应全力处肖邦反以极轻弹而层次极细，戈尔德施密特说不像衰弱，证明最满音乐可为外光亦可内光而满不等于响。\n\n【B 组】\n[1] (mm. 93–104) 高潮里的壮丽有近乎疼痛的性质，像多年后忽见熟悉的人城市旧照片而几十年时间在几秒里全部压回来般幸福巨大到承受不住，是完全被自己感情穿透而非英雄式征服。\n[2] (mm.84–92) 熟悉歌唱以更有重量更直接更不压抑之态回来，如最初受约束者liberated from constraint般历经白日梦沉思后更即时更强烈，心理上是从只敢偷偷拥有到愿意完整承担不再怕自己感受。\n[3] (mm.93–102) 明亮歌与主歌连成几乎不中断大呼吸，早先一唱完就走神凝视水面的状态消失而注意力被牢牢拉回here and now，构成不是失控而是不再分心的真正狂喜。\n[4] (mm.93–102) 声音越来越丰厚空间越来越亮却也越来越拥挤的过量幸福已饱和到带一点疼痛，使人在最幸福时隐约知道此状态不可能无限增长，正是从日常柔和走到巨大心理强度的距离。\n[5] (mm.84–92) mm.84–92重认熟悉相处方式却已知从容里包含什么，开头平静像事情还没伤到我而这里平静更像已知它能伤到我却仍愿留在这里。\n[6] (mm.84–92) mm.84–92相似音乐在后半部更成熟更厚，不是重播而是记忆。\n[7] (mm.84–92) mm.84–92像有些话第一次说是礼貌，经一次真正危机后再说同一句便成承诺。\n[8] (mm.93–110) mm.93–110越往前走，温柔欲望共同运动焦虑与装饰性兴奋等分开存在的东西越无法安分待着而挤到同一空间。\n[9] (mm.93–110) mm.93–110高潮不太像终于胜利，更像终于不能再假装只是在从容欣赏风景。\n[10] (mm.93–110) mm.93–110开头亲密之优雅因双方保留很多余地而成立，到这里余地越来越少，最强烈处既是结合也是危险，靠得太近几乎失掉边界。\n[11] (mm.19–38, mm.52–61, mm.62–77, mm.93–110) mm.93–110高潮不是突然情绪失控或孤立事件，而是mm.19–38还想再靠近、mm.52–61无法回答与mm.62–77不断积累长期长出的结果，是一笔终于必须偿还的旧账。\n[12] (mm.4–18, mm.84–116) mm.84以后重要在作品没给新世界而是让人回到旧世界却换了一双耳朵，mm.4–18之美是还没发生什么而后来之美是事情全发生过却仍听见水声仍愿留在船上。\n[13] (mm.84-92) 开头歌堂正回来获得更大底气与更厚波浪而解除约束，此前互让的歌与波浪同时强烈，构成升华放大而非更响。\n[14] (mm.32,92) 32小节左右向上攀升退入朦胧似到边缘又缩回的动作，到92小节被推成明亮汹涌浪峰，说明意义不在几个音里而是八十多小节经历改写了它。\n[15] (mm.93-102) 中段异乡之歌被带进原来世界而无缝接在第一首歌后形成巨大连续线，表明中段未被判为岔路错误而获留下资格，即以带回漂流所得而非删除漂流来解决冲突。\n[16] (mm.84-111) 后面强度须是前面生活过来的层层波浪积累而非音量旋钮，硬推高潮只显强硬嘈杂而升华不等于大声而是一切同时到场的密度，肖邦曾把本标强烈的84至111小节处理得很轻即为旁证。\n[17] (mm.84-92) 开头主题回来但短厚强、原来渐弱没了，不再是试探收声而是我就要这样的坚定甚至有点倔。\n[18] (mm.84-92) 短厚强奏出的同样的话从温柔变成意志，有不服输也有怕再飘走所以抓紧的紧张。\n[19] (mm.93-103) 中段另一条旋律移到升F大调、原落C#的尾巴多落A#，且96、97、100小节附近A#底下越来越不稳直至103小节强和弦，像重游旧地路记得但每块石头都在晃。\n[20] (mm.93-102) 怀念与不安并存且A#底下不稳使不安越来越多，必须走向爆发点才能了结。\n[21] (mm. 84–92) 开头主题回归，这次篇幅缩短，织体和力度都更强。\n[22] (mm. 84–92) 开头主题原先的渐弱没有照样出现。\n[23] (mm. 92–93) 第92–93小节附近有短暂停顿，之后进入另一条主题。\n[24] (mm. 93–102) 中段另一条旋律回归并移到升F大调。\n[25] (mm. 93–102) 原来常落在C♯的句尾，现在更多落在A♯。\n[26] (mm. 96–103) 第96、97、100小节附近A♯所处的和弦关系逐渐变得更不稳定，音乐在第103小节抵达强和弦。\n",
+  "prompt_sha256": "2f9c040af21c83804376c0b76dff03b323c192b7b5cc452f1cf873265709250b",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": true,
+  "response": "[{\"b\":1,\"overlap\":[10,13,14,17,35],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":2,\"overlap\":[6,15,30,31,34],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":3,\"overlap\":[25,47,48,49],\"class\":\"new\",\"residual\":\"两首歌在高潮处被听成几乎不中断的一口大呼吸，并因此把此前容易游离、出神的注意力彻底拉回当下。\",\"needs_future\":false},{\"b\":4,\"overlap\":[14,24,35,40],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":5,\"overlap\":[17,32,33],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":6,\"overlap\":[6,32],\"class\":\"alternative\",\"residual\":\"把后半部的回归理解为记忆性的再临，而不是A6所说的非回忆、当下重新确认与认领。\",\"needs_future\":false},{\"b\":7,\"overlap\":[6,15,16,30,31],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":8,\"overlap\":[13,14,34,36],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":9,\"overlap\":[10,13,15,16],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":10,\"overlap\":[37,39,40,43],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":11,\"overlap\":[15,34,36],\"class\":\"support\",\"residual\":\"无\",\"needs_future\":false},{\"b\":12,\"overlap\":[32,33,42,44],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":13,\"overlap\":[2,30,31,34],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":14,\"overlap\":[34,36],\"class\":\"new\",\"residual\":\"把约m.32曾经上攀后退回朦胧的动作与m.92的明亮浪峰直接对应起来，指出同类动作被八十多小节经历重新赋义。\",\"needs_future\":false},{\"b\":15,\"overlap\":[28,34,48,49],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":16,\"overlap\":[27,34,36,55],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":17,\"overlap\":[6,15,30,31],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":18,\"overlap\":[18,19,30,31],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":false},{\"b\":19,\"overlap\":[26,49,50,51],\"class\":\"rendering\",\"residual\":\"无\",\"needs_future\":true},{\"b\":20,\"overlap\":[26,50,51],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":21,\"overlap\":[25,30,31],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":22,\"overlap\":[30,31],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":23,\"overlap\":[47],\"class\":\"new\",\"residual\":\"在约mm.92–93第一主题结束与第二主题进入之间明确听到一个短暂的停顿或换气。\",\"needs_future\":false},{\"b\":24,\"overlap\":[9,12,25,47,48,49],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":25,\"overlap\":[49],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":false},{\"b\":26,\"overlap\":[26,50,51],\"class\":\"duplicate\",\"residual\":\"无\",\"needs_future\":true}]",
+  "http_status": 200,
+  "actual_model": "gpt-5.6-sol",
+  "actual_reasoning_effort": "xhigh",
+  "diagnostics": {
+    "preparation_started_at": 1791328107.6402397,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791328119.2472005
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791328119.4491
+    },
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "5.6 Extra High",
+      "selected_effort": "xhigh",
+      "fallback_reason": null,
+      "verified_at": 1791328119.219236,
+      "verification": "live_slider_and_closed_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "Extra High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 134308446246608,
+      "process_uid": 1000,
+      "process_pid": 1809,
+      "is_conversation": false
+    },
+    "verification_stage": "immediately_before_submission",
+    "authentication": {
+      "session_cookie_count": 1,
+      "expiries": [
+        1799104107.330886
+      ],
+      "device_cookie_present": true,
+      "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+      "site_cookie_count": 136,
+      "root_cookie_count": 133,
+      "cookie_header_bytes_estimate": 17418,
+      "temporary_cookie_count": 97
+    },
+    "storage_capacity": {
+      "cookie_count": 136,
+      "removed": 0
+    },
+    "submission_pacing": {
+      "minimum_interval_seconds": 5.0,
+      "waited_seconds": 0.0,
+      "send_attempt_at": 1791328119.5334892,
+      "previous_attempt_gap_seconds": 14.706
+    },
+    "prompt_content_verified": true,
+    "submitted_at": 1791328120.2613933,
+    "response_timeout_ms": 1800000,
+    "response_validation": {
+      "nonempty": true,
+      "transient_text": false,
+      "generation_active": false,
+      "response_characters": 2418
+    },
+    "screenshot_evidence": {
+      "directory": "/app/state/probe-artifacts/31ed142a869e4e0dac1226d1483c020e",
+      "stage": "response",
+      "request_id": "31ed142a869e4e0dac1226d1483c020e",
+      "captured_at": 1791328235.4687655,
+      "source": "live browser page owned by this standard request",
+      "files": [
+        {
+          "filename": "response-viewport.jpg",
+          "sha256": "2f01fe49c076982f5d589a92be1b339d0c98fa732527f8a32c46237050a2559a"
+        },
+        {
+          "filename": "response-full.jpg",
+          "sha256": "2f01fe49c076982f5d589a92be1b339d0c98fa732527f8a32c46237050a2559a"
+        }
+      ],
+      "thinking_time_ui_labels": [],
+      "success": true,
+      "capture_seconds": 0.118
+    },
+    "prompt_submitted": true,
+    "response_complete": true,
+    "elapsed_seconds": 128.656,
+    "thread_id": "6ac57f75-958c-83e9-ba25-6c5b3807d878",
+    "conversation_restore": false,
+    "request_id": "31ed142a869e4e0dac1226d1483c020e",
+    "worker_page_id": 134308446246608,
+    "queue_seconds": 0.709,
+    "completed_at": 1791328235.468687,
+    "concurrency": {
+      "max_concurrency": 8,
+      "in_flight": 6,
+      "available": 2,
+      "waiting": 0,
+      "max_active_tabs": 8,
+      "worker_tabs": 8,
+      "max_idle_worker_tabs": 2,
+      "max_queue": 16,
+      "queue_timeout_seconds": 240
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "error": null,
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "completion_id": "chatcmpl-d483b91bd5e7489f86bb0f10",
+  "transport_success": true,
+  "elapsed_seconds": 129.515
+}

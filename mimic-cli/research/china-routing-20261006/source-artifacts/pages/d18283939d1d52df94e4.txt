@@ -1,0 +1,444 @@
+Amazon.com Associates Central - Creators API Documentation
+Login
+or
+Sign up
+EN
+Language
+English - EN
+Español - ES
+Country
+United States
+United Kingdom
+Germany
+France
+Japan
+Canada
+Italy
+Spain
+India
+Brazil
+Mexico
+Australia
+United Arab Emirates
+Singapore
+Netherlands
+Saudi Arabia
+Sweden
+Poland
+Belgium
+Ireland
+Turkey
+Egypt
+Main menu
+HomeHome
+ToolsTools
+Commission Income StatementCommission Income Statement
+ReportsReports
+Creator UniversityCreator University
+HelpHelp
+HelpHelpProgram HelpOperating AgreementProgram PoliciesContact UsSIGN IN
+Creators API
+Introduction
+Migrating to Creators API from PA-API
+Onboarding›
+Get Started›
+Concepts & Guidelines›
+API Reference›
+Operations›
+Resources›
+BrowseNodeInfo
+BrowseNodes
+Images
+ItemInfo
+OffersV2
+ParentAsin
+SearchRefinements
+VariationSummary
+Locale Reference›
+Troubleshooting›
+Frequently Asked Questions
+PA-API 5 Deprecation Notice
+License Agreement
+Contact Us
+OffersV2
+The OffersV2 resource contains various resources related to offer listings for an item.
+Resources
+Listings
+Availability
+MaxOrderQuantity
+Message
+MinOrderQuantity
+Type
+Condition
+ConditionNote
+SubCondition
+Value
+DealDetails
+AccessType
+Badge
+EarlyAccessDurationInMilliseconds
+EndTime
+PercentClaimed
+StartTime
+IsBuyBoxWinner
+LoyaltyPoints
+Points
+MerchantInfo
+Name
+Id
+Price
+Money
+PricePerUnit
+SavingBasis
+Money
+SavingBasisType
+SavingBasisTypeLabel
+Savings
+Money
+Percentage
+Type
+ViolatesMAP
+Listings
+Specifies the various offer listings associated with the product.
+Attribute NameTypeDescription
+AvailabilityStructSpecifies availability information about an offer
+ConditionStructSpecifies the condition of the offer
+DealDetailsStructSpecifies deal information of the offer
+IsBuyBoxWinnerBooleanSpecifies whether the given offer is the winner of the BuyBox in the Detail Page Experience (DPX) of an item. This is the best offer recommended by Amazon for any product. This featured offer is seen on Detail Page on an ASIN.
+LoyaltyPointsStructSpecifies loyalty points related information for an offer (Currently only supported in the Japan marketplace)
+MerchantInfoStructSpecifies merchant information of an offer
+PriceStructSpecifies buying price of an offer
+TypeStringSpecifies the type of offer if there is a special distinction. Most listings will not have a type, such as regular listings and non-lightning deals.
+Valid Values:
+LIGHTNINGDEAL, SUBSCRIBEAND_SAVE
+ViolatesMAPBooleanSpecifies whether an offer violates MAP policy or not. Please refer to this for more details
+Sample Response
+{
+"itemsResult": {
+"items": [
+{
+"asin": "B00MNV8E0C",
+"detailPageURL": "https://www.amazon.com/dp/B00MNV8E0C?tag=example&linkCode=ogi&th=1&psc=1",
+"offersV2": {
+"listings": [
+{
+"availability": {
+"maxOrderQuantity": 1,
+"minOrderQuantity": 1,
+"type": "IN_STOCK"
+},
+"condition": {
+"conditionNote": "",
+"subCondition": "Unknown",
+"value": "New"
+},
+"dealDetails": {
+"accessType": "PRIME_EXCLUSIVE",
+"endTime": "2024-11-06T05:35Z",
+"percentClaimed": 38,
+"startTime": "2024-11-05T18:05Z"
+},
+"isBuyBoxWinner": true,
+"merchantInfo": {
+"name": "Amazon.com"
+},
+"price": {
+"money": {
+"amount": 59.49,
+"currency": "USD",
+"displayAmount": "$59.49"
+},
+"pricePerUnit": {
+"amount": 29.75,
+"currency": "USD",
+"displayAmount": "$29.75 / Count"
+},
+"savingBasis": {
+"money": {
+"amount": 69.99,
+"currency": "USD",
+"displayAmount": "$69.99"
+},
+"savingBasisType": "LIST_PRICE",
+"savingBasisTypeLabel": "List Price"
+},
+"savings": {
+"money": {
+"amount": 10.5,
+"currency": "USD",
+"displayAmount": "$10.50"
+},
+"percentage": 15
+}
+},
+"type": "LIGHTNING_DEAL",
+"violatesMAP": false
+}
+]
+}
+}
+]
+}
+}
+Availability
+Attribute NameTypeDescription
+MaxOrderQuantityIntegerSpecifies the maximum quantity of a product that can be purchased
+MessageStringSpecifies availability message of a product
+MinOrderQuantityIntegerSpecifies minimum number of quantity needed to make purchase of a product
+TypeStringDescribe about the availability type of product.
+Valid Values:
+AVAILABLEDATE, INSTOCK, INSTOCKSCARCE, LEADTIME,
+OUTOFSTOCK, PREORDER, UNAVAILABLE, UNKNOWN
+More detail on Availability Types:
+StatusDescription
+AVAILABLE_DATEThe item is not available, but will be available on a future date.
+IN_STOCKThe item is in stock.
+INSTOCKSCARCEThe item is in stock, but stock levels are limited.
+LEADTIMEThe item is only available after some amount of lead time (order received to order shipped time)
+OUTOFSTOCKThe item is currently out of stock.
+PREORDERThe item is not yet available, but can be pre-ordered.
+UNAVAILABLEThe item is not available
+UNKNOWNUnknown availability
+Sample Response
+{
+"availability": {
+"maxOrderQuantity": 30,
+"message": "In Stock",
+"minOrderQuantity": 1,
+"type": "IN_STOCK"
+}
+}
+Condition
+For Offers with value New, there will not be a specified ConditionNote and SubCondition will be Unknown
+Attribute NameTypeDescription
+ConditionNoteStringSpecifies the product condition as provided by the seller. May be blank
+ValueStringSpecifies the offer condition.
+Valid Values: New, Used, Refurbished, Unknown
+SubConditionStringSpecifies the SubCondition of an offer
+Valid Values: LikeNew, Good, VeryGood, Acceptable, Refurbished, OEM, OpenBox, Unknown
+Sample Response
+{
+"condition": {
+"conditionNote": "",
+"subCondition": "Unknown",
+"value": "New"
+}
+}
+DealDetails
+This field will only be populated if there is a deal associated with the listing. The existence of this field (when  requested) implies the existence of a deal.
+The easiest way to find deals on Amazon is by visiting https://www.amazon.com/deals, or the appropriate equivalent in your  marketplace of choice.
+Attribute NameTypeDescription
+AccessTypeStringSpecifies which customers can claim the deal (everyone or only Prime members).
+Prime Early Access is available to Prime members first (for time specified by EarlyAccessDurationInMilliseconds) before becoming available to everyone.
+Valid Values: ALL, PRIMEEARLYACCESS, PRIME_EXCLUSIVE.
+BadgeStringSpecifies a badge to accompany the deal.
+Example Values: Limited Time Deal, With Prime, Black Friday Deal, Ends In
+EarlyAccessDurationInMillisecondsIntegerSpecifies the number of milliseconds that a deal is first available to Prime members only, if applicable
+EndTimeStringSpecifies the UTC deal end time. It is possible for the deal to end sooner (For example: sold out)
+PercentClaimedStringSpecifies how much capacity of a deal is already consumed. Not available on all deal types.
+StartTimeStringSpecifies the UTC deal start time
+More detail on Deal Badge:
+The deal Badge is a string that can be displayed to accompany the deal. It may describe the kind of deal (Ex:  Limited Time Deal, Black Friday Deal), a particular aspect of the deal (Ex: With Prime on prime exclusive deals), or  some other form of information about the deal. For deals that are ending soon, this badge will often display "Ends  In" - this can be used in conjunction with the EndTime parameter if you wish to implement a countdown timer.
+More detail on start/end time
+There is no guarantee that there will be a start/end time specified in the response (as applies to any PA-API field, which may or may not be present). Deals that do not have a start/end time are running indefinitely, and do not have a pre-defined running duration. In this case, the existence of the DealDetails object in the response means that the deal is live at the time of the call.
+Please note that a Prime Early Access Deal is only available to Prime customers for the specified early access duration, before becoming available to all customers specified by the StartTime when present.
+Sample Response
+Limited Time Deal
+{
+"dealDetails": {
+"accessType": "ALL",
+"badge": "Limited time deal",
+"endTime": "2025-03-02T07:59:59Z",
+"startTime": "2025-02-16T08:00Z"
+}
+}
+Deal that is ending soon
+{
+"dealDetails": {
+"accessType": "PRIME_EARLY_ACCESS",
+"badge": "Ends in ",
+"earlyAccessDurationInMilliseconds": 1800000,
+"endTime": "2025-02-21T05:35Z",
+"percentClaimed": 35,
+"startTime": "2025-02-20T18:05Z"
+}
+}
+LoyaltyPoints
+Loyalty Points is an Amazon Japan only program. See https://www.amazon.co.jp/-/en/gp/help/customer/display.html?nodeId=GGB6FCM85P9UKC7T
+Attribute NameTypeDescription
+PointsIntegerSpecifies loyalty points associated with an offer
+Sample Response
+{
+"loyaltyPoints": {
+"points": 10
+}
+}
+MerchantInfo
+Attribute NameTypeDescription
+IdStringUnique identifier for merchant/seller
+NameStringThe name of merchant/seller
+Sample Response
+{
+"merchantInfo": {
+"id": "ATVPDKIKX0DER",
+"name": "Amazon.com"
+}
+}
+Price
+Please note that the price served is a default based on an in-marketplace shipping address. The price returned by the  API may differ from what any specific customer sees due to a variety of factors.
+Attribute NameTypeDescription
+MoneyMoneySpecifies buying amount of an offer
+PricePerUnitMoneySpecifies price per unit. DisplayAmount includes unit formatting
+SavingBasisStructSpecifies the currency associate with the buying amount
+SavingsStructSpecifies savings on an offer. This is the difference between the Price Money and the SavingBasis Money
+Sample Response
+{
+"price": {
+"money": {
+"amount": 59.49,
+"currency": "USD",
+"displayAmount": "$59.49"
+},
+"pricePerUnit": {
+"amount": 29.75,
+"currency": "USD",
+"displayAmount": "$29.75 / Count"
+},
+"savingBasis": {
+"money": {
+"amount": 69.99,
+"currency": "USD",
+"displayAmount": "$69.99"
+},
+"savingBasisType": "LIST_PRICE",
+"savingBasisTypeLabel": "List Price"
+},
+"savings": {
+"money": {
+"amount": 10.5,
+"currency": "USD",
+"displayAmount": "$10.50"
+},
+"percentage": 15
+}
+}
+}
+SavingBasis
+Reference Value Which is used to calculate savings against
+Attribute NameTypeDescription
+MoneyMoneySpecifies saving basis money information
+SavingBasisTypeStringSpecifies type of saving basis.
+Valid Values: LISTPRICE, LOWESTPRICE, LOWESTPRICESTRIKETHROUGH, WAS_PRICE
+SavingBasisTypeLabelStringLabel String that can be included next to the saving basis amount.
+Sample Response
+{
+"savingBasis": {
+"money": {
+"amount": 69.99,
+"currency": "USD",
+"displayAmount": "$69.99"
+},
+"savingBasisType": "LIST_PRICE",
+"savingBasisTypeLabel": "List Price"
+}
+}
+Savings
+Savings of an Offer
+Attribute NameTypeDescription
+MoneyMoneySpecifies savings money information
+PercentageIntegerSpecifies savings percentage on an offer
+Sample Response
+{
+"savings": {
+"money": {
+"amount": 10.5,
+"currency": "USD",
+"displayAmount": "$10.50"
+},
+"percentage": 15
+}
+}
+Money
+Common Struct used for representing money
+Attribute NameTypeDescription
+AmountBigDecimalSpecifies amount
+CurrencyStringSpecifies the currency associate with the buying amount
+DisplayAmountStringSpecifies formatted amount
+Relevant Operations
+Operations that can use these resources include:
+GetItems
+SearchItems
+GetVariations
+Appendix
+Minimum Advertising Price
+Some manufacturers have a minimum advertised price (MAP) that can be displayed on Amazon.com. When the Amazon price is lower than the MAP, the manufacturer does not allow the price to be shown until the customer takes further action, such as placing the item in their shopping cart, or in some cases, proceeding to the final checkout stage. Customers need to go to Amazon to see the price on the retail website, but won't be required to purchase the product.
+Offersv1 to Offersv2 Field Mapping
+The following table provides a comprehensive mapping of all fields from the legacy Offers resource to the new OffersV2 resource. Fields marked as "Not Available" have been intentionally discontinued in OffersV2. OffersV2 provides only featured listings as shown to retail customers on Amazon Detail Page buybox, which represent the best overall offers for the product. If there are no featured offers, OffersV2 will show status as out of stock.
+OffersV1 FieldOffersV2 Field
+Core Structure
+Offers.ListingsOffersV2.Listings
+Offers.SummariesNot Available
+Offers.Summaries.ConditionNot Available
+Offers.Summaries.HighestPriceNot Available
+Offers.Summaries.LowestPriceNot Available
+Offers.Summaries.OfferCountNot Available
+Availability
+Offers.Listings.Availability.MaxOrderQuantityOffersV2.Listings.Availability.MaxOrderQuantity
+Offers.Listings.Availability.MessageOffersV2.Listings.Availability.Message
+Offers.Listings.Availability.MinOrderQuantityOffersV2.Listings.Availability.MinOrderQuantity
+Offers.Listings.Availability.TypeOffersV2.Listings.Availability.Type
+Condition
+Offers.Listings.Condition.ValueOffersV2.Listings.Condition.Value
+Offers.Listings.Condition.SubCondition.ValueOffersV2.Listings.Condition.SubCondition
+Offers.Listings.Condition.ConditionNote.ValueOffersV2.Listings.Condition.ConditionNote
+DeliveryInfo
+Offers.Listings.DeliveryInfo.IsAmazonFulfilledNot Available
+Offers.Listings.DeliveryInfo.IsFreeShippingEligibleNot Available
+Offers.Listings.DeliveryInfo.IsPrimeEligibleNot Available
+Offers.Listings.DeliveryInfo.ShippingChargesNot Available
+Listing Core Fields
+Offers.Listings.IdNot Available
+Offers.Listings.IsBuyBoxWinnerOffersV2.Listings.IsBuyBoxWinner
+Offers.Listings.ViolatesMAPOffersV2.Listings.ViolatesMAP
+LoyaltyPoints
+Offers.Listings.LoyaltyPoints.PointsOffersV2.Listings.LoyaltyPoints.Points
+MerchantInfo
+Offers.Listings.MerchantInfo.DefaultShippingCountryNot Available
+Offers.Listings.MerchantInfo.FeedbackCountNot Available
+Offers.Listings.MerchantInfo.FeedbackRatingNot Available
+Offers.Listings.MerchantInfo.IdOffersV2.Listings.MerchantInfo.Id
+Offers.Listings.MerchantInfo.NameOffersV2.Listings.MerchantInfo.Name
+Price
+Offers.Listings.Price.AmountOffersV2.Listings.Price.Money.Amount
+Offers.Listings.Price.CurrencyOffersV2.Listings.Price.Money.Currency
+Offers.Listings.Price.DisplayAmountOffersV2.Listings.Price.Money.DisplayAmount
+Offers.Listings.Price.PricePerUnitOffersV2.Listings.Price.PricePerUnit
+ProgramEligibility
+Offers.Listings.ProgramEligibility.IsPrimeExclusiveNot Available
+Offers.Listings.ProgramEligibility.IsPrimePantryNot Available
+Promotions
+Offers.Listings.PromotionsNot Available
+SavingBasis
+Offers.Listings.SavingBasis.AmountOffersV2.Listings.Price.SavingBasis.Money.Amount
+Offers.Listings.SavingBasis.CurrencyOffersV2.Listings.Price.SavingBasis.Money.Currency
+Offers.Listings.SavingBasis.DisplayAmountOffersV2.Listings.Price.SavingBasis.Money.DisplayAmount
+New in OffersV2
+N/AOffersV2.Listings.DealDetails
+N/AOffersV2.Listings.DealDetails.AccessType
+N/AOffersV2.Listings.DealDetails.Badge
+N/AOffersV2.Listings.DealDetails.EarlyAccessDurationInMilliseconds
+N/AOffersV2.Listings.DealDetails.EndTime
+N/AOffersV2.Listings.DealDetails.PercentClaimed
+N/AOffersV2.Listings.DealDetails.StartTime
+N/AOffersV2.Listings.Price.SavingBasis
+N/AOffersV2.Listings.Price.SavingBasis.SavingBasisType
+N/AOffersV2.Listings.Price.SavingBasis.SavingBasisTypeLabel
+N/AOffersV2.Listings.Price.Savings
+N/AOffersV2.Listings.Price.Savings.Money
+N/AOffersV2.Listings.Price.Savings.Percentage
+N/AOffersV2.Listings.Type
+Operating agreement
+Program policies
+Conditions of use
+Contact us
+© 1996-2025, Amazon.com, Inc.

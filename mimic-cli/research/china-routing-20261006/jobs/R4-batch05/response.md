@@ -1,0 +1,471 @@
+已按冻结样本独立复核；以下把“访问状态纠正”和“市场不可得”严格分开。
+
+本轮保持 9 个冻结 SKU 不变，审计分母为 **9 SKU × 2 平台=18 个唯一平台单元**；对应三份 W4 报告共 **27 个 report-SKU、54 个 report-platform 单元**。最重要的纠正是：三份 W4 都把两平台统一写成 `BLOCKED`，但 2026-10-06 实际重开原始入口后，**Temu 9/9 搜索 URL 均返回可识别的 Temu HTML 搜索壳页、但无可读商品行，应记 `page_shell`；AliExpress 9/9 美国搜索 URL 均被重定向至 `login.aliexpress.com/sync_cookie_read.htm`，应记 `login_required`**。因此三批的“不可形成可用 offer”结论仍成立，但访问状态需要纠正；尤其不能把这些状态推导成 `VERIFIED_UNAVAILABLE`。:chatgpt-content-reference{index="0"} ([Invalid URL]())
+
+同时重开原报告给出的 AliExpress 商品候选：DDPAI、Cloud Up Pro 2、P2S Combo、Space Pi V2 Plus 的 `.com/item/...` 均无法读取；M800 的 `.us/item/...` 明确跳登录同步；A1 短链也不可读取。故这些候选只能保留为**线索层**，不能核实卖家、SKU/variant、是否原厂/OEM/转售、库存、US warehouse、美国区域可售性、普通公开价或 ZIP10001 运费。任何第三方缓存价格或搜索摘要均未升级为覆盖证据。([Invalid URL]())
+
+版本边界方面，W4 的若干谨慎判断得到支持：70mai 美国一级页当前叫 **Dash Cam 4K M800**，明确内置 **128GB eMMC** 且 4G 需另配硬线套件，因此不能自动等同冻结的“M800Pro/无卡”版本；DDPAI MINI PRO 4K 一级页存在且当前显示 sold out，但只有机身/硬线套件选项，未证明冻结套餐。:chatgpt-content-reference{index="3"} Naturehike 官方页明确 Cloud Up Pro 2P、20D，并有灰红产品图，但这只能增强产品族映射，不能推翻冻结的 `C14-S03 exact_variant_verified=false`。:chatgpt-content-reference{index="4"} Bambu 官方明确 **P2S Combo 默认含 AMS 2 Pro**；Creality 则明确 Space Pi V2 Plus 的 US Plug `4005010154` 与 CN Plug `4005010166` 分号，故地区/套装必须继续作为 exact 维度。:chatgpt-content-reference{index="5"} Li-Ning 页面只说明 Halbertec 5000 约 84g、处于 4U/3U 边界，不能单独证明“4U 空拍”；Mobi Garden 官方索引支持 NXZQU61017=Cold Mountain 2 PLUS/Mist White A，但本轮未从目标平台得到红灰 exact offer。:chatgpt-content-reference{index="6"} Bambu A1 美国官方商品页本轮直接请求返回 402，因此原报告所述“US warehouse”不能在本轮重新独立确认。([Invalid URL]())
+
+冻结分层不改：verified-head 仍为 **C13-S01、C13-S02、C15-S01（3/9）**，其余 **6/9** 保持非 verified-head；`C14-S03` 的 exact 仍为 provisional/false。最终可用的目标平台 **exact/OEM/comparable/reseller 直接覆盖=0/18；可用 exact 普通价比较=0/18；verified landed savings=0/18**。三份 W4 的核心保守结论“没有直接可核 marketplace offer、不能计算节省、不能判无货”可保留，但“18/18 BLOCKED”需按上述 `page_shell`/`login_required` 重编码。
+
+```json
+{
+  "job_id": "R4-batch05",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "review_performed": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "audited_jobs": [
+    "W4-A-batch05",
+    "W4-B-batch05",
+    "W4-C-batch05"
+  ],
+  "observation_audits": [
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C13-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu应细分为PAGE_SHELL；AliExpress应细分为LOGIN_REQUIRED，不能合并为18/18 BLOCKED。",
+      "caveat": "未从目标平台原页直接核实seller、M800Pro精确版本、OEM/转售、库存、US仓或普通送达价；M800一级页不能替代M800Pro平台覆盖。",
+      "source_ids": ["S01", "S02", "S19", "S28"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C13-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "MINI PRO 4K产品族可确认，但目标平台seller、360度/无卡套餐、库存、仓库和普通价均未直接观察。",
+      "source_ids": ["S03", "S04", "S20", "S29"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C13-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "70mai Cordless Air Compressor 2一级产品存在，但不能自动映射青春版2 2026新款；平台seller/库存/仓库/价格均未核。",
+      "source_ids": ["S05", "S06", "S21"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C14-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "NXZQU61017产品身份有一级索引线索，但冻结红灰版本、平台seller、库存、US仓和价格均未核。",
+      "source_ids": ["S07", "S08", "S22"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C14-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "一级页约84g不足以锁定4U空拍；目标平台4U、未穿线、seller、库存、仓库和价格均未直接核。",
+      "source_ids": ["S09", "S10", "S23"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C14-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED/候选item不可读；冻结exact_variant_verified=false不变。",
+      "caveat": "官方2P、20D、灰红证据仅增强产品族映射；AliExpress候选原页不可读，不能升级exact/OEM覆盖。",
+      "source_ids": ["S11", "S12", "S24", "S30"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C15-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED/候选item不可读。",
+      "caveat": "P2S Combo exact需锁AMS 2 Pro；目标平台seller、库存、仓库和普通价均未直接核。",
+      "source_ids": ["S13", "S14", "S25", "S31"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C15-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED；A1候选短链不可读。",
+      "caveat": "冻结要求大陆版单机；本轮Bambu美国A1一级页亦返回402，不能重核US warehouse，更不能把泛区域A1算exact。",
+      "source_ids": ["S15", "S16", "S26", "S32"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "sku_id": "C15-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED/候选item不可读。",
+      "caveat": "Creality一级页明确US/CN插头料号不同；目标平台大陆版、seller、库存、仓库及价格仍未核。",
+      "source_ids": ["S17", "S18", "S27", "S33"]
+    },
+
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C13-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED，不应统一写BLOCKED。",
+      "caveat": "M800Pro平台精确版本、seller、OEM/转售、库存、仓库、普通价均未直接核。",
+      "source_ids": ["S01", "S02", "S19", "S28"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C13-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "Ali候选item不可读；第三方seller/价格缓存不得升级为当前美国区精确覆盖。",
+      "source_ids": ["S03", "S04", "S20", "S29"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C13-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "全球Cordless Air Compressor 2不能证明青春版2 2026新款平台exact。",
+      "source_ids": ["S05", "S06", "S21"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C14-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "冻结红灰变体与当前一级索引Mist White A存在版本边界；目标平台原始offer未读。",
+      "source_ids": ["S07", "S08", "S22"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C14-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "4U与未穿线必须同时确认；当前目标平台原页未确认任一项。",
+      "source_ids": ["S09", "S10", "S23"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C14-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；item 1005008302503831仍不可读。",
+      "caveat": "产品族/20D/灰红一级信息较强，但冻结exact=false且平台variant selector未核。",
+      "source_ids": ["S11", "S12", "S24", "S30"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C15-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；P2S候选item不可读。",
+      "caveat": "官方确认P2S Combo默认AMS 2 Pro，但Ali seller/套装/库存/US仓/普通价未核。",
+      "source_ids": ["S13", "S14", "S25", "S31"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C15-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "大陆版单机要求保留；泛A1或零件搜索结果不能作为打印机exact。",
+      "source_ids": ["S15", "S16", "S26", "S32"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "sku_id": "C15-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED/候选item不可读。",
+      "caveat": "US/CN plug item number差异经一级页确认；平台实际出售地区版仍未知。",
+      "source_ids": ["S17", "S18", "S27", "S33"]
+    },
+
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C13-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索及已给出的US item均触发LOGIN_REQUIRED。",
+      "caveat": "论坛相邻链接仍不能绑定为M800Pro exact；无seller/variant/库存/仓库/普通价。",
+      "source_ids": ["S01", "S02", "S19", "S28"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C13-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；item 1005002382643295不可读。",
+      "caveat": "二手索引可保留为候选线索，但不可证明无卡套餐、当前stock、US仓或普通价。",
+      "source_ids": ["S03", "S04", "S20", "S29"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C13-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "未直接观察青春版2 2026新款平台offer；相近70mai型号不得替代。",
+      "source_ids": ["S05", "S06", "S21"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C14-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "NXZQU61017一级索引当前为Mist White A；冻结红灰版本的平台exact仍未证明。",
+      "source_ids": ["S07", "S08", "S22"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C14-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED。",
+      "caveat": "一级页只能支持Halbertec 5000产品族，不能锁4U空拍平台variant。",
+      "source_ids": ["S09", "S10", "S23"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C14-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；item 1005008302503831不可读；exact=false保持。",
+      "caveat": "官方2P/20D/灰红不能替代Ali原页variant/seller/stock验证。",
+      "source_ids": ["S11", "S12", "S24", "S30"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C15-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；item 1005010542893160不可读。",
+      "caveat": "P2S Combo须含AMS 2 Pro才能满足官方Combo边界；候选页未能核实。",
+      "source_ids": ["S13", "S14", "S25", "S31"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C15-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress=LOGIN_REQUIRED；A1短链不可读。",
+      "caveat": "大陆版单机地区身份未核；本轮美国官方A1页402，故W4-C关于US warehouse的一级页陈述未在本轮重验证。",
+      "source_ids": ["S15", "S16", "S26", "S32"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "sku_id": "C15-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Temu=PAGE_SHELL；AliExpress搜索=LOGIN_REQUIRED；item 1005012405130661不可读。",
+      "caveat": "一级页确认US/CN Plug料号不同，因此二手索引不能直接证明大陆版exact或US仓。",
+      "source_ids": ["S17", "S18", "S27", "S33"]
+    }
+  ],
+  "claim_audits": [
+    {
+      "original_job_id": "W4-A-batch05",
+      "claim": "18/18 target marketplace cells were BLOCKED.",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "Temu 9/9 are better coded PAGE_SHELL; AliExpress 9/9 are LOGIN_REQUIRED.",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "claim": "18/18 target marketplace cells were BLOCKED.",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "Temu 9/9 are PAGE_SHELL; AliExpress 9/9 redirect to a login-cookie endpoint and are LOGIN_REQUIRED.",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "claim": "18/18 target marketplace cells were BLOCKED.",
+      "status": "CORRECTION_REQUIRED",
+      "correction": "AliExpress should not be collapsed into BLOCKED when the observed state is LOGIN_REQUIRED; Temu returned non-evidentiary page shells.",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-A-batch05",
+      "claim": "No seller/item/variant/inventory/US-warehouse/ordinary delivered price was directly verified on Temu or AliExpress.",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "Several AliExpress item IDs remain plausible leads, but their primary pages were not readable.",
+      "source_ids": ["S28", "S29", "S30", "S31", "S32", "S33"]
+    },
+    {
+      "original_job_id": "W4-B-batch05",
+      "claim": "No directly usable marketplace offer or savings comparison was established.",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "The evidence failure is access-related and cannot be interpreted as marketplace absence.",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"]
+    },
+    {
+      "original_job_id": "W4-C-batch05",
+      "claim": "AliExpress candidate item IDs are leads only and do not establish exact US coverage.",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "correction": null,
+      "caveat": "Primary candidate pages remained blocked or login-gated; no seller/variant/stock/warehouse/ZIP10001 quote was recovered.",
+      "source_ids": ["S28", "S29", "S30", "S31", "S32", "S33"]
+    }
+  ],
+  "sources": [
+    {"source_id":"S01","url":"https://www.temu.com/search_result.html?search_key=70mai%20M800Pro","title":"Temu search - 70mai M800Pro","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S02","url":"https://www.aliexpress.us/w/wholesale-70mai-m800pro.html","title":"AliExpress US search - 70mai M800Pro","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S03","url":"https://www.temu.com/search_result.html?search_key=DDPAI%20MINIPro%204K","title":"Temu search - DDPAI MINIPro 4K","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S04","url":"https://www.aliexpress.us/w/wholesale-DDPAI-MINIPro-4K.html","title":"AliExpress US search - DDPAI MINIPro 4K","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S05","url":"https://www.temu.com/search_result.html?search_key=70mai%20Youth%20Edition%202%20inflator","title":"Temu search - 70mai Youth Edition 2 inflator","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S06","url":"https://www.aliexpress.us/w/wholesale-70mai-Youth-Edition-2-inflator.html","title":"AliExpress US search - 70mai Youth Edition 2 inflator","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S07","url":"https://www.temu.com/search_result.html?search_key=MOBI%20GARDEN%20NXZQU61017","title":"Temu search - MOBI GARDEN NXZQU61017","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S08","url":"https://www.aliexpress.us/w/wholesale-MOBI-GARDEN-NXZQU61017.html","title":"AliExpress US search - MOBI GARDEN NXZQU61017","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S09","url":"https://www.temu.com/search_result.html?search_key=Li-Ning%20Halbertec%205000%204U","title":"Temu search - Li-Ning Halbertec 5000 4U","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S10","url":"https://www.aliexpress.us/w/wholesale-Li-Ning-Halbertec-5000-4U.html","title":"AliExpress US search - Li-Ning Halbertec 5000 4U","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S11","url":"https://www.temu.com/search_result.html?search_key=Naturehike%20Cloud%20Up%20Pro%202P%2020D","title":"Temu search - Naturehike Cloud Up Pro 2P 20D","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S12","url":"https://www.aliexpress.us/w/wholesale-Naturehike-Cloud-Up-Pro-2P-20D.html","title":"AliExpress US search - Naturehike Cloud Up Pro 2P 20D","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S13","url":"https://www.temu.com/search_result.html?search_key=Bambu%20Lab%20P2S%20Combo","title":"Temu search - Bambu Lab P2S Combo","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S14","url":"https://www.aliexpress.us/w/wholesale-Bambu-Lab-P2S-Combo.html","title":"AliExpress US search - Bambu Lab P2S Combo","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S15","url":"https://www.temu.com/search_result.html?search_key=Bambu%20Lab%20A1%20mainland%20standalone","title":"Temu search - Bambu Lab A1 mainland standalone","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S16","url":"https://www.aliexpress.us/w/wholesale-Bambu-Lab-A1-mainland-standalone.html","title":"AliExpress US search - Bambu Lab A1 mainland standalone","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+    {"source_id":"S17","url":"https://www.temu.com/search_result.html?search_key=Creality%20Space%20Pi%20V2%20Plus%20mainland","title":"Temu search - Creality Space Pi V2 Plus mainland","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"page_shell","claims_supported":["K01","K04"]},
+    {"source_id":"S18","url":"https://www.aliexpress.us/w/wholesale-Creality-Space-Pi-V2-Plus-mainland.html","title":"AliExpress US search - Creality Space Pi V2 Plus mainland","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K02","K04"]},
+
+    {"source_id":"S19","url":"https://www.70mai.com/us/m800/","title":"70mai Dash Cam 4K M800","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S20","url":"https://store.ddpai.com/products/mini-pro-4k","title":"DDPAI MINI PRO 4K","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S21","url":"https://70mai.store/collections/auto-accessories/products/tp07","title":"70mai Cordless Air Compressor 2","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S22","url":"https://mobigarden.shop/tent/?max_price=430&min_price=0&per_page=9&shop_view=list","title":"Mobi Garden Tent / Cold Mountain Plus","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"snippet_only","claims_supported":["K06"]},
+    {"source_id":"S23","url":"https://li-ning.co.uk/product/li-ning-halbertec-5000/","title":"Li-Ning Halbertec 5000","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S24","url":"https://www.naturehike.com/products/cloud-up-pro-2-person-ultralight-backpacking-tent","title":"Naturehike Cloud Up Pro 2-Person","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S25","url":"https://blog.bambulab.com/the-icon-redefined-meet-the-p2s-a-completely-reengineered-version-of-the-ultra-productive-p1-series/","title":"Bambu Lab - The Icon Redefined: Meet the P2S","published_at":"2025-10-14","retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+    {"source_id":"S26","url":"https://us.store.bambulab.com/products/a1?variant=41583355232392","title":"Bambu Lab US Store A1","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K06"]},
+    {"source_id":"S27","url":"https://mvip.creality.com/en/goods/goodsDetail/2645","title":"Creality Space Pi V2 Plus Filament Dryer","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"read_full_page","claims_supported":["K06"]},
+
+    {"source_id":"S28","url":"https://www.aliexpress.us/item/3256812035378209.html","title":"AliExpress US item 3256812035378209 - 70mai candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"login_required","claims_supported":["K03"]},
+    {"source_id":"S29","url":"https://www.aliexpress.com/item/1005002382643295.html","title":"AliExpress item 1005002382643295 - DDPAI candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]},
+    {"source_id":"S30","url":"https://www.aliexpress.com/item/1005008302503831.html","title":"AliExpress item 1005008302503831 - Naturehike candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]},
+    {"source_id":"S31","url":"https://www.aliexpress.com/item/1005010542893160.html","title":"AliExpress item 1005010542893160 - Bambu P2S candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]},
+    {"source_id":"S32","url":"https://a.aliexpress.com/_c4V2grMn","title":"AliExpress short link - Bambu A1 candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]},
+    {"source_id":"S33","url":"https://www.aliexpress.com/item/1005012405130661.html","title":"AliExpress item 1005012405130661 - Creality Space Pi V2 Plus candidate","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]}
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "All nine frozen-SKU Temu search URLs returned Temu search-page shells without readable SKU offer rows in this audit channel.",
+      "classification": "FACT",
+      "source_ids": ["S01","S03","S05","S07","S09","S11","S13","S15","S17"],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "All nine frozen-SKU AliExpress US search URLs redirected to an AliExpress login-cookie synchronization endpoint and are therefore LOGIN_REQUIRED rather than VERIFIED_UNAVAILABLE.",
+      "classification": "FACT",
+      "source_ids": ["S02","S04","S06","S08","S10","S12","S14","S16","S18"],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "Specific AliExpress candidate item URLs cited in the W4 reports could not be read as current primary offers; one US item redirected to login and the remaining tested item/short URLs were blocked.",
+      "classification": "FACT",
+      "source_ids": ["S28","S29","S30","S31","S32","S33"],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "No target-platform primary page directly verified seller, exact/OEM/comparable/reseller classification, current stock, US warehouse, exact regional variant, ordinary public price, or ZIP10001 delivered price for any of the 18 unique SKU-platform cells.",
+      "classification": "FACT",
+      "source_ids": ["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S12","S13","S14","S15","S16","S17","S18"],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "The frozen strata remain unchanged: verified-head SKUs are C13-S01, C13-S02 and C15-S01; the other six remain non-verified-head, and C14-S03 remains exact_variant_verified=false.",
+      "classification": "FACT",
+      "source_ids": [],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Manufacturer evidence supports strict variant boundaries, including M800 built-in eMMC, Naturehike 2P/20D grey-red identity, P2S Combo with AMS 2 Pro, and distinct Creality US/CN plug item numbers; none substitutes for marketplace coverage.",
+      "classification": "FACT",
+      "source_ids": ["S19","S20","S21","S22","S23","S24","S25","S26","S27"],
+      "confidence": "high"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "Usable exact price comparisons, verified landed savings and usable exact marketplace coverage observations are all 0 of 18 unique SKU-platform cells.",
+      "classification": "INFERENCE",
+      "source_ids": ["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S12","S13","S14","S15","S16","S17","S18"],
+      "confidence": "high"
+    }
+  ],
+  "data_gaps": [
+    "18/18 unique SKU-platform cells still lack a readable primary offer with seller plus selected variant plus stock plus warehouse plus ordinary public price.",
+    "AliExpress current US browsing state is login-gated in this research channel; no login or cookie/account change was attempted.",
+    "Temu returned page shells without offer rows; absence of readable rows is not evidence of marketplace unavailability.",
+    "Known AliExpress candidate item IDs remain provisional leads only because their primary item pages were blocked/login-gated.",
+    "No verified ZIP10001 shipping amount, mandatory platform charges, ordinary delivered price, US warehouse confirmation, or landed savings can be calculated.",
+    "Bambu A1 US first-party page returned HTTP 402 in this audit, so the W4 US-warehouse statement was not independently reverified.",
+    "No order, checkout, payment, seller contact, account login or cookie-setting change was performed."
+  ]
+}
+```
+
+JSON 中已保留全部 27 个 `observation_audits`，没有删减或替换冻结 SKU。

@@ -1,0 +1,1441 @@
+### 行18558 调用 mcp__ccd_session__mark_chapter
+{"title": "DAG 测量与 DAG2 重写"}
+
+--- 行18559 结果
+Chapter marked: "DAG 测量与 DAG2 重写". Continue your current work.
+
+### 行18560 调用 mcp__ccd_turn__update_plan
+{"items": [{"content": "查 DAG 标准和现有测法工具", "status": "in_progress"}, {"content": "按 11-08 DAG 标准测现在的线和珠子", "status": "pending"}, {"content": "按测量结果决定 DAG 要不要改", "status": "pending"}, {"content": "DAG2 写稿层：按秒数定篇幅的揉写提示词", "status": "pending"}, {"content": "两首同步生成并全套测量", "status": "pending"}, {"content": "按剩余问题迭代直到都是轻微", "status": "pending"}], "scope": "continuation"}
+
+--- 行18561 结果
+Plan shown (6 steps).
+
+### 行18562 调用 Bash
+cd /d/musicclaude/_thread_evo_20261019; cat 标准.md; ls; tail -60 迭代准则.md
+
+--- 行18563 结果
+# 标准：DAG 的定稿（线和珠子）要做到什么
+
+DAG 只作 DAG2 的原料，这份标准是手段，可以由我凭端到端证据修改（见 `迭代准则.md` 第七节第 1 条）；目标是 `_video_public_20261104/大众版标准.md`，那份只有用户能改。所有评审提示词都从这里来。出处、用户原话和演变判断存档在 `标准_材料/标准修订稿_DAG_1108_带原话.md`，不喂给模型。11-08 用户同意本版。
+
+**范围：**DAG 的定稿（珠子 + 线）只作 DAG2 的原料，不单独成为成品。所以这里只要求 DAG2 自己造不出来的东西：内容本身（这件事的实质、发展、方向，以及感受和处境的对应）。DAG2 自己做得了的（压缩、人话、不啰嗦、提炼要点、排主次）不在这里要求。
+
+
+## 内容维度
+
+### 1. 自身成立：只读线，不靠珠子，它自己是一篇完整、讲得通的东西吗？
+- 只读线、不看珠子，读者也知道这是谁、在经历什么，不需要珠子来补意思。
+- 推动它的是他自己的经历，不是音乐里发生了什么，不是珠子，也不是新编的事件、前史、对白或物件；珠子里的画面、比喻不变成他真的发生的事（不翻译珠子）。
+- 边界：只管“离开珠子讲不讲得通、有没有依据”；有没有发展是第 2 条；贴不贴核心是第 3 条；和珠子配不配是第 4 条。
+
+### 2. 往前发展：读下来，这件事在一步步往深处走吗？看得出他此刻为什么这样吗？
+- 有逻辑、有时序、内在在生长：前面经历过、明白了的，成为后面的理由；后面的，又让前面的意味更清楚。不是定理推论，也不是没组织。
+- 看得出他此刻为什么这样（why-now），但不靠生硬的“因为……所以……”。
+- 一步步往深处探索，不像在迷宫里来回；也不硬造“问题一点点被解决”。
+- 有解释力：一眼读得出有内容、有深度，而不是在描述。
+- 边界：只管发展和原因；讲不讲得通、有没有依据是第 1 条；方向对不对（是不是这首曲子的核心）是第 3 条。
+
+### 3. 贴 Center：讲的是这首曲子的核心那件事吗？
+- 整件事和全曲的核心（Center）连着，看得出痕迹；但不要求每一段都去回应它。
+- 边界：只管方向；发展得好不好是第 2 条。
+
+### 4. 对应：珠子里的体验，线给得出情境吗？对应关系写明了吗？
+- 每段的感受，在同一段的线里找得到情境相近的处境；相关就行，不逐颗解释，让人感到那种情境的性质即可。
+- 大体覆盖就够，不要求全覆盖；但珠子里的核心体验，线要给得出情境。
+- 写明哪条线对应哪几颗珠子（DAG2 揉在一起时按这个把感受织进他的处境）。
+- 边界：只管“接不接得上、写没写明”；读起来是否一体由 DAG2 负责（DAG2 第 2 条）。
+
+---
+
+### 底线：意思读得清楚
+- 每句话的意思读得清、不含糊，DAG2 不会照着读歪的意思去写。人话、不啰嗦不做要求：DAG2 会重写一遍（用户 11-06、11-08 的猜想；11-08 r79o 对 r80b 实验支持：DAG 层人话、不啰嗦差，DAG2 成品没有变差，见 DAG.md）。
+
+## 形态
+- 分段要点（原名“关系图”）：每段几条，每条一件事、一句完整自然的话；提到前面的内容直接提并标出处，不标关系类型；每段标他此刻和 Center 的关系。（10-21 结构化、10-30“直接去提 然后标一下引用”、11-04“关系图是老叫法 其实就是bullet”）
+
+## 不算缺点
+戏剧化、主观、只讲一个故事；没有外部动作；精确到小节不等于鲜活，不加分（10-21 “精确到小节的音乐事件凭什么是鲜活”）。
+
+---
+修订记录
+- 11-02：建立（按时间重读 10-18 至 11-02 用户原话）。
+- 11-08：按时间线重读 10-17 至 11-08 用户全部原话重修（用户：维度不正交、不啰嗦写太少、DAG 和 DAG2 分开拟定、DAG 只作 DAG2 原料）。单独成立拆成自身成立、往前发展、贴 Center；不翻译珠子归自身成立；去掉串成一体；接得上珠子改为对应；不啰嗦写全；另列三条候选。
+- 11-08（续）：用户同意“DAG 只作原料，标准只留 DAG2 造不出来的内容”。去掉不啰嗦、人话和三条候选（要点、原因、主次都由 DAG2 做），加底线“意思读得清楚”；这份标准改为可由我凭端到端证据修改。
+CONTINUATION_20261025.txt
+CONTINUATION_LATEST_20261025.json
+DAG
+DAG.md
+EXPERIMENT_LOG.tsv
+FINAL_INPUT_PROTOCOL.md
+FINAL_PROMPT.txt
+FINAL_PROMPT_TEMPLATE.txt
+FINAL_REDRAFT_PROMPT.txt
+FINAL_REDRAFT_WITH_BEADS_PROMPT.txt
+FINAL_REPORT.md
+GEMINI_ISSUE.md
+GPT3_ISSUE.md
+ITER_LOG.md
+PLAN_20261026.md
+PLAN_20261029.md
+PLAN_D13_20261025.md
+PLAN_v6修补_20261029.md
+PLAN_解释池_20261023.md
+PLAN_逐段构建线_20261023.md
+README_FIRST.md
+RESULTS.md
+SEGMENTATION.md
+STAGE2_ALIGNMENT_DRAFT.md
+STATUS.md
+THREAD_SPEC.md
+VERSIONS.md
+__pycache__
+_claude_token_audit_20261028
+_codex
+accept_final_25.py
+adapt_op61_graph_25.py
+advisor.py
+advisor2.py
+advisor_followup.py
+advisor_followup2.py
+align.py
+align
+
+### 行18576 调用 Bash
+cd /d/musicclaude/_thread_evo_20261019; tail -40 DAG.md; ls runs | tail -30
+
+--- 行18577 结果
+  - 语言风格为什么几轮不变（11-01 下午，GPT 两条通道都在保护中，只用 Argon / Gemini 做，未做 GPT 测量）：
+    - 根子在中游，不在后置层：N06 把每条定义为“他此刻感到什么、想要什么、怕什么、做了什么、发现了什么”（= 他＋心理动词）；N05/N06/N08 都要求每段说出因果；之后 N08、N09b、N09c、N10c 全是“逐条重说、条目数量顺序不变、第三人称他”，写的人始终看着原句改，模子留下来。
+    - N09c 管不了评审最在意的累积问题：它规定“意思一点不能变、条目数量不变”，而评审说的“同一两难在后面几段反复重说、几个抽象词翻来覆去”是内容安排问题。N07 的“不要改窄”又让各层反复用同一个 Center 词。
+    - 换写法试验（`v6voice.py`，N08 v3）：在 d0 上压到六成字数 → Argon 写成半文言电报句，作废；在 h23 上按原长度，第三人称自由句式 / 第一人称 → 仍照抄原句（第一人称几乎只是“他”换“我”）；先由 Gemini 压成不成句的要点、只凭要点写 → 第一人称版转折词每百字 2.0→0.9、读着像说话，但长两成，还把“对方”写成“他”。Gemini 开放评审对五种写法给出同样两条主要意见（词汇窄、原地打转），分数没有提高（h23 7/6，第一人称要点版 5/6，第三人称要点版 6.8/6）。结论：人称和句式换不掉评审说的问题。
+    - N09d 按累积意见改内容（`v6circle.py`）：只给累积意见，允许删重复、合并条目、用 Center 的不同侧面换掉重复的词，守住珠子靠的意思。Argon 写：几乎没动（还把删掉的“也”加了回来），Gemini 评 6/6；Gemini 写：意思动了，但变得文艺、更长（“情愫生长”“倾囊倒出”）。两次都不可用。
+    - 待 GPT 恢复：用 GPT-6 写 N09d，再测覆盖、盲评、开放评审；如果仍不行，改 N06 的条目定义和 N05 的“每段说因果”要求（从源头减少同一两难的重复）。
+    - MimicGate 恢复后（11-01 傍晚）：发现 `v6circle.py` 读累积意见时没打开 `_v2` 开关，上午 h26c/h26g 和第一次 h27 实际没读到或只读到部分意见（已修）。修好后 GPT-6 写的 h27（读到 Op.60 35 条、Op.61 14 条意见）仍只是逐条换说法：S07、S09 照样重说“想靠近—怕给压力—收住—仍盼回应”，字数还多了一成多。结论：只要旧线摆在写的人面前，结构就留下来，换谁写都一样；N09d 不进生产。
+    - 更大的问题（用户 11-01 指出）：h 线成品一直带着 10-21 的旧 Center（“……相互牵制”，正是 N04b 禁用的万能词），新 Center 只在 q 线里；修补 h 线等于绕开了 Center 层。旧 Center 本身就是一对“相互牵制”，我一度猜它是来回打转的来源——但 10-23 已实测“加不加 Center 次数一样，Center 不是原因”（THREAD_SPEC §十.7），此猜测不成立。
+    - 改源头（`dag_src3.py`，TAG=e）：N05 v3 = 10-23 已修正过的写稿规则（`draft9.py` S 版：去掉“试过什么、发现了什么”和 NOPLOT 里“试着怎样对待……结果发现了什么”，加“不要靠心理动作推动故事：劝自己、提醒自己、想通、找到办法、发现办法不管用、下决心”；THREAD_SPEC §十.7 实测这些是“办法→失效→换办法”来回摆的来源，可 DAG 的 N05 之前仍用修正前的 `line8`：10-31 整理 DAG 时照产出 v6 的代码抄了写稿层，没对照 THREAD_SPEC，所以 q 线和 h 线（源头 v6 = n8 稿）的底稿都出自修正前的提示词。今后改任何一层前先对照 THREAD_SPEC）＋一条“不重说”：写清的顾虑不再完整重说，感受延续时只写这一次的不同，想要的和怕的每次说具体那一面。第一次启动时“不重说”规则里写了“试了什么办法、在哪里不够用”，正好重犯 §十.7，写出 4 篇主线后作废重跑。N06 v5 条目改为“这一段新出现的一件事”（新感到的、新想要的、新怕的，或原有感受这一次的不同），前面已成条的顾虑用关系指回，条目不必都以“他”开头。盲读加“前后推进”分（advance，来回摆也算打转）和“最大的一处打转”，与上一轮 DAG 选中稿对照。下游照 q 线：N08（WRITE_PLAIN）→ N09/N09c → N10c 两轮 → N09/N09c/N10g/N09w → 覆盖、开放评审、单独读、对 h23 盲评两次。同时补测 q8w（覆盖、开放评审、对 h23 盲评）。
+    - q8w 补测（11-01）：覆盖 43–48/50、48–53/53；对 h23 盲评 8 份里 6 份选 h23（Op.60 人话 0–2:11–14）。用户指出这种比较没意义——两条线底稿、Center、修补历史全不同，比不出原因。
+    - 试过在 h23 上只换 Center（`v6recenter.py`，h23c；Op.60 42 条改 6 条，去掉“克制/压住”框架，但“以后落空”重复 3 次），用户说不是要以 h23 为底，已停。
+    - 今后评判：开放评审（`lang_open`，10-31 晚才开始用，未经用户校准）只用来找问题，它的分数不作验收。验收沿用用户认可过的：覆盖（`v6cov`）、单独读（`v6alone`）、同一条线新旧两版的盲比（`v6fix blind`，一次只改一处，重复 8 次）。不拿两条底稿不同的线整体盲比。主线回到 q8w（10-31 端到端 + 修补），在它上面按问题改；e 线跑完也只按这套看写稿修正有没有用。
+- **11-0
+
+### 行18586 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; cat r3/openabs.py; ls; ls r2 2>/dev/null | head
+
+--- 行18587 结果
+"""11-09 凌晨 绝对尺度的开放评审（两位顾问问诊 judge_check/openrev_* 后的共同方案）。
+旧开放评审没有绝对轻重标准，只有跨段问题标轻重；每版都报 5–13 条中等以上，盲比明显更好的版本严重条数不减反增，像是在每版内部重新排轻重。
+新版：每条问题都按固定的绝对尺度标轻重（只看对观众的实际影响，不看它是不是这一版最突出的）；只是“还能写得更好”的不算问题；
+出现次数多不自动升级；七条标准逐条给结论（过 / 有问题 / 不可评估）；没有达到门槛就写没有。
+python r3/openabs.py TAG [轮次标记]     结果 r3/s24/openA_{作品}_{评委}_{TAG}_{轮次}.json
+"""
+import sys
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import blend, prompt_lint
+from pub24 import S, rd, wr, call, parse, G6, G56, WORKS, view_text
+sys.stdout.reconfigure(encoding='utf-8')
+
+OPENA = """你是验收评审。下面是一首钢琴曲大众版“边听边看”视频的屏幕稿：普通观众第一次看，边听边扫，每段屏幕只停留写明的秒数。【】中的字放大加亮（话里有，长一点的感受里也可能有）；“感受”是小字短语；标“到时出现”的，音乐走到它对应的那几小节时才出现（那几小节里加亮），之后留在屏幕上，直到这一屏结束。
+
+请按下面的大众版标准做验收：逐条标准判断它在这份屏幕稿上过没过，再列出确实存在的问题。
+
+【轻重的绝对尺度——只按问题对观众的实际影响判断，不按它是不是这一版里最突出的问题判断】
+- 严重：在给定停留时间、第一次看的条件下，普通观众很可能看不懂这个人的关键经历、行动、必要的因果或核心的情绪转折；或者关键文字来不及读到，故事主干断开。
+- 中等：主要意思能看懂，但有明确的额外理解成本：要自己补因果、回头看、反复辨认，或者明显打断一次扫读的连贯。
+- 轻微：第一次扫读就能看懂，没有实质损失；只是措辞、局部重复、表达精度或节奏上可以更好。
+- 不构成问题：只是能想到别的写法、个人偏好、理论上的改进空间，没有可说明的观看损害——这类不要列出来。
+规则：
+1. 同一把尺子用在任何版本上。一份稿子即使只剩一个问题，它也可能只是轻微。
+2. 出现次数多不自动升级：一种轻微问题出现很多次，只有在确实造成累积的阅读负担时才算中等，并说明负担在哪里。
+3. 情感留白、需要稍微体会一下的细腻表达，不算理解成本。
+4. 第 5 条（定稿内容不丢）需要对照定稿原文，这里没有提供，标“不可评估”，不要因此报问题。
+5. 没有达到“轻微”门槛的地方，不用找；某条标准没有问题就写“过”。
+
+【标准】
+{STD}
+
+只输出 JSON：{"standards":[{"std":"1","verdict":"过|有问题|不可评估","note":"一句"}],"issues":[{"sec":"S05 或 跨段","std":"标准编号","quote":"原文（跨段的写两三处）","why":"对观众的实际影响是什么","severity":"严重|中等|轻微"}]}
+
+【屏幕稿】
+{SCREEN}
+"""
+prompt_lint.lint(OPENA, 'openabs.py')
+
+
+def one(a):
+    w, j, m, tag, run = a; p = S/f'openA2_{w}_{j}_{tag}_{run}.json'   # 11-09：openA2 = “到时出现”的描述改成和渲染器一致（到时出现、留到这屏结束）
+    if p.exists(): return rd(p)
+    msg = OPENA.replace('{STD}', blend.DAGSTD).replace('{SCREEN}', view_text(w, tag))
+    for k in range(3):
+        ans = call(f'pub24OA2_{w}_{j}_{tag}_{run}' + ('' if not k else f'_r{k}'), msg, m, 'gpt3s', 'public24-openabs')
+        try: r = parse(ans); assert 'issues' in r; wr(p, r); return r
+        except Exception as ex: print('不合格', w, j, tag, run, repr(ex)[:120], flush=True)
+
+
+def summary(tag, runs):
+    for w in WORKS:
+        for j in ('g6', 'g56'):
+            row = []
+            for run in runs:
+                p = S/f'openA2_{w}_{j}_{tag}_{run}.json'   # 11-09：openA2 = “到时出现”的描述改成和渲染器一致（到时出现、留到这屏结束）
+                if not p.exists(): row.append('缺'); continue
+       
+
+### 行18592 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import json
+d=json.load(open('r2/op60_src.json',encoding='utf-8'))
+print(d.keys())
+s=d['sections'][4]; print({k:(v if k!='beads' else None) for k,v in s.items() if k!='beads'})
+b=s['beads'][0]; print(json.dumps(b,ensure_ascii=False)[:800])
+print(len(d['sections']), sum(len(s['beads']) for s in d['sections']))
+E
+grep -n "DAGSTD\|def view_text\|center" blend.py pub24.py | head -20
+
+--- 行18593 结果
+dict_keys(['work', 'center', 'sections'])
+{'sec': 'S05', 'bars': '35–39', 'window': [159.32, 177.7], 'relation': '正在面对', 'lines': [{'id': 'S05-1', 'text': '前几次想说又收住，对方却一直愿意跟他亲近，这回他不知不觉就忘了藏好喜欢，等察觉时，对方已经看出他有多在乎。'}, {'id': 'S05-2', 'text': '先前藏着时还能装作没那么在乎，如今对方看出来了，他心里空落落的，连怎么跟对方待着都拿不准。'}, {'id': 'S05-3', 'text': '他忍不住担心对方会嫌自己太黏，连原本熟悉的亲近，在他心里也像忽然隔了一层。'}]}
+{"id": "S05-B1", "text": "原来一直托着你的水波和摇晃，忽然像被抽掉了。丰满的声音只剩下一条单薄、孤零零的旋律，在空中漫无目的地游走。人仿佛突然失去了脚下的支撑，连时间也松开了；像小船漂进一片起雾的水域，前路未卜。", "where": "35–39", "after": 0, "role": "主体验", "points": [{"id": "S05-B1-p1", "text": "原来一直托着你的水波和摇晃，忽然像被抽掉了。", "local": false, "windows": [[159.32, 177.7]]}, {"id": "S05-B1-p2", "text": "丰满的声音只剩下一条单薄、孤零零的旋律，在空中漫无目的地游走。", "local": false, "windows": [[159.32, 177.7]]}, {"id": "S05-B1-p3", "text": "人仿佛突然失去了脚下的支撑，连时间也松开了；", "local": false, "windows": [[159.32, 177.7]]}, {"id": "S05-B1-p4", "text": "像小船漂进一片起雾的水域，前路未卜。", "local": false, "windows": [[159.32, 177.7]]}]}
+14 50
+blend.py:26:{DAGSTD}
+blend.py:55:DAGSTD = _std2()   # 11-08：标准改版后，写手拿 DAG2 标准的内容 7 条（去掉写给人看的边界说明）
+blend.py:105:        prompt_lint.lint(tpl.replace('{BUDGET}', '').replace('{DAGSTD}', '').replace('{FINAL}', '').replace('{BEADS}', ''), os.environ['PUB_BL_PROMPT'])
+blend.py:106:    msg = tpl.replace('{DAGSTD}', DAGSTD).replace('{BUDGET}', budget(w)).replace('{FINAL}', lines_text(w)).replace('{BEADS}', beads_text(w))
+pub24.py:938:def view_text(w, tag):
+
+### 行18602 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; sed -n 1,120p blend.py
+
+--- 行18603 结果
+"""11-08 V2.03e 珠子和线真正揉在一起写屏幕稿。
+来由：用户 11-08：“注意你这现在应该是要把珠子和线揉在一起的 连贯和散落都是可行的 我看你这个rhp的还是分开来的是什么情况”。
+11-06 起的屏幕稿只是排版上下交替，内容仍按来源分开（大字只放线、小字只放珠子，relines 还写了“不把珠子的感受搬进线”）。
+这一版每行自己选形态：连贯（一句话，关键词放大）或散落（小字短语）；线的内容、珠子的内容都可以进任何一行。
+python blend.py NEW g6|g56      两首同写 → r3/s24/screen_{w}_{NEW}.json（连贯 → kind line，散落 → kind feel，供已有测法和 film_v8 用）
+"""
+import json, os, re, sys
+from concurrent.futures import ThreadPoolExecutor
+import pub16
+from pub24 import S, R2, R3, rd, wr, call, parse, G6, G56, WORKS, to_script, lines_text
+
+BLEND = """下面是一首钢琴曲大众版“边听边看”视频要用的材料。下半屏是音乐动画，上半屏是文字。观众是普通人，边听边扫，没读过任何原文；每段屏幕只停留写明的秒数。请写这首曲子全曲的屏幕稿。
+
+材料有两种来源，都已定稿：
+- 线：一个人经历的一件事（他想要什么、怕什么、为什么变了），把全曲串起来。
+- 珠子：听的人此刻心里和身上的感受，带着具体的画面、身体感觉、比喻；有的写明只属于某几小节。
+
+【这一版最重要的一条：珠子和线揉在一起写，不按来源分行】
+揉在一起是为了让屏幕内部连贯：观众读起来不在“他的事”和“一堆感受”之间来回跳，感受和这个人的处境挨在一起、接得上，像一回事。同时原来的内容要尽量保住（会测屏幕对定稿线和珠子的覆盖）。
+屏幕上每一行自己选一种形态：
+- 连贯：一句话，大字，其中 1–2 个关键词放大加亮。
+- 散落：几块小字短语，散开排，每块 3–8 个字，不带标点。
+两种形态都可以装线的内容，也都可以装珠子的内容，一行里也可以两者都有。例如一句连贯的话，前半是他的顾虑，后半是此刻身上的感受；线的一个要点也可以化成散落的短语，和珠子的短语放在一起。什么内容用什么形态，按观众这几秒里最省力、又最能感到“这个人为什么这样”和“音乐里这一刻的感受”来定，不必一行线一行感受地交替。
+
+【线和珠子定稿时用的标准，屏幕上照样要成立（定稿做到的不能丢）】
+{DAGSTD}
+
+【之前几轮试出来的规矩，照做】
+1. 因果不能丢：每段要让人知道他此刻为什么这样、和上一段比是什么让他变了。要保留的是关系，不是句法：原因和结果最好在同一句里用“可、却、所以、这才、反而”这类词连上，也可以紧挨着放在相邻两块里，但不能隔开到读者要自己拼。不要为了连贯造出定稿没有的因果，定稿里并列的东西也不要写成先后。连贯的句子一扫读得完，不用分号把几件事串成长句。
+2. 不改意思（会专门查）：定稿线里的疑问句仍是疑问句；猜测、拿不准的语气（也许、说不定、还不知道）不写成确定；担心不写成已经发生；具体说法不换成笼统的词；每段的落点、尤其全曲结尾要留住。不加定稿没有的事件、画面、动作、结论，不把珠子的比喻写成他真的经历的事。人物指代要清楚，不产生歧义。
+3. 珠子不翻译、不概括：保留珠子自己的具体画面、身体感觉、比喻、心里话、转折，不要换成笼统的情绪词；纯写音乐本身的（声部、和弦、调性）换成它带出的感受，不要术语。同一种感受只留最具体的一个说法；最核心的不能掉，具体的东西尽量都留住。
+4. 扫得动：内容密度按停留秒数定，靠重组、去重、突出关键词，不靠按原文顺序截断。下面给了每段秒数和现在视频这一段的字数，只作参照：之前的版本里，停留短的段字一多，评委就说“几秒钟扫不完”。
+5. 局部小节：标了“只属于某几小节”的珠子，它的内容尽量写成散落短语，并在 bars 里写明小节（如 12–14），这些短语到那几小节才出现；同一颗珠子的短语放在一起。
+6. 人话：完整句、短句、问句、感叹、短语都可以，像一个人平常讲自己的经历，句式多变，相邻两句不要彼此太像；散落的短语也要像人说的，不是书面词，不是把一句话硬切成的半句；不写“他因……而……”这种电报句，不用格言和心理分析。全曲读下来要能顺着讲出这个人的事。
+7. 每个连贯行选一个情绪色（炽热、欢喜、亲密、安心、孤单、不安、悬着）。from 写这一行用到的定稿线编号和珠子编号（如 ["S05-2","S05-B1"]）。
+
+只输出 JSON：{"sections":[{"sec":"S01","rows":[{"form":"连贯","text":"…","keys":["照抄 text 里连续的字"],"emotion":"…","from":["S01-1","S01-B2"]},{"form":"散落","items":[{"text":"…","from":["S01-B2"],"bars":""}]}]}]}，所有段都要有，按段的顺序。
+
+【每段停留秒数和现在视频的字数（参照）】
+{BUDGET}
+
+【定稿的线】
+{FINAL}
+
+【定稿的珠子】
+{BEADS}
+"""
+def _std2():
+    import re as _re
+    NL = chr(10)
+    s = open('D:/musicclaude/_video_public_20261104/大众版标准.md', encoding='utf-8').read()
+    s = s[s.index('## 内容（屏幕稿）'):s.index('## 画面')].replace('## 内容（屏幕稿）', '').strip()
+    s = NL.join(l for l in s.sp
+
+### 行18609 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; grep -n "^def lines_text" -A12 pub24.py | head -20
+
+--- 行18616 结果
+817:def lines_text(w): return '\n'.join(f"{s['sec']} {l['id']}：{l['text']}" for s in rd(R2/f'{w}_src.json')['sections'] for l in s['lines'])
+818-def budget(w):
+819-    """每段现在视频（w23）屏幕上的字数，只作参照。"""
+820-    d = rd(R3/f'script_{w}_w23.json'); win = pub16.windows(w)
+821-    return chr(10).join(f"{s['sec']}（{round(win[s['sec']][1]-win[s['sec']][0])} 秒）：现在的屏幕约 {sum(len(l['text']) for g in s['groups'] for l in g['lines'])+sum(len(b['text']) for g in s['groups'] for b in g['beads'])} 字" for s in d['sections'])
+822-
+823-
+824-def seconds(w): return '\n'.join(f"{k}：{round(b-a)} 秒" for k, (a, b) in pub16.windows(w).items())
+825-
+826-
+827-def sample():
+828-    s = next(x for x in rd(R2/'op60_src.json')['sections'] if x['sec'] == 'S02')
+829-    d = next(x for x in rd(R3/'script_op60_w23.json')['sections'] if x['sec'] == 'S02')
+
+### 行18618 调用 Write
+D:\musicclaude\_video_public_20261104\line_r79o\r3\dagabs.py
+--内容--
+"""11-09 下午 DAG（定稿的线 + 珠子）按 11-08 版 DAG 标准做绝对尺度验收。
+起因：用户问“dag 和 dag2 都按照现在的标准收敛了吗”。11-08 起 DAG 一直直接用 r79o 当原料，没按 11-08 版标准测过。
+做法照 r3/openabs.py（大众版的绝对尺度验收）：四条内容标准 + 底线逐条给结论，问题按固定的绝对尺度标轻重；只是“还能写得更好”的不列。
+轻重按对 DAG2 的影响定义（DAG 只作 DAG2 的原料）：DAG2 照着写会不会写歪、写不出因果、找不到情境。
+python r3/dagabs.py [源 src 目录名，默认 r2] [轮次标记 run1 run2 ...]   结果 r3/s24/dagA_{作品}_{评委}_{源}_{轮次}.json
+"""
+import re, sys
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import prompt_lint
+from pub24 import S, rd, wr, call, parse, G6, G56, WORKS
+sys.stdout.reconfigure(encoding='utf-8')
+ROOT = Path(__file__).resolve().parents[1]
+
+DAGA = """你是验收评审。下面是一首钢琴曲的“定稿”：一条线（一个人经历的一件事，分段要点，每段标了他此刻和全曲核心的关系）和每段的珠子（听的人此刻心里和身上的感受）。它不直接给观众看，而是作为原料，交给下一步改写成大众版“边听边看”视频的屏幕稿；压缩、人话、不啰嗦、排主次都由下一步做，这里不要求。
+
+请按下面的标准做验收：逐条标准判断过没过，再列出确实存在的问题。
+
+【轻重的绝对尺度——只按问题对下一步（照着它写屏幕稿）的实际影响判断，不按它是不是这一份里最突出的问题】
+- 严重：照着它写，屏幕稿很可能会讲错或讲不通这个人的关键经历、原因、转折，或者偏离全曲核心；或者某段核心的感受在线里完全找不到对应的处境，下一步只能自己编。
+- 中等：能用，但下一步要自己补因果、自己判断哪句对应哪颗珠子、自己理顺前后，或者某处意思含糊、可能被读歪。
+- 轻微：不影响下一步照着写；只是措辞、局部可以更准。
+- 不构成问题：只是能想到别的写法、个人偏好；以及人话、啰嗦、压缩、排主次（这些由下一步负责）——这类不要列出来。
+规则：
+1. 同一把尺子用在任何版本上。一份定稿即使只剩一个问题，它也可能只是轻微。
+2. 出现次数多不自动升级：只有在确实造成累积影响时才算中等，并说明影响在哪里。
+3. 情感留白、需要体会一下的细腻表达，不算问题；戏剧化、主观、只讲一个故事、没有外部动作，不算缺点。
+4. 没有达到“轻微”门槛的地方不用找；某条标准没有问题就写“过”。
+
+【标准】
+{STD}
+
+只输出 JSON：{"standards":[{"std":"1","verdict":"过|有问题","note":"一句"}],"issues":[{"sec":"S05 或 跨段","std":"1|2|3|4|底线","quote":"原文（跨段的写两三处）","why":"对下一步的实际影响是什么","severity":"严重|中等|轻微"}]}
+
+【全曲核心（Center）】
+{CENTER}
+
+【定稿：每段的线和珠子】
+{SRC}
+"""
+prompt_lint.lint(DAGA, 'dagabs.py')
+
+
+def std():
+    s = (Path('D:/musicclaude/_thread_evo_20261019/标准.md')).read_text(encoding='utf-8')
+    s = s[s.index('## 内容维度'):s.index('修订记录')].rstrip('-\n ')
+    return re.sub(r'（(用户|10-|11-)[^）]*）', '', s)
+
+
+def src_text(w, src):
+    d = rd(ROOT/src/f'{w}_src.json'); out = []
+    for s in d['sections']:
+        out.append(f"\n### {s['sec']}（他此刻和核心的关系：{s.get('relation', '')}）")
+        out += [f"线 {l['id']}：{l['text']}" for l in s['lines']]
+        out += [f"珠子 {b['id']}：{b['text']}" for b in s['beads']]
+    return chr(10).join(out), d.get('center', '')
+
+
+def one(a):
+    w, j, m, src, run = a; p = S/f'dagA_{w}_{j}_{src}_{run}.json'
+    if p.exists(): return rd(p)
+    t, c = src_text(w, src)
+    c = c if isinstance(c, str) else '；'.join(f'{k}：{v}' for k, v in c.items()) if isinstance(c, dict) else str(c)
+    msg = DAGA.replace('{STD}', std()).replace('{CENTER}', c).replace('{SRC}', t)
+    for k in range(3):
+        ans = call(f'dagA_{w}_{j}_{src}_{run}' + ('' if not k else f'_r{k}'), msg, m, 'gpt3s', 'dag-abs')
+        try: r = parse(ans); assert 'issues' in r; wr(p, r); return r
+        except Exception as ex: print('不合格', w, j, src, run, repr(ex)[:120], flush=True)
+
+
+def summary(src, runs):
+    for w in WORKS:
+        for j in ('g6', 'g56'):
+            row = []
+            for run in runs:
+                p = S/f'dagA_{w}_{j}_{src}_{run}.json'
+                if not p.exists(): row.append('缺'); continue
+                r = rd(p); c = Counter(x.get('severity') for x in r.get('issues') or [])
+                bad = [s.get('std') for s in r.get('standards') or [] if s.get('verdict') == '有问题']
+                row.append(f"严重 {c['严重']}、中等 {c['中等']}、轻微 {c['轻微']}；有问题的标准 {','.join(bad) or '无'}")
+            print(f"DAG 绝对验收 {src} {w} {j}： " + ' ｜ '.join(row), flush=True)
+
+
+if __name__ == '__main__':
+    args = sys.argv[1:]; src = next((x for x in args if not x.startswith('run')), 'r2'); runs = [x for x in args if x.startswith('run')] or ['run1']
+    jobs = [(w, j, m, src, run) for run in runs for w in WORKS for j, m in (('g6', G6), ('g56', G56))]
+    with ThreadPoolExecutor(min(8, len(jobs))) as ex: list(ex.map(one, jobs))
+    summary(src, runs)
+
+
+--- 行18620 结果
+File created successfully at: D:\musicclaude\_video_public_20261104\line_r79o\r3\dagabs.py (file state is current in your context — no need to Read it back)
+
+### 行18623 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import sys; sys.argv=['x']; sys.path.insert(0,'r3')
+import importlib.util
+spec=importlib.util.spec_from_file_location('d','r3/dagabs.py'); d=importlib.util.module_from_spec(spec); spec.loader.exec_module(d)
+t,c=d.src_text('op60','r2'); print(type(c), str(c)[:300]); print(len(t)); print(d.std()[-400:])
+E
+cd /d/musicclaude/_thread_evo_20261019/runs; cat gpt3s_protected.json gpt4s_protected.json 2>/dev/null | head -c 400; echo; cd ..; python -c "import mg_schedule;print(mg_schedule.status())" 2>&1 | tail -2
+
+--- 行18624 结果
+<class 'str'> 亲密的幸福与留不住它的痛楚难以分开
+7898
+给得出情境吗？对应关系写明了吗？
+- 每段的感受，在同一段的线里找得到情境相近的处境；相关就行，不逐颗解释，让人感到那种情境的性质即可。
+- 大体覆盖就够，不要求全覆盖；但珠子里的核心体验，线要给得出情境。
+- 写明哪条线对应哪几颗珠子（DAG2 揉在一起时按这个把感受织进他的处境）。
+- 边界：只管“接不接得上、写没写明”；读起来是否一体由 DAG2 负责（DAG2 第 2 条）。
+
+---
+
+### 底线：意思读得清楚
+- 每句话的意思读得清、不含糊，DAG2 不会照着读歪的意思去写。人话、不啰嗦不做要求：DAG2 会重写一遍。
+
+## 形态
+- 分段要点（原名“关系图”）：每段几条，每条一件事、一句完整自然的话；提到前面的内容直接提并标出处，不标关系类型；每段标他此刻和 Center 的关系。
+
+## 不算缺点
+戏剧化、主观、只讲一个故事；没有外部动作；精确到小节不等于鲜活，不加分。
+{"until": 1794177840.9075718, "run": "pub24LD_op60_g56r_g68K3M2b", "why": "protection/limit signal at pub24LD_op60_g56r_g68K3M2b", "at": "2026-11-08 16:54:00"}{"until": 1794179357.3240266, "run": "pub24BCA_op60_g56r_g68K6aM", "why": "protection/limit signal at pub24BCA_op60_g56r_g68K6aM", "at": "2026-11-08 17:19:17"}
+{'cooldown_until': 1794210147.563207, 'failed_at': 1794210087.563207, 'failed_at_utc': '2026-11-09T07:41:27.563207+00:00', 'failed_run': 'pub24BCA_op60_g6_g68K11d', 'reason': '{"type": "incomplete_response", "message": "Browser automation failed at incomplete_response"}', 'resume_after_utc': '2026-11-09T07:42:27.563207+00:00', 'manual_retry': {'authorized_by': 'user: 再试试', 'authorized_at_utc': '2026-11-02T19:39:25.550847+00:00', 'previous_cooldown_until': 1793648854.0854735, 'run_id': 'recovery_20261102_manual_1439', 'scope': '一次单请求恢复检查，失败后重新冷却一小时'}, 'last_submit': 1794209562.0123138, 'last_submit_utc': '2026-11-09T07:32:42.012314+00:00', 'last_run': 'pub24BCA_op60_g6_g68K11d', 'cooldown_seconds': 60, 'retry_until': 1794210147.563207, 'classified_failure_at': 1794210087.563207, 'failure_kind': 'transient_failure', 'cooldown_kind': 'transient_failure', 'protection_until': 1794015056.8115876, 'protection_run': 'pub25J_op60_g56_w23_r2_Lr79d', 'protection_reason': "{'type': 'suspicious_behavior', 'message': 'gpt3、gpt4 两个账号都在保护冷却'}", 'cleared_by_user': '11-06 晚 用户：就直接用gpt4啊 报异常就切换 两个都异常再说', 'cooling': False}
+
+### 行18635 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python r3/dagabs.py r2 run1 run2 > r3/dagabs_r2.log 2>&1; tail -6 r3/dagabs_r2.log
+
+--- 行18636 结果
+Command running in background with ID: bsq8g828i. Output is being written to: C:\Users\zuoyi\AppData\Local\Temp\claude\c3a5d7b49981850d\37a0bac0-a5c2-4124-b459-05818b36b83c\tasks\bsq8g828i.output. You will be notified when it completes — do not poll that file or sleep while waiting. Read the file only if the user asks for progress, or if you need a line it prints before you can go on, such as a server's ready line or port.
+Session cwd remains D:\musicclaude\_thread_evo_20261019; directory changes made by the backgrounded command do not apply to subsequent commands.
+
+### 行18640 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3; ls s24/prompt_BLg6* ; wc -c s24/prompt_BLg64*.txt; cat s24/prompt_BLg64c.txt | head -150; grep -n "K10" /d/musicclaude/_dag2_video_20261104/DAG2.md | tail -8
+
+--- 行18641 结果
+s24/prompt_BLg61.txt
+s24/prompt_BLg62.txt
+s24/prompt_BLg63.txt
+s24/prompt_BLg63b.txt
+s24/prompt_BLg63c.txt
+s24/prompt_BLg63d.txt
+s24/prompt_BLg63n.txt
+s24/prompt_BLg64a.txt
+s24/prompt_BLg64b.txt
+s24/prompt_BLg64c.txt
+21332 s24/prompt_BLg64a.txt
+23431 s24/prompt_BLg64b.txt
+23761 s24/prompt_BLg64c.txt
+68524 total
+你是钢琴曲大众版“边听边看”视频的屏幕稿写手。
+
+请把已经定稿的线和珠子制作成全曲屏幕稿。视频下半屏是音乐动画，上半屏是文字；观众是普通人，边听边扫，每段有实际停留时间。线是人物经历、心理变化和内在因果；珠子是听者在音乐中产生的感受，包括心里话、身体感觉、具体画面、比喻和可能的听法，部分珠子只属于特定小节。
+
+本次必须保住上一版已经验证有效的方向：人物经历与当下感受进入同一条连贯阅读路径，因果清楚、为什么成立、单屏能够独立理解；同时修正两件事：珠子的想象和比喻不能被改写成人物真实经历，整屏不能因融合而堆得过长、扫不动。
+
+执行优先级：
+1. 意思准确、来源边界和确定程度不变，不新增人物事实。
+2. 人物心理因果、心里话和转折完整；珠子的具体画面、身体感觉、比喻和心里话得到严格覆盖。
+3. 线与珠子自然交织，保持连贯、人话和单屏可理解。
+4. 根据停留时间控制阅读负担，删掉重复，提升扫读和简洁度。
+
+全曲屏幕实际显示文字的总量，优先以约 2700–3000 字为弹性目标；这是整体规划参照，不是硬性上限。不得设置单屏字数、秒数、行数或短语数上限，也不得为了凑目标而牺牲独特意思、人物因果或珠子细节。
+
+## 一、先划清线与珠子的语义边界
+
+这是本次最重要的修正。融合的是阅读位置和表达路径，不是把两种材料的叙述主体、事实身份或确定程度混成一件事。
+
+### 1. 线：人物实际经历和定稿明确给出的心理
+
+线中的事件、动作、关系、对话、念头、担心、疑问、愿望和结论，按定稿原有的事实状态呈现。只有线明确给出的内容，才能作为人物真实发生的事情、真实做过的动作或确定存在的心理活动。
+
+不得借珠子替人物补出线里没有的事件、行为、身体接触、关系互动、回忆、动机、念头或结论。
+
+### 2. 珠子：听者的感受、想象和听法
+
+珠子里的具体画面、比喻、身体感觉、想象场景、拟想的心里话，以及“可以这样听”的解释，首先属于听者对音乐的感受，不自动属于人物的经历。
+
+即使珠子写出了一个人的动作、场景或内心声音，也不能因此认定人物真的做了、经历了或想了这些事。珠子里的身体感觉也不能自动改成主人公的身体反应；珠子里的想象对白或自问，也不能自动变成主人公真实说过或想过的话。
+
+珠子只能补充这一刻的听感，不能充当人物事实的证据。若某个事件或心理活动只出现在珠子里，屏幕稿只能把它保留为比喻、想象、听感或可能的联想，不能写成确定发生的情节。
+
+### 3. 比喻、想象和可能性必须保留原来的框架
+
+逐颗检查珠子原文中的限定方式和叙述视角。凡是定稿用比喻、类比、想象、假设、可能听法或联想表达的内容，屏幕稿必须保留同等明确的框架和确定程度。
+
+凡是定稿使用“像……”“仿佛……”“音乐像……”“也可以听成……”“也可以想成……”“另一种听法”“一种联想”“似乎”“可能”等限定方式，都不能为了让句子更顺、更短或更像人物叙述而删掉、弱化，或改成确定陈述。具体使用哪一种表达，以珠子原文的语气和含义为准，不要机械套词。
+
+必须特别检查语法主语和动作归属：
+- 珠子里的动作若是比喻画面，不能改成主人公实际做出的动作。
+- 珠子里的场景若是听者想象，不能改成主人公与他人实际发生的场景。
+- 珠子里的自问或心里话若是音乐带来的拟想，不能改成主人公确定的内心活动。
+- 珠子里的身体触感若是听者感受，不能改成主人公身体上确实发生的反应。
+- 珠子中的两个并列画面，不能擅自用表示先后、递进或因果的连接方式串成一段真实经历。
+- 不得改变动作的主体、对象、时间、方向或发生程度；不得把音乐或声音的动作转移给人物。
+
+当人物是句子的语法主语时，只有线明确支持的动作和心理才能直接归给人物。若同一句要接入珠子的比喻或想象，必须在珠子部分保留清楚的听感标记，并让读者能辨认其主体仍是音乐、声音、感受或想象，而不是人物本人。不能让前半句的人物主语无标记地统领后半句的珠子画面。
+
+如果同一句融合会让读者误以为珠子里的事真实发生了，就不要硬塞进同一句；改用紧邻的分句、相邻句或相邻行，并明确保留珠子的听感框架。宁可在句法上分开，也不能在意思上走样。
+
+## 二、先建立全曲内容地图，不要立即写屏幕文字
+
+先通读全部材料，并完整遵守 {{DAGSTD}}。在内部完成以下整理，不输出整理过程。
+
+### 1. 拆解线的意思单元
+
+逐段辨认并记录：
+- 人物实际经历和当前处境。
+- 使他来到当前处境的原因、前因和后果。
+- 具体的所求、顾虑、担心和愿望。
+- 人物自己的疑问、自问、对自己说的话。
+- 心理变化中的转折、犹豫、矛盾和前后关系。
+- 已经发生的变化，以及仍然悬着、没有答案或没有解决的事情。
+
+一句话中的原因、条件、转折、疑问和心理步骤都可能是独立意思单元，不能只保留结论。
+
+### 2. 拆解珠子的意思单元
+
+逐颗辨认并记录：
+- 具体画面和想象。
+- 身体感觉。
+- 比喻及其独特表达。
+- 具体心里话或拟想的内心声音。
+- 一种感受内部的变化、转折和层次。
+- 可能的听法、联想及其限定方式。
+- 只属于特定小节的局部细节。
+
+同一
+
+### 行18652 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3; sed -n 1,40p adv_fix.py; sed -n 150,400p s24/prompt_BLg64c.txt; cat pipe_K10c.sh 2>/dev/null
+
+--- 行18653 结果
+"""11-08 迭代准则 I12/I13：接近过线的候选交回原提出者改（同一方案最多 3 次）。
+python r3/adv_fix.py TAG 提出者(g6|g56) 原提示词文件 新提示词名      例：python r3/adv_fix.py g68K3 g6 prompt_BLg63.txt BLg63b
+"""
+import io, os, re, sys, contextlib
+from collections import Counter
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+os.environ['PUB_BC_ALL'] = '1'
+import gate2, prompt_lint
+from pub24 import S, R2, rd, call, parse, G6, G56, WORKS, JUDGES
+sys.stdout.reconfigure(encoding='utf-8')
+
+FIX = """你是顾问。你上一轮写的写稿提示词（附在最后）已经两首同跑、测完了。它是这一批里最接近过线的，现在交回给你改。
+
+【门槛（大众版标准 7 条的测法）】
+- 意思走样：至少两位评委同报一处严重的意思改动（疑问写成断言、担心写成已发生、加了定稿没有的事、珠子比喻写成真事等）就没过。
+- 整屏珠子覆盖：屏幕全部文字对定稿珠子要点的严格覆盖（具体的画面、身体感觉、比喻、心里话还在才算），不低于现在的旧视频。
+- 看片盲比（对旧视频，两种先后顺序配对，每首 8 次判断）：没有稳定选旧；分项 扫一眼抓到 scan、连贯不跳 flow、不啰嗦 concise、人话 human、知道为什么 why、单独成立 alone、细腻 fine，新版赢的都不少于旧版。
+
+【你这套的结果（如有多版，按先后列出；最后一版是这次交回的）】
+{RESULT}
+
+【没过的项的证据】
+{EVIDENCE}
+
+请：先一两句诊断没过的原因；再给出改后的完整提示词——保住已经赢的项，只改让它没过的地方，可以大改结构。要求不变：提示词里不放任何具体作品的内容或例子（上面的证据只给你看，不能写进提示词），不写死字数、秒数上限，输出格式和占位符（{{BUDGET}}、{{DAGSTD}}、{{FINAL}}、{{BEADS}}）保持原样。
+
+只输出 JSON：{"diagnosis":"…","prompt":"完整提示词"}。回答时请不要进行联网搜索。
+
+【你上一轮的提示词】
+{PROMPT}
+"""
+
+
+def evidence(tag):
+    out = []
+    pts = {q['id']: (s['sec'], q['text']) for w in WORKS for s in rd(R2/f'{w}_src.json')['sections'] for b in s['beads'] for q in b['points']}
+    for w in WORKS:
+        nf, cons = gate2.faith(w, tag)
+        if nf:
+
+### 4. 不添加融合用的虚构桥梁
+
+不能为了让线和珠子看起来有关联，就添加人物的新动作、新对话、新念头、新回忆或新因果。连接只能来自定稿已经存在的情境、感受呼应、对照或先后关系。
+
+如果一条内容实际只使用线，from 只列线编号；只使用珠子，from 只列珠子编号；同一条内容确实同时使用两种来源，才同时列出线和珠子编号。相邻但分开的两条内容分别标注各自来源，不要为了形式而把来源合并。
+
+## 五、严格保留人物心理因果和珠子的具体质感
+
+### 1. 线中的心里话、疑问和转折
+
+人物自己的心里话、自问和直接疑问必须原样保留，不得改成第三者的心理解释，不得为了简短而删掉。人物的转折、犹豫、矛盾和关键因果也必须保留。
+
+疑问仍然是疑问，担心仍然是担心，猜测仍然是猜测，愿望仍然是愿望，未确定的事不能写成已发生或已确定。不能把一句话中的多个心理步骤压成一个结论。
+
+可以删除确实重复、没有新增信息的完整句子，但不能删掉承载人物心理因果的局部小句，也不能用另一种书面说法替换原有心里话和转折。
+
+### 2. 珠子的具体表达
+
+一旦决定保留某颗珠子，就尽量照用定稿中的具体说法，不要为了短、整齐或排版方便而压缩改写。
+
+具体画面仍是具体画面，身体感觉仍是身体感觉，比喻仍是比喻，心里话仍保留其原有语气和限定方式。不能把具体感受换成抽象情绪词，不能把有过程的感受压成心理结论，也不能把独特比喻换成通用意象。
+
+允许在珠子原文前后增加必要的衔接语，但不得改动珠子本身的事实身份、主体、确定程度和关键细节。
+
+### 3. 严格覆盖珠子意思单元
+
+覆盖不是统计出现了多少颗珠子，也不是提到相近情绪就算覆盖。必须按每颗珠子的独立意思单元核对：具体画面、身体感觉、比喻、心里话、内部变化和限定方式分别检查。
+
+整屏对珠子要点的严格覆盖不得低于旧视频。核心单元必须保留；具有独立画面、身体感觉、比喻、心里话或转折的重要单元应尽量保留。不同珠子提供不同细节时，必须分别保留，不能用一个抽象判断代替。
+
+只有确实表达同一信息、没有增加任何具体细节或新作用的重复内容，才可以合并或删去。不得以篇幅目标为由，删除独特珠子或把它们改写成概括。
+
+## 六、篇幅、停留时间与扫读
+
+### 1. 全曲篇幅目标
+
+整屏实际显示文字（只计算连贯行的 text 和散落 item 的 text，不计算 JSON 字段和编号）优先控制在约 2700–3000 字，作为弹性目标而非硬性上限。不要把线和珠子两份材料完整展开后简单相加，也不要为了凑字数而填充。
+
+不要平均分配每段字数。根据每段实际停留时间、信息重要性和局部珠子的出现时段分配阅读量。
+
+### 2. 短停留
+
+### 行18662 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import pub16, json
+from pub24 import S, rd
+for w in ['op60','op61']:
+    win=pub16.windows(w); scr=rd(S/f'screen_{w}_g68K11g.json')
+    def L(s): return sum(len(x['text']) if x['kind']=='line' else sum(len(i['text']) for i in x['items']) for x in s['rows'])
+    n={s['sec']:L(s) for s in scr['sections']}
+    for r in (5,5.5,6):
+        print(w,r, sum(min(round(r*(b-a)),260) for a,b in win.values()))
+    print(w, [(k, round(b-a), n[k], round(n[k]/(b-a),1)) for k,(a,b) in win.items()])
+E
+
+--- 行18663 结果
+op60 5 2499
+op60 5.5 2697
+op60 6 2895
+op60 [('S01', 19, 123, 6.6), ('S02', 56, 252, 4.5), ('S03', 33, 192, 5.9), ('S04', 52, 308, 6.0), ('S05', 18, 139, 7.6), ('S06', 39, 243, 6.2), ('S07', 41, 245, 5.9), ('S08', 39, 165, 4.2), ('S09', 32, 241, 7.6), ('S10', 27, 161, 6.0), ('S11', 37, 269, 7.3), ('S12', 38, 224, 5.9), ('S13', 39, 258, 6.6), ('S14', 34, 236, 7.0)]
+op61 5 2592
+op61 5.5 2694
+op61 6 2797
+op61 [('S01', 128, 317, 2.5), ('S02', 84, 296, 3.5), ('S03', 38, 268, 7.0), ('S04', 42, 207, 4.9), ('S05', 68, 286, 4.2), ('S06', 87, 400, 4.6), ('S07', 64, 291, 4.6), ('S08', 20, 116, 5.7), ('S09', 31, 178, 5.7), ('S10', 28, 162, 5.8), ('S11', 22, 161, 7.4), ('S12', 25, 182, 7.4), ('S13', 62, 349, 5.7)]
+
+### 行18668 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='blend.py'; s=open(p,encoding='utf-8').read()
+old="def budget(w):\n"
+new='''def cap(w):
+    """11-09 下午 K15：按停留秒数定每屏字数上限（每秒 PUB_BL_RATE 字，最少 90、最多 300）。K10 不设上限写到 4500–6400 字；K11g 每秒 7 字以上的屏都被报偏密。"""
+    r = float(os.environ.get('PUB_BL_RATE', '5.5')); win = pub16.windows(w)
+    return {k: max(90, min(300, round(r*(b-a)))) for k, (a, b) in win.items()}
+
+
+def budget(w):
+    if os.environ.get('PUB_BL_RATE'):
+        win = pub16.windows(w); c = cap(w)
+        return chr(10).join(f"{k}：停留 {round(b-a)} 秒，这一屏最多 {c[k]} 字" for k, (a, b) in win.items()) + chr(10) + f"全曲合计最多 {sum(c.values())} 字。"
+'''
+assert s.count(old)==1; s=s.replace(old,new); open(p,'w',encoding='utf-8').write(s)
+E
+PUB_BL_RATE=5.5 python -c "import blend;print(blend.budget('op60'))"
+
+--- 行18669 结果
+S01：停留 19 秒，这一屏最多 103 字
+S02：停留 56 秒，这一屏最多 300 字
+S03：停留 33 秒，这一屏最多 179 字
+S04：停留 52 秒，这一屏最多 284 字
+S05：停留 18 秒，这一屏最多 101 字
+S06：停留 39 秒，这一屏最多 216 字
+S07：停留 41 秒，这一屏最多 227 字
+S08：停留 39 秒，这一屏最多 216 字
+S09：停留 32 秒，这一屏最多 175 字
+S10：停留 27 秒，这一屏最多 147 字
+S11：停留 37 秒，这一屏最多 202 字
+S12：停留 38 秒，这一屏最多 210 字
+S13：停留 39 秒，这一屏最多 215 字
+S14：停留 34 秒，这一屏最多 186 字
+全曲合计最多 2761 字。
+
+### 行18672 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3/s24; python - <<'E'
+s=open('prompt_BLg64c.txt',encoding='utf-8').read()
+def rep(a,b):
+    global s
+    assert s.count(a)==1, a[:30]; s=s.replace(a,b)
+i=s.index('全曲屏幕实际显示文字的总量'); j=s.index('\n',i)
+rep(s[i:j], '每一屏都有字数上限（见材料里的 BUDGET，按停留秒数算出），这是硬上限，会逐屏机械检查，超过的屏会被退回重写。上限比把材料全部写进去要少得多：每屏都要挑，先保人物这一刻的因果和转折，再挑最具体、最独特的感受；装不下的次要内容整条不用，不要把每条都压缩成概括来硬塞。')
+rep('4. 根据停留时间控制阅读负担，删掉重复，提升扫读和简洁度。', '4. 每屏字数不超过上限（硬约束，和第 1 条同级）：在上限内按 2、3 条的顺序挑内容。')
+i=s.index('整屏对珠子要点的严格覆盖不得低于旧视频'); j=s.index('\n',i)
+rep(s[i:j], '在每屏字数上限内，先保核心单元（每段最核心的那种感受、人物这一刻的因果），再挑最具体、最独特的画面、身体感觉、比喻和心里话。不同珠子提供不同细节时，宁可整条保留其中最好的一两条、其余整条不用，也不要把它们都压成一句抽象概括。')
+i=s.index('只有确实表达同一信息'); j=s.index('\n',i)
+rep(s[i:j], '只有确实表达同一信息、没有增加任何具体细节或新作用的重复内容，才算可以随便删；但当字数上限装不下时，次要的独特内容也要整条舍弃，这是允许的，舍弃比压缩改写好。')
+i=s.index('## 六、篇幅、停留时间与扫读'); j=s.index('## 七、')
+rep(s[i:j], '''## 六、篇幅、停留时间与扫读
+
+### 1. 每屏字数上限（硬约束）
+
+BUDGET 给了每屏停留秒数和这一屏最多多少字（只计算连贯行的 text 和散落 item 的 text，不计算 JSON 字段和编号）。每屏都不能超过；写完逐屏数一遍，超了就继续删，直到不超。会逐屏机械检查，超过的屏会被退回重写。
+
+上限是按普通观众边听边扫、来得及读完算的，比材料全部写进去少得多。所以写每一屏时先想清楚：这一屏观众只要带走什么？一般是人物这一刻的处境和为什么、一两个最有辨识度的感受。其余内容整条不用。
+
+### 2. 怎么挑
+
+1. 先保：人物这一刻的处境、因果和转折（为什么这样、和上一段比什么变了）；这一段最核心的那种感受里最具体的说法；人物的心里话和疑问。
+2. 再挑：其余珠子里最独特的画面、身体感觉或比喻，挑一两条，整条照用原来的说法。
+3. 不要：前面已经说过的背景和结论；同一种感受的第二个说法；只是情绪词、没有具体内容的句子；解释音乐本身的句子。
+4. 不要用压缩改写来减字：不把具体画面缩成四字词组，不把几层意思挤进一个长句，不写省掉主语和连接词的电报句。宁可整条舍弃，也不要把每条都压短。
+
+### 3. 打碎成短语、到时出现
+
+散落的小字要是真正散开的短语（每块大约 3–12 个字，一眼读完），不是被切开的长句。只属于某几小节的珠子，优先写成散落短语并填 bars，它们在音乐走到那几小节时才出现、之后留到这一屏结束；这样同一屏里的内容是随音乐陆续出现的，观众不必一开始就面对一整屏字。
+
+### 4. 扫读
+
+每屏第一眼应能抓到当前人物时刻或这一段的核心感受。连贯的句子一扫读得完，不用分号把几件事串成长句；需要保留的因果用自然断句和相邻行呈现。
+
+''')
+i=s.index('- 整屏严格覆盖是否不低于旧视频？'); j=s.index('\n',i)
+rep(s[i:j], '- 每段最核心的感受是否用了最具体的说法？装不下的是否整条舍弃，而不是被压成概括？')
+i=s.index('### 第五轮'); j=s.index('### 第六轮')
+rep(s[i:j], '''### 第五轮：逐屏数字数
+
+- 逐屏数一遍实际显示的字数，和 BUDGET 里这一屏的上限比；超了就回到第六节第 2 条继续删，直到每屏都不超。
+- 删的时候整条舍弃次要内容，不压缩改写留下的内容。
+
+''')
+open('prompt_BLg65a.txt','w',encoding='utf-8').write(s)
+print(len(s)); import re; print([m for m in re.findall(r'2700|旧视频',s)])
+E
+
+--- 行18679 结果
+8588
+['旧视频']
+
+### 行18684 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3/s24; grep -n "旧视频\|弹性" prompt_BLg65a.txt
+
+--- 行18685 结果
+309:每段停留秒数和旧视频字数参照：
+
+### 行18688 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3/s24; sed -i 's/^每段停留秒数和旧视频字数参照：/每段停留秒数和这一屏的字数上限（硬约束）：/' prompt_BLg65a.txt; grep -n "BUDGET" prompt_BLg65a.txt | head
+
+--- 行18689 结果
+13:每一屏都有字数上限（见材料里的 BUDGET，按停留秒数算出），这是硬上限，会逐屏机械检查，超过的屏会被退回重写。上限比把材料全部写进去要少得多：每屏都要挑，先保人物这一刻的因果和转折，再挑最具体、最独特的感受；装不下的次要内容整条不用，不要把每条都压缩成概括来硬塞。
+187:BUDGET 给了每屏停留秒数和这一屏最多多少字（只计算连贯行的 text 和散落 item 的 text，不计算 JSON 字段和编号）。每屏都不能超过；写完逐屏数一遍，超了就继续删，直到不超。会逐屏机械检查，超过的屏会被退回重写。
+293:- 逐屏数一遍实际显示的字数，和 BUDGET 里这一屏的上限比；超了就回到第六节第 2 条继续删，直到每屏都不超。
+310:{{BUDGET}}
+
+### 行18693 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; export PUB_BL_RATE=5.5 PUB_BL_PROMPT=prompt_BLg65a.txt; (python blend.py g68K15a g6 > r3/K15a_write.log 2>&1 &); (python blend.py g68K15b g56 > r3/K15b_write.log 2>&1 &); echo ok
+
+--- 行18694 结果
+ok
+
+### 行18699 调用 Write
+D:\musicclaude\_video_public_20261104\line_r79o\refit.py
+--内容--
+"""11-09 下午 K15：写稿后逐屏查字数上限（blend.cap，按停留秒数）。超过上限 1.1 倍的屏，交回写手按“挑内容”重写这一屏：
+给它这一屏的定稿线和珠子、它自己写的这一屏、前后两屏，要求在上限内重新挑（整条舍弃次要内容，不压缩改写留下的）。
+和 dense.py 的区别：dense 只在已有文字上删和并；这里可以回到定稿重新挑，避免“压成电报句”。
+python refit.py SRC NEW g6|g56
+"""
+import copy, json, os, sys
+from concurrent.futures import ThreadPoolExecutor
+import prompt_lint, blend
+from pub24 import S, R2, rd, wr, call, parse, G6, G56, WORKS, to_script
+
+RF = """你在写一首钢琴曲大众版“边听边看”视频的屏幕稿。下半屏是音乐动画，上半屏是文字；普通观众边听边扫。下面这一屏你写超了：停留 {SEC} 秒，最多 {CAP} 字，你写了 {NOW} 字。请重写这一屏，不超过 {CAP} 字。
+
+怎么改：
+1. 回到这一屏的定稿线和珠子重新挑：先保人物这一刻的处境、为什么、和上一屏比什么变了；再保这一段最核心的那种感受里最具体的说法、人物的心里话和疑问；其余珠子挑一两条最独特的，整条照用原来的说法。
+2. 装不下的整条舍弃，不要用压缩改写来减字：不把具体画面缩成四字词组，不把几层意思挤进一个长句，不写省掉主语和连接词的电报句。
+3. 意思不走样：疑问仍是疑问，担心不写成已发生；珠子里的比喻、想象和可能的听法保留原来的框架，不写成他真的经历的事；不加定稿没有的内容；不写小节号。
+4. 和前后两屏接得上，不重复前一屏已经说过的。
+5. 形态照旧：连贯（一句话，大字，1–2 个关键词放大）或散落（几块短语，每块 3–12 字）；只属于某几小节的珠子写成散落并填 bars。
+
+只输出 JSON：{"rows":[{"form":"连贯","text":"…","keys":["照抄 text 里连续的字"],"emotion":"炽热|欢喜|亲密|安心|孤单|不安|悬着","from":["编号"]},{"form":"散落","items":[{"text":"…","from":["编号"],"bars":""}]}]}
+
+【前一屏（你写的）】
+{PREV}
+
+【这一屏（你写的，超了）】
+{CUR}
+
+【后一屏（你写的）】
+{NEXT}
+
+【这一屏的定稿线】
+{LINES}
+
+【这一屏的定稿珠子】
+{BEADS}
+"""
+prompt_lint.lint(RF, 'refit.py')
+TOL = float(os.environ.get('REFIT_TOL', '1.1'))
+
+
+def L(s): return sum(len(x['text']) if x['kind'] == 'line' else sum(len(i['text']) for i in x['items']) for x in s['rows'])
+
+
+def show(s):
+    if not s: return '（无）'
+    out = []
+    for x in s['rows']:
+        if x['kind'] == 'line': out.append('连贯：' + x['text'])
+        else: out.append('散落：' + ' / '.join(i['text'] + (f"（{i['bars']}）" if i.get('bars') else '') for i in x['items']))
+    return chr(10).join(out)
+
+
+def one(a):
+    w, src, new, who = a; p = S/f'screen_{w}_{new}.json'
+    if p.exists(): to_script(w, new, rd(p)); return True
+    scr = copy.deepcopy(rd(S/f'screen_{w}_{src}.json')); cap = blend.cap(w); s0 = {s['sec']: s for s in rd(R2/f'{w}_src.json')['sections']}
+    import pub16; win = pub16.windows(w); secs = scr['sections']; log = []
+    for k, s in enumerate(secs):
+        now = L(s); c = cap[s['sec']]
+        if now <= c*TOL: continue
+        src0 = s0[s['sec']]; ok = False
+        msg = (RF.replace('{SEC}', str(round(win[s['sec']][1]-win[s['sec']][0]))).replace('{CAP}', str(c)).replace('{NOW}', str(now))
+               .replace('{PREV}', show(secs[k-1] if k else None)).replace('{CUR}', show(s)).replace('{NEXT}', show(secs[k+1] if k+1 < len(secs) else None))
+               .replace('{LINES}', chr(10).join(f"{l['id']}：{l['text']}" for l in src0['lines']))
+               .replace('{BEADS}', chr(10).join(f"[{b['id']}]{'（只属于小节 '+b['where']+'）' if any(q['local'] for q in b['points']) else ''}{b['text']}" for b in src0['beads'])))
+        for t in range(3):
+            try:
+                r = parse(call(f'refit_{w}_{s["sec"]}_{new}' + ('' if not t else f'_r{t}'), msg, G56 if who == 'g56' else G6, 'gpt3s', 'public24-refit'))
+                conv, _ = blend.convert(w, {'sections': [dict(sec=x['sec'], rows=(r['rows'] if x['sec'] == s['sec'] else [])) for x in secs]}) if False else (None, None)
+                one_sec = {'sections': [{'sec': s['sec'], 'rows': r['rows']}]}
+                rows = conv_rows(w, one_sec)
+                cand = {'sec': s['sec'], 'rows': rows}
+                if L(cand) > c*TOL: raise ValueError(f'仍然超 {L(cand)}/{c}')
+                s['rows'] = rows; ok = True; log.append(f"{s['sec']} {now}→{L(s)}/{c}"); break
+            except Exception as ex: print('不合格', w, s['sec'], repr(ex)[:150], flush=True)
+        if not ok: log.append(f"{s['sec']} 没改成（{now}/{c}）")
+    wr(p, scr); to_script(w, new, scr)
+    print(w, new, '超上限的屏：', '；'.join(log) or '无', '；全曲', sum(L(s) for s in secs), '/', sum(cap.values()), flush=True); return True
+
+
+def conv_rows(w, one_sec):
+    """借 blend.convert 的行转换，只转一屏（convert 要求全部段，这里临时补空段后取出）。"""
+    src = rd(R2/f'{w}_src.json'); sec = one_sec['sections'][0]['sec']
+    full = {'sections': [{'sec': x['sec'], 'rows': one_sec['sections'][0]['rows'] if x['sec'] == sec else [{'form': '连贯', 'text': '占位'}]} for x in src['sections']]}
+    out, _ = blend.convert(w, full)
+    return next(x for x in out['sections'] if x['sec'] == sec)['rows']
+
+
+if __name__ == '__main__':
+    sys.stdout.reconfigure(encoding='utf-8')
+    with ThreadPoolExecutor(2) as ex: print(list(ex.map(one, [(w, sys.argv[1], sys.argv[2], sys.argv[3]) for w in WORKS])), flush=True)
+
+
+--- 行18701 结果
+File created successfully at: D:\musicclaude\_video_public_20261104\line_r79o\refit.py (file state is current in your context — no need to Read it back)
+
+### 行18710 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='refit.py'; s=open(p,encoding='utf-8').read()
+a="                conv, _ = blend.convert(w, {'sections': [dict(sec=x['sec'], rows=(r['rows'] if x['sec'] == s['sec'] else [])) for x in secs]}) if False else (None, None)\n"
+assert a in s; s=s.replace(a,''); open(p,'w',encoding='utf-8').write(s)
+E
+python -c "import ast;ast.parse(open('refit.py',encoding='utf-8').read());print('语法通过')"; cat r3/K15a_write.log r3/K15b_write.log
+
+--- 行18711 结果
+语法通过
+
+### 行18716 调用 Monitor
+cd /d/musicclaude/_video_public_20261104/line_r79o; tail -n0 -F r3/K15a_write.log r3/K15b_write.log r3/dagabs_r2.log 2>/dev/null | grep --line-buffered -E "连贯|不合格|DAG 绝对验收|Error|Traceback"
+
+--- 行18717 结果
+Monitor started (task bf5te1t8i, expires in 30m unless the source ends first; you get one notice at expiry — re-arm if you still need the watch). You will be notified on each event. Keep working — do not poll or sleep. Events may arrive while you are waiting for the user — an event is not their reply.
+
+### 行18720 调用 Write
+D:\musicclaude\_video_public_20261104\line_r79o\r3\pipe_K15.sh
+--内容--
+#!/bin/bash
+# 11-09 下午 K15：写稿层重写（揉在一起 + 每屏按停留秒数定字数上限）。用户：“我感觉你这现在的dag2内容看上去还是很像我们之前那个版本的”。
+# 用法：bash r3/pipe_K15.sh 写稿标签(g68K15a) 写手(g6|g56)     写稿已由 blend.py 完成后再跑
+cd /d/musicclaude/_video_public_20261104/line_r79o
+export PUB_BC_ALL=1 PUB_JREP=1 PUB_BL_RATE=${PUB_BL_RATE:-5.5}
+T=$1; WHO=$2
+python refit.py $T ${T}R $WHO
+n=$(python -c "import gate2;print(sum(gate2.barnums(w,'${T}R') for w in gate2.WORKS))")
+if [ "$n" != "0" ]; then python nobar2.py ${T}R ${T}M; else for w in op60 op61; do cp r3/s24/screen_${w}_${T}R.json r3/s24/screen_${w}_${T}M.json; done; python -c "
+from pub24 import S,rd,to_script
+for w in ['op60','op61']: to_script(w,'${T}M',rd(S/f'screen_{w}_${T}M.json'))"; fi
+echo "== $T 定版 ${T}M $(date)"
+export PUB_VS3=1 PUB_VS3B=1
+python vs2.py ${T}M g68K11g &
+python units.py judge ${T}M &
+python -c "
+import pub24, faithful
+from concurrent.futures import ThreadPoolExecutor
+jobs=[(k,(w,j,'${T}M')) for w in pub24.WORKS for j in pub24.JUDGES for k in ('fa','bc')]
+with ThreadPoolExecutor(16) as ex: list(ex.map(lambda x: faithful.one(x[1]) if x[0]=='fa' else pub24.bead_cov(x[1]), jobs))
+" &
+python r3/openabs.py ${T}M run1 &
+wait
+python -c "
+import gate2, core
+for w in gate2.WORKS: print('$T', w, '旧覆盖', gate2.bcov(w,'${T}M'), '；核心要点覆盖', core.score(w,'${T}M')[0], '对 K11g', core.score(w,'g68K11g')[0], '；走样', gate2.faith(w,'${T}M'))
+"
+echo "== $T 测完 $(date)"
+
+
+--- 行18722 结果
+File created successfully at: D:\musicclaude\_video_public_20261104\line_r79o\r3\pipe_K15.sh (file state is current in your context — no need to Read it back)
+
+### 行18740 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; sed -n 1,30p r3/stage.py; grep -n "__main__" -A30 r3/stage.py | head -50; cat /d/musicclaude/_thread_evo_20261019/runs/gpt3_slots.txt /d/musicclaude/_thread_evo_20261019/runs/gpt4_slots.txt
+
+--- 行18741 结果
+"""11-08 分阶段流水线快筛（两位顾问 GPT-6、GPT-5.6 独立给出、意见一致的提速办法，见 r3/speed/）。
+每个候选包（两首）各走一个状态机，候选之间不互相等：
+  A 盲比初筛：每首 2 位评委（GPT-6、GPT-5.6 各 1）× 两种顺序，对当前主线。任一首两位评委都稳定选主线 → 整包淘汰（明显输）。
+  B 走样 + 覆盖初筛：每首 2 位评委。两位同报同一处严重走样，或覆盖均值比 w23 低 0.03 以上 → 整包淘汰。
+  C 补齐：没有明显失败的，盲比、走样、覆盖都补到 4 位评委（原快筛标准），再出结论。
+两首始终同阶段：一首明显失败，整包停。
+python r3/stage.py 主线TAG 候选TAG [候选TAG...]
+"""
+import os, sys, threading
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+os.environ['PUB_BC_ALL'] = '1'; os.environ['PUB_JREP'] = '1'
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import pub24, faithful, vs2, gate2
+from pub24 import S, rd, WORKS, JUDGES
+sys.stdout.reconfigure(encoding='utf-8')
+J1, J2 = ['g6', 'g56'], ['g6r', 'g56r']
+POOL = ThreadPoolExecutor(int(os.environ.get('PUB_PAR', '28')))
+LOCK = threading.Lock()
+
+
+def runall(jobs):
+    def f(x):
+        k, a = x
+        try:
+            if k == 'fa': faithful.one(a)
+            elif k == 'bc': pub24.bead_cov(a)
+            else: vs2.one(a)
+        except SystemExit as e: print(e, flush=True)
+        except Exception as e: print('失败', k, a, repr(e)[:150], flush=True)
+95:if __name__ == '__main__':
+96-    main, cands = sys.argv[1], sys.argv[2:]
+97-    with ThreadPoolExecutor(len(cands)) as ex: res = list(ex.map(lambda t: cand(main, t), cands))
+98-    print('结果', dict(zip(cands, res)), flush=True)
+8
+8
+
+### 行18744 调用 Read
+D:\musicclaude\_video_public_20261104\line_r79o\refit.py
+
+--- 行18745 结果
+50	    return chr(10).join(out)
+51	
+52	
+53	def one(a):
+54	    w, src, new, who = a; p = S/f'screen_{w}_{new}.json'
+55	    if p.exists(): to_script(w, new, rd(p)); return True
+56	    scr = copy.deepcopy(rd(S/f'screen_{w}_{src}.json')); cap = blend.cap(w); s0 = {s['sec']: s for s in rd(R2/f'{w}_src.json')['sections']}
+57	    import pub16; win = pub16.windows(w); secs = scr['sections']; log = []
+58	    for k, s in enumerate(secs):
+59	        now = L(s); c = cap[s['sec']]
+60	        if now <= c*TOL: continue
+61	        src0 = s0[s['sec']]; ok = False
+62	        msg = (RF.replace('{SEC}', str(round(win[s['sec']][1]-win[s['sec']][0]))).replace('{CAP}', str(c)).replace('{NOW}', str(now))
+63	               .replace('{PREV}', show(secs[k-1] if k else None)).replace('{CUR}', show(s)).replace('{NEXT}', show(secs[k+1] if k+1 < len(secs) else None))
+64	               .replace('{LINES}', chr(10).join(f"{l['id']}：{l['text']}" for l in src0['lines']))
+65	               .replace('{BEADS}', chr(10).join(f"[{b['id']}]{'（只属于小节 '+b['where']+'）' if any(q['local'] for q in b['points']) else ''}{b['text']}" for b in src0['beads'])))
+66	        for t in range(3):
+67	            try:
+68	                r = parse(call(f'refit_{w}_{s["sec"]}_{new}' + ('' if not t else f'_r{t}'), msg, G56 if who == 'g56' else G6, 'gpt3s', 'public24-refit'))
+69	                one_sec = {'sections': [{'sec': s['sec'], 'rows': r['rows']}]}
+70	                rows = conv_rows(w, one_sec)
+71	                cand = {'sec': s['sec'], 'rows': rows}
+72	                if L(cand) > c*TOL: raise ValueError(f'仍然超 {L(cand)}/{c}')
+73	                s['rows'] = rows; ok = True; log.append(f"{s['sec']} {now}→{L(s)}/{c}"); break
+74	            except Exception as ex: print('不合格', w, s['sec'], repr(ex)[:150], flush=True)
+75	        if not ok: log.append(f"{s['sec']} 没改成（{now}/{c}）")
+76	    wr(p, scr); to_script(w, new, scr)
+77	    print(w, new, '超上限的屏：', '；'.join(log) or '无', '；全曲', sum(L(s) for s in secs), '/', sum(cap.values()), flush=True); return True
+78	
+79	
+80	def conv_rows(w, one_sec):
+81	    """借 blend.convert 的行转换，只转一屏（convert 要求全部段，这里临时补空段后取出）。"""
+82	    src = rd(R2/f'{w}_src.json'); sec = one_sec['sections'][0]['sec']
+83	    full = {'sections': [{'sec': x['sec'], 'rows': one_sec['sections'][0]['rows'] if x['sec'] == sec else [{'form': '连贯', 'text': '占位'}]} for x in src['sections']]}
+84	    out, _ = blend.convert(w, full)
+85	    return next(x for x in out['sections'] if x['sec'] == sec)['rows']
+86	
+87	
+88	i
+
+### 行18754 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='refit.py'; s=open(p,encoding='utf-8').read()
+i=s.index("    for k, s in enumerate(secs):\n        now = L(s)"); j=s.index("    wr(p, scr); to_script(w, new, scr)\n    print(w, new, '超上限")
+new='''    orig = copy.deepcopy(secs)   # 11-09：用户要求按提速办法跑，超上限的屏并行重写；前后屏都取写手原稿
+
+    def fix(k):
+        s = secs[k]; now = L(s); c = cap[s['sec']]
+        if now <= c*TOL: return None
+        src0 = s0[s['sec']]
+        msg = (RF.replace('{SEC}', str(round(win[s['sec']][1]-win[s['sec']][0]))).replace('{CAP}', str(c)).replace('{NOW}', str(now))
+               .replace('{PREV}', show(orig[k-1] if k else None)).replace('{CUR}', show(orig[k])).replace('{NEXT}', show(orig[k+1] if k+1 < len(orig) else None))
+               .replace('{LINES}', chr(10).join(f"{l['id']}：{l['text']}" for l in src0['lines']))
+               .replace('{BEADS}', chr(10).join(f"[{b['id']}]{'（只属于小节 '+b['where']+'）' if any(q['local'] for q in b['points']) else ''}{b['text']}" for b in src0['beads'])))
+        for t in range(3):
+            try:
+                r = parse(call(f'refit_{w}_{s["sec"]}_{new}' + ('' if not t else f'_r{t}'), msg, G56 if who == 'g56' else G6, 'gpt3s', 'public24-refit'))
+                rows = conv_rows(w, {'sections': [{'sec': s['sec'], 'rows': r['rows']}]})
+                if L({'rows': rows}) > c*TOL: raise ValueError(f"仍然超 {L({'rows': rows})}/{c}")
+                s['rows'] = rows; return f"{s['sec']} {now}→{L(s)}/{c}"
+            except Exception as ex: print('不合格', w, s['sec'], repr(ex)[:150], flush=True)
+        return f"{s['sec']} 没改成（{now}/{c}）"
+    with ThreadPoolExecutor(8) as ex: log = [x for x in ex.map(fix, range(len(secs))) if x]
+'''
+s=s[:i]+new+s[j:]; open(p,'w',encoding='utf-8').write(s)
+E
+python -c "import ast;ast.parse(open('refit.py',encoding='utf-8').read());print('语法通过')"
+
+--- 行18755 结果
+语法通过
+
+### 行18760 调用 Write
+D:\musicclaude\_video_public_20261104\line_r79o\r3\pipe_K15.sh
+--内容--
+#!/bin/bash
+# 11-09 下午 K15：写稿层重写（揉在一起 + 每屏按停留秒数定字数上限）。用户：“我感觉你这现在的dag2内容看上去还是很像我们之前那个版本的”。
+# 用户：“你这个流程也要按照你之前提速的那个方式来提速”→ 两个候选一起走分阶段快筛（r3/stage.py：A 盲比 2 位 → B 走样+覆盖 2 位 → C 补齐 4 位，明显输就停），
+# 只有活过快筛的才做意思单元覆盖和绝对验收；超上限的屏并行重写；每账号在途 8。
+# 用法：bash r3/pipe_K15.sh 写手1标签 写手1 写手2标签 写手2     例：bash r3/pipe_K15.sh g68K15a g6 g68K15b g56（写稿已由 blend.py 完成）
+cd /d/musicclaude/_video_public_20261104/line_r79o
+export PUB_BC_ALL=1 PUB_JREP=1 PUB_BL_RATE=${PUB_BL_RATE:-5.5}
+prep() {   # 超上限重写 → 去小节号 → 定版 ${T}M
+  T=$1; WHO=$2
+  python refit.py $T ${T}R $WHO
+  n=$(python -c "import gate2;print(sum(gate2.barnums(w,'${T}R') for w in gate2.WORKS))")
+  if [ "$n" != "0" ]; then python nobar2.py ${T}R ${T}M; else for w in op60 op61; do cp r3/s24/screen_${w}_${T}R.json r3/s24/screen_${w}_${T}M.json; done; python -c "
+from pub24 import S,rd,to_script
+for w in ['op60','op61']: to_script(w,'${T}M',rd(S/f'screen_{w}_${T}M.json'))"; fi
+  echo "== $T 定版 ${T}M $(date)"
+}
+prep $1 $2 &
+prep $3 $4 &
+wait
+export PUB_VS3=1 PUB_VS3B=1
+python r3/stage.py g68K11g ${1}M ${3}M | tee r3/K15_stage.log
+for T in ${1}M ${3}M; do
+  if grep -q "'$T': '淘汰" r3/K15_stage.log; then echo "== $T 快筛淘汰，不再测"; continue; fi
+  python units.py judge $T &
+  python r3/openabs.py $T run1 &
+done
+wait
+python -c "
+import gate2, core
+for T in ['${1}M','${3}M']:
+  for w in gate2.WORKS: print(T, w, '旧覆盖', gate2.bcov(w,T), '；走样', gate2.faith(w,T))
+"
+echo "== K15 测完 $(date)"
+
+
+--- 行18761 结果
+The file D:\musicclaude\_video_public_20261104\line_r79o\r3\pipe_K15.sh has been updated successfully. (file state is current in your context — no need to Read it back)
+
+### 行18774 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o/r3/s24; python - <<'E'
+import json,glob
+for f in sorted(glob.glob('dagA_*_r2_run*.json')):
+    r=json.load(open(f,encoding='utf-8'))
+    print('##',f)
+    for x in r['issues']: print(' ',x.get('severity'),x.get('std'),x.get('sec'),'|',x.get('why','')[:160])
+E
+
+--- 行18775 结果
+## dagA_op60_g56_r2_run1.json
+  中等 4 跨段 | 没有明确标出B1对应S02-1、B2对应S02-3、B3对应S02-2、B4对应S02-3。虽然大致可以推出来，但下一步仍要自己判断哪条线承接哪颗珠子。S10等线条与珠子数量不一致的段落也有同样问题。这正是对应关系需要提前写明的部分。
+  中等 底线 S13 | “越喜欢”的主语没有明确交代，“跟他待着”里的“他”也存在指向歧义。既可能读成主角越喜欢和对方待着，也可能读成对方越喜欢和主角待着。下一步如果选错，会把谁享受这份亲密、谁因时间流逝而不安写错。
+## dagA_op60_g56_r2_run2.json
+  中等 4 跨段 | 各段只是将线和珠子分别编号，没有标明具体对应关系。下一步必须自行判断哪条线承接哪颗珠子的感受，再把感受织进人物处境。尤其一颗珠子可能同时贴近多条线，具体落点和选择需要下一步自己决定。这正是对应标准要求提前解决的工作。
+  轻微 2 跨段 | 这些前文回指没有标注对应的S段出处。下一步需要自行回看定位，例如S08-1所说的上回对应S05，S14-1的最初对应S01。不过回指本身的意思能够理解，前后发展也没有因此断裂，影响主要是增加一点追溯工作。
+## dagA_op60_g6_r2_run1.json
+  中等 4 跨段 | 这些对应关系虽然大体能够推出来，但全文都只是把线和珠子按段并列，没有明确标出哪条线承接哪几颗珠子。下一步仍要逐段自行判断、分配对应关系，尤其一条线可能承接多颗珠子、同一段也有多条线，增加了自行整理和误配的工作。
+## dagA_op60_g6_r2_run2.json
+  中等 4 跨段 | 每段只是把多条线和多颗珠子分别列出，没有说明具体对应关系。下一步需要自行判断每颗珠子的体验应该织进哪条线的处境里。尤其各段线与珠子的数量不等，不能仅凭排列顺序确定对应，增加了自行配对和放错情境的工作。
+## dagA_op61_g56_r2_run1.json
+  中等 4 跨段 | 各段都是先列多条线，再列多颗珠子，没有明确标出逐条对应关系。以上例子中，同一段存在多种不同的心理体验，下一步需要自行判断哪条线承接哪颗珠子、哪些感受应该织进哪种处境。这不是内容整体不相关，而是明确要求的对应关系尚未交代，属于中等程度的额外判断工作。
+## dagA_op61_g56_r2_run2.json
+  中等 4 跨段 | 目前只是把多条线和多颗珠子放在同一段，没有明确指出具体搭配。下一步需要自己判断哪条处境对应哪几颗体验，尤其一段里同时有不服气、怀念、疲惫等不同心理状态时，不能直接按明确的对应关系把感受织进人物处境。这属于需要下一步自行判断的工作。
+## dagA_op61_g6_r2_run1.json
+  中等 4 跨段 | 虽然同段内大体能看出关联，但珠子涉及不同层次的心理体验，有的对应一条线，有的需要结合几条线。下一步仍需自行判断哪颗珠子应该织进哪条处境，不能直接按现成映射改写。这正是对应关系标注尚未完成的地方。
+  轻微 形态 跨段 | 这些表达承接了前面已经出现的具体内容，但没有标明来源点号。例如S07-1承接S06的安心与温暖，S12-1回顾此前受气和旧日快乐，S11-2则承接S11-1。下一步需要自行回溯来源，无法直接按照出处标注追踪前后关系。不过叙事本身仍然清楚，不影响基本理解。
+## dagA_op61_g6_r2_run2.json
+  中等 1 S06 | 此前建立的是他离开熟悉生活、失去归属、开始想念从前的人，并没有交代离开后反复遇到难事的经历。这里把一种可能的孤独处境写成了已经发生的生活事实，还把他重新认识陪伴价值的原因具体化为独自熬过难关。下一步照着写，可能会把未经支持的经历当成人物真实经历讲出来。
+  中等 4 跨段 | 每段虽然同时列出了线和珠子，但没有写明具体对应关系。例如 S01 的三条线分别承接哪些珠子、S06 的四条线分别承接哪些珠子，都需要下一步自行判断。这样下一步就必须自己完成线与珠子的配对，再决定把哪些感受织进哪条人物处境，增加了本应在定稿中明确的判断工作。
+
+### 行18780 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import json
+for w,sec in [('op60','S13'),('op61','S06'),('op61','S05')]:
+    d=json.load(open(f'r2/{w}_src.json',encoding='utf-8'))
+    s=[x for x in d['sections'] if x['sec']==sec][0]
+    print(w,sec,s['relation'])
+    for l in s['lines']: print('  ',l['id'],l['text'])
+E
+grep -h "S13\|S06" r3/s24/dagA_op60_g56_r2_run1.json r3/s24/dagA_op61_g6_r2_run2.json | grep quote
+
+--- 行18781 结果
+op60 S13 正在面对
+   S13-1 高兴过后，他更想听对方说以后也不变；可就算听到了，越喜欢跟他待着，越觉得时间过得快，真能一直这样吗？
+   S13-2 起初他怕自己的需要给对方添负担，如今更怕对方哪天不再需要他，连这样待着都没了；少露些心意，会不会少疼些？
+   S13-3 可他早不像最初那样能装作不在乎了，刚才想对对方好也是真心的，真要往回藏，自己反倒更难受。
+op61 S06 正在面对
+   S06-1 心里那阵难受慢慢缓下来，他又想起以前和人在一起、不必时时防备的时候，这回没急着拿受过的气压住这份想念。
+   S06-2 离开以后，遇上难熬的事，他常常只能自己挺过去，这才知道从前有人在身边能让自己轻松多少。
+   S06-3 他很想再过上那种不用多说也知道彼此亲近的日子，又怕以后再也没有了。
+   S06-4 不过，那样的日子自己毕竟真真切切过过，光是这么想着，他心里也暖和了一点。
+op61 S05 正在面对
+   S05-1 他仍不服气，觉得当初那些气不该忍，可连过去开心的事都不敢多想，也太为难自己了。
+   S05-2 跟自己争得没了力气，那股不服气也渐渐淡了，想到自己如今已不在那些人身边，只觉得难受。
+   "quote": "线 S06-2：离开以后，遇上难熬的事，他常常只能自己挺过去，这才知道从前有人在身边能让自己轻松多少。",
+   "quote": "线 S01-1：他已经离开那段熟悉的生活，起初还觉得自己总算不用再一次次委屈自己了。；珠子 S01-B1：先听开头那一下沉重、郑重的和弦：它像要宣告什么，紧接着的自由上行琶音却没把这份重量接住，反而像烟雾往高处散，声音轻了、远了，悬在半空。；线 S06-1：心里那阵难受慢慢缓下来，他又想起以前和人在一起、不必时时防备的时候，这回没急着拿受过的气压住这份想念。；珠子 S06-B1：第148小节起，音乐像毫无征兆地滑进一片与此前世界隔开的静谧。",
+
+### 行18793 调用 Write
+D:\musicclaude\_video_public_20261104\line_r79o\r3\dagmap.py
+--内容--
+"""11-09 下午 DAG 补“对应”和“出处”（DAG 标准第 4 条“写明哪条线对应哪几颗珠子”、形态“提到前面的内容直接提并标出处”）。
+r3/dagabs.py 对 r79o（r2）两首两位评委各两遍，8 次里中等问题几乎都是这一条：只把线和珠子并列，没写对应。
+做法：GPT-6、GPT-5.6 各自独立标；两位一致的直接用，不一致的取两位都给的线并集（最多 2 条）。线和珠子的文字一个字不动。
+另：船歌 S13-1“越喜欢跟他待着”指代不清（GPT-5.6 报中等），按全段以“他”为感受主体的读法改成“他越喜欢跟对方待着”。
+python r3/dagmap.py 新目录名(r2b)       写到 line_r79o/{新目录}/{作品}_src.json，每条线加 beads（对应的珠子）和 refs（提到的前面段落）
+"""
+import copy, json, sys
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import prompt_lint
+from pub24 import rd, call, parse, G6, G56, WORKS
+sys.stdout.reconfigure(encoding='utf-8')
+ROOT = Path(__file__).resolve().parents[1]
+
+MAP = """下面是一首钢琴曲定稿的线（一个人经历的一件事，按段、按条编号）和每段的珠子（听的人此刻的感受）。请做两件标注，不改任何文字：
+1. 对应：同一段里，每颗珠子的感受落在哪条线的处境上（情境相近、感受呼应就算，不要求因果）。每颗珠子给 1 条线，确实同时贴近两条才给 2 条。
+2. 出处：每条线如果提到了前面段落里已经出现过的事或感受（例如“上回”“起初”“以前”“刚才那阵……”），标出它指的是前面哪一条线的编号；没有提到前面就不标。
+
+只输出 JSON：{"beads":[{"id":"珠子编号","lines":["线编号"]}],"refs":[{"id":"线编号","to":["前面的线编号"]}]}
+
+{SRC}
+"""
+prompt_lint.lint(MAP, 'dagmap.py')
+
+
+def text(d):
+    out = []
+    for s in d['sections']:
+        out.append(f"\n### {s['sec']}")
+        out += [f"线 {l['id']}：{l['text']}" for l in s['lines']]
+        out += [f"珠子 {b['id']}：{b['text']}" for b in s['beads']]
+    return chr(10).join(out)
+
+
+def ask(w, j, m, d):
+    for k in range(3):
+        try:
+            r = parse(call(f'dagmap_{w}_{j}' + ('' if not k else f'_r{k}'), MAP.replace('{SRC}', text(d)), m, 'gpt3s', 'dag-map'))
+            return {x['id']: [y for y in x.get('lines') or []] for x in r['beads']}, {x['id']: [y for y in x.get('to') or []] for x in r.get('refs') or []}
+        except Exception as ex: print('不合格', w, j, repr(ex)[:120], flush=True)
+    return {}, {}
+
+
+def one(a):
+    w, new = a; d = copy.deepcopy(rd(ROOT/'r2'/f'{w}_src.json'))
+    if w == 'op60':
+        for s in d['sections']:
+            for l in s['lines']:
+                if l['id'] == 'S13-1':
+                    assert '越喜欢跟他待着' in l['text']; l['text'] = l['text'].replace('越喜欢跟他待着', '他越喜欢跟对方待着')
+    with ThreadPoolExecutor(2) as ex: (b1, r1), (b2, r2) = ex.map(lambda jm: ask(w, jm[0], jm[1], d), [('g6', G6), ('g56', G56)])
+    agree = diff = 0
+    lid = {l['id']: s['sec'] for s in d['sections'] for l in s['lines']}
+    order = [l['id'] for s in d['sections'] for l in s['lines']]
+    for s in d['sections']:
+        ok = {l['id'] for l in s['lines']}
+        for l in s['lines']: l['beads'] = []
+        for b in s['beads']:
+            x, y = [i for i in b1.get(b['id'], []) if i in ok], [i for i in b2.get(b['id'], []) if i in ok]
+            if set(x) == set(y) and x: use = x; agree += 1
+            else: use = list(dict.fromkeys([i for i in x if i in y] or (x[:1] + y[:1]))); diff += 1
+            use = use[:2] or [s['lines'][0]['id']]
+            b['lines'] = use
+            for l in s['lines']:
+                if l['id'] in use: l['beads'].append(b['id'])
+        for l in s['lines']:
+            both = [i for i in r1.get(l['id'], []) if i in r2.get(l['id'], [])]
+            l['refs'] = [i for i in both if i in lid and lid[i] != s['sec'] and order.index(i) < order.index(l['id'])]
+    p = ROOT/new/f'{w}_src.json'; p.parent.mkdir(exist_ok=True)
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding='utf-8')
+    print(w, new, '珠子对应：两位一致', agree, '、不一致取交集或各取第一', diff, '；标了出处的线', sum(1 for s in d['sections'] for l in s['lines'] if l['refs']), flush=True)
+
+
+if __name__ == '__main__':
+    with ThreadPoolExecutor(2) as ex: list(ex.map(one, [(w, sys.argv[1]) for w in WORKS]))
+
+
+--- 行18794 结果
+File created successfully at: D:\musicclaude\_video_public_20261104\line_r79o\r3\dagmap.py (file state is current in your context — no need to Read it back)
+
+### 行18795 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='r3/dagabs.py'; s=open(p,encoding='utf-8').read()
+a='''        out += [f"线 {l['id']}：{l['text']}" for l in s['lines']]'''
+b='''        out += [f"线 {l['id']}：{l['text']}" + (f"（提到前面：{'、'.join(l['refs'])}）" if l.get('refs') else '') + (f"（对应珠子：{'、'.join(l['beads'])}）" if l.get('beads') else '') for l in s['lines']]   # 11-09：r2b 起写明对应和出处'''
+assert a in s; s=s.replace(a,b); open(p,'w',encoding='utf-8').write(s)
+E
+python r3/dagmap.py r2b 2>&1 | tail -5
+
+--- 行18796 结果
+【泛化检查没过】dagmap.py 的提示词里有作品原文：['刚才那阵……']。准则硬约束 1：提示词、评审、规则里不放具体作品的例子。
+
+### 行18808 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; sed -i 's/（例如“上回”“起初”“以前”“刚才那阵……”）//' r3/dagmap.py; python r3/dagmap.py r2b 2>&1 | tail -5
+
+--- 行18810 结果
+[dagmap_op61_g56] ok 317s 4135 chars
+op61 r2b 珠子对应：两位一致 41 、不一致取交集或各取第一 12 ；标了出处的线 32
+[dagmap_op60_g6] ok 350s 3865 chars
+[dagmap_op60_g56] ok 382s 3755 chars
+op60 r2b 珠子对应：两位一致 44 、不一致取交集或各取第一 6 ；标了出处的线 35
+[This command modified 1 file you've previously read: r3\dagmap.py. Call Read before editing.]
+
+### 行18818 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python r3/dagabs.py r2b run1 run2 > r3/dagabs_r2b.log 2>&1; tail -4 r3/dagabs_r2b.log
+
+--- 行18819 结果
+Command running in background with ID: byljx96b9. Output is being written to: C:\Users\zuoyi\AppData\Local\Temp\claude\c3a5d7b49981850d\37a0bac0-a5c2-4124-b459-05818b36b83c\tasks\byljx96b9.output. You will be notified when it completes — do not poll that file or sleep while waiting. Read the file only if the user asks for progress, or if you need a line it prints before you can go on, such as a server's ready line or port.
+Session cwd remains D:\musicclaude\_video_public_20261104\line_r79o; directory changes made by the backgrounded command do not apply to subsequent commands.
+
+### 行18821 调用 mcp__ccd_turn__update_plan
+{"items": [{"content": "查 DAG 标准和现有测法工具", "status": "completed"}, {"content": "按 11-08 DAG 标准测现在的线和珠子", "status": "completed"}, {"content": "DAG 补对应和出处（r2b）并重测", "status": "in_progress"}, {"content": "DAG2 按秒数定篇幅重写（K15a/K15b）", "status": "in_progress"}, {"content": "K15 分阶段快筛并全套测量", "status": "pending"}, {"content": "按剩余问题迭代直到都是轻微", "status": "pending"}], "scope": "continuation"}
+
+--- 行18822 结果
+Plan shown (6 steps). Keep only one step in_progress.
+
+### 行18854 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; tail -4 r3/dagabs_r2b.log; python - <<'E'
+import json,glob
+for f in sorted(glob.glob('r3/s24/dagA_*_r2b_run*.json')):
+    r=json.load(open(f,encoding='utf-8'))
+    for x in r['issues']: print(f[7:],x.get('severity'),x.get('std'),x.get('sec'),'|',x.get('why','')[:170])
+E
+
+--- 行18855 结果
+DAG 绝对验收 r2b op60 g6： 严重 0、中等 0、轻微 0；有问题的标准 无 ｜ 严重 0、中等 1、轻微 0；有问题的标准 4
+DAG 绝对验收 r2b op60 g56： 严重 0、中等 0、轻微 0；有问题的标准 无 ｜ 严重 0、中等 0、轻微 0；有问题的标准 无
+DAG 绝对验收 r2b op61 g6： 严重 0、中等 0、轻微 0；有问题的标准 无 ｜ 严重 0、中等 0、轻微 0；有问题的标准 无
+DAG 绝对验收 r2b op61 g56： 严重 0、中等 1、轻微 0；有问题的标准 1 ｜ 严重 0、中等 0、轻微 0；有问题的标准 无
+dagA_op60_g6_r2b_run2.json 中等 4 S05 | 珠子的关键体验是抓紧的冲动退去、松开手、紧张有所缓解；线里写的却仍是担心被嫌弃，以及亲近感产生隔阂，没有明确写出他从想抓紧转为松开、放下的心理变化。下一步若要呈现这颗珠子的体验，需要自行补出一层退让或放下的心理过程。
+dagA_op61_g56_r2b_run1.json 中等 1 S06 | 此前只交代了他离开熟悉生活、曾经受过委屈以及怀念旧日亲近，并没有建立离开后反复遇到难事、只能独自应对的经历。这句话把一段新的经历写成了既成事实，还用它解释后来对孤单的恐惧和对离开的动摇。下一步照着写，会把这条未经建立的经历当作人物经历来讲，补出一条重要因果。不过它没有改变全曲的核心方向，问题在于新增经历，而不是整条故事因此讲不通。
+
+### 行18865 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import json
+d=json.load(open('r2b/op60_src.json',encoding='utf-8'))
+s=[x for x in d['sections'] if x['sec']=='S05'][0]
+for l in s['lines']: print(l['id'],l['beads'],l['text'])
+for b in s['beads']: print(b['id'],b['lines'],b['text'][:200])
+d=json.load(open('r2b/op61_src.json',encoding='utf-8'))
+for s in d['sections'][:6]:
+    for l in s['lines']: print(l['id'],l['text'])
+E
+
+--- 行18866 结果
+S05-1 [] 前几次想说又收住，对方却一直愿意跟他亲近，这回他不知不觉就忘了藏好喜欢，等察觉时，对方已经看出他有多在乎。
+S05-2 ['S05-B1', 'S05-B2'] 先前藏着时还能装作没那么在乎，如今对方看出来了，他心里空落落的，连怎么跟对方待着都拿不准。
+S05-3 ['S05-B3'] 他忍不住担心对方会嫌自己太黏，连原本熟悉的亲近，在他心里也像忽然隔了一层。
+S05-B1 ['S05-2'] 原来一直托着你的水波和摇晃，忽然像被抽掉了。丰满的声音只剩下一条单薄、孤零零的旋律，在空中漫无目的地游走。人仿佛突然失去了脚下的支撑，连时间也松开了；像小船漂进一片起雾的水域，前路未卜。
+S05-B2 ['S05-2'] 刚才仿佛还有两个人在贴近耳语，到了这里，交谈却戛然而止。一个人从“我与你”的亲密中抽身，转而跌回自己的内心；像一句快到嘴边的重要话又悬在了唇边，心里甚至会闪过一个小小的疑问：“这份幸福是真实的吗？它能维持多久？”
+S05-B3 ['S05-3'] 此前还像要用力抱紧对方、牢牢抓住当下；到了这里，音乐却仿佛自己松开了手，深吸一口气。刚才那阵想攥紧不放的冲动，终于轻轻退了下去。
+S01-1 他已经离开那段熟悉的生活，起初还觉得自己总算不用再一次次委屈自己了。
+S01-2 可这份笃定没撑多久，他心里就空落落的，一时说不清到底舍不得什么。
+S01-3 偶尔想起从前熟悉的日子，他还是想往前过，却不知道以后靠什么让自己安下心。
+S02-1 他舍不得从前那些自在的时候，光是想到以后不能再像那样过日子，心里就有些慌。
+S02-2 那份舍不得一上来，他就赶紧提醒自己受过的那些气，怕一心软，连当初为什么要走都忘了。
+S02-3 可他还是不甘心，难道为了不再受那些气，就得把以前的好日子也一起丢掉吗？
+S03-1 他心里还憋着一股气，可想起从前和人在一起时，有人把他当作自己人，竟又高兴了一小会儿。
+S03-2 可那点高兴还没退，他心里就酸了：从前那样的日子过不成了，可离开以后就一定会更好过吗？
+S04-1 想起从前亲近的日子，他一度真盼着还能那样相处。
+S04-2 可那份亲近越鲜活，当初那些委屈也跟着翻上来：那一步走得对不对，后不后悔？没走的话，如今又会怎样？
+S05-1 他仍不服气，觉得当初那些气不该忍，可连过去开心的事都不敢多想，也太为难自己了。
+S05-2 跟自己争得没了力气，那股不服气也渐渐淡了，想到自己如今已不在那些人身边，只觉得难受。
+S06-1 心里那阵难受慢慢缓下来，他又想起以前和人在一起、不必时时防备的时候，这回没急着拿受过的气压住这份想念。
+S06-2 离开以后，遇上难熬的事，他常常只能自己挺过去，这才知道从前有人在身边能让自己轻松多少。
+S06-3 他很想再过上那种不用多说也知道彼此亲近的日子，又怕以后再也没有了。
+S06-4 不过，那样的日子自己毕竟真真切切过过，光是这么想着，他心里也暖和了一点。
+
+### 行18869 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; mkdir -p r2c; cp r2b/op60_src.json r2c/; python - <<'E'
+import json
+p='r2b/op61_src.json'; d=json.load(open(p,encoding='utf-8'))
+for s in d['sections']:
+    for l in s['lines']:
+        if l['id']=='S06-2':
+            assert l['text'].startswith('离开以后，遇上难熬的事，他常常只能自己挺过去，')
+            l['text']='如今身边没了那些人，他才知道从前有人在身边能让自己轻松多少。'
+json.dump(d,open('r2c/op61_src.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
+E
+cat > r2c/说明.md <<'E'
+11-09 下午 DAG 定稿 r2c = r79o（r2）
++ 写明对应和出处（r3/dagmap.py，两位评委独立标，一致的直接用）
++ 船歌 S13-1“越喜欢跟他待着”→“他越喜欢跟对方待着”（指代不清，验收报中等）
++ 幻想 S06-2“离开以后，遇上难熬的事，他常常只能自己挺过去，这才知道……”→“如今身边没了那些人，他才知道……”（16 次验收里两位不同评委各报一次“新编经历”；改后只靠 S05-2 已有的“如今已不在那些人身边”）。
+E
+(python r3/dagabs.py r2c run1 run2 > r3/dagabs_r2c.log 2>&1 &); echo 已启动
+
+--- 行18870 结果
+已启动
+
+### 行18872 调用 Monitor
+cd /d/musicclaude/_video_public_20261104/line_r79o; tail -n0 -F r3/K15a_write.log r3/dagabs_r2c.log 2>/dev/null | grep --line-buffered -E "连贯|不合格|DAG 绝对验收|Error|Traceback"
+
+--- 行18873 结果
+Monitor started (task b32as9jf9, expires in 30m unless the source ends first; you get one notice at expiry — re-arm if you still need the watch). You will be notified on each event. Keep working — do not poll or sleep. Events may arrive while you are waiting for the user — an event is not their reply.
+
+### 行18874 调用 TaskStop
+{"task_id": "bf5te1t8i"}
+
+--- 行18875 结果
+{"message":"Successfully stopped task: bf5te1t8i (cd /d/musicclaude/_video_public_20261104/line_r79o; tail -n0 -F r3/K15a_write.log r3/K15b_write.log r3/dagabs_r2.log 2>/dev/null | grep --line-buffered -E \"连贯|不合格|DAG 绝对验收|Error|Traceback\")","task_id":"bf5te1t8i","task_type":"local_bash","command":"cd /d/musicclaude/_video_public_20261104/line_r79o; tail -n0 -F r3/K15a_write.log r3/K15b_write.log r3/dagabs_r2.log 2>/dev/null | grep --line-buffered -E \"连贯|不合格|DAG 绝对验收|Error|Traceback\""}
+
+### 行18886 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+import json
+for w in ['op60','op61']:
+    d=json.load(open(f'r3/s24/screen_{w}_g68K15b.json',encoding='utf-8'))
+    for s in d['sections'][4:6]:
+        print('##',w,s['sec'])
+        for x in s['rows']:
+            print('  话：'+x['text'] if x['kind']=='line' else '  感受：'+' / '.join(i['text']+('['+i['bars']+']' if i.get('bars') else '') for i in x['items']))
+E
+
+--- 行18887 结果
+## op60 S05
+  话：前几次想说又收住，对方却一直愿意亲近；这回他忘了藏，对方已看出他有多在乎。心里空落落的，连怎么相处都拿不准，怕对方嫌他太黏，亲近也像隔了一层。
+  话：托着人的水波仿佛忽然被抽掉，只剩一条孤零零的旋律。
+## op60 S06
+  话：这回对方看出他有多在乎，相处却一点没变，他才又能像从前那样自在。
+  感受：熟悉的摇摆回来了，水波却变薄、碎成细密的小纹[40–50]
+  话：安静时，他还想靠近，怕要得太多；对方不知道他刚才多怕被嫌弃，他有点孤单。另一条声线不时回应、插话，像念头又回来：“算了”“但还是放不下”。
+  感受：也像白天相处很好，夜里独自回家，心头却泛起一阵酸楚
+  话：他忍不住想：对方既然一直没退开，会不会也有一点舍不得结束这份亲近？
+## op61 S05
+  话：他仍不服气，觉得当初那些气不该忍，可连过去开心的事都不敢多想，也太为难自己了。
+  感受：像换了一个人开口[116–147] / 语气柔和了许多[116–147] / 歌唱亲近却仍克制[116–147] / 仿佛夜色里两个影子[116–147] / 彼此低声说话[116–147]
+  感受：柔和歌唱[116–127] / 仍有向前的劲[116–127] / 仿佛在说[116–127] / “这件事不能就这样算了”[116–127]
+  话：跟自己争得没了力气，那股不服气也渐渐淡了；想到自己如今已不在那些人身边，只觉得难受。
+  感受：快速音型仍在往前流[128–147] / 随后渐渐放缓、变稀[128–147] / 最后化成较慢、较疏的和弦[128–147] / 旋律几乎单独露出来[128–147] / 像脚下的地板忽然不见[128–147] / 只剩一个声音自己说话[128–147]
+  感受：像几次深呼吸[144–147] / 或一声深深的叹息[144–147] / 这一下松动[144–147] / 并非已经想通[144–147] / 而是抵抗得累了[144–147]
+## op61 S06
+  话：心里那阵难受慢慢缓下来，他又想起以前和人在一起、不必时时防备的时候；这回没急着拿受过的气压住想念。
+  感受：音乐像滑进隔开的静谧[148–180] / 声音绵长、从容，近乎停驻[148–180] / 整个世界像被玻璃罩隔开[148–180] / 连呼吸都不愿惊动它[148–180] / 也像母亲在耳畔[148–180] / 轻轻哼唱的摇篮曲[148–180] / 安宁不等于现实变好[148–180] / 也不是能永远停留的地方[148–180]
+  话：离开以后，遇上难熬的事，他常常只能自己挺过去，这才知道从前有人在身边能让自己轻松多少。
+  话：他很想再过上那种不用多说也知道彼此亲近的日子，又怕以后再也没有了。
+  感受：也会浮现一幅短暂画面[约160] / 远方忽然被照亮[约160] / 远去的家园在梦里显现[约160] / 虽然无法回到那里[约160] / 却能远远地看见它[约160]
+  话：那样的日子毕竟真真切切过过，光是这么想着，他心里也暖和了一点。
+
+### 行18898 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; bash r3/pipe_K15.sh g68K15a g6 g68K15b g56 > r3/pipe_K15.log 2>&1
+
+--- 行18899 结果
+Command running in background with ID: bn56s2xn4. Output is being written to: C:\Users\zuoyi\AppData\Local\Temp\claude\c3a5d7b49981850d\37a0bac0-a5c2-4124-b459-05818b36b83c\tasks\bn56s2xn4.output. You will be notified when it completes — do not poll that file or sleep while waiting. Read the file only if the user asks for progress, or if you need a line it prints before you can go on, such as a server's ready line or port.
+Session cwd remains D:\musicclaude\_video_public_20261104\line_r79o; directory changes made by the backgrounded command do not apply to subsequent commands.
+
+### 行18917 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; grep -n "^R2\s*=\|^R2 =\|R2=" pub24.py | head; grep -rn "R2/f'{w}_src.json'\|R2/" --include=*.py . | grep -v "^./r3/\(s24\)" | wc -l
+
+--- 行18918 结果
+113
+
+### 行18920 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; grep -n "R2" pub24.py | head -5
+
+--- 行18921 结果
+14:R3 = pub3.OUT; R2 = pub2.OUT; S = R3/'s24'; S.mkdir(exist_ok=True)
+234:    for s in rd(R2/f'{w}_src.json')['sections']:
+245:    secs = rd(R2/f'{w}_src.json')['sections']
+444:        src = {b['id']: b for s in rd(R2/f'{w}_src.json')['sections'] for b in s['beads']}
+780:        for s in rd(R2/f'{w}_src.json')['sections']:
+
+### 行18924 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; grep -n "OUT" pub2.py | head -3
+
+--- 行18931 结果
+23:OUT = ROOT/'r2'; OUT.mkdir(exist_ok=True)
+122:        wr(OUT/f'{w}_src.json', out)
+128:    d = rd(OUT/f'{w}_src.json'); rows = [f"（全曲的中心：{d['center']}）"] if d.get('center') else []
+
+### 行18933 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='pub24.py'; s=open(p,encoding='utf-8').read()
+a="R3 = pub3.OUT; R2 = pub2.OUT; S = R3/'s24'; S.mkdir(exist_ok=True)"
+b="R3 = pub3.OUT; R2 = pub2.OUT; S = R3/'s24'; S.mkdir(exist_ok=True)\nif os.environ.get('PUB_SRC'): R2 = pub2.ROOT/os.environ['PUB_SRC']   # 11-09 下午：DAG 定稿换成 r2c（补对应和出处、改两句）时用 PUB_SRC=r2c"
+assert a in s; s=s.replace(a,b)
+if '\nimport os' not in s and 'import os' not in s.split('\n',15)[0:15].__str__(): s='import os\n'+s
+open(p,'w',encoding='utf-8').write(s)
+E
+head -14 pub24.py | grep -n import; PUB_SRC=r2c python -c "import pub24;print(pub24.R2)"; grep -n "^from pub24 import\|R2" blend.py | head -3
+
+--- 行18934 结果
+1:import os
+8:import json, os, re, sys
+9:from collections import Counter
+10:from concurrent.futures import ThreadPoolExecutor
+13:import pub2, pub3, pub16
+14:from pub2 import G6, G56, JUDGES, WORKS, call, parse, rd, wr
+D:\musicclaude\_video_public_20261104\line_r79o\r2c
+10:from pub24 import S, R2, R3, rd, wr, call, parse, G6, G56, WORKS, to_script, lines_text
+79:    for s in rd(R2/f'{w}_src.json')['sections']:
+88:    src = rd(R2/f'{w}_src.json'); secs = [s['sec'] for s in src['sections']]
+
+### 行18937 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; sed -i '1{/^import os$/d}' pub24.py; head -3 pub24.py; PUB_SRC=r2c python -c "import pub24;print(pub24.R2)"
+
+--- 行18938 结果
+"""屏幕稿：珠子和线揉在一起写，上下交替排（线一行、感受一行），线的关键词放大，感受小字散开；局部小节的感受到时出现。
+内容这一步直接从完整珠子 + 定稿线出发，不再先拆词再配线。顾问只用 GPT（GPT-6、GPT-5.6）。
+python pub24.py adv                两位顾问各给一份通用提示词 → r3/s24/prompt_{a}.txt
+D:\musicclaude\_video_public_20261104\line_r79o\r2c
+
+### 行18941 调用 Bash
+cd /d/musicclaude/_video_public_20261104/line_r79o; python - <<'E'
+p='blend.py'; s=open(p,encoding='utf-8').read()
+a="def beads_text(w):"
+b='''def lines_map(w):
+    """11-09 下午：DAG r2c 起每条线写明对应的珠子（DAG 标准第 4 条），写稿时一起给，方便把感受织进对应的处境。"""
+    return chr(10).join(f"{s['sec']} {l['id']}：{l['text']}" + (f"（对应珠子：{'、'.join(l['beads'])}）" if l.get('beads') else '') for s in rd(R2/f'{w}_src.json')['sections'] for l in s['lines'])
+
+
+def beads_text(w):'''
+assert s.count(a)==1; s=s.replace(a,b)
+a2=".replace('{FINAL}', lines_text(w))"
+assert s.count(a2)==1; s=s.replace(a2,".replace('{FINAL}', lines_map(w))")
+open(p,'w',encoding='utf-8').write(s)
+E
+PUB_SRC=r2c python -c "import blend;print(blend.lines_map('op60')[:300])"
+
+--- 行18942 结果
+S01 S01-1：他忽然发现自己那么想靠近这个人，心里一下热起来，连自己也有点意外。（对应珠子：S01-B1）
+S01 S01-2：他怕对方一看出自己有多需要这份亲近，就会觉得负担太重，所以只敢露出一点点喜欢。（对应珠子：S01-B2）
+S01 S01-3：只是这么一点亲近就让他觉得甜，他还拿不准，下次自己能不能更坦白些。（对应珠子：S01-B3）
+S02 S02-1：对方没有因为他露出在意就退开，仍愿意跟他亲近，他才渐渐放松下来。（对应珠子：S02-B1）
+S02 S02-2：他也想顺势靠得更近，有一阵子喜欢得几乎藏不住，最后还是怕太急弄坏眼下的自在而收住了。（对应珠子：S02-B3）
+S
+
+### 行18947 调用 Bash
+cd /d/musicclaude/_thread_evo_20261019; cat >> DAG.md <<'E'
+- **2026-11-09 下午：DAG 按 11-08 版标准收敛，定稿 r2c。** 用户问“dag 和 dag2 都按照现在的标准收敛了吗”。此前 11-08 起 DAG2 一直直接用 r79o（`line_r79o/r2/`）当原料，没按 11-08 版 DAG 标准测过。新测法：绝对尺度验收 `line_r79o/r3/dagabs.py`（四条内容标准 + 底线逐条判，轻重按对 DAG2 的实际影响定义，人话、啰嗦不算问题；两首 × GPT-6、GPT-5.6 × 两遍）。r79o：严重 0，中等每次 1–2 条，8 次里 8 次都报第 4 条“没写明哪条线对应哪几颗珠子”，另有单次报的船歌 S13-1 指代不清、幻想 S06-2 新编经历。处理：`r3/dagmap.py` 两位评委独立标对应和出处（一致的直接用，船歌 44/50、幻想 41/53 一致）→ r2b；船歌 S13-1“越喜欢跟他待着”→“他越喜欢跟对方待着”；r2b 重测 8 次里 6 次零问题，幻想 S06-2 又被另一位评委报一次 → 改成只依据已有事实“如今身边没了那些人，他才知道……”→ **r2c：8 次验收全部零问题（严重、中等、轻微都 0）**。说明 `line_r79o/r2c/说明.md`。DAG2 之后用 `PUB_SRC=r2c`，写稿时带上对应关系（`blend.lines_map`）。
+E
+sed -n 1,30p STATUS.md | head -30
+

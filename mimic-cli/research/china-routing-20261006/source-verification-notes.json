@@ -1,0 +1,263 @@
+{
+  "stage": "first_report_partial_audit",
+  "review_performed": true,
+  "all_reports_reviewed": false,
+  "verifier": "root coordinator",
+  "research_date": "2026-10-06",
+  "checks": [
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S04"
+      ],
+      "claim_ids": [
+        "C16"
+      ],
+      "url": "https://fred.stlouisfed.org/series/DCLORC1A027NBEA",
+      "method": "Coordinator downloaded and read full FRED page; public response SHA and retrieval timestamp in source-archive-index.json",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2025 clothing/footwear PCE $559.768B, annual current dollars, not seasonally adjusted; source BEA; latest displayed update 2026-09-30.",
+      "caveat": "PCE scope differs from employer-retailer revenue and C16 includes bags; not a contradiction with $245.655771B narrower store-industry subtotal. Preserve data vintage."
+    },
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S25"
+      ],
+      "claim_ids": [
+        "C10",
+        "C17"
+      ],
+      "url": "https://housewares.org/press-releases/second-annual-state-of-the-industry-report/",
+      "method": "Coordinator downloaded and read issuer full text; immutable public response SHA and timestamp recorded",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2025 small appliances $44.94B (+1%); non-electric housewares $32.18B (-2.5%); overall home/housewares purchased 40% in-store/60% online.",
+      "caveat": "Small appliance universe includes kitchen/personal-care/home-environment electrics; does not cleanly equal C10 robot vacuums/small appliances. Home/housewares aggregate channel split cannot be copied to every subcategory."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S25"
+      ],
+      "claim_ids": [
+        "C14"
+      ],
+      "url": "https://outdoorindustry.org/press-release/new-report-outdoor-market-shows-modest-rebound-to-28b-in-2024-driven-by-casual-consumers/",
+      "method": "Coordinator downloaded and read association's April 15, 2025 release",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2024 outdoor retail sales $28B (+1% vs 2023).",
+      "caveat": "Includes apparel/footwear/equipment/accessories. Cannot sum with C16 or interpret as equipment-only GMV."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S16"
+      ],
+      "claim_ids": [
+        "C08"
+      ],
+      "url": "https://www.parksassociates.com/blogs/pr-smart-home/nearly-50-of-us-internet-households-own-and-use-a-wearable",
+      "method": "Coordinator downloaded and read original issuer release and visible publication date",
+      "status": "VERIFIED_OLD_DATA_DATE",
+      "supported": "Nearly 50% US internet households owning/using wearable reported in source released 2024-08-28; study of 8000 internet households.",
+      "caveat": "This is 2024 ownership/adoption evidence, not a verified 2026 prevalence estimate or annual hardware GMV. Report's current-sounding language needs the explicit older date."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S04"
+      ],
+      "url": "https://www.census.gov/retail/ecommerce.html",
+      "method": "Coordinator independently opened official full page",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "Published Q2 2026 adjusted ecommerce share 17.1%; release 2026-08-18.",
+      "caveat": "Official special notice dated 2026-09-28 says estimates are not the most up-to-date; revisions to appear 2026-11-19. Aggregate retail share is not a category-specific online share."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S24"
+      ],
+      "claim_ids": [
+        "C13"
+      ],
+      "url": "https://www.sema.org/news-media/press-release/new-sema-research-2025-market-report",
+      "method": "Coordinator independently opened issuer full press release",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2024 US accessorizing/modifying spend approximately $52.65 billion; spending split equally online/offline.",
+      "caveat": "Specialty equipment market boundary is narrower/different than all auto parts or all C13 products. Source issuer estimate, not independently audited sales."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S26"
+      ],
+      "claim_ids": [
+        "C18"
+      ],
+      "url": "https://toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx?hkey=acea06b5-22e0-4bcc-a3bc-03532459e00d",
+      "method": "Coordinator independently opened association's published licensed original data",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2025 projected full toy market approximately $45.6B; retail tracking $30.3B covering 68%; 6% growth.",
+      "caveat": "Do not equate tracking panel with entire market; toy boundary does not establish full adult collectibles/official-merch category. Source warns panel and hierarchy revisions affect comparisons."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S06"
+      ],
+      "claim_ids": [
+        "C10",
+        "C16",
+        "C17"
+      ],
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-vets-2024.htm",
+      "method": "Coordinator opened table and verified All consumer units column, not military subgroup columns",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "2024 annual means: furnishings/equipment $2414, major appliances $385, small appliances/housewares $155, apparel/services $2001, footwear $461.",
+      "caveat": "Annual expenditure per consumer unit, not transaction ASP, purchase frequency or market GMV; overlapping and broader category boundaries. Sports $225 is not in this cited table and needs its own supporting source."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "method": "Coordinator followed official download link and retrieved AIES44BASIC.zip; exact selected rows saved in source-artifacts/census-retail-selected-rows.json",
+      "status": "RAW_DATA_RETRIEVED",
+      "supported": "Downloaded 2024 employer retail table independently reproduces $245.655771B apparel group using nonoverlapping NAICS2017 leaf codes 448110/448120/448130/448140/448150/448190/448210/448320; sporting-goods stores $58.713945B; hobby/toy/game stores $17.914046B; outdoor-power-equipment stores $11.613150B; auto-parts/accessory stores $85.239415B. Values are thousands of dollars in raw table.",
+      "caveat": "Validate sum using nonoverlapping leaf rows, not duplicate parent/child codes. Industry revenue is not product-line GMV. Original source S02 was agent snippet-only; coordinator's downloaded table is independent verification, not retroactive proof of the agent's access."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S10"
+      ],
+      "claim_ids": [
+        "C02"
+      ],
+      "url": "https://www.circana.com/post/circana-us-consumer-technology-forecast-growth-driven-by-premium-products-2026",
+      "method": "Official publisher search result exposes August 6 article content; repeat full-page fetch timed out",
+      "status": "PARTIAL_SEARCH_TEXT_SUPPORT",
+      "supported": "Indexed issuer content states notebook incremental revenue $1.7B and PC share nearly 20% in 2026.",
+      "caveat": "Full article archival verification still pending. These are forecasts. Even nearly 20% is PCs, not a clean laptops-only boundary."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S13",
+        "S14",
+        "S15"
+      ],
+      "method": "Coordinator found canonical /en/insights paths; opened pages but received title/date only without underlying detailed figures",
+      "status": "URL_REPAIR_AND_NUMERIC_REVALIDATION_REQUIRED",
+      "caveat": "Agent paths containing default.htm, sitemap.html and encoded mailto are malformed/noncanonical. Header-only fetch does not verify share tables, top-model percentages or ASP. Do not classify claimed full access or high-confidence numbers as verified on this basis.",
+      "canonical_urls": [
+        "https://counterpointresearch.com/en/insights/us-smartphone-sales-fall-5-percent-q2-2026",
+        "https://counterpointresearch.com/en/insights/us-smartphone-market-share",
+        "https://counterpointresearch.com/en/insights/top-5-smartphone-model-share-8-countries"
+      ]
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S08"
+      ],
+      "method": "Original notice could not be opened; coordinator found separate BLS full text confirming release schedule",
+      "status": "CORROBORATED_BY_DIFFERENT_OFFICIAL_PAGE",
+      "supported": "2025 annual CE expenditure release planned 2026-10-29, after research date.",
+      "corroborating_url": "https://www.bls.gov/cex/2025-federal-government-shutdown-impact-ce.htm",
+      "caveat": "The exact S08 page publication/access state remains unverified; keep original source record."
+    },
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S01"
+      ],
+      "claim_ids": [
+        "M01"
+      ],
+      "url": "https://www.census.gov/retail/eCommerce.html",
+      "method": "Coordinator read archived full official release, with response SHA and retrieval timestamp in source-archive-index.json",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "August 18 release reports seasonally adjusted Q2 2026 retail e-commerce $340.2B, total retail $1,986.5B, 17.1%; nonadjusted $329.5B and 16.4%.",
+      "caveat": "The page explicitly warns estimates ceased to be latest as of September 28, 2026. Preserve August vintage; do not call these latest estimates as of October 6. This is an all-retail aggregate, not an 18-category online fraction."
+    },
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S31"
+      ],
+      "claim_ids": [
+        "C14"
+      ],
+      "url": "https://sfia.org/resources/new-sfia-report-sporting-goods-industry-reaches-nearly-130b-amid-trade-and-tariff-pressures/",
+      "method": "Coordinator read full issuer press release archived in source-artifacts/pages",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": "March 31, 2026 issuer release reports 2025 wholesale sales $130B, +3.7%; universe includes sports equipment, athletic footwear, sports apparel and licensed merchandise.",
+      "caveat": "Wholesale basis must remain separate from retail/PCE; includes institutional equipment and C16/C18 overlaps; no full paid category table was accessed."
+    },
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S19"
+      ],
+      "claim_ids": [
+        "C06"
+      ],
+      "url": "https://www.circana.com/post/wired-headphones-growth-is-a-throwback-to-2016",
+      "method": "Compared the unedited W1-A and W1-B claims against the same cited URL; coordinator retrieval HTTP429",
+      "status": "CONFLICT_UNRESOLVED",
+      "supported": null,
+      "caveat": "W1-A calls the 65% dollar share true-wireless; W1-B calls it Bluetooth. These definitions are not interchangeable. Neither label is adjudicated until full primary text is accessible. Both repeats count as one source, not independent corroboration."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S22"
+      ],
+      "claim_ids": [
+        "C06"
+      ],
+      "url": "https://www.circana.com/post/wired-headphones-growth-is-a-throwback-to-2016",
+      "method": "Compared the unedited W1-A and W1-B claims against the same cited URL; coordinator retrieval HTTP429",
+      "status": "CONFLICT_UNRESOLVED",
+      "supported": null,
+      "caveat": "The same source is described with conflicting Bluetooth vs true-wireless definitions; keep 65% subgroup label pending primary-source adjudication."
+    },
+    {
+      "job_id": "W1-A",
+      "source_ids": [
+        "S08"
+      ],
+      "claim_ids": [
+        "C01"
+      ],
+      "url": "https://omdia.tech.informa.com/pr/2026/may/us-smartphone-market-declined-3percent-in-1q26-amid-pricing-pressure-and-carrier-subsidy-shifts",
+      "method": "Coordinator archive fetch returned HTTP403",
+      "status": "UNVERIFIED_BLOCKED",
+      "supported": null,
+      "caveat": "Model-attested 33.4M/-3% cannot be promoted to coordinator-verified shipment facts based only on a plausible URL."
+    },
+    {
+      "job_id": "W1-B",
+      "source_ids": [
+        "S07"
+      ],
+      "claim_ids": [
+        "C14"
+      ],
+      "url": "https://www.bls.gov/opub/ted/2026/the-new-year-and-household-spending.htm",
+      "method": "Coordinator archive fetch returned HTTP403",
+      "status": "UNVERIFIED_BLOCKED",
+      "supported": null,
+      "caveat": "The $225 sports/recreation/equipment expenditure observation remains pending; another BLS table was read for other expenditure fields but does not automatically verify this row."
+    }
+  ],
+  "methodology_flags": [
+    "W1-B's proposed composite 60/15/10/10/5 demand score includes fragmentation and growth. Treat as a discretionary opportunity-ranking index, NOT expenditure weights for a demand-weighted price-spread distribution.",
+    "A missing category GMV cannot be replaced by retailer-industry revenue, ownership penetration, equal SKU counts or an average from other reports.",
+    "Completed transport plus JSON and screenshot is evidence of a response, not evidence every cited fact is correct.",
+    "Do not share these notes with other W1/W2 replicates before they finish."
+  ]
+}

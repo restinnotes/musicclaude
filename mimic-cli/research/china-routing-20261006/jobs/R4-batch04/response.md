@@ -1,0 +1,798 @@
+审计结果如下；我把“市场是否实际有货”和“本次能否核验”严格分开，未把 snippet、索引价或页面壳升级为 marketplace coverage。
+
+冻结样本与 9 个 SKU 均保持不变。完整审计分母为 3 个原始 job × 9 SKU＝27 个 observation audit；其中每个 job 保留 6 个 frozen verified-head、3 个 provisional/non-head，因此合计 18 个 head 行、9 个 provisional 行。没有删掉全空行，也没有替换 SKU。
+
+本轮直接打开 9 个 Temu 精确搜索 URL，均得到可识别的 Temu 搜索页 URL/标题但没有可读商品记录，最合适的独立访问态是 `page_shell`，而不是可证明“无结果”或“无货”。:chatgpt-content-reference{index="0"} 9 个 AliExpress 精确搜索 URL 则全部重定向至 `login.aliexpress.com/sync_cookie_read.htm`，独立复核应记为 `LOGIN_REQUIRED`，而非统一 `BLOCKED` 或 `NOT_OBSERVED`。([Invalid URL]()) 因此 W4-A/W4-B 的“18/18 BLOCKED”计数需要口径修正；W4-C 的“Temu 9 NOT_OBSERVED、AliExpress 4 BLOCKED+5 NOT_OBSERVED”也不能作为本轮可复现的 primary-access 分类。不过三份报告最重要的实质结论仍成立：没有任何直接读到的 marketplace offer 足以核实 exact/OEM/comparable、seller、实时库存、美国仓或 ZIP10001 普通公开到手价，故 exact price、landed savings 和 exact coverage 均不可用。
+
+二级索引确实提供反缺席信息。P20 Max item 1005013026385525 在 2026-10-06 仍有索引记录，但标题只到 P20 Max 型号族，不能区分水箱版和自动上下水版；WU130X item 1005012312044183 当天仍被索引，且明确写着 “Without battery and charger”，因此不能匹配冻结 WU130X.1 单电套装；GO 3S item 1005009689106522 当天亦有索引，但标题没有锁定 Arctic White、64GB、Standard Bundle。:chatgpt-content-reference{index="2"} DJI ROMO item 1005010313425811 明确是滚刷/边刷/HEPA/拖布/尘袋等兼容配件，不是整机；W4-A 对它的排除是正确的。:chatgpt-content-reference{index="3"}
+
+exact 边界基本经独立资料复核：石头官方索引明确把 P20 Max 水箱版与上下水版分列；DJI ROMO P Water Tank Version 的官方页面明确为 ROMO P 整机/水箱基站，并说明 P 为透明机器人和透明基站；Sony 的 ILCE-7CM2L 包含 SEL2860 28–60mm 镜头，ILCE-7M5/B 官方销售页把 Body Only 与镜头套装分开；Insta360 官方页明确区分 Arctic White、64GB 与 Standard Bundle。:chatgpt-content-reference{index="4"} WU130X 系列手册的附件表也支持 WU130X、WU130X.1、WU130X.9 不应混为同一 bundle；但 W4-A 将这一点写成“官方页直接证明 .1 单电”略过强，因为 WORX 当前产品页本身展示的是 WU130X 双电，`.1` 单电映射主要来自系列手册/零售资料。:chatgpt-content-reference{index="5"}
+
+结构性问题另有两项：W4-B 的若干 `url` 字段实际存的是 Markdown 链接字符串，不是纯 URL，应修正；W4-C 把若干 Temu/AliExpress 直接访问源标成 `secondary`，来源类型应为平台官方页，只是访问态为 page shell/login/blocked。上述问题不改变“0 个可用于精确价格或 landed-savings 的已核验 offer”这一结论。
+
+```json
+{
+  "job_id": "R4-batch04",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "review_performed": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "audited_jobs": [
+    "W4-A-batch04",
+    "W4-B-batch04",
+    "W4-C-batch04"
+  ],
+  "observation_audits": [
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C10-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Independent primary access is Temu page_shell plus AliExpress login_required, not two generic BLOCKED cells.",
+      "caveat": "head stratum; P20 Max secondary candidate is model-family evidence only and does not prove the frozen water-tank/non-plumbing variant.",
+      "source_ids": ["T01", "A01", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C10-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Independent primary access is Temu page_shell plus AliExpress login_required, not two generic BLOCKED cells.",
+      "caveat": "head stratum; generic P20 Max indexing cannot establish the automatic water-supply/drainage variant.",
+      "source_ids": ["T02", "A02", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C10-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Primary access taxonomy should be Temu page_shell and AliExpress login_required; retain zero verified robot offers.",
+      "caveat": "provisional stratum; indexed item 1005010313425811 is compatible spare parts and is correctly excluded.",
+      "source_ids": ["T03", "A03", "AI02", "S02", "M02"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C11-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Replace reproducible access classification of the two searches with Temu page_shell and AliExpress login_required.",
+      "caveat": "head stratum; no seller, exact voltage/plug, stock, US warehouse or ordinary delivered price was verified.",
+      "source_ids": ["T04", "A04"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C11-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Replace reproducible access classification of the two searches with Temu page_shell and AliExpress login_required.",
+      "caveat": "head stratum; WJZ1601S dual-battery bundle, seller, stock, warehouse and delivery remain unverified.",
+      "source_ids": ["T05", "A05"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C11-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Primary access should be recorded as Temu page_shell plus AliExpress login_required; current AliExpress indexed candidate is a bare WU130X and not exact.",
+      "caveat": "provisional stratum; the WU130X.1 single-battery distinction is supported by series/manual evidence, while the current WORX product page itself describes WU130X with two batteries.",
+      "source_ids": ["T06", "A06", "AI03", "S03", "M03", "M04"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C12-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Primary search access is Temu page_shell and AliExpress login_required rather than generic BLOCKED.",
+      "caveat": "head stratum; Sony confirms ILCE-7CM2L/SEL2860 kit identity, but no marketplace silver exact offer was verified.",
+      "source_ids": ["T07", "A07", "M05"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C12-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Primary search access is Temu page_shell and AliExpress login_required rather than generic BLOCKED.",
+      "caveat": "head stratum; Sony confirms ILCE-7M5/B Body Only as a distinct style, not AliExpress/Temu coverage.",
+      "source_ids": ["T08", "A08", "M06"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "sku_id": "C12-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Primary search access is Temu page_shell and AliExpress login_required rather than generic BLOCKED.",
+      "caveat": "provisional stratum; generic GO 3S indexing does not prove Arctic White 64GB Standard Bundle.",
+      "source_ids": ["T09", "A09", "AI04", "S04", "M07"]
+    },
+
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C10-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "The 18-BLOCKED taxonomy is not reproduced: Temu is page_shell and AliExpress search is login_required. The report's URL field should also contain a plain URL rather than Markdown.",
+      "caveat": "head stratum; secondary P20 Max candidate remains non-exact and unusable for price/stock/warehouse claims.",
+      "source_ids": ["T01", "A01", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C10-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required for the independently reproduced access states; normalize the stored source URL.",
+      "caveat": "head stratum; automatic-plumbing configuration remains unverified.",
+      "source_ids": ["T02", "A02", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C10-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required rather than generic BLOCKED; normalize source URLs.",
+      "caveat": "provisional stratum; no ROMO P Water Tank whole-product marketplace offer was verified.",
+      "source_ids": ["T03", "A03", "AI02", "S02", "M02"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C11-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required rather than generic BLOCKED; normalize source URLs.",
+      "caveat": "head stratum; no primary offer fields were recoverable.",
+      "source_ids": ["T04", "A04"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C11-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required rather than generic BLOCKED; normalize source URLs.",
+      "caveat": "head stratum; no exact dual-battery marketplace offer, seller, stock or US warehouse was verified.",
+      "source_ids": ["T05", "A05"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C11-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required for search access; normalize source URLs.",
+      "caveat": "provisional stratum; indexed item 1005012312044183 explicitly lacks battery and charger, so exclusion from exact is supported.",
+      "source_ids": ["T06", "A06", "AI03", "S03", "M03", "M04"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C12-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required rather than generic BLOCKED; normalize source URLs.",
+      "caveat": "head stratum; silver 28-60 marketplace configuration remains unverified.",
+      "source_ids": ["T07", "A07", "M05"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C12-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required rather than generic BLOCKED; normalize source URLs.",
+      "caveat": "head stratum; Body Only is a valid exact boundary but marketplace coverage is unverified.",
+      "source_ids": ["T08", "A08", "M06"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "sku_id": "C12-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "Use Temu page_shell and AliExpress login_required for the primary search; normalize source URLs.",
+      "caveat": "provisional stratum; historical item 3256808554560690 is login-required and the current indexed GO 3S candidate does not establish the frozen variant.",
+      "source_ids": ["T09", "A09", "AI04", "AI05", "S04", "M07"]
+    },
+
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C10-S01",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": null,
+      "caveat": "head stratum; its core candidate conclusion is reproduced. Current direct AliExpress search is login_required, while the candidate item itself remains inaccessible; model-family indexing is not exact coverage.",
+      "source_ids": ["T01", "A01", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C10-S02",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": null,
+      "caveat": "head stratum; generic P20 Max candidate cannot establish automatic-plumbing exactness; direct search now hits a login wall.",
+      "source_ids": ["T02", "A02", "AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C10-S03",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "AliExpress primary search should be recorded as login_required in this independent pass rather than NOT_OBSERVED; retain zero exact offers.",
+      "caveat": "provisional stratum; a secondary accessory listing exists but is not the ROMO P robot.",
+      "source_ids": ["T03", "A03", "AI02", "S02", "M02"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C11-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "AliExpress primary search is independently login_required, not merely NOT_OBSERVED.",
+      "caveat": "head stratum; absence, stock and US eligibility remain unresolved.",
+      "source_ids": ["T04", "A04"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C11-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "AliExpress primary search is independently login_required, not merely NOT_OBSERVED.",
+      "caveat": "head stratum; no seller, stock, warehouse or exact dual-battery offer is verified.",
+      "source_ids": ["T05", "A05"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C11-S03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": null,
+      "caveat": "provisional stratum; its exclusion of the indexed bare WU130X from exact coverage is supported. Direct AliExpress search itself is login_required.",
+      "source_ids": ["T06", "A06", "AI03", "S03", "M03", "M04"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C12-S01",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "AliExpress primary search is independently login_required rather than NOT_OBSERVED.",
+      "caveat": "head stratum; Sony kit identity is verified, marketplace silver exact coverage is not.",
+      "source_ids": ["T07", "A07", "M05"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C12-S02",
+      "status": "CORRECTION_REQUIRED",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": "AliExpress primary search is independently login_required rather than NOT_OBSERVED.",
+      "caveat": "head stratum; Body Only boundary is verified but marketplace offer fields are not.",
+      "source_ids": ["T08", "A08", "M06"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "sku_id": "C12-S03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "usable_exact_price_comparison": false,
+      "usable_verified_landed_savings": false,
+      "usable_exact_coverage_observation": false,
+      "correction": null,
+      "caveat": "provisional stratum; the indexed GO 3S title does not establish Arctic White 64GB Standard Bundle, and the primary item remains inaccessible.",
+      "source_ids": ["T09", "A09", "AI04", "S04", "M07"]
+    }
+  ],
+  "claim_audits": [
+    {
+      "original_job_id": "W4-A-batch04",
+      "claim_ref": "K01/K02/K09 and 18 BLOCKED count",
+      "status": "CORRECTION_REQUIRED",
+      "finding": "Zero verified offers is supported, but independent primary access reproduces 9 Temu page_shell plus 9 AliExpress login_required, not 18 generic BLOCKED.",
+      "source_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08", "A09"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "claim_ref": "K03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "Item 1005010313425811 is indexed as compatible ROMO spare parts, not a robot; its AliExpress primary item remains inaccessible.",
+      "source_ids": ["AI02", "S02"]
+    },
+    {
+      "original_job_id": "W4-A-batch04",
+      "claim_ref": "K05",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "WU130X and WU130X.1 bundle identity is material. Current WORX page shows WU130X with two batteries; series-manual evidence distinguishes WU130X.1 as a separate accessory configuration.",
+      "source_ids": ["M03", "M04"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "claim_ref": "K01/K02/K06 and batch_counts.blocked=18",
+      "status": "CORRECTION_REQUIRED",
+      "finding": "The no-offer conclusion is retained, but current independent access-state counts are 9 page_shell and 9 login_required. Several JSON url fields are Markdown strings rather than valid URLs.",
+      "source_ids": ["T01", "T09", "A01", "A09"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "claim_ref": "K03",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "P20 Max item 1005013026385525 is still secondarily indexed on 2026-10-06 but does not establish either frozen plumbing variant, seller, stock, warehouse or delivered price.",
+      "source_ids": ["AI01", "S01", "M01"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "claim_ref": "K04",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "WU130X item 1005012312044183 is still indexed on 2026-10-06 and explicitly says without battery and charger, so it is not frozen WU130X.1 single-battery exact coverage.",
+      "source_ids": ["AI03", "S03", "M03", "M04"]
+    },
+    {
+      "original_job_id": "W4-B-batch04",
+      "claim_ref": "K05",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "The historical GO 3S candidate remains non-verifying; its direct AliExpress page requires login and it does not prove the frozen white 64GB Standard Bundle.",
+      "source_ids": ["AI05", "M07"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "claim_ref": "K01/K05 and observation_summary access counts",
+      "status": "CORRECTION_REQUIRED",
+      "finding": "Zero original-page-verified offers is supported, but the current direct access taxonomy is Temu page_shell for all nine and AliExpress login_required for all nine.",
+      "source_ids": ["T01", "T09", "A01", "A09"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "claim_ref": "K02/K03/K04",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "The P20 Max, bare WU130X and generic GO 3S secondary candidates are real anti-absence evidence but remain insufficient for frozen exact coverage.",
+      "source_ids": ["S01", "S03", "S04", "AI01", "AI03", "AI04"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "claim_ref": "K07-K11",
+      "status": "VERIFIED_WITH_CAVEAT",
+      "finding": "Manufacturer material supports the stated variant boundaries, but it is not marketplace coverage evidence.",
+      "source_ids": ["M01", "M02", "M05", "M06", "M07"]
+    },
+    {
+      "original_job_id": "W4-C-batch04",
+      "claim_ref": "sources S01/S02/S04/S06/S08 source_type",
+      "status": "CORRECTION_REQUIRED",
+      "finding": "Direct Temu/AliExpress platform-access attempts should be typed as official platform sources with page_shell/login_required/blocked access states, not secondary sources.",
+      "source_ids": []
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "T01",
+      "url": "https://www.temu.com/search_result.html?search_key=Roborock%20P20%20Max%20A2950RR&locale_override=211~en~USD",
+      "title": "Temu search - Roborock P20 Max A2950RR",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T02",
+      "url": "https://www.temu.com/search_result.html?search_key=Roborock%20P20%20Max%20automatic%20water%20A2950RR&locale_override=211~en~USD",
+      "title": "Temu search - P20 Max automatic water A2950RR",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T03",
+      "url": "https://www.temu.com/search_result.html?search_key=DJI%20ROMO%20P%20water%20tank&locale_override=211~en~USD",
+      "title": "Temu search - DJI ROMO P water tank",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T04",
+      "url": "https://www.temu.com/search_result.html?search_key=DZC1050-26BT&locale_override=211~en~USD",
+      "title": "Temu search - DZC1050-26BT",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T05",
+      "url": "https://www.temu.com/search_result.html?search_key=WJZ1601S&locale_override=211~en~USD",
+      "title": "Temu search - WJZ1601S",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T06",
+      "url": "https://www.temu.com/search_result.html?search_key=WU130X.1&locale_override=211~en~USD",
+      "title": "Temu search - WU130X.1",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T07",
+      "url": "https://www.temu.com/search_result.html?search_key=Sony%20A7C%20II%2028-60%20silver&locale_override=211~en~USD",
+      "title": "Temu search - Sony A7C II 28-60 silver",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T08",
+      "url": "https://www.temu.com/search_result.html?search_key=Sony%20Alpha%207%20V%20body&locale_override=211~en~USD",
+      "title": "Temu search - Sony Alpha 7 V body",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "T09",
+      "url": "https://www.temu.com/search_result.html?search_key=Insta360%20GO%203S%2064GB%20white&locale_override=211~en~USD",
+      "title": "Temu search - Insta360 GO 3S 64GB white",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": ["R401", "R402"]
+    },
+
+    {
+      "source_id": "A01",
+      "url": "https://www.aliexpress.us/w/wholesale-roborock-p20-max-a2950rr.html",
+      "title": "AliExpress search - Roborock P20 Max A2950RR",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A02",
+      "url": "https://www.aliexpress.us/w/wholesale-roborock-p20-max-automatic-water-a2950rr.html",
+      "title": "AliExpress search - P20 Max automatic water A2950RR",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A03",
+      "url": "https://www.aliexpress.us/w/wholesale-dji-romo-p-water-tank.html",
+      "title": "AliExpress search - DJI ROMO P water tank",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A04",
+      "url": "https://www.aliexpress.us/w/wholesale-dzc1050-26bt.html",
+      "title": "AliExpress search - DZC1050-26BT",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A05",
+      "url": "https://www.aliexpress.us/w/wholesale-wjz1601s.html",
+      "title": "AliExpress search - WJZ1601S",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A06",
+      "url": "https://www.aliexpress.us/w/wholesale-wu130x-1.html",
+      "title": "AliExpress search - WU130X.1",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A07",
+      "url": "https://www.aliexpress.us/w/wholesale-sony-a7c-ii-28-60-silver.html",
+      "title": "AliExpress search - Sony A7C II 28-60 silver",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A08",
+      "url": "https://www.aliexpress.us/w/wholesale-sony-alpha-7-v-body.html",
+      "title": "AliExpress search - Sony Alpha 7 V body",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+    {
+      "source_id": "A09",
+      "url": "https://www.aliexpress.us/w/wholesale-insta360-go-3s-64gb-white.html",
+      "title": "AliExpress search - Insta360 GO 3S 64GB white",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R401", "R402"]
+    },
+
+    {
+      "source_id": "AI01",
+      "url": "https://www.aliexpress.us/item/1005013026385525.html",
+      "title": "AliExpress item 1005013026385525 - P20 Max candidate",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["R403"]
+    },
+    {
+      "source_id": "AI02",
+      "url": "https://www.aliexpress.us/item/1005010313425811.html",
+      "title": "AliExpress item 1005010313425811 - ROMO compatible-parts candidate",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["R404"]
+    },
+    {
+      "source_id": "AI03",
+      "url": "https://www.aliexpress.us/item/1005012312044183.html",
+      "title": "AliExpress item 1005012312044183 - WU130X candidate",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["R403"]
+    },
+    {
+      "source_id": "AI04",
+      "url": "https://www.aliexpress.us/item/1005009689106522.html",
+      "title": "AliExpress item 1005009689106522 - GO 3S candidate",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["R403"]
+    },
+    {
+      "source_id": "AI05",
+      "url": "https://www.aliexpress.us/item/3256808554560690.html",
+      "title": "AliExpress GO 3S historical candidate linked from community discussion",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "login_required",
+      "claims_supported": ["R403"]
+    },
+
+    {
+      "source_id": "S01",
+      "url": "https://www.pricearchive.org/aliexpress.com/item/1005013026385525",
+      "title": "PriceArchive - Roborock P20 Max item 1005013026385525",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["R403"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://es.pricearchive.org/aliexpress.com/item/1005010313425811",
+      "title": "PriceArchive - DJI ROMO compatible spare parts item 1005010313425811",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["R404"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.pricearchive.org/aliexpress.com/item/1005012312044183",
+      "title": "PriceArchive - WORX WU130X without battery and charger item 1005012312044183",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["R403"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.pricearchive.org/aliexpress.com/item/1005009689106522",
+      "title": "PriceArchive - Insta360 GO 3S item 1005009689106522",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["R403"]
+    },
+
+    {
+      "source_id": "M01",
+      "url": "https://mall.roborock.com/",
+      "title": "Roborock official mall - P20 Max plumbing and water-tank variants",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "snippet_only",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M02",
+      "url": "https://store.dji.com/au/product/dji-romo-p-water-tank-version?from=store_homepage",
+      "title": "DJI ROMO P Water Tank Version",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M03",
+      "url": "https://www.worx.cn/content/details26_9742.html",
+      "title": "WORX WU130X official product page",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M04",
+      "url": "https://www.manualslib.com/manual/3645649/Worx-Wu130x-Series.html?page=13",
+      "title": "WORX WU130X/WU130X.1/WU130X.9 series manual - technical data and accessories",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M05",
+      "url": "https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7cm2l/specifications",
+      "title": "Sony ILCE-7CM2L specifications",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M06",
+      "url": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/all-interchangeable-lens-cameras/p/ilce7m5-b",
+      "title": "Sony Alpha 7 V ILCE-7M5/B Body Only",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    },
+    {
+      "source_id": "M07",
+      "url": "https://store.insta360.com/ph/product/go-3s?c=6617&from=banner",
+      "title": "Insta360 GO 3S official configuration page",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["R405"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "R401",
+      "claim": "Independent direct access to the nine frozen Temu searches produced page shells without verifiable product records, while all nine AliExpress searches redirected to a login synchronization page.",
+      "source_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08", "A09"]
+    },
+    {
+      "claim_id": "R402",
+      "claim": "No assigned SKU has a directly verified Temu or AliExpress offer establishing exact/OEM/comparable classification together with seller, current inventory, US warehouse and ordinary public ZIP10001 delivered price.",
+      "source_ids": ["T01", "T09", "A01", "A09"]
+    },
+    {
+      "claim_id": "R403",
+      "claim": "Secondary indexes show current or recent AliExpress model-family candidates for P20 Max, WU130X and GO 3S, but these cannot establish the frozen exact variants or transactional fields.",
+      "source_ids": ["S01", "S03", "S04", "AI01", "AI03", "AI04"]
+    },
+    {
+      "claim_id": "R404",
+      "claim": "AliExpress-linked item 1005010313425811 is indexed as DJI ROMO-compatible replacement brushes, filters, mop pads and dust bags rather than a ROMO P robot.",
+      "source_ids": ["S02", "AI02"]
+    },
+    {
+      "claim_id": "R405",
+      "claim": "Manufacturer or series documentation supports keeping the frozen P20 Max, ROMO P, WU130X.1, Sony and GO 3S variant boundaries separate; these sources do not establish marketplace coverage.",
+      "source_ids": ["M01", "M02", "M03", "M04", "M05", "M06", "M07"]
+    },
+    {
+      "claim_id": "R406",
+      "claim": "The audit retains all 27 original job-SKU observations: 18 verified-head-stratum rows and 9 provisional/non-head rows.",
+      "source_ids": []
+    },
+    {
+      "claim_id": "R407",
+      "claim": "W4-B contains non-URL Markdown strings in some url fields, and W4-C mis-types some direct marketplace-access sources as secondary; these are structural corrections independent of marketplace availability.",
+      "source_ids": []
+    }
+  ],
+  "data_gaps": [
+    "No Temu product-detail page for any frozen SKU was readable enough to verify whole-product exact/OEM/comparable/reseller status.",
+    "AliExpress direct searches require a login synchronization step in this independent pass; candidate item pages were blocked or login-required.",
+    "No verified marketplace seller identity, current inventory, US-warehouse evidence, region/variant fulfillment eligibility, or ZIP10001 ordinary public delivered total exists for any frozen SKU.",
+    "No secondary-index price was promoted to an exact price comparison or landed-savings calculation.",
+    "OEM identity cannot be inferred from image/spec similarity and remains unverified for all nine SKUs.",
+    "Temu page shells cannot distinguish true zero search results from dynamic-rendering, geo, session or anti-bot limitations.",
+    "The original three W4 reports remain usable only as provisional access-limited observations, not as evidence of VERIFIED_UNAVAILABLE."
+  ]
+}
+```

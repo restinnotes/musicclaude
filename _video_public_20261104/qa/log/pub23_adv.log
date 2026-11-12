@@ -1,0 +1,36 @@
+[pub23_adv_argon] ok(argon) 146s 4651 chars 
+[pub23_adv_g6] ok 206s 5113 chars
+g6 5113 这种配合在分工上是合理的：线讲人物的处境、意图和关系变化，珠子讲观众此刻的感受，两者不应该互相翻译。问题不在于“线连贯、珠子碎裂”，而在于现在线仍像缩短的散文，要点经常落在后半段，观众扫读时先看到铺垫；如果把线也拆成碎词，又会丢掉因果、转折和人物经历的连续性。线应该是“要点先行、必要关系补足”的叙事骨架：大字让人一眼抓住这一段的核心，小字保留让这个核心成立的原因、转折和限定。
+[pub23_adv_g56] ok 262s 7056 chars
+g56 7056 这种配合本身是合理的，而且应该保留：线负责人物经历中的事情、处境、选择和因果转折，珠子负责听者此刻的身体感受、情绪和联想。两者不是同一句话的长短版本，而是叙事骨架与体验碎片的分工。现在的问题不是线连贯、珠子碎裂，而是线把最重要的信息放在后半段，前面的铺垫占据了最宝贵的扫读入口，同时线又承担了过多解释，导致观众既要读句子，又要看珠子。线应该变成一种「前置要点＋必要的关系细节」的形态：要点先被看见，连接因果和转折的细节按需保留，全曲再通过关键词和状态变化把各段串起来。
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\pub23.py", line 205, in <module>
+    if c == 'adv': adv()
+                   ^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub23.py", line 108, in adv
+    with ThreadPoolExecutor(3) as ex: list(ex.map(one, jobs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub23.py", line 102, in one
+    name, fn = a; ans = fn(name, msg); r = parse(ans) or {}
+                                           ^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\pub2.py", line 39, in parse
+    return json.JSONDecoder().raw_decode(text[text.find('{'):])[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 888 (char 887)

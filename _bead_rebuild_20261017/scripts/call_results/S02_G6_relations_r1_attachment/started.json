@@ -1,0 +1,48 @@
+{
+  "job_id": "S02_G6_relations_r1_attachment",
+  "status": "failed",
+  "started": "2026-10-17T19:40:00.704603+00:00",
+  "channel": "gpt2",
+  "requested_model": "gpt-6-thinking",
+  "manifest_sha256": "3cfabb4eb93cb5d013cee666ad9d321cd7988af092208ea0a97439e5bc169532",
+  "runner_sha256": "84d7323ee2da0a867c1d42685cc1a945b531d9b55bee9728be499b86e7ccf248",
+  "prompt_source": "D:\\musicclaude\\_bead_rebuild_20261017\\inputs\\S02_gpt_envelope.txt",
+  "attachments": [
+    {
+      "source": "D:\\musicclaude\\_bead_rebuild_20261017\\inputs\\S02.txt",
+      "name": "S02.txt",
+      "size": 88016,
+      "sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3"
+    }
+  ],
+  "automatic_retry": false,
+  "automatic_fallback": false,
+  "exit_code": null,
+  "submission_state": "not_started",
+  "errors": [],
+  "labels": {
+    "segment": "S02",
+    "method": "source_distinctions_relations",
+    "round": 1,
+    "input_content": "same full S02.txt as Flash; native attachment envelope differs"
+  },
+  "prompt_sha256": "c03bde1072e11d46072bd4abba1c618ff6a3f184a99bcb3a11055b95158a1077",
+  "prompt_bytes": 223,
+  "prompt_characters": 83,
+  "normalized_prompt_sha256": "c03bde1072e11d46072bd4abba1c618ff6a3f184a99bcb3a11055b95158a1077",
+  "normalized_prompt_bytes": 223,
+  "normalized_prompt_characters": 83,
+  "native_body_limit_bytes": 65536,
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "thinking_effort": "max",
+    "temporary": true,
+    "unpersonalized": true,
+    "initializer_pss_limit_mib": 1536,
+    "native_body_limit_bytes": 65536,
+    "prompt_normalization": "single_leading_BOM_removed_CRLF_or_CR_to_LF_and_trim_end",
+    "cli_sha256": "7f900dbda11357708ad0cc331c505f619ce2ceec1430df846dbf478067288b8c"
+  }
+}

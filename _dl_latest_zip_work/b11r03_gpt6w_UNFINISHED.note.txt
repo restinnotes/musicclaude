@@ -1,0 +1,12 @@
+UNFINISHED (rule: ambiguous/post-submit -> NEVER retry, record as unfinished, rerun continues skipping)
+
+- job: B11:r03:gpt6w (model_requested=gpt-6-thinking)
+- attempts: 3 total
+  1. confirmed_pre_submit_failure (initial run)
+  2. confirmed_pre_submit_failure (attempt01 retry)
+  3. failure_or_ambiguous, phase=post_submit_ambiguous (attempt02 retry, 158.1s)
+  evidence: results/trials/gpt6w/B11/r03.attempt01/02.meta.json + r03.meta.json (+ .stderr.txt / .raw.json)
+- reason no retry: final attempt is post-submit ambiguous -- request may have reached the model;
+  a retry could double-submit and corrupt the independent-repeat design.
+- action: main rerun (no --retry flag) PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

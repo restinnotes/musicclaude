@@ -1,0 +1,68 @@
+{
+  "tag": "r55repair",
+  "base": "r54weave",
+  "complete": 4,
+  "wins": 3,
+  "no_regress": 2,
+  "net_sums": {
+    "alone": 23,
+    "lean": 39,
+    "plain": 40,
+    "cover": 4
+  },
+  "pass": false,
+  "rows": [
+    {
+      "w": "op60",
+      "j": "g6",
+      "seat": "newX",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 11,
+        "lean": 7,
+        "plain": 7,
+        "cover": 5
+      }
+    },
+    {
+      "w": "op60",
+      "j": "g56",
+      "seat": "newY",
+      "new_win": true,
+      "no_regress": false,
+      "net": {
+        "alone": 6,
+        "lean": 11,
+        "plain": 11,
+        "cover": 1
+      }
+    },
+    {
+      "w": "op61",
+      "j": "g6",
+      "seat": "newY",
+      "new_win": false,
+      "no_regress": false,
+      "net": {
+        "alone": 1,
+        "lean": 10,
+        "plain": 10,
+        "cover": -1
+      }
+    },
+    {
+      "w": "op61",
+      "j": "g56",
+      "seat": "newX",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 5,
+        "lean": 11,
+        "plain": 12,
+        "cover": -1
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "v3_gaps.1",
+  "date": "2026-10-09",
+  "real_model_submissions": 0,
+  "rows": [
+    {
+      "gap": "unknown_codex_event",
+      "reproduced": true,
+      "scope": "synthetic event accepted despite cancellation"
+    },
+    {
+      "gap": "raw_handle_string",
+      "reproduced": true,
+      "scope": "fictional handles only"
+    },
+    {
+      "gap": "untrusted_model_evidence_path",
+      "reproduced": true,
+      "scope": "local metadata spoof accepted, not evidence of real service mismatch"
+    },
+    {
+      "gap": "cli_metadata_handle",
+      "reproduced": true,
+      "scope": "fictional CLI metadata persisted"
+    },
+    {
+      "gap": "missing_cache_duplicate_submission",
+      "reproduced": true,
+      "scope": "mock resubmit for identical sample, no real CLI"
+    },
+    {
+      "gap": "hold_write_failure_allows_next",
+      "reproduced": true,
+      "scope": "mock hold OSError, distinct job proceeded"
+    }
+  ],
+  "all_reproduced": true,
+  "limits": "synthetic local protocol; no claim of real CLI compatibility, service state or music quality"
+}

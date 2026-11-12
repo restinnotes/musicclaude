@@ -1,0 +1,514 @@
+{
+  "job_id": "W2-B-batch01",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C01",
+      "name": "手机",
+      "price_band_rule": "low < CNY2000; mid CNY2000-4999; high >= CNY5000. Use same-day exact-SKU ordinary non-member pre-coupon price only; unknown price => unassigned.",
+      "head_rule": "From opened JD self-operated phone ranking, take first two unique physical SKUs.",
+      "opportunity_rule": "Outside the selected two heads, require opened domestic consumer/community evidence; overseas comparability is not a filter."
+    },
+    {
+      "category_id": "C02",
+      "name": "笔记本电脑",
+      "price_band_rule": "low < CNY4000; mid CNY4000-6999; high >= CNY7000. Use same-day exact-SKU ordinary non-member pre-coupon price only; unknown price => unassigned.",
+      "head_rule": "On opened JD new-laptop hot page, take first two distinct self-operated physical SKUs in page order with >=100000 displayed comments.",
+      "opportunity_rule": "Require an exact or near-exact domestic listing plus consumer/community use evidence; do not screen on overseas feasibility."
+    },
+    {
+      "category_id": "C03",
+      "name": "平板电脑",
+      "price_band_rule": "low < CNY2000; mid CNY2000-3999; high >= CNY4000. Use same-day exact-SKU ordinary non-member pre-coupon price only; unknown price => unassigned.",
+      "head_rule": "From opened JD tablet ranking, take first two unique physical SKUs.",
+      "opportunity_rule": "Select a non-head exact/near-exact variant with explicit domestic consumer evidence; year/spec ambiguity is PROVISIONAL rather than inferred."
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C01",
+      "候选sku_id": "C01-H01",
+      "brand": "Apple",
+      "model": "iPhone 18 Pro",
+      "exact_variant": "256GB 勃艮第酒红色，5G双卡双待",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD self-operated phone ranking TOP1; displayed 50000 comments.",
+      "domestic_selection_rule": "First unique physical SKU on opened JD self-operated phone ranking.",
+      "domestic_product_url": "https://item.jd.com/100414360094.html",
+      "item_id": "100414360094",
+      "seller_id": null,
+      "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_firmware_compatibility_not_assessed"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C01",
+      "候选sku_id": "C01-H02",
+      "brand": "Apple",
+      "model": "iPhone 17",
+      "exact_variant": "256GB 白色，5G双卡双待",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD self-operated phone ranking TOP2; displayed 3000000 comments.",
+      "domestic_selection_rule": "Second unique physical SKU on opened JD self-operated phone ranking.",
+      "domestic_product_url": "https://item.jd.com/100209267857.html",
+      "item_id": "100209267857",
+      "seller_id": null,
+      "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_firmware_compatibility_not_assessed"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C01",
+      "候选sku_id": "C01-O01",
+      "brand": "REDMI",
+      "model": "K90",
+      "exact_variant": "12GB+256GB 白色，骁龙8至尊版，7100mAh",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "JD phone recommendation ranking TOP1 with 500000 displayed comments and purchaser review; independent SMZDM owner review has mixed positive/negative experience.",
+      "domestic_selection_rule": "Non-selected-head Android opportunity with both opened JD consumer evidence and opened community owner evidence.",
+      "domestic_product_url": "https://item.jd.com/100215674663.html",
+      "item_id": "100215674663",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "store_selection_or_login_required; member_price_separate_and_unverified",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_firmware_compatibility_not_assessed"
+      ],
+      "verification_status": "VERIFIED_MODEL_VARIANT_AND_ITEM; PRICE_AUTHENTICATED_DATA_REQUIRED",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C02",
+      "候选sku_id": "C02-H01",
+      "brand": "REDMI",
+      "model": "REDMI Book 14 2025",
+      "exact_variant": "Core 5-210H; RAM/SSD not exposed on opened ranking page",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD opened hot page: self-operated and 100000+ displayed comments.",
+      "domestic_selection_rule": "First distinct self-operated SKU in page order meeting displayed-comment threshold >=100000.",
+      "domestic_product_url": "https://item.jd.com/100167105512.html",
+      "item_id": "100167105512",
+      "seller_id": null,
+      "access_state": "ranking_page_read_full_page; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "weight_shipping_not_assessed"
+      ],
+      "verification_status": "PROVISIONAL_VARIANT; RAM_STORAGE_AUTHENTICATED_DATA_REQUIRED",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C02",
+      "候选sku_id": "C02-H02",
+      "brand": "Lecoo",
+      "model": "斗战者 战7000",
+      "exact_variant": "Ryzen 9 8940HX / 16GB / 1TB / RTX5070 / 2.5K 180Hz / 灰",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD opened hot page: self-operated and 100000+ displayed comments.",
+      "domestic_selection_rule": "Second distinct self-operated SKU in page order meeting displayed-comment threshold >=100000.",
+      "domestic_product_url": "https://item.jd.com/100412589176.html",
+      "item_id": "100412589176",
+      "seller_id": null,
+      "access_state": "ranking_page_read_full_page; item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "weight_shipping_not_assessed"
+      ],
+      "verification_status": "VERIFIED_MODEL_VARIANT_AND_PURCHASE_SIGNAL; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C02",
+      "候选sku_id": "C02-O01",
+      "brand": "MECHREVO",
+      "model": "无界14 2026",
+      "exact_variant": "Core Ultra 5 226V / 16GB / 1TB / 2.8K / 灰",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "Opened JD product page contains multiple purchaser usage reviews; SMZDM AIGC article links to a 2026-03-29 Douyin hands-on source.",
+      "domestic_selection_rule": "Differentiated lightweight notebook with exact domestic listing plus purchaser/community-use evidence; negative reliability review retained.",
+      "domestic_product_url": "https://item.jd.com/product/r4ApbAO8qxc4swIo6MqmFQ.html",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED; related listings visible but not treated as target checkout price",
+      "feasibility_flags": [
+        "battery_powered",
+        "weight_shipping_not_assessed"
+      ],
+      "verification_status": "VERIFIED_EXACT_VARIANT_AND_CONSUMER_EVIDENCE; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C03",
+      "候选sku_id": "C03-H01",
+      "brand": "Apple",
+      "model": "iPad 11-inch A16",
+      "exact_variant": "2025 / 256GB / WLAN / 银色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD tablet ranking TOP1; displayed 2000000 comments.",
+      "domestic_selection_rule": "First unique physical SKU on opened JD tablet ranking.",
+      "domestic_product_url": "https://item.jd.com/100195510718.html",
+      "item_id": "100195510718",
+      "seller_id": null,
+      "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_os_compatibility_not_assessed"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C03",
+      "候选sku_id": "C03-H02",
+      "brand": "Apple",
+      "model": "iPad 11-inch A16",
+      "exact_variant": "2025 / 128GB / WLAN / 银色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "JD tablet ranking TOP2; displayed 2000000 comments and purchaser review.",
+      "domestic_selection_rule": "Second unique physical SKU on opened JD tablet ranking.",
+      "domestic_product_url": "https://item.jd.com/100153760305.html",
+      "item_id": "100153760305",
+      "seller_id": null,
+      "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_os_compatibility_not_assessed"
+      ],
+      "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C03",
+      "候选sku_id": "C03-O01",
+      "brand": "HUAWEI",
+      "model": "MatePad 11.5",
+      "exact_variant": "柔光版 / 12GB+256GB / 深空灰；是否为2026款仍需item参数确认",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "Opened JD tablet page shows this exact memory/color/soft-light combination at TOP6 with 200000 displayed comments and a detailed purchaser review; Huawei official site confirms a MatePad 11.5 2026 soft-light family.",
+      "domestic_selection_rule": "Non-head ecosystem alternative with explicit JD consumer evidence; model-year ambiguity kept PROVISIONAL rather than inferred.",
+      "domestic_product_url": "https://item.jd.com/100230964203.html",
+      "item_id": "100230964203",
+      "seller_id": null,
+      "access_state": "ranking_page_read_full_page; exact_item_page_minimal",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "battery_powered",
+        "region_os_compatibility_not_assessed"
+      ],
+      "verification_status": "PROVISIONAL_MODEL_YEAR; EXACT_MEMORY_COLOR_SOFTLIGHT_VARIANT_VERIFIED_ON_JD",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_9987edf2c0f03f1afc7f.html",
+      "title": "京东手机自营手机排行榜",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/phb/key_9987f05c50cc7d95c990.html",
+      "title": "手机推荐_排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://item.m.jd.com/product/100215674663.html",
+      "title": "REDMI K90 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02",
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/p/aog30mgn/",
+      "title": "倒反天罡还是金玉其外？红米K90评测",
+      "published_at": "2025-12-25",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02",
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/hotitem/6709c8e2fc71cca0b50.html",
+      "title": "新款笔本电脑排行 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://item.jd.com/product/r4ApbAO8qxc4swIo6MqmFQ.html",
+      "title": "机械革命无界14 2026 京东商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04",
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/p/a26w7p67/",
+      "title": "机械革命无界14 2026评测：4000元档位的1公斤轻薄本",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_67054a0556ddf6e337f.html",
+      "title": "平板电脑。排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.jd.com/phb/key_67067bf6d9ab64fd861.html",
+      "title": "平板笔记本排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://consumer.huawei.com/cn/tablets/matepad-11-5-2026/",
+      "title": "HUAWEI MatePad 11.5 2026 - 华为官网",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://wiki.smzdm.com/p/vp1q3dj/",
+      "title": "华为 MatePad 11.5 2026鸿蒙系统平板电脑 - 什么值得买",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06",
+        "K10"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "On the opened JD self-operated phone ranking, iPhone 18 Pro 256GB burgundy and iPhone 17 256GB white occupy TOP1 and TOP2 respectively.",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "JD ranking is a platform snapshot and may be cached or dynamically reordered; displayed comment counts are not exact transaction counts."
+    },
+    {
+      "claim_id": "K02",
+      "claim": "REDMI K90 12GB+256GB white is a defensible domestic opportunity sample because it has a strong JD consumer signal plus independent community ownership evidence.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "Community review reports gaming, fingerprint-enrollment and system-experience weaknesses."
+    },
+    {
+      "claim_id": "K03",
+      "claim": "Under the predefined laptop rule of first two self-operated entries with at least 100000 displayed comments, REDMI Book 14 2025 and Lecoo Battle 7000 are the selected heads.",
+      "classification": "FACT",
+      "source_ids": [
+        "S05"
+      ],
+      "confidence": "medium",
+      "counterevidence": "REDMI Book RAM/SSD are not exposed on the opened list page; comment counts may aggregate variants."
+    },
+    {
+      "claim_id": "K04",
+      "claim": "MECHREVO Unbounded 14 2026 is a valid opportunity candidate based on an exact domestic listing, purchaser feedback and additional community hands-on evidence.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "confidence": "medium",
+      "counterevidence": "The SMZDM article is AI-generated from another source, and a JD purchaser reports repeated black-screen/freeze failures."
+    },
+    {
+      "claim_id": "K05",
+      "claim": "The opened JD tablet ranking places iPad 11-inch A16 2025 256GB WLAN silver and 128GB WLAN silver at TOP1 and TOP2.",
+      "classification": "FACT",
+      "source_ids": [
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "One platform ranking is not the entire domestic market and displayed review totals may span related variants."
+    },
+    {
+      "claim_id": "K06",
+      "claim": "HUAWEI MatePad 11.5 soft-light 12GB+256GB deep-space-gray is a domestic opportunity candidate, but its exact 2026 model-year mapping remains provisional.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "confidence": "medium",
+      "counterevidence": "JD ranking title does not explicitly state 2026 for the 12GB+256GB variant, and SMZDM reports no product reputation entries for its 2026 wiki page."
+    },
+    {
+      "claim_id": "K07",
+      "claim": "Publicly accessible pages were insufficient to verify ordinary, member and targeted-coupon prices for most exact SKUs.",
+      "classification": "FACT",
+      "source_ids": [
+        "S03"
+      ],
+      "confidence": "high",
+      "counterevidence": "Authenticated or location/store-selected sessions may expose additional prices."
+    },
+    {
+      "claim_id": "K08",
+      "claim": "K90 community evidence is materially mixed rather than uniformly positive.",
+      "classification": "FACT",
+      "source_ids": [
+        "S04"
+      ],
+      "confidence": "high",
+      "counterevidence": "Other community users on the same page report satisfactory overall experience."
+    },
+    {
+      "claim_id": "K09",
+      "claim": "The MECHREVO candidate has direct negative consumer evidence concerning black-screen, freezing and crashes.",
+      "classification": "FACT",
+      "source_ids": [
+        "S06"
+      ],
+      "confidence": "medium",
+      "counterevidence": "This is an individual purchaser report and does not establish population-level failure rate."
+    },
+    {
+      "claim_id": "K10",
+      "claim": "External community-product reputation evidence for the MatePad 11.5 2026 is thin on the opened SMZDM wiki page.",
+      "classification": "FACT",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "high",
+      "counterevidence": "JD itself contains substantial purchaser-review activity for related MatePad 11.5 variants."
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED: exact-SKU ordinary price, member price, targeted coupon/subsidy price and seller_id for the nine candidates.",
+    "Verify REDMI Book 14 2025 item_id 100167105512 RAM and SSD configuration; current opened ranking only exposes Core 5-210H.",
+    "Verify whether JD item_id 100230964203 is specifically the 2026 MatePad 11.5 soft-light 12GB+256GB deep-space-gray model.",
+    "Determine whether displayed JD comment totals are SKU-specific or aggregated across related variants before using them quantitatively.",
+    "No Tmall/Taobao authenticated transaction data was obtained in this limited pass; this limits cross-platform representativeness.",
+    "No overseas SKU price, sales, availability or Temu/AliExpress coverage was queried."
+  ]
+}

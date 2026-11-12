@@ -1,0 +1,39 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "name": "RouteFirstFit",
+      "hypothesis": "只改A4。核心是改变写线的内部工作顺序：先完整理解并选择ROUTES，确定每段已经成立的处境、具体所求和顾虑，再从这条经历写出分段要点；最后才检查TARGETS，必要时调整情境表达和covers。TARGETS不能反过来决定人物发生了什么。它与TargetVector不同，不改变A3，也不先建立多维体验映射；它与旧N05整篇散文主线不同，不先写不分段的完整文章再转换成关系图，而是在原有段落结构内完成两轮综合。",
+      "risk": "可能让A4过度依赖ROUTES，导致目标覆盖变弱，或使某些听感只被宽泛的情绪对应。它也不能自动修复路线本身已有的重复。它与历史整篇主线写作的区别是保留原有分段结构、引用和每段2—4条要求，不另写散文再转换；与同提示词重抽的区别是改变了任务顺序和TARGETS的权限。必须同时测覆盖、单独成立和人话，不能只看文字变得简洁。",
+      "tag": "r59routefirst",
+      "author": "r55_advisor_g6a",
+      "author_index": 2,
+      "mode": "fullgraph",
+      "attempt": 1,
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "A4",
+          "path": "runs\\_batches\\round59_a4_order\\prompts\\r59routefirst_P1.txt",
+          "sha256": "e2544628aa027f16ee7047a44d36f043d66a9a8510c1a52fb1802759ebd521e0",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "downstream_required": "Checkpoint-only; rerun affected accepted N05e/N05f and final against actual then-current mainline if survivor."
+    }
+  ],
+  "source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "dedup_reassessment": "Re-read both complete original generic prompts: AnchorFirst constructs anchor inventory before TARGETS, then writes final; RouteFirstFit explicitly writes the complete segmented experience first, then checks TARGETS and can only change expression focus. Previously deferred as overlap; now test this lighter synthesis order variant once, without claiming direct observation of internal reasoning or clean causal attribution. Both use exact same original A1/A2/A3. Not a new upstream mechanism or same-prompt redraw."
+}

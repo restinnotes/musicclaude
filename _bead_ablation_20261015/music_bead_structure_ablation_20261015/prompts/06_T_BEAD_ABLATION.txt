@@ -1,0 +1,26 @@
+【通用提示词｜独立验证 T 是否真的改善本段 Bead】
+
+音乐段落：{{SEGMENT_ID_AND_RANGE}}
+固定结构支持：{{STRUCTURAL_EVIDENCE}}
+冻结的 A-only 珠子和来源：{{FROZEN_A_ONLY_BEAD}}
+本段及可能影响本段的 T-int/T-web 原文：{{T_SOURCE_POOL}}
+之前真实出现过的、已可核查的音乐经历（只可来自此前材料）：{{PAST_VALID_EVIDENCE}}
+
+本任务不是生成整首 Thread，不是提前决定 Center，不是给每段强加 WHY-NOW。**只检验 T 研究内容是否能使这一颗已经不错的 Affect 珠子更准确、更有感情、更有作品特异性。**
+
+必须逐条分类：
+1. `ADDS_LOCAL_EXPERIENCE`：T 确实发现了 A-only 没有的、当前前缀即可成立的体验/关系，且有音乐或 A 证据支持；
+2. `LOCAL_AUDIBLE_SUPPORT`：增加音乐依据或帮助听辨，但不新增主观体验；
+3. `ALREADY_IN_A`：A-only 已有，不得再数作新增；
+4. `THREAD_LATER`：只有放在全曲历史里才有用，但不改变此刻独立 Affect；
+5. `FUTURE_DEPENDENT`：需要后面的音乐才成立；当前不得用；
+6. `ALTERNATIVE_NEEDS_REVIEW`：确有竞争性解释，尚不能定论；
+7. `UNSUPPORTED`：历史解释缺证据或与当前声音相矛盾。
+
+先输出每条 T 的 `source_id / 原句 / 归类 / 音乐与历史证据 / 是否可以促进 Bead / 若能，具体新增了什么`。不要默默合并类别。
+
+然后生成一个 **A+T 候选珠子**：保持原 A-only 的全部独特感受，**只有通过 1 或确实改善听觉理解的 2 才能增补**。允许结果与 A-only 完全相同；绝不能为了证明 T 的价值而硬添一条“因为之前……”。
+
+最后做实际差异表：哪些读者感受因 T 新增了，哪些 A 原本的好内容因此变差、消失或重复；T 真正带来的独立阅读价值能不能用原文证明。如果没有，结论写 `T_NO_BEAD_GAIN_BUT_KEEP_FOR_THREAD`。
+
+注意：这只是测试 T 对 Bead 的贡献。T 作为独立研究未来仍可能十分有价值，不能以此宣判整个 T 分支无用。

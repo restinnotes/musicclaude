@@ -1,0 +1,13 @@
+[pub24UB_op61_g6_g68L33a] ok 241s 2557 chars
+[pub24UB_op60_g6_g68L33a] ok 302s 2115 chars
+[pub24UB_op61_g56_g68L33a] ok 270s 2557 chars
+[pub24UB_op60_g56_g68L33a] ok 310s 2115 chars
+g68L33a op60（1 位）：确认核心 0.266（64 个）、争议核心 0.548（42）、重要 0.653（118）、补充 0.0（1）、音乐 0.793（58）；确认核心丢失 16 ['S05-u3', 'S05-u7', 'S07-u2', 'S07-u3', 'S07-u6', 'S09-u4', 'S11-a1', 'S11-u2']；过半判不全 31；只看大块必读 0.161（56 个）丢 7 ['S05-u3', 'S07-u2', 'S09-u4', 'S11-u2', 'S11-u3', 'S11-u7', 'S14-u5']
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\line_r79o\units2.py", line 181, in <module>
+    r, lost, part, nj = score(w, t); b, bl, bn = big_score(w, t) if not t.startswith('w') else (None, [], 0)
+                        ^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\line_r79o\units2.py", line 137, in score
+    lost = [u['uid'] for u in us if u['tier'] == '核心' and sum(x == 0 for x in votes[u['uid']]) > len(js)/2]
+                                                                                ~~~~~^^^^^^^^^^
+KeyError: 'S01-u1'

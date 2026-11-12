@@ -1,0 +1,217 @@
+{
+  "job_id": "c7_v3__gpt56w__k7__hf16a19422e",
+  "run_id": "run133_thread_spec",
+  "route": "gpt2",
+  "adapter_version": "r1",
+  "model_key": "gpt56w",
+  "requested_effort": "max",
+  "prompt_file": "prompts/c7_v3__gpt56w__k7__hf16a19422e.txt",
+  "prompt_chars": 6398,
+  "prompt_sha256": "f16a19422e60bfb7ac406d5277c21ef64062128820498fdef49a1041532d5b11",
+  "output_file": "outputs/c7_v3__gpt56w__k7__hf16a19422e.md",
+  "stdout_file": "outputs/raw/c7_v3__gpt56w__k7__hf16a19422e.stdout.txt",
+  "stderr_file": "outputs/raw/c7_v3__gpt56w__k7__hf16a19422e.stderr.txt",
+  "started": "2026-10-09T00:25:16",
+  "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+  "cli_version": "dfca0fd",
+  "cache_key": "f2c93e9a2f05efad8522d3c0fd8fe197eb7340eb21b59bc25e2cd9b0740398a5",
+  "requested_model": "gpt-5-6-thinking",
+  "cache_hit": false,
+  "status": "ok",
+  "ended": "2026-10-09T00:26:20",
+  "seconds": 64.0,
+  "reported_model": "gpt-5-6-thinking",
+  "response_sha256": "a04f5c0392eb9696262578da9801941c12a9ad9b1df24602bedf2b0c35ebe89f",
+  "returncode": 0,
+  "attempts": 1,
+  "output_chars": 301,
+  "replacement_chars": 0,
+  "cli_metadata": {
+    "model": "gpt-5-6-thinking",
+    "thinking_effort": "max",
+    "headless": true,
+    "provider_interface": true,
+    "no_auto_retry": true,
+    "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-53c816b603a64261b06b13b4efb57683",
+    "response_sha256": "a04f5c0392eb9696262578da9801941c12a9ad9b1df24602bedf2b0c35ebe89f",
+    "session_handle": "bc199208-3e60-4f93-bbd8-04c29803acaf",
+    "prompt_normalization": "single_leading_BOM_removed_CRLF_or_CR_to_LF_and_trim_end",
+    "pre_submit_scope": null,
+    "initialization": {
+      "source": "native_pre_send_aborted_handoff",
+      "browser_assisted_initialization": true,
+      "native_browser_generation_sent": false,
+      "http_version": "auto",
+      "nonpersonalization_inherited": false,
+      "handoff_age_seconds": 0.826,
+      "state": "claimed"
+    },
+    "headless_initializer": {
+      "headless": true,
+      "native_browser_generation_sent": false,
+      "completed": true,
+      "browser_version": {
+        "type": "string",
+        "length": 13,
+        "sha256": "9722c94be680575b307b26183e1a423460d4568949ad7f3e7f985d33d9bf0e26"
+      },
+      "sealed_handoff_written": true,
+      "browser_closed": true,
+      "cloned_private_profile_removed": true,
+      "elapsed_seconds": 52.433
+    },
+    "stream_completion": {
+      "sse_done": true,
+      "message_completed": true,
+      "continuation_expected": false,
+      "handoff_seen": false,
+      "lifecycle_updates": 22,
+      "first_assistant_seconds": 4.829,
+      "first_text_seconds": 4.86,
+      "stream_seconds": 7.844,
+      "channel_update_counts": {
+        "final": 16
+      },
+      "bounded_server_observations": {
+        "scope": "http_sse",
+        "tool_message_observation_count": 0,
+        "truncated": false,
+        "scalar_patch_tool_role_inheritance": false,
+        "message_finished_successfully_is_tool_success": false,
+        "tool_result_observations": [],
+        "reasoning_observations": [
+          {
+            "finished_duration_sec": 4,
+            "reasoning_status": "reasoning_ended"
+          }
+        ]
+      }
+    },
+    "prepared_response_validation": {
+      "retained_message_count": 2,
+      "unsupported_work_continuation_observed": false,
+      "successful_assistant_terminal_observed": true
+    },
+    "server_metadata_summary": {
+      "server_ttfvt_ms": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
+        },
+        "value": 5575.339391012676
+      },
+      "conduit_prewarmed": true,
+      "plan_type": "team",
+      "plan_type_bucket": "teams",
+      "user_agent": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 11,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "39ae30333e06f52817bd4cb8771482f48a473105b92d588d4ca6a1cc7ba4bead"
+        }
+      },
+      "service": null,
+      "tool_name": null,
+      "tool_invoked": false,
+      "fast_convo": true,
+      "warmup_state": "warm",
+      "is_first_turn": true,
+      "cluster_region": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 9,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "e7bdb9fdeb9ed4765fdec0d39b07d1526070c818650314535091544beba913d9"
+        }
+      },
+      "model_slug": "gpt-5-6-thinking",
+      "requested_model_experience": "thinking",
+      "product_experience": "chat",
+      "region": null,
+      "is_multimodal": null,
+      "did_auto_switch_to_reasoning": false,
+      "auto_switcher_race_winner": null,
+      "is_autoswitcher_enabled": false,
+      "is_search": null,
+      "did_prompt_contain_image": false,
+      "search_tool_call_count": null,
+      "search_tool_query_types": null,
+      "message_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "bb22b006383bafd05bcf6c11a4673d323c628051fcf76880d6a5341a51773a87"
+        }
+      },
+      "request_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "361c8fd750c2e8da96e62b167cc324d2558a158956ce05e2672e97193053da81"
+        }
+      },
+      "turn_exchange_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "f55ab9602172f84624778ddcc2f427389c8e6e29e3aac0e2aa407750128aaf1e"
+        }
+      },
+      "turn_trace_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "3608bc768572c860352e65b4c1398ac082ed02eb50a6075b63f914e27463304e"
+        }
+      },
+      "resume_with_websockets": true,
+      "low_turn_topic_ttl": false,
+      "streaming_async_status": true,
+      "replace_stream_status": true,
+      "temporal_conversation_turn": false,
+      "pro_mode_turn_topic_streaming": true,
+      "turn_use_case": "thinking",
+      "turn_mode": "default"
+    },
+    "elapsed_seconds": 8.828,
+    "total_worker_seconds": 62.063,
+    "wrapper_seconds": 63.703
+  },
+  "stderr_tail": ""
+}

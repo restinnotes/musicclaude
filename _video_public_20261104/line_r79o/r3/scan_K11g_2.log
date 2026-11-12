@@ -1,0 +1,421 @@
+[scanA_op60_g56_g68K11g_run2_S08] ok 80s 1133 chars
+[scanA_op60_g56_g68K11g_run2_S05] ok 124s 889 chars
+[scanA_op60_g56_g68K11g_run2_S02] ok 132s 998 chars
+[scanA_op60_g56_g68K11g_run2_S03] ok 94s 997 chars
+[scanA_op60_g56_g68K11g_run2_S09] ok 52s 1029 chars
+[scanA_op60_g6_g68K11g_run2_S10] ok 101s 945 chars
+[scanA_op60_g6_g68K11g_run2_S09] ok 161s 1050 chars
+[scanA_op60_g6_g68K11g_run2_S05] ok 113s 1060 chars
+[scanA_op60_g6_g68K11g_run2_S11] ok 112s 1032 chars
+[scanA_op60_g56_g68K11g_run2_S11] ok 97s 981 chars
+[scanA_op60_g6_g68K11g_run2_S01] ok 127s 901 chars
+[scanA_op60_g56_g68K11g_run2_S12] ok 104s 999 chars
+[scanA_op60_g56_g68K11g_run2_S13] ok 83s 986 chars
+[scanA_op60_g6_g68K11g_run2_S13] ok 55s 1020 chars
+[scanA_op60_g6_g68K11g_run2_S14] FAILED rc=3221225794 0s ''
+[scanA_op60_g6_g68K11g_run2_S14] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op60_g6_g68K11g_run2_S14)
+[scanA_op60_g6_g68K11g_run2_S14] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g6_g68K11g_run2_S14] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/79f52a529bd356c58df7'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:47:47.925412+00:00
+不合格 op60 S14 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S14_r1] SKIPPED (冷却至 2026-11-09T22:47:47.925412+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/79f52a529bd356c58df7'])"})
+不合格 op60 S14 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S14_r2] SKIPPED (冷却至 2026-11-09T22:47:47.925412+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/79f52a529bd356c58df7'])"})
+不合格 op60 S14 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S02] SKIPPED (冷却至 2026-11-09T22:47:47.925412+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/79f52a529bd356c58df7'])"})
+不合格 op61 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S03] SKIPPED (2 in a row / 2 total failures (last scanA_op60_g6_g68K11g_run2_S14))
+[scanA_op60_g6_g68K11g_run2_S03] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g6_g68K11g_run2_S03] SKIPPED (冷却至 2026-11-09T22:47:47.925412+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/79f52a529bd356c58df7'])"})
+不合格 op60 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S01] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01)
+[scanA_op61_g6_g68K11g_run2_S01] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op61_g6_g68K11g_run2_S01] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S01] SKIPPED (冷却至 2026-11-09T22:48:57.653627+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/65b25416803d0f7a5943'])"})
+不合格 op61 S01 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S01] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S01] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S01)
+[scanA_op61_g56_g68K11g_run2_S01] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S01] SKIPPED (冷却至 2026-11-09T22:49:58.468314+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/4df0c11c1f95a5de0b2e'])"})
+不合格 op61 S01 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S01_r1] SKIPPED (冷却至 2026-11-09T22:49:58.468314+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/4df0c11c1f95a5de0b2e'])"})
+不合格 op61 S01 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S01_r2] SKIPPED (冷却至 2026-11-09T22:49:58.468314+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/4df0c11c1f95a5de0b2e'])"})
+不合格 op61 S01 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S07] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op60_g56_g68K11g_run2_S07] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g56_g68K11g_run2_S04] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op60_g56_g68K11g_run2_S04] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g6_g68K11g_run2_S08] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op60_g6_g68K11g_run2_S08] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g56_g68K11g_run2_S07] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/502f4a62683da6f84282'])"}
+[scanA_op60_g56_g68K11g_run2_S04] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e2ba8e89953ac233fc5'])"}
+[scanA_op60_g6_g68K11g_run2_S08] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:51:02.104415+00:00
+不合格 op60 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S04_r1] SKIPPED (冷却至 2026-11-09T22:51:02.104415+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e2ba8e89953ac233fc5'])"})
+不合格 op60 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S04_r2] SKIPPED (冷却至 2026-11-09T22:51:02.104415+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e2ba8e89953ac233fc5'])"})
+不合格 op60 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+MIMIC transient_failure pause 60s until 2026-11-09T22:51:02.104415+00:00
+不合格 op60 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S03] SKIPPED (冷却至 2026-11-09T22:51:02.104415+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/502f4a62683da6f84282'])"})
+不合格 op61 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S07_r1] SKIPPED (冷却至 2026-11-09T22:51:02.104415+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/502f4a62683da6f84282'])"})
+不合格 op60 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S07_r2] SKIPPED (冷却至 2026-11-09T22:51:02.104415+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/502f4a62683da6f84282'])"})
+不合格 op60 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+MIMIC transient_failure pause 60s until 2026-11-09T22:51:02.106414+00:00
+不合格 op60 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S08_r1] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S08_r2] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S03_r1] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S03_r2] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S04] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S04_r1] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S04_r2] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S04 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S10] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op60_g56_g68K11g_run2_S10] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g56_g68K11g_run2_S10] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S02] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01))
+[scanA_op60_g6_g68K11g_run2_S02] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g6_g68K11g_run2_S02] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S02_r1] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S02_r2] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op60 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S05] SKIPPED (冷却至 2026-11-09T22:51:02.106414+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/b3736df7d0bea7fd7346'])"})
+不合格 op61 S05 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S02] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S04] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S04)
+[scanA_op60_g56_g68K11g_run2_S10_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S04))
+[scanA_op60_g56_g68K11g_run2_S10_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S05_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S04))
+[scanA_op61_g56_g68K11g_run2_S05_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S05] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S02] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S04))
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S05)
+[scanA_op61_g56_g68K11g_run2_S02] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S05] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S05))
+[scanA_op61_g6_g68K11g_run2_S05] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S04] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S05))
+[scanA_op61_g6_g68K11g_run2_S04] gpt4 失败，这次改走 gpt3
+[scanA_op60_g56_g68K11g_run2_S10_r1] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:52:10.470177+00:00
+不合格 op60 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S05_r1] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S05 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S05] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S05 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S05_r1] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S05 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S05_r2] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S05 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S02] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S02 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S02_r1] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S02 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S02_r2] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S02 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S06] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S06 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S04] SKIPPED (冷却至 2026-11-09T22:52:10.470177+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/265018fcd71692cfc540'])"})
+不合格 op61 S04 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g56_g68K11g_run2_S10_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S05_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S05_r2)
+[scanA_op61_g56_g68K11g_run2_S06_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S05_r2))
+[scanA_op61_g56_g68K11g_run2_S06_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S04_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S05_r2))
+[scanA_op61_g6_g68K11g_run2_S04_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S06] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S06)
+[scanA_op60_g56_g68K11g_run2_S10_r2] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S06))
+[scanA_op60_g56_g68K11g_run2_S10_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S05_r2] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S06))
+[scanA_op61_g56_g68K11g_run2_S05_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S06_r1] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S06 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S04_r1] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S04 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S06] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S06))
+[scanA_op61_g6_g68K11g_run2_S06] gpt4 失败，这次改走 gpt3
+[scanA_op60_g56_g68K11g_run2_S10_r2] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op60 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S06] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S06 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S06_r1] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S06 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S06_r2] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S06 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S07] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S07_r1] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S07_r2] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S07 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S08] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S05_r2] SKIPPED (冷却至 2026-11-09T22:53:12.356145+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9ca28919ff5497260f39'])"})
+不合格 op61 S05 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S04_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S07] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07)
+[scanA_op61_g56_g68K11g_run2_S06_r2] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07))
+[scanA_op61_g56_g68K11g_run2_S06_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S08] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07))
+[scanA_op61_g56_g68K11g_run2_S08] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S08_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S08_r1)
+[scanA_op61_g6_g68K11g_run2_S04_r2] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S08_r1))
+[scanA_op61_g6_g68K11g_run2_S04_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S07] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S08_r1))
+[scanA_op61_g6_g68K11g_run2_S07] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S08_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S08_r1))
+[scanA_op61_g6_g68K11g_run2_S08_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S06_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e3a978b7b7cc606a058'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:54:33.746112+00:00
+不合格 op61 S06 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S04_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/5b0a8b0c7c7d02084712'])"}
+[scanA_op61_g56_g68K11g_run2_S08] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/365c750bfa1a6ea759b4'])"}
+[scanA_op61_g6_g68K11g_run2_S08_r1] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/260d4c3fc7aadae13829'])"}
+[scanA_op61_g6_g68K11g_run2_S09] SKIPPED (冷却至 2026-11-09T22:54:33.746112+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e3a978b7b7cc606a058'])"})
+不合格 op61 S09 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S09_r1] SKIPPED (冷却至 2026-11-09T22:54:33.746112+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e3a978b7b7cc606a058'])"})
+不合格 op61 S09 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S09_r2] SKIPPED (冷却至 2026-11-09T22:54:33.746112+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e3a978b7b7cc606a058'])"})
+不合格 op61 S09 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S07] SKIPPED (冷却至 2026-11-09T22:54:33.746112+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/7e3a978b7b7cc606a058'])"})
+不合格 op61 S07 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+MIMIC transient_failure pause 60s until 2026-11-09T22:54:33.752463+00:00
+不合格 op61 S04 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+MIMIC transient_failure pause 60s until 2026-11-09T22:54:33.756372+00:00
+不合格 op61 S08 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S08_r1] SKIPPED (冷却至 2026-11-09T22:54:33.756372+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/365c750bfa1a6ea759b4'])"})
+不合格 op61 S08 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S08_r2] SKIPPED (冷却至 2026-11-09T22:54:33.756372+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/365c750bfa1a6ea759b4'])"})
+不合格 op61 S08 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S10] SKIPPED (冷却至 2026-11-09T22:54:33.756372+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/365c750bfa1a6ea759b4'])"})
+不合格 op61 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+MIMIC transient_failure pause 60s until 2026-11-09T22:54:33.760071+00:00
+不合格 op61 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S09] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S07_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07_r1)
+[scanA_op61_g56_g68K11g_run2_S10_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07_r1))
+[scanA_op61_g56_g68K11g_run2_S10_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S08_r2] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S07_r1))
+[scanA_op61_g6_g68K11g_run2_S08_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S10] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S10)
+[scanA_op61_g56_g68K11g_run2_S09] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S10))
+[scanA_op61_g56_g68K11g_run2_S09] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S07_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S10))
+[scanA_op61_g6_g68K11g_run2_S07_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S10] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S10))
+[scanA_op61_g6_g68K11g_run2_S10] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S08_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S08_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S08_r2)
+[scanA_op61_g6_g68K11g_run2_S08_r2] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S08_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/007e0b82e0662e3ce5ad'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:56:08.602467+00:00
+不合格 op61 S08 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S02_r1] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S10_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g56_g68K11g_run2_S10_r1)
+[scanA_op61_g56_g68K11g_run2_S10_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g56_g68K11g_run2_S10_r1))
+[scanA_op61_g56_g68K11g_run2_S10_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g56_g68K11g_run2_S10_r1] SKIPPED (冷却至 2026-11-09T22:56:08.602467+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/007e0b82e0662e3ce5ad'])"})
+不合格 op61 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S02_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r1)
+[scanA_op61_g6_g68K11g_run2_S02_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S02_r1] SKIPPED (冷却至 2026-11-09T22:56:08.602467+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/007e0b82e0662e3ce5ad'])"})
+不合格 op61 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S07_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 4 in a row / 4 total failures (last scanA_op61_g6_g68K11g_run2_S07_r1)
+[scanA_op61_g6_g68K11g_run2_S07_r1] SKIPPED (4 in a row / 4 total failures (last scanA_op61_g6_g68K11g_run2_S07_r1))
+[scanA_op61_g6_g68K11g_run2_S07_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S07_r1] SKIPPED (冷却至 2026-11-09T22:56:08.602467+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/007e0b82e0662e3ce5ad'])"})
+不合格 op61 S07 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S10_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S09] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 5 in a row / 5 total failures (last scanA_op61_g56_g68K11g_run2_S09)
+[scanA_op61_g56_g68K11g_run2_S09] SKIPPED (5 in a row / 5 total failures (last scanA_op61_g56_g68K11g_run2_S09))
+[scanA_op61_g56_g68K11g_run2_S09] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g56_g68K11g_run2_S09] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:57:25.679285+00:00
+不合格 op61 S09 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S02_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r2)
+[scanA_op61_g6_g68K11g_run2_S10] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 6 in a row / 6 total failures (last scanA_op61_g6_g68K11g_run2_S10)
+[scanA_op61_g6_g68K11g_run2_S10] SKIPPED (6 in a row / 6 total failures (last scanA_op61_g6_g68K11g_run2_S10))
+[scanA_op61_g6_g68K11g_run2_S10] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S10] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S10 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S10_r1] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S10 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S10_r2] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S10 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S11] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S11 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S11_r1] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S11 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S11_r2] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S11 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S07_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S10_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S10_r2)
+[scanA_op61_g56_g68K11g_run2_S10_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S10_r2] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S10 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S12] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S12 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S12_r1] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S12 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S12_r2] SKIPPED (冷却至 2026-11-09T22:57:25.679285+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ccb67506a150597a7eb2'])"})
+不合格 op61 S12 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S09_r1] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S02_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r2)
+[scanA_op61_g6_g68K11g_run2_S02_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S02_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S07_r2] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r2))
+[scanA_op61_g6_g68K11g_run2_S07_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S13] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r2))
+[scanA_op61_g6_g68K11g_run2_S13] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S12] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S12)
+[scanA_op61_g56_g68K11g_run2_S09_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S12))
+[scanA_op61_g56_g68K11g_run2_S09_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S12] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S12))
+[scanA_op61_g6_g68K11g_run2_S12] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S01_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S12))
+[scanA_op61_g6_g68K11g_run2_S01_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S02_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S02_r2)
+[scanA_op61_g6_g68K11g_run2_S02_r2] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S02_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/38488f138d5322d94894'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T22:59:37.875176+00:00
+不合格 op61 S02 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S13] SKIPPED (冷却至 2026-11-09T22:59:37.875176+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/38488f138d5322d94894'])"})
+不合格 op61 S13 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S07_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S07_r2)
+[scanA_op61_g6_g68K11g_run2_S07_r2] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S07_r2))
+[scanA_op61_g6_g68K11g_run2_S07_r2] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S07_r2] SKIPPED (冷却至 2026-11-09T22:59:37.875176+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/38488f138d5322d94894'])"})
+不合格 op61 S07 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S12] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 4 in a row / 4 total failures (last scanA_op61_g6_g68K11g_run2_S12)
+[scanA_op61_g6_g68K11g_run2_S12] SKIPPED (4 in a row / 4 total failures (last scanA_op61_g6_g68K11g_run2_S12))
+[scanA_op61_g6_g68K11g_run2_S12] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S12] SKIPPED (冷却至 2026-11-09T22:59:37.875176+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/38488f138d5322d94894'])"})
+不合格 op61 S12 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S13] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 5 in a row / 5 total failures (last scanA_op61_g6_g68K11g_run2_S13)
+[scanA_op61_g6_g68K11g_run2_S13] SKIPPED (5 in a row / 5 total failures (last scanA_op61_g6_g68K11g_run2_S13))
+[scanA_op61_g6_g68K11g_run2_S13] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S13] SKIPPED (冷却至 2026-11-09T23:00:48.075319+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/72bca2b6c505a4d05689'])"})
+不合格 op61 S13 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S13_r1] SKIPPED (冷却至 2026-11-09T23:00:48.075319+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/72bca2b6c505a4d05689'])"})
+不合格 op61 S13 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S13_r2] SKIPPED (冷却至 2026-11-09T23:00:48.075319+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/72bca2b6c505a4d05689'])"})
+不合格 op61 S13 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S09_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 6 in a row / 6 total failures (last scanA_op61_g56_g68K11g_run2_S09_r1)
+[scanA_op61_g56_g68K11g_run2_S09_r1] SKIPPED (6 in a row / 6 total failures (last scanA_op61_g56_g68K11g_run2_S09_r1))
+[scanA_op61_g56_g68K11g_run2_S09_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g56_g68K11g_run2_S09_r1] SKIPPED (冷却至 2026-11-09T23:00:48.075319+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/72bca2b6c505a4d05689'])"})
+不合格 op61 S09 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S01_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 7 in a row / 7 total failures (last scanA_op61_g6_g68K11g_run2_S01_r1)
+[scanA_op61_g6_g68K11g_run2_S01_r1] SKIPPED (7 in a row / 7 total failures (last scanA_op61_g6_g68K11g_run2_S01_r1))
+[scanA_op61_g6_g68K11g_run2_S01_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S01_r1] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/8d50e08b3021ca29d7c8'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T23:01:49.107451+00:00
+不合格 op61 S01 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S11] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S09_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S09_r2)
+[scanA_op61_g6_g68K11g_run2_S11] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S09_r2))
+[scanA_op61_g6_g68K11g_run2_S11] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S09_r2] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S09_r2))
+[scanA_op61_g56_g68K11g_run2_S09_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S01_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01_r2)
+[scanA_op61_g6_g68K11g_run2_S01_r2] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g6_g68K11g_run2_S01_r2))
+[scanA_op61_g6_g68K11g_run2_S01_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S01_r2] SKIPPED (冷却至 2026-11-09T23:03:32.576612+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ca7d8084760a879e8411'])"})
+不合格 op61 S01 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S09_r2] SKIPPED (冷却至 2026-11-09T23:03:32.576612+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ca7d8084760a879e8411'])"})
+不合格 op61 S09 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S11] SKIPPED (冷却至 2026-11-09T23:03:32.576612+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/ca7d8084760a879e8411'])"})
+不合格 op61 S11 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S11_r1] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S11_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S11_r1)
+[scanA_op61_g6_g68K11g_run2_S11_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S11_r1] SKIPPED (冷却至 2026-11-09T23:04:48.816023+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/80153e4ec4ea4e7fe1b7'])"})
+不合格 op61 S11 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S11_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S11_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S11_r2)
+[scanA_op61_g6_g68K11g_run2_S11_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S11_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9509f5eac0686bb5aa79'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T23:06:05.936649+00:00
+不合格 op61 S11 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S03_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S11_r2))
+[scanA_op60_g6_g68K11g_run2_S03_r1] gpt4 失败，这次改走 gpt3
+[scanA_op60_g6_g68K11g_run2_S03_r1] SKIPPED (7 in a row / 7 total failures (last scanA_op61_g6_g68K11g_run2_S01_r1))
+[scanA_op60_g6_g68K11g_run2_S03_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op60_g6_g68K11g_run2_S03_r1] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9262671ecc8571bd4507'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T23:07:22.195723+00:00
+不合格 op60 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op60_g6_g68K11g_run2_S03_r2] FAILED rc=3221225794 0s ''
+[scanA_op60_g6_g68K11g_run2_S03_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op60_g6_g68K11g_run2_S03_r2)
+[scanA_op60_g6_g68K11g_run2_S03_r2] gpt4 失败，这次改走 gpt3
+[scanA_op60_g6_g68K11g_run2_S03_r2] SKIPPED (冷却至 2026-11-09T23:27:19.774691+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9be3cda8086d0f55f620'])"})
+不合格 op60 S03 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S12_r1] SKIPPED (2 in a row / 2 total failures (last scanA_op60_g6_g68K11g_run2_S03_r2))
+[scanA_op61_g6_g68K11g_run2_S12_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S12_r1] SKIPPED (7 in a row / 7 total failures (last scanA_op61_g6_g68K11g_run2_S01_r1))
+[scanA_op61_g6_g68K11g_run2_S12_r1] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[scanA_op61_g6_g68K11g_run2_S12_r1] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9eab7a726cef64bffb4c'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T23:29:09.379692+00:00
+不合格 op61 S12 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g6_g68K11g_run2_S12_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g6_g68K11g_run2_S12_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g6_g68K11g_run2_S12_r2)
+[scanA_op61_g6_g68K11g_run2_S12_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g6_g68K11g_run2_S12_r2] SKIPPED (冷却至 2026-11-09T23:29:09.379692+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9eab7a726cef64bffb4c'])"})
+不合格 op61 S12 g6 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S13_r1] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 3 in a row / 3 total failures (last scanA_op61_g56_g68K11g_run2_S13_r1)
+[scanA_op61_g56_g68K11g_run2_S13_r1] SKIPPED (3 in a row / 3 total failures (last scanA_op61_g56_g68K11g_run2_S13_r1))
+[scanA_op61_g56_g68K11g_run2_S13_r1] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S13_r1] SKIPPED (冷却至 2026-11-09T23:37:56.479282+00:00: {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/67a53e610e9c2441f116'])"})
+不合格 op61 S13 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")
+[scanA_op61_g56_g68K11g_run2_S13_r2] FAILED rc=3221225794 0s ''
+[scanA_op61_g56_g68K11g_run2_S13_r2] FAILED rc=3221225794 0s ''
+GPT3 STOPPED: 2 in a row / 2 total failures (last scanA_op61_g56_g68K11g_run2_S13_r2)
+[scanA_op61_g56_g68K11g_run2_S13_r2] gpt4 失败，这次改走 gpt3
+[scanA_op61_g56_g68K11g_run2_S13_r2] FAILED 0s {"kind": "client", "message": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/6f0873c5a96c9d163830'])"}
+MIMIC transient_failure pause 60s until 2026-11-09T23:39:36.974802+00:00
+不合格 op61 S13 g56 g68K11g TypeError("argument of type 'NoneType' is not iterable")

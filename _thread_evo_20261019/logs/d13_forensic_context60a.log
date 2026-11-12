@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\d13_forensic_finalize.py", line 41, in <module>
+    if __name__=='__main__':finalize(sys.argv[1] if len(sys.argv)>1 else None,int(sys.argv[2]) if len(sys.argv)>2 else None)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\d13_forensic_finalize.py", line 36, in finalize
+    assert len(txt)<64000,(w,part,len(txt))
+           ^^^^^^^^^^^^^^
+AssertionError: ('op60', 0, 152773)

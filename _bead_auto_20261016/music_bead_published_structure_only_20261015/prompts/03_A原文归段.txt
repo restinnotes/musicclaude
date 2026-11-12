@@ -1,0 +1,12 @@
+【通用提示词：固定来源分段，映射 A-only 材料】
+
+作品：{{WORK}}
+已经用户确认或授权选择的文献结构段：{{FROZEN_SOURCE_SEGMENTS}}
+仅 A-int/A-web 既有研究全文与来源清单：{{A_RAW_AND_SOURCE_MANIFEST}}
+可核对的已有抽取单元（如有）：{{A_EXTRACTED_UNITS}}
+
+不得更改给定结构段落。不得再读取谱面、录音、T/H1–H5/Thread/WHY。先逐条将 A 的文字以**原始小节范围及语义关联**归入对应 Pool，保留原文、研究来源模型、通道、采样、文件路径/哈希及 UID。允许一条原文跨多个音乐段，在各段保留引用，不剪断原句，不重复冒充不同研究事实。
+
+若原文缺小节、对应不上、出现超出作品的小节编号或与音乐段明显错配，放入 UNRESOLVED/OUT_OF_RANGE 并说明原因；不能按相邻段硬塞。只属于整首后见之明的解释标记 LONG_RANGE/FUTURE_DEPENDENT，不当作当前 Affect。重复素材可建同义关联，但保留各家有价值的独特措辞。
+
+输出每个段落 PRIMARY/CROSS_SEGMENT/UNCERTAIN 列表，以及全部原文的去向和来源台账。**必须先实际应用复核后的 Pool，才允许后续生成**。输出 A_POOL_MAP.json 和 A_POOL_REVIEW.md。

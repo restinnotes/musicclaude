@@ -1,0 +1,488 @@
+{
+  "parent_audit": "R2-domestic-batch01",
+  "category_id": "C03",
+  "packets": [
+    {
+      "original_job_id": "W2-A-batch01",
+      "original_response_byte_sha256": "0e694d1b8b51c5b0be0789cdb6a4bcdbdfc5c12ebe13d740c51c29cf986465ba",
+      "category": {
+        "category_id": "C03",
+        "name": "平板电脑",
+        "price_tier_rule": {
+          "basis": "public non-member ordinary/list price; subsidy, member price and targeted coupons excluded",
+          "low": "<=1999 CNY",
+          "mid": "2000-3999 CNY",
+          "high": ">=4000 CNY",
+          "unverified_price_rule": "tier=null"
+        },
+        "domestic_head_rule": "Open JD self-operated tablet ranking; scan from rank 1 downward; de-duplicate identical model families; take the first two exact SKUs from distinct model families. Thus rank 2 iPad A16 128GB is skipped as the same family as rank 1.",
+        "domestic_opportunity_rule": "Require a China community/consumer source naming a definable variant plus accessible domestic retail/consumer evidence; aging or clearance status does not by itself exclude the candidate."
+      },
+      "sku_candidates": [
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-H01",
+          "brand": "Apple",
+          "model": "iPad 11英寸 A16 2025",
+          "exact_variant": "256GB WLAN 银色",
+          "sampling_stratum": "domestic_head",
+          "sampling_price_tier": "high",
+          "domestic_evidence": "JD自营平板排行榜TOP1，公开页显示约2000000人评论；Apple中国商店可核验同规格普通标价。",
+          "domestic_selection_rule": "JD自营类目榜按榜位向下、model family去重后的第1个distinct family。",
+          "domestic_product_url": "https://item.jd.com/100195510718.html",
+          "item_id": "100195510718",
+          "seller_id": null,
+          "access_state": "ranking_page_read_full_page; product_detail_js_limited",
+          "observation_date": "2026-10-06",
+          "domestic_price": 4299,
+          "price_type": "official_current_public_list_price_non_member",
+          "feasibility_flags": [
+            "contains_lithium_battery"
+          ],
+          "verification_status": "VERIFIED_RANK_VARIANT_AND_OFFICIAL_LIST_PRICE",
+          "source_ids": [
+            "S03",
+            "S11"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-H02",
+          "brand": "Apple",
+          "model": "iPad Air 11英寸 M4 2026",
+          "exact_variant": "256GB WLAN 紫色",
+          "sampling_stratum": "domestic_head",
+          "sampling_price_tier": null,
+          "domestic_evidence": "JD自营平板排行榜TOP3；TOP2为与TOP1相同A16 family的128GB变体，按预定去重规则跳过。Apple官方确认11英寸M4存在紫色和256GB配置。",
+          "domestic_selection_rule": "JD自营类目榜按榜位向下，对相同model family去重后的第2个distinct family。",
+          "domestic_product_url": "https://item.jd.com/100328063414.html",
+          "item_id": "100328063414",
+          "seller_id": null,
+          "access_state": "ranking_page_read_full_page; product_detail_js_limited",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": null,
+          "price_note": "Apple 2026-03-02发布稿给出11英寸M4 WLAN系列128GB起售价4799元，但未给出256GB精确当前普通价。",
+          "feasibility_flags": [
+            "contains_lithium_battery"
+          ],
+          "verification_status": "VERIFIED_RANK_AND_VARIANT; EXACT_CURRENT_PRICE_UNVERIFIED",
+          "source_ids": [
+            "S03",
+            "S12"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-O01",
+          "brand": "REDMI",
+          "model": "REDMI K Pad",
+          "exact_variant": "16GB+512GB 深邃黑 / 天玑9400+ / 8.8英寸3K",
+          "sampling_stratum": "domestic_opportunity",
+          "sampling_price_tier": null,
+          "domestic_evidence": "2026-08-24国内社区文章明确推荐16GB+512GB版本；当前JD公开自营列表存在16+512G深邃黑精确条目并显示50000+评论。",
+          "domestic_selection_rule": "社区必须明确推荐具体容量版本，并有当前可访问国内自营消费者证据；清仓状态不作为预先允许的排除条件。",
+          "domestic_product_url": "https://item.jd.com/100183840415.html",
+          "item_id": "100183840415",
+          "seller_id": null,
+          "access_state": "listing_and_community_pages_read_full_page; product_detail_js_limited",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": null,
+          "price_note": "社区文章于2026-08-24记录16GB+512GB到手价2704元；折扣、券或补贴组成未充分拆分，故不作为普通价。",
+          "feasibility_flags": [
+            "contains_lithium_battery"
+          ],
+          "verification_status": "VERIFIED_VARIANT_AND_DOMESTIC_CONSUMER_EVIDENCE; CURRENT_TRANSACTION_PRICE_UNVERIFIED",
+          "source_ids": [
+            "S13",
+            "S14"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S03",
+          "url": "https://www.jd.com/phb/key_67011e02cc61d0fb721.html",
+          "title": "京东自营商品平板排行榜 - 京东",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "secondary",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K03",
+            "K08"
+          ]
+        },
+        {
+          "source_id": "S11",
+          "url": "https://www.apple.com.cn/shop/buy-ipad/ipad/md4g4ch/a",
+          "title": "购买 iPad 无线局域网机型 256GB - 银色 - Apple 中国大陆",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K07"
+          ]
+        },
+        {
+          "source_id": "S12",
+          "url": "https://www.apple.com.cn/newsroom/2026/03/apple-introduces-the-new-ipad-air-powered-by-m4/",
+          "title": "Apple 推出新款 iPad Air，由 M4 芯片强势驱动",
+          "published_at": "2026-03-02",
+          "retrieved_at": null,
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K07"
+          ]
+        },
+        {
+          "source_id": "S13",
+          "url": "https://www.jd.com/brand/67079349596d1459d1f.html",
+          "title": "小米/REDMI平板商品列表 - 京东",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "secondary",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K06",
+            "K10"
+          ]
+        },
+        {
+          "source_id": "S14",
+          "url": "https://post.smzdm.com/p/aqrxpzzv/",
+          "title": "7.3折！REDMI K Pad开启“清仓模式”",
+          "published_at": "2026-08-24T20:22:42+08:00",
+          "retrieved_at": null,
+          "source_type": "community",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K06",
+            "K10"
+          ]
+        }
+      ],
+      "original_source_access_is_unverified_until_you_inspect_it": true
+    },
+    {
+      "original_job_id": "W2-B-batch01",
+      "original_response_byte_sha256": "de7adc90dc94019b68cea87f6a6c7b6cac2f27e6564825eca509534cf569a18f",
+      "category": {
+        "category_id": "C03",
+        "name": "平板电脑",
+        "price_band_rule": "low < CNY2000; mid CNY2000-3999; high >= CNY4000. Use same-day exact-SKU ordinary non-member pre-coupon price only; unknown price => unassigned.",
+        "head_rule": "From opened JD tablet ranking, take first two unique physical SKUs.",
+        "opportunity_rule": "Select a non-head exact/near-exact variant with explicit domestic consumer evidence; year/spec ambiguity is PROVISIONAL rather than inferred."
+      },
+      "sku_candidates": [
+        {
+          "category_id": "C03",
+          "候选sku_id": "C03-H01",
+          "brand": "Apple",
+          "model": "iPad 11-inch A16",
+          "exact_variant": "2025 / 256GB / WLAN / 银色",
+          "sampling_stratum": "domestic_head",
+          "domestic_evidence": "JD tablet ranking TOP1; displayed 2000000 comments.",
+          "domestic_selection_rule": "First unique physical SKU on opened JD tablet ranking.",
+          "domestic_product_url": "https://item.jd.com/100195510718.html",
+          "item_id": "100195510718",
+          "seller_id": null,
+          "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": "AUTHENTICATED DATA REQUIRED",
+          "feasibility_flags": [
+            "battery_powered",
+            "region_os_compatibility_not_assessed"
+          ],
+          "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+          "source_ids": [
+            "S08"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "候选sku_id": "C03-H02",
+          "brand": "Apple",
+          "model": "iPad 11-inch A16",
+          "exact_variant": "2025 / 128GB / WLAN / 银色",
+          "sampling_stratum": "domestic_head",
+          "domestic_evidence": "JD tablet ranking TOP2; displayed 2000000 comments and purchaser review.",
+          "domestic_selection_rule": "Second unique physical SKU on opened JD tablet ranking.",
+          "domestic_product_url": "https://item.jd.com/100153760305.html",
+          "item_id": "100153760305",
+          "seller_id": null,
+          "access_state": "rank_page_read_full_page; exact_item_page_minimal",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": "AUTHENTICATED DATA REQUIRED",
+          "feasibility_flags": [
+            "battery_powered",
+            "region_os_compatibility_not_assessed"
+          ],
+          "verification_status": "VERIFIED_RANK_AND_EXACT_SKU_LINK; PRICE_UNVERIFIED",
+          "source_ids": [
+            "S08"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "候选sku_id": "C03-O01",
+          "brand": "HUAWEI",
+          "model": "MatePad 11.5",
+          "exact_variant": "柔光版 / 12GB+256GB / 深空灰；是否为2026款仍需item参数确认",
+          "sampling_stratum": "domestic_opportunity",
+          "domestic_evidence": "Opened JD tablet page shows this exact memory/color/soft-light combination at TOP6 with 200000 displayed comments and a detailed purchaser review; Huawei official site confirms a MatePad 11.5 2026 soft-light family.",
+          "domestic_selection_rule": "Non-head ecosystem alternative with explicit JD consumer evidence; model-year ambiguity kept PROVISIONAL rather than inferred.",
+          "domestic_product_url": "https://item.jd.com/100230964203.html",
+          "item_id": "100230964203",
+          "seller_id": null,
+          "access_state": "ranking_page_read_full_page; exact_item_page_minimal",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": "AUTHENTICATED DATA REQUIRED",
+          "feasibility_flags": [
+            "battery_powered",
+            "region_os_compatibility_not_assessed"
+          ],
+          "verification_status": "PROVISIONAL_MODEL_YEAR; EXACT_MEMORY_COLOR_SOFTLIGHT_VARIANT_VERIFIED_ON_JD",
+          "source_ids": [
+            "S09",
+            "S10",
+            "S11"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S08",
+          "url": "https://www.jd.com/phb/key_67054a0556ddf6e337f.html",
+          "title": "平板电脑。排行榜 - 京东",
+          "published_at": null,
+          "retrieved_at": "2026-10-06",
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K05"
+          ]
+        },
+        {
+          "source_id": "S09",
+          "url": "https://www.jd.com/phb/key_67067bf6d9ab64fd861.html",
+          "title": "平板笔记本排行榜 - 京东",
+          "published_at": null,
+          "retrieved_at": "2026-10-06",
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K06"
+          ]
+        },
+        {
+          "source_id": "S10",
+          "url": "https://consumer.huawei.com/cn/tablets/matepad-11-5-2026/",
+          "title": "HUAWEI MatePad 11.5 2026 - 华为官网",
+          "published_at": null,
+          "retrieved_at": "2026-10-06",
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K06"
+          ]
+        },
+        {
+          "source_id": "S11",
+          "url": "https://wiki.smzdm.com/p/vp1q3dj/",
+          "title": "华为 MatePad 11.5 2026鸿蒙系统平板电脑 - 什么值得买",
+          "published_at": null,
+          "retrieved_at": "2026-10-06",
+          "source_type": "community",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K06",
+            "K10"
+          ]
+        }
+      ],
+      "original_source_access_is_unverified_until_you_inspect_it": true
+    },
+    {
+      "original_job_id": "W2-C-batch01",
+      "original_response_byte_sha256": "29825e0f58ad56114ce74b601ab42549a015c67e78f425092f4bf5e4b0085557",
+      "category": {
+        "category_id": "C03",
+        "name": "平板电脑",
+        "domestic_price_tiers": {
+          "low": "<2000 CNY",
+          "mid": "2000-3999 CNY",
+          "high": ">=4000 CNY"
+        },
+        "sampling_rule": "操作性阈值，非行业标准。仅用公开非会员单机价或明确官方建议零售价分层；会员价、定向券、国补不并入。head在本次实际打开的京东自营精确SKU池中按评论量档位优先并品牌去重选2个；opportunity要求有额外国内社区或消费场景证据。价格未知时不强行分层。"
+      },
+      "sku_candidates": [
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-H1",
+          "brand": "HUAWEI",
+          "model": "MatePad Mini",
+          "exact_variant": "SIM卡/全网通通话版 12GB+256GB 曜石黑",
+          "sampling_stratum": "domestic_head",
+          "domestic_evidence": "京东公开自营列表显示精确12+256曜石黑版本10万+条评论；华为官网确认MatePad Mini存在12GB和256GB配置并有曜石黑配色。",
+          "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；10万+档，品牌去重。",
+          "domestic_product_url": "https://item.jd.com/100206512503.html",
+          "item_id": "100206512503",
+          "seller_id": null,
+          "access_state": "listing_read_full_page; exact_item_page_blocked",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": null,
+          "feasibility_flags": [
+            "integrated_battery",
+            "cellular_variant",
+            "HarmonyOS_5.1_upgradable_to_6"
+          ],
+          "verification_status": "VERIFIED_JD_EXACT_ITEM_AND_OFFICIAL_FAMILY_SPEC; EXACT_PRICE_UNVERIFIED",
+          "source_ids": [
+            "S10",
+            "S11"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-H2",
+          "brand": "Xiaomi",
+          "model": "Xiaomi Pad 8",
+          "exact_variant": "12GB+256GB 黑色",
+          "sampling_stratum": "domestic_head",
+          "domestic_evidence": "京东公开自营列表显示该精确款型5万+条评论。",
+          "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；5万+档，品牌去重。",
+          "domestic_product_url": "https://item.jd.com/100279475542.html",
+          "item_id": "100279475542",
+          "seller_id": null,
+          "access_state": "listing_read_full_page; exact_item_page_blocked",
+          "observation_date": "2026-10-06",
+          "domestic_price": null,
+          "price_type": null,
+          "feasibility_flags": [
+            "integrated_battery",
+            "China_OS_variant_not_separately_verified"
+          ],
+          "verification_status": "VERIFIED_JD_EXACT_ITEM; EXACT_PRICE_UNVERIFIED",
+          "source_ids": [
+            "S12"
+          ]
+        },
+        {
+          "category_id": "C03",
+          "candidate_sku_id": "C03-O1",
+          "brand": "Lenovo",
+          "model": "拯救者 Y700 五代",
+          "exact_variant": "8.8英寸 / 12GB+256GB / Wi-Fi / 碳晶黑",
+          "sampling_stratum": "domestic_opportunity",
+          "domestic_evidence": "京东公开自营列表显示精确黑色12+256款2万+条评论；联想商城公开标价4299元；2026-04-02国内社区评测有58赞、58收藏、16评论并聚焦小尺寸电竞使用。",
+          "domestic_selection_rule": "机会层选择具有明确小尺寸游戏场景、公开消费者证据和社区讨论的差异化SKU。",
+          "domestic_product_url": "https://item.jd.com/100244991837.html",
+          "item_id": "100244991837",
+          "seller_id": null,
+          "access_state": "listing_and_official_store_read_full_page; exact_jd_item_page_blocked",
+          "observation_date": "2026-10-06",
+          "domestic_price": 4299,
+          "price_type": "Lenovo official mall public listed price; government subsidy up to 15% excluded",
+          "feasibility_flags": [
+            "integrated_battery",
+            "wifi_only",
+            "gaming_tablet_form_factor"
+          ],
+          "verification_status": "VERIFIED_JD_EXACT_ITEM_AND_LENOVO_PUBLIC_PRICE",
+          "source_ids": [
+            "S13",
+            "S14",
+            "S15"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S10",
+          "url": "https://www.jd.com/hprm/9987cc1220ccf6c641d5.html",
+          "title": "京东 MatePad Mini 公开商品列表",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "secondary",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K10",
+            "K08"
+          ]
+        },
+        {
+          "source_id": "S11",
+          "url": "https://consumer.huawei.com/cn/tablets/matepad-mini/specs/",
+          "title": "HUAWEI MatePad Mini 官方规格参数",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K10"
+          ]
+        },
+        {
+          "source_id": "S12",
+          "url": "https://www.jd.com/hprm/670ca81522efb20c111.html",
+          "title": "京东 Xiaomi Pad 8 公开商品列表",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "secondary",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K10",
+            "K08"
+          ]
+        },
+        {
+          "source_id": "S13",
+          "url": "https://www.jd.com/brand/140653bba9610d2eaee81.html",
+          "title": "京东联想 Y700 公开商品列表",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "secondary",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K11"
+          ]
+        },
+        {
+          "source_id": "S14",
+          "url": "https://s.lenovo.com.cn/search/?key=%E6%8B%AF%E6%95%91%E8%80%85y700&type=home",
+          "title": "联想商城拯救者 Y700 搜索结果",
+          "published_at": null,
+          "retrieved_at": null,
+          "source_type": "official",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K11",
+            "K12"
+          ]
+        },
+        {
+          "source_id": "S15",
+          "url": "https://post.smzdm.com/p/aggmm973/",
+          "title": "谁说小屏难称王？联想AI平板拯救者Y700五代评测！",
+          "published_at": "2026-04-02",
+          "retrieved_at": null,
+          "source_type": "community",
+          "access_state": "read_full_page",
+          "claims_supported": [
+            "K11"
+          ]
+        }
+      ],
+      "original_source_access_is_unverified_until_you_inspect_it": true
+    }
+  ],
+  "contains_peer_audit_outputs": false
+}

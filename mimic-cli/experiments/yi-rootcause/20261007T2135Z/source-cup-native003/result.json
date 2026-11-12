@@ -1,0 +1,72 @@
+{
+  "started_utc": "2026-10-08T01:24:42.196337+00:00",
+  "container": "yi-mimicgate-20261002",
+  "api_url": "http://127.0.0.1:8652",
+  "source_started_at": "2026-10-08T01:22:56.097428337Z",
+  "command": "mg probe cup",
+  "automatic_replay": false,
+  "cli_started": true,
+  "container_memory_before": {
+    "utc": "2026-10-08T01:24:42.196337+00:00",
+    "current_bytes": 754974720,
+    "peak_bytes": 1427341312,
+    "events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    }
+  },
+  "success": true,
+  "cli_exit_code": 0,
+  "cli_run": "D:\\musicclaude\\mimic-cli\\runs\\20261008T012442.872642Z-4dcbb81c",
+  "diagnostic_sha256": "83e504948e6dac4ecb18688911e8a5bb3413d7ab277811e84e29a0e7b5406c56",
+  "probe_assessment": {
+    "expected_answer": 8,
+    "observed_answer": 8,
+    "normal": true,
+    "status": "matched",
+    "evidence": [
+      "\\boxed{x=8}",
+      "\\boxed{8}",
+      "\\boxed{x=8}"
+    ],
+    "method": "explicit_conclusion_text",
+    "proof_independently_verified": false
+  },
+  "cli_error": null,
+  "cli_elapsed_seconds": 781.11,
+  "screenshot_evidence_complete": true,
+  "ui_thinking_time": [
+    "Worked for 11m 40s"
+  ],
+  "finished_utc": "2026-10-08T01:37:44.017129+00:00",
+  "total_seconds": 781.328,
+  "memory": {
+    "minimum_windows_available_gib": 1.463,
+    "minimum_windows_commit_available_gib": 6.105,
+    "memory_samples": 158,
+    "sampling_interval_seconds": 5,
+    "minimum_free_before_probe_gib": 1,
+    "minimum_commit_headroom_before_probe_gib": 3,
+    "budget_scope": "one_request_with_existing_browser",
+    "in_flight_generation_automatically_aborted": false
+  },
+  "container_memory_after": {
+    "utc": "2026-10-08T01:37:44.017129+00:00",
+    "current_bytes": 777048064,
+    "peak_bytes": 1620615168,
+    "events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    }
+  },
+  "oom_kill_delta": 0,
+  "observer_sha256": "3baeb61ca3e9e5bd3e21f59ae0a75dc511d52ebdcd4b29df3ceff1fd5f9a18fb"
+}

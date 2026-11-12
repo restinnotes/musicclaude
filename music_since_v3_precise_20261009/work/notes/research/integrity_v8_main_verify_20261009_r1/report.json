@@ -1,0 +1,1669 @@
+{
+  "schema": "integrity-v8-main-isolated-offline/1",
+  "date": "2026-10-09",
+  "commands": [
+    {
+      "mode": "suite",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\integrity_v8_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\integrity_v8_main_verify_20261009_r1\\suite",
+        "--worker",
+        "suite"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 8.906,
+      "stdout_bytes": 1196,
+      "stderr_bytes": 10053,
+      "stdout_sha256": "976de4c37c5a8c400fd66bd982710a54262029f9c4f13404d455f9b224e7ae76",
+      "stderr_sha256": "2afa8b0aecd225245833dc097f7f02493353a67d37027cca68c5844b3d423646",
+      "result": {
+        "guard_negative_checks": [
+          {
+            "check": "model_cli_vector_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "different_python_script_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "missing_isolation_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "different_hold_shape_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "shell_option_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "direct_native_bypass_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true,
+            "spawned": false
+          }
+        ],
+        "tests_run": 70,
+        "failures": 0,
+        "errors": 0,
+        "was_successful": true,
+        "report_locator_seam": "process-local TOOLS proxy: real child tools path unchanged; only exact report-parent expression redirects to this new output directory",
+        "local_readonly_queue_children": [
+          {
+            "kind": "isolated_local_readonly_queue_check",
+            "vector_and_native_command_verified": true,
+            "native_shape": "windows_command_line"
+          }
+        ],
+        "blocked_write_count": 1,
+        "real_gate_after": false,
+        "real_model_submissions": 0,
+        "model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "limit": "Finite isolated mock evidence; not backend attestation or production acceptance."
+      }
+    },
+    {
+      "mode": "challenges",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\integrity_v8_main_verify_20261009_r1.py",
+        "--root",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+        "--out-dir",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\integrity_v8_main_verify_20261009_r1\\challenges",
+        "--worker",
+        "challenges"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.813,
+      "stdout_bytes": 3884,
+      "stderr_bytes": 0,
+      "stdout_sha256": "ac19d9c803aaee2aa657b26d1f2188979abca99c0311865634c0f41448bd834d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result": {
+        "guard_negative_checks": [
+          {
+            "check": "model_cli_vector_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "different_python_script_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "missing_isolation_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "different_hold_shape_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "shell_option_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "direct_native_bypass_blocked",
+            "passed": true,
+            "spawned": false
+          },
+          {
+            "check": "historical_report_write_blocked",
+            "passed": true,
+            "spawned": false
+          }
+        ],
+        "checks": [
+          {
+            "check": "complete_parse_failure_same_slot_rerun",
+            "passed": true,
+            "mock_process_calls": 1,
+            "second_new_model_submissions": 0,
+            "original_attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "changed_model",
+            "passed": true,
+            "rejected": true,
+            "exception": "ArtifactConflict",
+            "new_mock_process_calls": 0,
+            "attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "changed_version",
+            "passed": true,
+            "rejected": true,
+            "exception": "ArtifactConflict",
+            "new_mock_process_calls": 0,
+            "attempt_artifacts_unchanged": true
+          },
+          {
+            "check": "explicit_resample_budget_above_two",
+            "contract": "Explicit resample budget must be exact int <= 2, otherwise reject before a process.",
+            "passed": true,
+            "rejected": true,
+            "exception": "ValueError",
+            "mock_process_calls": 0,
+            "new_sample_taken": false,
+            "finding": null
+          },
+          {
+            "check": "source_bound_proof_positive_mock_control",
+            "passed": true,
+            "limit": "Synthetic proof; no actual CLI proof producer was exercised."
+          },
+          {
+            "check": "integer_in_boolean_proof_retryable",
+            "passed": true,
+            "accepted": false,
+            "supplied_type": "int",
+            "finding": null,
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_ambiguous",
+            "passed": true,
+            "accepted": false,
+            "supplied_type": "int",
+            "finding": null,
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_submit_callback_reached",
+            "passed": true,
+            "accepted": false,
+            "supplied_type": "int",
+            "finding": null,
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_model_request_sent",
+            "passed": true,
+            "accepted": false,
+            "supplied_type": "int",
+            "finding": null,
+            "mock_process_calls": 0
+          },
+          {
+            "check": "integer_in_boolean_proof_automatic_retry",
+            "passed": true,
+            "accepted": false,
+            "supplied_type": "int",
+            "finding": null,
+            "mock_process_calls": 0
+          },
+          {
+            "check": "ambiguous_hold_blocks_same_and_different_local_run",
+            "passed": true,
+            "mock_process_calls": 1,
+            "second_new_model_submissions": 0,
+            "different_run_new_model_submissions": 0
+          },
+          {
+            "check": "source_bound_transport_through_actual_adapter_mock_then_disk_reuse",
+            "passed": true,
+            "mock_cli_process_calls": 2,
+            "first_new_model_submissions": 1,
+            "second_new_model_submissions": 0,
+            "same_sampling_identity": true,
+            "immutable_artifacts_unchanged": true
+          },
+          {
+            "check": "adapter_rejects_integer_proof_retryable",
+            "passed": true
+          },
+          {
+            "check": "adapter_rejects_integer_proof_ambiguous",
+            "passed": true
+          },
+          {
+            "check": "adapter_rejects_integer_proof_submit_callback_reached",
+            "passed": true
+          },
+          {
+            "check": "adapter_rejects_integer_proof_model_request_sent",
+            "passed": true
+          },
+          {
+            "check": "adapter_rejects_integer_proof_automatic_retry",
+            "passed": true
+          },
+          {
+            "check": "exact2_optin_budget_reject_1",
+            "passed": true,
+            "no_output_directory_created": true
+          },
+          {
+            "check": "exact2_optin_budget_reject_3",
+            "passed": true,
+            "no_output_directory_created": true
+          },
+          {
+            "check": "exact2_optin_budget_reject_4",
+            "passed": true,
+            "no_output_directory_created": true
+          },
+          {
+            "check": "exact2_optin_budget_reject_2.0",
+            "passed": true,
+            "no_output_directory_created": true
+          },
+          {
+            "check": "exact2_optin_budget_reject_True",
+            "passed": true,
+            "no_output_directory_created": true
+          }
+        ],
+        "was_successful": true,
+        "local_readonly_queue_children": [],
+        "blocked_write_count": 1,
+        "real_gate_after": false,
+        "real_model_submissions": 0,
+        "model_cli_invocations": 0,
+        "music_acceptance": "NOT_PERFORMED",
+        "limit": "Finite isolated mock evidence; not backend attestation or production acceptance."
+      }
+    }
+  ],
+  "assertion_mapping": {
+    "v4_methods": 34,
+    "v7_methods": 63,
+    "v8_methods": 70,
+    "mappings": [
+      {
+        "source": "v4",
+        "methods": 34,
+        "mapping": [
+          {
+            "test": "AdapterTests.test_backend_unknown_or_wrong_not_success",
+            "old_line": 270,
+            "v8_line": 329,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_body_protection_words_are_content",
+            "old_line": 228,
+            "v8_line": 269,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_cache_write_failure_never_resumes_unsealed_success",
+            "old_line": 206,
+            "v8_line": 247,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_completed_strict_and_terminal_metadata_required",
+            "old_line": 239,
+            "v8_line": 280,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_hold_write_failure_next_job_stays_blocked",
+            "old_line": 183,
+            "v8_line": 224,
+            "old_assertion_count": 6,
+            "v8_assertion_count": 6,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_metadata_handles_never_persist",
+            "old_line": 219,
+            "v8_line": 260,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_missing_cache_no_resubmit",
+            "old_line": 153,
+            "v8_line": 194,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_pending_without_cache_no_resubmit",
+            "old_line": 160,
+            "v8_line": 201,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_post_submit_unknown_timeout_and_protection_hold",
+            "old_line": 258,
+            "v8_line": 317,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_pre_submit_contract_not_just_phase",
+            "old_line": 248,
+            "v8_line": 289,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": false,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_real_gate_closed_and_route_blocked",
+            "old_line": 278,
+            "v8_line": 337,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_sensitive_body_rejected_not_rewritten",
+            "old_line": 232,
+            "v8_line": 273,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_success_resume_readonly_and_cache_reference",
+            "old_line": 139,
+            "v8_line": 178,
+            "old_assertion_count": 8,
+            "v8_assertion_count": 9,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": false,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_tampered_body",
+            "old_line": 176,
+            "v8_line": 217,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_tampered_source_and_finalization",
+            "old_line": 167,
+            "v8_line": 208,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_ticket_write_failure_never_launches",
+            "old_line": 196,
+            "v8_line": 237,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "ExperimentTests.test_wrapper_exact_rerun_zero_new_submissions",
+            "old_line": 364,
+            "v8_line": 432,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "ExperimentTests.test_wrapper_fake_log_and_parser_error_never_success",
+            "old_line": 375,
+            "v8_line": 443,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_backend_root_contract_only",
+            "old_line": 89,
+            "v8_line": 91,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_body_preserved_or_rejected_not_scrubbed",
+            "old_line": 82,
+            "v8_line": 84,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_cancelled_item_rejected",
+            "old_line": 56,
+            "v8_line": 58,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_handle_keys_and_strings_redacted",
+            "old_line": 72,
+            "v8_line": 74,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_policy",
+            "old_line": 99,
+            "v8_line": 101,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_strict_json",
+            "old_line": 67,
+            "v8_line": 69,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_success_and_after_terminal",
+            "old_line": 62,
+            "v8_line": 64,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process",
+            "old_line": 104,
+            "v8_line": 106,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": false,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_unknown_codex_events_rejected",
+            "old_line": 51,
+            "v8_line": 53,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_codex_success_exact_resume",
+            "old_line": 308,
+            "v8_line": 365,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_final_argv_identity_contains_sandbox_and_images",
+            "old_line": 337,
+            "v8_line": 405,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_forbidden_tool_failed_with_complete_terminal",
+            "old_line": 348,
+            "v8_line": 416,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_hold_write_failure_retains_ticket",
+            "old_line": 329,
+            "v8_line": 397,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_opencode_success_handles_redacted",
+            "old_line": 314,
+            "v8_line": 382,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_real_gate_never_process",
+            "old_line": 356,
+            "v8_line": 424,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_unknown_event_stops_later_provider_job",
+            "old_line": 322,
+            "v8_line": 390,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          }
+        ]
+      },
+      {
+        "source": "v7",
+        "methods": 63,
+        "mapping": [
+          {
+            "test": "AdapterTests.test_backend_unknown_or_wrong_not_success",
+            "old_line": 309,
+            "v8_line": 329,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_body_protection_words_are_content",
+            "old_line": 249,
+            "v8_line": 269,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_cache_write_failure_never_resumes_unsealed_success",
+            "old_line": 227,
+            "v8_line": 247,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_completed_strict_and_terminal_metadata_required",
+            "old_line": 260,
+            "v8_line": 280,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_hold_write_failure_next_job_stays_blocked",
+            "old_line": 204,
+            "v8_line": 224,
+            "old_assertion_count": 6,
+            "v8_assertion_count": 6,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_metadata_handles_never_persist",
+            "old_line": 240,
+            "v8_line": 260,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_missing_cache_no_resubmit",
+            "old_line": 174,
+            "v8_line": 194,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_pending_without_cache_no_resubmit",
+            "old_line": 181,
+            "v8_line": 201,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_post_submit_unknown_timeout_and_protection_hold",
+            "old_line": 297,
+            "v8_line": 317,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_pre_submit_contract_not_just_phase",
+            "old_line": 269,
+            "v8_line": 289,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_real_gate_closed_and_route_blocked",
+            "old_line": 317,
+            "v8_line": 337,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_sensitive_body_rejected_not_rewritten",
+            "old_line": 253,
+            "v8_line": 273,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_success_resume_readonly_and_cache_reference",
+            "old_line": 158,
+            "v8_line": 178,
+            "old_assertion_count": 9,
+            "v8_assertion_count": 9,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_tampered_body",
+            "old_line": 197,
+            "v8_line": 217,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_tampered_source_and_finalization",
+            "old_line": 188,
+            "v8_line": 208,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "AdapterTests.test_ticket_write_failure_never_launches",
+            "old_line": 217,
+            "v8_line": 237,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_inline_private_config_value_is_not_read_or_hashed",
+            "old_line": 695,
+            "v8_line": 715,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_known_private_session_variable_is_excluded_without_reading_value",
+            "old_line": 685,
+            "v8_line": 705,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_proxy_cases_and_known_behavior_values_change_identity",
+            "old_line": 658,
+            "v8_line": 678,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_proxy_userinfo_or_query_is_rejected_not_silently_skipped",
+            "old_line": 670,
+            "v8_line": 690,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_seal_limitation_and_real_gate_are_explicit",
+            "old_line": 704,
+            "v8_line": 724,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "EnvironmentGapTests.test_unknown_gpt2agent_name_refused_without_reading_value",
+            "old_line": 675,
+            "v8_line": 695,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "ExperimentTests.test_wrapper_exact_rerun_zero_new_submissions",
+            "old_line": 412,
+            "v8_line": 432,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "ExperimentTests.test_wrapper_fake_log_and_parser_error_never_success",
+            "old_line": 423,
+            "v8_line": 443,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GPT2ExperimentGapTests.test_cache_alias_does_not_overwrite_original_source",
+            "old_line": 819,
+            "v8_line": 839,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GPT2ExperimentGapTests.test_nonempty_arbitrary_hash_is_not_source_bound_retry_proof",
+            "old_line": 743,
+            "v8_line": 763,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GPT2ExperimentGapTests.test_requested_effort_must_match_exact_returned_string",
+            "old_line": 732,
+            "v8_line": 752,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GPT2ExperimentGapTests.test_source_bound_pre_submit_retry_uses_same_frozen_prompt_new_attempt",
+            "old_line": 772,
+            "v8_line": 792,
+            "old_assertion_count": 6,
+            "v8_assertion_count": 6,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GPT2ExperimentGapTests.test_use_cache_false_never_creates_alias_or_resubmits",
+            "old_line": 760,
+            "v8_line": 780,
+            "old_assertion_count": 6,
+            "v8_assertion_count": 6,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_ambiguous_post_submit_is_never_retried",
+            "old_line": 530,
+            "v8_line": 550,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_codex_status_is_allowlisted_by_event_and_phase",
+            "old_line": 434,
+            "v8_line": 454,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_default_parse_failure_stops_after_one_complete_sample",
+            "old_line": 454,
+            "v8_line": 474,
+            "old_assertion_count": 7,
+            "v8_assertion_count": 7,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_explicit_new_sample_may_keep_prompt_and_changes_sampling_identity",
+            "old_line": 470,
+            "v8_line": 490,
+            "old_assertion_count": 7,
+            "v8_assertion_count": 7,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_explicit_second_sample_parse_failure_is_recorded_without_success",
+            "old_line": 492,
+            "v8_line": 512,
+            "old_assertion_count": 8,
+            "v8_assertion_count": 8,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_new_sample_requires_reason_key_and_budget",
+            "old_line": 519,
+            "v8_line": 539,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_opencode_conflicting_finish_status_rejected",
+            "old_line": 447,
+            "v8_line": 467,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "GapClosureTests.test_parser_exception_is_failure_and_does_not_resubmit",
+            "old_line": 508,
+            "v8_line": 528,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_backend_root_contract_only",
+            "old_line": 89,
+            "v8_line": 91,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_body_preserved_or_rejected_not_scrubbed",
+            "old_line": 82,
+            "v8_line": 84,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_cancelled_item_rejected",
+            "old_line": 56,
+            "v8_line": 58,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_handle_keys_and_strings_redacted",
+            "old_line": 72,
+            "v8_line": 74,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_legacy_version_tickets_and_hold_are_preserved_and_block_queue",
+            "old_line": 118,
+            "v8_line": 138,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_policy",
+            "old_line": 99,
+            "v8_line": 101,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_strict_json",
+            "old_line": 67,
+            "v8_line": 69,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_success_and_after_terminal",
+            "old_line": 62,
+            "v8_line": 64,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process",
+            "old_line": 104,
+            "v8_line": 106,
+            "old_assertion_count": 5,
+            "v8_assertion_count": 5,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": false,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "IntegrityTests.test_unknown_codex_events_rejected",
+            "old_line": 51,
+            "v8_line": 53,
+            "old_assertion_count": 1,
+            "v8_assertion_count": 1,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_bad_and_legacy_ledger_shapes_fail_closed",
+            "old_line": 575,
+            "v8_line": 595,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_cache_index_cannot_be_redirected_to_cache_alias",
+            "old_line": 634,
+            "v8_line": 654,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_finalize_or_cache_failure_cannot_be_reported_as_success",
+            "old_line": 647,
+            "v8_line": 667,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_nonobject_and_unreadable_ledgers_fail_closed",
+            "old_line": 591,
+            "v8_line": 611,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_orphan_prompt_and_output_fail_closed",
+            "old_line": 602,
+            "v8_line": 622,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_retained_legacy_seal_blocks_same_sample_after_ledgers_removed",
+            "old_line": 564,
+            "v8_line": 584,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_use_cache_false_returns_exact_source_without_alias_or_submission",
+            "old_line": 622,
+            "v8_line": 642,
+            "old_assertion_count": 8,
+            "v8_assertion_count": 8,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "LedgerGapTests.test_valid_unrelated_sample_does_not_block_new_identity",
+            "old_line": 615,
+            "v8_line": 635,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_codex_success_exact_resume",
+            "old_line": 345,
+            "v8_line": 365,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_final_argv_identity_contains_sandbox_and_images",
+            "old_line": 385,
+            "v8_line": 405,
+            "old_assertion_count": 4,
+            "v8_assertion_count": 4,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_forbidden_tool_failed_with_complete_terminal",
+            "old_line": 396,
+            "v8_line": 416,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_hold_write_failure_retains_ticket",
+            "old_line": 377,
+            "v8_line": 397,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_opencode_success_handles_redacted",
+            "old_line": 362,
+            "v8_line": 382,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_real_gate_never_process",
+            "old_line": 404,
+            "v8_line": 424,
+            "old_assertion_count": 2,
+            "v8_assertion_count": 2,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_unknown_event_stops_later_provider_job",
+            "old_line": 370,
+            "v8_line": 390,
+            "old_assertion_count": 3,
+            "v8_assertion_count": 3,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          },
+          {
+            "test": "RunnerTests.test_use_cache_false_returns_exact_source_without_alias_or_resubmit",
+            "old_line": 351,
+            "v8_line": 371,
+            "old_assertion_count": 7,
+            "v8_assertion_count": 7,
+            "old_assertions_not_retained": [],
+            "body_same_after_namespace": true,
+            "limit": "AST/expressions only; changed fixture or test body still requires semantic review."
+          }
+        ]
+      }
+    ]
+  },
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "independent_review": "PENDING",
+  "real_gate_changed": false,
+  "two_w_hold_changed": false,
+  "source_hash_parity": {
+    "tools/execution_integrity_v8.py": {
+      "matches": true
+    },
+    "tools/gpt2_adapter_v8.py": {
+      "matches": true
+    },
+    "tools/runner_v8.py": {
+      "matches": true
+    },
+    "tools/experiment_calls_v8.py": {
+      "matches": true
+    },
+    "tools/tests/test_execution_integrity_v8.py": {
+      "matches": true
+    }
+  },
+  "implementation_artifact_hash_parity": {
+    "notes/research/integrity_v8_luna_impl_20261009_r1/first_failure.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/fix_record.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/tests_run_manifest.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/protected_before.json": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/protected_after.json": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/assertion_fixture_behavior_mapping.json": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/queue_child_run.json": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/scope_incident.json": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_01.stdout.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_01.stderr.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_02.stdout.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_02.stderr.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_03.stdout.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_03.stderr.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_04.stdout.txt": {
+      "matches": true
+    },
+    "notes/research/integrity_v8_luna_impl_20261009_r1/test_run_04.stderr.txt": {
+      "matches": true
+    }
+  },
+  "agent_protected_schema_aware": {
+    "before_rows": 29,
+    "after_rows": 41,
+    "after_unique_paths": 39,
+    "rows": [
+      {
+        "path": "tools/execution_integrity_v4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/execution_integrity_v5.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/execution_integrity_v6.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/execution_integrity_v7.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/gpt2_adapter_v4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/gpt2_adapter_v5.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/gpt2_adapter_v6.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/gpt2_adapter_v7.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/runner_v4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/runner_v5.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/runner_v6.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/runner_v7.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/experiment_calls_v4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/experiment_calls_v5.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/experiment_calls_v6.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/experiment_calls_v7.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/tests/test_execution_integrity_v4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/tests/test_execution_integrity_v5.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/tests/test_execution_integrity_v6.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/tests/test_execution_integrity_v7.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/probes/integrity_v7_main_verify_20261009_r2.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/probes/integrity_v7_main_verify_20261009_r3.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "tools/probes/integrity_v7_main_verify_20261009_r4.py",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/report.json",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/first_failure.txt",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/fix_record.txt",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_main_verify_20261009_r2/report.json",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_main_verify_20261009_r3/report.json",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_main_verify_20261009_r4/report.json",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/first_failure.txt",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/fix_record.txt",
+        "before_baseline_available": true,
+        "baseline_fields_match": true,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/tests_run_manifest.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_01.stderr.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_01.stdout.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_02.stderr.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_02.stdout.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_03.stderr.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_03.stdout.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_04.stderr.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/test_run_04.stdout.txt",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      },
+      {
+        "path": "notes/research/integrity_v7_luna_impl_20261009_r1/安全README.md",
+        "before_baseline_available": false,
+        "baseline_fields_match": false,
+        "after_internal_matches": true,
+        "current_matches_after": true
+      }
+    ],
+    "limit": "Additional after-only entries have no contemporaneous before baseline; duplicate entries do not count as distinct protected files."
+  },
+  "scope_incident": {
+    "currently_out_of_root_file_exists": false,
+    "cleanup_is_implementation_report_not_main_action": true,
+    "historical_creation_and_cleanup_scope_independently_verified": false
+  },
+  "protected_unchanged": true,
+  "changed_protected_paths": [],
+  "main_disposition": "OFFLINE_DYNAMIC_CHECKS_RECORDED_NOT_ACCEPTED_PENDING_INDEPENDENT_REVIEW_AND_REAL_CONTRACTS",
+  "limits": [
+    "Synthetic/source-bound consistency is not remote authentication.",
+    "Real CLI event/proof producer, remote normalization, private configuration and external service remain unverified.",
+    "Scope incident historical cleanup is not independently established; schema-aware agent protection counts are limited.",
+    "No music or production acceptance."
+  ]
+}

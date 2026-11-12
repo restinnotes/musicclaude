@@ -1,0 +1,1303 @@
+[
+  {
+    "utc": "2026-10-08T01:00:59.798779+00:00",
+    "event": "generation_observation_error",
+    "source": "backend",
+    "endpoint": "/backend-api/conversation/init",
+    "status": 200,
+    "endpoint_kind": "init",
+    "request_observer_id": 131098357597968,
+    "page_object_id": 131098357711568,
+    "phase": "response",
+    "body_available": false,
+    "exception_type": "Error"
+  },
+  {
+    "utc": "2026-10-08T01:01:11.567556+00:00",
+    "event": "generation_wire_request",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    }
+  },
+  {
+    "utc": "2026-10-08T01:01:11.580567+00:00",
+    "event": "generation_wire_cookie_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "sent_cookie_count": 94,
+    "sent_auth_cookie_count": 1,
+    "sent_device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+    "actual_oai_did_header_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+    "oai_did_header_matches_sent_device_cookie": true,
+    "sent_device_cookie_conflict": false,
+    "cookie_header_bytes": 13423,
+    "sent_context_cookie_names": [
+      "__Secure-oai-is",
+      "__oailb",
+      "_account",
+      "oai-client-auth-info",
+      "oai-client-session-epoch"
+    ],
+    "header_names": [
+      ":authority",
+      ":method",
+      ":path",
+      ":scheme",
+      "accept",
+      "accept-encoding",
+      "accept-language",
+      "authorization",
+      "chatgpt-account-id",
+      "content-length",
+      "content-type",
+      "cookie",
+      "oai-did",
+      "oai-echo-logs",
+      "oai-language",
+      "openai-sentinel-chat-requirements-token",
+      "openai-sentinel-proof-token",
+      "openai-sentinel-turnstile-token",
+      "origin",
+      "originator",
+      "priority",
+      "referer",
+      "sec-ch-ua",
+      "sec-ch-ua-mobile",
+      "sec-ch-ua-platform",
+      "sec-fetch-dest",
+      "sec-fetch-mode",
+      "sec-fetch-site",
+      "user-agent",
+      "x-conduit-token",
+      "x-oai-mcp-form-version",
+      "x-oai-turn-trace-id",
+      "x-openai-codex-window-type",
+      "x-openai-web-frontend",
+      "x-openai-web-sse-compression"
+    ],
+    "client_header_context": {
+      "originator": "Codex Browser",
+      "x-openai-codex-window-type": "browser",
+      "x-openai-web-frontend": "codex_webview",
+      "x-oai-mcp-form-version": "2",
+      "oai-language": "en-US",
+      "accept-language": "en-US",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "sec-ch-ua": {
+        "characters": 39,
+        "sha256": "93b983d065609aa9672c2d0751de3cec7a87309fb75b0dd02916b521d5aaf313"
+      },
+      "user-agent": {
+        "characters": 101,
+        "sha256": "6741d334fd28ec48cc6266cc9dc6e207eb660cf3f8bbc23cd76b6e5118e4473a"
+      }
+    }
+  },
+  {
+    "utc": "2026-10-08T01:01:15.305687+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "user",
+        "message_recipient": "all",
+        "message_status": "finished_successfully"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:01:15.470045+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "system",
+        "message_recipient": "all",
+        "message_status": "finished_successfully",
+        "message_end_turn": true
+      },
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:01:15.523613+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "system",
+        "message_recipient": "all",
+        "message_status": "finished_successfully"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:01:41.439747+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_channel": "commentary",
+        "message_status": "in_progress"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:01:45.939157+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_status": "finished_successfully"
+      },
+      {
+        "message_end_turn": false
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:02:01.230022+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_status": "finished_successfully",
+        "message_end_turn": false
+      },
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "reasoning_status": "unknown"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:18:45.689836+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "reasoning_status": "reasoning_ended",
+        "finished_duration_sec": 1050
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:18:45.711911+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_channel": "final",
+        "message_status": "in_progress"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:20:26.956495+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "message_end_turn": true
+      },
+      {
+        "finish_details": {
+          "type": "stop",
+          "stop_tokens_type": "list"
+        }
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:20:28.147912+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "server_ste_metadata": {
+          "tool_name": "unknown",
+          "turn_use_case": "thinking",
+          "warmup_state": "warm",
+          "tool_invoked": false,
+          "conduit_prewarmed": true
+        }
+      },
+      {
+        "model_slug": "gpt-5-6-thinking"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:20:28.886064+00:00",
+    "event": "generation_stream_metadata",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "metadata_records": [
+      {
+        "default_model_slug": "gpt-5-6-thinking"
+      }
+    ]
+  },
+  {
+    "utc": "2026-10-08T01:20:28.903995+00:00",
+    "event": "generation_stream_finished",
+    "source": "cdp",
+    "endpoint": "/backend-api/f/conversation",
+    "page_object_id": 131098357711568,
+    "cdp_request_id": "2092.799",
+    "wire_epoch": 1791421271.498918,
+    "metadata": {
+      "model": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "browser_context_present": false,
+      "browser_context_is_object": false,
+      "context_shape": {
+        "client_contextual_info": {
+          "app_name": {
+            "type": "str",
+            "characters": 11,
+            "sha256": "c6240ca88eed5b237451d4ceab51a5df1e8bc3b0a4a0e099fbe4b9f0d5cf23a2"
+          },
+          "app_surface": {
+            "type": "str",
+            "characters": 13,
+            "sha256": "7d99ab4ab1c393bcf96c6e5c0819996f590c4567ee66c7e4a7ea42cd1d646014"
+          },
+          "has_web_push_capabilities": true,
+          "web_push_notification_permission": {
+            "type": "str",
+            "characters": 7,
+            "sha256": "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"
+          }
+        },
+        "supported_encodings": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 2,
+              "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+            }
+          ]
+        },
+        "local_function_names": {
+          "count": 1,
+          "items": [
+            {
+              "type": "str",
+              "characters": 22,
+              "sha256": "a8b29fa6d40e1fa67a26a22ba1455597428b55f971bd8762e18a2dc60f5b5b7c"
+            }
+          ]
+        },
+        "turn_attribution": {
+          "turn_trigger": {
+            "type": "str",
+            "characters": 8,
+            "sha256": "42cc848a9f5ec37abc5b95cb87023b74aae30d68e55939894bf42d839e13b736"
+          }
+        }
+      },
+      "timezone_offset_min": 420,
+      "timezone": "America/Los_Angeles",
+      "message_count": 1,
+      "text_characters": 412,
+      "text_sha256": "6941db951890638011b431dc77b33bccbe691c7628484308a252956549814d15"
+    },
+    "status": 200,
+    "protocol": "h2",
+    "bytes_observed": 52066,
+    "metadata_records": [
+      {
+        "message_author_role": "user",
+        "message_recipient": "all",
+        "message_status": "finished_successfully"
+      },
+      {
+        "message_author_role": "system",
+        "message_recipient": "all",
+        "message_status": "finished_successfully",
+        "message_end_turn": true
+      },
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max"
+      },
+      {
+        "message_author_role": "system",
+        "message_recipient": "all",
+        "message_status": "finished_successfully"
+      },
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_channel": "commentary",
+        "message_status": "in_progress"
+      },
+      {
+        "message_status": "finished_successfully"
+      },
+      {
+        "message_end_turn": false
+      },
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_status": "finished_successfully",
+        "message_end_turn": false
+      },
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "reasoning_status": "unknown"
+      },
+      {
+        "model_slug": "gpt-5-6-thinking",
+        "default_model_slug": "gpt-5-6-thinking",
+        "thinking_effort": "max",
+        "reasoning_status": "reasoning_ended",
+        "finished_duration_sec": 1050
+      },
+      {
+        "message_author_role": "assistant",
+        "message_recipient": "all",
+        "message_channel": "final",
+        "message_status": "in_progress"
+      },
+      {
+        "message_end_turn": true
+      },
+      {
+        "finish_details": {
+          "type": "stop",
+          "stop_tokens_type": "list"
+        }
+      },
+      {
+        "server_ste_metadata": {
+          "tool_name": "unknown",
+          "turn_use_case": "thinking",
+          "warmup_state": "warm",
+          "tool_invoked": false,
+          "conduit_prewarmed": true
+        }
+      },
+      {
+        "model_slug": "gpt-5-6-thinking"
+      },
+      {
+        "default_model_slug": "gpt-5-6-thinking"
+      }
+    ],
+    "sse_done": true,
+    "truncated": false,
+    "oversized_lines_dropped": 0,
+    "metadata_record_limit_reached": false,
+    "early_buffer_limit_reached": false,
+    "metadata_observation_complete": true,
+    "network_error": "net::ERR_ABORTED",
+    "wire_duration_seconds": 1157.459,
+    "last_network_data_seconds_after_request": 1157.441,
+    "network_idle_seconds_at_finish": 0.018,
+    "network_data_event_count": 465,
+    "failed": false,
+    "canceled": true,
+    "network_canceled_after_sse_done": true
+  },
+  {
+    "utc": "2026-10-08T01:20:28.905469+00:00",
+    "event": "generation_observation_error",
+    "source": "backend",
+    "endpoint": "/backend-api/f/conversation",
+    "status": 200,
+    "endpoint_kind": "generation",
+    "request_observer_id": 131098342697680,
+    "page_object_id": 131098357711568,
+    "phase": "response",
+    "body_available": false,
+    "exception_type": "Error"
+  }
+]

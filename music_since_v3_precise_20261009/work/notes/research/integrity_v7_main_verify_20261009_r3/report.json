@@ -1,0 +1,127 @@
+{
+  "schema": "integrity-v7-main-isolated-offline/3",
+  "date": "2026-10-09",
+  "change": "Only the probe Windows audit seam: exact original vector plus exact native command; no broad subprocess exemption.",
+  "r2_error_classification": "PROBE_WINDOWS_AUDIT_SHAPE_ERROR_NOT_V7_REGRESSION",
+  "source_evidence": "Python312/Lib/subprocess.py:1450-1462,1534 converts argv to list2cmdline and audits executable=None when not explicitly supplied.",
+  "command": {
+    "argv": [
+      "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-X",
+      "utf8",
+      "-I",
+      "-B",
+      "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\probes\\integrity_v7_main_verify_20261009_r3.py",
+      "--root",
+      "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+      "--worker"
+    ],
+    "returncode": 1,
+    "timed_out": false,
+    "elapsed_seconds": 0.109,
+    "stdout_bytes": 0,
+    "stderr_bytes": 1961,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3910b2fc85c559a55494278ae27af910fc127a456d9b59d3f1154de43d6572c7",
+    "result_parse_error": true
+  },
+  "protected_unchanged": true,
+  "r2_evidence_unchanged": true,
+  "r2_report_sha256": "15d64c9baff119c17ca8bf9d935c0cc2b78fbc900ef60cb0f925e1f140562aa7",
+  "retained_challenges": [
+    {
+      "check": "complete_parse_failure_same_slot_rerun",
+      "passed": true,
+      "mock_process_calls": 1,
+      "second_new_model_submissions": 0,
+      "original_attempt_artifacts_unchanged": true
+    },
+    {
+      "check": "changed_model",
+      "passed": true,
+      "rejected": true,
+      "exception": "ArtifactConflict",
+      "new_mock_process_calls": 0,
+      "attempt_artifacts_unchanged": true
+    },
+    {
+      "check": "changed_version",
+      "passed": true,
+      "rejected": true,
+      "exception": "ArtifactConflict",
+      "new_mock_process_calls": 0,
+      "attempt_artifacts_unchanged": true
+    },
+    {
+      "check": "explicit_resample_budget_above_two",
+      "contract": "Explicit resample budget must be exact int <= 2, otherwise reject before a process.",
+      "passed": false,
+      "rejected": false,
+      "exception": null,
+      "mock_process_calls": 2,
+      "new_sample_taken": true,
+      "finding": "Budget=3 accepted although the declared explicit-resample contract caps it at 2."
+    },
+    {
+      "check": "source_bound_proof_positive_mock_control",
+      "passed": true,
+      "limit": "Synthetic proof; no actual CLI proof producer was exercised."
+    },
+    {
+      "check": "integer_in_boolean_proof_retryable",
+      "passed": false,
+      "accepted": true,
+      "supplied_type": "int",
+      "finding": "Non-boolean proof flag accepted.",
+      "mock_process_calls": 0
+    },
+    {
+      "check": "integer_in_boolean_proof_ambiguous",
+      "passed": false,
+      "accepted": true,
+      "supplied_type": "int",
+      "finding": "Non-boolean proof flag accepted.",
+      "mock_process_calls": 0
+    },
+    {
+      "check": "integer_in_boolean_proof_submit_callback_reached",
+      "passed": false,
+      "accepted": true,
+      "supplied_type": "int",
+      "finding": "Non-boolean proof flag accepted.",
+      "mock_process_calls": 0
+    },
+    {
+      "check": "integer_in_boolean_proof_model_request_sent",
+      "passed": false,
+      "accepted": true,
+      "supplied_type": "int",
+      "finding": "Non-boolean proof flag accepted.",
+      "mock_process_calls": 0
+    },
+    {
+      "check": "integer_in_boolean_proof_automatic_retry",
+      "passed": false,
+      "accepted": true,
+      "supplied_type": "int",
+      "finding": "Non-boolean proof flag accepted.",
+      "mock_process_calls": 0
+    },
+    {
+      "check": "ambiguous_hold_blocks_same_and_different_local_run",
+      "passed": true,
+      "mock_process_calls": 1,
+      "second_new_model_submissions": 0,
+      "different_run_new_model_submissions": 0
+    }
+  ],
+  "challenges_rerun": false,
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "main_disposition": "NOT_ACCEPTED_CONFIRMED_V7_GAPS_REMAIN",
+  "limits": [
+    "SHA is local consistency, not remote authentication.",
+    "Real CLI event/proof compatibility and remote input normalization remain unverified.",
+    "Private config, external services, Docker and all three music acceptances remain unverified."
+  ]
+}

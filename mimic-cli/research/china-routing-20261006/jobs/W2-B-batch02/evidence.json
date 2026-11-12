@@ -1,0 +1,578 @@
+{
+  "job_id": "W2-B-batch02",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C04",
+      "name": "迷你PC",
+      "candidate_count": 3,
+      "sampling_rule": "domestic_head按京东公开迷你PC榜单的exact variant顺序取TOP1、TOP2；domestic_opportunity要求国内社区/消费证据且有可定义精确版本，不按海外可比性筛除。",
+      "tier_rule": "同一子品类公开Top10 exact variant按观察日未登录普通价升序：1-3低端、4-7中端、8-10高端；会员价、定向券、国补、以旧换新另列；金额不可见则tier=null。"
+    },
+    {
+      "category_id": "C05",
+      "name": "PC组件、存储、网络设备",
+      "candidate_count": 3,
+      "sampling_rule": "分别覆盖存储、网络、内存子品类；head取公开榜单子品类TOP1，opportunity取有中国买家使用证据的精确版本。",
+      "tier_rule": "SSD、路由器、内存各自在其子品类公开Top10内按未登录普通价升序：1-3低端、4-7中端、8-10高端；不跨子品类比较价格。"
+    },
+    {
+      "category_id": "C06",
+      "name": "音频",
+      "candidate_count": 3,
+      "sampling_rule": "head覆盖不同主流形态的公开榜单头部exact variant；opportunity要求国内社区实际使用证据与官方规格可交叉确认。",
+      "tier_rule": "同音频形态的公开Top10 exact variant按未登录普通价升序：1-3低端、4-7中端、8-10高端；bundle与单机不得混用价格。"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C04",
+      "候选sku_id": "C04-H1-LECOO-MINI-7430U-16-512",
+      "brand": "Lecoo 来酷",
+      "model": "来酷 MINI 锐龙版",
+      "exact_variant": "AMD Ryzen 5 7430U / 16GB / 512GB SSD / Windows 11",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东迷你PC公开榜单TOP1，页面显示约20000人评论；联想商城存在相同7430U/16GB/512GB版本。",
+      "domestic_selection_rule": "京东公开迷你PC榜单按exact variant排名取TOP1。",
+      "domestic_product_url": "https://item.jd.com/100294864549.html",
+      "item_id": "100294864549",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_page_dynamic",
+      "observation_date": "2026-10-06",
+      "domestic_price": 2999,
+      "price_type": "official_store_public_list_price; subsidy_and_instant_discount_excluded",
+      "feasibility_flags": [
+        "external_power_adapter",
+        "Windows_preinstalled_variant"
+      ],
+      "verification_status": "VERIFIED_PUBLIC",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "category_id": "C04",
+      "候选sku_id": "C04-H2-ASUS-POXIAO-13500H-16-512",
+      "brand": "ASUS 华硕",
+      "model": "破晓迷你主机",
+      "exact_variant": "Intel Core i5-13500H / 16GB / 512GB SSD / Wi-Fi 6",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开迷你PC榜单TOP2，约1000人评论；2026-08-25国内上新报道确认该精确配置。",
+      "domestic_selection_rule": "京东公开迷你PC榜单按exact variant排名取TOP2。",
+      "domestic_product_url": "https://item.jd.com/100293974227.html",
+      "item_id": "100293974227",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_page_dynamic",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "external_power_adapter",
+        "memory_storage_compatibility_check"
+      ],
+      "verification_status": "VERIFIED_VARIANT; CURRENT_PRICE_UNVERIFIED",
+      "source_ids": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C04",
+      "候选sku_id": "C04-O1-GMKTEC-K16-7735HS-32-512",
+      "brand": "GMKtec 极摩客",
+      "model": "NucBox K16",
+      "exact_variant": "AMD Ryzen 7 7735HS / 32GB LPDDR5-6400 onboard / 512GB SSD",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "国内媒体全文确认7735HS、板载32GB LPDDR5-6400和512GB SKU；什么值得买存在2026年专项评测，但正文直开失败，仅作社区机会信号。",
+      "domestic_selection_rule": "非头部榜单样本；要求可定义exact variant，并存在当年国内社区专项评测信号和国内上架证据。",
+      "domestic_product_url": "https://u.jd.com/fGsSc8c",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "external_power_adapter",
+        "onboard_memory_nonupgradeable",
+        "OCuLink_device_compatibility_check"
+      ],
+      "verification_status": "PROVISIONAL_RETAIL_LINK; VERIFIED_VARIANT",
+      "source_ids": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "候选sku_id": "C05-H1-ZHITAI-TIPLUS7100S-2TB",
+      "brand": "ZhiTai 致态",
+      "model": "TiPlus7100s",
+      "exact_variant": "2TB / NVMe M.2 / PCIe 4.0",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东2TB SSD公开榜单TOP1，约500000人评论；长江存储官网确认2TB规格。",
+      "domestic_selection_rule": "SSD子品类公开2TB榜单取TOP1 exact variant。",
+      "domestic_product_url": "https://item.jd.com/100293889522.html",
+      "item_id": "100293889522",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_page_dynamic",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "M.2_2280_PCIe4x4_compatibility"
+      ],
+      "verification_status": "VERIFIED_PUBLIC",
+      "source_ids": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "候选sku_id": "C05-H2-XIAOMI-BE6500",
+      "brand": "Xiaomi 小米",
+      "model": "BE6500",
+      "exact_variant": "Wi-Fi 7 / 6500兆级 / 全2.5G网口 / 高通4核处理器",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东6500级路由器公开榜单TOP1，约1000000人评论；小米中国官网存在对应产品页。",
+      "domestic_selection_rule": "路由器6500子品类公开榜单取TOP1 exact variant。",
+      "domestic_product_url": "https://item.jd.com/100134199408.html",
+      "item_id": "100134199408",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_page_dynamic",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "CN_firmware_regulatory_domain",
+        "power_adapter_voltage_check"
+      ],
+      "verification_status": "VERIFIED_PUBLIC",
+      "source_ids": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "候选sku_id": "C05-O1-KINGBANK-SILVER-DDR5-6000-C36-32GB",
+      "brand": "KINGBANK 金百达",
+      "model": "银爵",
+      "exact_variant": "32GB (16GBx2) / DDR5-6000 / 国产颗粒 / C36",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东精确商品页可全文读取，存在买家关于Z790M兼容、testmem5测试及国产DDR5的实际评价。",
+      "domestic_selection_rule": "不要求榜单TOP1；选择有公开中国买家实际兼容性反馈、版本可精确定义的国产颗粒内存套装。",
+      "domestic_product_url": "https://item.jd.com/product/xgX8EKW1Mrj5_OZ5EifFmQ.html",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page; final_price_login_required",
+      "observation_date": "2026-10-06",
+      "domestic_price": 3499,
+      "price_type": "public_list_price; final_to_hand_price_requires_login",
+      "feasibility_flags": [
+        "DDR5_desktop_memory",
+        "motherboard_memory_profile_compatibility_check"
+      ],
+      "verification_status": "VERIFIED_PUBLIC; AUTHENTICATED DATA REQUIRED_FOR_FINAL_PRICE",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "候选sku_id": "C06-H1-EDIFIER-FIT900NB-WHITE",
+      "brand": "EDIFIER 漫步者",
+      "model": "Fit900NB",
+      "exact_variant": "云岩白 / 头戴式蓝牙主动降噪耳机",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营漫步者公开榜单TOP1，约100000人评论；官方产品页确认型号及建议零售价。",
+      "domestic_selection_rule": "头戴无线形态取京东公开品牌自营榜TOP1 exact variant。",
+      "domestic_product_url": "https://item.jd.com/10108533871583.html",
+      "item_id": "10108533871583",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_page_dynamic",
+      "observation_date": "2026-10-06",
+      "domestic_price": 399,
+      "price_type": "official_MSRP; not_verified_transaction_price",
+      "feasibility_flags": [
+        "contains_lithium_battery",
+        "Bluetooth_OS_codec_feature_compatibility_check"
+      ],
+      "verification_status": "VERIFIED_PUBLIC",
+      "source_ids": [
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "候选sku_id": "C06-H2-EDIFIER-ZERO-AIR-MOONWHITE-BUNDLE",
+      "brand": "EDIFIER 漫步者/花再",
+      "model": "Zero Air",
+      "exact_variant": "月白 + 柯基狗耳机套；榜单文字另含入会享5元促销",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东入耳式耳机公开榜单TOP1，约200000人评论；官方页确认Zero Air月白单机规格，但bundle商品页点入触发京东风控。",
+      "domestic_selection_rule": "半入耳真无线形态取公开榜单TOP1 exact selling bundle；会员促销不计普通价。",
+      "domestic_product_url": "https://item.jd.com/10076132227848.html",
+      "item_id": "10076132227848",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "contains_lithium_battery",
+        "Bluetooth_OS_compatibility_check"
+      ],
+      "verification_status": "VERIFIED_RANKING_VARIANT; AUTHENTICATED DATA REQUIRED_FOR_PRODUCT_PAGE_AND_PRICE",
+      "source_ids": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "候选sku_id": "C06-O1-MOONDROP-KADENZ",
+      "brand": "MOONDROP 水月雨",
+      "model": "KADENZ 终章",
+      "exact_variant": "旗舰级10mm单动圈入耳式耳机 / 0.78-2pin / 官方标准配置",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "2026-05-06 B站国内原创使用文章讨论KADENZ佩戴、线材与声音；水月雨中国官网确认精确型号和核心规格。",
+      "domestic_selection_rule": "有国内独立社区实际使用内容且官方可确认精确型号的有线Hi-Fi机会样本。",
+      "domestic_product_url": "https://moondroplab.com/cn-products/kadenz",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "wired_earphone",
+        "0.78_2pin_cable_compatibility",
+        "4.4mm_or_USB_C_source_compatibility_check"
+      ],
+      "verification_status": "VERIFIED_EXISTENCE_AND_COMMUNITY; PROVISIONAL_CURRENT_RETAIL",
+      "source_ids": [
+        "S15",
+        "S16"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/67020523b87fbb6c43a.html",
+      "title": "迷你pc主机品牌排行榜 - 十大品牌 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://item.lenovo.com.cn/product/1056905.html",
+      "title": "来酷MINI锐龙版家用办公商务电脑主机 - 联想商城",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.ithome.com/0/993/823.htm",
+      "title": "华硕破晓迷你主机新增“i5-13500H + 16G + 512G”版本，3999元",
+      "published_at": "2026-08-25",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.ithome.com/0/943/445.htm",
+      "title": "极摩客K16迷你主机上架：7735HS + 板载LPDDR5",
+      "published_at": "2026-04-25",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://post.smzdm.com/p/agg0k0md/",
+      "title": "旗舰模具下放 32GB高频大内存！极摩客K16迷你主机评测",
+      "published_at": "2026-05-04",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "snippet_only",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/phb/key_670ad94c5fcd42034d0.html",
+      "title": "ssd固态硬盘2t排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.ymtc.com/cn/products/72.html?cat=44",
+      "title": "致态TiPlus7100s固态硬盘 - 长江存储",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_670c0746a6088797e0e.html",
+      "title": "路由器6500排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.mi.com/xiaomi-routers/be-6500",
+      "title": "Xiaomi路由器 BE6500",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://item.jd.com/product/xgX8EKW1Mrj5_OZ5EifFmQ.html",
+      "title": "金百达32GB DDR5 6000 国产颗粒 银爵 C36 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06",
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.jd.com/phb/key_6527ea29138f5b9b5cc.html",
+      "title": "京东自营漫步者排行榜",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.edifier.com/cn/product/product-749.html",
+      "title": "Fit900NB - 漫步者",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.jd.com/phb/key_652b398e405257dc735.html",
+      "title": "耳机耳麦入耳式排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.edifier.com/cn/product/product-622.html",
+      "title": "Zero Air - 漫步者",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.bilibili.com/opus/1199323772980559879",
+      "title": "水月雨的千元选手，k系耳机的终章",
+      "published_at": "2026-05-06",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://moondroplab.com/cn-products/kadenz",
+      "title": "水月雨 KADENZ 终章 入耳式耳机",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K10"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "可读京东迷你PC榜单中，来酷MINI 7430U/16/512与华硕破晓13500H/16/512分别处于TOP1和TOP2。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "confidence": "high",
+      "counterevidence": "排行榜未披露统计周期或真实销量，不能推导市场份额。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "联想商城公开显示来酷MINI Ryzen 5 7430U/16GB/512GB版本标价2999元，国补和其他优惠另示。",
+      "classification": "FACT",
+      "source_ids": [
+        "S02"
+      ],
+      "confidence": "high",
+      "counterevidence": "2999元是公开商城标价，不是经登录验证的最终成交价。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "GMKtec K16的7735HS/32GB LPDDR5-6400/512GB版本具备2026年国内上架和社区评测信号，可作为机会样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区正文未能直开，当前精确京东item_id和seller_id未核验，因此保持PROVISIONAL。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "致态TiPlus7100s 2TB在可读京东2TB SSD榜单为TOP1，官网确认2TB PCIe 4.0版本存在。",
+      "classification": "FACT",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "confidence": "high",
+      "counterevidence": "累计评论量和榜单名次不等同于期间销量。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "小米BE6500在可读京东6500级路由器榜单为TOP1，并有小米中国官网产品页。",
+      "classification": "FACT",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "榜单没有公开统计窗口和销量绝对值。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "金百达银爵32GB DDR5-6000国产颗粒C36商品页存在公开中国买家兼容性反馈，可作为内存机会SKU。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "medium",
+      "counterevidence": "单页买家评价存在自选择偏差，不能代表整体市场需求。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "Fit900NB云岩白在所读京东漫步者自营榜单为TOP1，官方建议零售价399元。",
+      "classification": "FACT",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "confidence": "high",
+      "counterevidence": "品牌自营榜口径较窄，399元为MSRP而非已核验成交价。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "Zero Air月白+柯基狗耳机套组合在所读入耳式榜单为TOP1，但exact bundle当前商品页受京东风控阻挡。",
+      "classification": "FACT",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "confidence": "medium",
+      "counterevidence": "官方129元仅对应Zero Air基础产品建议零售价，不能作为该bundle的普通价。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "金百达银爵32GB DDR5-6000 C36页面公开标价3499元，但到手价明确要求登录。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "high",
+      "counterevidence": "公开标价不能替代登录后的最终普通价、会员价或券后价。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "水月雨KADENZ具有2026年国内原创社区使用证据且官方可确认精确型号，因此适合作为有线Hi-Fi机会样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "confidence": "medium",
+      "counterevidence": "本轮没有取得当前国内成交量、榜单位置或精确零售价。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个候选在冻结时的登录态普通到手价，以及会员价、定向券、国补、以旧换新的分离记录。",
+    "AUTHENTICATED DATA REQUIRED：京东/天猫可见seller_id及可验证的期间成交量或销量字段。",
+    "C04 K16当前精确零售item_id/seller_id未取得，社区来源全文直开失败，因此保持PROVISIONAL。",
+    "C06 Zero Air exact bundle商品页触发京东风控验证，当前普通价和seller_id未核验。",
+    "C06 KADENZ缺当前中国零售成交数据、榜单位置和普通价。",
+    "多条京东排行榜不展示具体金额，因此本轮不强行为这些SKU贴高/中/低价位标签；冻结时按预设规则补价后机械分层。",
+    "本轮未扩张到本批次以外的15个品类，也未查询任何美国或海外SKU价格、销量、供货或Temu/AliExpress覆盖。"
+  ]
+}

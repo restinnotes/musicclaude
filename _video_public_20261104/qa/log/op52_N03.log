@@ -1,0 +1,79 @@
+[pool_v2/pool/S01] ok 489s 29356 chars
+[pool_v2/pool/S05] ok 485s 26759 chars
+[pool_v2/pool/S02] ok 517s 23341 chars
+[pool_v2/pool/S06] ok 527s 19107 chars
+[pool_v2/pool/S04] ok 551s 21854 chars
+[pool_v2/pool/S03] ok 578s 18294 chars
+[pool_v2/pool/S08] ok 636s 33323 chars
+[pool_v2/pool/S11] ok 583s 24730 chars
+[pool_v2/pool/S12] ok 597s 19321 chars
+[pool_v2/pool/S09] ok 665s 34571 chars
+[pool_v2/pool/S10] ok 789s 17622 chars
+[gen_b/S01] ok 389s 8814 chars
+[gen_b/S02] ok 459s 10374 chars
+[gen_b/S03] ok 332s 9441 chars
+[pool_v2/pool/S07] ok 1234s 29765 chars
+[pool_v2/pool/S14] ok 597s 34582 chars
+[pool_v2/pool/S13] ok 702s 29430 chars
+[gen_b/S05] ok 329s 8404 chars
+[gen_b/S04] ok 420s 9870 chars
+[gen_b/S06] ok 377s 5801 chars
+[gen_b/S08] ok 328s 8253 chars
+[gen_b/S07] ok 408s 12458 chars
+[gen_b/S09] ok 497s 12037 chars
+[gen_b/S11] ok 342s 9796 chars
+[gen_b/S12] ok 318s 10465 chars
+[gen_b/S10] ok 426s 9307 chars
+[gen_b/S14] ok 471s 10093 chars
+[gen_b/S13] ok 534s 14008 chars
+[rev1_b/S01] ok 337s 11070 chars
+[rev1_b/S03] ok 371s 7938 chars
+[rev1_b/S04] ok 518s 16306 chars
+[rev2_b/S03] ok 281s 5917 chars
+[rev1_b/S02] ok 695s 11603 chars
+[rev1_b/S06] ok 473s 7057 chars
+[rev1_b/S05] ok 535s 9454 chars
+[rev2_b/S04] ok 345s 5545 chars
+[rev2_b/S02] ok 414s 6166 chars
+[rev2_b/S05] ok 335s 5343 chars
+[rev2_b/S06] ok 404s 4172 chars
+[final_b/S03] ok 478s 12546 chars
+[rev2_b/S01] FAILED rc=1 1002s submitted=True
+[final_b/S02] ok 312s 11137 chars
+[final_b/S04] ok 500s 11049 chars
+[final_b/S06] ok 298s 7302 chars
+[final_b/S05] ok 372s 9805 chars
+[rev1_b/S07] ok 411s 10540 chars
+[rev1_b/S11] ok 293s 11722 chars
+[rev2_b/S07] ok 280s 3590 chars
+[rev1_b/S09] ok 433s 9675 chars
+[rev1_b/S10] ok 518s 12165 chars
+[rev1_b/S08] ok 639s 13603 chars
+[rev2_b/S11] ok 236s 5333 chars
+[rev1_b/S12] ok 495s 11349 chars
+[final_b/S07] ok 219s 9685 chars
+[rev2_b/S09] ok 341s 6325 chars
+[rev2_b/S10] ok 263s 4292 chars
+[final_b/S11] ok 247s 11717 chars
+[rev2_b/S08] ok 253s 4946 chars
+[rev2_b/S12] ok 279s 6629 chars
+[final_b/S10] ok 198s 8448 chars
+[final_b/S08] ok 234s 7847 chars
+[final_b/S12] ok 229s 10398 chars
+[rev1_b/S14] ok 367s 13561 chars
+[final_b/S09] ok 399s 14366 chars
+[rev1_b/S13] ok 760s 14283 chars
+[rev2_b/S14] ok 258s 5896 chars
+[rev2_b/S13] ok 307s 6480 chars
+[final_b/S14] ok 428s 13226 chars
+[final_b/S13] ok 286s 15781 chars
+DONE; failed: [('final_b', 'S01'), ('rev2_b', 'S01')]
+Traceback (most recent call last):
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 573, in <module>
+    main()
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 548, in main
+    return production(a)
+           ^^^^^^^^^^^^^
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 521, in production
+    raise RuntimeError("final_b incomplete: stop before whole-piece review")
+RuntimeError: final_b incomplete: stop before whole-piece review

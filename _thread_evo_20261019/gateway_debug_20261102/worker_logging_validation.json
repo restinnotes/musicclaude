@@ -1,0 +1,29 @@
+{
+  "hashes": {
+    "/app/src/chatgpt/client.py": "acc4635a7b711c5f47a1d620bf6bf6c6b621e0577609e5a1541e657b08e8a16a",
+    "/app/src/api/standard_completion.py": "90f1c0cddafa70650287817ad4adfba8ee014b3fb0a2b8db6e3a6d8cf606bfe9"
+  },
+  "tests": {
+    "worker_logging": 4,
+    "reader_dom_clipboard_warning": 13,
+    "completion_guards": 11,
+    "schedule": 13
+  },
+  "root_cause_of_empty_answer": "unresolved; upstream 200 plus terminal metadata observed, UI body empty",
+  "production_cooldown_seconds": {
+    "ordinary_failure": 60,
+    "explicit_suspicious_behavior": 1800
+  },
+  "actual_retry_remote_id": "8bc3a2b1b043abaf93d5",
+  "actual_retry": {
+    "http_status": 200,
+    "seconds": 376.284,
+    "characters": 14815,
+    "response_complete": true,
+    "model": "gpt-6",
+    "effort": "high",
+    "temporary_verified": true,
+    "unpersonalized_verified": true,
+    "prompt_verified": true
+  }
+}

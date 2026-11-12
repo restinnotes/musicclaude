@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-25T23:43:22.659781+00:00",
+  "user_authorization": "Continue using this provider until almost unusable; no new hard lock.",
+  "account_entry": "gpt4",
+  "generation_model": "gpt-5-6-thinking",
+  "workers": 1,
+  "stop_rule": "three consecutive newly submitted requests without a verified complete response; or six failures in last eight new requests",
+  "consecutive_failures": 1,
+  "new_calls": [
+    {
+      "run_id": "D13_d13v8A_56_op60_r1_S02_c8be72456dd6",
+      "complete": true,
+      "seed_from_first_serial_request": true
+    },
+    {
+      "run_id": "D13_d13v8A_56_op60_r1_S03_494c003433f2",
+      "complete": false,
+      "seed_from_first_serial_request": true
+    }
+  ],
+  "tasks": [
+    {
+      "task": "complete existing v2 Op61 B repeat3",
+      "started_utc": "2026-10-25T23:43:22.663780+00:00",
+      "status": "locally_interrupted",
+      "ended_utc": "2026-10-25T23:57:39.326174+00:00",
+      "limitation": "Local cancellation does not prove server-side request cancellation."
+    }
+  ],
+  "status": "stopped_for_model_identity_audit",
+  "stopped_utc": "2026-10-25T23:57:39.326174+00:00",
+  "stop_reason": "User requests audit of suspected model degradation; music queue terminated to prevent further generation."
+}

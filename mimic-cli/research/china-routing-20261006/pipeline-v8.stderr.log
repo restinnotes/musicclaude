@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 130, in <module>
+    try:main()
+        ^^^^^^
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 80, in main
+    if not (HERE/'reviewed-domestic-sample-input.json').exists():command('build_reviewed_sample.py')
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 28, in command
+    raise RuntimeError(script+' failed; original results preserved')
+RuntimeError: build_reviewed_sample.py failed; original results preserved

@@ -1,0 +1,48 @@
+{
+  "candidate_sha256": "1d0cb0dd03871ec85c846222087b835853b592ad4b596f6596d41b9dab9b3518",
+  "tests": {
+    "copy_boundary": 3,
+    "existing_reader_guard": 13,
+    "worker_logging": 4,
+    "schedule": 13,
+    "empty_finished_grace": 3,
+    "completion_guards": 11
+  },
+  "reproduced_bugs": [
+    "whole-turn Copy lookup borrows user button",
+    "geometry fallback borrows next user Copy button"
+  ],
+  "latest_exact_retry": {
+    "remote_id": "3441a1455b128344f5b1",
+    "seconds": 332,
+    "completed": true,
+    "http_status": 200,
+    "response_chars": 11198
+  },
+  "capture": {
+    "bytes": 6131560,
+    "truncated": false,
+    "status": 200,
+    "sse_done": true,
+    "json_parse_errors": 0
+  },
+  "empty_response_root_cause": "latest failed UI had 9190-character DIL source whose body returns null; upstream conversion path unresolved",
+  "cooldown_seconds": {
+    "ordinary_failure": 60,
+    "suspicious_behavior": 1800
+  },
+  "deployed_sha256": "1d0cb0dd03871ec85c846222087b835853b592ad4b596f6596d41b9dab9b3518",
+  "deployed_complete": true,
+  "gateway_ready": true,
+  "post_deploy_actual_validation": {
+    "run_id": "v6b2_op60_g6_r26t3_vsqu",
+    "remote_id": "171389f7b38ed88c62b6",
+    "status": "terminal_failure",
+    "exec_session": 37064,
+    "http_status": 502,
+    "seconds": 299,
+    "error": "Generation stopped but the latest assistant body stayed empty for 30 seconds",
+    "empty_terminal_wait_fix_live_verified": true,
+    "full_stream_capture_available": false
+  }
+}

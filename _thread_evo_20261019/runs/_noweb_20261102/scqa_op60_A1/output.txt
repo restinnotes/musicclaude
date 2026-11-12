@@ -1,0 +1,582 @@
+```
+routes:
+  - route_id: R01
+
+    situation: >
+      一个人正在与自己很在乎的人变得越来越亲近，
+      他很想放心投入，却害怕这份亲近有一天会失去。
+
+    segments:
+      - sec: S01
+        state:
+          - id: R01-S01-1
+            text: 他一直盼着能与这个人更亲近。
+          - id: R01-S01-2
+            text: 眼下已经有了让他欣喜的亲近，但他仍习惯保留一点距离。
+        delta_type: 新变化
+        delta: 从盼望亲近，进入了真正能够感受到亲近的处境。
+        depends_on: []
+        still_open: 他是否敢更放心地投入；这份亲近能否持续。
+
+      - sec: S02
+        state:
+          - id: R01-S02-1
+            text: 他开始相信眼下的亲近并非自己一厢情愿的想象。
+          - id: R01-S02-2
+            text: 他还不敢因此认定以后也会如此。
+        delta_type: 新变化
+        delta: 他第一次愿意把眼前的亲近当作真实存在的东西来接受。
+        depends_on: [R01-S01-2]
+        still_open: 眼前的亲近是否能够长久。
+
+      - sec: S03
+        state:
+          - id: R01-S03-1
+            text: 他不只想享受现在，还开始盼望以后也能一直这样亲近。
+          - id: R01-S03-2
+            text: 他不知道对方是否也盼着这份关系长久。
+        delta_type: 新变化
+        delta: 他的期待从眼前的亲近延伸到了关系的将来。
+        depends_on: [R01-S02-1]
+        still_open: 对方对将来的期待；自己是否敢承受这种不确定。
+
+      - sec: S04
+        state:
+          - id: R01-S04-1
+            text: 他暂时不要求自己先确定将来，才允许自己享受眼下的亲近。
+          - id: R01-S04-2
+            text: 他仍然想知道这份关系会不会长久。
+        delta_type: 新变化
+        delta: 他选择继续接受眼前的亲近，而不把未来有无保证作为前提。
+        depends_on: [R01-S03-1, R01-S03-2]
+        still_open: 未来仍未确定；他还不知道自己会投入多深。
+
+      - sec: S05
+        state:
+          - id: R01-S05-1
+            text: 有一阵，他只是满足于自己正在被接纳，不再想着以后会怎样。
+        delta_type: 暂时没在想
+        delta: ""
+        depends_on: [R01-S04-1]
+        still_open: 关系能否持续的问题没有解决，只是暂时退到了心思之外。
+
+      - sec: S06
+        state:
+          - id: R01-S06-1
+            text: 他开始盼望在自己不安的时候，也能从这份亲近里得到安定。
+          - id: R01-S06-2
+            text: 他想要的不再只是相处时的快乐，还包括可以依靠的感觉。
+        delta_type: 新变化
+        delta: 他对这段关系有了依靠的愿望，而不只是希望亲近能够延续。
+        depends_on: [R01-S03-1, R01-S04-1]
+        still_open: 这份关系能否成为可靠的依靠；对方是否也有类似需要。
+
+      - sec: S07
+        state:
+          - id: R01-S07-1
+            text: 他开始害怕，假如自己真的依赖上这份亲近，将来失去时会更加难受。
+          - id: R01-S07-2
+            text: 即使如此，他仍然想要那种可以依靠的感觉。
+        delta_type: 后果
+        delta: 想要依靠这段关系，使他开始在意投入之后可能付出的代价。
+        depends_on: [R01-S06-1, R01-S06-2]
+        still_open: 他会不会因为害怕失去而重新收起自己的需要。
+
+      - sec: S08
+        state:
+          - id: R01-S08-1
+            text: 他仍然留在这份亲近里，眼下的满足暂时超过了对失去的担忧。
+          - id: R01-S08-2
+            text: 他没有忘记未来不确定，只是不再一直盯着它。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R01-S04-1, R01-S07-1]
+        still_open: 未来的不确定和失去的风险仍然存在。
+
+      - sec: S09
+        state:
+          - id: R01-S09-1
+            text: 他发现自己已经开始在心里依赖这份亲近，而不只是希望将来能够依赖。
+          - id: R01-S09-2
+            text: 再想到关系可能改变时，他比以前更舍不得。
+        delta_type: 回到旧处但有新增
+        delta: 他重新担心失去，但现在已经有了实际形成的依赖，而不只是对依赖的向往。
+        depends_on: [R01-S03-2, R01-S06-1, R01-S07-1]
+        still_open: 这份依赖能否得到长久回应；他是否会因此收回投入。
+
+      - sec: S10
+        state:
+          - id: R01-S10-1
+            text: 他依然不打算因为未来未知，就主动从眼前的亲近中退开。
+          - id: R01-S10-2
+            text: 他没有因此变得确信未来一定会好。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R01-S04-1, R01-S09-1]
+        still_open: 对方的长期心意；这份关系的将来。
+
+      - sec: S11
+        state:
+          - id: R01-S11-1
+            text: 他有一阵完全沉浸在这份亲近里，不再反复猜测它还能持续多久。
+        delta_type: 暂时没在想
+        delta: ""
+        depends_on: [R01-S10-1]
+        still_open: 所有关于将来的疑问仍然没有答案。
+
+      - sec: S12
+        state:
+          - id: R01-S12-1
+            text: 他不再刻意藏起自己有多在乎对方。
+          - id: R01-S12-2
+            text: 他仍会害怕失去，但愿意让自己的在乎被对方感受到。
+        delta_type: 新变化
+        delta: 从接受对方带来的亲近，进一步走到不再刻意遮掩自己的在乎。
+        depends_on: [R01-S02-1, R01-S04-1, R01-S09-1]
+        still_open: 对方会如何面对他的投入；关系能否长久。
+
+      - sec: S13
+        state:
+          - id: R01-S13-1
+            text: 不再遮掩之后，他也更直接地承受着可能失去的担心。
+          - id: R01-S13-2
+            text: 他没有因为这份担心而重新收起自己的在乎。
+        delta_type: 后果
+        delta: 不再隐藏在乎，使他更直接地处在可能受伤的境地。
+        depends_on: [R01-S07-1, R01-S12-1]
+        still_open: 对方是否愿意同样投入；未来是否会改变。
+
+      - sec: S14
+        state:
+          - id: R01-S14-1
+            text: 他仍然想继续亲近，也仍不知道这种亲近能保持多久。
+          - id: R01-S14-2
+            text: 他此刻没有退回最初那种刻意保留的状态。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R01-S10-1, R01-S12-1, R01-S13-2]
+        still_open: 关系的未来以及对方的长期心意。
+
+    established:
+      - first: S01
+        state_ref: R01-S01-1
+        fact: 他很在乎对方，盼望更亲近。
+      - first: S01
+        state_ref: R01-S01-2
+        fact: 眼下已有真实的亲近，但他仍有所保留。
+      - first: S02
+        state_ref: R01-S02-1
+        fact: 他开始相信眼前的亲近并非一厢情愿。
+      - first: S03
+        state_ref: R01-S03-1
+        fact: 他开始盼望关系能够长久。
+      - first: S03
+        state_ref: R01-S03-2
+        fact: 他不知道对方是否同样希望长久。
+      - first: S04
+        state_ref: R01-S04-1
+        fact: 他选择不以未来确定为前提，继续接受现在的亲近。
+      - first: S06
+        state_ref: R01-S06-1
+        fact: 他开始希望这段关系能成为自己的依靠。
+      - first: S07
+        state_ref: R01-S07-1
+        fact: 他意识到依赖越深，将来失去时可能越痛。
+      - first: S09
+        state_ref: R01-S09-1
+        fact: 他已经开始实际依赖这份亲近。
+      - first: S12
+        state_ref: R01-S12-1
+        fact: 他不再刻意遮掩自己有多在乎对方。
+
+
+  - route_id: R02
+
+    situation: >
+      一个人守着一个许多年都没有实现的心愿，
+      如今开始怀疑它是否还会成真，却仍然舍不得放下。
+
+    segments:
+      - sec: S01
+        state:
+          - id: R02-S01-1
+            text: 他有一个盼望了许多年的心愿，常常想象它实现以后的生活。
+          - id: R02-S01-2
+            text: 虽然心愿至今没有实现，他过去一直相信它终究会实现。
+        delta_type: 延续
+        delta: ""
+        depends_on: []
+        still_open: 心愿何时能够实现；等待还要持续多久。
+
+      - sec: S02
+        state:
+          - id: R02-S02-1
+            text: 他仍然习惯把未来最值得期待的部分留给心愿实现之后。
+          - id: R02-S02-2
+            text: 他觉得眼下的等待是通往那个未来的一部分。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R02-S01-1, R02-S01-2]
+        still_open: 心愿是否真的会实现。
+
+      - sec: S03
+        state:
+          - id: R02-S03-1
+            text: 他第一次无法像过去那样确信，自己盼望的事终究会发生。
+          - id: R02-S03-2
+            text: 他还没有认定心愿已经落空。
+        delta_type: 新变化
+        delta: 心愿从他心里认定的未来，变成了可能实现、也可能不实现的未来。
+        depends_on: [R02-S01-2, R02-S02-2]
+        still_open: 心愿是否会落空；他能否承受没有把握的等待。
+
+      - sec: S04
+        state:
+          - id: R02-S04-1
+            text: 即使不再确信，他想到心愿成真的可能，仍然真切地高兴。
+          - id: R02-S04-2
+            text: 他暂时没有想放弃这个愿望。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R02-S01-1, R02-S03-1]
+        still_open: 愿望能否实现；他还能带着不确定等待多久。
+
+      - sec: S05
+        state:
+          - id: R02-S05-1
+            text: 有一阵，他完全沉浸在心愿已经实现的想象里。
+          - id: R02-S05-2
+            text: 他暂时不去想它实际上仍没有发生。
+        delta_type: 暂时没在想
+        delta: ""
+        depends_on: [R02-S01-1, R02-S04-1]
+        still_open: 心愿在现实中依然没有实现。
+
+      - sec: S06
+        state:
+          - id: R02-S06-1
+            text: 回到现实后，他开始觉得等待比从前辛苦。
+          - id: R02-S06-2
+            text: 过去那种终究会等到的确信，已经不能像以前一样支撑他。
+        delta_type: 后果
+        delta: 对心愿能否实现的怀疑，开始改变他对等待本身的感受。
+        depends_on: [R02-S01-2, R02-S03-1]
+        still_open: 他是否还愿意继续等；不等又意味着什么。
+
+      - sec: S07
+        state:
+          - id: R02-S07-1
+            text: 他发现自己很久没有认真想过，如果心愿一直不能实现，自己还可以期待什么。
+          - id: R02-S07-2
+            text: 一想到可能没有那个未来，他就不知道该怎样看待眼下的日子。
+        delta_type: 新变化
+        delta: 他第一次清楚地面对，自己已经把太多生活期待系在这一个心愿上。
+        depends_on: [R02-S02-1, R02-S03-1, R02-S06-1]
+        still_open: 如果心愿落空，往后的日子是否仍有值得期待的部分。
+
+      - sec: S08
+        state:
+          - id: R02-S08-1
+            text: 他仍然留恋心愿成真的想象。
+          - id: R02-S08-2
+            text: 他也怀念过去那个一想到心愿就满怀把握的自己。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R02-S01-2, R02-S03-1, R02-S07-1]
+        still_open: 他能否在不再确信的情况下继续盼望。
+
+      - sec: S09
+        state:
+          - id: R02-S09-1
+            text: 他又很想像从前一样，把全部盼望都交给这个心愿。
+          - id: R02-S09-2
+            text: 但这一次，他感到这种熟悉的盼望也在束缚自己，让其他日子都像只是在等。
+        delta_type: 回到旧处但有新增
+        delta: 他重新想全心等待，但现在不仅知道结果没有保证，还开始感到全心等待对自己生活的束缚。
+        depends_on: [R02-S02-1, R02-S06-1, R02-S07-1]
+        still_open: 他会不会继续把所有生活期待寄托在这个心愿上。
+
+      - sec: S10
+        state:
+          - id: R02-S10-1
+            text: 他不愿再把每一天都当成通往心愿实现的等待。
+          - id: R02-S10-2
+            text: 他并没有决定放弃心愿，只是不想继续让它决定所有日子的价值。
+        delta_type: 新变化
+        delta: 他决定不再把眼下的生活全部留给尚未发生的结果。
+        depends_on: [R02-S07-1, R02-S09-2]
+        still_open: 他能否真的不再时时等待；心愿最终是否实现。
+
+      - sec: S11
+        state:
+          - id: R02-S11-1
+            text: 他依然会强烈地盼望心愿实现。
+          - id: R02-S11-2
+            text: 但在某些时刻，他不再因为心愿未实现，就觉得眼下的一切都不够好。
+        delta_type: 实行已有想法
+        delta: 他开始实际经历不把每个当下都看作等待的时刻。
+        depends_on: [R02-S10-1, R02-S10-2]
+        still_open: 这样的时刻能否持续；他是否仍会重新陷入全部押在心愿上的等待。
+
+      - sec: S12
+        state:
+          - id: R02-S12-1
+            text: 他感到一种久违的轻松，不是因为心愿更接近实现，而是因为暂时不必等到它实现才允许自己满足。
+          - id: R02-S12-2
+            text: 他仍然希望心愿成真。
+        delta_type: 后果
+        delta: 不再把全部生活寄托在心愿上，使他第一次切身体验到不以心愿实现为条件的轻松。
+        depends_on: [R02-S10-1, R02-S11-2]
+        still_open: 这份轻松是否能够保留；他以后会怎样对待心愿。
+
+      - sec: S13
+        state:
+          - id: R02-S13-1
+            text: 他珍惜这种轻松，却又生出一点愧疚。
+          - id: R02-S13-2
+            text: 他隐约觉得，自己若不再时时等待，仿佛辜负了多年来那么认真盼望的自己。
+        delta_type: 后果
+        delta: 新得到的轻松，与他长期把等待视为忠于心愿的习惯发生了冲突。
+        depends_on: [R02-S01-2, R02-S02-2, R02-S12-1]
+        still_open: 他能否既珍惜过去的盼望，又允许自己不再一直等待。
+
+      - sec: S14
+        state:
+          - id: R02-S14-1
+            text: 他仍希望心愿最终实现。
+          - id: R02-S14-2
+            text: 他也已经有过不围着心愿生活的时刻，暂时没有放弃其中任何一边。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R02-S10-2, R02-S12-1, R02-S13-1]
+        still_open: 心愿能否实现；他是否会彻底放下；两种生活心态能否长久共存。
+
+    established:
+      - first: S01
+        state_ref: R02-S01-1
+        fact: 他有一个盼望了许多年的心愿，长期想象它实现后的生活。
+      - first: S01
+        state_ref: R02-S01-2
+        fact: 心愿尚未实现，他过去却一直相信终究会实现。
+      - first: S02
+        state_ref: R02-S02-1
+        fact: 他把未来最重要的期待寄托在心愿实现之后。
+      - first: S03
+        state_ref: R02-S03-1
+        fact: 他第一次失去心愿终究会实现的确信。
+      - first: S06
+        state_ref: R02-S06-1
+        fact: 没有把握的等待开始让他疲惫。
+      - first: S07
+        state_ref: R02-S07-1
+        fact: 他发现自己不知道心愿落空后还能期待什么。
+      - first: S09
+        state_ref: R02-S09-2
+        fact: 他开始感到把全部盼望寄托于心愿也会束缚自己。
+      - first: S10
+        state_ref: R02-S10-1
+        fact: 他决定不再让每一天都只是等待心愿实现。
+      - first: S12
+        state_ref: R02-S12-1
+        fact: 他体验到不以心愿实现为条件的轻松。
+      - first: S13
+        state_ref: R02-S13-2
+        fact: 他担心不再一直等待意味着辜负过去的自己。
+
+
+  - route_id: R03
+
+    situation: >
+      一个人正在考虑离开一段自己依然珍惜的亲密关系，
+      因为继续留下就总要委屈自己，但他又舍不得失去这份关系。
+
+    segments:
+      - sec: S01
+        state:
+          - id: R03-S01-1
+            text: 他仍然爱着对方，也把这段关系当成自己熟悉的依靠。
+          - id: R03-S01-2
+            text: 为了维持这份亲近，他已经很久在压下自己真正的需要。
+        delta_type: 延续
+        delta: ""
+        depends_on: []
+        still_open: 他还能这样维持多久；自己的需要是否可能在关系里得到照顾。
+
+      - sec: S02
+        state:
+          - id: R03-S02-1
+            text: 他仍盼望能够留在这段关系里，同时不再需要委屈自己。
+          - id: R03-S02-2
+            text: 他暂时不想把留下与照顾自己看成只能选一个。
+        delta_type: 新变化
+        delta: 他明确地希望同时保留亲近与自己的需要，而不是继续只顾维持关系。
+        depends_on: [R03-S01-1, R03-S01-2]
+        still_open: 这两个愿望是否真的能够同时得到满足。
+
+      - sec: S03
+        state:
+          - id: R03-S03-1
+            text: 他仍然记得这段关系曾给过自己的安慰和满足。
+          - id: R03-S03-2
+            text: 想到那些亲近，他就更舍不得失去对方。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R03-S01-1, R03-S02-1]
+        still_open: 留下是否真的能够不再委屈自己。
+
+      - sec: S04
+        state:
+          - id: R03-S04-1
+            text: 他开始认真面对，继续留下可能意味着自己还要不断压下需要。
+          - id: R03-S04-2
+            text: 他第一次允许自己认真考虑离开，而不只是盼望关系能变好。
+        delta_type: 新变化
+        delta: 离开第一次成为他愿意认真考虑的可能，而不再只是必须避免的失去。
+        depends_on: [R03-S01-2, R03-S02-1]
+        still_open: 他是否真的会离开；有没有可能既留下又不再委屈自己。
+
+      - sec: S05
+        state:
+          - id: R03-S05-1
+            text: 他有一阵不想再考虑去留，只是舍不得那份熟悉的亲近。
+          - id: R03-S05-2
+            text: 想到被爱和依靠的感觉时，他暂时不去想关系里令自己难受的部分。
+        delta_type: 暂时没在想
+        delta: ""
+        depends_on: [R03-S01-1, R03-S03-1]
+        still_open: 是否离开仍未决定；自己的需要仍未得到解决。
+
+      - sec: S06
+        state:
+          - id: R03-S06-1
+            text: 他开始具体地害怕，离开以后就不能再像过去那样依靠这段关系。
+          - id: R03-S06-2
+            text: 这份害怕让他迟疑，但并没有消除继续留下时的委屈。
+        delta_type: 新变化
+        delta: 他第一次把失去熟悉依靠当成离开所要付出的真实代价来面对。
+        depends_on: [R03-S01-1, R03-S04-2]
+        still_open: 他是否愿意承受失去依靠的代价。
+
+      - sec: S07
+        state:
+          - id: R03-S07-1
+            text: 他开始承认，即使依然爱着对方，也不意味着自己一定要继续留下。
+          - id: R03-S07-2
+            text: 他仍然没有决定离开，但不再因为舍不得，就禁止自己考虑离开。
+        delta_type: 新变化
+        delta: 爱着对方与必须留下，在他心里第一次不再被当作同一件事。
+        depends_on: [R03-S01-1, R03-S04-1, R03-S06-1]
+        still_open: 他最终会留下还是离开；他能否承受真正分开。
+
+      - sec: S08
+        state:
+          - id: R03-S08-1
+            text: 他仍因从前的亲近而动摇，很想不用失去任何东西就能继续相爱。
+          - id: R03-S08-2
+            text: 他没有否认自己可能需要离开，也还没有做出决定。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R03-S02-1, R03-S03-2, R03-S07-2]
+        still_open: 是否离开；失去亲近的代价能否承受。
+
+      - sec: S09
+        state:
+          - id: R03-S09-1
+            text: 他决定离开这段关系。
+          - id: R03-S09-2
+            text: 这个决定并没有让他停止爱对方，也没有使他立刻不再舍不得。
+        delta_type: 新变化
+        delta: 去留第一次有了明确决定；在爱仍然存在的情况下，他选择离开。
+        depends_on: [R03-S01-2, R03-S04-1, R03-S06-1, R03-S07-1]
+        still_open: 他怎样承受失去；决定之后的生活会是什么样子。
+
+      - sec: S10
+        state:
+          - id: R03-S10-1
+            text: 一想到以后不能再自然地依靠这段关系，他就感到强烈的舍不得。
+          - id: R03-S10-2
+            text: 他已经做出的决定，使这种失去比从前设想时更加切身。
+        delta_type: 后果
+        delta: 原先只是设想中的失去，因离开的决定而变成他正在面对的后果。
+        depends_on: [R03-S06-1, R03-S09-1]
+        still_open: 他能否承受这种舍不得；决定是否能够保持。
+
+      - sec: S11
+        state:
+          - id: R03-S11-1
+            text: 他仍然很想回到从前熟悉的亲近里。
+          - id: R03-S11-2
+            text: 他没有撤回离开的决定，也没有因为决定离开而否认自己的爱。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R03-S03-2, R03-S09-1, R03-S10-1]
+        still_open: 失去亲近的痛苦会持续多久；他以后是否会后悔。
+
+      - sec: S12
+        state:
+          - id: R03-S12-1
+            text: 他开始感到，离开也意味着自己不必再为了留住这段关系而不断压下需要。
+          - id: R03-S12-2
+            text: 想到这种可能，他有了真实的轻松，虽然思念依然存在。
+        delta_type: 后果
+        delta: 离开的决定第一次让他切身感受到不再委屈自己的可能，而不只是失去的痛苦。
+        depends_on: [R03-S01-2, R03-S09-1]
+        still_open: 他能否真正习惯不再依靠对方；这种轻松能否持续。
+
+      - sec: S13
+        state:
+          - id: R03-S13-1
+            text: 那份轻松没有让他停止想念对方。
+          - id: R03-S13-2
+            text: 他同时感受到离开带来的松快与舍不得，没有重新做一次决定。
+        delta_type: 后果
+        delta: 决定离开之后，失去依靠的难过与不再压抑自己的轻松开始同时存在。
+        depends_on: [R03-S09-1, R03-S10-1, R03-S12-1]
+        still_open: 这两种感受以后会怎样变化；他何时能适应离开。
+
+      - sec: S14
+        state:
+          - id: R03-S14-1
+            text: 他没有撤回离开的决定，也没有停止爱对方。
+          - id: R03-S14-2
+            text: 他仍不知道自己以后会多么想念这段关系，也不知道何时能真正习惯不再依靠它。
+        delta_type: 延续
+        delta: ""
+        depends_on: [R03-S09-1, R03-S11-2, R03-S12-1, R03-S13-2]
+        still_open: 离开后的适应；持续的思念；以后是否仍会后悔。
+
+    established:
+      - first: S01
+        state_ref: R03-S01-1
+        fact: 他仍爱着对方，把这段关系当作熟悉的依靠。
+      - first: S01
+        state_ref: R03-S01-2
+        fact: 他长期为了维持关系压下自己的需要。
+      - first: S02
+        state_ref: R03-S02-1
+        fact: 他希望既保留这段关系，又不再委屈自己。
+      - first: S04
+        state_ref: R03-S04-1
+        fact: 他开始认真面对继续留下可能意味着持续退让。
+      - first: S04
+        state_ref: R03-S04-2
+        fact: 他第一次允许自己认真考虑离开。
+      - first: S06
+        state_ref: R03-S06-1
+        fact: 他开始具体面对离开意味着失去熟悉依靠的代价。
+      - first: S07
+        state_ref: R03-S07-1
+        fact: 他承认仍然爱着对方并不意味着一定要留下。
+      - first: S09
+        state_ref: R03-S09-1
+        fact: 他明确决定离开这段关系。
+      - first: S09
+        state_ref: R03-S09-2
+        fact: 离开的决定并没有消除爱与不舍。
+      - first: S12
+        state_ref: R03-S12-1
+        fact: 他开始切身感受到离开也意味着不必再持续压下自己的需要。
+      - first: S13
+        state_ref: R03-S13-2
+        fact: 他在决定之后同时经历失去依靠的难过与不再压抑自己的轻松。
+```

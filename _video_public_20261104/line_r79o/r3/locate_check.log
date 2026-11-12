@@ -1,0 +1,27 @@
+[locchk_op60_g56] ok 338s 5597 chars
+[locchk_op60_g6] ok 315s 8090 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\line_r79o\r3\locate_check.py", line 69, in <module>
+    with ThreadPoolExecutor(4) as ex: list(ex.map(one, [(w, j) for w in WORKS for j in ('g6', 'g56')]))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\line_r79o\r3\locate_check.py", line 49, in one
+    txt, ids = body(w)
+               ^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\line_r79o\r3\locate_check.py", line 40, in body
+    s, b, p = pt[i]; a, z = L['bars']
+              ~~^^^
+KeyError: 'S12-B2-p2'

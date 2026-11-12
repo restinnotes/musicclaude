@@ -1,0 +1,55 @@
+{
+  "tag": "r80b",
+  "base": "r78a",
+  "stage": "F2",
+  "works": {
+    "op60": {
+      "rid": "scr80b_op60_F2",
+      "before_chars": 1583,
+      "after_chars": 1631,
+      "changed_ids": [
+        "S05-1",
+        "S06-2",
+        "S07-1",
+        "S08-1",
+        "S09-3",
+        "S11-2",
+        "S12-1",
+        "S13-3"
+      ],
+      "output_sha256": "3c0e7075876167bef5e274434ae4f9dec26166aa0db7a337d554b23785c19110",
+      "input_sha256": "e63590d29b44088cab5064328fdd7fe840cff564bcbc2d6244776a1ceb49d173",
+      "line_sha256": "8944952d0d66159ad41ddd131e418706b0489d664d1f734dc9936100d89ae6f6",
+      "beads_sha256": "526ac172f2a33aa21979b6d68d5a07b5719d857ec22a4906c74d13e8b0d600dd",
+      "route": "mimic",
+      "model": "gpt-6",
+      "effort": "high"
+    },
+    "op61": {
+      "rid": "scr80b_op61_F2",
+      "before_chars": 1378,
+      "after_chars": 1356,
+      "changed_ids": [
+        "S04-2",
+        "S08-2",
+        "S10-1",
+        "S11-4",
+        "S12-1",
+        "S13-1",
+        "S13-2",
+        "S13-3"
+      ],
+      "output_sha256": "fa49b7a7288116154e0e99b9e0f9e06076397f8ccaf256c4f1c4270d31d5cd65",
+      "input_sha256": "dd06ae89ca55c2d84b609a51813ae5ccfdb0309cc6ff95daa57f88eec1096086",
+      "line_sha256": "5012e793c2e2d639cee11474da4d829d660ceaf4ee9de74c5fd8d2330f1ed470",
+      "beads_sha256": "37f1f984a423b0467c77d3a1fe91c63cc7dde12573ce926bbb44fcc7465a49de",
+      "route": "mimic",
+      "model": "gpt-6",
+      "effort": "high"
+    }
+  },
+  "issues": [
+    "op60: length growth exceeds prompt 3% cap"
+  ],
+  "mechanical_pass": false
+}

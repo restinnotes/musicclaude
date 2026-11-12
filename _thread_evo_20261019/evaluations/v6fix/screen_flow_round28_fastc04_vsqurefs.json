@@ -1,0 +1,68 @@
+{
+  "tag": "round28_fastc04",
+  "base": "qurefs",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 3,
+    "wins": 2,
+    "no_regress": 2,
+    "net_sums": {
+      "alone": 9,
+      "lean": 7,
+      "plain": -31,
+      "cover": -6
+    },
+    "missing": [
+      "v6b2_op61_g6_round28_fastc04_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 13,
+    "reasons": [
+      "plain: even every remaining segment winning leaves a negative net"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_round28_fastc04_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -2,
+          "lean": -2,
+          "plain": -14,
+          "cover": -6
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_round28_fastc04_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 9,
+          "lean": 11,
+          "plain": -3,
+          "cover": 4
+        }
+      },
+      {
+        "rid": "v6b2_op60_g56_round28_fastc04_vsqurefs",
+        "w": "op60",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 2,
+          "lean": -2,
+          "plain": -14,
+          "cover": -4
+        }
+      }
+    ]
+  },
+  "status": "reject",
+  "next": "archive_and_change_direction"
+}

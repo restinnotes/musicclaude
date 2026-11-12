@@ -1,0 +1,63 @@
+{
+  "name": "round30_g6c02",
+  "note": "重构 A3 的信息编码，而不让它写故事：把每颗珠子的性质从无类型的短语，改为“体验性质 + 可辨认的性质类型”，并只保留原珠子明确标出的主体验/替代听法等来源角色。这样 A4 能区分情感基调、关系姿态、注意力/沉浸、期待/顾虑和时间变化，而不把所有 TARGETS 当成同一种情绪温度；也能看见哪些是原记录明确的主体验，哪些只是另一种理解。与历史的区别：Q6_A3 已经保留多 qualities、temporal_shape 和 tensions，但没有把显式主次/替代标记传给 A4；过去 Q15_A4 的覆盖变化都在 A4 改写层，没有改变 A3 的信息编码。可证伪预期：在 A1/A2/A4 完全固定时，A4 对原珠子明确标为主体验的承接更稳定，替代解释不再被压成主线事实，段内多种体验更少被混为同一种情绪；若标签被 A4 忽略、反而照抄成分析腔、或未提升主体验覆盖且损害人话/独立成立，则否定。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "R27P2_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R27P2_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "round30_g6c02_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "Q15_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4",
+  "edits": []
+}

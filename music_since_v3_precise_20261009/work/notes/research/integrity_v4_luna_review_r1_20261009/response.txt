@@ -1,0 +1,48 @@
+## 审查结论
+
+v4 的六项历史修复在各自预期路径上基本成立，但我复现了 **四项实质缺口**，另有一项终态字段绑定缺口。**目前不能据此通过调用层审查**；真实执行 gate 仍为关闭状态，本轮没有改动它。
+
+## 发现
+
+1. **残留 completion seal 时，丢失账本可导致同一样本再次提交。**  
+   [ref_cache](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/execution_integrity_v4.py:174) 在 cache 缺失时只扫描 `pending` 和 `meta`；[reserve](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/execution_integrity_v4.py:163) 也不检查 `finalized`。
+
+   最小复现：先用 mock 成功提交 `job_id=first, sampling_key=shared`；删除该 job 的 cache、pending 和 meta，保留 `finalized/first.json`；再用相同 prompt 和 sampling key、不同 job ID 提交。结果是第二次 mock producer 被调用，`process_calls=2`、`status=ok`、`cache_hit=false`，旧 seal 仍在。不同 job ID 绕过了 `reserve` 的同名文件检查。若只缺 cache，或 cache 与 pending/meta 中任一账本仍保留，测试均按预期阻断。当前缺口只在账本同时缺失而 seal 残留时出现。
+
+2. **实验包装层会在一次成功终态后重新提交同一 prompt。**  
+   [experiment_calls_v4.py](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/experiment_calls_v4.py:24) 按 `max_attempts` 循环；解析失败后不会在 [第 71 行附近](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/experiment_calls_v4.py:65) 停止。每次循环都更换 job ID，并把 `attempt` 写进 `extra`，因此身份和 cache key 也改变，避开同一样本去重。
+
+   离线复现：`max_attempts=2`，第一条完整 mock 回复解析失败，第二条解析成功。包装层发起了两次完整 mock 调用，记录为两个 `status=ok` attempt，尽管两次输入 prompt 相同。这是成功终态后的新提交，不是“已证明未提交”的安全重试；按本任务的禁止重提要求属于缺陷。
+
+3. **Codex 与继承的 OpenCode 解析器会忽略未知或矛盾的 status 字段。**  
+   [parse_codex](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/execution_integrity_v4.py:295) 只拒绝 `failed/error/cancelled/canceled`，没有要求 `item.completed` 的其他 status 属于已知成功状态；`turn.completed` 也不检查附带的 `status`。我给 `agent_message` 加 `status="mystery_terminal"`，并给 `turn.completed` 加 `status="failed"`，解析器仍返回正文和 `turn.completed` 终态。继承自 v3 的 OpenCode 解析器同样会接受 `step_finish.reason="stop"` 同时带 `status="failed"` 的合成事件。
+
+   v4 对未知事件类型的拒绝已验证有效；这里是不同的缺口：**事件类型已知，但事件内的状态未知或矛盾**。这是合成协议输入，未证明当前真实 CLI 会产生此形状；但当前调用层在这种输入下会把结果当成功。
+
+4. **producer identity 没覆盖会影响运行的环境变量。**  
+   [environment_identity](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/execution_integrity_v4.py:88) 只哈希固定 allowlist；GPT2 调用则把完整 `os.environ` 交给子进程，见 [gpt2_adapter_v4.py](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/gpt2_adapter_v4.py:158)。指定 producer 源码会读取代理环境变量（[gpt2agent_provider.py](D:/musicclaude/gpt2agent-safechain/src/chatgpt_provider/gpt2agent_provider.py:70)）、`GPT2AGENT_MAX_ACTIVE_TURNS`（[第 373 行](D:/musicclaude/gpt2agent-safechain/src/chatgpt_provider/gpt2agent_provider.py:373)）和 `GPT2AGENT_TURN_TIMEOUT_SECONDS`（[第 735 行](D:/musicclaude/gpt2agent-safechain/src/chatgpt_provider/gpt2agent_provider.py:735)），这些值不在 allowlist 中。
+
+   使用纯合成环境值复现时，改变代理和 turn timeout、保持 PATH 不变，身份不变；改变 PATH，身份会变。对 runner 的 `request_identity_for` 做同类 mock 也得到相同结果。代码已明示环境覆盖有限；因此这是**已确认的身份覆盖缺口**，不是隐蔽行为。实际代理或 timeout 是否改变过真实服务调用，本轮没有验证。
+
+5. **GPT2 成功终态没有把返回的 effort 绑定到请求 effort。**  
+   [terminal_payload](D:/musicclaude/unified_run_handoff_20260924/unified_run_handoff_20260924/tools/gpt2_adapter_v4.py:54) 校验 model、response hash 和终态标志，但不校验 `metadata.thinking_effort`。我用请求 `effort="max"`、返回 metadata 声称 `thinking_effort="low"` 的 mock payload 调用，得到 `status=ok`。
+
+   指定的 headless provider 源码确实固定 `max` 并检查启动证据（[headless_native_provider.py](D:/musicclaude/gpt2agent-safechain/src/chatgpt_provider/headless_native_provider.py:365)），所以这不是当前真实 CLI 已使用错误 effort 的证据；它是 adapter 对不一致 producer 输出的验收缺口。当前真实 CLI 兼容性尚未验证。
+
+## 历史六项修复复核
+
+- 未知 Codex **事件类型**会被拒绝。
+- cache 丢失且 pending 或 meta 仍留存时，同一采样会被阻断。
+- hold 写失败后，fsync ticket 保留；独立 `python -I` 子进程看到 queue closed，后继 job 的 mock process 没有运行。
+- ticket 写盘失败时，mock process 调用数为 0。
+- success cache 写失败后没有 finalized seal；重放触发 `ArtifactConflict`，ticket 保留，未恢复成成功。
+- 合成 session/thread/parent handle 在 metadata 和 malformed raw log 中均被脱敏；扫描 mock run 的 8 个文件未发现该 handle。
+- `debug.resolved_model_slugs` 仍为 `unverified`；限定在 `server_metadata_summary` 根字段的来源路径会匹配。这一项没有误报成旧缺陷。
+
+## Seal 与证据边界
+
+输出文件被单独篡改时，resume 会拒绝；恢复原始备份字节后可恢复，这符合完整性检查预期。不过 seal 是可重算的普通哈希，不是带密钥的真实性证明。我把 meta 的 model evidence 改为 `unverified` 并重建 finalized seal 后，resume 仍接受成功记录。若本地 run 目录属于对抗者可写，seal 不能防止对方重建整套证据；若威胁模型只包含意外损坏，这一点是边界限制。
+
+指定 producer 源码显示，`headless_client` 会读取 prompt 文件并固定 `max`，headless provider 会验证启动绑定；HTTP worker 会从 server metadata 生成 summary。它支持 v4 设计的来源路径，但**源码检查不等于已验证真实 CLI、Docker/runtime、远程协议或服务状态**。`REAL_EXECUTION_APPROVED=False`，本轮没有运行真实 CLI、模型、网络或服务，也未检查 cookie、session-state、secret 或 private-config 值。所有运行均为临时目录中的 mock，gate 只在测试进程内 patch；仓库源码未修改。
+
+**结论：v4 修复了历史六项中的常规路径，但 seal 残留时重复提交、实验解析失败后重提、未知 status 被接受、环境身份覆盖不足仍需处理；effort 字段也应绑定到请求。不能据本轮离线结果宣称 production ready、真实协议兼容或音乐验收通过。**

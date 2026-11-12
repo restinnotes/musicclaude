@@ -1,0 +1,15 @@
+{
+  "base": "r86b",
+  "tags": [
+    "r87a",
+    "r87b"
+  ],
+  "stage": "F2",
+  "hypothesis": "Two independent paired samples; at most two local edits, current-scope guards. Reduce duplicate retrospective evidence / awkward collocations without deleting protected transition causes.",
+  "max_edits": 2,
+  "scope_guard": true,
+  "guard": "r68a:r67a,r78a:r67a,r78a:r49b,r78a:r54weave,r80a:r78a,r81b:r78a,r83a:r78a,r84a:r78a,r86b:r78a,r86b:r49b",
+  "condition": "Wait for all eight GPT-only open reviews of current r86b; full-read and bind before generation.",
+  "criteria": "Original paired quick4 then coverage4 then alone4 then full8 and fixed r49b; per-work diagnosis; no Gemini feedback.",
+  "planned_at": "2026-11-04T14:30:27.103066-05:00"
+}

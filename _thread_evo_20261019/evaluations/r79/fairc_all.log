@@ -1,0 +1,44 @@
+evaluations/r79/fairc_r79f.log:Traceback (most recent call last):
+evaluations/r79/fairc_r79f.log:  File "D:\musicclaude\_thread_evo_20261019\round79_fairc.py", line 37, in <module>
+evaluations/r79/fairc_r79f.log:    with ThreadPoolExecutor(8) as ex: rows = [r for r in ex.map(one, [(w, j, tag, base, s) for w in F.WORKS for j in F.JUDGES for s in ('newX', 'newY')]) if r]
+evaluations/r79/fairc_r79f.log:                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79f.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+evaluations/r79/fairc_r79f.log:    yield _result_or_cancel(fs.pop())
+evaluations/r79/fairc_r79f.log:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79f.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+evaluations/r79/fairc_r79f.log:    return fut.result(timeout)
+evaluations/r79/fairc_r79f.log:           ^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79f.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+evaluations/r79/fairc_r79f.log:    return self.__get_result()
+evaluations/r79/fairc_r79f.log:           ^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79f.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+evaluations/r79/fairc_r79f.log:    raise self._exception
+evaluations/r79/fairc_r79f.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+evaluations/r79/fairc_r79f.log:    result = self.fn(*self.args, **self.kwargs)
+evaluations/r79/fairc_r79f.log:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79f.log:  File "D:\musicclaude\_thread_evo_20261019\round79_fairc.py", line 25, in one
+evaluations/r79/fairc_r79f.log:    r = evo.call(rid+('' if not k else f'_r{k}'), prompt(w, x, y), model=F.JUDGES[j], meta={'stage': 'r79-fairc', 'web': True})
+evaluations/r79/fairc_r79f.log:                                                                         ~~~~~~~~^^^
+evaluations/r79/fairc_r79f.log:TypeError: tuple indices must be integers or slices, not str
+evaluations/r79/fairc_r79d.log:Traceback (most recent call last):
+evaluations/r79/fairc_r79d.log:  File "D:\musicclaude\_thread_evo_20261019\round79_fairc.py", line 37, in <module>
+evaluations/r79/fairc_r79d.log:    with ThreadPoolExecutor(8) as ex: rows = [r for r in ex.map(one, [(w, j, tag, base, s) for w in F.WORKS for j in F.JUDGES for s in ('newX', 'newY')]) if r]
+evaluations/r79/fairc_r79d.log:                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79d.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+evaluations/r79/fairc_r79d.log:    yield _result_or_cancel(fs.pop())
+evaluations/r79/fairc_r79d.log:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79d.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+evaluations/r79/fairc_r79d.log:    return fut.result(timeout)
+evaluations/r79/fairc_r79d.log:           ^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79d.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+evaluations/r79/fairc_r79d.log:    return self.__get_result()
+evaluations/r79/fairc_r79d.log:           ^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79d.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+evaluations/r79/fairc_r79d.log:    raise self._exception
+evaluations/r79/fairc_r79d.log:  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+evaluations/r79/fairc_r79d.log:    result = self.fn(*self.args, **self.kwargs)
+evaluations/r79/fairc_r79d.log:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluations/r79/fairc_r79d.log:  File "D:\musicclaude\_thread_evo_20261019\round79_fairc.py", line 25, in one
+evaluations/r79/fairc_r79d.log:    r = evo.call(rid+('' if not k else f'_r{k}'), prompt(w, x, y), model=F.JUDGES[j], meta={'stage': 'r79-fairc', 'web': True})
+evaluations/r79/fairc_r79d.log:                                                                         ~~~~~~~~^^^
+evaluations/r79/fairc_r79d.log:TypeError: tuple indices must be integers or slices, not str

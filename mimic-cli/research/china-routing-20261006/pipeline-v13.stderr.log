@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 130, in <module>
+    try:main()
+        ^^^^^^
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 99, in main
+    require_success(job)
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\run_pipeline.py", line 33, in require_success
+    completed_files(job)
+  File "D:\musicclaude\mimic-cli\research\china-routing-20261006\completed_reports.py", line 36, in completed_files
+    raise ValueError(job + ' has no successful original or completed independent batch bundle')
+ValueError: J1-methodology has no successful original or completed independent batch bundle

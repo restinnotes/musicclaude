@@ -1,0 +1,669 @@
+"""10-29 (user: "我们就是需要在v6的基础上解决这三个 v6的大致形式不能丢 每次要增加一个版本回退检查，不能有v6的实质好内容被回退
+可以通过盲评实现 你每次迭代到你觉得可以交付之前 都要开一个gpt3的新对话问他 相较于v6 有没有出问题 然后我们的三个问题有没有改善
+（当然你珠子关系图也要给他）直到说大致可用了再给我"). Plan: PLAN_v6修补_20261029.md.
+Three product problems (10-29 with ChatGPT): P1 覆盖不足, P2 啰嗦废话, P3 不说人话. Base = deliverable/thread_v6 (the last line the
+user approved as a whole, 10-21). Form kept: Center (unchanged), per-segment relation to Center, short items (→ follows), typed ← links.
+Stages (all gpt3 max):
+  diag   : per piece, gpt-6 and 5.6 each: per segment keep / p1 per bead / p2 / p3, with reasons             ids v6d_<w>_<j>
+  fix    : segments in order, gpt-6 (web allowed): v6 whole + repaired so far + this segment's v6 + beads + diagnoses
+           -> items/because in v6 form, changes vs v6, gaps                                                    ids v6f_<w>_<sec>_<T>
+  check  : 5.6: bounds, links, readable, lost vs v6, unexplained -> one revision with the notes            ids v6k_/v6fr_
+  blind  : v6 vs new, anonymised X/Y, random order, gpt-6 and 5.6: per segment cover/lean/plain + lost both ways  ids v6b_<w>_<j>_<T>
+  render / join (thread graph + bead graph screens) / gate (fresh gpt3 conversations, see gate_v6.py)
+usage: python v6fix.py diag | fix <w> [T] | blind [T] | render [T] | join [T]   -> evaluations/v6fix/"""
+import json, os, random, re, sys
+import os
+import covjudge, draft10, evo, join as J
+
+OUT = evo.ROOT / "evaluations" / "v6fix"
+OUT.mkdir(parents=True, exist_ok=True)
+V6 = {w: evo.ROOT / "deliverable" / "thread_v6" / f"{'Op60' if w == 'op60' else 'Op61'}_关系图.json" for w in ("op60", "op61")}
+RELS = ("提供理由", "说明", "限制", "动摇", "唤起", "改写", "失效", "仍在起作用")
+JUDGES = {"g6": evo.G6, "g56": evo.G56}
+
+WHAT = ("Thread 是什么：一个人在这首曲子里经历的一件事。每一段要让人看见他此刻为什么会这样，理由来自他前面真实经历过、相信过、发现过的东西，"
+        "而不是音乐忽然发生了什么。珠子是另一批人听这段音乐写下的听感，写的是此刻听到、感到的具体样子，会和线并排展示；"
+        "线不用把珠子再描写一遍，而是给这些感受一个“为什么偏偏此刻会这样”的理由。\n"
+        "关系图的写法：每段先标他和 Center 的关系（还说不清 / 正在面对 / 没在想）；条目前的 → 表示由上一条引出；"
+        "← 是跨段箭头，指回前面某段的某一条（提供理由、说明、限制、动摇、唤起、改写、失效）；⟲ 是前面仍在起作用的东西。")
+
+
+# 11-02 JV=2: judges aligned to 标准.md (line = 分段要点, not an arrow graph; "why now" is felt, not causal sentences;
+# beads: related situation is enough, imagery/plot must not become events; blind compares all four dimensions)
+JV = os.environ.get("JV", "1")
+WHAT2 = ("线是什么：一个人在这首曲子里经历的一件事，作用是把逐段的听感记录（珠子）串成一个整体。只读线也要成立：有逻辑、有时序、内在有发展，"
+         "看得出他此刻为什么这样，但不靠“因为……所以……”交代；推动它的是他自己前面的经历，不是音乐里发生了什么，也不是新编的事件。"
+         "珠子是另一批人听这段音乐写下的听感，会和线排在一起给读者看；线不用把珠子再写一遍，只要在同一段里有情境相近的处境或原因，相关就行。"
+         "线不能把珠子里的画面、比喻或想象出的情节变成他真的经历的事。\n"
+         "线的写法：按音乐段落分段，每段几条要点；段首括号是他此刻和整件事的关系（没在想 / 还说不清 / 正在面对）；〔〕是这句接着前面哪一段的哪一条。")
+BLIND2 = """下面是肖邦{NAME}同一条线的两个版本 X 和 Y，以及另一批人听这首曲子每一段写下的听感记录（珠子）。两个版本的顺序是随机的。
+
+{WHAT}
+
+请逐段比较 X 和 Y，每个判断写一句理由：
+1. alone（单独成立）：只看线、不看珠子，哪一版这一段更像从前面自然长出来的——看得出他此刻为什么这样，又不是生硬的“因为……所以……”，也没有把前面已经得出的东西当成新的再说一遍？填 X / Y / 差不多。
+2. lean（不啰嗦、读得顺）：哪一版这一段每句都有用、没有重复、连着读更顺？
+3. plain（人话）：哪一版更像一个人平平常常讲自己的经历，具体、不抽象，不像心理分析或哲理总结？
+4. cover（接得上珠子）：哪一版这一段更能让人感到珠子里那些感受为什么会出现在这里？相关、情境相近就算；把珠子的画面或情节搬进线当真的不算。
+5. lost：X 里有、Y 里丢了又没有用更好的说法取代的实质内容（具体心理事实，或前后之间有解释力的联系），写进 lost_in_Y；反过来写进 lost_in_X。删掉的重复和空话不算丢。没有就留空。
+最后整体判断：哪一版更好；如果用 Y 取代 X，算不算实质退步；用 X 取代 Y 呢。
+戏剧化、主观、只讲一个故事都不算缺点。
+
+【X】
+{X}
+
+【Y】
+{Y}
+
+【珠子】
+{BEADS}
+
+只输出 json：
+```json
+{{"sections": [{{"sec": "S01", "alone": "X", "alone_why": "……", "lean": "Y", "lean_why": "……", "plain": "差不多", "plain_why": "……", "cover": "X", "cover_why": "……",
+   "lost_in_X": [], "lost_in_Y": [{{"what": "……", "why": "……"}}]}}],
+ "better": "Y", "better_why": "……", "Y_replacing_X_regress": "否", "Y_regress_why": "……", "X_replacing_Y_regress": "是", "X_regress_why": "……"}}
+```"""
+
+# ---------- graphs ----------
+def v6(w):
+    """v6 json -> {center, segments:[{sec, bars, relation, items:[{id,text,key,follows}], because:[{from,to,rel}]}]}"""
+    d = json.loads(V6[w].read_text(encoding="utf-8")); segs = draft10.segs(w)
+    out = []
+    for s, x in zip(segs, d["segments"]):
+        assert x["bars"].replace("–", "-") == f"{s['start']}-{s['end']}", (w, x["bars"], s)
+        out.append({"sec": s["id"], "bars": x["bars"], "relation": x.get("relation"),
+                    "items": [{k: it.get(k) for k in ("id", "text", "key", "follows")} for it in x.get("items") or []],
+                    "because": [{k: e.get(k) for k in ("from", "to", "rel", "how")} for e in x.get("because") or []]})
+    return {"center": d["center"], "segments": out}
+
+
+def index(g):
+    return {it["id"]: (s, it) for s in g["segments"] for it in s.get("items") or []}
+
+
+def view(g, ids=False, secs=None, head=True, center=True):
+    """the v6 relation-graph layout (tgraph4.view), without ✦ tags; ids=True adds [id] for prompts"""
+    I = index(g); md = [f"**Center：**{g['center']}", ""] if center else []
+
+    def src(e):
+        x = I.get(e.get("from"))
+        if not x:
+            return None
+        return f"（{x[0]['bars']}）「{x[1].get('key') or x[1]['text'][:10]}」" + (f"[{e['from']}]" if ids else "")
+    for s in g["segments"]:
+        if secs and s["sec"] not in secs:
+            continue
+        if head:
+            relation = f"　（{s.get('relation')}）" if s.get("relation") else ""
+            md += [f"### {s['sec']}｜{s['bars']} 小节{relation}", ""]
+        es = s.get("because") or []
+        for n, it in enumerate(s.get("items") or []):
+            tag = f"[{it['id']}] " if ids else ""
+            # 10-30 new form: "引用" = the item itself mentions an earlier item; shown inline as 〔bars ②〕, not as an arrow
+            cites = [f"〔{I[e['from']][0]['bars']} {'①②③④⑤⑥⑦⑧⑨⑩⑪⑫'[int(e['from'].split('-')[-1]) - 1]}〕" + (f"[{e['from']}]" if ids else "")
+                     for e in es if e.get("to") == it["id"] and e.get("rel") == "引用" and e.get("from") in I]
+            md.append(f"- {'→ ' if it.get('follows') and n else ''}{tag}{it['text']}{(' ' + ''.join(cites)) if cites else ''}")
+            for e in es:
+                if e.get("to") == it["id"] and e.get("rel") != "引用" and (e.get("rel") != "仍在起作用" or e.get("how")) and src(e):
+                    md.append(f"  - ← {e.get('rel')}：{src(e)}" + (f" —— {e['how']}" if e.get("how") else ""))
+        still = [src(e) for e in es if e.get("rel") == "仍在起作用" and not e.get("how") and src(e)]
+        if still:
+            md.append("- ⟲ 仍在起作用：" + "；".join(dict.fromkeys(still)))
+        md.append("")
+    return "\n".join(md).strip()
+
+
+# ---------- beads ----------
+def beads(w, sec=None):
+    bs = [b for b in covjudge.beads(w) if b["role"] != "演奏条件" and (sec is None or b["sec"] == sec)]
+    segs = {s["id"]: s for s in draft10.segs(w)}; out = []; last = None
+    for b in bs:
+        if b["sec"] != last and sec is None:
+            last = b["sec"]; s = segs[last]; out.append(f"\n### {last}｜{s['start']}–{s['end']} 小节")
+        out.append(f"- {b['id'].split('-')[-1]}［{b['role']}］（{b['measures']}）{b['text']}")
+    if sec is not None:
+        st = json.loads((covjudge.STRUCT[w] / f"{sec}.json").read_text(encoding="utf-8"))
+        keep = {b["id"].split("-")[-1] for b in bs}
+        rel = [f"{r['a']} 与 {r['b']}：{r['type']}" for r in st.get("relations") or [] if r.get("a") in keep and r.get("b") in keep]
+        if rel:
+            out.append("珠子之间：" + "；".join(rel))
+    return "\n".join(out).strip()
+
+
+def bead_ids(w, sec, roles=("主体验", "段内变化", "另一侧面")):
+    return [b["id"].split("-")[-1] for b in covjudge.beads(w) if b["sec"] == sec and b["role"] in roles]
+
+
+def parse(rid):
+    t = evo.output(rid)
+    try:
+        return evo.parse_json(t)
+    except Exception:
+        pass
+    # 10-29: some answers come back wrapped as <text preserveWhitespace>{`{...}`}</text> (a rendering shell around the json)
+    m = re.search(r"\{`(.*)`\}", t or "", re.S)
+    if m:
+        try:
+            return evo.parse_json(m.group(1))
+        except Exception:
+            pass
+    # trailing commas before } or ] (seen 10-29 in a judge answer)
+    s = (m.group(1) if m else t or "")
+    s = s[s.find("{"): s.rfind("}") + 1]
+    try:
+        return json.loads(re.sub(r",\s*([}\]])", r"\1", s))
+    except Exception:
+        return None
+
+
+# ---------- stage 1: diagnosis ----------
+DIAG = """下面是肖邦{NAME}的一条 Thread（关系图，叫 v6），以及另一批人听这首曲子每一段写下的听感记录（珠子）。我们打算在 v6 的基础上逐段修补，请你先逐段诊断。
+
+{WHAT}方括号里是条目编号。
+
+请逐段写：
+1. keep：这一段 v6 里真正成立、修补时不能丢的实质内容——具体的心理事实，或者前后之间真有解释力的关系。写出是哪几条、它说清了什么。和珠子对不上的解释不算。没有就留空。
+2. p1（覆盖）：这一段每颗珠子（另一种理解除外）在 v6 里的情况：说清（线给出了他此刻为什么会这样）/ 偏弱（沾边但说不清）/ 相反（线写的感受和珠子对不上）/ 没有。每颗一句理由。
+3. p2（啰嗦）：哪几条在重复同一个意思、哪条删掉也不损失任何意思、哪个箭头或因果其实不成立、哪里在“试一个办法—不管用—换一个办法”。写出编号和理由。
+4. p3（不说人话）：哪几句抽象、像哲理总结、工整对照、替他宣布领悟、只说他没做什么。引原句，写理由。
+另外列出全曲层面跨段的、有实质解释力的关系（cross），修补时也不能丢。
+
+戏剧化、主观、只讲一个故事都不算缺点，不要因为这些扣分。每个判断都要有一句理由。
+
+【v6】
+{V6}
+
+【珠子】
+{BEADS}
+
+只输出 json：
+```json
+{{"sections": [{{"sec": "S01", "keep": [{{"ids": ["R1"], "what": "……"}}], "p1": [{{"bead": "B1", "status": "说清", "why": "……"}}],
+  "p2": [{{"ids": ["R2", "R3"], "why": "……"}}], "p3": [{{"id": "R4", "quote": "……", "why": "……"}}]}}],
+ "cross": [{{"ids": ["R3", "R5"], "what": "……"}}]}}
+```"""
+
+
+def diag():
+    jobs = []
+    for w in ("op60", "op61"):
+        msg = DIAG.format(NAME=covjudge.NAME[w], WHAT=WHAT, V6=view(v6(w), ids=True), BEADS=beads(w))
+        for j, m in JUDGES.items():
+            rid = f"v6d_{w}_{j}"
+            if not evo.done(rid):
+                jobs.append((rid, lambda rid=rid, msg=msg, m=m: evo.call(rid, msg, model=m, meta={"stage": "v6-diag"})))
+    evo.run_parallel(jobs, 4)
+    for w in ("op60", "op61"):
+        for j in JUDGES:
+            d = parse(f"v6d_{w}_{j}")
+            print(w, j, "ok" if d else "PARSE FAIL", len((d or {}).get("sections") or []), "段", flush=True)
+
+
+def diag_for(w, sec):
+    out = []
+    for j, name in (("g6", "评审甲"), ("g56", "评审乙")):
+        d = parse(f"v6d_{w}_{j}") or {}
+        s = next((x for x in d.get("sections") or [] if x.get("sec") == sec), None)
+        if not s:
+            continue
+        lines = [f"{name}："]
+        lines += [f"- 值得保留 {'、'.join(k.get('ids') or [])}：{k.get('what', '')}" for k in s.get("keep") or []]
+        lines += [f"- 珠子 {p.get('bead')}：{p.get('status')}。{p.get('why', '')}" for p in s.get("p1") or []]
+        lines += [f"- 啰嗦 {'、'.join(p.get('ids') or [])}：{p.get('why', '')}" for p in s.get("p2") or []]
+        lines += [f"- 不说人话 {p.get('id', '')}「{p.get('quote', '')}」：{p.get('why', '')}" for p in s.get("p3") or []]
+        out.append("\n".join(lines))
+    ids = {it["id"] for it in next(x for x in v6(w)["segments"] if x["sec"] == sec)["items"]}
+    cross = []
+    for j in JUDGES:
+        for c in (parse(f"v6d_{w}_{j}") or {}).get("cross") or []:
+            if ids & set(c.get("ids") or []):
+                cross.append(f"- {'、'.join(c.get('ids') or [])}：{c.get('what', '')}")
+    if cross:
+        out.append("跨段、不能丢的关系（涉及这一段的）：\n" + "\n".join(dict.fromkeys(cross)))
+    return "\n\n".join(out) or "（无）"
+
+
+# ---------- stage 2/3: sequential repair + check ----------
+FIX = """下面是肖邦{NAME}的一条 Thread（关系图，叫 v6）。我们在 v6 的基础上逐段修补，前面的段已经修好，现在修 {SEC}（第 {A}–{B} 小节）。
+
+{WHAT}
+
+这次修补只解决三个问题：
+1. 覆盖不足：这一段珠子里的感受（主体验、段内变化，以及和它们同时成立的另一侧面），线要给出他此刻为什么会这样；理由和珠子对不上的要改。
+2. 啰嗦废话：一个意思拆成几条、翻来覆去说同一件事、没有必要的心理环节、不成立的因果。
+3. 不说人话：抽象、像哲理总结、工整对照、作者替他宣布领悟、只说他没做什么。
+v6 已经成立的好内容不能丢：整体走向、已经说清的心理事实和前后关系都要留下，可以改写、合并，但意思不能丢、不能变弱；只有换成更有解释力的说法时才可以去掉，并在 changes 里说明。和珠子对不上的解释不算好内容，要改。
+
+要求：
+- 覆盖：主体验、段内变化里的每一种感受，都要能从这一段的条目里看出他此刻为什么会这样。线的作用不是把感受写得更细——细节由珠子并排展示，线只给原因；所以不要把珠子的描写搬进线里。一条原因常常能同时解释好几颗珠子，不要为每颗珠子各加一条。同时存在的几种感受可以写在同一条里，不要硬排成先后发生的几件事。真正解释不了的写进 gaps，不要硬补。另一种理解（和主体验不能同时成立的听法）不必解释。
+- 精简：一条只说一个别的条目没说过的意思，包括前面各段已经说过的——前面说过的原因不要再说一遍，此刻还在起作用就用 ← 指回去；几条其实是同一个念头就合成一条；删掉也不损失意思的就删。条数跟这一段真正发生了多少相称，没多少事就写一两条；修补后的条数一般不多于 v6 这一段，除非 v6 确实漏掉了这一段的主体验。不强求每段都有新的领悟、办法或转折，不写“试一个办法—不管用—换一个办法”。全曲一直成立的背景（他在乎、对方心意未知、时间在走之类）不能单独当此刻的原因，要说出它此刻因为前面哪一步变了才起了新作用。关键转折写出具体前因，不用“越……越……”“更……了”顶替。
+- 人话：直接写他具体在想什么、怕什么、想要什么。不把心情说成一样东西（“这份……”“一种……”），不写听着深刻的总结句，不写整整齐齐的“前半句；后半句”对照，不由作者替他宣布“他终于明白”“他才看清”；但他想明白的东西本身（分清了两件事、发现某个办法管不了什么、对自己的新认识）是内容，不能因此删掉：保留这个认识，用他自己的平常话说出来，并让人看出是前面哪段经历让他想到的；前文没有经历撑着的，不要把无奈写成高尚、坚定的选择。只说他没做什么的空否定，改成说他在做什么（说出变化的“不再……”可以留）。一条只放一个意思，不用分号把两三件事串在一起；每条一般不超过 45 字，但不要为了字数把一个意思拆成几条。
+- 边界：不新增前史、往事、身份、外部事件、对白、具体的人物关系或场景；珠子里的比喻——地点、人物、往事画面，以及处境、动作、对白（例如“像要对很亲近的人说一件想了很久的事”“握紧另一个人的手”“像一幕旧场景回来”）——只说明感受像什么，不能写成他真的在做、真的要做或真的想起的事；可以取其中的心理，不取那件事本身；不把音乐本身的变化当成心理原因。可以补一座接在前面已确立内容上的局部心理过程（身体先于念头、刚才的什么让此刻变了）。正文不写小节号、编号、音乐术语，也不写对修改的说明。
+- 形式同 v6：relation 是这一段他和 Center 的关系（还说不清 / 正在面对 / 没在想），一般沿用 v6；follows: true 表示由这一段上一条引出（画成 →）；because 是跨段箭头，from 只能写【前面已经修好的段】里的条目编号，rel 取 提供理由、说明、限制、动摇、唤起、改写、失效、仍在起作用，只连真正的前因，主题相近不算。key 是两到八个字，取自这一条的原文，后面的箭头用它指代这一条。explains 写这一条给出原因的珠子编号。Center 不改。
+
+【Center】{CENTER}
+
+【v6 全曲】（底稿；后面各段的走向也看一下，修这一段时不要和后面接不上）
+{V6}
+
+【前面已经修好的段】（跨段箭头用这里的编号）
+{DONE}
+
+【这一段 v6 原来的样子】
+{CUR}
+
+【这一段的珠子】
+{BEADS}
+
+【两位评审对 v6 这一段的诊断】
+{DIAG}
+{EXTRA}
+只输出 json：
+```json
+{{"relation": "正在面对",
+ "items": [{{"id": "{SEC}-1", "text": "……", "key": "……", "follows": false, "explains": ["B1"]}}],
+ "because": [{{"from": "S02-3", "to": "{SEC}-1", "rel": "提供理由"}}],
+ "changes": [{{"v6": ["R12", "R13"], "now": ["{SEC}-1"], "what": "合并", "why": "……"}}],
+ "gaps": [{{"bead": "B4", "why": "……"}}]}}
+```"""
+CHK = """下面是一条 Thread（关系图）在某一段的修补结果。请核对：
+1. 每条：ok / 越界。越界指：新增了前史、往事、身份、外部事件、对白、具体的人物关系或场景；把珠子里的比喻（地点、人物、往事画面，或要对人说话、握手、拥抱、想起旧场景这类处境和动作）写成了他真的在做、要做或想起的事；把音乐本身的变化当成心理原因；写了小节号或音乐术语。越界的写出是哪一处。
+2. 每个跨段箭头（←）：前面那一条是不是真的给了这一条前因（成立 / 勉强 / 不成立），一句理由。
+3. 只读线、不看珠子，能不能读懂（是 / 否，一句理由）。
+4. 和 v6 这一段比：v6 这一段里已经说清的实质内容（具体心理事实、前后关系），修补后有没有丢掉、又没有被更好的说法取代？列出丢掉的，没有就留空。删掉的重复、空话，以及和珠子对不上而被改掉的解释，都不算丢。
+5. 这一段珠子里的主体验、段内变化，修补后是否都能看出他此刻为什么会这样？只问线有没有给出原因，不要求线把珠子的细节再写一遍（珠子会并排展示）。列出还说不清原因的珠子，没有就留空。
+6. 修补后还有没有明显的啰嗦（两条说同一个意思、把前面各段已经说过的原因又说一遍、可以删的条目、为了对上珠子而加的条目、一条里用分号串了几件事）或不说人话的句子？列出，没有就留空。
+戏剧化、主观不算问题。每个判断写一句理由。
+
+【前面已经修好的段】
+{DONE}
+
+【这一段 v6 原来的样子】
+{CUR}
+
+【这一段修补后】
+{NEW}
+
+【这一段的珠子】
+{BEADS}
+
+只输出 json：
+```json
+{{"items": [{{"id": "S04-1", "label": "ok", "why": "……"}}], "links": [{{"from": "S03-2", "to": "S04-1", "label": "成立", "why": "……"}}],
+ "readable": "是", "readable_why": "……", "lost": [{{"v6": ["R12"], "what": "……"}}], "unexplained": [{{"bead": "B2", "why": "……"}}],
+ "wordy": [{{"ids": ["S04-2"], "why": "……"}}]}}
+```"""
+REV = """
+
+【上一次的修补被核对者退回】
+{NOTES}
+
+上一次的修补结果：
+{PREV}
+
+请据此重写这一段：只改被指出的问题，其余照旧；格式和要求同上。"""
+
+
+def seg_graph(e, sec, s):
+    """model output -> a v6-form segment; ids forced to <sec>-n, links to unknown ids dropped later"""
+    items = []
+    for n, it in enumerate(e.get("items") or [], 1):
+        items.append({"id": it.get("id") or f"{sec}-{n}", "text": (it.get("text") or "").strip(), "key": it.get("key") or "",
+                      "follows": bool(it.get("follows")) and n > 1, "explains": [str(b).split("-")[-1] for b in it.get("explains") or []]})
+    return {"sec": sec, "bars": f"{s['start']}–{s['end']}", "relation": e.get("relation") or "正在面对", "items": items,
+            "because": [{"from": b.get("from"), "to": b.get("to"), "rel": b.get("rel") if b.get("rel") in RELS else "提供理由"}
+                        for b in e.get("because") or []]}
+
+
+def tidy(g):
+    """drop links whose ends do not exist / point forward"""
+    seen = set()
+    for s in g["segments"]:
+        here = {it["id"] for it in s["items"]}
+        position = {it["id"]: n for n, it in enumerate(s["items"])}
+        s["because"] = [b for b in s["because"] if b.get("to") in here and
+                        (b.get("from") in seen or
+                         (b.get("rel") == "引用" and b.get("from") in here and
+                          position[b["from"]] < position[b["to"]]))]
+        seen |= here
+    return g
+
+
+def fix(w, T="r1", notes=None, base=None):
+    """notes: {sec: [text]} from the blind check / gate; with base, segments without notes are copied from round <base>"""
+    g6 = v6(w); segs = draft10.segs(w); done = {"center": g6["center"], "segments": []}; rows = {}
+    prev = json.loads((OUT / f"{w}_{base}.json").read_text(encoding="utf-8")) if base else None
+    for s in segs:
+        sec = s["id"]; cur = {"center": g6["center"], "segments": [x for x in g6["segments"] if x["sec"] == sec]}
+        if prev and sec not in (notes or {}):
+            seg = next(x for x in prev["graph"]["segments"] if x["sec"] == sec)
+            done["segments"].append(seg); rows[sec] = prev["rows"][sec]; tidy(done); continue
+        D = view(done, ids=True, center=False) if done["segments"] else "（这是第一段，前面还没有）"
+        extra = ""
+        if notes and notes.get(sec):
+            old = next(x for x in prev["graph"]["segments"] if x["sec"] == sec) if prev else None
+            extra = ("\n【上一轮整首评审对这一段的意见】（这一段上一轮的修补结果也附在下面，请据此再修）\n" + "\n".join(f"- {n}" for n in notes[sec])
+                     + (f"\n上一轮的修补结果：\n{view({'center': g6['center'], 'segments': [old]}, ids=True, center=False)}\n" if old else "\n"))
+            if old:
+                here = {it["id"] for it in old["items"]}
+                later = sorted({e["from"] for x in prev["graph"]["segments"] for e in x.get("because") or [] if e.get("from") in here})
+                if later:
+                    extra += f"后面各段有箭头指回这一段的 {'、'.join(later)}：请保留这些编号，且意思不变（可以改措辞）。\n"
+        msg = FIX.format(NAME=covjudge.NAME[w], SEC=sec, A=s["start"], B=s["end"], WHAT=WHAT, CENTER=g6["center"],
+                         V6=view(g6, ids=True, center=False), DONE=D, CUR=view(cur, ids=True, center=False),
+                         BEADS=beads(w, sec), DIAG=diag_for(w, sec), EXTRA=extra)
+        rid = f"v6f_{w}_{sec}_{T}"
+        if not evo.done(rid):
+            evo.call(rid, msg, model=evo.G6, meta={"stage": "v6-fix", "web": True})
+        e = parse(rid)
+        if not e:
+            if not evo.done(rid) or not evo.call(rid + "b", msg, model=evo.G56, meta={"stage": "v6-fix", "web": True}):
+                print(w, sec, "修补没有结果，停", flush=True); return None
+            e = parse(rid + "b")
+        new = seg_graph(e, sec, s)
+        k = check(w, sec, T, done, cur, new)
+        notes_ = review_notes(k, new, e)
+        revised = False
+        if notes_:
+            rr = f"v6fr_{w}_{sec}_{T}"
+            prevtxt = view({"center": g6["center"], "segments": [new]}, ids=True, center=False)
+            if not evo.done(rr):
+                evo.call(rr, msg + REV.format(NOTES="\n".join(notes_), PREV=prevtxt), model=evo.G6, meta={"stage": "v6-fix-rev", "web": True})
+            r = parse(rr)
+            if r:
+                e, new, revised = r, seg_graph(r, sec, s), True
+        done["segments"].append(new); tidy(done)
+        rows[sec] = {"edit": e, "check": k, "notes": notes_, "revised": revised}
+        n_old = len(cur["segments"][0]["items"]); n_new = len(new["items"])
+        print(f"{w} {sec}: v6 {n_old} 条 → {n_new} 条 | 退改 {revised} | 核对意见 {len(notes_)} | gaps {[x.get('bead') for x in e.get('gaps') or []]}", flush=True)
+        json.dump({"graph": done, "rows": rows}, open(OUT / f"{w}_{T}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    (OUT / f"{w}_{T}.md").write_text(f"# {'Op.60' if w == 'op60' else 'Op.61'}｜关系图（v6 修补 {T}）\n\n" + view(tidy(done)), encoding="utf-8")
+    return done
+
+
+def pfix(w, T, base, notes):
+    """10-29: focused per-segment repair of only the segments in notes, in parallel, on top of round <base> (whole-piece
+    refines kept missing the same few v6 insights). Each call sees v6 whole, base's earlier segments, this segment's v6 and
+    beads, the diagnoses, and what to bring back; then check + one revision as in fix(). Other segments copied from base."""
+    g6 = v6(w); segs = {s["id"]: s for s in draft10.segs(w)}
+    prev = json.loads((OUT / f"{w}_{base}.json").read_text(encoding="utf-8")); pg = tidy(prev["graph"])
+
+    def one(sec):
+        s = segs[sec]; i = next(k for k, x in enumerate(pg["segments"]) if x["sec"] == sec)
+        done = {"center": g6["center"], "segments": pg["segments"][:i]}
+        cur = {"center": g6["center"], "segments": [x for x in g6["segments"] if x["sec"] == sec]}
+        old = pg["segments"][i]; here = {it["id"] for it in old["items"]}
+        later = sorted({e["from"] for x in pg["segments"][i + 1:] for e in x.get("because") or [] if e.get("from") in here})
+        extra = ("\n【上一轮整首评审对这一段的意见】（这一段上一轮的修补结果也附在下面，请据此再修）\n" + "\n".join(f"- {n}" for n in notes[sec])
+                 + f"\n上一轮的修补结果：\n{view({'center': g6['center'], 'segments': [old]}, ids=True, center=False)}\n"
+                 + (f"后面各段有箭头指回这一段的 {'、'.join(later)}：请保留这些编号，且意思不变（可以改措辞）。\n" if later else ""))
+        msg = FIX.format(NAME=covjudge.NAME[w], SEC=sec, A=s["start"], B=s["end"], WHAT=WHAT, CENTER=g6["center"],
+                         V6=view(g6, ids=True, center=False), DONE=view(done, ids=True, center=False) if done["segments"] else "（这是第一段，前面还没有）",
+                         CUR=view(cur, ids=True, center=False), BEADS=beads(w, sec), DIAG=diag_for(w, sec), EXTRA=extra)
+        rid = f"v6f_{w}_{sec}_{T}"
+        if not evo.done(rid):
+            evo.call(rid, msg, model=evo.G6, meta={"stage": "v6-pfix", "web": True})
+        e = parse(rid)
+        if not e:
+            return sec, None
+        new = seg_graph(e, sec, s); k = check(w, sec, T, done, cur, new); nts = review_notes(k, new, e); revised = False
+        if nts:
+            rr = f"v6fr_{w}_{sec}_{T}"
+            if not evo.done(rr):
+                evo.call(rr, msg + REV.format(NOTES="\n".join(nts), PREV=view({"center": g6["center"], "segments": [new]}, ids=True, center=False)),
+                         model=evo.G6, meta={"stage": "v6-pfix-rev", "web": True})
+            r = parse(rr)
+            if r:
+                e, new, revised = r, seg_graph(r, sec, s), True
+        return sec, (new, {"edit": e, "check": k, "notes": nts, "revised": revised, "pfix_notes": notes[sec]})
+    res = evo.run_parallel([(sec, (lambda sec=sec: one(sec))) for sec in notes], 8)
+    rows = dict(prev["rows"]); graph = {"center": pg["center"], "segments": []}
+    for x in pg["segments"]:
+        got = (res.get(x["sec"]) or (None, None))[1]
+        if x["sec"] in notes and not got:
+            print(w, x["sec"], "重修没有结果，保留上一轮", flush=True)
+        graph["segments"].append(got[0] if got else x)
+        if got:
+            rows[x["sec"]] = got[1]
+            print(f"{w} {x['sec']}: 上一轮 {len(x['items'])} 条 → {len(got[0]['items'])} 条 | 退改 {got[1]['revised']} | 核对意见 {len(got[1]['notes'])}", flush=True)
+    tidy(graph)
+    json.dump({"graph": graph, "rows": rows, "base": base}, open(OUT / f"{w}_{T}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    (OUT / f"{w}_{T}.md").write_text(f"# {'Op.60' if w == 'op60' else 'Op.61'}｜关系图（在 {base} 上逐段聚焦重修 {T}）\n\n" + view(graph), encoding="utf-8")
+    return graph
+
+
+def check(w, sec, T, done, cur, new):
+    rid = f"v6k_{w}_{sec}_{T}"
+    if not evo.done(rid):
+        D = view(done, ids=True, center=False) if done["segments"] else "（这是第一段，前面还没有）"
+        evo.call(rid, CHK.format(DONE=D, CUR=view(cur, ids=True, center=False),
+                                 NEW=view({"center": "", "segments": [new]}, ids=True, center=False) + _links(new),
+                                 BEADS=beads(w, sec)), model=evo.G56, meta={"stage": "v6-check"})
+    return parse(rid)
+
+
+def _links(seg):
+    ls = [f"- {b['to']} ← {b['rel']} ← {b['from']}" for b in seg.get("because") or []]
+    return ("\n跨段箭头：\n" + "\n".join(ls)) if ls else "\n（这一段没有跨段箭头）"
+
+
+def review_notes(k, new, e):
+    if not k:
+        return []
+    out = [f"- {x.get('id')} 越界：{x.get('why', '')}" for x in k.get("items") or [] if x.get("label") not in ("ok", "OK")]
+    out += [f"- 箭头 {x.get('from')}→{x.get('to')} {x.get('label')}：{x.get('why', '')}（删掉或换成真正的前因）"
+            for x in k.get("links") or [] if x.get("label") in ("勉强", "不成立")]
+    if k.get("readable") == "否":
+        out.append(f"- 不看珠子读不懂：{k.get('readable_why', '')}")
+    out += [f"- 丢了 v6 的实质内容 {'、'.join(x.get('v6') or [])}：{x.get('what', '')}" for x in k.get("lost") or []]
+    gaps = {str(g.get("bead")) for g in e.get("gaps") or []}
+    out += [f"- 珠子 {x.get('bead')} 还说不清：{x.get('why', '')}" for x in k.get("unexplained") or [] if str(x.get("bead")) not in gaps]
+    out += [f"- 啰嗦 / 不说人话 {'、'.join(x.get('ids') or [])}：{x.get('why', '')}" for x in k.get("wordy") or []]
+    return out
+
+
+# ---------- stage 4: blind regression check vs v6 ----------
+BLIND = """下面是肖邦{NAME}同一条 Thread 的两个版本 X 和 Y（关系图），以及另一批人听这首曲子每一段写下的听感记录（珠子）。两个版本的顺序是随机的。
+
+{WHAT}
+
+请逐段比较 X 和 Y，每个判断写一句理由：
+1. cover（覆盖）：这一段珠子里的感受，哪一版更能说清他此刻为什么会这样？填 X / Y / 差不多。
+2. lean（啰嗦）：哪一版的重复、拆碎、没有必要的心理环节、不成立的因果更少？
+3. plain（人话）：哪一版更像一个人在说自己的事，具体、不抽象、不像哲理总结？
+4. lost：X 里有、Y 里丢了又没有用更好的说法取代的实质内容（具体心理事实，或前后之间有解释力的关系），写进 lost_in_Y；反过来写进 lost_in_X。删掉的重复和空话不算丢。没有就留空。
+最后整体判断：哪一版更好；如果用 Y 取代 X，算不算实质退步（丢了 X 已经说清的重要东西）；用 X 取代 Y 呢。
+戏剧化、主观、只讲一个故事都不算缺点。
+
+【X】
+{X}
+
+【Y】
+{Y}
+
+【珠子】
+{BEADS}
+
+只输出 json：
+```json
+{{"sections": [{{"sec": "S01", "cover": "X", "cover_why": "……", "lean": "Y", "lean_why": "……", "plain": "差不多", "plain_why": "……",
+   "lost_in_X": [], "lost_in_Y": [{{"what": "……", "why": "……"}}]}}],
+ "better": "Y", "better_why": "……", "Y_replacing_X_regress": "否", "Y_regress_why": "……", "X_replacing_Y_regress": "是", "X_regress_why": "……"}}
+```"""
+
+
+def graph_of(w, T):
+    return tidy(json.loads((OUT / f"{w}_{T}.json").read_text(encoding="utf-8"))["graph"])
+
+
+def blind(T="r1", base="v6"):
+    jobs, maps = [], {}
+    for w in [x for x in os.environ.get("ONLY_W", "op60,op61").split(",") if x]:
+        A = v6(w) if base == "v6" else graph_of(w, base); B = graph_of(w, T)
+        for n, j in enumerate(JUDGES):
+            rid = f"{'v6b2' if JV == '2' else 'v6b'}_{w}_{j}_{T}" + ("" if base == "v6" else f"_vs{base}") + (f"_r{os.environ['BLIND_REP']}" if os.environ.get("BLIND_REP") else "")
+            flip = random.Random(rid).random() < 0.5           # deterministic per run id; recorded
+            X, Y = (B, A) if flip else (A, B)
+            maps[rid] = {"X": "new" if flip else "base", "Y": "base" if flip else "new"}
+            msg = (BLIND2.format(NAME=covjudge.NAME[w], WHAT=WHAT2, X=view(X), Y=view(Y), BEADS=beads(w)) if JV == "2"
+                   else BLIND.format(NAME=covjudge.NAME[w], WHAT=WHAT, X=view(X), Y=view(Y), BEADS=beads(w)))
+            if not evo.done(rid) and not os.environ.get("BLIND_ONLY_DONE"):    # summarize only finished judges (deadline)
+                jobs.append((rid, lambda rid=rid, msg=msg, m=JUDGES[j]: evo.call(rid, msg, model=m, meta={"stage": "v6-blind"})))
+    evo.run_parallel(jobs, 4)
+    report = [f"# 回退检查（盲评）：v6 修补 {T} 对 {base}", ""]
+    summary = {}
+    for rid, mp in maps.items():
+        d = parse(rid); w = rid.split("_")[1]; j = rid.split("_")[2]
+        if not d:
+            report.append(f"## {rid}：没有结果"); continue
+        # a label that is not X / Y (some judges write the reason into the label field) counts as 平; read the reasons by hand
+        lab = lambda v: {"X": mp["X"], "Y": mp["Y"]}.get(v, "平")
+        name = {"new": "新版", "base": base, "平": "差不多"}
+        cnt = {k: {"new": 0, "base": 0, "平": 0} for k in (("alone", "cover", "lean", "plain") if JV == "2" else ("cover", "lean", "plain"))}
+        lost_new, lost_base = [], []
+        rows = []
+        for s in d.get("sections") or []:
+            for k in cnt:
+                cnt[k][lab(s.get(k))] += 1
+            ln = s.get("lost_in_Y" if mp["Y"] == "new" else "lost_in_X") or []
+            lb = s.get("lost_in_Y" if mp["Y"] == "base" else "lost_in_X") or []
+            lost_new += [(s.get("sec"), x) for x in ln]; lost_base += [(s.get("sec"), x) for x in lb]
+            rows.append(f"| {s.get('sec')} | {name[lab(s.get('cover'))]}：{s.get('cover_why', '')} | {name[lab(s.get('lean'))]}：{s.get('lean_why', '')} | {name[lab(s.get('plain'))]}：{s.get('plain_why', '')} |")
+        reg_new = d.get("Y_replacing_X_regress") if mp["Y"] == "new" else d.get("X_replacing_Y_regress")
+        reg_new_why = d.get("Y_regress_why") if mp["Y"] == "new" else d.get("X_regress_why")
+        summary[rid] = {"w": w, "j": j, "better": name[lab(d.get("better"))], "new_regress": reg_new, "cnt": cnt,
+                        "lost_new": lost_new, "lost_base": lost_base}
+        report += [f"## {w} · {'gpt-6' if j == 'g6' else 'gpt-5.6'}", "",
+                   f"- 整体更好：**{name[lab(d.get('better'))]}**。{d.get('better_why', '')}",
+                   f"- 新版取代 {base} 算不算实质退步：**{reg_new}**。{reg_new_why}",
+                   f"- 逐段：覆盖 新版 {cnt['cover']['new']} / {base} {cnt['cover']['base']} / 平 {cnt['cover']['平']}；"
+                   f"啰嗦（更少） 新版 {cnt['lean']['new']} / {base} {cnt['lean']['base']} / 平 {cnt['lean']['平']}；"
+                   f"人话 新版 {cnt['plain']['new']} / {base} {cnt['plain']['base']} / 平 {cnt['plain']['平']}", "",
+                   "新版丢了的（" + base + " 有）：" + ("无" if not lost_new else ""), *[f"- {sec}：{x.get('what', '')}（{x.get('why', '')}）" for sec, x in lost_new], "",
+                   f"{base} 丢了的（新版有）：" + ("无" if not lost_base else ""), *[f"- {sec}：{x.get('what', '')}（{x.get('why', '')}）" for sec, x in lost_base[:30]], "",
+                   "| 段 | 覆盖 | 啰嗦 | 人话 |", "|---|---|---|---|", *rows, ""]
+    fn = OUT / f"blind{'2' if JV == '2' else ''}_{T}{'' if base == 'v6' else '_vs' + base}{'_r' + os.environ['BLIND_REP'] if os.environ.get('BLIND_REP') else ''}.md"
+    fn.write_text("\n".join(report), encoding="utf-8")
+    json.dump(summary, open(fn.with_suffix(".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    for rid, s in summary.items():
+        print(rid, "更好:", s["better"], "| 新版退步:", s["new_regress"], *(("| 单独", s["cnt"]["alone"]) if "alone" in s["cnt"] else ()), "| 覆盖", s["cnt"]["cover"], "啰嗦", s["cnt"]["lean"], "人话", s["cnt"]["plain"],
+              "| 新版丢", len(s["lost_new"]), "条", flush=True)
+    return summary
+
+
+# ---------- stage 5: join with the bead graph ----------
+def join(T="r1"):
+    md = [f"# 成品：线（v6 修补 {T}）与珠子关系图结合", "",
+          "每段若干屏：**线**是关系图条目（→ 段内由上一条引出；← 指回前面某段的某一条；⟲ 前面仍在起作用的），"
+          "同一屏下面是这些条目说明的**珠子**条目（逐字原文，右边是小节）。“线没有单独说明的听感”是线没对上的珠子；“也可以听成”是和主体验不能同时成立的另一种听法。", ""]
+    for w in ("op60", "op61"):
+        g = graph_of(w, T); I = index(g)
+        # 10-29 (gate review): beads both coverage judges call 没有 / 相反 must not sit next to line items as if explained
+        notexp = set()
+        for jj in JUDGES:
+            for x in (parse(f"cov_{w}_{jj}_{T}") or {}).get("beads") or []:
+                if x.get("status") in ("没有", "相反"):
+                    notexp.add((x.get("sec"), str(x.get("bead")), jj))
+        notexp = {(s_, b_) for s_, b_, _ in notexp if all((s_, b_, jj) in notexp for jj in JUDGES)}
+        md += [f"## 肖邦{covjudge.NAME[w]}", "", f"**Center：**{g['center']}", ""]
+        for s in g["segments"]:
+            sec = s["sec"]; bi = J.bead_items(w, sec); by = {}
+            for x in bi:
+                if x["role"] == "演奏条件":
+                    continue
+                by.setdefault(x["bead"], []).append(x)
+            alt = {b for b, xs in by.items() if xs[0]["role"] == "另一种理解" or xs[0]["alt_of"]}
+            shown = set(); screens = []; buf = []
+            for n, it in enumerate(s["items"]):
+                line = f"{'→ ' if it.get('follows') and n else ''}{it['text']}"
+                links = [f"← {e['rel']}：（{I[e['from']][0]['bars']}）「{I[e['from']][1].get('key') or I[e['from']][1]['text'][:10]}」"
+                         for e in s["because"] if e.get("to") == it["id"] and e.get("rel") != "仍在起作用" and e.get("from") in I]
+                buf.append((line, links))
+                new = [b for b in it.get("explains") or [] if b in by and b not in shown and b not in alt and (sec, b) not in notexp]
+                if new:
+                    shown |= set(new); screens.append((buf, [x for b in new for x in by[b]])); buf = []
+            if buf:
+                if screens:
+                    screens[-1] = (screens[-1][0] + buf, screens[-1][1])
+                else:
+                    screens.append((buf, []))
+            still = [f"（{I[e['from']][0]['bars']}）「{I[e['from']][1].get('key')}」" for e in s["because"]
+                     if e.get("rel") == "仍在起作用" and e.get("from") in I]
+            md += [f"### {sec} ｜ {s['bars']} 小节　（{s.get('relation')}）", ""]
+            for k, (lines, bs) in enumerate(screens, 1):
+                md += [f"**屏 {k}**", ""]
+                for line, links in lines:
+                    md.append(f"> {line}")
+                    md += [f">　<small>{l}</small>" for l in links]
+                if k == len(screens) and still:
+                    md.append(f">　<small>⟲ 仍在起作用：{'；'.join(dict.fromkeys(still))}</small>")
+                md.append("")
+                md += [f"- {x['text']}　<small>{x['bars']}</small>" for x in bs] + [""]
+            rest = [b for b in by if b not in shown and b not in alt]
+            if rest:
+                md += ["**线没有单独说明的听感**", ""] + [f"- {x['text']}　<small>{x['bars']}</small>" for b in rest for x in by[b]] + [""]
+            if alt:
+                md += ["**也可以听成**", ""] + [f"- {x['text']}　<small>{x['bars']}</small>" for b in alt for x in by[b]] + [""]
+    fn = OUT / f"成品_线与珠子关系图_{T}.md"
+    fn.write_text("\n".join(md), encoding="utf-8")
+    print("->", fn, flush=True)
+    return fn
+
+
+def notes_from_blind(T, base="v6"):
+    """per segment notes for the next round: what the blind judges say the new line lost, and where both judges preferred the
+    base on a dimension (with their reasons). Returns {w: {sec: [text]}}."""
+    fn = OUT / f"blind_{T}{'' if base == 'v6' else '_vs' + base}.json"
+    S = json.loads(fn.read_text(encoding="utf-8")); out = {}
+    for rid, s in S.items():
+        for sec, x in s["lost_new"]:
+            out.setdefault(s["w"], {}).setdefault(sec, []).append(f"盲评评委（{'gpt-6' if s['j'] == 'g6' else '5.6'}）说新版丢了 v6 的：{x.get('what', '')}（{x.get('why', '')}）")
+    for w in ("op60", "op61"):
+        per = {}
+        for rid, s in S.items():
+            if s["w"] != w:
+                continue
+            d = parse(rid); mp = None
+            if not d:
+                continue
+            flip = random.Random(rid).random() < 0.5
+            base_lab = "Y" if flip else "X"
+            for sx in d.get("sections") or []:
+                for k, name in (("cover", "覆盖"), ("lean", "啰嗦"), ("plain", "人话")):
+                    if sx.get(k) == base_lab:
+                        per.setdefault((sx.get("sec"), name), []).append(sx.get(k + "_why", ""))
+        for (sec, name), whys in per.items():
+            if len(whys) >= 2:
+                out.setdefault(w, {}).setdefault(sec, []).append(f"两位盲评评委都说这一段在“{name}”上 v6 更好：" + "；".join(whys))
+    return out
+
+
+def stats(T):
+    for w in ("op60", "op61"):
+        a, b = v6(w), graph_of(w, T)
+        na = [len(s["items"]) for s in a["segments"]]; nb = [len(s["items"]) for s in b["segments"]]
+        ca = sum(len(it["text"]) for s in a["segments"] for it in s["items"]); cb = sum(len(it["text"]) for s in b["segments"] for it in s["items"])
+        print(w, f"条目 v6 {sum(na)} → {sum(nb)}；字数 {ca} → {cb}；逐段 {list(zip(na, nb))}", flush=True)
+
+
+if __name__ == "__main__":
+    a = sys.argv[1:]
+    if a[0] == "diag":
+        diag()
+    elif a[0] == "fix":
+        fix(a[1], a[2] if len(a) > 2 else "r1")
+    elif a[0] == "pfix":            # pfix <w> <T> <base> <notes.json>: focused parallel repair of the noted segments only
+        nt = json.loads(open(a[4], encoding="utf-8").read()).get(a[1]) or {}
+        pfix(a[1], a[2], a[3], nt)
+    elif a[0] == "refix":           # refix <w> <T> <base> <notes.json>: re-run only the segments with notes, others copied from base
+        nt = json.loads(open(a[4], encoding="utf-8").read()).get(a[1]) or {}
+        fix(a[1], a[2], notes=nt, base=a[3])
+    elif a[0] == "blind":
+        blind(a[1] if len(a) > 1 else "r1", a[2] if len(a) > 2 else "v6")
+    elif a[0] == "join":
+        join(a[1] if len(a) > 1 else "r1")
+    elif a[0] == "stats":
+        stats(a[1] if len(a) > 1 else "r1")
+    elif a[0] == "show":
+        w = a[1]; print(view(v6(w), ids=True))

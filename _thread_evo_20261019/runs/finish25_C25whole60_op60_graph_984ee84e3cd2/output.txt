@@ -1,0 +1,276 @@
+<text color="secondary" size="xs">14 段 · 82 个条目 · 73 条跨段关系 · 不含 Center</text>
+
+[下载完整 JSON 文件](sandbox:/mnt/data/thread_relationship.json)
+
+<CodeBlock language="json" editable={false}>
+{
+  "segments": [
+    {
+      "sec": "S01",
+      "bars": "1–3",
+      "items": [
+        {"id":"I1","text":"他很清楚自己在乎这个人，也知道对方怎样回应，对自己意义重大。","key":"明确在乎对方","follows":false,"sources":[1],"explains":["S01-B1","S01-B2"]},
+        {"id":"I2","text":"但对方究竟对他抱着怎样的心意，他目前还没有把握。","key":"对方心意未定","follows":false,"sources":[1],"explains":["S01-B2","S01-B3"]},
+        {"id":"I3","text":"正因在乎又没有把握，刚升起的期待虽然深深触动他，却还不能变成安心的快乐。","key":"期待动人却悬着","follows":true,"sources":[1],"explains":["S01-B1","S01-B3"]}
+      ],
+      "because": []
+    },
+    {
+      "sec": "S02",
+      "bars": "4–16",
+      "items": [
+        {"id":"I4","text":"眼下真切的相伴，让他感到亲近不再只是一个未落实的愿望。","key":"相伴变得真实","follows":false,"sources":[1],"explains":["S02-B1"]},
+        {"id":"I5","text":"两人可以安静待在一起，不必急着确认什么，先前的谨慎才暂时松开。","key":"自在使谨慎松开","follows":true,"sources":[1],"explains":["S02-B2"]},
+        {"id":"I6","text":"正因为尝到这份自在，他又舍不得相伴的时间就这样过去。","key":"舍不得相伴时光","follows":true,"sources":[1],"explains":["S02-B4"]},
+        {"id":"I7","text":"他越来越愿意亲近，热切一时难以收住，心意也更愿意显露。","key":"热切难以收住","follows":false,"sources":[2],"explains":["S02-B5"]},
+        {"id":"I8","text":"但他珍惜的也有安静相处的自在，所以心意显露后仍不急着索取答案。","key":"表露但不催答案","follows":false,"sources":[2],"explains":["S02-B5"]}
+      ],
+      "because": [
+        {"from":"I3","to":"I5","rel":"改写"}
+      ]
+    },
+    {
+      "sec": "S03",
+      "bars": "17–23",
+      "items": [
+        {"id":"I9","text":"相伴带来的安慰仍在，他还可以安静沉浸，不急着去往别处。","key":"仍可安静沉浸","follows":false,"sources":[1],"explains":["S03-B1"]},
+        {"id":"I10","text":"但正因为已经得到满足，他开始想让亲近延续，不再只要眼前这一刻。","key":"满足生出延续愿望","follows":true,"sources":[1],"explains":["S03-B1","S03-B2"]},
+        {"id":"I11","text":"一想到延续，愿望便碰上不能单凭自己的喜欢来决定的部分。","key":"延续非一人能定","follows":true,"sources":[1],"explains":["S03-B2"]},
+        {"id":"I12","text":"于是急切会短暂冒出来，却找不到可以落实的着落。","key":"急切无处落实","follows":true,"sources":[1],"explains":["S03-B2"]},
+        {"id":"I13","text":"他想回到单纯享受，又放不下已经生出的需要，舒服里便持续有阻力。","key":"享受与需要拉扯","follows":false,"sources":[1],"explains":["S03-B3"]}
+      ],
+      "because": [
+        {"from":"I5","to":"I9","rel":"提供理由"},
+        {"from":"I6","to":"I10","rel":"改写"},
+        {"from":"I2","to":"I11","rel":"限制"}
+      ]
+    },
+    {
+      "sec": "S04",
+      "bars": "24–34",
+      "items": [
+        {"id":"I14","text":"熟悉的亲近又让他舒服，但已经生出的延续愿望并没有随之消失。","key":"温柔带不走需要","follows":false,"sources":[1],"explains":["S04-B1"]},
+        {"id":"I15","text":"这一次亲近越充分，延续的需要越真切，他反而更难只安住眼前。","key":"亲近反使需要更真","follows":false,"sources":[1],"explains":["S04-B3"]},
+        {"id":"I16","text":"因此这次的欢喜不再只是满足，未获着落的需要也使它添了迫切与酸楚。","key":"欢喜添了酸楚","follows":true,"sources":[1],"explains":["S04-B4"]},
+        {"id":"I17","text":"即使投入得再充分，也不能因此让相伴的以后更有保证。","key":"投入不能保证长久","follows":false,"sources":[2],"explains":["S04-B2"]},
+        {"id":"I18","text":"越想靠此刻的好抓牢亲近，增加的只有自己的牵动，而非延续的把握。","key":"抓牢只增加牵动","follows":true,"sources":[2],"explains":["S04-B2"]},
+        {"id":"I19","text":"因此最明亮、最热切的时候，他仍会失衡、哽住，甚至退缩。","key":"明亮处也会哽住","follows":true,"sources":[2],"explains":["S04-B2"]}
+      ],
+      "because": [
+        {"from":"I10","to":"I14","rel":"提供理由"},
+        {"from":"I5","to":"I15","rel":"改写"},
+        {"from":"I11","to":"I16","rel":"限制"},
+        {"from":"I11","to":"I17","rel":"限制"},
+        {"from":"I7","to":"I17","rel":"限制","how":"此前热切使心意显露，但显露心意也不能让以后有保证。"}
+      ]
+    },
+    {
+      "sec": "S05",
+      "bars": "35–39",
+      "items": [
+        {"id":"I20","text":"刚才的热切曾让他整个人沉在相伴的充盈里。","key":"沉在相伴的充盈里","follows":false,"sources":[1],"explains":["S05-B1"]},
+        {"id":"I21","text":"一从那份充盈中露出来，他便独自面对延续仍无着落的需要。","key":"独自面对未落的需要","follows":false,"sources":[1],"explains":["S05-B1","S05-B2"]},
+        {"id":"I22","text":"现在仅靠眼前的好，已无法承托想要延续的需要，再加大热切也补不上。","key":"原来的安顿失效","follows":false,"sources":[1],"explains":["S05-B1","S05-B2"]},
+        {"id":"I23","text":"原来能托住他的方式失效，留下了需要独自承受的空落。","key":"独自承受空落","follows":true,"sources":[1],"explains":["S05-B2"]},
+        {"id":"I24","text":"强烈沉浸时的用力退了下来，身体终于可以缓一口气。","key":"用力退去可以缓气","follows":false,"sources":[2],"explains":["S05-B3"]},
+        {"id":"I25","text":"但想让亲近继续的牵挂没有解除，所以松动和孤单仍会同时存在。","key":"松动与孤单并存","follows":false,"sources":[2],"explains":["S05-B3"]}
+      ],
+      "because": [
+        {"from":"I19","to":"I20","rel":"唤起"},
+        {"from":"I10","to":"I21","rel":"提供理由"},
+        {"from":"I5","to":"I22","rel":"改写"},
+        {"from":"I18","to":"I22","rel":"提供理由"},
+        {"from":"I13","to":"I25","rel":"提供理由"}
+      ]
+    },
+    {
+      "sec": "S06",
+      "bars": "40–50",
+      "items": [
+        {"id":"I26","text":"失去的只是被眼前温柔包围的安稳，已经经历的美好仍留在心里。","key":"失去安稳未失美好","follows":false,"sources":[1],"explains":["S06-B1"]},
+        {"id":"I27","text":"眼前的亲近暂时不能像先前那样安慰他，留下的余温却仍能让他快乐。","key":"余温仍带来快乐","follows":false,"sources":[1],"explains":["S06-B1"]},
+        {"id":"I28","text":"他现在可以独自细细体会那份清澈的好，而不必有人在旁托住。","key":"独自体会温柔","follows":true,"sources":[1],"explains":["S06-B3"]},
+        {"id":"I29","text":"这种快乐成了他自己的感受，也带着别人无法完全陪同的孤单。","key":"自有快乐也孤单","follows":true,"sources":[1],"explains":["S06-B3"]},
+        {"id":"I30","text":"热切不再填满他时，他反而更清楚温柔如何留在自己身上。","key":"退热后更觉余温","follows":false,"sources":[2],"explains":["S06-B2"]},
+        {"id":"I31","text":"余温能独自享受，不代表他不再想亲近对方，安静里仍有拉扯。","key":"安静里仍想亲近","follows":false,"sources":[2],"explains":["S06-B2"]}
+      ],
+      "because": [
+        {"from":"I23","to":"I26","rel":"改写"},
+        {"from":"I5","to":"I27","rel":"改写"},
+        {"from":"I23","to":"I29","rel":"改写"},
+        {"from":"I24","to":"I30","rel":"提供理由"},
+        {"from":"I25","to":"I31","rel":"提供理由"}
+      ]
+    },
+    {
+      "sec": "S07",
+      "bars": "51–61",
+      "items": [
+        {"id":"I32","text":"独自感到的温柔并没使他远离对方，快乐反而让相伴的满足更鲜明。","key":"回味使相伴更鲜明","follows":false,"sources":[1],"explains":["S07-B1"]},
+        {"id":"I33","text":"身体越记得那份满足，再次靠近对方的愿望就越直接。","key":"身体记得想靠近","follows":true,"sources":[1],"explains":["S07-B1"]},
+        {"id":"I34","text":"先前可以安静回味的温柔，如今变成舍不得抽身的热度。","key":"回味变成热度","follows":true,"sources":[1],"explains":["S07-B2"]},
+        {"id":"I35","text":"沉浸本身也有快感，使他难以只停留在独自回味里。","key":"沉浸本身有快感","follows":false,"sources":[1],"explains":["S07-B2"]},
+        {"id":"I36","text":"他既知道相伴能让人安稳，也体验过独自回味仍能快乐。","key":"相伴独处均可快乐","follows":false,"sources":[2],"explains":["S07-B3"]},
+        {"id":"I37","text":"可无论哪一种快乐，都留不住眼前时间；美好还在，他已舍不得它过去。","key":"快乐留不住时间","follows":false,"sources":[2],"explains":["S07-B3"]}
+      ],
+      "because": [
+        {"from":"I27","to":"I32","rel":"提供理由"},
+        {"from":"I5","to":"I33","rel":"唤起"},
+        {"from":"I30","to":"I33","rel":"提供理由"},
+        {"from":"I28","to":"I34","rel":"改写"},
+        {"from":"I29","to":"I36","rel":"提供理由"},
+        {"from":"I6","to":"I37","rel":"唤起"}
+      ]
+    },
+    {
+      "sec": "S08",
+      "bars": "62–71",
+      "items": [
+        {"id":"I38","text":"除了相伴，他也真切尝到：心里还能喜欢、身体还能快乐，本身就是幸福。","key":"喜欢本身有幸福","follows":false,"sources":[1],"explains":["S08-B1"]},
+        {"id":"I39","text":"因此这时的舒畅不必等到以后的关系有保证，才算真的成立。","key":"快乐无需以后保证","follows":true,"sources":[1],"explains":["S08-B1"]},
+        {"id":"I40","text":"鲜活地喜欢、被生活触动就足以让他高兴，急切也变得轻盈有玩心。","key":"急切添了轻盈玩心","follows":true,"sources":[1],"explains":["S08-B2"]},
+        {"id":"I41","text":"这份轻快不是全无牵挂的无忧，而是仍带着已经生出的不舍。","key":"轻快并非无牵挂","follows":false,"sources":[2],"explains":["S08-B3"]},
+        {"id":"I42","text":"他经历过热切退下而余温仍在，所以快乐还未散尽就知道自己会想念此刻。","key":"余温经验带来预先想念","follows":false,"sources":[2],"explains":["S08-B3"]},
+        {"id":"I43","text":"正在享受与已经不舍可以同时发生，不必等欢喜过去才开始想念。","key":"享受与不舍同在","follows":true,"sources":[2],"explains":["S08-B3"]}
+      ],
+      "because": [
+        {"from":"I28","to":"I38","rel":"提供理由"},
+        {"from":"I35","to":"I38","rel":"提供理由"},
+        {"from":"I3","to":"I39","rel":"改写"},
+        {"from":"I37","to":"I41","rel":"提供理由"},
+        {"from":"I30","to":"I42","rel":"唤起"},
+        {"from":"I27","to":"I42","rel":"提供理由"}
+      ]
+    },
+    {
+      "sec": "S09",
+      "bars": "72–77",
+      "items": [
+        {"id":"I44","text":"刚才的快乐让他暂时不必等待保证，如今热度未退，却仍没有确定的以后。","key":"快乐后仍无确定结果","follows":false,"sources":[1],"explains":["S09-B1"]},
+        {"id":"I45","text":"他还想继续，但刚才的尽兴不能替下一刻给出答案，喜悦也没有因此变假。","key":"尽兴不能回答下一刻","follows":false,"sources":[1],"explains":["S09-B2"]},
+        {"id":"I46","text":"往前的冲动因此凝住，注意反而更集中，心里仍有未落定的余响。","key":"冲动凝住余响未定","follows":true,"sources":[1],"explains":["S09-B3"]},
+        {"id":"I47","text":"独自体会温柔与后来尽兴的经历，表明值得珍惜的不只是得了多少亲近。","key":"珍惜不只亲近多少","follows":false,"sources":[2],"explains":["S09-B4"]},
+        {"id":"I48","text":"那个人的存在、共同度过的时刻和仍能感到的快乐，都不因疑问未解而失去价值。","key":"人和经历自有价值","follows":false,"sources":[2],"explains":["S09-B4"]},
+        {"id":"I49","text":"渴望仍悬着，却暂时不再占满他全部的心思。","key":"渴望暂不占满心思","follows":true,"sources":[2],"explains":["S09-B4"]}
+      ],
+      "because": [
+        {"from":"I39","to":"I44","rel":"改写"},
+        {"from":"I2","to":"I44","rel":"限制"},
+        {"from":"I37","to":"I45","rel":"限制"},
+        {"from":"I28","to":"I47","rel":"提供理由"},
+        {"from":"I40","to":"I47","rel":"提供理由"},
+        {"from":"I43","to":"I45","rel":"唤起"}
+      ]
+    },
+    {
+      "sec": "S10",
+      "bars": "78–83",
+      "items": [
+        {"id":"I50","text":"亲近的以后仍没有答案，但相伴、想念与快乐都已经真实经历过。","key":"以后未定美好已真","follows":false,"sources":[1],"explains":["S10-B1"]},
+        {"id":"I51","text":"刚才的安静没有抹去美好，反使它们不必只绕着未定的结果打转。","key":"不再只围着答案打转","follows":false,"sources":[1],"explains":["S10-B1","S10-B3"]},
+        {"id":"I52","text":"已有的美好本身仍能触动他，热切便不必始终绷成索求。","key":"美好不必绷成索求","follows":true,"sources":[1],"explains":["S10-B3"]},
+        {"id":"I53","text":"身体也跟着松开，减轻的是非得先有保证才敢安心感受的负担。","key":"松开求保证的负担","follows":true,"sources":[1],"explains":["S10-B4"]},
+        {"id":"I54","text":"这不代表他的在乎变少，也不代表亲近的以后已有答案。","key":"轻松不减在乎","follows":false,"sources":[1],"explains":["S10-B4"]}
+      ],
+      "because": [
+        {"from":"I48","to":"I51","rel":"提供理由"},
+        {"from":"I49","to":"I51","rel":"提供理由"},
+        {"from":"I38","to":"I52","rel":"提供理由"},
+        {"from":"I3","to":"I53","rel":"改写"},
+        {"from":"I39","to":"I53","rel":"提供理由"}
+      ]
+    },
+    {
+      "sec": "S11",
+      "bars": "84–92",
+      "items": [
+        {"id":"I55","text":"熟悉的亲近再次真切起来，而失去直接安慰的空落也是他经历过的。","key":"带着空落再遇温柔","follows":false,"sources":[1],"explains":["S11-B1"]},
+        {"id":"I56","text":"他也体验过独自仍能快乐，所以温柔不必再独自负责保证全部幸福。","key":"幸福不再只靠一种安慰","follows":false,"sources":[1],"explains":["S11-B1"]},
+        {"id":"I57","text":"少了这份重担，他反而可以更充分地投入眼前的亲近。","key":"投入更充分","follows":true,"sources":[1],"explains":["S11-B2"]},
+        {"id":"I58","text":"但这些经历也使温柔带着不舍与心疼，浓烈得几乎难以容下。","key":"浓烈含着心疼不舍","follows":false,"sources":[1],"explains":["S11-B3"]},
+        {"id":"I59","text":"无需先得到长久的保证，也能充分感受深情；这份感受本身已有价值。","key":"深情本身已有价值","follows":false,"sources":[2],"explains":["S11-B4"]},
+        {"id":"I60","text":"此前因无法保证以后而哽住的部分热切，在这里得到释放，但以后仍无答案。","key":"受阻热切部分释放","follows":true,"sources":[2],"explains":["S11-B4"]}
+      ],
+      "because": [
+        {"from":"I23","to":"I55","rel":"唤起"},
+        {"from":"I28","to":"I56","rel":"提供理由"},
+        {"from":"I53","to":"I57","rel":"提供理由"},
+        {"from":"I16","to":"I58","rel":"唤起"},
+        {"from":"I39","to":"I59","rel":"提供理由"},
+        {"from":"I19","to":"I60","rel":"改写"}
+      ]
+    },
+    {
+      "sec": "S12",
+      "bars": "93–102",
+      "items": [
+        {"id":"I61","text":"最初相伴带来的安稳，与后来独自仍能感到的快乐，如今一同融进亲近。","key":"两种幸福一同来到","follows":false,"sources":[1],"explains":["S12-B1"]},
+        {"id":"I62","text":"亲近不只用来让他安心，独自的快乐也不再只是留在心里的余温。","key":"两种快乐不再各自局限","follows":true,"sources":[1],"explains":["S12-B1"]},
+        {"id":"I63","text":"对方本身、共同度过的时间和自己鲜活的喜欢，都有不能被结果替代的分量。","key":"人时间和喜欢有分量","follows":false,"sources":[1],"explains":["S12-B2"]},
+        {"id":"I64","text":"这份好超过原先索求的答案，他的心思不再计较得了多少，只被丰盛吸引。","key":"丰盛超过所求答案","follows":true,"sources":[1],"explains":["S12-B2"]},
+        {"id":"I65","text":"但能在此刻尽情体会，不等于以后确定；想延续相伴的期待还在。","key":"充分感受并非以后已定","follows":false,"sources":[2],"explains":["S12-B3"]},
+        {"id":"I66","text":"眼前越丰盛就越难轻轻放开，欢喜因此仍带着恳求与牵扯。","key":"丰盛越多越难放","follows":true,"sources":[2],"explains":["S12-B3"]},
+        {"id":"I67","text":"直到这份情感真正充分展开，原来悬着的力量才得到释放。","key":"充分展开后悬力释放","follows":false,"sources":[2],"explains":["S12-B3"]},
+        {"id":"I68","text":"得到的是此刻确实经历过的幸福，并不是从此再也没有不舍。","key":"得到当下而非不舍消失","follows":false,"sources":[2],"explains":["S12-B3"]}
+      ],
+      "because": [
+        {"from":"I5","to":"I61","rel":"唤起"},
+        {"from":"I28","to":"I61","rel":"唤起"},
+        {"from":"I59","to":"I62","rel":"提供理由"},
+        {"from":"I48","to":"I63","rel":"提供理由"},
+        {"from":"I49","to":"I64","rel":"提供理由"},
+        {"from":"I11","to":"I65","rel":"限制"},
+        {"from":"I10","to":"I65","rel":"唤起"},
+        {"from":"I16","to":"I66","rel":"唤起"},
+        {"from":"I60","to":"I67","rel":"改写"}
+      ]
+    },
+    {
+      "sec": "S13",
+      "bars": "103–110",
+      "items": [
+        {"id":"I69","text":"刚才充分经历的幸福是真的，长久积起的依恋却不会随满足一起平息。","key":"满足后依恋未平","follows":false,"sources":[1],"explains":["S13-B1"]},
+        {"id":"I70","text":"曾能独自回味的温柔，如今与眼前充沛的亲近一起涌来。","key":"余温与亲近一同涌来","follows":false,"sources":[1],"explains":["S13-B1","S13-B3"]},
+        {"id":"I71","text":"身体仍被这些分量牵动，越觉得确实得到了，越舍不得它就此过去。","key":"真实抵达更难放","follows":true,"sources":[1],"explains":["S13-B3"]},
+        {"id":"I72","text":"因此即使刚才已经释放过，他仍有一股停不住、想继续向前的冲动。","key":"释放后仍向前","follows":true,"sources":[1],"explains":["S13-B3"]},
+        {"id":"I73","text":"亲近与深情越真切，就越显出它们不能替时间和对方决定以后。","key":"真切不能决定以后","follows":false,"sources":[2],"explains":["S13-B2"]},
+        {"id":"I74","text":"悲伤正从已经得到的幸福里生出，并没有让那份幸福变假。","key":"幸福内部生出悲伤","follows":true,"sources":[2],"explains":["S13-B4"]},
+        {"id":"I75","text":"充分感受的满足还在，不能留住这一刻的酸楚也在，两者都无法轻轻带过。","key":"满足酸楚相容","follows":false,"sources":[2],"explains":["S13-B2","S13-B4"]}
+      ],
+      "because": [
+        {"from":"I68","to":"I69","rel":"提供理由"},
+        {"from":"I28","to":"I70","rel":"唤起"},
+        {"from":"I61","to":"I70","rel":"提供理由"},
+        {"from":"I67","to":"I72","rel":"改写"},
+        {"from":"I37","to":"I73","rel":"提供理由"},
+        {"from":"I2","to":"I73","rel":"限制"},
+        {"from":"I68","to":"I74","rel":"提供理由"}
+      ]
+    },
+    {
+      "sec": "S14",
+      "bars": "111–116",
+      "items": [
+        {"id":"I76","text":"身体渐渐平静，不会使刚才充分得到的幸福变得不真实。","key":"平静不抹去幸福","follows":false,"sources":[1],"explains":["S14-B2"]},
+        {"id":"I77","text":"已经经历的亲近和独自感到的快乐，也不必靠一直激动才有分量。","key":"美好不靠持续激动","follows":false,"sources":[1],"explains":["S14-B2"]},
+        {"id":"I78","text":"长久积起的力量终于能退下，温暖和回望仍在，不再只有停不住的冲动。","key":"冲动能退温暖仍在","follows":true,"sources":[1],"explains":["S14-B3"]},
+        {"id":"I79","text":"开头还只是没有把握的期待，现在亲近的满足已经真切发生过。","key":"从悬望到真实相伴","follows":false,"sources":[2],"explains":["S14-B1"]},
+        {"id":"I80","text":"即使没有直接安慰，他也经历过喜欢仍留在心里、仍能独自快乐。","key":"独自仍有喜欢的证据","follows":false,"sources":[2],"explains":["S14-B1"]},
+        {"id":"I81","text":"以后依旧无法保证，但这一切已不是尚待实现的可能。","key":"以后未知但美好已真","follows":true,"sources":[2],"explains":["S14-B4"]},
+        {"id":"I82","text":"因此这一刻可以明确结束，不必把结束拖成期待，也不必靠永久保证证明真实。","key":"可以明确结束此刻","follows":true,"sources":[2],"explains":["S14-B4"]}
+      ],
+      "because": [
+        {"from":"I68","to":"I76","rel":"提供理由"},
+        {"from":"I28","to":"I77","rel":"提供理由"},
+        {"from":"I72","to":"I78","rel":"改写"},
+        {"from":"I3","to":"I79","rel":"改写"},
+        {"from":"I5","to":"I79","rel":"提供理由"},
+        {"from":"I28","to":"I80","rel":"唤起"},
+        {"from":"I2","to":"I81","rel":"限制"},
+        {"from":"I68","to":"I81","rel":"提供理由"},
+        {"from":"I53","to":"I82","rel":"提供理由"}
+      ]
+    }
+  ]
+}
+</CodeBlock>

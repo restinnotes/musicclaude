@@ -1,0 +1,87 @@
+{
+  "tag": "r35mrg",
+  "base": "qurefs",
+  "blind": {
+    "status": "pass",
+    "planned": 4,
+    "complete": 4,
+    "wins": 3,
+    "no_regress": 1,
+    "net_sums": {
+      "alone": 18,
+      "lean": 36,
+      "plain": 34,
+      "cover": -2
+    },
+    "missing": [],
+    "invalid": [],
+    "remaining_segment_upper_bound": 0,
+    "reasons": [],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_r35mrg_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -6,
+          "lean": 7,
+          "plain": 8,
+          "cover": -9
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_r35mrg_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 11,
+          "lean": 11,
+          "plain": 10,
+          "cover": 2
+        }
+      },
+      {
+        "rid": "v6b2_op60_g56_r35mrg_vsqurefs",
+        "w": "op60",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 2,
+          "lean": 6,
+          "plain": 6,
+          "cover": -3
+        }
+      },
+      {
+        "rid": "v6b2_op61_g6_r35mrg_vsqurefs",
+        "w": "op61",
+        "j": "g6",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 11,
+          "lean": 12,
+          "plain": 10,
+          "cover": 8
+        }
+      }
+    ]
+  },
+  "status": "quick_pass",
+  "coverage": {
+    "status": "pass",
+    "failures": [],
+    "missing": []
+  },
+  "alone": {
+    "status": "pass",
+    "failures": [],
+    "missing": []
+  },
+  "next": "complete_pipeline_then_acceptance"
+}

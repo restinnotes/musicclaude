@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\_dl_latest_zip_work\scripts\run_repeated_trials.py", line 132, in <module>
+    if __name__=='__main__':sys.exit(main())
+                                     ^^^^^^
+  File "D:\musicclaude\_dl_latest_zip_work\scripts\run_repeated_trials.py", line 86, in main
+    if actual!=job['prompt_hash']:raise RuntimeError('Immutable prompt hash mismatch: '+job['id'])
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Immutable prompt hash mismatch: D_k02_r01_gengpt6w_judgegpt56w_AB

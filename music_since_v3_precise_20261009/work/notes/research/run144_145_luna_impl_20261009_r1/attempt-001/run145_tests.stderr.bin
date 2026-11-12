@@ -1,0 +1,246 @@
+test_import_has_no_environment_file_cli_or_write_side_effects (__main__.ImportSideEffectsTests.test_import_has_no_environment_file_cli_or_write_side_effects) ... ok
+test_ambiguous_success_sources_from_two_runs_are_rejected (__main__.Run145ThreadResumeTests.test_ambiguous_success_sources_from_two_runs_are_rejected) ... ok
+test_duplicate_success_in_same_slot_is_ambiguous (__main__.Run145ThreadResumeTests.test_duplicate_success_in_same_slot_is_ambiguous) ... ok
+test_explains_indices_reject_bool_float_string_nested_duplicate_and_range_errors (__main__.Run145ThreadResumeTests.test_explains_indices_reject_bool_float_string_nested_duplicate_and_range_errors) ... ERROR
+test_full_identity_tamper_is_rejected (__main__.Run145ThreadResumeTests.test_full_identity_tamper_is_rejected) ... ERROR
+test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit (__main__.Run145ThreadResumeTests.test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit) ... ERROR
+test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete (__main__.Run145ThreadResumeTests.test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete) ... ERROR
+test_legacy_unknown_producer_is_preserved_without_fabrication (__main__.Run145ThreadResumeTests.test_legacy_unknown_producer_is_preserved_without_fabrication) ... ok
+test_missing_artifact_is_not_reused (__main__.Run145ThreadResumeTests.test_missing_artifact_is_not_reused) ... ok
+test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot (__main__.Run145ThreadResumeTests.test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot) ... ERROR
+test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt (__main__.Run145ThreadResumeTests.test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt) ... FAIL
+test_musepack_tampering_and_file_read_reference_are_rejected (__main__.Run145ThreadResumeTests.test_musepack_tampering_and_file_read_reference_are_rejected) ... FAIL
+test_no_longer_valid_requires_an_exact_source_match (__main__.Run145ThreadResumeTests.test_no_longer_valid_requires_an_exact_source_match) ... ok
+test_no_longer_valid_without_match_evidence_blocks_history (__main__.Run145ThreadResumeTests.test_no_longer_valid_without_match_evidence_blocks_history) ... ok
+test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart (__main__.Run145ThreadResumeTests.test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart) ... ERROR
+test_prompt_tamper_is_rejected (__main__.Run145ThreadResumeTests.test_prompt_tamper_is_rejected) ... ERROR
+test_queue_stop_stops_current_remaining_jobs_and_all_later_stages (__main__.Run145ThreadResumeTests.test_queue_stop_stops_current_remaining_jobs_and_all_later_stages) ... ok
+test_real_preflight_only_checks_presence_and_direct_real_entry_writes_nothing (__main__.Run145ThreadResumeTests.test_real_preflight_only_checks_presence_and_direct_real_entry_writes_nothing) ... ok
+test_response_and_metadata_parsing_reject_prefix_trailer_duplicates_and_nonfinite (__main__.Run145ThreadResumeTests.test_response_and_metadata_parsing_reject_prefix_trailer_duplicates_and_nonfinite) ... ERROR
+test_second_completed_parse_failure_keeps_new_sample_reason_and_no_third_sample (__main__.Run145ThreadResumeTests.test_second_completed_parse_failure_keeps_new_sample_reason_and_no_third_sample) ... ERROR
+test_strict_preflight_is_pending_without_v4_acceptance_and_writes_nothing (__main__.Run145ThreadResumeTests.test_strict_preflight_is_pending_without_v4_acceptance_and_writes_nothing) ... ok
+test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match (__main__.Run145ThreadResumeTests.test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match) ... ok
+test_tampered_output_sha_is_rejected (__main__.Run145ThreadResumeTests.test_tampered_output_sha_is_rejected) ... ERROR
+test_thread_compare_uses_frozen_schema_and_candidate_specific_exact_quotes (__main__.Run145ThreadResumeTests.test_thread_compare_uses_frozen_schema_and_candidate_specific_exact_quotes) ... ok
+test_v2_v3_are_bound_to_one_q3_single_line_change_only (__main__.Run145ThreadResumeTests.test_v2_v3_are_bound_to_one_q3_single_line_change_only) ... FAIL
+
+======================================================================
+ERROR: test_explains_indices_reject_bool_float_string_nested_duplicate_and_range_errors (__main__.Run145ThreadResumeTests.test_explains_indices_reject_bool_float_string_nested_duplicate_and_range_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 97, in test_explains_indices_reject_bool_float_string_nested_duplicate_and_range_errors
+    parsed, error = GO["parse_mech"](json.dumps(valid), 2)
+                    ~~^^^^^^^^^^^^^^
+KeyError: 'parse_mech'
+
+======================================================================
+ERROR: test_full_identity_tamper_is_rejected (__main__.Run145ThreadResumeTests.test_full_identity_tamper_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 255, in test_full_identity_tamper_is_rejected
+    slot, prompt, fingerprint, _ = self._mock_artifact(folder)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit (__main__.Run145ThreadResumeTests.test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 110, in test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit
+    report = GO["run_mock"](self.root, Path(temp) / "mock-evidence")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 1455, in run_mock
+    chains[chain_id], centers[chain_id] = _build_mock_chain(
+                                          ^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 980, in _build_mock_chain
+    match_proof = execute_mock_task(evidence_dir, match_task, fingerprint, hashes,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 769, in execute_mock_task
+    _mock_response({**dict(task), "sample_attempt": next_attempt}))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 615, in _mock_response
+    inventory = binding["inventory_before"]
+                ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'inventory_before'
+
+======================================================================
+ERROR: test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete (__main__.Run145ThreadResumeTests.test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 599, in test_integrated_match_evidence_binds_step_inventory_quote_and_none_does_not_delete
+    binding, match_slot, proof = run_match("v2_gpt56w_match")
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 593, in run_match
+    return binding, match_slot, GO["execute_mock_task"](
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 768, in execute_mock_task
+    raw = (response_factory(task, next_attempt) if callable(response_factory) else
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 597, in <lambda>
+    if chain.endswith("none") else GO["_mock_response"](task)))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 615, in _mock_response
+    inventory = binding["inventory_before"]
+                ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'inventory_before'
+
+======================================================================
+ERROR: test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot (__main__.Run145ThreadResumeTests.test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 472, in test_mode_request_and_full_mock_producer_tuple_are_bound_to_slot
+    slot, prompt, fingerprint, proof = self._mock_artifact(folder)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart (__main__.Run145ThreadResumeTests.test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 159, in test_parse_failure_raw_is_durable_default_stop_and_explicit_sample_survives_restart
+    slot, prompt, fingerprint, _ = self._mock_artifact(Path(temp) / "fixture")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_prompt_tamper_is_rejected (__main__.Run145ThreadResumeTests.test_prompt_tamper_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 246, in test_prompt_tamper_is_rejected
+    slot, prompt, fingerprint, _ = self._mock_artifact(folder)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_response_and_metadata_parsing_reject_prefix_trailer_duplicates_and_nonfinite (__main__.Run145ThreadResumeTests.test_response_and_metadata_parsing_reject_prefix_trailer_duplicates_and_nonfinite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 463, in test_response_and_metadata_parsing_reject_prefix_trailer_duplicates_and_nonfinite
+    slot, prompt, fingerprint, _ = self._mock_artifact(folder)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_second_completed_parse_failure_keeps_new_sample_reason_and_no_third_sample (__main__.Run145ThreadResumeTests.test_second_completed_parse_failure_keeps_new_sample_reason_and_no_third_sample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 209, in test_second_completed_parse_failure_keeps_new_sample_reason_and_no_third_sample
+    slot, prompt, fingerprint, _ = self._mock_artifact(Path(temp) / "fixture")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_tampered_output_sha_is_rejected (__main__.Run145ThreadResumeTests.test_tampered_output_sha_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 237, in test_tampered_output_sha_is_rejected
+    slot, prompt, fingerprint, _ = self._mock_artifact(folder)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 141, in _mock_artifact
+    proof = GO["_create_mock_artifact"](folder, task, fingerprint, raw)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 700, in _create_mock_artifact
+    return verify_disk_evidence(evidence_dir, slot, task["prompt"], fingerprint,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\runs\run145_thread_resume_r5\go.py", line 588, in verify_disk_evidence
+    parse_task = {"match_binding": meta.get("lineage", {}).get("match_binding")}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+FAIL: test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt (__main__.Run145ThreadResumeTests.test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt)
+----------------------------------------------------------------------
+_run145_thread_resume_r5_test.IntegrityError: trusted archive receipt fields are incomplete or unexpected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 389, in test_muse_raw_return_is_unverified_and_sourcebound_entry_needs_exact_receipt
+    with self.assertRaisesRegex(GO["IntegrityError"], "exact field set"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "exact field set" does not match "trusted archive receipt fields are incomplete or unexpected"
+
+======================================================================
+FAIL: test_musepack_tampering_and_file_read_reference_are_rejected (__main__.Run145ThreadResumeTests.test_musepack_tampering_and_file_read_reference_are_rejected)
+----------------------------------------------------------------------
+_run145_thread_resume_r5_test.IntegrityError: Musepack schema/no-file-read policy invalid
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 299, in test_musepack_tampering_and_file_read_reference_are_rejected
+    with self.assertRaisesRegex(GO["IntegrityError"], "read files"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "read files" does not match "Musepack schema/no-file-read policy invalid"
+
+======================================================================
+FAIL: test_v2_v3_are_bound_to_one_q3_single_line_change_only (__main__.Run145ThreadResumeTests.test_v2_v3_are_bound_to_one_q3_single_line_change_only)
+----------------------------------------------------------------------
+_run145_thread_resume_r5_test.IntegrityError: v2/v3 must have exactly one prompt diff
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_run145_thread_resume_r5.py", line 87, in test_v2_v3_are_bound_to_one_q3_single_line_change_only
+    with self.assertRaisesRegex(GO["IntegrityError"], "question 3"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "question 3" does not match "v2/v3 must have exactly one prompt diff"
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.584s
+
+FAILED (failures=3, errors=10)

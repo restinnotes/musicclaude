@@ -1,0 +1,176 @@
+{
+  "run_id": "20261008T012329.482476Z-a6e2297a",
+  "timestamp": "2026-10-08T01:23:29.482476+00:00",
+  "command": "check",
+  "profile": "yi",
+  "probe": null,
+  "prompt": "Reply with exactly TEST_OK. No other text.",
+  "prompt_sha256": "cf4962f651ef6b8f38225f175cb6b3ed712224ced56dc4111b9173aa2ee0c314",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": true,
+  "response": "TEST_OK",
+  "http_status": 200,
+  "actual_model": "gpt-5.6-sol",
+  "actual_reasoning_effort": "xhigh",
+  "diagnostics": {
+    "preparation_started_at": 1791422615.9304097,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791422628.4096239
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791422628.5829551
+    },
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "5.6 Extra High",
+      "selected_effort": "xhigh",
+      "fallback_reason": null,
+      "verified_at": 1791422628.3799543,
+      "verification": "live_slider_and_closed_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "Extra High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 130135865098896,
+      "process_uid": 1000,
+      "process_pid": 1805,
+      "is_conversation": false
+    },
+    "verification_stage": "immediately_before_submission",
+    "browser_environment_observation": "skipped_before_submission",
+    "native_hint_experiment": {
+      "mode": "baseline",
+      "actual_native_metadata": null,
+      "supplied_header_names": [],
+      "supplied_headers": {},
+      "original_native_low_entropy_headers_overridden": false,
+      "request_body_edited": false,
+      "opaque_instance_id_injected": false,
+      "applied_by_owning_driver": true
+    },
+    "authentication": {
+      "session_cookie_count": 1,
+      "expiries": [
+        1799198613.812974
+      ],
+      "device_cookie_present": true,
+      "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+      "site_cookie_count": 100,
+      "root_cookie_count": 97,
+      "cookie_header_bytes_estimate": 14781,
+      "temporary_cookie_count": 61
+    },
+    "storage_capacity": {
+      "cookie_count": 100,
+      "removed": 0
+    },
+    "submission_pacing": {
+      "minimum_interval_seconds": 5.0,
+      "waited_seconds": 0.0,
+      "send_attempt_at": 1791422628.612486,
+      "previous_attempt_gap_seconds": null
+    },
+    "prompt_content_verified": true,
+    "submitted_at": 1791422628.8991416,
+    "response_timeout_ms": 1800000,
+    "response_validation": {
+      "nonempty": true,
+      "transient_text": false,
+      "generation_active": false,
+      "response_characters": 7
+    },
+    "screenshot_evidence": {
+      "directory": "/app/state/probe-artifacts/b0d37d63eaeb4e00b517dde8be4c9b56",
+      "stage": "response",
+      "request_id": "b0d37d63eaeb4e00b517dde8be4c9b56",
+      "captured_at": 1791422632.7636335,
+      "source": "live browser page owned by this standard request",
+      "files": [
+        {
+          "filename": "response-viewport.jpg",
+          "sha256": "73b1e06760fd399e12ae5df5237de6289aef5eafe16646ca845d9911550cd4c7"
+        },
+        {
+          "filename": "response-full.jpg",
+          "sha256": "73b1e06760fd399e12ae5df5237de6289aef5eafe16646ca845d9911550cd4c7"
+        }
+      ],
+      "conclusion_scrolled_into_view": false,
+      "conclusion_scroll_error_class": "TimeoutError",
+      "thinking_time_ui_labels": [],
+      "success": true,
+      "capture_seconds": 5.107
+    },
+    "prompt_submitted": true,
+    "response_complete": true,
+    "elapsed_seconds": 25.02,
+    "thread_id": "6ac6f09e-f5c8-83e8-a51b-1945dc3ee24e",
+    "conversation_restore": false,
+    "request_id": "b0d37d63eaeb4e00b517dde8be4c9b56",
+    "worker_page_id": 130135865098896,
+    "queue_seconds": 3.079,
+    "completed_at": 1791422632.7635593,
+    "concurrency": {
+      "max_concurrency": 8,
+      "in_flight": 1,
+      "available": 7,
+      "waiting": 0,
+      "max_active_tabs": 8,
+      "worker_tabs": 1,
+      "max_idle_worker_tabs": 2,
+      "max_queue": 16,
+      "queue_timeout_seconds": 240
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "error": null,
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "completion_id": "chatcmpl-e80a8122b7f2438bbf494926",
+  "transport_success": true,
+  "elapsed_seconds": 28.5
+}

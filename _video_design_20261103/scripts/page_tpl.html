@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__ · 全文</title>
+<style>
+:root{color-scheme:dark;--bg:#0c0e16;--ink:#f1efe9;--dim:#a9a8ac;--bead:#c9c3b6;--gold:#ffc45c;--line:#262a38}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.85 "Noto Serif SC","Songti SC","SimSun",serif}
+header{position:sticky;top:0;z-index:5;background:rgba(12,14,22,.96);border-bottom:1px solid var(--line);padding:10px 20px}
+header .row{max-width:860px;margin:auto;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+h1{font-size:18px;margin:0;font-weight:500}
+audio{flex:1;min-width:260px;height:36px}
+label{font-size:14px;color:var(--dim);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;white-space:nowrap}
+main{max-width:860px;margin:auto;padding:24px 20px 200px}
+.lead{color:var(--dim);font-size:15px;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;margin:0 0 28px}
+section{padding:18px 0 12px 18px;border-left:2px solid transparent;margin-bottom:12px;transition:border-color .3s;scroll-margin-top:70px}
+section.on{border-left-color:var(--gold)}
+h2{font:13px/1.6 "Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--dim);margin:0 0 10px;letter-spacing:.04em}
+.line{font-size:21px;margin:14px 0 8px;cursor:pointer;font-weight:500}
+.bead{color:var(--bead);font-size:16.5px;margin:6px 0 12px;padding-left:16px;border-left:1px solid var(--line);cursor:pointer}
+.bead .tag{display:inline-block;font:12px/1 "Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--dim);margin-right:8px}
+.bead .alt{color:#8fc4f2}
+.line:hover,.bead:hover,.line:focus,.bead:focus{color:#fff;outline:none}
+@media (max-width:600px){body{font-size:17px}.line{font-size:19px}.bead{font-size:15.5px}}
+</style></head><body>
+<header><div class="row"><h1>__TITLE__</h1><audio id="a" controls preload="metadata" src="__AUDIO__"></audio>
+<label><input type="checkbox" id="f" checked> 跟随音乐</label></div></header>
+<main>
+<p class="lead">钢琴：__PLAYER__。正文是一个人在这首曲子里经历的一件事（线），缩进的是听感记录（珠子）。点任意一句，音乐跳到那里。</p>
+<div id="c"></div>
+</main>
+<script>
+const D=__DATA__;
+const c=document.getElementById('c'),a=document.getElementById('a'),f=document.getElementById('f');
+function el(t,k,x){const e=document.createElement(t);if(k)e.className=k;if(x!=null)e.textContent=x;return e}
+const secs=[];
+D.forEach(s=>{
+  const sec=el('section');secs.push(sec);
+  sec.appendChild(el('h2',null,'第 '+s.bars+' 小节　·　'+s.rel));
+  s.rows.forEach(r=>{
+    const p=el('p',r.k);p.tabIndex=0;
+    if(r.k==='bead'){
+      p.appendChild(el('span','tag'+(r.alt?' alt':''),(r.alt?'另一种听法 · ':'')+r.bars));
+      p.appendChild(document.createTextNode(r.text));
+    }else{p.textContent=r.text}
+    const go=()=>{a.currentTime=r.t;a.play()};
+    p.addEventListener('click',go);
+    p.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
+    sec.appendChild(p);
+  });
+  c.appendChild(sec);
+});
+let cur=-1;
+a.addEventListener('timeupdate',()=>{
+  const t=a.currentTime;let n=-1;
+  D.forEach((s,i)=>{if(t>=s.t0)n=i});
+  if(n!==cur){
+    if(cur>=0)secs[cur].classList.remove('on');
+    cur=n;
+    if(cur>=0){secs[cur].classList.add('on');if(f.checked&&!a.paused)secs[cur].scrollIntoView({behavior:'smooth',block:'start'})}
+  }
+});
+</script></body></html>

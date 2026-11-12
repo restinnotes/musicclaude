@@ -1,0 +1,66 @@
+{
+  "frozen_at": "2026-11-03T21:42:57.153281-05:00",
+  "tag": "r54sample",
+  "checkpoint_base": "qu",
+  "actual_final_mainline": "r54weave",
+  "status": "missing_same_position_checkpoint_not_a_new_production_or_favorable_reask",
+  "finding": "Historical selected output is bare Q15 A4 plus verbatim selection, but its original quick4 compared against post-N05e r50progress1rr. That is a valid direct final-body loss, not evidence that the A4 sampling mechanism failed at its same-position checkpoint.",
+  "old_comparison": {
+    "path": "runs/_batches/round54_broader/r54sample_disposition.json",
+    "sha256": "e1d0a20145b74cde5c4f942f515ea07cc2be12e6a506ca41a24a7eb58b32bddd",
+    "preserve_all_original_votes": true
+  },
+  "input_proofs": [
+    {
+      "rid": "scr54sample_op60_P1",
+      "full_input_sha256": "05a115b53f51731d56c8116bec898c9bbf005349091fda1b58abb4192617923a",
+      "body_sha256": "05a115b53f51731d56c8116bec898c9bbf005349091fda1b58abb4192617923a",
+      "mode": "message_body"
+    },
+    {
+      "rid": "scr54sample_op60_P2",
+      "full_input_sha256": "05a115b53f51731d56c8116bec898c9bbf005349091fda1b58abb4192617923a",
+      "body_sha256": "05a115b53f51731d56c8116bec898c9bbf005349091fda1b58abb4192617923a",
+      "mode": "message_body"
+    },
+    {
+      "rid": "scr54sample_op60_P3",
+      "full_input_sha256": "e8398894662a5d99928026f59958d0d86fc9dd9bbc405406c3241d3fa11ca383",
+      "body_sha256": "94d4e254cf10513d17a12bc15dd7134abbf7cd0baf6f7c7ace4c394af817cdb0",
+      "mode": "verified_full_prompt_attachment",
+      "attachment_bytes_sha256": "4194baf0b44014d8bd14dc0b3731e5a9d56d3ea6748befad378c52d241f8043a"
+    },
+    {
+      "rid": "scr54sample_op61_P1",
+      "full_input_sha256": "1841550044db67221edd584b97e5d67054ed29859007c3449cce9b5f74bd2f2b",
+      "body_sha256": "1841550044db67221edd584b97e5d67054ed29859007c3449cce9b5f74bd2f2b",
+      "mode": "message_body"
+    },
+    {
+      "rid": "scr54sample_op61_P2",
+      "full_input_sha256": "1841550044db67221edd584b97e5d67054ed29859007c3449cce9b5f74bd2f2b",
+      "body_sha256": "1841550044db67221edd584b97e5d67054ed29859007c3449cce9b5f74bd2f2b",
+      "mode": "message_body"
+    },
+    {
+      "rid": "scr54sample_op61_P3",
+      "full_input_sha256": "5e6fdfe16f731a71491564e7332a561ebf856c68ba06e83c092858890e801f84",
+      "body_sha256": "94d4e254cf10513d17a12bc15dd7134abbf7cd0baf6f7c7ace4c394af817cdb0",
+      "mode": "verified_full_prompt_attachment",
+      "attachment_bytes_sha256": "01a93fbfec0cadfe5c05149de478f74805df65459a1f87caf388d0538d07727c"
+    }
+  ],
+  "body_hashes": {
+    "op60": "8b28a4511fbb13f0387ae2c347e4375c61a3bb29b20e13c9eed901274035551c",
+    "op61": "f162bdfa05379a9e45c4b50a550937cc6d1ba694a9c1cc47b7b2719adc54bf1c"
+  },
+  "checkpoint_source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "calls_in_prepare": 0,
+  "new_productions": 0,
+  "next": "One original balanced quick4 versus current A4 node output qu. Original gates unchanged. Floors only if quick passes. If survivor rerun affected N05e/N05f under a new tag, then formal final comparison against then-current accepted mainline; never call a qu checkpoint win a win over r54.",
+  "r49b": "Only final convergence MD. No new fixed-start requests.",
+  "other_r54_modes": "Role/reader/weave read current final LINE as postwrite inputs; ground hard-format failure happened before comparison. This verified placement defect concerns sample only; it is not evidence all past baselines were wrong."
+}

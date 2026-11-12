@@ -1,0 +1,28 @@
+{
+  "schema": "t3-public-delegation-archive/1",
+  "client_request_id": "music-20261009-run140-pack01-luna-r1",
+  "pack_id": "pack01",
+  "reviewer": "luna",
+  "role": "review",
+  "mode": "async",
+  "submitted_at": "2026-10-09T10:07:34.140Z",
+  "terminal_observed_at": "2026-10-09T10:09:31.335Z",
+  "requested_target": {
+    "providerInstanceId": "codex",
+    "model": "gpt-6-luna",
+    "options": {
+      "reasoningEffort": "max"
+    }
+  },
+  "observed_t3_provider": "codex",
+  "observed_t3_model": "gpt-6-luna",
+  "observed_status": "completed",
+  "task_sha256": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e",
+  "response_sha256": "25646cd06c5f9204d941f03931a2ff717a891254c53a94580869e18878842e90",
+  "task_utf8_bytes": 25719,
+  "response_utf8_bytes": 23765,
+  "task_source": "frozen prompt file bytes == render_pack_prompt bytes; dispatcher attests tool payload identical",
+  "evidence_scope": "exact parent transcript tool payload and terminal result; T3 reported model is not independent remote backend attestation",
+  "backend_session_handles": "not archived",
+  "production_ready": false
+}

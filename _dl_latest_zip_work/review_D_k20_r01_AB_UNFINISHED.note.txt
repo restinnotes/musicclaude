@@ -1,0 +1,12 @@
+UNFINISHED (rule: same job 3x consecutive confirmed pre-submit failure -> keep evidence, skip, continue)
+
+- job: D_k20_r01_gengpt6w_judgegpt56w_AB (review phase, judge_model=gpt56w)
+- attempts: 3, all confirmed_pre_submit_failure, phase=pre_submit,
+  error_code=headless_runner_or_evidence_failed, ~0.5s instant local rejection
+  (attempt01/attempt02/current .meta.json + .stderr.txt / .raw.json under
+   results/reviews/gpt56w/D_k20_r01_gengpt6w_judgegpt56w_AB.*)
+- note: first D-track job to hit the instant-rejection signature. Prompt hash
+  verified against manifest.
+- runner: HEALTHY on web account (gpt2 check ready:true/docker_ready:true).
+- action: NO further retry. Parallel review run PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

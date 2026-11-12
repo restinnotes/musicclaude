@@ -1,0 +1,47 @@
+## 最终 Bead / STRUCT 的要求
+
+这是经过选择的体验内容，不是研究摘要。数量由本段音乐、表达之间的重叠和新增内容的边际价值决定；不规定条数，也不规定上限。
+
+- `beads`：最终保留的每一种体验。
+  - `text`：给普通听者读的自然中文，保留原稿中最鲜活的具体画面、动作、触感和说法；允许小幅组织和拼接相容内容，但不全面重写、不洗成抽象解释。
+  - `role`：`主体验`／`另一侧面`（与其他体验可同时成立）／`另一种理解`（与某体验是不同听法）／`段内变化`（音乐内部的先后变化）／`演奏条件`（只在某种演奏处理下成立）。
+  - `measures`、`placement`（`stated`／`inferred`／`segment_wide`，不能比证据更精确）。
+  - `performance_condition`：演奏条件，没有就写 null。
+  - `sources`：逐字原话（每条不超过 60 字）＋来源 ID。
+  - `also_expressed_by`：并入此体验的其他鲜活原话（逐字＋来源 ID），供以后呈现时替换使用；没有可为空。
+  - `vivid_lines`：可以直接上屏的原稿原句（逐字），没有可为空。
+- `relations`：只写真实存在的关系：`可同时成立`／`另一种理解`／`段内先后`／`重叠但新增`，并写一句说明。没有就留空，不必为了格式整齐每类都出现。
+- `timeline`：只有本段内部确实有先后变化时才写（每步：小节、音乐事件、相关 bead）；否则为空数组。
+- `reader`：给听者的连续自然中文正文，可以只选 beads 中适合当前呈现的内容。不同来源的不同理解要让读者看得出是不同的听法，不要串成同一个人的经历或因果链。不要套用全曲通用的人物故事。
+- `reader_uses`：正文用到的 bead id。
+- `title`：本段一个短标题（不超过 16 字），来自本段真正的体验。
+- `stop_reason`：为什么停在这些体验，不再增加。
+- `not_kept`：值得记录的、未保留的重要候选及原因（简短；只列有判断价值的几条）。
+- `internal_note`：内部理解（不上屏），没有就留空。
+
+戏剧性、肯定、单一故事的写法本身不是缺点；问题只在于把没有证据的关系拼起来，或用抽象概括替代具体体验。
+
+只输出一个 JSON 代码块，**直接写在回答正文里**，不要生成文件或下载链接，不要联网搜索。
+
+```json
+{
+  "segment": "{SEG}",
+  "title": "",
+  "beads": [
+    {"id": "B1", "role": "主体验", "text": "", "measures": "", "placement": "stated",
+     "performance_condition": null,
+     "sources": [{"src": "SRC-xxx", "quote": ""}],
+     "also_expressed_by": [{"src": "SRC-xxx", "quote": ""}],
+     "vivid_lines": [{"src": "SRC-xxx", "quote": ""}]}
+  ],
+  "relations": [{"a": "B1", "b": "B2", "type": "可同时成立", "note": ""}],
+  "timeline": [],
+  "reader": "",
+  "reader_uses": ["B1"],
+  "stop_reason": "",
+  "not_kept": [{"what": "", "why": ""}],
+  "review_responses": [{"issue": "", "decision": "采纳|部分采纳|不采纳", "why": ""}],
+  "internal_note": ""
+}
+```
+（`review_responses` 只在有审稿意见时填写，否则为空数组。）

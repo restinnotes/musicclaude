@@ -1,0 +1,56 @@
+{
+  "tag": "r32rep6",
+  "base": "qurefs",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 2,
+    "wins": 0,
+    "no_regress": 0,
+    "net_sums": {
+      "alone": -15,
+      "lean": 8,
+      "plain": 14,
+      "cover": -17
+    },
+    "missing": [
+      "v6b2_op60_g56_r32rep6_vsqurefs",
+      "v6b2_op61_g6_r32rep6_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 27,
+    "reasons": [
+      "remaining votes cannot reach the required new-version wins"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_r32rep6_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -11,
+          "lean": 2,
+          "plain": 7,
+          "cover": -9
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_r32rep6_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -4,
+          "lean": 6,
+          "plain": 7,
+          "cover": -8
+        }
+      }
+    ]
+  },
+  "status": "reject",
+  "next": "archive_and_change_direction"
+}

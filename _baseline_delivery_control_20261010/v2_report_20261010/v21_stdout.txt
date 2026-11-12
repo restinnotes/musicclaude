@@ -1,0 +1,29 @@
+data_root=D:\musicclaude\_dl_latest_zip_work
+prompt_freeze_ok=True (16 jobs byte-identical pairing)
+BASE r01-r05 slots=160 transport_valid_success=146 claimed_invalid=0 confirmed_pre_submit=0 ambiguous=14 missing=0 other=0
+BASE excl_pilot slots=156 transport_valid_success=142 ambiguous=14
+valid中 schema_parse_ok=145 fail=1 source_valid=145 invalid=0
+schema_fail_slots=['trial:B18:gpt6w:r02:JSONDecodeError: Invalid control character at: line 157 column 261 (char 7803)']
+reviews manifest=97 transport_valid_success=69 by_class={'transport_valid_success': 69, 'missing': 9, 'ambiguous_failure': 19}
+reviews schema_ok=65 schema_fail=4
+  REVIEW-SCHEMA-FAIL D_k02_r05_gengpt6w_judgegpt56w_BA:gpt56w: ['quoted_evidence[4] M2_1: non_source_quote (not in frozen input fragment)']
+  REVIEW-SCHEMA-FAIL D_k11_r05_gengpt6w_judgegpt56w_BA:gpt56w: ["quoted_evidence[5] unknown_source_id '匿名版本A'", "quoted_evidence[6] unknown_source_id '匿名版本A'", "quoted_evidence[7] unknown_source_id '匿名版本B'"]
+  REVIEW-SCHEMA-FAIL D_k11_r05_gengpt56w_judgegpt6w_AB:gpt6w: ["quoted_evidence[0] unknown_source_id 'PREVIOUS:P11_1'"]
+  REVIEW-SCHEMA-FAIL D_k11_r05_gengpt56w_judgegpt6w_BA:gpt6w: ["quoted_evidence[0] unknown_source_id 'PREVIOUS:P11_1'"]
+D/G winner={'D': {'A': 17, 'B': 16}, 'G': {'A': 17, 'B': 13}} F recommend={'YES': 4, 'NO': 2}
+AB/BA comparable=27 agree=26 disagree=1 uncomparable=17
+  AB-BA-DISAGREE D:gpt6w:D_k23_r01_gengpt56w_judgegpt6w: AB=B BA=B
+self_review D_self=0 D_nonself=33 D_excl_self={'A': 17, 'B': 16}
+session_reuse_non_pilot=0 pilot_exceptions=0 pilot_collision_with_current=0
+meta_interval_peak_incl_pilot=9 at=2026-10-10T22:24:35.358534+00:00
+  members=['trial:A01:gpt6w:r3:ambiguous_failure', 'trial:A05:gpt6w:r4:ambiguous_failure', 'trial:A06:gpt6w:r1:ambiguous_failure', 'trial:B02:gpt6w:r2:ambiguous_failure', 'trial:C20:gpt6w:r4:ambiguous_failure', 'review:G_k02_r01_judgegpt6w_BA:gpt6w:r-:ambiguous_failure', 'review:G_k02_r05_judgegpt6w_AB:gpt6w:r-:ambiguous_failure', 'review:G_k02_r05_judgegpt6w_BA:gpt6w:r-:ambiguous_failure', 'review:F_k02_n05_judgegpt6w:gpt6w:r-:ambiguous_failure']
+meta_interval_peak_excl_pilot=9 at=2026-10-10T22:24:35.358534+00:00
+scheduler_event_window_peak={'assessed': True, 'peak': 9, 'peak_at': '2026-10-10T22:24:38.967408+00:00', 'paired_tasks': 33, 'basis': 'pipeline events launched.utc→result.utc 同 task 配对的事件窗口估计；launched 早于 worker 开始、result 晚于实际结束（落盘后），max_workers=8 下估计值 9 不等于 9 worker 真实活进程；v3 以 proc_started→process_exit 为准'}
+owned_http_inflight_peak={'assessed': True, 'peak': 11, 'peak_at': '2026-10-10T21:50:51.292480+00:00', 'bound_experiment_jobs': 391, 'open_intervals': 9, 'members': ['job-01010d589a9a4a879c38c2279af5912c (open)', 'job-04462ff021de434696469f0f0f2bfe71 (open)', 'job-1be65409d3b049d8a6f2ebdbc419d27d (open)', 'job-1d889222057b4aad9bb40d462ec20368 (open)', 'job-52b2069315df41e2acc1ed285673ef85 (open)', 'job-567387a36cf94602b33ed90f87708557 (open)', 'job-7223e410948f4e4c8bf0697192bf1e22 (open)', 'job-d396fd4a9a8e4484b157ce739b5b2d3c', 'job-d6a8998a0f5441739a7b3536b5774e53 (open)', 'job-e9630af8695c4a2a8e79004eb1ed5813', 'job-ef1ef2525a954538ad47ae8948c5cdc9 (open)'], 'basis': 'experiment 绑定 job 的 submitted.utc→result.utc 区间重叠；无 result 保留 open（右端=扫描时刻，不假设结束）；无关旧 job 已过滤'}
+owned_terminal_event_density_120s={'assessed': True, 'peak': 7, 'peak_at': '2026-10-10T20:31:47.411290+00:00', 'markers': 225, 'basis': 'result completed+terminal utc ±60s 窗事件密度；不是 HTTP 在途'}
+recovered_items=1 recovered_verified=1 (supplemental only, never into canonical)
+  RECOVERED SUPPLEMENTAL_RECOVERED_FROM_OWNED_EVIDENCE__A01r03_retry_presubmit.txt: verified=True checks={'sha_self': True, 'sha_source': True, 'binding': True, 'binding_detail': {'model_started': 'gpt-6-thinking', 'model_sidecar': 'gpt-6-thinking', 'model_expected': 'gpt-6-thinking', 'model_ok_vs_expected': True, 'model_sidecar_vs_expected': True, 'prompt_bound': True, 'in_window': True}, 'terminal': True, 'terminal_sha_match': True, 'submitted': True, 'canonical_untouched': True, 'canonical_untouched_mode': 'degraded_status_only (no --baseline-snapshot)', 'schema_source': True} schema=True source=True
+INVARIANTS pass=True failed=[]
+r06+ pairing_gaps=1
+wrote D:\musicclaude\_baseline_delivery_control_20261010\v2_report_20261010\delivery_validation_v2.json
+wrote D:\musicclaude\_baseline_delivery_control_20261010\v2_report_20261010\delivery_validation_v2_summary.txt

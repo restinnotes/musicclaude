@@ -1,0 +1,127 @@
+{
+  "target": "r55restored",
+  "revised": "r55repair",
+  "base": "r54weave",
+  "tasks": [
+    {
+      "work": "op60",
+      "rid": "scr55restored_op60_A5",
+      "sha256": "9733f78adc211eb7b0441079042c8a884f6539707a39b5e5429c6330a825ea45"
+    },
+    {
+      "work": "op61",
+      "rid": "scr55restored_op61_A5",
+      "sha256": "7fc2db54e8f5f047e6abf660478302568bb4c615cb7afd9a9d044b53d149f192"
+    }
+  ],
+  "prompt": "你负责检查一轮Thread局部修订是否删掉了真正有用的心理内容，并进行必要的反馈回补。\n\n本步骤不重新写故事，也不机械恢复原稿。目标是保住已经形成的跨段心理发展，让文字保持自然、具体、简洁。\n\n【段落】\n{SECTIONS}\n\n【固定Center】\n{CENTER}\n\n【原版完整线】\n{ORIGINAL}\n\n【第一轮修订后的完整线】\n{REVISED}\n\n【固定珠子，使用与两版完全一致的N03i显示措辞】\n{BEADS}\n\n【全部评审及正反比较的完整原始理由】\n{REVIEWS}\n\n一、完整阅读\n\n读完原版、修订版、珠子和全部反馈。保留评审的评级、严重程度、正反意见及分歧，不将不同评委的判断平均成一个结论。\n\n二、逐项检查实质损失\n\n检查修订版是否丢掉了：\n- 一个后面心理变化真正依赖的前因。\n- 人物具体想要的东西或害怕失去的东西。\n- 某次认识与前一次认识之间的真实区别。\n- 某个选择为什么发生、会付出什么代价。\n- 已经成立的事实在后面产生的独特后果。\n- 原版中有独立意义、且珠子有相近情境支持的感受。\n\n同时判断这些内容是否已经在修订版其他位置得到充分表达。不能因为某个原句被删掉，就认定内容一定丢失。\n\n三、吸收反馈\n\n1. 评委指出的损失是证据，不是必须照办的指令。\n2. 不照搬评委给出的示范句。\n3. 不恢复真正重复的心理解释。\n4. 不把被删掉的抽象总结全部恢复。\n5. 不恢复无根据的外部事件、他人心理、对白或前史。\n6. 不把推测改成事实，也不把有根据的事实全部降为猜测。\n7. 不为了覆盖珠子而补造人物经历。\n8. 不照搬碎句、少于2条或必须崇高等不符合标准的建议。\n\n四、实际回补\n\n只修改确实存在实质损失的位置。可以通过替换修订版中仍然存在的条目，恢复必要的前因、具体愿望、顾虑或不同心理作用。\n\n不设最多修改条数，不设全文不能增长的限制。\n\n本步骤仍只允许replace或delete原有条目，不新增条目、不改分段、不改Center、不改珠子。保留修订版原编号。未改正文逐字不动。\n\n不修改cite、covers或relation字段。如果正确回补需要修改这些字段，或需要增加新条目才能恢复必要内容，在note中明确说明，不得伪装已经修复。\n\n每段最终必须2—4条，每条一句完整自然的话。\n\n如果修订版没有真正损失内容，允许edits为空。不能为了显得完成任务而恢复旧稿的全部文字。\n\n五、全文复核\n\n最后通读完整修订版，检查：\n- 原有发展是否恢复。\n- 修订带来的简洁和人话改善是否保留。\n- 是否重新引入重复。\n- 是否损失了珠子的独有体验落脚处。\n- 前后因果是否成立。\n- 是否出现未经支持的事实。\n\n只输出JSON：\n{\n  \"edits\": [\n    {\n      \"id\": \"S03-2\",\n      \"op\": \"replace\",\n      \"text\": \"...\"\n    }\n  ],\n  \"note\": \"说明恢复了哪些真正必要的内容、保留了哪些修订收益、仍然有哪些损失或风险\"\n}\n不输出完整线，不输出其他文字。",
+  "prompt_source": {
+    "id": "P2",
+    "author_id": "P2_restore",
+    "path": "runs\\_batches\\round55_current\\prompts\\r55repair_P2.txt",
+    "sha256": "21f3f5dc6e55ba67ac2e8d33d333d43923a873cb17634072d99192a1783485e6",
+    "placeholders": [
+      "BEADS",
+      "CENTER",
+      "ORIGINAL",
+      "REVIEWS",
+      "REVISED",
+      "SECTIONS"
+    ]
+  },
+  "adviser_source": "r55_advisor_g6a candidate3 P2_restore exact verbatim",
+  "source_graph_hashes": {
+    "op60": {
+      "r54weave": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+      "r55repair": "db1ffab7e4a3031132e4a60dfab9f3eb097faf6eeb195182c940e4babcbc5b3c"
+    },
+    "op61": {
+      "r54weave": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e",
+      "r55repair": "e8b010f02cfeb66153319ecdd3ac789667f65acbfa7d5575f1417f06eeb7a212"
+    }
+  },
+  "P1_quick": {
+    "tag": "r55repair",
+    "base": "r54weave",
+    "complete": 4,
+    "pending": [],
+    "wins": 3,
+    "no_regress": 2,
+    "net_sums": {
+      "alone": 23,
+      "lean": 39,
+      "plain": 40,
+      "cover": 4
+    },
+    "pass": true,
+    "cannot_reach_3_wins": false,
+    "rows": [
+      {
+        "rid": "v6b3_op60_g6_r55repair_vsr54weave_newX",
+        "output_sha256": "5d06a1aebf8cf16e7bf7531f929caba01caa93a26ab0ccee89a808c58b68c395",
+        "input_sha256": "e97cb8c28ca06c2ece58073f6c9ee59cf84aca7ef7284f01f2b3709b0910196f",
+        "w": "op60",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 11,
+          "lean": 7,
+          "plain": 7,
+          "cover": 5
+        }
+      },
+      {
+        "rid": "v6b3_op60_g56_r55repair_vsr54weave_newY",
+        "output_sha256": "93ac3d8faaf73c815f8ba349c62c6f61be031795c9fe2989adfe322fbf2222e3",
+        "input_sha256": "a76f17c70ecea708531aa6d5a44d66aa03f4d12f5cd8d12771d336b0ee27df7d",
+        "w": "op60",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 6,
+          "lean": 11,
+          "plain": 11,
+          "cover": 1
+        }
+      },
+      {
+        "rid": "v6b3_op61_g6_r55repair_vsr54weave_newY",
+        "output_sha256": "33065fb965dd78f60dda209c81c7dbfa8fda1a22c912ad5dfb91ce3c4dd79aca",
+        "input_sha256": "f69b4c0660d4311735d5fb01c47c3e973c0ad21360c6377bf9ceb41b8160d067",
+        "w": "op61",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": 1,
+          "lean": 10,
+          "plain": 10,
+          "cover": -1
+        }
+      },
+      {
+        "rid": "v6b3_op61_g56_r55repair_vsr54weave_newX",
+        "output_sha256": "04d1867b145b845ba976ae95631f162a9543caf7154157006858acb4f0158438",
+        "input_sha256": "247fdcd1015a94f540efc785593f331bdeaf3cf41fa0c3a96d824ffae9adc3c8",
+        "w": "op61",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 5,
+          "lean": 11,
+          "plain": 12,
+          "cover": -1
+        }
+      }
+    ]
+  },
+  "production_route": "mimic GPT6/High, existing collector only; no automatic application",
+  "next": "Read full edits/note, validate exact inputs and edited graph before mechanical application; new final candidate then compare against r54weave."
+}

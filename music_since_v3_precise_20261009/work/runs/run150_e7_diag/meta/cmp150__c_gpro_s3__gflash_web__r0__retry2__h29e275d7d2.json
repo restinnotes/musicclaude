@@ -1,0 +1,80 @@
+{
+  "job_id": "cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2",
+  "branch": "compare",
+  "model_key": "gflash_web",
+  "model_name": "gemini-3.8-flash-high",
+  "argv": [],
+  "stdin_mode": "raw",
+  "prompt_file": "prompts/cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2.txt",
+  "prompt_version": "E7_COMPARE_v0",
+  "prompt_template": "prompts/tooling/E7_COMPARE_v0.txt",
+  "work_key": "op60",
+  "work_name": "肖邦《船歌》升F大调 Op.60",
+  "sample": 1,
+  "started": "2026-10-09T14:57:26",
+  "ended": "2026-10-09T14:57:26",
+  "seconds": 0.0,
+  "exit_code": null,
+  "status": "failed",
+  "error": "RuntimeError: MemoryError: ",
+  "attempts": 0,
+  "output_file": "outputs/cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2.md",
+  "stdout_file": "outputs/raw/cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2.stdout.txt",
+  "stderr_file": "outputs/raw/cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2.stderr.txt",
+  "output_chars": 0,
+  "replacement_chars": 0,
+  "tool_counts": {},
+  "extra": {
+    "set": "c_gpro_s3",
+    "run": 0,
+    "mapping": {
+      "甲": "a",
+      "乙": "c",
+      "丙": "b"
+    },
+    "attempt": 2
+  },
+  "request_identity": {
+    "schema": "20261009.1",
+    "producer": {
+      "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a",
+      "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+      "route": "initialization_failed",
+      "model_name": "gemini-3.8-flash-high",
+      "initialization_error": "MemoryError: "
+    },
+    "model_key": "gflash_web",
+    "prompt_sha256": "29e275d7d239d86d46cbcc8491be17531639bedd3ec8c586d57d678e126ac407",
+    "prompt_version": "E7_COMPARE_v0",
+    "prompt_template": "prompts/tooling/E7_COMPARE_v0.txt",
+    "work_key": "op60",
+    "sample": 1,
+    "forbid_tools": [
+      "bash",
+      "edit",
+      "glob",
+      "grep",
+      "read",
+      "webfetch",
+      "websearch",
+      "write"
+    ],
+    "extra_sha256": "62db58663dd4459ad4aff8c35396e3e063101ae16dc6b958ed22fea6395e4121",
+    "image_sha256": {},
+    "sampling_key": "cmp150__c_gpro_s3__gflash_web__r0__retry2__h29e275d7d2"
+  },
+  "producer_identity": {
+    "runner_sha256": "778596ffd02bad51fdc43df18824134ae2b56432ed18fd3370a0997851a9d90a",
+    "integrity_sha256": "224c930e4bbe18047d356727ff256f281c0dfb4f7bf3dbdca485f5171f6c1be8",
+    "route": "initialization_failed",
+    "model_name": "gemini-3.8-flash-high",
+    "initialization_error": "MemoryError: "
+  },
+  "prompt_sha256": "29e275d7d239d86d46cbcc8491be17531639bedd3ec8c586d57d678e126ac407",
+  "response_sha256": null,
+  "automatic_retry": false,
+  "retry_safe": true,
+  "failure_phase": "local_initialization",
+  "queue_stop": false,
+  "raw_redacted": true
+}

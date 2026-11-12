@@ -1,0 +1,67 @@
+{
+  "name": "P",
+  "note": "方案 P（GPT-6 顾问方案 A）：三条经历蓝图（不看珠子，给 Center）→ 覆盖诊断 → 一次成图；无后续改写",
+  "edits": [
+    {
+      "prompt_file": "P_A2.txt",
+      "old": "七、Center\n\n全图完成后，才回头概括 Center。\n\nCenter 是贯穿整条经历的最小完整关系句：\n用名词短语指出重要的事物或关系，并用谓语\n说出它们怎样相关。\n\n不写人称，不叙述动作，不预告结局。\n不要求一定是冲突或相互牵制。\n不能只把两个抽象名词放在一起。\n\nCenter 所说的每部分，在整条线里都必须\n具有读者能辨认的实际所指。\n\n不要为了符合事先设定的抽象主题，\n在后半篇反复证明同一结论。\n\n",
+      "new": [
+        {
+          "text": "七、Center\nCenter 已经给定："
+        },
+        "CENTER",
+        {
+          "text": "\n不改写它，输出的 center 字段原样填入。它是回头看整首时把各段组织起来的那件事，不预告路线，不是每段都要回应。不要为了符合它，在后半篇反复证明同一结论。\n\n"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "A0",
+      "prompt_file": "P_A0.txt",
+      "replace": {
+        "{WORK_INFO}": "WORK_INFO",
+        "{SEGMENTS}": [
+          "SEGMENTS",
+          {
+            "text": "\n【Center（上游已定，不改）】\n"
+          },
+          "CENTER",
+          {
+            "text": "\n这是读者回头看整首时把各段组织起来的那件事；不是他一开始就清楚知道的事，也不是每一段都要回应的题目。不预告发展路线和结局。\n"
+          }
+        ],
+        "{INDEPENDENT_MUSIC_CONTEXT}": {
+          "text": "（无）"
+        }
+      },
+      "model": "g6",
+      "after": [
+        "missing"
+      ]
+    },
+    {
+      "id": "A1",
+      "prompt_file": "P_A1.txt",
+      "replace": {
+        "{CANDIDATES_JSON}": "step:A0",
+        "{BEADS_JSON}": "BEADS_TEXT",
+        "{SEGMENTS}": "SEGMENTS"
+      },
+      "model": "g6"
+    },
+    {
+      "id": "A2",
+      "prompt_file": "P_A2.txt",
+      "replace": {
+        "{WORK_INFO}": "WORK_INFO",
+        "{SEGMENTS}": "SEGMENTS",
+        "{CANDIDATES_JSON}": "step:A0",
+        "{COVERAGE_PLAN_JSON}": "step:A1"
+      },
+      "model": "g6"
+    }
+  ],
+  "final": "A2"
+}

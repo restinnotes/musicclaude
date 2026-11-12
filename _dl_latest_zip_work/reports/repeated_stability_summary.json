@@ -1,0 +1,4400 @@
+{
+  "method": "fixed inputs, independent gpt2 sessions; historical labels not ground truth",
+  "statuses": {
+    "A01/gpt6w/r01": "valid",
+    "A01/gpt6w/r02": "valid",
+    "A01/gpt6w/r03": "invalid:",
+    "A01/gpt6w/r04": "invalid:",
+    "A01/gpt6w/r05": "valid",
+    "A01/gpt6w/r06": "missing",
+    "A01/gpt6w/r07": "missing",
+    "A01/gpt6w/r08": "missing",
+    "A01/gpt6w/r09": "missing",
+    "A01/gpt6w/r10": "missing",
+    "A01/gpt6w/r11": "missing",
+    "A01/gpt6w/r12": "missing",
+    "A01/gpt56w/r01": "valid",
+    "A01/gpt56w/r02": "valid",
+    "A01/gpt56w/r03": "valid",
+    "A01/gpt56w/r04": "valid",
+    "A01/gpt56w/r05": "valid",
+    "A01/gpt56w/r06": "missing",
+    "A01/gpt56w/r07": "missing",
+    "A01/gpt56w/r08": "missing",
+    "A01/gpt56w/r09": "missing",
+    "A01/gpt56w/r10": "missing",
+    "A01/gpt56w/r11": "missing",
+    "A01/gpt56w/r12": "missing",
+    "A02/gpt6w/r01": "valid",
+    "A02/gpt6w/r02": "valid",
+    "A02/gpt6w/r03": "valid",
+    "A02/gpt6w/r04": "valid",
+    "A02/gpt6w/r05": "valid",
+    "A02/gpt6w/r06": "missing",
+    "A02/gpt6w/r07": "missing",
+    "A02/gpt6w/r08": "missing",
+    "A02/gpt6w/r09": "missing",
+    "A02/gpt6w/r10": "missing",
+    "A02/gpt6w/r11": "missing",
+    "A02/gpt6w/r12": "missing",
+    "A02/gpt56w/r01": "valid",
+    "A02/gpt56w/r02": "invalid:",
+    "A02/gpt56w/r03": "valid",
+    "A02/gpt56w/r04": "valid",
+    "A02/gpt56w/r05": "valid",
+    "A02/gpt56w/r06": "missing",
+    "A02/gpt56w/r07": "missing",
+    "A02/gpt56w/r08": "missing",
+    "A02/gpt56w/r09": "missing",
+    "A02/gpt56w/r10": "missing",
+    "A02/gpt56w/r11": "missing",
+    "A02/gpt56w/r12": "missing",
+    "A03/gpt6w/r01": "valid",
+    "A03/gpt6w/r02": "valid",
+    "A03/gpt6w/r03": "valid",
+    "A03/gpt6w/r04": "valid",
+    "A03/gpt6w/r05": "valid",
+    "A03/gpt6w/r06": "missing",
+    "A03/gpt6w/r07": "missing",
+    "A03/gpt6w/r08": "missing",
+    "A03/gpt6w/r09": "missing",
+    "A03/gpt6w/r10": "missing",
+    "A03/gpt6w/r11": "missing",
+    "A03/gpt6w/r12": "missing",
+    "A03/gpt56w/r01": "valid",
+    "A03/gpt56w/r02": "valid",
+    "A03/gpt56w/r03": "invalid:",
+    "A03/gpt56w/r04": "valid",
+    "A03/gpt56w/r05": "valid",
+    "A03/gpt56w/r06": "missing",
+    "A03/gpt56w/r07": "missing",
+    "A03/gpt56w/r08": "missing",
+    "A03/gpt56w/r09": "missing",
+    "A03/gpt56w/r10": "missing",
+    "A03/gpt56w/r11": "missing",
+    "A03/gpt56w/r12": "missing",
+    "A04/gpt6w/r01": "valid",
+    "A04/gpt6w/r02": "valid",
+    "A04/gpt6w/r03": "valid",
+    "A04/gpt6w/r04": "valid",
+    "A04/gpt6w/r05": "valid",
+    "A04/gpt6w/r06": "missing",
+    "A04/gpt6w/r07": "missing",
+    "A04/gpt6w/r08": "missing",
+    "A04/gpt6w/r09": "missing",
+    "A04/gpt6w/r10": "missing",
+    "A04/gpt6w/r11": "missing",
+    "A04/gpt6w/r12": "missing",
+    "A04/gpt56w/r01": "valid",
+    "A04/gpt56w/r02": "valid",
+    "A04/gpt56w/r03": "valid",
+    "A04/gpt56w/r04": "valid",
+    "A04/gpt56w/r05": "valid",
+    "A04/gpt56w/r06": "missing",
+    "A04/gpt56w/r07": "missing",
+    "A04/gpt56w/r08": "missing",
+    "A04/gpt56w/r09": "missing",
+    "A04/gpt56w/r10": "missing",
+    "A04/gpt56w/r11": "missing",
+    "A04/gpt56w/r12": "missing",
+    "A05/gpt6w/r01": "valid",
+    "A05/gpt6w/r02": "valid",
+    "A05/gpt6w/r03": "valid",
+    "A05/gpt6w/r04": "invalid:",
+    "A05/gpt6w/r05": "valid",
+    "A05/gpt6w/r06": "missing",
+    "A05/gpt6w/r07": "missing",
+    "A05/gpt6w/r08": "missing",
+    "A05/gpt6w/r09": "missing",
+    "A05/gpt6w/r10": "missing",
+    "A05/gpt6w/r11": "missing",
+    "A05/gpt6w/r12": "missing",
+    "A05/gpt56w/r01": "valid",
+    "A05/gpt56w/r02": "valid",
+    "A05/gpt56w/r03": "valid",
+    "A05/gpt56w/r04": "valid",
+    "A05/gpt56w/r05": "valid",
+    "A05/gpt56w/r06": "missing",
+    "A05/gpt56w/r07": "missing",
+    "A05/gpt56w/r08": "missing",
+    "A05/gpt56w/r09": "missing",
+    "A05/gpt56w/r10": "missing",
+    "A05/gpt56w/r11": "missing",
+    "A05/gpt56w/r12": "missing",
+    "A06/gpt6w/r01": "invalid:",
+    "A06/gpt6w/r02": "valid",
+    "A06/gpt6w/r03": "valid",
+    "A06/gpt6w/r04": "valid",
+    "A06/gpt6w/r05": "valid",
+    "A06/gpt6w/r06": "missing",
+    "A06/gpt6w/r07": "missing",
+    "A06/gpt6w/r08": "missing",
+    "A06/gpt6w/r09": "missing",
+    "A06/gpt6w/r10": "missing",
+    "A06/gpt6w/r11": "missing",
+    "A06/gpt6w/r12": "missing",
+    "A06/gpt56w/r01": "valid",
+    "A06/gpt56w/r02": "valid",
+    "A06/gpt56w/r03": "valid",
+    "A06/gpt56w/r04": "valid",
+    "A06/gpt56w/r05": "valid",
+    "A06/gpt56w/r06": "missing",
+    "A06/gpt56w/r07": "missing",
+    "A06/gpt56w/r08": "missing",
+    "A06/gpt56w/r09": "missing",
+    "A06/gpt56w/r10": "missing",
+    "A06/gpt56w/r11": "missing",
+    "A06/gpt56w/r12": "missing",
+    "B02/gpt6w/r01": "valid",
+    "B02/gpt6w/r02": "invalid:",
+    "B02/gpt6w/r03": "valid",
+    "B02/gpt6w/r04": "valid",
+    "B02/gpt6w/r05": "valid",
+    "B02/gpt6w/r06": "missing",
+    "B02/gpt6w/r07": "missing",
+    "B02/gpt6w/r08": "missing",
+    "B02/gpt6w/r09": "missing",
+    "B02/gpt6w/r10": "missing",
+    "B02/gpt6w/r11": "missing",
+    "B02/gpt6w/r12": "missing",
+    "B02/gpt56w/r01": "valid",
+    "B02/gpt56w/r02": "valid",
+    "B02/gpt56w/r03": "valid",
+    "B02/gpt56w/r04": "invalid:",
+    "B02/gpt56w/r05": "valid",
+    "B02/gpt56w/r06": "missing",
+    "B02/gpt56w/r07": "missing",
+    "B02/gpt56w/r08": "missing",
+    "B02/gpt56w/r09": "missing",
+    "B02/gpt56w/r10": "missing",
+    "B02/gpt56w/r11": "missing",
+    "B02/gpt56w/r12": "missing",
+    "C02/gpt6w/r01": "valid",
+    "C02/gpt6w/r02": "valid",
+    "C02/gpt6w/r03": "valid",
+    "C02/gpt6w/r04": "valid",
+    "C02/gpt6w/r05": "valid",
+    "C02/gpt6w/r06": "valid",
+    "C02/gpt6w/r07": "valid",
+    "C02/gpt6w/r08": "valid",
+    "C02/gpt6w/r09": "missing",
+    "C02/gpt6w/r10": "missing",
+    "C02/gpt6w/r11": "missing",
+    "C02/gpt6w/r12": "missing",
+    "C02/gpt56w/r01": "valid",
+    "C02/gpt56w/r02": "valid",
+    "C02/gpt56w/r03": "valid",
+    "C02/gpt56w/r04": "valid",
+    "C02/gpt56w/r05": "valid",
+    "C02/gpt56w/r06": "invalid:",
+    "C02/gpt56w/r07": "valid",
+    "C02/gpt56w/r08": "valid",
+    "C02/gpt56w/r09": "missing",
+    "C02/gpt56w/r10": "missing",
+    "C02/gpt56w/r11": "missing",
+    "C02/gpt56w/r12": "missing",
+    "B11/gpt6w/r01": "valid",
+    "B11/gpt6w/r02": "valid",
+    "B11/gpt6w/r03": "invalid:",
+    "B11/gpt6w/r04": "valid",
+    "B11/gpt6w/r05": "valid",
+    "B11/gpt6w/r06": "missing",
+    "B11/gpt6w/r07": "missing",
+    "B11/gpt6w/r08": "missing",
+    "B11/gpt6w/r09": "missing",
+    "B11/gpt6w/r10": "missing",
+    "B11/gpt6w/r11": "missing",
+    "B11/gpt6w/r12": "missing",
+    "B11/gpt56w/r01": "valid",
+    "B11/gpt56w/r02": "valid",
+    "B11/gpt56w/r03": "valid",
+    "B11/gpt56w/r04": "valid",
+    "B11/gpt56w/r05": "valid",
+    "B11/gpt56w/r06": "missing",
+    "B11/gpt56w/r07": "missing",
+    "B11/gpt56w/r08": "missing",
+    "B11/gpt56w/r09": "missing",
+    "B11/gpt56w/r10": "missing",
+    "B11/gpt56w/r11": "missing",
+    "B11/gpt56w/r12": "missing",
+    "C11/gpt6w/r01": "valid",
+    "C11/gpt6w/r02": "valid",
+    "C11/gpt6w/r03": "valid",
+    "C11/gpt6w/r04": "valid",
+    "C11/gpt6w/r05": "valid",
+    "C11/gpt6w/r06": "valid",
+    "C11/gpt6w/r07": "valid",
+    "C11/gpt6w/r08": "invalid:",
+    "C11/gpt6w/r09": "missing",
+    "C11/gpt6w/r10": "missing",
+    "C11/gpt6w/r11": "missing",
+    "C11/gpt6w/r12": "missing",
+    "C11/gpt56w/r01": "valid",
+    "C11/gpt56w/r02": "valid",
+    "C11/gpt56w/r03": "valid",
+    "C11/gpt56w/r04": "valid",
+    "C11/gpt56w/r05": "valid",
+    "C11/gpt56w/r06": "valid",
+    "C11/gpt56w/r07": "valid",
+    "C11/gpt56w/r08": "invalid:",
+    "C11/gpt56w/r09": "missing",
+    "C11/gpt56w/r10": "missing",
+    "C11/gpt56w/r11": "missing",
+    "C11/gpt56w/r12": "missing",
+    "B18/gpt6w/r01": "valid",
+    "B18/gpt6w/r02": "invalid:Invalid control character at: line 157 column 261 (char 7803)",
+    "B18/gpt6w/r03": "valid",
+    "B18/gpt6w/r04": "invalid:",
+    "B18/gpt6w/r05": "valid",
+    "B18/gpt6w/r06": "missing",
+    "B18/gpt6w/r07": "missing",
+    "B18/gpt6w/r08": "missing",
+    "B18/gpt6w/r09": "missing",
+    "B18/gpt6w/r10": "missing",
+    "B18/gpt6w/r11": "missing",
+    "B18/gpt6w/r12": "missing",
+    "B18/gpt56w/r01": "valid",
+    "B18/gpt56w/r02": "valid",
+    "B18/gpt56w/r03": "valid",
+    "B18/gpt56w/r04": "valid",
+    "B18/gpt56w/r05": "valid",
+    "B18/gpt56w/r06": "missing",
+    "B18/gpt56w/r07": "missing",
+    "B18/gpt56w/r08": "missing",
+    "B18/gpt56w/r09": "missing",
+    "B18/gpt56w/r10": "missing",
+    "B18/gpt56w/r11": "missing",
+    "B18/gpt56w/r12": "missing",
+    "C18/gpt6w/r01": "valid",
+    "C18/gpt6w/r02": "valid",
+    "C18/gpt6w/r03": "invalid:",
+    "C18/gpt6w/r04": "invalid:",
+    "C18/gpt6w/r05": "valid",
+    "C18/gpt6w/r06": "missing",
+    "C18/gpt6w/r07": "missing",
+    "C18/gpt6w/r08": "missing",
+    "C18/gpt6w/r09": "missing",
+    "C18/gpt6w/r10": "missing",
+    "C18/gpt6w/r11": "missing",
+    "C18/gpt6w/r12": "missing",
+    "C18/gpt56w/r01": "valid",
+    "C18/gpt56w/r02": "valid",
+    "C18/gpt56w/r03": "valid",
+    "C18/gpt56w/r04": "valid",
+    "C18/gpt56w/r05": "valid",
+    "C18/gpt56w/r06": "missing",
+    "C18/gpt56w/r07": "missing",
+    "C18/gpt56w/r08": "missing",
+    "C18/gpt56w/r09": "missing",
+    "C18/gpt56w/r10": "missing",
+    "C18/gpt56w/r11": "missing",
+    "C18/gpt56w/r12": "missing",
+    "B20/gpt6w/r01": "valid",
+    "B20/gpt6w/r02": "valid",
+    "B20/gpt6w/r03": "valid",
+    "B20/gpt6w/r04": "valid",
+    "B20/gpt6w/r05": "valid",
+    "B20/gpt6w/r06": "missing",
+    "B20/gpt6w/r07": "missing",
+    "B20/gpt6w/r08": "missing",
+    "B20/gpt6w/r09": "missing",
+    "B20/gpt6w/r10": "missing",
+    "B20/gpt6w/r11": "missing",
+    "B20/gpt6w/r12": "missing",
+    "B20/gpt56w/r01": "valid",
+    "B20/gpt56w/r02": "valid",
+    "B20/gpt56w/r03": "valid",
+    "B20/gpt56w/r04": "valid",
+    "B20/gpt56w/r05": "valid",
+    "B20/gpt56w/r06": "missing",
+    "B20/gpt56w/r07": "missing",
+    "B20/gpt56w/r08": "missing",
+    "B20/gpt56w/r09": "missing",
+    "B20/gpt56w/r10": "missing",
+    "B20/gpt56w/r11": "missing",
+    "B20/gpt56w/r12": "missing",
+    "C20/gpt6w/r01": "valid",
+    "C20/gpt6w/r02": "valid",
+    "C20/gpt6w/r03": "valid",
+    "C20/gpt6w/r04": "invalid:",
+    "C20/gpt6w/r05": "valid",
+    "C20/gpt6w/r06": "missing",
+    "C20/gpt6w/r07": "missing",
+    "C20/gpt6w/r08": "missing",
+    "C20/gpt6w/r09": "missing",
+    "C20/gpt6w/r10": "missing",
+    "C20/gpt6w/r11": "missing",
+    "C20/gpt6w/r12": "missing",
+    "C20/gpt56w/r01": "valid",
+    "C20/gpt56w/r02": "valid",
+    "C20/gpt56w/r03": "valid",
+    "C20/gpt56w/r04": "valid",
+    "C20/gpt56w/r05": "valid",
+    "C20/gpt56w/r06": "missing",
+    "C20/gpt56w/r07": "missing",
+    "C20/gpt56w/r08": "missing",
+    "C20/gpt56w/r09": "missing",
+    "C20/gpt56w/r10": "missing",
+    "C20/gpt56w/r11": "missing",
+    "C20/gpt56w/r12": "missing",
+    "B23/gpt6w/r01": "invalid:",
+    "B23/gpt6w/r02": "valid",
+    "B23/gpt6w/r03": "valid",
+    "B23/gpt6w/r04": "valid",
+    "B23/gpt6w/r05": "valid",
+    "B23/gpt6w/r06": "missing",
+    "B23/gpt6w/r07": "missing",
+    "B23/gpt6w/r08": "missing",
+    "B23/gpt6w/r09": "missing",
+    "B23/gpt6w/r10": "missing",
+    "B23/gpt6w/r11": "missing",
+    "B23/gpt6w/r12": "missing",
+    "B23/gpt56w/r01": "valid",
+    "B23/gpt56w/r02": "valid",
+    "B23/gpt56w/r03": "valid",
+    "B23/gpt56w/r04": "valid",
+    "B23/gpt56w/r05": "valid",
+    "B23/gpt56w/r06": "missing",
+    "B23/gpt56w/r07": "missing",
+    "B23/gpt56w/r08": "missing",
+    "B23/gpt56w/r09": "missing",
+    "B23/gpt56w/r10": "missing",
+    "B23/gpt56w/r11": "missing",
+    "B23/gpt56w/r12": "missing",
+    "C23/gpt6w/r01": "valid",
+    "C23/gpt6w/r02": "valid",
+    "C23/gpt6w/r03": "valid",
+    "C23/gpt6w/r04": "valid",
+    "C23/gpt6w/r05": "valid",
+    "C23/gpt6w/r06": "invalid:",
+    "C23/gpt6w/r07": "invalid:",
+    "C23/gpt6w/r08": "invalid:",
+    "C23/gpt6w/r09": "missing",
+    "C23/gpt6w/r10": "missing",
+    "C23/gpt6w/r11": "missing",
+    "C23/gpt6w/r12": "missing",
+    "C23/gpt56w/r01": "valid",
+    "C23/gpt56w/r02": "valid",
+    "C23/gpt56w/r03": "valid",
+    "C23/gpt56w/r04": "valid",
+    "C23/gpt56w/r05": "valid",
+    "C23/gpt56w/r06": "invalid:",
+    "C23/gpt56w/r07": "invalid:",
+    "C23/gpt56w/r08": "invalid:",
+    "C23/gpt56w/r09": "missing",
+    "C23/gpt56w/r10": "missing",
+    "C23/gpt56w/r11": "missing",
+    "C23/gpt56w/r12": "missing"
+  },
+  "A_case_stability": {
+    "gpt56w/B002": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "manufactured"
+        ],
+        [
+          3,
+          "manufactured"
+        ],
+        [
+          4,
+          "manufactured"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 1,
+        "manufactured": 4
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B004": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B005": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 3,
+        "restatement": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B006": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B007": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 1,
+        "restatement": 3
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B008": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B009": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B010": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 1,
+        "insight": 4
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B013": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B014": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B016": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B018": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B020": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "manufactured"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "manufactured"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 1,
+        "manufactured": 3,
+        "restatement": 1
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B024": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B025": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 2
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B027": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 2
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B028": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "manufactured",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B031": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "undetermined"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 2,
+        "undetermined": 1,
+        "manufactured": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "undetermined",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B032": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B034": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B035": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 2,
+        "insight": 3
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B036": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B038": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B039": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B040": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B042": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B044": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "manufactured": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B045": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B046": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 1,
+        "insight": 4
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B048": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "manufactured"
+        ],
+        [
+          3,
+          "manufactured"
+        ],
+        [
+          4,
+          "manufactured"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "manufactured",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B049": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B055": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 2
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B056": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "manufactured"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 3,
+        "restatement": 2
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B057": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 2,
+        "restatement": 3
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B058": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt56w/B059": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "manufactured"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 2,
+        "insight": 3
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B002": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 2,
+        "insight": 1,
+        "restatement": 1
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B004": {
+      "trials": [
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B005": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B006": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B007": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B008": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B009": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B010": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B013": {
+      "trials": [
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B014": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B016": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B018": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B020": {
+      "trials": [
+        [
+          2,
+          "manufactured"
+        ],
+        [
+          3,
+          "manufactured"
+        ],
+        [
+          4,
+          "manufactured"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B024": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 1,
+        "insight": 2
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B025": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "manufactured"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 3,
+        "restatement": 1
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B027": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B028": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "manufactured",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B031": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "undetermined",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B032": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B034": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B035": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B036": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B038": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B039": {
+      "trials": [
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B040": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4,
+        "restatement": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B042": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 3
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B044": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 2,
+        "restatement": 3
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B045": {
+      "trials": [
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B046": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 3
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "restatement",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B048": {
+      "trials": [
+        [
+          1,
+          "manufactured"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          5,
+          "manufactured"
+        ]
+      ],
+      "verdict_counts": {
+        "manufactured": 2,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "manufactured",
+        "source": "work/notes/research/run140_pack01_main_adjudication_20261009_r2.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B049": {
+      "trials": [
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B055": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B056": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B057": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 1
+      },
+      "unstable": true,
+      "historical_verdict": null,
+      "historical_agreements": null,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B058": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 3,
+        "insight": 2
+      },
+      "unstable": true,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    },
+    "gpt6w/B059": {
+      "trials": [
+        [
+          1,
+          "insight"
+        ],
+        [
+          2,
+          "insight"
+        ],
+        [
+          3,
+          "insight"
+        ],
+        [
+          4,
+          "insight"
+        ],
+        [
+          5,
+          "insight"
+        ]
+      ],
+      "verdict_counts": {
+        "insight": 5
+      },
+      "unstable": false,
+      "historical_verdict": {
+        "verdict": "insight",
+        "source": "work/notes/research/run140_pack02_main_adjudication_20261009_r1.md",
+        "scope": "历史 Claude 主会话对旧研究文字的 input-level 裁决，并非谱面/音频真值"
+      },
+      "historical_agreements": 0,
+      "historical_is_not_ground_truth": true
+    }
+  },
+  "B_hypothesis_stability": {
+    "gpt56w/B02/M2_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 3,
+        "valuable_new_link": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B02/R2_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4
+      },
+      "unstable": false
+    },
+    "gpt56w/B02/R2_2": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 3,
+        "restatement": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B02/W2": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 1,
+        "restatement": 3
+      },
+      "unstable": true
+    },
+    "gpt56w/B11/M11_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B11/R11_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4,
+        "premature_lock": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B11/R11_2": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 4,
+        "unsupported_causality": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B11/W11": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B18/M18_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 3,
+        "valuable_new_link": 2
+      },
+      "unstable": true
+    },
+    "gpt56w/B18/M18_2": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 4,
+        "valuable_new_link": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B18/R18_1": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B20/M20_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B20/M20_2": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 2,
+        "unsupported_causality": 3
+      },
+      "unstable": true
+    },
+    "gpt56w/B20/R20_1": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B20/W20": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 5
+      },
+      "unstable": false
+    },
+    "gpt56w/B23/M23_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4,
+        "unsupported_causality": 1
+      },
+      "unstable": true
+    },
+    "gpt56w/B23/R23_1": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 5
+      },
+      "unstable": false
+    },
+    "gpt6w/B02/M2_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B02/R2_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B02/R2_2": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B02/W2": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B11/M11_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B11/R11_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B11/R11_2": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 4
+      },
+      "unstable": false
+    },
+    "gpt6w/B11/W11": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 2,
+        "valuable_new_link": 2
+      },
+      "unstable": true
+    },
+    "gpt6w/B18/M18_1": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 1,
+        "unsupported_causality": 1,
+        "restatement": 1
+      },
+      "unstable": true
+    },
+    "gpt6w/B18/M18_2": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 2,
+        "valuable_new_link": 1
+      },
+      "unstable": true
+    },
+    "gpt6w/B18/R18_1": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 3
+      },
+      "unstable": false
+    },
+    "gpt6w/B20/M20_1": {
+      "trials": [
+        [
+          1,
+          "unsupported_causality"
+        ],
+        [
+          2,
+          "unsupported_causality"
+        ],
+        [
+          3,
+          "unsupported_causality"
+        ],
+        [
+          4,
+          "unsupported_causality"
+        ],
+        [
+          5,
+          "unsupported_causality"
+        ]
+      ],
+      "verdict_counts": {
+        "unsupported_causality": 5
+      },
+      "unstable": false
+    },
+    "gpt6w/B20/M20_2": {
+      "trials": [
+        [
+          1,
+          "restatement"
+        ],
+        [
+          2,
+          "restatement"
+        ],
+        [
+          3,
+          "restatement"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "restatement": 5
+      },
+      "unstable": false
+    },
+    "gpt6w/B20/R20_1": {
+      "trials": [
+        [
+          1,
+          "premature_lock"
+        ],
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "premature_lock"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 5
+      },
+      "unstable": false
+    },
+    "gpt6w/B20/W20": {
+      "trials": [
+        [
+          1,
+          "valuable_new_link"
+        ],
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "valuable_new_link"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 4,
+        "restatement": 1
+      },
+      "unstable": true
+    },
+    "gpt6w/B23/M23_1": {
+      "trials": [
+        [
+          2,
+          "valuable_new_link"
+        ],
+        [
+          3,
+          "valuable_new_link"
+        ],
+        [
+          4,
+          "restatement"
+        ],
+        [
+          5,
+          "restatement"
+        ]
+      ],
+      "verdict_counts": {
+        "valuable_new_link": 2,
+        "restatement": 2
+      },
+      "unstable": true
+    },
+    "gpt6w/B23/R23_1": {
+      "trials": [
+        [
+          2,
+          "premature_lock"
+        ],
+        [
+          3,
+          "premature_lock"
+        ],
+        [
+          4,
+          "premature_lock"
+        ],
+        [
+          5,
+          "valuable_new_link"
+        ]
+      ],
+      "verdict_counts": {
+        "premature_lock": 3,
+        "valuable_new_link": 1
+      },
+      "unstable": true
+    }
+  },
+  "C_editing_variability": {
+    "gpt56w/C02": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why"
+          ],
+          "screen_fingerprint": "da32023973d30ab9"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_why"
+          ],
+          "screen_fingerprint": "2fea0a8392dd1f37"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why"
+          ],
+          "screen_fingerprint": "827ce2beb1db5bef"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why"
+          ],
+          "screen_fingerprint": "676be0431681f3b3"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_why",
+            "k02_now01"
+          ],
+          "screen_fingerprint": "c090b886e478fd64"
+        },
+        {
+          "r": 7,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why"
+          ],
+          "screen_fingerprint": "3b10b43f1d82b72a"
+        },
+        {
+          "r": 8,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_now01",
+            "k02_why"
+          ],
+          "screen_fingerprint": "1b3ab46e48f4495b"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 7
+      },
+      "selected_source_frequency": {
+        "k02_hd": 6,
+        "k02_now01": 6,
+        "k02_why": 7
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt56w/C11": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_now01",
+            "k11_now02",
+            "k11_now09"
+          ],
+          "screen_fingerprint": "bc887e85a48e0a87"
+        },
+        {
+          "r": 2,
+          "action": "APPEND",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_now02",
+            "k11_now09"
+          ],
+          "screen_fingerprint": "971b9936f612a669"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_now01",
+            "k11_now02"
+          ],
+          "screen_fingerprint": "c643155f5dbae138"
+        },
+        {
+          "r": 4,
+          "action": "APPEND",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_now02"
+          ],
+          "screen_fingerprint": "7aa87f57249a0bef"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01"
+          ],
+          "screen_fingerprint": "c67b1ad4718b59a5"
+        },
+        {
+          "r": 6,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01"
+          ],
+          "screen_fingerprint": "ba0233308f66335e"
+        },
+        {
+          "r": 7,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_now01",
+            "k11_hd"
+          ],
+          "screen_fingerprint": "07d899b155b94ef4"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 5,
+        "APPEND": 2
+      },
+      "selected_source_frequency": {
+        "k11_now01": 5,
+        "k11_now02": 4,
+        "k11_now09": 2,
+        "k11_hd": 3
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt56w/C18": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_now01",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "003a0824a2579c27"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k18_now22"
+          ],
+          "screen_fingerprint": "6b495853dc431d93"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_now01",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "448fb52fcebfb8cb"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_hd",
+            "k18_now01",
+            "k18_now08"
+          ],
+          "screen_fingerprint": "50395a37d5f0ac3f"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_hd",
+            "k18_now08",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "f2319d1fe9de7ea1"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 5
+      },
+      "selected_source_frequency": {
+        "k18_now01": 3,
+        "k18_now22": 4,
+        "k18_hd": 2,
+        "k18_now08": 2
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt56w/C20": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_hd",
+            "k20_now01",
+            "k20_why"
+          ],
+          "screen_fingerprint": "58027ca2b6556841"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_hd",
+            "k20_now01",
+            "k20_why"
+          ],
+          "screen_fingerprint": "1c3ea008430452fd"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_now01",
+            "k20_why",
+            "k20_now05"
+          ],
+          "screen_fingerprint": "964de4996a1c9ba0"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_now01",
+            "k20_why",
+            "k20_hd",
+            "k20_now05"
+          ],
+          "screen_fingerprint": "d5c44f9cce190400"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k20_now01",
+            "k20_why"
+          ],
+          "screen_fingerprint": "d8823b9d50d501d5"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 5
+      },
+      "selected_source_frequency": {
+        "k20_hd": 3,
+        "k20_now01": 5,
+        "k20_why": 5,
+        "k20_now05": 2
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt56w/C23": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now07",
+            "k23_now22"
+          ],
+          "screen_fingerprint": "de9eecc129aa332c"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now07",
+            "k23_now22"
+          ],
+          "screen_fingerprint": "ba21a73d720497d4"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now07",
+            "k23_now22"
+          ],
+          "screen_fingerprint": "c312497bdfa4027e"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now07",
+            "k23_now22"
+          ],
+          "screen_fingerprint": "41c3daa618d4779f"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now07",
+            "k23_now22"
+          ],
+          "screen_fingerprint": "c7ff3a1a0bcbd73c"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 5
+      },
+      "selected_source_frequency": {
+        "k23_now02": 5,
+        "k23_now07": 5,
+        "k23_now22": 5
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt6w/C02": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "5c4e847cca906c77"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_why",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "f890be97537b75cf"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_why",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "64fd27eb1aec5a6b"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_why",
+            "k02_now04",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "e7f87979e7bc48ed"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now01",
+            "k02_why",
+            "k02_now07",
+            "k02_now03",
+            "k02_now06"
+          ],
+          "screen_fingerprint": "2fb00029744ee99d"
+        },
+        {
+          "r": 6,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now02",
+            "k02_why",
+            "k02_now01",
+            "k02_now04",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "3999852a9fc0f1db"
+        },
+        {
+          "r": 7,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now02",
+            "k02_why",
+            "k02_now01",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "8e77033816caed7c"
+        },
+        {
+          "r": 8,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k02_hd",
+            "k02_now02",
+            "k02_why",
+            "k02_now04",
+            "k02_now07"
+          ],
+          "screen_fingerprint": "6ca1ea96ac10e97e"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 8
+      },
+      "selected_source_frequency": {
+        "k02_hd": 8,
+        "k02_now01": 4,
+        "k02_why": 8,
+        "k02_now07": 8,
+        "k02_now04": 3,
+        "k02_now03": 1,
+        "k02_now06": 1,
+        "k02_now02": 3
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt6w/C11": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_now01",
+            "k11_hd",
+            "k11_now02"
+          ],
+          "screen_fingerprint": "9e781849003e945c"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01",
+            "k11_now02"
+          ],
+          "screen_fingerprint": "37a1a874cd8a51ea"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 1,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01",
+            "k11_now02"
+          ],
+          "screen_fingerprint": "3070bc25fcb25209"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_now01",
+            "k11_hd",
+            "k11_now02",
+            "k11_now04"
+          ],
+          "screen_fingerprint": "897f0b9842e7e491"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01",
+            "k11_now02",
+            "k11_now09"
+          ],
+          "screen_fingerprint": "d7dd04ee047ea741"
+        },
+        {
+          "r": 6,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01",
+            "k11_now02",
+            "k11_now03"
+          ],
+          "screen_fingerprint": "984efa7ae980a1d1"
+        },
+        {
+          "r": 7,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k11_hd",
+            "k11_now01",
+            "k11_now02",
+            "k11_now04"
+          ],
+          "screen_fingerprint": "99738f590ee476a6"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 7
+      },
+      "selected_source_frequency": {
+        "k11_now01": 7,
+        "k11_hd": 7,
+        "k11_now02": 7,
+        "k11_now04": 2,
+        "k11_now09": 1,
+        "k11_now03": 1
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt6w/C18": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_now01",
+            "k18_now03",
+            "k18_now04",
+            "k18_now33",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "a87a18206db0eece"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_now04",
+            "k18_now08",
+            "k18_now03",
+            "k18_now33",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "3224430f2890ce23"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k18_now04",
+            "k18_now33",
+            "k18_now21",
+            "k18_now22"
+          ],
+          "screen_fingerprint": "473c425eb6c5d3d2"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 3
+      },
+      "selected_source_frequency": {
+        "k18_now01": 1,
+        "k18_now03": 2,
+        "k18_now04": 3,
+        "k18_now33": 3,
+        "k18_now22": 3,
+        "k18_now08": 1,
+        "k18_now21": 1
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt6w/C20": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_now01",
+            "k20_why",
+            "k20_now05"
+          ],
+          "screen_fingerprint": "ad4c33d928605059"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_now01",
+            "k20_now02",
+            "k20_why",
+            "k20_now05"
+          ],
+          "screen_fingerprint": "0d06445e511efef3"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_hd",
+            "k20_now01",
+            "k20_now05",
+            "k20_now02",
+            "k20_why"
+          ],
+          "screen_fingerprint": "30f7069b5dc65192"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k20_now01",
+            "k20_why",
+            "k20_now02"
+          ],
+          "screen_fingerprint": "045e4c32561fd688"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 4
+      },
+      "selected_source_frequency": {
+        "k20_now01": 4,
+        "k20_why": 4,
+        "k20_now05": 3,
+        "k20_now02": 3,
+        "k20_hd": 1
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    },
+    "gpt6w/C23": {
+      "trials": [
+        {
+          "r": 1,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "M23_1",
+            "k23_now07",
+            "k23_now19"
+          ],
+          "screen_fingerprint": "d6a25eccd65316f0"
+        },
+        {
+          "r": 2,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "k23_now05",
+            "k23_now07",
+            "k23_now08",
+            "k23_now12"
+          ],
+          "screen_fingerprint": "408b615ae45c14a5"
+        },
+        {
+          "r": 3,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "M23_1",
+            "k23_hd",
+            "k23_now07",
+            "k23_now19"
+          ],
+          "screen_fingerprint": "f686e1df721a9b2c"
+        },
+        {
+          "r": 4,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "M23_1",
+            "k23_hd",
+            "k23_now07",
+            "k23_now19"
+          ],
+          "screen_fingerprint": "37891dc905d190b0"
+        },
+        {
+          "r": 5,
+          "action": "REPLACE",
+          "n_new_screen_items": 2,
+          "source_ids": [
+            "k23_now02",
+            "M23_1",
+            "k23_now07",
+            "k23_now12"
+          ],
+          "screen_fingerprint": "243b59e5129bd680"
+        }
+      ],
+      "action_counts": {
+        "REPLACE": 5
+      },
+      "selected_source_frequency": {
+        "k23_now02": 5,
+        "M23_1": 4,
+        "k23_now07": 5,
+        "k23_now19": 3,
+        "k23_now05": 1,
+        "k23_now08": 1,
+        "k23_now12": 2,
+        "k23_hd": 2
+      },
+      "semantic_saturation": "NOT_MACHINE_MEASURABLE: read independent F judge outputs",
+      "single_output_cannot_establish_model_quality": true
+    }
+  },
+  "warnings": [
+    "repeats within case/station are NOT independent test examples",
+    "source ID stability is not semantic saturation",
+    "judge label counts without audit are not musical truth",
+    "pre_submit failures are not SILENCE"
+  ]
+}

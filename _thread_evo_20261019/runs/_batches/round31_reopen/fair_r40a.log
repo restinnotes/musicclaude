@@ -1,0 +1,36 @@
+[cov2_op60_g6_r40a] ok 158s 10072 chars
+[cov2_op61_g6_r40a] ok 145s 11231 chars
+[cov2_op60_g56_r40a] ok 155s 9947 chars
+[cov2_op61_g56_r40a] ok 160s 10600 chars
+qurefs op60_g6 说清 44/50 偏弱 6 相反 0 没有 0 未判 0 | 主体验说清 13/14
+qurefs op60_g56 说清 44/50 偏弱 4 相反 0 没有 2 未判 0 | 主体验说清 12/14
+qurefs op61_g6 说清 47/53 偏弱 5 相反 0 没有 1 未判 0 | 主体验说清 13/13
+qurefs op61_g56 说清 51/53 偏弱 2 相反 0 没有 0 未判 0 | 主体验说清 13/13
+r40a op60_g6 说清 35/50 偏弱 10 相反 0 没有 5 未判 0 | 主体验说清 11/14
+r40a op60_g56 说清 36/50 偏弱 13 相反 0 没有 1 未判 0 | 主体验说清 11/14
+r40a op61_g6 说清 45/53 偏弱 7 相反 0 没有 1 未判 0 | 主体验说清 12/13
+r40a op61_g56 说清 43/53 偏弱 10 相反 0 没有 0 未判 0 | 主体验说清 12/13
+coverage {"status": "reject", "failures": ["op60 S01 coverage drops >=2 for both judges", "op60 S04 coverage drops >=2 for both judges"], "missing": []}
+[al2_op60_g6_r40a] ok 212s 4545 chars
+[al2_op60_g56_r40a] ok 192s 4620 chars
+[al2_op61_g6_r40a] ok 157s 4175 chars
+[al2_op61_g56_r40a] ok 198s 4121 chars
+alone {"status": "pass", "failures": [], "missing": []}
+all {"status": "reject", "failures": ["op60 S01 coverage drops >=2 for both judges", "op60 S04 coverage drops >=2 for both judges"], "missing": []}
+[v6b3_op60_g6_r40a_vsqurefs_newX] ok 220s 9194 chars
+[v6b3_op60_g56_r40a_vsqurefs_newX] ok 246s 9393 chars
+[v6b3_op60_g6_r40a_vsqurefs_newY] ok 290s 10343 chars
+[v6b3_op60_g56_r40a_vsqurefs_newY] ok 303s 9622 chars
+[v6b3_op61_g6_r40a_vsqurefs_newX] ok 272s 8380 chars
+[v6b3_op61_g6_r40a_vsqurefs_newY] ok 269s 7564 chars
+[v6b3_op61_g56_r40a_vsqurefs_newX] ok 249s 9893 chars
+[v6b3_op61_g56_r40a_vsqurefs_newY] ok 236s 7842 chars
+r40a 未过 4/8 不退步 2 {'alone': -2, 'lean': 75, 'plain': 98, 'cover': -42}
+  op60 g6 newX 旧胜 退步 {'alone': 1, 'lean': 11, 'plain': 12, 'cover': -7}
+  op60 g6 newY 旧胜 退步 {'alone': -10, 'lean': 6, 'plain': 12, 'cover': -10}
+  op60 g56 newX 旧胜 退步 {'alone': -3, 'lean': 2, 'plain': 14, 'cover': -6}
+  op60 g56 newY 旧胜 退步 {'alone': -10, 'lean': 8, 'plain': 14, 'cover': -8}
+  op61 g6 newX 新胜 退步 {'alone': 2, 'lean': 11, 'plain': 13, 'cover': -7}
+  op61 g6 newY 新胜 退步 {'alone': 6, 'lean': 13, 'plain': 11, 'cover': 0}
+  op61 g56 newX 新胜 不退步 {'alone': 6, 'lean': 11, 'plain': 9, 'cover': -6}
+  op61 g56 newY 新胜 不退步 {'alone': 6, 'lean': 13, 'plain': 13, 'cover': 2}

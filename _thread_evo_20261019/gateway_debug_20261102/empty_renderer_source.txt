@@ -1,0 +1,191 @@
+(function(GenUI) {
+  "use strict";
+  const __modelGenUI = undefined;
+DIL.render(__dil.jsx(()=>{const __dilConstants=DIL.useConstants();const __dilModelDataBindings=DIL.useAppData((appData)=>appData.opGenui?.modelDataBindings??{});return null;},{"key":"body:0"}));
+})((function(handlers) {
+  "use strict";
+  const GenUI = Object.create(null);
+  function discardHostCompletion(result) {
+    // The host owns action outcome feedback; frame callbacks return RPC promises.
+    void Promise.resolve(result).catch(() => undefined);
+  }
+  const openUrl = handlers.openUrl;
+  if (typeof openUrl === "function") {
+    GenUI.openUrl = function(...args) {
+      if (args.length !== 1 || typeof args[0] !== "string") {
+        throw new TypeError("GenUI.openUrl requires one URL string");
+      }
+      return openUrl(args[0]);
+    };
+  }
+  const share = handlers.share;
+  if (typeof share === "function") {
+    function isValidComponentId(value) {
+      // Keep this runtime boundary aligned with the canonical Python
+      // is_valid_component_id helper without duplicating its regex constant.
+      if (typeof value !== "string" || value.length === 0 || value.length > 128) {
+        return false;
+      }
+      const first = value.charCodeAt(0);
+      if (!((first >= 65 && first <= 90) || (first >= 97 && first <= 122))) {
+        return false;
+      }
+      for (let index = 1; index < value.length; index += 1) {
+        const code = value.charCodeAt(index);
+        if (!((code >= 65 && code <= 90) ||
+              (code >= 97 && code <= 122) ||
+              (code >= 48 && code <= 57) ||
+              code === 95 || code === 45)) {
+          return false;
+        }
+      }
+      return true;
+    }
+    GenUI.share = function(...args) {
+      const value = args[0];
+      if (args.length !== 1 || value === null || typeof value !== "object" ||
+          Array.isArray(value) || !Object.prototype.hasOwnProperty.call(value, "kind")) {
+        throw new TypeError("GenUI.share requires one valid share request");
+      }
+      const keys = Reflect.ownKeys(value);
+      const kind = value.kind;
+      if (kind === "message" && keys.length === 1) {
+        discardHostCompletion(share({ kind: "message" }));
+        return;
+      }
+      if (kind === "region" && keys.length === 2 &&
+          Object.prototype.hasOwnProperty.call(value, "targetId")) {
+        const targetId = value.targetId;
+        if (isValidComponentId(targetId)) {
+          discardHostCompletion(share({ kind: "region", targetId }));
+          return;
+        }
+      }
+      throw new TypeError("GenUI.share requires one valid share request");
+    };
+  }
+  const copy = handlers.copy;
+  if (typeof copy === "function") {
+    GenUI.copy = function(...args) {
+      if (args.length !== 1 || typeof args[0] !== "string") {
+        throw new TypeError("GenUI.copy requires one text string");
+      }
+      discardHostCompletion(copy(args[0]));
+    };
+  }
+  const issueNewTurn = handlers.issueNewTurn;
+  if (typeof issueNewTurn === "function") {
+    GenUI.issueNewTurn = function(...args) {
+      if (args.length !== 1 || typeof args[0] !== "string") {
+        throw new TypeError("GenUI.issueNewTurn requires one query string");
+      }
+      discardHostCompletion(issueNewTurn(args[0]));
+    };
+  }
+  const triggerAgenticHandoff = handlers.triggerAgenticHandoff;
+  if (typeof triggerAgenticHandoff === "function") {
+    GenUI.triggerAgenticHandoff = function(...args) {
+      if (args.length !== 1 || typeof args[0] !== "string") {
+        throw new TypeError("GenUI.triggerAgenticHandoff requires one query string");
+      }
+      discardHostCompletion(triggerAgenticHandoff(args[0]));
+    };
+  }
+  const requestPhotoUpload = handlers.requestPhotoUpload;
+  if (typeof requestPhotoUpload === "function") {
+    GenUI.dispatchAction = function(...args) {
+      const action = args[0];
+      if (args.length !== 1 || action === null || typeof action !== "object" ||
+          Array.isArray(action) || action.type !== "request_media_upload" ||
+          (action.handler !== undefined && action.handler !== "client")) {
+        return false;
+      }
+      discardHostCompletion(requestPhotoUpload());
+    };
+  }
+  const openEntityDetail = handlers.openEntityDetail;
+  if (typeof openEntityDetail === "function") {
+    const entityReferencePattern = /^turn(?:0|[1-9]\d*)(product|business)(?:0|[1-9]\d*)(?![\s\S])/;
+    function entityText(value, limit) {
+      if (typeof value !== "string" || value.length > limit || !value.trim()) {
+        throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+      }
+      return value.trim();
+    }
+    GenUI.openEntityDetail = function(...args) {
+      const value = args[0];
+      // Check authored keys before a membrane can drop hidden or symbol fields.
+      if (args.length !== 1 || value === null || typeof value !== "object" ||
+          Array.isArray(value) || !Object.prototype.hasOwnProperty.call(value, "category")) {
+        throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+      }
+      const keys = Reflect.ownKeys(value);
+      if (Object.prototype.hasOwnProperty.call(value, "refId")) {
+        const { category, refId } = value;
+        if (keys.length !== 2 || (category !== "product" && category !== "business") ||
+            typeof refId !== "string" || refId.length > 128 ||
+            entityReferencePattern.exec(refId)?.[1] !== category) {
+          throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+        }
+        discardHostCompletion(openEntityDetail({ category, refId }));
+        return;
+      }
+      if (!Object.prototype.hasOwnProperty.call(value, "value") ||
+          keys.some(key => !["value", "category", "disambig", "location", "address"].includes(key))) {
+        throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+      }
+      const category = entityText(value.category, 128).toLowerCase();
+      // Follow-up carries host-owned sidebar context.
+      if (category === "entity_sidebar_follow_up") {
+        throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+      }
+      const named = { category: category === "business" ? "local_business" : category, value: entityText(value.value, 1024) };
+      for (const field of ["disambig", "location", "address"]) {
+        if (Object.prototype.hasOwnProperty.call(value, field)) named[field] = entityText(value[field], 1024);
+      }
+      if (["local_business", "restaurant", "hotel", "hospital", "point_of_interest", "urgent_care"].includes(named.category) &&
+          !named.address && (!named.location || named.location.toLowerCase() === "user")) {
+        throw new TypeError("GenUI.openEntityDetail requires one reference or named entity");
+      }
+      discardHostCompletion(openEntityDetail(named));
+    };
+  }
+  const launchEcosystemWidget = handlers.launchEcosystemWidget;
+  if (typeof launchEcosystemWidget === "function") {
+    GenUI.launchEcosystemWidget = function(...args) {
+      const payload = args[0];
+      const fields = ["appUri", "template", "mode", "toolName", "toolInput", "logging"];
+      if (args.length !== 1 || payload === null || typeof payload !== "object" ||
+          Array.isArray(payload) ||
+          fields.some(key => !Object.prototype.hasOwnProperty.call(payload, key)) ||
+          Reflect.ownKeys(payload).some(key => ![...fields, "viewParams"].includes(key)) ||
+          ["appUri", "template", "toolName"].some(key => typeof payload[key] !== "string" || !payload[key].trim()) ||
+          !["fullscreen", "modal"].includes(payload.mode) ||
+          [payload.toolInput, payload.logging].some(value => value === null || typeof value !== "object" || Array.isArray(value)) ||
+          (payload.viewParams != null && (typeof payload.viewParams !== "object" || Array.isArray(payload.viewParams)))) {
+        throw new TypeError("GenUI.launchEcosystemWidget requires a returned launcher payload");
+      }
+      discardHostCompletion(launchEcosystemWidget(payload));
+    };
+  }
+  const runPluginTool = handlers.runPluginTool;
+  if (typeof runPluginTool === "function") {
+    GenUI.runPluginTool = function(...args) {
+      const value = args[0];
+      if (args.length !== 1 || value === null || typeof value !== "object" ||
+          Array.isArray(value) || Reflect.ownKeys(value).length !== 2 ||
+          !Object.prototype.hasOwnProperty.call(value, "tool") || !Object.prototype.hasOwnProperty.call(value, "arguments")) {
+        throw new TypeError("GenUI.runPluginTool requires {tool: 'exact_tool_name_or_uri', arguments: {...}}");
+      }
+      const { tool, arguments: toolArguments } = value;
+      if (typeof tool !== "string" || !tool.trim() ||
+          toolArguments === null || typeof toolArguments !== "object" || Array.isArray(toolArguments)) {
+        throw new TypeError("GenUI.runPluginTool requires {tool: 'exact_tool_name_or_uri', arguments: {...}}");
+      }
+      // Unlike fire-and-forget actions, the authored UI owns this completion.
+      return runPluginTool({ tool, arguments: toolArguments });
+    };
+  }
+
+  return Object.freeze(GenUI);
+})(__modelGenUI));

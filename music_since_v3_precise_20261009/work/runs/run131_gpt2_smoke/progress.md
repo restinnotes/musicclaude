@@ -1,0 +1,42 @@
+# run131 gpt2 smoke progress
+
+- 2026-10-08 R3 start: adapter+tests exist uncommitted; progress.md created.
+- 2026-10-08 R3T1 done: mock 18/18 passed (pytest tools/tests/test_gpt2_adapter.py).
+- 2026-10-08 R3T2 done: CLI help checked. ask/resume/probe --model {gpt-5-6-thinking,gpt-6-thinking}, default 5.6, fixed Extra High/max, no effort param, --file max 65536 chars, exit 0/1/2. Matches adapter. `gpt2 check` ready:true (local only, docker_ready:true, MG_required:false). safechain@dca0fd (origin restinnotes/gpt2agent-safechain). upstream-control-20261008 is the RobotLearning123 gpt2agent MCP server repo (v0.0.26, 2026-10-05); safechain is a separate downsteam fork/derivative with headless-init+HTTP chain + gpt2.cmd wrapper. Read-only, not installed.
+- 2026-10-08 R3T3 prep: prompts ready in runs/run131_gpt2_smoke/prompts/ (short_q 37ch, long_sum 20014ch, cup=0926 original 407ch). OP52 reference is clean UTF-8 (36210 chars, 0 replacement).
+- 2026-10-08 R4 start (Muse): subprocess list直调.cmd实测FileNotFoundError; cmd.exe /c可用. 修adapter+tests先.
+- 2026-10-08 R4 adapter: gpt2.cmd 经 ["cmd.exe","/c",<cmd>,...] 调用（_cmd_argv，MUSIC_GPT2_CMD 覆盖仍有效）；_write_text 改 newline=""（原先 CRLF 源会被写成 CR CR LF 再经 --file 发出）；测试 mock 只认 `ask` 调用（原先误拦 git rev-parse）。mock 测试 23/23 通过（含真实 subprocess 经 cmd.exe 跑 .cmd 桩）。
+- 2026-10-08 R4 go.py 写好：runs/run131_gpt2_smoke/go.py。--dry-run（桩 CLI，临时目录）DONE 6/6；--dry-run --simulate-429 在 gpt6w long_sum 停队列并写 stop_reason.json+FAILED；--dry-dir 续跑跳过已 ok job。发出 prompt 为源文件 CRLF->LF。真实目录无干跑产物、无 DONE。
+- 2026-10-08 R4 run132 go.py 写好（runs/run132_v2a_gemini_baseline/go.py）：--dry-run 11 job + 1 retry 演练 DONE；prompt 与 A_orig_V2A.txt 仅 {{WORK}} 处不同（字节校验通过）。Gemini 冒烟（只回复：好）：gpro_web ok 16.1s「好」，gflash_web ok 16.6s「好」，产物在 run132/_smoke。
+- 2026-10-08 18:35 go.py start (dry_run=False)
+- 2026-10-08 18:35 run131__gpt56w__short_q: failed 0.8s 0ch suspect=-
+- 2026-10-08 18:35 run131__gpt6w__short_q: failed 0.7s 0ch suspect=-
+- 2026-10-08 18:35 run131__gpt56w__long_sum: failed 0.9s 0ch suspect=-
+- 2026-10-08 18:35 run131__gpt6w__long_sum: failed 1.0s 0ch suspect=-
+- 2026-10-08 18:35 run131__gpt56w__cup: failed 0.8s 0ch suspect=-
+- 2026-10-08 18:35 run131__gpt6w__cup: failed 0.6s 0ch suspect=-
+- 2026-10-08 18:35 go.py end: FAILED
+- 2026-10-08 18:42 go.py start (dry_run=False)
+- 2026-10-08 18:42 run131__gpt56w__short_q: failed 0.7s 0ch suspect=-
+- 2026-10-08 18:42 run131__gpt6w__short_q: failed 0.8s 0ch suspect=-
+- 2026-10-08 18:42 run131__gpt56w__long_sum: failed 0.8s 0ch suspect=-
+- 2026-10-08 18:42 run131__gpt6w__long_sum: failed 0.7s 0ch suspect=-
+- 2026-10-08 18:42 run131__gpt56w__cup: failed 0.6s 0ch suspect=-
+- 2026-10-08 18:42 run131__gpt6w__cup: failed 0.6s 0ch suspect=-
+- 2026-10-08 18:42 go.py end: FAILED
+- 2026-10-08 23:47 go.py start (dry_run=False)
+- 2026-10-08 23:47 run131__gpt56w__short_q: failed 0.4s 0ch suspect=-
+- 2026-10-08 23:47 run131__gpt6w__short_q: failed 0.3s 0ch suspect=-
+- 2026-10-08 23:47 run131__gpt56w__long_sum: failed 0.4s 0ch suspect=-
+- 2026-10-08 23:47 run131__gpt6w__long_sum: failed 0.4s 0ch suspect=-
+- 2026-10-08 23:47 run131__gpt56w__cup: failed 0.3s 0ch suspect=-
+- 2026-10-08 23:47 run131__gpt6w__cup: failed 0.3s 0ch suspect=-
+- 2026-10-08 23:47 go.py end: FAILED
+- 2026-10-09 00:07 go.py start (dry_run=False)
+- 2026-10-09 00:08 run131__gpt56w__short_q: ok 61.3s 135ch suspect=['slug_mismatch']
+- 2026-10-09 00:10 run131__gpt6w__short_q: failed 85.8s 0ch suspect=-
+- 2026-10-09 00:11 run131__gpt56w__long_sum: failed 68.5s 0ch suspect=-
+- 2026-10-09 00:12 run131__gpt6w__long_sum: failed 69.5s 0ch suspect=-
+- 2026-10-09 00:21 run131__gpt56w__cup: ok 541.3s 6618ch suspect=['slug_mismatch']
+- 2026-10-09 00:28 run131__gpt6w__cup: ok 419.0s 10208ch suspect=['slug_mismatch']
+- 2026-10-09 00:28 go.py end: FAILED

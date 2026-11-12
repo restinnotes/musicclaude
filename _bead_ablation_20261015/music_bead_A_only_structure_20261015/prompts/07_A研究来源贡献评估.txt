@@ -1,0 +1,19 @@
+【通用提示词｜只审 A-int/A-web 研究来源模型对珠子的真实贡献】
+
+作品、冻结段落与可靠结构证据：{{SEGMENT_AND_STRUCTURE}}
+A 原始研究及来源明细（按 model × int/web × sample 标记）：{{ALL_A_RAW_SOURCES}}
+该段 A-only Bead（如果已有）：{{BEAD_TEXT_AND_TRACE}}
+可供比较的其他 A 模型材料：{{OTHER_A_SOURCES}}
+
+你的任务不是选“最强模型”标签，而是判断**每个真实的 A 研究来源为这一段提供了什么不可替代的感受或表达**。每个参与的模型、联网和内部渠道、各采样都单独记录；不可用时不造原文。
+
+逐来源查看：
+- 有哪些具体的、独特的当前体验、精神质地、关系姿态或真实局部变化？附准确引文和 source_id。
+- 与其他 A 来源在语义上已经重合的有哪些？即使含义相似，是否有更鲜活的表达值得保留？分开记录 semantic_gain 与 expression_gain。
+- 哪些只是近义堆叠、泛化标签、纯技术术语、越过当下时间权限的全曲预设，或者定位/事实有疑点？
+- 哪些实际上进入了当前珠子？若未进入，是真实重复、输出篇幅限制还是不当损失？
+- 如果删除这个来源是否会损失真正有价值的内容？可以在一段内做留一试验，但必须固定其余输入、结构、模型和提示词。对照不成立时就报告无法裁决。
+
+不要因为表达有戏剧性、具体生活场景、强烈甚至笃定而自动扣分。不能只比较引用数量、单元数量或作者篇幅。也不要将珠子写手模型的优劣冒充为原始 A 来源模型的优劣。
+
+输出一张完整来源表：`source_id, model, int_or_web, sample, exact_valuable_text, semantic_gain, expression_gain, support_or_uncertainty, redundancy, downstream_fate, removal_impact, confidence`，另附每个模型最有力/最薄弱的原文实例。最后给证据有限的建议而非笼统排名。

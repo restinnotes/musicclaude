@@ -1,0 +1,119 @@
+--- gpt3_call.py (before)
++++ gpt3_call.py (after)
+@@ -1,11 +1,13 @@
+ """Careful gpt3 route for evo.call (10-26/27, user: retry the gpt3 account (yi) at Extra High / max, serial, ~20 s apart).
+-- one request in flight at a time, at least GAP s (+ up to 10 s jitter) between submissions;
++- shared slots limit requests in flight; at least GAP s (+ up to 10 s jitter) between real submissions;
++- hold the submission gate until the previous request starts returning (or exits / times out);
+ - --allow-topic-stream: when an answer moves to the websocket topic (the 10-24 truncation cause), the CLI follows that
+   same turn instead of ending with thoughts only; it never regenerates;
+ - stop for good on a usage-limit / protection message, after 2 failures in a row, or after 3 failures in total.
+ No fingerprint, verification or anti-bot tricks: only pacing and honest stopping."""
+ import hashlib, json, os, random, subprocess, threading, time
+ from pathlib import Path
++from datetime import datetime, timezone
+ import evo
+ 
+ GPT3 = "D:/musicclaude/gpt2agent-safechain/bin/gpt3.cmd"
+@@ -61,9 +63,53 @@
+ GATE = evo.RUNS / "gpt3_submit.lock"
+ 
+ 
+-def _space_submission():
+-    """10-27: read-wait-stamp under one exclusive cross-process lock, so parallel slots still start >= GAP s apart
+-    (before, 8 slots read the same old stamp at once and all submitted in the same second)"""
++SUBMIT_TIMEOUT = 180
++SUBMIT_POLL = 1
++
++
++def _wait_submission(proc, message, t0, existing, run_id):
++    """Observe only this launch's new prompt-matched job while holding GATE."""
++    deadline = time.monotonic() + SUBMIT_TIMEOUT
++    job = None; submitted_utc = None; submitted_epoch = None
++    want = message.rstrip()  # The CLI rstrips the input before saving prompt.txt.
++    while True:
++        if job is None:
++            for candidate in evo.GPT3_RUNS.glob("pro-bridge-*"):
++                try:
++                    if candidate in existing or candidate.stat().st_ctime < t0:
++                        continue
++                    if (candidate / "prompt.txt").read_text(encoding="utf-8-sig").rstrip() == want:
++                        job = candidate
++                        break
++                except (OSError, UnicodeError):
++                    pass  # The CLI may still be creating the directory / writing the prompt.
++        if job is not None:
++            try:
++                utc = json.loads((job / "submitted.json").read_text(encoding="utf-8"))["utc"]
++                parsed = datetime.fromisoformat(utc.replace("Z", "+00:00"))
++                if parsed.tzinfo is None:
++                    parsed = parsed.replace(tzinfo=timezone.utc)
++                submitted_epoch = parsed.timestamp(); submitted_utc = utc
++            except (OSError, ValueError, KeyError, TypeError, AttributeError, OverflowError):
++                pass  # Missing or partially written evidence is retried on the next poll.
++            try:
++                network = json.loads((job / "generation-network.json").read_text(encoding="utf-8"))
++                if submitted_epoch is not None and network.get("first_chunk_ms") is not None:
++                    break
++            except (OSError, ValueError, AttributeError):
++                pass
++        if proc.poll() is not None:
++            break
++        remaining = deadline - time.monotonic()
++        if remaining <= 0:
++            print(f"[{run_id}] WARNING: submission/first-chunk wait timed out after {SUBMIT_TIMEOUT}s; releasing GATE", flush=True)
++            break
++        time.sleep(min(SUBMIT_POLL, remaining))
++    return submitted_utc, submitted_epoch
++
++
++def _space_submission(command, message, run_id):
++    """Wait from the previous real submit, launch, and observe first return under GATE."""
+     import msvcrt
+     with open(GATE, "a+") as f:
+         while True:
+@@ -72,11 +118,17 @@
+             except OSError:
+                 time.sleep(1)
+         try:
+-            last = float(STAMP.read_text()) if STAMP.exists() else 0.0
++            last = float(STAMP.read_text(encoding="utf-8")) if STAMP.exists() else 0.0
+             w = GAP + random.uniform(0, 10) - (time.time() - last)
+             if w > 0:
+                 time.sleep(w)
+-            STAMP.write_text(str(time.time()))
++            existing = set(evo.GPT3_RUNS.glob("pro-bridge-*"))
++            started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
++            proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++            submitted_utc, submitted_epoch = _wait_submission(proc, message, t0, existing, run_id)
++            STAMP.write_text(str(submitted_epoch if submitted_epoch is not None else time.time()), encoding="utf-8")
++            gap = submitted_epoch - last if submitted_epoch is not None and last else None
++            return proc, started, t0, submitted_utc, gap
+         finally:
+             f.seek(0); msvcrt.locking(f.fileno(), msvcrt.LK_UNLCK, 1)
+ 
+@@ -100,11 +152,11 @@
+         with _Serial():
+             if stopped():
+                 print(f"[{run_id}] SKIPPED ({stopped()})", flush=True); return None
+-            _space_submission()
+-            started = time.strftime("%Y-%m-%dT%H:%M:%S"); t0 = time.time()
+-            cp = subprocess.run([GPT3, "ask", "--file", str(inp), "--json", "--model", model, "--allow-topic-stream"]
+-                                + [x for a in attach for x in ("--attach", a)], capture_output=True)
+-            STAMP.write_text(str(time.time()))
++            command = [GPT3, "ask", "--file", str(inp), "--json", "--model", model, "--allow-topic-stream"] \
++                      + [x for a in attach for x in ("--attach", a)]
++            proc, started, t0, submitted_utc, gap = _space_submission(command, message, run_id)
++            stdout, stderr = proc.communicate()
++            cp = subprocess.CompletedProcess(command, proc.returncode, stdout, stderr)
+         dt = time.time() - t0
+         (d / "stdout.bin").write_bytes(cp.stdout); (d / "stderr.bin").write_bytes(cp.stderr)
+         try:
+@@ -115,6 +167,7 @@
+         ok = (cp.returncode == 0 and j.get("completed") is True and resp.strip()
+               and md.get("model") == model and md.get("thinking_effort") == "max")
+         rec = {"run_id": run_id, "attempt": attempt, "account": "gpt3", "route": "gpt3-serial", "started": started,
++               "submitted_utc": submitted_utc, "gap_since_prev_submit_s": gap,
+                "seconds": round(dt), "exit_code": cp.returncode, "completed": bool(ok), "model": md.get("model"),
+                "thinking_effort": md.get("thinking_effort"), "job_directory": md.get("job_directory"),
+                "message_chars": len(message), "message_sha256": hashlib.sha256(message.encode()).hexdigest(), "meta": meta or {}}

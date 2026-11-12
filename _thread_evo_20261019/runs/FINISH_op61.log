@@ -1,0 +1,68 @@
+op61 S05 gaps ['S05-B1'] -> accepted 1 / 1
+[flP3a_op61_S03_W] FAILED 93s {"type": "incomplete_response", "message": "Browser automation failed at incomplete_response"}
+op61 S05 gaps ['S05-B1'] -> accepted 1 / 1
+[flP3a_op61_S06_W] FAILED rc=4294967295 23s 'meError", "automatic_retry": false, "job_directory": "D:\\\\musicclaude\\\\gpt2agent-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261027T103112271308Z", "submitted": true}\r\n'
+[flP3a_op61_S07_W] FAILED rc=1 25s 'meError", "automatic_retry": false, "job_directory": "D:\\\\musicclaude\\\\gpt2agent-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261027T103112226681Z", "submitted": true}\r\n'
+GPT3 STOPPED: 2 in a row / 2 total failures (last flP3a_op61_S07_W)
+[flP3a_op61_S07_W] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+[flP3a_op61_S07_W_x] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+op61 S07 gaps ['S07-B1'] -> accepted 0 / 0
+[flP3a_op61_S08_W] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+[flP3a_op61_S08_W_x] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+op61 S08 gaps ['S08-B2'] -> accepted 0 / 0
+[flP3a_op61_S10_W] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+[flP3a_op61_S10_W_x] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+op61 S10 gaps ['S10-B1', 'S10-B2'] -> accepted 0 / 0
+[flP3a_op61_S11_W] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+[flP3a_op61_S11_W_x] SKIPPED (2 in a row / 2 total failures (last flP3a_op61_S07_W))
+op61 S11 gaps ['S11-B2'] -> accepted 0 / 0
+[flP3a_op61_S02_W] FAILED rc=1 28s 'meError", "automatic_retry": false, "job_directory": "D:\\\\musicclaude\\\\gpt2agent-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261027T103112296184Z", "submitted": true}\r\n'
+GPT3 STOPPED: 3 in a row / 3 total failures (last flP3a_op61_S02_W)
+[flP3a_op61_S02_W] SKIPPED (3 in a row / 3 total failures (last flP3a_op61_S02_W))
+[flP3a_op61_S02_W_x] SKIPPED (3 in a row / 3 total failures (last flP3a_op61_S02_W))
+op61 S02 gaps ['S02-B5'] -> accepted 0 / 0
+[flP3a_op61_S03_B5_W] ok 56s 369 chars
+[flP3a_op61_S02_B5_W] ok 68s 281 chars
+[flP3a_op61_S03_B5_K] ok 41s 165 chars
+op61 S03 gaps ['S03-B5'] -> accepted 1 / 1
+[flP3a_op61_S02_B5_K] ok 52s 172 chars
+op61 S02 gaps ['S02-B5'] -> accepted 1 / 1
+[flP3a_op61_S05_B1_B5_W] ok 78s 418 chars
+[flP3a_op61_S04_B4_W] ok 164s 312 chars
+[flP3a_op61_S05_B1_B5_K] ok 41s 156 chars
+op61 S05 gaps ['S05-B1', 'S05-B5'] -> accepted 0 / 1
+[flP3a_op61_S04_B4_K] ok 52s 134 chars
+op61 S04 gaps ['S04-B4'] -> accepted 1 / 1
+[flP3a_op61_S08_B2_W] ok 52s 288 chars
+[flP3a_op61_S08_B2_K] ok 31s 144 chars
+op61 S08 gaps ['S08-B2'] -> accepted 1 / 1
+[flP3a_op61_S07_B1_W] ok 105s 349 chars
+[flP3a_op61_S07_B1_K] ok 31s 142 chars
+op61 S07 gaps ['S07-B1'] -> accepted 0 / 1
+[flP3a_op61_S11_B2_W] ok 77s 330 chars
+[flP3a_op61_S11_B2_K] ok 31s 156 chars
+op61 S11 gaps ['S11-B2'] -> accepted 1 / 1
+[flP3a_op61_S13_B4_W] ok 91s 430 chars
+[flP3a_op61_S13_B4_K] ok 41s 173 chars
+op61 S13 gaps ['S13-B4'] -> accepted 1 / 1
+[flP3a_op61_S06_B2_B3_W] ok 370s 510 chars
+[flP3a_op61_S06_B2_B3_K] ok 31s 178 chars
+op61 S06 gaps ['S06-B2', 'S06-B3'] -> accepted 1 / 1
+[flP3a_op61_S10_B1_B2_W] ok 203s 451 chars
+[flP3a_op61_S10_B1_B2_K] ok 31s 168 chars
+op61 S10 gaps ['S10-B1', 'S10-B2'] -> accepted 1 / 1
+[fnP3a_op61_F] ok 661s 13143 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\finalize3.py", line 179, in <module>
+    run(sys.argv[1], sys.argv[2])
+  File "D:\musicclaude\_thread_evo_20261019\finalize3.py", line 121, in run
+    pairs = "\n".join(f"{it['id']}\n  原文：{orig.get(it['id'], '（无对应原文）')}\n  修改后：{it['text']}"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\finalize3.py", line 121, in <genexpr>
+    pairs = "\n".join(f"{it['id']}\n  原文：{orig.get(it['id'], '（无对应原文）')}\n  修改后：{it['text']}"
+                                                                                               ~~^^^^^^^^
+KeyError: 'text'
+[fnP3a_op61_V] ok 133s 1694 chars
+[fnP3a_op61_R_g6] ok 616s 6127 chars
+[fnP3a_op61_R_g56] ok 113s 3806 chars
+op61 coverage {'explained': 35, 'filled': 4, 'compatible': 3, 'alternative': 0, 'doubtful': 2, 'gap': 9} | regression {'g6': '新版有实质退步', 'g56': '新版有实质退步'}

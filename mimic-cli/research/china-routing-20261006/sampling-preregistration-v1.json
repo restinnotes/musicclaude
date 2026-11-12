@@ -1,0 +1,19 @@
+{
+  "registered_date": "2026-10-06",
+  "stage": "Before coordinator has inspected any completed W2 candidate table; no overseas SKU research has begun",
+  "population": "18 categories in the original user brief",
+  "candidate_input": "All candidate proposals from independent W2-A/B/C; include all category batches when a replicate was split",
+  "selection": {
+    "maximum_per_category": 3,
+    "desired_strata": {"domestic_head": 2, "domestic_opportunity": 1},
+    "deduplication": "Normalize brand/model/exact_variant using Unicode NFKC and casefold; retain all original spellings and provenance; never merge distinct memory/capacity/region/bundle variants",
+    "quality_priority": ["independently inspected current domestic SKU ranking or sales evidence plus exact variant", "independently inspected domestic consumer purchase evidence plus exact variant", "documented domestic review or official model evidence with head status explicitly unverified"],
+    "within_equal_quality_tiebreak": "Normalized brand, then model, then exact_variant ascending; no overseas channel or price information is consulted",
+    "insufficient_head_evidence": "Preserve category gaps and unverified head status. Provisional model-only candidates cannot become verified domestic bestsellers or enter a verified-head statistical distribution.",
+    "weights": "No fabricated category GMV weights; report missing demand-weighted distribution if comparable nonoverlapping expenditure weights are unavailable"
+  },
+  "permitted_exclusions": ["counterfeit", "wrong target product type", "variant entirely undefinable", "nonphysical", "clearly illegal/prohibited shipment"],
+  "not_exclusion_reasons": ["weight", "battery", "voltage", "firmware", "warranty", "US compatibility", "unknown shipping price", "not found overseas", "weak international visibility"],
+  "freeze": "Root coordinator inspects exact models and cited domestic sources under the user's delegated completion instruction; record actual review, retained provisional status, exclusion/gap log, UTC time, SHA256, immutable version",
+  "postfreeze": "Keep full frozen denominator; distinguish exact match, evidenced OEM match, functional comparable, not observed, blocked, and verified unavailable. Do not replace missing values with search snippets. Head/opportunity strata and verified/provisional results remain separate."
+}

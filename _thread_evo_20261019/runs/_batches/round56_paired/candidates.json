@@ -1,0 +1,37 @@
+{
+  "base": "r54weave",
+  "workers": 2,
+  "candidates": [
+    {
+      "tag": "r56paired",
+      "author": "r55_advisor_g6b",
+      "author_index": 2,
+      "name": "Paired-Delta Repair",
+      "mode": "fullgraph",
+      "hypothesis": "N05f GlobalReweave已把r50progress1rr整篇重组为r54weave并通过验收，但当时主要依据开放评审；随后才有r54weave对r50progress1rr的8份配对盲比及其逐段正反损失理由。新方案把当前稿与上一份验收稿作为双版本语义差分：保留r54新增且获得比较支持的推进，只恢复确实丢失、仍有独立作用且事实边界允许的旧语义单元；对评委意见分歧的地方回到两版全文判断。它不是单纯局部修句，也不是再做一次无基准的全篇重组。",
+      "risk": "模型可能把两版简单拼接，重新带回已被删掉的重复内容，或为了回应评委而变长；也可能把旧稿中的未经支持事实当成已验收事实恢复。必须严格按REVIEWS中的X/Y映射读取配对结果，并把baseline当作语义参照而非事实证明；当前稿仍是主稿，不能按票数自动合并。它与R54Reader Rebuild不同：核心输入是明确配对的两版差分和逐份正反损失，而不是只对单稿重建通用读者因果图；与N05e局部修订不同：输出完整segments JSON，可重新安排跨段职责，不受旧实验的改动条数或篇幅限制。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "POST_paired_delta",
+          "path": "runs\\_batches\\round56_paired\\prompts\\r56paired_P1.txt",
+          "sha256": "56b7967d69e588b7009232807b9f87659f15aba2f9db5d2273acfa14b09a6311",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "LINE",
+            "REVIEWS",
+            "SECTIONS"
+          ]
+        }
+      ],
+      "paired_delta_context": true,
+      "bead_input": "N03i_display"
+    }
+  ],
+  "source_hashes": {
+    "op60": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+    "op61": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+  },
+  "selection": "Distinct global paired-version mechanism, using fully read adviser. Separate from R55 protected shell/local repair; no acceptance or convergence assumed. If current mainline advances during parallel collection, recompare to the actual new mainline before acceptance."
+}

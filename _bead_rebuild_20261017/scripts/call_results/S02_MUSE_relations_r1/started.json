@@ -1,0 +1,50 @@
+{
+  "job_id": "S02_MUSE_relations_r1",
+  "status": "failed",
+  "started": "2026-10-17T19:33:19.126530+00:00",
+  "channel": "opencode",
+  "requested_model": "opencode2api/muse-spark-1.3-contributor-free#xhigh",
+  "manifest_sha256": "d1738e695247c25d58f431b7a6d6f789b9ad0760e64329fd3f52f6e0291b0777",
+  "runner_sha256": "84d7323ee2da0a867c1d42685cc1a945b531d9b55bee9728be499b86e7ccf248",
+  "prompt_source": "D:\\musicclaude\\_bead_rebuild_20261017\\inputs\\S02.txt",
+  "attachments": [],
+  "automatic_retry": false,
+  "automatic_fallback": false,
+  "exit_code": null,
+  "submission_state": "not_started",
+  "errors": [],
+  "labels": {
+    "segment": "S02",
+    "method": "source_distinctions_relations",
+    "round": 1
+  },
+  "prompt_sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3",
+  "prompt_bytes": 88016,
+  "prompt_characters": 45104,
+  "normalized_prompt_sha256": "41c3217f738f7ea504d59d82e320f867e55eff563931d2f8e3f64cbc05aa5f8f",
+  "normalized_prompt_bytes": 87374,
+  "normalized_prompt_characters": 44462,
+  "native_body_limit_bytes": 65536,
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "tools": "deny",
+    "standalone": true,
+    "provider_timeout": false,
+    "effort": "xhigh",
+    "provider_configuration_sha256": "7f8257c997d1d3fa3fa9001ec42699d575c438f80776d63b3c9ba30faf39088c",
+    "process_config": {
+      "permission": "deny",
+      "provider": {
+        "opencode2api": {
+          "options": {
+            "timeout": false
+          }
+        }
+      }
+    },
+    "upstream_safety_settings": "inherited_not_independently_verified",
+    "provider_internal_retry_behavior": "not_verified_runner_never_retries"
+  }
+}

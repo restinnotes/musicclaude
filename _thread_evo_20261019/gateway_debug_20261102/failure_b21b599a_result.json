@@ -1,0 +1,126 @@
+{
+  "key": "scr26t3_op60_A4#0",
+  "prompt_sha256": "a79109c6d836a50d9838cc08e6531afcf22215f649d427f6f45a2b2e11d335eb",
+  "model": "gpt-6",
+  "effort": "high",
+  "http_status": 502,
+  "body": {
+    "error": {
+      "type": "incomplete_response",
+      "message": "Browser automation failed at incomplete_response"
+    },
+    "mimicgate_diagnostics": {
+      "preparation_started_at": 1793659832.2983906,
+      "temporary_chat": {
+        "verified": true,
+        "url_flag": true,
+        "active_control": "Turn off temporary chat",
+        "verified_at": 1793659887.1579714
+      },
+      "non_personalized": {
+        "verified": true,
+        "selected_label": "Unpersonalized",
+        "aria_checked": true,
+        "closed_label": "Unpersonalized",
+        "verified_at": 1793659887.6184025
+      },
+      "model": {
+        "model": "gpt-6",
+        "requested_effort": "high",
+        "selected_effort": "high",
+        "fallback_reason": null,
+        "selected_model_label": "GPT-6",
+        "selected_effort_label": "High",
+        "available_effort_labels": [
+          "Instant",
+          "Medium",
+          "High"
+        ],
+        "verified_at": 1793659886.7517917,
+        "verification": "live_radio_slider_reopened_picker",
+        "verification_stage": "immediately_before_submission",
+        "cache_used": false,
+        "bound_page_object_id": 138663095422416
+      },
+      "verification_stage": "immediately_before_submission",
+      "browser_environment_observation": "skipped_before_submission",
+      "native_hint_experiment": {
+        "mode": "baseline",
+        "actual_native_metadata": null,
+        "supplied_header_names": [],
+        "supplied_headers": {},
+        "original_native_low_entropy_headers_overridden": false,
+        "request_body_edited": false,
+        "opaque_instance_id_injected": false,
+        "cookie_or_login_changed": false,
+        "applied_by_owning_driver": true
+      },
+      "authentication": {
+        "session_cookie_count": 2,
+        "expiries": [
+          1801435831.53209,
+          1801435831.532412
+        ],
+        "device_cookie_present": true,
+        "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+        "site_cookie_count": 102,
+        "root_cookie_count": 100,
+        "cookie_header_bytes_estimate": 14821,
+        "temporary_cookie_count": 64
+      },
+      "storage_capacity": {
+        "cookie_count": 102,
+        "removed": 0
+      },
+      "submission_pacing": {
+        "minimum_interval_seconds": 5.0,
+        "waited_seconds": 0.0,
+        "send_attempt_at": 1793659887.724945,
+        "previous_attempt_gap_seconds": 71.219
+      },
+      "prompt_content_verified": true,
+      "submitted_at": 1793659888.3741243,
+      "response_timeout_ms": 1800000,
+      "failure_page_response_error": {
+        "checked": true,
+        "error": null
+      },
+      "cleanup_stop_attempted": false,
+      "generation_active_before_cleanup": false,
+      "generation_inactive_after_cleanup": true,
+      "generation_stop_verified": true,
+      "generation_stop_verified_scope": "after_exception_cleanup_not_natural_completion",
+      "screenshot_evidence": {
+        "directory": "/app/state/probe-artifacts/a98dd473bd8b4d6ca8685c8c6ff55800",
+        "stage": "failure",
+        "request_id": "a98dd473bd8b4d6ca8685c8c6ff55800",
+        "captured_at": 1793660189.1488457,
+        "source": "live browser page owned by this standard request",
+        "files": [
+          {
+            "filename": "failure-viewport.jpg",
+            "sha256": "d5fd43dcdca6d0510bfaf186943184344077b045df2e0f82894771d8be5df0a3"
+          },
+          {
+            "filename": "failure-full.jpg",
+            "sha256": "d5fd43dcdca6d0510bfaf186943184344077b045df2e0f82894771d8be5df0a3"
+          }
+        ],
+        "thinking_time_ui_labels": [],
+        "success": true,
+        "capture_seconds": 0.192
+      },
+      "elapsed_seconds": 358.267,
+      "completion_guard_version": "response-fix-v1",
+      "request_id": "a98dd473bd8b4d6ca8685c8c6ff55800",
+      "protocol_error_tags": [],
+      "response_complete": false,
+      "exception_class": "RuntimeError"
+    }
+  },
+  "error": null,
+  "seconds": 358.461,
+  "finished_utc": "2026-11-02T22:56:29.624945+00:00",
+  "no_automatic_retry": true,
+  "receiver_pid": 5327
+}

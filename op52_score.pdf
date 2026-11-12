@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMSLP - Bot Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .success {
+            color: #2e7d32;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .pld { display: none; }
+        .mtcaptcha { display: inline-block; }
+        .cta {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .cta:hover { background-color: #1565c0; }
+        .cta:disabled { background-color: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div id='s0'>
+        <div class='message'>Click the button below to verify you are human.</div>
+        <button class='cta' onclick='_sc()'>Start Verification</button>
+    </div>
+
+    <div id='s1' style='display:none'>
+        <div id='instructions'></div>
+        <div class='mtcaptcha'>Loading...</div><br />
+        <div id='reminder'></div>
+    </div>
+
+    <input type='text' name='email' class='pld' tabindex='-1' autocomplete='off' />
+    <input type='text' name='url' class='pld' tabindex='-1' autocomplete='off' />
+
+    <div id='s2' style='display:none'>
+        <div class='success'>Bot Check Passed</div>
+        <div class='message'>
+            You have passed the bot test.<br /><br />
+            Please go back and try the link again.
+        </div>
+    </div>
+
+    <script>
+        function _sc() {
+            var hp = document.querySelectorAll('.pld');
+            for (var i = 0; i < hp.length; i++) {
+                if (hp[i].value) { return; }
+            }
+            document.getElementById('s0').style.display = 'none';
+            document.getElementById('s1').style.display = 'block';
+            var s = document.createElement('script');
+            s.src = '/extensions/common/jscss/mtcaptcha.loader.js';
+            document.head.appendChild(s);
+        }
+
+        function mtcaptchaRenderedCallback() {
+            document.getElementById('instructions').innerHTML = 'Please enter the letters below to continue:<br />';
+        }
+
+        function mtcaptchaCallback(r) {
+            fetch('/wiki/Special:GM/getbotclearedtoken', {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    mtcaptcha_response: r
+                })
+            })
+            .then(function(res){ return res.json(); })
+            .then(function(data){
+                if (data.client_token) {
+                    document.cookie = 'BOT_DETECT_CLEARED=' + data.client_token + '; path=/; Max-Age=' + (400*24*60*60) + '; SameSite=None; Secure';
+                    document.getElementById('s1').style.display = 'none';
+                    document.getElementById('s2').style.display = 'block';
+                } else {
+                    console.error('MTCaptcha: no client_token in response');
+                    location.reload();
+                }
+            })
+            .catch(function(err){
+                console.error('MTCaptcha-token request failed:', err);
+                location.reload();
+            });
+        }
+
+        setTimeout(
+            function() { document.getElementById('reminder').innerHTML = 'If you cannot get past this page, please e-mail eguo@imslp.org'; },
+            5000
+        );
+    </script>
+</body>
+</html>

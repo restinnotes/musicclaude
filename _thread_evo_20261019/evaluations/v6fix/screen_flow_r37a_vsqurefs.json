@@ -1,0 +1,68 @@
+{
+  "tag": "r37a",
+  "base": "qurefs",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 3,
+    "wins": 1,
+    "no_regress": 1,
+    "net_sums": {
+      "alone": -3,
+      "lean": 23,
+      "plain": 40,
+      "cover": -13
+    },
+    "missing": [
+      "v6b2_op61_g6_r37a_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 13,
+    "reasons": [
+      "remaining votes cannot reach the required new-version wins"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_r37a_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -3,
+          "lean": 6,
+          "plain": 14,
+          "cover": -2
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_r37a_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 4,
+          "lean": 9,
+          "plain": 12,
+          "cover": 0
+        }
+      },
+      {
+        "rid": "v6b2_op60_g56_r37a_vsqurefs",
+        "w": "op60",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -4,
+          "lean": 8,
+          "plain": 14,
+          "cover": -11
+        }
+      }
+    ]
+  },
+  "status": "reject",
+  "next": "archive_and_change_direction"
+}

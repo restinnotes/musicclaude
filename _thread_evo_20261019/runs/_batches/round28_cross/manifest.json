@@ -1,0 +1,30 @@
+{
+  "name": "round28_cross",
+  "base": "qurefs",
+  "source_tags": [
+    "r27p2",
+    "qu"
+  ],
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "round28_crossc01",
+      "spec": "schemes/round28_crossc01.json",
+      "upstream": "schemes/R27P2.json",
+      "a2_source": "schemes/R27P2.json",
+      "writer": "schemes/round28_fastc01.json",
+      "spec_sha256": "cd29b61c5418588fa1a6f432dab1b0448f19b75ee721863071d4d4a6775d86ff",
+      "attempt": 1
+    },
+    {
+      "tag": "round28_crossc02",
+      "spec": "schemes/round28_crossc02.json",
+      "upstream": "schemes/R27P2.json",
+      "a2_source": "schemes/R27P2.json",
+      "writer": "schemes/round28_fastc02.json",
+      "spec_sha256": "2377b664589e1f39a9bf72b273f75b810fd99472c64863821d7b7df01b677598",
+      "attempt": 1
+    }
+  ],
+  "prompt_review_required": true
+}

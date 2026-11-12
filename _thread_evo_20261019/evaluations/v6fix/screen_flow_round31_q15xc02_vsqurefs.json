@@ -1,0 +1,69 @@
+{
+  "tag": "round31_q15xc02",
+  "base": "qurefs",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 3,
+    "wins": 1,
+    "no_regress": 1,
+    "net_sums": {
+      "alone": -10,
+      "lean": 15,
+      "plain": -41,
+      "cover": -33
+    },
+    "missing": [
+      "v6b2_op61_g6_round31_q15xc02_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 13,
+    "reasons": [
+      "remaining votes cannot reach the required new-version wins",
+      "plain: even every remaining segment winning leaves a negative net"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_round31_q15xc02_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 6,
+          "lean": 8,
+          "plain": -14,
+          "cover": -12
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_round31_q15xc02_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -7,
+          "lean": -3,
+          "plain": -13,
+          "cover": -9
+        }
+      },
+      {
+        "rid": "v6b2_op60_g56_round31_q15xc02_vsqurefs",
+        "w": "op60",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -9,
+          "lean": 10,
+          "plain": -14,
+          "cover": -12
+        }
+      }
+    ]
+  },
+  "status": "reject",
+  "next": "archive_and_change_direction"
+}

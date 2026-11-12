@@ -1,0 +1,208 @@
+{
+  "tag": "r54weave",
+  "base": "r50progress1rr",
+  "accepted_at": "2026-11-03T14:18:51.750164-05:00",
+  "fair": {
+    "tag": "r54weave",
+    "base": "r50progress1rr",
+    "complete": 8,
+    "wins": 7,
+    "no_regress": 6,
+    "net_sums": {
+      "alone": 19,
+      "lean": 1,
+      "plain": 10,
+      "cover": 16
+    },
+    "pass": true,
+    "rows": [
+      {
+        "w": "op60",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 8,
+          "lean": 0,
+          "plain": -5,
+          "cover": 6
+        }
+      },
+      {
+        "w": "op60",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 10,
+          "lean": 2,
+          "plain": -2,
+          "cover": 4
+        }
+      },
+      {
+        "w": "op60",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 4,
+          "lean": -6,
+          "plain": -3,
+          "cover": 6
+        }
+      },
+      {
+        "w": "op60",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -2,
+          "lean": 2,
+          "plain": 0,
+          "cover": 6
+        }
+      },
+      {
+        "w": "op61",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 3,
+          "lean": -3,
+          "plain": -1,
+          "cover": 0
+        }
+      },
+      {
+        "w": "op61",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 1,
+          "lean": 7,
+          "plain": 9,
+          "cover": -1
+        }
+      },
+      {
+        "w": "op61",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 1,
+          "lean": -6,
+          "plain": 1,
+          "cover": -2
+        }
+      },
+      {
+        "w": "op61",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": -6,
+          "lean": 5,
+          "plain": 11,
+          "cover": -3
+        }
+      }
+    ]
+  },
+  "floor": {
+    "status": "pass",
+    "failures": [],
+    "missing": []
+  },
+  "integrity": {
+    "op60": {
+      "线条数": 40,
+      "字数": 1608,
+      "珠子数": 50,
+      "珠子逐字一致": true,
+      "线逐字在合写内": true,
+      "每段条数": [
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "珠子版本": "N03i display wording, unchanged from accepted baseline delivery",
+      "source_sha256": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959"
+    },
+    "op61": {
+      "线条数": 36,
+      "字数": 1435,
+      "珠子数": 53,
+      "珠子逐字一致": true,
+      "线逐字在合写内": true,
+      "每段条数": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        4,
+        3,
+        2,
+        2,
+        3,
+        4,
+        2,
+        4
+      ],
+      "珠子版本": "N03i display wording, unchanged from accepted baseline delivery",
+      "source_sha256": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+    }
+  },
+  "review_output_hashes": {
+    "v6b3_op60_g6_r54weave_vsr50progress1rr_newX": "24c3c9438fec48a0131e391969f88fc1cff4317e2b8b9bf2063df7f44ff9d5f5",
+    "v6b3_op60_g6_r54weave_vsr50progress1rr_newY": "5a0b5a78bda439fbcdf9a3db18e61f0948cd3e060f75553b8f5494f67b30d5d4",
+    "cov2_op60_g6_r50progress1rr": "872df4a5cb5fde2755789c518a0d4916c94b3d82a4a2f355aa7ed4285db22f44",
+    "cov2_op60_g6_r54weave": "80ec082822c0bbc0ecbb036ee902e8088d5141ef7ccc8e1a60e6c3493f8b8668",
+    "al2_op60_g6_r50progress1rr": "2e06b024aec213cd64cc63fcd897fb4d125452f1af5afcefcc947d23b89117fe",
+    "al2_op60_g6_r54weave": "ba69f8446b16164a604dc9cc4b982fc95d9a1442cd3f924479b50a50b7ffd862",
+    "v6b3_op60_g56_r54weave_vsr50progress1rr_newX": "04cc77b382e7bc3c6b98a8cd6f58419251af9bc967014491b62bed466268370f",
+    "v6b3_op60_g56_r54weave_vsr50progress1rr_newY": "439e37ae0aee042f28204bff8197706d79de944749e16491534d552524ad6c97",
+    "cov2_op60_g56_r50progress1rr": "07ff9cff6ff05763465f500fc88302f064f01a5b34bf909d64520fbde0d77d8d",
+    "cov2_op60_g56_r54weave": "8e295b40ec3051edbdb6e57d750e77c4ba860413f11d90a47e8419585986cecb",
+    "al2_op60_g56_r50progress1rr": "2a6058ba143cfbc5b58e6b58164f2bd3227bf3c706596fc8376bd05bc2b9338e",
+    "al2_op60_g56_r54weave": "2b335d2fd2e32b100ab0476cf44a950f5afeb1d9a8096a35dc153f2ccc9658d4",
+    "v6b3_op61_g6_r54weave_vsr50progress1rr_newX": "8f1fe9a5db590371c543f8b9810207f8be482c96ba0a97c2988f4e5a05368bd7",
+    "v6b3_op61_g6_r54weave_vsr50progress1rr_newY": "54a9ce2c7ccd9093f8ae7aa3a208fc01ceab787a40cba09751f479e590778c1a",
+    "cov2_op61_g6_r50progress1rr": "27645e465107d9f1e2fa8655c239ff00c227bd18bf65e1163ae564ab769e6457",
+    "cov2_op61_g6_r54weave": "0e6cb5d478f09bb15802f99f183d67c914194004feada450612b3782bf4837da",
+    "al2_op61_g6_r50progress1rr": "74c9b6bce121b967095e1e62df15ae95520a8b24fe1da85f5c85768fe070e0d7",
+    "al2_op61_g6_r54weave": "5c8b2d8a49f57da09811e1c37d8058c84afd0f5605176cb6c5ad34c17b01e2b5",
+    "v6b3_op61_g56_r54weave_vsr50progress1rr_newX": "30433488a9b332be4813f946a7451d3973c468b76eab48cecdac415f7388cd6b",
+    "v6b3_op61_g56_r54weave_vsr50progress1rr_newY": "741b5179c3e1d10114c79cc2d8743bd2f7ae606027367ed38b52d68291eccb87",
+    "cov2_op61_g56_r50progress1rr": "e6f41e0474de1246e84d15743a1aaf36fdb08d684df5e22ea4520ce7f2e05d90",
+    "cov2_op61_g56_r54weave": "348f256b800232843ff10bee229154cb179d4b0b6341d99664a93682d0bb73d1",
+    "al2_op61_g56_r50progress1rr": "56ee6390924a12f9de8752783e7ea39ba73c8a69b60b5140ac704e5800b5c57e",
+    "al2_op61_g56_r54weave": "ce4f58696e154d1bef9fd47688f5f2b65264893efee93eb4c5add6ac24004fdf"
+  },
+  "scope": "Accepted comparison and floors; unresolved diagnostic issues remain. Annotation r49b stays bound to r49b."
+}

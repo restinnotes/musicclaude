@@ -1,0 +1,7 @@
+Initial isolated suite: test_run_01 (2026-10-09).
+ARGV: C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\python.exe -X utf8 -I -B D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_execution_integrity_v8.py -v
+Return code: 1; runtime: 5.648 s; 70 tests; 1 failure and 1 error.
+
+Failure: AdapterTests.test_ticket_write_failure_never_launches expected its injected disk error, but the copied v7 fixture still matched the literal path component inflight_v7. The v8 ticket directory is inflight_v8, so the injected fault was not triggered.
+Error: V8RegressionTests.test_default_three_attempt_transport_budget_remains_proof_bounded passed timeout as a keyword, while its mock callback accepted only a positional _timeout argument.
+The complete unmodified stdout and stderr for this run are test_run_01.stdout.txt and test_run_01.stderr.txt. Their byte counts and SHA-256 values are recorded in report.json.

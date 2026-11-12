@@ -1,0 +1,62 @@
+{
+  "name": "R26G3",
+  "note": "Gemini运行前第三版：清除具体反例和强制独处/结尾/段内时序限制，回到标准与自然承接；对当前主线qu快筛",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "R26G3_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R26G3_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "R26G3_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4"
+}

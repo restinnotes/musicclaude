@@ -1,0 +1,63 @@
+{
+  "name": "round29_g6c01",
+  "note": "A1-only把生成轴从“为每段安排情绪和心理办法”改成“不同的切身所求—本人可承担的取舍—另一项仍在场的代价”，再映射到稀疏phase；若有效，在相同原R27P2 A2与Q15 A4下，后期反复确立同一原则的段落应减少、具体因果与人话评价应提升而不新增外部事实。若新骨架仍成压住／放开等办法链，或两首在同一A4下无改善，即被证伪。此前正式结果仅支持这一缺口确实存在，不支持此生成法已有效。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "round29_g6c01_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R27P2_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "Q15_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4",
+  "edits": []
+}

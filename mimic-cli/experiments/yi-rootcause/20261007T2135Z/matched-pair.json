@@ -1,0 +1,61 @@
+{
+  "utc": "2026-10-07T21:36:07.553408+00:00",
+  "source": "yi-mimicgate-20261002",
+  "source_image": "sha256:95053febf41afaa56f9691504a4cad5de1ece2b58e9c75af40954a3817d109f6",
+  "frozen_image": "sha256:cd6776796f092bf39bd220436396baaf88739d80f3905ce9975a280bab4ebf10",
+  "source_finished_at": "2026-10-07T20:00:13.731700864Z",
+  "source_volumes_read_only": true,
+  "source_started": false,
+  "source_profile_modified": false,
+  "clones": {
+    "control": {
+      "container": "yi-mg-storage-control-20261007",
+      "volumes": {
+        "/config": "yi-mg-storage-control-20261007-config",
+        "/app/browser_data": "yi-mg-storage-control-20261007-browser",
+        "/app/logs": "yi-mg-storage-control-20261007-logs",
+        "/app/state": "yi-mg-storage-control-20261007-state"
+      },
+      "api_url": "http://127.0.0.1:8668",
+      "viewer_url": "http://127.0.0.1:5818",
+      "memory_limit_bytes": 1610612736,
+      "swap_allowed": false,
+      "stopped": true
+    },
+    "local_storage": {
+      "container": "yi-mg-storage-ls-20261007",
+      "volumes": {
+        "/config": "yi-mg-storage-ls-20261007-config",
+        "/app/browser_data": "yi-mg-storage-ls-20261007-browser",
+        "/app/logs": "yi-mg-storage-ls-20261007-logs",
+        "/app/state": "yi-mg-storage-ls-20261007-state"
+      },
+      "api_url": "http://127.0.0.1:8669",
+      "viewer_url": "http://127.0.0.1:5819",
+      "memory_limit_bytes": 1610612736,
+      "swap_allowed": false,
+      "stopped": true
+    },
+    "native_identity": {
+      "container": "yi-mg-native-identity-20261007",
+      "volumes": {
+        "/config": "yi-mg-native-identity-20261007-config",
+        "/app/browser_data": "yi-mg-native-identity-20261007-browser",
+        "/app/logs": "yi-mg-native-identity-20261007-logs",
+        "/app/state": "yi-mg-native-identity-20261007-state"
+      },
+      "api_url": "http://127.0.0.1:8670",
+      "viewer_url": "http://127.0.0.1:5820",
+      "memory_limit_bytes": 1610612736,
+      "swap_allowed": false,
+      "stopped": true,
+      "change": "Native platform, userAgent, userAgentData and sec_ch_ua; other Stealth settings retained",
+      "expected_local_storage_clear": false,
+      "installed_hashes": {
+        "request_observer.py": "3d96cb537dba7ca3a1bb37c3edccef7fa68a52a8ab131e7ec3fec4b6a164650e",
+        "browser/stealth.py": "0abdfb9dfe6df13a060590effd8583a8378046b16f502399227c93ec0b4ae9a7"
+      }
+    }
+  },
+  "intended_single_variable": "ChatGPT origin local_storage clear only; same native cookie bundle"
+}

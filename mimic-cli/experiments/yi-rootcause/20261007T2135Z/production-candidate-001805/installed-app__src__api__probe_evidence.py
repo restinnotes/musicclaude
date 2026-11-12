@@ -1,0 +1,48 @@
+"""Opt-in screenshots for controlled browser comparisons, before tab cleanup."""
+from pathlib import Path
+import hashlib
+import json
+import os
+import time
+
+
+async def capture_probe_evidence(client, stage):
+    if not getattr(client, '_capture_probe_evidence', False) and not Path('/app/state/capture-probes.enabled').exists():
+        return None
+    request_id = client._standard_request_id
+    directory = Path('/app/state/probe-artifacts') / request_id
+    directory.mkdir(parents=True, exist_ok=True, mode=0o700)
+    started = time.time()
+    record = {'stage': stage, 'request_id': request_id, 'captured_at': started,
+              'source': 'live browser page owned by this standard request', 'files': []}
+    try:
+        if stage == 'response':
+            # Long answers use an internal scroll container, so full_page does
+            # not necessarily show the conclusion. Scroll only after the
+            # response is complete, through this request's existing driver.
+            # Preserve a native screenshot rather than reconstructing text.
+            try:
+                conclusion = client.page.locator('[data-message-author-role="assistant"]').last.locator('p, .katex-display').last
+                await conclusion.scroll_into_view_if_needed(timeout=5000)
+                record['conclusion_scrolled_into_view'] = True
+            except Exception as error:
+                record['conclusion_scrolled_into_view'] = False
+                record['conclusion_scroll_error_class'] = type(error).__name__
+        for suffix, full_page in [('viewport', False), ('full', True)]:
+            filename = stage + '-' + suffix + '.jpg'
+            image = await client.page.screenshot(type='jpeg', quality=85,
+                                                  full_page=full_page, timeout=12000)
+            path = directory / filename
+            path.write_bytes(image)
+            os.chmod(path, 0o600)
+            record['files'].append({'filename': filename, 'sha256': hashlib.sha256(image).hexdigest()})
+        labels = await client.page.get_by_text(__import__('re').compile(r'^(Worked for|Thought for)\s')).all_text_contents()
+        record['thinking_time_ui_labels'] = labels
+        record['success'] = True
+    except Exception as error:
+        record.update(success=False, error_class=type(error).__name__)
+    record['capture_seconds'] = round(time.time() - started, 3)
+    path = directory / (stage + '.json')
+    path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
+    os.chmod(path, 0o600)
+    return {'directory': str(directory), **record}

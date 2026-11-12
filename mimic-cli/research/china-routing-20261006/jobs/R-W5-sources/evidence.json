@@ -1,0 +1,824 @@
+{
+  "job_id": "R-W5-sources",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "review_performed": true,
+  "audited_jobs": [
+    "W5-A",
+    "W5-B",
+    "W5-C"
+  ],
+  "claim_audits": [
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C01",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "标准平台采购服务费为0已核；不代表国内运费、国际运费、VAS或其他平台采购费为0。",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C02",
+      "original_source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "免费合包及按最终包裹/线路/目的地计费已核；最终账单仍以物流商账单结算。",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C03",
+      "original_source_ids": [
+        "S02",
+        "S06",
+        "S15",
+        "S16"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "官方计算器确认尺寸和体积重重要；社区例和BuckyDrop博客本轮未复核，不作为必要支撑。",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C04",
+      "original_source_ids": [
+        "S02",
+        "S15"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "计算器有电池类别，官方限制页显示电池接受按线路变化；未证明具体电池配置到美国可寄。",
+      "source_ids": [
+        "S02",
+        "S05"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C05",
+      "original_source_ids": [
+        "S03"
+      ],
+      "status": "UNVERIFIED_PAGE_SHELL",
+      "supported": null,
+      "correction": null,
+      "caveat": "Superbuy Business Service直接打开为0行页面壳；按本审计规则丢弃搜索索引/snippet，split-to-different-users未获全文证据。",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C06",
+      "original_source_ids": [
+        "S03"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "已核公开页面未见1000独立包裹阶梯价；这只能支持“公开未证明”，不能证明不存在私有合同价。",
+      "source_ids": [
+        "S02",
+        "S06"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C07",
+      "original_source_ids": [
+        "S04"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "BuckyDrop价格页除CN¥9.90/parcel履约费外，又在物流区单列flat CN¥9.9 service fee per parcel；页面未说明二者同一笔，不能据公开页认定只有一个9.9。",
+      "caveat": "Pro CN¥199/月/店、履约费和zero-markup公司表述已核；carrier成本/毛利仍未独立审计。",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C08",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "只能确认公开收费项目；不能从价目表推出收入占比、carrier rebate或freight gross margin。",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C09",
+      "original_source_ids": [
+        "S05"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BuckyDrop全文页核到API Integration、Shopify/WooCommerce自动同步、采购、打包、跟踪；Solution API站点本轮超时，端点、权限、限流、SLA未核。",
+      "source_ids": [
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C10",
+      "original_source_ids": [
+        "S03",
+        "S05",
+        "S06"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BuckyDrop足以证明逐消费者自动履约在操作上存在；Superbuy拆分多用户证据因页面壳未核，且运营能力不等于规模运价优势。",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C11",
+      "original_source_ids": [
+        "S07"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "15分钟边界内未复核Sugargoo历史California 3kg价格；不得进入当前ZIP10001成本。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C12",
+      "original_source_ids": [
+        "S08"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "§1321(a)(2)(C)低值行政豁免当前已无限期暂停；bona fide gifts和旅客随身物品等其他法定豁免不受该规则影响。",
+      "source_ids": [
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C13",
+      "original_source_ids": [
+        "S09",
+        "S10"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "基准日2026-10-06已适用FY2027：formal MPF 0.3464%，最低$34.58、最高$670.86；informal $2.77/$8.30/$12.45；express waybill $1.38。",
+      "caveat": "W5-A使用FY2026旧数；具体费用仍按entry mode适用，不能全叠加。",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C14",
+      "original_source_ids": [
+        "S10"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "把州/地方sales/use tax排除出W5物流端点是方法口径，不等于消费者税负为0；需后续按merchant/marketplace结构统一处理。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C15",
+      "original_source_ids": [
+        "S11",
+        "S12",
+        "S13"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "中国在60经济体调查中；最终行动对“其他被调查经济体”给12.5%，并有产品豁免。旧China Section 301等需按HTS逐项判断，不能统一税率。",
+      "source_ids": [
+        "S13",
+        "S14",
+        "S15"
+      ]
+    },
+    {
+      "original_job_id": "W5-A",
+      "original_claim_id": "C16",
+      "original_source_ids": [
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "社区个案本轮未复核；不影响官方体积重机制的核验。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C01",
+      "original_source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "0标准采购费、重量/尺寸/路线变量已核；Superbuy示例CN¥428的加总自身有算术错误，不能当精确报价。",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C02",
+      "original_source_ids": [
+        "S03",
+        "S05",
+        "S06"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BuckyDrop全文验证自动逐单履约和API Integration；Superbuy split-to-users仅页面壳，不能作为独立已验证证据。",
+      "source_ids": [
+        "S03",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C03",
+      "original_source_ids": [
+        "S04"
+      ],
+      "status": "CONFLICT_UNRESOLVED",
+      "supported": null,
+      "correction": null,
+      "caveat": "官方价格页将CN¥9.90履约费与物流区flat CN¥9.9 service fee分开列示，但未说明是否同一笔；W5-B不双计是保守处理，但CN¥9,900不能称完整公开固定费。",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C04",
+      "original_source_ids": [
+        "S07",
+        "S08"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "本轮按时间边界未重试Sugargoo页面，不能继承其他报告声称的403状态。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C05",
+      "original_source_ids": [
+        "S09",
+        "S10"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "非邮政低值豁免自2026-06-24无限期暂停，邮政新流程自2026-07-24生效；其他法定豁免仍存在。",
+      "source_ids": [
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C06",
+      "original_source_ids": [
+        "S10",
+        "S11"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "FY2027数字已核且自2026-10-01适用；不同entry/express/postal结构不能机械叠加。",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C07",
+      "original_source_ids": [
+        "S02",
+        "S07",
+        "S15"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "冻结账本缺最终packed weight/L×W×H，公开Superbuy feed也无ZIP/尺寸/税费条件，故0/54 quote-grade结论合理；不能解释为不可寄。",
+      "source_ids": [
+        "S02",
+        "S04"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C08",
+      "original_source_ids": [
+        "S13",
+        "S14"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "社区体积重/海关个案本轮未复核。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C09",
+      "original_source_ids": [
+        "S12"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "这是比较口径而非免税事实；州/地方sales/use tax需在交易层另算。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C10",
+      "original_source_ids": [
+        "S02",
+        "S03",
+        "S04",
+        "S08"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "未见公开1000独立订单运价阶梯；Superbuy≥30kg是货物/单票定制入口，BuckyDrop Pro unlimited fulfillment也不是freight discount。",
+      "source_ids": [
+        "S02",
+        "S06"
+      ]
+    },
+    {
+      "original_job_id": "W5-B",
+      "original_claim_id": "C11",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "公开可核的是收费项目，不是公司收入构成或承运商价差；“主要靠什么赚钱”仍无财务级证据。",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C01",
+      "original_source_ids": [
+        "S13",
+        "S14"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "低值免税不可作为默认已核；邮政规则7月24生效，但19 CFR 145.12(a)(2)(v),(vi)的10-digit HTSUS及条件性数量/重量字段合规日为2026-10-22。",
+      "source_ids": [
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C02",
+      "original_source_ids": [
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "FY2027费率已核；EO14389明确不影响Section 301。费用按entry mode适用。",
+      "source_ids": [
+        "S11",
+        "S12",
+        "S14"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C03",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "0标准采购费、免费合包、最终物流商账单结算已核；费页CN¥428示例等式320+50+38实际为408，示例不可当真实报价。",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C04",
+      "original_source_ids": [
+        "S02",
+        "S05"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "体积重/尺寸规则与线路限制已核；/6000和60cm规则并非所有线路通用，且未验证美国电池具体线路。",
+      "source_ids": [
+        "S02",
+        "S05"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C05",
+      "original_source_ids": [
+        "S04"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "公开feed确有USA+CNY运费/重量观察值；页面用相对时间且缺ZIP、三边、申报值、税费条件，因此只是公开parcel observation，不是ZIP10001 route quote。",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C06",
+      "original_source_ids": [
+        "S03"
+      ],
+      "status": "UNVERIFIED_PAGE_SHELL",
+      "supported": null,
+      "correction": null,
+      "caveat": "Superbuy Business Service直接页为页面壳；按严格规则不能用搜索索引文字证明split orders to different users。",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C07",
+      "original_source_ids": [
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "除CN¥9.90/parcel履约费、>5件和>8kg附加费外，价格页还单列物流flat CN¥9.9 service fee/parcel；API营销能力已核，但API文档/权限/SLA未核。",
+      "caveat": "原claim遗漏了独立列示的物流服务费层，容易低估all-in固定收费。",
+      "source_ids": [
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C08",
+      "original_source_ids": [
+        "S09",
+        "S10",
+        "S12"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "Sugargoo工作流/页面状态本轮未复核。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C09",
+      "original_source_ids": [
+        "S11"
+      ],
+      "status": "UNVERIFIED_NOT_CHECKED",
+      "supported": null,
+      "correction": null,
+      "caveat": "Sugargoo社区8kg→21.25kg个案本轮未复核；官方Superbuy资料已足以证明体积重机制。",
+      "source_ids": []
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C10",
+      "original_source_ids": [
+        "S03",
+        "S06",
+        "S07"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BuckyDrop证明商业逐单履约可不先物理集货；没有公开证据证明1000独立消费者包裹因此获得特定运价折扣。",
+      "source_ids": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C11",
+      "original_source_ids": [
+        "S02",
+        "S08",
+        "S16"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "缺最终packed weight/L×W×H、当前线路和逐SKU HTS，故0/54 exact quote成立；未验证任何SKU不可运。",
+      "source_ids": [
+        "S02",
+        "S14"
+      ]
+    },
+    {
+      "original_job_id": "W5-C",
+      "original_claim_id": "C12",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "公开收费表不能推出Superbuy收入占比或freight markup为主要利润来源；该“不足以判断”结论成立。",
+      "source_ids": [
+        "S01"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.superbuy.com/en/page/guide/feecomposition/",
+      "title": "Superbuy Fee Structure",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C01",
+        "W5-A:C02",
+        "W5-A:C03",
+        "W5-A:C08",
+        "W5-B:C01",
+        "W5-B:C11",
+        "W5-C:C03",
+        "W5-C:C12"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://login.superbuy.com/en/page/query/freight/",
+      "title": "Superbuy Shipping Calculator",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C02",
+        "W5-A:C03",
+        "W5-A:C04",
+        "W5-B:C01",
+        "W5-B:C07",
+        "W5-B:C10",
+        "W5-C:C04",
+        "W5-C:C11"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.superbuy.com/en/page/businessservice/?tab=channel",
+      "title": "Superbuy B2B Business Services",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.superbuy.com/en/page/shoppingagent/",
+      "title": "Superbuy Shoppingagent Public Parcel Feed",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-B:C07",
+        "W5-C:C05"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.superbuy.com/en/page/buy/",
+      "title": "Superbuy Shopping Agent Logistics Limitations",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C04",
+        "W5-C:C04"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.buckydrop.com/en/services/pricing/",
+      "title": "BuckyDrop Pricing",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C07",
+        "W5-B:C03",
+        "W5-B:C10",
+        "W5-C:C07",
+        "W5-C:C10"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.buckydrop.com/en/how-it-works/",
+      "title": "BuckyDrop How It Works",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C09",
+        "W5-A:C10",
+        "W5-B:C02",
+        "W5-C:C07",
+        "W5-C:C10"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://solution-api.buckydrop.com/",
+      "title": "BuckyDrop Solution API",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": []
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/",
+      "title": "Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries",
+      "published_at": "2026-02-20",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C12",
+        "W5-B:C05",
+        "W5-C:C01"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/FR-2026-06-24.pdf",
+      "title": "Federal Register, June 24, 2026: De Minimis Interim Final Rules",
+      "published_at": "2026-06-24",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C12",
+        "W5-B:C05",
+        "W5-C:C01"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-31/pdf/2026-15530.pdf",
+      "title": "Customs User Fees To Be Adjusted for Inflation in Fiscal Year 2027",
+      "published_at": "2026-07-31",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C13",
+        "W5-B:C06",
+        "W5-C:C02"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/ending-certain-tariff-actions/",
+      "title": "Ending Certain Tariff Actions",
+      "published_at": "2026-02-20",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-C:C02"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/ustr-takes-action-forced-labor-section-301-investigations",
+      "title": "USTR Takes Action in Forced Labor Section 301 Investigations",
+      "published_at": "2026-07-23",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C15"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.ustr.gov/issue-areas/enforcement/section-301-investigations/search",
+      "title": "How to Navigate the Section 301 Tariff Process",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C15",
+        "W5-C:C02",
+        "W5-C:C11"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/march/ustr-initiates-60-section-301-investigations-relating-failures-take-action-forced-labor",
+      "title": "USTR Initiates 60 Section 301 Investigations Relating to Failures to Take Action on Forced Labor",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "W5-A:C15"
+      ]
+    }
+  ],
+  "claims": [],
+  "data_gaps": [
+    "未访问任何海外SKU商品页、价格或覆盖页面；冻结样本内商品价/优惠券仅作为既有输入，不在本W5来源审计重采。",
+    "Superbuy Business Service为页面壳；其split-to-different-users能力未达到本审计的全文证据门槛。",
+    "BuckyDrop Solution API站点本轮直接访问超时；API端点、认证范围、限流、错误语义、SLA和生产资格条款未核。",
+    "BuckyDrop两项CN¥9.9收费的关系公开页未明确；在书面条款/实际账单前既不能合并成一项，也不能武断双计。",
+    "未获得任何1000个不同美国消费者、分别履约的书面商务运价/阶梯/最低量承诺；不得把≥30kg customized logistics当月度商业折扣。",
+    "Superbuy公开美国parcel feed缺ZIP、L/W/H、申报值、完整商品/电池属性和税费承担，不能升级为ZIP10001报价。",
+    "所有54个冻结SKU仍缺最终仓库packed actual weight、L/W/H、当前battery-eligible route、HTS/Chapter 99与完整必收费用。",
+    "邮政19 CFR 145.12(a)(2)(v),(vi)的10-digit HTSUS与条件性数量/重量字段合规日为2026-10-22；W5-B正文将其写成已即时强制，需时间限定。",
+    "未在时间边界内重查Sugargoo官方页和Reddit个案；相关claim保持UNVERIFIED_NOT_CHECKED。",
+    "未核实可叠加的运输优惠券/credit之资格、到期、线路限制和stacking；不得从freight中预扣任何优惠。",
+    "未取得Superbuy/BuckyDrop审计财务报表或carrier合同；公开价目只能证明收费项目，不能证明收入占比、毛利或carrier spread。"
+  ]
+}

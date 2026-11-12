@@ -1,0 +1,67 @@
+[
+  {
+    "keys": [
+      "action",
+      "browser_context",
+      "client_contextual_info",
+      "client_prepare_state",
+      "genui_state_snapshots",
+      "history_and_training_disabled",
+      "is_do_not_remember",
+      "local_function_names",
+      "messages",
+      "model",
+      "parent_message_id",
+      "supported_encodings",
+      "temporary_chat_requests_personalization",
+      "thinking_effort",
+      "timezone",
+      "timezone_offset_min",
+      "turn_attribution"
+    ],
+    "requestShape": {
+      "turn_attribution": "object",
+      "action": "string",
+      "history_and_training_disabled": "boolean",
+      "is_do_not_remember": "boolean",
+      "temporary_chat_requests_personalization": "boolean",
+      "model": "string",
+      "parent_message_id": "string",
+      "thinking_effort": "string",
+      "timezone": "string",
+      "timezone_offset_min": "number",
+      "client_contextual_info": "object",
+      "local_function_names": "array",
+      "messages": "array",
+      "supported_encodings": "array",
+      "browser_context": "object",
+      "genui_state_snapshots": "array",
+      "client_prepare_state": "string"
+    },
+    "safeScalarValues": {
+      "history_and_training_disabled": true,
+      "is_do_not_remember": false,
+      "temporary_chat_requests_personalization": false,
+      "timezone_offset_min": 240
+    },
+    "messageKeys": [
+      [
+        "author",
+        "channel",
+        "content",
+        "create_time",
+        "end_turn",
+        "id",
+        "metadata",
+        "recipient",
+        "status",
+        "update_time",
+        "weight"
+      ]
+    ],
+    "messageAuthorRoles": [
+      "user"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+  }
+]

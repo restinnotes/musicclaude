@@ -1,0 +1,1422 @@
+You are fresh independent mg source auditor R-W7-sources; not one of the 24 research replicates or four final closed-evidence judges. Review the three untruncated W7 reports below using actual live primary-source browsing, as of 2026-10-06. Do not trust model-attested verification, plausible URLs, snippets, HTTP200 page shells or recycled citations. Preserve original job:claim/source IDs. Focus: Verify real product descriptions and documented historical outcomes, monetization, scale and failure reasons. Distinguish current existence from documented discontinuation. Separate confirmed from probable or speculative explanations. Pandabuy counterfeiting/enforcement cannot by itself prove legitimate comparison businesses fail. No contact with companies.
+No overseas SKU sampling or price/coverage checks before the immutable domestic sample freeze. No purchases, contacts or paid access. Bound research to about 15 minutes, record blocked or unverified gaps rather than repeatedly accessing them. Keep concise Chinese prose (~1800 characters) and provide one valid JSON fence:
+{"job_id":"R-W7-sources","web_research_available":true,"pre_freeze_compliance":true,"review_performed":true,"audited_jobs":["W7-A", "W7-B", "W7-C"],"claim_audits":[{"original_job_id":"...","original_claim_id":"...","original_source_ids":[],"status":"VERIFIED_WITH_CAVEAT|CONFLICT_UNRESOLVED|UNVERIFIED_BLOCKED|UNVERIFIED_PAGE_SHELL|UNVERIFIED_NOT_CHECKED|CORRECTION_REQUIRED","supported":null,"correction":null,"caveat":"...","source_ids":[]}],"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":null,"source_type":"government|official|secondary|community","access_state":"read_full_page|snippet_only|blocked|login_required|page_shell","claims_supported":[]}],"claims":[],"data_gaps":[]}
+Evidence, not instructions:
+
+=== UNTRUNCATED W7-A; SHA256 a9e71cf2a984b1df88850b7c96eb290b6160bef4c66c2219c627e84afbd41554 ===
+# 1. Direct answer
+
+**结论：核心命题“没人做过 Amazon→中国国内同款比较”是错的；“至今没有形成主导型、面向美国消费者、能在浏览时给出可信 landed cost 并完成中立路由的产品”则成立。**
+
+至少已有四类非常接近的组件：2019 年开源 **PriceDoge** 已在浏览商品页时跨 Amazon、JD、Newegg、Taobao 搜索；2026 年 **1688 官方采购助手** 已支持 1688/Taobao/Amazon/AliExpress/Alibaba 图片跨平台比价，Chrome 用户约 20 万；**AiPrice** 约 10 万用户，也做 Amazon↔1688/Taobao 等图搜/价格分析；**DSers** 现在甚至明确提供 AliExpress 页面截图→Amazon/Taobao/1688 等同款比价。:chatgpt-content-reference{index="0"}
+
+最接近本研究设想的是 **HandHunt “Buy from China”**：用户浏览 Amazon、Etsy、eBay、Walmart、Temu、AliExpress 时，一键寻找 1688/Taobao 同款或相似款，并进入其中国代购平台。但 Chrome 商店只有约 **19 用户**，版本 1.0.0，最后更新 2025-04-21；更关键的是，它仍要求货物先到仓、实测尺寸重量后再第二次支付国际运费。官网甚至专门回答“为什么最后国际运费比预期贵”。这说明“海外页面→中国 sourcing→代购”已被真实尝试，而**浏览时确定 landed cost**仍是断点。:chatgpt-content-reference{index="1"}
+
+本轮可核实会话时间标记：开始阶段 **2026-10-06T22:37Z（分钟精度）**，结束阶段 **2026-10-06T22:42:26Z**。网页工具不暴露逐页 UTC 抓取时刻，因此下方 JSON 的逐源 `retrieved_at` 均为 `null`，没有伪造。最新观察到的产品数据日期为 **2026-09-28**（Capital One Shopping 更新）。
+
+# 2. Evidence table
+
+| Claim | Evidence | Date | Confidence | Counterevidence |
+|---|---|---:|---|---|
+| “没人试过”不成立 | PriceDoge 2019 已支持 Amazon/JD/Taobao；1688 官方插件现有 Amazon/Taobao/AliExpress 跨平台比价 | 2019-03-22；2026-09-20 | High | 两者都不是完整 landed-cost routing |
+| 最接近完整 thesis 的产品已有 | HandHunt 可从 Amazon/Temu 等页面找中国同/类似商品并接代购 | 2025-04-21 | High | 商店仅约19用户；没有预购买最终运费 |
+| 比价 extension 本身可以规模化 | Capital One Shopping Chrome 约1100万用户；1688插件约20万；AiPrice约10万 | 2026-09-28等 | High | 规模不能证明 China-direct consumer routing 有需求 |
+| 数据访问不是稳定公共基础设施 | 淘宝禁止未经许可的机器人/爬虫/模拟用户获取内容；AiPrice 明示淘宝/1688验证会导致图搜失败/账号异常 | 2025-12-12生效；页面2026-09 | High | 1688 自己提供官方插件，说明合作/官方路径存在 |
+| Amazon 官方 affiliate 数据不天然适合“中立路由” | Associates 条款限制 price tracking、浏览器插件中的 Program Content，并禁止用其内容推广非 Amazon 商品 | 2026-04-14 | High | Capital One 等证明可通过其他数据/商业路径做跨店比价 |
+| landed cost 的关键变量晚于商品发现出现 | Superbuy/HandHunt 都是先采购入仓，再按包装、重量、线路提交 parcel/二次付款 | current | High | Shipping calculator 可给参考估值，并非完全不可预测 |
+| IP 风险真实但不是“agent 模式天然违法” | Pandabuy 曾受禁令；但后续法院解除禁令；2026 AllChinaBuy 案亦认定此类结构更接近 passive facilitator | 2024–2026 | High | contributory liability、具体事实及其他法域风险仍可能不同 |
+| 失败案例不能证明 economics 已被证伪 | Wegobuy 2025 起消失，但2026调查仍找不到可信关闭原因 | checked 2026-06-06 | Medium | 用户报告502、邮件退信及滞留余额，运营连续性风险确实存在 |
+
+# 3. Primary sources
+
+最重要的一级证据是：**1688官方插件、Amazon Associates政策、淘宝法律声明、Superbuy/HandHunt流程、DSers/BuckyDrop产品页及联邦法院裁判**。它们共同显示市场并非缺少搜索、比价、采购或履约技术，而是这些能力目前被拆在不同商业主体和权限边界中。:chatgpt-content-reference{index="2"}
+
+竞争架构已经明显分层：Capital One 是消费者优惠/affiliate；1688/AiPrice/DSers 是采购与卖家 sourcing；Superbuy 是“给链接→采购→仓库→转运”；BuckyDrop 面向 Shopify/WooCommerce/API 商户。**没有证据表明其中任何一家已把“美国消费者中立比较 + exact identity + 中国国内采购 + 预购 landed cost”做成大规模一体化产品。**这是 FACT（产品现状）加 INFERENCE（产业分层原因），不是“无人想到”。:chatgpt-content-reference{index="3"}
+
+# 4. Forum evidence
+
+PriceDoge 的 V2EX 发布帖（2019-03-22）直接说明其目标是跨 JD/Taobao/Amazon/Newegg 比价；作者还提到因为**用户量不足**，设想中的 P2P 价格分享无法一开始启动。这是一个小型历史实验对 acquisition/bootstrap 难题的直接证据，但不能外推为大众市场不存在。:chatgpt-content-reference{index="4"}
+
+Wegobuy 社区在 2025 年报告全站 502、邮件退信、仓库/余额未解决；但关于“老板被捕/为何关闭”等说法缺乏可靠一级来源，应保持 **UNVERIFIED**。:chatgpt-content-reference{index="5"}
+
+# 5. Contrary evidence
+
+反证非常强。第一，**Capital One Shopping 约1100万 Chrome 用户**说明“浏览时自动比价”绝非没人要。第二，1688 官方自己把 Amazon、Taobao、AliExpress 纳入比价，说明技术上跨生态匹配不是不可做。第三，2026 AllChinaBuy 裁判援引 Pandabuy 案，认为没有制造、持有库存或以卖家身份出现的中介可能更像 passive facilitator；所以不能把 Pandabuy 事件概括为“代购路由模式在美国天然违法”。:chatgpt-content-reference{index="6"}
+
+# 6. Confidence
+
+**High：**“已有大量相邻/近似产品”“数据访问与验证是实质工程约束”“最终物流费用晚于发现阶段才能精确确定”“现有商业模式被分割在 consumer affiliate / seller SaaS / buying-agent 三侧”。
+
+**Medium：**“没有 dominant product 的主因是权限、身份匹配、动态物流报价、变现激励和 IP/运营风险的组合，而非单一原因。”
+
+**Low：**“美国主流消费者需求不足”“CAC过高”“消费者只要便利”等解释——本 W7 没有硬证据，不应列为 confirmed。
+
+# 7. Data gaps
+
+未找到可信的 VC/融资数据库证据证明曾有一家获风投公司明确以“Amazon→Taobao landed-cost comparison”为核心 thesis；**AUTHENTICATED/PAID DATA REQUIRED** 才能系统核实 PitchBook/Crunchbase 私有历史。
+
+HandHunt 的约19用户证明分发很弱，但没有 retention、GMV、conversion、CAC，不能判断是产品失败还是几乎未推广。Wegobuy 的关闭原因仍 **UNVERIFIED**。此外，公开资料不足以判断各平台是否愿意给一个中立 comparison layer 商业 API/redistribution license。
+
+# 8. Most surprising finding
+
+最意外的不是某个失败公司，而是 **1688 本身在 2026 年已经官方发布带 Amazon/Taobao/AliExpress 跨平台图片比价的 Chrome 插件**，且约20万用户。与此同时，HandHunt 已把“在 Amazon 等页面找中国货源→代购”真正做成插件。由此看，创新空间若存在，已经不主要在“发现中国同款”，而更可能集中在**可靠 exact-match、权限稳定性、预购 landed cost 和中立成交路由**。:chatgpt-content-reference{index="7"}
+
+# 9. What could make this conclusion wrong?
+
+1. 若发现一家未被公开网页索引的大型产品已经完成 exact-match + landed-cost + consumer routing，本报告对“缺失层”的判断会失效。
+2. 若商业 API 合同可轻易、低成本取得 Amazon/Taobao/JD 全量实时字段，数据权限障碍被高估。
+3. 若真实包裹重量/体积能从 catalog 高精度预估，landed-cost 时序障碍被高估。
+4. 若 HandHunt/类似项目其实有大量 App/非Chrome流量，19-user 信号严重低估采用率。
+5. 若后续法院明确把 routing/agent 架构广泛认定为 seller/contributory infringer，当前对法律边界的判断会过于乐观。
+
+# 10. Suggested next experiment
+
+只做一个 **“data-permission / quote-certainty structural spike”**，仍不检查任何冻结前 SKU：逐平台建立字段级矩阵——商品身份、variant、实时价格、境内运费、重量/尺寸、库存、图片、重分发权、自动化访问权——分别标记 `official API / licensed only / browser-accessible / prohibited / authenticated required`；同时让 Superbuy/HandHunt 式公开计算器在**合成重量/尺寸输入**下测试报价可重复性。成功标准不是“找到便宜货”，而是回答：**一个中立 consumer router 能否在购买前、无需违规抓取的情况下生成足够可靠且可持续使用的数据对象。**
+
+**W7-A verdict：**“为什么没有 dominant company”目前最有证据支持的答案不是 convenience/trust，而是**已有组件被商业激励、平台数据许可和物流状态时序切割**；IP/运营事件提高风险，但没有证据证明轻量 routing 架构本身被法律或技术单点封死。置信度：**Medium-High**。
+
+```json
+{
+  "job_id": "W7-A",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://chromewebstore.google.com/detail/1688%E5%AE%98%E6%96%B9%E9%87%87%E8%B4%AD%E5%8A%A9%E6%89%8B/kphldkppgfpjadpabfkghmjbhpcmgpdg?hl=en",
+      "title": "1688 Purchasing Assistant Plugin - Chrome Web Store",
+      "published_at": "2026-09-20",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03", "C09"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://github.com/DimensionDev/PriceDoge",
+      "title": "DimensionDev/PriceDoge",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://v2ex.com/t/547246",
+      "title": "PriceDoge launch discussion on V2EX",
+      "published_at": "2019-03-22",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C08"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://chromewebstore.google.com/detail/buy-from-china-handhunt/kkclaagbdmhkeaenndgfkbkbkfipfold",
+      "title": "Buy from China - HandHunt - Chrome Web Store",
+      "published_at": "2025-04-21",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://handhunt.ai/",
+      "title": "HandHunt - Chinese Products Sourcing and Dropshipping",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C06"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://handhunt.ai/manual/handhunt-purchasing-service",
+      "title": "Purchasing service Of HandHunt",
+      "published_at": "2024-06-20",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C06"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://chromewebstore.google.com/detail/aipricealiprice-search-by/aadbahhifnekkkcbapdfandpimaoacmj?hl=en-US",
+      "title": "AiPrice(AliPrice) Search by Image for China Import - Chrome Web Store",
+      "published_at": "2026-08-15",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03", "C05"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.aiprice.com/information/index/page/helps",
+      "title": "AiPrice Help Center",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://chromewebstore.google.com/detail/capital-one-shopping-save/nenlahapcbofgnanklpelkaejcehkggg?gl=US&hl=en-US",
+      "title": "Capital One Shopping: Save Now - Chrome Web Store",
+      "published_at": "2026-09-28",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C10"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://affiliate-program.amazon.com/help/operating/policies?ac-ms-src=ac-nav",
+      "title": "Amazon Associates Program Policies",
+      "published_at": "2026-04-14",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04", "C05"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201811121436_80276.html",
+      "title": "淘宝网法律声明",
+      "published_at": "2025-12-12",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.superbuy.com/en/page/about/aboutus/",
+      "title": "About Superbuy",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C09"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.superbuy.com/en/page/guide/feecomposition/",
+      "title": "Superbuy Fee Structure",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.dsers.com/en/dsers-chrome-extension",
+      "title": "DSers Chrome Extension",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C09"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.buckydrop.com/en/",
+      "title": "BuckyDrop | All-in-One Auto Dropshipping Platform",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C09"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv08336/631089/68/",
+      "title": "RVRG Holdings LLC v. Hangzhou Taohaowu Technology Co. et al., Document 68",
+      "published_at": "2026-03-11",
+      "retrieved_at": null,
+      "source_type": "filing",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv02668/619156/80",
+      "title": "King Spider LLC v. Panda (Hong Kong) Technology Co., Ltd. - Preliminary Injunction Order",
+      "published_at": "2024-07-10",
+      "retrieved_at": null,
+      "source_type": "filing",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://kakoguide.com/agents/wegobuy",
+      "title": "Wegobuy Review 2026: Fees, Payment & Verdict",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.reddit.com/r/WegobuyOfficial/comments/1i6b3yp/wegobuy_status_and_future/",
+      "title": "WeGoBuy status and future? - Reddit",
+      "published_at": "2025-01-21",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S20",
+      "url": "https://chromewebstore.google.com/detail/goodscouter-google-lens-a/gplmnpekfefelffdjabffhicllemehpl",
+      "title": "Goodscouter: Image Search & Price Comparison - Chrome Web Store",
+      "published_at": "2026-08-12",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Amazon/全球电商页面与淘宝、1688、JD等中国平台之间的跨平台同款搜索和价格比较已经被多次实际实现，因此“没人尝试过”不成立。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S03", "S07", "S14", "S20"],
+      "confidence": "high",
+      "counterevidence": "这些产品大多面向采购或卖家，且通常不提供面向美国消费者的最终landed cost与中立成交路由。"
+    },
+    {
+      "claim_id": "C02",
+      "claim": "HandHunt是本轮发现最接近目标架构的公开实例：从Amazon、Temu等海外页面寻找1688/淘宝同款或相似商品并连接中国代购，但其公开Chrome采用规模极小，且国际运费仍在入库后确定。",
+      "classification": "FACT",
+      "source_ids": ["S04", "S05", "S06"],
+      "confidence": "high",
+      "counterevidence": "Chrome用户数不代表其全部网站、App或B2B流量，也不能单独证明产品市场需求失败。"
+    },
+    {
+      "claim_id": "C03",
+      "claim": "消费者浏览器比价和中国供应链跨平台比价本身都可以获得显著采用，因此单纯的UI、用户不会安装插件或用户不理解比价并不是有证据支持的核心阻碍。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S07", "S09", "S20"],
+      "confidence": "high",
+      "counterevidence": "相邻产品的采用并不证明美国消费者愿意接受中国直购的交付、退货和跨境风险。"
+    },
+    {
+      "claim_id": "C04",
+      "claim": "稳定的数据取得是结构性约束：淘宝公开法律声明限制未经许可的爬虫、机器人及模拟用户获取内容；第三方工具也记录了淘宝和1688验证、账号异常导致功能失败；Amazon官方affiliate数据亦有严格使用限制。",
+      "classification": "FACT",
+      "source_ids": ["S08", "S10", "S11"],
+      "confidence": "high",
+      "counterevidence": "1688官方插件表明通过官方产品或商业合作可以获得部分跨平台能力，因此这不是绝对技术封锁。"
+    },
+    {
+      "claim_id": "C05",
+      "claim": "现有玩家的变现激励彼此错位：Amazon affiliate体系希望流量回到Amazon，AiPrice存在广告链接跳转，BuckyDrop/DSers服务卖家，而购买代理主要从采购和物流环节获利；一个真正中立的消费者路由器需要新的数据和收入安排。",
+      "classification": "INFERENCE",
+      "source_ids": ["S07", "S10", "S15"],
+      "confidence": "medium",
+      "counterevidence": "Capital One Shopping证明多商户affiliate网络可以支撑大型中立度较高的比较产品，故变现冲突并非不可解。"
+    },
+    {
+      "claim_id": "C06",
+      "claim": "可靠landed cost存在时序问题：购买代理通常在国内货物入仓、重新打包并测量实际重量和体积后才确定最终国际运费，因此浏览商品页时的全包价格天然包含估计误差。",
+      "classification": "FACT",
+      "source_ids": ["S05", "S06", "S12", "S13"],
+      "confidence": "high",
+      "counterevidence": "公开shipping calculator和历史包裹数据理论上可提供预估值，问题是精度而非完全不可计算。"
+    },
+    {
+      "claim_id": "C07",
+      "claim": "知识产权执法是购买代理规模化的真实风险，但现有美国判例并不支持“代理/路由模式天然等同卖家并必然承担直接商标侵权责任”的简单结论。",
+      "classification": "FACT",
+      "source_ids": ["S16", "S17"],
+      "confidence": "high",
+      "counterevidence": "直接侵权只是法律风险的一部分；contributory infringement、特定品牌事实、其他法域及平台政策仍可能产生重大责任。"
+    },
+    {
+      "claim_id": "C08",
+      "claim": "Wegobuy等消失案例证明购买代理存在运营连续性和托管风险，但公开证据不足以把其关闭归因于特定法律事件或失败的商业经济性。",
+      "classification": "FACT",
+      "source_ids": ["S18", "S19"],
+      "confidence": "medium",
+      "counterevidence": "社区确实报告502错误、邮件退信、余额与仓库货物问题，说明最终用户遭受的连续性风险并非理论问题。"
+    },
+    {
+      "claim_id": "C09",
+      "claim": "截至本轮研究，最有证据支持的“无主导产品”解释是功能被分割在消费者比价、采购工具、卖家SaaS和购买代理之间，并同时受到数据许可和动态物流报价的约束，而不是一个单一不可逾越的技术障碍。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S12", "S14", "S15"],
+      "confidence": "medium",
+      "counterevidence": "尚未取得完整创业失败数据库、融资数据库或内部经营数据，因此不能排除CAC、retention或需求不足才是最终决定因素。"
+    },
+    {
+      "claim_id": "C10",
+      "claim": "本W7研究没有硬证据证明美国消费者对这种China-direct comparison/routing产品的需求不足，因此“消费者只想要方便”“没人愿意等”只能保持为假设。",
+      "classification": "HYPOTHESIS",
+      "source_ids": ["S09"],
+      "confidence": "medium",
+      "counterevidence": "Capital One Shopping的大规模采用只证明一般在线比价需求，并不直接测量跨境中国直购意愿。"
+    }
+  ],
+  "categories": [
+    {
+      "category": "consumer_price_comparison_extensions",
+      "representatives": ["Capital One Shopping"],
+      "primary_user": "consumer",
+      "china_domestic_integration": false,
+      "buying_agent_integration": false,
+      "prepurchase_landed_cost": false,
+      "observed_users": 11000000,
+      "structural_role": "证明浏览器内自动比价可以达到大众规模"
+    },
+    {
+      "category": "china_cross_platform_sourcing_extensions",
+      "representatives": ["1688 Purchasing Assistant", "AiPrice"],
+      "primary_user": "seller_or_procurement",
+      "china_domestic_integration": true,
+      "buying_agent_integration": false,
+      "prepurchase_landed_cost": false,
+      "observed_users": null,
+      "structural_role": "证明Amazon与1688/Taobao等跨平台匹配和比价已经产品化"
+    },
+    {
+      "category": "near_exact_consumer_china_router",
+      "representatives": ["HandHunt Buy from China"],
+      "primary_user": "consumer_and_seller",
+      "china_domestic_integration": true,
+      "buying_agent_integration": true,
+      "prepurchase_landed_cost": false,
+      "observed_users": 19,
+      "structural_role": "最接近目标架构的公开实例，但采用弱且运费后置"
+    },
+    {
+      "category": "shopping_agents",
+      "representatives": ["Superbuy"],
+      "primary_user": "cross_border_buyer",
+      "china_domestic_integration": true,
+      "buying_agent_integration": true,
+      "prepurchase_landed_cost": false,
+      "observed_users": null,
+      "structural_role": "提供购买、QC、仓储、合包和国际运输基础设施"
+    },
+    {
+      "category": "merchant_dropshipping_saas",
+      "representatives": ["DSers", "BuckyDrop"],
+      "primary_user": "merchant",
+      "china_domestic_integration": true,
+      "buying_agent_integration": true,
+      "prepurchase_landed_cost": null,
+      "observed_users": null,
+      "structural_role": "已把sourcing与订单履约自动化，但商业对象是卖家而非终端消费者"
+    },
+    {
+      "category": "open_source_historical_comparators",
+      "representatives": ["PriceDoge"],
+      "primary_user": "consumer",
+      "china_domestic_integration": true,
+      "buying_agent_integration": false,
+      "prepurchase_landed_cost": false,
+      "observed_users": null,
+      "structural_role": "直接历史证据：2019年已有人实现Amazon/JD/Taobao跨平台比价"
+    },
+    {
+      "category": "agent_failure_and_legal_cases",
+      "representatives": ["Pandabuy", "Wegobuy", "AllChinaBuy"],
+      "primary_user": "cross_border_buyer",
+      "china_domestic_integration": true,
+      "buying_agent_integration": true,
+      "prepurchase_landed_cost": false,
+      "observed_users": null,
+      "structural_role": "展示IP执法、平台连续性和中介法律身份的实际边界"
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "是否存在未被公开网页索引、已获得VC融资且明确以Amazon到Taobao/1688 landed-cost comparison为核心的历史公司",
+      "requirement": "AUTHENTICATED DATA REQUIRED: PitchBook/Crunchbase/公司档案或创始人历史资料"
+    },
+    {
+      "gap": "HandHunt真实MAU、GMV、conversion、retention、CAC及非Chrome流量",
+      "requirement": "公司内部数据或可信第三方analytics"
+    },
+    {
+      "gap": "Wegobuy关闭的官方原因及用户余额/仓库资产最终处理",
+      "requirement": "官方公告、公司/法院/监管记录；当前原因UNVERIFIED"
+    },
+    {
+      "gap": "Amazon、Taobao/Tmall、JD、1688是否愿意向中立消费者比较层授予商业API和再展示权限",
+      "requirement": "商业API合同或书面平台许可"
+    },
+    {
+      "gap": "在商品入仓前利用catalog/历史包裹特征预测最终计费重量和体积的可实现误差",
+      "requirement": "真实历史包裹级数据或代理商内部数据"
+    },
+    {
+      "gap": "消费者跨境China-direct routing真实需求、留存和愿意容忍的报价误差",
+      "requirement": "独立需求实验；本W7未进行"
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```
+=== UNTRUNCATED W7-B; SHA256 857b295ebf977c999388e67eec0fb90b59661ba0703999909b17d2a5e734aaa0 ===
+以下为 W7-B 独立报告。仅研究竞争格局、历史尝试与结构性“为什么没有主导产品”；**未选择国内 SKU，未检查任何具体 SKU 的海外价格、库存或覆盖率**。Web research 可用；本轮实际检索窗口为 **2026-10-06T22:38:37Z–2026-10-06T22:46:54Z**。浏览工具不提供逐 URL 的精确抓取秒级时间，因此 JSON 中逐源 `retrieved_at` 保守填 `null`，不伪造。最新明确发布日期证据为 **2026-09-29** 的波兰 UODO Pandabuy 数据事件页面。
+
+# 1. Direct answer / Bottom line
+
+1. **[FACT] “Amazon → 淘宝/中国平台同款比较”不是没人做过。** 2019 年开源 PriceDoge 已在 Amazon、JD、Newegg、Taobao 商品页之间搜索并显示其他平台结果；作者明确说按当前商品标题查 TB/Amazon/Newegg/JD。  
+[https://github.com/DimensionDev/PriceDoge](https://github.com/DimensionDev/PriceDoge)  
+[https://www.v2ex.com/t/547246](https://www.v2ex.com/t/547246) :chatgpt-content-reference{index="2"}
+
+2. **[FACT] 2026 年甚至已有非常接近目标架构的微型产品。** GP Sourcing 可在 Amazon/Shopify/AliExpress 页面寻找 1688 货源并估算 DDP/landed cost；IK Sourcing 明确从 Amazon US/UK 找 1688 并估算 landed UK cost；另一个 Amazon-to-1688 扩展直接做供应商匹配。但抓取时分别只有约 **56、5、8 名 Chrome 用户**，且主要服务卖家/进口商，而非普通消费者。  
+[https://chromewebstore.google.com/detail/gp-sourcing-dropshipping/habbjbbidapgddblimhdjjgpnceeihab](https://chromewebstore.google.com/detail/habbjbbidapgddblimhdjjgpnceeihab?utm_source=header-cta)  
+[https://chromewebstore.google.com/detail/ik-sourcing-%E2%80%94-1688-profit/kdmdebiinfbkgmncenjcjfafdagkkikd](https://chromewebstore.google.com/detail/ik-sourcing-%E2%80%94-1688-profit/kdmdebiinfbkgmncenjcjfafdagkkikd)  
+[https://chromewebstore.google.com/detail/amazon-to-1688-sourcing-a/bkggnbelomjlmjnmiffalchkocnkijbn](https://chromewebstore.google.com/detail/amazon-to-1688-sourcing-a/bkggnbelomjlmjnmiffalchkocnkijbn) :chatgpt-content-reference{index="6"}
+
+3. **[FACT] 同款发现本身已经能达到明显规模。** AiPrice/AliPrice 的 Chrome 扩展抓取时显示约 **200,000 users**；公司自报截至 2025-08 累计用户约 100 万、注册用户约 65 万，并支持 Amazon、1688、Taobao 等图片找货。它证明 discovery layer 并非空白，但定位偏跨境卖家采购，不是中立的美国消费者购买路由。  
+[https://www.aiprice.com/information/index/page/about](https://www.aliprice.com/information/index/page/about)  
+[https://chromewebstore.google.com/detail/aipricealiprice%E8%B7%A8%E5%A2%83%E5%8D%96%E5%AE%B6%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/lenipkahddombkldhfmcnnjakmcepdlk](https://chromewebstore.google.com/detail/aipricealiprice%E8%B7%A8%E5%A2%83%E5%8D%96%E5%AE%B6%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/lenipkahddombkldhfmcnnjakmcepdlk) :chatgpt-content-reference{index="9"}
+
+4. **[INFERENCE] 真正没有看到公开规模化证据的是这一整条链同时成立：美国消费者 intent → exact identity → 中国国内 catalog → 实时可买价格 → forwarding/tax/volumetric landed cost → 与美国渠道中立比较 → 一键执行。** 本次 bounded search 只能说明“未发现公开 dominant product”，不能证明私人公司、stealth 产品或未索引产品绝对不存在。
+
+5. **Confirmed 的结构障碍首先是上游平台依赖。** ezbuy 曾获 US$20m B 轮，并拥有数百万用户；但 2017 年其大量 Taobao 采购账号和仓库地址被限制，导致 Buy-For-Me 服务中断。Alibaba 对媒体称相关行为涉及其所称的“scalping/代购规则”问题。此事证明规模化代理可以遭遇 source-platform counterparty shock。反证是：ezbuy 后来仍以约 **US$85.55m** 对价被 LightInTheBox 收购，所以这并不是“代理模式被证明失败”。 :chatgpt-content-reference{index="10"}
+
+6. **Probable，而不是 Confirmed：行业被按用户和盈利模式拆层。** Superbuy/Baopals 做消费者代购履约；AiPrice/DSers/BuckyDrop 做商家采购自动化；Honey 证明购物扩展本身可以做到千万级 MAU。缺口更像“跨层 orchestration + identity + reliable landed-cost state + consumer monetization”，而不是“没人想到浏览器插件”或“物流基础设施不存在”。 :chatgpt-content-reference{index="11"}
+
+# 2. Evidence table
+
+| 结论 | 证据 / 日期 | 置信度 | 反证 |
+|---|---|---|---|
+| Amazon↔Taobao 比价早已被尝试 | PriceDoge，2019；标题匹配“similar products” | 高 | 不是严格 exact-SKU；GitHub 当前仅 72 stars |
+| 2026 已有 Amazon→1688+landed-cost 产品 | GP/IK 等当前 Chrome listings | 高 | 用户数极小，且面向 seller/importer |
+| 数据访问/匹配是持续摩擦 | PriceDoge 用 Puppeteer；Shopping Hub 记录登录、滑块、限流/API约束 | 中 | Baopals 明示部分商品信息来自平台 API，故“无法正规接入”不能普遍成立 |
+| 上游平台能打断大型代理 | ezbuy 2017 批量账号/仓址被限制 | 高 | ezbuy 有 >3m customers 且随后被收购 |
+| 法律/安全暴露真实存在 | UODO：约 130 万 Pandabuy 用户数据事件；2026 美案仍有程序进展 | 高（事件） | 法院此前在相关 Pandabuy 分析中曾因其偏被动 facilitator 而解除 PI，不能写成“代理必然承担卖家责任” |
+| 浏览器扩展不是天然增长瓶颈 | Honey 2019 约 17m MAU，PayPal 约 US$4b 收购 | 高 | Honey 的 affiliate/merchant economics 与 China-direct router 不同 |
+
+# 3. Primary sources
+
+最关键 primary evidence：PriceDoge 官方 GitHub；Superbuy 官方 about；Baopals 当前站及隐私政策；AiPrice 官方页面；DSers/BuckyDrop 当前官方资料；ezbuy 自身 2017 service-disruption statement；SEC 的 ezbuy 收购文件；PayPal 的 Honey 收购公告；波兰 UODO 2026-09-29 公告。Baopals 隐私政策尤其构成反证：其称部分商品/店铺数据由电商平台通过 API 提供，因此“只能非法 scraping，所以没人能做”不成立。 :chatgpt-content-reference{index="12"}
+
+# 4. Forum / community evidence
+
+PriceDoge 作者在 2019 V2EX 帖中直接承认：跨站查询基于标题，优惠券/满减、商品内部 ID 等会让最终价格与匹配复杂；其计划中的 P2P price-sharing 没继续，一项明确原因是“没有足够多的用户量”并且作者时间有限。这是**一个项目的失败机制证据**，不能升级成全市场 CAC 结论。当前 Shopping Hub GitHub 又独立记录了 Taobao/Tmall/1688 匿名抓取所遇到的登录、滑块验证码以及 API/限流问题。 :chatgpt-content-reference{index="13"}
+
+# 5. Contrary evidence
+
+对“为什么不存在”的浅层解释，证据有明显反驳：  
+**“技术做不到”**——AiPrice 和 2026 的 GP/IK 已做到相当部分；**“没有代购基础设施”**——Superbuy 自 2012 年运营，Baopals 当前公开展示大量历史订单；**“extension 用户不会装”**——Honey 曾有约 17m MAU；**“平台一定不给数据”**——Baopals 披露存在 API 来源；**“法律必然把代理当 retailer”**——Pandabuy 相关法院材料并不支持这种绝对说法。 :chatgpt-content-reference{index="14"}
+
+# 6. Confidence
+
+**高置信度：** 概念已有多次实现；供应/代购/扩展各层均存在成熟参与者；ezbuy 证明 source-platform dependency 能造成真实规模性中断。  
+**中置信度：** dominant consumer router 缺失主要来自多层数据状态、身份解析、平台依赖及商业激励同时耦合。  
+**低置信度：** “中立比价与 affiliate monetization 天然冲突”“消费者获客成本过高”——目前没有足够失败案例证明因果。
+
+# 7. Data gaps
+
+`AUTHENTICATED DATA REQUIRED`：本研究未登录 Taobao/Tmall/JD，无法验证 2026 各平台对第三方搜索/API 的完整权限边界。Wegobuy 主页本次无法可靠打开；JadeShip 将其列为 legacy，但属于第三方，因此其当前状态 **UNVERIFIED**。Sugargoo/CSSBuy/CNFans 公共页面可触达但本轮没有提取到足以审计其历史/规模的 primary text。没有付费 VC 数据库、公司内部数据、创始人访谈或 Chrome 安装历史时间序列，因此可能遗漏已关闭/stealth 尝试。
+
+# 8. Most surprising finding
+
+最令人意外的不是“没人做”，而是**2026 年已经出现多个几乎贴着该架构边界的微型产品，却仍停留在卖家/power-user niche**。因此正确问题应从 *Why doesn’t this exist?* 改成：
+
+> **Why has this repeatedly existed, but not crossed from sourcing/proxy tooling into a mainstream neutral consumer router?**
+
+# 9. What would falsify this conclusion?
+
+以下任一证据会显著改变判断：①发现已有 >100 万美国消费者使用的 neutral US→China landed-cost router；②证明国内平台可通过稳定官方 API 获得全量实时价格与身份数据，且不存在显著平台依赖；③找到大型同类 consumer startup 的关闭材料，明确证明唯一主因是“消费者没有需求”；④证明 ezbuy 2017 事件与规模化代购架构无关、纯属一次孤立违规；⑤证明 exact identity + landed cost 在现实中已被某通用基础设施商品化成低成本稳定 API。
+
+# 10. Suggested next experiment
+
+只再做一个 W7 实验，我会做**2015–2026 competitor archaeology**：固定一份结构化名单，利用官方公司记录、Chrome 商店历史、GitHub commit/release、Wayback/公开融资与收购记录，逐个重建“上线→用户规模→商业模式→pivot/停止→可证明原因”。目标不是再找更多现存工具，而是确认**是否存在被今天搜索结果埋掉的、已经真正测试过 consumer-first neutral routing 的失败公司**。这会直接区分“市场没人完整做过”和“做过但被某个结构机制杀死”。
+
+```json
+{
+  "job_id": "W7-B",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://github.com/DimensionDev/PriceDoge",
+      "title": "DimensionDev/PriceDoge",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.v2ex.com/t/547246",
+      "title": "PriceDoge creator discussion on V2EX",
+      "published_at": "2019-03-22",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.aiprice.com/information/index/page/about",
+      "title": "AiPrice About",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C08"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://chromewebstore.google.com/detail/aipricealiprice%E8%B7%A8%E5%A2%83%E5%8D%96%E5%AE%B6%E8%BE%85%E5%8A%A9%E5%B7%A5%E5%85%B7/lenipkahddombkldhfmcnnjakmcepdlk",
+      "title": "AiPrice/AliPrice Chrome Web Store listing",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C08"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://chromewebstore.google.com/detail/gp-sourcing-dropshipping/habbjbbidapgddblimhdjjgpnceeihab",
+      "title": "GP Sourcing — Dropshipping Chrome extension",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://chromewebstore.google.com/detail/ik-sourcing-%E2%80%94-1688-profit/kdmdebiinfbkgmncenjcjfafdagkkikd",
+      "title": "IK Sourcing — 1688 Profit Chrome extension",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://chromewebstore.google.com/detail/amazon-to-1688-sourcing-a/bkggnbelomjlmjnmiffalchkocnkijbn",
+      "title": "Amazon to 1688 Sourcing Assistant",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://github.com/aon082910/shopping-hub",
+      "title": "Shopping Hub",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C09"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.superbuy.com/en/page/about/aboutus/",
+      "title": "Superbuy About Us",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C08"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.baopals.com/",
+      "title": "Baopals",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C08"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.baopals.com/privacy",
+      "title": "Baopals Privacy Policy",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C05"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.businesstimes.com.sg/startups-tech/technology/2-online-shopping-sites-bag-venture-funding",
+      "title": "2 online shopping sites bag venture funding",
+      "published_at": "2016-03-23",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.acnnewswire.com/press-release/english/40224/media-statement:-ezbuy.sg---update-on-service-disruption",
+      "title": "Media Statement: ezbuy.sg - Update on Service Disruption",
+      "published_at": "2017-12-08",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.straitstimes.com/singapore/singapore-based-ezbuys-founder-accuses-taobao-of-bullying-alibaba-responds",
+      "title": "Singapore-based ezbuy's founder accuses Taobao of bullying; Alibaba responds",
+      "published_at": "2017-12-09",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.sec.gov/Archives/edgar/data/1523836/000110465918066939/a18-39726_1ex99d1.htm",
+      "title": "LightInTheBox agreement to acquire Ezbuy",
+      "published_at": "2018-11-08",
+      "retrieved_at": null,
+      "source_type": "filing",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04", "C05"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://newsroom.paypal-corp.com/paypal-to-acquire-honey",
+      "title": "PayPal to Acquire Honey",
+      "published_at": "2019-11-20",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://help.dsers.com/what-is-dsers-a-quick-overview-for-beginners/",
+      "title": "What is DSers? A Quick Overview for Beginners",
+      "published_at": "2026-05-25",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://blog.buckydrop.com/us-dropshipping-fulfillment-cost/",
+      "title": "US Dropshipping Fulfillment Cost",
+      "published_at": "2026-09-15",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08", "C09"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.uodo.gov.pl/pl/138/4589",
+      "title": "Polish data protection authority page concerning Pandabuy customer data incident",
+      "published_at": "2026-09-29",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S20",
+      "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv02668/619156/185",
+      "title": "Federal court filing concerning Pandabuy defendants",
+      "published_at": "2026-04-15",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S21",
+      "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv08336/631089/68",
+      "title": "Federal court order discussing Pandabuy facilitator analysis",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S22",
+      "url": "https://www.jadeship.com/",
+      "title": "JadeShip",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Amazon-to-Taobao/JD cross-platform comparison was actually implemented by PriceDoge by 2019.",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02"],
+      "confidence": "high",
+      "counterevidence": "PriceDoge described title-based similar-product search rather than guaranteed exact-SKU identity resolution, and its public GitHub footprint is small."
+    },
+    {
+      "claim_id": "C02",
+      "claim": "By 2026 multiple public tools implement substantial portions of Amazon-to-China sourcing, including Amazon-to-1688 matching and in some cases landed-cost estimation.",
+      "classification": "FACT",
+      "source_ids": ["S03", "S04", "S05", "S06", "S07"],
+      "confidence": "high",
+      "counterevidence": "The closest 2026 Chrome extensions observed have very small public user counts and are primarily seller/importer tools rather than mainstream consumer routers."
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Product identity, dynamic price state, authentication, CAPTCHA, rate limiting and source-platform access are recurring technical frictions, but authorized/API-based access can mitigate at least some of them.",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S02", "S08", "S11"],
+      "confidence": "medium",
+      "counterevidence": "Baopals states that some shop and product information is supplied via e-commerce-platform APIs, so platform access should not be characterized as universally impossible."
+    },
+    {
+      "claim_id": "C04",
+      "claim": "A scaled buying-agent business can suffer severe operational disruption from source-platform counterparty actions; ezbuy experienced large-scale Taobao account and warehouse-address restrictions in 2017.",
+      "classification": "FACT",
+      "source_ids": ["S12", "S13", "S14", "S15"],
+      "confidence": "high",
+      "counterevidence": "Ezbuy had millions of customers and was subsequently acquired; the incident therefore does not establish that the agent model itself is commercially nonviable."
+    },
+    {
+      "claim_id": "C05",
+      "claim": "Consumer proxy-purchasing and forwarding infrastructure already exists at meaningful scale, so absence of forwarding infrastructure alone does not explain the missing neutral router.",
+      "classification": "INFERENCE",
+      "source_ids": ["S09", "S10", "S11", "S15"],
+      "confidence": "high",
+      "counterevidence": "Existing agents optimize their own procurement/forwarding workflows rather than proving that a channel-neutral U.S.-consumer comparison layer is economically attractive."
+    },
+    {
+      "claim_id": "C06",
+      "claim": "Browser-extension distribution is not by itself a structural reason a shopping-assistance product cannot reach mass scale.",
+      "classification": "INFERENCE",
+      "source_ids": ["S16"],
+      "confidence": "high",
+      "counterevidence": "Honey's merchant and affiliate economics differ substantially from a China-direct neutral routing product."
+    },
+    {
+      "claim_id": "C07",
+      "claim": "Security and litigation exposure are real risks for proxy-shopping platforms, but available court evidence does not establish that a passive facilitator is necessarily treated like the underlying seller or manufacturer.",
+      "classification": "INFERENCE",
+      "source_ids": ["S19", "S20", "S21"],
+      "confidence": "medium",
+      "counterevidence": "Pandabuy-related proceedings and default issues show continuing legal exposure, while prior judicial analysis cited in related litigation cut against an automatic seller-equivalence theory."
+    },
+    {
+      "claim_id": "C08",
+      "claim": "Commercialization is currently fragmented across consumer agents, seller sourcing tools, dropshipping automation and agent interoperability rather than concentrated in one neutral U.S.-consumer routing layer.",
+      "classification": "INFERENCE",
+      "source_ids": ["S03", "S04", "S09", "S10", "S17", "S18", "S22"],
+      "confidence": "medium",
+      "counterevidence": "Bounded public-web research cannot rule out private, stealth, mobile-only or poorly indexed integrated competitors."
+    },
+    {
+      "claim_id": "C09",
+      "claim": "The closest publicly visible 2026 tools suggest that landed-cost computation itself is implementable; the unresolved scaling problem appears to be integration of reliable identity, data state, execution, platform access and consumer distribution.",
+      "classification": "INFERENCE",
+      "source_ids": ["S05", "S06", "S08", "S18"],
+      "confidence": "medium",
+      "counterevidence": "The observed products are tiny or seller-focused, so their existence does not prove the same architecture works economically for ordinary U.S. consumers."
+    },
+    {
+      "claim_id": "C10",
+      "claim": "A neutrality-versus-affiliate or merchant-funded monetization conflict may help explain why sourcing/comparison products cluster around sellers and affiliate workflows rather than neutral consumer routing.",
+      "classification": "HYPOTHESIS",
+      "source_ids": ["S03", "S16", "S17", "S18"],
+      "confidence": "low",
+      "counterevidence": "No identified failed company directly attributed its failure to this incentive conflict; alternative explanations such as data reliability, operations or insufficient consumer demand remain viable."
+    }
+  ],
+  "categories": [
+    {
+      "category": "cross_market_discovery_comparison",
+      "representatives": ["PriceDoge", "AiPrice/AliPrice"],
+      "structural_role": "same-or-similar product discovery across marketplaces",
+      "current_or_historical_scale_signal": {
+        "aiprice_chrome_users_at_retrieval": 200000,
+        "pricedoge_github_stars_at_retrieval": 72
+      },
+      "source_ids": ["S01", "S03", "S04"]
+    },
+    {
+      "category": "seller_sourcing_and_landed_cost",
+      "representatives": ["GP Sourcing", "IK Sourcing", "Amazon to 1688 Sourcing Assistant", "DSers", "BuckyDrop"],
+      "structural_role": "China sourcing, supplier matching, fulfillment and in some cases landed-cost estimation",
+      "current_or_historical_scale_signal": {
+        "gp_sourcing_chrome_users_at_retrieval": 56,
+        "ik_sourcing_chrome_users_at_retrieval": 5,
+        "amazon_to_1688_chrome_users_at_retrieval": 8
+      },
+      "source_ids": ["S05", "S06", "S07", "S17", "S18"]
+    },
+    {
+      "category": "consumer_proxy_and_forwarding",
+      "representatives": ["Superbuy", "Baopals", "ezbuy"],
+      "structural_role": "proxy purchasing, warehousing, international forwarding and consumer-facing execution",
+      "current_or_historical_scale_signal": {
+        "ezbuy_customers_reported_2018": 3000000,
+        "baopals_happy_customers_self_reported_at_retrieval": 142477,
+        "baopals_orders_self_reported_at_retrieval": 1904954,
+        "baopals_goods_delivered_self_reported_at_retrieval": 7012337
+      },
+      "source_ids": ["S09", "S10", "S12", "S15"]
+    },
+    {
+      "category": "agent_interoperability",
+      "representatives": ["JadeShip"],
+      "structural_role": "agent-agnostic link conversion and navigation across multiple buying agents",
+      "current_or_historical_scale_signal": {
+        "agents_claimed_supported": 35
+      },
+      "source_ids": ["S22"]
+    },
+    {
+      "category": "mainstream_shopping_assistant",
+      "representatives": ["Honey"],
+      "structural_role": "browser-based shopping assistance and merchant-funded savings",
+      "current_or_historical_scale_signal": {
+        "monthly_active_users_2019": 17000000,
+        "announced_acquisition_value_usd": 4000000000
+      },
+      "source_ids": ["S16"]
+    },
+    {
+      "category": "open_source_multi_market_landed_cost",
+      "representatives": ["Shopping Hub"],
+      "structural_role": "multi-market search, matching, landed-cost estimation and agent deep linking",
+      "current_or_historical_scale_signal": {
+        "github_stars_at_retrieval": 6,
+        "github_commits_at_retrieval": 58
+      },
+      "source_ids": ["S08"]
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "Current authenticated access behavior for Taobao, Tmall, JD and related ranking/search endpoints was not tested.",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap": "No paid venture/startup database was accessed, so stealth or discontinued companies may be missing.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "gap": "Wegobuy could not be reliably opened in this session; third-party legacy labels are insufficient to establish current corporate status.",
+      "status": "UNVERIFIED"
+    },
+    {
+      "gap": "Sugargoo, CSSBuy and CNFans public sites were reachable but this bounded session did not obtain sufficiently auditable primary history or scale data to make material claims about them.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "gap": "No Chrome extension install-history time series was available; reported user counts are retrieval-time snapshots only.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "gap": "No founder interviews, direct company contacts, purchases, quotations or paid datasets were used.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "gap": "Public evidence does not establish causal consumer acquisition economics for a neutral U.S.-to-China routing product.",
+      "status": "UNRESOLVED"
+    },
+    {
+      "gap": "The browsing interface does not expose exact per-source retrieval timestamps; only the overall session retrieval window 2026-10-06T22:38:37Z to 2026-10-06T22:46:54Z was independently recorded, so per-source retrieved_at fields are null.",
+      "status": "UNRESOLVED"
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```
+=== UNTRUNCATED W7-C; SHA256 91e96c5b6e7375091ae9b4c817b83d270d1f9a3038c310021f9250c66c87ca56 ===
+以下是独立 W7-C 结果。检索窗口为 **2026-10-06T22:39:56Z–2026-10-06T22:43:23Z**；网页工具不返回逐页精确抓取时钟，因此 JSON 中逐来源 `retrieved_at` 保守填 `null`。可明确识别日期的最新研究来源为 FINDIT 对 BigGo 的 **2026-09-04** 更新；对无发布日期的当前官网，不把抓取日伪装成发布日期。
+
+# 1. Direct answer
+
+**结论：核心概念并非没人尝试过，但我没有找到已规模化的“美国商品页 → 中国国内 exact match → 真实中国成交价 → 转运/税费 landed cost → 中立排序”消费者产品。**
+
+最直接的先例是 **PriceDoge**：2019 年开源 Chrome 插件明确支持 Amazon、JD、Newegg、Taobao，在商品详情页自动搜索其他平台；Taobao 搜索甚至需要后端 Puppeteer。开发者在 V2EX 明说当时是按商品标题返回“类似商品”，P2P 价格共享因“用户量不足、没时间”没有完成，优惠券、满减、返现、商品内部 ID 变化也被讨论为真实价格问题。另一个 `2tao` 仓库直接自称“Compare products of Taobao and Amazon”，但只有 3 个 commits。故“Amazon→Taobao 比价从未有人做过”是错误命题。:chatgpt-content-reference{index="0"}  
+URL: [https://github.com/DimensionDev/PriceDoge](https://github.com/DimensionDev/PriceDoge)；[https://v2ex.com/t/547246](https://v2ex.com/t/547246)；[https://github.com/zhanghongyi/2tao](https://github.com/zhanghongyi/2tao)
+
+更重要的是，**所需能力已经分别被不同公司验证，却停留在不同层**：AiPrice 能跨 Amazon/1688/Taobao 以图找同款/相似款，Chrome 商店显示约 100,000 用户；BigGo 做自动比价、价格历史和 affiliate；Capital One Shopping 官方称覆盖 100,000+ 在线零售商并计算运费/会员价；Superbuy 接受商品链接后采购、质检、仓储、合包和国际配送；BuckyDrop/DSers 则把中国 sourcing→fulfillment 自动化卖给商家。:chatgpt-content-reference{index="4"}
+
+因此我的主判断是 **INFERENCE**：缺失的不是某一种“神奇技术”，而是把 **跨站识别、可授权/可靠的中国价格数据、个性化交易价格、跨境履约报价和中立 monetization** 连成同一个消费者级 truth layer。
+
+# 2. Evidence table
+
+| Claim | Evidence / date | Confidence | Counterevidence |
+|---|---|---|---|
+| 已存在 Amazon↔Taobao 直接尝试 | PriceDoge 2019；2tao 开源仓库 | High | 两者都没有证明商业规模或 landed-cost 能力 |
+| Matching 本身可规模化 | AiPrice：Amazon/1688 等图片搜索，Chrome 100k users；BigGo 仍运营 | High | image/similar match ≠ exact SKU |
+| 转运能力本身已成熟存在 | Superbuy：link→purchase→warehouse→global delivery | High | 用户必须先知道中国商品/链接，未解决 discovery |
+| 数据访问是结构性维护问题 | Alibaba 条款禁止未经授权 robots/spiders；Amazon API 有 Associates 门槛，且价格可能与特定用户看到的不同 | High | 正式 API/licensing 可部分解决 |
+| 真实成交价比“页面价”困难 | PriceDoge 社区直接指出 coupon/满减/返现/内部 ID；Capital One 也单列 shipping/member pricing | Med-High | 成熟平台已能解决部分美国站点价格上下文 |
+| agent 生态存在真实 IP 风险，但不能说模式本身违法 | Pandabuy 2024 曾被初步禁令；2025 法院又撤销，认为证据更接近 passive facilitator；Nike 案记录 promoter 从 PandaBuy 获得 $270k | High | 撤销禁令本身就是强反证：不能等同“代理=侵权卖家” |
+
+数据访问来源：[https://terms.alicdn.com/legal-agreement/terms/c_platform_service_agreement/20250822114124762/20250822114124762.html](https://terms.alicdn.com/legal-agreement/terms/c_platform_service_agreement/20250822114124762/20250822114124762.html)；[https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction)；[https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/resources/offersV2](https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/resources/offersV2)。Alibaba 明确限制未经许可通过 robots/spiders 获取或使用 Taobao/Tmall 内容；Amazon Creators API 要求 Associates 资格及近期 qualifying sales，而 OffersV2 明示 API 默认价格可能与具体客户实际看到的价格不同。:chatgpt-content-reference{index="8"}
+
+# 3. Primary sources
+
+**采购/履约层。** Superbuy 的当前流程是“submit a link→代购→仓库 QC/storage→global delivery”，说明最后一公里之前的中国采购与国际转运不是空白基础设施。其 affiliate 计划按被推荐用户的国际包裹运费奖励，并声称自 2012 年累计支付约 RMB 9.26m commission。BuckyDrop 和 DSers 则明显面向 Shopify/WooCommerce/Amazon 等**卖家工作流**，包括 API、supplier mapping、variant matching、自动下单和 tracking。:chatgpt-content-reference{index="9"}  
+URL: [https://www.superbuy.com/](https://www.superbuy.com/)；[https://www.superbuy.com/en/page/about/affiliate/](https://www.superbuy.com/en/page/about/affiliate/)；[https://www.buckydrop.com/en/](https://www.buckydrop.com/en/)；[https://www.dsers.com/en/integration](https://www.dsers.com/en/integration)
+
+**消费者比价层。** BigGo 政府数据库记录其成立于 2016 年、截至 2026-09-04 状态“营运中”；其扩展明确以 affiliate commission 支撑免费比价。Capital One Shopping 2026-03-12 官方材料证明浏览器后台自动比较价格、运费及会员价的消费者行为已经成立。:chatgpt-content-reference{index="14"}  
+URL: [https://findit.sme.gov.tw/tw/Startup/UFRKV3BWbXVWMWp2NjYxSEtYS1c0dz09/Basic](https://findit.sme.gov.tw/tw/Startup/UFRKV3BWbXVwMWp2NjYxSEtYS1c0dz09/Basic)；[https://extension.biggo.com/store/overview.php](https://extension.biggo.com/store/overview.php)；[https://www.capitalone.com/learn-grow/money-management/capital-one-shopping/](https://www.capitalone.com/learn-grow/money-management/capital-one-shopping/?msockid=2e5cf69b5ef9656d2148e06a5f866482)
+
+# 4. Forum evidence
+
+PriceDoge 的 2019 V2EX 发布帖是本次最有价值的历史材料：开发者本人说跨站匹配实际是“用当前商品名去其他网站搜索类似商品”；P2P crowdsourcing 因用户不够没有启动；用户指出 coupon、满减、返现、商品 ID 变化会破坏价格真实性；开发者承认跨平台购物车+优惠组合逻辑因时间不足未完成。:chatgpt-content-reference{index="18"}
+
+WeGoBuy 2024 Reddit 讨论出现网站 502、仓库货物担忧和 chargeback 行为，但这是**社区证据**，只能证明用户当时经历服务中断/不确定性，不能证明停运根因或“exit scam”。:chatgpt-content-reference{index="19"}  
+URL: [https://www.reddit.com/r/WegobuyOfficial/comments/1co0y1d/is_wegobuy_website_down/](https://www.reddit.com/r/WegobuyOfficial/comments/1co0y1d)
+
+# 5. Contrary evidence
+
+最强反证有三条。第一，AiPrice、BigGo、Capital One Shopping 证明“用户不愿装插件”“跨站匹配不可能”都不是成立解释。第二，Superbuy 长期运营证明消费者代理采购/转运基础设施本身不是不存在。第三，Pandabuy 法律史不能简化成“法院认定代理商就是侵权卖家”：2025-01-14 法院撤销此前 preliminary injunction，认为现有证据更像 passive facilitator；2025-04 Nike v. Fox 也明确说 PandaBuy/agents 是否属于 direct infringers 存在 genuine dispute。:chatgpt-content-reference{index="21"}  
+URL: [https://case-law.vlex.com/vid/king-spider-llc-v-1065990420](https://case-law.vlex.com/vid/king-spider-llc-v-1065990420?utm_source=chatgpt.com)；[https://docs.justia.com/cases/federal/district-courts/florida/flmdce/8:2023cv02873/421976/71](https://docs.justia.com/cases/federal/district-courts/florida/flmdce/8%3A2023cv02873/421976/71)
+
+# 6. Confidence
+
+**High confidence:** 过去确有 Amazon↔Taobao 比价原型；今天各子能力分别存在；平台数据权限和 transaction-price context 是真实技术/合同约束。  
+**Medium confidence:** 缺乏 dominant product 的主要原因是跨层集成成本和 monetization alignment，而非单一 UI 问题。  
+**Low confidence:** “这些原因已经被某家融资创业公司用真实 CAC/LTV 数据证明导致失败。”本次没有找到这种证据，因此不能声称。
+
+# 7. Data gaps
+
+PriceDoge/2tao 没有可靠活跃用户、收入、留存或正式 shutdown post；WeGoBuy/Pandabuy 的最终运营结局和根因没有足够一手公司材料；没有访问 Taobao/Tmall 登录态/API 商务合同；没有任何付费数据集、内部 affiliate conversion、CAC/LTV 或 agent partnership quote。以上均不能由搜索 snippet 补齐；涉及真实站内 feed/API 权限的部分应标记 **AUTHENTICATED DATA REQUIRED**。
+
+# 8. Most surprising finding
+
+最意外的不是“没人做过”，而是**2019 年 PriceDoge 已经非常接近入口形态，却明确停在“标题搜类似商品”这一步**；与此同时，2026 年 AiPrice 已把 Amazon↔中国供应链的 same/similar image-search 做到 100k Chrome 用户，但主要定位仍是 importer/online seller sourcing。:chatgpt-content-reference{index="24"}
+
+这暗示市场可能不是缺 matching primitive，而是 matching 的经济价值目前更容易在 **B2B sourcing** 中兑现。
+
+# 9. What would falsify this conclusion?
+
+如果获得以下任一证据，我会显著下调“跨层集成是缺口”的判断：①存在未发现、已达到大规模美国消费者使用的 China-domestic landed-cost comparator；②正式 API/商业数据合同可以低成本稳定返回 authenticated transaction price 与 SKU-level inventory；③历史创业公司公开 post-mortem 显示 exact matching/landed cost 技术其实稳定，而唯一失败因素是 CAC；④ agent 已有成熟 Amazon-context API，只是公开产品未宣传；⑤真实用户实验显示仅做 title/image match 就足够达到高 precision，无需复杂 variant resolution。
+
+# 10. Suggested next experiment
+
+只做一个结构实验：在**未来已冻结的 domestic-first SKU universe** 上，建立一个“不购物”的技术 probe，测量三个完全独立指标：**exact-match precision、authenticated-price retrievability、landed-cost quote retrievability**。同时分别测试官方/API 路径与 browser-mediated 路径。若三者同时高，则“为什么不存在”更可能是 distribution/monetization；若任一层在合法、稳定条件下持续失败，则形成真正的结构性解释。本实验不在 W7-C 当前阶段选 SKU，也不做任何冻结前海外 coverage/价格检查。
+
+证据账本 JSON 如下；`categories` 表示本次实际研究的**竞争者架构类别**，不是商品 category，`sku_candidates` 按预冻结规则为空。
+
+```json
+{
+  "job_id": "W7-C",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://github.com/DimensionDev/PriceDoge",
+      "title": "DimensionDev/PriceDoge: A Chrome extension for price comparison",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C02", "C05", "C08"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://v2ex.com/t/547246",
+      "title": "反杀熟的开源小工具 PriceDoge",
+      "published_at": "2019-03-22",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C05", "C08", "C11"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://github.com/zhanghongyi/2tao",
+      "title": "zhanghongyi/2tao: A price comparison engine. Compare products of Taobao and Amazon.",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C11"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.aiprice.com/en/taobao_tutorials/667_425/Introduction-of-1688-Extension",
+      "title": "Introduction of AiPrice Sourcing Tool extension",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://chromewebstore.google.com/detail/aipricealiprice-search-by/aadbahhifnekkkcbapdfandpimaoacmj?hl=en",
+      "title": "AiPrice(AliPrice) Search by Image for China Import",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.superbuy.com/",
+      "title": "Superbuy - China Shopping Proxy & Shipping Worldwide",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C08"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.superbuy.com/en/page/about/affiliate/",
+      "title": "Superbuy Affiliate Program",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C10"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.buckydrop.com/en/",
+      "title": "BuckyDrop | All-in-One Auto Dropshipping Platform",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C09"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.dsers.com/en/integration",
+      "title": "DSers Integrations",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C09"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://extension.biggo.com/store/overview.php",
+      "title": "BigGo Shopping Assistant",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C06", "C10"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://findit.sme.gov.tw/tw/Startup/UFRKV3BWbXVWMWp2NjYxSEtYS1c0dz09/Basic",
+      "title": "FINDIT - 樂方 BigGo",
+      "published_at": "2026-09-04",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.capitalone.com/learn-grow/money-management/capital-one-shopping/",
+      "title": "Capital One Shopping: A free tool to find deals online",
+      "published_at": "2026-03-12",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C05"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://help.joinhoney.com/article/30-how-does-honey-make-money",
+      "title": "How does Honey make money?",
+      "published_at": "2024-11-25",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C10"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://terms.alicdn.com/legal-agreement/terms/c_platform_service_agreement/20250822114124762/20250822114124762.html",
+      "title": "Alibaba Legal Statement",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction",
+      "title": "Amazon Creators API Documentation - Introduction",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://affiliate-program.amazon.com/creatorsapi/docs/en-us/api-reference/resources/offersV2",
+      "title": "Amazon Creators API - OffersV2",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04", "C05"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1:2024cv02668/619156/80",
+      "title": "King Spider LLC v. Panda - Preliminary Injunction Order",
+      "published_at": "2024-07-10",
+      "retrieved_at": null,
+      "source_type": "filing",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://case-law.vlex.com/vid/king-spider-llc-v-1065990420",
+      "title": "King Spider LLC v. Panda (Hong Kong) Technology Co.",
+      "published_at": "2025-01-14",
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://docs.justia.com/cases/federal/district-courts/florida/flmdce/8:2023cv02873/421976/71",
+      "title": "Nike Inc. v. Fox - Order",
+      "published_at": "2025-04-21",
+      "retrieved_at": null,
+      "source_type": "filing",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07", "C06"]
+    },
+    {
+      "source_id": "S20",
+      "url": "https://github.com/cachho/jadeship-browser-extension",
+      "title": "Jadeship browser extension",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C12"]
+    },
+    {
+      "source_id": "S21",
+      "url": "https://www.reddit.com/r/WegobuyOfficial/comments/1co0y1d/is_wegobuy_website_down/",
+      "title": "Is WeGoBuy website down?",
+      "published_at": "2024-05-09",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C12"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "至少已有两个公开项目直接尝试过 Taobao 与 Amazon 的跨平台商品比较；PriceDoge 还在商品详情页自动查询 Amazon、JD、Newegg、Taobao。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S03"],
+      "confidence": "high",
+      "counterevidence": "这些项目没有证明达到商业规模，也没有实现本研究所要求的 exact-SKU landed-cost routing。"
+    },
+    {
+      "claim_id": "C02",
+      "claim": "跨平台商品发现和消费者自动比价本身已经分别被 AiPrice、BigGo、Capital One Shopping 等产品验证为可运行能力。",
+      "classification": "FACT",
+      "source_ids": ["S04", "S05", "S10", "S11", "S12"],
+      "confidence": "high",
+      "counterevidence": "这些产品没有被证实同时解决中国国内 authenticated transaction price、exact SKU、国际转运和关税后的 landed cost。"
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Superbuy 类 buying agent 与 BuckyDrop/DSers 类 merchant SaaS 已解决采购、仓储或商家履约的很多环节，但其默认入口不是美国消费者正在浏览的商品自动发现中国 exact match。",
+      "classification": "FACT",
+      "source_ids": ["S06", "S08", "S09"],
+      "confidence": "high",
+      "counterevidence": "Superbuy 也支持关键词搜索，部分 agent/extension 正在向 discovery 扩展，因此边界并非绝对。"
+    },
+    {
+      "claim_id": "C04",
+      "claim": "稳定获取跨平台价格数据存在真实访问约束：Alibaba 条款限制未经授权的 robots/spiders，Amazon 官方 API 又有 Associates 资格门槛且 API 价格不保证等于具体客户所见价格。",
+      "classification": "FACT",
+      "source_ids": ["S14", "S15", "S16"],
+      "confidence": "high",
+      "counterevidence": "正式授权、affiliate API、商业数据许可或客户端执行可以缓解这一问题，故它不是不可逾越的技术定律。"
+    },
+    {
+      "claim_id": "C05",
+      "claim": "跨站价格的 truth problem 不只是抓到标价：优惠券、满减、返现、商品 ID/variant 和用户上下文都会改变可成交价格。",
+      "classification": "FACT",
+      "source_ids": ["S02", "S12", "S16"],
+      "confidence": "high",
+      "counterevidence": "Capital One Shopping 等成熟产品已经能处理部分优惠、运费和会员价，说明该问题可以部分工程化。"
+    },
+    {
+      "claim_id": "C06",
+      "claim": "Affiliate/referral 是该相邻生态的常见 monetization：Honey、BigGo、Superbuy 均公开披露此类收入或奖励结构。",
+      "classification": "FACT",
+      "source_ids": ["S07", "S10", "S13", "S19"],
+      "confidence": "high",
+      "counterevidence": "存在 affiliate 收入不等于必须牺牲推荐中立性，也不证明其他收入模型不可行。"
+    },
+    {
+      "claim_id": "C07",
+      "claim": "Pandabuy 生态产生了真实 IP 诉讼和运营风险，但现有法院材料不支持把 buying-agent 模式简单等同于直接侵权卖家。",
+      "classification": "FACT",
+      "source_ids": ["S17", "S18", "S19"],
+      "confidence": "high",
+      "counterevidence": "2024 年确有 preliminary injunction；但 2025 年法院随后撤销，并指出 Pandabuy 更接近 passive facilitator，Nike v. Fox 中 shipping-agent direct infringement 也被认定存在事实争议。"
+    },
+    {
+      "claim_id": "C08",
+      "claim": "当前缺口更可能是把 matching、可靠交易价格、跨境 landed-cost 和 checkout handoff 组合成一个消费者级 truth layer，而非任何单项能力完全不存在。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S02", "S04", "S06", "S08", "S09", "S12", "S14", "S16"],
+      "confidence": "medium",
+      "counterevidence": "缺少失败创业公司的内部 post-mortem，因此不能证明这种集成难度就是无人规模化的主要因果因素。"
+    },
+    {
+      "claim_id": "C09",
+      "claim": "现有跨中国供应链的 matching/automation 工具更明显地向 importer、online seller 和 dropship merchant monetization 聚集。",
+      "classification": "INFERENCE",
+      "source_ids": ["S04", "S08", "S09"],
+      "confidence": "medium",
+      "counterevidence": "BigGo、Capital One Shopping 和 Superbuy 都证明消费者端也存在可规模化业务，因此不能推断 B2B 是唯一可行方向。"
+    },
+    {
+      "claim_id": "C10",
+      "claim": "完全中立地始终推荐最低 landed-cost 路径，可能与 affiliate-driven monetization 存在激励张力。",
+      "classification": "HYPOTHESIS",
+      "source_ids": ["S07", "S10", "S13"],
+      "confidence": "low",
+      "counterevidence": "BigGo 明确披露 affiliate 并仍提供比价功能；没有证据证明这种激励冲突足以阻止该产品成立。"
+    },
+    {
+      "claim_id": "C11",
+      "claim": "PriceDoge 和 2tao 的小规模不能被当作市场需求失败的证据。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S02", "S03"],
+      "confidence": "high",
+      "counterevidence": "PriceDoge 开发者确实提到用户量不足以启动 P2P，但同时明确提到时间不足，因此无法区分 cold-start、资源约束与需求不足。"
+    },
+    {
+      "claim_id": "C12",
+      "claim": "本次有限公开网页研究未发现一个已规模化、明确同时完成美国零售商品上下文、中国国内 exact match、authenticated price、真实 landed cost 与消费者 routing 的产品。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S03", "S04", "S06", "S08", "S09", "S10", "S20", "S21"],
+      "confidence": "medium",
+      "counterevidence": "这是 bounded search 的未发现结果，不是全世界不存在此类公司或私有产品的证明；尤其缺少付费数据库及非公开 startup 数据。"
+    }
+  ],
+  "categories": [
+    {
+      "category": "direct_cross_market_comparison_prototypes",
+      "examples": ["PriceDoge", "2tao"],
+      "customer": "consumer/developer",
+      "solves": ["cross-site search", "onsite comparison"],
+      "missing_layers": ["authenticated China transaction price", "exact-SKU validation at scale", "landed cost", "scaled distribution"],
+      "evidence_source_ids": ["S01", "S02", "S03"]
+    },
+    {
+      "category": "cross_border_product_matching",
+      "examples": ["AiPrice"],
+      "customer": "importer/online seller",
+      "solves": ["image search", "same/similar product discovery", "SKU data utilities"],
+      "missing_layers": ["US-consumer neutral routing", "full landed-cost comparison"],
+      "evidence_source_ids": ["S04", "S05"]
+    },
+    {
+      "category": "consumer_price_comparison_extensions",
+      "examples": ["BigGo", "Capital One Shopping", "Honey"],
+      "customer": "consumer",
+      "solves": ["price comparison", "coupon/rewards", "price history"],
+      "missing_layers": ["China-domestic procurement route", "agent shipping/tariff landed cost"],
+      "evidence_source_ids": ["S10", "S11", "S12", "S13"]
+    },
+    {
+      "category": "buying_agents_forwarders",
+      "examples": ["Superbuy"],
+      "customer": "consumer already seeking China procurement",
+      "solves": ["purchase", "QC", "warehouse", "consolidation", "international shipping"],
+      "missing_layers": ["automatic discovery from US retail context", "neutral cross-channel price ranking"],
+      "evidence_source_ids": ["S06", "S07"]
+    },
+    {
+      "category": "merchant_dropshipping_automation",
+      "examples": ["BuckyDrop", "DSers"],
+      "customer": "merchant",
+      "solves": ["sourcing", "supplier mapping", "order automation", "fulfillment integration"],
+      "missing_layers": ["end-consumer decision interface", "neutral landed-cost recommendation"],
+      "evidence_source_ids": ["S08", "S09"]
+    },
+    {
+      "category": "agent_ecosystem_and_legacy_tools",
+      "examples": ["Pandabuy", "Wegobuy", "Jadeship"],
+      "customer": "agent-community users",
+      "solves": ["agent link conversion", "cross-agent workflow", "community-driven sourcing"],
+      "missing_layers": ["verified legitimate-only catalog architecture", "stable mainstream US consumer distribution"],
+      "evidence_source_ids": ["S17", "S18", "S19", "S20", "S21"]
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "Taobao/Tmall authenticated catalog, transaction-price and API licensing behavior",
+      "status": "AUTHENTICATED DATA REQUIRED",
+      "impact": "Cannot determine whether stable authorized exact-SKU/price ingestion is economically available."
+    },
+    {
+      "gap": "PriceDoge and 2tao historical MAU, retention, revenue and shutdown/post-mortem",
+      "status": "UNVERIFIED",
+      "impact": "Cannot distinguish product-market rejection from hobby-project resource constraints."
+    },
+    {
+      "gap": "WeGoBuy closure/root-cause primary company evidence",
+      "status": "UNVERIFIED",
+      "impact": "Community outage/chargeback reports cannot establish causal failure mechanism."
+    },
+    {
+      "gap": "Private startup and VC attempt database",
+      "status": "NOT ACCESSED",
+      "impact": "Bounded public search may miss stealth, acquired or quietly discontinued attempts."
+    },
+    {
+      "gap": "Cross-agent commercial referral conversion, CAC/LTV and partnership terms",
+      "status": "AUTHENTICATED DATA REQUIRED",
+      "impact": "Prevents causal conclusion on whether monetization or acquisition economics killed prior attempts."
+    },
+    {
+      "gap": "Per-source exact retrieval clock",
+      "status": "UNAVAILABLE_FROM_WEB_TOOL",
+      "impact": "Actual session retrieval window was 2026-10-06T22:39:56Z through 2026-10-06T22:43:23Z; individual source timestamps are left null rather than fabricated."
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```

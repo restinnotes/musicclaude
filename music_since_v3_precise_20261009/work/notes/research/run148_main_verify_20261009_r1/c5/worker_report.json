@@ -1,0 +1,104 @@
+{
+  "schema": "r7-main-worker/1",
+  "revision": "run148_e7_flash_diag_r7",
+  "mode": "c5",
+  "guard_negatives": [
+    {
+      "check": "model_cli_blocked",
+      "passed": true
+    },
+    {
+      "check": "isolated_python_still_blocked",
+      "passed": true
+    },
+    {
+      "check": "native_popen_bypass_blocked",
+      "passed": true
+    },
+    {
+      "check": "shell_blocked",
+      "passed": true
+    },
+    {
+      "check": "network_dns_blocked",
+      "passed": true
+    },
+    {
+      "check": "historical_report_write_blocked",
+      "passed": true
+    }
+  ],
+  "real_model_submissions": 0,
+  "provider_or_model_cli_invocations": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "checks": [
+    {
+      "check": "run144_receipt_positive",
+      "passed": true,
+      "accepted": true,
+      "mutation_field": null,
+      "mutation_value": null,
+      "exception": null,
+      "full_ingestion_entry": "validate_external_review_results",
+      "normalized_rows": 6,
+      "all_real_return_counts_zero": true,
+      "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+    },
+    {
+      "check": "run144_receipt_exact_bool_verified_1",
+      "passed": true,
+      "accepted": false,
+      "mutation_field": "verified",
+      "mutation_value": 1,
+      "exception": "trusted Muse receipt is not source-bound for field verified",
+      "full_ingestion_entry": "validate_external_review_results",
+      "normalized_rows": 0,
+      "all_real_return_counts_zero": false,
+      "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+    },
+    {
+      "check": "run144_receipt_exact_bool_verified_1.0",
+      "passed": true,
+      "accepted": false,
+      "mutation_field": "verified",
+      "mutation_value": 1.0,
+      "exception": "trusted Muse receipt is not source-bound for field verified",
+      "full_ingestion_entry": "validate_external_review_results",
+      "normalized_rows": 0,
+      "all_real_return_counts_zero": false,
+      "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+    },
+    {
+      "check": "run144_receipt_exact_bool_source_bound_1",
+      "passed": true,
+      "accepted": false,
+      "mutation_field": "source_bound",
+      "mutation_value": 1,
+      "exception": "trusted Muse receipt is not source-bound for field source_bound",
+      "full_ingestion_entry": "validate_external_review_results",
+      "normalized_rows": 0,
+      "all_real_return_counts_zero": false,
+      "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+    },
+    {
+      "check": "run144_receipt_exact_bool_source_bound_1.0",
+      "passed": true,
+      "accepted": false,
+      "mutation_field": "source_bound",
+      "mutation_value": 1.0,
+      "exception": "trusted Muse receipt is not source-bound for field source_bound",
+      "full_ingestion_entry": "validate_external_review_results",
+      "normalized_rows": 0,
+      "all_real_return_counts_zero": false,
+      "limit": "Injected TEST_ONLY verifier receipts; no actual service attestation or model invocation."
+    }
+  ],
+  "legacy_check_labels": "run144 names retained; actual frozen r7 suite and ingress",
+  "was_successful": true,
+  "guard_blocked_counts": {
+    "process": 4,
+    "network": 1,
+    "write": 1
+  },
+  "guard_scope": "Finite Python audit/class-preserving process guard, not OS sandbox or containment of malicious native code."
+}

@@ -1,0 +1,84 @@
+{
+  "job_id": "run135__gpt6w__short_q",
+  "run_id": "run135_gpt2_recheck",
+  "route": "gpt2",
+  "adapter_version": "r2_20261009",
+  "model_key": "gpt6w",
+  "requested_effort": "max",
+  "effort_is_request_not_backend_proof": true,
+  "prompt_file": "prompts/run135__gpt6w__short_q.txt",
+  "prompt_chars": 93,
+  "prompt_sha256": "78c3c7dee7fac89aff674bc15466f68c008a13e4f1c8afbab8f34695533f02ee",
+  "output_file": "outputs/run135__gpt6w__short_q.md",
+  "stdout_file": "outputs/raw/run135__gpt6w__short_q.stdout.txt",
+  "stderr_file": "outputs/raw/run135__gpt6w__short_q.stderr.txt",
+  "started": "2026-10-09T01:01:37",
+  "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+  "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+  "producer_identity": {
+    "route": "gpt2",
+    "adapter_version": "r2_20261009",
+    "adapter_sha256": "87da74ef08a897a22fffaceec535d84f5845e597a4a352f390ebaf264b949a99",
+    "integrity_sha256": "23bddcc6db72f50a3c2ff03f37152cdfdc2898a3aeb49e641c4018c16249e667",
+    "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+    "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+    "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+    "cli_source": {
+      "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+      "files": 96,
+      "missing": false
+    }
+  },
+  "consumer_identity": {
+    "route": "gpt2",
+    "adapter_version": "r2_20261009",
+    "adapter_sha256": "87da74ef08a897a22fffaceec535d84f5845e597a4a352f390ebaf264b949a99",
+    "integrity_sha256": "23bddcc6db72f50a3c2ff03f37152cdfdc2898a3aeb49e641c4018c16249e667",
+    "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+    "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+    "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+    "cli_source": {
+      "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+      "files": 96,
+      "missing": false
+    }
+  },
+  "request_identity": {
+    "producer": {
+      "route": "gpt2",
+      "adapter_version": "r2_20261009",
+      "adapter_sha256": "87da74ef08a897a22fffaceec535d84f5845e597a4a352f390ebaf264b949a99",
+      "integrity_sha256": "23bddcc6db72f50a3c2ff03f37152cdfdc2898a3aeb49e641c4018c16249e667",
+      "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+      "cli_sha256": "c88844f0b68379f063cfb0e67c4fd25281c35e33d5296fd48e1877546b910cf2",
+      "cli_version": "dfca0fdc1851172a01341b79ab7bf6c58c4b89af",
+      "cli_source": {
+        "sha256": "aaffc0148d41abed549c3c2a6c25b831294855aa656b3d6219916411d9688f8c",
+        "files": 96,
+        "missing": false
+      }
+    },
+    "model_key": "gpt6w",
+    "requested_model": "gpt-6-thinking",
+    "requested_effort": "max",
+    "prompt_sha256": "78c3c7dee7fac89aff674bc15466f68c008a13e4f1c8afbab8f34695533f02ee",
+    "sampling_key": "run135__gpt6w__short_q"
+  },
+  "cache_key": "97dcead0d3e8f155f25847ddc92ee465a6cf4af595000ab6a1423552d0697987",
+  "cache_hit": false,
+  "raw_redacted": true,
+  "automatic_retry": false,
+  "tool_counts": {},
+  "requested_model": "gpt-6-thinking",
+  "status": "failed",
+  "ended": "2026-10-09T01:02:44",
+  "seconds": 66.3,
+  "error": "exit 1: {\"completed\": false, \"error_code\": \"headless_native_result_rejected\", \"phase\": \"post_submit_ambiguous\", \"automatic_retry\": false}\r\n",
+  "response_sha256": null,
+  "output_chars": 0,
+  "attempts": 1,
+  "returncode": 1,
+  "failure_phase": "post_submit_ambiguous",
+  "queue_stop": true,
+  "retry_safe": false
+}

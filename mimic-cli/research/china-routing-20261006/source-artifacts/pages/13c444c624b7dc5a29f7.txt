@@ -1,0 +1,234 @@
+GitHub - DimensionDev/PriceDoge: A Chrome extension for price comparison · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+Code QualityEnforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search/
+Sign inSign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+{{ message }}
+DimensionDev
+PriceDoge
+Repository navigation
+Code
+Issues
+Pull requests35 (35)
+Actions
+Projects
+Security and quality
+Insights
+More items
+PriceDogePublic
+NotificationsYou must be signed in to change notification settings
+Fork13 (13)
+Star72 (72)You must be signed in to star a repository
+About
+A Chrome extension for price comparison
+Topics
+browser-extensionchrome-extensione-commercep2p
+Resources
+Readme
+License
+Activity
+Custom properties
+Stars
+72 stars
+Watchers
+3 watching
+Forks
+13 forks
+Report repository
+master
+BranchesTags
+Go to fileCode
+Open more actions menu
+Latest commit
+History26 Commits
+26 Commits
+Folders and files
+NameName
+Last commit message
+Last commit date
+.circleci
+.circleci
+extension
+extension
+server
+server
+.gitignore
+.gitignore
+.travis.yml
+.travis.yml
+LICENSE
+LICENSE
+README-zh_CN.md
+README-zh_CN.md
+README.md
+README.md
+build
+build
+docker-compose.yml
+docker-compose.yml
+install-docker
+install-docker
+View all files
+Repository files navigation
+README
+License
+More items
+Pricedoge
+中文文档
+Chrome extension for price comparison.
+How it works
+When you visit a web page, the extension will check the website if it is a goods detail page, search from other platforms, and finally show the result at the top of the current website.
+Extension
+You can download the packed crx file at: https://github.com/DimensionFoundation/PriceDoge/raw/master/extension/pricedog.crx
+We build the extension using React with Typescript.
+You can run npm run build to build the extension and load unpacked extension from chrome.
+Since we don't want to run npm run eject which will throw everything from react-scripts that we don't necessarily need, we're using rewire to modify some webpack setting. You can check ./extension/scripts/build.js and ./extension/config/webpack.prod.js for reference.
+Key pair
+The extension will generate a key pair using bip39 once you open the extension's page, you can check ./extension/src/utils/keyStore.ts for reference.
+Content script
+You can check all the scripts under ./extension/src/contentHandler folder.
+Every script extends from IContentHandler interface and canHandle() function will be called every time the user visits a website. handle() function will be called if canHandle() returns true.
+Background script
+You can check all the background services under ./extension/src/backgroundService folder.
+Communication between background script && content script && actual web page
+Communication between different context is very important since the same code will be executed from different contexts.
+You can check the ./extension/src/utils/messaging.ts file if you're in a hurry :)
+Since we don't want to check the context every time, we create a MessageCenter to handle all that stuff. Message.send() to send a message and Message.on() to subscribe.
+All messages are typed. See ITypedMessages in ./extension/src/utils/messaging.ts.
+Searching results provider
+Amazon
+JD.com
+Newegg
+Taobao
+You can check the ./extension/src/services folder to see the actual code.
+Since Taobao's search is an ajax request, we create a server to complete the search, you can check the Server section to see more.
+Localization
+You can add your localization under [./extension/src/i18nfolder just likeen](./extension/src/i18nfolder just likeen) folder.
+Use script to check if localization is complete.
+cd extension
+npm run i18n-lint
+Server
+We create a server using Koa with Typescript.
+puppeteer is used to completing the actual search, you can check ./server/src/taobao.ts to see more.
+About
+A Chrome extension for price comparison
+Topics
+browser-extensionchrome-extensione-commercep2p
+Resources
+Readme
+License
+Activity
+Custom properties
+Stars
+72 stars
+Watchers
+3 watching
+Forks
+13 forks
+Report repository
+Releases
+Packages
+Used by
+Contributors
+Languages
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

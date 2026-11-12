@@ -1,0 +1,42 @@
+﻿{
+    "success":  true,
+    "backup_path":  "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261006T1625Z\\memory\\d32-pagefile-before-20261006T200435Z.json",
+    "after":  {
+                  "utc":  "2026-10-06T20:04:36.4117814Z",
+                  "automatic_managed_pagefile":  false,
+                  "configured":  [
+                                     {
+                                         "Name":  "C:\\pagefile.sys",
+                                         "InitialSize":  4096,
+                                         "MaximumSize":  4096
+                                     },
+                                     {
+                                         "Name":  "D:\\pagefile.sys",
+                                         "InitialSize":  32768,
+                                         "MaximumSize":  32768
+                                     }
+                                 ],
+                  "active":  [
+                                 {
+                                     "Name":  "C:\\pagefile.sys",
+                                     "AllocatedBaseSize":  4096,
+                                     "CurrentUsage":  139,
+                                     "PeakUsage":  1189
+                                 },
+                                 {
+                                     "Name":  "D:\\pagefile.sys",
+                                     "AllocatedBaseSize":  32768,
+                                     "CurrentUsage":  0,
+                                     "PeakUsage":  0
+                                 }
+                             ],
+                  "paging_files_registry":  [
+                                                "C:\\pagefile.sys 4096 4096",
+                                                "D:\\pagefile.sys 32768 32768"
+                                            ],
+                  "commit_limit_gib":  67.497,
+                  "committed_gib":  32.276
+              },
+    "reboot_initiated":  false,
+    "note":  "Configuration verified. Active capacity must be checked after the next planned restart."
+}

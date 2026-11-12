@@ -1,0 +1,3 @@
+﻿Run 01 was the first full offline v7 suite execution: 61 tests, exit code 1, 5.537 seconds. It exposed two issues: a versioned fixture variable was referenced outside its scope, and a cache-write fault test revealed that an exact finalized success without its cache index could still be resumed. The full sanitized outputs are preserved as test_run_01.stdout.txt and test_run_01.stderr.txt.
+
+Run 02 isolated the cache-write fault: 1 test, exit code 1, 0.276 seconds. The initial exception was correctly raised; the second read-only resume incorrectly accepted the prior success because resume did not require the exact cache ownership index. Its full sanitized outputs are preserved as test_run_02.stdout.txt and test_run_02.stderr.txt.

@@ -1,0 +1,1645 @@
+You are independent researcher W1-C-continuation01. Your ONLY assigned workstream is W1: US Demand Map. Other researchers cannot see this session and you must not assume any findings from them. The master brief below is shared protocol, not a request to execute other workstreams or to invent their outcomes.
+Use actual live web search and read the source pages. If your session cannot browse, say WEB RESEARCH UNAVAILABLE prominently; do not substitute memory for research. State your actual retrieval UTC timestamps and the newest available data dates. The research as-of date is 2026-10-06; do not fabricate future-dated publications. Do not claim access to a logged-in shopping account, quotations or paid datasets that you did not actually access. Sources that you cannot open must be marked UNVERIFIED or AUTHENTICATED DATA REQUIRED. Search snippets cannot establish transaction prices, model variants, seller IDs, or demand rankings.
+
+PRE-FREEZE STAGE: No research into specific-SKU overseas prices, availability, coverage, import savings or selection using internationalized brand visibility. W1 may examine aggregate US category demand and retail structure, never select SKU candidates by overseas price. W2 must select solely from Chinese domestic consumer evidence and cannot assert US obscurity before the freeze. Cover ALL 18 categories, including difficult/heavy products. Missing evidence stays missing. No need to propose a startup or UI.
+
+For all 18 categories, output category IDs C01..C18 in the brief order. Separate US sales from global, online from all-channel, retail from wholesale; keep years, currencies, category boundaries, overlap and proxy limitations explicit. Provide a demand ranking only to the extent supported by comparable evidence. Propose a reproducible demand-weighting method and uncertainty treatment, rather than manufacture numeric weights for missing category GMV.
+
+Write your report in Chinese, using the ten report sections in the brief. Aim for substantive, well-supported research; source count alone is not a quality measure. For every key finding give explicit source URLs, dates and opposing evidence. Do not hide URLs in citation-only labels; include the literal full URLs. After the report, append one valid JSON object in a ```json fence with schema {"job_id":"W1-C-continuation01","web_research_available":true,"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":"UTC ISO time or null if unavailable","source_type":"official|government|filing|secondary|community","access_state":"read_full_page|snippet_only|blocked|login_required","claims_supported":["C01"]}],"claims":[{"claim_id":"C01","claim":"...","classification":"FACT|INFERENCE|HYPOTHESIS","source_ids":["S01"],"confidence":"high|medium|low","counterevidence":"..."}],"categories":[],"sku_candidates":[],"data_gaps":[],"pre_freeze_compliance":true}. Populate categories/sku_candidates with your actual tables as structured objects; keep missing numbers null. If browsing unavailable use false. Never invent retrieval times.
+
+=== FULL USER MASTER BRIEF (protocol, not prior evidence) ===
+对。下面这套我按**真正做研究项目**来设计，不是再让一个 GPT 写一篇长报告。
+
+我建议直接跑 **8 个 workstream × 每个 3 个独立 subagent = 24 个研究 agent**，然后再跑 **4 个交叉复核/红队 agent + 1 个总合成 agent**。同一问题的三个 agent **在完成前互相不能看结果**，这样才能真正降低模型搜索路径造成的方差。
+
+尤其要坚持一条：**国内-first 抽样，在任何海外价格搜索之前冻结 SKU 样本。** 上一轮最后进入 AliExpress exact-SKU 统计的样本只有 16 个，而且明显偏向已经高度国际化的型号；这不足以回答我们的真正问题。粘贴的文本 (1)
+
+### 1. 给你的本地 Agent 的总控提示词
+
+你是一个 research orchestrator。你可以通过终端命令 `mg` 启动多个独立的 GPT 网页会话。不要担心调用额度；这个任务优先追求研究质量、广度、可审计性和 falsification，而不是节约调用次数。
+
+# 一、研究背景
+
+我们正在研究一个潜在的消费者购物产品：
+
+当美国消费者准备在 Amazon、Google Shopping、Temu、AliExpress 或其他美国渠道购买商品时，系统同时搜索：
+
+- Taobao
+- Tmall
+- JD
+- 必要时 1688
+
+然后通过：
+
+- Superbuy
+- Sugargoo
+- BuckyDrop
+- 其他 buying agent / forwarding infrastructure
+
+计算这个商品真实运到美国的 landed cost。
+
+最终展示类似：
+
+Amazon: $39.99 — tomorrow  
+AliExpress: $27.40 — 8 days  
+Temu: $25.20 — 4 days  
+China domestic + forwarding: $16.80 all-in — 9–13 days
+
+核心产品不一定自己进口、自己仓储，也不一定是 AI agent。
+
+可能是：
+
+- browser extension
+- shopping search engine
+- marketplace
+- AI shopping agent
+- API
+- price-comparison/routing layer
+
+核心 thesis 是：
+
+> 中国国内商品市场可能存在一个很大的、没有被国际电商完全套利掉的价格与 selection advantage。一个消费者入口如果把中国国内 catalog 自动加入美国消费者的 comparison set，可能创造大量 consumer surplus。
+
+我们不是要求“中国永远最便宜”。
+
+系统可以推荐：
+
+- Amazon
+- Temu
+- AliExpress
+- Taobao/Superbuy
+- 美国本地 reseller
+
+中的任何一个。
+
+真正研究的是：
+
+> 是否存在一个数量和 GMV 都足够大的 SKU 集合，使 China-direct route 持续具有明显价格优势？
+
+---
+
+# 二、重要的已有 provisional finding
+
+之前做过一轮 preliminary research。
+
+它找到的可严格比较 exact-SKU 样本非常少，而且高度集中在：
+
+- FiiO
+- Moondrop
+- AULA
+- FNIRSI
+- VXE
+- ORICO
+
+等已经比较国际化的中国品牌。
+
+结果显示：
+
+> 对已经高度国际化的 branded exact SKU，AliExpress 往往已经把中国国内外价差压得很小。
+
+但是上一轮存在严重潜在 selection bias：
+
+> 越容易通过国际网页搜索确认 exact SKU  
+> → 越可能本来就是已经高度国际化的 SKU  
+> → 越容易在 AliExpress/海外专业零售商找到有效价格。
+
+因此这一轮严禁：
+
+> 先从 Amazon / AliExpress / Google 容易找到的 SKU 出发，再去中国找价格。
+
+必须反过来：
+
+> **China domestic market first → freeze sample → only then inspect overseas channels.**
+
+之前研究的结果只能作为 hypothesis，不允许作为 ground truth。
+
+---
+
+# 三、两个核心轴
+
+整个研究必须围绕两个独立维度。
+
+## Axis A — Feasibility
+
+对于一个 SKU：
+
+> China domestic price  
+> + domestic shipping  
+> + agent fee  
+> + international freight  
+> + tariff  
+> + mandatory customs/processing fees
+
+得到真实 landed cost 后：
+
+与美国/国际方便购买渠道相比能省多少？
+
+重点阈值：
+
+- ≥10%
+- ≥20%
+- ≥30%
+- ≥40%
+- ≥50%
+
+同时考虑：
+
+- actual weight
+- volumetric weight
+- batteries
+- voltage
+- radio compatibility
+- US carrier bands
+- plugs
+- firmware/language
+- product restrictions
+- warranty
+- shipping restrictions
+
+但不要因为某个问题存在就提前删 SKU。
+
+记录问题，然后让 feasibility score 下降。
+
+---
+
+## Axis B — Demand / Economic Volume
+
+即使一个 SKU 可以省 60%，如果一年只有 50 人买，商业意义可能有限。
+
+必须同时测：
+
+- 美国 category GMV
+- US online GMV
+- unit volume（如果有）
+- Amazon/category demand proxy
+- search demand
+- marketplace activity
+- category growth
+- average selling price
+- SKU concentration / fragmentation
+
+最终我们想寻找的是：
+
+> **High Demand × High China-direct Feasibility**
+
+而不是只找最容易寄的小玩意。
+
+---
+
+# 四、必须覆盖的大品类
+
+第一轮 category scan 不得只研究轻小电子配件。
+
+至少覆盖：
+
+1. Smartphones
+   - Redmi
+   - Xiaomi
+   - OnePlus
+   - realme
+   - iQOO
+   - Honor
+   - vivo / OPPO 等
+
+2. Laptops
+   - Lenovo/ThinkBook
+   - RedmiBook
+   - Xiaomi
+   - Mechrevo
+   - gaming laptops
+   - Chinese-market configurations
+
+3. Tablets
+
+4. Mini PCs / small desktops
+
+5. PC components / storage / networking
+   - SSD
+   - enclosures
+   - routers
+   - switches
+   - adapters
+   - docks
+
+6. Headphones / IEM / DAC / portable audio
+
+7. PC peripherals
+   - mouse
+   - keyboard
+   - controller
+   - webcam
+   - microphones
+
+8. Wearables
+   - smartwatch
+   - fitness devices
+
+9. Smart home / security / IoT
+
+10. Robot vacuums / small appliances
+
+11. Power tools / electronics tools / repair tools
+
+12. Camera / video gear and accessories
+
+13. Automotive accessories
+
+14. Sports / outdoor goods
+
+15. Hobby / models / 3D printing / maker electronics
+
+16. Apparel / shoes / bags
+   - only legitimate brands/unbranded goods
+   - no counterfeit thesis
+
+17. Home / organization / household goods
+
+18. Toys / collectibles / official merchandise
+
+Agents may propose additional categories if evidence indicates significant US demand plus Chinese supply advantage.
+
+---
+
+# 五、关键 sampling rule
+
+这是整个项目最重要的方法论要求。
+
+## Domestic-first sampling
+
+对于每个 category：
+
+1. 先研究中国国内市场。
+2. 找：
+   - JD 热销榜
+   - Tmall/Taobao 热销/销量榜
+   - 官方旗舰店畅销榜
+   - 国内主流比价/评测来源
+   - 中国消费者真实购买信号
+3. 构建 domestic SKU list。
+4. 人工检查 SKU 是否真实、型号是否清楚。
+5. **冻结 SKU list。**
+6. 保存 freeze timestamp/hash/version。
+7. 只有完成 freeze 后，才允许研究：
+   - AliExpress
+   - Temu
+   - Amazon
+   - eBay
+   - 美国官网
+   - 美国专业 retailer
+
+绝对禁止看到海外价格以后再改变样本。
+
+唯一允许剔除 SKU 的理由必须预先定义，例如：
+
+- counterfeit
+- 商品不是目标类型
+- 完全无法定义型号/规格
+- 非实物商品
+- 明显非法/禁运
+
+“海外找不到”绝对不能成为 exclusion reason。
+
+海外找不到本身就是重要结果。
+
+---
+
+# 六、登录态与数据质量
+
+不要假设公开 Google indexing 等价于真实中国电商 catalog。
+
+必须主动调查：
+
+- Taobao 登录态 vs 未登录差异
+- 中国大陆账号 vs 海外账号
+- App vs Web
+- 中文界面 vs international interface
+- JD/Tmall/Taobao ranking accessibility
+- coupons
+- 普通促销
+- 88VIP / targeted promotions
+- seller sales/review counts
+
+如果准确数据需要登录态：
+
+> 明确标记 `AUTHENTICATED DATA REQUIRED`
+
+不要用搜索引擎 snippet 猜测。
+
+如果本地环境能够获取登录态数据，就使用。
+
+如果无法访问，则：
+
+1. 保存缺口；
+2. 给出需要人工采集的精确字段；
+3. 不把缺失值偷偷替换成公开索引值。
+
+---
+
+# 七、Exact SKU discipline
+
+每个匹配必须分类：
+
+A — Exact SKU  
+品牌、型号、规格、容量、版本一致。
+
+B — High-confidence same OEM  
+有强证据属于相同产品/OEM，但 branding 不同。
+
+C — Comparable alternative  
+功能相似，但不是同一个商品。
+
+三个 bucket 必须分别统计。
+
+严禁：
+
+> 用一个便宜的类似商品  
+> 对比一个美国品牌 exact SKU  
+> 然后宣称价格低 60%。
+
+---
+
+# 八、价格定义
+
+记录至少：
+
+## China
+
+- regular price
+- broadly available current sale price
+- targeted/member coupon price
+
+主统计优先：
+
+> 普通中国消费者在合理条件下能够获得的 current transaction price。
+
+## Overseas
+
+分别记录：
+
+- Amazon
+- AliExpress
+- Temu
+- brand US/global store
+- Walmart/Best Buy（相关时）
+- eBay reputable seller
+- major niche retailer
+
+同时计算：
+
+### vs Amazon
+
+以及：
+
+### vs Cheapest Convenient Overseas Option
+
+后者通常比 Amazon benchmark 更重要。
+
+---
+
+# 九、Landed cost
+
+严禁统一使用一个虚假的固定税率或只用商品裸价。
+
+逐 SKU 尽量计算：
+
+China price
++ domestic shipping
++ mandatory agent fee
++ realistic international shipping
++ applicable tariff
++ customs / processing fees
+= landed cost
+
+必须区分：
+
+1. single-item standalone shipment
+2. current Superbuy consolidated-haul marginal cost
+3. potential negotiated platform/B2B rate
+4. true bulk-import economics
+
+不得把四种结构混在一起。
+
+关税尽量逐 SKU：
+
+SKU → HTS classification → MFN → China-specific duties → current Section 301 → exemptions
+
+无法确认时：
+
+> 输出 range / sensitivity。
+
+---
+
+# 十、非常重要：研究真正的“China-head / US-middle-tail gap”
+
+我们怀疑最大机会可能不是：
+
+> 中国 long tail → 美国 long tail
+
+而是：
+
+> **中国国内 head SKU → 美国 middle/tail SKU**
+
+例如某国产品牌产品：
+
+在中国：
+- 大销量
+- 数万评价
+- 多家店竞争
+- 官方店
+- 已经经过消费者筛选
+
+但在美国：
+- 没有主流 distribution
+- Temu 没 exact SKU
+- AliExpress international seller 很少
+- Amazon 只有 reseller
+- markup 很高
+
+这类必须专门识别。
+
+---
+
+# 十一、不要因为以下因素直接排除大品类
+
+例如 Redmi 手机可能存在：
+
+- US LTE/5G band compatibility
+- firmware
+- warranty
+
+这些不是“不研究手机”的理由。
+
+手机的 Demand 很大。
+
+应该记录：
+
+Demand = very high  
+Price spread = high/low  
+Compatibility = x  
+Final feasibility = y
+
+同理：
+
+- laptop 重量
+- appliance voltage
+- apparel returns
+- robot vacuum shipping
+
+都应该成为结果，而不是 sampling exclusion。
+
+---
+
+# 十二、研究架构
+
+启动以下 8 个 workstreams。
+
+每个 workstream：
+
+> **启动 3 个完全独立的 subagents。**
+
+命名：
+
+W1-A / W1-B / W1-C-continuation01  
+W2-A / W2-B / W2-C  
+...
+
+三个 agent 在提交最终结果前：
+
+> **不得看到彼此的输出。**
+
+每个 agent 必须：
+
+- Web research
+- 搜论坛
+- 找官方来源
+- 保存 URL
+- 保存发布日期/抓取时间
+- 区分 fact / inference
+- 输出 confidence
+- 输出 unresolved questions
+- 主动寻找反证
+
+不要因为其他 agent 已经做过同一题而减少工作。
+
+---
+
+# 十三、8 个 Workstreams
+
+## W1 — US Demand Map
+
+目标：
+
+建立各 category 的美国需求规模与购买频率。
+
+回答：
+
+- 哪些类别 GMV 最大？
+- online share 多大？
+- average selling price？
+- purchase frequency？
+- Amazon/marketplace reliance？
+- category fragmentation？
+- 哪些 category 有大量 middle-tail SKU？
+
+输出二维地图的 Y-axis：Demand.
+
+---
+
+## W2 — China Domestic Market Map
+
+目标：
+
+完全从中国消费者视角理解 domestic catalog。
+
+回答：
+
+- 每个 category 国内主流品牌是谁？
+- 国内畅销 SKU 是什么？
+- 哪些 SKU 中国极热、美国却陌生？
+- JD/Tmall/Taobao ranking 能拿到什么？
+- 正规商品价格竞争有多激烈？
+- 官方旗舰/高销量店占比？
+- China-head / US-middle-tail candidates 是哪些？
+
+不得先查看海外价格再选 SKU。
+
+---
+
+## W3 — Price Spread Audit
+
+目标：
+
+国内-first frozen sample 后，逐 SKU 查：
+
+China landed
+vs
+AliExpress
+Temu
+Amazon
+cheapest convenient overseas option
+
+建立真正 distribution。
+
+必须输出：
+
+median
+mean
+P10/P25/P50/P75/P90
+
+以及：
+
+% >10%
+% >20%
+% >30%
+% >40%
+% >50%
+
+按：
+
+- category
+- head/middle/tail
+- weight
+- ASP
+- exact/OEM/comparable
+
+分层。
+
+---
+
+## W4 — Temu / AliExpress Coverage
+
+两者必须完全分开。
+
+Temu：
+
+研究 head-SKU efficiency / US warehouse / platform selection。
+
+AliExpress：
+
+研究 internationalized long/middle tail。
+
+核心问题：
+
+> 对 China domestic hot SKUs，AliExpress exact coverage 到底是多少？
+
+> 对没有 exact match 的 SKU，是 completely unavailable，还是只有 marked-up reseller？
+
+> Temu exact coverage 与 AliExpress exact coverage 分别是多少？
+
+特别关注：
+
+> China-head / US-middle-tail。
+
+---
+
+## W5 — Logistics / Superbuy Infrastructure
+
+目标：
+
+把 Superbuy/Sugargoo/BuckyDrop 当基础设施研究。
+
+回答：
+
+- 实际美国线路多少钱？
+- standalone vs consolidated economics？
+- actual vs volumetric weight？
+- batteries？
+- customs？
+- B2B pricing？
+- bulk parcel discounts？
+- split shipping？
+- API/integration？
+- volume discounts？
+- 是否可以：
+  “平台贡献 1000 个独立订单 → Superbuy 给商务价 → 仍分别直接寄消费者”
+- 什么 volume 会改变 rate？
+- Superbuy 到底靠什么赚钱？
+
+尤其调查：
+
+> 是否真的需要我们自己做 physical aggregation？
+
+还是：
+
+> commercial volume aggregation 就足够。
+
+---
+
+## W6 — Regulation / Structural Boundary
+
+只研究真正会改变 business architecture 的法规。
+
+不要泛泛说“合规复杂”。
+
+明确区分：
+
+A. comparison/routing layer  
+B. consumer buys through Superbuy  
+C. platform acts as buying agent  
+D. platform aggregates shipments  
+E. platform becomes importer of record  
+F. platform owns inventory / US warehouse
+
+分别回答：
+
+- 谁是 purchaser？
+- 谁是 importer？
+- 谁承担 customs duty？
+- 哪一步开始产品认证责任显著变化？
+- 哪一步涉及 FCC/CPSC 等？
+- 是否可以保持轻资产同时拿 volume discount？
+
+核心问题：
+
+> 有没有一个合法结构，能够拿到规模物流经济，但不把平台变成传统 importer/retailer？
+
+---
+
+## W7 — Competitive Landscape / “Why Doesn't This Exist?”
+
+这是非常重要的一组。
+
+不要接受以下浅层答案：
+
+- consumers like convenience
+- people don't know China
+- marketing is hard
+- trust issue
+- UI problem
+
+必须找到真实历史证据。
+
+研究：
+
+- Superbuy
+- Sugargoo
+- BuckyDrop
+- Pandabuy
+- Wegobuy
+- CSSBuy
+- CNFans
+- AliPrice
+- DSers
+- Honey-like extensions
+- image sourcing extensions
+- cross-border dropshipping SaaS
+- Taobao agents
+- China-price comparison products
+- discontinued startups
+- VC-funded attempts
+- GitHub/open-source projects
+
+核心问题：
+
+> 有没有人实际上尝试过“Amazon → Taobao same-item comparison”？
+
+如果有：
+
+- 做到多大？
+- 为什么没继续？
+- 用户是谁？
+- monetization？
+- 技术问题？
+- legal problem？
+- platform blocking？
+- acquisition problem？
+- pivot？
+
+特别调查失败案例，而不仅是现存公司。
+
+---
+
+## W8 — Thesis Falsification
+
+这个 workstream 的唯一目标是：
+
+> **证明整个商业想法不成立。**
+
+不要帮我们。
+
+主动寻找：
+
+1. AliExpress 已经覆盖足够广。
+2. 真正大 GMV category 没有 price advantage。
+3. 中国 price advantage 只存在于微小商品。
+4. shipping 吃掉优势。
+5. tariff 吃掉优势。
+6. exact match 后价格优势消失。
+7. China-head / US-middle-tail 实际很少。
+8. 国际需求一出现 price spread 就迅速消失。
+9. agent economics 不能支持消费者产品。
+10. platform fee / payment / fraud / returns 足够大。
+11. Superbuy economics 无法规模化。
+12. source platforms 会封锁 access。
+13. regulations fundamentally destroy routing model。
+14. 一个已经失败的 startup 实际上证明了这些。
+
+必须寻找 hard evidence，而不是理论风险。
+
+---
+
+# 十四、每个独立 Subagent 的输出标准
+
+每个 subagent 必须输出：
+
+1. Direct answer
+2. Evidence table
+3. Primary sources
+4. Forum evidence
+5. Contrary evidence
+6. Confidence
+7. Data gaps
+8. Most surprising finding
+9. What would falsify its own conclusion
+10. Suggested next experiment
+
+所有数字必须可追溯。
+
+不得写：
+
+> “据估计”
+
+却没有出处。
+
+---
+
+# 十五、完成 24 个 Subagent 后
+
+启动 4 个独立 adjudicator/red-team agents。
+
+## Judge 1 — Methodology Auditor
+
+只检查：
+
+- selection bias
+- survivorship bias
+- sample leakage
+- price mismatch
+- variant mismatch
+- login-state bias
+- stale prices
+- coupon contamination
+- tariff mistakes
+- freight mistakes
+
+## Judge 2 — Economic Auditor
+
+只检查：
+
+- demand weighting
+- GMV relevance
+- unit economics
+- logistics scaling
+- marketplace economics
+- whether savings are actually economically meaningful
+
+## Judge 3 — Adversarial Bear
+
+拿所有证据，尽最大努力证明：
+
+> “这是一个看起来聪明但实际上没有足够市场的 idea。”
+
+## Judge 4 — Adversarial Bull
+
+拿同一证据，尽最大努力证明：
+
+> “这里存在一个被严重低估的 global price-discovery failure。”
+
+Bull 和 Bear 都必须引用同一 evidence base，不允许编新事实。
+
+---
+
+# 十六、最终 Synthesizer
+
+最后再启动一个独立 GPT 会话。
+
+它获得：
+
+- 24 个原始 subagent reports
+- 4 个 judge reports
+
+要求：
+
+不要按多数投票。
+
+逐项 adjudicate disagreement。
+
+最终输出：
+
+# A. What we know with high confidence
+
+# B. What appears true but is not yet proven
+
+# C. What previous assumptions were wrong
+
+# D. Category Opportunity Matrix
+
+表格：
+
+Category | US demand | China advantage | Ali coverage | Temu coverage | Logistics feasibility | Regulatory friction | Opportunity score | Confidence
+
+# E. Price Spread Distribution
+
+必须按 demand-weighted 与 feasibility-weighted 两种 sample 分别报告。
+
+# F. China-head / US-middle-tail Gap
+
+这是重点章节。
+
+# G. Logistics Infrastructure Verdict
+
+回答：
+
+> Superbuy 能否当基础设施？
+
+以及：
+
+> 是否必须自己 aggregate/import？
+
+# H. Strongest 10 arguments AGAINST the thesis
+
+# I. Strongest 10 arguments FOR the thesis
+
+# J. Why no dominant company exists today
+
+必须只给被证据支持的原因。
+
+明确区分：
+
+- confirmed
+- probable
+- speculative
+
+# K. Decisive Unknowns
+
+只留下真正还会改变投资判断的问题。
+
+# L. Final Verdict
+
+分别判断：
+
+1. Thin comparison/routing SaaS
+2. Shopping agent
+3. Marketplace
+4. Logistics aggregation platform
+
+使用：
+
+- Strong
+- Moderate
+- Weak
+- Rejected
+
+并给 confidence。
+
+---
+
+# 十七、可审计要求
+
+把所有研究资产保存下来：
+
+- prompts
+- raw responses
+- URLs
+- source title
+- source date
+- retrieval date
+- screenshots if available
+- SKU IDs
+- seller IDs
+- exact variant
+- weights
+- dimensions
+- price
+- coupons
+- freight quote
+- tariff calculation
+- match confidence
+
+生成一个 evidence ledger。
+
+任何最终数字都必须能追溯回原始 evidence。
+
+如果不同 agent 对同一个 SKU 得到不同价格：
+
+> 不要自动平均。
+
+先找原因：
+
+- date
+- region
+- coupon
+- login state
+- variant
+- shipping
+- seller
+
+只有解释完才能 adjudicate。
+
+---
+
+# 十八、禁止事项
+
+不要：
+
+- 为了凑样本而把 comparable 当 exact。
+- 用 Google 没搜到推断 Temu 一定没货。
+- 用 AliExpress listing 的最低 accessory variant 当主商品价格。
+- 用美国热门品牌作为唯一 sampling frame。
+- 只研究最容易寄的小商品。
+- 用统一 tariff proxy 得出最终结论。
+- 把 old de-minimis economics 当 2026 economics。
+- 因为商品海外难找而把它从样本删除。
+- 把 SKU count 当 TAM。
+- 把“中国便宜”当预设结论。
+- 因为一个商业模式听起来合理就替它找理由。
+
+整个项目的目标是：
+
+> **找到真相，而不是证明 thesis。**
+
+### 2. 给每个 Workstream 的通用 Subagent 外壳
+
+这个可以让你的本地 orchestrator 把具体 W1–W8 的任务文本填进去，然后每题独立跑三遍。
+
+你是一个独立 research subagent。
+
+你正在参与一个关于“中国国内电商价格 → 美国消费者”的商业研究。
+
+你不能看到其他 subagent 的结论，也不要猜他们会得到什么。
+
+你的任务不是支持某个创业 idea，而是尽可能准确地回答下面的指定研究问题。
+
+---
+
+# Assigned Workstream
+
+{{INSERT_W1_TO_W8_TASK_HERE}}
+
+---
+
+# Global Research Thesis
+
+研究一个消费者购物系统是否存在商业空间：
+
+当美国消费者购买商品时，同时比较：
+
+- Amazon
+- Temu
+- AliExpress
+- 美国其他方便购买渠道
+- Taobao
+- Tmall
+- JD
+- 必要时 1688
+
+对于中国渠道，通过 Superbuy/Sugargoo/BuckyDrop 等成熟 buying-agent/forwarding infrastructure 计算真实美国 landed cost。
+
+系统并不默认推荐中国。
+
+目标是寻找：
+
+> 中国国内已经经过消费者验证、销量高、价格竞争激烈，但尚未被海外渠道充分国际化的 SKU。
+
+尤其关注：
+
+> **China-head / US-middle-tail gap。**
+
+---
+
+# Research Rules
+
+## 1. Search broadly
+
+至少结合：
+
+- platform official sources
+- company filings
+- government sources
+- ecommerce data providers
+- Reddit
+- specialist communities
+- Chinese forums
+- LinuxDo
+- V2EX
+- 一亩三分地
+- Dealmoon
+- industry forums
+- archive/search history when useful
+
+社区证据用于：
+
+> 实际行为、价格体验、shipping experience、user friction。
+
+官方来源用于：
+
+> fees、rules、policy、platform capability。
+
+---
+
+## 2. Current date
+
+按 2026-10-06 的现实环境研究。
+
+对于：
+
+- tariffs
+- de minimis
+- Superbuy fees
+- Temu
+- AliExpress
+- shipping
+- regulations
+
+必须优先近期资料。
+
+旧资料必须注明年份。
+
+---
+
+## 3. Facts vs inference
+
+每一个重要结论标记：
+
+- FACT
+- INFERENCE
+- HYPOTHESIS
+
+不要把推理写成事实。
+
+---
+
+## 4. Do not cherry-pick
+
+如果发现与你预期相反的例子：
+
+优先保存。
+
+尤其寻找：
+
+> China route 更贵  
+> AliExpress 已经压平价差  
+> Temu exact SKU 很便宜  
+> shipping destroys spread
+
+等 negative evidence。
+
+---
+
+## 5. Exact SKU discipline
+
+A = exact SKU  
+B = high-confidence same OEM  
+C = comparable
+
+严格分开。
+
+---
+
+## 6. Login-state problems
+
+如果 source 需要中国正常登录态：
+
+标记：
+
+`AUTHENTICATED DATA REQUIRED`
+
+不要假装 Google snippet 等价于真实站内数据。
+
+---
+
+## 7. Evidence quality
+
+每条核心 finding 至少尽量使用：
+
+- 一个 primary/official source
+和/或
+- 两个相互独立的 secondary/community sources
+
+如果只有一个 Reddit comment：
+
+不能上升为“market consensus”。
+
+---
+
+# Required Output
+
+## 1. Bottom line
+
+5–10 条最重要结论。
+
+## 2. Evidence table
+
+Claim | Evidence | Source | Date | Confidence | Counterevidence
+
+## 3. Data
+
+尽可能提供原始数字和计算。
+
+## 4. Contradictory evidence
+
+单独一节。
+
+## 5. What could make this conclusion wrong?
+
+至少 5 条。
+
+## 6. Missing data
+
+明确哪些问题必须靠：
+
+- login state
+- API
+- manual sample
+- paid dataset
+- real shipping quote
+
+才能解决。
+
+## 7. Most important next action
+
+如果只能再做一个 experiment，做什么？
+
+---
+
+不要给创业建议。
+
+不要设计产品 UI。
+
+不要泛泛谈消费者心理。
+
+你的职责只有：
+
+> **把这个 assigned research question 尽可能研究透。**
+
+### 3. 最后的复核 / 总合成提示词
+
+等 24+4 份报告出来之后，把这一份给最后的 GPT。
+
+你是这项研究的最终 adjudicator。
+
+你会收到：
+
+- 多个相同问题的独立研究报告
+- methodology audit
+- economic audit
+- adversarial bear report
+- adversarial bull report
+
+这些 agent 之间存在冲突是正常的。
+
+不要：
+
+- 按多数表决
+- 平均数字
+- 选择更符合创业 thesis 的答案
+
+你的工作是逐项追溯 evidence。
+
+---
+
+# 第一原则：Sampling Frame
+
+优先判断：
+
+> 样本究竟是从中国国内市场先产生，
+> 还是因为海外容易搜索到而进入样本？
+
+任何 international-first sample：
+
+不能用于估计：
+
+> China-head / US-middle-tail opportunity rate。
+
+---
+
+# 第二原则：Demand × Feasibility
+
+不要因为某品类：
+
+> 价格优势特别漂亮
+
+就认为它很重要。
+
+同时问：
+
+> 美国消费者在这里实际花多少钱？
+
+也不要因为一个巨大 GMV category：
+
+> 物流/兼容性困难
+
+就直接删除。
+
+必须把两轴分开。
+
+---
+
+# 第三原则：Price Spread Distribution
+
+最终至少建立两个 distribution：
+
+## Demand-weighted distribution
+
+美国消费支出真实落在哪里？
+
+## Opportunity-seeking distribution
+
+如果系统主动扫描最可能套利的 SKU，能找到多少明显机会？
+
+不能把两者混在一起。
+
+---
+
+# 第四原则：AliExpress 是主要 benchmark
+
+Temu 主要测试：
+
+> head SKU efficiency。
+
+AliExpress 测试：
+
+> 中国商品国际化究竟已经做到多深。
+
+如果：
+
+Taobao/Tmall + legitimate landed cost
+≈
+AliExpress
+
+则这部分机会不存在。
+
+如果：
+
+China route
+<<
+AliExpress
+
+则是真正未被套利的 spread。
+
+---
+
+# 第五原则：Real Landed Cost
+
+任何核心结果必须核对：
+
+- China price
+- domestic shipping
+- agent fee
+- international freight
+- volumetric weight
+- tariff
+- customs/processing
+- current 2026 policy
+
+如果报告使用统一 tariff proxy：
+
+只能视为 screening。
+
+---
+
+# 第六原则：Separate Business Architectures
+
+分别判断：
+
+A. comparison/routing-only  
+B. agent checkout  
+C. commercially aggregated individual forwarding  
+D. platform-controlled bulk import  
+E. marketplace with US inventory
+
+不要把 D/E 的合规问题拿来否定 A/B。
+
+也不要把 A/B 的轻资产 economics 假装成 D/E 的最终物流效率。
+
+---
+
+# 最终必须回答的 12 个问题
+
+1. 中国国内正规热销商品相比 Amazon 的真实 landed-price advantage 有多大？
+2. 相比 AliExpress 呢？
+3. 相比 cheapest convenient overseas option 呢？
+4. 哪些 category spread 最大？
+5. 哪些 category demand 最大？
+6. 哪些 category 同时落在 demand × feasibility 的右上角？
+7. China-head / US-middle-tail gap 是否真实存在？
+8. 这种 gap 大概是偶发异常，还是结构性现象？
+9. Temu 已经解决了哪些部分？
+10. AliExpress 已经解决了哪些部分？
+11. Superbuy 是否足够成为基础设施，而不需要平台自己重做物流？
+12. 如果机会这么明显，为什么到今天仍没有 dominant consumer product？
+
+---
+
+# 关于“为什么没人做”
+
+这一节要求特别严格。
+
+每一个原因分成：
+
+### Confirmed
+存在具体企业/数据/失败案例证明。
+
+### Probable
+有多条间接证据。
+
+### Speculative
+逻辑上合理但没有直接证据。
+
+禁止把：
+
+> “消费者喜欢方便”
+> “distribution 很难”
+> “美国人不熟中国平台”
+
+这种东西直接作为 confirmed explanation。
+
+---
+
+# 输出最终 Opportunity Matrix
+
+至少包括：
+
+| Category | US demand | CN domestic maturity | CN-US price spread | Ali coverage | Temu coverage | Shipping economics | Compatibility | Regulatory friction | Net feasibility | Evidence confidence |
+
+重点包括：
+
+- smartphones
+- laptops
+- tablets
+- mini PCs
+- audio
+- PC peripherals
+- storage/networking
+- wearables
+- smart home
+- robot vacuum/appliances
+- tools
+- camera
+- automotive
+- sports/outdoor
+- hobby/maker
+- apparel
+- home goods
+
+---
+
+# Final Verdict
+
+不要只给一个 verdict。
+
+分别给：
+
+## Broad thesis
+
+“China domestic catalog 普遍存在巨大未套利价格差”
+
+评级。
+
+## Narrow thesis
+
+“存在数量足够大的 China-head / US-middle-tail anomaly set，可被自动 routing product 持续发现”
+
+评级。
+
+## Thin routing business
+
+评级。
+
+## Full marketplace business
+
+评级。
+
+使用：
+
+- Strong
+- Moderate
+- Weak
+- Rejected
+
+每个给：
+
+- confidence
+- decisive evidence
+- strongest counterargument
+- what data would change the verdict
+
+---
+
+最后单独给一节：
+
+# If We Spend $10,000 on Research, What Should We Do Next?
+
+只能提出真正能减少最大 uncertainty 的实验。
+
+不要提出泛泛建议。
+
+我会特别建议你的本地 agent **不要马上让 24 个 agent 都手工查 SKU**。正确顺序是先让 W1/W2 各跑三遍，合成出 **category map + 国内-first sampling frame**，我们人工过目冻结一版 SKU universe；然后再让 W3/W4/W5 大规模跑。否则即使调用 100 个 GPT，也可能只是在更大规模地复制上一轮的 selection bias。
+=== END BRIEF ===
+Remember: execute ONLY W1-C-continuation01, US Demand Map. No overseas SKU checks before freeze for W1/W2. Begin your independent web research now.
+
+=== CONTINUATION OF ONLY YOUR OWN INDEPENDENT REPLICATE ===
+The original C session did independent research and began its answer, but the UI stream remained incomplete and the original request reached its 30-minute timeout. That request has now stopped. No A/B peer results are provided. Below is the unedited partial from ONLY the original C, not a finished or verified report. Continue this same independent replicate, verify the most important primary numerical anchors through actual browsing and complete the report. Do not claim you re-read a source unless you actually did; sources known only from the own partial remain unverified. Do not research overseas specific-SKU prices or availability. Keep ALL 18 categories and all ten requested sections but keep prose approximately 2000 Chinese characters and append compact complete JSON. Missing metrics remain null. Do not repeat the entire partial verbatim. Finish a bounded approximately 12-minute investigation rather than expand source collection. job_id must be W1-C-continuation01.
+ChatGPT said:
+
+以下为独立 W1-C / US Demand Map 报告。严格停留在美国需求、消费规模、线上结构和市场集中度；未搜索任何具体 SKU 的海外价格、海外覆盖、进口节省或候选 SKU。
+
+W1-C — US Demand Map（截至 2026-10-06）
+W1-C — US Demand Map
+
+研究截至：2026-10-06
+
+研究范围：仅 W1，美国需求地图。
+Pre-freeze 状态：COMPLIANT。没有做 Amazon / AliExpress / Temu / 海外官网的 specific-SKU 价格或覆盖研究；sku_candidates=[]。
+
+本会话能够进行实际网页检索。为避免伪造单页抓取时间，需要区分两件事：
+
+我实际记录的研究批次 UTC 时间为：2026-10-06T20:48:46Z、20:49:59Z、20:53:34Z、20:56:30Z、20:57:17Z、21:00:22Z、21:00:56Z、21:01:26Z、21:01:52Z。
+
+Web 检索接口本身只返回诸如 “Crawled: today” 而没有可审计的逐 URL UTC 时间。因此后附 JSON 中逐源 retrieved_at 均为 null；我不会把批次时间冒充成某一具体网页的抓取时间。
+
+1. Direct answer / Bottom line
+
+第一，美国消费需求本身绝不是问题，但 18 个目标类目的公开数据可比性很差。 Census 最新已发布的 Q2 2026 数据显示，经季调美国零售电商销售额为 $340.2B，总零售为 $1,986.5B，电商占 17.1%，同比增长 12.2%，快于总零售的 6.7%。但 Census 在 2026-09-28 已特别提示这份 Q2 报告“不再包含最新估计”，修订值要等 2026-11-19 的未来 Q3 发布，因此目前只能把 17.1% 当作最新已发布但待修订的全零售基线。
+URL: https://www.census.gov/retail/ecommerce.html
+
+第二，不能把 Census 某种实体店业态的“线上销售占比”当成某产品类目的线上渗透率。 Census 明确说明，如果一家实体电子零售商把电商业务作为独立部门经营，该线上部门可能被归入 NAICS 4541 Electronic Shopping and Mail-Order Houses，而实体店销售仍归 NAICS 443。因此“电子/家电店自己的电商 ÷ 电子/家电店总销售”会漏掉被划入 4541 的线上交易，更会漏掉其他业态销售；这使 18 类产品的可靠 online share 成为 W1 最大数据缺口之一。
+URL: https://www.census.gov/programs-surveys/e-stats/about/faqs.html ，页面最后修订 2021-10-08。
+
+第三，在公开、较接近目标边界的美国消费金额指标中，服装鞋类明显是巨大需求池。 BEA 2025 年 Clothing and Footwear PCE 为 $559.768B；这已经远大于本研究中能公开获得的汽车 specialty aftermarket、玩具和 outdoor 市场。但 C16 还包括 bags，而这一 BEA 数字不含完整 bags，因此它不是 C16 的完美 GMV，只能说服装鞋类主体本身就非常大。数据于 2026-09-30 更新。
+URL: https://fred.stlouisfed.org/series/DCLORC1A027NBEA
+
+第四，汽车配件、玩具/收藏和户外用品也都有数百亿美元级、边界相对清楚的美国零售需求证据。 SEMA 报告 2025 年美国 specialty-equipment accessory/performance parts 销售 $52.92B，约四分之一车主购买过此类产品；Toy Association/Circana 估计 2025 美国完整玩具市场约 $45.6B；OIA 的 2024 outdoor retail market 为 $28B。三者的边界不同，不能简单相加或当成严格同口径 GMV 排名。
+URLs:
+https://www.sema.org/news-media/enews/2026/29/want-grow-your-aftermarket-business-start-2026-sema-market-report
+https://toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx?hkey=acea06b5-22e0-4bcc-a3bc-03532459e00d
+https://outdoorindustry.org/2025-outdoor-retail-sales-trends-report/
+
+第五，科技品类需求很大，但公开免费数据无法可靠把 C01–C09/C12 拆成 18 类所需口径。 Circana 在 2026-01 的预测把 2026 美国 consumer technology 销售额放在 $112B，电脑仍是最大增量来源；而 BEA 的公开 PCE 会把多个相关产品装进较宽的 “information processing equipment”等桶。CTA 的 2026 One-Year Forecast 实际提供 200+ 产品的美国 shipments、wholesale revenue、average wholesale price、household penetration，但完整数据需要登录或购买（非会员 $2,000）。因此不能拿 CTA wholesale revenue 去跟 BEA PCE 或 Circana retail sales 偷偷混在一起。
+URLs:
+https://www.circana.com/post/us-consumer-technology-sales-forecast-to-reach-112-billion-in-2026-reports-circana
+https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/
+
+第六，需求“金额”和需求“件数”在 2026 年可能明显背离。 例如 Circana 的 home forecast 是 2026 美国家居类美元销售 +2.9% 到 $43.7B，但同时明确说 unit demand 仍受压；平板方面更明显：IDC 在 2026-08-13 发布的 Q2 数据显示美国 tablet shipments 同比 -31.6%，与 Circana 年初“平板将贡献超过 $200M 增量收入”的预测形成明显反证。不能用销售额增长自动推导购买频率或件数增长。
+URLs:
+https://www.circana.com/post/circana-forecasts-u-s-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money
+https://www.idc.com/resource-center/blog/the-tablet-market-hits-a-wall/
+
+第七，部分美国科技市场在品牌层面高度集中，但这不等于 SKU 层面没有 middle tail。 Counterpoint Q2 2026 的美国 smartphone shipment shares 为 Apple 54%、Samsung 30%、Motorola 11%，前三家合计 95%；Gartner Q1 2025 的美国 PC sell-in 中 HP、Dell、Lenovo、Apple 合计 84.1%。这能支持“品牌集中”，却不能回答 SKU concentration、seller fragmentation 或美国 middle-tail SKU 数量，后者仍需单独的 SKU-level demand dataset。
+URLs:
+https://counterpointresearch.com/sitemap.html/insights/us-smartphone-market-share
+https://www.gartner.com/en/newsroom/press-releases/2025-04-14-gartner-says-worldwide-pc-shipments-increased-4-point-8-percent-in-first-quarter-of-2025
+
+第八，W1 目前不支持给 18 类强行制造一组精确 numeric demand weights。 最合理的是先保留真实 GMV、上界 proxy、下界/partial proxy、units、频率和 online GMV 各自独立；只有同口径数据齐全时才生成统一 demand score。否则最诚实的输出是“部分可排序 + 大量未排序”，而不是用宽口径代理值硬排 1–18 名。
+
+2. Evidence table / 18-category US Demand Map
+
+表中美元均为名义美元；“PCE”是 BEA 美国消费者支出、不是批发额；“retail”是相应机构定义的零售市场；shipments 是出货而不是最终消费销售。null/未知 是研究结果，不以市场研究网站的模糊估值替代。
+
+ID	类别	最佳公开美国需求证据	最新需求信号	Online / ASP / frequency	集中度 / fragmentation	判定与边界
+C01	Smartphones	2025 $35.942B BEA “telephone and related communication equipment” PCE proxy；比 smartphone 稍宽。URL: https://alfred.stlouisfed.org/series?seid=DTCERC1A027NBEA	Q2 2026 美国 smartphone shipments +6% YoY。URL: https://counterpointresearch.com/sitemap.html/insights/us-smartphone-market-share	产品级 online share、绝对 ASP、upgrade frequency：公开同口径不足；CTA 有相关付费数据。	Q2 2026 Apple 54% + Samsung 30% + Motorola 11% = 95% shipment share；品牌高度集中，SKU concentration 未知。	需求高；置信中。 $35.9B 是 broad proxy，不当 smartphone 精确 GMV。
+C02	Laptops	独立 laptop GMV 未找到。BEA information-processing umbrella 2025 $326.628B 与多个 C02/C03/C04/C05/C07 重叠；Circana 2026 consumer-tech 总盘预测 $112B。URL: https://alfred.stlouisfed.org/series?seid=DIPERC1A027NBEA	Circana：2026 computers 预计较 2025 增收 >$600M，notebook/desktop 对增量贡献大致相当。Gartner：Q1 2025 美国 PC sell-in 16.391M units，+12.6%。	独立 laptop online share / ASP / refresh interval 无公开完整值；CTA 报告需要认证。	Q1 2025 PC 前四品牌 shipment share 84.1%；但 laptops 与 desktops 混合。	需求高的证据强，GMV 点值不足；置信中。
+C03	Tablets	独立美国 GMV：null；不可从 information-processing umbrella 分摊。	IDC Q2 2026：美国 shipments -31.6% YoY、+7.1% QoQ；全球 Q2 33.6M、-12.3%。URL: https://www.idc.com/resource-center/blog/the-tablet-market-hits-a-wall/	Circana 年初预测 2026 tablets 增量收入 >$200M，但不提供公开绝对市场值。	当前美国 vendor/SKU concentration 无同口径公开值。	需求存在但 2026 明显承压；置信中。 早期 revenue forecast 与后来 actual shipment 数据冲突。
+C04	Mini PCs / small desktops	null。与普通 desktop/PC 混入 broad computing 数据，无法单独切出。	IDC 在 tablet 分析中称低价 mini-PCs 正抢走部分 sub-$200 tablet 潜在买家，但不是市场规模测量。	null	null	公开需求规模证据不足；置信低。 不因体量难测而删类。
+C05	PC components / storage / networking	null。BEA $326.628B information-processing umbrella 是共享上层桶，不能把整桶分别赋给 C02–C05/C07。	CTA 2026 Forecast 明确覆盖 computing/accessories 等产品级 shipments、wholesale revenue、ASP，但完整数据需登录/购买。URL: https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/	null；AUTHENTICATED DATA REQUIRED	社区证据显示 PC builders 跨 Amazon、Newegg、Micro Center、B&H、Best Buy 等多渠道比价，但不能量化 GMV/SKU fragmentation。	经济需求很可能实质性，但无法公开定量排名；置信低-中。
+C06	Headphones / IEM / DAC / portable audio	2025 BEA video and audio equipment ≈ $92.6B broad upper proxy，包含大量 TV/video 产品，远宽于目标音频子集。URL: https://alfred.stlouisfed.org/series?seid=DVAARC1A027NBEA	Circana 报告 2025 wired headphones 销售额 +3%（约 +$15M），H2 +10%；只是 headphones 的一个子段。	exact ASP/frequency/online share null。	null	需求明确存在，但 $92.6B 绝不能作为 C06 GMV；置信中低。
+C07	PC peripherals	null；包含于 computing/信息处理 broad bucket。	CTA 付费 forecast 明确有 PC peripherals/parts 类产品资料。	AUTHENTICATED DATA REQUIRED	buildapc 社区显示多零售商并存；不能推出 SKU 集中度。	未排名；置信低。
+C08	Wearables	全 wearables GMV null。Circana：2025 前 7 个月美国 fitness trackers 购买 >1.3M units，+35%；smart-ring YTD revenue $217M。URL: https://www.circana.com/post/spending-on-fitness-trackers-grows-88-in-2025-circana-reports	Fitness-tracker YTD revenue +88%；smart-ring units +195%；传统 wrist trackers units -6%。	Smart-ring ASP 约传统 wrist tracker 的 4 倍；不是绝对 ASP。Smartwatches 未包含在这些数字中。	产品形态快速重构，不能用 tracker 数据代替全 wearables。	需求成长快但总量缺失；置信中低。
+C09	Smart home / security / IoT	GMV null。	CTA 2026 Ownership 研究的公开摘要称最快增长的 5 个 tech products 中有 4 个属于 smart home；包括 thermostats、lighting、plugs、air purifiers、speakers/displays、robotic vacuums 等。URL: https://www.cta.tech/articles/from-connected-to-intelligent-how-ai-is-transforming-the-smart-home/	精确 ownership/intent 表需 CTA 完整研究；产品级 online share null。	高度多子类，统一“市场集中度”意义有限。	需求扩张证据中等，GMV 无公开点值；置信中低。
+C10	Robot vacuums / small appliances	BEA 2025 household appliances $89.654B，是明显过宽的上层 proxy。URL: https://fred.stlouisfed.org/series/DAPPRC1A027NBEA	Circana Sep-2026：2026 Home market $43.7B、+2.9%；robotic-vacuum dollar sales forecast +9.1%。URL: https://www.circana.com/post/circana-forecasts-u-s-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money	Replacement signals：microwave 65%、coffee maker 61%、upright vacuum 54% 的近期买家是在替换旧品。	SKU fragmentation null。	需求高、replacement 重要；置信中。 两个金额口径都比 C10 更宽且彼此重叠，不能相加。
+C11	Power tools / electronics tools / repair tools	BEA 2025 tools and equipment for house and garden $61.557B all-channel PCE proxy。URL: https://alfred.stlouisfed.org/series?seid=DTOORC1A027NBEA	最新年度数据为 2025。	online share / unit / ASP / frequency null。	null	需求可观；置信中。 Proxy 包含 garden tools、未完整覆盖 electronics-repair tools。
+C12	Camera / video gear & accessories	美国 consumer retail GMV null。	CIPA 官方站于 2026-10-01 已发布到 2026 年 8 月 digital-camera 统计，但其公开文件为厂商出货/地区统计体系，不是美国零售 GMV。URL: https://www.cipa.jp/e/stats/dc-2025.html	null	null	无法从 CIPA global/regional shipments 冒充美国消费规模；置信低。
+C13	Automotive accessories	SEMA：2025 美国 specialty-equipment accessory + performance parts $52.92B retail sales。URL: https://www.sema.org/news-media/enews/2026/29/want-grow-your-aftermarket-business-start-2026-sema-market-report	约 1/4 vehicle owners 2025 买过 accessory/performance products；pickup-related 产品约占总销售 30%，>$15B。	purchase incidence 有直接证据；online share/ASP null。	具体 SKU concentration null。	最强的 target-adjacent direct evidence 之一；置信高。 但不含整个 replacement-parts market。BEA 更宽的 motor-parts-and-accessories PCE 为 $131.214B。
+C14	Sports / outdoor goods	OIA/Circana：2024 U.S. outdoor retail sales $28B，+1%。URL: https://outdoorindustry.org/2025-outdoor-retail-sales-trends-report/	2024 footwear/accessories 较强，equipment 下滑、apparel flat；更新的 2025 渠道信号较弱。	OIA 覆盖 chain、e-commerce、specialty，但公开页没有可计算的全类 online share。	多子类；SKU concentration null。	可做量级基线；置信高（对其定义的 outdoor market）。 与 C16 存在 apparel/footwear overlap。
+C15	Hobby / models / 3D printing / maker electronics	null；公开 toy、electronics、craft/hobby 数据均与目标边界严重交叉。	3D-printing community 有持续的 purchase-advice 活动，但不能用于市场规模。	null	社区显示产品选择丰富，但不可量化。	缺口大；置信低。 不把 toys/building sets 数字冒充全部 maker/hobby。
+C16	Apparel / shoes / bags	BEA 2025 Clothing & Footwear PCE $559.768B，all-channel U.S. consumer expenditure。URL: https://fred.stlouisfed.org/series/DCLORC1A027NBEA	2024 $529.730B → 2025 $559.768B，名义增长约 5.7%。	产品级 online share null；bags 不完整。	SKU/brand fragmentation 未获同口径定量指标，但不能从巨额 GMV反推。	本轮最明确的大需求池；置信高。 注意 bags 边界缺口。
+C17	Home / organization / household goods	没有一个干净点值。BEA 2025 household utensils $61.954B；更宽 furniture/furnishings proxy 约 $291.7B；Circana 2026 Home $43.7B 又与 C10 重叠。URLs: https://fred.stlouisfed.org/series/DUTERC1A027NBEA ；https://alfred.stlouisfed.org/series?seid=DFFFRC1A027NBEA	Circana 显示 food storage、cookware 等仍有较高购买计划执行意向。	online share/ASP/frequency 大多 null。	典型超宽、碎片化 taxonomy，无法量化 SKU concentration。	大需求基本确定，但 exact GMV 不可给；置信中。 绝不把三个重叠 proxy 相加。
+C18	Toys / collectibles / official merchandise	Toy Association/Circana：2025 完整美国 toy market 估计 $45.6B；tracked 68% market 的 retail panel 为 $30.3B。URL: https://toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx?hkey=acea06b5-22e0-4bcc-a3bc-03532459e00d	H1 2026：美元 +17%、units +12%、ASP +4%；licensed toys 占 total toy sales 39%。URL: https://www.circana.com/post/us-toy-industry-posts-strongest-first-half-in-six-years-circana-reports	有 dollar/unit/ASP 同方向数据；购买频率仍无统一年度值。	Collectibles/trading cards 推动明显；SKU concentration null。	需求大且 2026 当前动能很强；置信高。 Official merchandise 超出玩具者不在 $45.6B 中。
+2.1 仅在证据允许范围内的需求排序
+
+我不建议生成“C01–C18 精确 1–18 名”。能够相对接近目标类目、且公开给出美国 consumer/retail dollar value 的子集，只能做如下量级序列：
+
+有公开 dollar baseline 的子集	数值	年份	为什么仍不是严格 apples-to-apples
+C16 Apparel / shoes 主体	$559.768B	2025	BEA all-channel PCE；bags 不完整
+C13 Specialty automotive accessories/performance	$52.92B	2025	retail；只是 automotive accessories 的 specialty/performance 部分
+C18 Toys	~$45.6B	2025	projected total retail toy market；official merchandise 不完全覆盖
+C14 Outdoor	$28.0B	2024	retail outdoor universe；与 C16 apparel/footwear 有交叉
+
+所以能够支持的是：C16 的消费规模显著大于后三者；C13/C18 属于相近的数百亿美元量级；C14 也是大型市场。 不能据此宣称其他 14 类更小，因为它们主要是“缺干净数据”，不是“需求低”。
+
+2.2 可重复的 demand-weighting 方法
+
+建议最终 Y-axis 采用预注册规则，而不是在看到结果后调整权重：
+
+Stage A — 核心经济量：
+
+G_i = 美国该类目、同一年、消费者端 all-channel 或 market-wide retail GMV
+
+只接受 product-based taxonomy。Wholesale revenue、global GMV、store-industry sales 不进入 G_i。
+
+Stage B — 当完整数据存在时的 Demand Index：
+
+D_i = 0.70 × percentile(log10(G_i)) + 0.15 × percentile(unit volume_i) + 0.10 × percentile(purchase frequency_i) + 0.05 × percentile(online GMV_i)
+
+这里的权重应在补数据前冻结。SKU fragmentation 另列为 opportunity-density 维度，不混入 demand，以免“市场碎”被误算成“市场大”。
+
+Missing-data rule：
+
+缺 GMV：D_i = null，不能把其他变量重新归一化为 100%。
+
+目标类目严格属于一个更宽 proxy 时：只记录 upper_bound，例如 C10 ≤ household-appliance broad bucket，不拿上界当点估计。
+
+Proxy 只覆盖目标的一部分时：记录 partial/lower-side evidence，不外推。
+
+多个 proxy 重叠：不求和。
+
+Online share 只有在“按产品而不是按企业 NAICS”统计时才可使用。
+
+Ranking 只有当两个类目使用相同经济概念、年份足够接近且边界误差不会改变顺序时才给出；否则标 unranked。
+
+3. Primary sources / 数据口径审计
+
+主要证据按可信度优先级如下。
+
+Source	日期 / 最新数据	类型与用途	访问状态 / 关键限制
+U.S. Census Quarterly Retail E-Commerce	发布 2026-08-18；Q2 2026	全美 retail/ecommerce 顶层基准。URL: https://www.census.gov/retail/ecommerce.html	全页可读；但 2026-09-28 已声明待修订。
+Census E-Stats FAQ	rev. 2021-10-08	解释线上部门 NAICS 分类，证明 store-type online ratio ≠ product online penetration。URL: https://www.census.gov/programs-surveys/e-stats/about/faqs.html	全页可读。
+BEA/FRED/ALFRED PCE	2025 annual，多项于 2026-09-30 更新	all-channel U.S. consumer expenditure；C01/C06/C10/C11/C13/C16/C17 proxies。	政府基础数据；最大问题是 taxonomy 比本项目类目宽。
+Circana U.S. Consumer Technology Forecast	2026-01-06	2026 U.S. consumer-tech revenue forecast $112B；computer/tablet 增量。URL: https://www.circana.com/post/us-consumer-technology-sales-forecast-to-reach-112-billion-in-2026-reports-circana	全文可读；是 forecast、且总 tech universe 比本项目若干类别宽。
+CTA One-Year Forecast	发布 June 2026	200+ U.S. tech products；shipments、wholesale revenue、average wholesale prices、household penetration。URL: https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/	AUTHENTICATED DATA REQUIRED；member login / nonmember $2,000。
+CTA Technology Lifecycle	Oct 2025	26 tech categories；ownership、useful life、upgrade/replacement frequency。URL: https://www.cta.tech/research/2025-technology-lifecycle-consumer-ownership-upgrade-insights/	AUTHENTICATED DATA REQUIRED；公开页只确认字段，不能猜数值。
+Gartner PC	2025-04-14；Q1 2025	U.S. PC sell-in units、vendor shares。URL: https://www.gartner.com/en/newsroom/press-releases/2025-04-14-gartner-says-worldwide-pc-shipments-increased-4-point-8-percent-in-first-quarter-of-2025	全文可读；shipments to channels，不是 end-consumer sales。
+IDC Tablet	2026-08-13；Q2 2026	当前 tablet unit trend；美国 -31.6% YoY。URL: https://www.idc.com/resource-center/blog/the-tablet-market-hits-a-wall/	全文可读；无美国 GMV。
+Circana Fitness Trackers	2025-09-18；Jan–Jul 2025	units、revenue growth、smart-ring revenue/ASP relationship。URL: https://www.circana.com/post/spending-on-fitness-trackers-grows-88-in-2025-circana-reports	全文可读；不包含整个 smartwatch market。
+Circana Home	2026-09-24	最新 home dollar forecast、replacement、robot vacuum signal。URL: https://www.circana.com/post/circana-forecasts-u-s-home-market-growth-as-consumers-invest-in-products-that-help-them-save-money	全文可读；C10/C17 边界重叠。
+SEMA 2026 Market Report summary	2026-07	2025 specialty automotive accessory/performance retail market。URL: https://www.sema.org/news-media/enews/2026/29/want-grow-your-aftermarket-business-start-2026-sema-market-report	摘要全文可读；深层报告需购买。
+Outdoor Industry Association	2025 report；2024 market	$28B outdoor retail universe。URL: https://outdoorindustry.org/2025-outdoor-retail-sales-trends-report/	Executive summary 可读；详细 member data 需登录。
+Toy Association / Circana	2025 data	~$45.6B total toy market、$30.3B tracked panel。URL: https://toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx?hkey=acea06b5-22e0-4bcc-a3bc-03532459e00d	全页可读；来源自己提醒 panel/category hierarchy 每年会变化。
+Circana Toy H1 2026	2026-08-12	dollars/units/ASP 同时给出，适合判断真实 current momentum。URL: https://www.circana.com/post/us-toy-industry-posts-strongest-first-half-in-six-years-circana-reports	全文可读。
+CIPA	updated 2026-10-01；data through Aug 2026	Camera industry shipment source。URL: https://www.cipa.jp/e/stats/dc-2025.html	官方页可读；具体表以 PDF 发布，且不是美国 retail GMV，因此未拿它填 C12 GMV。
+
+**Global vs U.S. discipline：**本报告不使用 global smartphone/tablet/camera GMV 来替代美国需求。IDC/CIPA 的 global 或 regional 数据只有在明确标注时用于趋势/数据缺口，没有进入美国需求排名。
+
+**Retail vs wholesale discipline：**CTA 可获得的是 wholesale revenue；BEA 是 consumer expenditure；Circana/SEMA/OIA/Toy Association 多为 retail/sell-through 类型。它们不直接混算。
+
+4. Forum evidence
+
+论坛证据只用来理解实际购物行为与零售结构，完全不拿来估 GMV。
+
+PC building 社区的近期讨论显示，用户会在 Amazon、Newegg、Micro Center、B&H、Best Buy 等多个渠道间比较价格、bundle 和 seller quality，这与“PC components 采购渠道较碎、用户会 multi-home”的判断一致，但样本是 self-selected enthusiasts，不能外推到全美消费者。
+
+2026-06-14 r/buildapc： https://www.reddit.com/r/buildapc/comments/1u5i1g1/where_to_source_parts_from/
+
+2025-12 r/buildapc： https://www.reddit.com/r/buildapc/comments/1pmm4vt/where_to_buy_components/
+
+3D printing 社区存在长期 purchase-advice megathread，说明 C15 有活跃产品选择与比较行为，但同样不能建立市场规模或销量排名：
+
+https://www.reddit.com/r/3Dprinting/comments/1kc1pr8/purchase_advice_megathread_may_2025/
+
+结论：论坛证据对 C05/C07/C15 的“购买路径分散”有辅助价值，对 Demand Y-axis 权重应为 0。
+
+5. Contrary evidence
+初看结论	反证 / 为什么需要降置信
+“美国电商已经 17.1%，可以把它套到各类别”	不可以。17.1% 是全零售顶层值，而且 Census 已宣布 Q2 数据待修订；同时 NAICS 4541 的组织方式破坏产品级线上份额计算。URL: https://www.census.gov/retail/ecommerce.html 和 https://www.census.gov/programs-surveys/e-stats/about/faqs.html
+“2026 tablets 是增长类目”	Circana 2026-01 forecast 预计 tablets 带来 >$200M incremental
+=== END OWN PARTIAL ===

@@ -1,0 +1,502 @@
+{
+  "schema": 1,
+  "generated_utc": "2026-10-07T22:19:20.303516+00:00",
+  "objective": "Diagnose current yi MimicGate answer 8 to 6 regression",
+  "production_restored": false,
+  "original_container_candidate_patch_applied": false,
+  "experiment_browsers_running": 0,
+  "source_state_unchanged": true,
+  "original_Chrome_auth_untouched": true,
+  "original_profile_mutated": false,
+  "native_identity_candidate": {
+    "file": {
+      "file": "D:\\musicclaude\\mimic-cli\\src\\browser\\stealth.py",
+      "sha256": "0abdfb9dfe6df13a060590effd8583a8378046b16f502399227c93ec0b4ae9a7"
+    },
+    "opt_in_env": "MIMICGATE_NATIVE_BROWSER_IDENTITY=1",
+    "enabled_only_on_owned_clone": true,
+    "actual_identity": {
+      "platform": "Linux x86_64",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+      "uaDataPlatform": "Linux",
+      "architecture": "x86",
+      "bitness": "64",
+      "platformVersion": "",
+      "uaFullVersion": "153.0.8010.12",
+      "native_identity_opt_in": true
+    },
+    "effect": "Preserve native navigator platform, UA and UAData; no fabricated Windows hint headers",
+    "result": "Actual identity consistency verified, answer still 6"
+  },
+  "preparation": [
+    {
+      "account_navigation_performed": false,
+      "browser_closed": true,
+      "browser_major": 153,
+      "clear_executed": false,
+      "closed_storage_file_comparison": {
+        "http_and_code_cache": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": null,
+          "observed": false
+        },
+        "indexeddb": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 11,
+          "file_count_before": 11,
+          "observed": true
+        },
+        "service_worker_and_cache_storage": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 0,
+          "file_count_before": 0,
+          "observed": true
+        }
+      },
+      "completed": true,
+      "container_memory_peak_bytes": 600408064,
+      "cookie_count_after_clear": 99,
+      "cookie_count_before_clear": 99,
+      "cookies_exactly_unchanged": true,
+      "cookies_keys_values_or_fingerprints_logged": false,
+      "imported_cookie_count": 32,
+      "imported_values_and_writable_metadata_verified": true,
+      "local_storage_count_after": 60,
+      "local_storage_count_after_basis": "owned_offline_origin_fixture",
+      "local_storage_count_before": 60,
+      "local_storage_count_before_basis": "owned_offline_origin_fixture",
+      "mode": "control",
+      "model_generation_permitted": false,
+      "network_none_externally_required": true,
+      "no_live_browser_verified": true,
+      "offline_launch_required": true,
+      "other_storage_types_requested_for_clear": false,
+      "owned_clone_marker_verified": true,
+      "schema": 1,
+      "source_mounts_forbidden_externally": true,
+      "stage": "offline_preparation_verified",
+      "started_utc": "2026-10-07T21:59:26.266904+00:00",
+      "finished_utc": "2026-10-07T21:59:30.078947+00:00",
+      "condition": "control",
+      "clone": "yi-mg-storage-control-20261007",
+      "source_profile_mounted": false,
+      "network_mode": "none",
+      "memory_limit_bytes": 805306368,
+      "memory_before": {
+        "utc": "2026-10-07T21:59:26.264905+00:00",
+        "physical_load_percent": 88,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 3.536,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 58.079,
+        "available_commit_gib": 9.419,
+        "commit_load_percent": 86.0
+      },
+      "memory_after": {
+        "utc": "2026-10-07T21:59:30.080455+00:00",
+        "physical_load_percent": 90,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 3.033,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 58.542,
+        "available_commit_gib": 8.956,
+        "commit_load_percent": 86.7
+      },
+      "cookie_bundle_sha256": "3c3488e5d2f7bd4da0826994bda34330a121fc5bfecc444eb7685ef70a860ca8",
+      "preparation_script_sha256": "1c35b2b5a047087636470323ae8585f0f083bca1c9334ac4ef64660ad904eb6c",
+      "return_code": 0,
+      "stderr_present": false,
+      "success": true
+    },
+    {
+      "account_navigation_performed": false,
+      "browser_closed": true,
+      "browser_major": 153,
+      "clear_executed": true,
+      "closed_storage_file_comparison": {
+        "http_and_code_cache": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": null,
+          "observed": false
+        },
+        "indexeddb": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 11,
+          "file_count_before": 11,
+          "observed": true
+        },
+        "service_worker_and_cache_storage": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 0,
+          "file_count_before": 0,
+          "observed": true
+        }
+      },
+      "completed": true,
+      "container_memory_peak_bytes": 556617728,
+      "cookie_count_after_clear": 99,
+      "cookie_count_before_clear": 99,
+      "cookies_exactly_unchanged": true,
+      "cookies_keys_values_or_fingerprints_logged": false,
+      "imported_cookie_count": 32,
+      "imported_values_and_writable_metadata_verified": true,
+      "local_storage_count_after": 0,
+      "local_storage_count_after_basis": "owned_offline_origin_fixture",
+      "local_storage_count_before": 60,
+      "local_storage_count_before_basis": "owned_offline_origin_fixture",
+      "mode": "local_storage",
+      "model_generation_permitted": false,
+      "network_none_externally_required": true,
+      "no_live_browser_verified": true,
+      "offline_launch_required": true,
+      "other_storage_types_requested_for_clear": false,
+      "owned_clone_marker_verified": true,
+      "schema": 1,
+      "source_mounts_forbidden_externally": true,
+      "stage": "offline_preparation_verified",
+      "started_utc": "2026-10-07T21:59:44.550804+00:00",
+      "finished_utc": "2026-10-07T21:59:48.138852+00:00",
+      "condition": "local_storage",
+      "clone": "yi-mg-storage-ls-20261007",
+      "source_profile_mounted": false,
+      "network_mode": "none",
+      "memory_limit_bytes": 805306368,
+      "memory_before": {
+        "utc": "2026-10-07T21:59:44.548195+00:00",
+        "physical_load_percent": 89,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 3.199,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 58.432,
+        "available_commit_gib": 9.066,
+        "commit_load_percent": 86.6
+      },
+      "memory_after": {
+        "utc": "2026-10-07T21:59:48.139366+00:00",
+        "physical_load_percent": 91,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 2.799,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 58.926,
+        "available_commit_gib": 8.571,
+        "commit_load_percent": 87.3
+      },
+      "cookie_bundle_sha256": "3c3488e5d2f7bd4da0826994bda34330a121fc5bfecc444eb7685ef70a860ca8",
+      "preparation_script_sha256": "1c35b2b5a047087636470323ae8585f0f083bca1c9334ac4ef64660ad904eb6c",
+      "return_code": 0,
+      "stderr_present": false,
+      "success": true
+    },
+    {
+      "account_navigation_performed": false,
+      "browser_closed": true,
+      "browser_major": 153,
+      "clear_executed": false,
+      "closed_storage_file_comparison": {
+        "http_and_code_cache": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": null,
+          "observed": false
+        },
+        "indexeddb": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 11,
+          "file_count_before": 11,
+          "observed": true
+        },
+        "service_worker_and_cache_storage": {
+          "browser_housekeeping_is_not_excluded": true,
+          "content_file_set_equal": true,
+          "differing_file_count": 0,
+          "file_count_after": 0,
+          "file_count_before": 0,
+          "observed": true
+        }
+      },
+      "completed": true,
+      "container_memory_peak_bytes": 489062400,
+      "cookie_count_after_clear": 99,
+      "cookie_count_before_clear": 99,
+      "cookies_exactly_unchanged": true,
+      "cookies_keys_values_or_fingerprints_logged": false,
+      "imported_cookie_count": 32,
+      "imported_values_and_writable_metadata_verified": true,
+      "local_storage_count_after": 60,
+      "local_storage_count_after_basis": "owned_offline_origin_fixture",
+      "local_storage_count_before": 60,
+      "local_storage_count_before_basis": "owned_offline_origin_fixture",
+      "mode": "control",
+      "model_generation_permitted": false,
+      "network_none_externally_required": true,
+      "no_live_browser_verified": true,
+      "offline_launch_required": true,
+      "other_storage_types_requested_for_clear": false,
+      "owned_clone_marker_verified": true,
+      "schema": 1,
+      "source_mounts_forbidden_externally": true,
+      "stage": "offline_preparation_verified",
+      "started_utc": "2026-10-07T22:08:25.185929+00:00",
+      "finished_utc": "2026-10-07T22:08:29.411545+00:00",
+      "condition": "native_identity",
+      "clone": "yi-mg-native-identity-20261007",
+      "source_profile_mounted": false,
+      "network_mode": "none",
+      "memory_limit_bytes": 805306368,
+      "memory_before": {
+        "utc": "2026-10-07T22:08:25.180928+00:00",
+        "physical_load_percent": 95,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 1.4,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 60.099,
+        "available_commit_gib": 7.398,
+        "commit_load_percent": 89.0
+      },
+      "memory_after": {
+        "utc": "2026-10-07T22:08:29.411545+00:00",
+        "physical_load_percent": 95,
+        "total_physical_gib": 31.497,
+        "available_physical_gib": 1.453,
+        "total_commit_gib": 67.497,
+        "used_commit_gib": 60.018,
+        "available_commit_gib": 7.479,
+        "commit_load_percent": 88.9
+      },
+      "cookie_bundle_sha256": "3c3488e5d2f7bd4da0826994bda34330a121fc5bfecc444eb7685ef70a860ca8",
+      "preparation_script_sha256": "1c35b2b5a047087636470323ae8585f0f083bca1c9334ac4ef64660ad904eb6c",
+      "return_code": 0,
+      "stderr_present": false,
+      "success": true
+    }
+  ],
+  "findings": [
+    {
+      "condition": "control",
+      "finished_utc": "2026-10-07T22:05:21.375862+00:00",
+      "actual_answer": 6,
+      "elapsed_seconds": 94.265,
+      "ui_thinking_time": [
+        "Worked for 1m 7s"
+      ],
+      "actual_wire_generation_requests": 1,
+      "wire_model_effort": [
+        {
+          "model": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "browser_context_present": false
+        }
+      ],
+      "actual_sent_hint_names": [
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform"
+      ],
+      "document_responses_observed": 3,
+      "document_responses_with_accept_ch": 0,
+      "server_ste": [
+        {
+          "tool_name": "unknown",
+          "turn_use_case": "unknown",
+          "warmup_state": "rewarm",
+          "tool_invoked": true,
+          "conduit_prewarmed": false
+        }
+      ],
+      "tool_role_messages_observed": 1,
+      "assistant_python_recipients_observed": 1,
+      "error": null,
+      "memory": {
+        "minimum_windows_available_gib": 0.473,
+        "minimum_windows_commit_available_gib": 6.276,
+        "memory_samples": 20,
+        "sampling_interval_seconds": 5,
+        "minimum_free_before_probe_gib": 1,
+        "minimum_commit_headroom_before_probe_gib": 3,
+        "budget_scope": "one_request_with_existing_browser",
+        "in_flight_generation_automatically_aborted": false
+      },
+      "screenshot_evidence": {
+        "complete": true,
+        "directory": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-control-001\\screenshots",
+        "files": [
+          {
+            "filename": "response-viewport.jpg",
+            "sha256": "00cfdca3eec23053b4da17b248a49b28f7c5114011459e0a22b25e48d3be8896"
+          },
+          {
+            "filename": "response-full.jpg",
+            "sha256": "00cfdca3eec23053b4da17b248a49b28f7c5114011459e0a22b25e48d3be8896"
+          }
+        ],
+        "thinking_time_ui_labels": [
+          "Worked for 1m 7s"
+        ]
+      }
+    },
+    {
+      "condition": "native_identity",
+      "finished_utc": "2026-10-07T22:13:31.820664+00:00",
+      "actual_answer": 6,
+      "elapsed_seconds": 148.937,
+      "ui_thinking_time": [
+        "Worked for 2m 1s"
+      ],
+      "actual_wire_generation_requests": 1,
+      "wire_model_effort": [
+        {
+          "model": "gpt-5-6-thinking",
+          "thinking_effort": "max",
+          "browser_context_present": false
+        }
+      ],
+      "actual_sent_hint_names": [
+        "sec-ch-ua",
+        "sec-ch-ua-mobile",
+        "sec-ch-ua-platform"
+      ],
+      "document_responses_observed": 3,
+      "document_responses_with_accept_ch": 0,
+      "server_ste": [
+        {
+          "tool_name": "ContainerTool",
+          "turn_use_case": "coding",
+          "warmup_state": "rewarm",
+          "tool_invoked": true,
+          "conduit_prewarmed": false
+        }
+      ],
+      "tool_role_messages_observed": 1,
+      "assistant_python_recipients_observed": 0,
+      "error": null,
+      "memory": {
+        "minimum_windows_available_gib": 0.259,
+        "minimum_windows_commit_available_gib": 6.04,
+        "memory_samples": 31,
+        "sampling_interval_seconds": 5,
+        "minimum_free_before_probe_gib": 1,
+        "minimum_commit_headroom_before_probe_gib": 3,
+        "budget_scope": "one_request_with_existing_browser",
+        "in_flight_generation_automatically_aborted": false
+      },
+      "screenshot_evidence": {
+        "complete": true,
+        "directory": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-001\\screenshots",
+        "files": [
+          {
+            "filename": "response-viewport.jpg",
+            "sha256": "b1392227847ba4bf16074de38669a87ce44d7999f60bcbc1f7b0dd3fadde4ab4"
+          },
+          {
+            "filename": "response-full.jpg",
+            "sha256": "b1392227847ba4bf16074de38669a87ce44d7999f60bcbc1f7b0dd3fadde4ab4"
+          }
+        ],
+        "thinking_time_ui_labels": [
+          "Worked for 2m 1s"
+        ]
+      }
+    },
+    {
+      "condition": "local_storage",
+      "finished_utc": "2026-10-07T22:16:59.678419+00:00",
+      "actual_answer": null,
+      "elapsed_seconds": 25.828,
+      "ui_thinking_time": [],
+      "actual_wire_generation_requests": 0,
+      "wire_model_effort": [],
+      "actual_sent_hint_names": [],
+      "document_responses_observed": 3,
+      "document_responses_with_accept_ch": 0,
+      "server_ste": [],
+      "tool_role_messages_observed": 0,
+      "assistant_python_recipients_observed": 0,
+      "error": {
+        "type": "model_state",
+        "message": "Browser automation failed at model_state"
+      },
+      "memory": {
+        "minimum_windows_available_gib": 1.44,
+        "minimum_windows_commit_available_gib": 6.243,
+        "memory_samples": 7,
+        "sampling_interval_seconds": 5,
+        "minimum_free_before_probe_gib": 1,
+        "minimum_commit_headroom_before_probe_gib": 3,
+        "budget_scope": "one_request_with_existing_browser",
+        "in_flight_generation_automatically_aborted": false
+      },
+      "screenshot_evidence": {
+        "complete": true,
+        "directory": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-local_storage-002\\screenshots",
+        "files": [
+          {
+            "filename": "failure-viewport.jpg",
+            "sha256": "0ea10e57ce1009c0f845bcf0c5d032518b0de67146e75ef502b78cd7385d875c"
+          },
+          {
+            "filename": "failure-full.jpg",
+            "sha256": "0ea10e57ce1009c0f845bcf0c5d032518b0de67146e75ef502b78cd7385d875c"
+          }
+        ],
+        "thinking_time_ui_labels": []
+      }
+    }
+  ],
+  "partially_observed_common_control_candidate_js_assets": 18,
+  "partially_observed_control_only_js_assets": 5,
+  "partially_observed_candidate_only_js_assets": 0,
+  "interpretation": [
+    "Current opt-in native identity correction is insufficient to restore the expected 8 answer.",
+    "Missing browser_context is not a sufficient standalone explanation: historical successful MG also lacked it.",
+    "High entropy UA headers have not been forced or fabricated; observed documents did not request them via Accept-CH.",
+    "Current model wire policy remains gpt-5-6-thinking with max effort; CLI xhigh mapping was verified.",
+    "Tool-use and coding metadata differ from prior successful native Chrome observations; correlation is not a proven root cause.",
+    "The localStorage ablation is inconclusive: model picker was absent and no generation POST was sent.",
+    "Failed localStorage run 001 occurred before service readiness; run 002 stopped before submission. Neither is an answer trial.",
+    "JS observation is bounded and incomplete; common hashes do not prove complete frontend or executed bytecode equivalence.",
+    "Browser native high entropy JS values and HTTP client-hint negotiation are separate mechanisms.",
+    "Two single-trial answers of 6 do not exclude interaction effects, intermittent recovery, or server-side changes."
+  ],
+  "next_investigation": [
+    "Trace the native browser_context instance lifecycle without inventing or replaying opaque identifiers.",
+    "Identify which cleared localStorage setting removes the model picker before a narrower reversible clone-only ablation.",
+    "Compare native and MG tool routing, account feature state, frontend assets and full client-hint negotiation.",
+    "Require two normal cup results and ordinary MG calls before declaring production restored."
+  ],
+  "primary_protocol_reference": "https://developer.chrome.com/docs/privacy-security/user-agent-client-hints",
+  "inputs": [
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-control-001\\diagnostics.json",
+      "sha256": "ddb1beb05f63b953592ccad6cfc96c50aa675bab9b2e607a33ada0431fc935da"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\observer-control-220657.json",
+      "sha256": "fcd482252ddb0653648e52439c294eb5b71587f9cb10a49ee6a9a873f86dee33"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-001\\diagnostics.json",
+      "sha256": "0902e66b0904296b9f043cc9d5e5116fd263859bc02e39e76e1e20f0e0726704"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\observer-native_identity-221442.json",
+      "sha256": "007a812f23ff0b57fba9de8bd5cdd9a90e1d58b30c2403e804e8846b25bf2be6"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-local_storage-002\\diagnostics.json",
+      "sha256": "2063ce40f400607f64c7f3a9b7307de2210399177a352508301499126b4afd1b"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\observer-local_storage-221819.json",
+      "sha256": "11dfe550191c86cfb063cf17509cbc502bd6c0f8ae4e769703bf7a76c702de46"
+    }
+  ]
+}

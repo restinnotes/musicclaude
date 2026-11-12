@@ -1,0 +1,552 @@
+## 1. 直接回答
+
+`WEB RESEARCH AVAILABLE: true`。本轮严格只研究 C07/C08/C09，共保留 9 个冻结前候选：每类 2 个 `domestic_head` + 1 个 `domestic_opportunity`。没有因海外可比款、重量、电池、固件、电压、保修或兼容性删除候选。“头部”仅是本轮国内平台榜位+消费者评论规模的抽样代理，不解释为全市场份额。京东未登录榜页多数只有“¥”而无数字，因此 9 个 SKU 的 `domestic_price` 均置 `null`，不采用搜索摘要价格；价格与 seller_id 统一记为 `AUTHENTICATED DATA REQUIRED`。[JD.com](https://www.jd.com/phb/key_670c477052e903b1f5f.html)
+
+## 2. 核心证据
+
+C07：G304 黑色在京东自营外设榜 TOP6、约 200 万评论；毒蝰 V4 Pro 白色 TOP2、约 20 万评论。机会样本 Rainy75 指定秘银版本在机械键盘榜 TOP1、约 2 万评论。来源（观察 2026-10-06）：[https://www.jd.com/phb/key_670c477052e903b1f5f.html](https://www.jd.com/phb/key_670c477052e903b1f5f.html)；[https://www.jd.com/phb/key_6705f549fec7a417e79.html](https://www.jd.com/phb/key_6705f549fec7a417e79.html)。[JD.com](https://www.jd.com/phb/key_670c477052e903b1f5f.html)
+
+C08：同一已打开的跨品牌手环榜中，小米手环11银色 TOP1、约10万评论；华为手环11 Pro NFC羽砂黑 TOP7、约10万评论，且是榜内首个不同于小米的品牌 SKU。Keep B5 黑色硅胶版在另一已打开手环榜 TOP4、约2万评论。来源（观察 2026-10-06）：[https://www.jd.com/phb/key_652a4d4ca815523bd8e.html](https://www.jd.com/phb/key_652a4d4ca815523bd8e.html)；[https://www.jd.com/phb/652a24b4d7a8da0a4e7.html](https://www.jd.com/phb/652a24b4d7a8da0a4e7.html)。[JD.com](https://www.jd.com/phb/key_652a4d4ca815523bd8e.html)
+
+C09：小米智能摄像机4为摄像头榜 TOP1、约200万评论；小米智能门锁4 Pro双摄版为智能锁榜 TOP1、约2万评论；Aqara S1E皎月白为中控开关榜 TOP8、约2万评论。来源均观察于 2026-10-06：[https://www.jd.com/phb/key_6529b38862bab0717b8.html](https://www.jd.com/phb/key_6529b38862bab0717b8.html)；[https://www.jd.com/phb/key_9855f843e2d28543b4f1.html](https://www.jd.com/phb/key_9855f843e2d28543b4f1.html)；[https://www.jd.com/phb/key_9855fa5990a5ecbe2c79.html](https://www.jd.com/phb/key_9855fa5990a5ecbe2c79.html)。[JD.com](https://www.jd.com/phb/key_6529b38862bab0717b8.html)
+
+## 3. 一级来源
+
+品牌官网只用于规格/存在性补证。罗技中国页确认 G304 的 LIGHTSPEED、HERO 200–12000 DPI及单节AA电池标称250小时；华为中国页确认 Band 11 Pro 的羽砂黑铝壳、1.62英寸 AMOLED、5ATM、BT6.0/BLE及系统要求；Aqara中国页确认 S1E 型号 CJPKG01LM、220V~50Hz、2.4GHz Wi-Fi；小米中国有“智能门锁4 Pro双摄版”独立产品页。上述官网发布日均未载，本轮观察日 2026-10-06。[https://www.logitechg.com/zh-cn/shop/p/g305-lightspeed-wireless-gaming-mouse](https://www.logitechg.com/zh-cn/shop/p/g305-lightspeed-wireless-gaming-mouse) [https://consumer.huawei.com/cn/wearables/band11-pro/specs/](https://consumer.huawei.com/cn/wearables/band11-pro/specs/) [https://www.aqara.cn/Smart-Magic-Switch-S1E_spec](https://www.aqara.cn/Smart-Magic-Switch-S1E_spec) [https://www.mi.com/xiaomi-smartlock-4-pro-dual-camera](https://www.mi.com/xiaomi-smartlock-4-pro-dual-camera)。[Logitech](https://www.logitechg.com/zh-cn/shop/p/g305-lightspeed-wireless-gaming-mouse)
+
+## 4. 社区证据
+
+Rainy75 的京东可见评价明确指出电源开关操作麻烦、无线接收器无法收纳；Keep B5 有“功能齐全，中学生适用”的具体消费反馈。S1E 的什么值得买实装文发布于 2023-06-26，当前打开可见 37 赞、138 收藏、56 评论，并讨论零线、Wi-Fi及生态自动化问题；它只能作机会/使用证据，不能证明2026销量。[https://post.smzdm.com/p/a4p04rl8/](https://post.smzdm.com/p/a4p04rl8/)。[JD.com](https://www.jd.com/phb/key_6705f549fec7a417e79.html)
+
+## 5. 反向证据
+
+京东自己提示排行榜可能因缓存、页面更新出现价格异常；评论数也不是已核验成交量。S1E 社区文章还披露商品由什么值得买提供并邀请评测，且实装者提示需要零线、无线控制受网络影响，因此社区正向体验不能独立当作需求强度证据。[JD.com](https://www.jd.com/phb/key_670c477052e903b1f5f.html)
+
+## 6. 置信度
+
+C07 为中高：两头部 SKU 有同一自营外设榜直接证据，Rainy75 版本也很具体。C08 为中等：同榜跨品牌证据足够做冻结前抽样，但榜名口径较窄；小米手环11银色是否应正式写作“标准版”仍为 `PROVISIONAL`。C09 为中高：摄像头、门锁榜位清晰，S1E 又有官网参数与实装证据。所有“当前成交价”置信度均为未核验。
+
+## 7. 数据缺口
+
+主要缺口是 9 个 SKU 的普通价、会员价、定向券、国补及 seller_id；小米手环11银色的标准/NFC SKU级确认；华为11 Pro NFC的官方SKU级细节；毒蝰V4 Pro和小米摄像机4的中国大陆官方深层规格；以及京东榜单算法、评论是否跨变体合并。这些均停止扩张并留给后续补证。
+
+## 8. 意外发现
+
+“机会样本”不等于榜位靠后：Rainy75 在机械键盘子榜反而是 TOP1。这里的 opportunity 是“差异化细分机会”而非弱销售代理。S1E 也表现出类似特征：老产品有较早社区积累，同时在当前可见榜单仍有约2万评论，但这不能推导当前月销量。[JD.com](https://www.jd.com/phb/key_6705f549fec7a417e79.html)
+
+## 9. 自我反驳
+
+若把京东“已有X人评论”直接解释成销量，或把品牌/细分类榜解释成全国市场份额，本结论会过度外推；榜位还可能动态变化。因此 `domestic_head` 只是冻结前候选层，不是最终“国内销量冠军”判断。[JD.com](https://www.jd.com/phb/key_670c477052e903b1f5f.html)
+
+## 10. 下一实验
+
+下一步只需授权国内登录态补齐价格和 seller_id，不再扩大 SKU 池。预注册价格分层操作阈值为：C07 低端 `<200`、中端 `200–699`、高端 `≥700`；C08 `<500`、`500–1499`、`≥1500`；C09 `<300`、`300–1499`、`≥1500`。只认同日公开普通单件价，会员/定向券/国补分别保存；无普通价则 `UNASSIGNED`，绝不因可行性或海外可比性删除候选。
+
+```json
+{
+  "job_id": "W2-B-batch03",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C07",
+      "name": "外设",
+      "domestic_head_rule": "在观察日可打开的京东自营外设榜TOP10中筛评论数>=200000；先取评论数最高SKU，再取与其品牌不同且榜位最高的SKU。",
+      "domestic_opportunity_rule": "在外设子类榜（机械键盘）TOP3且评论数>=10000，并有具体消费者使用反馈；机会层定义为差异化/细分机会，不要求低排名。",
+      "price_tier_rule_cny": {
+        "low": "<200",
+        "mid": "200-699",
+        "high": ">=700"
+      },
+      "price_tier_basis": "仅使用观察日公开普通单件价；会员价、定向券、国补分列；无可见数字则UNASSIGNED且不删候选。"
+    },
+    {
+      "category_id": "C08",
+      "name": "可穿戴设备",
+      "domestic_head_rule": "在同一已打开的跨品牌智能手环榜TOP10中筛评论数>=100000；先取榜位最高SKU，再取首个不同品牌SKU。",
+      "domestic_opportunity_rule": "不与两个头部品牌重复、在可打开手环榜TOP5且评论数>=20000，并具有明确运动/使用场景消费者反馈。",
+      "price_tier_rule_cny": {
+        "low": "<500",
+        "mid": "500-1499",
+        "high": ">=1500"
+      },
+      "price_tier_basis": "仅使用观察日公开普通单件价；会员价、定向券、国补分列；无可见数字则UNASSIGNED且不删候选。"
+    },
+    {
+      "category_id": "C09",
+      "name": "智能家居与IoT",
+      "domestic_head_rule": "在观察日可打开的国内子类榜中TOP1且评论数>=20000；跨摄像头与智能门锁两个典型子类取两个SKU。",
+      "domestic_opportunity_rule": "中控开关榜TOP10且评论数>=5000，并有至少一条国内长文/用户使用证据。",
+      "price_tier_rule_cny": {
+        "low": "<300",
+        "mid": "300-1499",
+        "high": ">=1500"
+      },
+      "price_tier_basis": "仅使用观察日公开普通单件价；会员价、定向券、国补分列；无可见数字则UNASSIGNED且不删候选。"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C07",
+      "candidate_sku_id": "C07-H1",
+      "brand": "Logitech G",
+      "model": "G304",
+      "exact_variant": "G304 黑色（非G304X）",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营外设榜TOP6，已有2000000人评论。",
+      "domestic_selection_rule": "满足C07头部规则：TOP10且评论数>=200000；为筛选集评论数最高SKU。",
+      "domestic_product_url": "https://item.jd.com/7571300.html",
+      "item_id": "7571300",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "AA电池",
+        "LIGHTSPEED/USB接收器兼容性需实测"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C07",
+      "candidate_sku_id": "C07-H2",
+      "brand": "Razer",
+      "model": "Viper V4 Pro",
+      "exact_variant": "毒蝰V4 Pro 专业版 白色 8K",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营外设榜TOP2，已有200000人评论。",
+      "domestic_selection_rule": "满足C07头部规则：TOP10且评论数>=200000；在G304之外为不同品牌中榜位最高SKU。",
+      "domestic_product_url": "https://item.jd.com/100328240478.html",
+      "item_id": "100328240478",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "无线外设",
+        "8K回报率（京东标题）",
+        "接收器/固件兼容性待实测"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C07",
+      "candidate_sku_id": "C07-O1",
+      "brand": "WOB",
+      "model": "Rainy75",
+      "exact_variant": "〖新品〗秘银-阳极-220目-雪顶芒芒轴",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东机械键盘榜TOP1，已有20000人评论；可见评价指出电源开关操作麻烦、无线接收器无键盘内收纳。",
+      "domestic_selection_rule": "满足C07机会规则：机械键盘子类TOP3、评论数>=10000且有具体使用反馈。",
+      "domestic_product_url": "https://item.jd.com/10222576613740.html",
+      "item_id": "10222576613740",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "三模连接（京东标题）",
+        "无线接收器收纳问题（用户评价）",
+        "电池/固件细节未核验"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "category_id": "C08",
+      "candidate_sku_id": "C08-H1",
+      "brand": "Xiaomi",
+      "model": "小米手环11",
+      "exact_variant": "银色；榜单未写“标准版”，且TOP2另列“NFC版银色”，暂按非NFC版记录",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "同一已打开跨品牌智能手环榜TOP1，标题为“小米手环11 银色”，已有100000人评论；TOP2另列“NFC版 银色”。",
+      "domestic_selection_rule": "满足C08头部规则：同榜TOP10且评论数>=100000；为榜位最高SKU。",
+      "domestic_product_url": "https://item.jd.com/100307274263.html",
+      "item_id": "100307274263",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "可穿戴电池设备",
+        "NFC状态未核验",
+        "手机App/系统兼容性待核验"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_EDITION; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C08",
+      "candidate_sku_id": "C08-H2",
+      "brand": "Huawei",
+      "model": "华为手环 11 Pro",
+      "exact_variant": "NFC 羽砂黑 铝合金表壳",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "同一已打开跨品牌智能手环榜TOP7，明确写“手环11ProNFC羽砂黑铝合金表壳”，已有100000人评论；为榜内首个不同于小米的品牌SKU。",
+      "domestic_selection_rule": "满足C08头部规则：同榜TOP10且评论数>=100000；为首个不同品牌SKU。",
+      "domestic_product_url": "https://item.jd.com/100326342022.html",
+      "item_id": "100326342022",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "磁吸充电",
+        "BT 6.0/BLE",
+        "5ATM",
+        "HarmonyOS 2+/Android 9+/iOS 13+兼容要求"
+      ],
+      "verification_status": "VERIFIED_LISTING; PROVISIONAL_OFFICIAL_NFC_DETAIL; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C08",
+      "candidate_sku_id": "C08-O1",
+      "brand": "Keep",
+      "model": "B5",
+      "exact_variant": "黑色硅胶表带版",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "已打开京东手环榜TOP4，已有20000人评论；可见评价称“功能齐全，中学生适用”。",
+      "domestic_selection_rule": "满足C08机会规则：非两头部品牌、榜内TOP5、评论数>=20000且有明确使用场景反馈。",
+      "domestic_product_url": "https://item.jd.com/100205242492.html",
+      "item_id": "100205242492",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "可穿戴电池设备",
+        "手机App/系统兼容性待核验"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "category_id": "C09",
+      "candidate_sku_id": "C09-H1",
+      "brand": "Xiaomi",
+      "model": "小米智能摄像机 4",
+      "exact_variant": "室内云台 800万像素 4K",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东监控摄像头榜TOP1，已有2000000人评论。",
+      "domestic_selection_rule": "满足C09头部规则：摄像头子类榜TOP1且评论数>=20000。",
+      "domestic_product_url": "https://item.jd.com/100201209046.html",
+      "item_id": "100201209046",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "室内网络摄像头",
+        "手机远程/账号与固件依赖",
+        "隐私/本地网络兼容性待实测"
+      ],
+      "verification_status": "VERIFIED_LISTING; PROVISIONAL_OFFICIAL_SPEC; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C09",
+      "candidate_sku_id": "C09-H2",
+      "brand": "Xiaomi",
+      "model": "小米智能门锁 4 Pro 双摄版",
+      "exact_variant": "双摄/人脸/掌静脉/猫眼大屏",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东智能锁榜TOP1，已有20000人评论；小米中国官网存在同名“双摄版”产品页。",
+      "domestic_selection_rule": "满足C09头部规则：智能锁子类榜TOP1且评论数>=20000。",
+      "domestic_product_url": "https://item.jd.com/100285245906.html",
+      "item_id": "100285245906",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; item_shell_only; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "门体/锁体安装兼容性待核验",
+        "人脸/掌静脉/双摄隐私与固件依赖待实测",
+        "供电细节未核验"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "category_id": "C09",
+      "candidate_sku_id": "C09-O1",
+      "brand": "Aqara",
+      "model": "妙控开关 S1E",
+      "exact_variant": "皎月白；型号 CJPKG01LM",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东中控开关榜TOP8，已有20000人评论；国内社区长文有实际安装与生态使用讨论。",
+      "domestic_selection_rule": "满足C09机会规则：中控开关榜TOP10、评论数>=5000且有国内长文/使用证据。",
+      "domestic_product_url": "https://item.jd.com/100048666759.html",
+      "item_id": "100048666759",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; exact_item_page_content_partly_dynamic; logged_out",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "220V~50Hz",
+        "2.4GHz Wi-Fi",
+        "需零线（社区实装证据）",
+        "HomeKit/Aqara/米家生态兼容性待版本实测"
+      ],
+      "verification_status": "VERIFIED_EXACT_LISTING_AND_OFFICIAL_MODEL; AUTHENTICATED DATA REQUIRED(price,seller_id)",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S12"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_670c477052e903b1f5f.html",
+      "title": "京东自营外设排行榜",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K10", "K11"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/phb/key_6705f549fec7a417e79.html",
+      "title": "电脑键盘机械键盘排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02", "K10"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.logitechg.com/zh-cn/shop/p/g305-lightspeed-wireless-gaming-mouse",
+      "title": "罗技 G304 LIGHTSPEED 无线游戏鼠标",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.jd.com/phb/key_652a4d4ca815523bd8e.html",
+      "title": "比能器械训练智能手环排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04", "K10", "K11"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://consumer.huawei.com/cn/wearables/band11-pro/specs/",
+      "title": "华为手环 11 Pro 规格参数",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/phb/652a24b4d7a8da0a4e7.html",
+      "title": "爱魔客有氧锻炼智能手环品牌排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06", "K10"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.jd.com/phb/key_6529b38862bab0717b8.html",
+      "title": "监控摄象头排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07", "K10", "K11"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_9855f843e2d28543b4f1.html",
+      "title": "智能锁排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07", "K10", "K11"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.mi.com/xiaomi-smartlock-4-pro-dual-camera",
+      "title": "小米智能门锁 4 Pro 双摄版",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.jd.com/phb/key_9855fa5990a5ecbe2c79.html",
+      "title": "中控开关排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08", "K10"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.aqara.cn/Smart-Magic-Switch-S1E_spec",
+      "title": "妙控开关 S1E｜产品参数｜Aqara 全屋智能",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://post.smzdm.com/p/a4p04rl8/",
+      "title": "原来智能开关也可以这么好玩，Aqara妙控开关S1E体验！",
+      "published_at": "2023-06-26",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K09"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "C07头部代理中，G304黑色在京东自营外设榜TOP6、约200万评论；雷蛇毒蝰V4 Pro白色TOP2、约20万评论。",
+      "classification": "FACT",
+      "source_ids": ["S01"],
+      "confidence": "high",
+      "counterevidence": "榜单为平台动态榜，不等同于全市场销量或份额。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "Rainy75指定秘银/阳极/220目/雪顶芒芒轴版本在京东机械键盘榜TOP1、约2万评论，且有明确负面使用反馈。",
+      "classification": "FACT",
+      "source_ids": ["S02"],
+      "confidence": "high",
+      "counterevidence": "评论量是平台累计评论口径，不是已核验成交量。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "罗技中国页确认G304为LIGHTSPEED无线鼠标，HERO 200-12000 DPI，单节AA电池官方标称续航250小时。",
+      "classification": "FACT",
+      "source_ids": ["S03"],
+      "confidence": "high",
+      "counterevidence": "官方页只证明规格与存在，不证明国内销量。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "同一已打开跨品牌智能手环榜中，小米手环11银色TOP1、约10万评论；华为手环11 Pro NFC羽砂黑TOP7、约10万评论，且是榜内首个不同于小米的品牌SKU。",
+      "classification": "FACT",
+      "source_ids": ["S04"],
+      "confidence": "high",
+      "counterevidence": "榜名口径较窄且平台算法未公开，不能直接推断全市场份额。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "华为官方规格页确认手环11 Pro羽砂黑铝合金、1.62英寸AMOLED、5ATM、BT6.0/BLE及HarmonyOS/Android/iOS要求。",
+      "classification": "FACT",
+      "source_ids": ["S05"],
+      "confidence": "high",
+      "counterevidence": "该官方规格页标题是11 Pro，未在已读页面中单独标注NFC版本。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Keep B5黑色硅胶表带版在已打开京东手环榜TOP4、约2万评论，并有“中学生适用”的消费反馈。",
+      "classification": "FACT",
+      "source_ids": ["S06"],
+      "confidence": "medium",
+      "counterevidence": "榜单名称口径较窄，不能外推为全可穿戴市场头部。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "小米智能摄像机4在京东摄像头榜TOP1、约200万评论；小米智能门锁4 Pro双摄版在智能锁榜TOP1、约2万评论。",
+      "classification": "FACT",
+      "source_ids": ["S07", "S08", "S09"],
+      "confidence": "high",
+      "counterevidence": "评论量不是成交量；摄像机4的品牌官方精确规格页本轮未核验。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "Aqara S1E皎月白在京东中控开关榜TOP8、约2万评论；官方参数确认型号CJPKG01LM、220V~50Hz、2.4GHz Wi-Fi。",
+      "classification": "FACT",
+      "source_ids": ["S10", "S11"],
+      "confidence": "high",
+      "counterevidence": "榜单不能证明当前销量；安装线路兼容性需单独核验。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "2023-06-26的S1E社区实装文显示需零线，并记录网络/生态自动化限制讨论；文章同时披露商品由什么值得买提供并邀请评测。",
+      "classification": "FACT",
+      "source_ids": ["S12"],
+      "confidence": "medium",
+      "counterevidence": "来源较旧且带产品提供/邀测关系，只用作机会与反向证据，不作2026销量证明。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "本轮已打开的京东榜单在未登录状态多只显示“¥”而无数值，且页面提示缓存/更新可能造成价格异常，因此未把搜索摘要或空白价位当作当前价格。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S04", "S06", "S07", "S08", "S10"],
+      "confidence": "high",
+      "counterevidence": "授权登录态或结算页可能展示可核验数字，需后续补证。"
+    },
+    {
+      "claim_id": "K11",
+      "claim": "本轮“domestic_head”是国内平台榜位与评论规模的预冻结抽样代理，不是市场份额结论。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S04", "S07", "S08"],
+      "confidence": "high",
+      "counterevidence": "若后续取得平台成交量或第三方全市场份额，应重新校准头部定义。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个SKU的当前普通价、会员价、定向券、国补/补贴、seller_id需在授权登录态分别核验；本轮不使用搜索摘要价格。",
+    "C08-H1小米手环11银色：同榜TOP2另列“NFC版银色”，但TOP1标题本身未写“标准版”，故非NFC/标准版判断仍标PROVISIONAL。",
+    "C08-H2的NFC字样由京东精确标题确认，但已读华为官方规格页仅标“手环11 Pro”，NFC细节需官方SKU级补证。",
+    "C07-H2雷蛇毒蝰V4 Pro与C09-H1小米智能摄像机4的中国大陆官方SKU级深层规格本轮未补齐；不影响保留候选。",
+    "京东榜单算法、排名刷新机制、评论数是否跨变体合并未公开到可据此推算销量的程度。",
+    "S1E社区长文发布于2023-06-26，2026年的生态/固件行为需实测复核；可行性标记不作为排除条件。",
+    "retrieved_at保持null：未虚构精确检索时间，仅记录observation_date=2026-10-06。"
+  ]
+}
+```

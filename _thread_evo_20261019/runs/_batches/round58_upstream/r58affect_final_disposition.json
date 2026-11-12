@@ -1,0 +1,95 @@
+{
+  "status": "archive",
+  "tag": "r58affect",
+  "base": "qu",
+  "checkpoint_only": true,
+  "quick": {
+    "tag": "r58affect",
+    "base": "qu",
+    "complete": 4,
+    "pending": [],
+    "wins": 0,
+    "no_regress": 0,
+    "net_sums": {
+      "alone": -24,
+      "lean": 22,
+      "plain": -36,
+      "cover": -30
+    },
+    "pass": false,
+    "cannot_reach_3_wins": true,
+    "rows": [
+      {
+        "rid": "v6b3_op60_g6_r58affect_vsqu_newX",
+        "output_sha256": "05de3543b85df03e98a6f5c5bb398704b60a476cdb7cf813aa813db593c9050e",
+        "input_sha256": "8f22c1c6860d32f0a3df249a2cf9db59ffc3c990c6387fcd0989bf1f46840076",
+        "w": "op60",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -4,
+          "lean": 6,
+          "plain": -14,
+          "cover": -10
+        }
+      },
+      {
+        "rid": "v6b3_op60_g56_r58affect_vsqu_newY",
+        "output_sha256": "a0f605dbe6fe0e1712cee28ba57d932be2751c140392b422510d2fea6ac81fbe",
+        "input_sha256": "b324df35799b823cd418551f8c36a1c65c27f9ce3068046a6612a304d7c4bfdd",
+        "w": "op60",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -4,
+          "lean": 6,
+          "plain": -12,
+          "cover": -2
+        }
+      },
+      {
+        "rid": "v6b3_op61_g6_r58affect_vsqu_newY",
+        "output_sha256": "3db29e7b4a9743e8c92fd16e0afd5a626cb46cacc043b2ac4d188d011d207599",
+        "input_sha256": "c3babba2099e2fb57e07a7122b8c5d35f294aebb61f56a0e5378a1bb587d0d9a",
+        "w": "op61",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -9,
+          "lean": 5,
+          "plain": -9,
+          "cover": -7
+        }
+      },
+      {
+        "rid": "v6b3_op61_g56_r58affect_vsqu_newX",
+        "output_sha256": "ab50ec355d944aff654aaa29c4382774668e94eb4f0aade1e25626e5b8060934",
+        "input_sha256": "3ffdae1b209531505ccb7559dc1d76299577802911bdb95771c9a9f47391f585",
+        "w": "op61",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -7,
+          "lean": 5,
+          "plain": -1,
+          "cover": -11
+        }
+      }
+    ]
+  },
+  "reason": "Multiple failed original quick conditions; no near-pass repair. No floors/remaining4/downstream and no DAG promotion. Upstream affect simplification lost concrete causal transitions, concurrent feelings and late progress.",
+  "source_output_hashes": {
+    "v6b3_op60_g6_r58affect_vsqu_newX": "05de3543b85df03e98a6f5c5bb398704b60a476cdb7cf813aa813db593c9050e",
+    "v6b3_op60_g56_r58affect_vsqu_newY": "a0f605dbe6fe0e1712cee28ba57d932be2751c140392b422510d2fea6ac81fbe",
+    "v6b3_op61_g6_r58affect_vsqu_newY": "3db29e7b4a9743e8c92fd16e0afd5a626cb46cacc043b2ac4d188d011d207599",
+    "v6b3_op61_g56_r58affect_vsqu_newX": "ab50ec355d944aff654aaa29c4382774668e94eb4f0aade1e25626e5b8060934"
+  }
+}

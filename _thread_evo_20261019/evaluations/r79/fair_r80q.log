@@ -1,0 +1,27 @@
+[v6b3_op60_g56_r80q_vsr78a_newX] ok 349s 13674 chars
+[v6b3_op61_g6_r80q_vsr78a_newX] ok 277s 12617 chars
+[v6b3_op60_g6_r80q_vsr78a_newY] ok 295s 11370 chars
+[v6b3_op60_g6_r80q_vsr78a_newX] FAILED rc=1 282s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T080259894307Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[v6b3_op61_g56_r80q_vsr78a_newX] ok 282s 11412 chars
+[v6b3_op60_g56_r80q_vsr78a_newY] ok 299s 11585 chars
+[v6b3_op61_g6_r80q_vsr78a_newY] ok 424s 10873 chars
+[v6b3_op61_g56_r80q_vsr78a_newY] FAILED rc=1 334s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T080706522723Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[v6b3_op60_g6_r80q_vsr78a_newX] ok 301s 10558 chars
+[v6b3_op61_g56_r80q_vsr78a_newY] FAILED rc=1 304s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T081445431338Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+GPT3 STOPPED: 1 in a row / 3 total failures (last v6b3_op61_g56_r80q_vsr78a_newY)
+[v6b3_op61_g56_r80q_vsr78a_newY] gpt4 临时失败，这次改走 gpt3
+[v6b3_op61_g56_r80q_vsr78a_newY] FAILED rc=1 2s 'ude\\\\gpt2agent-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T082013721877Z", "submitted": true, "message": "CONVERSATION_FAILED: ChatGPT Pro returned HTTP 429."}\r\n'
+GPT3 STOPPED: protection/limit signal at v6b3_op61_g56_r80q_vsr78a_newY
+[v6b3_op61_g56_r80q_vsr78a_newY] SKIPPED (protection/limit signal at v6b3_op61_g56_r80q_vsr78a_newY)
+[v6b3_op61_g56_r80q_vsr78a_newY] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[v6b3_op61_g56_r80q_vsr78a_newY] SKIPPED (冷却至 2026-11-06T08:20:50.823018+00:00: CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'sh', '-c', 'test -f /app/state/music-result-spool-v1/b11228030c244448df54/request.json && echo y || echo n']))
+[v6b3_op61_g56_r80q_vsr78a_newY] ok 264s 11440 chars
+r80q 未过 0/8 不退步 0 {'alone': -89, 'lean': -83, 'plain': -108, 'cover': 39}
+  op60 g6 newX 旧胜 退步 {'alone': -9, 'lean': -12, 'plain': -14, 'cover': -6}
+  op60 g6 newY 旧胜 退步 {'alone': -12, 'lean': -12, 'plain': -14, 'cover': -2}
+  op60 g56 newX 旧胜 退步 {'alone': -12, 'lean': -12, 'plain': -14, 'cover': 3}
+  op60 g56 newY 旧胜 退步 {'alone': -12, 'lean': -12, 'plain': -14, 'cover': 0}
+  op61 g6 newX 旧胜 退步 {'alone': -13, 'lean': -9, 'plain': -13, 'cover': 11}
+  op61 g6 newY 旧胜 退步 {'alone': -9, 'lean': -13, 'plain': -13, 'cover': 13}
+  op61 g56 newX 旧胜 退步 {'alone': -9, 'lean': -5, 'plain': -13, 'cover': 9}
+  op61 g56 newY 旧胜 退步 {'alone': -13, 'lean': -8, 'plain': -13, 'cover': 11}

@@ -1,0 +1,527 @@
+{
+  "job_id": "W2-C-batch02",
+  "parent_replicate": "W2-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C04",
+      "name": "迷你PC",
+      "scope_anchor": "迷你PC整机/准系统",
+      "domestic_tier_rule": {
+        "low": "公开普通价<1000元",
+        "mid": "公开普通价1000-2999元",
+        "high": "公开普通价>=3000元"
+      },
+      "tier_assignment_status": "NOT_ASSIGNED_PRICE_UNVERIFIED"
+    },
+    {
+      "category_id": "C05",
+      "name": "PC组件、存储、网络设备",
+      "scope_anchor": "本批固定为2TB M.2 NVMe SSD，避免跨子类不可比",
+      "domestic_tier_rule": {
+        "low": "公开普通价<500元",
+        "mid": "公开普通价500-999元",
+        "high": "公开普通价>=1000元"
+      },
+      "tier_assignment_status": "NOT_ASSIGNED_PRICE_UNVERIFIED"
+    },
+    {
+      "category_id": "C06",
+      "name": "音频",
+      "scope_anchor": "个人无线耳机",
+      "domestic_tier_rule": {
+        "low": "公开普通价<300元",
+        "mid": "公开普通价300-799元",
+        "high": "公开普通价>=800元"
+      },
+      "tier_assignment_status": "NOT_ASSIGNED_PRICE_UNVERIFIED"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C04",
+      "candidate_sku_id": "C04-H01",
+      "brand": "铭凡 MINISFORUM",
+      "model": "UM870 Plus",
+      "exact_variant": "AMD Ryzen 7 8745H, 32G+1T",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开列表显示该精确32G+1T条目为自营且10000+评论。",
+      "domestic_selection_rule": "在公开迷你PC列表中选取精确可定义、自营、评价>=10000的完整配置；不把评价数解释为销量。",
+      "domestic_product_url": "https://item.jd.com/100200290366.html",
+      "item_id": "100200290366",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C04",
+      "candidate_sku_id": "C04-H02",
+      "brand": "铭凡 MINISFORUM",
+      "model": "UM880Plus",
+      "exact_variant": "AMD Ryzen 7 8845HS, 32G+1T",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开列表显示该精确32G+1T条目为自营且10000+评论。",
+      "domestic_selection_rule": "同C04-H01；选择公开页满足评价阈值且精确配置可定义的另一款。",
+      "domestic_product_url": "https://item.jd.com/100197021530.html",
+      "item_id": "100197021530",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C04",
+      "candidate_sku_id": "C04-O01",
+      "brand": "天钡",
+      "model": "GEM12+",
+      "exact_variant": "R7 PRO 8845HS，带副屏及指纹，32G+1TB PCIe4 SSD",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开列表为2000+评论；近期社区存在8845HS GEM12+ PRO与SER8的直接对比。",
+      "domestic_selection_rule": "公开商品条目可定义且有>=2000评论，同时存在近期中文社区的同系列/同CPU实测讨论。",
+      "domestic_product_url": "https://item.jd.com/10196860564274.html",
+      "item_id": "10196860564274",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [],
+      "verification_status": "PROVISIONAL_MODEL_SUFFIX",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "candidate_sku_id": "C05-H01",
+      "brand": "致态 ZHITAI",
+      "model": "TiPlus7100s",
+      "exact_variant": "2TB NVMe M.2 SSD",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东2TB SSD公开排序页中该条目500000+评论、自营。",
+      "domestic_selection_rule": "先固定2TB M.2 NVMe；在打开的京东排序页中按页面顺序取前两个精确可定义、自营且评价>=500000的合格条目。",
+      "domestic_product_url": "https://item.jd.com/100293889522.html",
+      "item_id": "100293889522",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "host_M.2_NVMe_compatibility_required"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "candidate_sku_id": "C05-H02",
+      "brand": "三星 Samsung",
+      "model": "990 EVO Plus",
+      "exact_variant": "2TB, PCIe 4.0 x4 / PCIe 5.0 x2, 标称读取7250MB/s",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "同一京东公开排序页显示该2TB条目2000000+评论、自营。",
+      "domestic_selection_rule": "同C05-H01；按已打开排序页顺序取第二个满足规则的合格条目，不按国际知名度筛选。",
+      "domestic_product_url": "https://item.jd.com/100144705326.html",
+      "item_id": "100144705326",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "host_M.2_NVMe_compatibility_required"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "category_id": "C05",
+      "candidate_sku_id": "C05-O01",
+      "brand": "梵想 FANSXIANG",
+      "model": "S790",
+      "exact_variant": "2TB PCIe 4.0 x4 TLC；京东库存对应P/N/主控未核验",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开2TB条目500000+评论；2026社区评测显示新版2TB样品P/N IP480C02TBG3M6BQS、IG5222主控，并明确产品存在多个版本。",
+      "domestic_selection_rule": "选取有强国内购买代理、且近期社区揭示新硬件修订/差异化信息的型号，版本未桥接前保持PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100052237871.html",
+      "item_id": "100052237871",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "host_M.2_NVMe_compatibility_required",
+        "hardware_revision_must_be_verified"
+      ],
+      "verification_status": "PROVISIONAL_HARDWARE_REVISION",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "candidate_sku_id": "C06-H01",
+      "brand": "华为 HUAWEI",
+      "model": "FreeBuds 7i",
+      "exact_variant": "贝母白",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页面显示精确颜色条目100000+评论、自营。",
+      "domestic_selection_rule": "个人无线耳机中，精确型号/颜色可定义、自营且公开评价>=100000，作为头部购买热度代理。",
+      "domestic_product_url": "https://item.jd.com/100269735192.html",
+      "item_id": "100269735192",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "contains_battery",
+        "ecosystem_feature_compatibility_unverified"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "candidate_sku_id": "C06-H02",
+      "brand": "漫步者 EDIFIER",
+      "model": "X3 Pro",
+      "exact_variant": "秘夜蓝",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开页面显示精确颜色条目500000+评论、自营。",
+      "domestic_selection_rule": "同C06-H01；满足精确可定义、自营、公开评价>=100000。",
+      "domestic_product_url": "https://item.jd.com/100154257138.html",
+      "item_id": "100154257138",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "contains_battery",
+        "ecosystem_feature_compatibility_unverified"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C06",
+      "candidate_sku_id": "C06-O01",
+      "brand": "漫步者 EDIFIER",
+      "model": "LolliClip SE",
+      "exact_variant": "云霜金，耳夹式开放耳",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东自营漫步者排行榜公开页显示TOP5、5000人评论；2026-08近期中文社区有两周使用体验及明显互动。",
+      "domestic_selection_rule": "近90天新品：品牌公开自营榜TOP10且有明确中文社区实测互动，即使累计评价低于成熟头部也可进入机会层。",
+      "domestic_product_url": "https://item.jd.com/100279374489.html",
+      "item_id": "100279374489",
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "contains_battery",
+        "open_ear_no_active_noise_cancellation"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING_VARIANT",
+      "source_ids": [
+        "S08",
+        "S09",
+        "S10"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/brand/6709a657f91d6b655ac.html?electedExtAttrSet=3785,&extAttrValue=expand_name,@94643::3785&sort_type=sort_redissale_desc",
+      "title": "京东迷你PC/铭凡公开商品列表",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01",
+        "K02",
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://post.smzdm.com/p/a26m2kw7/",
+      "title": "R7 8845HS迷你主机怎么选？零刻SER8和天钡GEM12+ PRO深度对比",
+      "published_at": "2026-06-04",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/hotitem/670f1da0b8ac9e391bc.html",
+      "title": "京东2TB SSD公开排序页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04",
+        "K05",
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/p/avvow5w9/",
+      "title": "新版梵想S790评测：升级英韧IG5222主控，功耗降低性能提升",
+      "published_at": "2026-01-29",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06",
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://post.smzdm.com/p/am8ovmzd/",
+      "title": "梵想S790旧版本相关实测",
+      "published_at": "2023-02-21",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/brand/13765a528fdcd668a60e2.html",
+      "title": "京东华为耳机公开商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.jd.com/brand/652002dd75e78a5e161.html",
+      "title": "京东漫步者公开商品页",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_652b16b731e3578902c.html",
+      "title": "京东自营漫步者排行榜",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://post.smzdm.com/p/a26z6722/",
+      "title": "用了两周才敢聊：四百元档位卷王LolliClip SE相关体验",
+      "published_at": "2026-08-18",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://post.smzdm.com/p/a70k39o5/",
+      "title": "漫步者LolliClip SE深度体验",
+      "published_at": "2026-08-17",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://mall.jd.com/view_page-243051856.html",
+      "title": "致态京东自营旗舰店公开页面",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K11"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "京东公开页显示铭凡UM870 Plus 32G+1T和UM880Plus 32G+1T均为自营且10000+评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "评价量不是精确成交量，且可能存在跨版本聚合。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "在本批公开证据框架下，UM870 Plus与UM880Plus可作为C04国内头部购买热度代理样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "medium",
+      "counterevidence": "未获得登录态成交件数，也未覆盖所有国内渠道。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "天钡GEM12+ 8845HS有京东购买热度代理及近期中文社区对比证据，但GEM12+与GEM12+ PRO后缀尚未完成精确桥接。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区文章的PRO后缀可能对应不同版本，因此候选保持PROVISIONAL。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "固定2TB M.2 NVMe子市场后，公开京东页显示TiPlus7100s 2TB为500000+评论，990 EVO Plus 2TB为2000000+评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S03"
+      ],
+      "confidence": "high",
+      "counterevidence": "评论数不等于当前期销量或市场份额。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "TiPlus7100s和990 EVO Plus可作为C05本批2TB NVMe子市场的国内头部代理样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S03"
+      ],
+      "confidence": "medium",
+      "counterevidence": "C05其余组件、网络设备未纳入该同质化子样本。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "S790 2TB有强公开购买热度代理，但2026社区实测明确表明该营销型号存在硬件版本变化。",
+      "classification": "FACT",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "京东公开商品标题未暴露当前库存P/N和主控，无法证明与评测样品完全一致。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "旧版S790的历史测试与2026新版采用不同硬件信息，因此不能把旧版可靠性结果无条件外推到当前版本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "confidence": "high",
+      "counterevidence": "若后续取得当前库存P/N，可缩小版本不确定性。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "公开京东页显示FreeBuds 7i贝母白为100000+评论、自营；漫步者X3 Pro秘夜蓝为500000+评论、自营。",
+      "classification": "FACT",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "confidence": "high",
+      "counterevidence": "仍属于评论量购买代理，不是成交件数。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "LolliClip SE云霜金在京东自营漫步者榜单为TOP5、5000人评论，同时存在2026-08近期中文社区实测互动。",
+      "classification": "FACT",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "新品累计评论显著低于成熟头部，榜位也可能随时间更新。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "LolliClip SE开放式形态没有主动降噪，并存在嘈杂环境与漏音方面的使用限制。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "medium",
+      "counterevidence": "这是社区体验结论，不替代标准化声学实验。"
+    },
+    {
+      "claim_id": "K11",
+      "claim": "本轮公开京东页面没有稳定提供可核验的数值普通价，因此候选价格保持null。",
+      "classification": "FACT",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "high",
+      "counterevidence": "登录态、地区化页面或客户端可能显示价格，但本轮未将其冒充为已核验数据。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：九个候选的稳定普通价、会员价、定向券和可比成交指标尚未取得。",
+    "九个候选的seller_id未从当前公开渲染中可靠核验，保持null。",
+    "C04天钡GEM12+与社区所称GEM12+ PRO的型号后缀/版本关系需要冻结前核对。",
+    "C05梵想S790需要取得当前京东库存P/N、主控和闪存版本，才能解除PROVISIONAL_HARDWARE_REVISION。",
+    "C05本批仅覆盖2TB M.2 NVMe SSD子市场，不外推至显卡、内存、路由器等其他C05子类。",
+    "C06本批聚焦个人无线耳机，不外推至音箱、声卡、桌面音频等其他C06子类。",
+    "跨境运输、海外价格、海外销量、Temu/AliExpress覆盖均按任务要求未研究，也未用于删选。"
+  ]
+}

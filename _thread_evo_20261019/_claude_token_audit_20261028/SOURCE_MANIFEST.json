@@ -1,0 +1,76 @@
+{
+  "audit_scope": "7c623294-a1ea-40eb-b513-ae6588ad2c39",
+  "snapshot_utc": "2026-10-28T23:55:57.093144+00:00",
+  "scope_timezone": "America/New_York",
+  "token_sources": [
+    {
+      "owner": "main",
+      "original_path": "C:\\Users\\zuoyi\\.claude\\projects\\D--musicclaude\\7c623294-a1ea-40eb-b513-ae6588ad2c39.jsonl",
+      "bytes": 89438498,
+      "sha256": "65eaf449648f47d9f1f011e640e203702f6fa92f59ef86d8e71fd760d26d0771",
+      "records": 42219
+    },
+    {
+      "owner": "child_op61",
+      "original_path": "C:\\Users\\zuoyi\\.claude\\projects\\D--musicclaude\\ee4b30f9-1950-4d0b-850b-8f19e4aacb67.jsonl",
+      "bytes": 2214595,
+      "sha256": "1d4329cfdca3d1df003074b82a7daa7811b36695deca538ed717cfb8f4dfadeb",
+      "records": 1044
+    },
+    {
+      "owner": "agent-a3e59548f994d23d0",
+      "original_path": "C:\\Users\\zuoyi\\.claude\\projects\\D--musicclaude\\7c623294-a1ea-40eb-b513-ae6588ad2c39\\subagents\\agent-a3e59548f994d23d0.jsonl",
+      "bytes": 762988,
+      "sha256": "c545177c7bbeebc11318807cf9ba40da241e286b41825e26ffe7b5f10dd4e94e",
+      "records": 102
+    },
+    {
+      "owner": "agent-a832822540081130c",
+      "original_path": "C:\\Users\\zuoyi\\.claude\\projects\\D--musicclaude\\7c623294-a1ea-40eb-b513-ae6588ad2c39\\subagents\\agent-a832822540081130c.jsonl",
+      "bytes": 883281,
+      "sha256": "1fb8ce338ab8eb2f7843f206b41c180963c70645b9d45924f892921169e261b7",
+      "records": 195
+    }
+  ],
+  "expected_measured_totals": {
+    "requests": 3903,
+    "tokens": {
+      "input_tokens": 9546,
+      "cache_read_input_tokens": 1684807111,
+      "cache_creation_input_tokens": 15719382,
+      "output_tokens": 2809239
+    },
+    "api_equivalent_usd": 514.733106165
+  },
+  "rates_asof": "2026-10-28",
+  "rates_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "rates_per_million": {
+    "opus_5_5": {
+      "input": 4,
+      "output": 20,
+      "cache_read": 0.2,
+      "write_5m": 5,
+      "write_1h": 8
+    },
+    "haiku_5_5_prompt_le_100000": {
+      "input": 0.1,
+      "output": 0.5,
+      "cache_read": 0.01,
+      "write_5m": 0.125,
+      "write_1h": 0.2
+    },
+    "haiku_5_5_prompt_gt_100000": {
+      "input": 0.5,
+      "output": 2.5,
+      "cache_read": 0.05,
+      "write_5m": 0.625,
+      "write_1h": 1
+    }
+  },
+  "scope_exclusions": [
+    "fork 269b7c69-fa4b-4c04-bf55-382b4968bb56 contains 378 copied IDs, no new IDs",
+    "unmatched attempts: no imputations",
+    "aggregate Haiku checkpoint residual: separate",
+    "other independent projects/sessions not spawned by target"
+  ]
+}

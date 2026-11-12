@@ -1,0 +1,18 @@
+你是音乐事实核查员，不评价文学质量。附件 {FILE} 是一篇写 {WORK}（全曲{TOTAL}小节）的聆听文章。
+
+请找出文中所有**可以核查的音乐事实陈述**：带小节位置或明确指向某处的主题/动机出现与回归、调性与转调、和声（终止、悬置、不协和）、织体与伴奏型、音区、力度与表情记号、速度变化、段落起止等。纯比喻和情绪解释不算。
+
+逐条核查。可以联网查阅乐谱（如 IMSLP 上的初版或通行版本）和已发表的分析（如 Rink、Kopp、Samson 等），也可依据你确有把握的乐谱知识；拿不准就判 unverifiable，不要猜。位置偏差一两小节、只是说法宽松而不影响听感理解的，判 approx。
+
+只输出一个 ```json 代码块：
+```json
+{
+ "claims": [
+  {"quote": "原文短引", "measures": "文中所指小节", "verdict": "correct|approx|wrong|unverifiable", "severity": "high|medium|low", "note": "依据或错在哪里"}
+ ],
+ "invented_bars_or_sections": ["文中把不存在的小节或段落当作实际音乐来写的地方（若无则为空）"],
+ "missed_salient_events": ["文中对应段落明显漏掉、而听者很容易注意到的音乐事件（最多5条）"],
+ "summary": {"correct": 0, "approx": 0, "wrong": 0, "unverifiable": 0, "high_severity_wrong": 0}
+}
+```
+severity：wrong 且会让读者对这一刻的听感产生误解的为 high；只是术语或位置小误为 low。

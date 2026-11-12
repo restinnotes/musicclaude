@@ -1,0 +1,53 @@
+{
+  "started_utc": "2026-10-06T18:58:37.981002+00:00",
+  "finished_utc": "2026-10-06T18:59:44.849406+00:00",
+  "condition": "fresh native authentication plus native device cookie only; original client context retained; Chrome 153; Los Angeles; reused existing clone",
+  "memory": {
+    "minimum_windows_available_gib": 7.37,
+    "minimum_windows_commit_available_gib": 0.042,
+    "memory_samples": 15,
+    "sampling_interval_seconds": 5,
+    "minimum_free_before_probe_gib": 3,
+    "minimum_commit_headroom_before_probe_gib": 1.5,
+    "budget_scope": "one_request_with_existing_browser",
+    "in_flight_generation_automatically_aborted": false
+  },
+  "container": "yi-rca-auth-only-20261006",
+  "run_path": "D:\\musicclaude\\mimic-cli\\runs\\20261006T185837.985264Z-f93d0f00",
+  "exit_code": 1,
+  "assessment": {
+    "expected_answer": 8,
+    "observed_answer": 6,
+    "normal": false,
+    "status": "mismatch",
+    "evidence": [
+      "\\boxed{x=6}",
+      "\\boxed{x=6}"
+    ],
+    "method": "explicit_conclusion_text",
+    "proof_independently_verified": false
+  },
+  "screenshot_evidence": {
+    "directory": "/app/state/probe-artifacts/d1be0565cb304790b9ab28e0ba200613",
+    "stage": "response",
+    "request_id": "d1be0565cb304790b9ab28e0ba200613",
+    "captured_at": 1791313184.200475,
+    "source": "live browser page owned by this standard request",
+    "files": [
+      {
+        "filename": "response-viewport.jpg",
+        "sha256": "db5d06d9aecae94c3c313df79da96ec6e2fa622f3298b6f5626c706d59871c33"
+      },
+      {
+        "filename": "response-full.jpg",
+        "sha256": "db5d06d9aecae94c3c313df79da96ec6e2fa622f3298b6f5626c706d59871c33"
+      }
+    ],
+    "thinking_time_ui_labels": [
+      "Worked for 36s"
+    ],
+    "success": true,
+    "capture_seconds": 0.122
+  },
+  "evidence_complete": true
+}

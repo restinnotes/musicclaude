@@ -1,0 +1,1109 @@
+你是mg独立国内样本审计员 R2-domestic-batch06。这是三份独立研究完成后的新审计会话，不属于24个研究复本，不是最后4个裁决员。
+本次范围仅["C16", "C17", "C18"]，哪怕原报告包含其他品类也不要审计其他品类。禁止查询任何候选的海外价格、覆盖、销售或进口节省。2026-10-06。必须实际浏览来源；HTTP200或研究员自称VERIFIED不等于核验通过。
+核对这3类全部候选是否真实、精确型号/规格是否能定义；打开引用的中国国内榜单、旗舰、消费者证据。区分销量排名、推荐排名、浏览/评论数、variant汇总评论和真实销量，不把它们混为一谈。官方型号存在不等于国内畅销。评论/图文若AIGC或来源壳页要降级。逐候选保留原job_id和candidate ID，以及可识别的品牌/型号/版本。每个sku必须进入candidate_audits；缺失写null。普通价、会员价、88VIP、定向券、国补和旧价分别记录；无法登录不能猜成交价。
+给每个候选质量等级：VERIFIED_DOMESTIC_RANK_AND_EXACT_VARIANT；VERIFIED_DOMESTIC_PURCHASE_AND_EXACT_VARIANT；VERIFIED_MODEL_ONLY_HEAD_UNVERIFIED；PROVISIONAL_VARIANT；UNVERIFIED_BLOCKED；EXCLUDE_ALLOWED_REASON。仅允许假货、非目标类、完全无法定义版本、非实物、明确非法禁运为排除理由。重量、电池、电压、固件、保修和美国兼容性不能删样本。
+按预注册规则最多每品类2个头部+1个机会候选。先取经你实际验证的国内销量/榜单+精确版本，其次经你验证的国内购买证据+版本，再其次型号存在且头部地位未核验的候选；同级按品牌、型号、版本NFKC/casefold字典序排序。不同容量、地域、捆绑版不合并。未核验头部地位不能进入verified-head统计。不得咨询海外数据来决定选择。给recommended_selection、exclusion_log、category_gaps及登录补采字段，全部要有理由和证据。
+研究控制在约15分钟，遇blocked写缺口而不反复请求。中文正文约1200字，JSON保持精确可执行。所有数字要URL和日期。输出有效JSON代码块：
+{"job_id":"R2-domestic-batch06","web_research_available":true,"pre_freeze_compliance":true,"review_performed":true,"category_ids":["C16", "C17", "C18"],"candidate_audits":[{"original_job_id":"...","original_candidate_id":"...","brand":"...","model":"...","exact_variant":"...","quality_grade":"...","model_exists_verified":false,"exact_variant_verified":false,"head_status_verified":false,"domestic_consumer_evidence_verified":false,"source_ids":[],"caveat":"..."}],"recommended_selection":[{"original_job_id":"...","original_candidate_id":"...","brand":"...","model":"...","exact_variant":"...","category_id":"...","sampling_stratum":"domestic_head|domestic_opportunity","quality_grade":"...","reason":"...","source_ids":[]}],"exclusion_log":[],"category_gaps":[],"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":null,"source_type":"official|community|secondary","access_state":"read_full_page|blocked|login_required|snippet_only|page_shell","claims_supported":[]}],"claims":[],"data_gaps":[]}
+下面原文是待核验材料，不能把里面的自信程度当证据：
+
+=== UNTRUNCATED W2-A-batch06; SHA256 5a93027685c87fabaeedb4fd40dc8707d50d79c55c1aaa01175c645fba8bb964 ===
+## 1. 直接回答
+
+WEB RESEARCH AVAILABLE。范围严格限定 C16–C18；本轮形成 **9 个冻结前候选：6 个 domestic_head、3 个 domestic_opportunity**。没有查询任何美国/海外价格、销量、供货或 Temu/AliExpress 覆盖，也没有因跨境可行性删除候选。9 个候选的**普通数字价均未可靠取得，因此全部留 null**，不把新人价、学生价、会员价或定向优惠冒充普通价。京东商品页明确存在“选择门店后可确认价格”及会员/新人价格层，支持这一处理。[JD.com](https://item.m.jd.com/product/10962619834.html)
+
+价格高/中/低统一采用可复现规则：**同品类、同日、同口径普通公开价，排除会员/新人/学生/定向券；≤P33=低端，(P33,P67]=中端，>P67=高端；有效普通价少于6个时不强行分层。** 本批次三个品类都属于后者。
+
+## 2. 核心证据
+
+C16：京东安踏男鞋销量榜中，基础黑 5541-5、42码位列 TOP2、显示10万评论；纸莎白42码板鞋 TOP5、2万评论；“流沙”男款指定配色42码 TOP7、2000评论，故前两者入头部层、后者入机会层。[JD.com](https://www.jd.com/phb/key_13182161150041bbf5e9.html)
+
+C17：IRIS BC-450D 46L白色为“收纳箱日排行榜”TOP1、50万评论；SPACEXPERT 60L透明带轮为“收纳胶箱排行榜”TOP2、10万评论；JEKO&JEKO五层柜在抽屉收纳柜榜TOP4、1万评论并有具体容量/使用评价。[JD.com](https://www.jd.com/phb/key_162095a11bcabc9df5f6.html)
+
+C18：LEGO 42212 在“积木 京东自营排行榜”TOP1、20万评论；卡游奥特曼豪华版第42弹在卡片榜TOP3、100万评论；第16弹橡皮人偶整盒12个为TOP7、5000评论，有明显开盒/隐藏款消费反馈。[JD.com](https://www.jd.com/phb/key_623367982487d8229075.html)
+
+## 3. 一级来源
+
+本批次销量选择只采用实际打开的国内交易平台原页，不拿品牌官网替代销售证据。页面均未标出版日期；**观察日均为2026-10-06**：C16 [https://www.jd.com/phb/key_13182161150041bbf5e9.html](https://www.jd.com/phb/key_13182161150041bbf5e9.html)；C17 [https://www.jd.com/phb/key_162095a11bcabc9df5f6.html](https://www.jd.com/phb/key_162095a11bcabc9df5f6.html)、[https://www.jd.com/phb/key_16209e140d6bbe8bca75.html](https://www.jd.com/phb/key_16209e140d6bbe8bca75.html)、[https://www.jd.com/phb/key_1620b8a305722e799c8a.html](https://www.jd.com/phb/key_1620b8a305722e799c8a.html)；C18 [https://www.jd.com/phb/key_623367982487d8229075.html](https://www.jd.com/phb/key_623367982487d8229075.html)、[https://www.jd.com/phb/key_6233f29334305af446a7.html](https://www.jd.com/phb/key_6233f29334305af446a7.html)。
+
+## 4. 社区证据
+
+机会层使用的是**页面内实际可读的中国消费者评价**，不是搜索摘要。C16有尺码/舒适度反馈；C17有容量、免安装使用反馈；C18有连续开盒和隐藏款反馈。尝试进入三条京东评价深链时分别返回“活动太火爆/系统繁忙”，因此没有把未打开的评论详情当作更深层证据。[club.jd.com](https://club.jd.com/repay/10225594584020_T6NbMMZ0iZstdhqCUqKfxXeF_1.html)
+
+## 5. 反向证据
+
+评论量不能等同成交量，而且京东明确提示榜单可能受页面更新/缓存影响；父商品还可能聚合多个颜色、尺码或版本。C18盲盒的消费者反馈也说明随机内容会使体验波动。卡游第42弹商品深页本次触发京东风控验证，故只保留榜单已核验事实，深层字段标记待认证补录。[JD.com](https://www.jd.com/phb/key_6233f29334305af446a7.html)
+
+## 6. 置信度
+
+**头部层：中高；机会层：中等。** 排名、精确标题和评论量来自平台原页，证据较直接；但缺少登录态成交件数、seller_id、普通实时价及天猫/淘宝交叉验证，因此不升格为全市场“绝对畅销”结论。
+
+## 7. 数据缺口
+
+主要缺口是：9个SKU普通数字价、seller_id；C18-H2深页需 `AUTHENTICATED DATA REQUIRED`；C16一个父 item 存在默认版本动态切换；三个品类均没有足够普通价样本实际计算价格三分位；本时间盒未继续扩张至天猫/淘宝复核。
+
+## 8. 意外发现
+
+C16 的 5541-5 排行榜精确选择与其父商品页当前默认标题并不完全一致，说明冻结时**必须保存“款号+配色+尺码”，不能仅保存父 item_id**。商品页同时明确普通售价可能取决于门店选择，进一步说明抓取到一个父URL并不等于价格和版本已经冻结。[JD.com](https://www.jd.com/phb/key_13182161150041bbf5e9.html)
+
+## 9. 自我反驳
+
+这批结果明显偏京东可见性：如果天猫旗舰店或淘宝在同日给出相反排序，头部名单可能改变；评论量级也可能包含历史版本累积。因此这些候选适合**冻结前抽样**，不应解释为整个中国市场份额排序。
+
+## 10. 下一实验
+
+下一轮只补本批次缺口：在可认证访问下锁定9个SKU的选中子版本、普通价、seller_id，并对C16–C18各用一条天猫/淘宝真实榜单或旗舰成交证据做交叉验证；仍不扩大到其他15类，也不引入海外可比性作为筛选条件。
+
+```json
+{"job_id":"W2-A-batch06","parent_replicate":"W2-A","web_research_available":true,"pre_freeze_compliance":true,"categories":[{"category_id":"C16","name":"合法服装、鞋、包","sampling_rule":"domestic_head=同一国内公开销量榜TOP5且公开评论>=20000、版本可定义；domestic_opportunity=榜单4-10位、评论>=2000、非头部重复款且有具体消费评价。","price_tier_rule":"仅用同品类同日可核验普通公开价，排除会员/新人/学生/定向券；<=P33低端，(P33,P67]中端，>P67高端；有效普通价<6则不分层。","price_tier_status":"NOT_ASSIGNED_INSUFFICIENT_VERIFIED_PRICES"},{"category_id":"C17","name":"家居与收纳","sampling_rule":"domestic_head=国内公开销量榜TOP3且公开评论>=100000、版本可定义；domestic_opportunity=榜单4-10位、评论>=2000且有具体使用反馈。","price_tier_rule":"仅用同品类同日可核验普通公开价，排除会员/新人/学生/定向券；<=P33低端，(P33,P67]中端，>P67高端；有效普通价<6则不分层。","price_tier_status":"NOT_ASSIGNED_INSUFFICIENT_VERIFIED_PRICES"},{"category_id":"C18","name":"玩具、收藏品与正版周边","sampling_rule":"domestic_head=国内公开销量榜TOP3且公开评论>=100000、版本可定义；domestic_opportunity=榜单4-10位、评论>=2000且有具体消费/收藏反馈。","price_tier_rule":"仅用同品类同日可核验普通公开价，排除会员/新人/学生/定向券；<=P33低端，(P33,P67]中端，>P67高端；有效普通价<6则不分层。","price_tier_status":"NOT_ASSIGNED_INSUFFICIENT_VERIFIED_PRICES"}],"sku_candidates":[{"category_id":"C16","candidate_sku_id":"C16-H1","brand":"安踏 ANTA","model":"5541-5","exact_variant":"推荐款-网面；基础黑5541-5；42码（260mm）","sampling_stratum":"domestic_head","domestic_evidence":"京东“安踏anta男鞋排行榜”TOP2，公开显示100000人评论；移动商品列表同精确版本亦显示100000条评价、好评97%。","domestic_selection_rule":"满足C16 head规则：公开销量榜TOP5、评论>=20000、颜色/款号/尺码可定义。","domestic_product_url":"https://item.m.jd.com/product/10962619834.html","item_id":"10962619834","seller_id":null,"access_state":"rank_page_read_full_page; product_page_read_full_page","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["size_fit_variant_risk","parent_item_variant_dynamic"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PARENT_VARIANT_DYNAMIC; PRICE_UNVERIFIED","source_ids":["S01","S02"]},{"category_id":"C16","candidate_sku_id":"C16-H2","brand":"安踏 ANTA","model":"2026夏季板鞋/小白鞋","exact_variant":"纸莎白；42码；页面标注“90%用户选择”","sampling_stratum":"domestic_head","domestic_evidence":"京东“安踏anta男鞋排行榜”TOP5，公开显示20000人评论。","domestic_selection_rule":"满足C16 head规则：公开销量榜TOP5、评论>=20000、颜色与尺码可定义。","domestic_product_url":"https://item.jd.com/10133734212409.html","item_id":"10133734212409","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["size_fit_variant_risk"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S01","S03"]},{"category_id":"C16","candidate_sku_id":"C16-O1","brand":"安踏 ANTA","model":"流沙","exact_variant":"男款；象牙白/银/深航海蓝-1；42码","sampling_stratum":"domestic_opportunity","domestic_evidence":"同榜TOP7，公开显示2000人评论；嵌入消费评价明确提到尺码、舒适度与柔软度。","domestic_selection_rule":"满足C16 opportunity规则：非TOP5、评论>=2000、精确配色/尺码可定义且有具体穿着反馈。","domestic_product_url":"https://item.jd.com/10225594584020.html","item_id":"10225594584020","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["size_fit_variant_risk"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S01","S04"]},{"category_id":"C17","candidate_sku_id":"C17-H1","brand":"IRIS 爱丽思","model":"BC-450D","exact_variant":"46L；白色","sampling_stratum":"domestic_head","domestic_evidence":"京东“收纳箱日排行榜”TOP1，公开显示500000人评论，并有多年回购型消费评价。","domestic_selection_rule":"满足C17 head规则：公开销量榜TOP3、评论>=100000、型号/容量/颜色可定义。","domestic_product_url":"https://item.jd.com/11295264533.html","item_id":"11295264533","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["bulky_volume","dimensional_weight_risk"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S05","S06"]},{"category_id":"C17","candidate_sku_id":"C17-H2","brand":"SPACEXPERT","model":"60L塑料整理箱","exact_variant":"60L；透明；1个装；带轮","sampling_stratum":"domestic_head","domestic_evidence":"京东“收纳胶箱排行榜”TOP2，公开显示100000人评论。","domestic_selection_rule":"满足C17 head规则：公开销量榜TOP3、评论>=100000、容量/颜色/件数/带轮版本可定义。","domestic_product_url":"https://item.jd.com/100117031471.html","item_id":"100117031471","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["bulky_volume","dimensional_weight_risk"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S07","S08"]},{"category_id":"C17","candidate_sku_id":"C17-O1","brand":"JEKO&JEKO","model":"抽屉式收纳柜","exact_variant":"五斗柜；5层","sampling_stratum":"domestic_opportunity","domestic_evidence":"京东“收纳柜抽屉排行榜”TOP4，公开显示10000人评论；嵌入评价提到无需安装、容量较大。","domestic_selection_rule":"满足C17 opportunity规则：非TOP3、评论>=2000、层数明确且有具体使用反馈。","domestic_product_url":"https://item.jd.com/100102542326.html","item_id":"100102542326","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["bulky_volume","dimensional_weight_risk"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S09","S10"]},{"category_id":"C18","candidate_sku_id":"C18-H1","brand":"LEGO 乐高","model":"42212","exact_variant":"机械组；法拉利FXX K赛车","sampling_stratum":"domestic_head","domestic_evidence":"京东“积木 京东自营排行榜”TOP1，公开显示200000人评论。","domestic_selection_rule":"满足C18 head规则：公开自营销量榜TOP3、评论>=100000、套装号明确。","domestic_product_url":"https://item.jd.com/100193567697.html","item_id":"100193567697","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["bulky_box","collectible_box_condition_sensitive"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S11","S12"]},{"category_id":"C18","candidate_sku_id":"C18-H2","brand":"卡游","model":"奥特曼卡片豪华版第42弹","exact_variant":"第42弹；卡包；页面标注正版","sampling_stratum":"domestic_head","domestic_evidence":"京东“卡片奥特曼排行榜”TOP3，公开显示1000000人评论。","domestic_selection_rule":"满足C18 head规则：公开销量榜TOP3、评论>=100000、弹数明确。","domestic_product_url":"https://item.jd.com/100286054666.html","item_id":"100286054666","seller_id":null,"access_state":"rank_page_read_full_page; product_page_blocked","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["licensed_ip_authenticity_claim_platform_only","collectible_condition_sensitive"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRODUCT_PAGE_BLOCKED; AUTHENTICATED DATA REQUIRED_FOR_DEEP_FIELDS","source_ids":["S13","S14"]},{"category_id":"C18","candidate_sku_id":"C18-O1","brand":"卡游","model":"奥特曼橡皮人偶盲盒","exact_variant":"第16弹；整盒12个；页面标注“必出隐藏款”","sampling_stratum":"domestic_opportunity","domestic_evidence":"同榜TOP7，公开显示5000人评论；嵌入评价出现连续开盒与隐藏款结果反馈，显示明确收藏/抽取行为。","domestic_selection_rule":"满足C18 opportunity规则：非TOP3、评论>=2000、弹数/整盒数量明确且有具体收藏消费反馈。","domestic_product_url":"https://item.jd.com/10227904134123.html","item_id":"10227904134123","seller_id":null,"access_state":"rank_page_read_full_page; product_page_snippet_only","observation_date":"2026-10-06","domestic_price":null,"price_type":null,"feasibility_flags":["randomized_contents","collectible_condition_sensitive"],"verification_status":"VERIFIED_VARIANT_ON_RANKING; ITEM_ID_RESOLVED; PRICE_UNVERIFIED","source_ids":["S13","S15"]}],"sources":[{"source_id":"S01","url":"https://www.jd.com/phb/key_13182161150041bbf5e9.html","title":"安踏anta男鞋排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K01","K02","K08","K09","K10"]},{"source_id":"S02","url":"https://item.m.jd.com/product/10962619834.html","title":"安踏男鞋运动鞋男士商品页 - 京东移动端","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K01","K09","K10"]},{"source_id":"S03","url":"https://item.jd.com/10133734212409.html","title":"安踏2026板鞋商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K01"]},{"source_id":"S04","url":"https://item.jd.com/10225594584020.html","title":"安踏流沙商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K02"]},{"source_id":"S05","url":"https://www.jd.com/phb/key_162095a11bcabc9df5f6.html","title":"收纳箱日排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K03","K08","K09"]},{"source_id":"S06","url":"https://item.jd.com/11295264533.html","title":"IRIS BC-450D 46L商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K03"]},{"source_id":"S07","url":"https://www.jd.com/phb/key_16209e140d6bbe8bca75.html","title":"收纳胶箱排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K03","K08","K09"]},{"source_id":"S08","url":"https://item.jd.com/100117031471.html","title":"SPACEXPERT 60L收纳箱商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K03"]},{"source_id":"S09","url":"https://www.jd.com/phb/key_1620b8a305722e799c8a.html","title":"收纳柜抽屉排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K04","K08","K09"]},{"source_id":"S10","url":"https://item.jd.com/100102542326.html","title":"JEKO&JEKO五层收纳柜商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K04"]},{"source_id":"S11","url":"https://www.jd.com/phb/key_623367982487d8229075.html","title":"积木 京东自营排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K05","K08","K09"]},{"source_id":"S12","url":"https://item.jd.com/100193567697.html","title":"LEGO 42212商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K05"]},{"source_id":"S13","url":"https://www.jd.com/phb/key_6233f29334305af446a7.html","title":"卡片奥特曼排行榜 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"read_full_page","claims_supported":["K05","K06","K08","K09"]},{"source_id":"S14","url":"https://item.jd.com/100286054666.html","title":"卡游奥特曼豪华版第42弹商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"blocked","claims_supported":["K05"]},{"source_id":"S15","url":"https://item.jd.com/10227904134123.html","title":"卡游奥特曼橡皮人偶盲盒第16弹整盒12个商品页 - 京东","published_at":null,"retrieved_at":null,"source_type":"secondary","access_state":"snippet_only","claims_supported":["K06"]}],"claims":[{"claim_id":"K01","claim":"C16头部候选中，安踏5541-5基础黑42码在京东男鞋销量榜为TOP2并显示100000人评论；纸莎白42码板鞋为TOP5并显示20000人评论。","classification":"FACT","source_ids":["S01","S02","S03"],"confidence":"high","counterevidence":"评论数可能聚合父商品多版本；商品页当前默认版本可变化。"},{"claim_id":"K02","claim":"C16机会候选安踏流沙男款象牙白/银/深航海蓝-1 42码在同榜为TOP7并显示2000人评论，且页面嵌入具体穿着反馈。","classification":"FACT","source_ids":["S01","S04"],"confidence":"medium","counterevidence":"单条评价不能代表整体满意度，且评论可能跨版本聚合。"},{"claim_id":"K03","claim":"C17中IRIS BC-450D 46L白色在收纳箱日榜TOP1并显示500000人评论；SPACEXPERT 60L透明带轮在收纳胶箱榜TOP2并显示100000人评论。","classification":"FACT","source_ids":["S05","S06","S07","S08"],"confidence":"high","counterevidence":"两个榜单口径不同，不能直接比较两SKU的绝对销量。"},{"claim_id":"K04","claim":"C17机会候选JEKO&JEKO五层抽屉式收纳柜在收纳柜抽屉榜TOP4并显示10000人评论，页面嵌入容量与免安装使用反馈。","classification":"FACT","source_ids":["S09","S10"],"confidence":"medium","counterevidence":"评论数可能聚合颜色/层数等变体。"},{"claim_id":"K05","claim":"C18头部候选中，LEGO 42212在积木京东自营榜TOP1并显示200000人评论；卡游奥特曼豪华版第42弹在卡片奥特曼榜TOP3并显示1000000人评论。","classification":"FACT","source_ids":["S11","S12","S13","S14"],"confidence":"high","counterevidence":"跨子品类榜单，不能把名次当作整个C18统一市场份额；卡游商品深页被风控拦截。"},{"claim_id":"K06","claim":"C18机会候选卡游奥特曼橡皮人偶盲盒第16弹整盒12个在同榜TOP7并显示5000人评论，嵌入评价显示消费者存在连续开盒与隐藏款结果反馈。","classification":"FACT","source_ids":["S13","S15"],"confidence":"medium","counterevidence":"抽取体验波动大，单条评价无法估计复购率或满意度。"},{"claim_id":"K07","claim":"本批次未获得9个候选的可核验普通数字价，因此没有把会员价、新人价、学生价或定向券价格当作普通价。","classification":"FACT","source_ids":["S01","S02","S05","S07","S09","S11","S13"],"confidence":"high","counterevidence":"登录态、门店选择或结算页可能显示实时价格，但本批次未验证。"},{"claim_id":"K08","claim":"京东销量榜名次结合公开评论量可作为国内头部/消费证据，但评论量本身不等于成交量。","classification":"INFERENCE","source_ids":["S01","S05","S07","S09","S11","S13"],"confidence":"medium","counterevidence":"排行榜可能缓存、口径可能随频道变化，评论也可能跨版本聚合。"},{"claim_id":"K09","claim":"价格高/中/低分层应只基于同品类、同日、同口径的可核验普通公开价分位数；当前每类有效价格样本不足6，因此不应强行分层。","classification":"INFERENCE","source_ids":["S01","S05","S07","S09","S11","S13"],"confidence":"high","counterevidence":"若后续获得足够登录态普通价样本，分位阈值会改变。"},{"claim_id":"K10","claim":"C16至少一个京东父商品页会随当前选择显示不同版本标题，因此冻结时必须绑定榜单中的精确配色/尺码，而不能只依赖父item URL。","classification":"FACT","source_ids":["S01","S02"],"confidence":"high","counterevidence":"若后续能获得子SKU/variant ID，可消除该歧义。"}],"data_gaps":["9个候选均缺可核验普通数字价；未把会员/新人/学生/定向券价格混入普通价。","seller_id均未从公开页面可靠解析。","C18-H2商品深页触发京东风控验证：AUTHENTICATED DATA REQUIRED补seller_id、当前选中variant和普通价。","本时间盒内未做天猫/淘宝交叉验证；所有头部/机会判断仅代表已打开的京东国内公开页。","三类均因可核验普通价样本<6而未实际赋予高/中/低价格层级；仅保留可复现分层规则。"]}
+```
+=== UNTRUNCATED W2-B-batch06; SHA256 bfa337b5cda649717721470ccf33d350a2ffffa6c15b83f44d65ee1adb5a3f12 ===
+### 1. 直接回答
+WEB RESEARCH AVAILABLE。本批次严格只覆盖 C16/C17/C18，共保留 **9 个候选：6 个 domestic_head、3 个 domestic_opportunity**。头部位只接受实际打开的京东“热卖/销量排行榜”前二；机会位要求精确 SKU 出现在已打开榜单且有≥2万条国内消费者评论/晒单信号。未查询任何海外价格、销量、供货或跨境平台覆盖。观察日均为 **2026-10-06**。
+
+价格分层规则预先固定：只采未登录公开的**普通货架价**，排除 PLUS/会员价、定向券、补贴价；同品类若至少3款可核验，则按普通价升序三等分为低/中/高端，边界并列归较低档。本轮榜单实际打开后均只显示“¥”而无数字，商品详情又动态化，因此 **9款价格层级均 UNASSIGNED，domestic_price=null**，不因缺价删除候选。
+
+### 2. 核心证据
+C16：Nike AF1 **CW2288-111 白42**为男休闲鞋榜 TOP2、约20万评论；Coach **CITY33 CV976 奶茶色**为京东自营女包榜 TOP2、约2万评论。机会位 adidas **Superstar II JI0079 37码**为 TOP4、约5万评论，晒单出现明确“回购”倾向。观察日2026-10-06。[JD.com](https://www.jd.com/phb/key_117295431568a9ca97508.html)  
+[https://www.jd.com/phb/key_117295431568a9ca97508.html](https://www.jd.com/phb/key_117295431568a9ca97508.html)　[https://www.jd.com/phb/key_1732962340b4ab733e2f2.html](https://www.jd.com/phb/key_1732962340b4ab733e2f2.html)
+
+C17：茶花储物箱榜 TOP1 为**奶黄色34L×3、45.5×38×31cm**，TOP2 为**抽屉式单层30.5L×2**；京东京造无痕衣架20支虽仅宽肩衣架榜 TOP6，却有约50万评论，作为消费证据型机会位。[JD.com](https://www.jd.com/phb/key_6728f72c4d7da7847075.html)  
+[https://www.jd.com/phb/key_6728f72c4d7da7847075.html](https://www.jd.com/phb/key_6728f72c4d7da7847075.html)　[https://www.jd.com/phb/key_1620c66e2a80eafec2c4.html](https://www.jd.com/phb/key_1620c66e2a80eafec2c4.html)
+
+C18：LEGO **10698**为乐高类积木榜 TOP1、约20万评论；POP MART **CRYBABY Vacation Mode On 随机1个**为泡泡玛特榜 TOP1、约5万评论。万代 **RG 1/144 RX-78-2 RGU ver 2.0**在更窄的高达自营榜 TOP1、约2万评论，因此按“细分收藏机会”而非本类两大头部位取样。[JD.com](https://www.jd.com/phb/key_62332f73a75ad40ac177.html)  
+[https://www.jd.com/phb/key_62332f73a75ad40ac177.html](https://www.jd.com/phb/key_62332f73a75ad40ac177.html)　[https://www.jd.com/phb/key_1672a82c40093893fa3c.html](https://www.jd.com/phb/key_1672a82c40093893fa3c.html)　[https://www.jd.com/phb/key_6233b84d3d9e717415ea.html](https://www.jd.com/phb/key_6233b84d3d9e717415ea.html)
+
+### 3. 一级来源
+实际打开了京东榜单页、商品链接及茶花厨房官方旗舰店页面。茶花旗舰店页面的“销售排行”中，34L×3奶黄色收纳箱还位列店铺全品类第4，可作为额外交叉验证；页面仍不展示数字价格。[JD Mall](https://mall.jd.com/view_search-357036-8343750-99-1-24-1.html)  
+[https://mall.jd.com/view_search-357036-8343750-99-1-24-1.html](https://mall.jd.com/view_search-357036-8343750-99-1-24-1.html)
+
+### 4. 社区证据
+本轮没有把未打开的小红书/知乎搜索摘要当证据；机会位采用京东榜单内嵌的真实消费者评论量与晒单文本。adidas 有“回购”，京东京造衣架评价明确提到防滑、不鼓肩及收纳用途，万代则有实际购买后的盒损反馈。[JD.com](https://www.jd.com/phb/key_117295431568a9ca97508.html)
+
+### 5. 反向证据
+评论量不能直接等同当前销量：例如 C17 榜 TOP6 京东京造衣架约50万评论，明显高于茶花储物箱 TOP1 的约2000评论；POP MART榜也存在低名次累计评论更高的情况。因此“榜单名次”和“累计评论量”分别使用，不相互替代。京东还明确提示榜单页可能受缓存、页面更新影响。[JD.com](https://www.jd.com/phb/key_6728f72c4d7da7847075.html)
+
+### 6. 置信度
+**头部入选：中高**，因为型号/规格/榜单名次可在完整页面直接读取；**机会位：中等**，消费信号强但不代表增速或份额；**价格、seller_id、实时成交量：低/未核验**。商品详情页虽能解析到 item_id，但正文动态内容基本不可读，因此没有把搜索摘要或空“¥”符号伪装成价格。
+
+### 7. 数据缺口
+`AUTHENTICATED DATA REQUIRED`：9款的同日普通价、会员/券后价拆分、seller_id，以及若平台登录态可见的近期成交量。C17目前头部样本集中于塑料收纳箱，未进一步扩展到收纳家具/智能晾晒；这是范围和时间内的覆盖缺口，而不是排除结论。C16服装本体、C18其他正版IP周边同理未继续扩张。
+
+### 8. 意外发现
+榜单排序与历史评论基数偏离较大，说明仅以“评论最多”定义国内头部会产生明显误采。另一个例子是 CRYBABY 的“随机1个”：随机内容本身就是可定义的商品版本，并非“版本无法定义”，因此不应按预设排除条件删除。[JD.com](https://www.jd.com/phb/key_1672a82c40093893fa3c.html)
+
+### 9. 自我反驳
+本轮主要证据来自京东，不能声称代表全中国平台市场份额；Coach、Nike、LEGO等入选也不是按国际知名度挑选，而是由本次实际打开的国内榜单触发。若天猫/淘宝登录态榜单给出不同头部，冻结前应允许替换，而非维护本轮品牌结论。
+
+### 10. 下一实验
+冻结前只做一个窄实验：在登录态浏览器中逐一补齐这9款的**普通价、会员/券价、seller_id、可见近期成交字段**，再按预注册三分位规则分高/中/低端；随后仅在 C16/C17/C18 内各做一次天猫/淘宝同款交叉核验，发现冲突即记录，不向其他15品类扩展。
+
+```json
+{
+  "job_id": "W2-B-batch06",
+  "parent_replicate": "W2-B",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C16",
+      "name": "合法服装、鞋、包",
+      "domestic_head_rule": "在2026-10-06实际打开的京东相关热卖/销量榜中，精确SKU位列TOP2；跨子类允许各取一个头部位。",
+      "domestic_opportunity_rule": "精确SKU在实际打开的国内榜单中可定义，且有至少20000条消费者评论/晒单信号，但不占该品类两个头部位。",
+      "price_tier_rule": "只用同一观察会话未登录可见的普通货架价，排除PLUS/会员/定向券/补贴价；至少3款价格核验后按升序等人数三分位划低/中/高，边界并列归较低档；本轮均UNASSIGNED。"
+    },
+    {
+      "category_id": "C17",
+      "name": "家居与收纳",
+      "domestic_head_rule": "在2026-10-06实际打开的京东相关热卖/销量榜中，精确SKU位列TOP2。",
+      "domestic_opportunity_rule": "精确SKU在实际打开的国内榜单中可定义，且有至少20000条消费者评论/晒单信号；允许TOP3-TOP10的消费证据型候选。",
+      "price_tier_rule": "只用同一观察会话未登录可见的普通货架价，排除PLUS/会员/定向券/补贴价；至少3款价格核验后按升序等人数三分位划低/中/高，边界并列归较低档；本轮均UNASSIGNED。"
+    },
+    {
+      "category_id": "C18",
+      "name": "玩具、收藏品与正版周边",
+      "domestic_head_rule": "在2026-10-06实际打开的京东主要玩具/潮玩子类热卖榜中，精确SKU位列TOP2。",
+      "domestic_opportunity_rule": "精确SKU在实际打开的国内细分收藏榜中可定义，且有至少20000条消费者评论/晒单信号；窄收藏子类的TOP1可作为机会位，但不替代本类两个主要头部位。",
+      "price_tier_rule": "只用同一观察会话未登录可见的普通货架价，排除PLUS/会员/定向券/补贴价；至少3款价格核验后按升序等人数三分位划低/中/高，边界并列归较低档；本轮均UNASSIGNED。"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-H01",
+      "brand": "NIKE",
+      "model": "CW2288-111",
+      "exact_variant": "Air Force 1 AF1 白色 42码",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东男休闲鞋排行榜TOP2；页面显示约200000人评论。",
+      "domestic_selection_rule": "实际打开的国内热卖榜TOP2。",
+      "domestic_product_url": "https://item.jd.com/100017087656.html",
+      "item_id": "100017087656",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["size_variant_sensitive"],
+      "verification_status": "RANK_AND_VARIANT_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S01", "S02"]
+    },
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-H02",
+      "brand": "COACH",
+      "model": "CV976",
+      "exact_variant": "CITY33大号手提单肩托特包 奶茶色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营包包女排行榜TOP2；页面显示约20000人评论。",
+      "domestic_selection_rule": "实际打开的国内自营榜TOP2。",
+      "domestic_product_url": "https://item.jd.com/100141957946.html",
+      "item_id": "100141957946",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["style_color_variant_sensitive"],
+      "verification_status": "RANK_AND_VARIANT_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S03", "S04"]
+    },
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-O01",
+      "brand": "adidas",
+      "model": "JI0079",
+      "exact_variant": "Superstar II 三叶草贝壳头 37码",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东男休闲鞋排行榜TOP4；约50000人评论，榜单内嵌评价出现明确回购表达。",
+      "domestic_selection_rule": "榜内精确SKU且消费者评论量>=20000，不占头部位。",
+      "domestic_product_url": "https://item.jd.com/100182824564.html",
+      "item_id": "100182824564",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["size_variant_sensitive"],
+      "verification_status": "VARIANT_AND_CONSUMER_SIGNAL_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S01", "S05"]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-H01",
+      "brand": "CHAHUA",
+      "model": null,
+      "exact_variant": "斜口前开/侧开叠加收纳箱 奶黄色 34L×3，大号34L 45.5×38×31cm",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东茶花储物箱排行榜TOP1；约2000人评论；茶花厨房官方旗舰店全店销售排行中同款奶黄色版本另列第4。",
+      "domestic_selection_rule": "实际打开的储物箱销量榜TOP1；旗舰店销售排行交叉验证。",
+      "domestic_product_url": "https://item.jd.com/10077974594208.html",
+      "item_id": "10077974594208",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["bulky_volumetric"],
+      "verification_status": "RANK_AND_EXACT_VARIANT_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S06", "S07", "S08"]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-H02",
+      "brand": "CHAHUA",
+      "model": null,
+      "exact_variant": "抽屉式单层收纳箱 30.5L 两只装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东茶花储物箱排行榜TOP2；页面显示约5000人评论。",
+      "domestic_selection_rule": "实际打开的储物箱销量榜TOP2。",
+      "domestic_product_url": "https://item.jd.com/100026217460.html",
+      "item_id": "100026217460",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["bulky_volumetric"],
+      "verification_status": "RANK_AND_EXACT_VARIANT_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S06", "S09"]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-O01",
+      "brand": "京东京造",
+      "model": null,
+      "exact_variant": "无痕防滑衣架 干湿两用 20支",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东宽肩衣架排行榜TOP6；约500000人评论；内嵌评价明确提到防滑、圆肩不鼓包及家用收纳。",
+      "domestic_selection_rule": "榜内精确SKU、TOP3-TOP10且消费者评论量>=20000。",
+      "domestic_product_url": "https://item.jd.com/100045056946.html",
+      "item_id": "100045056946",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["bundle_pack"],
+      "verification_status": "VARIANT_AND_CONSUMER_SIGNAL_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S10", "S11"]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-H01",
+      "brand": "LEGO",
+      "model": "10698",
+      "exact_variant": "经典创意积木盒，赠礼袋",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东乐高类积木排行榜TOP1；页面显示约200000人评论。",
+      "domestic_selection_rule": "实际打开的主要玩具子类热卖榜TOP1。",
+      "domestic_product_url": "https://item.jd.com/1339446.html",
+      "item_id": "1339446",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["many_small_parts"],
+      "verification_status": "RANK_AND_MODEL_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S12", "S13"]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-H02",
+      "brand": "POP MART",
+      "model": "CRYBABY Vacation Mode On",
+      "exact_variant": "搪胶毛绒挂件盲盒 随机1个",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东泡泡玛特排行榜TOP1；页面显示约50000人评论。",
+      "domestic_selection_rule": "实际打开的主要潮玩子类热卖榜TOP1。",
+      "domestic_product_url": "https://item.jd.com/10186510065913.html",
+      "item_id": "10186510065913",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["blind_box_randomized_content"],
+      "verification_status": "RANK_AND_VARIANT_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S14", "S15"]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-O01",
+      "brand": "BANDAI",
+      "model": "RG 1/144 RX-78-2",
+      "exact_variant": "元祖 RGU ver 2.0",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东万代高达自营排行榜TOP1；约20000人评论；作为窄收藏细分机会样本，内嵌评价提供实际购买和盒损反馈。",
+      "domestic_selection_rule": "窄收藏细分榜精确SKU且消费者评论量>=20000，不占本类两个主要头部位。",
+      "domestic_product_url": "https://item.jd.com/100115060743.html",
+      "item_id": "100115060743",
+      "seller_id": null,
+      "access_state": "blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": ["many_small_parts", "collector_box_condition_sensitive"],
+      "verification_status": "NICHE_RANK_AND_MODEL_VERIFIED_PRICE_UNVERIFIED",
+      "source_ids": ["S16", "S17"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_117295431568a9ca97508.html",
+      "title": "男休閑鞋排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K04"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://item.jd.com/100017087656.html",
+      "title": "Nike CW2288-111 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/phb/key_1732962340b4ab733e2f2.html",
+      "title": "京东自营包包女排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://item.jd.com/100141957946.html",
+      "title": "Coach CITY33 CV976 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://item.jd.com/100182824564.html",
+      "title": "adidas Superstar II JI0079 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/phb/key_6728f72c4d7da7847075.html",
+      "title": "茶花储物箱排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02", "K05"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://mall.jd.com/view_search-357036-8343750-99-1-24-1.html",
+      "title": "茶花厨房官方旗舰店商品页及销售排行",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://item.jd.com/10077974594208.html",
+      "title": "茶花34L×3奶黄色收纳箱商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://item.jd.com/100026217460.html",
+      "title": "茶花30.5L两只装抽屉式收纳箱商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.jd.com/phb/key_1620c66e2a80eafec2c4.html",
+      "title": "衣架宽肩排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02", "K04", "K05"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://item.jd.com/100045056946.html",
+      "title": "京东京造无痕衣架20支商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.jd.com/phb/key_62332f73a75ad40ac177.html",
+      "title": "乐高类积木排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://item.jd.com/1339446.html",
+      "title": "LEGO 10698 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.jd.com/phb/key_1672a82c40093893fa3c.html",
+      "title": "泡泡玛特排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03", "K05", "K06"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://item.jd.com/10186510065913.html",
+      "title": "POP MART CRYBABY Vacation Mode On 随机1个商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.jd.com/phb/key_6233b84d3d9e717415ea.html",
+      "title": "万代高达自营排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03", "K04"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://item.jd.com/100115060743.html",
+      "title": "BANDAI RG 1/144 RX-78-2 RGU ver 2.0 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "C16的Nike CW2288-111白42和Coach CITY33 CV976奶茶色分别位列已打开京东相关榜单TOP2，可作为本轮国内头部样本。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S03"],
+      "confidence": "high",
+      "counterevidence": "单一平台榜单不能代表全国市场份额，且榜单会动态变化。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "C17茶花34L×3奶黄色和30.5L×2抽屉式收纳箱位列茶花储物箱榜TOP1、TOP2；前者亦出现在茶花官方旗舰店销售排行。",
+      "classification": "FACT",
+      "source_ids": ["S06", "S07"],
+      "confidence": "high",
+      "counterevidence": "两个头部样本均集中于塑料收纳箱，不代表整个家居与收纳大类的结构。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "C18的LEGO 10698和POP MART CRYBABY Vacation Mode On随机1个分别位列已打开的乐高类积木榜和泡泡玛特榜TOP1。",
+      "classification": "FACT",
+      "source_ids": ["S12", "S14"],
+      "confidence": "high",
+      "counterevidence": "两个榜单属于不同细分子类，不能直接比较市场份额。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "adidas JI0079、京东京造20支无痕衣架、万代RG RX-78-2均有至少约20000条国内消费者评论/晒单信号，满足本轮机会位阈值。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S10", "S16"],
+      "confidence": "high",
+      "counterevidence": "评论数是累计消费者信号，不等于近期销量或增长率。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "榜单名次与累计评论量存在明显偏离，因此不应把评论最多直接当作当前销量第一。",
+      "classification": "INFERENCE",
+      "source_ids": ["S06", "S10", "S14"],
+      "confidence": "high",
+      "counterevidence": "缺少京东榜单算法和统一时间窗口的成交数据，无法解释具体排序机制。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "CRYBABY“随机1个”的随机内容是商品定义的一部分，而不是完全无法定义版本。",
+      "classification": "INFERENCE",
+      "source_ids": ["S14"],
+      "confidence": "medium",
+      "counterevidence": "若后续研究要求精确到具体隐藏/常规角色，则该SKU不足以支持角色级比较。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "本轮商品详情页普遍动态化，无法从实际打开页面可靠读取普通价和seller_id，因此不填价格、不用搜索摘要替代。",
+      "classification": "FACT",
+      "source_ids": ["S02", "S04", "S05", "S08", "S09", "S11", "S13", "S15", "S17"],
+      "confidence": "high",
+      "counterevidence": "登录态或完整JavaScript浏览器可能可读取这些字段，本轮未将其视作已核验。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个候选的同日普通货架价、PLUS/会员价、定向券/补贴价需分字段补采。",
+    "AUTHENTICATED DATA REQUIRED：9个候选的seller_id及平台若可见的近期成交量/销量字段未核验。",
+    "C17两个头部位集中在塑料储物箱；未继续扩展收纳家具、智能晾晒等子类。",
+    "C16未覆盖服装本体头部；C18未覆盖更多正版影视/游戏IP周边，均作为冻结前覆盖缺口而非排除结论。",
+    "本轮主要使用京东可公开读取页面；尚未用登录态天猫/淘宝榜单进行同款交叉验证。",
+    "所有候选的高/中/低价格层级均为UNASSIGNED，因为没有至少3个可核验普通价；未因缺价删除任何候选。"
+  ]
+}
+```
+=== UNTRUNCATED W2-C-batch06; SHA256 30e976d6427ccc9421b682ebcce83ca6bef21db72a9526b81b9b79ddde61ddd5 ===
+### 1. 直接回答
+WEB RESEARCH AVAILABLE。本批次只研究 C16/C17/C18，共保留 **9 个候选：每类2个 domestic_head + 1个 domestic_opportunity**；未查询任何海外价格、销量、供货或 Temu/AliExpress。5个候选的版本可由公开页面较明确锁定，4个因颜色/尺码或型号—商品页映射不足标为 PROVISIONAL。除 52TOYS 朱雀的社区报道首发价外，未登录页面没有可靠普通价，因此不补造价格。
+
+价格层冻结规则：**同一功能子类、同平台、同观察日，至少取得6个精确版本的公开普通价；会员价、定向券单列，不混入；同规格套装才可折算单件；按P33/P67划低/中/高。少于6个可核验普通价，一律不赋价格层。**
+
+### 2. 核心证据
+C16：李宁京东自营店公开“销售排行”中，**浮舟 AGCS419 为第1、10万+评价**；骆驼 A7W217127 在京东自营列表有 **20万+评价**，这里仅把评价量当消费证据，不当销量。观察：2026-10-06。:chatgpt-content-reference{index="0"} [https://mall.jd.com/view_search-671440-24736463-99-1-24-1.html](https://mall.jd.com/view_search-671440-24736463-99-1-24-1.html) [https://www.jd.com/hprm/131813218873a5438afd.html](https://www.jd.com/hprm/131813218873a5438afd.html)
+
+C17：茶花 **58L浅咖色3个装带轮**有5万+评价；佳帮手 **透明20L单只、43×30×24.5cm**有10万+评价，均为自营公开列表。观察：2026-10-06。:chatgpt-content-reference{index="3"} [https://www.jd.com/brand/16209c725f02bfc07e73.html](https://www.jd.com/brand/16209c725f02bfc07e73.html) [https://www.jd.com/hprm/162040e030303fb84d3e.html](https://www.jd.com/hprm/162040e030303fb84d3e.html)
+
+C18：布鲁可自营旗舰榜 **星辰版第8弹端盒 TOP1、20万+评价**；卡游旗舰店公开销售排行中 **奥特曼X档案第45弹豪华版1盒为第4、5万评价**。观察：2026-10-06。:chatgpt-content-reference{index="6"} [https://www.jd.com/phb/key_6233b9bfd297201c4a8a.html](https://www.jd.com/phb/key_6233b9bfd297201c4a8a.html) [https://mall.jd.com/view_search-682246-19220153-99-1-20-1.html](https://mall.jd.com/view_search-682246-19220153-99-1-20-1.html)
+
+### 3. 一级来源
+本批次以能实际打开的京东旗舰店、自营列表及商品页为主要国内平台证据；直达 item 页部分为动态页，公开抓取内容很薄，因此型号、评论量、排行主要回指已读完整的店铺/列表页面，而不把动态页空白字段视作已核验。52TOYS 朱雀另可在京东自营列表看到 **5000+评价**。观察：2026-10-06。:chatgpt-content-reference{index="9"} [https://www.jd.com/hprm/1713466d0d29ddfabcbe.html](https://www.jd.com/hprm/1713466d0d29ddfabcbe.html)
+
+### 4. 社区证据
+蕉下 **AL417** 的国内社区文章具体讨论版型、长度、袖口及遮挡体验，故作为机会层而非只按评论规模选样；文章发布 2026-08-08。:chatgpt-content-reference{index="11"} [https://post.smzdm.com/p/a26z5lk2/](https://post.smzdm.com/p/a26z5lk2/)
+
+52TOYS **猛兽匣无限系列朱雀 IB-18** 的社区资料给出9月3日发售、168元首发信息，并记录造型/关节争议，适合作为“消费讨论驱动”的机会候选；168元只记作**社区报道首发价**，不作当前成交价。发布 2026-08-31。:chatgpt-content-reference{index="13"} [https://post.smzdm.com/p/a3md845n/](https://post.smzdm.com/p/a3md845n/)
+
+### 5. 反向证据
+评价量并不等于销量，更不能说明2026年10月即时销售速度；旗舰店“销售排行”也是动态页面快照，未公开时间窗或GMV。京东京造 G-5053 买家评论虽认可容量/气味与做工，也有人指出叠放接触面偏滑、希望增加前扣，说明“可叠加”卖点并非无摩擦。观察：2026-10-06。:chatgpt-content-reference{index="15"} [https://item.jd.com/product/Y9aqWU_ytRzSkF3lZ9SvgQ.html](https://item.jd.com/product/Y9aqWU_ytRzSkF3lZ9SvgQ.html)
+
+### 6. 置信度
+C16、C18 的“头部”判断为**中等偏高**：有直接销售排行或大规模公开消费评价，但部分颜色/尺码和榜单统计窗口未知。C17 为**中等**：消费量证据强，但未取得正式品类销售榜。所有当前普通价判断为**低/未核验**，所以本批次不强行贴高、中、低价标签。
+
+### 7. 数据缺口
+主要缺口是普通公开价、会员价/定向券、seller_id、真实成交量/GMV；这些字段需要 **AUTHENTICATED DATA REQUIRED** 时才补。另缺 C16 三款的最终颜色/尺码，G-5053 数字 item_id，以及 52TOYS 京东 item 与“IB-18”型号在同一公开商品页上的直接对应。限时研究未继续扩展天猫/淘宝交叉验证，因此不声称这些是“全国绝对前三”。
+
+### 8. 意外发现
+“机会SKU”并不一定是低热度SKU：AL417已有20万+京东评价，IB-18朱雀也已有自营消费反馈。机会层的区分依据是**社区里出现具体使用/设计争议，可形成后续验证假设**，而不是人为挑冷门。AL417京东证据观察 2026-10-06。:chatgpt-content-reference{index="17"} [https://www.jd.com/hprm/13188757ef4feecbba1c.html](https://www.jd.com/hprm/13188757ef4feecbba1c.html)
+
+### 9. 自我反驳
+本批次明显偏京东：这是可公开读页面质量造成的取样偏差。累积评价还会奖励老SKU，可能错过近期增长快的新款；社区文章也不是随机样本，其中蕉下文章带整理/AIGC属性。因此这里应理解为**冻结前有限候选集**，而非市场份额排名。
+
+### 10. 下一实验
+冻结前下一轮只补本3类：在同一观察日登录国内平台，逐项记录**普通价、会员价、定向券、seller_id、精确颜色/尺码/盒规及榜单位置**；每个功能子类凑足至少6个可比普通价后再执行P33/P67价格层规则。52TOYS优先验证“IB-18 ↔ JD item 100311856477”的同页型号关系；若不能证实则继续保持 PROVISIONAL，不因海外可比性删除。
+
+```json
+{
+  "job_id": "W2-C-batch06",
+  "parent_replicate": "W2-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C16",
+      "name": "合法服装、鞋、包",
+      "candidate_count": 3,
+      "domestic_price_tier_rule": "同一功能子类、同平台、同观察日取得至少6个精确版本的公开普通价；会员价和定向券单列排除；仅同规格套装可折算单件；按P33/P67划分低/中/高；少于6个不赋价格层。",
+      "price_tier_status": "not_assigned_due_to_insufficient_verified_public_regular_prices"
+    },
+    {
+      "category_id": "C17",
+      "name": "家居与收纳",
+      "candidate_count": 3,
+      "domestic_price_tier_rule": "同一功能子类、同平台、同观察日取得至少6个精确版本的公开普通价；会员价和定向券单列排除；仅同规格套装可折算单件；按P33/P67划分低/中/高；少于6个不赋价格层。",
+      "price_tier_status": "not_assigned_due_to_insufficient_verified_public_regular_prices"
+    },
+    {
+      "category_id": "C18",
+      "name": "玩具、收藏品与正版周边",
+      "candidate_count": 3,
+      "domestic_price_tier_rule": "同一功能子类、同平台、同观察日取得至少6个精确版本的公开普通价；会员价和定向券单列排除；仅同规格套装可折算单件；按P33/P67划分低/中/高；少于6个不赋价格层。",
+      "price_tier_status": "not_assigned_due_to_insufficient_verified_public_regular_prices"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-01",
+      "brand": "李宁",
+      "model": "AGCS419",
+      "exact_variant": "浮舟板鞋男鞋 AGCS419；颜色/尺码未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "李宁京东自营旗舰店公开销售排行第1，页面显示100000人评价；评价量不作为销量。",
+      "domestic_selection_rule": "优先选实际打开的品牌自营销售排行前列且型号可识别的合法实物SKU。",
+      "domestic_product_url": "https://item.jd.com/100029081321.html",
+      "item_id": "100029081321",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "size_variant_dependency",
+        "soft_goods",
+        "no_battery"
+      ],
+      "verification_status": "PROVISIONAL",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-02",
+      "brand": "骆驼",
+      "model": "A7W217127",
+      "exact_variant": "三合一冲锋衣 A7W217127；页面存在黑色、星夜蓝、远山蓝等选项，最终颜色/尺码未锁定",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营公开列表显示A7W217127及200000+条评论，作为明确国内消费参与证据而非销量。",
+      "domestic_selection_rule": "在已打开的对应功能列表中，合法实物、型号明确且公开评价量达到高量级的自营SKU优先进入头部层。",
+      "domestic_product_url": "https://item.jd.com/4626857.html",
+      "item_id": "4626857",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "size_variant_dependency",
+        "bulky_outerwear",
+        "no_battery"
+      ],
+      "verification_status": "PROVISIONAL",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "category_id": "C16",
+      "candidate_sku_id": "C16-03",
+      "brand": "蕉下",
+      "model": "AL417",
+      "exact_variant": "AL417女款防晒衣；最终颜色/尺码未锁定",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东自营列表显示200000+条评论；国内社区文章进一步讨论版型、衣长、袖口及遮挡体验。",
+      "domestic_selection_rule": "机会层要求国内平台存在性/消费证据，加至少一条具体社区使用摩擦或需求信号；不以低销量为条件。",
+      "domestic_product_url": "https://item.jd.com/100184575884.html",
+      "item_id": "100184575884",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "size_variant_dependency",
+        "soft_goods",
+        "no_battery"
+      ],
+      "verification_status": "PROVISIONAL",
+      "source_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-01",
+      "brand": "茶花",
+      "model": null,
+      "exact_variant": "塑料衣物收纳箱 58L 浅咖色 3个装 带轮",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东品牌公开列表显示该精确规格、自营及50000+条评论。",
+      "domestic_selection_rule": "在已打开的家居收纳公开列表中，优先保留精确容量/套装可定义且公开评价量达到50000+的自营实物SKU。",
+      "domestic_product_url": "https://item.jd.com/2250792.html",
+      "item_id": "2250792",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "bulky_volume",
+        "three_pack",
+        "no_battery"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-02",
+      "brand": "佳帮手",
+      "model": null,
+      "exact_variant": "透明20L单只，约43×30×24.5cm",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营公开列表显示精确20L单只规格、尺寸信息及100000+条评论。",
+      "domestic_selection_rule": "在已打开的家居收纳公开列表中，优先保留精确容量/尺寸可定义且公开评价量高的自营实物SKU，并避免与另一头部候选同品牌重复。",
+      "domestic_product_url": "https://item.jd.com/100037081376.html",
+      "item_id": "100037081376",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "bulky_volume",
+        "single_unit",
+        "no_battery"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "category_id": "C17",
+      "candidate_sku_id": "C17-03",
+      "brand": "京东京造",
+      "model": "G-5053",
+      "exact_variant": "白方方可叠加抽屉式收纳箱，透明白，中号",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "可公开读取的商品页含型号/版本和买家使用反馈；正向提及容量、做工和气味，反向提及叠放偏滑及希望增加前扣。",
+      "domestic_selection_rule": "机会层选择能在公开商品页同时定义具体版本并出现具体消费者使用摩擦的SKU。",
+      "domestic_product_url": "https://item.jd.com/product/Y9aqWU_ytRzSkF3lZ9SvgQ.html",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "bulky_volume",
+        "stacking_stability_feedback",
+        "no_battery"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_PRODUCT_PAGE",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-01",
+      "brand": "布鲁可",
+      "model": "变形金刚星辰版第8弹",
+      "exact_variant": "星辰版第8弹 端盒",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "布鲁可京东自营旗舰店排行榜公开显示该端盒为TOP1，并显示200000用户评论。",
+      "domestic_selection_rule": "优先选择实际打开的品牌自营旗舰榜TOP位置、版本可定义的正版实物SKU。",
+      "domestic_product_url": "https://item.jd.com/100391332470.html",
+      "item_id": "100391332470",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "collectible_assortment_structure_needs_verification",
+        "small_parts_age_label",
+        "no_battery"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-02",
+      "brand": "卡游",
+      "model": "奥特曼卡片宇宙奥特英雄X档案",
+      "exact_variant": "第45弹 豪华版 1盒",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "卡游京东旗舰店公开销售排行中该精确版本为第4，显示50000评价。",
+      "domestic_selection_rule": "优先选择实际打开的官方旗舰销售排行前列、弹次和盒规明确的正版收藏SKU。",
+      "domestic_product_url": "https://item.jd.com/10233518540660.html",
+      "item_id": "10233518540660",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "card_pack_assortment_randomness",
+        "collectible_contents_need_verification",
+        "no_battery"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_LISTING",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "category_id": "C18",
+      "candidate_sku_id": "C18-03",
+      "brand": "52TOYS",
+      "model": "IB-18",
+      "exact_variant": "猛兽匣无限系列 朱雀",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "国内社区资料记录IB-18、2026-09-03发售及168元首发信息并讨论造型/关节争议；京东自营公开列表显示同名朱雀商品5000+条评论。",
+      "domestic_selection_rule": "机会层要求具体社区讨论信号与国内自营在售/消费证据并存；型号与电商item若未在同一公开页直接对应则保持PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/100311856477.html",
+      "item_id": "100311856477",
+      "seller_id": null,
+      "access_state": "snippet_only",
+      "observation_date": "2026-10-06",
+      "domestic_price": 168,
+      "price_type": "community_reported_launch_price_non_transactional",
+      "feasibility_flags": [
+        "small_parts_age_14_plus",
+        "collectible_joint_quality_feedback",
+        "no_battery"
+      ],
+      "verification_status": "PROVISIONAL_MODEL_ITEM_LINK",
+      "source_ids": [
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://mall.jd.com/view_search-671440-24736463-99-1-24-1.html",
+      "title": "所有商品-李宁京东自营旗舰店",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/hprm/131813218873a5438afd.html",
+      "title": "京东骆驼户外商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/hprm/13188757ef4feecbba1c.html",
+      "title": "京东蕉下防晒服商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/p/a26z5lk2/",
+      "title": "蕉下防晒衣型号天书拆解：AL900、AL417、AL818、TS402，哪件闷、哪件遮、哪件适合你",
+      "published_at": "2026-08-08",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03",
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/brand/16209c725f02bfc07e73.html",
+      "title": "茶花品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/hprm/162040e030303fb84d3e.html",
+      "title": "京东佳帮手收纳商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://item.jd.com/product/Y9aqWU_ytRzSkF3lZ9SvgQ.html",
+      "title": "京东京造G-5053白方方可叠加抽屉式收纳箱商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_6233b9bfd297201c4a8a.html",
+      "title": "布鲁可京东自营旗舰店排行榜",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://mall.jd.com/view_search-682246-19220153-99-1-20-1.html",
+      "title": "卡游京东旗舰店商品销售排行",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://post.smzdm.com/p/a3md845n/",
+      "title": "猛兽匣朱雀9月3日开售：四象收官要168元，\"小翅膀长腿\"吵翻了，先算清这三笔账",
+      "published_at": "2026-08-31",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09",
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.jd.com/hprm/1713466d0d29ddfabcbe.html",
+      "title": "京东朱雀相关商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "2026-10-06可公开读取的李宁京东自营旗舰店销售排行中，浮舟AGCS419列第1并显示100000人评价。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "销售排行是动态页面快照，未公开排行时间窗、销量或GMV；颜色和尺码尚未锁定。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "骆驼A7W217127在京东自营公开列表显示200000+条评论，可作为国内消费参与证据。",
+      "classification": "FACT",
+      "source_ids": [
+        "S02"
+      ],
+      "confidence": "high",
+      "counterevidence": "评论量不等于销量，也不能证明近期销售速度。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "蕉下AL417在京东公开列表显示200000+条评论，且国内社区存在关于版型、衣长、袖口和遮挡体验的具体讨论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区文章为整理型内容并带AIGC属性，体验数据不能视作随机消费者样本。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "茶花58L浅咖色3个装带轮收纳箱在京东公开列表显示50000+条评论及自营身份。",
+      "classification": "FACT",
+      "source_ids": [
+        "S05"
+      ],
+      "confidence": "high",
+      "counterevidence": "公开评价量不等于销量或当前市场份额。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "佳帮手透明20L单只收纳箱公开列表给出约43×30×24.5cm规格并显示100000+条评论及自营身份。",
+      "classification": "FACT",
+      "source_ids": [
+        "S06"
+      ],
+      "confidence": "high",
+      "counterevidence": "未取得当前普通价、销量或跨平台份额。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "京东京造G-5053公开商品页存在正向容量/做工反馈，同时有消费者提出叠放偏滑、希望增加前扣。",
+      "classification": "FACT",
+      "source_ids": [
+        "S07"
+      ],
+      "confidence": "medium",
+      "counterevidence": "买家评论为自选择样本，无法估算该问题发生率。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "布鲁可京东自营旗舰店排行榜中，变形金刚星辰版第8弹端盒为TOP1并显示200000用户评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "榜单动态且未公开统计周期、成交件数或GMV。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "卡游京东旗舰店销售排行中，奥特曼X档案第45弹豪华版1盒在观察时列第4并显示50000评价。",
+      "classification": "FACT",
+      "source_ids": [
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "榜单位置会动态变化，且评论量不等于销量。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "52TOYS猛兽匣无限系列朱雀在京东自营列表显示5000+条评论；社区资料将其标为IB-18，并报道2026-09-03发售及168元首发信息。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "confidence": "medium",
+      "counterevidence": "IB-18型号与JD item 100311856477尚未在同一公开商品页直接对应；168元是社区报道首发价而非当前成交价。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "AL417与52TOYS朱雀适合作为机会层候选，因为国内社区对具体使用或设计摩擦已有可检验讨论，而不是因为它们销量低。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S04",
+        "S10"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区讨论可能被活跃用户和内容创作者放大，不能直接代表总体需求。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：大多数候选的当前普通公开价、会员价、定向券及seller_id未能从未登录公开页面可靠取得，不能补造。",
+    "未取得任何候选的已认证成交件数或GMV；公开评论量仅作为国内消费证据，不作为销量。",
+    "C16的AGCS419、A7W217127、AL417尚未锁定最终颜色和尺码，因此保持PROVISIONAL。",
+    "C17京东京造G-5053的数字item_id未在已读公开页面可靠暴露；当前普通价也未核验。",
+    "C18的52TOYS IB-18与京东item 100311856477需要在同一官方/商品页直接核对型号；卡游第45弹盒内配置也需进一步锁定。",
+    "有限研究未继续扩张到天猫/淘宝跨平台独立验证，因此本批次不声称候选是全国绝对销量前三。",
+    "未查询任何美国或其他海外市场的价格、销量、供货、Temu或AliExpress覆盖；海外可比性未用于删选。"
+  ]
+}
+```

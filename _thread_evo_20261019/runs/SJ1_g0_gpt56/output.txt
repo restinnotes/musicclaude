@@ -1,0 +1,500 @@
+## 一、逐份读后
+
+**线A**
+
+它最稳定，几乎没有额外编造“劝自己、想通、找到办法”之类的心理动作。但它的主要问题是：把听感记录里已经出现的“对亲近的人有心事，想说又怕改变关系”扩写成了四段故事。S02 能解释亲密为什么让人珍惜，S03、S04 却没有足够的新经历推动情绪发生特定变化。它更像是在维持一个心理状态，而不是解释每一段为什么恰好出现现在的体验。
+
+**线B**
+
+五份里，它对人物两难的交代相对完整：已有的亲近是真实的，未说出口的愿望也是真实的，两者之间存在代价。但它仍有明显的复述，尤其 S03 的“突然很想说出来，却始终没有真的开口”，几乎直接翻译了听感记录。S01 的“还没找到一种说法”又额外引入了寻找办法的过程。它比线A更努力建立因果，却还没有让四段真正形成有差别的经历。
+
+**线C**
+
+它最克制，心理动作少，文字也基本易懂。问题在于，“亲近带来满足，自由空间又值得保护”是一个很容易套用的框架。它能解释温柔中为什么有顾虑，却解释不了 S03 的短促急切、流动受阻，也解释不了 S04 为什么一度迫切到顶点又退下来。它提供的是人物性格的概括，不是足以解释这些具体变化的经历。
+
+**线D**
+
+它和线C类似，但历史基础更薄。“珍惜自由”是故事的核心理由，却没有任何具体经历说明自由为什么对他如此重要。后面几段反复把听感改写成“想靠近，又怕失去空间”，虽然顺口，也能形成表面连贯，但对急切、受阻、顶点回落这些具体变化，解释力不足。
+
+**线E**
+
+它最值得肯定的是 S03：前一段满足于当下的亲近，后来开始希望它能够长久，于是才出现对对方是否同样珍惜自己的在意。这是一条真正利用前文经历解释当前变化的因果链。但它在 S02、尤其 S04 编入了太多自我劝说、提醒、发现和确认。更重要的是，S04 最后让人物确信自己找到了不会失去什么的相处方式，反而把听感中迫切、颤动、情绪打开后又退回去的矛盾抹平了。
+
+总体上，线B的因果覆盖面略好于线A；线E有最明显的局部进步，却付出了过多心理动作的代价。线C、线D则是少犯错，但没有解释到关键变化。
+
+## 二、JSON 评审结果
+
+说明：`explains` 只逐颗评判题目指定的【主体验】和【段内变化】；`needs_history` 的“是”表示该段的解释确实依赖前文已经发生的事情，不能只靠本段重新陈述同一套设定。分数按整份线评定。
+
+```json
+{
+  "ranking": ["线B", "线A", "线E", "线C", "线D"],
+  "versions": {
+    "线A": {
+      "segments": {
+        "S01": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "未说出口的心事能解释悬而未落的心理张力，但没有从既有经历推出开场为何显得突兀、迸发。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S02": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "是",
+              "note": "两人已有的亲近和他对这段关系的珍惜，能够解释为什么这种相处让他感到温存。"
+            },
+            {
+              "bead": "B5",
+              "verdict": "部分",
+              "note": "只说喜欢变强但仍未说出口，近似把上涌和回柔改写成情感强弱，没有解释为何此刻先冲高又收回。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [
+            "把两人原本自在、令人满足的相处当作既定背景，但S01只明确写了对方是亲近的人，并未具体写出这种自在。"
+          ],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S03": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "持续珍惜亲近可以解释安静中的沉浸，但他始终没有开口，无法支撑听感中说过重要的话以后的具体情境。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "未说出口的愿望可以解释冲动为什么没有落实，却没有新经历说明这次冲动为何突然出现。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S04": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "想表达与怕改变关系之间的冲突可以解释迫切和退缩并存，但没有事件推动他此刻变得更迫切。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "顾虑仍在可以解释情绪没有落稳，却没有解释情绪为什么一度打开到顶点又退弱。"
+            }
+          ],
+          "extra_moves": [
+            "把心意越来越强烈、对关系越来越珍惜写成新的心理升级，但S03没有发生推动这种升级的新事。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        }
+      },
+      "explanatory": 5,
+      "no_extra_moves": 8,
+      "plain": 8,
+      "coherent": 6,
+      "overall": 5,
+      "verdict": "关系背景清楚且心理动作克制，但反复依赖同一个未说出口的心事，难以解释S03和S04的具体变化。"
+    },
+    "线B": {
+      "segments": {
+        "S01": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "害怕改变现有关系可以解释未说出口的张力，但没有解释开场的突发感，也没有具体前史推动当前状态。"
+            }
+          ],
+          "extra_moves": [
+            "新增了不愿放下愿望、寻找一种能承担后果的说法这两个心理过程，但听感并未要求人物已经开始寻找表达方法。"
+          ],
+          "invented_history": [
+            "两人一直相处自在的设定没有由此前线段交代，虽然与亲近关系相容，却是为了支撑后续温存而新增的背景。"
+          ],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S02": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "是",
+              "note": "真实存在的亲近、长期在意和对关系变化的顾虑，能够解释为什么相处本身既让他满足又显得珍贵。"
+            },
+            {
+              "bead": "B5",
+              "verdict": "部分",
+              "note": "想靠近又怕改变关系能够解释热情没有完全落实，但没有说明为什么此刻会突然升高又回柔。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S03": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "持续享受亲近可以解释沉浸感，但不能充分解释漂浮、走神以及流动被拖住的体验。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "关系顾虑解释了冲动为何没有落实，但突然想说又没有开口几乎直接复述了听感记录，没有解释冲动为何此刻出现。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S04": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "再次亲近、想更靠近又担心关系变化，能够解释迫切和顾虑并存，但没有推动这次升级的新经历。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "想表达却担心后果可以解释情绪没有稳定落下，但快要说出口又退回去仍主要是对听感的翻译。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        }
+      },
+      "explanatory": 6,
+      "no_extra_moves": 6,
+      "plain": 7,
+      "coherent": 7,
+      "overall": 6,
+      "verdict": "五份中因果框架相对完整，能把真实亲近与关系顾虑放在一起解释，但很多段落仍在重述听感，人物的经历没有真正推动后续变化。"
+    },
+    "线C": {
+      "segments": {
+        "S01": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "想靠近又怕失去空间可以解释悬而未定的心理张力，但不能具体解释开场为何突发、迸发。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [
+            "以过去适度亲近带来安心、过度亲近会挤占空间作为前史，但没有交代任何具体经历，这更像笼统的人物设定。"
+          ],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S02": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "过去适度亲近带来的安稳能够解释当下为什么舒服，但仍主要把温柔和满足换一种说法，缺少更具体的因果。"
+            },
+            {
+              "bead": "B5",
+              "verdict": "否",
+              "note": "满足尚未被顾虑超过只能描述一种稳定状态，解释不了本段先涌起又回柔的变化。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S03": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "熟悉的亲近让他满足，可以解释温柔，却没有解释漂浮、走神和流动滞留的来源。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "否",
+              "note": "在意得还很轻、没有要求，并未说明短促急切的念头为何突然出现又沉下去。"
+            }
+          ],
+          "extra_moves": [
+            "把亲近慢慢变得重要写成新的心理发展，却没有具体事件支撑，也没有用它解释本段短促的急切。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S04": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "珍惜亲近和担心空间受限可以解释满足与顾虑并存，但没有说明熟悉的亲近为什么这次更迫切。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "担心失去空间能够解释退缩的一面，却不能充分解释情绪短暂打开到顶点又退下。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        }
+      },
+      "explanatory": 4,
+      "no_extra_moves": 8,
+      "plain": 7,
+      "coherent": 6,
+      "overall": 3,
+      "verdict": "文字克制且容易理解，但个人空间的矛盾过于通用，解释不了关键的急切和受阻，前史也缺少具体事件。"
+    },
+    "线D": {
+      "segments": {
+        "S01": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "不确定自己想要什么、又舍不得退开，可以解释心理悬置，但没有具体经历解释突发感。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [
+            "把珍惜自由设为人物最重要的顾虑，却没有任何具体前史说明他为什么如此看重自由。"
+          ],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S02": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "尚未明确想要什么可以解释他暂时享受靠近，却没有解释这份亲密为何在此刻产生，也没有使用具体前史。"
+            },
+            {
+              "bead": "B5",
+              "verdict": "否",
+              "note": "说靠近暂时只是可能，解释不了感情为什么先涌上去又回到柔和。"
+            }
+          ],
+          "extra_moves": [
+            "引入不必先得到理解、肯定或确认安全的心理条件，但前文并未建立他正在担心被拒绝或缺乏安全感。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S03": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "想靠近又想保留自由可以解释温柔中有顾虑，却没有解释漂浮和流动受阻的具体来源。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "否",
+              "note": "顾虑变得明显并不能说明短促急切的念头为什么突然冒出，更没有解释它为什么很快沉下去。"
+            }
+          ],
+          "extra_moves": [
+            "把顾虑加深、开始意识到靠近会影响空间写成新的心理变化，但没有具体事件推动，而且没有解释短促冲动。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S04": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "靠近和自由之间的冲突可以解释迫切与顾虑并存，但没有事件说明这次为什么更强烈。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "部分",
+              "note": "怕失去自由可以解释收回的一面，却不能充分解释情绪一度完整打开、随后又退弱。"
+            }
+          ],
+          "extra_moves": [
+            "把越珍惜亲近越清楚地意识到自由可能受影响写成新的自我认识，但前段没有事件促成它。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        }
+      },
+      "explanatory": 3,
+      "no_extra_moves": 6,
+      "plain": 7,
+      "coherent": 6,
+      "overall": 2,
+      "verdict": "语言易懂，但核心顾虑缺乏前史支撑，四段反复套用想靠近又要自由的矛盾，几乎没有解释具体变化。"
+    },
+    "线E": {
+      "segments": {
+        "S01": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "想靠近却本能退回的拉扯可以解释悬而未落，但人物自己也不知道为何谨慎，因果解释并未真正建立。"
+            }
+          ],
+          "extra_moves": [],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "否",
+          "survives_reversal": "是"
+        },
+        "S02": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "通过允许自己喜欢而不求回应，他逐渐感到安心，这能解释温存的一面，但主要靠新增的自我劝说制造变化。"
+            },
+            {
+              "bead": "B5",
+              "verdict": "否",
+              "note": "整段写的是逐渐放松、越来越满足，没有解释热情为何短暂涌高又回到柔和。"
+            }
+          ],
+          "extra_moves": [
+            "新增不急着给在意一个去向的自我调节。",
+            "新增通过这样想便逐渐安心的心理转变。",
+            "新增不必确认自己的心意有没有被对方领受的相处原则。",
+            "新增渐渐不再提防自己的喜欢这一转变。",
+            "新增对自己能够如此宽和的满意。",
+            "新增希望亲近一直自然发生的设想。",
+            "新增觉得现状已经足够的阶段性结论。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "无",
+          "needs_history": "是",
+          "survives_reversal": "否"
+        },
+        "S03": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "已经尝到亲近的幸福却开始希望它长久，可以解释安稳之下出现牵挂，但不能充分解释漂浮和沉浸感。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "是",
+              "note": "从满足于当下转向希望长久，再开始在意自己是否被珍惜，提供了短促急切的念头为何出现又无法落实的因果链。"
+            }
+          ],
+          "extra_moves": [
+            "“他有些意外”额外增加了一次自我发现；真正起解释作用的是从满足转向盼望长久、担心是否被珍惜。"
+          ],
+          "invented_history": [],
+          "restates_beads": true,
+          "deletion_loss": "有",
+          "needs_history": "是",
+          "survives_reversal": "否"
+        },
+        "S04": {
+          "explains": [
+            {
+              "bead": "B1",
+              "verdict": "部分",
+              "note": "想保住已有的快乐并转向慷慨付出，能解释热情增加的一面，却没有解释迫切、颤动和退弱为何同时存在。"
+            },
+            {
+              "bead": "B2",
+              "verdict": "否",
+              "note": "人物最终确信自己已经放松并找到不会失去什么的方式，反而否定了情绪打开后仍然退弱、无法落稳的核心矛盾。"
+            }
+          ],
+          "extra_moves": [
+            "新增不愿破坏快乐、不愿让喜欢变成催促的自我约束。",
+            "新增主动试着把心放宽的心理干预。",
+            "新增提醒自己不必索取保证的一整套自我说服。",
+            "新增自我说服确实奏效、让自己轻松起来的结论。",
+            "新增发现自己更愿意付出、不再衡量心意的连续心理变化。",
+            "新增对毫不勉强的热切感到幸福的自我评价。",
+            "新增相信自己找到不会伤人、也不会失去什么的相处办法。"
+          ],
+          "invented_history": [
+            "“对方并没有答应过什么”和“先前得来不易的快乐”都是此前未交代的关系事实或前史。"
+          ],
+          "restates_beads": false,
+          "deletion_loss": "无",
+          "needs_history": "是",
+          "survives_reversal": "否"
+        }
+      },
+      "explanatory": 5,
+      "no_extra_moves": 2,
+      "plain": 5,
+      "coherent": 5,
+      "overall": 4,
+      "verdict": "S03有五份中最清楚的因果推进，但S02与S04加入过多心理干预，尤其S04以获得安稳收束矛盾，与听感中的迫切、颤动和不舍不符。"
+    }
+  }
+}
+```

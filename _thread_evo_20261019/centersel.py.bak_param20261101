@@ -1,0 +1,106 @@
+"""Center selection mechanism (user 10-21 approved; no beads):
+  pool   : A-draft consensus Centers (A_<w>.json) + previous research winners (rs top 2) + dd61 for op61
+  spec   : specificity — the Center sentence alone, shuffled with other candidates; judge spreads probability over 10 Chopin
+           pieces; score = probability on the right piece. (gpt6 + gpt56)
+  fit    : explanatory power + room to develop — per work, all candidates in one call: per segment the commonly described
+           musical character (from knowledge/research, not beads), then 自然/勉强/不能 for each candidate; plus development
+           (P0 accumulation kinds, not resolved at the start). (gpt6 + gpt56)
+  report : combined table -> evaluations/centersel/<w>.md
+usage: python centersel.py pool | spec | fit | report"""
+import json, random, sys
+from collections import defaultdict
+from statistics import mean
+import centers, evo, seg
+
+OUT = evo.ROOT / "evaluations" / "centersel"
+PIECES = ["船歌 Op.60", "幻想波兰舞曲 Op.61", "第一叙事曲 Op.23", "第四叙事曲 Op.52", "幻想曲 Op.49", "摇篮曲 Op.57",
+          "夜曲 Op.27-2", "夜曲 Op.48-1", "英雄波兰舞曲 Op.53", "第三奏鸣曲 Op.58 第三乐章"]
+RIGHT = {"op60": "船歌 Op.60", "op61": "幻想波兰舞曲 Op.61"}
+SPEC = ("下面每一句话，都是有人为某一首肖邦作品写的“这首曲子围绕的那件人的事”。请判断每一句最可能是为哪首作品写的，"
+        "把 100 分概率分给下面 10 首作品（可以集中，也可以分散；如果一句话放在哪首上都说得通，就分散）。只根据这句话本身和你对这些作品的了解来判断。\n"
+        "作品：" + "、".join(PIECES) + "\n"
+        "只输出一个 ```json 代码块：{\"items\": [{\"id\": \"…\", \"probs\": {\"作品名\": 0}, \"why\": \"一句话\"}]}\n\n")
+FIT = ("下面是为{WORK}的「线」（Thread）提出的几个候选 Center。Center 是整首曲子围绕的那件人的事：什么对他重要、是什么使它难以安顿。"
+       "这首曲子按这些段落划分：{SEG}\n"
+       "请先依据你对这首曲子的了解和公认的分析（不要编），逐段写出这一段公认的音乐性格和情绪（一句话）。"
+       "然后对每个候选，逐段判断：用这个 Center 加上前面段落的经历，能不能解释这一段的情绪——自然（不费力、贴合）、勉强（要绕弯或忽略这一段的主要性格）、不能。"
+       "再给每个候选打 development（1–10）：它能否自然长出这类理解的积累——原先挤在一起的两个要求被分清；一种给过他东西的办法显出限度；合理选择的代价；"
+       "一次满足照出仍未满足；知道更多反而更尖锐——并且开头不会把话说完。最后给 overall（1–10：作为这首曲子的 Center 有多大说服力）。\n"
+       "只输出一个 ```json 代码块：{\"segments\": [{\"bars\": \"…\", \"character\": \"…\"}], \"candidates\": [{\"id\": \"…\", \"by_segment\": [\"自然\", \"勉强\", \"不能\"], "
+       "\"development\": 0, \"overall\": 0, \"note\": \"一句话：最贴合与最不贴合的地方\"}]}\n\n候选：\n")
+
+
+def pool(w):
+    out = []
+    A = json.loads((evo.ROOT / "evaluations" / "centers" / f"A_{w}.json").read_text(encoding="utf-8"))
+    for k, c in enumerate(A["centers"], 1):
+        out.append({"id": f"A{k}", "center": c["center"], "support": c.get("support"), "models": c.get("models"), "src": "原稿共识"})
+    rs = json.loads((evo.ROOT / "evaluations" / "centers" / f"rs_{w}.json").read_text(encoding="utf-8"))
+    for k in ({"op60": (1, 5), "op61": (2, 6)}[w]):
+        out.append({"id": f"R{k}", "center": rs[k - 1]["center"], "support": None, "src": "上轮比赛"})
+    if w == "op61":
+        out.append({"id": "DD", "center": json.loads((evo.ROOT / "evaluations" / "centers" / "dd61.json").read_text(encoding="utf-8"))[0]["center"], "src": "行动与做梦"})
+    return out
+
+
+if __name__ == "__main__":
+    ph = sys.argv[1]; OUT.mkdir(parents=True, exist_ok=True)
+    if ph == "pool":
+        for w in ("op60", "op61"):
+            p = pool(w); (OUT / f"pool_{w}.json").write_text(json.dumps(p, ensure_ascii=False, indent=1), encoding="utf-8")
+            for c in p:
+                print(w, c["id"], c["src"], c.get("support"), c["center"])
+    elif ph == "spec":
+        items = [{"id": f"{w}:{c['id']}", "center": c["center"]} for w in ("op60", "op61") for c in json.loads((OUT / f"pool_{w}.json").read_text(encoding="utf-8"))]
+        jobs = []
+        for jn, model in (("gpt6", evo.G6), ("gpt56", evo.G56)):
+            for s in (1, 2):
+                it = items[:]; random.Random(f"spec{jn}{s}").shuffle(it)
+                key = {f"C{i + 1}": x["id"] for i, x in enumerate(it)}
+                msg = SPEC + "\n".join(f"C{i + 1}：{x['center']}" for i, x in enumerate(it))
+                (OUT / f"spec_key_{jn}_{s}.json").write_text(json.dumps(key, ensure_ascii=False), encoding="utf-8")
+                rid = f"csp_{jn}_{s}"
+                jobs.append((rid, (lambda rid=rid, msg=msg, model=model: evo.call(rid, msg, prompt_text=SPEC, model=model, meta={"stage": "center_spec"}))))
+        evo.run_parallel(jobs, 4)
+    elif ph == "fit":
+        jobs = []
+        for w in ("op60", "op61"):
+            p = json.loads((OUT / f"pool_{w}.json").read_text(encoding="utf-8"))
+            for jn, model in (("gpt6", evo.G6), ("gpt56", evo.G56)):
+                pp = p[:]; random.Random(f"fit{w}{jn}").shuffle(pp)
+                msg = FIT.replace("{WORK}", centers.WORKNAME[w]).replace("{SEG}", seg.clause(seg.load(w), "note")) + "\n".join(f"{c['id']}：{c['center']}" for c in pp)
+                rid = f"cfit_{w}_{jn}"
+                jobs.append((rid, (lambda rid=rid, msg=msg, model=model: evo.call(rid, msg, prompt_text=FIT, model=model, meta={"stage": "center_fit"}))))
+        evo.run_parallel(jobs, 4)
+    elif ph == "report":
+        spec = defaultdict(list)
+        for jn in ("gpt6", "gpt56"):
+            for s in (1, 2):
+                r = evo.output(f"csp_{jn}_{s}")
+                if not r:
+                    continue
+                key = json.loads((OUT / f"spec_key_{jn}_{s}.json").read_text(encoding="utf-8"))
+                for it in evo.parse_json(r)["items"]:
+                    cid = key.get(it["id"]); w = cid.split(":")[0] if cid else None
+                    if cid:
+                        tot = sum(float(v) for v in it["probs"].values()) or 1
+                        spec[cid].append(100 * float(it["probs"].get(RIGHT[w], 0)) / tot)
+        for w in ("op60", "op61"):
+            p = json.loads((OUT / f"pool_{w}.json").read_text(encoding="utf-8")); fit = defaultdict(list)
+            for jn in ("gpt6", "gpt56"):
+                r = evo.output(f"cfit_{w}_{jn}")
+                if r:
+                    for c in evo.parse_json(r)["candidates"]:
+                        bs = c.get("by_segment") or []
+                        fit[c["id"]].append({"nat": bs.count("自然") / max(1, len(bs)), "no": bs.count("不能"), "dev": float(c.get("development", 0)),
+                                             "ov": float(c.get("overall", 0)), "note": c.get("note", "")})
+            md = [f"# {w}｜Center 选择", "", "| 候选 | 来源 | 原稿支持 | 专属性（猜中概率） | 解释力（自然段比例） | 不能解释的段 | 展开空间 | 说服力 | Center |", "|---|---|---|---|---|---|---|---|---|"]
+            rows = []
+            for c in p:
+                f = fit.get(c["id"], []); sp = spec.get(f"{w}:{c['id']}", [])
+                row = (c["id"], c["src"], c.get("support") or "", mean(sp) if sp else float("nan"), mean([x["nat"] for x in f]) if f else float("nan"),
+                       mean([x["no"] for x in f]) if f else float("nan"), mean([x["dev"] for x in f]) if f else float("nan"), mean([x["ov"] for x in f]) if f else float("nan"), c["center"])
+                rows.append(row)
+            for r in sorted(rows, key=lambda r: -(r[7] if r[7] == r[7] else 0)):
+                md.append(f"| {r[0]} | {r[1]} | {r[2]} | {r[3]:.0f}% | {100 * r[4]:.0f}% | {r[5]:.1f} | {r[6]:.1f} | {r[7]:.1f} | {r[8]} |")
+            (OUT / f"{w}.md").write_text("\n".join(md), encoding="utf-8"); print("\n".join(md)); print()

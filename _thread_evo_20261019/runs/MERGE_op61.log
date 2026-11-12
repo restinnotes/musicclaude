@@ -1,0 +1,22 @@
+[mgP3a_op61_M] ok 836s 15575 chars
+[mgP3a_op61_R_g6] ok 632s 5020 chars
+[mgP3a_op61_R_g56] ok 205s 3512 chars
+op61 merged: pkg3 items 23 | regression {'g6': '新版不差于旧版', 'g56': '新版有实质退步'}
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\merge3.py", line 69, in <module>
+    run(sys.argv[1], sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 1)
+  File "D:\musicclaude\_thread_evo_20261019\merge3.py", line 56, in run
+    reg = {j: finalize3.call(f"mg{T}_{w}_R{sfx}_{j}", finalize3.R.format(NAME=covjudge.NAME[w], OLD=old, NEW=txt), j) for j in ("g6", "g56")}
+                                           ^^^
+NameError: name 'sfx' is not defined
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\merge3.py", line 69, in <module>
+    run(sys.argv[1], sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 1)
+  File "D:\musicclaude\_thread_evo_20261019\merge3.py", line 56, in run
+    reg = {j: finalize3.call(f"mg{T}_{w}_R{sfx}_{j}", finalize3.R.format(NAME=covjudge.NAME[w], OLD=old, NEW=txt), j) for j in ("g6", "g56")}
+                                           ^^^
+NameError: name 'sfx' is not defined
+[mgP3a_op61_M2] ok 771s 16401 chars
+[mgP3a_op61_R2_g6] ok 682s 5012 chars
+[mgP3a_op61_R2_g56] ok 123s 2693 chars
+op61 merged2: pkg3 items 31 | regression {'g6': '新版不差于旧版', 'g56': '新版不差于旧版'}

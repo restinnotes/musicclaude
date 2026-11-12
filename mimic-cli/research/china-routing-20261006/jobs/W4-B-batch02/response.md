@@ -1,0 +1,112 @@
+## 1. 直接回答
+
+截至 **2026-10-06**，仅调查冻结批次 W4-B-batch02 的 9 个 SKU。网页研究本身可用，但当前研究接口对 9 个 Temu 原始搜索页全部不可访问，按预注册状态记为 `BLOCKED`；AliExpress 9 个原始搜索页同样全部不可访问。这里的 `BLOCKED` **绝不解释为缺货或 VERIFIED_UNAVAILABLE**。 ([](), [](), []()) ([Invalid URL]()) ([Invalid URL]())
+
+本批共 **18 个 platform×SKU 观察单元：BLOCKED=18，合格 offers=0，offer级必需字段缺失率=100%**。A exact、B OEM、C comparable 的**已核验**计数均为 0；这不代表市场上不存在。冻结前 `head_status_verified` 与 `exact_variant_verified` 未改动。
+
+## 2. 证据表
+
+| SKU | 冻结 head/exact | Temu | AliExpress | 中国头部/美国中尾部 |
+|---|---|---|---|---|
+| C04-S01 | T / T | BLOCKED | BLOCKED | unresolved |
+| C04-S02 | T / T | BLOCKED | BLOCKED | unresolved |
+| C04-S03 | F / T | BLOCKED | BLOCKED | not_supported |
+| C05-S01 | T / T | BLOCKED | BLOCKED | unresolved |
+| C05-S02 | T / T | BLOCKED | BLOCKED | unresolved |
+| C05-S03 | F / T | BLOCKED | BLOCKED | not_supported |
+| C06-S01 | T / T | BLOCKED | BLOCKED | unresolved |
+| C06-S02 | T / T | BLOCKED | BLOCKED | unresolved |
+| C06-S03 | F / T | BLOCKED | BLOCKED | not_supported |
+
+## 3. 一级来源
+
+每个 SKU 都完成了一次精确型号/版本检索，并尝试打开对应 Temu、AliExpress 原始搜索页；失败均属于“原始页无法由本研究接口读取”，没有拿 HTTP 壳、搜索摘要或二级页面补成交价、seller、库存、仓库。
+
+## 4. 论坛证据
+
+未用论坛/社区数据证明覆盖。唯一有用的社区痕迹是 PiBenchmarks 的用户基准记录出现 `Samsung SSD990EVOPlus2TB`，但持有该硬件不能证明从 AliExpress 购买，更不能证明当前 listing、卖家、价格或库存。[Pi Benchmarks](https://pibenchmarks.com/benchmark/130440/?utm_source=chatgpt.com)
+
+## 5. 反证
+
+AliExpress 并不能因 `BLOCKED` 被解释成“没有”。二级聚合页确实出现 KINGBANK DDR5-6000 银色系列，并可解析到 AliExpress item `1005010520353531`，但原始商品页仍打不开。[Trovaprezzi](https://www.trovaprezzi.it/prezzo_ram_ram_ddr5_6000_mhz_16_gbx2.aspx) Samsung 990 EVO Plus 也有二级 AliExpress 痕迹并解析到 item `1005008997118442`；其二级标题同时跨 1T/2T/4T，且原始页不可读取，因此不能确认冻结的 2TB exact variant。[Pricearchive.org](https://ms.pricearchive.org/search/aliexpress.com/%D0%BC2-ssd-samsung/1?sort=SALE_PRICE_DESC)
+
+## 6. 置信度
+
+对“本研究接口无法直接核验这 18 个观察单元”的置信度高；对 Temu/AliExpress **真实市场在售状态**置信度低/未知。因此没有任何 `VERIFIED_UNAVAILABLE`。
+
+## 7. 缺口
+
+seller、item状态、库存、US warehouse、USD/CNY普通公开价、ZIP10001运费/送达价、重量尺寸、运输结构输入、关税分类/来源/金额全部为 `null`。比较端点定义为送达 **ZIP10001 的普通公开价 + 可见运费**；美国销售税不计入比较端点，除非平台直接强制显示，本批未观察到。四种 shipment structure 保持彼此分离，全部为空，不合并、不补税率、不制造节省。
+
+## 8. 意外发现
+
+外部聚合器可以暴露 AliExpress item ID，即使原站无法读取；这些信息只适合作为后续定位线索，不能升级成 offer。
+
+## 9. 自我反驳
+
+最重要的反驳是：这里可能主要是**研究接口/反爬访问限制**，并非平台本身对美国用户不可用。因此本结果衡量的是“本批可核验性”，不是 Temu/AliExpress 的市场覆盖率。
+
+## 10. 下一实验
+
+下一轮应使用能正常读取两平台公开美国站页面、但不登录的浏览环境，固定 ZIP10001，对同一 9 个冻结 SKU 各重复一次 exact 搜索；只记录原始页直接显示的 seller/item、精确版本、库存、US warehouse、普通价、运费与送达条件。仍不登录、不下单、不联系商家，也不替换冻结 SKU。
+
+```json
+{
+"job_id":"W4-B-batch02",
+"parent_replicate":"W4-B",
+"web_research_available":true,
+"pre_freeze_compliance":true,
+"frozen_sample_sha256":"4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+"assigned_sku_ids":["C04-S01","C04-S02","C04-S03","C05-S01","C05-S02","C05-S03","C06-S01","C06-S02","C06-S03"],
+"categories":[{"category_id":"C04","status":"blocked_no_admissible_offer"},{"category_id":"C05","status":"blocked_no_admissible_offer"},{"category_id":"C06","status":"blocked_no_admissible_offer"}],
+"comparison_endpoint":{"destination":"US ZIP10001","ordinary_price":"public delivered price + visible shipping if directly observed","us_sales_tax":"excluded unless mandatory tax is directly shown; none observed","member_coupon_subsidy":"kept separate; none observed","four_shipment_structures":"kept separate; all null/unresolved because no admissible offer input"},
+"batch_counts":{"platform_sku_units":18,"BLOCKED":18,"EXACT_OBSERVED":0,"OEM_OBSERVED":0,"COMPARABLE_ONLY":0,"RESELLER_ONLY":0,"NOT_OBSERVED":0,"LOGIN_REQUIRED":0,"VERIFIED_UNAVAILABLE":0,"offers":0,"missing_rate":1.0},
+"sources":[
+{"source_id":"S01","url":"https://www.temu.com/search_result.html?search_key=ASUS%2013500H%2016GB%20512GB%20mini%20PC","title":"Temu search C04-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S02","url":"https://www.aliexpress.com/w/wholesale-ASUS-13500H-16GB-512GB-mini-PC.html","title":"AliExpress search C04-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S03","url":"https://www.temu.com/search_result.html?search_key=GMKtec%20EVO-X2%20Ryzen%20AI%20Max%20395%20128GB%202TB","title":"Temu search C04-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S04","url":"https://www.aliexpress.com/w/wholesale-GMKtec-EVO-X2-Ryzen-AI-Max-395-128GB-2TB.html","title":"AliExpress search C04-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S05","url":"https://www.temu.com/search_result.html?search_key=Beelink%20SER8%208745HS%20barebone","title":"Temu search C04-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S06","url":"https://www.aliexpress.com/w/wholesale-Beelink-SER8-8745HS-barebone.html","title":"AliExpress search C04-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S07","url":"https://www.temu.com/search_result.html?search_key=Samsung%20990%20EVO%20Plus%202TB","title":"Temu search C05-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S08","url":"https://www.aliexpress.com/w/wholesale-Samsung-990-EVO-Plus-2TB.html","title":"AliExpress search C05-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S09","url":"https://www.temu.com/search_result.html?search_key=Xiaomi%20BE6500%20WiFi%207","title":"Temu search C05-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S10","url":"https://www.aliexpress.com/w/wholesale-Xiaomi-BE6500-WiFi-7.html","title":"AliExpress search C05-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S11","url":"https://www.temu.com/search_result.html?search_key=KINGBANK%20DDR5%206000%2032GB%20CL36","title":"Temu search C05-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S12","url":"https://www.aliexpress.com/w/wholesale-KINGBANK-DDR5-6000-32GB-CL36.html","title":"AliExpress search C05-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S13","url":"https://www.temu.com/search_result.html?search_key=EDIFIER%20Lolli%20Pro%20SE%20white%20ANC","title":"Temu search C06-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S14","url":"https://www.aliexpress.com/w/wholesale-EDIFIER-Lolli-Pro-SE-white-ANC.html","title":"AliExpress search C06-S01","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S15","url":"https://www.temu.com/search_result.html?search_key=EDIFIER%20LolliClip%20SE%20gold","title":"Temu search C06-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S16","url":"https://www.aliexpress.com/w/wholesale-EDIFIER-LolliClip-SE-gold.html","title":"AliExpress search C06-S02","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S17","url":"https://www.temu.com/search_result.html?search_key=EDIFIER%20Comfo%20Clip%20Q%20white","title":"Temu search C06-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K01","K05"]},
+{"source_id":"S18","url":"https://www.aliexpress.com/w/wholesale-EDIFIER-Comfo-Clip-Q-white.html","title":"AliExpress search C06-S03","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K02","K05"]},
+{"source_id":"S19","url":"https://www.trovaprezzi.it/prezzo_ram_ram_ddr5_6000_mhz_16_gbx2.aspx","title":"KINGBANK AliExpress trace","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"read_full_page","claims_supported":["K03"]},
+{"source_id":"S20","url":"https://it.aliexpress.com/item/1005010520353531.html","title":"AliExpress item 1005010520353531","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K03"]},
+{"source_id":"S21","url":"https://ms.pricearchive.org/search/aliexpress.com/%D0%BC2-ssd-samsung/1?sort=SALE_PRICE_DESC","title":"Samsung AliExpress trace","published_at":null,"retrieved_at":"2026-10-06","source_type":"secondary","access_state":"read_full_page","claims_supported":["K04"]},
+{"source_id":"S22","url":"https://www.aliexpress.com/item/1005008997118442.html","title":"AliExpress item 1005008997118442","published_at":null,"retrieved_at":"2026-10-06","source_type":"official","access_state":"blocked","claims_supported":["K04"]},
+{"source_id":"S23","url":"https://pibenchmarks.com/benchmark/130440/","title":"Samsung SSD990EVOPlus2TB user benchmark","published_at":null,"retrieved_at":"2026-10-06","source_type":"community","access_state":"read_full_page","claims_supported":["K07"]}
+],
+"claims":[
+{"claim_id":"K01","claim":"Temu原始搜索页对9个SKU均无法读取；仅能判BLOCKED，不能判无货。","classification":"FACT","source_ids":["S01","S03","S05","S07","S09","S11","S13","S15","S17"],"confidence":"high","counterevidence":"Temu通用页可被索引，但不能核验本批SKU。"},
+{"claim_id":"K02","claim":"AliExpress原始搜索页对9个SKU均无法读取；仅能判BLOCKED，不能判无货。","classification":"FACT","source_ids":["S02","S04","S06","S08","S10","S12","S14","S16","S18"],"confidence":"high","counterevidence":"外部聚合器存在个别AliExpress线索。"},
+{"claim_id":"K03","claim":"KINGBANK DDR5-6000银色家族有AliExpress间接线索并解析到item 1005010520353531，但原始商品页blocked，不能计offer。","classification":"FACT","source_ids":["S19","S20"],"confidence":"high","counterevidence":"卖家、美国区、ZIP10001、库存、仓库、普通送达价均未直接观察。"},
+{"claim_id":"K04","claim":"Samsung 990 EVO Plus家族有AliExpress间接线索并解析到item 1005008997118442，但原始商品页blocked，不能确认2TB exact offer。","classification":"FACT","source_ids":["S21","S22"],"confidence":"high","counterevidence":"二级标题跨1T/2T/4T，不能证明2TB选择项当前可售。"},
+{"claim_id":"K05","claim":"18个platform×SKU单元无可接纳的原始offer；卖家、库存、美国仓、ZIP10001送达价均为null。","classification":"FACT","source_ids":["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S12","S13","S14","S15","S16","S17","S18"],"confidence":"high","counterevidence":"二级线索不提升为offer。"},
+{"claim_id":"K06","claim":"冻结前head_status_verified与exact_variant_verified对9个SKU均原样保留。","classification":"FACT","source_ids":[],"confidence":"high","counterevidence":"本workstream不重审国内冻结证据。"},
+{"claim_id":"K07","claim":"社区基准只证明有人使用Samsung SSD990EVOPlus2TB设备字符串，不能证明AliExpress当前listing/卖家/价格/库存。","classification":"FACT","source_ids":["S23"],"confidence":"high","counterevidence":"硬件可由其他渠道购得。"}
+],
+"coverage":[
+{"sku_id":"C04-S01","category_id":"C04","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com ASUS 13500H 16GB 512GB mini PC","page:https://www.temu.com/search_result.html?search_key=ASUS%2013500H%2016GB%20512GB%20mini%20PC"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com ASUS 13500H 16GB 512GB mini PC","page:https://www.aliexpress.com/w/wholesale-ASUS-13500H-16GB-512GB-mini-PC.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C04-S02","category_id":"C04","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com GMKtec EVO-X2 Ryzen AI Max 395 128GB 2TB","page:https://www.temu.com/search_result.html?search_key=GMKtec%20EVO-X2%20Ryzen%20AI%20Max%20395%20128GB%202TB"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com GMKtec EVO-X2 Ryzen AI Max 395 128GB 2TB","page:https://www.aliexpress.com/w/wholesale-GMKtec-EVO-X2-Ryzen-AI-Max-395-128GB-2TB.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C04-S03","category_id":"C04","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com Beelink SER8 8745HS barebone","page:https://www.temu.com/search_result.html?search_key=Beelink%20SER8%208745HS%20barebone"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com Beelink SER8 8745HS barebone","page:https://www.aliexpress.com/w/wholesale-Beelink-SER8-8745HS-barebone.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"not_supported","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C05-S01","category_id":"C05","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com Samsung 990 EVO Plus 2TB","page:https://www.temu.com/search_result.html?search_key=Samsung%20990%20EVO%20Plus%202TB"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com Samsung 990 EVO Plus 2TB","page:https://www.aliexpress.com/w/wholesale-Samsung-990-EVO-Plus-2TB.html","secondary:item 1005008997118442; primary blocked"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C05-S02","category_id":"C05","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com Xiaomi BE6500 WiFi 7","page:https://www.temu.com/search_result.html?search_key=Xiaomi%20BE6500%20WiFi%207"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com Xiaomi BE6500 WiFi 7","page:https://www.aliexpress.com/w/wholesale-Xiaomi-BE6500-WiFi-7.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C05-S03","category_id":"C05","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com KINGBANK DDR5 6000 32GB CL36","page:https://www.temu.com/search_result.html?search_key=KINGBANK%20DDR5%206000%2032GB%20CL36"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com KINGBANK DDR5 6000 32GB CL36","page:https://www.aliexpress.com/w/wholesale-KINGBANK-DDR5-6000-32GB-CL36.html","secondary:item 1005010520353531; primary blocked"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"not_supported","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C06-S01","category_id":"C06","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com EDIFIER Lolli Pro SE white ANC","page:https://www.temu.com/search_result.html?search_key=EDIFIER%20Lolli%20Pro%20SE%20white%20ANC"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com EDIFIER Lolli Pro SE white ANC","page:https://www.aliexpress.com/w/wholesale-EDIFIER-Lolli-Pro-SE-white-ANC.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C06-S02","category_id":"C06","head_status_verified":true,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com EDIFIER LolliClip SE gold","page:https://www.temu.com/search_result.html?search_key=EDIFIER%20LolliClip%20SE%20gold"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com EDIFIER LolliClip SE gold","page:https://www.aliexpress.com/w/wholesale-EDIFIER-LolliClip-SE-gold.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"unresolved","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]},
+{"sku_id":"C06-S03","category_id":"C06","head_status_verified":false,"exact_variant_verified":true,"temu":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:temu.com EDIFIER Comfo Clip Q white","page:https://www.temu.com/search_result.html?search_key=EDIFIER%20Comfo%20Clip%20Q%20white"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"aliexpress":{"observation_status":"BLOCKED","offers":[],"search_scope":["web:site:aliexpress.com EDIFIER Comfo Clip Q white","page:https://www.aliexpress.com/w/wholesale-EDIFIER-Comfo-Clip-Q-white.html"],"access_limitations":["primary_blocked","no_ZIP10001_context","no_snippet_inference"]},"china_head_us_middle_tail_status":"not_supported","caveats":["BLOCKED≠缺货/VERIFIED_UNAVAILABLE","A/B/C均未形成可核验offer"]}
+],
+"data_gaps":["18/18原始平台搜索页blocked；不等同无货。","seller/item/stock/US-warehouse/ZIP10001普通送达价均未直接观察。","重量/尺寸、运费结构、关税分类/来源/金额均为null；未制造税率或节省。","四种shipment structure保持分离但本批均无输入，未合并或替代。","二级/社区线索只作发现与反证，不进入offers。"],
+"source_attestation":"model-observed; coordinator_review_pending"
+}
+```

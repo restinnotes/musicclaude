@@ -1,0 +1,83 @@
+{
+ "name": "L31aR",
+ "note": "L31a：11-11 I02 写线层治打转（{'A1': 'L31_g6_A1.txt', 'A2': 'L31_g6_A2.txt', 'A4': 'L31_g6_A4.txt'}）；加一轮：骨架按选路的淘汰理由重写、再审（A1R、A2R）",
+ "steps": [
+  {
+   "id": "A1",
+   "prompt_file": "L31_g6_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  },
+  {
+   "id": "A2",
+   "prompt_file": "L31_g6_A2.txt",
+   "replace": {
+    "{ROUTES}": "step:A1"
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A1R",
+   "prompt_file": "L31_g6_A1R.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER",
+    "{PREV}": "step:A1",
+    "{REVIEW}": "step:A2"
+   },
+   "model": "g6"
+  },
+  {
+   "id": "A2R",
+   "prompt_file": "L31_g6_A2.txt",
+   "replace": {
+    "{ROUTES}": "step:A1R"
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A3",
+   "prompt_file": "Q6_A3.txt",
+   "replace": {
+    "{SEGMENTS}": "SEGMENTS",
+    "{BEADS_TEXT}": "BEADS_TEXT"
+   },
+   "model": "g6",
+   "after": [
+    "A1"
+   ],
+   "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+  },
+  {
+   "id": "A4",
+   "prompt_file": "L31_g6_A4.txt",
+   "replace": {
+    "{SECTIONS}": "SEGMENTS",
+    "{ROUTES}": [
+     "step:A1R",
+     {
+      "text": "\n\n【宏观评审结果】\n"
+     },
+     "step:A2R"
+    ],
+    "{TARGETS}": "step:A3",
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  }
+ ],
+ "final": "A4"
+}

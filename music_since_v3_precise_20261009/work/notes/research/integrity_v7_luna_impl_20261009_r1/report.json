@@ -1,0 +1,149 @@
+{
+  "schema": "execution_integrity_v7_report_v1",
+  "created_date": "2026-10-09",
+  "result": "complete_mock_only_validation",
+  "scope": {
+    "root": "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924",
+    "target_files": [
+      "tools/execution_integrity_v7.py",
+      "tools/gpt2_adapter_v7.py",
+      "tools/runner_v7.py",
+      "tools/experiment_calls_v7.py",
+      "tools/tests/test_execution_integrity_v7.py"
+    ],
+    "report_directory": "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\notes\\research\\integrity_v7_luna_impl_20261009_r1",
+    "report_files": [
+      "安全README.md",
+      "fix_record.txt",
+      "first_failure.txt",
+      "tests_run_manifest.txt",
+      "test_run_01.stdout.txt",
+      "test_run_01.stderr.txt",
+      "test_run_02.stdout.txt",
+      "test_run_02.stderr.txt",
+      "test_run_03.stdout.txt",
+      "test_run_03.stderr.txt",
+      "test_run_04.stdout.txt",
+      "test_run_04.stderr.txt"
+    ],
+    "v7_targets_absent_before_creation": true,
+    "legacy_v4_v5_v6_sources_and_tests_used_read_only": true,
+    "real_execution_approved": false,
+    "production_or_gate_changes": false,
+    "secrets_credentials_cookies_private_config_or_session_state_values_read": false,
+    "network_or_real_model_cli_calls": 0
+  },
+  "suite": {
+    "final_run": 4,
+    "final_return_code": 0,
+    "final_tests_run": 63,
+    "v4_test_methods": 34,
+    "v7_test_methods": 63,
+    "new_v7_test_methods": 29,
+    "missing_v4_method_names": [],
+    "v4_test_file_sha256": "057587233b53e868775058a70fbb2085b42dcdc52889317223942d3a02bde38e",
+    "all_provider_RUN_PROCESS_calls_mocked": true,
+    "cross_process_test": "A local Python child imports v7 and reads queue_open only; it invokes no provider or network.",
+    "runs": [
+      {
+        "run": 1,
+        "argv_display": "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B -m unittest discover -s D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests -p test_execution_integrity_v7.py -v",
+        "return_code": 1,
+        "tests_run": 61,
+        "runtime_seconds": 5.537,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e8016bb0faae9f0e5ddf835b927641a4202c15347b291d4bada9e70c1c6b689d",
+        "stdout_file": "test_run_01.stdout.txt",
+        "stderr_file": "test_run_01.stderr.txt"
+      },
+      {
+        "run": 2,
+        "argv_display": "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B -m unittest test_execution_integrity_v7.AdapterTests.test_cache_write_failure_never_resumes_unsealed_success -v",
+        "return_code": 1,
+        "tests_run": 1,
+        "runtime_seconds": 0.276,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "9d470065672dec8039988f42054fce4b8d04eae5133befaf811c252cdd385399",
+        "stdout_file": "test_run_02.stdout.txt",
+        "stderr_file": "test_run_02.stderr.txt"
+      },
+      {
+        "run": 3,
+        "argv_display": "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B -m unittest discover -s D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests -p test_execution_integrity_v7.py -v",
+        "return_code": 0,
+        "tests_run": 61,
+        "runtime_seconds": 5.009,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "2b7c239c81c6f1f0d4ecfc9ed9db66be408ffd302b97f8f1b0fba7bf3e6ec09e",
+        "stdout_file": "test_run_03.stdout.txt",
+        "stderr_file": "test_run_03.stderr.txt"
+      },
+      {
+        "run": 4,
+        "argv_display": "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B -m unittest discover -s D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests -p test_execution_integrity_v7.py -v",
+        "return_code": 0,
+        "tests_run": 63,
+        "runtime_seconds": 5.274,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "ca804fc7e7edd8399e8b62da80e90560a9ae9acfcdafe7c8f71ba4d9233cc9b5",
+        "stdout_file": "test_run_04.stdout.txt",
+        "stderr_file": "test_run_04.stderr.txt"
+      }
+    ],
+    "first_failure_record": "first_failure.txt",
+    "fix_record": "fix_record.txt"
+  },
+  "gap_closure": {
+    "event_phase_status_allowlists_and_unknown_or_contradictory_terminal_rejection": true,
+    "parse_failure_default_stop_and_explicit_new_sample_policy": true,
+    "proven_pre_submit_transport_retry_same_frozen_prompt": true,
+    "ambiguous_or_post_submit_retry_forbidden_with_persistent_hold": true,
+    "exact_legacy_and_malformed_ledger_ownership_fail_closed": true,
+    "cache_alias_cannot_replace_original_source": true,
+    "use_cache_false_cannot_bypass_ledgers_or_submit_duplicate": true,
+    "independent_v7_classify_stop_and_hold_failure_ticket_retention": true,
+    "source_bound_pre_submit_proof": true,
+    "requested_thinking_effort_exact_max_echo_binding": true,
+    "known_nonprivate_environment_bindings_and_private_value_exclusions": true,
+    "actual_gpt2_argv_bound_in_sealed_completion_meta": true
+  },
+  "active_provider_source_binding": {
+    "files": {
+      "tools/chatgpt_web/linux_native_provider_runner.py": "1765ee93dc07a126d3bd97f71512ff7366b14fc941a182c2f7c7e0ed11107ab3",
+      "tools/chatgpt_web/native_prepared_http_probe.py": "f69fc13804878ab2c258dff079ca05ea953790ab72fdb8fd5014e3e2c62a3345",
+      "src/chatgpt_provider/gpt2agent_provider.py": "994eec5d924d7510206087a175f48ebe69a8df8edb522b0ec1604398cba408ee",
+      "src/chatgpt_provider/headless_native_provider.py": "6617b9bfe1af3875e7371e17c6f305fb6661356c7401c1c3d54c7534f0f2e03c"
+    },
+    "complete": true,
+    "missing": []
+  },
+  "implementation_sha256": {
+    "tools/execution_integrity_v7.py": "d8d5f088812309f3d70166dc5a3fe34b1a3231a209bf534a384f49ebaee902e6",
+    "tools/gpt2_adapter_v7.py": "ecde4fb1edf1abb08fa74324d6d289e8b29403d5533d0e8a4dfeb8c371a21e64",
+    "tools/runner_v7.py": "5cc2033befd86ac4292b23e1c7ae5e855019fd0476e20497bf296b32407796af",
+    "tools/experiment_calls_v7.py": "53c956030ad72fff02ddd69fc05cce29ca169f601cb2b061b37416ab48d5af36",
+    "tools/tests/test_execution_integrity_v7.py": "7744896c31ba2119a41b163f147189266258f942735e9ce8637ab91367e17640"
+  },
+  "report_artifact_sha256": {
+    "安全README.md": "66de535ec7c82e4c32fc6cbfe9207ad02a63d9c4f1dd233fd36a88bf50fb4f8f",
+    "fix_record.txt": "b2cfd9a54424647ccbe7b28a31d50fabadc8ad79fa5bf61250418b382b9be524",
+    "first_failure.txt": "ecc4c3a6ff39cef99903fc9306b7b6810bd5695ad845f737537c9c280558651c",
+    "tests_run_manifest.txt": "ff9efccaef3e336df5038a5744a63152f0dfb7e044ad1e822e27dfdea582cacd",
+    "test_run_01.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_run_01.stderr.txt": "e8016bb0faae9f0e5ddf835b927641a4202c15347b291d4bada9e70c1c6b689d",
+    "test_run_02.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_run_02.stderr.txt": "9d470065672dec8039988f42054fce4b8d04eae5133befaf811c252cdd385399",
+    "test_run_03.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_run_03.stderr.txt": "2b7c239c81c6f1f0d4ecfc9ed9db66be408ffd302b97f8f1b0fba7bf3e6ec09e",
+    "test_run_04.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_run_04.stderr.txt": "ca804fc7e7edd8399e8b62da80e90560a9ae9acfcdafe7c8f71ba4d9233cc9b5"
+  },
+  "limitations": [
+    "No actual CLI or remote provider contract was exercised; Codex/OpenCode event compatibility is unverified.",
+    "GPT-2 input BOM/CRLF/rstrip normalization is unverified.",
+    "Private/global config, session state, Docker image and external service are not frozen; coverage gate is false.",
+    "thinking_effort equality is returned-metadata consistency, not remote attestation.",
+    "plain recomputable SHA-256 integrity marker; not a MAC, signature, or defense against a writer able to rebuild the whole run directory",
+    "No claim of route health, music acceptance, or production readiness."
+  ]
+}

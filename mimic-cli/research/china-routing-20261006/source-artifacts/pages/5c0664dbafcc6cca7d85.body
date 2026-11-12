@@ -1,0 +1,490 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+      
+      
+      
+      
+    
+  
+
+
+
+
+
+
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+
+
+
+    
+    
+        
+    
+        
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+<!doctype html><html class="a-no-js" data-19ax5a9jf="dingo">
+    <head><script>var aPageStart = (new Date()).getTime();</script><meta charset="utf-8"/>
+        <title>
+                
+            Amazon.com Associates Central - Creators API Documentation 
+        </title>
+        
+        <meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="csrf-token" content="hPL/IPLXOojZ/VFsEvuTvxXKtZuCB8C64Pmmz8XNWVu7AAAAAGrFgEw3Y2Y3OGI0Yi0xOThlLTRlY2YtOWM4OC01MDAzMmNjMGE3YTM="/><link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/G/01/creators/favicon.ico"/><meta name="auth-store-id" content=""/><meta name="auth-tracking-id" content=""/><meta name="mobile-request" content="false"/><meta name="google-site-verification" content="fXdIV_PiWyvq6RPKlGjfsitLhT-M7hcNmCnVvfI3DUA" />
+<style>
+.ac-ghome-container .ac-ghome-banner-container .banner{
+    height: 232px;
+    background-image: url("https://m.media-amazon.com/images/G/01/NSA/OneLink_LandingBanner_2x._CB512379350_.png") !important;
+}
+
+.ac-ghome-container .ac-ghome-banner-container .banner .welcome-msg, .ac-ghome-container .ac-ghome-banner-container .banner .ac-card-header-primary{
+	display: none;
+}
+
+</style>
+        
+        <script>!function(){function n(n,t){var r=i(n);return t&&(r=r("instance",t)),r}var r=[],c=0,i=function(t){return function(){var n=c++;return r.push([t,[].slice.call(arguments,0),n,{time:Date.now()}]),i(n)}};n._s=r,this.csa=n}();
+csa("Config", {
+'Application': 'CreatorHub',
+'Events.SushiEndpoint': "https://unagi.amazon.com/1/events/com.amazon.csm.csa.prod",
+'ObfuscatedMarketplaceId': "ATVPDKIKX0DER",
+'CacheDetection.RequestID': "2C9NZPGMFBZPV62R3PAT"
+});
+csa("Events")("setEntity", {
+page: {requestId: "2C9NZPGMFBZPV62R3PAT"},
+session: {id: "142-8476975-2886024"}
+});
+var e = document.createElement("script"); e.src = "https://m.media-amazon.com/images/I/41mrkPcyPwL.js"; document.head.appendChild(e);</script>
+        <script>(function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+'cwr',
+"b01fddae-34ff-417d-8307-8dc17d33618f",
+'1.0.0',
+"us-east-1",
+'https://client.rum.us-east-1.amazonaws.com/1.18.0/cwr.js',
+{
+sessionSampleRate: 1,
+guestRoleArn: "arn:aws:iam::059580467097:role/AppMonitorRum-05958046709-AppMonitorRum05958046709-1O6V75058TY59",
+identityPoolId: "us-east-1:ae87ef7a-abe3-4066-96de-61dff33af1a4",
+endpoint: "https://dataplane.rum.us-east-1.amazonaws.com",
+telemetries: [
+[
+'errors',
+{
+stackTraceLength: 500,
+ignore: errorEvent => {
+const errorPatterns = [
+/window.ue.t0/,
+/Cognito identity: TypeError/,
+/A network error occurred./
+];
+const doIgnore = errorPatterns.some(
+(errorPattern) =>
+errorPattern.test(errorEvent.error?.stack) ||
+errorPattern.test(errorEvent.filename) ||
+errorPattern.test(errorEvent.message)
+);
+return errorEvent && errorEvent.message && doIgnore;
+},
+},
+],
+"performance",
+"http"],
+allowCookies: true,
+sessionAttributes: {
+serverSessionId: "142-8476975-2886024",
+serverRequestId: "2C9NZPGMFBZPV62R3PAT"
+}
+}
+);</script>
+        <link rel="stylesheet" href="https://m.media-amazon.com/images/I/214aTrUk8lL._RC|51nfWTBkewL.css_.css?AUIClients/AmazonUI" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/11WsGYSItxL._RC|01DE6WSvLKL.css,516AF8YtSfL.css,31VyBF3Z4EL.css,01dpRn7s1DL.css,21JMC7OC91L.css,01xH+fhFIJL.css,01oplyhwgTL.css,413Vvv3GONL.css,1170nDgl0uL.css,01Rw4F+QU6L.css,11GW2DCngTL.css,01dwEpLmO4L.css,01IdKcBuAdL.css,01iHqjS7YfL.css,21D3IemrALL.css,11Cv7swYm2L.css,51kR4v4RCcL.css,01yC8kk5kkL.css,11hdEXw-6rL.css,01GAxF7K5tL.css,01ZM-s8Z3xL.css,21gEzBqpmtL.css,11FeoxrgiyL.css,21Yuul0BcnL.css,01rSTIgNJIL.css,21HqyYwP3xL.css,31u+uM+C07L.css,019TAYpKRCL.css,01Lgkx7LWKL.css,31g3RABPKHL.css,11PDZ29p-PL.css,117zDsOznQL.css,215WpAjwzoL.css,11INh4d+2FL.css,114aTS6SjML.css,01Uw64cHNCL.css,21GcfcmbahL.css,21OD8FuBraL.css,11XozyxiH7L.css,210W8HxtP4L.css,11GyUpf9PlL.css,119Cktja74L.css,11PMguLK6gL.css,01890+Vwk8L.css,11TZSntL0oL.css,01qiwJ7qDfL.css,21jZ2Hny6UL.css,01ONg56w3qL.css,0136+UFOtpL.css,31un+UKeIeL.css,21MLYj6O8gL.css,013-xYw+SRL.css_.css?AUIClients/AmazonUI#us.not-trident" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/51SNgZnpM6L.css?AUIClients/AssociateRailsWebsiteAssets-base" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/31f0oc+ICkL.css?AUIClients/AssociateRailsWebsiteAssets-common" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/61jtsjFq8KL.css?AUIClients/AssociateRailsWebsiteAssets-widgets" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/01Cg5grWagL.css?AUIClients/AssociateRailsWebsiteAssets-hype" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/21ynN7W0kIL.css?AUIClients/AssociateRailsWebsiteAssets-creatorsapi_docs" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/21znJZjjhYL.css?AUIClients/CreatorCentralBuzzAssets-menu" />
+<link rel="stylesheet" href="https://m.media-amazon.com/images/I/41LFMyDOXgL.css?AUIClients/CreatorHubAIAssistantBuzzAssets-chatbot" />
+
+        
+        
+        <script>
+(function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log("A copy of P has already been loaded on this page.","FATAL",c.join(" "))}})(window,document,Date);(function(a,b,c,d){"use strict";a._pSetI=function(){return null}})(window,document,Date);(function(c,e,I,B){"use strict";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d){try{return d()}catch(J){return!1}}function l(){if(m){var d={w:c.innerWidth||b.clientWidth,h:c.innerHeight||b.clientHeight};5<Math.abs(d.w-q.w)||50<d.h-q.h?(q=d,n=4,(d=a.mobile||a.tablet?450<d.w&&d.w>d.h:1250<=d.w)?k(b,"a-ws"):b.className=v(b,"a-ws")):0<n&&(n--,x=setTimeout(l,16))}}function G(d){(m=d===B?!m:!!d)&&l()}function H(){return m}if(!u){u=!0;var r=function(){var d=["O","ms","Moz","Webkit"],
+c=e.createElement("div");return{testGradients:function(){return!0},test:function(a){var b=a.charAt(0).toUpperCase()+a.substr(1);a=(d.join(b+" ")+b+" "+a).split(" ");for(b=a.length;b--;)if(""===c.style[a[b]])return!0;return!1},testTransform3d:function(){return!0}}}(),y=b.className,z=/(^| )a-mobile( |$)/.test(y),A=/(^| )a-tablet( |$)/.test(y);a={audio:function(){return!!e.createElement("audio").canPlayType},video:function(){return!!e.createElement("video").canPlayType},canvas:function(){return!!e.createElement("canvas").getContext},
+svg:function(){return!!e.createElementNS&&!!e.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect},offline:function(){return navigator.hasOwnProperty&&navigator.hasOwnProperty("onLine")&&navigator.onLine},dragDrop:function(){return"draggable"in e.createElement("span")},geolocation:function(){return!!navigator.geolocation},history:function(){return!(!c.history||!c.history.pushState)},webworker:function(){return!!c.Worker},autofocus:function(){return"autofocus"in e.createElement("input")},
+inputPlaceholder:function(){return"placeholder"in e.createElement("input")},textareaPlaceholder:function(){return"placeholder"in e.createElement("textarea")},localStorage:function(){return"localStorage"in c&&null!==c.localStorage},orientation:function(){return"orientation"in c},touch:function(){return"ontouchend"in e},gradients:function(){return r.testGradients()},hires:function(){var a=c.devicePixelRatio&&1.5<=c.devicePixelRatio||c.matchMedia&&c.matchMedia("(min-resolution:144dpi)").matches;E("hiRes"+
+(z?"Mobile":A?"Tablet":"Desktop"),a?1:0);return a},transform3d:function(){return r.testTransform3d()},touchScrolling:function(){return f(/Windowshop|android|OS ([5-9]|[1-9][0-9]+)(_[0-9]{1,2})+ like Mac OS X|SOFTWARE=([5-9]|[1-9][0-9]+)(.[0-9]{1,2})+.*DEVICE=iPhone|Chrome|Silk|Firefox|Trident.+?; Touch/i)},ios:function(){return f(/OS [1-9][0-9]*(_[0-9]*)+ like Mac OS X/i)&&!f(/trident|Edge/i)},android:function(){return f(/android.([1-9]|[L-Z])/i)&&!f(/trident|Edge/i)},mobile:function(){return z},
+tablet:function(){return A},rtl:function(){return"rtl"===b.dir}};for(var g in a)a.hasOwnProperty(g)&&(a[g]=w(a[g]));for(var t="textShadow textStroke boxShadow borderRadius borderImage opacity transform transition".split(" "),p=0;p<t.length;p++)a[t[p]]=w(function(){return r.test(t[p])});var m=!0,x=0,q={w:0,h:0},n=4;l();h(c,"resize",function(){clearTimeout(x);n=4;l()});b.className=v(b,"a-no-js");k(b,"a-js");!f(/OS [1-8](_[0-9]*)+ like Mac OS X/i)||c.navigator.standalone||f(/safari/i)||k(b,"a-ember");
+h=[];for(g in a)a.hasOwnProperty(g)&&a[g]&&h.push("a-"+g.replace(/([A-Z])/g,function(a){return"-"+a.toLowerCase()}));k(b,h.join(" "));b.setAttribute("data-aui-build-date",F);C.register("p-detect",function(){return{capabilities:a,localStorage:a.localStorage&&D,toggleResponsiveGrid:G,responsiveGridEnabled:H}});return a||{}}}}()})(window,document,Date);(function(a,p,q,k){function m(e,b,c,g){a.P.when.apply(a.P,b).register("flow:"+e,function(){var a=g.apply(this,arguments);return c||a})}function l(e){a.P.log(e,"FATAL","AmazonUIPageJS@AUIDefineJS")}function f(a,b,c){Object.defineProperty(a,b,{value:c,writable:!1})}function n(e,b,c){"string"!==typeof e&&a.P.error("Anonymous modules are not supported.");var g=c!==k?c:"function"===typeof b?b:k;g||a.P.error("A callback must be provided");var f,h=[];if(c&&Array.isArray(b)&&(h=b.reduce(function(b,d){if("module"===
+d||"require"===d)a.P.error('"module" or "require" injection is not supported.');else if("exports"===d){d=f={};var c="flow:"+e+"-exports";a.P.declare(c,d);b.push(c)}else 0!==d.lastIndexOf("@amzn/",0)?l("Dependency "+d+" does not begin with '@amzn/'"):b.push("flow:"+d);return b},[]),b.length!==h.length))return;m(e,h,f,g)}"use strict";Object.prototype.hasOwnProperty.call(a,"aui")?l("AUIDefineJS is already present globally"):(f(a,"aui",{}),f(a.aui,"amd_define",n))})(window,document,Date);(function(g,h,C,D){function K(a){l&&l.tag&&l.tag(p(":","aui",a))}function q(a,b){l&&l.count&&l.count("aui:"+a,0===b?0:b||(l.count("aui:"+a)||0)+1)}function L(a){try{return a.test(navigator.userAgent)}catch(b){return!1}}function x(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)}function p(a,b,c,f){b=b&&c?b+a+c:b||c;return f?p(a,b,f):b}function y(a,b,c){try{Object.defineProperty(a,b,{value:c,writable:!1})}catch(f){a[b]=c}return c}function M(a,b){a.className=
+N(a,b)+" "+b}function N(a,b){return(" "+a.className+" ").split(" "+b+" ").join(" ").replace(/^ | $/g,"")}function aa(a,b,c){var f=c=a.length,e=function(){f--||(E.push(b),F||(m?m.set(z):setTimeout(z,0),F=!0))};for(e();c--;)O[a[c]]?e():(u[a[c]]=u[a[c]]||[]).push(e)}function ba(a,b,c,f,e){var d=h.createElement(a?"script":"link");x(d,"error",f);e&&x(d,"load",e);a?(d.type="text/javascript",d.async=!0,c&&/AUIClients|images[/]I/.test(b)&&d.setAttribute("crossorigin","anonymous"),d.src=b):(d.rel="stylesheet",
+d.href=b);h.getElementsByTagName("head")[0].appendChild(d)}function P(a,b){return function(c,f){function e(){ba(b,c,d,function(b){G?q("resource_unload"):d?(d=!1,q("resource_retry"),e()):(q("resource_error"),a.log("Asset failed to load: "+c));b&&b.stopPropagation?b.stopPropagation():g.event&&(g.event.cancelBubble=!0)},f)}if(Q[c])return!1;Q[c]=!0;q("resource_count");var d=!0;return!e()}}function ca(a,b,c){for(var f={name:a,guard:function(c){return b.guardFatal(a,c)},guardTime:function(a){return b.guardTime(a)},
+logError:function(c,d,e){b.logError(c,d,e,a)}},e=[],d=0;d<c.length;d++)A.hasOwnProperty(c[d])&&(e[d]=H.hasOwnProperty(c[d])?H[c[d]](A[c[d]],f):A[c[d]]);return e}function v(a,b,c,f,e){return function(d,k){function n(){var a=null;f?a=k:"function"===typeof k&&(q.start=r(),a=k.apply(g,ca(d,h,l)),q.end=r());if(b){A[d]=a;a=d;for(O[a]=!0;(u[a]||[]).length;)u[a].shift()();delete u[a]}q.done=!0}var h=e||this;"function"===typeof d&&(k=d,d=D);b&&(d=d?d.replace(R,""):"__NONAME__",I.hasOwnProperty(d)&&h.error(p(", reregistered by ",
+p(" by ",d+" already registered",I[d]),h.attribution),d),I[d]=h.attribution);for(var l=[],m=0;m<a.length;m++)l[m]=a[m].replace(R,"");var q=w[d||"anon"+ ++da]={depend:l,registered:r(),namespace:h.namespace};d&&ea.hasOwnProperty(d);c?n():aa(l,h.guardFatal(d,n),d);return{decorate:function(a){H[d]=h.guardFatal(d,a)}}}}function S(a){return function(){var b=Array.prototype.slice.call(arguments);return{execute:v(b,!1,a,!1,this),register:v(b,!0,a,!1,this)}}}function J(a,b){return function(c,f){f||(f=c,c=
+D);var e=this.attribution;return function(){n.push(b||{attribution:e,name:c,logLevel:a});var d=f.apply(this,arguments);n.pop();return d}}}function B(a,b){this.load={js:P(this,!0),css:P(this)};y(this,"namespace",b);y(this,"attribution",a)}function T(){h.body?k.trigger("a-bodyBegin"):setTimeout(T,20)}"use strict";var t=C.now=C.now||function(){return+new C},r=function(a){return a&&a.now?a.now.bind(a):t}(g.performance),fa=r(),ea={},l=g.ue;K();K("aui_build_date:3.26.8-2026-10-02");var U={getItem:function(a){try{return g.localStorage.getItem(a)}catch(b){}},
+setItem:function(a,b){try{return g.localStorage.setItem(a,b)}catch(c){}}},m=g._pSetI(),E=[],ha=[],F=!1,ia=navigator.scheduling&&"function"===typeof navigator.scheduling.isInputPending;var z=function(){for(var a=m?m.set(z):setTimeout(z,0),b=t();ha.length||E.length;)if(E.shift()(),m&&ia){if(150<t()-b&&!navigator.scheduling.isInputPending()||50<t()-b&&navigator.scheduling.isInputPending())return}else if(50<t()-b)return;m?m.clear(a):clearTimeout(a);F=!1};var O={},u={},Q={},G=!1;x(g,"beforeunload",function(){G=
+!0;setTimeout(function(){G=!1},1E4)});var R=/^prv:/,I={},A={},H={},w={},da=0,ja=String.fromCharCode(92),n=[],V=!0,W=g.onerror;g.onerror=function(a,b,c,f,e){e&&"object"===typeof e||(e=Error(a,b,c),e.columnNumber=f,e.stack=b||c||f?p(ja,e.message,"at "+p(":",b,c,f)):D);var d=n.pop()||{};e.attribution=p(":",e.attribution||d.attribution,d.name);e.logLevel=d.logLevel;e.attribution&&console&&console.log&&console.log([e.logLevel||"ERROR",a,"thrown by",e.attribution].join(" "));n=[];W&&(d=[].slice.call(arguments),
+d[4]=e,W.apply(g,d))};B.prototype={logError:function(a,b,c,f){b={message:b,logLevel:c||"ERROR",attribution:p(":",this.attribution,f)};if(g.ueLogError)return g.ueLogError(a||b,a?b:null),!0;console&&console.error&&(console.log(b),console.error(a));return!1},error:function(a,b,c,f){a=Error(p(":",f,a,c));a.attribution=p(":",this.attribution,b);throw a;},guardError:J(),guardFatal:J("FATAL"),guardCurrent:function(a){var b=n[n.length-1];return b?J(b.logLevel,b).call(this,a):a},guardTime:function(a){var b=
+n[n.length-1],c=b&&b.name;return c&&c in w?function(){var b=r(),e=a.apply(this,arguments);w[c].async=(w[c].async||0)+r()-b;return e}:a},log:function(a,b,c){return this.logError(null,a,b,c)},declare:v([],!0,!0,!0),register:v([],!0),execute:v([]),AUI_BUILD_DATE:"3.26.8-2026-10-02",when:S(),now:S(!0),trigger:function(a,b,c){var f=t();this.declare(a,{data:b,pageElapsedTime:f-(g.aPageStart||NaN),triggerTime:f});c&&c.instrument&&X.when("prv:a-logTrigger").execute(function(b){b(a)})},handleTriggers:function(){this.log("handleTriggers deprecated")},
+attributeErrors:function(a){return new B(a)},_namespace:function(a,b){return new B(a,b)},setPriority:function(a){V?V=!1:this.log("setPriority only accept the first call.")}};var k=y(g,"AmazonUIPageJS",new B);var X=k._namespace("PageJS","AmazonUI");X.declare("prv:p-debug",w);k.declare("p-recorder-events",[]);k.declare("p-recorder-stop",function(){});y(g,"P",k);T();if(h.addEventListener){var Y;h.addEventListener("DOMContentLoaded",Y=function(){k.trigger("a-domready");h.removeEventListener("DOMContentLoaded",
+Y,!1)},!1)}var Z=h.documentElement,ka=g._pd(k,L,x,M,Z,U,N,q,"3.26.8-2026-10-02");L(/UCBrowser/i)||ka.localStorage&&M(Z,U.getItem("a-font-class"));k.declare("a-event-revised-handling",!1);k.declare("a-fix-event-off",!1);q("pagejs:pkgExecTime",r()-fa)})(window,document,Date);
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/11I0WXrZVoL._RC|61xJcNKKLXL.js,11Y+5x+kkTL.js,51IrWwn6GEL.js,115zbyk371L.js,11GgN1+C7hL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21NadQlXUWL.js,01vRf9id2EL.js,31on-La90vL.js,11a7qqY8xXL.js,11PZSUl3FLL.js,51C4kaFbiAL.js,11FhdH2HZwL.js,11wb9K3sw0L.js,11BrgrMAHUL.js,11dKU9zhD1L.js,21F6z4HaEVL.js,01Svfxfy8OL.js,61lbT4bHNWL.js,01ikBbTAneL.js,31xywoXPfpL.js,01qXJuwGmxL.js,01WlsjNmqIL.js,11F929pmpYL.js,31dUhXzzjYL.js,01rpauTep4L.js,314M2Oak7hL.js,011FfPwYqHL.js,21P5VvHf-XL.js,01pTq+jF06L.js,21kN0q4IA-L.js,0105nvqLd4L.js,11vb6P5C5AL.js,013jNanSD3L.js_.js?AUIClients/AmazonUI');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/51ikmtGNnwL.js?AUIClients/AssociateRailsWebsiteAssets-core');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/5167slHMoBL.js?AUIClients/AssociateRailsWebsiteAssets-common');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/61BAhX-xu7L.js?AUIClients/AssociateRailsWebsiteAssets-widgets#918798-T1');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/117ePI93evL.js?AUIClients/AssociateRailsWebsiteAssets-creatorsapi_docs');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/11ILHWKgI1L.js?AUIClients/CreatorCentralBuzzAssets-menu');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://m.media-amazon.com/images/I/01-akAcsXsL._RC|71+KX6LY3BL.js_.js?AUIClients/CreatorHubAIAssistantBuzzAssets-chatbot');
+</script>
+
+    </head>
+    <body class="ac-body ac-regular-base-font hype a-m-us a-aui_72554-c a-aui_template_weblab_cache_333406-c a-bw_aui_dark_mode_mshop_ios_1390013-t1"><div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"BW_AUI_DARK_MODE_MSHOP_IOS_1390013":"T1"}</script>
+        
+        
+
+        <div class="ac-creatorhub-header-wrapper"><div class="a-section a-spacing-none ac-creatorhub-header"><div class="ac-page-wrapper"><div class="ac-creatorhub-header-container"><div class="ac-creatorhub-header-item"><span class="a-button a-button-primary"><span class="a-button-inner"><a href="/login" class="a-button-text">Login</a></span></span></div><div class="ac-creatorhub-header-item ac-header-item-separator">or</div><div class="ac-creatorhub-header-item"><span class="a-button a-button-search"><span class="a-button-inner"><a href="/welcome" class="a-button-text">Sign up</a></span></span></div><div class="ac-creatorhub-logo"><span data-csa-c-type="action" data-csa-c-content-id="ac-logo" data-csa-c-slot-id="Hype.header_bottom.ac-logo" data-csa-c-action="navigate"><a href="/" title="Home" aria-label="Home"><span style="width:{{ width }};height:{{ height }};display:block;background-image:url(https://images-na.ssl-images-amazon.com/images/G/01//associates/network/revamp/AmazonAssociatesLogo.svg)"></span></a></span></div><div class="ac-creatorhub-header-right"><div class="ac-creatorhub-header-item"><span class="a-declarative" data-action="a-popover" data-a-popover="{&quot;name&quot;:&quot;ac-country-language-selector&quot;,&quot;position&quot;:&quot;triggerBottom&quot;,&quot;padding&quot;:&quot;none&quot;,&quot;closeButton&quot;:false}"><a href="javascript:void(0)" role="button" class="a-popover-trigger a-declarative"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/US-flag._V192206995_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-intro-metadata-msg-home="Change Language" data-intro-metadata-position="top" class="ac-language-name">EN<span class="a-letter-space"></span></span><i class="a-icon a-icon-popover"></i></a><div class="a-popover-preload" id="a-popover-ac-country-language-selector"><div class="a-section ac-creatorhub-header-popover-content"><div class="a-section ac-selection-group"><span class="ac-selection-group-header">Language</span><span class="a-declarative" data-action="ac-language-change-action" data-ac-language-change-action="{&quot;selector&quot;:&quot;.ac-language-radio-button&quot;}"><ul class="a-unordered-list a-nostyle a-vertical ac-language-options"><li class="ac-language-option ac-selected-option"><span class="a-list-item"><div data-a-input-name="ac-language" data-url="/home/language/update?url=https%3A%2F%2Faffiliate-program.amazon.com%2Fcreatorsapi%2Fdocs%2Fen-us%2Fintroduction&amp;language=en_US" class="a-radio a-radio-fancy ac-language-radio-button"><label><input type="radio" name="ac-language" value="en_US" checked/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><span data-csa-c-type="action" data-csa-c-content-id="English - EN" data-csa-c-slot-id="Hype.language_dropdown" data-csa-c-action="navigate">English - EN</span></span></label></div></span></li><li class="ac-language-option"><span class="a-list-item"><div data-a-input-name="ac-language" data-url="/home/language/update?url=https%3A%2F%2Faffiliate-program.amazon.com%2Fcreatorsapi%2Fdocs%2Fen-us%2Fintroduction&amp;language=es_US" class="a-radio a-radio-fancy ac-language-radio-button"><label><input type="radio" name="ac-language" value="es_US"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><span data-csa-c-type="action" data-csa-c-content-id="Español - ES" data-csa-c-slot-id="Hype.language_dropdown" data-csa-c-action="navigate">Español - ES</span></span></label></div></span></li></ul></span></div><div class="a-section ac-selection-group"><span class="ac-selection-group-header">Country</span><span class="a-declarative" data-action="ac-country-change-action" data-ac-country-change-action="{&quot;selector&quot;:&quot;.ac-country-radio-button&quot;}"><ul class="a-unordered-list a-nostyle a-vertical ac-country-options"><li class="ac-country-option ac-selected-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.com/creatorsapi/docs/en-us/introduction" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="US" checked/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/US-flag._V192206995_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="United States" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">United States</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.co.uk" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="GB"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/UK-flag._V192206992_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="United Kingdom" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">United Kingdom</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://partnernet.amazon.de" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="DE"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/DE-flag._V192206982_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Germany" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Germany</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://partenaires.amazon.fr" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="FR"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/FR-flag._V192206976_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="France" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">France</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate.amazon.co.jp" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="JP"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/JP-flag._V192207005_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Japan" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Japan</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://associates.amazon.ca" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="CA"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/CA-flag._V192206983_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Canada" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Canada</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://programma-affiliazione.amazon.it" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="IT"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/IT-flag._V204498394_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Italy" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Italy</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://afiliados.amazon.es" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="ES"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/ES-flag._V156897028_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Spain" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Spain</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.in" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="IN"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/IN-flag._V382358001_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="India" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">India</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://associados.amazon.com.br" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="BR"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/BR-flag._V342668329_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Brazil" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Brazil</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://afiliados.amazon.com.mx" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="MX"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/MX-flag._V315331614_.jpg" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Mexico" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Mexico</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.com.au" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="AU"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-na.ssl-images-amazon.com/images/G/01/associates/network/AU-flag._CB1517570484_.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Australia" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Australia</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.ae" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="AE"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-eu.ssl-images-amazon.com/images/G/39/associates/network/UAEFlag._CB1198675309_.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="United Arab Emirates" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">United Arab Emirates</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.sg" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="SG"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/65/associates/network/SG-flag-small._CB1198675309_.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Singapore" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Singapore</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://partnernet.amazon.nl/" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="NL"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/01/associates/network/NL-flag._CB1577426702_.jpg" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Netherlands" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Netherlands</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.sa" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="SA"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/40/associates/network/SAflag._CB1198675309_.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Saudi Arabia" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Saudi Arabia</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.se" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="SE"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/46/associates/network/Sweden.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Sweden" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Sweden</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.pl" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="PL"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/48/associates/network/Poland.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Poland" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Poland</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.com.be" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="BE"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/51/associates/network/BelgiumFlag.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Belgium" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Belgium</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.ie" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="IE"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/56/associates/network/IrelandFlag.png" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Ireland" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Ireland</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://gelirortakligi.amazon.com.tr" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="TR"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://images-eu.ssl-images-amazon.com/images/G/41/associates/network/TRFlag._CB1198675309_.gif" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Turkey" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Turkey</span></span></label></div></span></li><li class="ac-country-option"><span class="a-list-item"><div data-a-input-name="ac-country" data-url="https://affiliate-program.amazon.eg" class="a-radio a-radio-fancy ac-country-radio-button"><label><input type="radio" name="ac-country" value="EG"/><i class="a-icon a-icon-radio"></i><span class="a-label a-radio-label"><img alt="" src="https://m.media-amazon.com/images/G/42/associates/network/mp-flag-eg.jpg" class="creator-central-country-flag"/><span class="a-letter-space"></span><span data-csa-c-type="action" data-csa-c-content-id="Egypt" data-csa-c-slot-id="Hype.country_dropdown" data-csa-c-action="navigate">Egypt</span></span></label></div></span></li></ul></span></div></div></div></span></div><div class="ac-creatorhub-header-item"><span class="a-declarative" data-action="creator-central-open-menu" data-creator-central-open-menu="{}"><a aria-label="Open Menu" href="#"><div class="creator-central-menu-icon creatorhub-hamburger" id="hamburger"><div class="creator-central-icon-container"><div class="line"></div><div class="line"></div><div class="line"></div></div></div></a></span></div></div></div></div></div></div><div id="creator-central-nav-menu" class="cc-menu-overlay"><div class="cc-submenu-container"><span class="a-declarative" data-action="creator-central-nav-previous" data-creator-central-nav-previous="{}"><button class="cc-submenu-header cc-menu-button-layout"><i class="a-icon a-icon-previous" role="presentation"></i><span class="cc-submenu-header-text cc-menu-primary-text-size a-text-bold a-text-caps">Main menu</span></button></span><div class="cc-submenu-items"></div></div><div class="cc-menu-container"><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-home&quot;,&quot;menuItemUrl&quot;:&quot;/home&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="home-Click" data-csa-c-slot-id="Hype.menu.home" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="/home"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Home</span><span>Home</span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-tools&quot;,&quot;menuItemUrl&quot;:&quot;/welcome/topic/tools&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="tools-Click" data-csa-c-slot-id="Hype.menu.tools" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="/welcome/topic/tools"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Tools</span><span>Tools</span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-fee_schedule&quot;,&quot;menuItemUrl&quot;:&quot;/help/operating/schedule&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="fee_schedule-Click" data-csa-c-slot-id="Hype.menu.fee_schedule" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="/help/operating/schedule"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Commission Income Statement</span><span>Commission Income Statement</span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-reports&quot;,&quot;menuItemUrl&quot;:&quot;/home/reports&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="reports-Click" data-csa-c-slot-id="Hype.menu.reports" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="/home/reports"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Reports</span><span>Reports</span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-creator_university&quot;,&quot;menuItemUrl&quot;:&quot;/home/redirect?to=https%3A%2F%2Fwww.amazon.com%2Fb%3Fnode%3D48482381011&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="creator_university-Click" data-csa-c-slot-id="Hype.menu.creator_university" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="/home/redirect?to=https%3A%2F%2Fwww.amazon.com%2Fb%3Fnode%3D48482381011"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Creator University</span><span>Creator University</span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;subMenuItemId&quot;:&quot;cc-menu-item-help&quot;,&quot;menuItemUrl&quot;:&quot;javascript:void(0)&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="help-Click" data-csa-c-slot-id="Hype.menu.help" data-csa-c-action="navigate"><button class="cc-menu-button-layout" url="javascript:void(0)"><div class="cc-menu-item-grid"><span class="cc-menu-primary-text-size a-text-bold">Help</span><span>Help</span></div><i class="a-icon a-icon-arrow" role="presentation"></i><div id="cc-menu-item-help" class="aok-hidden cc-menu-item-grid"><div class="cc-submenu-title"><span class="cc-menu-primary-text-size a-text-bold">Help</span><span class="a-color-secondary">Help</span></div><span data-csa-c-type="action" data-csa-c-content-id="help_productClick" data-csa-c-slot-id="Hype.menu.help_product" data-csa-c-action="navigate"><a class="cc-submenu-button-layout" role="button" aria-label="Program Help" href="/help/node">Program Help</a></span><span data-csa-c-type="action" data-csa-c-content-id="operating_agreementClick" data-csa-c-slot-id="Hype.menu.operating_agreement" data-csa-c-action="navigate"><a class="cc-submenu-button-layout" role="button" aria-label="Operating Agreement" href="/help/operating/agreement?ac-ms-src=ac-nav">Operating Agreement</a></span><span data-csa-c-type="action" data-csa-c-content-id="program_policiesClick" data-csa-c-slot-id="Hype.menu.program_policies" data-csa-c-action="navigate"><a class="cc-submenu-button-layout" role="button" aria-label="Program Policies" href="/help/operating/policies?ac-ms-src=ac-nav">Program Policies</a></span><span data-csa-c-type="action" data-csa-c-content-id="contact_usClick" data-csa-c-slot-id="Hype.menu.contact_us" data-csa-c-action="navigate"><a class="cc-submenu-button-layout" role="button" aria-label="Contact Us" href="/contact?ac-ms-src=ac-nav">Contact Us</a></span></div></button></span></span><span class="a-declarative" data-action="cc-menu-item-clicked" data-cc-menu-item-clicked="{&quot;menuItemUrl&quot;:&quot;/login&quot;}"><span data-csa-c-type="action" data-csa-c-content-id="cc-menu-sign-in-clicked" data-csa-c-slot-id="Hype.menu.signIn" data-csa-c-action="navigate"><button class="cc-menu-button-layout"><span class="cc-menu-primary-text-size cc-menu-sign-out-text">SIGN IN</span></button></span></span></div><span class="a-declarative" data-action="creator-central-close-menu" data-creator-central-close-menu="{}"><div class="cc-menu-close-overlay"><button class="white-close-icon"></button></div></span></div>
+
+        <div id="" role="main">
+                
+            <noscript>Please enable JavaScript</noscript>
+
+                
+            <div class="ac-global-alert-container ac-page-wrapper" id="ac-global-alert-container"></div>
+
+                
+            <div class="ac-page ac-page-wrapper">
+                    
+                    <div class="creatorsapi-docs-page">
+    <div class="main-content">
+    <nav class="sidebar">
+  <h2>Creators API</h2>
+  <input type="search" id="docs-search" placeholder="Search docs..." autocomplete="off" />
+  <div id="search-results" class="search-results" hidden></div>
+  <ul id="sidebar-toc">
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/introduction" class="active">Introduction</a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/migrating-to-creatorsapi-from-paapi">Migrating to Creators API from PA-API</a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/onboarding" class="section-header">Onboarding<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/get-started" class="section-header">Get Started<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/concepts" class="section-header">Concepts &amp; Guidelines<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/api-reference" class="section-header">API Reference<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/locale-reference" class="section-header">Locale Reference<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/troubleshooting" class="section-header">Troubleshooting<span class="arrow">›</span></a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/frequently-asked-questions">Frequently Asked Questions</a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/paapiv5-deprecation">PA-API 5 Deprecation Notice</a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/license-agreement">License Agreement</a></li>
+    <li style="margin-left: 0px"><a href="/creatorsapi/docs/en-us/contact-us">Contact Us</a></li>
+  </ul>
+</nav>
+    <main class="content">
+      <div class="content-box">
+        <article class="markdown-content">
+          <h1 id="welcome-to-creators-api">Welcome to Creators API</h1>
+<p>Build applications that integrate with Amazon&#39;s product catalog and help your audience discover products.</p>
+<h2 id="what-is-the-creators-api">What is the Creators API?</h2>
+<p>The Creators API is a REST-based API that provides programmatic access to Amazon&#39;s product catalog data, enabling publishers, influencers, and affiliate partners to create innovative and engaging shopping experiences for their audiences. Applications using the Creators API can deliver relevant product recommendations, integrate rich product content, and provide seamless shopping experiences, helping creators grow their businesses through the Amazon Associates program.</p>
+<h2 id="api-operations">API Operations</h2>
+<div class="table-wrapper"><table><thead><tr><th>Operation</th><th>Description</th></tr></thead><tbody><tr><td><a href="/creatorsapi/docs/en-us/api-reference/operations/search-items">SearchItems</a></td><td>Search for products using keywords, filters, and browse nodes</td></tr><tr><td><a href="/creatorsapi/docs/en-us/api-reference/operations/get-items">GetItems</a></td><td>Retrieve detailed information for specific products by ASIN or other identifiers</td></tr><tr><td><a href="/creatorsapi/docs/en-us/api-reference/operations/get-variations">GetVariations</a></td><td>Get all variations of a parent product</td></tr><tr><td><a href="/creatorsapi/docs/en-us/api-reference/operations/get-browse-nodes">GetBrowseNodes</a></td><td>Fetch category information and browse node hierarchy</td></tr></tbody></table></div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the Creators API, you must:</p>
+<ol><li><p>Be enrolled in the Amazon Associates program for your target marketplace</p></li><li><p>Have at least 10 qualifying sales within the past 30 days to access the PA API through the Creators API</p></li><li><p>Register for API access through <a href="http://affiliate-program.amazon.com/creatorsapi">Associates Central</a></p></li><li><p>Generate API credentials</p></li></ol>
+<p>See <a href="/creatorsapi/docs/en-us/onboarding/register-for-creators-api">Register for Creators API</a> for detailed instructions.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ul><li><p><a href="/creatorsapi/docs/en-us/get-started">Getting Started</a> - Setup instructions and operations overview</p></li><li><p><a href="/creatorsapi/docs/en-us/get-started/using-sdk">Using SDK</a> - SDKs for Node.js, Python, PHP, and Java</p></li><li><p><a href="/creatorsapi/docs/en-us/get-started/using-curl">Using cURL</a> - Making direct HTTP requests</p></li><li><p><a href="/creatorsapi/docs/en-us/api-reference">API Reference</a> - Complete API documentation</p></li></ul>
+<h2 id="migrating-from-product-advertising-api">Migrating from Product Advertising API?</h2>
+<p>If you&#39;re currently using Product Advertising API 5.0, see the <a href="/creatorsapi/docs/en-us/migrating-to-creatorsapi-from-paapi">Migration Guide</a> for step-by-step instructions on transitioning to Creators API.</p>
+<h2 id="support">Support</h2>
+<ul><li><p><a href="/creatorsapi/docs/en-us/troubleshooting">Troubleshooting</a> - Common issues and solutions</p></li><li><p><a href="/creatorsapi/docs/en-us/frequently-asked-questions">FAQ</a> - Frequently asked questions</p></li><li><p><a href="/creatorsapi/docs/en-us/contact-us">Contact Us</a> - Get help from support</p></li><li><p><a href="/creatorsapi/docs/en-us/license-agreement">License Agreement</a> - Terms and conditions</p></li></ul>
+        </article>
+      </div>
+    </main>
+  </div>
+  </div>
+            </div>
+
+            <div class="creatorhub-footer-wrapper"><div class="creatorhub-page-wrapper"><div class="creatorhub-footer"><span data-csa-c-type="action" data-csa-c-content-id="home.footer" data-csa-c-slot-id="Hype.home.footer" data-csa-c-action="navigate"><!--wlact-->
+  
+    <div class="footlist floatl creatorhublink">
+      <ul>
+        <li>
+          <a href="https://affiliate-program.amazon.com/help/operating/agreement/?pf_rd_p=1bc82604-94f5-4f61-9e69-a6a780150b1e&ref_=amb_link_Ej00m9pwQOiij74PjxIJcw_1&pf_rd_r=2C9NZPGMFBZPV62R3PAT">
+              Operating agreement
+            </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footlist floatl creatorhublink">
+      <ul>
+          <li>
+              <a href="https://affiliate-program.amazon.com/help/operating/policies?pf_rd_p=1bc82604-94f5-4f61-9e69-a6a780150b1e&ref_=amb_link_Ej00m9pwQOiij74PjxIJcw_2&pf_rd_r=2C9NZPGMFBZPV62R3PAT">
+                    Program policies
+                </a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="footlist floatl creatorhublink">
+      <ul>
+          <li>
+              <a href="https://amazon.com/gp/help/customer/display.html?ie=UTF8&nodeId=508088">
+                    Conditions of use
+                </a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="footlist floatl creatorhublink">
+      <ul>
+          <li>
+              <a href="https://affiliate-program.amazon.com/home/contact?ref_=amb_link_Ej00m9pwQOiij74PjxIJcw_4&pf_rd_p=1bc82604-94f5-4f61-9e69-a6a780150b1e&_encoding=UTF8%2F&pf_rd_r=2C9NZPGMFBZPV62R3PAT">
+                    Contact us
+                </a>
+          </li>
+      </ul>
+    </div>
+    
+    <div class="floatr"> © 1996-2025, Amazon.com, Inc.</div>
+    <div class="clear"></div>
+
+</span></div></div></div>
+        </div>
+
+        
+            
+        
+
+
+        
+        <script type="text/javascript">if (typeof window.P === "object" && typeof window.P.when === "function") {
+P.when('A').register('ac-app-config', function(A) {
+var accountingConfig = {"currency":{"format":"%s%v","symbol":"$","decimal":".","thousand":",","precision":"2"},"number":{"precision":"2","thousand":",","decimal":"."}};
+var strings = {"404-all":"We're sorry. The page you are looking for is not a functioning page on our site.","500-all":"We're sorry, but something went wrong. Rest assured we are working on fixing this.","data-not-applicable":"-","no-data":"No data found","dateformats-month-year":"MMM YYYY","error-no-internet":"Unable to connect to the Internet.","dateformats-date-month":"DD MMM","loading":"Loading..."};
+var configs = {"marketplace_id":"ATVPDKIKX0DER","completionServerEndPoint":"https://completion.amazon.com","reportsDateCustomLanguage":"","associatesWebsiteEndpoint":"https://affiliate-program.amazon.com","program_id":1,"widgetURL":"","ajax_timeout":55000,"ZipcodeNotApplicableCountries":["SA"],"locale":"US","time_zone":"America/Los_Angeles","CreatorLinks.sushiEelUrl":"https://unagi-na.amazon.com/1/events/com.amazon.eel.CreatorLinksProd.nexus/","i18nlang":"en_US","mobile_optimized_endpoints":["/home/ads","/promotion/landing"],"retailWebsiteOtherEndPoint":"https://www.primevideo.com","acic_host_config":"prod.NAAmazon","unencrypted_marketplace_id":1,"widgetServerDefaultEndPoint":"//ws-na.amazon-adsystem.com"};
+return {
+getAccountingConfig: function() {
+return accountingConfig
+},
+getString: function(key) {
+return strings[key]
+},
+getConfig: function(key) {
+return configs[key]
+}
+}
+});
+}</script>
+
+        
+        
+    </div></body>
+</html>
+

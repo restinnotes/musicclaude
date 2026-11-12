@@ -1,0 +1,129 @@
+{
+  "frozen_at": "2026-11-03T00:13:08.309338-05:00",
+  "status": "prospective_only_no_new_review_requests",
+  "rule": "I14: two consecutive rounds with no acceptance AND current four-goal open reviews find no new medium-or-higher problems relative to the reviewed prior issue set. Repeated known issues are recorded unresolved, not reclassified as new. No claim of improvement or standards compliance follows from stopping criterion alone.",
+  "valid_only_if": "Mainline Q15/qu body unchanged (qurefs citations restored only), R29 and R30 both terminal with zero accepted. If mainline changes, discard this scope and reset cycle.",
+  "rounds_to_audit": [
+    "round29",
+    "round30"
+  ],
+  "prior_issue_sources": [
+    {
+      "rid": "eo2_op60_qu_g56_r1",
+      "output_sha256": "88e2b67a0bac57d6aa84c3586509f28e0a551c9b8349163a0d7c3120a16fab50"
+    },
+    {
+      "rid": "eo2_op60_qu_g56_r2",
+      "output_sha256": "f63c45546fe1e23a00b4631df7c366b5f977343f7100ba728c47b40a19709b62"
+    },
+    {
+      "rid": "eo2_op60_qu_g6_r1",
+      "output_sha256": "4af69c3cfa16a73b2809cda731bc37b57c8c990264d9a85d42f88feb4dce9e79"
+    },
+    {
+      "rid": "eo2_op60_qu_g6_r2",
+      "output_sha256": "a033117c240a05cffd42fd0cfff1ed7ae4032ccea8006fbc8133ac21b70ac696"
+    },
+    {
+      "rid": "eo2_op60_qu_gem_r1",
+      "output_sha256": "379fa8ba1c2d94b2bca6c65d4df9d4fe0eebbd541e80b5fc1540b0bd7d763255"
+    },
+    {
+      "rid": "eo2_op61_qu_g56_r1",
+      "output_sha256": "3cf99a76fd93576f88fb3034d877dd87bb69ceb2be0f1f5c6bd04729d2717ba8"
+    },
+    {
+      "rid": "eo2_op61_qu_g56_r2",
+      "output_sha256": "e3babc44e41ffbe5b5a46a47c8cca141d97fa8fa0c02ad587b09a60ea2efa883"
+    },
+    {
+      "rid": "eo2_op61_qu_g6_r1",
+      "output_sha256": "250d8bdbed7aeb1178c4c6e9b0c4cd005fae147460b6cd00d86ed63160367167"
+    },
+    {
+      "rid": "eo2_op61_qu_g6_r2",
+      "output_sha256": "765c49f5710a16a2c61b6d6425ac7c0d0a43ceb8ac6954a9aabfc8d5e15719d9"
+    },
+    {
+      "rid": "eo2_op61_qu_gem_r1",
+      "output_sha256": "578803b4e6bf53d25a2a86a2f70724741be54d93339d69f7728e427d950601fe"
+    },
+    {
+      "rid": "eo2_op60_qurefs_g6_r2",
+      "output_sha256": "f6e832bbf62033ecfafff6204e2a6ec49f72bb48b5269bdb10c4de5c51300660"
+    },
+    {
+      "rid": "eo2_op60_qurefs_g6_r3",
+      "output_sha256": "53fef0cac753788c45ca910489ff6b046a0305baf756bccead74b247db08ea45"
+    },
+    {
+      "rid": "eo2_op60_qurefs_g56_r1",
+      "output_sha256": "1fcc3281aa067e3ca09eee61bc6138b4c04f496e3e2b6bc7cf49427906af81d9"
+    },
+    {
+      "rid": "eo2_op60_qurefs_g56_r2",
+      "output_sha256": "83f1fae766523033bb2d79cd7727715fd20f38839863fbd7aaf6a602b5c3c24b"
+    },
+    {
+      "rid": "eo2_op60_qurefs_gem_r1",
+      "output_sha256": "901b54212f048b46539b228dab28ae6167d71f4a0ff8cf24d6157ab5d91e62ea"
+    },
+    {
+      "rid": "eo2_op61_qurefs_g6_r1",
+      "output_sha256": "947200b6e891397841faa9cc8e9acf4653713afd1b004e7b4329f4c2a9c44694"
+    },
+    {
+      "rid": "eo2_op61_qurefs_g6_r2",
+      "output_sha256": "56b7ba68e0ce41f20665b2ad33561b531c8061c663fdb2065b565bba0dbbb4a5"
+    },
+    {
+      "rid": "eo2_op61_qurefs_g56_r1",
+      "output_sha256": "8c367548204160ec572079e6ab8ed774284fabc0fe8dae8c40f73e9c72520d2d"
+    },
+    {
+      "rid": "eo2_op61_qurefs_g56_r2",
+      "output_sha256": "34efb8e7920de9a1033ceb6f7240301e3d28b2b740c629d604e998036e0165e4"
+    },
+    {
+      "rid": "eo2_op61_qurefs_gem_r1",
+      "output_sha256": "f8a49d832c8410446901c84e215a1d74cdea86d2d8d2016883ec5a46b2e3c180"
+    }
+  ],
+  "known_unresolved_medium_candidates": [
+    {
+      "review": "eo2_op60_qurefs_g56_r1",
+      "problem_index": 7,
+      "goal": "4",
+      "where": "S06 B1",
+      "severity": "中等",
+      "finding": "Specific clear/light/pastoral main-experience under-supported, while side beads dominate. Old set inspected has S06 state-list language problem, not clearly this coverage mechanism. Current g6 r2 problem6 also raises it lightly. Do not merge solely because both mention S06.",
+      "timing": "raw g56 call started21:43:24 finished198s, before R28; included in frozen R29 material but R28 prepare used old qu tag only."
+    },
+    {
+      "review": "eo2_op61_qurefs_g56_r1",
+      "problem_index": 1,
+      "goal": "1",
+      "where": "S05",
+      "severity": "中等",
+      "finding": "First sentence declares only longing remains, second revives resistance, third extinguishes resistance again. Old Gem mentions repeated exhaustion, not clearly this logical contradiction. Do not mark known without specific prior evidence.",
+      "timing": "current four-review group included in frozen R29 advisory input, but novelty versus audit_scope old qu set remains to decide."
+    }
+  ],
+  "also_keep_uncertain_instance": "eo2_op61_qurefs_gem_r1 problem3 S09/S10 fatigue-tail repetition; treat as already raised for future novelty matching, never as fixed.",
+  "body_comparison": {
+    "op60": {
+      "same_body_and_relation": true,
+      "qu_body_sha256": "22d0728c93e69d8cd498a22e957124d36fe9d10ba62250a0145701e036db35d8",
+      "qurefs_body_sha256": "22d0728c93e69d8cd498a22e957124d36fe9d10ba62250a0145701e036db35d8"
+    },
+    "op61": {
+      "same_body_and_relation": true,
+      "qu_body_sha256": "521c7de103bf437af4a817755242698b0832fd9ef381b650d1b7aea472f8ba2c",
+      "qurefs_body_sha256": "521c7de103bf437af4a817755242698b0832fd9ef381b650d1b7aea472f8ba2c"
+    }
+  },
+  "required_fresh_group": "Two works, GPT6 x2 / GPT5.6 x2 / Gemini3.8 x1 each, same JV2 prompt and exact qurefs body; all complete and full read before any I14 verdict. Do not reuse current 10 as a fresh group.",
+  "matching_rule": "Compare each fresh medium/serious finding to exact prior mechanism and location; broad categories alone do not match. Old unresolved is not fixed. Scope frozen before future reviews; no moving after results.",
+  "current_i14_assessment": "still not_proven; this prospective scope does not alter previous assessment or certify convergence.",
+  "model_calls": 0
+}

@@ -1,0 +1,39 @@
+{
+  "run": "cov2_op60_g6_r50progress1rr",
+  "raw_sha256": "872df4a5cb5fde2755789c518a0d4916c94b3d82a4a2f355aa7ed4285db22f44",
+  "issue": {
+    "sec": "S13",
+    "bead": "B3",
+    "items_claim": "S13②“心里疼得厉害”",
+    "actual": "S13②没有该片段；同词在S11③",
+    "status": "说清",
+    "points_uncertain_range": [
+      0,
+      2
+    ],
+    "clear_count_uncertain_range": [
+      0,
+      1
+    ]
+  },
+  "decision": "Even excluding S13B3 entirely, g6 S13 drops only one clear bead against baseline; the original floor requires a drop of >=2 for both judges in the same section. This miscitation cannot change the floor outcome, so retain the raw review and flag it rather than add a correction call or hand-edit its rating.",
+  "sensitivity": {
+    "baseline_S13_g6_clear": 4,
+    "candidate_raw_S13_g6_clear": 4,
+    "candidate_worst_case_S13_g6_clear": 3,
+    "worst_case_drop": 1,
+    "threshold_each_judge": 2,
+    "can_change_floor_failure": false,
+    "all_other_S13_citations_remain": true
+  },
+  "additional_miscitation": {
+    "run": "cov2_op61_g56_r50progress1rr",
+    "sec": "S11",
+    "bead": "B2",
+    "issue": "Three phrases assigned S11② are actually from S07③; keep raw original.",
+    "baseline_clear": 3,
+    "candidate_raw_clear": 3,
+    "candidate_excluding_this_bead": 2,
+    "worst_drop": 1
+  }
+}

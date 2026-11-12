@@ -1,0 +1,48 @@
+{
+ "name": "L36abl",
+ "note": "L36abl：11-11 深夜诊断用消融。L32a 原样，只把 A4 的 TARGETS（珠子提炼的逐段体验性质）拿掉，看打转是不是由逐段体验性质带出来的。",
+ "steps": [
+  {
+   "id": "A1",
+   "prompt_file": "L32_g6_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  },
+  {
+   "id": "A2",
+   "prompt_file": "L32_g6_A2.txt",
+   "replace": {
+    "{ROUTES}": "step:A1"
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A4",
+   "prompt_file": "L32_g6_A4b.txt",
+   "replace": {
+    "{SECTIONS}": "SEGMENTS",
+    "{ROUTES}": [
+     "step:A1",
+     {
+      "text": "\n\n【宏观评审结果】\n"
+     },
+     "step:A2"
+    ],
+    "{TARGETS}": {
+     "text": "（这一轮不提供逐段体验性质；按选定路线写，情感底色由你按路线自己定。）"
+    },
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  }
+ ],
+ "final": "A4"
+}

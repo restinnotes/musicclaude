@@ -1,0 +1,63 @@
+{
+  "name": "round28_crossc01",
+  "note": "cross A1=schemes/R27P2.json A2=schemes/R27P2.json A4=schemes/round28_fastc01.json",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "R27P2_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "R27P2_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "round28_fastc01_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4",
+  "edits": []
+}

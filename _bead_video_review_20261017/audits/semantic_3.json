@@ -1,0 +1,1912 @@
+{
+  "audit_id": "semantic_3",
+  "date": "2026-10-17",
+  "scope": [
+    "S11",
+    "S12",
+    "S13",
+    "S14"
+  ],
+  "state": "complete",
+  "method": {
+    "definition": "意义族以具体体验、关系、动作、感官与变化方向归组；同义重复合并，主体、原因、态度、感官、走向不同至少登记子差异。",
+    "status_definitions": {
+      "full": "该条自身所列的有效子差异均有现稿对应；不是只看共同底色。",
+      "partial": "现稿保留主干或共同底色，但有已列子差异未明确表达。",
+      "omitted": "有效或条件有效的体验在本段现稿缺少对应；不自动等于编辑错误，也不要求全部塞回正文。",
+      "quarantine": "隔离有问题的事实、定位或未经证实的传记因果；不连带否定可分离的体验。",
+      "out_of_scope": "跨段具体事件不属当前段，合理排除。"
+    },
+    "denominator": "意义族及子差异划分含编辑判断，不以UID数、模型数或重复次数为异质性分母；不计算全量覆盖率、不作全量100%保证。",
+    "current_support_scope": "仅当前段FINAL_BEADS正文的连续片段；空字符串表示无直接对应。邻段相似内容不替本段自动记覆盖。",
+    "evidence_policy": "quote必须为sources/units.json对应unit.text的连续子串；不去标点拼接，不使用检索摘要充当引文。",
+    "video_policy": "建议句只是恢复差异的备选，非整篇重写。未给定音轨，不设秒数、不声称亲听录音；演奏分支分别选择，不混成同一次演奏必然同时发生。",
+    "external_calls": "无外部模型调用，无联网搜索。"
+  },
+  "reading": {
+    "pool_occurrences": {
+      "S11": 37,
+      "S12": 39,
+      "S13": 45,
+      "S14": 43
+    },
+    "pool_occurrence_total": 164,
+    "pool_unique_units": 104,
+    "units_json_total_records": 353,
+    "units_json_read_scope": "解析完整353记录索引，语义通读范围为四池对应104个原单位；另读2个池外前言核定位。未声称353个单位全部逐条语义审读。",
+    "additional_original_units": [
+      "SRC-muse-int-2-U01",
+      "SRC-luna-int-1-U01"
+    ],
+    "actual_unique_original_units_read": 106,
+    "pure_title_uids": [
+      "SRC-gpt6w-web-1-U14",
+      "SRC-gpt6w-web-3-U13",
+      "SRC-gpt56w-web-2-U12",
+      "SRC-gpt6w-web-1-U17"
+    ],
+    "pure_title_occurrences": {
+      "S11": 2,
+      "S12": 3,
+      "S13": 3,
+      "S14": 1
+    },
+    "content_occurrences_after_pure_titles": 155,
+    "content_unique_after_pure_titles": 100,
+    "outline_with_meaning_uids": [
+      "SRC-gflash-int-1-U15",
+      "SRC-gflash-int-1-U18"
+    ],
+    "outline_policy": "这两个标题式提纲含明确心理句，共4次出现，保留意义但不因它们独立增加意义族；短摘要也按意义合并。kind=head不自动等于标题壳。",
+    "cross_segment_policy": "跨段单位全文已读；按明确句子和小节归属裁决，不按整UID剔除；条目不要求每个重复UID都重复列证据。",
+    "pool_unit_comparison": "四池所有164次出现均已对照原unit全文；去除池内继承标题提示和分隔符后，原unit文本与池内容互含吻合。",
+    "pool_uid_ledger": {
+      "S11": [
+        "SRC-gflash-int-1-U15",
+        "SRC-gflash-int-1-U16",
+        "SRC-gflash-int-2-U07",
+        "SRC-gflash-int-3-U11",
+        "SRC-gflash-web-1-U07",
+        "SRC-gflash-web-2-U06",
+        "SRC-gflash-web-3-U06",
+        "SRC-gpt56w-int-2-U09",
+        "SRC-gpt56w-int-2-U19",
+        "SRC-gpt56w-int-3-U09",
+        "SRC-gpt56w-int-r1-U08",
+        "SRC-gpt56w-web-2-U11",
+        "SRC-gpt56w-web-3-U09",
+        "SRC-gpt56w-web-r1-U09",
+        "SRC-gpt6w-int-1-U09",
+        "SRC-gpt6w-int-2-U07",
+        "SRC-gpt6w-int-3-U08",
+        "SRC-gpt6w-web-1-U14",
+        "SRC-gpt6w-web-1-U16",
+        "SRC-gpt6w-web-2-U11",
+        "SRC-gpt6w-web-3-U13",
+        "SRC-gpt6w-web-3-U14",
+        "SRC-luna-int-1-U05",
+        "SRC-luna-int-1-U06",
+        "SRC-luna-int-2-U06",
+        "SRC-luna-int-2-U07",
+        "SRC-luna-int-3-U09",
+        "SRC-luna-web-1-U09",
+        "SRC-luna-web-2-U10",
+        "SRC-luna-web-3-U10",
+        "SRC-muse-int-1-U07",
+        "SRC-muse-int-2-U08",
+        "SRC-muse-int-2-U09",
+        "SRC-muse-int-3-U06",
+        "SRC-muse-web-1-U07",
+        "SRC-muse-web-2-U07",
+        "SRC-muse-web-3-U07"
+      ],
+      "S12": [
+        "SRC-gflash-int-1-U15",
+        "SRC-gflash-int-1-U17",
+        "SRC-gflash-int-2-U07",
+        "SRC-gflash-int-3-U13",
+        "SRC-gflash-web-1-U07",
+        "SRC-gflash-web-2-U06",
+        "SRC-gflash-web-3-U06",
+        "SRC-gpt56w-int-2-U09",
+        "SRC-gpt56w-int-2-U10",
+        "SRC-gpt56w-int-2-U19",
+        "SRC-gpt56w-int-3-U09",
+        "SRC-gpt56w-int-3-U10",
+        "SRC-gpt56w-int-r1-U08",
+        "SRC-gpt56w-int-r1-U09",
+        "SRC-gpt56w-web-2-U12",
+        "SRC-gpt56w-web-2-U13",
+        "SRC-gpt56w-web-3-U10",
+        "SRC-gpt56w-web-r1-U09",
+        "SRC-gpt6w-int-1-U09",
+        "SRC-gpt6w-int-1-U10",
+        "SRC-gpt6w-int-2-U08",
+        "SRC-gpt6w-int-3-U08",
+        "SRC-gpt6w-web-1-U17",
+        "SRC-gpt6w-web-1-U18",
+        "SRC-gpt6w-web-2-U12",
+        "SRC-gpt6w-web-3-U13",
+        "SRC-gpt6w-web-3-U15",
+        "SRC-luna-int-1-U06",
+        "SRC-luna-int-2-U07",
+        "SRC-luna-int-3-U09",
+        "SRC-luna-web-1-U09",
+        "SRC-luna-web-2-U10",
+        "SRC-luna-web-3-U11",
+        "SRC-muse-int-1-U08",
+        "SRC-muse-int-2-U09",
+        "SRC-muse-int-3-U07",
+        "SRC-muse-web-1-U07",
+        "SRC-muse-web-2-U07",
+        "SRC-muse-web-3-U07"
+      ],
+      "S13": [
+        "SRC-gflash-int-1-U18",
+        "SRC-gflash-int-1-U19",
+        "SRC-gflash-int-2-U08",
+        "SRC-gflash-int-3-U13",
+        "SRC-gflash-web-1-U08",
+        "SRC-gflash-web-1-U09",
+        "SRC-gflash-web-2-U07",
+        "SRC-gflash-web-3-U07",
+        "SRC-gpt56w-int-2-U10",
+        "SRC-gpt56w-int-2-U11",
+        "SRC-gpt56w-int-2-U19",
+        "SRC-gpt56w-int-2-U20",
+        "SRC-gpt56w-int-3-U10",
+        "SRC-gpt56w-int-3-U11",
+        "SRC-gpt56w-int-r1-U10",
+        "SRC-gpt56w-web-2-U12",
+        "SRC-gpt56w-web-2-U14",
+        "SRC-gpt56w-web-3-U11",
+        "SRC-gpt56w-web-r1-U10",
+        "SRC-gpt6w-int-1-U10",
+        "SRC-gpt6w-int-1-U11",
+        "SRC-gpt6w-int-2-U08",
+        "SRC-gpt6w-int-2-U09",
+        "SRC-gpt6w-int-3-U08",
+        "SRC-gpt6w-int-3-U09",
+        "SRC-gpt6w-web-1-U17",
+        "SRC-gpt6w-web-1-U19",
+        "SRC-gpt6w-web-1-U20",
+        "SRC-gpt6w-web-2-U13",
+        "SRC-gpt6w-web-3-U13",
+        "SRC-gpt6w-web-3-U16",
+        "SRC-luna-int-1-U06",
+        "SRC-luna-int-2-U07",
+        "SRC-luna-int-3-U09",
+        "SRC-luna-int-3-U10",
+        "SRC-luna-web-1-U10",
+        "SRC-luna-web-2-U10",
+        "SRC-luna-web-2-U11",
+        "SRC-luna-web-3-U12",
+        "SRC-muse-int-1-U09",
+        "SRC-muse-int-2-U10",
+        "SRC-muse-int-3-U08",
+        "SRC-muse-web-1-U08",
+        "SRC-muse-web-2-U08",
+        "SRC-muse-web-3-U08"
+      ],
+      "S14": [
+        "SRC-gflash-int-1-U18",
+        "SRC-gflash-int-1-U20",
+        "SRC-gflash-int-1-U21",
+        "SRC-gflash-int-2-U08",
+        "SRC-gflash-int-3-U13",
+        "SRC-gflash-web-1-U08",
+        "SRC-gflash-web-1-U09",
+        "SRC-gflash-web-1-U10",
+        "SRC-gflash-web-2-U07",
+        "SRC-gflash-web-3-U07",
+        "SRC-gpt56w-int-2-U12",
+        "SRC-gpt56w-int-2-U21",
+        "SRC-gpt56w-int-3-U12",
+        "SRC-gpt56w-int-r1-U11",
+        "SRC-gpt56w-web-2-U14",
+        "SRC-gpt56w-web-2-U15",
+        "SRC-gpt56w-web-3-U11",
+        "SRC-gpt56w-web-3-U12",
+        "SRC-gpt56w-web-r1-U11",
+        "SRC-gpt6w-int-1-U11",
+        "SRC-gpt6w-int-2-U09",
+        "SRC-gpt6w-int-3-U09",
+        "SRC-gpt6w-web-1-U21",
+        "SRC-gpt6w-web-2-U13",
+        "SRC-gpt6w-web-2-U14",
+        "SRC-gpt6w-web-3-U13",
+        "SRC-gpt6w-web-3-U17",
+        "SRC-luna-int-1-U07",
+        "SRC-luna-int-2-U07",
+        "SRC-luna-int-3-U10",
+        "SRC-luna-web-1-U10",
+        "SRC-luna-web-1-U11",
+        "SRC-luna-web-2-U10",
+        "SRC-luna-web-2-U11",
+        "SRC-luna-web-2-U12",
+        "SRC-luna-web-3-U12",
+        "SRC-luna-web-3-U13",
+        "SRC-muse-int-1-U09",
+        "SRC-muse-int-2-U10",
+        "SRC-muse-int-3-U08",
+        "SRC-muse-web-1-U08",
+        "SRC-muse-web-2-U09",
+        "SRC-muse-web-3-U09"
+      ]
+    },
+    "content_occurrences_excluding_pure_titles_and_outline_only": 151,
+    "content_unique_excluding_pure_titles_and_outline_only": 98
+  },
+  "inputs": {
+    "root": "D:\\musicclaude\\_bead_quality_20261017",
+    "pools": [
+      "production_context\\pools\\S11.txt",
+      "production_context\\pools\\S12.txt",
+      "production_context\\pools\\S13.txt",
+      "production_context\\pools\\S14.txt"
+    ],
+    "current": "editorial\\FINAL_BEADS.json",
+    "original_units": "sources\\units.json",
+    "local_fact_checks": [
+      "facts_S13.txt",
+      "audits\\facts_S11.txt",
+      "audits\\facts_S12.txt",
+      "audits\\facts_S14.txt"
+    ],
+    "primary_local_reference": "D:\\musicclaude\\kopp.html，直接读[12]、[23–26]、[28]及注23、27；非只依赖旧审计结论。"
+  },
+  "constraints": {
+    "S07": "不在本审计范围；不将78 sfogato或62 poco piu mosso归给S07，也不因记号错位否定独立的心理安静。",
+    "S13": "持续张力与局部呼吸并存；收退可随演奏条件化；111 calando归S14。",
+    "S14": "死亡隐喻不自动判错；与作曲家事实、定位错误分开。",
+    "limits": "本次未逐一核验原A所有学者归因、未重新听录音、未重新逐页读谱；事实边界使用本地正文与既有谱面核验记录，明确其来源。"
+  },
+  "families": [
+    {
+      "id": "S11-M01",
+      "segment": "S11",
+      "meaning": "熟悉的私语变成向外敞开的歌",
+      "subdifferences": [
+        "主题仍可辨认",
+        "厚度、重量与空间扩大",
+        "上扬时不再立刻收轻"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-3-U06",
+          "quote": "左手从温柔的水波变成了横跨几个八度的惊涛骇浪"
+        },
+        {
+          "uid": "SRC-muse-web-1-U07",
+          "quote": "这次开头没有那个压抑的渐弱了，像挣脱了。"
+        }
+      ],
+      "status": "full",
+      "current_support": "开头那支熟悉的歌回来了，却不再只贴着耳边说话。声音厚了，分量大了，底下的水波也翻成宽阔的涌动；原先向上伸去便收轻的地方，这次让歌声敞开。",
+      "lost_meaning": "",
+      "reason": "三项声响和表达方向均有对应；同义的放开、解放不需逐条复述。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S11-M02",
+      "segment": "S11",
+      "meaning": "经历改变了听见熟悉事物的人",
+      "subdifferences": [
+        "旧房子与家具未变，人已知道太多",
+        "重逢后才懂珍贵",
+        "珍贵使失去变得具体"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-2-U09",
+          "quote": "家具可能没变。\n\n但你知道的事情已经太多了。"
+        },
+        {
+          "uid": "SRC-gpt56w-int-2-U19",
+          "quote": "可是当我重新看见它，我才真正知道自己可能失去什么。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "歌仍认得出来，身体却像被它整个卷入了。",
+      "lost_meaning": "保留了熟悉，却未说清听者因经历而改变，以及珍贵带来的失去之痛。",
+      "reason": "身体被卷入是强度变化，不能替代时间、记忆和认知变化。",
+      "suggested_human_line": "歌还是那首歌，你却更知道它有多珍贵了。"
+    },
+    {
+      "id": "S11-M03",
+      "segment": "S11",
+      "meaning": "承认自己的感情并愿意承担脆弱",
+      "subdifferences": [
+        "不再为热情道歉",
+        "从请求许可转为内在确信",
+        "明知受伤仍主动投入"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U14",
+          "quote": "我知道这份感情可能使我受伤，可我不想再缩回去。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-1-U16",
+          "quote": "现在他仿佛在回答：“是的，这就是我真正的感受。”"
+        }
+      ],
+      "status": "partial",
+      "current_support": "我知道这份感情可能使我受伤，可我不想再缩回去。",
+      "lost_meaning": "承认并冒受伤风险已保留；从向别人请求许可到不再道歉、获得内在确信的关系变化仅隐含。",
+      "reason": "按子差异严格判定，现稿保住主干但未逐一明确内在许可变化。",
+      "suggested_human_line": "这就是我的感情，这回不再觉得需要为它道歉。"
+    },
+    {
+      "id": "S11-M04",
+      "segment": "S11",
+      "meaning": "从想起爱转为此刻正在爱",
+      "subdifferences": [
+        "回忆中的距离缩短",
+        "不再旁观自己的感情",
+        "同一个人当下认领经历"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-2-U09",
+          "quote": "如果说 mm.5 是“想起爱”，这里是“正在爱”。"
+        },
+        {
+          "uid": "SRC-gpt56w-web-2-U11",
+          "quote": "同一艘船、同一首歌突然变得异常直接、异常现实。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺了回忆态转为当下行动的时间方向。",
+      "reason": "这与勇敢表达有关，但表达得更响不等于从回忆回到当下；Muse此源定位有问题，故以心理候选保留，不据其小节号独立背书。",
+      "suggested_human_line": "像终于不再只是想起那份爱，而是重新活在里面。"
+    },
+    {
+      "id": "S11-M05",
+      "segment": "S11",
+      "meaning": "不再要求所爱永远留下",
+      "subdifferences": [
+        "不要求对方证明不会消失",
+        "曾经真实爱过便足够",
+        "珍惜有限而不占有"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U09",
+          "quote": "不是放弃所爱，而是不再拼命要求所爱的东西证明自己不会消失。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-2-U11",
+          "quote": "即使我知道自己留不住这一刻，也不能因此否认它有多珍贵。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "没有保留从占有要求退到允许存在的关系变化。",
+      "reason": "跨78–93的材料只取可独立成立的心理意义，不能把78的sfogato当84的新记号；S11专属原文亦有留不住仍珍惜。",
+      "suggested_human_line": "留不住这一刻，也不妨碍它已经足够珍贵。"
+    },
+    {
+      "id": "S11-M06",
+      "segment": "S11",
+      "meaning": "主动要求幸福、执意抓住此刻",
+      "subdifferences": [
+        "从怀念变成索求",
+        "明知会走仍按住",
+        "勇敢中有固执与用力过猛"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-3-U07",
+          "quote": "从“怀念幸福”变成了“要求幸福”。"
+        },
+        {
+          "uid": "SRC-muse-web-2-U07",
+          "quote": "这时的快乐已经不是享受，是**用力抓住**。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿的愿意表达没有保留向所爱索求、按住幸福的动作。",
+      "reason": "这是与放下占有相反的有效听法；可以列为备选，不能声称已由“不缩回去”全部覆盖。",
+      "suggested_human_line": "也像突然不肯再等了：这一刻，我就是想抓住。"
+    },
+    {
+      "id": "S11-M07",
+      "segment": "S11",
+      "meaning": "饱满超出身体容量，喜悦转成痛",
+      "subdifferences": [
+        "胸口压迫与窒息",
+        "热浪吞没",
+        "刺眼到流泪的视觉联觉"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-3-U11",
+          "quote": "天空烧得血红金亮，光芒刺眼到让人想流泪"
+        },
+        {
+          "uid": "SRC-gflash-web-3-U06",
+          "quote": "被巨大的生命热浪完全吞没的战栗与窒息感"
+        }
+      ],
+      "status": "partial",
+      "current_support": "你也能在这份放声里感到一点近乎痛苦的饱满。",
+      "lost_meaning": "痛与卷入已保留，具体胸口压迫、灼热及刺眼流泪未保留。",
+      "reason": "同族可合并，但触觉、温度、视觉并非完全同义；视频宜选一项感官提示。",
+      "suggested_human_line": "亮得让人想流泪，胸口也像被这份饱满压住了。"
+    },
+    {
+      "id": "S11-M08",
+      "segment": "S11",
+      "meaning": "允许多种感情同时存在而不管理自己",
+      "subdifferences": [
+        "停止阻止悲伤",
+        "爱、欲望、感激和恐惧同在",
+        "暂时不受忧虑支配并非消除忧虑"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-r1-U08",
+          "quote": "我不再要求自己只能感到某一种东西。"
+        },
+        {
+          "uid": "SRC-gpt6w-int-2-U07",
+          "quote": "已经知道忧虑存在，却短暂地不再受它支配。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "那份坚定里仍有柔软",
+      "lost_meaning": "仅保留勇气和柔软，缺少停止情绪管理、容许多种感受共存。",
+      "reason": "跨段心理解释可作候选；不把此处认作78的记号位置，也不把心理松开等同音量减弱。",
+      "suggested_human_line": "忧虑还在，只是这一次，你不急着把它压回去。"
+    },
+    {
+      "id": "S11-M09",
+      "segment": "S11",
+      "meaning": "私密亲近扩展到世界和生命本身",
+      "subdifferences": [
+        "从两个人到拥抱世界",
+        "孤舟融入海洋",
+        "有限生命仍值得赞美"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-2-U07",
+          "quote": "紧紧抱住他所爱的人和这个世界。"
+        },
+        {
+          "uid": "SRC-gflash-int-1-U16",
+          "quote": "小船不再是孤舟，它仿佛与整片翻滚的金色海洋融为了一体。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "关系对象和尺度由恋人扩向世界的差异消失。",
+      "reason": "可以保留为听者比喻；剥离作曲家濒死的断言后仍有独立意义。",
+      "suggested_human_line": "这份爱忽然装下了更多东西，像连眼前的世界也想一起抱住。"
+    },
+    {
+      "id": "S11-M10",
+      "segment": "S11",
+      "meaning": "强烈也可以是极轻的内心独白",
+      "subdifferences": [
+        "精神强度不等于声压",
+        "放声倾诉与不敢大声的独白是演奏分支",
+        "温柔与勇敢可以并存"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-web-2-U10",
+          "quote": "这个高潮可以是放声倾诉，也可以是强烈到不敢大声说出的内心独白。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿反复用放声、厚重描写，未留下轻声而内里燃烧的版本。",
+      "reason": "本地Kopp[12]确有1848弱奏记述，但并未核听任何录音；建议按未来所选音轨条件使用，不宣布唯一正确演法。",
+      "suggested_human_line": "如果这里弹得很轻，那股热也可能全烧在心里。"
+    },
+    {
+      "id": "S11-M11",
+      "segment": "S11",
+      "meaning": "情绪推着人走，主动投入中仍有惊惶",
+      "subdifferences": [
+        "我想控制方向",
+        "潮水更强",
+        "不甘与身体无力不同于从容承担"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-int-1-U05",
+          "quote": "你想控制方向，却发现潮水比自己更有力。"
+        },
+        {
+          "uid": "SRC-muse-int-1-U07",
+          "quote": "求生的意志很强，但身体的无力感也很真。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "身体却像被它整个卷入了。",
+      "lost_meaning": "被卷入已有，控制方向失败的惊惶与求生式不甘没有。",
+      "reason": "少数听法可保留；不沿用同源关于78–83大喊、84后音流持续下掉的定位断言。",
+      "suggested_human_line": "想把方向握在手里，心里的浪却比自己更有力。"
+    },
+    {
+      "id": "S11-M12",
+      "segment": "S11",
+      "meaning": "段末既回应旧问题又悬向不可撤回的下一步",
+      "subdifferences": [
+        "92附近得到较完整回应",
+        "满足并非全曲结束",
+        "力量悬住，预感将越过门槛"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-2-U11",
+          "quote": "m.92 给出了前面长期欠着的某种满足，但仍然不是全曲最后的结束。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-3-U14",
+          "quote": "你隐隐知道，后面将发生一件无法再收回去的事。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "到段末，力量短暂悬着，话还没有真正收住。",
+      "lost_meaning": "保留悬置，少了先前欠缺得到回应和下一步不可撤回的双重方向。",
+      "reason": "可简短补前后关系；不把93以后的第二主题放进S11。",
+      "suggested_human_line": "像终于答上了先前那句话，却还站在下一步的门口。"
+    },
+    {
+      "id": "S11-M13",
+      "segment": "S11",
+      "meaning": "重逢后的平静含有回想",
+      "subdifferences": [
+        "熟悉世界带来安顿",
+        "不立即开口，事后再听未说完的话",
+        "心理平静不等于声响退潮"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-int-2-U06",
+          "quote": "它更像事后重新坐下来，把刚才没说完的话放在心里慢慢听。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿只选择向外投入，未留下内在回想的静态听法。",
+      "reason": "原范围67–88粗，不能证明S11整段动态；心理平静仍可作为有条件的另一种听法，不因不合主线自动判错。",
+      "suggested_human_line": "歌声回来时，心里也可能安静一下，重新听见那些没说完的话。"
+    },
+    {
+      "id": "S11-M14",
+      "segment": "S11",
+      "meaning": "把末次燃烧解释为肖邦已知将死的直接结果",
+      "subdifferences": [
+        "听者的死亡预感可成立",
+        "作曲家病情与创作因果不能从比喻推出",
+        "权威归因未逐项核实"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-3-U11",
+          "quote": "这是肖邦生命力在枯竭前的终极燃烧"
+        },
+        {
+          "uid": "SRC-gflash-web-1-U07",
+          "quote": "一种濒死者的回光返照"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不恢复未经证实的传记因果；生命有限的体验已另列。",
+      "reason": "原文把体验升级为作曲家事实，不可作为普通旁白直接采用；此处隔离的是归因，不是死亡意象。",
+      "suggested_human_line": "仿佛正因为知道美好留不住，才想把此刻活得更深。"
+    },
+    {
+      "id": "S11-M15",
+      "segment": "S11",
+      "meaning": "把84后的回归固定描成翻船下沉",
+      "subdifferences": [
+        "78–83的大喊前提可疑",
+        "84–92扑腾、持续下掉是技术叙事",
+        "挣扎的体验可与技术断言拆开"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-1-U07",
+          "quote": "mm.84-92 像喊完之后在水里扑腾，左右乱抓，音流往下掉，怎么划都回不到刚才的亮。"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不应恢复错误或未获支持的音型走向；惊惶体验见S11-M11。",
+      "reason": "本地Kopp[23]支持主题A增强回归；原单位混写前段并把体验当必然音型。本次不以旧评审的“挣扎都错”整体排除。",
+      "suggested_human_line": "若听见那份慌，可以像抓住船沿；不必说音乐正在下沉。"
+    },
+    {
+      "id": "S11-M16",
+      "segment": "S11",
+      "meaning": "跨段的第二主题推进与提前等待",
+      "subdifferences": [
+        "93–102属于S12",
+        "78–83等待属于S10语境",
+        "范围碰到84不等于整段可用"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-3-U06",
+          "quote": "到了 `mm. 93–102`，第二主题以更激烈的姿态被推向极致。"
+        },
+        {
+          "uid": "SRC-muse-int-2-U08",
+          "quote": "mm.78-84：屏住呼吸，停在半空"
+        }
+      ],
+      "status": "out_of_scope",
+      "current_support": "",
+      "lost_meaning": "本段不采属合理排除，不记语义损失。",
+      "reason": "跨段全文中明确指向其他小节的事件只记归属；可分离心理意义已另列。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S12-M01",
+      "segment": "S12",
+      "meaning": "原先坦率的歌被扩大到整个人的尺度",
+      "subdifferences": [
+        "柔情素材变得密亮",
+        "近于戏剧性宣告",
+        "解脱里有急迫乃至强硬"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U15",
+          "quote": "原来只是一个人愿意向另一个人袒露心事，现在仿佛整个人都被这份感情点燃了。"
+        },
+        {
+          "uid": "SRC-luna-web-3-U11",
+          "quote": "里面有解脱，也有急迫，甚至有一点惊人的强硬。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "前面那首坦率的小歌，如今像被整个人唱了出来。声音更密、更亮，一浪又一浪往前涌",
+      "lost_meaning": "素材、尺度和亮度都在，但惊人的强硬未显现。",
+      "reason": "无需补英雄胜利故事，但戏剧性的强硬是原稿明确的态度差异。",
+      "suggested_human_line": "原先柔软的话，这次竟带着一点不容退让的劲。"
+    },
+    {
+      "id": "S12-M02",
+      "segment": "S12",
+      "meaning": "身体先于语言，笑与泪出自同一份强烈感情",
+      "subdifferences": [
+        "重逢、告别或突然明白深爱都可能触发",
+        "呼吸加深、动作变大",
+        "眼眶热与喉咙紧"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U10",
+          "quote": "现实中人在极度幸福、重逢、告别、突然意识到自己深爱某个人时，有时会出现这种状态：你无法判断自己到底想笑还是想哭。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-1-U18",
+          "quote": "高兴到喉咙发紧、眼眶可能湿润、甚至有些承受不住的快乐。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "明明在笑，却同时想哭，身体先于语言，呼吸变深，意识有些跟不上情绪。",
+      "lost_meaning": "主要体验充分保留；触发被收窄到重逢，告别或突然意识到爱也能产生同样状态。",
+      "reason": "不是每个实例都须上字幕；登记原因差异，避免把重逢当唯一故事。",
+      "suggested_human_line": "像重逢，也像告别：话还没出来，眼眶先热了。"
+    },
+    {
+      "id": "S12-M03",
+      "segment": "S12",
+      "meaning": "幸福之所以疼，是已经想到它会消失",
+      "subdifferences": [
+        "眼前真实拥有",
+        "越珍贵越不能承受失去",
+        "快乐本身生成悲伤"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-2-U10",
+          "quote": "正因为这一刻这么好，我才无法承受它有一天不存在。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-2-U12",
+          "quote": "越是充实，越无法忍受美好事物终将消逝的可能"
+        }
+      ],
+      "status": "partial",
+      "current_support": "快乐开始有一点疼",
+      "lost_meaning": "现稿给了结果，却没有点出疼来自对有限和失去的清醒。",
+      "reason": "因果差异不能被笑哭并存替代；可用一句人话保留。",
+      "suggested_human_line": "越觉得眼前这一刻好，越舍不得它会过去。"
+    },
+    {
+      "id": "S12-M04",
+      "segment": "S12",
+      "meaning": "终于允许自己感受，撤防反而释放更大能量",
+      "subdifferences": [
+        "理解并不使情绪变弱",
+        "压抑撤掉后能量涌出",
+        "不顾安全的坦诚"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U10",
+          "quote": "理解了一种感情，并不会让它变弱。"
+        },
+        {
+          "uid": "SRC-gpt6w-int-2-U08",
+          "quote": "我不再考虑这样投入是否安全，也不再计算以后会怎样。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "原来只是愿意袒露的心事，此刻把整个人都点燃了。",
+      "lost_meaning": "从理解、撤防到能量释放的原因未说清。",
+      "reason": "被点燃保留强度变化，未完整保留主动允许与安全计算的停止。",
+      "suggested_human_line": "一旦不再拦着自己，感情反而更大了。"
+    },
+    {
+      "id": "S12-M05",
+      "segment": "S12",
+      "meaning": "痛过的经历在此刻获得意义",
+      "subdifferences": [
+        "过去的委屈与等待被重新理解",
+        "并未忘记痛苦",
+        "因此更懂眼前幸福的珍贵"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-1-U18",
+          "quote": "你忽然觉得自己此前的等待、受过的委屈、失望、犹豫，似乎都在这一刻找到了意义。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少回望过去、重新赋义这一认知变化。",
+      "reason": "不能被重逢拥抱或大声宣泄替代。",
+      "suggested_human_line": "像先前那些等待和委屈，忽然让你更懂得这一刻。"
+    },
+    {
+      "id": "S12-M06",
+      "segment": "S12",
+      "meaning": "从幻想或旁观退回此时此地，承担感情的分量",
+      "subdifferences": [
+        "不再逃进回忆",
+        "承认事情对自己有决定意义",
+        "不求别人许可而自己承担结果"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-2-U13",
+          "quote": "我终于不能再把这件事当成一种美好的情绪了。我承认它真的对我具有决定性的意义。"
+        },
+        {
+          "uid": "SRC-gpt56w-web-3-U10",
+          "quote": "无论结果如何，我承认这就是我全部的感受"
+        }
+      ],
+      "status": "partial",
+      "current_support": "已经很难只把它当作一段好听的旋律。",
+      "lost_meaning": "现稿由听曲转为感受，却未保留停止逃避现实与人格承担的态度。",
+      "reason": "听者的审美判断与原文主体的承担不是同一层意思。",
+      "suggested_human_line": "这回不再躲进想象里：它对我这么重要，我认了。"
+    },
+    {
+      "id": "S12-M07",
+      "segment": "S12",
+      "meaning": "从我与我们扩展到共同的人生处境",
+      "subdifferences": [
+        "爱情时间与失去并非只属于我",
+        "世界大于个人",
+        "自我暂时不那么重要"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-r1-U09",
+          "quote": "爱情、时间、身体、失去、渴望，本来就是人的共同处境。"
+        },
+        {
+          "uid": "SRC-gpt56w-int-r1-U09",
+          "quote": "自我暂时不再那么重要"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少主体尺度扩大以及自我退到后面的方向。",
+      "reason": "这是与整个人被点燃不同的意义族：一个扩大个人强度，一个减弱自我中心。",
+      "suggested_human_line": "忽然觉得，这份爱和失去，并不只发生在自己身上。"
+    },
+    {
+      "id": "S12-M08",
+      "segment": "S12",
+      "meaning": "反复句尾仍牵扯，亮度中压力持续增加",
+      "subdifferences": [
+        "末端延迟与不协和",
+        "亮不等于畅通",
+        "通向103的抵达尚未完成"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U15",
+          "quote": "乐句的末端仍有牵扯、延迟与紧张"
+        },
+        {
+          "uid": "SRC-muse-web-3-U07",
+          "quote": "mm.96、mm.97、mm.100那些结尾一次比一次硌耳朵，越来越紧张"
+        }
+      ],
+      "status": "full",
+      "current_support": "几个乐句走到末端，仍有延迟和紧张，越往前，越觉得这股明亮带着压迫。",
+      "lost_meaning": "",
+      "reason": "声音依据和心理方向均对应；103未被写成已发生于本段。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S12-M09",
+      "segment": "S12",
+      "meaning": "强烈中的局部含住、渐弱和减速",
+      "subdifferences": [
+        "句尾不是只向前砸",
+        "含泪用足力气",
+        "局部回收仍保持整体压力"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-1-U07",
+          "quote": "肖邦还写了渐弱加渐慢，不是让你砸，而是让你**含着眼泪把力气用足**。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "一浪往前的主线未明确保留句尾含住、减速的动作。",
+      "reason": "本地Kopp[23]及注22说明某些版本的减弱、ritenuto；未来需按音轨和谱本定位，不能宣称所有版本一致。",
+      "suggested_human_line": "到了句尾，声音像含住了一下，里面的力却没有散。"
+    },
+    {
+      "id": "S12-M10",
+      "segment": "S12",
+      "meaning": "爱变成恳求和抓住，喊出后仍知留不住",
+      "subdifferences": [
+        "还想要更多、不能满足",
+        "幸福将走而固执按住",
+        "宣泄后意识到水仍要流"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-2-U12",
+          "quote": "原本温柔的爱意，开始具有一种近乎恳求的力量。"
+        },
+        {
+          "uid": "SRC-muse-int-3-U07",
+          "quote": "但喊完你就知道，喊也没用，水还是要流。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "歌也还没有把那口气完全放下。",
+      "lost_meaning": "悬着的气保留，向对方恳求、主动抓住，以及喊也留不住的认知没有。",
+      "reason": "这是关系动作和结果差异，不只是紧张的同义修辞。",
+      "suggested_human_line": "还想再留住一点；喊出来了，也知道时间不会停。"
+    },
+    {
+      "id": "S12-M11",
+      "segment": "S12",
+      "meaning": "身体与精神合一的充实",
+      "subdifferences": [
+        "高烧般狂喜",
+        "肉体与精神同步",
+        "与意识跟不上身体构成不同体验"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-1-U17",
+          "quote": "情绪持续处在高烧般的狂喜中，肉体与精神达到了完全合一的巅峰。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少合一听法，现稿选择了意识跟不上情绪。",
+      "reason": "有效另一种听法；不把两种相反体验写成同一瞬间的必然现象。",
+      "suggested_human_line": "也可能有一瞬，身体和心里终于朝着同一个方向。"
+    },
+    {
+      "id": "S12-M12",
+      "segment": "S12",
+      "meaning": "悲伤仍在而不慌，关系修复后继续唱",
+      "subdifferences": [
+        "吵后和解、握手更紧",
+        "不再说漂亮话",
+        "尊严来自看清后仍愿意"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-1-U08",
+          "quote": "像大吵一架后和解的两个人，不再说漂亮话，但手握得更紧。悲伤还在，但不慌了"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少不再抓取与慌张的成熟亲近；现稿的重逢并不等于争执后的修复。",
+      "reason": "原稿误称主旋律回来不能照搬为第一主题；心理不慌可独立成立，不因声响仍高涨判错。",
+      "suggested_human_line": "像吵过以后又握紧了手，难过还在，人却不慌了。"
+    },
+    {
+      "id": "S12-M13",
+      "segment": "S12",
+      "meaning": "有限的人仍全心投入、生命狂喜的悲壮",
+      "subdifferences": [
+        "身体承载不了庞大情感",
+        "知道不能永有仍不退缩",
+        "温柔勇敢并存，未必靠外在大音量"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-int-3-U08",
+          "quote": "我知道自己无法永远拥有它，但此刻，我不愿意只用一半的心去感受。"
+        },
+        {
+          "uid": "SRC-muse-web-1-U07",
+          "quote": "这里的“大”不是音量大，是**心里烧**。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "此刻把整个人都点燃了。",
+      "lost_meaning": "未保留知道有限仍选择全心投入的态度；也未保留轻声而心里燃烧的演奏分支。",
+      "reason": "与M03的怕失去区分：这里重点是主动肯定。弱奏史料只说明可能性，不等于本次未给定音轨的实际效果。",
+      "suggested_human_line": "知道这一刻留不住，还是不愿只用一半的心去感受。"
+    },
+    {
+      "id": "S12-M14",
+      "segment": "S12",
+      "meaning": "把93起整段写成高烧退去、冷汗和水温变凉",
+      "subdifferences": [
+        "冷与热是感官差异",
+        "局部回收不等于整段退潮",
+        "无法据此判定已全面平复"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-3-U13",
+          "quote": "水温重新变凉，心跳缓缓平复，像是经历了一场高烧后，周身渗出的冷汗。"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "暂不恢复整段退潮的走向；局部收息已单列M09。",
+      "reason": "本地Kopp[23]的句尾持续紧张与此整体断言不合；冷汗可作条件体验，但本次未给音轨，不能凭原文宣称93处已有该音响过程。",
+      "suggested_human_line": "若句尾略收，可以像热过以后的一阵凉意。"
+    },
+    {
+      "id": "S12-M15",
+      "segment": "S12",
+      "meaning": "以作曲家残存生命和临终自知解释高潮",
+      "subdifferences": [
+        "有限生命的比喻可保留",
+        "已知自己来日无多不是听感事实",
+        "神化概念不证明临终动机"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-3-U06",
+          "quote": "一个深知自己来日无多的人，在命运的终点线上，把毕生对爱情、对光明的渴望"
+        },
+        {
+          "uid": "SRC-gflash-web-2-U06",
+          "quote": "一个生命在终点线前，调动全部灵魂的残存力量"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不采传记因果属合理隔离，悲壮体验见M13。",
+      "reason": "不能由响度、织体或模型重复次数推定肖邦此刻心理；也不以权威名字替代逐项证据。",
+      "suggested_human_line": "像想把这短短一刻活得很满。"
+    },
+    {
+      "id": "S12-M16",
+      "segment": "S12",
+      "meaning": "跨段的sfogato、第一主题回归与最终寂静",
+      "subdifferences": [
+        "78的释放不是93的新记号",
+        "84的A主题回归不能当93的主题身份",
+        "103以后收尾不前移"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-r1-U08",
+          "quote": "这里肖邦写了那个非常著名、也非常准确的 **dolce sfogato**。"
+        },
+        {
+          "uid": "SRC-gflash-int-3-U13",
+          "quote": "**尾声的释怀（`mm. 103–110`）**"
+        }
+      ],
+      "status": "out_of_scope",
+      "current_support": "",
+      "lost_meaning": "不计为S12遗漏；交叠单位只取93–102有效部分。",
+      "reason": "来源范围触及93或跨到116，不能把整段内容自动分配到S12。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S13-M01",
+      "segment": "S13",
+      "meaning": "已经抵达却还要反复确认",
+      "subdifferences": [
+        "103抵达而不终结",
+        "低处守住、上方反复",
+        "停下就会失去的急切"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-web-2-U11",
+          "quote": "好像怕自己一停下来，刚刚得到的东西就会消失。"
+        },
+        {
+          "uid": "SRC-muse-web-1-U08",
+          "quote": "像你知道梦要醒了，死死抓住被角再待30秒。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "像一句重要的话已经说出口，还要再说一遍、再确认一遍。",
+      "lost_meaning": "动作保留，怕一停下来刚得到的就消失这一原因未保留。",
+      "reason": "持续张力主线成立，但确认并不自动说明为何不肯停。",
+      "suggested_human_line": "像一停下来，刚才得到的就会从手里溜走。"
+    },
+    {
+      "id": "S13-M02",
+      "segment": "S13",
+      "meaning": "上方叹息与下方坚持相互牵扯",
+      "subdifferences": [
+        "下行语气近哀诉",
+        "持续低音不退让",
+        "悲伤由热烈内部浮现"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U16",
+          "quote": "上方的声音不断出现下行的、近乎叹息的形状。下面却有一种不肯移动、不肯让步的坚定感。"
+        }
+      ],
+      "status": "full",
+      "current_support": "上面的声音一回回落下，近乎叹息；低处不肯让步",
+      "lost_meaning": "",
+      "reason": "现稿后续又保留热烈里有刺，基本覆盖此族；不必重复多个叹息比喻。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S13-M03",
+      "segment": "S13",
+      "meaning": "后半重新聚紧，光亮中摩擦加深",
+      "subdifferences": [
+        "106颤动与推进",
+        "107后暗沉尖锐",
+        "更强并非更安心"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-1-U20",
+          "quote": "但是到了 **mm. 107–110**，音乐里出现了越来越尖锐、暗沉的东西。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "走到后半，声音再度聚紧。光亮里混进尖锐的摩擦",
+      "lost_meaning": "后半聚紧和尖锐已保留；106的颤动这一具体听觉动作未显现。",
+      "reason": "共同走向已在，仍不能因主线一致就把颤动细节算作全覆盖。",
+      "suggested_human_line": "声音又颤起来，越往后，亮光里越有一点硌人的东西。"
+    },
+    {
+      "id": "S13-M04",
+      "segment": "S13",
+      "meaning": "持续张力里仍可以局部换气",
+      "subdifferences": [
+        "整体未放手",
+        "103后相对前段回收",
+        "短暂松口再聚集，不等于整段卸力"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-int-1-U06",
+          "quote": "情绪到了顶点，然后开始换气。"
+        },
+        {
+          "uid": "SRC-gpt6w-int-2-U09",
+          "quote": "高潮之后，仿佛有短暂的收束与重新聚集"
+        }
+      ],
+      "status": "partial",
+      "current_support": "听来像话音已有了转圜，心里的那股力却还绷着。",
+      "lost_meaning": "段末的转圜在，但前段或中途短暂回收、疲倦中换气较弱。",
+      "reason": "本地facts_S13记录104末局部渐弱；本地Kopp[25]也保留柔韧性。持续张力不能写成每拍都上紧。",
+      "suggested_human_line": "中间也像换了一口气，接着又把话说紧了。"
+    },
+    {
+      "id": "S13-M05",
+      "segment": "S13",
+      "meaning": "按演奏条件逐渐收退，疲倦后慢慢放手",
+      "subdifferences": [
+        "退潮、热度下降是听觉感官",
+        "满足之后放下",
+        "与持续燃烧构成演奏分支"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-1-U19",
+          "quote": "璀璨的光芒开始黯淡，热度退散。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-3-U16",
+          "quote": "一种是「情绪终于得到了满足，现在可以慢慢放下」。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿只用持续张力读法，未告知收退是有效竞争解释。",
+      "reason": "本地Kopp[24–25,28]确认收退传统且不宣称唯一正确；本次未亲听录音，不把原A倒填成某演奏家听证。",
+      "suggested_human_line": "若这里渐渐收远，也可以像情绪太满之后，人终于慢慢松了手。"
+    },
+    {
+      "id": "S13-M06",
+      "segment": "S13",
+      "meaning": "身体累下来，难过还在却更清楚",
+      "subdifferences": [
+        "哭后眼睛洗净般清明",
+        "不慌不装",
+        "只是累后的诚实，未必和解"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-3-U08",
+          "quote": "你还是难过，但不慌了，不装了。"
+        },
+        {
+          "uid": "SRC-muse-int-3-U08",
+          "quote": "接受了一点，但不是和解，只是累了以后的诚实。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "疲倦、清醒、不再装平静的体验未保留。",
+      "reason": "心理清明可与持续和声张力并存；不据粗范围103–113宣称整段弱奏。",
+      "suggested_human_line": "像哭过以后看得更清楚了，仍难过，却不再慌。"
+    },
+    {
+      "id": "S13-M07",
+      "segment": "S13",
+      "meaning": "激情后重新温柔，原谅与照顾对方",
+      "subdifferences": [
+        "吵后和好",
+        "哭后给爱人擦脸",
+        "强烈与平静能同在"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-2-U10",
+          "quote": "像吵完架后真正的和好，或者大哭一场后给爱人擦脸。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少关系修复、照顾他人的具体动作。",
+      "reason": "Muse-int-2前言误称138小节，定位不可独立背书；作为心理比喻可条件保留，不能偷移到111才有的calando。",
+      "suggested_human_line": "也可能像哭过以后，伸手替身边的人擦一擦脸。"
+    },
+    {
+      "id": "S13-M08",
+      "segment": "S13",
+      "meaning": "受过伤后玩心回来，仍愿看碎光",
+      "subdifferences": [
+        "水花与碎光的轻巧",
+        "没有忘掉伤痛",
+        "决定不怨恨，重新看美"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-1-U09",
+          "quote": "不是胜利，是玩心回来了。"
+        },
+        {
+          "uid": "SRC-muse-int-1-U09",
+          "quote": "反正都会过去，那就好好看看光吧。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿保留光亮，却没有注意力回到轻巧事物、玩心恢复的态度。",
+      "reason": "原文将103–111一概说特别轻不可靠；拆下可成立的心理层，可按收退音轨采用，不判玩心本身错误。",
+      "suggested_human_line": "累过以后，还是忍不住多看一眼水上的光。"
+    },
+    {
+      "id": "S13-M09",
+      "segment": "S13",
+      "meaning": "情绪穿过自我保护，坦诚到无法说话",
+      "subdifferences": [
+        "彻底暴露",
+        "自我观察和分类失效",
+        "重逢反而失语，愿望实现反而流泪"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-2-U11",
+          "quote": "终于见到一个极其思念的人时，  \n反而一句话也说不出来；"
+        },
+        {
+          "uid": "SRC-gpt56w-int-2-U11",
+          "quote": "此前一直存在的优雅、节制、自我观察，在这里短暂失效。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "不是终于找到一句漂亮的话，而是连原先护着自己的分寸也藏不住了。",
+      "lost_meaning": "撤防充分保留，但现稿持续用“说出来”统摄，漏了越强烈越失语这一相反反应。",
+      "reason": "这是具体动作差异，不宜把失语也算说出口的同义改写。",
+      "suggested_human_line": "也可能强烈到一句话都说不出，只剩眼泪先出来。"
+    },
+    {
+      "id": "S13-M10",
+      "segment": "S13",
+      "meaning": "多组相反经验同时失去边界",
+      "subdifferences": [
+        "幸福与痛苦同源",
+        "回忆与当下叠合",
+        "感谢和惋惜、肉体兴奋和超脱并存"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U11",
+          "quote": "回忆和正在发生，  \n感谢和惋惜，  \n肉体性的兴奋和精神性的超脱，"
+        }
+      ],
+      "status": "partial",
+      "current_support": "你仍听得见热烈，也同时感觉到它里面那根刺。",
+      "lost_meaning": "热烈与疼保留；时间层次、感激惋惜、肉体和精神的不同轴被合成一根刺。",
+      "reason": "同族必须登记各轴，不必每轴加一句字幕，但不可宣称全部覆盖。",
+      "suggested_human_line": "感谢和惋惜挤在一起，连是在回想还是正在经历都分不清了。"
+    },
+    {
+      "id": "S13-M11",
+      "segment": "S13",
+      "meaning": "幸福使有限和无法永远拥有变得刺痛",
+      "subdifferences": [
+        "不是坏事突然发生",
+        "真正拥有才更怕失去",
+        "不甘来自世界曾经美好"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-2-U13",
+          "quote": "不是因为世界残酷而痛哭，而是因为世界曾经如此美好，所以不愿意接受它终究不能被完全拥有。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "你仍听得见热烈，也同时感觉到它里面那根刺。",
+      "lost_meaning": "刺的原因被隐去：对有限的清醒与无法完全拥有的不甘。",
+      "reason": "与M10的混合感不同，本族是关系与原因，建议一句明确因果。",
+      "suggested_human_line": "正因为刚才那么好，才更不甘心它不能永远留下。"
+    },
+    {
+      "id": "S13-M12",
+      "segment": "S13",
+      "meaning": "刚说是，内心就追问可是",
+      "subdifferences": [
+        "苦笑和反讽",
+        "幸福不能保证未来",
+        "问题得不到回答，不等于幸福是假的"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-r1-U10",
+          "quote": "你刚刚最坚定地说“是”，内心马上有一个声音回答：“可是呢？”"
+        },
+        {
+          "uid": "SRC-gpt6w-web-1-U20",
+          "quote": "人或许可以拥有极其真实的幸福，却仍然不能保证人生将按照自己期望的方向发展。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "像狂欢最高点的那个人，笑着笑着，表情忽然有一点僵。",
+      "lost_meaning": "表情保留，疑问内容和无保证的认知未保留。",
+      "reason": "现稿很好地留下了人话外壳，但苦笑不能覆盖全部发问的意义；归因作者未核之处不带入。",
+      "suggested_human_line": "刚说完“是真的”，心里又问：可它能一直这样吗？"
+    },
+    {
+      "id": "S13-M13",
+      "segment": "S13",
+      "meaning": "明知有限仍主动肯定",
+      "subdifferences": [
+        "不灰心地接受命运",
+        "因不能永有更愿投入",
+        "肯定与怀疑是不同选择"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-r1-U10",
+          "quote": "正因为不能永久存在，它才如此值得我把整个生命投入进去。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿有坦诚和压力，未保留对有限主动说是的正向选择。",
+      "reason": "可以与怀疑并列为不同听法，不能用无保证直接推出悲观。",
+      "suggested_human_line": "知道它不能永远留下，还是愿意认真地爱这一刻。"
+    },
+    {
+      "id": "S13-M14",
+      "segment": "S13",
+      "meaning": "记忆被强光照得过曝，熟悉感变得近乎幻觉",
+      "subdifferences": [
+        "视觉过曝",
+        "怀旧不再温柔",
+        "过去经历被此刻强度重新照亮"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-2-U14",
+          "quote": "它已经不是前面那种甜甜地回想，而像整个记忆被强光照得过曝了。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿的光亮与摩擦没有保留记忆被改写的感官关系。",
+      "reason": "保留为原A的联觉听法；原文Parakilas归因未在本次核原书，不把比喻说成专家定论。",
+      "suggested_human_line": "熟悉的回忆像被照得太亮，一时竟有点认不清了。"
+    },
+    {
+      "id": "S13-M15",
+      "segment": "S13",
+      "meaning": "花饰是消散的光还是最后一次冲起",
+      "subdifferences": [
+        "同为上升再落下",
+        "柔软落地与强烈到达不同",
+        "真正落点跨到111"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-web-3-U12",
+          "quote": "既可以把上行的快速音型听作退场前渐渐消散的光，也可以听成最后一次冲上天空、重重落下的亮光"
+        }
+      ],
+      "status": "partial",
+      "current_support": "段末那道花饰向高处伸去，再落下来。听来像话音已有了转圜，心里的那股力却还绷着。",
+      "lost_meaning": "形状、未放松保留，消散/冲击两个演奏分支与跨界落点不够明确。",
+      "reason": "本地Kopp[25]直接列出两种处理；视频不得在110前把111的落点说完。",
+      "suggested_human_line": "这道光可以渐渐散开，也可以像最后一次冲起；落地还在下一拍。"
+    },
+    {
+      "id": "S13-M16",
+      "segment": "S13",
+      "meaning": "把持续强度误说成全段没有任何细腻起伏",
+      "subdifferences": [
+        "sempre f不等于每拍渐强",
+        "106有颤音及渐强",
+        "低音持续不是踏板八小节不换"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-3-U08",
+          "quote": "谱上只写`sempre f`，一直强，没有以前那种细腻的起伏。"
+        },
+        {
+          "uid": "SRC-muse-web-2-U08",
+          "quote": "而且没有任何细腻的表情记号"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不恢复这些字面技术断言；持续张力主线已有。",
+      "reason": "原单位“只写”“没有”过度。本地facts_S13指出104局部渐弱；Kopp注23列版本差异及106渐强，不能据此消灭局部呼吸。",
+      "suggested_human_line": "力量一直在，中间仍能换气。"
+    },
+    {
+      "id": "S13-M17",
+      "segment": "S13",
+      "meaning": "用衰竭病体或时日不多证明末段心态",
+      "subdifferences": [
+        "历史弱奏记述与病因推断分开",
+        "时日不多是比喻也可能被误写为传记",
+        "强烈心理不必等于外在轰鸣"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-3-U07",
+          "quote": "已经没有力气在键盘上砸出宏大的音量。"
+        },
+        {
+          "uid": "SRC-muse-web-3-U08",
+          "quote": "一个知道自己时日不多的人，回忆完、放空完，最后能做的就是用力活一次。"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "隔离未经证实的病情因果与作者意图；弱声仍强的可能性保留在演奏备注。",
+      "reason": "本地Kopp[12]支持弱奏轶事，但不能据此证明“已没有力气”或确定作曲心理。",
+      "suggested_human_line": "即使声音收轻，心里的那股坚持也可能没有退。"
+    },
+    {
+      "id": "S13-M18",
+      "segment": "S13",
+      "meaning": "111以后的calando、低处独唱和终结",
+      "subdifferences": [
+        "111收退记号属于S14",
+        "113的低处回望属于S14",
+        "116终结不可提前"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-3-U07",
+          "quote": "从 `m. 111` 开始（表情记号为 *calando*，意为“渐弱且渐慢”），浪潮终于平息了。"
+        },
+        {
+          "uid": "SRC-gflash-web-3-U07",
+          "quote": "在 `m. 113`，左手的内声部幽幽地响起了一段如同男中音独唱的沉思旋律。"
+        }
+      ],
+      "status": "out_of_scope",
+      "current_support": "",
+      "lost_meaning": "合理排除；不能把范围103–116全文当本段遗漏。",
+      "reason": "保留110引向111的关系，但111开始的事件只在S14落地。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S14-M01",
+      "segment": "S14",
+      "meaning": "握手是最后道别，亲密中含有分离",
+      "subdifferences": [
+        "有人对你轻握",
+        "原文是向对方握手，关系视角可逆",
+        "触觉很轻，却明确说该走了"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-1-U20",
+          "quote": "像是在黑暗中轻轻握了一下对方的手，做最后的道别：“该走了。”"
+        }
+      ],
+      "status": "partial",
+      "current_support": "像黑暗中有人轻轻握了一下你的手，没有再说许多话。",
+      "lost_meaning": "触觉保留，道别和不可继续相伴的关系含义淡化；视角从对方变成你。",
+      "reason": "轻碰并不天然等于告别。只需救回“该走了”，无需强化悲剧情节。",
+      "suggested_human_line": "像最后握一下手：该走了。"
+    },
+    {
+      "id": "S14-M02",
+      "segment": "S14",
+      "meaning": "身体恢复平静，心里仍留着热与怅惘",
+      "subdifferences": [
+        "强烈后收轻",
+        "身体渐稳但感情没抹掉",
+        "经历开始离远，有一点怅惘"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U17",
+          "quote": "仿佛刚才那些强烈到难以承受的事情，忽然开始离自己远去。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-3-U17",
+          "quote": "这里有一点怅惘，但不是沉溺于失落。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "刚才的热还在，呼吸却慢慢回到身体里。",
+      "lost_meaning": "余温与呼吸已在，但事物离自己远去的距离变化及怅惘未明确。",
+      "reason": "不必补所有词，登记时间距离差异即可。",
+      "suggested_human_line": "身体慢慢静了，刚才那一刻却像离远了一点。"
+    },
+    {
+      "id": "S14-M03",
+      "segment": "S14",
+      "meaning": "低处歌唱是回望，也是重新听见普通人的声音",
+      "subdifferences": [
+        "由宏大回到人声尺度",
+        "低处独唱有沉思和回眸",
+        "熟悉的声音带着经历重新出现"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-r1-U11",
+          "quote": "好像巨大情绪之后突然重新听见一个普通人的声音"
+        },
+        {
+          "uid": "SRC-gflash-web-3-U07",
+          "quote": "这是最后的深情回眸"
+        }
+      ],
+      "status": "partial",
+      "current_support": "低处浮起一小段歌唱，像说给自己听。",
+      "lost_meaning": "低处和自语已有，普通人的尺度、最后回望以及熟悉动机的记忆含义未写。",
+      "reason": "“说给自己听”是合理现稿，但未覆盖关系与回忆子差异。",
+      "suggested_human_line": "像终于又听见一个普通人的声音，回头看了看刚才。"
+    },
+    {
+      "id": "S14-M04",
+      "segment": "S14",
+      "meaning": "最后的碎光和装饰仍有轻巧、玩心",
+      "subdifferences": [
+        "高处水花般闪光",
+        "上升再落下",
+        "经历沉重后仍能看光、笑着靠岸"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-3-U09",
+          "quote": "最后还能笑着靠岸。"
+        },
+        {
+          "uid": "SRC-muse-web-3-U09",
+          "quote": "华彩音阶像水花一样溅起来"
+        }
+      ],
+      "status": "partial",
+      "current_support": "高处还有细碎、轻巧的光，最后一道装饰又升起、落下。",
+      "lost_meaning": "声响形状充分，受伤后仍能玩、仍能笑的态度未保留。",
+      "reason": "原稿“玩心”最直接段落跨103–111，不能无条件迁移；S14专属原文的笑着靠岸独立支撑此处正向余味。",
+      "suggested_human_line": "还有一点轻巧，像累过以后，仍能笑着靠岸。"
+    },
+    {
+      "id": "S14-M05",
+      "segment": "S14",
+      "meaning": "结尾的重量让身体回到实地",
+      "subdifferences": [
+        "明确收住而非无尽淡出",
+        "撞木桩或脚踩岸",
+        "流动被截停，身体站稳"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-2-U08",
+          "quote": "它没有选择无限渐弱消失，而是像船头轻轻撞上了码头的木桩"
+        },
+        {
+          "uid": "SRC-muse-int-1-U09",
+          "quote": "像脚踩到岸上。船停了，人站起来。"
+        }
+      ],
+      "status": "full",
+      "current_support": "可以像小船碰到岸边的木桩，船身一震，人终于踩到实地",
+      "lost_meaning": "",
+      "reason": "现稿前句明确反对无限淡去，落点、触觉与方向均保留；同义靠岸无需重复。",
+      "suggested_human_line": ""
+    },
+    {
+      "id": "S14-M06",
+      "segment": "S14",
+      "meaning": "重新获得边界与尊严，而非仅仅故事结束",
+      "subdifferences": [
+        "身体站稳转为人格自持",
+        "打开过后不必再证明",
+        "经历会被记住而不再逃避"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-2-U12",
+          "quote": "已经全部打开过，所以不必再证明。"
+        },
+        {
+          "uid": "SRC-gpt56w-int-2-U21",
+          "quote": "这个人以后仍然会想起这一切，但从此不需要再逃避它。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "人终于踩到实地",
+      "lost_meaning": "身体落地保留，主体重获边界、无需证明与不再逃避未保留。",
+      "reason": "物理落地不能自动算人格改变全覆盖。",
+      "suggested_human_line": "经历过这么深的感情，现在又能站稳，不必再证明什么。"
+    },
+    {
+      "id": "S14-M07",
+      "segment": "S14",
+      "meaning": "把经历带回日常生活",
+      "subdifferences": [
+        "独自走回家",
+        "外界照常运行",
+        "生活继续，但人已经改变"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U12",
+          "quote": "我知道刚才发生了什么，现在我要带着它继续生活。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-2-U14",
+          "quote": "坐下来，发现外面的世界还在照常运行。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "自己又回到寂静的房间里。",
+      "lost_meaning": "回到房间保留空间切换，没保留携带经历继续生活的未来方向。",
+      "reason": "梦醒既可能清空也可能带走所得，原稿对此有明确区分。",
+      "suggested_human_line": "回到平常的日子里，刚才的一切也一起带着走。"
+    },
+    {
+      "id": "S14-M08",
+      "segment": "S14",
+      "meaning": "让这一刻结束，不再要求它永远停留",
+      "subdifferences": [
+        "主动放手而非放弃幸福",
+        "承认真实拥有过",
+        "不再强求永久保有"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U17",
+          "quote": "我经历了这些，也确实拥有过这些。现在，我可以让它结束了。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-3-U17",
+          "quote": "这不是放弃幸福，而是不再强求幸福必须永远停留。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿写结束发生了，未写主体愿意让它结束。",
+      "reason": "题名“真的结束”是结果，不足以覆盖主动同意与非占有的态度。",
+      "suggested_human_line": "我确实拥有过这一刻，现在可以让它结束了。"
+    },
+    {
+      "id": "S14-M09",
+      "segment": "S14",
+      "meaning": "没有答案和未来保证，经历仍可完整",
+      "subdifferences": [
+        "音乐结束不等于人生问题解决",
+        "未获全部满足仍可承认意义",
+        "不后悔投入"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-2-U14",
+          "quote": "情感可以没有得到最终的满足，但这段经历仍然可以完整。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-1-U21",
+          "quote": "即使未来没有保证，我也不后悔刚才那样真切地活过。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "缺少未解的问题与结束的完整性并存这一层。",
+      "reason": "现稿未误说大团圆，但“不说圆满”不等于已经表达“无答案仍完整”。",
+      "suggested_human_line": "问题未必都有答案，可这一刻没有白白经历。"
+    },
+    {
+      "id": "S14-M10",
+      "segment": "S14",
+      "meaning": "梦醒也可能是被现实猛然打断",
+      "subdifferences": [
+        "突兀、冰冷、强制的中断",
+        "温存瞬间离开",
+        "与自愿放手、平稳靠岸不同"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-1-U10",
+          "quote": "它像现实世界冰冷坚硬的铁闸突然轰然落下。"
+        },
+        {
+          "uid": "SRC-gflash-web-1-U08",
+          "quote": "依依惜别，随后梦境被现实残忍地撕碎。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "也可以像梦骤然醒了，自己又回到寂静的房间里。",
+      "lost_meaning": "骤然保留，但现实铁闸般的冷硬及被剥夺感被柔化。",
+      "reason": "可选的听者体验，不一定错误；必须剥离原文肖邦衰竭喘息的事实化叙述。",
+      "suggested_human_line": "也可能像现实忽然关上了门，刚才的梦一下断了。"
+    },
+    {
+      "id": "S14-M11",
+      "segment": "S14",
+      "meaning": "安详离去乃至面对死亡的满足",
+      "subdifferences": [
+        "看过美好后安心闭眼",
+        "永恒寂静是隐喻",
+        "不是虚无绝望，也不是继续日常生活"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-2-U07",
+          "quote": "又如同一个人在看尽了世间最不可思议的光芒后，安详、平静地闭上了双眼。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-1-U21",
+          "quote": "得以从容面对死亡的宁静"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "没有保留离去、闭眼和死亡式安宁的终局方向。",
+      "reason": "死亡隐喻并非事实错误；原A明确有从容面对死亡的诠释。不能将其改称作曲家临终意图，亦不能以现稿靠岸宣称全覆盖。",
+      "suggested_human_line": "也可以像见过那样的光之后，终于能够安心闭上眼睛。"
+    },
+    {
+      "id": "S14-M12",
+      "segment": "S14",
+      "meaning": "最后仍想抓一眼世界，随后沉没的终结感",
+      "subdifferences": [
+        "临别前本能挽留",
+        "沉入深水的死亡隐喻",
+        "不甘挣扎与安详闭眼不同"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-3-U13",
+          "quote": "这就像一个溺水者或弥留之人，在沉入深水前，突然凭着本能把头猛地探出水面，想要再抓一眼天空。"
+        },
+        {
+          "uid": "SRC-gflash-int-3-U13",
+          "quote": "水面彻底合拢，涟漪散尽，夜幕降临。"
+        }
+      ],
+      "status": "omitted",
+      "current_support": "",
+      "lost_meaning": "现稿的装饰升落保留形状，未保留本能留恋和沉没的心理方向。",
+      "reason": "只保留比喻候选；同源111–113猛烈上冲的定位有问题，见M15，不能照原号对齐字幕。死亡与挣扎本身不自动隔离。",
+      "suggested_human_line": "临到告别，还是忍不住想再看一眼。"
+    },
+    {
+      "id": "S14-M13",
+      "segment": "S14",
+      "meaning": "回到开头的声响，旧悬念终于得到回应",
+      "subdifferences": [
+        "113的歌唱是回忆",
+        "末尾向上的收束回应开头",
+        "音乐上的回答不证明生活圆满"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-web-2-U12",
+          "quote": "结尾又让人想起开头，并用一个向上的动作把它回应回来。"
+        },
+        {
+          "uid": "SRC-gpt6w-web-2-U14",
+          "quote": "形成一种回望开头、最终给予回答的效果。"
+        }
+      ],
+      "status": "partial",
+      "current_support": "低处浮起一小段歌唱，像说给自己听。",
+      "lost_meaning": "缺少首尾相认、末尾回应开头的听觉记忆关系。",
+      "reason": "本地Kopp[26]支持动机回望及116上行四度；视频可做前后声响呼应，不必增加术语。",
+      "suggested_human_line": "像回头认出最初那句话，这一次终于接住了它。"
+    },
+    {
+      "id": "S14-M14",
+      "segment": "S14",
+      "meaning": "把梦醒写成肖邦本人衰竭喘息或临终自传",
+      "subdifferences": [
+        "听者的寂静房间可保留",
+        "具体作曲家生理状态需证据",
+        "告别诠释不等于自传"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-gflash-web-1-U10",
+          "quote": "空荡的房间里，只剩下肖邦衰竭的喘息与无尽的寂静。"
+        },
+        {
+          "uid": "SRC-luna-web-1-U11",
+          "quote": "那属于诠释，而不是已证实的肖邦自传。"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不恢复未经证实的生理和传记断言；死亡比喻单独保留。",
+      "reason": "原A中也有明确自我限制，不能把最强戏剧说法当作者事实。",
+      "suggested_human_line": "梦醒后，房间很静，刚才的热还留在心里。"
+    },
+    {
+      "id": "S14-M15",
+      "segment": "S14",
+      "meaning": "错误小节、终止音程与花饰位置",
+      "subdifferences": [
+        "111–143超出全曲116小节",
+        "116的收束不是所称下行八度",
+        "把110–111的冲起挪到111–113"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-luna-int-1-U07",
+          "quote": "mm. 111–143：重新获得平静，但这份平静更清醒。"
+        },
+        {
+          "uid": "SRC-gflash-int-3-U13",
+          "quote": "**最后的本能挣扎（`mm. 111–113`）**"
+        },
+        {
+          "uid": "SRC-muse-web-2-U09",
+          "quote": "再用两下很实的八度拍板。"
+        }
+      ],
+      "status": "quarantine",
+      "current_support": "",
+      "lost_meaning": "不采错误定位属合理排除，不能用其位置删除相伴隐喻。",
+      "reason": "本地Kopp[25–26]及facts_S14区分110–111到达、随后收退、113低处歌唱、最后升落与116上行四度；先修技术骨架再选择体验。",
+      "suggested_human_line": "临到末尾还有一道光升起、落下，最后几下才把它收住。"
+    },
+    {
+      "id": "S14-M16",
+      "segment": "S14",
+      "meaning": "前段持续低音、苦笑和反复追问的长过程",
+      "subdifferences": [
+        "103–110主要压力过程属于S13",
+        "110–111跨界抵达可作开头承接",
+        "不能重演整个高潮"
+      ],
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-1-U08",
+          "quote": "mm.103有个大终止，很多人以为完了。"
+        },
+        {
+          "uid": "SRC-luna-web-2-U11",
+          "quote": "以为说完了，却又多说了一遍。"
+        }
+      ],
+      "status": "out_of_scope",
+      "current_support": "",
+      "lost_meaning": "属于S13的完整发展不计S14遗漏；跨界落点现稿开头已有。",
+      "reason": "原稿池收进边界相交单位是材料组织方式，不是将全段重新归属。",
+      "suggested_human_line": ""
+    }
+  ],
+  "summary": {
+    "total_entries": 66,
+    "candidate_families": 54,
+    "status_counts": {
+      "full": 4,
+      "partial": 29,
+      "omitted": 21,
+      "quarantine": 8,
+      "out_of_scope": 4
+    },
+    "segment_counts": {
+      "S11": {
+        "full": 1,
+        "partial": 6,
+        "omitted": 6,
+        "quarantine": 2,
+        "out_of_scope": 1
+      },
+      "S12": {
+        "partial": 7,
+        "omitted": 5,
+        "full": 1,
+        "quarantine": 2,
+        "out_of_scope": 1
+      },
+      "S13": {
+        "partial": 8,
+        "full": 1,
+        "omitted": 6,
+        "quarantine": 2,
+        "out_of_scope": 1
+      },
+      "S14": {
+        "partial": 8,
+        "full": 1,
+        "omitted": 4,
+        "quarantine": 2,
+        "out_of_scope": 1
+      }
+    },
+    "interpretation": "候选族含条件有效听法；omitted不是自动错误，partial不等于稿件质量分，隔离/跨段项不计为有效遗漏。没有计算覆盖率。"
+  },
+  "validation": {
+    "required_fields": "pass",
+    "unique_ids": "pass",
+    "evidence_exact_contiguous_substrings": 116,
+    "current_support_exact_contiguous_substrings": 33,
+    "evidence_uids_in_corresponding_pool": "pass",
+    "markdown_has_all_entries": "pass",
+    "meaning_full_review": "4条full已按自身子差异复核，其他只保留底色的条目使用partial。",
+    "errors": []
+  },
+  "input_sha256": {
+    "D:\\musicclaude\\_bead_quality_20261017\\sources\\units.json": "3348d3f8ab9834878631c6954869d9c20360f9eda34935e7b1fb1734e4c98c42",
+    "D:\\musicclaude\\_bead_quality_20261017\\editorial\\FINAL_BEADS.json": "3f140a066e7ff2b9e4e9abf9ced1cd07f29b8ae535645c6ad84700b6c9484a8d",
+    "D:\\musicclaude\\_bead_quality_20261017\\production_context\\pools\\S11.txt": "c1f8d1eaa892e0fa00e7046828f65b268025d284149ab40f72bd10fd8415c985",
+    "D:\\musicclaude\\_bead_quality_20261017\\production_context\\pools\\S12.txt": "422e7f35b61e6722bcd2ae44bd1236bde70d5b19e1085ab06888ae6cf28d85b7",
+    "D:\\musicclaude\\_bead_quality_20261017\\production_context\\pools\\S13.txt": "6f72fd51f4f1656a7208971ad94cd481713fe52113afb4e366f1743e37e453e2",
+    "D:\\musicclaude\\_bead_quality_20261017\\production_context\\pools\\S14.txt": "06af84cf9d40dc30e795765765d382a7d1e655d6d7a9685519318a6e07364720"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "round28_extrac02",
+  "note": "接缝驱动假设：把内部组织单位从“这一段应该新增什么”改成“这一段怎样接住上一段、又给下一段留下什么”，先建立相邻SECTION之间的段界接缝图，再写段内文字。它不是证据准入，因为不为结论做事实背书；不是具体所求，因为不以人物当下利害作为句子模板；不是多层体验配置，因为不先拆本段体验层；也不是语义差分，因为允许一段什么都不新增，只要求交接连续。可检验地去掉段标题连读，看相邻两段是否仍知道为什么会从前一刻走到后一刻，以及突变段是否仍保有同一件事的连续痕迹。值得单独运行；风险是接缝要求过强会把本来应当突兀或悬断的段落写得过分顺滑。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "Q6_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "Q6_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "round28_extrac02_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4"
+}

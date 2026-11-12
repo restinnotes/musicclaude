@@ -1,0 +1,458 @@
+{
+  "schema": "run140-source-archive-report/1",
+  "created_at_utc": "2026-10-09T12:47:16.065529+00:00",
+  "method": {
+    "historical_sources_read_only": true,
+    "runtime": "python -I -B",
+    "frozen_driver_sha256": "aa2ef7e09747de4b56aad3b8974d408c2e6ad909166c4e6d86c9754d382abaf1",
+    "frozen_cases_sha256": "8f30ef391dce919fd8c0e5f8c112d7b40a7c5248b1498b575b011d4663ae78aa",
+    "all_five_frozen_prompts_match_render_and_allowlisted_sha": true,
+    "strict_parser": "tools/probes/run140_dispatch_archive_20261009.py strict_outer_load + tools/run140_mech_independent_review.py parse_review",
+    "new_model_or_workflow_submissions": 0,
+    "new_review_or_candidate_content_authored": false
+  },
+  "dispatcher": {
+    "client_request_id": "music-20261009-run140-dispatch-muse-r1",
+    "source_activity_position": 968,
+    "brief_requested_additional_child_tasks": 9,
+    "prior_completed_task": "pack01_muse",
+    "requested_additional_routes": "pack01-pack05 Luna and pack02-pack05 Muse",
+    "parent_activity_reported_item_count": 1309,
+    "parent_activity_last_position_read": 1308,
+    "parent_delegate_task_call_count": 42,
+    "dispatcher_activity_item_count": 204,
+    "dispatcher_status": "completed",
+    "dispatcher_run_count": 2,
+    "successful_content_child_submissions": 3,
+    "failed_delegate_invocations_without_task_id": [
+      {
+        "position": 58,
+        "client_request_id": "music-20261009-run140-pack01-luna-r1",
+        "status": "failed",
+        "task_id_returned": false,
+        "reason": "Invalid parameters: timeoutMs expected number or undefined"
+      },
+      {
+        "position": 65,
+        "client_request_id": "music-20261009-run140-pack02-luna-r1",
+        "status": "failed",
+        "task_id_returned": false,
+        "reason": "InputValidationError: JSON parse failed (140 bytes)"
+      },
+      {
+        "position": 74,
+        "client_request_id": "music-20261009-run140-pack02-muse-r1",
+        "status": "failed",
+        "task_id_returned": false,
+        "reason": "InputValidationError: JSON parse failed (140 bytes)"
+      }
+    ]
+  },
+  "counts": {
+    "planned_content_review_slots_including_preexisting_pack01_muse": 10,
+    "submitted_content_reviews": 4,
+    "terminal_content_reviews": 4,
+    "archive_directories_present_after_repair": 4,
+    "preexisting_archives_fully_matching_source_metadata_and_parse": 1,
+    "exact_task_and_response_source_pairs_after_repair": 4,
+    "not_submitted_slots": 6,
+    "additional_tasks_requested": 9,
+    "additional_tasks_submitted": 3
+  },
+  "submission_matrix": [
+    {
+      "pack": "pack01",
+      "reviewer": "luna",
+      "client_request_id": "music-20261009-run140-pack01-luna-r1",
+      "submission_status": "terminal_completed",
+      "archive_status": "existing_with_mismatch"
+    },
+    {
+      "pack": "pack01",
+      "reviewer": "muse",
+      "client_request_id": "music-20261009-run140-pack01-muse-r1",
+      "submission_status": "terminal_completed_preexisting",
+      "archive_status": "verified_existing"
+    },
+    {
+      "pack": "pack02",
+      "reviewer": "luna",
+      "client_request_id": "music-20261009-run140-pack02-luna-r1",
+      "submission_status": "terminal_completed",
+      "archive_status": "existing_with_mismatch"
+    },
+    {
+      "pack": "pack02",
+      "reviewer": "muse",
+      "client_request_id": "music-20261009-run140-pack02-muse-r1",
+      "submission_status": "terminal_completed",
+      "archive_status": "recovered_new"
+    },
+    {
+      "pack": "pack03",
+      "reviewer": "luna",
+      "client_request_id": "music-20261009-run140-pack03-luna-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    },
+    {
+      "pack": "pack03",
+      "reviewer": "muse",
+      "client_request_id": "music-20261009-run140-pack03-muse-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    },
+    {
+      "pack": "pack04",
+      "reviewer": "luna",
+      "client_request_id": "music-20261009-run140-pack04-luna-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    },
+    {
+      "pack": "pack04",
+      "reviewer": "muse",
+      "client_request_id": "music-20261009-run140-pack04-muse-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    },
+    {
+      "pack": "pack05",
+      "reviewer": "luna",
+      "client_request_id": "music-20261009-run140-pack05-luna-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    },
+    {
+      "pack": "pack05",
+      "reviewer": "muse",
+      "client_request_id": "music-20261009-run140-pack05-muse-r1",
+      "submission_status": "not_submitted",
+      "archive_status": "none"
+    }
+  ],
+  "submitted_sources": {
+    "pack01_muse": {
+      "client_request_id": "music-20261009-run140-pack01-muse-r1",
+      "model": "muse-spark-1.3-contributor-free",
+      "provider_app_reported": "claude-proxy",
+      "task_terminal_status": "completed",
+      "delegate_task_event_position": 881,
+      "task_equals_frozen_prompt": true,
+      "task_sha256": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e",
+      "terminal_response_sha256": "f3bbf1b0fa5f89a94768f5a2efb917076c94fa4c8fe070e0c006d57aeb7189eb",
+      "terminal_item_position": 2
+    },
+    "pack01_luna": {
+      "client_request_id": "music-20261009-run140-pack01-luna-r1",
+      "model": "gpt-6-luna",
+      "provider_app_reported": "codex",
+      "task_terminal_status": "completed",
+      "delegate_task_event_position": 62,
+      "task_equals_frozen_prompt": true,
+      "task_sha256": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e",
+      "terminal_response_sha256": "25646cd06c5f9204d941f03931a2ff717a891254c53a94580869e18878842e90",
+      "terminal_item_position": 27
+    },
+    "pack02_luna": {
+      "client_request_id": "music-20261009-run140-pack02-luna-r1",
+      "model": "gpt-6-luna",
+      "provider_app_reported": "codex",
+      "task_terminal_status": "completed",
+      "delegate_task_event_position": 71,
+      "task_equals_frozen_prompt": true,
+      "task_sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211",
+      "terminal_response_sha256": "86bdef072cdcd960eb2d22b5db0ffb3267277ff9013ab93c902a2d13132d35c1",
+      "terminal_item_position": 24
+    },
+    "pack02_muse": {
+      "client_request_id": "music-20261009-run140-pack02-muse-r1",
+      "model": "muse-spark-1.3-contributor-free",
+      "provider_app_reported": "claude-proxy",
+      "task_terminal_status": "completed",
+      "delegate_task_event_position": 77,
+      "task_equals_frozen_prompt": true,
+      "task_sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211",
+      "terminal_response_sha256": "bf9d6e643d88d54e4dc40c261d8415928690694c13b216e5bf7e3fa8ba720e7b",
+      "terminal_item_position": 2
+    }
+  },
+  "task_status_evidence": {
+    "pack01_luna": {
+      "dispatcher_activity_positions": [
+        87,
+        105,
+        141,
+        163
+      ],
+      "status": "completed",
+      "work_state": "result_available",
+      "has_pending_child_runs": false
+    },
+    "pack02_luna": {
+      "dispatcher_activity_positions": [
+        99,
+        144,
+        165
+      ],
+      "status": "completed",
+      "work_state": "result_available",
+      "has_pending_child_runs": false
+    },
+    "pack02_muse": {
+      "dispatcher_activity_positions": [
+        115,
+        146,
+        200
+      ],
+      "status": "completed",
+      "work_state": "result_available",
+      "has_pending_child_runs": false
+    },
+    "pack02_muse_position_200_reassembled": true,
+    "pack02_muse_position_200_initial_truncated": true,
+    "pack02_muse_position_200_chunk_lengths": [
+      22000,
+      22000,
+      2286
+    ],
+    "pack02_muse_position_200_total_chars": 46286
+  },
+  "existing_archive_checks": {
+    "pack01_luna": {
+      "directory": "runs/run140_mech_independent_review/reviews/pack01_luna_r1",
+      "all_four_files_present": true,
+      "files_present": {
+        "task.txt": true,
+        "response.txt": true,
+        "meta.json": true,
+        "parse_report.json": true
+      },
+      "actual_delegate_payload_equals_frozen_prompt": true,
+      "archive_task_equals_frozen_prompt": true,
+      "archive_task_equals_delegate_payload": true,
+      "archive_response_equals_terminal_message": true,
+      "meta_checks": {
+        "client_request_id": {
+          "matches": true,
+          "reported": "music-20261009-run140-pack01-luna-r1"
+        },
+        "task_sha256": {
+          "matches": true,
+          "reported": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e"
+        },
+        "response_sha256": {
+          "matches": true,
+          "reported": "25646cd06c5f9204d941f03931a2ff717a891254c53a94580869e18878842e90"
+        },
+        "task_utf8_bytes": {
+          "matches": true,
+          "reported": 25719
+        },
+        "response_utf8_bytes": {
+          "matches": true,
+          "reported": 23765
+        },
+        "status": {
+          "matches": false,
+          "reported": null
+        },
+        "requested_target": {
+          "matches": true,
+          "reported": {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-luna",
+            "options": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "observed_t3_provider": {
+          "matches": true,
+          "reported": "codex"
+        },
+        "observed_t3_model": {
+          "matches": true,
+          "reported": "gpt-6-luna"
+        }
+      },
+      "parse_report_checks": {
+        "response_sha256_matches_terminal": true,
+        "actual_task_sha256_matches_delegate_payload": true,
+        "actual_task_equals_frozen": true,
+        "schema_pass_matches_recomputed": true,
+        "parsed_object_matches_recomputed": true,
+        "quoted_items_exact_matches_recomputed": true,
+        "quoted_relation_exact_matches_recomputed": true
+      },
+      "recomputed_schema_pass_from_terminal_message": true,
+      "recomputed_parse_error": null,
+      "archive_task_sha256": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e",
+      "archive_response_sha256": "25646cd06c5f9204d941f03931a2ff717a891254c53a94580869e18878842e90",
+      "meta_json_error": null,
+      "parse_report_json_error": null
+    },
+    "pack01_muse": {
+      "directory": "runs/run140_mech_independent_review/reviews/pack01_muse_r1",
+      "all_four_files_present": true,
+      "files_present": {
+        "task.txt": true,
+        "response.txt": true,
+        "meta.json": true,
+        "parse_report.json": true
+      },
+      "actual_delegate_payload_equals_frozen_prompt": true,
+      "archive_task_equals_frozen_prompt": true,
+      "archive_task_equals_delegate_payload": true,
+      "archive_response_equals_terminal_message": true,
+      "meta_checks": {
+        "client_request_id": {
+          "matches": true,
+          "reported": "music-20261009-run140-pack01-muse-r1"
+        },
+        "task_sha256": {
+          "matches": true,
+          "reported": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e"
+        },
+        "response_sha256": {
+          "matches": true,
+          "reported": "f3bbf1b0fa5f89a94768f5a2efb917076c94fa4c8fe070e0c006d57aeb7189eb"
+        },
+        "task_utf8_bytes": {
+          "matches": true,
+          "reported": 25719
+        },
+        "response_utf8_bytes": {
+          "matches": true,
+          "reported": 22547
+        },
+        "status": {
+          "matches": true,
+          "reported": "completed"
+        },
+        "requested_target": {
+          "matches": true,
+          "reported": {
+            "providerInstanceId": "claude-proxy",
+            "model": "muse-spark-1.3-contributor-free",
+            "options": {
+              "effort": "xhigh"
+            }
+          }
+        },
+        "observed_t3_provider": {
+          "matches": true,
+          "reported": "claude-proxy"
+        },
+        "observed_t3_model": {
+          "matches": true,
+          "reported": "muse-spark-1.3-contributor-free"
+        }
+      },
+      "parse_report_checks": {
+        "response_sha256_matches_terminal": true,
+        "actual_task_sha256_matches_delegate_payload": true,
+        "actual_task_equals_frozen": true,
+        "schema_pass_matches_recomputed": true,
+        "parsed_object_matches_recomputed": true,
+        "quoted_items_exact_matches_recomputed": true,
+        "quoted_relation_exact_matches_recomputed": true
+      },
+      "recomputed_schema_pass_from_terminal_message": true,
+      "recomputed_parse_error": null,
+      "archive_task_sha256": "082a8dedd3c91875f47e4e3899f5a289732db5633ea9757caffcd2b7b910b16e",
+      "archive_response_sha256": "f3bbf1b0fa5f89a94768f5a2efb917076c94fa4c8fe070e0c006d57aeb7189eb",
+      "meta_json_error": null,
+      "parse_report_json_error": null
+    },
+    "pack02_luna": {
+      "directory": "runs/run140_mech_independent_review/reviews/pack02_luna_r1",
+      "all_four_files_present": true,
+      "files_present": {
+        "task.txt": true,
+        "response.txt": true,
+        "meta.json": true,
+        "parse_report.json": true
+      },
+      "actual_delegate_payload_equals_frozen_prompt": true,
+      "archive_task_equals_frozen_prompt": true,
+      "archive_task_equals_delegate_payload": true,
+      "archive_response_equals_terminal_message": true,
+      "meta_checks": {
+        "client_request_id": {
+          "matches": true,
+          "reported": "music-20261009-run140-pack02-luna-r1"
+        },
+        "task_sha256": {
+          "matches": true,
+          "reported": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211"
+        },
+        "response_sha256": {
+          "matches": true,
+          "reported": "86bdef072cdcd960eb2d22b5db0ffb3267277ff9013ab93c902a2d13132d35c1"
+        },
+        "task_utf8_bytes": {
+          "matches": true,
+          "reported": 24899
+        },
+        "response_utf8_bytes": {
+          "matches": true,
+          "reported": 22865
+        },
+        "status": {
+          "matches": false,
+          "reported": null
+        },
+        "requested_target": {
+          "matches": true,
+          "reported": {
+            "providerInstanceId": "codex",
+            "model": "gpt-6-luna",
+            "options": {
+              "reasoningEffort": "max"
+            }
+          }
+        },
+        "observed_t3_provider": {
+          "matches": true,
+          "reported": "codex"
+        },
+        "observed_t3_model": {
+          "matches": true,
+          "reported": "gpt-6-luna"
+        }
+      },
+      "parse_report_checks": {
+        "response_sha256_matches_terminal": true,
+        "actual_task_sha256_matches_delegate_payload": true,
+        "actual_task_equals_frozen": true,
+        "schema_pass_matches_recomputed": true,
+        "parsed_object_matches_recomputed": true,
+        "quoted_items_exact_matches_recomputed": true,
+        "quoted_relation_exact_matches_recomputed": true
+      },
+      "recomputed_schema_pass_from_terminal_message": true,
+      "recomputed_parse_error": null,
+      "archive_task_sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211",
+      "archive_response_sha256": "86bdef072cdcd960eb2d22b5db0ffb3267277ff9013ab93c902a2d13132d35c1",
+      "meta_json_error": null,
+      "parse_report_json_error": null
+    }
+  },
+  "new_archive": {
+    "directory": "notes/research/run140_source_archive_20261009_r2/pack02_muse_r1",
+    "task_equals_frozen_prompt": true,
+    "task_sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211",
+    "response_sha256": "bf9d6e643d88d54e4dc40c261d8415928690694c13b216e5bf7e3fa8ba720e7b",
+    "response_utf8_bytes": 22734,
+    "terminal_status": "completed",
+    "strict_schema_pass": true,
+    "parse_error": null
+  },
+  "limitations": [
+    "T3 provider/model are app-reported labels; actual backend identity is unattested.",
+    "Nested child user text is not exposed in messages view. For nested submissions, the exact known wrapper was removed only from the 72-character subagent title preview; the remaining visible prefix matched the delegate input prefix. This is auxiliary and not proof of the full prompt.",
+    "The delegate_task input.task is the primary task-payload source; receipt hashes do not authenticate a remote backend.",
+    "Schema and exact-quote parsing does not judge musical quality, resolve the reviews, complete any work, or establish production readiness."
+  ]
+}

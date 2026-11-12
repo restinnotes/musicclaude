@@ -1,0 +1,61 @@
+{
+  "run_id": "20261006T000341.776543Z-a4a6374e",
+  "timestamp": "2026-10-06T00:03:41.776543+00:00",
+  "command": "check",
+  "profile": "yi",
+  "probe": null,
+  "prompt": "Reply with exactly TEST_OK. No other text.",
+  "prompt_sha256": "cf4962f651ef6b8f38225f175cb6b3ed712224ced56dc4111b9173aa2ee0c314",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "success": false,
+  "response": "",
+  "http_status": 502,
+  "actual_model": null,
+  "actual_reasoning_effort": null,
+  "diagnostics": {
+    "preparation_started_at": 1791245130.3137121,
+    "generation_stop_verified": true,
+    "elapsed_seconds": 59.972,
+    "response_complete": false,
+    "exception_class": "StandardStateError"
+  },
+  "error": {
+    "type": "ui_selector",
+    "message": "Temporary Chat activation control was not found"
+  },
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "elapsed_seconds": 168.187
+}

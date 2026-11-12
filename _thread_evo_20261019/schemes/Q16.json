@@ -1,0 +1,82 @@
+{
+ "name": "Q16",
+ "note": "Q16：Q15 加 Center 贴合（骨架要求就是 Center 那件事；选路加一项 center_fit）",
+ "steps": [
+  {
+   "id": "A1",
+   "prompt_file": "Q6_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  },
+  {
+   "id": "A2",
+   "prompt_file": "Q6_A2.txt",
+   "replace": {
+    "{ROUTES}": "step:A1",
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A3",
+   "prompt_file": "Q6_A3.txt",
+   "replace": {
+    "{SEGMENTS}": "SEGMENTS",
+    "{BEADS_TEXT}": "BEADS_TEXT"
+   },
+   "model": "g6",
+   "after": [
+    "A1"
+   ],
+   "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+  },
+  {
+   "id": "A4",
+   "prompt_file": "Q15_A4.txt",
+   "replace": {
+    "{SECTIONS}": "SEGMENTS",
+    "{ROUTES}": [
+     "step:A1",
+     {
+      "text": "\n\n【宏观评审结果】\n"
+     },
+     "step:A2"
+    ],
+    "{TARGETS}": "step:A3",
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  }
+ ],
+ "final": "A4",
+ "edits": [
+  {
+   "prompt_file": "Q6_A1.txt",
+   "old": "- Center 已经给定，见下。它是读者回头看整首时把各段组织起来的那件事；不是他一开始就清楚知道的事，也不是每一段都要回应的题目；不预告发展路线和结局。",
+   "new": "- Center 已经给定，见下。它是读者回头看整首时把各段组织起来的那件事；不是他一开始就清楚知道的事，也不是每一段都要回应的题目；不预告发展路线和结局。\n- 路线讲的这一件事，就是 Center 说的那件事本身：读者回头看整首，能认出是 Center 里那几样东西怎样缠在一起、怎样变化。不能换成一件和 Center 相近的另一件事来当主线，比如只写了 Center 的一半，或者把 Center 引申出来的一个具体心事（某个顾虑、某个愿望）当成整件事。"
+  },
+  {
+   "prompt_file": "Q6_A2.txt",
+   "old": "先分别给每条路线：",
+   "new": "9. 是否就是 Center 说的那件事：回头看整条路线，讲的是不是 Center 本身；Center 里的几样东西是不是都在、而且缠在一起地变化，而不是只写了其中一样，或者换成了一件相近的另一件事。\n\n【Center】{CENTER}\n\n先分别给每条路线："
+  },
+  {
+   "prompt_file": "Q6_A2.txt",
+   "old": "- human_plausibility：1–10",
+   "new": "- human_plausibility：1–10\n- center_fit：1–10"
+  },
+  {
+   "prompt_file": "Q6_A2.txt",
+   "old": "然后选出最多 3 条进入下一步，按优先顺序排列。",
+   "new": "然后选出最多 3 条进入下一步，按优先顺序排列。center_fit 低的路线（换成了相近的另一件事）不要选进前面。"
+  }
+ ]
+}

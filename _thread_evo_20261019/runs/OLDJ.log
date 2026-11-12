@@ -1,0 +1,38 @@
+Exception in thread Thread-3 (run):
+Traceback (most recent call last):
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\musicclaude\_thread_evo_20261019\calib.py", line 30, in run
+    texts = {n: (arts.b0() if n == "B0" else causal.text(n)) for n in names}
+                                             ^^^^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\oldjudge.py", line 16, in uniform
+    return "\n\n".join(f"**第{s['start']}—{s['end']}小节**\n\n{t}" for s, t in zip(segs, draftjudge.sections(n)))
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+C9A: 4 calls
+C9B: 4 calls
+[judge_spec_v3_C9A_s2_gpt6] ok 256s 8413 chars
+[judge_spec_v3_C9A_s1_gpt56] ok 270s 8819 chars
+[judge_spec_v3_C9A_s1_gpt6] ok 295s 8684 chars
+[judge_spec_v3_C9B_s2_gpt6] ok 262s 8207 chars
+[judge_spec_v3_C9B_s1_gpt56] ok 268s 9456 chars
+[judge_spec_v3_C9A_s2_gpt56] ok 308s 13604 chars
+C9A: 16 rows
+[judge_spec_v3_C9B_s1_gpt6] ok 334s 7012 chars
+[judge_spec_v3_C9B_s2_gpt56] ok 324s 11712 chars
+C9B: 16 rows
+C9A {'d9LC_op60_r1': [6, 6, 7, 6], 'd9S_op60_r1': [4, 7, 4, 4], 'd9L_op60_r1': [5, 5, 3, 5], 'n8_op60_r1': [8, 8, 8, 8]}
+C9B {'d9S_op60_r2': [4, 4, 7, 6], 'd9LC_op60_r2': [5, 6, 4, 5], 'd9L_op60_r2': [6, 5, 5, 4], 'n8_op60_r1': [8, 8, 8, 8]}
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\oldjudge.py", line 35, in <module>
+    rows = json.loads((calib.EV / eid / "rows.json").read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\musicclaude\\_thread_evo_20261019\\evaluations\\C9C\\rows.json'

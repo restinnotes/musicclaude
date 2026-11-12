@@ -1,0 +1,88 @@
+{
+  "status": "quick_pass_not_acceptance",
+  "fully_read_quick": {
+    "tag": "r55restored",
+    "base": "r54weave",
+    "complete": 4,
+    "pending": [],
+    "wins": 3,
+    "no_regress": 2,
+    "net_sums": {
+      "alone": 21,
+      "lean": 34,
+      "plain": 40,
+      "cover": 10
+    },
+    "pass": true,
+    "cannot_reach_3_wins": false,
+    "rows": [
+      {
+        "rid": "v6b3_op60_g6_r55restored_vsr54weave_newX",
+        "output_sha256": "d87354979b79b6841af7831c27eab074b78aca6a08cc655874cbc11511f638f8",
+        "input_sha256": "6e3a8c3c3415f1cb3e86295c39c2e4631fd5f4a4f5f22a12e54d84b8fcecc951",
+        "w": "op60",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 9,
+          "lean": 11,
+          "plain": 9,
+          "cover": 5
+        }
+      },
+      {
+        "rid": "v6b3_op60_g56_r55restored_vsr54weave_newY",
+        "output_sha256": "6562f581cdbfd8db69c9f336cddd83c176e77d7ed46d5836ed915cf4cb574936",
+        "input_sha256": "c8cb7ae1e2f51d3cc2ab869f0a89285af25d6963fe62ad884c4fcd376c3b5a0a",
+        "w": "op60",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 8,
+          "lean": 9,
+          "plain": 11,
+          "cover": 4
+        }
+      },
+      {
+        "rid": "v6b3_op61_g6_r55restored_vsr54weave_newY",
+        "output_sha256": "4ff8206c60eea71ae98be5fdba20a8e778468d7cfb533836bb32110c87f02ffc",
+        "input_sha256": "55288d3220391a639cde02c8f04a555a5ca7e53bacc42bf8620038d95ebfdd08",
+        "w": "op61",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": 1,
+          "lean": 8,
+          "plain": 8,
+          "cover": 3
+        }
+      },
+      {
+        "rid": "v6b3_op61_g56_r55restored_vsr54weave_newX",
+        "output_sha256": "1045dc8c3d46022a3a8d945bc4988deffcb598064f3083ddc0c9870f354f070e",
+        "input_sha256": "08a2ac7eb98583e47169920a5ec24a7393809240762c75f7e06f534567ebb29b",
+        "w": "op61",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 3,
+          "lean": 6,
+          "plain": 12,
+          "cover": -2
+        }
+      }
+    ]
+  },
+  "next": "Original coverage floor first, then standalone floor, then remaining four if still viable. Original eight no-regression requires all remaining four no-regression; no threshold change.",
+  "DAG_change": false,
+  "P1_measurements_reused_as_P2": false
+}

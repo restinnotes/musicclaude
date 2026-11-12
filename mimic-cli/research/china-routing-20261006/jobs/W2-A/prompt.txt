@@ -1,0 +1,1479 @@
+You are independent researcher W2-A. Your ONLY assigned workstream is W2: China Domestic Market Map. Other researchers cannot see this session and you must not assume any findings from them. The master brief below is shared protocol, not a request to execute other workstreams or to invent their outcomes.
+Use actual live web search and read the source pages. If your session cannot browse, say WEB RESEARCH UNAVAILABLE prominently; do not substitute memory for research. State your actual retrieval UTC timestamps and the newest available data dates. The research as-of date is 2026-10-06; do not fabricate future-dated publications. Do not claim access to a logged-in shopping account, quotations or paid datasets that you did not actually access. Sources that you cannot open must be marked UNVERIFIED or AUTHENTICATED DATA REQUIRED. Search snippets cannot establish transaction prices, model variants, seller IDs, or demand rankings.
+
+PRE-FREEZE STAGE: No research into specific-SKU overseas prices, availability, coverage, import savings or selection using internationalized brand visibility. W1 may examine aggregate US category demand and retail structure, never select SKU candidates by overseas price. W2 must select solely from Chinese domestic consumer evidence and cannot assert US obscurity before the freeze. Cover ALL 18 categories, including difficult/heavy products. Missing evidence stays missing. No need to propose a startup or UI.
+
+For each C01..C18, attempt three clearly specified domestic candidate variants: two head candidates from domestic ranking/flagship sales evidence and one candidate from strong domestic consumer/community purchasing evidence. These are proposed slots, not a license to fill absent evidence. Provide exact brand/model/variant, Chinese product URL/item ID/seller ID where observed, domestic head evidence, source access state and date, and price-type distinctions. Rank evidence quality. If a candidate is only provisional, explicitly mark PROVISIONAL; do not call an undated review a verified bestseller. Do not exclude batteries, large goods, voltage/firmware/compatibility difficulties; record feasibility flags separately. Do not begin overseas comparisons. Include an executable, deterministic sampling rule and exact manual data fields for authenticated-data gaps.
+
+Write your report in Chinese, using the ten report sections in the brief. Aim for substantive, well-supported research; source count alone is not a quality measure. For every key finding give explicit source URLs, dates and opposing evidence. Do not hide URLs in citation-only labels; include the literal full URLs. After the report, append one valid JSON object in a ```json fence with schema {"job_id":"W2-A","web_research_available":true,"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":"UTC ISO time or null if unavailable","source_type":"official|government|filing|secondary|community","access_state":"read_full_page|snippet_only|blocked|login_required","claims_supported":["C01"]}],"claims":[{"claim_id":"C01","claim":"...","classification":"FACT|INFERENCE|HYPOTHESIS","source_ids":["S01"],"confidence":"high|medium|low","counterevidence":"..."}],"categories":[],"sku_candidates":[],"data_gaps":[],"pre_freeze_compliance":true}. Populate categories/sku_candidates with your actual tables as structured objects; keep missing numbers null. If browsing unavailable use false. Never invent retrieval times.
+
+=== FULL USER MASTER BRIEF (protocol, not prior evidence) ===
+对。下面这套我按**真正做研究项目**来设计，不是再让一个 GPT 写一篇长报告。
+
+我建议直接跑 **8 个 workstream × 每个 3 个独立 subagent = 24 个研究 agent**，然后再跑 **4 个交叉复核/红队 agent + 1 个总合成 agent**。同一问题的三个 agent **在完成前互相不能看结果**，这样才能真正降低模型搜索路径造成的方差。
+
+尤其要坚持一条：**国内-first 抽样，在任何海外价格搜索之前冻结 SKU 样本。** 上一轮最后进入 AliExpress exact-SKU 统计的样本只有 16 个，而且明显偏向已经高度国际化的型号；这不足以回答我们的真正问题。粘贴的文本 (1)
+
+### 1. 给你的本地 Agent 的总控提示词
+
+你是一个 research orchestrator。你可以通过终端命令 `mg` 启动多个独立的 GPT 网页会话。不要担心调用额度；这个任务优先追求研究质量、广度、可审计性和 falsification，而不是节约调用次数。
+
+# 一、研究背景
+
+我们正在研究一个潜在的消费者购物产品：
+
+当美国消费者准备在 Amazon、Google Shopping、Temu、AliExpress 或其他美国渠道购买商品时，系统同时搜索：
+
+- Taobao
+- Tmall
+- JD
+- 必要时 1688
+
+然后通过：
+
+- Superbuy
+- Sugargoo
+- BuckyDrop
+- 其他 buying agent / forwarding infrastructure
+
+计算这个商品真实运到美国的 landed cost。
+
+最终展示类似：
+
+Amazon: $39.99 — tomorrow  
+AliExpress: $27.40 — 8 days  
+Temu: $25.20 — 4 days  
+China domestic + forwarding: $16.80 all-in — 9–13 days
+
+核心产品不一定自己进口、自己仓储，也不一定是 AI agent。
+
+可能是：
+
+- browser extension
+- shopping search engine
+- marketplace
+- AI shopping agent
+- API
+- price-comparison/routing layer
+
+核心 thesis 是：
+
+> 中国国内商品市场可能存在一个很大的、没有被国际电商完全套利掉的价格与 selection advantage。一个消费者入口如果把中国国内 catalog 自动加入美国消费者的 comparison set，可能创造大量 consumer surplus。
+
+我们不是要求“中国永远最便宜”。
+
+系统可以推荐：
+
+- Amazon
+- Temu
+- AliExpress
+- Taobao/Superbuy
+- 美国本地 reseller
+
+中的任何一个。
+
+真正研究的是：
+
+> 是否存在一个数量和 GMV 都足够大的 SKU 集合，使 China-direct route 持续具有明显价格优势？
+
+---
+
+# 二、重要的已有 provisional finding
+
+之前做过一轮 preliminary research。
+
+它找到的可严格比较 exact-SKU 样本非常少，而且高度集中在：
+
+- FiiO
+- Moondrop
+- AULA
+- FNIRSI
+- VXE
+- ORICO
+
+等已经比较国际化的中国品牌。
+
+结果显示：
+
+> 对已经高度国际化的 branded exact SKU，AliExpress 往往已经把中国国内外价差压得很小。
+
+但是上一轮存在严重潜在 selection bias：
+
+> 越容易通过国际网页搜索确认 exact SKU  
+> → 越可能本来就是已经高度国际化的 SKU  
+> → 越容易在 AliExpress/海外专业零售商找到有效价格。
+
+因此这一轮严禁：
+
+> 先从 Amazon / AliExpress / Google 容易找到的 SKU 出发，再去中国找价格。
+
+必须反过来：
+
+> **China domestic market first → freeze sample → only then inspect overseas channels.**
+
+之前研究的结果只能作为 hypothesis，不允许作为 ground truth。
+
+---
+
+# 三、两个核心轴
+
+整个研究必须围绕两个独立维度。
+
+## Axis A — Feasibility
+
+对于一个 SKU：
+
+> China domestic price  
+> + domestic shipping  
+> + agent fee  
+> + international freight  
+> + tariff  
+> + mandatory customs/processing fees
+
+得到真实 landed cost 后：
+
+与美国/国际方便购买渠道相比能省多少？
+
+重点阈值：
+
+- ≥10%
+- ≥20%
+- ≥30%
+- ≥40%
+- ≥50%
+
+同时考虑：
+
+- actual weight
+- volumetric weight
+- batteries
+- voltage
+- radio compatibility
+- US carrier bands
+- plugs
+- firmware/language
+- product restrictions
+- warranty
+- shipping restrictions
+
+但不要因为某个问题存在就提前删 SKU。
+
+记录问题，然后让 feasibility score 下降。
+
+---
+
+## Axis B — Demand / Economic Volume
+
+即使一个 SKU 可以省 60%，如果一年只有 50 人买，商业意义可能有限。
+
+必须同时测：
+
+- 美国 category GMV
+- US online GMV
+- unit volume（如果有）
+- Amazon/category demand proxy
+- search demand
+- marketplace activity
+- category growth
+- average selling price
+- SKU concentration / fragmentation
+
+最终我们想寻找的是：
+
+> **High Demand × High China-direct Feasibility**
+
+而不是只找最容易寄的小玩意。
+
+---
+
+# 四、必须覆盖的大品类
+
+第一轮 category scan 不得只研究轻小电子配件。
+
+至少覆盖：
+
+1. Smartphones
+   - Redmi
+   - Xiaomi
+   - OnePlus
+   - realme
+   - iQOO
+   - Honor
+   - vivo / OPPO 等
+
+2. Laptops
+   - Lenovo/ThinkBook
+   - RedmiBook
+   - Xiaomi
+   - Mechrevo
+   - gaming laptops
+   - Chinese-market configurations
+
+3. Tablets
+
+4. Mini PCs / small desktops
+
+5. PC components / storage / networking
+   - SSD
+   - enclosures
+   - routers
+   - switches
+   - adapters
+   - docks
+
+6. Headphones / IEM / DAC / portable audio
+
+7. PC peripherals
+   - mouse
+   - keyboard
+   - controller
+   - webcam
+   - microphones
+
+8. Wearables
+   - smartwatch
+   - fitness devices
+
+9. Smart home / security / IoT
+
+10. Robot vacuums / small appliances
+
+11. Power tools / electronics tools / repair tools
+
+12. Camera / video gear and accessories
+
+13. Automotive accessories
+
+14. Sports / outdoor goods
+
+15. Hobby / models / 3D printing / maker electronics
+
+16. Apparel / shoes / bags
+   - only legitimate brands/unbranded goods
+   - no counterfeit thesis
+
+17. Home / organization / household goods
+
+18. Toys / collectibles / official merchandise
+
+Agents may propose additional categories if evidence indicates significant US demand plus Chinese supply advantage.
+
+---
+
+# 五、关键 sampling rule
+
+这是整个项目最重要的方法论要求。
+
+## Domestic-first sampling
+
+对于每个 category：
+
+1. 先研究中国国内市场。
+2. 找：
+   - JD 热销榜
+   - Tmall/Taobao 热销/销量榜
+   - 官方旗舰店畅销榜
+   - 国内主流比价/评测来源
+   - 中国消费者真实购买信号
+3. 构建 domestic SKU list。
+4. 人工检查 SKU 是否真实、型号是否清楚。
+5. **冻结 SKU list。**
+6. 保存 freeze timestamp/hash/version。
+7. 只有完成 freeze 后，才允许研究：
+   - AliExpress
+   - Temu
+   - Amazon
+   - eBay
+   - 美国官网
+   - 美国专业 retailer
+
+绝对禁止看到海外价格以后再改变样本。
+
+唯一允许剔除 SKU 的理由必须预先定义，例如：
+
+- counterfeit
+- 商品不是目标类型
+- 完全无法定义型号/规格
+- 非实物商品
+- 明显非法/禁运
+
+“海外找不到”绝对不能成为 exclusion reason。
+
+海外找不到本身就是重要结果。
+
+---
+
+# 六、登录态与数据质量
+
+不要假设公开 Google indexing 等价于真实中国电商 catalog。
+
+必须主动调查：
+
+- Taobao 登录态 vs 未登录差异
+- 中国大陆账号 vs 海外账号
+- App vs Web
+- 中文界面 vs international interface
+- JD/Tmall/Taobao ranking accessibility
+- coupons
+- 普通促销
+- 88VIP / targeted promotions
+- seller sales/review counts
+
+如果准确数据需要登录态：
+
+> 明确标记 `AUTHENTICATED DATA REQUIRED`
+
+不要用搜索引擎 snippet 猜测。
+
+如果本地环境能够获取登录态数据，就使用。
+
+如果无法访问，则：
+
+1. 保存缺口；
+2. 给出需要人工采集的精确字段；
+3. 不把缺失值偷偷替换成公开索引值。
+
+---
+
+# 七、Exact SKU discipline
+
+每个匹配必须分类：
+
+A — Exact SKU  
+品牌、型号、规格、容量、版本一致。
+
+B — High-confidence same OEM  
+有强证据属于相同产品/OEM，但 branding 不同。
+
+C — Comparable alternative  
+功能相似，但不是同一个商品。
+
+三个 bucket 必须分别统计。
+
+严禁：
+
+> 用一个便宜的类似商品  
+> 对比一个美国品牌 exact SKU  
+> 然后宣称价格低 60%。
+
+---
+
+# 八、价格定义
+
+记录至少：
+
+## China
+
+- regular price
+- broadly available current sale price
+- targeted/member coupon price
+
+主统计优先：
+
+> 普通中国消费者在合理条件下能够获得的 current transaction price。
+
+## Overseas
+
+分别记录：
+
+- Amazon
+- AliExpress
+- Temu
+- brand US/global store
+- Walmart/Best Buy（相关时）
+- eBay reputable seller
+- major niche retailer
+
+同时计算：
+
+### vs Amazon
+
+以及：
+
+### vs Cheapest Convenient Overseas Option
+
+后者通常比 Amazon benchmark 更重要。
+
+---
+
+# 九、Landed cost
+
+严禁统一使用一个虚假的固定税率或只用商品裸价。
+
+逐 SKU 尽量计算：
+
+China price
++ domestic shipping
++ mandatory agent fee
++ realistic international shipping
++ applicable tariff
++ customs / processing fees
+= landed cost
+
+必须区分：
+
+1. single-item standalone shipment
+2. current Superbuy consolidated-haul marginal cost
+3. potential negotiated platform/B2B rate
+4. true bulk-import economics
+
+不得把四种结构混在一起。
+
+关税尽量逐 SKU：
+
+SKU → HTS classification → MFN → China-specific duties → current Section 301 → exemptions
+
+无法确认时：
+
+> 输出 range / sensitivity。
+
+---
+
+# 十、非常重要：研究真正的“China-head / US-middle-tail gap”
+
+我们怀疑最大机会可能不是：
+
+> 中国 long tail → 美国 long tail
+
+而是：
+
+> **中国国内 head SKU → 美国 middle/tail SKU**
+
+例如某国产品牌产品：
+
+在中国：
+- 大销量
+- 数万评价
+- 多家店竞争
+- 官方店
+- 已经经过消费者筛选
+
+但在美国：
+- 没有主流 distribution
+- Temu 没 exact SKU
+- AliExpress international seller 很少
+- Amazon 只有 reseller
+- markup 很高
+
+这类必须专门识别。
+
+---
+
+# 十一、不要因为以下因素直接排除大品类
+
+例如 Redmi 手机可能存在：
+
+- US LTE/5G band compatibility
+- firmware
+- warranty
+
+这些不是“不研究手机”的理由。
+
+手机的 Demand 很大。
+
+应该记录：
+
+Demand = very high  
+Price spread = high/low  
+Compatibility = x  
+Final feasibility = y
+
+同理：
+
+- laptop 重量
+- appliance voltage
+- apparel returns
+- robot vacuum shipping
+
+都应该成为结果，而不是 sampling exclusion。
+
+---
+
+# 十二、研究架构
+
+启动以下 8 个 workstreams。
+
+每个 workstream：
+
+> **启动 3 个完全独立的 subagents。**
+
+命名：
+
+W1-A / W1-B / W1-C  
+W2-A / W2-B / W2-C  
+...
+
+三个 agent 在提交最终结果前：
+
+> **不得看到彼此的输出。**
+
+每个 agent 必须：
+
+- Web research
+- 搜论坛
+- 找官方来源
+- 保存 URL
+- 保存发布日期/抓取时间
+- 区分 fact / inference
+- 输出 confidence
+- 输出 unresolved questions
+- 主动寻找反证
+
+不要因为其他 agent 已经做过同一题而减少工作。
+
+---
+
+# 十三、8 个 Workstreams
+
+## W1 — US Demand Map
+
+目标：
+
+建立各 category 的美国需求规模与购买频率。
+
+回答：
+
+- 哪些类别 GMV 最大？
+- online share 多大？
+- average selling price？
+- purchase frequency？
+- Amazon/marketplace reliance？
+- category fragmentation？
+- 哪些 category 有大量 middle-tail SKU？
+
+输出二维地图的 Y-axis：Demand.
+
+---
+
+## W2 — China Domestic Market Map
+
+目标：
+
+完全从中国消费者视角理解 domestic catalog。
+
+回答：
+
+- 每个 category 国内主流品牌是谁？
+- 国内畅销 SKU 是什么？
+- 哪些 SKU 中国极热、美国却陌生？
+- JD/Tmall/Taobao ranking 能拿到什么？
+- 正规商品价格竞争有多激烈？
+- 官方旗舰/高销量店占比？
+- China-head / US-middle-tail candidates 是哪些？
+
+不得先查看海外价格再选 SKU。
+
+---
+
+## W3 — Price Spread Audit
+
+目标：
+
+国内-first frozen sample 后，逐 SKU 查：
+
+China landed
+vs
+AliExpress
+Temu
+Amazon
+cheapest convenient overseas option
+
+建立真正 distribution。
+
+必须输出：
+
+median
+mean
+P10/P25/P50/P75/P90
+
+以及：
+
+% >10%
+% >20%
+% >30%
+% >40%
+% >50%
+
+按：
+
+- category
+- head/middle/tail
+- weight
+- ASP
+- exact/OEM/comparable
+
+分层。
+
+---
+
+## W4 — Temu / AliExpress Coverage
+
+两者必须完全分开。
+
+Temu：
+
+研究 head-SKU efficiency / US warehouse / platform selection。
+
+AliExpress：
+
+研究 internationalized long/middle tail。
+
+核心问题：
+
+> 对 China domestic hot SKUs，AliExpress exact coverage 到底是多少？
+
+> 对没有 exact match 的 SKU，是 completely unavailable，还是只有 marked-up reseller？
+
+> Temu exact coverage 与 AliExpress exact coverage 分别是多少？
+
+特别关注：
+
+> China-head / US-middle-tail。
+
+---
+
+## W5 — Logistics / Superbuy Infrastructure
+
+目标：
+
+把 Superbuy/Sugargoo/BuckyDrop 当基础设施研究。
+
+回答：
+
+- 实际美国线路多少钱？
+- standalone vs consolidated economics？
+- actual vs volumetric weight？
+- batteries？
+- customs？
+- B2B pricing？
+- bulk parcel discounts？
+- split shipping？
+- API/integration？
+- volume discounts？
+- 是否可以：
+  “平台贡献 1000 个独立订单 → Superbuy 给商务价 → 仍分别直接寄消费者”
+- 什么 volume 会改变 rate？
+- Superbuy 到底靠什么赚钱？
+
+尤其调查：
+
+> 是否真的需要我们自己做 physical aggregation？
+
+还是：
+
+> commercial volume aggregation 就足够。
+
+---
+
+## W6 — Regulation / Structural Boundary
+
+只研究真正会改变 business architecture 的法规。
+
+不要泛泛说“合规复杂”。
+
+明确区分：
+
+A. comparison/routing layer  
+B. consumer buys through Superbuy  
+C. platform acts as buying agent  
+D. platform aggregates shipments  
+E. platform becomes importer of record  
+F. platform owns inventory / US warehouse
+
+分别回答：
+
+- 谁是 purchaser？
+- 谁是 importer？
+- 谁承担 customs duty？
+- 哪一步开始产品认证责任显著变化？
+- 哪一步涉及 FCC/CPSC 等？
+- 是否可以保持轻资产同时拿 volume discount？
+
+核心问题：
+
+> 有没有一个合法结构，能够拿到规模物流经济，但不把平台变成传统 importer/retailer？
+
+---
+
+## W7 — Competitive Landscape / “Why Doesn't This Exist?”
+
+这是非常重要的一组。
+
+不要接受以下浅层答案：
+
+- consumers like convenience
+- people don't know China
+- marketing is hard
+- trust issue
+- UI problem
+
+必须找到真实历史证据。
+
+研究：
+
+- Superbuy
+- Sugargoo
+- BuckyDrop
+- Pandabuy
+- Wegobuy
+- CSSBuy
+- CNFans
+- AliPrice
+- DSers
+- Honey-like extensions
+- image sourcing extensions
+- cross-border dropshipping SaaS
+- Taobao agents
+- China-price comparison products
+- discontinued startups
+- VC-funded attempts
+- GitHub/open-source projects
+
+核心问题：
+
+> 有没有人实际上尝试过“Amazon → Taobao same-item comparison”？
+
+如果有：
+
+- 做到多大？
+- 为什么没继续？
+- 用户是谁？
+- monetization？
+- 技术问题？
+- legal problem？
+- platform blocking？
+- acquisition problem？
+- pivot？
+
+特别调查失败案例，而不仅是现存公司。
+
+---
+
+## W8 — Thesis Falsification
+
+这个 workstream 的唯一目标是：
+
+> **证明整个商业想法不成立。**
+
+不要帮我们。
+
+主动寻找：
+
+1. AliExpress 已经覆盖足够广。
+2. 真正大 GMV category 没有 price advantage。
+3. 中国 price advantage 只存在于微小商品。
+4. shipping 吃掉优势。
+5. tariff 吃掉优势。
+6. exact match 后价格优势消失。
+7. China-head / US-middle-tail 实际很少。
+8. 国际需求一出现 price spread 就迅速消失。
+9. agent economics 不能支持消费者产品。
+10. platform fee / payment / fraud / returns 足够大。
+11. Superbuy economics 无法规模化。
+12. source platforms 会封锁 access。
+13. regulations fundamentally destroy routing model。
+14. 一个已经失败的 startup 实际上证明了这些。
+
+必须寻找 hard evidence，而不是理论风险。
+
+---
+
+# 十四、每个独立 Subagent 的输出标准
+
+每个 subagent 必须输出：
+
+1. Direct answer
+2. Evidence table
+3. Primary sources
+4. Forum evidence
+5. Contrary evidence
+6. Confidence
+7. Data gaps
+8. Most surprising finding
+9. What would falsify its own conclusion
+10. Suggested next experiment
+
+所有数字必须可追溯。
+
+不得写：
+
+> “据估计”
+
+却没有出处。
+
+---
+
+# 十五、完成 24 个 Subagent 后
+
+启动 4 个独立 adjudicator/red-team agents。
+
+## Judge 1 — Methodology Auditor
+
+只检查：
+
+- selection bias
+- survivorship bias
+- sample leakage
+- price mismatch
+- variant mismatch
+- login-state bias
+- stale prices
+- coupon contamination
+- tariff mistakes
+- freight mistakes
+
+## Judge 2 — Economic Auditor
+
+只检查：
+
+- demand weighting
+- GMV relevance
+- unit economics
+- logistics scaling
+- marketplace economics
+- whether savings are actually economically meaningful
+
+## Judge 3 — Adversarial Bear
+
+拿所有证据，尽最大努力证明：
+
+> “这是一个看起来聪明但实际上没有足够市场的 idea。”
+
+## Judge 4 — Adversarial Bull
+
+拿同一证据，尽最大努力证明：
+
+> “这里存在一个被严重低估的 global price-discovery failure。”
+
+Bull 和 Bear 都必须引用同一 evidence base，不允许编新事实。
+
+---
+
+# 十六、最终 Synthesizer
+
+最后再启动一个独立 GPT 会话。
+
+它获得：
+
+- 24 个原始 subagent reports
+- 4 个 judge reports
+
+要求：
+
+不要按多数投票。
+
+逐项 adjudicate disagreement。
+
+最终输出：
+
+# A. What we know with high confidence
+
+# B. What appears true but is not yet proven
+
+# C. What previous assumptions were wrong
+
+# D. Category Opportunity Matrix
+
+表格：
+
+Category | US demand | China advantage | Ali coverage | Temu coverage | Logistics feasibility | Regulatory friction | Opportunity score | Confidence
+
+# E. Price Spread Distribution
+
+必须按 demand-weighted 与 feasibility-weighted 两种 sample 分别报告。
+
+# F. China-head / US-middle-tail Gap
+
+这是重点章节。
+
+# G. Logistics Infrastructure Verdict
+
+回答：
+
+> Superbuy 能否当基础设施？
+
+以及：
+
+> 是否必须自己 aggregate/import？
+
+# H. Strongest 10 arguments AGAINST the thesis
+
+# I. Strongest 10 arguments FOR the thesis
+
+# J. Why no dominant company exists today
+
+必须只给被证据支持的原因。
+
+明确区分：
+
+- confirmed
+- probable
+- speculative
+
+# K. Decisive Unknowns
+
+只留下真正还会改变投资判断的问题。
+
+# L. Final Verdict
+
+分别判断：
+
+1. Thin comparison/routing SaaS
+2. Shopping agent
+3. Marketplace
+4. Logistics aggregation platform
+
+使用：
+
+- Strong
+- Moderate
+- Weak
+- Rejected
+
+并给 confidence。
+
+---
+
+# 十七、可审计要求
+
+把所有研究资产保存下来：
+
+- prompts
+- raw responses
+- URLs
+- source title
+- source date
+- retrieval date
+- screenshots if available
+- SKU IDs
+- seller IDs
+- exact variant
+- weights
+- dimensions
+- price
+- coupons
+- freight quote
+- tariff calculation
+- match confidence
+
+生成一个 evidence ledger。
+
+任何最终数字都必须能追溯回原始 evidence。
+
+如果不同 agent 对同一个 SKU 得到不同价格：
+
+> 不要自动平均。
+
+先找原因：
+
+- date
+- region
+- coupon
+- login state
+- variant
+- shipping
+- seller
+
+只有解释完才能 adjudicate。
+
+---
+
+# 十八、禁止事项
+
+不要：
+
+- 为了凑样本而把 comparable 当 exact。
+- 用 Google 没搜到推断 Temu 一定没货。
+- 用 AliExpress listing 的最低 accessory variant 当主商品价格。
+- 用美国热门品牌作为唯一 sampling frame。
+- 只研究最容易寄的小商品。
+- 用统一 tariff proxy 得出最终结论。
+- 把 old de-minimis economics 当 2026 economics。
+- 因为商品海外难找而把它从样本删除。
+- 把 SKU count 当 TAM。
+- 把“中国便宜”当预设结论。
+- 因为一个商业模式听起来合理就替它找理由。
+
+整个项目的目标是：
+
+> **找到真相，而不是证明 thesis。**
+
+### 2. 给每个 Workstream 的通用 Subagent 外壳
+
+这个可以让你的本地 orchestrator 把具体 W1–W8 的任务文本填进去，然后每题独立跑三遍。
+
+你是一个独立 research subagent。
+
+你正在参与一个关于“中国国内电商价格 → 美国消费者”的商业研究。
+
+你不能看到其他 subagent 的结论，也不要猜他们会得到什么。
+
+你的任务不是支持某个创业 idea，而是尽可能准确地回答下面的指定研究问题。
+
+---
+
+# Assigned Workstream
+
+{{INSERT_W1_TO_W8_TASK_HERE}}
+
+---
+
+# Global Research Thesis
+
+研究一个消费者购物系统是否存在商业空间：
+
+当美国消费者购买商品时，同时比较：
+
+- Amazon
+- Temu
+- AliExpress
+- 美国其他方便购买渠道
+- Taobao
+- Tmall
+- JD
+- 必要时 1688
+
+对于中国渠道，通过 Superbuy/Sugargoo/BuckyDrop 等成熟 buying-agent/forwarding infrastructure 计算真实美国 landed cost。
+
+系统并不默认推荐中国。
+
+目标是寻找：
+
+> 中国国内已经经过消费者验证、销量高、价格竞争激烈，但尚未被海外渠道充分国际化的 SKU。
+
+尤其关注：
+
+> **China-head / US-middle-tail gap。**
+
+---
+
+# Research Rules
+
+## 1. Search broadly
+
+至少结合：
+
+- platform official sources
+- company filings
+- government sources
+- ecommerce data providers
+- Reddit
+- specialist communities
+- Chinese forums
+- LinuxDo
+- V2EX
+- 一亩三分地
+- Dealmoon
+- industry forums
+- archive/search history when useful
+
+社区证据用于：
+
+> 实际行为、价格体验、shipping experience、user friction。
+
+官方来源用于：
+
+> fees、rules、policy、platform capability。
+
+---
+
+## 2. Current date
+
+按 2026-10-06 的现实环境研究。
+
+对于：
+
+- tariffs
+- de minimis
+- Superbuy fees
+- Temu
+- AliExpress
+- shipping
+- regulations
+
+必须优先近期资料。
+
+旧资料必须注明年份。
+
+---
+
+## 3. Facts vs inference
+
+每一个重要结论标记：
+
+- FACT
+- INFERENCE
+- HYPOTHESIS
+
+不要把推理写成事实。
+
+---
+
+## 4. Do not cherry-pick
+
+如果发现与你预期相反的例子：
+
+优先保存。
+
+尤其寻找：
+
+> China route 更贵  
+> AliExpress 已经压平价差  
+> Temu exact SKU 很便宜  
+> shipping destroys spread
+
+等 negative evidence。
+
+---
+
+## 5. Exact SKU discipline
+
+A = exact SKU  
+B = high-confidence same OEM  
+C = comparable
+
+严格分开。
+
+---
+
+## 6. Login-state problems
+
+如果 source 需要中国正常登录态：
+
+标记：
+
+`AUTHENTICATED DATA REQUIRED`
+
+不要假装 Google snippet 等价于真实站内数据。
+
+---
+
+## 7. Evidence quality
+
+每条核心 finding 至少尽量使用：
+
+- 一个 primary/official source
+和/或
+- 两个相互独立的 secondary/community sources
+
+如果只有一个 Reddit comment：
+
+不能上升为“market consensus”。
+
+---
+
+# Required Output
+
+## 1. Bottom line
+
+5–10 条最重要结论。
+
+## 2. Evidence table
+
+Claim | Evidence | Source | Date | Confidence | Counterevidence
+
+## 3. Data
+
+尽可能提供原始数字和计算。
+
+## 4. Contradictory evidence
+
+单独一节。
+
+## 5. What could make this conclusion wrong?
+
+至少 5 条。
+
+## 6. Missing data
+
+明确哪些问题必须靠：
+
+- login state
+- API
+- manual sample
+- paid dataset
+- real shipping quote
+
+才能解决。
+
+## 7. Most important next action
+
+如果只能再做一个 experiment，做什么？
+
+---
+
+不要给创业建议。
+
+不要设计产品 UI。
+
+不要泛泛谈消费者心理。
+
+你的职责只有：
+
+> **把这个 assigned research question 尽可能研究透。**
+
+### 3. 最后的复核 / 总合成提示词
+
+等 24+4 份报告出来之后，把这一份给最后的 GPT。
+
+你是这项研究的最终 adjudicator。
+
+你会收到：
+
+- 多个相同问题的独立研究报告
+- methodology audit
+- economic audit
+- adversarial bear report
+- adversarial bull report
+
+这些 agent 之间存在冲突是正常的。
+
+不要：
+
+- 按多数表决
+- 平均数字
+- 选择更符合创业 thesis 的答案
+
+你的工作是逐项追溯 evidence。
+
+---
+
+# 第一原则：Sampling Frame
+
+优先判断：
+
+> 样本究竟是从中国国内市场先产生，
+> 还是因为海外容易搜索到而进入样本？
+
+任何 international-first sample：
+
+不能用于估计：
+
+> China-head / US-middle-tail opportunity rate。
+
+---
+
+# 第二原则：Demand × Feasibility
+
+不要因为某品类：
+
+> 价格优势特别漂亮
+
+就认为它很重要。
+
+同时问：
+
+> 美国消费者在这里实际花多少钱？
+
+也不要因为一个巨大 GMV category：
+
+> 物流/兼容性困难
+
+就直接删除。
+
+必须把两轴分开。
+
+---
+
+# 第三原则：Price Spread Distribution
+
+最终至少建立两个 distribution：
+
+## Demand-weighted distribution
+
+美国消费支出真实落在哪里？
+
+## Opportunity-seeking distribution
+
+如果系统主动扫描最可能套利的 SKU，能找到多少明显机会？
+
+不能把两者混在一起。
+
+---
+
+# 第四原则：AliExpress 是主要 benchmark
+
+Temu 主要测试：
+
+> head SKU efficiency。
+
+AliExpress 测试：
+
+> 中国商品国际化究竟已经做到多深。
+
+如果：
+
+Taobao/Tmall + legitimate landed cost
+≈
+AliExpress
+
+则这部分机会不存在。
+
+如果：
+
+China route
+<<
+AliExpress
+
+则是真正未被套利的 spread。
+
+---
+
+# 第五原则：Real Landed Cost
+
+任何核心结果必须核对：
+
+- China price
+- domestic shipping
+- agent fee
+- international freight
+- volumetric weight
+- tariff
+- customs/processing
+- current 2026 policy
+
+如果报告使用统一 tariff proxy：
+
+只能视为 screening。
+
+---
+
+# 第六原则：Separate Business Architectures
+
+分别判断：
+
+A. comparison/routing-only  
+B. agent checkout  
+C. commercially aggregated individual forwarding  
+D. platform-controlled bulk import  
+E. marketplace with US inventory
+
+不要把 D/E 的合规问题拿来否定 A/B。
+
+也不要把 A/B 的轻资产 economics 假装成 D/E 的最终物流效率。
+
+---
+
+# 最终必须回答的 12 个问题
+
+1. 中国国内正规热销商品相比 Amazon 的真实 landed-price advantage 有多大？
+2. 相比 AliExpress 呢？
+3. 相比 cheapest convenient overseas option 呢？
+4. 哪些 category spread 最大？
+5. 哪些 category demand 最大？
+6. 哪些 category 同时落在 demand × feasibility 的右上角？
+7. China-head / US-middle-tail gap 是否真实存在？
+8. 这种 gap 大概是偶发异常，还是结构性现象？
+9. Temu 已经解决了哪些部分？
+10. AliExpress 已经解决了哪些部分？
+11. Superbuy 是否足够成为基础设施，而不需要平台自己重做物流？
+12. 如果机会这么明显，为什么到今天仍没有 dominant consumer product？
+
+---
+
+# 关于“为什么没人做”
+
+这一节要求特别严格。
+
+每一个原因分成：
+
+### Confirmed
+存在具体企业/数据/失败案例证明。
+
+### Probable
+有多条间接证据。
+
+### Speculative
+逻辑上合理但没有直接证据。
+
+禁止把：
+
+> “消费者喜欢方便”
+> “distribution 很难”
+> “美国人不熟中国平台”
+
+这种东西直接作为 confirmed explanation。
+
+---
+
+# 输出最终 Opportunity Matrix
+
+至少包括：
+
+| Category | US demand | CN domestic maturity | CN-US price spread | Ali coverage | Temu coverage | Shipping economics | Compatibility | Regulatory friction | Net feasibility | Evidence confidence |
+
+重点包括：
+
+- smartphones
+- laptops
+- tablets
+- mini PCs
+- audio
+- PC peripherals
+- storage/networking
+- wearables
+- smart home
+- robot vacuum/appliances
+- tools
+- camera
+- automotive
+- sports/outdoor
+- hobby/maker
+- apparel
+- home goods
+
+---
+
+# Final Verdict
+
+不要只给一个 verdict。
+
+分别给：
+
+## Broad thesis
+
+“China domestic catalog 普遍存在巨大未套利价格差”
+
+评级。
+
+## Narrow thesis
+
+“存在数量足够大的 China-head / US-middle-tail anomaly set，可被自动 routing product 持续发现”
+
+评级。
+
+## Thin routing business
+
+评级。
+
+## Full marketplace business
+
+评级。
+
+使用：
+
+- Strong
+- Moderate
+- Weak
+- Rejected
+
+每个给：
+
+- confidence
+- decisive evidence
+- strongest counterargument
+- what data would change the verdict
+
+---
+
+最后单独给一节：
+
+# If We Spend $10,000 on Research, What Should We Do Next?
+
+只能提出真正能减少最大 uncertainty 的实验。
+
+不要提出泛泛建议。
+
+我会特别建议你的本地 agent **不要马上让 24 个 agent 都手工查 SKU**。正确顺序是先让 W1/W2 各跑三遍，合成出 **category map + 国内-first sampling frame**，我们人工过目冻结一版 SKU universe；然后再让 W3/W4/W5 大规模跑。否则即使调用 100 个 GPT，也可能只是在更大规模地复制上一轮的 selection bias。
+=== END BRIEF ===
+Remember: execute ONLY W2-A, China Domestic Market Map. No overseas SKU checks before freeze for W1/W2. Begin your independent web research now.

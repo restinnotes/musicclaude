@@ -1,0 +1,1109 @@
+ <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>
+	Auto Care - Joint E-commerce Trends and Outlook Forecast Report
+</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"> <link href="/Stylesheets/FY2027WebUpdates/702b039e-2bbf-4297-891f-8cc5628c565d?version=110" rel="stylesheet" type="text/css" /><link href="/Stylesheets/AutoCareMain/e3874882-56ab-4062-af35-1e9de1429148?version=2770" rel="stylesheet" type="text/css" /> <!-- Auto Care FontAwesome Pro Kit --> <script src=https://kit.fontawesome.com/4c9f09c5bb.js crossorigin="anonymous"></script> <!-- Google Tag Manager --> <script>    (function(w, d, s, l, i) {
+				w[l] = w[l] || []; w[l].push({ 'gtm.start':
+		new Date().getTime(), event: 'gtm.js'
+				}); var f = d.getElementsByTagName(s)[0],
+		j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+		'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-WX4RFM');</script> <!-- End Google Tag Manager --> <meta property="og:title" content="Auto Care - Joint E-commerce Trends and Outlook Forecast Report" /><meta property="og:description" content="This report provides insights into how e-commerce may impact your business." /><meta property="og:image" content="https://www.autocare.org/images/default-source/market-research/2023-joint-ev-study-tizra-tile-600x460.png?sfvrsn=abc4274a_2" /><meta property="og:url" content="https://www.autocare.org/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast" /><meta property="og:type" content="website" /><meta property="og:site_name" content="Auto Care" /><script type="text/javascript">
+/*
+  Testimonials carousel — pairs with Testimonials-AutoCareMain.css.
+  Add once per page (Sitefinity JavaScript widget, head or bottom).
+  Enhances every <section data-ac-testimonials>: arrows, page dots,
+  initials avatars and "Read more" toggles for clamped quotes.
+*/
+(function () {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function init(root) {
+    if (root.getAttribute("data-ac-testimonials-ready")) return;
+
+    var viewport = root.querySelector(".ac-testimonials__viewport");
+    var slides = root.querySelectorAll(".ac-testimonials__slide");
+    var controls = root.querySelector(".ac-testimonials__controls");
+    var prevBtn = root.querySelector("[data-ac-testimonials-prev]");
+    var nextBtn = root.querySelector("[data-ac-testimonials-next]");
+    var dotsWrap = root.querySelector(".ac-testimonials__dots");
+    if (!viewport || !slides.length || !controls || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    root.setAttribute("data-ac-testimonials-ready", "1");
+
+    function perView() {
+      var w = slides[0].getBoundingClientRect().width;
+      return w ? Math.max(1, Math.floor((viewport.clientWidth + 4) / w)) : 1;
+    }
+
+    function offsetOf(i) {
+      return slides[i].offsetLeft - slides[0].offsetLeft;
+    }
+
+    function currentIndex() {
+      var best = 0;
+      var bestDist = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var d = Math.abs(offsetOf(i) - viewport.scrollLeft);
+        if (d < bestDist) { bestDist = d; best = i; }
+      }
+      return best;
+    }
+
+    function atEnd() {
+      return viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 2;
+    }
+
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      viewport.scrollTo({ left: offsetOf(i), behavior: reduceMotion.matches ? "auto" : "smooth" });
+    }
+
+    var dotCount = 0;
+    function buildDots() {
+      var pages = Math.ceil(slides.length / perView());
+      if (pages === dotCount) return;
+      dotCount = pages;
+      dotsWrap.innerHTML = "";
+      for (var p = 0; p < pages; p++) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "ac-testimonials__dot";
+        dot.setAttribute("aria-label", "Show testimonials page " + (p + 1) + " of " + pages);
+        dot.addEventListener("click", (function (page) {
+          return function () { goTo(page * perView()); };
+        })(p));
+        dotsWrap.appendChild(dot);
+      }
+      dotsWrap.hidden = pages < 2;
+      controls.hidden = pages < 2;
+    }
+
+    function update() {
+      var page = atEnd() ? dotCount - 1 : Math.floor(currentIndex() / perView());
+      var dots = dotsWrap.children;
+      for (var d = 0; d < dots.length; d++) {
+        if (d === page) dots[d].setAttribute("aria-current", "true");
+        else dots[d].removeAttribute("aria-current");
+      }
+      prevBtn.disabled = viewport.scrollLeft <= 2;
+      nextBtn.disabled = atEnd();
+    }
+
+    function setupReadMore() {
+      var cards = root.querySelectorAll(".ac-testimonials__card");
+      Array.prototype.forEach.call(cards, function (card) {
+        var quote = card.querySelector(".ac-testimonials__quote");
+        var text = quote && quote.querySelector("p");
+        if (!text) return;
+        var btn = card.querySelector(".ac-testimonials__more");
+        if (!btn) {
+          btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "ac-testimonials__more";
+          btn.textContent = "Read more";
+          btn.setAttribute("aria-expanded", "false");
+          btn.addEventListener("click", function () {
+            var open = card.classList.toggle("is-expanded");
+            btn.textContent = open ? "Show less" : "Read more";
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+          quote.parentNode.insertBefore(btn, quote.nextSibling);
+        }
+        if (card.classList.contains("is-expanded")) return;
+        btn.hidden = text.scrollHeight <= text.clientHeight + 1;
+      });
+    }
+
+    function setupAvatars() {
+      var cites = root.querySelectorAll(".ac-testimonials__cite");
+      Array.prototype.forEach.call(cites, function (cite) {
+        if (cite.querySelector(".ac-testimonials__avatar")) return;
+        var name = cite.querySelector(".ac-testimonials__name");
+        var words = name ? name.textContent.trim().split(/\s+/) : [];
+        if (!words.length) return;
+        var initials = words[0].charAt(0);
+        if (words.length > 1) initials += words[words.length - 1].charAt(0);
+        var avatar = document.createElement("span");
+        avatar.className = "ac-testimonials__avatar";
+        avatar.setAttribute("aria-hidden", "true");
+        avatar.textContent = initials.toUpperCase();
+        cite.insertBefore(avatar, cite.firstChild);
+      });
+    }
+
+    prevBtn.addEventListener("click", function () { goTo(currentIndex() - perView()); });
+    nextBtn.addEventListener("click", function () { goTo(currentIndex() + perView()); });
+
+    var ticking = false;
+    viewport.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () { ticking = false; update(); });
+    }, { passive: true });
+
+    var resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        viewport.scrollTo({ left: offsetOf(currentIndex()), behavior: "auto" });
+        buildDots();
+        setupReadMore();
+        update();
+      }, 150);
+    });
+
+    setupAvatars();
+    buildDots();
+    setupReadMore();
+    update();
+  }
+
+  function initAll() {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-ac-testimonials]"), init);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAll);
+  } else {
+    initAll();
+  }
+})();
+
+</script><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" media="all" rel="stylesheet" type="text/css" /><meta name="Generator" content="Sitefinity 15.0.8234.0 DX" /><link rel="canonical" href="https://www.autocare.org/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast" /><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/50603700.js"></script>
+<!-- End of HubSpot Embed Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="pFdxp9SfnjwtOJN4+KkemA" async></script><meta name="description" content="This report provides insights into how e-commerce may impact your business." /><meta name="keywords" content="automotive aftermarket data report, electrification forecast report, EV forecast study, electric vehicles study, key performance indicators for the automotive aftermarket, global automotive aftermarket data and KPIs, automotive aftermarket industry market and size, market intelligence" /></head> <body data-waypoints="115vh: is-scrolled"> <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4RFM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <script src="/ScriptResource.axd?d=agwj-qG4Oi7k9hkvkRq2GcqjB1XHSkBKr3YPwFzb1tVLNQM4OCSWfJWQTqaAsthHXNJUNrFKsrsClRVXxUX3gBQtqlgMiXLiLm_qwfndO6E7GzPwl58HMv1ycY-Qf-pYRm-xeYxGb9h2C6pc7fwfo-brChhb4CzPosyQuvDPIPQq3pV-7w26bm5lCsXk_Ks30&amp;t=ffffffffdbfab1e5" type="text/javascript"></script><script src="/ScriptResource.axd?d=ePnjFy9PuY6CB3GWMX-b_9VliZHwdPJPwBhDz5P21WY9cWi-aw_gfRlOAgDmMQgNNSmHxK42kpJznvK4AutWtohNcfMHY1xGICy8qd6s5ftFBSlUODeU6hGPMDkJFzGIOdA_neVKpbfMQf7v_3co7cKNwNjy89oanC5nc-zkdw3zUMxI1BEp9yHf-FDz0-6-0&amp;t=ffffffffdbfab1e5" type="text/javascript"></script> <header class="page-header" role="banner"> <div class="page-bounds"> <div class="header-logo">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><a href="/" data-feathr-click-track="true" data-feathr-link-aids="587e77177c1fea20c28a89ce" data-acsb-clickable="true" data-acsb-navigable="true" data-acsb-now-navigable="true" data-acsb-textual-ops="null" data-custom-button-processed="true"><img src="/images/default-source/logos/autocare_svg_web_med.svg?sfvrsn=c8080e2b_1" class="header-logo" alt="Auto Care Association logo"></a></div>
+</div>
+
+</div> <button class="page-header__toggle">
+                Menu
+                <span class="toggle-indicator"> <span class="toggle-indicator__piece toggle-indicator__piece--1"></span> <span class="toggle-indicator__piece toggle-indicator__piece--2"></span> <span class="toggle-indicator__piece toggle-indicator__piece--3"></span> </span> </button> <div class="page-header__content"> <div class="header-utility header-utility__secondary">
+
+<ul class="header-utility__list">
+    <li class="header-utility__item">
+        <a href="/auto-care-vip" target="_blank">Auto Care VIP</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/digital-hub" target="_blank">Digital Hub</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/trendlens-login" target="_blank">TrendLens</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/secondary-header-utility-navigation/academy" target="_blank">Academy</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/secondary-header-utility-navigation/protect-right-to-repair" target="_self">Protect Right to Repair</a>
+    </li>
+</ul>
+
+
+
+
+
+</div> <div class="header-utility">
+
+<div class="translate sf-lang-selector">
+
+  <ul class="header-list header-translate">
+    <li class="header-list__item">
+      <a href="#0">
+        Language <span class="icon-language header-utility__icon"></span>
+        <label>
+
+              <select onChange="openLinkCustom(value)">
+                                  <option value="en" selected=selected>English</option>
+        </select>
+    </label>
+
+  </a>
+
+</li>
+
+</ul>
+
+</div>
+
+<script>
+  function openLinkCustom(culture) {
+    var url = document.querySelector('[data-sf-role="' + culture + '"]').value;
+
+    if (culture == "en") {
+      url = url.replace("/home", "");
+    }
+    else if (culture == "es") {
+      url = url.replace("/casa", "");
+    }
+
+    window.location = url;
+  }
+</script>
+
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><ul class="header-list header-share"><li class="header-list__item"><a href="#0">Share <span class="fas fa-share-alt header-utility__icon"></span></a>
+
+ <ul class="header-user__actions"><div data-share-to="facebook twitter linkedin email" class="display-inline"></div></ul></li></ul></div>
+</div>
+<ul class="header-utility__list header-utility__list">
+    <li class="header-utility__item">
+        <a href="/about-us" target="_self">About Us</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/contact" target="_self">Contact</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="/membership" target="_self">Membership</a>
+    </li>
+</ul>
+
+
+
+
+
+</div> <div class="header-search">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><form action="/search-results" method="GET" class="header-search__form"><label class="header-search__label" for="header-search__input"><span class="header-search__text">Search</span> <span class="fa fa-search"></span></label>
+ <input type="text" id="header-search__input" class="header-search__input" name="Keywords" placeholder="Search"><button type="submit" class="header-search__submit"><span class="fa fa-search"></span></button></form></div>
+</div></div> <div class="header-user">
+
+
+
+
+
+
+
+<div>
+  <div data-sf-role="sf-logged-in-view" style="display: none">
+
+
+    <a href="#0"><span class="header-user__welcome"><em class="fas fa-user-circle"></em><span class="screenreaders-only">User Profile</span></span></a>
+
+
+  </div>
+
+  <div data-sf-role="sf-logged-out-view" style="display: none">
+    <a href="https://www.autocare.org/account/login?redirect_uri=%2fdata-and-information%2fmarket-research%2fjoint-e-commerce-trends-and-outlook-forecast"><span class="header-user__welcome"><em class="fas fa-user-circle"></em><span class="screenreaders-only">User Profile</span></span></a>
+  </div>
+</div>
+
+<input type="hidden" data-sf-role="sf-status-json-endpoint-url" value="/rest-api/rd-login-status/FullName" />
+<input type="hidden" data-sf-role="sf-allow-windows-sts-login" value="False" />
+<input type="hidden" data-sf-role="sf-logout-redirect-url" value="https://www.autocare.org/account/logout" />
+<input type="hidden" data-sf-role="sf-is-design-mode-value" value="False" />
+
+</div> <nav class="header-nav" role="navigation">
+
+<ul class="header-nav__sf-list newmenunav">
+    <li class="is-current  ">
+
+                
+        <a href="/data-and-information" target="_self">Data and Information</a>
+            <ul>
+                        <li class="is-current  ">
+            <a href="/data-standards" target="_self">Data Standards</a>
+                <ul>
+                            <li class="  ">
+            <a href="/aces" target="_self">Aftermarket Catalog Exchange Standard (ACES&#174;)</a>
+        </li>
+        <li class="  ">
+            <a href="/pies" target="_self">Product Information Exchange Standard (PIES&#174;)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases" target="_self">Databases</a>
+                <ul>
+                            <li class="  ">
+            <a href="/data-and-information/data-standards/databases/vehicle-configuration-database-vcdb" target="_self">Vehicle Configuration database (VCdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/qualifier-database-qdb" target="_self">Qualifier database (Qdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/product-classification-database-pcdb" target="_self">Product Classification database (PCdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/product-attribute-database-padb" target="_self">Product Attribute database (PAdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/brand-table" target="_self">Brand Table</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/data-standards/integrated-shop-standard-(ishop)" target="_self">Integrated Shop Standard (iShop&#174;)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-standards/internet-parts-ordering-(ipo)" target="_self">Internet Parts Ordering (IPO)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-standards/super-spec" target="_self">Super Spec</a>
+        </li>
+        <li class="  ">
+            <a href="/data-standards/managing-data-standards" target="_self">Managing Data Standards</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="is-current  ">
+            <a href="/trendlens" target="_self">TrendLens&#174;: Interactive Data</a>
+                <ul>
+                            <li class="  ">
+            <a href="/demand-index" target="_self">Demand Index</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research" target="_self">Market Research</a>
+                <ul>
+                            <li class="is-current  ">
+            <a href="/data-and-information/market-research/Auto-Care-Factbook" target="_self">Auto Care Factbook</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/lang-annual" target="_self">Lang Annual</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/confidence-indices" target="_self">Confidence Indices</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/global-automotive-aftermarket-report" target="_self">Global Automotive Aftermarket Report</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/joint-electrification-forecast" target="_self">Joint Electrification Forecast</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast" target="_self">Joint E-commerce Trends and Outlook Forecast</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/market-insights-with-mike" target="_self">Market Insights with Mike</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/market-research/state-of-auto-care" target="_blank">State of Auto Care</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/emerging-transportation-technologies" target="_self">Emerging Transportation Technologies</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/glossary-of-terms" target="_self">Glossary of Terms</a>
+        </li>
+        <li class="is-current  ">
+            <a href="/data-and-information/industry-acronyms" target="_self">Industry Acronyms</a>
+        </li>
+
+
+            </ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="/events" target="_self">Events</a>
+            <ul>
+                        <li class="  ">
+            <a href="/trade-shows" target="_self">Trade Shows</a>
+                <ul>
+                            <li class="  ">
+            <a href="/trade-shows/heavy-duty-aftermarket-week-hdaw" target="_self">Heavy Duty Aftermarket Week (HDAW)</a>
+        </li>
+        <li class="  ">
+            <a href="/trade-shows/automotive-aftermarket-products-expo-(aapex)" target="_self">Automotive Aftermarket Products Expo (AAPEX)</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/conferences" target="_self">Conferences</a>
+                <ul>
+                            <li class="  ">
+            <a href="/connect" target="_self">Auto Care Connect</a>
+        </li>
+        <li class="  ">
+            <a href="/leadership-days" target="_self">Fall Leadership Days</a>
+        </li>
+        <li class="  ">
+            <a href="/category-management-summit" target="_self">Category Management Summit</a>
+        </li>
+        <li class="  ">
+            <a href="/conferences/awda-business-conference" target="_self">AWDA Annual Business Conference</a>
+        </li>
+        <li class="  ">
+            <a href="/conferences/legislative-summit" target="_self">Legislative Summit</a>
+        </li>
+        <li class="  ">
+            <a href="/conferences/women-in-auto-care-leadership-conference" target="_self">Women in Auto Care Leadership Conference</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/events/webinars" target="_self">Upcoming Webinars</a>
+                <ul>
+                            <li class="  ">
+            <a href="/events/webinars/upcoming-webinars" target="_self">Upcoming Webinars</a>
+        </li>
+        <li class="  ">
+            <a href="/events/webinars/webinar-series" target="_self">Webinar Series</a>
+        </li>
+        <li class="  ">
+            <a href="/webinar-recordings" target="_self">Auto Care Webinar Recordings</a>
+        </li>
+        <li class="  ">
+            <a href="/all-past-webinars" target="_self">All Past Webinars</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/events/details" target="_self">Details</a>
+        </li>
+        <li class="  ">
+            <a href="/events/full-industry-events-calendar" target="_self">Industry Calendar</a>
+        </li>
+
+
+            </ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="/networking-and-development" target="_self">Networking and Development</a>
+            <ul>
+                        <li class="  ">
+            <a href="/communities" target="_self">Communities</a>
+                <ul>
+                            <li class="  ">
+            <a href="/acc" target="_self">Automotive Communications Council</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/acc/sponsorships" target="_self">Sponsorships</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/communities/aftermarket-warehouse-distributors" target="_self">Aftermarket Warehouse Distributors</a>
+        </li>
+        <li class="  ">
+            <a href="/acpn" target="_self">Aftermarket Content Professionals Network</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/acpn/sponsorships" target="_self">Sponsorships</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/communities/filter-manufacturers-community" target="_self">Filter Manufacturers Community</a>
+        </li>
+        <li class="  ">
+            <a href="/communities/import-vehicle-community" target="_self">Import Vehicle Community</a>
+        </li>
+        <li class="  ">
+            <a href="/communities/manufacturers&#39;-representatives" target="_self">Manufacturers&#39; Representatives</a>
+        </li>
+        <li class="  ">
+            <a href="/communities/paint-body-equipment-specialists" target="_self">Paint, Body, &amp; Equipment Specialists</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/communities/paint-body-equipment-specialists/pbes-conference" target="_self">PBES at Connect</a>
+                <ul>
+                            <li class="  ">
+            <a href="/communities/paint-body-equipment-specialists/pbes-conference/session-details" target="_self">Session Details</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/communities/paint-body-equipment-specialists/pbes-conference/speakers" target="_self">Speakers</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/communities/paint-body-equipment-specialists/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/tool-and-equipment" target="_self">Tool and Equipment</a>
+        </li>
+        <li class="  ">
+            <a href="/women-in-auto-care" target="_self">Women in Auto Care</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/women-in-auto-care/events" target="_self">Events</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/women-in-auto-care-leadership-conference" target="_self">Women in Auto Care Leadership Conference</a>
+                <ul>
+                            <li class="  ">
+            <a href="/women-in-auto-care-leadership-conference/session-details" target="_self">Session Details</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care-leadership-conference/speakers" target="_self">Speakers</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/events/women-in-auto-care-quarterly-bookclub" target="_self">Women in Auto Care Quarterly Bookclub</a>
+        </li>
+        <li class="  ">
+            <a href="/women-in-auto-care/events/connection-circles" target="_self">Connection Circles</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/awards" target="_self">Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/scholarships" target="_self">Scholarships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/sponsorships" target="_self">Sponsorships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/about-us" target="_self">About Us</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/international-womens-day" target="_self">International Womens Day</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/women-in-auto-care/women-in-auto-care-champions" target="_self">Women in Auto Care Champions</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/yang" target="_self">Young Auto Care Network Group</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/yang-at-connect" target="_self">YANG at Connect</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/yang-at-connect/session-details" target="_self">Session Details</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/yang-at-connect/speakers" target="_self">Speakers</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/yang/mentoring" target="_self">YANG Mentorship Program</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/yang/scholarships" target="_self">Scholarships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/yang/sponsorships" target="_self">Sponsorships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/yang/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/vehicle-service-experts" target="_self">Vehicle Service Experts</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/committees" target="_self">Committees</a>
+                <ul>
+                            <li class="  ">
+            <a href="/committees/board-of-directors" target="_self">board of directors</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/audit-committee" target="_self">audit committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/category-management-committee" target="_self">category management committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/education-committee" target="_self">education committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/emerging-technologies-committee" target="_self">emerging technologies committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/events-committee" target="_self">events committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/finance-committee" target="_self">finance committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/government-affairs-committee" target="_self">government affairs committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/international-trade-committee" target="_self">international trade committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/market-intelligence-committee" target="_self">market intelligence committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/marketing-and-communications-committee" target="_self">marketing and communications committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/sustainability-committee" target="_self">sustainability committee</a>
+        </li>
+        <li class="  ">
+            <a href="/committees/technology-standards-committee" target="_self">technology standards committee</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development" target="_self">International Business Development Opportunities</a>
+                <ul>
+                            <li class="  ">
+            <a href="/networking-and-development/international-business-development/explore-international-markets" target="_self">Explore International Markets</a>
+        </li>
+        <li class="  ">
+            <a href="/matchmaking-at-aapex" target="_self">Matchmaking Program at AAPEX</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/partnerships" target="_self">International Partnerships</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/international-trade-resources" target="_self">International Trade Resources</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/data-standards-seminars" target="_self">Data Standards Seminars</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/awards-and-scholarships" target="_self">Awards and Scholarships</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/awards-and-scholarships/impact-awards" target="_self">Impact Awards</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources" target="_self">Career Tools and Resources</a>
+                <ul>
+                            <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/sustainability-toolkit" target="_self">Sustainability Toolkit</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/rep-match-tool" target="_self">Rep Match Tool</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/shop-toolkit" target="_self">Shop Toolkit</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/career-tools-and-resources/social-responsibility" target="_self">Auto Care Social Responsibility</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/mentoring-toolkit" target="_self">Mentoring Toolkit</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/auto-care-jobs" target="_blank">Auto Care Jobs</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/career-tools-and-resources/auto-care-careers" target="_self">Auto Care Careers</a>
+        </li>
+
+                </ul>
+        </li>
+
+
+            </ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="/government-relations" target="_self">Government Relations</a>
+            <ul>
+                        <li class="  ">
+            <a href="/government-relations/current-issues" target="_self">Key Issues</a>
+                <ul>
+                            <li class="  ">
+            <a href="/government-relations/current-issues/global-right-to-repair" target="_self">Global Right to Repair</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/access-to-and-control-of-vehicle-data" target="_self">National Right to Repair</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/right-to-repair" target="_self">Massachusetts Right to Repair</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/Magnuson-Moss-Warranty-Act" target="_self">Magnuson-Moss Warranty Act</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/vehicle-safety-inspections" target="_self">Vehicle Safety Inspections</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade" target="_self">Tariffs and Trade</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/sustainability" target="_self">Sustainability</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/see-all-issues" target="_self">See All Issues</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/resources" target="_self">Resources</a>
+                <ul>
+                            <li class="  ">
+            <a href="/government-relations/resources/advocacy-101" target="_self">Advocacy 101</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/resources/toolkit" target="_self">Right to Repair Media Kit</a>
+                <ul>
+                            <li class="  ">
+            <a href="/government-relations/resources/toolkit/right-to-repair-media-kit-for-drivers-and-shops" target="_self">For Drivers and Shops</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/resources/district-impact-data" target="_self">District Impact Data</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/resources/latest-news" target="_self">Latest News</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/government-relations/resources/vehicle-data-toolkit" target="_self">Vehicle Data Toolkit</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/government-relations/resources/data-access-industry-engagement" target="_self">Data Access Industry Engagement</a>
+        </li>
+        <li class="  ">
+            <a href="/epr-resources" target="_self">EPR Resources</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/become-an-advocate" target="_blank">Get Involved</a>
+                <ul>
+                            <li class="  ">
+            <a href="/government-relations/become-an-advocate/join-acpac" target="_blank">Join ACPAC</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/become-an-advocate/state-associations" target="_self">State Associations</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/become-an-advocate/attend-the-legislative-summit" target="_self">Legislative Summit</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/become-an-advocate/report-automotive-repair-restrictions" target="_self">Report Automotive Repair Restrictions</a>
+        </li>
+
+                </ul>
+        </li>
+
+
+            </ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="/news" target="_self">News</a>
+            <ul>
+                        <li class="  ">
+            <a href="/news/latest-news" target="_self">Latest News</a>
+                <ul>
+                            <li class=" hide-nav ">
+            <a href="/news/latest-news/details" target="_self">Details</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/news/blog" target="_self">Auto Care Blog</a>
+                <ul>
+                            <li class="  ">
+            <a href="/news/blog/advocacy-in-action" target="_self">Advocacy in Action</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/emerging-technology" target="_self">Emerging Technology</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/executive-update" target="_self">Executive Update</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/global-trade-and-supply-chain" target="_self">Global Trade and Supply Chain</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/industry-profiles" target="_self">Industry Profiles</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/market-insights-with-mike" target="_self">Market Insights with Mike</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/meet-a-staffer" target="_self">Meet a Staffer</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/wtt" target="_self">What the Tech?</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/yang-effect" target="_self">YANG Effect</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/news/auto-care-on-air" target="_self">Auto Care ON AIR Podcast</a>
+        </li>
+        <li class="  ">
+            <a href="/news/media-coverage" target="_self">Media Coverage</a>
+        </li>
+        <li class="  ">
+            <a href="/news/media-kit" target="_self">Media Kit</a>
+        </li>
+        <li class="  ">
+            <a href="/news/auto-care-insider" target="_blank">Auto Care Insider</a>
+        </li>
+        <li class="  ">
+            <a href="/news/media-contacts" target="_self">Media Contacts</a>
+        </li>
+
+
+                    <li class="header-nav__callout">
+                            <a href="https://digital.autocare.org/2027factbook" class="header-nav__callout-link">
+                            
+                                <img src="https://www.autocare.org/images/default-source/aapex/2027-factbook-cover-final.jpg?sfvrsn=3280bfd6_1" alt="" class="header-nav__callout-image" />
+                                
+                                 <div class="header-callout-text"> The 36th edition includes an extended industry forecast through 2029.</div>
+                                 
+                                 <span class="button button--highlight__invert small-invert">view more</span>
+                                 
+                            </a>
+                    </li>
+            </ul>
+    </li>
+</ul>
+
+
+
+
+
+
+</nav> </div> </div> </header> <div class="content" role="main" id="top">
+<div class="title-block" data-sf-element="Row">
+    <div id="ContentPlaceholder_T640AA4C2004_Col00" class="sf_colsIn" data-sf-element="Column 1" data-placeholder-label="Title Block">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><div class="title-block__background"><img data-method="ResizeFitToAreaArguments" data-customsizemethodproperties="{'MaxWidth':1280,'MaxHeight':480,'Width':null,'Height':null,'ScaleUp':false,'Quality':'High','Method':'ResizeFitToAreaArguments'}" src="/images/default-source/banners/market-intelligence_banner_1280x320.jpg?sfvrsn=30d1429f_4&amp;MaxWidth=1280&amp;MaxHeight=480&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=F59C21AE6BFFAFE4B01B486757027B336CAF1C11" alt="Market Intelligence_banner" title="Market Intelligence_banner" data-displaymode="Custom"></div></div>
+</div><div class="title-block__content page-bounds" data-sf-element="Row">
+    <div id="ContentPlaceholder_T640AA4C2006_Col00" class="sf_colsIn" data-sf-element="Column 1" data-placeholder-label="Column 1"><div class="breadcrumbs">
+
+            <a href="/">Home </a>
+            <span> / </span>
+            <a href="/data-and-information">Data and Information </a>
+            <span> / </span>
+            <a href="/data-and-information/market-research">Market Research </a>
+            <span> / </span>
+Joint E-commerce Trends and Outlook Forecast</div>
+<h1 class="page-title">Joint E-commerce Trends and Outlook Forecast</h1>
+    </div>
+</div>
+
+    </div>
+</div>
+<div class="interior-layout page-bounds" data-sf-element="Row">
+    <div id="ContentPlaceholder_TE47EF149001_interiorLayoutNav" class="sf_colsIn interior-layout__nav" data-sf-element="Nav" data-placeholder-label="Nav">
+<div class="in-this-section">
+
+    <button type="button" class="in-this-section__toggle" data-toggle-target="next">
+        In This Section
+        <span class="toggle-indicator">
+            <span class="toggle-indicator__piece toggle-indicator__piece--1"></span>
+            <span class="toggle-indicator__piece toggle-indicator__piece--2"></span>
+            <span class="toggle-indicator__piece toggle-indicator__piece--3"></span>
+        </span>
+    </button>
+
+    <ul>
+    <li class="  ">
+        <a href="/data-and-information/market-research/Auto-Care-Factbook" target="_self">Auto Care Factbook</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/lang-annual" target="_self">Lang Annual</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/confidence-indices" target="_self">Confidence Indices</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/global-automotive-aftermarket-report" target="_self">Global Automotive Aftermarket Report</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/joint-electrification-forecast" target="_self">Joint Electrification Forecast</a>
+    </li>
+    <li class="is-current  ">
+        <a href="/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast" target="_self">Joint E-commerce Trends and Outlook Forecast</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/market-insights-with-mike" target="_self">Market Insights with Mike</a>
+    </li>
+    <li class="  ">
+        <a href="/data-and-information/market-research/state-of-auto-care" target="_blank">State of Auto Care</a>
+    </li>
+    </ul>
+</div>
+
+
+
+
+
+    </div>
+    <div id="ContentPlaceholder_TE47EF149001_interiorLayoutMain" class="sf_colsIn interior-layout__main" data-sf-element="Main" data-placeholder-label="Main">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><h2 style="text-transform: none">2025 Joint E-commerce Trends &amp; Forecast Outlook</h2><p>The Auto Care Association, in partnership with MEMA Aftermarket Suppliers, commissioned the 2025 Joint E-commerce Trends and Outlook Forecast report to provide our members with updated insights into consumer purchase of automotive parts and accessories via the online channel. The report provides in-depth analysis and forecasts to support the industry’s continued adaptation to consumer behavior for research and purchase of automotive parts and accessories. Research and analysis for the 2025 Joint E-commerce Trends and Outlook Forecast were led by Jefferies, with a team of leading industry collaborators.</p><h3>Free for members!</h3><a target="_blank" class="button" href="https://digital.autocare.org/2025-joint-e-commerce-trends-and-outlook-forecast/" data-feathr-click-track="true" data-feathr-link-aids="587e77177c1fea20c28a89ce" data-sf-ec-immutable="">Go To Publication</a>
+<blockquote class="pull-quote"><div class="pull-quote__container"><p><em>All employees of Auto Care Association member companies are provided with a digital copy of the 2025 Joint E-commerce Trends and Outlook Forecast at no cost as a benefit of their membership.</em></p></div></blockquote><p><strong>In this study, readers will find:</strong>
+ <img src="/images/default-source/hub/2025-joint-ecomm-tizra-tile-600x4602-(1).png?sfvrsn=e44c6e3b_1" style="margin-bottom: 20px; margin-left: 20px; float: right; width: 50%"></p><ul><li>U.S. e-commerce sales of automotive aftermarket parts are forecast to reach ~$23 billion (excluding third-party marketplaces), and $44.6 billion total (including marketplaces) in 2025.
+  </li><li>Steady growth from 2020-2030 is expected (total market CAGR exceeding 5%) as consumers seeking lower costs via online channels amidst persistent inflation.</li><li>Retailers' implementation of technological advancements (e.g., logistics improvements; real-time inventory management; part compatibility for vehicle year, make, model and trim) has enhanced the consumers' online shopping experience.</li><li>Ticket amounts for parts categories have grown at CAGR up to 6% (engine parts) from 2021-2025, albeit mostly attributable to inflation.</li><li>While some product lines experience seasonal trends for online purchases (e.g., HVAC), many do not (e.g., brakes, steering and suspension).</li><li>DIYers are more inclined to purchase from online only sources (e.g., Amazon, eBay, RockAuto) than from brick-and-mortar stores.</li><li>The percentage of consumers starting their in-store purchasing journey online has grown steadily since 2018, emphasizing the importance of an online presence and an e-commerce strategy.</li></ul><br></div>
+</div><div class="grid" data-sf-element="Row">
+    <div id="ContentPlaceholder_C022_Col00" class="sf_colsIn grid__unit grid__unit--1-3-m" data-sf-element="Column 1" data-placeholder-label="Column 1">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><h4>Auto Care Members</h4></div>
+</div>
+    </div>
+    <div id="ContentPlaceholder_C022_Col01" class="sf_colsIn grid__unit grid__unit--2-3-m" data-sf-element="Column 2" data-placeholder-label="Column 2">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><p><a href="https://digital.autocare.org/2024-joint-e-commerce-trends-and-outlook-forecast/" class="more">Access full report on the Digital Hub  <em class="fas fa-arrow-right"></em></a><br>This report is included as a benefit. Make sure to sign-in with
+    your member login credentials.</p></div>
+</div>
+    </div>
+</div>
+<div class="grid" data-sf-element="Row">
+    <div id="ContentPlaceholder_C018_Col00" class="sf_colsIn grid__unit grid__unit--1-3-m" data-sf-element="Column 1" data-placeholder-label="Column 1">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><h4>Not a member?&nbsp;</h4></div>
+</div>
+    </div>
+    <div id="ContentPlaceholder_C018_Col01" class="sf_colsIn grid__unit grid__unit--2-3-m" data-sf-element="Column 2" data-placeholder-label="Column 2">
+<div >
+    <div class="sfContentBlock sf-Long-text" ><p><a href="https://my.autocare.org/order?id=65e25080-6491-ef11-95f6-000d3a7d8944" class="more">Purchase for $1,500 to unlock instant access <em class="fas fa-arrow-right"></em></a><br>Combine it with newly-released <a href="/data-and-information/market-research/joint-electrification-forecast">Joint Electrification Forecast</a> for even more insights into the evolving auto care industry.</p></div>
+</div>
+    </div>
+</div>
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ></div>
+</div>
+    </div>
+    <div id="ContentPlaceholder_TE47EF149001_interiorLayoutAside" class="sf_colsIn interior-layout__aside" data-sf-element="Aside" data-placeholder-label="Aside">
+    </div>
+</div>
+</div> <footer class="page-footer" role="contentinfo" id="footer"> <!-- <div class="page-bounds"> --> <div class="footer-tagline">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" >Thank you for trusting us.</div>
+</div></div> <div class="footer-logo">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><a data-feathr-click-track="true" href="/home" data-feathr-link-aids="587e77177c1fea20c28a89ce"><img src="/images/default-source/logos/autocare_svg_web.svg?sfvrsn=1274d7f7_1" alt="Auto Care Association logo"></a></div>
+</div></div> <div class="page-footer__content"> <div class="footer-contact">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><p>2 Bethesda Metro Center, Suite 440
+    <br>Bethesda, MD 20814-3415<br>(301) 654-6664
+</p></div>
+</div></div> <div class="footer-social">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><span class="screenreaders-only">Visit us on</span>
+<a target="_blank" href="https://www.facebook.com/autocareorg" class="footer-social__icon"><span class="fab fa-facebook-f"></span><span class="screenreaders-only">Facebook</span></a>
+<a target="_blank" href="https://twitter.com/autocareorg" class="footer-social__icon"><span class="fab fa-twitter"></span><span class="screenreaders-only">Twitter</span></a>
+<a target="_blank" href="https://www.linkedin.com/company/autocareorg" class="footer-social__icon"><span class="fab fa-linkedin-in"></span><span class="screenreaders-only">LinkedIn</span></a>
+<a target="_blank" href="https://www.youtube.com/user/AAIAssociation" class="footer-social__icon"><span class="fab fa-youtube"></span><span class="screenreaders-only">YouTube</span></a></div>
+</div></div> <div class="footer-utility">
+
+<ul class="footer-utility__list footer-utility__list">
+    <li class="footer-utility__item">
+        <a href="/privacy-policy-footer" target="_self">Privacy Policy</a>
+    </li>
+    <li class="footer-utility__item">
+        <a href="/site-map" target="_self">Site Map</a>
+    </li>
+    <li class="footer-utility__item">
+        <a href="/contact-us" target="_self">Contact</a>
+    </li>
+</ul>
+
+
+
+
+</div> </div> <div class="footer-copyright">
+
+<div >
+    <div class="sfContentBlock sf-Long-text" >© 2026 Auto Care Association</div>
+</div></div> <!-- </div> --> </footer> 
+
+
+
+
+
+<div >
+    <div class="sfContentBlock sf-Long-text" ><div class="footer-back-top"><a href="#top">Back to Top <span class="icon-chevron"></span></a>
+
+</div></div>
+</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Navigation/Mvc/Scripts/LanguageSelector/language-selector.min.js?package=AutoCare&amp;v=MTUuMC44MjM0LjA%3d" type="text/javascript"></script><script src="/Mvc/Scripts/RDLoginLogoutStatus/login-status.js" type="text/javascript"></script><script type="application/json" id="PersonalizationTracker">
+	{"IsPagePersonalizationTarget":false,"IsUrlPersonalizationTarget":false,"PageId":"ef530c2c-3dcc-4a08-bae8-88cf6db94521"}
+</script><script type="text/javascript" src="/WebResource.axd?d=NjxTqR2bqTw1rewxxlkHPlwgJ5N99V8LCA7GftcZJbTsW7roQLTtEpUyJigQCZdnaVIduS8stMhvRO-B8JHUoSjLtCz5CZvluKBPFsyqBgW2-GNWRUybheBqejEkKn1VUIdEe8NiVrFwMuMZJSqaBE8vZBBKGcoIym-tH7dwbRtBrJUC36HkrQtE0gJ6fDesQW-MUoRrCKQKIJEhhPQmjUcyzPQjgNAtICAP6rI9o8w1&amp;t=639177462963896133">
+
+</script><input data-sf-role='en' type='hidden' value='https://www.autocare.org/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast'><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/polyfills.min.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/lodash.custom.min.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/scripts.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/prism.min.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/jquery-ui.min.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/countup.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/waypoints.js"></script><script type="text/javascript">
+   // import CountUp  from 'countup.js';
+// import 'waypoints/lib/noframework.waypoints';
+
+document.querySelectorAll('.js-count-up').forEach(element => {
+  const { start, end, decimals, duration } = element.dataset;
+  const countUp = new CountUp(element, start, end, decimals, duration, element.dataset);
+
+  new Waypoint({
+    element,
+    handler: direction => {
+      if (direction === 'down') {
+        countUp.start();
+      }
+    },
+    offset: '600px'
+  });
+});
+
+</script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/modal.js"></script><script type="text/javascript" src="/ResourcePackages/AutoCare/assets/scripts/sponsor-rotate.js"></script><script type="text/javascript" src="/Scripts/clipboard.min.js"></script> </body></html>

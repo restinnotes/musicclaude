@@ -1,0 +1,872 @@
+{
+  "job_id": "R1-W1-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "audited_job_id": "W1-A",
+  "input_report_sha256": "c8c930872433332d7a83a7231bcdb7447b68bf6d5e0f9e0b8bd698b76b8e7bfb",
+  "review_performed": true,
+  "all_claims_verified": false,
+  "claim_audits": [
+    {
+      "original_claim_id": "M01",
+      "original_source_ids": [
+        "S01"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "The $340.2B, $1,986.5B and 17.1% values are verified as the August 18, 2026 Q2 release vintage. Census now explicitly states that as of September 28, 2026 this report no longer contains the most up-to-date estimates; it must not be described as the latest revised estimate as of October 6.",
+      "source_ids": [
+        "A01"
+      ]
+    },
+    {
+      "original_claim_id": "M02",
+      "original_source_ids": [
+        "S02"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "AIES is organized around businesses/establishments and NAICS sectors, with measures such as revenue, sales and shipments varying by sector. The conclusion that retailer-industry receipts are not automatically merchandise-category GMV is supported, although specialized product-line Census tables may exist separately.",
+      "source_ids": [
+        "A02"
+      ]
+    },
+    {
+      "original_claim_id": "M03",
+      "original_source_ids": [
+        "S03",
+        "S25",
+        "S31",
+        "S33"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "The accessed evidence mixes PCE, consumer-tracking estimates, wholesale sales and projected total-market estimates, with material taxonomy overlap. The methodological conclusion not to construct one exact 18-category GMV ranking is supported.",
+      "source_ids": [
+        "A03",
+        "A25",
+        "A31",
+        "A33"
+      ]
+    },
+    {
+      "original_claim_id": "M04",
+      "original_source_ids": [
+        "S05",
+        "S06"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "CTA's public landing pages verify coverage of 200+ products/services, shipment volumes, wholesale revenues, average wholesale prices and household penetration, plus a 73-product ownership study. The detailed reports require member login or paid purchase; the detailed tables themselves were not accessible.",
+      "source_ids": [
+        "A05",
+        "A06"
+      ]
+    },
+    {
+      "original_claim_id": "M05",
+      "original_source_ids": [
+        "S07"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "CTA's public Events page states approximately $578B of 2026 U.S. consumer-tech retail revenue and about 4% year-over-year growth. It is an umbrella industry figure and does not provide an auditable C01-C12 allocation.",
+      "source_ids": [
+        "A07"
+      ]
+    },
+    {
+      "original_claim_id": "C01",
+      "original_source_ids": [
+        "S08"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Omdia reports 33.4M U.S. smartphone shipments in Q1 2026, down 3% year over year. This is quarterly shipment/sell-in evidence, not annual consumer sell-through or GMV.",
+      "source_ids": [
+        "A08"
+      ]
+    },
+    {
+      "original_claim_id": "C02",
+      "original_source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "status": "CONFLICT_UNRESOLVED",
+      "supported": true,
+      "correction": null,
+      "caveat": "GVR publicly reports a 2025 U.S. laptop model of $54.7843B while IMARC reports $12.7B, approximately a 4.31x difference. Omdia's 27.695M 2025 consumer-PC figure combines notebooks and desktops. Public methodology is insufficient to reconcile the two laptop dollar models, so neither should be used as a harmonized GMV.",
+      "source_ids": [
+        "A09",
+        "A10",
+        "A11"
+      ]
+    },
+    {
+      "original_claim_id": "C03",
+      "original_source_ids": [
+        "S12",
+        "S13"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "IMARC reports a modeled $12.0B U.S. tablet market for 2025, but its segmentation includes consumer and commercial end users. IDC verifies a 31.6% year-over-year decline in U.S. tablet shipments in Q2 2026 and does not disclose an absolute U.S. unit total on the public page.",
+      "source_ids": [
+        "A12",
+        "A13"
+      ]
+    },
+    {
+      "original_claim_id": "C04",
+      "original_source_ids": [
+        "S14",
+        "S15"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Emergen's $3.5B 2024 U.S. mini-PC figure is a commercial model and includes consumer and commercial use. ASINsight's 63,750 units, $17.53M trailing sales, $339.72 price and 58.6% top-10 unit share are explicitly a top-50-ASIN keyword sample, not an Amazon or U.S. category census.",
+      "source_ids": [
+        "A14",
+        "A15"
+      ]
+    },
+    {
+      "original_claim_id": "C05",
+      "original_source_ids": [
+        "S16",
+        "S17",
+        "S18"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "The router and consumer-NAS model values are publicly visible, and they cannot be summed into a complete non-overlapping C05 total. The GVR router universe also includes residential, commercial and industrial demand. WARC currently exposes only a short Euromonitor summary/page shell; the 94M/78M volume figures are therefore excluded from full-page-verified evidence under this audit standard.",
+      "source_ids": [
+        "A16",
+        "A17",
+        "A18"
+      ]
+    },
+    {
+      "original_claim_id": "C06",
+      "original_source_ids": [
+        "S19",
+        "S20"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Circana verifies that true wireless represented 65% of tracked headphone dollars in 2025 and reports approximate ASPs of $13 wired versus $99 Bluetooth. The $2.31B figure is a separate commercial headphones model and does not cover the full IEM/DAC/portable-audio universe.",
+      "source_ids": [
+        "A19",
+        "A20",
+        "A36"
+      ]
+    },
+    {
+      "original_claim_id": "C07",
+      "original_source_ids": [
+        "S21"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "Retain the $1.6218B IMARC gaming-peripherals model only as a partially overlapping gaming-accessory market. Do not describe it as a clean subset of PC peripherals because IMARC explicitly covers both PC and console gaming devices.",
+      "caveat": "IMARC reports 60.6% offline distribution; an approximately 39.4% online remainder is an inference from its binary online/offline segmentation, not a separately reported source value. Reddit mechanical-keyboard evidence is anecdotal only.",
+      "source_ids": [
+        "A21",
+        "A35"
+      ]
+    },
+    {
+      "original_claim_id": "C08",
+      "original_source_ids": [
+        "S22"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "GVR publicly reports $25.1655B for the 2025 U.S. wearable-technology model and 52.15% wrist-wear share. Its taxonomy also includes eyewear/headwear, footwear, bodywear and other categories, so it is broader than smartwatch/fitness wearables.",
+      "source_ids": [
+        "A22"
+      ]
+    },
+    {
+      "original_claim_id": "C09",
+      "original_source_ids": [
+        "S23",
+        "S24",
+        "S37"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": true,
+      "correction": "Keep the $23.72B and $28.30B 2024 commercial models separate, but change the downstream formal flag from MODEL_CONFLICT to MODEL_DIVERGENCE/SCOPE_MISMATCH unless the preregistered threshold is changed. Their difference is about 19.3%, below W1-A's own >20% MODEL_CONFLICT trigger.",
+      "caveat": "Both smart-home definitions include broad systems such as security, climate/HVAC and appliances, creating direct overlap with C10. The Home Assistant thread contains genuine comments about Zigbee, Thread, Matter and Wi-Fi but supports only qualitative protocol fragmentation.",
+      "source_ids": [
+        "A23",
+        "A24",
+        "A37"
+      ]
+    },
+    {
+      "original_claim_id": "C10",
+      "original_source_ids": [
+        "S25",
+        "S26",
+        "S27"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": false,
+      "correction": "Describe $44.94B as the IHA-reported 2025 small-appliance sales estimate generated through Circana Checkout consumer tracking. Replace the characterization of the $3.8B robot-vacuum versus $1.70B household-vacuum figures as a demonstrated logical contradiction with a scope-mismatch warning: the GMI robot universe includes floor, pool and window products and residential, commercial and industrial applications, whereas GVR is explicitly U.S. household vacuum cleaners.",
+      "caveat": "The two vacuum figures remain unsuitable for harmonized consumer-GMV weighting. The 60% online figure applies to the broader home-and-housewares universe, not specifically to small appliances.",
+      "source_ids": [
+        "A25",
+        "A26",
+        "A27"
+      ]
+    },
+    {
+      "original_claim_id": "C11",
+      "original_source_ids": [
+        "S03",
+        "S28"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BEA/FRED verifies $61.557B of 2025 PCE for tools and equipment for house and garden. GVR reports a $7.5414B U.S. power-tools model, but its application scope includes industrial and residential demand. Neither exactly matches the requested repair/electronics-tools category.",
+      "source_ids": [
+        "A03",
+        "A28"
+      ]
+    },
+    {
+      "original_claim_id": "C12",
+      "original_source_ids": [
+        "S29"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "Ken Research publicly reports a 2025 U.S. digital-camera model of $2.420B and 2.15M units, implying the reported blended ASP of about $1,125.6. Its stated scope excludes standalone lenses, accessories, smartphones, webcams and cinema-only cameras, so it cannot represent the broader C12 universe.",
+      "source_ids": [
+        "A29"
+      ]
+    },
+    {
+      "original_claim_id": "C13",
+      "original_source_ids": [
+        "S03",
+        "S30"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BEA/FRED verifies 2025 motor-vehicle parts/accessories PCE of $130.530B. Auto Care's public landing page verifies forecasts of approximately $23B excluding third-party marketplaces and $44.6B including them. These are aftermarket e-commerce forecasts, not the same universe as PCE, so no exact online-share ratio is valid.",
+      "source_ids": [
+        "A03",
+        "A30"
+      ]
+    },
+    {
+      "original_claim_id": "C14",
+      "original_source_ids": [
+        "S31"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "SFIA verifies $130B of 2025 U.S. sporting-goods wholesale sales and 3.7% year-over-year growth. The report explicitly includes sporting equipment, athletic footwear, sports apparel and licensed merchandise, so it is wholesale rather than consumer retail GMV and overlaps C16 and C18.",
+      "source_ids": [
+        "A31"
+      ]
+    },
+    {
+      "original_claim_id": "C15",
+      "original_source_ids": [
+        "S32",
+        "S38"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "IMARC reports a $7.1B U.S. 3D-printing model for 2025 whose scope includes printers, materials, software and services across industrial, aerospace, automotive, healthcare, consumer and other verticals. The Reddit purchase-advice megathread is a genuine discussion page but is not representative market evidence.",
+      "source_ids": [
+        "A32",
+        "A38"
+      ]
+    },
+    {
+      "original_claim_id": "C16",
+      "original_source_ids": [
+        "S03",
+        "S04"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "BEA/FRED verifies $559.768B of 2025 PCE for clothing and footwear. This is a PCE accounting measure, not retailer receipts, and it does not cover the complete bags universe. Luggage and similar personal items are separately reported at $51.032B and should not be automatically added without a frozen taxonomy.",
+      "source_ids": [
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "original_claim_id": "C17",
+      "original_source_ids": [
+        "S25"
+      ],
+      "status": "CORRECTION_REQUIRED",
+      "supported": true,
+      "correction": "Retain the $32.18B 2025 value but label its statistical basis as the IHA-reported non-electric-housewares sales estimate produced through the IHA/Circana MarketScope framework, not as a government-like full-market retailer-receipts measure.",
+      "caveat": "The source defines the grouping to include cookware, bakeware, kitchen tools/gadgets, tabletop, home organization and cleaning. The broader 60% online share applies to home plus housewares overall rather than specifically to C17.",
+      "source_ids": [
+        "A25"
+      ]
+    },
+    {
+      "original_claim_id": "C18",
+      "original_source_ids": [
+        "S33",
+        "S34"
+      ],
+      "status": "VERIFIED_WITH_CAVEAT",
+      "supported": true,
+      "correction": null,
+      "caveat": "The Toy Association states that 2025 total U.S. toy-industry size projected to 100% of market was approximately $45.6B using Circana Checkout, while $30.3B was Circana Retail Tracking Service covering about 68% of the U.S. toys market. Circana verifies H1 2026 dollar sales +17%, units +12% and ASP +4%. The Toy Association explicitly warns that panel additions and category-hierarchy adjustments impair cross-year direct comparison.",
+      "source_ids": [
+        "A33",
+        "A34"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "A01",
+      "url": "https://www.census.gov/retail/eCommerce.html",
+      "title": "Quarterly Retail E-Commerce Sales",
+      "published_at": "2026-08-18",
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M01"
+      ]
+    },
+    {
+      "source_id": "A02",
+      "url": "https://www.census.gov/newsroom/press-releases/2026/2024-aies-data-release.html",
+      "title": "2024 Annual Integrated Economic Survey Data Release",
+      "published_at": "2026-09-03",
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M02"
+      ]
+    },
+    {
+      "source_id": "A03",
+      "url": "https://fred.stlouisfed.org/release/tables?eid=44183&rid=53",
+      "title": "BEA Personal Consumption Expenditures Table 2.4.5 via FRED",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M03",
+        "C11",
+        "C13",
+        "C16"
+      ]
+    },
+    {
+      "source_id": "A04",
+      "url": "https://fred.stlouisfed.org/series/DCLORC1A027NBEA",
+      "title": "Personal Consumption Expenditures: Clothing and Footwear",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C16"
+      ]
+    },
+    {
+      "source_id": "A05",
+      "url": "https://www.cta.tech/research/cta-us-consumer-technology-one-year-industry-forecast-2022-2027-july-2026/",
+      "title": "CTA U.S. Consumer Technology One-Year Industry Forecast, 2022-2027 (July 2026)",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M04"
+      ]
+    },
+    {
+      "source_id": "A06",
+      "url": "https://www.cta.tech/research/2026-us-consumer-technology-ownership-market-potential-study/",
+      "title": "2026 U.S. Consumer Technology Ownership & Market Potential Study",
+      "published_at": "2026-05",
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M04"
+      ]
+    },
+    {
+      "source_id": "A07",
+      "url": "https://www.cta.tech/Events",
+      "title": "CTA Events",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M05"
+      ]
+    },
+    {
+      "source_id": "A08",
+      "url": "https://omdia.tech.informa.com/pr/2026/may/us-smartphone-market-declined-3percent-in-1q26-amid-pricing-pressure-and-carrier-subsidy-shifts",
+      "title": "US smartphone market declined 3% in 1Q26 amid pricing pressure and carrier subsidy shifts",
+      "published_at": "2026-05-27",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C01"
+      ]
+    },
+    {
+      "source_id": "A09",
+      "url": "https://omdia.tech.informa.com/om146681/us-pc-shipments-fell-70-in-1q26-marking-the-steepest-decline-since-2023",
+      "title": "US PC shipments fell 7.0% in 1Q26, marking the steepest decline since 2023",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C02"
+      ]
+    },
+    {
+      "source_id": "A10",
+      "url": "https://www.grandviewresearch.com/horizon/outlook/laptop-market/united-states",
+      "title": "U.S. Laptop Market",
+      "published_at": "2026-05-29",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C02"
+      ]
+    },
+    {
+      "source_id": "A11",
+      "url": "https://www.imarcgroup.com/united-states-laptop-market",
+      "title": "United States Laptop Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C02"
+      ]
+    },
+    {
+      "source_id": "A12",
+      "url": "https://www.imarcgroup.com/united-states-tablet-market",
+      "title": "United States Tablet Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C03"
+      ]
+    },
+    {
+      "source_id": "A13",
+      "url": "https://www.idc.com/resource-center/blog/the-tablet-market-hits-a-wall/",
+      "title": "The Tablet Market Hits a Wall",
+      "published_at": "2026-08-13",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C03"
+      ]
+    },
+    {
+      "source_id": "A14",
+      "url": "https://www.emergenresearch.com/industry-report/us-mini-pc-market",
+      "title": "U.S. Mini PC Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C04"
+      ]
+    },
+    {
+      "source_id": "A15",
+      "url": "https://www.asinsight.com/market-analysis/US/mini-pc",
+      "title": "Amazon US Mini PC Market Analysis",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C04"
+      ]
+    },
+    {
+      "source_id": "A16",
+      "url": "https://www.grandviewresearch.com/industry-analysis/us-wireless-router-market-report",
+      "title": "U.S. Wireless Router Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C05"
+      ]
+    },
+    {
+      "source_id": "A17",
+      "url": "https://www.grandviewresearch.com/horizon/outlook/consumer-network-attached-storage-market/united-states",
+      "title": "U.S. Consumer Network Attached Storage Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C05"
+      ]
+    },
+    {
+      "source_id": "A18",
+      "url": "https://www.warc.com/en/article/computers-and-peripherals-in-the-us-3153b3b4784e402b970d9e9431270894",
+      "title": "Computers and peripherals in the US",
+      "published_at": "2025-12-17",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "page_shell",
+      "claims_supported": []
+    },
+    {
+      "source_id": "A19",
+      "url": "https://www.circana.com/post/wired-headphones-growth-is-a-throwback-to-2016",
+      "title": "Wired Headphones Growth Is a Throwback to 2016",
+      "published_at": "2026-02-25",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C06"
+      ]
+    },
+    {
+      "source_id": "A20",
+      "url": "https://www.expertmarketresearch.com/reports/united-states-headphones-market",
+      "title": "United States Headphones Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C06"
+      ]
+    },
+    {
+      "source_id": "A21",
+      "url": "https://www.imarcgroup.com/united-states-gaming-peripherals-market",
+      "title": "United States Gaming Peripherals Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C07"
+      ]
+    },
+    {
+      "source_id": "A22",
+      "url": "https://www.grandviewresearch.com/horizon/outlook/wearable-technology-market/united-states",
+      "title": "U.S. Wearable Technology Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C08"
+      ]
+    },
+    {
+      "source_id": "A23",
+      "url": "https://www.grandviewresearch.com/industry-analysis/us-smart-home-market-report",
+      "title": "U.S. Smart Home Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C09"
+      ]
+    },
+    {
+      "source_id": "A24",
+      "url": "https://www.fortunebusinessinsights.com/u-s-smart-home-market-107731",
+      "title": "U.S. Smart Home Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C09"
+      ]
+    },
+    {
+      "source_id": "A25",
+      "url": "https://housewares.org/press-releases/second-annual-state-of-the-industry-report/",
+      "title": "International Housewares Association Launches Second Annual State of the Industry Report",
+      "published_at": "2026-05-13",
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M03",
+        "C10",
+        "C17"
+      ]
+    },
+    {
+      "source_id": "A26",
+      "url": "https://www.gminsights.com/industry-analysis/robotic-vacuum-cleaner-market",
+      "title": "Robotic Vacuum Cleaner Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C10"
+      ]
+    },
+    {
+      "source_id": "A27",
+      "url": "https://www.grandviewresearch.com/industry-analysis/us-household-vacuum-cleaner-market-report",
+      "title": "U.S. Household Vacuum Cleaner Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C10"
+      ]
+    },
+    {
+      "source_id": "A28",
+      "url": "https://www.grandviewresearch.com/horizon/outlook/power-tools-market/united-states",
+      "title": "U.S. Power Tools Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C11"
+      ]
+    },
+    {
+      "source_id": "A29",
+      "url": "https://www.kenresearch.com/industry-reports/usa-digital-camera-market",
+      "title": "USA Digital Camera Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C12"
+      ]
+    },
+    {
+      "source_id": "A30",
+      "url": "https://www.autocare.org/data-and-information/market-research/joint-e-commerce-trends-and-outlook-forecast",
+      "title": "Joint E-Commerce Trends and Outlook Forecast",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C13"
+      ]
+    },
+    {
+      "source_id": "A31",
+      "url": "https://sfia.org/resources/new-sfia-report-sporting-goods-industry-reaches-nearly-130b-amid-trade-and-tariff-pressures/",
+      "title": "New SFIA Report: Sporting Goods Industry Reaches Nearly $130B Amid Trade and Tariff Pressures",
+      "published_at": "2026-03-31",
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M03",
+        "C14"
+      ]
+    },
+    {
+      "source_id": "A32",
+      "url": "https://www.imarcgroup.com/united-states-3d-printing-market",
+      "title": "United States 3D Printing Market",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C15"
+      ]
+    },
+    {
+      "source_id": "A33",
+      "url": "https://www.toyassociation.org/ta/toys/research-and-data/data/us-sales-data.aspx",
+      "title": "U.S. Sales Data",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "M03",
+        "C18"
+      ]
+    },
+    {
+      "source_id": "A34",
+      "url": "https://www.circana.com/post/us-toy-industry-posts-strongest-first-half-in-six-years-circana-reports",
+      "title": "U.S. Toy Industry Posts Strongest First Half in Six Years, Circana Reports",
+      "published_at": "2026-08-12",
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C18"
+      ]
+    },
+    {
+      "source_id": "A35",
+      "url": "https://www.reddit.com/r/MechanicalKeyboards/comments/1q6g28d/collection_update_2026/",
+      "title": "Collection Update 2026",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C07"
+      ]
+    },
+    {
+      "source_id": "A36",
+      "url": "https://www.reddit.com/r/headphones/comments/1qabj8e/my_2026_collection/",
+      "title": "My 2026 collection",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C06"
+      ]
+    },
+    {
+      "source_id": "A37",
+      "url": "https://www.reddit.com/r/homeassistant/comments/1q4lps1/im_starting_a_new_smart_home_what/",
+      "title": "I'm starting a new smart home",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C09"
+      ]
+    },
+    {
+      "source_id": "A38",
+      "url": "https://www.reddit.com/r/3Dprinting/comments/1w438v9/purchase_advice_megathread_september_2026/",
+      "title": "Purchase Advice Megathread - September 2026",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "C15"
+      ]
+    }
+  ],
+  "claims": [],
+  "data_gaps": [
+    {
+      "gap_id": "ADG01",
+      "scope": "M01",
+      "gap": "Census states that the August 18 Q2 e-commerce release is no longer the most up-to-date estimate as of September 28, but revised Q2 values are not yet presented on the audited page.",
+      "impact": "The 17.1% figure is usable only as a dated release vintage, not as an October 6 latest-revision benchmark."
+    },
+    {
+      "gap_id": "ADG02",
+      "scope": "C01-C12",
+      "gap": "CTA detailed product-level shipment, wholesale-revenue and average-wholesale-price tables remain authenticated/paid.",
+      "impact": "Consumer-tech categories still lack a harmonized public dollar basis."
+    },
+    {
+      "gap_id": "ADG03",
+      "scope": "C10,C17,C18",
+      "gap": "Public pages disclose Circana Checkout/consumer-tracking and Retail Tracking bases but do not provide enough common methodology detail to prove that IHA and Toy Association dollar estimates are directly rank-comparable.",
+      "impact": "The $45.6B, $44.94B and $32.18B ordering should remain approximate and should not be treated as a precision rank."
+    },
+    {
+      "gap_id": "ADG04",
+      "scope": "C02",
+      "gap": "Full comparable methodologies for the GVR and IMARC laptop models are not publicly available on the audited pages.",
+      "impact": "The 4.31x conflict cannot be reconciled or averaged."
+    },
+    {
+      "gap_id": "ADG05",
+      "scope": "C05",
+      "gap": "The WARC/Euromonitor URL currently exposes only a short summary/page shell rather than the full article.",
+      "impact": "The 94M computers-and-peripherals and 78M computers figures are not accepted as full-page-verified evidence in this audit."
+    },
+    {
+      "gap_id": "ADG06",
+      "scope": "C09,C10,C14,C16,C17,C18,C06,C07,C05",
+      "gap": "A frozen non-overlapping taxonomy crosswalk is still absent.",
+      "impact": "Smart appliances, home goods, athletic apparel/footwear, licensed merchandise, gaming headsets and peripheral/networking products can be double-counted."
+    },
+    {
+      "gap_id": "ADG07",
+      "scope": "C01-C18",
+      "gap": "No common observed all-channel consumer-dollar dataset exists in the audited public sources for all 18 categories.",
+      "impact": "A single exact 18-category spending rank or demand-weight vector remains unsupported."
+    },
+    {
+      "gap_id": "ADG08",
+      "scope": "C01-C18",
+      "gap": "Category-specific online numerator and all-channel denominator are unavailable on one common taxonomy for most categories.",
+      "impact": "The Census 17.1% all-retail share cannot be substituted for category-level online share."
+    },
+    {
+      "gap_id": "ADG09",
+      "scope": "C01-C18",
+      "gap": "Representative purchase-frequency, SKU concentration and marketplace-share measures remain absent for most categories.",
+      "impact": "Forum anecdotes and marketplace keyword samples may remain annotations only and must not enter consumer-spending weights."
+    }
+  ]
+}

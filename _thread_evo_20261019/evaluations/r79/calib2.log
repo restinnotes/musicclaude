@@ -1,0 +1,153 @@
+[r79pkX_op61_g56_r78a] ok 9s 97 chars
+[r79pkX_op60_g6_r78a] ok 12s 146 chars
+[r79pkY_op60_g6_r49b] ok 11s 129 chars
+[r79pkX_op60_g6_r49b] ok 9s 155 chars
+[r79pkY_op61_g6_r78a] FAILED rc=1 56s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T072136853034Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkX_op60_g56_r49b] ok 6s 116 chars
+[r79pkX_op60_g56_r78a] FAILED rc=1 42s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T072200365174Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkY_op60_g56_r78a] ok 8s 135 chars
+[r79pkX_op60_g56_r78a] ok 8s 123 chars
+[r79ppY_op60_g56_r49b_vsr78a] FAST 50s -> cup probe
+[r79ppY_op60_g56_r49b_vsr78a] ok 50s 967 chars
+[r79ppX_op60_g56_r49b_vsr78a] FAST 45s -> cup probe
+[r79ppX_op60_g56_r49b_vsr78a] ok 45s 976 chars
+[r79ppX_op60_g6_r49b_vsr78a] ok 66s 829 chars
+[r79pkY_op61_g6_r49b] ok 12s 153 chars
+[r79ppX_op61_g6_r49b_vsr78a] FAST 36s -> cup probe
+[r79ppX_op61_g6_r49b_vsr78a] ok 36s 914 chars
+[r79pkY_op61_g6_r78a] ok 11s 159 chars
+[r79pkX_op61_g6_r49b] ok 9s 146 chars
+[r79ppY_op60_g6_r49b_vsr78a] ok 82s 923 chars
+[r79pkY_op60_g6_r78a] ok 12s 154 chars
+[r79pkX_op61_g56_r49b] ok 7s 112 chars
+[r79pkY_op60_g56_r49b] ok 9s 107 chars
+[r79ppY_op61_g6_r49b_vsr78a] FAILED rc=1 95s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T072652547936Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79ppX_op60_g6_h23_vsr78a] FAST 53s -> cup probe
+[r79ppX_op60_g6_h23_vsr78a] ok 53s 986 chars
+[r79ppY_op61_g6_r49b_vsr78a] ok 63s 884 chars
+[r79pkX_op61_g6_r78a] FAILED rc=1 61s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T072904438792Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+GPT3 STOPPED: 1 in a row / 3 total failures (last r79pkX_op61_g6_r78a)
+[r79pkX_op61_g6_r78a] SKIPPED (1 in a row / 3 total failures (last r79pkX_op61_g6_r78a))
+[r79pkX_op61_g6_r78a] gpt4 临时失败，这次改走 gpt3
+[r79pkY_op60_g56_h23] ok 7s 151 chars
+[r79ppY_op61_g56_r49b_vsr78a] FAST 14s -> cup probe
+[r79ppY_op61_g56_r49b_vsr78a] ok 14s 565 chars
+[r79pkY_op61_g56_r78a] ok 6s 109 chars
+[r79pkX_op61_g6_r78a] ok 8s 147 chars
+[r79pkX_op60_g56_h23] FAILED rc=1 57s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T073058139716Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkY_op61_g56_r49b] ok 8s 124 chars
+[r79pkX_op61_g6_h23] FAILED rc=1 68s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T073141974744Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+GPT3 STOPPED: 2 in a row / 3 total failures (last r79pkX_op61_g6_h23)
+[r79pkX_op61_g6_h23] SKIPPED (2 in a row / 3 total failures (last r79pkX_op61_g6_h23))
+[r79pkX_op61_g6_h23] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79pkX_op61_g6_h23] FAILED 0s {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"}
+MIMIC transient_failure pause 60s until 2026-11-06T07:33:49.434522+00:00
+不合格 r79pkX_op61_g6_h23
+[r79pkX_op61_g6_h23_r1] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79pkX_op61_g6_h23
+[r79pkX_op61_g6_h23_r2] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79pkX_op61_g6_h23
+[r79ppY_op61_g6_h23_vsr78a] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g6_h23_vsr78a
+[r79ppY_op61_g6_h23_vsr78a_r1] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g6_h23_vsr78a
+[r79ppY_op61_g6_h23_vsr78a_r2] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g6_h23_vsr78a
+[r79ppX_op61_g6_h23_vsr78a] SKIPPED (2 in a row / 3 total failures (last r79pkX_op61_g6_h23))
+[r79ppX_op61_g6_h23_vsr78a] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79ppX_op61_g6_h23_vsr78a] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g6_h23_vsr78a
+[r79ppX_op61_g6_h23_vsr78a_r1] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g6_h23_vsr78a
+[r79ppX_op61_g6_h23_vsr78a_r2] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g6_h23_vsr78a
+[r79pkX_op60_g56_h23] ok 12s 149 chars
+[r79ppX_op61_g56_h23_vsr78a] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g56_h23_vsr78a
+[r79ppX_op61_g56_h23_vsr78a_r1] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g56_h23_vsr78a
+[r79ppX_op61_g56_h23_vsr78a_r2] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppX_op61_g56_h23_vsr78a
+[r79ppY_op61_g56_h23_vsr78a] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g56_h23_vsr78a
+[r79ppY_op61_g56_h23_vsr78a_r1] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g56_h23_vsr78a
+[r79ppY_op61_g56_h23_vsr78a_r2] SKIPPED (冷却至 2026-11-06T07:33:49.434522+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/9761c61dd01231dda25c'])"})
+不合格 r79ppY_op61_g56_h23_vsr78a
+[r79pkX_op60_g6_h23] ok 7s 145 chars
+[r79ppX_op61_g56_r49b_vsr78a] FAST 14s -> cup probe
+[r79ppX_op61_g56_r49b_vsr78a] ok 14s 457 chars
+[r79ppX_op60_g56_h23_vsr78a] FAST 25s -> cup probe
+[r79ppX_op60_g56_h23_vsr78a] ok 25s 556 chars
+[r79pkY_op60_g6_r78aloop] ok 9s 141 chars
+[r79pkY_op60_g6_h23] ok 31s 117 chars
+[r79ppY_op60_g6_h23_vsr78a] ok 63s 1063 chars
+[r79pkY_op60_g56_r78aloop] ok 11s 163 chars
+[r79ppY_op60_g56_h23_vsr78a] FAST 24s -> cup probe
+[r79ppY_op60_g56_h23_vsr78a] ok 24s 893 chars
+[r79pkY_op61_g56_h23] ok 9s 106 chars
+[r79ppX_op60_g56_r78aloop_vsr78a] FAST 26s -> cup probe
+[r79ppX_op60_g56_r78aloop_vsr78a] ok 26s 747 chars
+[r79pkX_op60_g56_r78aloop] ok 8s 146 chars
+[r79pkX_op60_g6_r78aloop] ok 16s 132 chars
+[r79pkY_op61_g6_h23] ok 16s 133 chars
+[r79ppX_op61_g6_r78aloop_vsr78a] FAILED rc=1 58s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T073652488508Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkY_op61_g6_r78aloop] ok 8s 161 chars
+[r79pkX_op61_g56_h23] FAILED rc=1 39s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T073741518266Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79ppY_op60_g6_r78aloop_vsr78a] FAST 52s -> cup probe
+[r79ppY_op60_g6_r78aloop_vsr78a] ok 52s 1120 chars
+[r79ppY_op60_g56_r78aloop_vsr78a] FAST 13s -> cup probe
+[r79ppY_op60_g56_r78aloop_vsr78a] ok 13s 736 chars
+[r79pkX_op61_g6_r78aloop] ok 8s 153 chars
+[r79ppX_op61_g6_r78aloop_vsr78a] ok 69s 1016 chars
+[r79pkX_op61_g56_h23] FAILED rc=1 39s 't-safechain\\\\runs\\\\gpt4\\\\pro-bridge-20261106T073917986123Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkX_op61_g56_h23] gpt4 临时失败，这次改走 gpt3
+[r79ppY_op61_g56_r78aloop_vsr78a] FAST 38s -> cup probe
+[r79ppY_op61_g56_r78aloop_vsr78a] ok 38s 987 chars
+[r79ppX_op60_g6_r78aloop_vsr78a] FAILED rc=1 58s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T073935685224Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+[r79pkX_op61_g56_r78aloop] FAILED rc=1 60s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T074007418452Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+GPT3 STOPPED: 2 in a row / 3 total failures (last r79pkX_op61_g56_r78aloop)
+[r79pkX_op61_g56_r78aloop] SKIPPED (2 in a row / 3 total failures (last r79pkX_op61_g56_r78aloop))
+[r79pkX_op61_g56_r78aloop] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79pkX_op61_g56_r78aloop] FAILED 0s {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"}
+MIMIC transient_failure pause 60s until 2026-11-06T07:42:06.642727+00:00
+不合格 r79pkX_op61_g56_r78aloop
+[r79pkX_op61_g56_r78aloop_r1] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkX_op61_g56_r78aloop
+[r79pkX_op61_g56_r78aloop_r2] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkX_op61_g56_r78aloop
+[r79pkX_op61_g56_h23] SKIPPED (2 in a row / 3 total failures (last r79pkX_op61_g56_r78aloop))
+[r79pkX_op61_g56_h23] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79pkX_op61_g56_h23] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkX_op61_g56_h23
+[r79pkY_op61_g56_r78aloop] SKIPPED (2 in a row / 3 total failures (last r79pkX_op61_g56_r78aloop))
+[r79pkY_op61_g56_r78aloop] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79pkY_op61_g56_r78aloop] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkY_op61_g56_r78aloop
+[r79pkY_op61_g56_r78aloop_r1] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkY_op61_g56_r78aloop
+[r79pkY_op61_g56_r78aloop_r2] SKIPPED (冷却至 2026-11-06T07:42:06.642727+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/81d32f858e1ad73c4832'])"})
+不合格 r79pkY_op61_g56_r78aloop
+[r79ppX_op61_g56_r78aloop_vsr78a] FAST 60s -> cup probe
+[r79ppX_op61_g56_r78aloop_vsr78a] ok 60s 863 chars
+[r79ppY_op61_g6_r78aloop_vsr78a] FAST 46s -> cup probe
+[r79ppY_op61_g6_r78aloop_vsr78a] ok 46s 878 chars
+[r79pkX_op61_g56_h23_r1] ok 10s 109 chars
+[r79ppX_op60_g6_r78aloop_vsr78a] FAILED rc=1 62s 't-safechain\\\\runs\\\\gpt3\\\\pro-bridge-20261106T074317440052Z", "submitted": true, "message": "UPSTREAM_STREAM_ERROR: Hmm...something seems to have gone wrong."}\r\n'
+GPT3 STOPPED: 1 in a row / 4 total failures (last r79ppX_op60_g6_r78aloop_vsr78a)
+[r79ppX_op60_g6_r78aloop_vsr78a] GPT3 unavailable -> MimicGate backup; retry primary after short backoff
+[r79ppX_op60_g6_r78aloop_vsr78a] FAILED 0s {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"}
+MIMIC transient_failure pause 60s until 2026-11-06T07:45:19.417547+00:00
+不合格 r79ppX_op60_g6_r78aloop_vsr78a
+[r79ppX_op60_g6_r78aloop_vsr78a_r1] SKIPPED (冷却至 2026-11-06T07:45:19.417547+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"})
+不合格 r79ppX_op60_g6_r78aloop_vsr78a
+[r79ppX_op60_g6_r78aloop_vsr78a_r2] SKIPPED (冷却至 2026-11-06T07:45:19.417547+00:00: {"kind": "client", "message": "CalledProcessError(1, ['docker', 'exec', 'yi-mimicgate-20261002', 'mkdir', '-p', '/app/state/music-result-spool-v1/0dac110d27f70f49cb82'])"})
+不合格 r79ppX_op60_g6_r78aloop_vsr78a
+r78a op60：认对 Center 3/4；和 r78a 比，判本版更来回 0、判 r78a 更来回 0、一样 0
+r78a op61：认对 Center 4/4；和 r78a 比，判本版更来回 0、判 r78a 更来回 0、一样 0
+r49b op60：认对 Center 4/4；和 r78a 比，判本版更来回 4、判 r78a 更来回 0、一样 0
+r49b op61：认对 Center 4/4；和 r78a 比，判本版更来回 3、判 r78a 更来回 1、一样 0
+h23 op60：认对 Center 3/4；和 r78a 比，判本版更来回 3、判 r78a 更来回 1、一样 0
+h23 op61：认对 Center 2/3；和 r78a 比，判本版更来回 0、判 r78a 更来回 0、一样 0
+r78aloop op60：认对 Center 2/4；和 r78a 比，判本版更来回 3、判 r78a 更来回 0、一样 0
+r78aloop op61：认对 Center 2/2；和 r78a 比，判本版更来回 4、判 r78a 更来回 0、一样 0

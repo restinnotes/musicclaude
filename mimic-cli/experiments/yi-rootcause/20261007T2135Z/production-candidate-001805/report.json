@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-08T00:18:11.923097+00:00",
+  "container": "yi-mimicgate-20261002",
+  "backups": {
+    "/app/src/browser/identity_policy.py": {
+      "present": false
+    },
+    "/app/src/browser/environment_evidence.py": {
+      "present": false
+    },
+    "/app/src/mg_native_hint_settings.py": {
+      "present": false
+    },
+    "/app/src/browser/stealth.py": {
+      "present": true,
+      "sha256": "e715c3e7e83c074ab2c5fc3fe31b7d739349eb771619b7d8f25734d4746bba26"
+    },
+    "/app/src/api/probe_evidence.py": {
+      "present": true,
+      "sha256": "c8eee36f22ee50e528fe0e0abfb42843097583a1f664e6dcabbdcd862d5061d8"
+    },
+    "/app/src/api/standard_completion.py": {
+      "present": true,
+      "sha256": "51d662b1df9572cbb54de336e4e26de2aeffcb926bc3112cb4df8d1ba274c342"
+    },
+    "/app/src/request_observer.py": {
+      "present": true,
+      "sha256": "969bb8cde059671c99821dabd1ee85e2d859062ece9e8428f81ac9623fec5dec"
+    },
+    "/app/.env": {
+      "present": false
+    },
+    "/app/state/.mg-patchright-only.json": {
+      "present": false
+    },
+    "/app/state/.mg-native-hints.json": {
+      "present": false
+    }
+  },
+  "installed_sha256": {
+    "/app/src/browser/identity_policy.py": "7271c59fd696dd8be8f6f32415fb0e27209c21eeb906ecfad22807608af8449c",
+    "/app/src/browser/environment_evidence.py": "7e01293a37a91e1c2f78eb3ad9d381c61bbc0091f894a89565f449b76bd1e9ae",
+    "/app/src/mg_native_hint_settings.py": "841006451d817884851e3eca9032e7d746bbe9155a9f83f7346a60e1a8a889aa",
+    "/app/src/browser/stealth.py": "2853bff0c1569a4c5108b3ec893532371b3c1a64711a39131678741bcdcc6375",
+    "/app/src/api/probe_evidence.py": "5f15b184a95a029208ce8d6f8b06ea861b87c5a62e09138e7e1adf72a1d60bac",
+    "/app/src/api/standard_completion.py": "a7e9ee00037c5efc1fd4863677528cb5c4795734fef3611e1d29bb1ff612fc6a",
+    "/app/src/request_observer.py": "be39f958ecbfbb7fd4f66a2371e89568b23f61e68cb46124f2559a7b04523eee",
+    "/app/.env": "fcfb867cd384a7d3dd5c3256483e6edefbff6456a4807b4a754f476523355319",
+    "/app/state/.mg-patchright-only.json": "a73e04e0c1e7f7354f4a7d908d7ae062909cbf33996b2e60d38cabf135874104",
+    "/app/state/.mg-native-hints.json": "afd134d48e40a255739fe347b63e5453943c71751c460d6b19e2660f346067d0"
+  },
+  "verified_candidate_runs": [
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-patchrightonly001\\diagnostics.json",
+      "sha256": "ff313d5a18852c72397fdf67c1bef6e54595a7b20a5e91e1508ac82af1ec2afa"
+    },
+    {
+      "file": "D:\\musicclaude\\mimic-cli\\experiments\\yi-rootcause\\20261007T2135Z\\cup-native_identity-patchrightonly003\\diagnostics.json",
+      "sha256": "96e77c31a17da1bcdb4a341b3751cc7a0ee2bfd57667dd3346f6fdf02ede6323"
+    }
+  ],
+  "installed_while_stopped": true,
+  "production_restored": false,
+  "live_source_verified": false,
+  "auth_or_browser_profile_modified": false,
+  "ports_or_resource_limits_modified": false,
+  "candidate_policy": "Native browser identity, no additional Stealth injection, no manually supplied high entropy hints",
+  "original_container_started": false
+}

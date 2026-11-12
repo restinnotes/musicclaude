@@ -1,0 +1,78 @@
+已完成封闭证据审计；附件字节 SHA256 与你给定的 `0912ea224a51feb4b5bd0cc1e3a04346a5990f71e8856bc3de00d91c7b3635d4` 一致。24/24 个研究 job 及其对应 mg audit 均已实际检查，因此不标 `INPUT_INCOMPLETE`。
+
+## 状态
+
+**INPUT_COMPLETE。** 但这不等于样本身份已完全闭合：证据包顶部明确标记 `sample_frozen=false`，原因是 `C17-S01`、`C17-S02` 虽有国内 item_id、容量/颜色/套装精确核验，却缺 manufacturer model number；在跨市场 exact-match 经济计算中仍应保持该缺口。:chatgpt-content-reference{index="0"}
+
+## J2 经济裁决
+
+**第一，当前不得发布需求加权的节省率、覆盖率或“美国市场机会值”。置信度：高。**  
+`W1-A:M03`（原 S03/S25/S31/S33；audit A03/A25/A31/A33）已由协调审计确认：现有输入混合 PCE、consumer tracking、wholesale、shipment、forecast 和 projected-market，并且存在实质 taxonomy 重叠，因此不支持统一 18 类精确 GMV 排名。更强的例子是 `W1-A:C02`（S09/S10/S11）维持 `CONFLICT_UNRESOLVED`：同一 laptop 类目的模型金额相差约 4.31×，不能投票、取均值或中位数。`W1-B:C16`（S02/S06）又表明 retailer-establishment receipts 不能改名成 merchandise-line all-channel GMV。:chatgpt-content-reference{index="1"} :chatgpt-content-reference{index="2"}
+
+必须显式去重/划界的交叉至少包括 `C09↔C10`、`C10↔C17`、`C14↔C16`、`C14↔C18`、`C06↔C07`、`C05↔C07`；此外 C13 的 specialty aftermarket 是更宽汽车配件桶的子集。增长率、线上率、fragmentation、ASP 可以是独立解释变量，**不能混进 demand/spending weight**。W1-B 提出的 `60% spend + 15% online + 10% incidence + 10% fragmentation + 5% growth` 因此不应再称需求权重。:chatgpt-content-reference{index="3"}
+
+**第二，W2 的京东榜位/评论只能服务于 domestic-first 抽样相关性，不能变成需求权重。置信度：高。**  
+R2 audits 多次发现同日不同入口排名漂移；“已有 X 人评论”明确不得转换成销量、成交件数或份额。例如 `C07-S02`（GPW5）原头部名次未复现，因此降为 purchase+exact；`C06-S01/S02` 的所谓 head 仅是“自营漫步者排行榜”这种品牌窄榜；`C17-S01/S02` 虽锁定具体储物箱榜位，也不能把累计评论当销量。:chatgpt-content-reference{index="4"} :chatgpt-content-reference{index="5"} :chatgpt-content-reference{index="6"}  
+**反证：**这些榜单仍足以做预注册的国内“head/opportunity”抽样信号；我的否定只针对把它们升级成 GMV/demand weights。
+
+**第三，当前单位经济没有正也没有负的可验证结论；正确统计量是“可计算 n=0”，不是“savings=0”。置信度：极高。**  
+R3 六批 audit 一致：四种结构——standalone、consolidated marginal、**1000 independent consumer orders 商务费率**、true physical bulk import——均没有任何 SKU 同时闭合实际/体积重、包装尺寸、电池/特殊处理费、国际运费、代理费、逐 SKU HTS/税层、mandatory customs/brokerage、FX 与 ZIP10001 便利端点。`R3-batch04:C10-S03`（S01/S02）就是典型：`C10-S03` DJI ROMO P 的中国官方 ¥3699 可核，但海外观察对应非 ZIP10001、地区/电压条件不同，因此不能成为 landed 分母；旧海外快照与新快照也明确不得平均。:chatgpt-content-reference{index="7"}  
+同理，R3-batch01 明确禁止把官方 MSRP、活动价、登录后到手价、不同地区料号混成一价；跨品类简单均值同样无效。:chatgpt-content-reference{index="8"}
+
+**第四，物流规模化必须拆成两个完全不同的经济对象。置信度：高。**  
+实际已验证的公开条件包括 `W5-A:C01/S01`：淘宝/Tmall/JD/1688 标准采购服务费可为 0；以及免费 consolidation、公开 parcel fee structure。**实际 negotiated 1000-parcel/month rate：证据包中没有一份。** `W5-A:C06` 与 `W5-B:C10`（audit S02/S06）只支持“公开未见 1000 个不同消费者包裹的阶梯商务运价”；`≥30kg customized logistics` 是单票/货物定制入口，**不是**“1000 单/月运价折扣”。`W5-C:C10`（S06/S07）则验证了商业订单流可通过 API/逐单履约扩展，**这证明 commercial order aggregation 不要求先把货物物理拼成一票**，但完全不能证明因此获得特定 freight discount。:chatgpt-content-reference{index="9"}
+
+因此必须分开：
+**commercial aggregation**＝平台汇集采购量、订单数据、结算关系，但每位消费者仍是一件独立跨境包裹；  
+**physical bulk import**＝货物真正合并成大票进口，随后在美国拆货、仓储和 last-mile。  
+两者的报关、固定费、库存风险和末端成本曲线不能互借。任何“规模后运费下降 X%”在目前都是**假设费率**，不是 negotiated rate。
+
+另有 `W5-B:C03/S06` 的实际收费歧义：BuckyDrop 页面分别出现 CN¥9.90/parcel fulfillment fee 和物流区 flat CN¥9.9 service fee，公开材料没有说明是否同一笔；既不能只算一次，也不能擅自双计。:chatgpt-content-reference{index="10"}
+
+**第五，Marketplace economics 目前是“coverage 未观测”，不是“coverage=0”。置信度：高。**  
+R4 六批均得到同一实质结果：Temu 多为 `page_shell`，AliExpress 多为 `LOGIN_REQUIRED/blocked`，所以没有一格可核 seller、exact variant、库存、US warehouse、ordinary price 与 ZIP10001 delivered price。`R4-batch06:K01/K02`（S01–S23）明确要求：这些状态**不能升级为 VERIFIED_UNAVAILABLE**。因此不能拿 W4 推导“Temu/AliExpress 没有这些 SKU”或计算平台覆盖率为 0%。:chatgpt-content-reference{index="11"}
+
+另一方面，`W7-A:C03` 的 audit（S03/S06/S07/S22）验证了 1688/AiPrice/Capital One 等相邻比价工具可以达到显著用户规模，反驳“购物助手天然不能 scale”；但 `W7-A:C05` 是 `CONFLICT_UNRESOLVED`：affiliate economics 与中立排序是否存在不可解冲突没有被证明。:chatgpt-content-reference{index="12"}  
+W8 的协调审计也只允许说 **broad thesis 受到结构压力**：AliExpress 的物流/成本效率、de-minimis 变化、数据接入和 parcel 固定成本会压缩普遍套利，但没有 exact-SKU coverage/landed-price 数据证明 narrow China-head/US-middle-tail opportunity set 已消失。:chatgpt-content-reference{index="13"}
+
+## 最终经济判定
+
+**不能证明“可规模化正单位经济”，也不能证明狭义机会集合不存在。当前应判：QUANTITATIVE ECONOMICS NOT ESTABLISHED / NARROW THESIS UNRESOLVED。**
+
+对 bullish 结论最强的反证是：R3 的 verified landed savings 可计算数为 0；R4 的 usable exact marketplace coverage 为 0 个**可用观察**；没有任何已谈妥的 1000 独立包裹商务运价。  
+对 bearish 结论最强的反证是：标准采购费可以为 0、免费合包存在、逐消费者商业履约在操作上存在、比价/采购工具能够规模化，而且 blocked/page-shell 不能解释为市场无货。
+
+**改变本裁决所需的最小证据**是：先冻结不重叠的同年度 consumer-dollar category crosswalk；然后对预注册而非事后挑选的 frozen SKU 取得同日中国实际普通成交价、ZIP10001 最低便利海外 delivered endpoint、仓库最终 packed weight/L×W×H、逐 SKU HTS/税费；再分别取得一份针对“约1000个独立美国消费者包裹/月”的书面 negotiated rate card，以及一份真正 physical-bulk-import 的全成本报价（进口+brokerage+美国收货/仓储/拆包/last-mile）。Marketplace 端则需一方 listing 级 seller/item/variant/stock/warehouse/ordinary-price 观察。在这些字段闭合之前，不应给任何需求加权 ROI、毛利率或套利覆盖百分比。
+
+## 输入完整性检查表
+
+| Job | report SHA256 | 我实际检查到的报告特异性分歧/材料点 |
+|---|---|---|
+| W1-A | `c8c930872433332d7a83a7231bcdb7447b68bf6d5e0f9e0b8bd698b76b8e7bfb` | 主张不能强排18类；C02 laptop 两套市场模型冲突，且存在 parent/subcategory 重叠。:chatgpt-content-reference{index="14"} |
+| W1-B | `a6474c4aa74cce05b3f17ac17423941223bd83b9b6b7360e34839ee75702a1d1` | 自建 D 指数混入 fragmentation/growth；C16 店型 sales 不能当商品线全渠道 GMV。:chatgpt-content-reference{index="15"} |
+| W1-C | `489e916b8e9646e4317a6db3d9ae052966d673c8c8dd9777edef9c1346da34ba` | 仅支持粗粒度需求量级；明确 proxy 不应求和、缺可比 GMV 时 demand score 应为 null。:chatgpt-content-reference{index="16"} |
+| W2-A | `046f9bb84061977ebf1eb89b3f89c6b6337f0359d453e9c18d8860fbf059c024` | JD 榜单/评论作为国内 head 信号；后续 audit 发现榜位动态、重复 exact item，评论不能转销量。:chatgpt-content-reference{index="17"} |
+| W2-B | `2182ad02c9f58435c88b974e1de064cbcb5a6c02fc01f9868229aa33b9cca532` | 多个候选只有公开 listing/榜位，最终到手价需登录；榜位复核后有重排。:chatgpt-content-reference{index="18"} |
+| W2-C | `5994f7cefe60ef7d53b913d217c1162ce4cfa85fce25fcf630246b1b41c47e62` | 若干“head”只能降为 purchase/model evidence；不同容量/颜色/bundle 不得合并。:chatgpt-content-reference{index="19"} |
+| W3-A | `4f22acab532a65f7392a4212411ec872d3020edfff3edb76aca52c469e38868b` | 四种物流结构均缺完整真实 quote；海外地区型号/ZIP 不同，不能形成 landed saving。:chatgpt-content-reference{index="20"} |
+| W3-B | `a00c62dbca6c1950c57060753e2fd19f80a4d5364c4d4a1debbce82395961ef5` | 保留全部分母但没有闭合 delivered endpoint；若干海外价格已过期/不同卖家，不能平均。:chatgpt-content-reference{index="21"} |
+| W3-C | `e440304de201a8f93fd4e211eea560e2ef591999d85095bc90b9f6cb4027ca36` | 同样无 verified landed savings；把未逐 SKU 核实的税率写成 0 后被 audit 纠正为 null。:chatgpt-content-reference{index="22"} |
+| W4-A | `39bcd589d0b450a5e187b5d0632dd1edcdc8413733e0ab50664daa04c36e1bc3` | “全 BLOCKED”访问标签过粗；核心只是没有合格的一方 marketplace offer。:chatgpt-content-reference{index="23"} |
+| W4-B | `525c6379ac871ac8ecc3806dbcb46d1b52c36248a9d9ac01136e020bf03c60b3` | Temu/Ali 访问受限，无法核 seller/stock/warehouse/价；`not_supported` 不能解释成市场不可售。:chatgpt-content-reference{index="24"} |
+| W4-C | `633e5e642b1c31ec6bf043344cecf2e10161b936d1698b7e3deaa18d05a48fed` | 把访问失败与无货分开较谨慎；仍为 0 个 usable exact coverage observations。:chatgpt-content-reference{index="25"} |
+| W5-A | `c68db3699dddd62da8b3c8a66455bf385a1983d7e222fb56335b855856ff68f6` | 标准采购费可为0，但无1000独立包裹 negotiated rate；旧 FY fee 数字需修正。:chatgpt-content-reference{index="26"} |
+| W5-B | `f684b48ecbd1594400d5663dcc12027a44082e698cc8b1351a1890316b10fd37` | 0/54 quote-grade freight；≥30kg customized logistics 不等于1000单商务阶梯；BuckyDrop ¥9.9 层存在歧义。:chatgpt-content-reference{index="27"} |
+| W5-C | `cc295668c9ea0c7fe24c84943411a91e0a7e2dd0c96d19f406733afaaf2ff48d` | 公共 parcel feed 是历史观察不是 ZIP10001 quote；逐单商业履约可行≠已取得折扣费率。:chatgpt-content-reference{index="28"} |
+| W6-A | `1b958a99991c685ebe774ffee0c7d4e319adb0fc2c4e862eacd0418ecfb669c0` | 轻资产链条可拆分，但实际 IOR/POA/volume contract 未核；经济上不能把结构可能性当成本报价。:chatgpt-content-reference{index="29"} |
+| W6-B | `20090bcef53c54b0f1c22e4c329ba2ecade652c93db347be1187ece6c5100d19` | 商业订单规模与 importer/title 身份不是同一问题；实际商务线路合同仍未知。:chatgpt-content-reference{index="30"} |
+| W6-C | `0b194b34f17487cd2df7d90f75bfbb4f5821523fa2db44cc8f48e21583b8977f` | 可保持消费者购买+broker/forwarder 的轻资产结构，但未证明任何具体大客户费率或真实 IOR 安排。:chatgpt-content-reference{index="31"} |
+| W7-A | `a9e71cf2a984b1df88850b7c96eb290b6160bef4c66c2219c627e84afbd41554` | “没人做过”错误；HandHunt 等显示最终国际运费常在入仓称重后才确定。:chatgpt-content-reference{index="32"} |
+| W7-B | `857b295ebf977c999388e67eec0fb90b59661ba0703999909b17d2a5e734aaa0` | Amazon→1688+landed estimate 已有小型卖家工具；小用户数不能被当作消费者需求失败证明。:chatgpt-content-reference{index="33"} |
+| W7-C | `91e96c5b6e7375091ae9b4c817b83d270d1f9a3038c310021f9250c66c87ca56` | matching、agent、affiliate 各层已被产品化；整合缺口存在，但“为何无 dominant router”的因果解释仍属推断。:chatgpt-content-reference{index="34"} |
+| W8-A | `6e0b859334d4da5c0b82c715b772d6d4364f0a45a1f31dbe3c5692405a457042` | 税费、单件物流、数据访问削弱 broad thesis；官方运费示例不能外推代表性美国实际报价。:chatgpt-content-reference{index="35"} |
+| W8-B | `56a438d4c0253df9918fe41cb13f1a001c189b329bf67519e41e4286467684d8` | narrow thesis 未被证伪；明确没有公开大客户 rate card，物流 scale curve 仍未知。:chatgpt-content-reference{index="36"} |
+| W8-C | `a6eea15a627e8223d526626546ae0713f9e512ce44d8c5708a9bf2f33babab4c` | AliExpress 等会压缩价差且 agent freight 非线性；但零采购费/免费合包等反证阻止得出“China-direct 已无经济性”。:chatgpt-content-reference{index="37"} |
+
+**输入完整性结论：24/24 已检查；没有缺失 job/section。** 当前未解决的是证据本身的经济字段，而不是本次 judge 输入缺失。
+
+如需 coordinator 直接机读，我可以把同一裁决压缩为 `finding / status / confidence / claim_ids / source_ids / sku_ids / change_of_mind_evidence` 的 JSON 结构。

@@ -1,0 +1,61 @@
+{
+  "completion": "COMPLETION_PENDING",
+  "configuration": {
+    "auditors": [
+      "gflash",
+      "luna_noweb"
+    ],
+    "chooser": "gflash",
+    "compare_seed": 139060,
+    "default_parse_failure": "STOP",
+    "explicit_new_sample_requires": [
+      "allow_new_sample_on_parse_failure=True",
+      "bounded max_attempts",
+      "new_sample_reason"
+    ],
+    "gen": "gflash",
+    "history_producer": "unknown: run130 steps.json has no verified producer identity",
+    "history_source": "run130:gpt56w",
+    "judges": [
+      "gflash",
+      "luna_noweb"
+    ],
+    "max_attempts": 2,
+    "steps": 23,
+    "why_k": "2..23"
+  },
+  "confirmed_real_model_submissions": 0,
+  "driver_sha256": "59b13484d6351262e1dbd0035296ab1d9652e85591120428b14896f0eb98c3ac",
+  "frozen_inputs_sha256": {
+    "runs/run124_render/surface__B__gpt56w__op60.md": "8436c931b0e6c54e0a62d845d3cacc22dba05bc62ee75a2d4ec113535b4feb78",
+    "runs/run130_thread_e6/beads_clean.md": "a04346e4aed47b41a31902c035bac34b8ac8fa443b578bbc7f8fa7ae4659d02d",
+    "runs/run130_thread_e6/steps.json": "6c5a0a2d769ff4c73e655d2a08fdbb2884cb435816e147e87e44d83b714dd8e9",
+    "runs/run132_v2a_gemini_baseline/meta/run132__op60__gflash_web__s1.json": "f946dec337e879e842426de5c46d370fce2f1874acb54503040edfd60c87d54a",
+    "runs/run132_v2a_gemini_baseline/meta/run132__op60__gpro_web__s3.json": "f2e9a4fdb25586d6a31da663cbf65b9062a1f80ab66a048d4c1b86bea6648693",
+    "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gflash_web__s1.md": "f4fe7880f3b01aa2b00e7de1718253328ac577b11ba468986cd241bf7cca772c",
+    "runs/run132_v2a_gemini_baseline/outputs/run132__op60__gpro_web__s3.md": "cd98a3278d847a399219d28832d40fd3e88989453efe35178cd340d5349b4df9"
+  },
+  "frozen_prompt_sha256": {
+    "prompts/tooling/E7_COMPARE_v0.txt": "2a3630b12ec92df4b75bb2637f5a447ab199a7f6d680bf8cd7116a41be60a30b",
+    "prompts/tooling/MECH_AUDIT_v0.txt": "e48278e4aa7a4ddef314f3f072839dcb0f64ab575d21914cb546b5c7b4ecc99b",
+    "prompts/tooling/MECH_v1.txt": "a7759ed5a4387bb0f8a10c5840dd0c4290aa6943213218a03d900e64aff7414a",
+    "prompts/versions/E7_SURFACE_v0.txt": "e401eee186056377426ea773427057b9f2b1503476e3530f6df506ec54d44b5a",
+    "prompts/versions/WHY_GATE_v4.txt": "6e3d042d2e40be2c7f53ebd7faa971dc794590aa9cec5831074afe3c9e7e6ce1"
+  },
+  "implementation_author": "Luna",
+  "mode": "offline_only",
+  "music_acceptance": "NOT_PERFORMED",
+  "new_music_candidates": 0,
+  "production_ready": false,
+  "provider_requests": 0,
+  "r4_gate": "blocked",
+  "real_preflight": {
+    "dependencies": "not imported or verified",
+    "status": "blocked",
+    "v4": "present_unverified",
+    "v5": "partial_unusable",
+    "v6": "in_flight_not_auto_adopted"
+  },
+  "run_id": "run142_e7_flash_diag_r4",
+  "schema": "run-config-manifest/1"
+}

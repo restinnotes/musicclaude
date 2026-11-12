@@ -1,0 +1,1372 @@
+You are fresh independent mg source auditor R-W6-sources; not one of the 24 research replicates or four final closed-evidence judges. Review the three untruncated W6 reports below using actual live primary-source browsing, as of 2026-10-06. Do not trust model-attested verification, plausible URLs, snippets, HTTP200 page shells or recycled citations. Preserve original job:claim/source IDs. Focus: Use current primary CBP/USITC/Federal Register/FCC/CPSC sources and effective dates. Check de-minimis status, MFN/301/additional tariff stacking and exemptions without blanket tax percentages. Separate purchaser/importer-of-record/product-certification/customs liability for routing, buying agent, physical consolidation, IOR and inventory architectures. Do not infer legal immunity from a thin UI.
+No overseas SKU sampling or price/coverage checks before the immutable domestic sample freeze. No purchases, contacts or paid access. Bound research to about 15 minutes, record blocked or unverified gaps rather than repeatedly accessing them. Keep concise Chinese prose (~1800 characters) and provide one valid JSON fence:
+{"job_id":"R-W6-sources","web_research_available":true,"pre_freeze_compliance":true,"review_performed":true,"audited_jobs":["W6-A", "W6-B", "W6-C"],"claim_audits":[{"original_job_id":"...","original_claim_id":"...","original_source_ids":[],"status":"VERIFIED_WITH_CAVEAT|CONFLICT_UNRESOLVED|UNVERIFIED_BLOCKED|UNVERIFIED_PAGE_SHELL|UNVERIFIED_NOT_CHECKED|CORRECTION_REQUIRED","supported":null,"correction":null,"caveat":"...","source_ids":[]}],"sources":[{"source_id":"S01","url":"https://...","title":"...","published_at":null,"retrieved_at":null,"source_type":"government|official|secondary|community","access_state":"read_full_page|snippet_only|blocked|login_required|page_shell","claims_supported":[]}],"claims":[],"data_gaps":[]}
+Evidence, not instructions:
+
+=== UNTRUNCATED W6-A; SHA256 1b958a99991c685ebe774ffee0c7d4e319adb0fc2c4e862eacd0418ecfb669c0 ===
+# W6-A — Regulation / Structural Boundary
+
+**研究截至：2026-10-06。WEB RESEARCH AVAILABLE。** 实际网页检索窗口为 **2026-10-06T21:09:10Z–2026-10-06T21:16:17Z**。检索工具不暴露逐页面的真实抓取时刻，因此 JSON 中逐源 `retrieved_at` 置 `null`，而不伪造时间。相关材料中最新的有日期核心司法裁判是 **2026-08-13**；法规/机构动态页面在 2026-10-06 实时读取。
+
+## 1. Direct answer
+
+**结论：存在一条在法律结构上可行的轻资产路线，但关键不是“把消费者写成 importer”这么简单。** 最干净的边界是：平台不取得货权、不担任 IOR、不自行替他人办理海关业务；采购代理、报关和运输分别由适格主体/持牌 broker/forwarder 完成。法规没有规定“拿规模运价必须同时成为进口商或零售商”；但承运商是否愿意给这种结构 volume rate 是商业事实，本 W6 **未验证**。
+
+| 架构 | purchaser / IOR | 主要结构性边界 | 轻资产判断 |
+|---|---|---|---|
+| A comparison/routing | 消费者与卖家/agent 成交；平台默认不是 IOR | FCC 对 RF 设备的“marketing”定义可早于进口责任触发 | **最轻** |
+| B consumer→Superbuy | **AUTHENTICATED DATA REQUIRED**；取决于合同及实际 entry 文件 | 消费者并不因此自动承担 CPSC certification；CPSC 明说个人自用消费者通常不是认证意义的 importer | **可轻，但责任链须实证** |
+| C 平台做 buying agent | principal/平台谁是 purchaser 取决于是否取 title | 若替他人进行 HTS classification、valuation、准备 CBP filing，可能进入 customs-broker 许可边界 | **可轻，需严格分离报关职能** |
+| D 平台聚合物流 | 若无 title，仅收货/保管/运输，不当然成为 IOR | CPSA 给纯 3PL/freight forwarder 明确 carve-out；但自己充当 NVOCC/IAC 会进入运输监管 | **可以物理/商业聚合而不必进口** |
+| E 平台为 IOR | 平台成为适格 IOR | 直接承担 entry/reasonable-care、duty deposit；CPSC importer/eFiling；部分 FCC SDoC 责任 | **明显监管悬崖** |
+| F 自有库存/美国仓 | 平台买货并销售；通常同时叠加 E | 再增加 distributor/retailer 的 CPSC reporting/recall 等责任 | **接近传统进口零售商** |
+
+最重要的 2026 变化是：**不能再用旧的 $800 de minimis 经济模型。** CBP 当前 FAQ 说明，$800 以下、所有运输模式的商业货件均受 suspension，需 formal/informal entry；2026-08-13 CIT 又判定最高法院否定 IEEPA 加征 tariff 并没有恢复 de minimis，并支持该 suspension。且 Public Law 119-21 已规定从 **2027-07-01** 法定删除 commercial-shipment de minimis。  
+https://www.cbp.gov/trade/basic-import-export/e-commerce/faqs  
+https://www.cit.uscourts.gov/sites/cit/files/26-94.pdf  
+https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm [LTNR](https://ltnr.ca/morty/?mortyurl=https%3A%2F%2Fwww.cbp.gov%2Ftrade%2Fbasic-import-export%2Fe-commerce%2Ffaqs)
+
+## 2. Evidence table
+
+| Claim | Evidence / source / date | Confidence | Counterevidence |
+|---|---|---|---|
+| De minimis 当前不是可依赖架构 | EO 14388，2026-02-20；CBP 91 FR 37801，2026-06-24；CIT 26-94，2026-08-13。https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/ ；https://www.federalregister.gov/documents/2026/06/24/2026-12669/indefinite-suspension-of-the-de-minimis-exemption-for-mail-shipments-and-new-postal-informal-entry ；https://www.cit.uscourts.gov/sites/cit/files/26-94.pdf | High | 最高法院确实在 2026-02-20 否定 IEEPA tariff 权限；但该案未裁定 de minimis suspension，CIT 后续明确区分。 [The White House](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?trk=article-ssr-frontend-pulse_little-text-block) |
+| IOR 是真正 customs liability cliff | 19 USC 1484 要求适格 IOR entry/reasonable care；19 USC 1505 要求 IOR deposit duties。https://www.law.cornell.edu/uscode/text/19/1484 ；https://www.law.cornell.edu/uscode/text/19/1505 | High | 商业合同可以把经济成本转嫁给另一方，但不会因此改变 CBP 法定 entry 责任。 [Legal Information Institute](https://www.law.cornell.edu/uscode/text/19/1484) |
+| 自动化报关功能可触及 broker 许可 | 19 CFR 111.1 把 classification、valuation、duty、为 CBP filing 准备文件列为 customs business；纯数据传输除外；111.2 通常要求 broker license。https://www.law.cornell.edu/cfr/text/19/111.1 ；https://www.law.cornell.edu/cfr/text/19/111.2 | High | 纯购物前 tariff estimate、没有替客户准备/提交 entry，不等同于上述 customs business；精确边界仍需按产品流程审查。 [Legal Information Institute](https://www.law.cornell.edu/cfr/text/19/111.1) |
+| CPSC 责任不是简单推给终端消费者 | CPSC 规则把进口商品 certifier 与 IOR/适格 entry party 联系；并明确个人自用消费者通常不视为 certification importer；2026-07-08 eFiling 已生效。https://www.cpsc.gov/FAQ/GCC ；https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports | High | 并非所有商品都有 CPSC certificate 要求；必须逐产品判断 applicable rule。 [U.S. Consumer Product Safety Commission](https://www.cpsc.gov/FAQ/GCC) |
+| 纯物流聚合本身不必变 retailer/importer | 15 USC 2052：不取 title、仅收货/保管/运输的 3PL，以及 carrier/freight forwarder，不仅因运输行为成为 CPSA manufacturer/distributor/retailer。https://www.law.cornell.edu/uscode/text/15/2052 | High | 若平台取 title、销售、进口，或超越纯物流职能，该 carve-out 不再回答全部责任。 [Legal Information Institute](https://www.law.cornell.edu/uscode/text/15/2052) |
+| FCC 风险可能在 IOR 之前出现 | 47 CFR 2.803 的 marketing 包含 advertising/offering for sale；2.909 对进口 SDoC 产品以 importer 为 responsible party。https://www.law.cornell.edu/cfr/text/47/2.803 ；https://www.law.cornell.edu/cfr/text/47/2.909 | High | §2.1204 有“三台以内个人自用”等 import exception；但个人进口例外不能自动推出平台可公开营销未经授权设备。https://www.law.cornell.edu/cfr/text/47/2.1204 [Legal Information Institute](https://www.law.cornell.edu/cfr/text/47/2.803) |
+
+## 3. Primary sources
+
+最关键原始材料是 CIT **Axle of Dearborn**（2026-08-13）、CBP 的 2026-06-24 interim final rule、CPSC 2026-07-08 eFiling 实施公告、Public Law 119-21 §70531，以及当前 CBP/CPSC 官方 FAQ。特别值得注意：PL 119-21 已把 commercial de minimis 的法定删除日期写成 **2027-07-01**，因此即使当前行政 suspension 后续继续诉讼，也不能据此假设旧 $800 模式长期回归。https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm [GovInfo](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm)
+
+对于 marketplace 边界，FTC 的 INFORM 指南定义覆盖允许第三方卖家参与 sale/purchase/payment/storage/shipping/delivery 的 consumer-directed marketplace；2025-09-05 FTC 对 Temu 宣布 $2m INFORM settlement，是实际执法而不是理论风险。https://www.ftc.gov/business-guidance/resources/INFORMAct ；https://www.ftc.gov/news-events/news/press-releases/2025/09/online-marketplace-temu-pay-2-million-penalty-alleged-inform-act-violations [Federal Trade Commission](https://www.ftc.gov/business-guidance/resources/INFORMAct)
+
+## 4. Forum evidence
+
+社区材料只作为实施摩擦的佐证，不作为法律依据。Superbuy subreddit 上署名 “Superbuy Team”的 2026-06-30 公告已要求用户关注 CPC/GCC/eFiling；回复中又称 Superbuy 自身“不是 seller or manufacturer”，用户集中反映从国内卖家取得美国认证资料困难。该帖无法证明 Superbuy 的真实 IOR、broker 或 contractual status，因此这些字段仍为 **AUTHENTICATED DATA REQUIRED**。https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/ [Reddit](https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/)
+
+## 5. Contrary evidence
+
+轻资产 thesis 有三个重要反例/限制。第一，FCC 允许某些 RF 设备三台以内个人自用进口，所以并非所有 DTC RF shipment 都被禁止；第二，CPSA 对无 title 的 3PL 有明确保护，因此“物理碰货=零售商”是错误概括；第三，CPSC 又明确说个人消费者通常不是 certificate-responsible importer，因此也不能通过把消费者列为收件人就让产品合规责任消失。对 de minimis，当前 CIT 判决仍可能被上诉；但 2027 法定 repeal 是独立的不利事实。 [Legal Information Institute](https://www.law.cornell.edu/cfr/text/47/2.1204)
+
+## 6. Confidence
+
+**High**：de minimis、IOR/duty、customs-broker、CPSC、FCC、INFORM 的规则边界。  
+**Medium**：B/C/D 具体谁是 purchaser/IOR，因为这取决于 Superbuy/forwarder 的合同、POA、entry data 和实际 shipping line。  
+**Medium**：能够“不做 IOR 仍拿 volume discount”在法律上没有发现禁止，但**实际商业可得性未验证**。
+
+## 7. Data gaps
+
+最关键缺口是：Superbuy/Sugargoo 等对美线路的实际 Terms、POA、ACE entry/IOR 字段、bond holder、broker identity 和 DDP/DAP 安排；这些需要真实合同或去标识 entry packet，不能靠公开宣传推断，标记 **AUTHENTICATED DATA REQUIRED**。其次，若平台自己承包海运，FMC 对 NVOCC 有 licensing/financial-responsibility/tariff 规则；https://www.fmc.gov/about/bureaus-offices/bureau-of-enforcement-investigations-and-compliance-beic/office-of-compliance/ocean-transportation-intermediaries/ 。航空聚合、50 州 marketplace-facilitator/product-liability、具体 PGA/HTS 也需后续按真实流程审查。 [Federal Maritime Commission](https://www.fmc.gov/about/bureaus-offices/bureau-of-enforcement-investigations-and-compliance-beic/office-of-compliance/ocean-transportation-intermediaries/)
+
+## 8. Most surprising finding
+
+最反直觉的是两个边界同时成立：**平台只做无 title 的物流聚合，CPSA 明确允许它不因此变成 manufacturer/distributor/retailer；但终端个人消费者又通常不是 CPSC certification importer。** 因而合法轻资产结构确实有空间，但必须设计一个真实承担 certification/entry 责任的上游或适格进口主体，不能让责任链“凭空消失”。 [Legal Information Institute](https://www.law.cornell.edu/uscode/text/15/2052)
+
+## 9. What would falsify this conclusion?
+
+如果后续真实 entry packets 显示代理物流的低价线路普遍要求平台本身成为 IOR/merchant；如果 carrier 的规模价只给 NVOCC/IAC/shipper-of-record、无法通过既有持牌商实现；如果州法把这种 routing/buying-agent 模式普遍认定为 seller；或者监管机构把平台的商品页面认定为对大量未经 FCC authorization 设备的违法 marketing，那么“轻资产 + volume economics”结论会明显变弱。
+
+## 10. Suggested next experiment
+
+唯一优先实验应是**责任链文件审计，而不是更多理论搜索**：选同一代理的一条邮政线和一条 express line，获取/审阅去标识的 purchase terms、broker POA、entry type、IOR、bond、HTS filer、duty payer、CPSC certificate filer 和 transport contracting party，并逐字段映射到 A–F。该实验能直接回答“规模物流经济是否必须伴随 IOR/title”。本轮没有联系商家、购买商品或访问付费/登录数据。
+
+```json
+{
+  "job_id": "W6-A",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/",
+      "title": "Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries",
+      "published_at": "2026-02-20",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.cit.uscourts.gov/sites/cit/files/26-94.pdf",
+      "title": "Axle of Dearborn, Inc. v. Department of Commerce, Slip Op. 26-94",
+      "published_at": "2026-08-13",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.cbp.gov/trade/basic-import-export/e-commerce/faqs",
+      "title": "E-Commerce Frequently Asked Questions",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.federalregister.gov/documents/2026/06/24/2026-12669/indefinite-suspension-of-the-de-minimis-exemption-for-mail-shipments-and-new-postal-informal-entry",
+      "title": "Indefinite Suspension of the De Minimis Exemption for Mail Shipments and New Postal Informal Entry Process",
+      "published_at": "2026-06-24",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C03"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.law.cornell.edu/uscode/text/19/1484",
+      "title": "19 U.S. Code § 1484 - Entry of merchandise",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C10", "C11"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.law.cornell.edu/uscode/text/19/1505",
+      "title": "19 U.S. Code § 1505 - Payment of duties and fees",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C11"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.law.cornell.edu/cfr/text/19/111.1",
+      "title": "19 CFR § 111.1 - Definitions",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.law.cornell.edu/cfr/text/19/111.2",
+      "title": "19 CFR § 111.2 - License and permit required",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04", "C10"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.law.cornell.edu/uscode/text/15/2052",
+      "title": "15 U.S. Code § 2052 - Definitions",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C10"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.cpsc.gov/FAQ/GCC",
+      "title": "General Certificate of Conformity (GCC) FAQ",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C11"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports",
+      "title": "CPSC Implements Mandatory eFiling for Certificates of Compliance, Targeting Dangerous Foreign Imports",
+      "published_at": "2026-07-08",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C11"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.803",
+      "title": "47 CFR § 2.803 - Marketing of radio frequency devices prior to equipment authorization",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.909",
+      "title": "47 CFR § 2.909 - Responsible party",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07", "C11"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.1204",
+      "title": "47 CFR § 2.1204 - Import conditions",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.ftc.gov/business-guidance/resources/INFORMAct",
+      "title": "Informing Businesses about the INFORM Consumers Act",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/online-marketplace-temu-pay-2-million-penalty-alleged-inform-act-violations",
+      "title": "Online Marketplace Temu to Pay $2 Million Penalty for Alleged INFORM Act Violations",
+      "published_at": "2025-09-05",
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://www.fmc.gov/about/bureaus-offices/bureau-of-enforcement-investigations-and-compliance-beic/office-of-compliance/ocean-transportation-intermediaries/",
+      "title": "Ocean Transportation Intermediaries",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C09", "C10"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+      "title": "Public Law 119-21",
+      "published_at": "2025-07-04",
+      "retrieved_at": null,
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/",
+      "title": "U.S. CPSC Policy Update & Customs Compliance Guide",
+      "published_at": "2026-07-01",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C12"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "As of 2026-10-06, the commercial de minimis exemption is suspended for low-value shipments across modes; formal or informal entry and applicable duties/fees are required, and the August 13, 2026 CIT decision upheld the de minimis rescission notwithstanding the Supreme Court's separate invalidation of IEEPA tariffs.",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S03", "S04"],
+      "confidence": "high",
+      "counterevidence": "The Supreme Court held that IEEPA did not authorize the challenged tariffs, but the CIT expressly stated the de minimis rescission was not decided in that case; the CIT judgment itself may remain subject to appellate review."
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Public Law 119-21 repeals the commercial-shipment de minimis exception effective July 1, 2027.",
+      "classification": "FACT",
+      "source_ids": ["S18"],
+      "confidence": "high",
+      "counterevidence": "A future Congress could amend the statute before the effective date, but no such change was found in this bounded research."
+    },
+    {
+      "claim_id": "C03",
+      "claim": "The importer of record is the central customs-liability role: an eligible party must make entry using reasonable care, and the IOR is required to deposit estimated duties and fees.",
+      "classification": "FACT",
+      "source_ids": ["S03", "S05", "S06"],
+      "confidence": "high",
+      "counterevidence": "Commercial agreements can shift the economic incidence of duties to another party, but that does not by itself change statutory entry responsibility."
+    },
+    {
+      "claim_id": "C04",
+      "claim": "A platform that conducts classification, valuation, duty work, or prepares CBP entry documents on behalf of others can enter the customs-business licensing boundary; mere electronic transmission of received data is expressly excluded.",
+      "classification": "FACT",
+      "source_ids": ["S07", "S08"],
+      "confidence": "high",
+      "counterevidence": "A pre-purchase comparison estimate that is not prepared for or transmitted as a CBP filing is not clearly within the cited definition; exact implementation matters."
+    },
+    {
+      "claim_id": "C05",
+      "claim": "For CPSC-regulated imported finished products, certification responsibility is tied to the responsible importer/eligible entry party; CPSC states that an individual consumer purchasing for personal use is not typically treated as the importer responsible for certification, and mandatory eFiling took effect July 8, 2026.",
+      "classification": "FACT",
+      "source_ids": ["S10", "S11"],
+      "confidence": "high",
+      "counterevidence": "Not every consumer product is subject to a CPSC certification requirement; applicable rules must be determined product by product."
+    },
+    {
+      "claim_id": "C06",
+      "claim": "Under the CPSA, a third-party logistics provider that solely receives, holds, or transports goods without taking title, as well as carriers and freight forwarders, is not deemed a manufacturer, distributor, or retailer solely because of those logistics activities.",
+      "classification": "FACT",
+      "source_ids": ["S09"],
+      "confidence": "high",
+      "counterevidence": "The statutory protection does not cover additional conduct such as taking title, selling, importing in another capacity, or other activities beyond ordinary logistics."
+    },
+    {
+      "claim_id": "C07",
+      "claim": "FCC exposure can arise before a platform becomes importer of record because marketing includes advertising or offering RF devices for sale; for imported devices subject to Supplier's Declaration of Conformity the importer can be the responsible party, while limited personal-use import exceptions exist.",
+      "classification": "FACT",
+      "source_ids": ["S12", "S13", "S14"],
+      "confidence": "high",
+      "counterevidence": "The personal-use exception permits specified categories of three or fewer devices, and whether a passive comparison link itself constitutes prohibited marketing would depend on facts not resolved by the cited rules."
+    },
+    {
+      "claim_id": "C08",
+      "claim": "Moving from routing into an online marketplace can trigger INFORM Consumers Act seller-verification, disclosure, suspension and reporting-mechanism duties; federal enforcement against Temu demonstrates this is an enforced boundary.",
+      "classification": "FACT",
+      "source_ids": ["S15", "S16"],
+      "confidence": "high",
+      "counterevidence": "A comparison service or buying-agent arrangement does not automatically satisfy the statutory definition of an online marketplace; coverage depends on platform and seller relationships."
+    },
+    {
+      "claim_id": "C09",
+      "claim": "If a platform itself holds out or operates as an ocean transportation intermediary/NVOCC, separate FMC licensing, financial-responsibility and tariff-related requirements can arise.",
+      "classification": "FACT",
+      "source_ids": ["S17"],
+      "confidence": "high",
+      "counterevidence": "Using an already regulated NVOCC or forwarder does not by itself make the technology platform an NVOCC."
+    },
+    {
+      "claim_id": "C10",
+      "claim": "A legally plausible light-asset architecture exists in which the platform does not take title or become IOR and outsources customs and transport functions to eligible/licensed parties; regulation does not itself require IOR status merely to aggregate commercial demand.",
+      "classification": "INFERENCE",
+      "source_ids": ["S05", "S08", "S09", "S17"],
+      "confidence": "medium",
+      "counterevidence": "The research did not establish that carriers or buying agents will grant material volume discounts under this allocation of roles; specific carrier contracts could require a regulated shipper or intermediary."
+    },
+    {
+      "claim_id": "C11",
+      "claim": "Architectures E and F represent the clearest regulatory cliff because becoming IOR or inventory-owning importer directly adds customs duty/entry responsibility and, for relevant products, CPSC importer/eFiling and FCC responsible-party obligations.",
+      "classification": "INFERENCE",
+      "source_ids": ["S05", "S06", "S10", "S11", "S13"],
+      "confidence": "high",
+      "counterevidence": "The exact compliance burden varies by product; certification-based FCC devices can place primary technical responsibility on the certification grantee rather than automatically on every importer."
+    },
+    {
+      "claim_id": "C12",
+      "claim": "Community evidence indicates that 2026 CPSC eFiling/certificate requirements are already creating practical documentation friction for buying-agent users, but this does not establish the agent's legal IOR or seller status.",
+      "classification": "INFERENCE",
+      "source_ids": ["S19"],
+      "confidence": "low",
+      "counterevidence": "The Reddit account and user comments are not a substitute for authenticated contracts, entry records, or agency determinations."
+    }
+  ],
+  "categories": [
+    {
+      "architecture_id": "A",
+      "architecture": "comparison/routing layer",
+      "purchaser": "consumer contracts with seller or external agent",
+      "importer_of_record": "not platform by default",
+      "customs_duty": "IOR bears statutory entry/deposit obligation; economic incidence contract-dependent",
+      "certification_responsibility": "no CPSC importer role solely from comparison; FCC marketing risk may arise for RF-device advertising",
+      "customs_broker_risk": "low if no preparation or filing of customs entries",
+      "transport_regulatory_risk": "low",
+      "light_asset_feasibility": "high",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C03", "C04", "C07"]
+    },
+    {
+      "architecture_id": "B",
+      "architecture": "consumer buys through Superbuy or similar buying agent",
+      "purchaser": "AUTHENTICATED DATA REQUIRED: contract-specific",
+      "importer_of_record": "AUTHENTICATED DATA REQUIRED: entry-document-specific",
+      "customs_duty": "depends on actual IOR/entry arrangement",
+      "certification_responsibility": "consumer is not typically CPSC certification importer merely because purchase is personal",
+      "customs_broker_risk": "depends on who prepares/files entry",
+      "transport_regulatory_risk": "agent/forwarder arrangement specific",
+      "light_asset_feasibility": "potentially high but unverified",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C01", "C03", "C05"]
+    },
+    {
+      "architecture_id": "C",
+      "architecture": "platform acts as buying agent",
+      "purchaser": "principal versus agent status depends on contract and title",
+      "importer_of_record": "not automatically platform; must be determined from eligibility and entry facts",
+      "customs_duty": "IOR bears statutory deposit obligation",
+      "certification_responsibility": "rises materially if platform becomes importer",
+      "customs_broker_risk": "material if platform performs customs business for others",
+      "transport_regulatory_risk": "moderate depending logistics role",
+      "light_asset_feasibility": "medium-high with strict role separation",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C03", "C04", "C05"]
+    },
+    {
+      "architecture_id": "D",
+      "architecture": "platform aggregates shipments",
+      "purchaser": "underlying purchaser can remain unchanged if platform takes no title",
+      "importer_of_record": "aggregation alone does not establish platform as IOR",
+      "customs_duty": "remains with applicable IOR/entry arrangement",
+      "certification_responsibility": "CPSA no-title 3PL carve-out applies to logistics activity alone",
+      "customs_broker_risk": "material if platform itself prepares customs entries",
+      "transport_regulatory_risk": "can become material if platform itself is NVOCC or other regulated transportation intermediary",
+      "light_asset_feasibility": "medium-high through licensed third parties",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C04", "C06", "C09", "C10"]
+    },
+    {
+      "architecture_id": "E",
+      "architecture": "platform becomes importer of record",
+      "purchaser": "platform must have qualifying IOR status under applicable entry facts",
+      "importer_of_record": "platform",
+      "customs_duty": "platform directly responsible for IOR duty/fee deposit obligations",
+      "certification_responsibility": "direct CPSC importer/eFiling responsibility for applicable regulated goods; FCC importer responsibility for relevant SDoC equipment",
+      "customs_broker_risk": "platform may use licensed broker but remains IOR",
+      "transport_regulatory_risk": "separate from IOR status",
+      "light_asset_feasibility": "low-medium",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C03", "C05", "C07", "C11"]
+    },
+    {
+      "architecture_id": "F",
+      "architecture": "platform owns inventory / U.S. warehouse",
+      "purchaser": "platform purchases inventory for resale",
+      "importer_of_record": "typically platform if self-importing; exact structure contract-dependent",
+      "customs_duty": "E-level customs obligations if platform imports",
+      "certification_responsibility": "E-level importer obligations plus distributor/retailer safety reporting responsibilities",
+      "customs_broker_risk": "broker can be outsourced but importer responsibility remains",
+      "transport_regulatory_risk": "depends on transport activities",
+      "light_asset_feasibility": "low",
+      "regulatory_friction_score": null,
+      "evidence_claim_ids": ["C05", "C06", "C11"]
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap_id": "DG01",
+      "gap": "Actual Superbuy/Sugargoo U.S. terms, broker POA, entry type, IOR field, bond holder, duty payer and certificate filer.",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap_id": "DG02",
+      "gap": "Whether a platform can obtain meaningful forwarder/carrier volume discounts while never taking title, acting as IOR, or becoming a regulated transportation intermediary.",
+      "status": "commercial evidence required; belongs primarily to W5"
+    },
+    {
+      "gap_id": "DG03",
+      "gap": "Fifty-state marketplace-facilitator, sales-tax and product-liability treatment of a buying-agent/routing architecture.",
+      "status": "state-by-state legal review required"
+    },
+    {
+      "gap_id": "DG04",
+      "gap": "Exact TSA/IAC or FMC/NVOCC classification for any proposed physical aggregation flow.",
+      "status": "requires exact transport contracts and operating facts"
+    },
+    {
+      "gap_id": "DG05",
+      "gap": "Product-specific HTS, Section 301/232 or other duties, and Partner Government Agency requirements.",
+      "status": "intentionally not researched pre-freeze; requires frozen SKU/category facts"
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```
+=== UNTRUNCATED W6-B; SHA256 20090bcef53c54b0f1c22e4c329ba2ecade652c93db347be1187ece6c5100d19 ===
+# W6-B — Regulation / Structural Boundary
+
+**研究截至：2026-10-06。WEB RESEARCH AVAILABLE。**  
+核心来源最终复核批次：**2026-10-06T22:33:03Z**；论坛复核：**2026-10-06T22:34:11Z**；CPSC 最新公告复核：**2026-10-06T22:35:01Z**。本轮看到的最新重要已发布规则是 FCC **2026-09-11** final rule；CBP Entry Type 13 测试已于 **2026-09-22** 开始。FCC 该新规要到 **2026-10-13** 才生效，因此不能把它写成 10 月 6 日已生效规则。未做任何 SKU、海外价格或覆盖率搜索，`pre_freeze_compliance=true`。
+
+## 1. Direct answer
+
+**[INFERENCE，高置信] 核心答案是“存在轻资产合法结构，但不是旧式 de-minimis 无摩擦结构”。** 最稳健的形态是：平台不取得货权、不做 IOR、不自行从事受许可的 customs business；消费者/真实 owner-purchaser 保持交易主体，报关交给 licensed customs broker，仓储/拼包/运输交给 3PL/forwarder。美国法并没有把“物理聚合货物”本身等同于 retailer/importer；CPSA 甚至明确规定，无货权的 3PL/freight forwarder 仅因收货运输，不因此成为 manufacturer/distributor/retailer。[Legal Information Institute](https://www.law.cornell.edu/uscode/text/15/2052)
+
+| 架构 | Purchaser / IOR | 关税责任 | 产品合规跃迁 | W6-B判断 |
+|---|---|---|---|---|
+| **A Comparison/routing** | 消费者购买；平台通常非 IOR | IOR/其 bond 承担海关法责任，成本可合同转嫁消费者 | 平台最低；但若进一步成交/履约，会进入 marketplace/FCC 边界 | **最轻** |
+| **B 消费者通过 Superbuy** | Superbuy 实际代下单，但公开条款不足以证明美国入境时谁是 owner/purchaser/IOR | 必须逐线路看报关文件 | Superbuy 条款不能替代美国法责任分配 | **可轻资产；IOR 未验证** |
+| **C 平台 buying agent** | 真正代理结构可让消费者保持 principal；IOR 可是 owner/purchaser 或其 broker | 若平台替别人准备/办理报关，可能进入 customs-broker licensing | 取得货权或承担卖方功能会明显升高 | **可行但结构要刻意设计** |
+| **D 平台聚合/拼包** | 聚合本身不改变 purchaser；无货权 freight forwarder 仍需合资格 IOR/broker | 取决于 entry 结构 | 纯 3PL 有法定隔离；电池/危险品、自己经营海运会另触规则 | **可拿物流规模而不必成为 importer** |
+| **E 平台成为 IOR** | 平台即 IOR，即使未必是最终经济购买者 | bond、entry、税费/纠错责任直接落到平台 | CPSC/FCC importer 责任显著增加 | **监管悬崖** |
+| **F 自有库存/美国仓** | 通常取得货权并成为进口/销售链主体 | 平台承担并计入售价 | importer + retailer/seller 责任最强 | **已接近传统进口零售商** |
+
+**[FACT] 2026 最大结构变化是 $800 de minimis 已不能作为商业模型基础。** CBP 6 月规则分别对邮政和非邮政所有模式无限期暂停 19 U.S.C. 1321(a)(2)(C) 豁免；非邮政低值件必须走适当 formal/informal entry。邮政 Entry Type 13 又明确要求 IOR、HTS、价值、税额和 bond。[Federal Register Public Inspection](https://public-inspection.federalregister.gov/2026-12670.pdf)
+
+**[INFERENCE] 因此答案不是“平台要不要自己进口”，而是“能否把商业量聚合与法律角色拆开”。答案原则上是可以。** 但我没有找到 Superbuy 公布的美国线路 B2B volume-discount 门槛或“1000 个独立终端订单仍分别保持消费者/经纪人 IOR”的合同承诺；该部分必须标记 **AUTHENTICATED DATA REQUIRED**。
+
+## 2. Evidence table
+
+| Claim | Evidence / URL / date | Confidence | Counterevidence |
+|---|---|---:|---|
+| **C01 [FACT] de minimis 已全面暂停** | CBP 2026-06-24：[https://public-inspection.federalregister.gov/2026-12670.pdf](https://public-inspection.federalregister.gov/2026-12670.pdf)；邮政测试：[https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail](https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail) [Federal Register Public Inspection](https://public-inspection.federalregister.gov/2026-12670.pdf) | 高 | bona-fide gifts / traveler exemptions仍存在；不能说“所有小包所有豁免都消失”。 |
+| **C02 [FACT] 代他人做 customs business 有 broker 边界** | 19 CFR 111.1/111.2：[https://www.law.cornell.edu/cfr/text/19/111.1](https://www.law.cornell.edu/cfr/text/19/111.1)；[https://www.law.cornell.edu/cfr/text/19/111.2](https://www.law.cornell.edu/cfr/text/19/111.2) [Legal Information Institute](https://www.law.cornell.edu/cfr/text/19/111.1) | 高 | “mere electronic transmission”明确不属于 customs business；平台并非什么数据动作都必须持 broker license。 |
+| **C03 [FACT] CPSC eFiling 已于 2026-07-08 生效** | CPSC：[https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports](https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports)；16 CFR 1110.3：[https://www.law.cornell.edu/cfr/text/16/1110.3](https://www.law.cornell.edu/cfr/text/16/1110.3) [U.S. Consumer Product Safety Commission](https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports) | 高 | broker 即使作为 IOR，也可指定 owner/purchaser/consignee 为 CPSC certificate responsible party；个人自用消费者通常不被 CPSC 当成认证责任 importer。 |
+| **C04 [FACT] 无货权纯 3PL 有明确隔离** | 15 U.S.C. 2052：[https://www.law.cornell.edu/uscode/text/15/2052](https://www.law.cornell.edu/uscode/text/15/2052) [Legal Information Institute](https://www.law.cornell.edu/uscode/text/15/2052) | 高 | 隔离只限“solely”收货/持有/运输；一旦取得 title、销售或承担其他功能，结论改变。 |
+| **C05 [FACT] FCC责任不是简单等同于 IOR** | 47 CFR 2.1204：[https://www.law.cornell.edu/cfr/text/47/2.1204](https://www.law.cornell.edu/cfr/text/47/2.1204)；2.909：[https://www.law.cornell.edu/cfr/text/47/2.909](https://www.law.cornell.edu/cfr/text/47/2.909) [Legal Information Institute](https://www.law.cornell.edu/cfr/text/47/2.1204) | 高 | 认证设备主要由 certification grantee 负责；个人自用特定 RF 设备还有 ≤3 台例外。 |
+| **C06 [FACT] Marketplace 的 FCC 边界正在扩大** | FCC final rule 2026-09-11：[https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf](https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf) [GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf) | 高 | **截至 10/06 尚未生效**；10/13 才生效，FCC-ID display compliance 分别到 2027-03-01/06-01。 |
+| **C07 [INFERENCE] 可在不成为 IOR 的情况下获取物流规模经济** | CBP允许 forwarder/consignee 通过 licensed broker；CPSA保护无货权3PL；Superbuy当前已做仓储、合包且国际运输由第三方：[https://www.superbuy.com/en/page/guide/shoppingagent/](https://www.superbuy.com/en/page/guide/shoppingagent/) [Federal Register](https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail) | 中高 | 是否真能获得所需“平台商务价”、门槛及逐终端包裹 IOR 安排没有公开合同证据。 |
+
+## 3. Primary sources
+
+最有决定性的 primary chain 是 **CBP 2026-12670 / 2026-12668 → CPSC Part 1110/eFiling → FCC 2026-18535**。另外，INFORM Consumers Act 会在平台真正允许第三方卖家通过其进行 sale/purchase/payment/storage/shipping/delivery 时增加 marketplace seller-verification 义务：[https://www.ftc.gov/business-guidance/resources/INFORMAct](https://www.ftc.gov/business-guidance/resources/INFORMAct)。[Federal Trade Commission](https://www.ftc.gov/business-guidance/resources/INFORMAct)
+
+Superbuy 的公开操作说明确认其会代用户购买、仓储、合并包裹，且 international delivery 由指定第三方执行：[https://www.superbuy.com/en/page/about/agreement/](https://www.superbuy.com/en/page/about/agreement/)；[https://www.superbuy.com/en/page/guide/shoppingagent/](https://www.superbuy.com/en/page/guide/shoppingagent/)。这些条款**不能证明美国海关意义上的 IOR 身份**。[Superbuy](https://www.superbuy.com/en/page/about/agreement/)
+
+## 4. Forum evidence
+
+Superbuy subreddit 上一则标为公告、署名 “Superbuy Team” 的 2026-06-30/07-01 帖子称 CPSC eFiling 后，部分用户很难从中国卖家取得 CPC/GCC/测试文件；回复中的 Superbuy 账号亦表示代理本身不是 seller/manufacturer。URL：[https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/](https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/)。[Reddit](https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/)
+
+这只能证明**操作摩擦和文件可得性问题**，不能证明所有个人包裹都要证书或都会被扣；同一社区也有成功清关案例，构成反证。
+
+## 5. Contrary evidence
+
+最重要的反证恰恰支持“不要把 D/E/F 的风险错误投射到 A/B”：CPSC 明文称个人购买自用品通常不被视作认证责任 importer；纯 3PL 无货权仅运输不会因此变成 manufacturer/retailer；FCC 对部分个人自用 RF 设备允许最多三台，并且认证设备的持续技术责任首先属于 certification grantee。[Legal Information Institute](https://www.law.cornell.edu/cfr/text/16/1110.3)
+
+但反方向也存在：2026 FCC 已发布的新规则明确把“在线 listing + warehousing/order processing/billing/fulfillment”等组合纳入 marketing。即使**不取得货权**，成熟 marketplace 也不等于完全没有 FCC 平台责任。[GovInfo](https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf)
+
+## 6. Confidence
+
+总体 **medium-high**。对 de minimis、broker licensing、CPSC eFiling、3PL carve-out、FCC 现行/即将生效规则为 **high**；对 A–F 具体交易中的 purchaser/title/IOR 分配为 **medium**，因为这取决于合同、POA、bill/entry record，而不是品牌自称“agent”。本报告是架构研究，不替代针对最终合同流的法律意见。
+
+## 7. Data gaps
+
+**AUTHENTICATED DATA REQUIRED：** Superbuy/Sugargoo/BuckyDrop 各美国线路真实 ACE/entry 文件上的 IOR、broker、consignee；商业批量价门槛及“集中议价、分散直寄”是否可签；公开 Superbuy B2B 页面搜索索引曾显示 batch packing / split-to-different-users，但页面正文此次返回空内容，因此该具体能力记为 **UNVERIFIED**。另需在 SKU freeze 后逐品类验证 CPSC/FCC 所需证书是否真实存在，而不能从 HTS 或搜索 snippet 猜测。
+
+## 8. Most surprising finding
+
+**最意外的是监管边界比“是否碰货”更精确。** 美国法明确允许一个实体物理持有、拼包、运输而不因此自动成为 CPSC retailer/manufacturer；真正的 cliff 是 **title / IOR / selling / customs-business / product-certification functions**。与此同时，FCC 2026 新规又说明“无 title”也不是 marketplace 的永久安全港：功能足够深，平台义务仍会上升。[Legal Information Institute](https://www.law.cornell.edu/uscode/text/15/2052)
+
+## 9. What would falsify this conclusion?
+
+若后续真实报关文件显示规模化直邮必须由平台统一成为 IOR；或主要 forwarder 只有在平台取得 title/承担 importer liability 时才给商务价；或 CPSC/FCC 在实际执行中系统性把 buying-agent/consignee 认定为认证责任主体；或平台为生成 HTS/价值/entry 数据所做的核心自动化被认定为未经许可的 customs business，那么“轻资产 + volume logistics”的结论将显著削弱。危险品也有独立边界：执行某项 hazmat pre-transport function 的主体要对该功能负责；若平台自己成为 NVOCC/OFF，还会触发 FMC licensing/financial-responsibility 体系。[Legal Information Institute](https://www.law.cornell.edu/cfr/text/49/171.2)
+
+## 10. Suggested next experiment
+
+**唯一最值钱的 W6 下一步实验：做“同一订单、三种法律角色”的文件级 dry run。** 对已冻结后的同一合规商品，要求 forwarder + licensed broker 提供三套匿名/样例流程：①消费者为 owner/purchaser/IOR；②broker 为 IOR；③平台为 IOR。逐字段比较 POA、ACE entry、bond、HTS/PGA/CPSC 数据、invoice/title、duty debit 与 return/recall responsibility。这样能直接判定：**商业量能否聚合，而法律进口责任仍保持分散。** 在拿到这些文件前，“Superbuy 可以给 volume discount 所以无需成为 importer”只能维持 **INFERENCE，而非 FACT**。
+
+```json
+{
+  "job_id": "W6-B",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://public-inspection.federalregister.gov/2026-12670.pdf",
+      "title": "Indefinite Suspension of the De Minimis Exemption for Merchandise Arriving Through All Modes Other Than the International Postal Network",
+      "published_at": "2026-06-24",
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail",
+      "title": "Test of the New Electronic Informal Entry Process for Mail",
+      "published_at": "2026-06-24",
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C02", "C09"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/",
+      "title": "Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries",
+      "published_at": "2026-02-20",
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.law.cornell.edu/cfr/text/19/111.1",
+      "title": "19 CFR § 111.1 - Definitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.law.cornell.edu/cfr/text/19/111.2",
+      "title": "19 CFR § 111.2 - License and permit required",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C09"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports",
+      "title": "CPSC Implements Mandatory eFiling for Certificates of Compliance, Targeting Dangerous Foreign Imports",
+      "published_at": "2026-07-08",
+      "retrieved_at": "2026-10-06T22:35:01Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C10"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.law.cornell.edu/cfr/text/16/1110.3",
+      "title": "16 CFR § 1110.3 - Definitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03", "C10"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.law.cornell.edu/uscode/text/15/2052",
+      "title": "15 U.S. Code § 2052 - Definitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04", "C09", "C10"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.1204",
+      "title": "47 CFR § 2.1204 - Import conditions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.909",
+      "title": "47 CFR § 2.909 - Responsible party",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C10"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-11/pdf/2026-18535.pdf",
+      "title": "Protecting Against National Security Threats to the Communications Supply Chain Through the Equipment Authorization Program",
+      "published_at": "2026-09-11",
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06", "C10"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/INFORMAct",
+      "title": "Informing Businesses about the INFORM Consumers Act",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.superbuy.com/en/page/about/agreement/",
+      "title": "Superbuy Terms of Service",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.superbuy.com/en/page/guide/shoppingagent/",
+      "title": "Superbuy User Guidance - Shopping Agent",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08", "C09"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.superbuy.com/en/page/businessservice/?tab=channel",
+      "title": "Superbuy Business Service",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:34:11Z",
+      "source_type": "official",
+      "access_state": "snippet_only",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.faa.gov/hazmat/safecargo/resources/lithium-battery-guide",
+      "title": "Interactive Guide to Shipping Lithium Batteries",
+      "published_at": "2026-08-28",
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C11"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://www.law.cornell.edu/cfr/text/49/171.2",
+      "title": "49 CFR § 171.2 - General requirements",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C11"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://www.fmc.gov/about/bureaus-offices/bureau-of-enforcement-investigations-and-compliance-beic/office-of-compliance/ocean-transportation-intermediaries/",
+      "title": "Ocean Transportation Intermediaries",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:33:03Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C11"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.reddit.com/r/Superbuy/comments/1uk7eaq/noticeus_cpsc_policy_update_customs_compliance/",
+      "title": "Notice: U.S. CPSC Policy Update & Customs Compliance Guide",
+      "published_at": "2026-07-01",
+      "retrieved_at": "2026-10-06T22:34:11Z",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["C12"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "截至2026-10-06，19 U.S.C. 1321(a)(2)(C)的800美元de minimis行政免税已对邮政和非邮政商业进口暂停；低值商品需要适当的formal或informal entry。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02", "S03"],
+      "confidence": "high",
+      "counterevidence": "Bona fide gifts和旅客随身个人/家庭物品的独立豁免未被这些规则取消。"
+    },
+    {
+      "claim_id": "C02",
+      "claim": "平台若代表消费者从事报关、归类、估价、准备拟提交CBP的报关文件等customs business，通常需要customs broker license；仅机械传输他人提供的数据明确被排除。",
+      "classification": "FACT",
+      "source_ids": ["S02", "S04", "S05"],
+      "confidence": "high",
+      "counterevidence": "进口人可为自己账户办理customs business；部分非商业进口及特定运输活动还有法定例外。"
+    },
+    {
+      "claim_id": "C03",
+      "claim": "CPSC对受认证要求约束的进口消费品的eFiling自2026-07-08生效；进口商品的certifier通常是Part 1110定义的importer。",
+      "classification": "FACT",
+      "source_ids": ["S06", "S07"],
+      "confidence": "high",
+      "counterevidence": "当licensed broker作为IOR时，可在CPSC数据中识别owner/purchaser/consignee为证书责任方；个人为自用购买或接收商品通常不被CPSC视为认证责任importer。"
+    },
+    {
+      "claim_id": "C04",
+      "claim": "无货权且仅在通常业务中接收、持有或运输商品的3PL/freight forwarder，不会仅因该运输行为就在CPSA下被视为manufacturer、distributor或retailer。",
+      "classification": "FACT",
+      "source_ids": ["S08"],
+      "confidence": "high",
+      "counterevidence": "该保护取决于其仅从事相应物流行为且不取得title；增加销售、进口或其他职能会改变分析。"
+    },
+    {
+      "claim_id": "C05",
+      "claim": "FCC的产品责任不能简单等同于海关IOR：认证设备通常由certification grantee负责；SDoC进口设备则进口商可成为responsible party，且特定个人自用RF设备存在最多三台的进口条件。",
+      "classification": "FACT",
+      "source_ids": ["S09", "S10"],
+      "confidence": "high",
+      "counterevidence": "个人自用例外只适用于法规列明的设备和条件，不能推广到商业转售或所有无线产品。"
+    },
+    {
+      "claim_id": "C06",
+      "claim": "FCC于2026-09-11发布的新规则把在线marketplace listing与仓储、订单处理、包装、billing或fulfillment等组合明确纳入marketing，并设置FCC ID展示要求；该规则在研究截至日尚未生效。",
+      "classification": "FACT",
+      "source_ids": ["S11"],
+      "confidence": "high",
+      "counterevidence": "规则2026-10-13才生效，FCC ID展示的实际compliance dates为2027-03-01和2027-06-01，并有旧listing、低量卖家和二手设备等例外。"
+    },
+    {
+      "claim_id": "C07",
+      "claim": "纯comparison/link-out模式较不容易成为INFORM Consumers Act意义下的online marketplace；一旦平台允许第三方卖家通过其完成sale、purchase、payment、storage、shipping或delivery并与消费者存在相应平台合同，INFORM义务明显增加。",
+      "classification": "INFERENCE",
+      "source_ids": ["S12"],
+      "confidence": "medium",
+      "counterevidence": "具体产品流程可能即使没有完整checkout也满足法定定义的一部分，需要根据最终合同和功能逐项判断。"
+    },
+    {
+      "claim_id": "C08",
+      "claim": "Superbuy公开资料确认其可按用户指示采购、仓储、合并包裹，并由指定第三方进行国际运输；公开资料不足以确认每条美国线路的美国IOR或商业批量折扣结构。",
+      "classification": "FACT",
+      "source_ids": ["S13", "S14", "S15"],
+      "confidence": "medium",
+      "counterevidence": "B2B页面的搜索索引曾显示batch packing和split-to-different-users能力，但本次直接页面正文为空，因此该具体功能及商业条件为UNVERIFIED。"
+    },
+    {
+      "claim_id": "C09",
+      "claim": "存在一种法律上可行的轻资产结构：平台不取得title、不成为IOR、不自行从事受许可customs business，把报关交给licensed broker，把仓储/拼包/运输交给3PL，同时在商业层面聚合订单量。",
+      "classification": "INFERENCE",
+      "source_ids": ["S02", "S04", "S05", "S08", "S14"],
+      "confidence": "medium",
+      "counterevidence": "没有公开合同证明Superbuy或其他代理会按所需规模提供足够大的volume discount，或允许所有终端包裹保持所需的分散IOR结构。"
+    },
+    {
+      "claim_id": "C10",
+      "claim": "平台成为IOR、取得商品货权或持有美国库存会显著提高海关和产品合规责任；F类自有库存/美国仓最接近传统进口零售结构。",
+      "classification": "INFERENCE",
+      "source_ids": ["S06", "S07", "S08", "S10", "S11"],
+      "confidence": "high",
+      "counterevidence": "IOR并非在所有法规下自动等同于唯一产品认证责任人，例如broker-as-IOR的CPSC责任可分配给owner/purchaser/consignee，FCC认证设备责任也可继续属于grantee。"
+    },
+    {
+      "claim_id": "C11",
+      "claim": "即使平台避免成为IOR，若其实际承担危险品pre-transport functions或自行作为NVOCC/Ocean Freight Forwarder提供海运服务，仍会触发独立的DOT/FMC监管义务。",
+      "classification": "FACT",
+      "source_ids": ["S16", "S17", "S18"],
+      "confidence": "high",
+      "counterevidence": "这些义务与是否为customs IOR是不同维度；把相关功能外包给合规carrier/OTI可避免平台自身承担部分角色。"
+    },
+    {
+      "claim_id": "C12",
+      "claim": "Superbuy社区证据显示2026 CPSC eFiling实施后，中国国内卖家取得美国CPC/GCC/测试资料可能成为现实操作摩擦。",
+      "classification": "INFERENCE",
+      "source_ids": ["S19"],
+      "confidence": "low",
+      "counterevidence": "该证据来自社区和平台账号讨论，并存在成功清关的相反个案，不能据此估计扣关率或证明所有个人进口均需同类证书。"
+    }
+  ],
+  "categories": [
+    {
+      "architecture": "A",
+      "name": "comparison/routing layer",
+      "purchaser": "consumer",
+      "importer_of_record": "consumer/owner/purchaser or appointed licensed broker; platform normally outside role",
+      "duty_responsibility": "IOR/bonded party legally; economic cost may be passed to consumer",
+      "product_compliance_boundary": "lowest platform exposure if no title, checkout, fulfillment or customs business",
+      "regulatory_friction": "low",
+      "light_asset_feasibility": "high",
+      "confidence": "medium"
+    },
+    {
+      "architecture": "B",
+      "name": "consumer buys through Superbuy",
+      "purchaser": "contract-dependent; Superbuy publicly states it purchases following user instructions",
+      "importer_of_record": "not established by public Superbuy materials; route-specific customs documents required",
+      "duty_responsibility": "route and IOR dependent",
+      "product_compliance_boundary": "can remain relatively light, but CPSC/FCC requirements still apply to regulated goods and the actual responsible party",
+      "regulatory_friction": "medium",
+      "light_asset_feasibility": "high",
+      "confidence": "medium"
+    },
+    {
+      "architecture": "C",
+      "name": "platform acts as buying agent",
+      "purchaser": "consumer can remain principal in a genuine agency structure; exact title allocation is contractual",
+      "importer_of_record": "owner/purchaser or properly appointed licensed broker",
+      "duty_responsibility": "IOR/bonded party legally",
+      "product_compliance_boundary": "customs-broker licensing becomes critical if platform performs customs business for others",
+      "regulatory_friction": "medium",
+      "light_asset_feasibility": "medium_high",
+      "confidence": "medium"
+    },
+    {
+      "architecture": "D",
+      "name": "platform aggregates shipments",
+      "purchaser": "aggregation alone need not change purchaser",
+      "importer_of_record": "must still be an eligible owner/purchaser or broker; a nominal freight forwarder cannot simply self-file as owner",
+      "duty_responsibility": "entry-specific",
+      "product_compliance_boundary": "pure no-title 3PL has CPSA carve-out; hazmat and transportation licensing may arise from functions performed",
+      "regulatory_friction": "medium",
+      "light_asset_feasibility": "medium_high",
+      "confidence": "medium_high"
+    },
+    {
+      "architecture": "E",
+      "name": "platform becomes importer of record",
+      "purchaser": "may or may not also be economic purchaser",
+      "importer_of_record": "platform",
+      "duty_responsibility": "platform entry/bond responsibility",
+      "product_compliance_boundary": "CPSC/FCC and admissibility obligations materially increase",
+      "regulatory_friction": "high",
+      "light_asset_feasibility": "low",
+      "confidence": "high"
+    },
+    {
+      "architecture": "F",
+      "name": "platform owns inventory / US warehouse",
+      "purchaser": "platform normally takes title before downstream consumer sale",
+      "importer_of_record": "typically platform or broker acting for it",
+      "duty_responsibility": "platform economics",
+      "product_compliance_boundary": "importer plus retailer/seller responsibilities; highest exposure among studied architectures",
+      "regulatory_friction": "very_high",
+      "light_asset_feasibility": "low",
+      "confidence": "high"
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "Route-specific U.S. IOR identity and broker POA structure for Superbuy, Sugargoo and BuckyDrop",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap": "Published or contractual volume-discount thresholds and rates for commercially aggregated but individually forwarded U.S. parcels",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap": "Whether provider contracts allow platform-level commercial volume aggregation while preserving consumer/third-party broker IOR on every parcel",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap": "Superbuy B2B split-order page terms; direct page returned no body during this session",
+      "status": "UNVERIFIED"
+    },
+    {
+      "gap": "Product-by-product CPSC/FCC certificate availability and admissibility",
+      "status": "DEFER UNTIL DOMESTIC-FIRST SKU FREEZE"
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```
+=== UNTRUNCATED W6-C; SHA256 0b194b34f17487cd2df7d90f75bfbb4f5821523fa2db44cc8f48e21583b8977f ===
+# W6-C — Regulation / Structural Boundary
+
+**Research as-of：2026-10-06。** 本次网页实际抓取窗口为 **2026-10-06T22:36:52Z–22:39:14Z**。最新读到的政府材料发布日期为 **2026-10-01**（CBP Entry Type 13 信息收集通知）。以下是结构研究，不构成法律意见；未检查任何具体 SKU、海外价格或覆盖率。
+
+## 1. Direct answer / Bottom line
+
+**结论：存在一个法律上有依据的轻资产边界，但必须刻意把“信息/交易编排、报关、运输、进口、零售”拆开。**
+
+| 架构 | purchaser / IOR 边界 | 主要责任跃迁 |
+|---|---|---|
+| **A 比价/routing** | 消费者仍购买；平台通常不是 IOR | 最轻，但 RF 商品例外：FCC 把“advertising for sale”计入 marketing，纯导购并非当然免责 |
+| **B 消费者经 Superbuy** | Superbuy公开称 shopping agent；其页面称进口税由 recipient 承担；**实际美国 IOR 仍须看报关记录** | 可以保持轻，但平台条款本身不能证明法律 IOR |
+| **C 平台 buying agent** | 若消费者保持 owner/purchaser、持牌 broker 报关，平台不必当然成为 IOR | 若平台替客户做 classification/value/entry 文书，可能跨入需牌照的 customs business |
+| **D 平台集货** | 单纯无产权的收货/仓储/运输并不自动成为进口商 | CPSC 明文保护仅因运输而存在的 3PL/forwarder；但自行转售海运/航空运输会出现 FMC/TSA 独立监管 |
+| **E 平台作为 IOR** | 需具备 owner/purchaser 身份，或作为有资格的 customs broker | 关税债务、CPSC 进口商/认证/eFiling、部分 FCC responsible-party 责任显著集中到平台 |
+| **F 自营库存/美国仓** | 通常已进入 importer + retailer/distributor 结构 | CPSC 报告/召回责任增加；若同时承载第三方卖家，又触发 INFORM marketplace 义务 |
+
+因此最可证成的轻资产路径是 **A/B/C-lite/D-lite：消费者保持购买/所有权关系；持牌 customs broker 或其他合格主体做 entry；既有 forwarder/carrier 做运输；平台不取得货权、不担任 IOR，也不自行经营受牌照约束的报关业务。** 我没有找到规则规定“谈到规模物流折扣”本身会把平台变成 importer；但这是**法律结构推论，不是对某个具体商业合同的监管批准**。:chatgpt-content-reference{index="0"}
+
+## 2. Evidence table
+
+| Claim | Evidence / source / date | Counterevidence |
+|---|---|---|
+| **2026 不能沿用旧 de minimis 模型** | EO 14388 明确 §321(c) 不再适用于通常低值商业包裹；CBP 2026-06-24 又建立新的低值邮件 entry 流程。[https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/](https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/?trk=article-ssr-frontend-pulse_little-text-block&utm_source=chatgpt.com)；[https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail](https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail) | bona fide gift 等其他法定例外仍存在；不能泛化成“所有入境物永无低值例外”。 |
+| **消费者/owner-purchaser + broker 的直接包裹结构仍存在** | Entry Type 13 开放给 owner/purchaser 与其指定的持牌 broker；要求 IOR、HTS10、价值、税率、税额等。测试自 **2026-09-22** 开始；最新 CBP 资料为 **2026-10-01**。[https://www.federalregister.gov/documents/2026/10/01/2026-20170/agency-information-collection-activities-revision-entry](https://www.federalregister.gov/documents/2026/10/01/2026-20170/agency-information-collection-activities-revision-entry) | 这是 test；CBP 的 200 万 annual responses 是 PRA burden estimate，不是实际成交量。 |
+| **IOR 是真正海关责任跃迁点** | 19 USC 1484：entry 可由 owner/purchaser 或获授权持牌 broker 提交；19 CFR 141.1：进口关税是 importer 对美国的个人债务。[https://www.law.cornell.edu/uscode/text/19/1484](https://www.law.cornell.edu/uscode/text/19/1484)；[https://www.law.cornell.edu/cfr/text/19/141.1](https://www.law.cornell.edu/cfr/text/19/141.1) | broker 可替 importer 缴款，因此“谁实际付款”并不能单独识别 IOR。 |
+| **平台不可随意替消费者做报关专业工作** | 19 USC 1641 将 entry/admissibility/classification/valuation/关税及相关文件准备定义为 customs business；为他人经营通常需 broker license；“mere electronic transmission”例外。[https://www.law.cornell.edu/uscode/text/19/1641](https://www.law.cornell.edu/uscode/text/19/1641) | 自己账户的进口商可自行办理；纯数据传输也不等于 brokerage。 |
+| **CPSC 对 direct consumer 与商业 importer 区分明显** | 当前 16 CFR 1110.3 称个人自用消费者通常不被视为承担认证责任的 importer；自 **2026-07-08** 起受认证要求的进口消费品须 eFile。[https://www.law.cornell.edu/cfr/text/16/1110.3](https://www.law.cornell.edu/cfr/text/16/1110.3)；[https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Certificates](https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Certificates) | 原文是 “not typically”，不是绝对安全港；具体 consignee/owner 仍可能承担证书数据责任。 |
+| **纯物流可以与产品销售责任分离** | CPSA 明定仅收货、保管、运输且不取得 title 的 3PL，以及 carrier/freight forwarder，不会“solely”因运输成为 manufacturer/distributor/retailer。[https://www.law.cornell.edu/uscode/text/15/2052](https://www.law.cornell.edu/uscode/text/15/2052) | “solely”很重要：一旦拿货权、进口、销售或承担其他角色，保护不能继续机械套用。 |
+| **A 层对无线电子并非零责任** | 47 CFR 2.803 的 RF “marketing”明确包括 advertising for sale；进口也须满足 §2.1204 条件。[https://www.law.cornell.edu/cfr/text/47/2.803](https://www.law.cornell.edu/cfr/text/47/2.803)；[https://www.law.cornell.edu/cfr/text/47/2.1204](https://www.law.cornell.edu/cfr/text/47/2.1204) | §2.1204 有个人自用最多 3 台的有限例外，但只覆盖规定设备类型，也不能明显消除平台自身 marketing 问题。 |
+
+## 3. Primary sources
+
+核心依据以 White House、Federal Register/CBP、CPSC、FTC、FMC 及现行法条为主。特别重要的是：**2026-07-08 CPSC eFiling 已生效；2026-09-22 Entry Type 13 已启动；2026-10-01 CBP 又公布了最新 ET13 信息收集说明。** :chatgpt-content-reference{index="12"}
+
+Superbuy 官方当前页面称其提供“international shopping agent service”，并允许多件商品免费合包；同时称目的国进口税费由 recipient 承担。[https://www.superbuy.com/en/page/about/agreement/](https://www.superbuy.com/en/page/about/agreement/)；[https://www.superbuy.com/en/page/guide/feecomposition/](https://www.superbuy.com/en/page/guide/feecomposition/)。**反证：这些合同措辞无法确定美国海关系统中的实际 IOR；必须看具体线路的 entry、broker POA 与运单。**
+
+## 4. Forum evidence
+
+本轮**没有用论坛帖子建立任何法律结论**。社区经验最多能说明实际清关摩擦，不能证明 importer、FCC responsible party 或 CPSC certifier 的法定身份；因此没有把 Reddit/论坛传闻提升为 evidence。
+
+## 5. Contrary evidence
+
+最强反证有三项。第一，轻资产并非“无产品合规”：FCC marketing 定义可穿透到广告/导购。第二，物理集货虽不当然等于 IOR，但若平台自己向航空承运人 offer cargo，49 CFR 1548 对 indirect air carrier 要求 TSA-approved security program，甚至“不实际占有货物”也可能适用；海运若成为 OFF/NVOCC，则 FMC 要求许可/注册及财务担保。[https://www.law.cornell.edu/cfr/text/49/1548.5](https://www.law.cornell.edu/cfr/text/49/1548.5)；[https://www.fmc.gov/licensing-and-certification/apply-for-a-license-or-request-a-foreign-registration/](https://www.fmc.gov/licensing-and-certification/apply-for-a-license-or-request-a-foreign-registration/)。第三，一旦进入第三方 seller marketplace，INFORM Act 是真实且已执行的额外监管层；FTC 2025 年对 Temu 的首宗 INFORM 执法包括 **$2 million** 民事罚款。[https://www.ftc.gov/business-guidance/resources/INFORMAct](https://www.ftc.gov/business-guidance/resources/INFORMAct)；[https://www.ftc.gov/news-events/news/press-releases/2025/09/online-marketplace-temu-pay-2-million-penalty-alleged-inform-act-violations](https://www.ftc.gov/news-events/news/press-releases/2025/09/online-marketplace-temu-pay-2-million-penalty-alleged-inform-act-violations)
+
+## 6. Confidence
+
+**总体：medium-high。** IOR、customs broker、CPSC/FCC 边界有明确法条，confidence high；“A/B/C-lite/D-lite 可以同时取得商业量价而不成为 importer”是从这些法定角色分离推导出来，confidence medium，因为最终取决于交易合同、title/risk transfer、broker POA、运输安排及商品类别。
+
+## 7. Data gaps
+
+`AUTHENTICATED DATA REQUIRED` / 人工文件核验的最大缺口是：Superbuy/Sugargoo 等美国线路真实 entry record 上的 IOR、broker、bond、Incoterm/DDP 结构；快递专线是否以 broker/carrier 自身名义报关；平台若统一采购物流但让每个消费者保持 owner/purchaser 时，具体承运合同怎样写。商业 volume discount 的真实门槛属于 W5，本报告没有推断。FDA、NHTSA、EPA 等类别专门制度也未逐品类展开。
+
+## 8. Most surprising finding
+
+最值得注意的是**责任边界不是简单的“碰不碰货”**。CPSC 对纯运输 3PL 有明确隔离，同时对个人自用进口也给出明显缓和；但 FCC 反而可能在平台还没碰货、没做 IOR 时，就因为“advertising for sale”进入监管范围。:chatgpt-content-reference{index="19"}
+
+## 9. What would falsify this conclusion?
+
+如果实际 broker/CBP 文件表明消费者直邮模型中必须由路由平台统一成为 IOR；如果法院/FCC 明确认定普通中立比较链接不构成 §2.803 marketing；如果典型规模物流合同必须让平台取得 title 或承运人身份；如果 CPSC 把相关 direct-consumer 模式普遍认定为商业 importer；或若后续法规取消 owner/purchaser + licensed-broker 的低值包裹路径，本结论将需要重大修正。
+
+## 10. Suggested next experiment
+
+唯一最有价值的下一步是做一次**“纸面 transaction-flow audit”**：不用真实购买，也不用具体 SKU，选一个普通非受限消费品和一个 FCC RF 设备作为两个假设案例，为 A→D 分别画出 title、付款、POA、IOR、broker、carrier、consignee、CPSC certifier/FCC responsible party 字段，然后让持牌 customs broker 与美国产品合规律师逐字段书面确认。若消费者可持续作为 owner/purchaser、broker 独立报关、平台只提供数据及商业物流编排，核心轻资产边界即得到最直接验证。
+
+```json
+{
+  "job_id": "W6-C",
+  "web_research_available": true,
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/02/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries/",
+      "title": "Continuing the Suspension of Duty-Free De Minimis Treatment for All Countries",
+      "published_at": "2026-02-20",
+      "retrieved_at": "2026-10-06T22:38:20Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail",
+      "title": "Test of the New Electronic Informal Entry Process for Mail",
+      "published_at": "2026-06-24",
+      "retrieved_at": "2026-10-06T22:38:20Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C01", "C02", "C03"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.federalregister.gov/documents/2026/10/01/2026-20170/agency-information-collection-activities-revision-entry",
+      "title": "Agency Information Collection Activities; Revision; Entry",
+      "published_at": "2026-10-01",
+      "retrieved_at": "2026-10-06T22:38:20Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C02", "C03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.law.cornell.edu/uscode/text/19/1484",
+      "title": "19 U.S. Code § 1484 - Entry of merchandise",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:39Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.law.cornell.edu/cfr/text/19/141.1",
+      "title": "19 CFR § 141.1 - Liability of importer for duties",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:39Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C03"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.law.cornell.edu/uscode/text/19/1641",
+      "title": "19 U.S. Code § 1641 - Customs brokers",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:39Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C04"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Certificates",
+      "title": "Update: Certificates of Compliance and eFiling",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.law.cornell.edu/cfr/text/16/1110.3",
+      "title": "16 CFR § 1110.3 - Definitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.law.cornell.edu/uscode/text/15/2052",
+      "title": "15 U.S. Code § 2052 - Definitions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C05", "C07"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.803",
+      "title": "47 CFR § 2.803 - Marketing of radio frequency devices prior to equipment authorization",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.1204",
+      "title": "47 CFR § 2.1204 - Import conditions",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.law.cornell.edu/cfr/text/47/2.909",
+      "title": "47 CFR § 2.909 - Responsible party",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C06"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.superbuy.com/en/page/about/agreement/",
+      "title": "Terms of Service - Superbuy",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:39:14Z",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C09"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://www.superbuy.com/en/page/guide/feecomposition/",
+      "title": "Superbuy Fees & Pricing / Fee Composition",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:39:14Z",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["C09"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://www.fmc.gov/licensing-and-certification/apply-for-a-license-or-request-a-foreign-registration/",
+      "title": "Apply for a License or Request a Foreign Registration",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:39:08Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S16",
+      "url": "https://www.law.cornell.edu/cfr/text/49/1548.5",
+      "title": "49 CFR § 1548.5 - Adoption and implementation of the security program",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:39:08Z",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["C07"]
+    },
+    {
+      "source_id": "S17",
+      "url": "https://www.ftc.gov/business-guidance/resources/INFORMAct",
+      "title": "Informing Businesses about the INFORM Consumers Act",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S18",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/online-marketplace-temu-pay-2-million-penalty-alleged-inform-act-violations",
+      "title": "Online Marketplace Temu to Pay $2 Million Penalty for Alleged INFORM Act Violations",
+      "published_at": "2025-09",
+      "retrieved_at": "2026-10-06T22:38:14Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    },
+    {
+      "source_id": "S19",
+      "url": "https://www.cpsc.gov/Business--Manufacturing/Recall-Guidance/Duty-to-Report-to-CPSC-Rights-and-Responsibilities-of-Businesses",
+      "title": "Duty to Report to CPSC: Rights and Responsibilities of Businesses",
+      "published_at": null,
+      "retrieved_at": "2026-10-06T22:38:39Z",
+      "source_type": "government",
+      "access_state": "read_full_page",
+      "claims_supported": ["C08"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim": "As of 2026-10-06, ordinary commercial low-value imports cannot rely on the former Section 321 de minimis duty-free model; appropriate entry and applicable duties/fees are required under the post-suspension regime.",
+      "classification": "FACT",
+      "source_ids": ["S01", "S02"],
+      "confidence": "high",
+      "counterevidence": "Separate statutory treatment remains for certain bona fide gifts and other narrow exceptions; suspension should not be generalized beyond its scope."
+    },
+    {
+      "claim_id": "C02",
+      "claim": "CBP's Entry Type 13 test demonstrates a current legal/operational path in which an owner or purchaser, or a properly appointed licensed customs broker, can make electronic informal mail entry without a comparison platform itself becoming IOR.",
+      "classification": "FACT",
+      "source_ids": ["S02", "S03"],
+      "confidence": "high",
+      "counterevidence": "Entry Type 13 is a voluntary test and its published response volumes are Paperwork Reduction Act estimates, not evidence of actual market adoption."
+    },
+    {
+      "claim_id": "C03",
+      "claim": "The importer-of-record boundary is a major architecture transition: qualifying owner/purchaser or licensed broker makes entry, and import duties constitute a debt of the importer.",
+      "classification": "FACT",
+      "source_ids": ["S02", "S04", "S05"],
+      "confidence": "high",
+      "counterevidence": "A broker can act as IOR in some structures and can remit duties, so payment flow alone does not identify the legal importer."
+    },
+    {
+      "claim_id": "C04",
+      "claim": "A platform that performs classification, valuation, admissibility or prepares customs documents for consumers risks conducting regulated customs business; mere electronic transmission of received data is expressly excluded.",
+      "classification": "FACT",
+      "source_ids": ["S06"],
+      "confidence": "high",
+      "counterevidence": "An importer conducting customs business solely for its own account does not require a broker license, and pure data transmission is outside the statutory customs-business definition."
+    },
+    {
+      "claim_id": "C05",
+      "claim": "CPSC responsibility changes materially when the platform becomes the commercial importer: regulated imports generally require importer certification/eFiling from July 8, 2026, while CPSC says it will not typically consider a personal-use consumer the importer responsible for certification; transport-only 3PLs also have a statutory role carve-out.",
+      "classification": "FACT",
+      "source_ids": ["S07", "S08", "S09"],
+      "confidence": "high",
+      "counterevidence": "The consumer language is 'not typically,' not an absolute exemption, and the 3PL protection applies only when the entity's role is solely receiving, holding or transporting without taking title."
+    },
+    {
+      "claim_id": "C06",
+      "claim": "A pure comparison/routing layer can still face FCC issues for RF devices because FCC marketing includes advertising for sale; imported SDoC equipment can make the importer the responsible party.",
+      "classification": "FACT",
+      "source_ids": ["S10", "S11", "S12"],
+      "confidence": "high",
+      "counterevidence": "FCC rules contain a narrow personal-use import exception for three or fewer devices in specified categories; whether a particular neutral comparison interface constitutes prohibited marketing is fact-dependent."
+    },
+    {
+      "claim_id": "C07",
+      "claim": "Physical or commercial logistics aggregation does not by itself make the platform an importer, but operating as a transportation intermediary can trigger separate regimes such as TSA indirect-air-carrier security requirements or FMC OTI/NVOCC licensing and financial responsibility.",
+      "classification": "FACT",
+      "source_ids": ["S09", "S15", "S16"],
+      "confidence": "high",
+      "counterevidence": "Using an already regulated carrier/forwarder and merely negotiating commercial rates need not make the platform itself the regulated transportation intermediary."
+    },
+    {
+      "claim_id": "C08",
+      "claim": "Moving into inventory/retail or a third-party marketplace creates additional obligations independent of customs status, including CPSC hazard reporting for manufacturers/importers/distributors/retailers and INFORM Act duties for qualifying online marketplaces.",
+      "classification": "FACT",
+      "source_ids": ["S17", "S18", "S19"],
+      "confidence": "high",
+      "counterevidence": "INFORM's marketplace obligations concern third-party sellers and do not by themselves turn an own-inventory retailer into a third-party marketplace."
+    },
+    {
+      "claim_id": "C09",
+      "claim": "Superbuy's public operating model is consistent with a shopping-agent/forwarding structure in which users direct purchases, parcels may be consolidated, and destination customs charges are described as borne by the recipient, but these public terms do not establish the actual U.S. IOR for each route.",
+      "classification": "FACT",
+      "source_ids": ["S13", "S14"],
+      "confidence": "medium",
+      "counterevidence": "Actual legal status depends on carrier contracts, entry filings, broker powers of attorney and route-specific customs practices, none of which were available on the public pages reviewed."
+    },
+    {
+      "claim_id": "C10",
+      "claim": "A plausible light-asset architecture can obtain commercially negotiated logistics scale while keeping the consumer/qualified broker as the customs-side principal, provided the platform avoids taking title, acting as IOR, unlicensed customs brokerage, or independently operating regulated transportation services.",
+      "classification": "INFERENCE",
+      "source_ids": ["S02", "S04", "S06", "S09", "S15", "S16"],
+      "confidence": "medium",
+      "counterevidence": "No source reviewed constitutes regulatory approval of this exact business model, and particular logistics contracts may allocate title, IOR, consignee or carrier functions differently."
+    }
+  ],
+  "categories": [
+    {
+      "architecture": "A_comparison_routing",
+      "likely_purchaser": "consumer",
+      "importer_of_record": "route-dependent; platform need not be IOR",
+      "duty_responsibility": "importer/IOR",
+      "product_compliance_boundary": "low for ordinary goods; FCC marketing exposure can arise for RF devices",
+      "regulatory_friction": "low_to_medium",
+      "source_ids": ["S10", "S11"]
+    },
+    {
+      "architecture": "B_consumer_buys_through_superbuy",
+      "likely_purchaser": "consumer acting through shopping agent, subject to actual contract",
+      "importer_of_record": "AUTHENTICATED DATA REQUIRED / route-specific customs record required",
+      "duty_responsibility": "Superbuy public page states destination import taxes are borne by recipient; legal IOR still unverified",
+      "product_compliance_boundary": "depends on actual IOR and product regime",
+      "regulatory_friction": "medium",
+      "source_ids": ["S13", "S14"]
+    },
+    {
+      "architecture": "C_platform_buying_agent",
+      "likely_purchaser": "fact- and contract-dependent",
+      "importer_of_record": "consumer/owner-purchaser or licensed broker can remain IOR if structured accordingly",
+      "duty_responsibility": "IOR/importer",
+      "product_compliance_boundary": "customs-broker licensing risk if platform prepares entry/classification/valuation for others",
+      "regulatory_friction": "medium",
+      "source_ids": ["S04", "S05", "S06"]
+    },
+    {
+      "architecture": "D_platform_aggregates_shipments",
+      "likely_purchaser": "can remain consumer if platform does not take title",
+      "importer_of_record": "does not automatically shift merely because of physical aggregation",
+      "duty_responsibility": "IOR/importer",
+      "product_compliance_boundary": "CPSC transport-only carve-out possible; TSA/FMC transportation-intermediary rules may separately apply",
+      "regulatory_friction": "medium_to_high",
+      "source_ids": ["S09", "S15", "S16"]
+    },
+    {
+      "architecture": "E_platform_importer_of_record",
+      "likely_purchaser": "platform generally must qualify as owner/purchaser or act through an eligible broker structure",
+      "importer_of_record": "platform",
+      "duty_responsibility": "platform/importer",
+      "product_compliance_boundary": "CPSC importer certification/eFiling; FCC importer responsible-party exposure where applicable",
+      "regulatory_friction": "high",
+      "source_ids": ["S04", "S05", "S07", "S08", "S12"]
+    },
+    {
+      "architecture": "F_platform_inventory_us_warehouse",
+      "likely_purchaser": "platform for inventory acquisition",
+      "importer_of_record": "typically platform or its import structure",
+      "duty_responsibility": "platform/import structure",
+      "product_compliance_boundary": "importer plus retailer/distributor reporting and recall obligations; INFORM if qualifying third-party marketplace",
+      "regulatory_friction": "very_high",
+      "source_ids": ["S17", "S18", "S19"]
+    }
+  ],
+  "sku_candidates": [],
+  "data_gaps": [
+    {
+      "gap": "Actual IOR, broker, bond and Incoterm/DDP structure used by Superbuy/Sugargoo/BuckyDrop U.S. routes",
+      "required_evidence": "real entry documents, carrier/broker terms or authenticated shipment records",
+      "status": "AUTHENTICATED DATA REQUIRED"
+    },
+    {
+      "gap": "Whether a proposed platform's negotiated parcel-volume contract would make it an indirect air carrier, NVOCC/OFF, consignee or principal",
+      "required_evidence": "specific carrier/forwarder contract and legal review",
+      "status": "unresolved"
+    },
+    {
+      "gap": "Actual adoption and operating performance of Entry Type 13 after its September 22, 2026 launch",
+      "required_evidence": "CBP operational statistics rather than PRA estimates",
+      "status": "unresolved"
+    },
+    {
+      "gap": "Product-category-specific regimes outside the core CPSC/FCC analysis, including FDA, EPA and NHTSA where relevant",
+      "required_evidence": "category-specific regulatory analysis after domestic sample freeze",
+      "status": "not_researched_in_W6-C"
+    },
+    {
+      "gap": "Commercial thresholds for logistics volume discounts",
+      "required_evidence": "real carrier/forwarder quotations or W5 research",
+      "status": "outside_W6_scope"
+    }
+  ],
+  "pre_freeze_compliance": true
+}
+```

@@ -1,0 +1,916 @@
+{
+  "job_id": "W4-C-batch04",
+  "parent_replicate": "W4-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "frozen_sample_sha256": "4e882003a038fc557633b77d0ff9ac4d28f4f4cbf42feac78ef30d38dbbbd185",
+  "as_of": "2026-10-06",
+  "assigned_sku_ids": [
+    "C10-S01",
+    "C10-S02",
+    "C10-S03",
+    "C11-S01",
+    "C11-S02",
+    "C11-S03",
+    "C12-S01",
+    "C12-S02",
+    "C12-S03"
+  ],
+  "categories": [
+    {
+      "category_id": "C10",
+      "status": "completed_with_access_limits"
+    },
+    {
+      "category_id": "C11",
+      "status": "completed_with_access_limits"
+    },
+    {
+      "category_id": "C12",
+      "status": "completed_with_access_limits"
+    }
+  ],
+  "comparison_endpoint": {
+    "destination_country": "US",
+    "destination_zip": "10001",
+    "price_basis": "ordinary_public_delivered_price_before_US_sales_tax",
+    "US_sales_tax": {
+      "included": false,
+      "observed": false,
+      "value": null,
+      "note": "No checkout performed; tax is unobserved, not assumed zero."
+    },
+    "member_price": null,
+    "88vip_price": null,
+    "targeted_coupon": null,
+    "china_national_subsidy": null
+  },
+  "matching_policy": {
+    "A": "exact brand+model+capacity/version+region+bundle",
+    "B": "same OEM with different branding only when strong OEM evidence exists",
+    "C": "functional comparable",
+    "cross_bucket_savings_allowed": false
+  },
+  "observation_summary": {
+    "sku_count": 9,
+    "platform_sku_cells": 18,
+    "temu": {
+      "NOT_OBSERVED": 9,
+      "BLOCKED": 0,
+      "LOGIN_REQUIRED": 0,
+      "VERIFIED_UNAVAILABLE": 0,
+      "verified_offers": 0
+    },
+    "aliexpress": {
+      "NOT_OBSERVED": 5,
+      "BLOCKED": 4,
+      "LOGIN_REQUIRED": 0,
+      "VERIFIED_UNAVAILABLE": 0,
+      "verified_offers": 0
+    },
+    "match_counts": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    },
+    "critical_transaction_fields_missing_cells": 18,
+    "critical_transaction_fields_missing_rate": 1.0,
+    "scope_note": "Batch observation missingness only; not a full-market or full-sample coverage rate."
+  },
+  "shipment_structures": [
+    {
+      "structure_id": "1",
+      "definition": null,
+      "status": "unresolved",
+      "quote": null,
+      "tariff": null,
+      "reason": "Four-structure mapping not supplied in batch prompt; no verified platform offer."
+    },
+    {
+      "structure_id": "2",
+      "definition": null,
+      "status": "unresolved",
+      "quote": null,
+      "tariff": null,
+      "reason": "Four-structure mapping not supplied in batch prompt; no verified platform offer."
+    },
+    {
+      "structure_id": "3",
+      "definition": null,
+      "status": "unresolved",
+      "quote": null,
+      "tariff": null,
+      "reason": "Four-structure mapping not supplied in batch prompt; no verified platform offer."
+    },
+    {
+      "structure_id": "4",
+      "definition": null,
+      "status": "unresolved",
+      "quote": null,
+      "tariff": null,
+      "reason": "Four-structure mapping not supplied in batch prompt; no verified platform offer."
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": null,
+      "web_ref": "turn417789view0",
+      "title": "Temu direct search URL access test - Roborock P20 Max",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": null,
+      "web_ref": "turn417789view1",
+      "title": "Temu direct search URL access test - Insta360 GO 3S",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K01"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": null,
+      "web_ref": "turn218596search0",
+      "title": "Pricearchive index - Roborock P20 Max AliExpress item 1005013026385525",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K02",
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": null,
+      "web_ref": "turn852527view1",
+      "title": "AliExpress original item 1005013026385525 access attempt",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K02"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": null,
+      "web_ref": "turn218596search2",
+      "title": "Pricearchive index - WORX WU130X AliExpress item 1005012312044183",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03",
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": null,
+      "web_ref": "turn852527view2",
+      "title": "AliExpress original WU130X item access attempt",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": null,
+      "web_ref": "turn383977search0",
+      "title": "Pricearchive index - Insta360 GO 3S AliExpress item 1005009689106522",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04",
+        "K06"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": null,
+      "web_ref": "turn852527view3",
+      "title": "AliExpress original GO 3S item access attempt",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "blocked",
+      "claims_supported": [
+        "K04"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": null,
+      "web_ref": "turn387412search0",
+      "title": "Roborock official mall - P20 Max water-tank and plumbing variants",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": null,
+      "web_ref": "turn387412search4",
+      "title": "DJI ROMO P Water Tank Version - DJI Store",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": null,
+      "web_ref": "turn860631search0",
+      "title": "Sony ILCE-7CM2L setup - SEL2860 kit lens",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S12",
+      "url": null,
+      "web_ref": "turn804867search0",
+      "title": "Sony Alpha 7 V ILCE-7M5/B - Body Only",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S13",
+      "url": null,
+      "web_ref": "turn387412search1",
+      "title": "Insta360 GO 3S official store - color/capacity/bundle options",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K11"
+      ]
+    },
+    {
+      "source_id": "S14",
+      "url": null,
+      "web_ref": "turn914808reddit22",
+      "title": "Reddit r/Aliexpress - GO 3S third-party listing discussion",
+      "published_at": "2025-05-09",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K12"
+      ]
+    },
+    {
+      "source_id": "S15",
+      "url": null,
+      "web_ref": "turn914808reddit27",
+      "title": "Reddit r/Insta360 - AliExpress import/authenticity discussion",
+      "published_at": "2026-08-05",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K13"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "No assigned SKU produced a Temu exact/OEM/comparable original product page that could be directly verified in this research pass; direct Temu search URLs were inaccessible in the research channel.",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "confidence": "medium",
+      "counterevidence": "Search-index incompleteness or geo-personalized listings may create false negatives; therefore no VERIFIED_UNAVAILABLE claim."
+    },
+    {
+      "claim_id": "K02",
+      "claim": "A secondary index identifies an AliExpress Roborock P20 Max model-family candidate, but the original item page was blocked and does not establish either frozen P20 Max variant.",
+      "classification": "FACT",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "Secondary index presence is evidence against claiming model-family absence."
+    },
+    {
+      "claim_id": "K03",
+      "claim": "A secondary index identifies a WU130X candidate described as without battery and charger; the original AliExpress page was blocked, so it cannot establish frozen WU130X.1 2.0Ah single-battery exact coverage.",
+      "classification": "FACT",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "confidence": "high",
+      "counterevidence": "The indexed model family may still have another unobserved exact bundle."
+    },
+    {
+      "claim_id": "K04",
+      "claim": "A secondary index identifies a GO 3S model-family candidate, but its indexed title does not establish Arctic White 64GB Standard Bundle and the original AliExpress page was blocked.",
+      "classification": "FACT",
+      "source_ids": [
+        "S07",
+        "S08",
+        "S13"
+      ],
+      "confidence": "high",
+      "counterevidence": "Another exact variant listing may exist but was not observed."
+    },
+    {
+      "claim_id": "K05",
+      "claim": "Across 18 platform-SKU cells there were zero original-page-verified A, B, or C offers in this batch pass.",
+      "classification": "FACT",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "confidence": "medium",
+      "counterevidence": "Platform access limitations prevent interpreting zero verified offers as zero market supply."
+    },
+    {
+      "claim_id": "K06",
+      "claim": "Secondary AliExpress indexes are counterevidence to any assertion that P20 Max, WU130X, or GO 3S model families are definitely absent from AliExpress.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S07"
+      ],
+      "confidence": "medium",
+      "counterevidence": "Indexes may be stale and do not prove current stock, exact variant, destination eligibility, seller, or delivered price."
+    },
+    {
+      "claim_id": "K07",
+      "claim": "Roborock officially separates P20 Max water-tank and automatic-plumbing variants.",
+      "classification": "FACT",
+      "source_ids": [
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": null
+    },
+    {
+      "claim_id": "K08",
+      "claim": "DJI officially defines a ROMO P Water Tank Version in the ROMO product family.",
+      "classification": "FACT",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "high",
+      "counterevidence": null
+    },
+    {
+      "claim_id": "K09",
+      "claim": "Sony documents ILCE-7CM2L as the Alpha 7C II kit using the SEL2860 FE 28-60mm lens.",
+      "classification": "FACT",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "high",
+      "counterevidence": null
+    },
+    {
+      "claim_id": "K10",
+      "claim": "Sony US lists ILCE-7M5/B Alpha 7 V with a distinct Body Only style.",
+      "classification": "FACT",
+      "source_ids": [
+        "S12"
+      ],
+      "confidence": "high",
+      "counterevidence": null
+    },
+    {
+      "claim_id": "K11",
+      "claim": "Insta360's official product page treats GO 3S color, capacity, and bundle as explicit variant dimensions.",
+      "classification": "FACT",
+      "source_ids": [
+        "S13"
+      ],
+      "confidence": "high",
+      "counterevidence": null
+    },
+    {
+      "claim_id": "K12",
+      "claim": "Community discussion reports third-party/unbranded GO 3S listings on AliExpress and recommends seller/authenticity checks; it is not proof of counterfeit status.",
+      "classification": "FACT",
+      "source_ids": [
+        "S14"
+      ],
+      "confidence": "medium",
+      "counterevidence": "Community reports are anecdotal and seller/listing-specific."
+    },
+    {
+      "claim_id": "K13",
+      "claim": "Community reports indicate import duty, tax, delivery region and warranty can materially affect apparent AliExpress savings.",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S15"
+      ],
+      "confidence": "low",
+      "counterevidence": "Anecdotal experiences do not establish costs for ZIP10001 or any assigned listing."
+    }
+  ],
+  "coverage": [
+    {
+      "sku_id": "C10-S01",
+      "category_id": "C10",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"Roborock P20 Max\" A2950RR water tank",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact indexed original product page surfaced; direct Temu search URL inaccessible via research channel."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [
+          {
+            "url": null,
+            "seller": null,
+            "item": "1005013026385525 (secondary-index candidate only)",
+            "match_bucket": null,
+            "evidence": "Model-family title P20 Max only; frozen non-plumbing water-tank variant not proven; original AliExpress page blocked.",
+            "exact_variant": null,
+            "inventory": null,
+            "US_warehouse_evidence": null,
+            "currency": null,
+            "price": null,
+            "delivery": null,
+            "price_type": null,
+            "access_state": "blocked_original_page",
+            "observed_at": "2026-10-06",
+            "source_ids": [
+              "S03",
+              "S04",
+              "S09"
+            ]
+          }
+        ],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"Roborock P20 Max\" A2950RR water tank",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "Original AliExpress candidate page inaccessible; secondary indexed price/seller/stock not accepted as transaction evidence."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "P20 Max water-tank and plumbing variants cannot be merged.",
+        "No savings computed."
+      ]
+    },
+    {
+      "sku_id": "C10-S02",
+      "category_id": "C10",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"Roborock P20 Max\" A2950RR automatic plumbing",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact indexed original product page surfaced; direct Temu search inaccessible."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [
+          {
+            "url": null,
+            "seller": null,
+            "item": "1005013026385525 (secondary-index candidate only)",
+            "match_bucket": null,
+            "evidence": "Generic P20 Max candidate does not prove automatic water-supply/drain variant; original page blocked.",
+            "exact_variant": null,
+            "inventory": null,
+            "US_warehouse_evidence": null,
+            "currency": null,
+            "price": null,
+            "delivery": null,
+            "price_type": null,
+            "access_state": "blocked_original_page",
+            "observed_at": "2026-10-06",
+            "source_ids": [
+              "S03",
+              "S04",
+              "S09"
+            ]
+          }
+        ],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"Roborock P20 Max\" A2950RR automatic plumbing",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "Original page inaccessible; indexed model-family evidence insufficient for bucket A."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "Not merged with C10-S01.",
+        "No savings computed."
+      ]
+    },
+    {
+      "sku_id": "C10-S03",
+      "category_id": "C10",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"DJI ROMO P\" \"Water Tank\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"DJI ROMO P\" \"Water Tank\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact robot offer surfaced; no inference from accessories or snippets."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head_status_verified remains false.",
+        "DJI official regional page verifies variant definition only, not platform coverage."
+      ]
+    },
+    {
+      "sku_id": "C11-S01",
+      "category_id": "C11",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"DZC1050-26BT\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"DZC1050-26BT\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "Mains voltage and plug compatibility remain unobserved for US use."
+      ]
+    },
+    {
+      "sku_id": "C11-S02",
+      "category_id": "C11",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"WJZ1601S\" 16V dual battery",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"WJZ1601S\" 16V dual battery",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "Battery/charger region compatibility remains null."
+      ]
+    },
+    {
+      "sku_id": "C11-S03",
+      "category_id": "C11",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"WU130X.1\" 12V 40Nm 2.0Ah",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [
+          {
+            "url": null,
+            "seller": null,
+            "item": "1005012312044183 (secondary-index candidate only)",
+            "match_bucket": null,
+            "evidence": "Indexed title says WU130X 12V 40Nm but without battery and charger; does not establish WU130X.1 or frozen 2.0Ah single-battery bundle; original page blocked.",
+            "exact_variant": null,
+            "inventory": null,
+            "US_warehouse_evidence": null,
+            "currency": null,
+            "price": null,
+            "delivery": null,
+            "price_type": null,
+            "access_state": "blocked_original_page",
+            "observed_at": "2026-10-06",
+            "source_ids": [
+              "S05",
+              "S06"
+            ]
+          }
+        ],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"WU130X.1\" 12V 40Nm 2.0Ah",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "Original candidate page inaccessible; secondary price and seller data rejected."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head_status_verified remains false.",
+        "Wrong/no-battery bundle cannot be bucket A.",
+        "OEM relationship not inferred from appearance/specification similarity."
+      ]
+    },
+    {
+      "sku_id": "C12-S01",
+      "category_id": "C12",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"Sony A7C II\" silver \"28-60\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"Sony A7C II\" silver \"28-60\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact silver ILCE-7CM2L/28-60 original offer surfaced."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "Body-only or other-color offers would not be exact."
+      ]
+    },
+    {
+      "sku_id": "C12-S02",
+      "category_id": "C12",
+      "head_status_verified": true,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"ILCE-7M5\" \"Alpha 7 V\" body only",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"ILCE-7M5\" \"Alpha 7 V\" body only",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head/exact flags preserved.",
+        "Sony official US page verifies Body Only distinction but not marketplace coverage."
+      ]
+    },
+    {
+      "sku_id": "C12-S03",
+      "category_id": "C12",
+      "head_status_verified": false,
+      "exact_variant_verified": true,
+      "temu": {
+        "observation_status": "NOT_OBSERVED",
+        "offers": [],
+        "search_scope": [
+          {
+            "query": "site:temu.com \"Insta360 GO 3S\" \"Arctic White\" 64GB \"Standard Bundle\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "No exact original product page surfaced; direct Temu search URL inaccessible."
+        ]
+      },
+      "aliexpress": {
+        "observation_status": "BLOCKED",
+        "offers": [
+          {
+            "url": null,
+            "seller": null,
+            "item": "1005009689106522 (secondary-index candidate only)",
+            "match_bucket": null,
+            "evidence": "Indexed title establishes GO 3S model family only; Arctic White, 64GB and Standard Bundle are not established; original AliExpress page blocked.",
+            "exact_variant": null,
+            "inventory": null,
+            "US_warehouse_evidence": null,
+            "currency": null,
+            "price": null,
+            "delivery": null,
+            "price_type": null,
+            "access_state": "blocked_original_page",
+            "observed_at": "2026-10-06",
+            "source_ids": [
+              "S07",
+              "S08",
+              "S13"
+            ]
+          }
+        ],
+        "search_scope": [
+          {
+            "query": "site:aliexpress.com/item \"Insta360 GO 3S\" \"Arctic White\" 64GB \"Standard Bundle\"",
+            "destination": "US ZIP10001",
+            "observed_at": "2026-10-06"
+          }
+        ],
+        "access_limitations": [
+          "Original item inaccessible; secondary indexed price not accepted as ordinary delivered price."
+        ]
+      },
+      "china_head_us_middle_tail_status": "unresolved",
+      "caveats": [
+        "Frozen head_status_verified remains false.",
+        "Generic GO 3S cannot be bucket A without color+capacity+bundle.",
+        "Community authenticity concerns are not treated as counterfeit proof."
+      ]
+    }
+  ],
+  "data_gaps": [
+    "Temu direct in-site search pages were inaccessible through the research channel; exact external searches yielded no verified original offers.",
+    "AliExpress original pages for the three indexed model families evaluated against four frozen SKUs were inaccessible.",
+    "No verified seller identity for any assigned SKU.",
+    "No verified current inventory for any assigned SKU.",
+    "No verified US-warehouse evidence for any assigned SKU.",
+    "No ordinary public delivered price to ZIP10001 for any assigned SKU.",
+    "No verified shipping component price, package weight or package dimensions.",
+    "No tariff classification, tariff-source determination or tariff-rate assumption was manufactured.",
+    "US sales tax was not observed because no checkout was performed; it is excluded from the comparison endpoint rather than set to zero.",
+    "Definitions of the required four shipment structures were not supplied in this batch prompt, so all four were preserved separately as unresolved.",
+    "NOT_OBSERVED must not be interpreted as out-of-stock or unavailable; BLOCKED must not be interpreted as available.",
+    "All source attestations remain subject to coordinator review."
+  ]
+}

@@ -1,0 +1,1497 @@
+{
+  "experiment": "S06_compact_experiment",
+  "purpose": "仅压缩重复搭景、同义解释与转场套话，以平行句减少阅读开销；保持完整自然中文及独立画面、动因、方向、读法。",
+  "source_file": "D:\\musicclaude\\_bead_rebuild_20261017\\drafts\\early.json",
+  "source_sha256": "D0CADDBCA20CF893108EADBC95E081CB99A930E6FA4ACCF41CFC2DA1FE718977",
+  "output_file": "D:\\musicclaude\\_bead_rebuild_20261017\\drafts\\S06_compact_experiment.json",
+  "segment": "S06",
+  "constraints": [
+    "只含S06page，不改early.json及其他段；不做新研究，不调用外部模型。",
+    "分母仍为93；85项正文索引及8项decision的身份与状态保持不变。",
+    "下列操作按目标块列出。原B01、B04、B14分配到不止一处，属于按不同观察重新排布；source_portions说明去向，不把移动当删除。",
+    "removed_only逐项列出原稿中被去掉的重复或迂回措辞；同义缩句的意义仍在must_preserve_differences中逐组登记。",
+    "不能从卡片减少推断1080单屏可容纳；本实验没有做排版实测。正文字符统计含标点、数字与拉丁字符，排除空白，不冒称中文词数。",
+    "意义去向、精确引句与保留片段可做机械核验，语义是否无损仍交独立对照审计。"
+  ],
+  "intentionally_long": [
+    {
+      "block": "S06-C02",
+      "reason": "清澈不能吞掉圣咏、牧歌、意大利式舒展、薄纱暗室、具体初恋下午与无创源头。保留两个完整段落，未压成意象词串。"
+    },
+    {
+      "block": "S06-C05",
+      "reason": "不可代担、无法交出、无法进入、日夜独处、被爱仍孤单与自语耗力各有主体及动因，合块后仍留两段。"
+    },
+    {
+      "block": "S06-C07",
+      "reason": "外在声线回应、心中自辩、向对方求回答、内在提醒、双人防备/各有心事不能共用一个说话者，保留三段。"
+    },
+    {
+      "block": "S06-C12",
+      "reason": "单独留块保留情色、遗憾及跨40–61范围；没有为并入纯净读法而删词。"
+    }
+  ],
+  "validation": {
+    "id_accounting": {
+      "ledger_total": 93,
+      "in_blocks": 85,
+      "partial": 4,
+      "pending": 3,
+      "omitted": 1,
+      "original_statuses_unchanged": true
+    },
+    "source_quote_count": 107,
+    "precision": "107条来源引句继承early中对应来源，写入前逐条与inputs/S06.txt的UID原文做连续子串核验；日志删除片段/保留片段各自与旧/新正文做精确子串核验。",
+    "semantic_limit": "保留片段由主编辑逐项对照，不将索引和字符串测试当独立语义审计已通过。"
+  },
+  "metrics": {
+    "counting": "正文text字段；排除空白，含标点、数字和拉丁字符。intro与标题不计；两稿intro/title相同。",
+    "before": {
+      "blocks": 20,
+      "paragraphs": 40,
+      "body_characters": 2621,
+      "longest_block_characters": 186
+    },
+    "after": {
+      "blocks": 12,
+      "paragraphs": 19,
+      "body_characters": 1917,
+      "longest_block_characters": 264
+    },
+    "reduction": {
+      "blocks_percent": 40,
+      "paragraphs_percent": 52.5,
+      "body_characters_percent": 26.86
+    },
+    "tradeoff": "总字符、块标题及段落入口减少；最长块从186增至264字符。合块增加局部密度，C02/C05/C07留段落，不能把减少块数等同1080画面负担同比降低。"
+  }
+,
+"operations": [
+{
+  "step": 1,
+  "operation": "redistribute_and_merge",
+  "original_blocks": [
+    {
+      "id": "S06-B01",
+      "source_portion": "仅夕阳转月光；歌声与无垢读法移C02"
+    },
+    {
+      "id": "S06-B02",
+      "source_portion": "所有凉意、水巷、阴影、深水、桥与支流场景"
+    },
+    {
+      "id": "S06-B04",
+      "source_portion": "仅拐出狭运河至开阔水面；深梦/失重留C02"
+    }
+  ],
+  "target_blocks": [
+    "S06-C01"
+  ],
+  "common_premise": "都是换光或换水域的画面，可平行说出；方向不同，不合成一条航线。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A002"
+      ],
+      "difference": "暖黄夕阳至清凉空灵月光的色温方向。",
+      "retained_text": "从暖黄夕阳换成清凉空灵的月光"
+    },
+    {
+      "meaning_ids": [
+        "S06-A006",
+        "S06-A086"
+      ],
+      "difference": "白天水面至背阴，与入夜银巷的时间/空间各自保留。",
+      "retained_text": "从白天暖金水面滑入背阴凉意，或在入夜后转进银色水巷"
+    },
+    {
+      "meaning_ids": [
+        "S06-A009"
+      ],
+      "difference": "无声进入阴影，或雾气弥漫的深水，仍为替代场景。",
+      "retained_text": "无声滑入幽静阴影，或雾气弥漫的深水"
+    },
+    {
+      "meaning_ids": [
+        "S06-A012",
+        "S06-A087"
+      ],
+      "difference": "古老石桥的阴影与狭窄清幽支流不是同一个地方；转凉条件共享。",
+      "retained_text": "滑到古老石桥的阴影下，或拐入狭窄清幽的支流，空气瞬间转凉"
+    },
+    {
+      "meaning_ids": [
+        "S06-A020"
+      ],
+      "difference": "从幽暗狭窄拐出，迎撞开阔波光，方向与进入阴影相反。",
+      "retained_text": "忽然拐出幽暗狭窄的运河，迎面撞上开阔水面的粼粼波光"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B02",
+      "original_text": "另一幅画面里，",
+      "reason": "场景引入语；各场景已用可以/或并列。"
+    },
+    {
+      "original_block": "S06-B02",
+      "original_text": "还可以想象",
+      "reason": "重复提示想象性质；小船可以作为公共主语。"
+    },
+    {
+      "original_block": "S06-B04",
+      "original_text": "另一个方向却向外打开：",
+      "reason": "原转场改成更短的向外打开的画面则是；拐出方向和迎撞动势均留。"
+    }
+  ]
+},
+{
+  "step": 2,
+  "operation": "redistribute_and_merge",
+  "original_blocks": [
+    {
+      "id": "S06-B01",
+      "source_portion": "歌声耳语/圣咏及所有无垢读法"
+    },
+    {
+      "id": "S06-B03",
+      "source_portion": "全部质感、暗室、牧歌、意大利抒情观察"
+    },
+    {
+      "id": "S06-B04",
+      "source_portion": "深层梦境、闭眼忘重、无创源头、存在感及非节奏停摆限定"
+    }
+  ],
+  "target_blocks": [
+    "S06-C02"
+  ],
+  "common_premise": "清澈是共享质感；声音、场景隔离、回忆与深梦各用完整平行句，不把它们当同义。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A003"
+      ],
+      "difference": "低声耳语与多声部圣咏仍同时具体。",
+      "retained_text": "歌声低如耳语，纯净如多声部圣咏"
+    },
+    {
+      "meaning_ids": [
+        "S06-A011",
+        "S06-A083"
+      ],
+      "difference": "贴身情话至牧歌的转换，与意大利式抒情舒展均保留。",
+      "retained_text": "贴身情话化作纯净舒展的牧歌，也可听出纯正的意大利式抒情"
+    },
+    {
+      "meaning_ids": [
+        "S06-A007",
+        "S06-A008"
+      ],
+      "difference": "高处听觉条件、水滴/星芒与从嘈杂被拉入薄纱暗室分开。",
+      "retained_text": "若留意高处，晶莹跳动可像水滴或星芒，空气忽然安静，仿佛从嘈杂世界被拉入薄纱暗室"
+    },
+    {
+      "meaning_ids": [
+        "S06-A017"
+      ],
+      "difference": "透明纯净与薄雾朦胧共存。",
+      "retained_text": "透明纯净里，也有薄雾的朦胧"
+    },
+    {
+      "meaning_ids": [
+        "S06-A013",
+        "S06-A004",
+        "S06-A005"
+      ],
+      "difference": "欲望退去的童年/往事，与第一次心动的具体下午及无世俗杂质宁静分别保留；无垢特殊措辞不丢。",
+      "retained_text": "欲望退去，可以显出童年或往事的清澈。这份“无垢”可以是忽然记起年少第一次心动的下午，或只余无世俗杂质的宁静"
+    },
+    {
+      "meaning_ids": [
+        "S06-A001"
+      ],
+      "difference": "远离现实、纯净回忆、神圣白日梦仍有各自措辞。",
+      "retained_text": "远离现实、只余纯净回忆的神圣白日梦"
+    },
+    {
+      "meaning_ids": [
+        "S06-A016",
+        "S06-A018",
+        "S06-A019"
+      ],
+      "difference": "真实水面潜入深梦、闭眼忘重、无创源头、无焦虑存在感/避难所完整保留；与sfogato错链无关。",
+      "retained_text": "若听成从真实水面潜入更深的梦，人闭眼忘却肉体重量，回到未受创的生命源头，进入无焦虑、只余存在感的心灵避难所"
+    },
+    {
+      "meaning_ids": [],
+      "difference": "部分保留A015的纯朴宽广、A080的高处与空气安静不等于采纳其未核音乐断言；宁静仍只指感受。",
+      "retained_text": "这份宁静属于人的感受，声音仍在活动。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B01",
+      "original_text": "整个空间又",
+      "reason": "重设空间的虚主语；神圣白日梦意象原词保留。"
+    },
+    {
+      "original_block": "S06-B03",
+      "original_text": "另一种质感",
+      "reason": "不用每个相近质感重新设立一层读法；透明与薄雾两者仍在。"
+    },
+    {
+      "original_block": "S06-B03",
+      "original_text": "也可以感到一种",
+      "reason": "重复提示听者感受，改成也可听出，意大利式抒情未删。"
+    },
+    {
+      "original_block": "S06-B04",
+      "original_text": "若把这份清静听到底，可以像",
+      "reason": "冗长条件入口改成若听成；后接真实水面至深梦及全部身体内容。"
+    }
+  ]
+},
+{
+  "step": 3,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B05",
+      "source_portion": "整块"
+    }
+  ],
+  "target_blocks": [
+    "S06-C03"
+  ],
+  "common_premise": "忘记被观看与停止维持完整形象共享说话者；知道不该索求的依恋和美好尚在的预悲仍是两层。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A021",
+        "S06-A022",
+        "S06-A076"
+      ],
+      "difference": "被观看/监控优雅、无哭泣崩溃却放弃完整、主动承认脆弱三个意思不互抵。",
+      "retained_text": "说话的人忘了自己正被看着，松下防备，不再监控优雅姿态。他没有哭泣或崩溃，只是不再努力显得完整，开始承认脆弱。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A023"
+      ],
+      "difference": "不该索求与仍希望留下的张力。",
+      "retained_text": "明知不该索求，仍依恋着，希望这件事留下"
+    },
+    {
+      "meaning_ids": [
+        "S06-A024"
+      ],
+      "difference": "对象尚在，珍惜引起对失去可能的提前悲伤。",
+      "retained_text": "美好尚在，已因太珍惜而预感失去的可能，先有了悲伤。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B05",
+      "original_text": "也可以像",
+      "reason": "与其他块相同的开场提示，人物动作保留。"
+    },
+    {
+      "original_block": "S06-B05",
+      "original_text": "自己其实很",
+      "reason": "开始承认脆弱已经给出主体与认识转变，省去迂回修饰。"
+    }
+  ]
+},
+{
+  "step": 4,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B06",
+      "source_portion": "整块独立保留，没有与索求读法合并"
+    }
+  ],
+  "target_blocks": [
+    "S06-C04"
+  ],
+  "common_premise": "先保留视线退后与意识宽于欲望的先后，再把三种感恩质地排成同一句。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A025"
+      ],
+      "difference": "正在经历至旁观自己曾经历，回忆/非纯回忆的时态。",
+      "retained_text": "从“我正在经历”转成“我看着自己曾经经历”，像回忆，又不完全是回忆"
+    },
+    {
+      "meaning_ids": [
+        "S06-A026"
+      ],
+      "difference": "问题及欲望未消失，宁静来自意识更宽。",
+      "retained_text": "事情未解决，欲望未消失，意识却暂时比欲望更宽，心里安静下来"
+    },
+    {
+      "meaning_ids": [
+        "S06-A027",
+        "S06-A028",
+        "S06-A088"
+      ],
+      "difference": "不问归属未来、感恩经历、不急占有；距离不冷漠与忧伤非伤口不能互代。",
+      "retained_text": "不再问归属和以后，只感到经历本身珍贵：满足而不急占有，有距离却不冷漠，有忧伤却不似伤口，感恩里仍有失去的意识。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B06",
+      "original_text": "心理上的",
+      "reason": "后面的两句自述已明示心理视线，省去重复定位。"
+    },
+    {
+      "original_block": "S06-B06",
+      "original_text": "也可以",
+      "reason": "块内本来是一条完整读法，不必再启一次分支。"
+    },
+    {
+      "original_block": "S06-B06",
+      "original_text": "此刻",
+      "reason": "状态已在退后看这一读法内，省去重复时间指示。"
+    }
+  ]
+},
+{
+  "step": 5,
+  "operation": "merge",
+  "original_blocks": [
+    {
+      "id": "S06-B07",
+      "source_portion": "不可代担、日夜独处、当下回忆、被爱仍孤单"
+    },
+    {
+      "id": "S06-B08",
+      "source_portion": "交出/进入两个方向、无对象惆怅、自问/挣脱、两种加深爱/珍惜的动因"
+    },
+    {
+      "id": "S06-B17",
+      "source_portion": "自语、求懂无对象、自慰及耗力内缩"
+    }
+  ],
+  "target_blocks": [
+    "S06-C05"
+  ],
+  "common_premise": "亲密中的私人经验共用一个定位，但代担、交出、进入、独处想念与自语保留各自的主体和方向。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A029",
+        "S06-A077",
+        "S06-A038"
+      ],
+      "difference": "意识不可代担，内心无法全交出，无法进入对方，三个方向都写明。",
+      "retained_text": "一个人只能以自己的意识去爱，感情无人代担；自己的内心无法全部交出，也无法完全进入对方的内心。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A036"
+      ],
+      "difference": "被爱而孤单并不推出关系破裂，温柔、安全与漂泊并存。",
+      "retained_text": "被爱仍会孤单，关系没有破裂，温柔、安全与漂泊并存。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A040",
+        "S06-A039"
+      ],
+      "difference": "无人离开、无灾难仍无对象惆怅；轻声自问与挣脱迟疑交替。",
+      "retained_text": "人没有离开，也没有灾难，仍有无明确对象的惆怅；时而轻声自问，时而想挣脱迟疑。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A082",
+        "S06-A037"
+      ],
+      "difference": "孤独加深爱与珍惜/不安双向加深，仍是两个机制。",
+      "retained_text": "孤独可以使爱更深；珍惜也可以引起不安，不安又加深珍惜。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A030",
+        "S06-A031"
+      ],
+      "difference": "白天好、夜独处酸楚是独处放大；快乐正在发生已有回忆质地，不混成昔日已失。",
+      "retained_text": "独处时想起一个人：白天相处得好，晚上回家却酸楚，独处把感受放大；快乐正在发生，也已带回忆的质地。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A063",
+        "S06-A064",
+        "S06-A065"
+      ],
+      "difference": "低声贴耳指夜间自语，想被懂却无倾诉对象才复述，孤独中自慰。",
+      "retained_text": "夜里贴耳的低声还可以是自语：白天都好，晚上却空，想被懂得又不知向谁说，只得反复说给自己听，在温柔的孤独里自我安慰。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A066"
+      ],
+      "difference": "长期撑温柔的耗力是内缩动因，不能并成笼统私人心事。",
+      "retained_text": "一直撑着温柔，撑久了耗力，也会想往内缩。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B07",
+      "original_text": "它可以像",
+      "reason": "独处时想人的场景直接起句，不重复提示比喻。"
+    },
+    {
+      "original_block": "S06-B08",
+      "original_text": "亲密也有两个方向的限度：",
+      "reason": "方向在后面交出/进入的平行句直接写出。"
+    },
+    {
+      "original_block": "S06-B08",
+      "original_text": "另一路里，",
+      "reason": "两种动因改用分号并列，孤独和珍惜的不同原因未删。"
+    },
+    {
+      "original_block": "S06-B08",
+      "original_text": "两边彼此加深。",
+      "reason": "前句不安又让人更加珍惜已说清双向关系，删除同义复述。"
+    },
+    {
+      "original_block": "S06-B17",
+      "original_text": "还有一个更费力的原因：",
+      "reason": "耗力内缩的实际原因紧接正文，无需再给原因贴标签。"
+    }
+  ]
+},
+{
+  "step": 6,
+  "operation": "merge",
+  "original_blocks": [
+    {
+      "id": "S06-B09",
+      "source_portion": "旅行预见怀念及知脆弱仍前行"
+    },
+    {
+      "id": "S06-B10",
+      "source_portion": "夜晚三问、安慰后复发及无支配权"
+    }
+  ],
+  "target_blocks": [
+    "S06-C06"
+  ],
+  "common_premise": "两块都涉及幸福尚在时对时间与命运的认识；旅行的确定预见与夜晚的疑问用两段对照。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A041"
+      ],
+      "difference": "非理所当然的突然认识，带重量。",
+      "retained_text": "欣赏风景，忽然觉得美好并非理所当然，有了重量。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A042",
+        "S06-A043"
+      ],
+      "difference": "快乐旅行中确定将怀念的酸楚，与仍前行不自怜都保留。",
+      "retained_text": "快乐旅行中，知道几年后一定会怀念今天，快乐便多一点酸楚；知其脆弱，仍愿前行、亲近美好，不停在自怜里。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A092",
+        "S06-A046",
+        "S06-A091"
+      ],
+      "difference": "美好夜晚的多久、是否同惜、将来只剩回忆三问均保留，并未用旅行预见回答它们。",
+      "retained_text": "美好夜晚里的疑问则是：“这样的日子还能多久？对方是否同样珍惜？这些感受将来会不会只剩回忆？”"
+    },
+    {
+      "meaning_ids": [
+        "S06-A045"
+      ],
+      "difference": "受到安慰、未消失、过后回来三步。",
+      "retained_text": "念头受了安慰却未消失，过后又回来。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A090"
+      ],
+      "difference": "对象关系美好仍在，感到无权支配命运，不等同预悲。",
+      "retained_text": "对象、关系、美好都还在，却感到自己无法支配它们的命运。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B09",
+      "original_text": "可以像在一次",
+      "reason": "旅行作为并列比喻直接起句，不重设一次框架。"
+    },
+    {
+      "original_block": "S06-B10",
+      "original_text": "人明明在过一个",
+      "reason": "美好夜晚条件紧贴三问，省去迂回主谓结构。"
+    }
+  ]
+},
+{
+  "step": 7,
+  "operation": "redistribute_and_merge",
+  "original_blocks": [
+    {
+      "id": "S06-B12",
+      "source_portion": "全部声线观察与四步自辩"
+    },
+    {
+      "id": "S06-B13",
+      "source_portion": "全部表达、眼前思念、内在提醒与克制撑不住"
+    },
+    {
+      "id": "S06-B14",
+      "source_portion": "双人段全部；新鲜感/回头确认移C08"
+    }
+  ],
+  "target_blocks": [
+    "S06-C07"
+  ],
+  "common_premise": "低声倾诉与声线回应只建立一次；自辩、求回答、内在提醒、双人防备/各有心事各用平行句，不串成发展过程。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A033",
+        "S06-A034"
+      ],
+      "difference": "蒙着压低而躁动的歌声，外在另一声线纠缠回应。",
+      "retained_text": "歌声蒙着、压低，却仍躁动，旁边的声线不断纠缠、回应。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A035",
+        "S06-A049"
+      ],
+      "difference": "不愿公开与放下/放不下/似平静/否认平静的四步顺序。",
+      "retained_text": "心事不愿公开，反复自辩：“算了。”“但还是放不下。”“好像已经平静。”“不，其实没有。”"
+    },
+    {
+      "meaning_ids": [
+        "S06-A050",
+        "S06-A051"
+      ],
+      "difference": "反复换表达仍不够/不获满意答复，与声音不完全释放、靠近退开均保留。",
+      "retained_text": "也可以反复换说法，总嫌不够，得不到满意回答，声音不完全释放，在靠近与退开间往返。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A052"
+      ],
+      "difference": "对方眼前却不可抵达，不靠距离的思念。",
+      "retained_text": "对方就在眼前，仍无法抵达，这份思念无关远近。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A078"
+      ],
+      "difference": "提醒者为内在另一声音；它与主歌旁的声线不能当成同一个人。",
+      "retained_text": "内在另一个声音又提醒：美好还未安顿，虽眷恋，仍不能安心沉浸。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A054",
+        "S06-A079"
+      ],
+      "difference": "双人相互防备与各自有心事两个侧面同时在。",
+      "retained_text": "双人的听法里，两人说心里话，靠近却留着防备，各自还有心事"
+    },
+    {
+      "meaning_ids": [
+        "S06-A055"
+      ],
+      "difference": "享受至愿意告诉你、旋律向上、回应或插话、吸引与不确定/试探全部保留。",
+      "retained_text": "享受亲密又转为“我有话想告诉你”。旋律向上，伴随声像回应或插话，吸引与不确定并存，靠近中仍有试探。"
+    },
+    {
+      "meaning_ids": [],
+      "difference": "原B13没有另挂ID的越在意越难装无所谓、克制撑不住仍保留。",
+      "retained_text": "越在意，越难装作无所谓，优雅表面的克制也撑不住。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B12",
+      "original_text": "这四句话，绕了一圈又回到自己身上。",
+      "reason": "四句原顺序及反复自辩已直接呈现循环，删同义解释。"
+    },
+    {
+      "original_block": "S06-B13",
+      "original_text": "有些话正在心里发生，却还不愿让外界听见。",
+      "reason": "与B12心事不愿公开共用C07一次表述，A049不丢。"
+    },
+    {
+      "original_block": "S06-B13",
+      "original_text": "另一个侧面里，",
+      "reason": "删除编辑转场，不删克制维持不住的内容。"
+    },
+    {
+      "original_block": "S06-B14",
+      "original_text": "也可以是两个人都想靠近，",
+      "reason": "两人靠近已成为本段公共前提；各自带心事作为独立后项仍在。"
+    }
+  ]
+},
+{
+  "step": 8,
+  "operation": "redistribute_and_merge",
+  "original_blocks": [
+    {
+      "id": "S06-B11",
+      "source_portion": "改变与已有、双力争主动权"
+    },
+    {
+      "id": "S06-B14",
+      "source_portion": "仅新鲜吸引/回望确认/适应陌生地方"
+    },
+    {
+      "id": "S06-B19",
+      "source_portion": "强造双人梦、新旧调竞争、表笑脚晃"
+    }
+  ],
+  "target_blocks": [
+    "S06-C08"
+  ],
+  "common_premise": "新地方使人想去又回望，可以平行容纳主动求变、适应新鲜与旧调召唤，保留各自原因。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A047",
+        "S06-A048"
+      ],
+      "difference": "争主动权与被拉走/尝试找立足点，不改成已稳定；求变与怕丢已有并存。",
+      "retained_text": "游移像两股力量争主动权，一次次被拉向别处，又试图找回立足点：想走出现在，也不愿放弃，盼改变，又怕丢掉已有。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A053"
+      ],
+      "difference": "新鲜吸引、回头核对距离及兴奋不安地适应，主体动作仍完整。",
+      "retained_text": "新鲜感吸引着人，人却回头确认是否走远，兴奋而不安地适应陌生、迷人的地方。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A073"
+      ],
+      "difference": "不甘只回忆、强造梦及我们还能去别处的双人愿望。",
+      "retained_text": "也可以是不甘只回忆，硬给自己造一个“如果我们还能去别处”的梦。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A074",
+        "S06-A085"
+      ],
+      "difference": "越想扎根越被旧调从身后召唤，外表笑/脚下晃各自的观察位置。",
+      "retained_text": "越想在新处扎根，旧调越从身后召唤；想开心，仍被拽着。表面笑着，脚下还在晃。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B11",
+      "original_text": "游移可以听成",
+      "reason": "改为游移像，后面仍完整写两股力量及求变/怕失去已有。"
+    },
+    {
+      "original_block": "S06-B19",
+      "original_text": "还可以像",
+      "reason": "并列读法已有也可以是，删双层提示。"
+    },
+    {
+      "original_block": "S06-B19",
+      "original_text": "从外面看，人像",
+      "reason": "改为表面，保留外观笑与脚下不稳的观察位置。"
+    }
+  ]
+},
+{
+  "step": 9,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B18",
+      "source_portion": "整块；不与旧调或内心两声合成一个因果"
+    }
+  ],
+  "target_blocks": [
+    "S06-C09"
+  ],
+  "common_premise": "变亮后的高兴待不住，调性游移、旧事/未来与查门锁仍各有具体内容。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A068",
+        "S06-A084"
+      ],
+      "difference": "摇碎变急如活水与忧郁转照亮喜悦两层均写明。",
+      "retained_text": "摇晃变碎、变急，像活水；忧郁也可以一下转成被照亮的喜悦"
+    },
+    {
+      "meaning_ids": [
+        "S06-A070"
+      ],
+      "difference": "换地方想单纯高兴，来回再试仍无法解脱。",
+      "retained_text": "想换个地方单纯高兴。高兴却待不住：刚站稳又滑开，回来再试，仍然如此。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A069"
+      ],
+      "difference": "旧事与未来担忧的相反时间方向不简写成走神。",
+      "retained_text": "旧事与未来的担心却轮流拉走注意"
+    },
+    {
+      "meaning_ids": [
+        "S06-A071",
+        "S06-A072"
+      ],
+      "difference": "幻想暖住所赶紧入住、不踏实致反复起身查锁；渴望与不相信会留下仍共存。",
+      "retained_text": "像幻想出温暖住所，赶紧入住，却因不踏实反复起身查门锁：渴望幸福，也不信它会留下。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B18",
+      "original_text": "另一个具体画面里，",
+      "reason": "查锁比喻用像直接接入，不再给画面加定位套话。"
+    },
+    {
+      "original_block": "S06-B18",
+      "original_text": "是在尝试解脱，尚未成功。",
+      "reason": "不是删去未成功，缩写为想解脱，仍未成功；只紧缩同义迂回表达。"
+    }
+  ]
+},
+{
+  "step": 10,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B15",
+      "source_portion": "整块独立留；不将失眠翻身收成一般坐不住"
+    }
+  ],
+  "target_blocks": [
+    "S06-C10"
+  ],
+  "common_premise": "眼睛、念头、身体动作共用走神定位，温柔久驻、找回失败、久坐与失眠仍有不同原因。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A014"
+      ],
+      "difference": "极温柔不能久驻，记忆走神的动因。",
+      "retained_text": "极度温柔里待不久，记忆会走神。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A056",
+        "S06-A059"
+      ],
+      "difference": "盯水至眼乱飘、念头试错，与暖仍在/光暗/水凉。",
+      "retained_text": "刚才还盯着水面，眼睛开始乱飘，一个念头接一个，试几个方向都不对；暖意尚在，光却暗了，水也凉了。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A058"
+      ],
+      "difference": "失败引起烦躁和碎步。",
+      "retained_text": "找不回刚才的感觉，才有烦躁与碎步。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A057",
+        "S06-A089"
+      ],
+      "difference": "久坐起行与半夜失眠翻身分别出现，时间和身体动作均不删。",
+      "retained_text": "坐不住可以像久坐后起身走走，也可以像半夜失眠，不断翻身。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B15",
+      "original_text": "思绪散开还有很具体的样子：",
+      "reason": "直接写盯水、眼飘与逐念头试错，不再解释这些是具体例子。"
+    },
+    {
+      "original_block": "S06-B15",
+      "original_text": "这份坐不住，",
+      "reason": "坐不住并未删，去掉重复指示词后接两种身体比喻。"
+    }
+  ]
+},
+{
+  "step": 11,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B16",
+      "source_portion": "整块独立保留；不与宁静梦境或解脱失败合并"
+    }
+  ],
+  "target_blocks": [
+    "S06-C11"
+  ],
+  "common_premise": "都是想变轻，但其动因是沉浸过久想逃，不能用无欲清净取代。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A060"
+      ],
+      "difference": "沉浸过久引发本能逃离与换个更轻自己的愿望。",
+      "retained_text": "沉浸太久，本能地想逃一下，换个更轻的自己。"
+    },
+    {
+      "meaning_ids": [
+        "S06-A061"
+      ],
+      "difference": "梦中卸除病/流亡/年龄三种负担，不当传记事实。",
+      "retained_text": "白日梦里没有病、没有流亡、没有年龄，可以飘起"
+    },
+    {
+      "meaning_ids": [
+        "S06-A062"
+      ],
+      "difference": "勉强飞起、天真背后疲惫，不简写成轻盈。",
+      "retained_text": "纯真却带着勉强，轻得不自然，像努力让自己飞，天真背后仍有疲惫。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B16",
+      "original_text": "也有一种想逃开的愿望：",
+      "reason": "实际的沉浸过久/本能逃离已经紧接写出，不重复宣布愿望。"
+    },
+    {
+      "original_block": "S06-B16",
+      "original_text": "那份纯真并不全然自然，听得出一点勉强，",
+      "reason": "紧缩为纯真却带着勉强，轻得不自然，保留性质与费力飞的身体感。"
+    }
+  ]
+},
+{
+  "step": 12,
+  "operation": "rewrite",
+  "original_blocks": [
+    {
+      "id": "S06-B20",
+      "source_portion": "整块独立留长，跨40–61条件仍紧贴复合体验"
+    }
+  ],
+  "target_blocks": [
+    "S06-C12"
+  ],
+  "common_premise": "感官享受的多种成分共享一次入题；不与无世俗杂质的宁静合并。",
+  "must_preserve_differences": [
+    {
+      "meaning_ids": [
+        "S06-A032"
+      ],
+      "difference": "40–50强感官享受、清澈之外身体沉入。",
+      "retained_text": "mm.40–50 也可听作强烈的感官享受，清澈之外，身体也沉了进去。"
+    },
+    {
+      "meaning_ids": [],
+      "difference": "原块独立异质内容继续写明：40–61条件、从想对象转为沉迷感受、气味/身体/幻想/遗憾/快感及情色暖意，不能被温柔吸收。",
+      "retained_text": "放在 mm.40–61 整段里听，原先想着某人某事，后来沉迷于“自己正在感觉”：气味、身体感觉、幻想、遗憾和快感混杂，有一点情色性的暖意，仍不安稳。"
+    },
+    {
+      "meaning_ids": [],
+      "difference": "越舒服越失方向与沉醉/不安同步加深、控制距离丧失仍完整。",
+      "retained_text": "越舒服，越可能失去方向；沉醉与不安一起增加，越沉入，就越难与感受拉开一点距离来控制它。"
+    }
+  ],
+  "removed_only": [
+    {
+      "original_block": "S06-B20",
+      "original_text": "另一种听法里，",
+      "reason": "也可听作已给出并列性质，不再多设入口。"
+    },
+    {
+      "original_block": "S06-B20",
+      "original_text": "若沿这条读法去听，",
+      "reason": "原块内第二次声明条件；40–61范围与并列听法已在前两句，删套话不删条件。"
+    },
+    {
+      "original_block": "S06-B20",
+      "original_text": "还会有另一层感受：",
+      "reason": "实际对象至自感的转换直接写出，无需宣布加了一层。"
+    }
+  ]
+}
+],
+"meaning_routes": [
+  {
+    "meaning_id": "S06-A001",
+    "status": "in_block",
+    "original_block": "S06-B01",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A002",
+    "status": "in_block",
+    "original_block": "S06-B01",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A003",
+    "status": "in_block",
+    "original_block": "S06-B01",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A004",
+    "status": "in_block",
+    "original_block": "S06-B01",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A005",
+    "status": "in_block",
+    "original_block": "S06-B01",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A006",
+    "status": "in_block",
+    "original_block": "S06-B02",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A009",
+    "status": "in_block",
+    "original_block": "S06-B02",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A012",
+    "status": "in_block",
+    "original_block": "S06-B02",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A086",
+    "status": "in_block",
+    "original_block": "S06-B02",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A087",
+    "status": "in_block",
+    "original_block": "S06-B02",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A007",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A008",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A011",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A013",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A017",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A083",
+    "status": "in_block",
+    "original_block": "S06-B03",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A016",
+    "status": "in_block",
+    "original_block": "S06-B04",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A018",
+    "status": "in_block",
+    "original_block": "S06-B04",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A019",
+    "status": "in_block",
+    "original_block": "S06-B04",
+    "experiment_block": "S06-C02"
+  },
+  {
+    "meaning_id": "S06-A020",
+    "status": "in_block",
+    "original_block": "S06-B04",
+    "experiment_block": "S06-C01"
+  },
+  {
+    "meaning_id": "S06-A021",
+    "status": "in_block",
+    "original_block": "S06-B05",
+    "experiment_block": "S06-C03"
+  },
+  {
+    "meaning_id": "S06-A022",
+    "status": "in_block",
+    "original_block": "S06-B05",
+    "experiment_block": "S06-C03"
+  },
+  {
+    "meaning_id": "S06-A023",
+    "status": "in_block",
+    "original_block": "S06-B05",
+    "experiment_block": "S06-C03"
+  },
+  {
+    "meaning_id": "S06-A024",
+    "status": "in_block",
+    "original_block": "S06-B05",
+    "experiment_block": "S06-C03"
+  },
+  {
+    "meaning_id": "S06-A076",
+    "status": "in_block",
+    "original_block": "S06-B05",
+    "experiment_block": "S06-C03"
+  },
+  {
+    "meaning_id": "S06-A025",
+    "status": "in_block",
+    "original_block": "S06-B06",
+    "experiment_block": "S06-C04"
+  },
+  {
+    "meaning_id": "S06-A026",
+    "status": "in_block",
+    "original_block": "S06-B06",
+    "experiment_block": "S06-C04"
+  },
+  {
+    "meaning_id": "S06-A027",
+    "status": "in_block",
+    "original_block": "S06-B06",
+    "experiment_block": "S06-C04"
+  },
+  {
+    "meaning_id": "S06-A028",
+    "status": "in_block",
+    "original_block": "S06-B06",
+    "experiment_block": "S06-C04"
+  },
+  {
+    "meaning_id": "S06-A088",
+    "status": "in_block",
+    "original_block": "S06-B06",
+    "experiment_block": "S06-C04"
+  },
+  {
+    "meaning_id": "S06-A029",
+    "status": "in_block",
+    "original_block": "S06-B07",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A030",
+    "status": "in_block",
+    "original_block": "S06-B07",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A031",
+    "status": "in_block",
+    "original_block": "S06-B07",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A036",
+    "status": "in_block",
+    "original_block": "S06-B07",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A037",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A038",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A039",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A040",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A077",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A082",
+    "status": "in_block",
+    "original_block": "S06-B08",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A041",
+    "status": "in_block",
+    "original_block": "S06-B09",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A042",
+    "status": "in_block",
+    "original_block": "S06-B09",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A043",
+    "status": "in_block",
+    "original_block": "S06-B09",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A045",
+    "status": "in_block",
+    "original_block": "S06-B10",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A046",
+    "status": "in_block",
+    "original_block": "S06-B10",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A090",
+    "status": "in_block",
+    "original_block": "S06-B10",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A091",
+    "status": "in_block",
+    "original_block": "S06-B10",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A092",
+    "status": "in_block",
+    "original_block": "S06-B10",
+    "experiment_block": "S06-C06"
+  },
+  {
+    "meaning_id": "S06-A047",
+    "status": "in_block",
+    "original_block": "S06-B11",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A048",
+    "status": "in_block",
+    "original_block": "S06-B11",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A033",
+    "status": "in_block",
+    "original_block": "S06-B12",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A034",
+    "status": "in_block",
+    "original_block": "S06-B12",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A035",
+    "status": "in_block",
+    "original_block": "S06-B12",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A049",
+    "status": "in_block",
+    "original_block": "S06-B13",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A050",
+    "status": "in_block",
+    "original_block": "S06-B13",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A051",
+    "status": "in_block",
+    "original_block": "S06-B13",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A052",
+    "status": "in_block",
+    "original_block": "S06-B13",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A078",
+    "status": "in_block",
+    "original_block": "S06-B13",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A053",
+    "status": "in_block",
+    "original_block": "S06-B14",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A054",
+    "status": "in_block",
+    "original_block": "S06-B14",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A055",
+    "status": "in_block",
+    "original_block": "S06-B14",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A079",
+    "status": "in_block",
+    "original_block": "S06-B14",
+    "experiment_block": "S06-C07"
+  },
+  {
+    "meaning_id": "S06-A056",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A057",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A058",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A059",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A089",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A014",
+    "status": "in_block",
+    "original_block": "S06-B15",
+    "experiment_block": "S06-C10"
+  },
+  {
+    "meaning_id": "S06-A060",
+    "status": "in_block",
+    "original_block": "S06-B16",
+    "experiment_block": "S06-C11"
+  },
+  {
+    "meaning_id": "S06-A061",
+    "status": "in_block",
+    "original_block": "S06-B16",
+    "experiment_block": "S06-C11"
+  },
+  {
+    "meaning_id": "S06-A062",
+    "status": "in_block",
+    "original_block": "S06-B16",
+    "experiment_block": "S06-C11"
+  },
+  {
+    "meaning_id": "S06-A063",
+    "status": "in_block",
+    "original_block": "S06-B17",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A064",
+    "status": "in_block",
+    "original_block": "S06-B17",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A065",
+    "status": "in_block",
+    "original_block": "S06-B17",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A066",
+    "status": "in_block",
+    "original_block": "S06-B17",
+    "experiment_block": "S06-C05"
+  },
+  {
+    "meaning_id": "S06-A068",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A069",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A070",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A071",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A072",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A084",
+    "status": "in_block",
+    "original_block": "S06-B18",
+    "experiment_block": "S06-C09"
+  },
+  {
+    "meaning_id": "S06-A073",
+    "status": "in_block",
+    "original_block": "S06-B19",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A074",
+    "status": "in_block",
+    "original_block": "S06-B19",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A085",
+    "status": "in_block",
+    "original_block": "S06-B19",
+    "experiment_block": "S06-C08"
+  },
+  {
+    "meaning_id": "S06-A032",
+    "status": "in_block",
+    "original_block": "S06-B20",
+    "experiment_block": "S06-C12"
+  },
+  {
+    "meaning_id": "S06-A010",
+    "status": "pending",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A015",
+    "status": "partial",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A044",
+    "status": "pending",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A067",
+    "status": "omitted",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A075",
+    "status": "partial",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A080",
+    "status": "partial",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A081",
+    "status": "partial",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  },
+  {
+    "meaning_id": "S06-A093",
+    "status": "pending",
+    "original_location": "decisions",
+    "experiment_location": "decisions",
+    "status_unchanged": true
+  }
+]
+}

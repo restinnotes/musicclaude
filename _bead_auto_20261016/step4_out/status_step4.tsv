@@ -1,0 +1,23 @@
+﻿JOB_START_PAR 2026-10-17T02:54:37
+LANES_LAUNCHED 14
+OK	S01	491 s	6427 ch
+OK	S03	514 s	7177 ch
+FAIL	S02	601 s	ec=1	{"completed": false, "error_code": "headless_runner_or_evidence_failed", "phase": "pre_submit", "automatic_retry": false, "diagnostics": {"schema": "headless-failure-v1", "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-55d95b9e3f7e4c56ae30f000d7f5e419", "category": "initialization_failed", "underlying_error_code": "initializer_queue_timeout", "initializer_stage": "initializer_queue", "initializer_error_type": null, "initializer_elapsed_seconds": null, "runner_elapsed_seconds": 600.062, "ui_failure_step": null, "worker_exit_code": null, "worker_stage": null, "worker_error_type": null, "http_status": null, "submission_evidence": "no_local_submit_marker", "automatic_retry": false, "prepare": {}, "final_policy_checks": null, "attachment_upload": null, "session_restored": null, "session_response_checks": {}}}
+FAIL	S05	601 s	ec=1	{"completed": false, "error_code": "headless_runner_or_evidence_failed", "phase": "pre_submit", "automatic_retry": false, "diagnostics": {"schema": "headless-failure-v1", "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-4bf6a6e41f0840599d43ff5c3d60adca", "category": "initialization_failed", "underlying_error_code": "initializer_queue_timeout", "initializer_stage": "initializer_queue", "initializer_error_type": null, "initializer_elapsed_seconds": null, "runner_elapsed_seconds": 600.079, "ui_failure_step": null, "worker_exit_code": null, "worker_stage": null, "worker_error_type": null, "http_status": null, "submission_evidence": "no_local_submit_marker", "automatic_retry": false, "prepare": {}, "final_policy_checks": null, "attachment_upload": null, "session_restored": null, "session_response_checks": {}}}
+OK	S06	734 s	8187 ch
+OK	S04	785 s	5925 ch
+OK	S07	829 s	6720 ch
+OK	S14	844 s	5673 ch
+OK	S09	889 s	6211 ch
+OK	S12	1082 s	6327 ch
+OK	S08	1154 s	6859 ch
+OK	S10	1168 s	6449 ch
+OK	S13	1200 s	6749 ch
+OK	S11	1302 s	7289 ch
+JOB_RETRY_PAR	2026-10-17 03:16:47	segs=S02,S05	waveSize=2
+RETRY_LAU	speed=S02	03:16:47
+RETRY_LAU	speed=S05	03:16:47
+RETRY_WAVE	1	launch=S02,S05
+JOB_RETRY_DONE	2026-10-17 03:16:47	ok=0 fail=2 bad=S02(no-marker),S05(no-marker)
+OK	S05	523 s	6554 ch
+OK	S02	644 s	6946 ch

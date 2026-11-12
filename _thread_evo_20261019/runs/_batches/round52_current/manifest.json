@@ -1,0 +1,81 @@
+{
+  "base": "r50progress1rr",
+  "focus": {
+    "r52trim": "只检验局部的重复和解释腔：同一段两条若在说同一个念头，保留其中独立的愿望、顾虑和转折，减少重复陈述；不能只换近义词。优先修真正冗余的句子或半句，不为每段制造新进展。保住每次回返真正不同的作用，不把既有具体关系降成泛泛亲近，也不新增任何事实。结尾最终选择逐字不动。",
+    "r53coherence": "只检验关键心理变化的前后一致性：行为是主动还是无意、愿望与推测还是已经知道的事实、一次轻松还是已经作出的选择，要让前后用法相容。已有结论若缺依据，不补造经历，不只加引用；修到后文实际依赖它的恐惧和选择也接得上。保留已成立的具体相互关系及情感力度，不能把全文降为含糊猜测，不能借解释动机重复剧情。结尾最终选择逐字不动。"
+  },
+  "tasks": [
+    {
+      "tag": "r52trim1",
+      "work": "op60",
+      "mode": "r52trim",
+      "draw": 1,
+      "rid": "scr52trim1_op60_A5",
+      "input_sha256": "8f6b2c1a8845940d122244b9f9aa164d261b5d19f63e6b0f2ef011f0e06c2588"
+    },
+    {
+      "tag": "r52trim1",
+      "work": "op61",
+      "mode": "r52trim",
+      "draw": 1,
+      "rid": "scr52trim1_op61_A5",
+      "input_sha256": "1fac1d7454725faea1c59d6e47d035b9a4ec159136ced334b0bc3b37ca746b71"
+    },
+    {
+      "tag": "r52trim2",
+      "work": "op60",
+      "mode": "r52trim",
+      "draw": 2,
+      "rid": "scr52trim2_op60_A5",
+      "input_sha256": "8f6b2c1a8845940d122244b9f9aa164d261b5d19f63e6b0f2ef011f0e06c2588"
+    },
+    {
+      "tag": "r52trim2",
+      "work": "op61",
+      "mode": "r52trim",
+      "draw": 2,
+      "rid": "scr52trim2_op61_A5",
+      "input_sha256": "1fac1d7454725faea1c59d6e47d035b9a4ec159136ced334b0bc3b37ca746b71"
+    },
+    {
+      "tag": "r53coherence1",
+      "work": "op60",
+      "mode": "r53coherence",
+      "draw": 1,
+      "rid": "scr53coherence1_op60_A5",
+      "input_sha256": "ba9bec81d3910edf16ebed9b51e7bbf27dc08ada03e5a1beb8a84509d37b5836"
+    },
+    {
+      "tag": "r53coherence1",
+      "work": "op61",
+      "mode": "r53coherence",
+      "draw": 1,
+      "rid": "scr53coherence1_op61_A5",
+      "input_sha256": "d37de1696f273850b492435f340cf2dbef34da441ce868a7212fd4c85c9ef574"
+    },
+    {
+      "tag": "r53coherence2",
+      "work": "op60",
+      "mode": "r53coherence",
+      "draw": 2,
+      "rid": "scr53coherence2_op60_A5",
+      "input_sha256": "ba9bec81d3910edf16ebed9b51e7bbf27dc08ada03e5a1beb8a84509d37b5836"
+    },
+    {
+      "tag": "r53coherence2",
+      "work": "op61",
+      "mode": "r53coherence",
+      "draw": 2,
+      "rid": "scr53coherence2_op61_A5",
+      "input_sha256": "d37de1696f273850b492435f340cf2dbef34da441ce868a7212fd4c85c9ef574"
+    }
+  ],
+  "source_hashes": {
+    "op60": "7941a01cabf6dcf5a0861fc294c508850b894c890d1e51577afeefdbd9a9ffe9",
+    "op61": "63b413e14e3dd5efcc9cbe3aa3d3840ac545a929f8489dea558462587f52b64d"
+  },
+  "route": "mimic",
+  "workers": 4,
+  "next": "full_read_then_mechanical_apply_then_balanced_quick4_against_current_mainline",
+  "stopping": "Two distinct batches; a later accepted mainline invalidates their old-base superiority claims."
+}

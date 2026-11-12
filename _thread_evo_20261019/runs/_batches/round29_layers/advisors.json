@@ -1,0 +1,34 @@
+{
+  "name": "round29_layers",
+  "base": "qurefs",
+  "scheme": "schemes/R27P2.json",
+  "count": 6,
+  "source_tags": [
+    "r27p2",
+    "qu"
+  ],
+  "workers": 4,
+  "advisors": [
+    {
+      "run_id": "batch_round29_layers_advisor_g6",
+      "judge": "g6",
+      "requested": 2,
+      "sha256": "9e5fb5635b95649a6d63e63869b1577dc3477e6aea4de6342d46cdc1f2c642c1"
+    },
+    {
+      "run_id": "batch_round29_layers_advisor_g56",
+      "judge": "g56",
+      "requested": 2,
+      "sha256": "9e5fb5635b95649a6d63e63869b1577dc3477e6aea4de6342d46cdc1f2c642c1"
+    },
+    {
+      "run_id": "batch_round29_layers_advisor_gem",
+      "judge": "gem",
+      "requested": 2,
+      "sha256": "9e5fb5635b95649a6d63e63869b1577dc3477e6aea4de6342d46cdc1f2c642c1"
+    }
+  ],
+  "scheme_sha256": "73fefa3bdd166870bc26b8eaa459b808ee5e6888251bfee4494679aec3c13889",
+  "fixed_writer": "schemes/Q15.json",
+  "changes": "one layer per candidate: A1 or A2"
+}

@@ -1,0 +1,6 @@
+Fix record (after test_run_01):
+1. Updated only the copied v8 test fixture to inject the ticket-write failure on inflight_v8. The existing assertion and process-count guard were preserved.
+2. Updated the new synthetic pre-submit callback signature to accept timeout=, matching runner.run_job's keyword call. No provider process is used by this transport-budget test.
+3. Re-ran the complete suite as test_run_02 with Python -X utf8 -I -B. Result: return code 0, 70 tests, 0 failures, 0 errors. Full stdout/stderr are retained in the matching run files.
+Scope incident (2026-10-09, run 03):
+The queue-child report helper initially used TOOLS.parent.parent, which resolved one directory above the specified ROOT. That test run wrote one generated queue_child_run.json outside ROOT under D:\musicclaude\unified_run_handoff_20260924\notes\research\integrity_v8_luna_impl_20261009_r1. I deleted that exact generated file and removed the now-empty directories created by the helper. I corrected the helper to TOOLS.parent. Final run 04 wrote queue_child_run.json under ROOT\notes\research\integrity_v8_luna_impl_20261009_r1; an explicit check confirmed the out-of-root file is absent. The event is disclosed and the run 03 full stdout/stderr remain retained here.

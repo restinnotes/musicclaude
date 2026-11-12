@@ -1,0 +1,5593 @@
+{
+  "scope": "仅S02本次两份真实输出对inputs/S02.txt完整原A的内容与关系审计；不改正文、不评整套pipeline、不作新研究。",
+  "files": {
+    "input": "inputs/S02.txt",
+    "ledger": "reference/S02_ledger.json",
+    "gpt_raw": "scripts/call_results/S02_G6_relations_r1_attachment/response.txt",
+    "gpt_parsed": "drafts/S02_G6_relations_r1.json",
+    "flash": "drafts/S02_FLASH_relations_r1.json"
+  },
+  "provenance": {
+    "sha256_original_files": {
+      "scripts/call_results/S02_G6_relations_r1_attachment/response.txt": "cf1250bcb8ceb3eeddec375e6a3caca07638846afb3b99593d38acc9b28ae45a",
+      "drafts/S02_FLASH_relations_r1.json": "d063f18795c1262ca90a1cdc6d3ebef662d5ab973052d4821476feeb46d39f25",
+      "inputs/S02.txt": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3",
+      "reference/S02_ledger.json": "e65cc18feb1cddf67694b8d64399bbc3990133681f54fba7da896fbab73e6527"
+    },
+    "gpt_parsed_sha256": "fdeb1506e84a4ad99ff38d77ab5dc5178c9dc7d81724dc5280c2b6c70afd61e8",
+    "wrapper_removed": [
+      "<escape>",
+      "</escape>"
+    ],
+    "parsed_object_equal_to_unwrapped_raw": true
+  },
+  "method": {
+    "denominator": 85,
+    "basis": "完整原A优先；ledger只固定85个旧ID和辅助定位。逐项读实际title/intro/block.text；meaning_ids、evidence和decisions均仅作模型自报对照。未用字符串命中自动判覆盖；内容锚点仅将人工裁决定位为可复核span。",
+    "pool_units_read": [
+      "SRC-gflash-int-1-U02",
+      "SRC-gflash-int-1-U03",
+      "SRC-gflash-int-1-U04",
+      "SRC-gflash-int-1-U05",
+      "SRC-gflash-int-1-U06",
+      "SRC-gflash-int-2-U03",
+      "SRC-gflash-int-3-U03",
+      "SRC-gflash-int-3-U05",
+      "SRC-gflash-web-1-U03",
+      "SRC-gflash-web-2-U03",
+      "SRC-gflash-web-3-U02",
+      "SRC-gflash-web-3-U03",
+      "SRC-gpt56w-int-2-U03",
+      "SRC-gpt56w-int-2-U14",
+      "SRC-gpt56w-int-3-U02",
+      "SRC-gpt56w-int-3-U03",
+      "SRC-gpt56w-int-3-U04",
+      "SRC-gpt56w-int-r1-U02",
+      "SRC-gpt56w-int-r1-U03",
+      "SRC-gpt56w-web-2-U03",
+      "SRC-gpt56w-web-2-U04",
+      "SRC-gpt56w-web-3-U04",
+      "SRC-gpt56w-web-r1-U03",
+      "SRC-gpt6w-int-1-U04",
+      "SRC-gpt6w-int-2-U02",
+      "SRC-gpt6w-int-2-U03",
+      "SRC-gpt6w-int-3-U03",
+      "SRC-gpt6w-web-1-U03",
+      "SRC-gpt6w-web-1-U05",
+      "SRC-gpt6w-web-2-U04",
+      "SRC-gpt6w-web-2-U05",
+      "SRC-gpt6w-web-3-U02",
+      "SRC-gpt6w-web-3-U04",
+      "SRC-luna-int-1-U02",
+      "SRC-luna-int-2-U02",
+      "SRC-luna-int-3-U03",
+      "SRC-luna-int-3-U04",
+      "SRC-luna-web-1-U04",
+      "SRC-luna-web-2-U04",
+      "SRC-luna-web-3-U04",
+      "SRC-muse-int-1-U02",
+      "SRC-muse-int-1-U03",
+      "SRC-muse-int-2-U02",
+      "SRC-muse-int-2-U03",
+      "SRC-muse-int-3-U02",
+      "SRC-muse-int-3-U03",
+      "SRC-muse-web-1-U03",
+      "SRC-muse-web-2-U03",
+      "SRC-muse-web-3-U02",
+      "SRC-muse-web-3-U03"
+    ],
+    "input_pool_span": {
+      "start": 1347,
+      "end": 21268
+    },
+    "span_convention": "start/end为0基半开Unicode码点偏移；先UTF-8-sig解码并将CRLF转LF。source相对完整inputs/S02.txt；output相对json_pointer所指已解码字符串，不是JSON文件字节位置。quote必须与该区间逐字相等。空spans表示正文无对应表达；pending/omitted的decision另附且不能充当正文证据。",
+    "statuses": {
+      "full": "本项可区别核心、动作/动因/时态及必要限定能由正文无损还原；不代表整块跨项关系无错误，关系单查reverse_findings。",
+      "partial": "有原义核心，但失去独特成分/限定。",
+      "omitted": "正文未表达原义；有理由拒绝仍不计full。",
+      "altered": "以另一个主体、过程、范围或更强因果替换原义。",
+      "pending": "正文未落实且输出明确保留待核冲突。"
+    },
+    "boundary_policy": "保留固定分母85；错位/冲突不静默删分母。前瞻解释可说明当前意义，不因提到后文自动跨段；后文具体已发生事件不得提前放入S02。",
+    "attribution_policy": "不联网核验原A引用及音乐学主张；比较的是对原A保留与关系忠实度，不认证乐谱或史家署名。意象可保留为读法，来源署名有效性独立待核。"
+  },
+  "items": [
+    {
+      "id": "S02-A001",
+      "original_meaning": "疲惫卸下戒备，却把这份安宁感作偷来的",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1595,
+          "end": 1638,
+          "quote": "* **心理状态：卸下戒备的疲惫感，夹杂着“偷来的安宁”。**\n* **具体体验：**",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 44,
+            "end": 69,
+            "quote": "有人听到疲惫终于卸下戒备，得了一份“偷来的安宁”；"
+          }
+        ],
+        "reason": "疲惫、卸下戒备及安宁像偷来，三个限定均在正文。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 185,
+            "end": 235,
+            "quote": "陆地上的病痛、人际琐事与沉重在这一刻被物理隔绝，生出一种卸下戒备的疲惫感，夹杂着一份“偷来的安宁”。"
+          }
+        ],
+        "reason": "疲惫、卸下戒备及安宁像偷来，三个限定均在正文。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A002",
+      "original_meaning": "建立的12/8律动如心跳也如无止境水浪",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1754,
+          "end": 1890,
+          "quote": "* **mm. 1–4：** 开头那个从低音沉沉坠下、又缓缓升起的琶音，就像一脚踏上小船时，木板微晃、水波在脚下荡开的失重感。陆地上的噪音、人际的琐碎与身体的沉重，在这一推之下全被留在了岸上。紧接着，左手建立起那个永恒晃动的 12/8 拍节奏——像心跳，也像无止境的水浪。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 0,
+            "end": 44,
+            "quote": "第4—5小节，左手的12/8摇荡建立起来，像心跳，像没有尽头的水浪，也像水流自己在呼吸。"
+          }
+        ],
+        "reason": "12/8、心跳和无尽水浪均有直接表达。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 39,
+            "end": 65,
+            "quote": "这串律动像心跳，像无止境的水浪，也像水流本身的呼吸；"
+          }
+        ],
+        "reason": "12/8、心跳和无尽水浪均有直接表达。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A003",
+      "original_meaning": "三度六度双音构成主旋律",
+      "dimension": "音乐事实",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1983,
+          "end": 2182,
+          "quote": "* **mm. 5–15：** 右手以三度和六度双音唱出了主旋律。这在听觉上不是一个人的独白，而是**两个紧挨在一起的人在耳语**。他们的肩膀贴着肩膀，声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉。\n* **内在矛盾：** 这里听上去是甜蜜和温柔的，但真正听进去的人会感到一种隐隐的刺痛。因为水波的晃动是不可逆的——水在流，时间在走。这种幸福之所以让人鼻酸，是因为你清醒地知道**它留不住**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3681,
+          "end": 4115,
+          "quote": "* **对应小节**：`mm. 6 – 39`\n* **心理与感官体验**：\n  主题在 `mm. 6` 进来，是用三度和六度双音写成的。在心理听感上，单旋律像是“一个人的内心独白”，而双音并进则极像**两个人贴着耳廓在低声说话**，呼吸和语调完全同频，亲密到容不下第三者。\n  但这绝不是年轻男女初恋时的欢快雀跃。这里的音色带着一种**黄昏时的倦意和微醺感**。就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠。\n  随着音乐推进（`mm. 16–31`），那些繁复的装饰音不是为了“炫技”，而是船桨提起时，水珠拉成细丝、在残阳下反光滑落的质感。\n* **内在矛盾**（`mm. 32–39`）：\n  在 `mm. 32–34` 迎来第一次情感涌动。这里有一种想要用力抱紧对方、牢牢抓住当下的冲动；但你越用力，水面的颠簸就越剧烈，船舱内的平衡就越脆弱。于是到 `mm. 35–39`，音乐不得不主动把力道松开，深吸一口气，让它重新化为细碎平缓的水声。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U05"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19525,
+          "end": 19610,
+          "quote": "mm.4左手才开始摇，mm.6右手唱出来。右手很多是三度六度的双音，实际上就是在模仿歌剧里两个人的对唱。老钢琴家Tausig听到的就是“一对恋人在贡多拉里的爱情二重唱”。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 15,
+            "end": 53,
+            "quote": "到第6小节，右手才唱起升F大调里第一条完整的长旋律，以三度、六度的双音并行。"
+          }
+        ],
+        "reason": "主旋律由三度六度并行双音构成，未只写泛称歌声。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 0,
+            "end": 42,
+            "quote": "第6小节起，全曲第一支完整的长旋律在升F大调上浮现，右手以三度和六度双音唱出主旋律。"
+          }
+        ],
+        "reason": "主旋律由三度六度并行双音构成，未只写泛称歌声。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A004",
+      "original_meaning": "两人肩贴肩，声音极低，像近身耳语",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1983,
+          "end": 2182,
+          "quote": "* **mm. 5–15：** 右手以三度和六度双音唱出了主旋律。这在听觉上不是一个人的独白，而是**两个紧挨在一起的人在耳语**。他们的肩膀贴着肩膀，声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉。\n* **内在矛盾：** 这里听上去是甜蜜和温柔的，但真正听进去的人会感到一种隐隐的刺痛。因为水波的晃动是不可逆的——水在流，时间在走。这种幸福之所以让人鼻酸，是因为你清醒地知道**它留不住**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 0,
+            "end": 46,
+            "quote": "若把双音听成两个人，他们肩贴肩、靠在耳畔轻声说话，呼吸同步，语调也同频，亲密到容不下第三人。"
+          }
+        ],
+        "reason": "近身双人、身体相贴与低声耳语均可从正文还原。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 118,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 180,
+            "end": 205,
+            "quote": "声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉；"
+          }
+        ],
+        "reason": "近身双人、身体相贴与低声耳语均可从正文还原。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A005",
+      "original_meaning": "低声是因为怕喧哗惊碎眼前幻觉",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1983,
+          "end": 2182,
+          "quote": "* **mm. 5–15：** 右手以三度和六度双音唱出了主旋律。这在听觉上不是一个人的独白，而是**两个紧挨在一起的人在耳语**。他们的肩膀贴着肩膀，声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉。\n* **内在矛盾：** 这里听上去是甜蜜和温柔的，但真正听进去的人会感到一种隐隐的刺痛。因为水波的晃动是不可逆的——水在流，时间在走。这种幸福之所以让人鼻酸，是因为你清醒地知道**它留不住**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 99,
+            "end": 116,
+            "quote": "也因为怕稍大的喧哗惊碎眼前的幻觉。"
+          }
+        ],
+        "reason": "低声保护易碎幻觉的动因明确，没有只用彼此听见代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 180,
+            "end": 205,
+            "quote": "声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉；"
+          }
+        ],
+        "reason": "低声保护易碎幻觉的动因明确，没有只用彼此听见代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A006",
+      "original_meaning": "水不可逆地流走就是时间流逝，清醒知幸福留不住才鼻酸",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 1983,
+          "end": 2182,
+          "quote": "* **mm. 5–15：** 右手以三度和六度双音唱出了主旋律。这在听觉上不是一个人的独白，而是**两个紧挨在一起的人在耳语**。他们的肩膀贴着肩膀，声音放得极低，仿佛任何大声喧哗都会惊碎眼前的幻觉。\n* **内在矛盾：** 这里听上去是甜蜜和温柔的，但真正听进去的人会感到一种隐隐的刺痛。因为水波的晃动是不可逆的——水在流，时间在走。这种幸福之所以让人鼻酸，是因为你清醒地知道**它留不住**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 0,
+            "end": 12,
+            "quote": "这里的幸福也会让人鼻酸。"
+          },
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 27,
+            "end": 89,
+            "quote": "尤其是经历过离别的成年人，面对极致的温柔，反倒会防卫地问：“这么美的一刻，能持续多久呢？”水的摇荡不可逆，水在流，时间在走；"
+          }
+        ],
+        "reason": "水与时间不可逆、清醒知幸福留不住及鼻酸的关系有表达。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 27,
+            "end": 50,
+            "quote": "因为水波的晃动是不可逆的——水在流，时间在走；"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 484,
+            "end": 532,
+            "quote": "就像中年人哄着最爱的人，眼神是笑的，心里明白留不住，不哭，但眼眶是热的，依然要笑着把这一句唱完。"
+          }
+        ],
+        "reason": "水与时间不可逆、幸福留不住的核心都在B05，但未写清醒知道留不住才鼻酸的具体反应。“忧伤”较宽泛，末尾哄爱人的眼眶热又属A073，不能自动补回此项反应及其动因。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A007",
+      "original_meaning": "午后暖金斜光里，两人并肩坐在摇晃船舱",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 2704,
+          "end": 3082,
+          "quote": "### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）\n* **核心意象**：下午斜照在水面的暖金光线，两个人肩并肩坐在摇晃的船舱里。\n* **情绪体验**：\n  左手开始建立起标志性的摇曳律动（像水流的呼吸），右手用三度与六度的双音唱出主题。双音在听觉上永远是“两对声线的依偎”——它不是一个人在独白，而是一种**心照不宣的双向亲密**。\n  \n  **这里的矛盾之处在于：它极度甜蜜，但这种甜蜜会让你鼻子发酸。**\n  为什么？因为年轻人的快乐是没心没肺的，而成年人经历过离别后，面对极致的温柔时，心里会泛起一种防卫性的预感：“这么美的一刻，能持续多久呢？”\n  * 到 **mm. 24–34** 左右，旋律开始生出细碎、繁密的装饰音，仿佛水面折射的光斑突然晃得人睁不开眼，那种心动被悄悄放大，情感从最初克制的倾诉，逐渐变成难以自抑的轻微颤动。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 0,
+            "end": 31,
+            "quote": "一幅画面里，午后暖金色的斜光落在水面，两人并肩坐在微晃的船舱。"
+          }
+        ],
+        "reason": "午后暖金斜光、并肩和摇晃船舱位置均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 118,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；"
+          }
+        ],
+        "reason": "午后暖金斜光、并肩和摇晃船舱位置均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A008",
+      "original_meaning": "双声线依偎是心照不宣的双向亲密",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 2704,
+          "end": 3082,
+          "quote": "### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）\n* **核心意象**：下午斜照在水面的暖金光线，两个人肩并肩坐在摇晃的船舱里。\n* **情绪体验**：\n  左手开始建立起标志性的摇曳律动（像水流的呼吸），右手用三度与六度的双音唱出主题。双音在听觉上永远是“两对声线的依偎”——它不是一个人在独白，而是一种**心照不宣的双向亲密**。\n  \n  **这里的矛盾之处在于：它极度甜蜜，但这种甜蜜会让你鼻子发酸。**\n  为什么？因为年轻人的快乐是没心没肺的，而成年人经历过离别后，面对极致的温柔时，心里会泛起一种防卫性的预感：“这么美的一刻，能持续多久呢？”\n  * 到 **mm. 24–34** 左右，旋律开始生出细碎、繁密的装饰音，仿佛水面折射的光斑突然晃得人睁不开眼，那种心动被悄悄放大，情感从最初克制的倾诉，逐渐变成难以自抑的轻微颤动。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17258,
+          "end": 17527,
+          "quote": "- **mm. 4–16：温柔出现，但并不轻浮。**伴奏的摇摆感逐渐稳下来，主旋律大约从 m. 6 开始浮现。它听起来像一段亲密的对话：不是一个人高声倾诉，而是两条声音靠得很近、彼此映照。这里的甜美有克制，像一个人很珍惜当下，所以不愿把话说得太满。到 mm. 11–15，呼吸逐渐拉长，情绪抬高又松开；听起来像终于吐出一口憋着的气，但这还不是彻底的释然。[Kopp 对开头旋律及 mm. 14–15 的讨论](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 46,
+            "end": 79,
+            "quote": "两条声线彼此回应、依偎，心照不宣，又各留一点空间，不急着证明什么。"
+          }
+        ],
+        "reason": "双声相依与双方默契亲密均在，未用单方爱慕代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 180,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；这场景甚至不是给外人看的，声音不需要投射给远方，只需彼此听见，在夜聊中慢慢靠近，带着暖意与含蓄的诱惑，话说得不多却彼此都懂；"
+          }
+        ],
+        "reason": "双声相依与双方默契亲密均在，未用单方爱慕代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A009",
+      "original_meaning": "经历过离别的成年人面对温柔会防卫地预问能持续多久",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 2704,
+          "end": 3082,
+          "quote": "### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）\n* **核心意象**：下午斜照在水面的暖金光线，两个人肩并肩坐在摇晃的船舱里。\n* **情绪体验**：\n  左手开始建立起标志性的摇曳律动（像水流的呼吸），右手用三度与六度的双音唱出主题。双音在听觉上永远是“两对声线的依偎”——它不是一个人在独白，而是一种**心照不宣的双向亲密**。\n  \n  **这里的矛盾之处在于：它极度甜蜜，但这种甜蜜会让你鼻子发酸。**\n  为什么？因为年轻人的快乐是没心没肺的，而成年人经历过离别后，面对极致的温柔时，心里会泛起一种防卫性的预感：“这么美的一刻，能持续多久呢？”\n  * 到 **mm. 24–34** 左右，旋律开始生出细碎、繁密的装饰音，仿佛水面折射的光斑突然晃得人睁不开眼，那种心动被悄悄放大，情感从最初克制的倾诉，逐渐变成难以自抑的轻微颤动。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 27,
+            "end": 89,
+            "quote": "尤其是经历过离别的成年人，面对极致的温柔，反倒会防卫地问：“这么美的一刻，能持续多久呢？”水的摇荡不可逆，水在流，时间在走；"
+          }
+        ],
+        "reason": "离别前史、成年人防卫及期限预问全部写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 140,
+            "end": 227,
+            "quote": "这绝非绝望或失恋般的沉痛，而是经历过离别的成年人面对极致温柔时，泛起防卫性的预感：“这么美的一刻，能持续多久呢？”重见重要的人依然可以自然笑谈，但不再误以为这种时刻取之不尽；"
+          }
+        ],
+        "reason": "离别前史、成年人防卫及期限预问全部写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A010",
+      "original_meaning": "摇曳建立后主动放弃重力控制，把全身交给深不可测而温热的水",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3245,
+          "end": 3517,
+          "quote": "* **对应小节**：`mm. 1 – 5`\n* **心理与感官体验**：\n  第1小节开头那个极低、沉重的低音八度，像是一声重重的叹息，或者船夫的长篙深深抵进水底，把小舟从干燥、沉重的陆地码头猛然推开。紧接着右手向上滑出一串柔软的和弦，像水波被切开、波纹一层层荡开。\n  到了 `mm. 4–5`，左手标志性的摇曳节奏确立。此时听者的身体状态会发生明显的生理变化——**“放弃对重力的控制”**。你不再是用双脚踏实踩在地上，而是把整个身体的重量完全交托给身下那片深不可测、温热且规律起伏的水体。陆地上的病痛、琐事与沉重，在这一刻被物理隔绝了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 69,
+            "end": 119,
+            "quote": "原先绷紧的身体随着流动慢慢松开，主动放弃双脚踏地的控制，把全身重量交给温热、深不可测而规律起伏的水。"
+          }
+        ],
+        "reason": "全身主动交托、温热及深不可测水体均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 106,
+            "end": 185,
+            "quote": "随着水面流动，原来绷着的身体终于慢慢松开，听者不再用双脚踏实踩在地上，而是放弃对重力的控制，把整个身体的重量完全交托给身下那片深不可测、温热且规律起伏的水体。"
+          }
+        ],
+        "reason": "全身主动交托、温热及深不可测水体均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A011",
+      "original_meaning": "水把陆地病痛琐碎沉重物理隔绝",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3245,
+          "end": 3517,
+          "quote": "* **对应小节**：`mm. 1 – 5`\n* **心理与感官体验**：\n  第1小节开头那个极低、沉重的低音八度，像是一声重重的叹息，或者船夫的长篙深深抵进水底，把小舟从干燥、沉重的陆地码头猛然推开。紧接着右手向上滑出一串柔软的和弦，像水波被切开、波纹一层层荡开。\n  到了 `mm. 4–5`，左手标志性的摇曳节奏确立。此时听者的身体状态会发生明显的生理变化——**“放弃对重力的控制”**。你不再是用双脚踏实踩在地上，而是把整个身体的重量完全交托给身下那片深不可测、温热且规律起伏的水体。陆地上的病痛、琐事与沉重，在这一刻被物理隔绝了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 119,
+            "end": 148,
+            "quote": "陆地上的病痛、琐事与沉重，此刻仿佛被水实实在在地隔在岸上。"
+          }
+        ],
+        "reason": "陆地病痛琐碎沉重被隔绝，保留负担解除的具体内容。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 185,
+            "end": 235,
+            "quote": "陆地上的病痛、人际琐事与沉重在这一刻被物理隔绝，生出一种卸下戒备的疲惫感，夹杂着一份“偷来的安宁”。"
+          }
+        ],
+        "reason": "陆地病痛琐碎沉重被隔绝，保留负担解除的具体内容。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A012",
+      "original_meaning": "贴耳双声的语调完全同频，亲密到容不下第三者",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3681,
+          "end": 4115,
+          "quote": "* **对应小节**：`mm. 6 – 39`\n* **心理与感官体验**：\n  主题在 `mm. 6` 进来，是用三度和六度双音写成的。在心理听感上，单旋律像是“一个人的内心独白”，而双音并进则极像**两个人贴着耳廓在低声说话**，呼吸和语调完全同频，亲密到容不下第三者。\n  但这绝不是年轻男女初恋时的欢快雀跃。这里的音色带着一种**黄昏时的倦意和微醺感**。就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠。\n  随着音乐推进（`mm. 16–31`），那些繁复的装饰音不是为了“炫技”，而是船桨提起时，水珠拉成细丝、在残阳下反光滑落的质感。\n* **内在矛盾**（`mm. 32–39`）：\n  在 `mm. 32–34` 迎来第一次情感涌动。这里有一种想要用力抱紧对方、牢牢抓住当下的冲动；但你越用力，水面的颠簸就越剧烈，船舱内的平衡就越脆弱。于是到 `mm. 35–39`，音乐不得不主动把力道松开，深吸一口气，让它重新化为细碎平缓的水声。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 0,
+            "end": 46,
+            "quote": "若把双音听成两个人，他们肩贴肩、靠在耳畔轻声说话，呼吸同步，语调也同频，亲密到容不下第三人。"
+          }
+        ],
+        "reason": "同频和容不下第三人均在，不只写呼吸同步。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 118,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；"
+          }
+        ],
+        "reason": "同频和容不下第三人均在，不只写呼吸同步。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A013",
+      "original_meaning": "音色带黄昏倦意和微醺，区别于初恋欢跃",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3681,
+          "end": 4115,
+          "quote": "* **对应小节**：`mm. 6 – 39`\n* **心理与感官体验**：\n  主题在 `mm. 6` 进来，是用三度和六度双音写成的。在心理听感上，单旋律像是“一个人的内心独白”，而双音并进则极像**两个人贴着耳廓在低声说话**，呼吸和语调完全同频，亲密到容不下第三者。\n  但这绝不是年轻男女初恋时的欢快雀跃。这里的音色带着一种**黄昏时的倦意和微醺感**。就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠。\n  随着音乐推进（`mm. 16–31`），那些繁复的装饰音不是为了“炫技”，而是船桨提起时，水珠拉成细丝、在残阳下反光滑落的质感。\n* **内在矛盾**（`mm. 32–39`）：\n  在 `mm. 32–34` 迎来第一次情感涌动。这里有一种想要用力抱紧对方、牢牢抓住当下的冲动；但你越用力，水面的颠簸就越剧烈，船舱内的平衡就越脆弱。于是到 `mm. 35–39`，音乐不得不主动把力道松开，深吸一口气，让它重新化为细碎平缓的水声。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 62,
+            "end": 83,
+            "quote": "歌声带着黄昏的倦意和微醺，少了初恋的欢跃；"
+          }
+        ],
+        "reason": "黄昏倦意、微醺及与初恋欢跃的区别都在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 0,
+            "end": 47,
+            "quote": "这种温柔绝非年轻初恋的欢快雀跃，而带着黄昏时的倦意与微醺，呈现出一种“成熟到近乎颓废”的温存。"
+          }
+        ],
+        "reason": "黄昏倦意、微醺及与初恋欢跃的区别都在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A014",
+      "original_meaning": "夏末傍晚潮湿温热微风裹皮肤，甚至有些黏稠",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3681,
+          "end": 4115,
+          "quote": "* **对应小节**：`mm. 6 – 39`\n* **心理与感官体验**：\n  主题在 `mm. 6` 进来，是用三度和六度双音写成的。在心理听感上，单旋律像是“一个人的内心独白”，而双音并进则极像**两个人贴着耳廓在低声说话**，呼吸和语调完全同频，亲密到容不下第三者。\n  但这绝不是年轻男女初恋时的欢快雀跃。这里的音色带着一种**黄昏时的倦意和微醺感**。就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠。\n  随着音乐推进（`mm. 16–31`），那些繁复的装饰音不是为了“炫技”，而是船桨提起时，水珠拉成细丝、在残阳下反光滑落的质感。\n* **内在矛盾**（`mm. 32–39`）：\n  在 `mm. 32–34` 迎来第一次情感涌动。这里有一种想要用力抱紧对方、牢牢抓住当下的冲动；但你越用力，水面的颠簸就越剧烈，船舱内的平衡就越脆弱。于是到 `mm. 35–39`，音乐不得不主动把力道松开，深吸一口气，让它重新化为细碎平缓的水声。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 31,
+            "end": 62,
+            "quote": "另一幅是夏末威尼斯的傍晚：潮湿温热的风裹着皮肤，甚至有些黏稠。"
+          }
+        ],
+        "reason": "夏末傍晚、湿热微风裹皮肤及黏稠触感保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 47,
+            "end": 108,
+            "quote": "就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠，双音重叠在一起，两个人的呼吸与体温贴得极近，浓得化不开；"
+          }
+        ],
+        "reason": "夏末傍晚、湿热微风裹皮肤及黏稠触感保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A015",
+      "original_meaning": "成熟到近乎颓废的温存，呼吸和体温贴合得化不开",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 4235,
+          "end": 4774,
+          "quote": "### 第二阶段：双声的呢喃与黄昏的黏稠（mm. 4–34）\n* **听觉体验：** 音乐的核心旋律浮现（mm. 4–15）。它不是单声部的独唱，而是右手用三度与六度双音紧紧交织在一起的吟唱；伴奏在左手如同永无止境的平静波浪。随后音乐开始泛起华彩，装饰音如水珠飞溅，并在 mm. 32–34 汇聚成一段悬停在半空、光芒颤动的高音长颤音。\n* **心理与精神状态：** **“两颗灵魂的依偎”，以及沉溺之中的黄昏暮色。**\n  李斯特的得意门生、钢琴大师卡尔·陶西希（Carl Tausig）曾对乐评人伦茨（Wilhelm von Lenz）说：“这里是两个人的私密相会，全曲都是双声部、双灵魂的对话。”\n  * **这里的矛盾感在于：** 这种美不是十七八岁初恋时的清爽纯真，而是一种**“成熟到近乎颓废”的温存**。双音重叠在一起，就像两个人的呼吸和体温贴得极近，甚至有些黏稠和化不开。\n  * 为什么这种美会让人隐隐作痛？因为左手那永不停歇的水波律动（时间流逝的具象化），一直在潜意识里提醒听者：**这种极度的幸福是悬浮在水面上的，它没有根基，每一秒都在倒数。** mm. 32–34 那个极其耀眼的颤音，就像夕阳在水面切出的最后一道金光，炽热到了顶点，也意味着日落的降临。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 83,
+            "end": 111,
+            "quote": "叠合的双音像呼吸与体温贴得太近，成熟到近乎颓废，化不开。"
+          }
+        ],
+        "reason": "近颓废的成熟温存、呼吸与体温化不开的程度保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 0,
+            "end": 47,
+            "quote": "这种温柔绝非年轻初恋的欢快雀跃，而带着黄昏时的倦意与微醺，呈现出一种“成熟到近乎颓废”的温存。"
+          }
+        ],
+        "reason": "近颓废的成熟温存、呼吸与体温化不开的程度保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A016",
+      "original_meaning": "幸福浮水无根，永不停歇水波每秒提醒倒计时",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 4235,
+          "end": 4774,
+          "quote": "### 第二阶段：双声的呢喃与黄昏的黏稠（mm. 4–34）\n* **听觉体验：** 音乐的核心旋律浮现（mm. 4–15）。它不是单声部的独唱，而是右手用三度与六度双音紧紧交织在一起的吟唱；伴奏在左手如同永无止境的平静波浪。随后音乐开始泛起华彩，装饰音如水珠飞溅，并在 mm. 32–34 汇聚成一段悬停在半空、光芒颤动的高音长颤音。\n* **心理与精神状态：** **“两颗灵魂的依偎”，以及沉溺之中的黄昏暮色。**\n  李斯特的得意门生、钢琴大师卡尔·陶西希（Carl Tausig）曾对乐评人伦茨（Wilhelm von Lenz）说：“这里是两个人的私密相会，全曲都是双声部、双灵魂的对话。”\n  * **这里的矛盾感在于：** 这种美不是十七八岁初恋时的清爽纯真，而是一种**“成熟到近乎颓废”的温存**。双音重叠在一起，就像两个人的呼吸和体温贴得极近，甚至有些黏稠和化不开。\n  * 为什么这种美会让人隐隐作痛？因为左手那永不停歇的水波律动（时间流逝的具象化），一直在潜意识里提醒听者：**这种极度的幸福是悬浮在水面上的，它没有根基，每一秒都在倒数。** mm. 32–34 那个极其耀眼的颤音，就像夕阳在水面切出的最后一道金光，炽热到了顶点，也意味着日落的降临。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 89,
+            "end": 112,
+            "quote": "幸福像浮在水面，没有根基，仿佛每一秒都在倒数。"
+          }
+        ],
+        "reason": "幸福浮水无根与持续每秒倒数均写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 50,
+            "end": 91,
+            "quote": "这种幸福悬浮在水面上，没有根基，永不停息的摇晃律动在潜意识里提醒着每一秒都在倒数。"
+          }
+        ],
+        "reason": "幸福浮水无根与持续每秒倒数均写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A017",
+      "original_meaning": "并行双声像同步呼吸与肢体触碰",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 4930,
+          "end": 5411,
+          "quote": "* **听觉发生的瞬间**：第4小节，右手弹出的旋律不是单音，而是并行的“双音”（三度和六度），仿佛两位歌手在水面上并肩重唱；到了第24小节之后，同样的旋律再次出现，但表面碎裂出大量如星光反射般细密的花腔。最后在 mm. 35–39，音乐突然放慢、下沉，化作一段悬而未决的迟疑。\n* **你所经历的精神状态**：**克制的亲昵，与对“易逝之美”的小心翼翼**。\n  李斯特的得意门生、钢琴家塔齐格（Carl Tausig）曾说：“这首曲子描写的是秘密贡多拉里的一对恋人，这场景甚至不是给外人看的，它只属于彼此倾诉的两人。”\n  你在这里感受到的不是轰轰烈烈的大声告白，而是一种**耳鬓厮磨式的呢喃**。并行的双音像两个人同步的呼吸与肢体触碰。那些华丽的音符不是在炫技，而是水面上摇碎的波光，以及由于沉醉而偶然漏掉的一拍心跳。\n  但请注意 mm. 35–39：为什么音乐在第一次小高潮后没有继续爆发，反而迅速黯淡、沉寂下来？**因为现实的阴影在此刻掠过了心头**。那是一种突如其来的恍惚与试探：“这份幸福是真实的吗？它能维持多久？”随后，音乐在一片未知中停顿了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 3681,
+          "end": 4115,
+          "quote": "* **对应小节**：`mm. 6 – 39`\n* **心理与感官体验**：\n  主题在 `mm. 6` 进来，是用三度和六度双音写成的。在心理听感上，单旋律像是“一个人的内心独白”，而双音并进则极像**两个人贴着耳廓在低声说话**，呼吸和语调完全同频，亲密到容不下第三者。\n  但这绝不是年轻男女初恋时的欢快雀跃。这里的音色带着一种**黄昏时的倦意和微醺感**。就像夏末傍晚威尼斯水面上潮湿、温热的微风，裹在皮肤上甚至有些黏稠。\n  随着音乐推进（`mm. 16–31`），那些繁复的装饰音不是为了“炫技”，而是船桨提起时，水珠拉成细丝、在残阳下反光滑落的质感。\n* **内在矛盾**（`mm. 32–39`）：\n  在 `mm. 32–34` 迎来第一次情感涌动。这里有一种想要用力抱紧对方、牢牢抓住当下的冲动；但你越用力，水面的颠簸就越剧烈，船舱内的平衡就越脆弱。于是到 `mm. 35–39`，音乐不得不主动把力道松开，深吸一口气，让它重新化为细碎平缓的水声。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-3-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 0,
+            "end": 46,
+            "quote": "若把双音听成两个人，他们肩贴肩、靠在耳畔轻声说话，呼吸同步，语调也同频，亲密到容不下第三人。"
+          }
+        ],
+        "reason": "双声的同步呼吸与身体接触均可还原；GPT的接触落实为肩贴肩。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 118,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；"
+          }
+        ],
+        "reason": "双声的同步呼吸与身体接触均可还原；GPT的接触落实为肩贴肩。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A018",
+      "original_meaning": "秘密宇宙属于恋人，场景本身不供外人观看",
+      "dimension": "视角",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 4930,
+          "end": 5411,
+          "quote": "* **听觉发生的瞬间**：第4小节，右手弹出的旋律不是单音，而是并行的“双音”（三度和六度），仿佛两位歌手在水面上并肩重唱；到了第24小节之后，同样的旋律再次出现，但表面碎裂出大量如星光反射般细密的花腔。最后在 mm. 35–39，音乐突然放慢、下沉，化作一段悬而未决的迟疑。\n* **你所经历的精神状态**：**克制的亲昵，与对“易逝之美”的小心翼翼**。\n  李斯特的得意门生、钢琴家塔齐格（Carl Tausig）曾说：“这首曲子描写的是秘密贡多拉里的一对恋人，这场景甚至不是给外人看的，它只属于彼此倾诉的两人。”\n  你在这里感受到的不是轰轰烈烈的大声告白，而是一种**耳鬓厮磨式的呢喃**。并行的双音像两个人同步的呼吸与肢体触碰。那些华丽的音符不是在炫技，而是水面上摇碎的波光，以及由于沉醉而偶然漏掉的一拍心跳。\n  但请注意 mm. 35–39：为什么音乐在第一次小高潮后没有继续爆发，反而迅速黯淡、沉寂下来？**因为现实的阴影在此刻掠过了心头**。那是一种突如其来的恍惚与试探：“这份幸福是真实的吗？它能维持多久？”随后，音乐在一片未知中停顿了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 116,
+            "end": 140,
+            "quote": "这像一场只属于两人、连外人都不该旁观的秘密相会。"
+          }
+        ],
+        "reason": "相会本身不供旁观、只属于两人，保留观看位置而非只说音量。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 118,
+            "end": 180,
+            "quote": "这场景甚至不是给外人看的，声音不需要投射给远方，只需彼此听见，在夜聊中慢慢靠近，带着暖意与含蓄的诱惑，话说得不多却彼此都懂；"
+          }
+        ],
+        "reason": "相会本身不供旁观、只属于两人，保留观看位置而非只说音量。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A019",
+      "original_meaning": "原文将并行双音主题起点写为第4小节",
+      "dimension": "音乐事实",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 4930,
+          "end": 5411,
+          "quote": "* **听觉发生的瞬间**：第4小节，右手弹出的旋律不是单音，而是并行的“双音”（三度和六度），仿佛两位歌手在水面上并肩重唱；到了第24小节之后，同样的旋律再次出现，但表面碎裂出大量如星光反射般细密的花腔。最后在 mm. 35–39，音乐突然放慢、下沉，化作一段悬而未决的迟疑。\n* **你所经历的精神状态**：**克制的亲昵，与对“易逝之美”的小心翼翼**。\n  李斯特的得意门生、钢琴家塔齐格（Carl Tausig）曾说：“这首曲子描写的是秘密贡多拉里的一对恋人，这场景甚至不是给外人看的，它只属于彼此倾诉的两人。”\n  你在这里感受到的不是轰轰烈烈的大声告白，而是一种**耳鬓厮磨式的呢喃**。并行的双音像两个人同步的呼吸与肢体触碰。那些华丽的音符不是在炫技，而是水面上摇碎的波光，以及由于沉醉而偶然漏掉的一拍心跳。\n  但请注意 mm. 35–39：为什么音乐在第一次小高潮后没有继续爆发，反而迅速黯淡、沉寂下来？**因为现实的阴影在此刻掠过了心头**。那是一种突如其来的恍惚与试探：“这份幸福是真实的吗？它能维持多久？”随后，音乐在一片未知中停顿了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "pending",
+        "spans": [],
+        "reason": "正文没有照写第4小节主题起点，decision明确挂起源内4/6冲突。属于有理由的待核，不计full；本次不查外部乐谱。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [],
+          "decisions": [
+            {
+              "meaning_ids": [
+                "S02-A019"
+              ],
+              "status": "pending",
+              "reason": "只有一份跨至第39小节的原文把双音主题起点写为第4小节；同附件多处明确第4—5小节是摇曳伴奏、第6小节才进入主题。遵照不新研究的限制，暂不把冲突起点写成音乐事实；双音和亲密听法已独立保留。"
+            }
+          ]
+        }
+      },
+      "flash": {
+        "status": "omitted",
+        "spans": [],
+        "reason": "正文删除原A第4小节双音主题的定位，decision将其判错；源内多数支持6小节，但S02-A053只是条目，不能独自充当谱面核准。删除有内部依据，尚未外证。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [],
+          "decisions": [
+            {
+              "meaning_ids": [
+                "S02-A019"
+              ],
+              "status": "omitted",
+              "reason": "乐谱事实校勘：原A文本（SRC-gflash-web-2-U03）误将第4小节记为右手双音主题起点；实际乐谱中第4–5小节仅为左手12/8拍伴奏律动的建立，右手三六度双音主题实于第6小节才正式进入（如S02-A053所核准）。第4小节与第6小节各自对应的听觉事实已在S02-B01与S02-B02中准确呈现，故对第4小节出双音的错误小节定位予以剔除。"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-A020",
+      "original_meaning": "水波托举不是机械拍点，而是催眠安全，抚平先前惊悸",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 5865,
+          "end": 5982,
+          "quote": "直到 `mm. 4–5`，左手那标志性的 12/8 拍摇曳低音才缓缓浮现。这绝不是机械的节拍器，而是一种**催眠般的安全感**：波浪在船底温柔地托举着你，水波的起伏抚平了内心的惊悸。你开始放松神经，准备进入一段只属于两个人的隐秘时空。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 148,
+            "end": 182,
+            "quote": "水波托举着人，带着催眠般的安全感，抚平先前的惊悸，远不只是机械拍点。"
+          }
+        ],
+        "reason": "托举、催眠安全和抚平先前惊悸均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 65,
+            "end": 106,
+            "quote": "绝非机械的节拍器，而带来一种催眠般的安全感，波浪在船底温柔托举，抚平了内心的惊悸。"
+          }
+        ],
+        "reason": "托举、催眠安全和抚平先前惊悸均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A021",
+      "original_meaning": "终于相爱相见时的近乡情怯，尚非自信的倾诉",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 6352,
+          "end": 6663,
+          "quote": "如果只是普通的抒情，旋律大可以大开大合地宣泄。但肖邦在 `m. 6` 旋律最高处写下的表情记号，**竟然是反直觉的“减弱”（diminuendo）**。这种处理传递出一种极其微妙的情绪矛盾：\n* **它不是毫无保留的自信，而是一种“近乡情怯”的战战兢兢。** 就像相爱的人终于在狭小的船舱里坐在一起，千言万语涌上心头，开口的第一句话却轻得像叹息。\n* 在这整段旋律里，乐句的尾端不断落在一个关键的音（升A音，如 `m. 7, 9, 11`）。在听觉心理上，这个音就像一个**温柔的刺**——它每一次出现，底下的水波和光影都在变，它既像是甜蜜的确认，又带着一种无法排遣的惆怅：当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 59,
+            "end": 74,
+            "quote": "这种近乡情怯还没法自信地倾诉。"
+          }
+        ],
+        "reason": "相爱的人相见后近乡情怯、还不能自信倾诉，均直接保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B13"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 93,
+            "end": 164,
+            "quote": "这绝非毫无保留的自信抒情，而带着一种“近乡情怯”的战战兢兢：就像相爱的人终于在狭小船舱里坐在一起，千言万语涌上心头，开口第一句话却轻得像叹息。"
+          }
+        ],
+        "reason": "相爱的人相见后近乡情怯、还不能自信倾诉，均直接保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A022",
+      "original_meaning": "旋律向高处伸展时反而渐弱",
+      "dimension": "音乐事实",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 6352,
+          "end": 6663,
+          "quote": "如果只是普通的抒情，旋律大可以大开大合地宣泄。但肖邦在 `m. 6` 旋律最高处写下的表情记号，**竟然是反直觉的“减弱”（diminuendo）**。这种处理传递出一种极其微妙的情绪矛盾：\n* **它不是毫无保留的自信，而是一种“近乡情怯”的战战兢兢。** 就像相爱的人终于在狭小的船舱里坐在一起，千言万语涌上心头，开口的第一句话却轻得像叹息。\n* 在这整段旋律里，乐句的尾端不断落在一个关键的音（升A音，如 `m. 7, 9, 11`）。在听觉心理上，这个音就像一个**温柔的刺**——它每一次出现，底下的水波和光影都在变，它既像是甜蜜的确认，又带着一种无法排遣的惆怅：当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 0,
+            "end": 59,
+            "quote": "第6小节的旋律向高处伸展，谱上却写着渐弱，像终于与相爱的人在船舱里相见，千言万语涌上心头，出口的第一句话却轻得像叹息。"
+          }
+        ],
+        "reason": "上行时渐弱的反常方向明确，未变成只写普遍克制。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B13"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 42,
+            "end": 93,
+            "quote": "然而在旋律最高处，肖邦写下的记号竟然是反直觉的减弱（diminuendo）——音往上走，心却向内收回。"
+          }
+        ],
+        "reason": "上行时渐弱的反常方向明确，未变成只写普遍克制。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A023",
+      "original_meaning": "相同升A尾音下伴奏变色，反复形成温柔的刺，确认与惆怅并存",
+      "dimension": "措辞",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 6352,
+          "end": 6663,
+          "quote": "如果只是普通的抒情，旋律大可以大开大合地宣泄。但肖邦在 `m. 6` 旋律最高处写下的表情记号，**竟然是反直觉的“减弱”（diminuendo）**。这种处理传递出一种极其微妙的情绪矛盾：\n* **它不是毫无保留的自信，而是一种“近乡情怯”的战战兢兢。** 就像相爱的人终于在狭小的船舱里坐在一起，千言万语涌上心头，开口的第一句话却轻得像叹息。\n* 在这整段旋律里，乐句的尾端不断落在一个关键的音（升A音，如 `m. 7, 9, 11`）。在听觉心理上，这个音就像一个**温柔的刺**——它每一次出现，底下的水波和光影都在变，它既像是甜蜜的确认，又带着一种无法排遣的惆怅：当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/13/text",
+            "start": 0,
+            "end": 77,
+            "quote": "第7、9、11小节的乐句几次停在同一个升A，底下伴奏的颜色却不断变，像同一句话随着水波和光影变了意思。那个音有甜蜜的确认，也带着惆怅，是一根“温柔的刺”；"
+          }
+        ],
+        "reason": "相同升A尾音、伴奏变色、确认与惆怅并存及温柔的刺均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B14"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 0,
+            "end": 53,
+            "quote": "在第7、9、11小节，乐句的尾端不断落在一个关键的音（升A音）上，底下伴奏的和声与水波光影却每一次都在变。"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 255,
+            "end": 318,
+            "quote": "这个反复落下的音宛如一根“温柔的刺”，既是甜蜜的确认，又带着无法排遣的惆怅——当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。"
+          }
+        ],
+        "reason": "相同升A尾音、伴奏变色、确认与惆怅并存及温柔的刺均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A024",
+      "original_meaning": "当下美像浮光一碰即散",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 6352,
+          "end": 6663,
+          "quote": "如果只是普通的抒情，旋律大可以大开大合地宣泄。但肖邦在 `m. 6` 旋律最高处写下的表情记号，**竟然是反直觉的“减弱”（diminuendo）**。这种处理传递出一种极其微妙的情绪矛盾：\n* **它不是毫无保留的自信，而是一种“近乡情怯”的战战兢兢。** 就像相爱的人终于在狭小的船舱里坐在一起，千言万语涌上心头，开口的第一句话却轻得像叹息。\n* 在这整段旋律里，乐句的尾端不断落在一个关键的音（升A音，如 `m. 7, 9, 11`）。在听觉心理上，这个音就像一个**温柔的刺**——它每一次出现，底下的水波和光影都在变，它既像是甜蜜的确认，又带着一种无法排遣的惆怅：当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/13/text",
+            "start": 77,
+            "end": 91,
+            "quote": "美仿佛水面的浮光，一碰就散。"
+          }
+        ],
+        "reason": "水面浮光一碰即散的具体脆弱意象保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B14"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 255,
+            "end": 318,
+            "quote": "这个反复落下的音宛如一根“温柔的刺”，既是甜蜜的确认，又带着无法排遣的惆怅——当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。"
+          }
+        ],
+        "reason": "水面浮光一碰即散的具体脆弱意象保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A025",
+      "original_meaning": "久识者靠近无需制造话题，私人柔软舒适并非狂喜",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 7011,
+          "end": 7037,
+          "quote": "像两个人已经相识很久，坐得很近，不需要拼命制造话题。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 7947,
+          "end": 7990,
+          "quote": "很像两个人已经非常熟悉，不需要大声表达感情，只是在一起走路、说话，甚至沉默。你感觉到：",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-3-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12323,
+          "end": 12384,
+          "quote": "像两个人坐在一起，不必拼命找话说。你知道眼前这个人、这个下午、这种亲近感，对你很重要。你甚至不想做什么，只希望时间慢一点。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12700,
+          "end": 12755,
+          "quote": "你可以把它想成：和一个非常亲近的人坐在一起，不需要找话题，也不担心沉默。对方偶尔望你一眼，你心里就已经很满足。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 0,
+            "end": 23,
+            "quote": "也许两人已相识很久，坐得近，不需要拼命找话题；"
+          }
+        ],
+        "reason": "久识、靠近、无需找话题、私人柔软舒适而非狂喜均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 108,
+            "end": 165,
+            "quote": "最先浮现的不是狂喜，而是一种私人、柔软的舒适与安静拥有的安顿：像两个人已经相识很久，坐得很近，不需要拼命制造话题；"
+          }
+        ],
+        "reason": "久识、靠近、无需找话题、私人柔软舒适而非狂喜均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A026",
+      "original_meaning": "成年重见重要的人还能自然笑谈，但知道此时刻并非取之不尽",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 7142,
+          "end": 7200,
+          "quote": "很像你成年以后再次见到一个很重要的人。你们还是可以笑，可以自然地说话，但你不会再像年轻时那样误以为这种时刻取之不尽。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 0,
+            "end": 38,
+            "quote": "可以想成成年后重见重要的人，依然能自然笑谈，只是不再以为这样的时刻取之不尽。"
+          }
+        ],
+        "reason": "成年重逢、自然笑谈、不再以为时刻无穷均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 140,
+            "end": 227,
+            "quote": "这绝非绝望或失恋般的沉痛，而是经历过离别的成年人面对极致温柔时，泛起防卫性的预感：“这么美的一刻，能持续多久呢？”重见重要的人依然可以自然笑谈，但不再误以为这种时刻取之不尽；"
+          }
+        ],
+        "reason": "成年重逢、自然笑谈、不再以为时刻无穷均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A027",
+      "original_meaning": "能够安静地拥有这种感觉",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 7388,
+          "end": 7414,
+          "quote": "**mm. 1–19：我能够安静地拥有这种感觉。**",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-2-U14"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 107,
+            "end": 124,
+            "quote": "也可以只是安静地拥有眼前这种感觉。"
+          }
+        ],
+        "reason": "能够安静拥有这种感觉的安顿保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 108,
+            "end": 165,
+            "quote": "最先浮现的不是狂喜，而是一种私人、柔软的舒适与安静拥有的安顿：像两个人已经相识很久，坐得很近，不需要拼命制造话题；"
+          }
+        ],
+        "reason": "能够安静拥有这种感觉的安顿保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A028",
+      "original_meaning": "不是遇坏事才忧伤，是幸福本身使人害怕结束",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 8047,
+          "end": 8085,
+          "quote": "这是这首曲子第一次出现它最重要的心理矛盾：  \n**幸福本身会制造忧伤。**",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 112,
+            "end": 133,
+            "quote": "并没有发生坏事，忧伤却可能由幸福本身生出。"
+          }
+        ],
+        "reason": "幸福自身引发忧伤及结束担忧，区别于坏事后悲伤。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 91,
+            "end": 140,
+            "quote": "幸福本身开始制造忧伤：并不是发生了坏事才忧伤，而是因为太清楚眼前这个东西值得珍惜，所以害怕它结束；"
+          }
+        ],
+        "reason": "幸福自身引发忧伤及结束担忧，区别于坏事后悲伤。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A029",
+      "original_meaning": "温柔像手掌托着珍贵易碎的东西",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 8120,
+          "end": 8168,
+          "quote": "所以这里的温柔不是松弛到毫无防备的温柔，而是一种**手掌托着很珍贵、很容易碎的东西时的温柔**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 0,
+            "end": 36,
+            "quote": "美好刚出现，就有一种不敢用力拥抱的心情，像手掌托着极珍贵、极易碎的东西。"
+          }
+        ],
+        "reason": "手掌托着珍贵易碎之物的身体动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 370,
+            "end": 403,
+            "quote": "像手掌托着珍贵易碎的东西，在感官陶醉中不敢完全相信亲近能长久持续；"
+          }
+        ],
+        "reason": "手掌托着珍贵易碎之物的身体动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A030",
+      "original_meaning": "外层稳定从容有礼，内心仍容纳复杂期待重量",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 8677,
+          "end": 8999,
+          "quote": "### mm. 1–5：不是“开船”，而是进入一种已经存在的心境\n\n开头几小节给我的感觉，不像故事的第一句话，倒像推开一扇门之后，发现里面的人已经想了很久。\n\n它有一点郑重，甚至略微突兀。不是轻松地说“今天天气很好，我们去泛舟”，而是先把人的注意力从日常生活中抽离出来。\n\n随后那种持续摇曳的运动出现，世界才开始流动。\n\n这里很重要的一点是：**水面是平稳的，但人的内心并不因此简单。**\n\n那种摇摆并不等于安逸，更像人在一个很稳定的动作里容纳复杂的念头。比如一个人夜里走很熟悉的路，脚步非常规律，但脑中想着的东西一点也不平静。\n\n所以一开始就有两层东西：\n\n外层是稳定、从容、几乎有礼貌的；  \n内层则已经有一种说不清的期待和重量。\n\n---",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-r1-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 0,
+            "end": 33,
+            "quote": "这摇摆外层很稳、从容，几乎有礼貌，内心却容得下说不清的期待和重量。"
+          }
+        ],
+        "reason": "外层稳从容有礼、内层复杂期待重量均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 235,
+            "end": 304,
+            "quote": "它的外层稳定、从容、几乎有礼貌，就像一个人夜里走在极熟悉的路段，脚步非常规律，脑中想着的东西却一点也不平静，容纳着说不清的期待与心理重量；"
+          }
+        ],
+        "reason": "外层稳从容有礼、内层复杂期待重量均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A031",
+      "original_meaning": "规律摇摆像夜走熟路，脚步稳而脑中不平静",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 8873,
+          "end": 8941,
+          "quote": "那种摇摆并不等于安逸，更像人在一个很稳定的动作里容纳复杂的念头。比如一个人夜里走很熟悉的路，脚步非常规律，但脑中想着的东西一点也不平静。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-r1-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 33,
+            "end": 64,
+            "quote": "像一个人夜里走熟悉的路，脚步十分规律，脑中的念头一点也不平静。"
+          }
+        ],
+        "reason": "夜走熟路、规律脚步与不平静念头的反差保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 235,
+            "end": 304,
+            "quote": "它的外层稳定、从容、几乎有礼貌，就像一个人夜里走在极熟悉的路段，脚步非常规律，脑中想着的东西却一点也不平静，容纳着说不清的期待与心理重量；"
+          }
+        ],
+        "reason": "夜走熟路、规律脚步与不平静念头的反差保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A032",
+      "original_meaning": "共同生活后在普通晚上重认对方在场的珍贵，因非理所当然而珍惜",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9110,
+          "end": 9500,
+          "quote": "### mm. 6–21：非常亲密，但不是毫无阴影的幸福\n\n真正的歌唱展开以后，第一感觉确实是温柔。\n\n但我觉得它不是“天真幸福”。\n\n更准确地说，是一种**已经知道幸福很珍贵，所以不敢粗暴触碰它的温柔**。\n\n这和年轻人第一次兴奋地爱上某个人不太一样。它比较像两个人已经共同生活过一段时间之后，在某个很普通的晚上突然重新意识到：“这个人在这里，真好。”\n\n因此这里的甜不是糖分很高的甜，而有一种珍惜感。\n\n而“珍惜”这个词本身就隐藏着它的反面：\n\n**只有知道某样东西不是理所当然的，人才能如此珍惜。**\n\n所以 mm. 6–21 里面，我一直能听到一种细微的矛盾：音乐非常亲密，却没有完全解除警觉；它愿意靠近，却仍然保留一点距离。\n\n像伸手抚摸一个人的脸，同时脑中极快地闪过一个念头：\n\n> 这样的时刻不可能永远存在。\n\n这个念头还没有成为悲伤，只是一层薄薄的阴影。\n\n---",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-r1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 38,
+            "end": 78,
+            "quote": "也可以是共同生活多年的两个人，在一个普通晚上突然重又觉得：“这个人在这里，真好。"
+          }
+        ],
+        "reason": "共同生活后的普通晚间重新珍惜在场、知道非理所当然均在；GPT年限有增写，见反向复核。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 165,
+            "end": 218,
+            "quote": "或者共同生活过一段时间之后，在某个普通的晚上重新意识到“这个人在这里，真好”，因深知非理所当然而格外珍惜。"
+          }
+        ],
+        "reason": "共同生活后的普通晚间重新珍惜在场、知道非理所当然均在；GPT年限有增写，见反向复核。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A033",
+      "original_meaning": "靠近仍保留警觉距离，抚脸时骤想到这时刻不永存，尚非悲伤",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9429,
+          "end": 9454,
+          "quote": "像伸手抚摸一个人的脸，同时脑中极快地闪过一个念头：",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-r1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 106,
+            "end": 170,
+            "quote": "还有一幅画面：手正抚过对方的脸，脑中忽然闪过“这样的时刻不可能永远存在”。靠近中仍存一点距离，那还不是悲伤，只是一层薄薄的阴影。"
+          }
+        ],
+        "reason": "抚脸时突闪不永存、靠近又警觉的层次可核，是否尚非悲伤另作严格判断。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 335,
+            "end": 370,
+            "quote": "像伸手抚摸一个人的脸，脑中极快闪过“这时刻不可能永远存在”的一层薄影；"
+          }
+        ],
+        "reason": "抚脸与不永存念头、薄影在正文；但未明说“尚未成为悲伤”，并被置入“这种幸福始终…带防备”的共同叙述，弱化原稿限定。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A034",
+      "original_meaning": "双声也可理解为一个人内心的两种声音相依",
+      "dimension": "视角",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9621,
+          "end": 9713,
+          "quote": "到 mm.4 以后，真正熟悉的船歌摇摆才出现，上面是两条彼此缠绕、彼此回应的歌唱线。听起来很容易联想到两个人贴得很近地说话，也可以不那么具象地理解为**一个人内心两种声音互相依偎**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 0,
+            "end": 21,
+            "quote": "双声也可以是一个人内心互相依偎的两种声音；"
+          }
+        ],
+        "reason": "同一人内在双声作为另种读法保留，没有必定变成两位恋人。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 278,
+            "end": 308,
+            "quote": "双音不必具象为两个人，也可以是一个人内心两种声音的互相依偎。"
+          }
+        ],
+        "reason": "同一人内在双声作为另种读法保留，没有必定变成两位恋人。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A035",
+      "original_meaning": "12–16呼吸越来越短，情绪跑在理智前",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9715,
+          "end": 9869,
+          "quote": "关键是，它并不一上来就尽情歌唱。Kopp特别注意到，主旋律初次出现时，肖邦反而要求它先收弱，而不是顺势把情绪推出来——这使得开头的亲密感带有明显的自我约束。到了大约 mm.12–16，句子的“呼吸”又越来越短，情绪开始赶在理智前面。citeturn273646view0turn309366view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/19/text",
+            "start": 0,
+            "end": 59,
+            "quote": "也有人在第12—16小节听到相反的呼吸：乐句越来越短，情绪仿佛赶在理智前面，原本自在的歌里生出“接下来会怎样”的期待。"
+          }
+        ],
+        "reason": "12—16呼吸变短、情绪赶在理智前的内容保留；合并关系另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B20"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 48,
+            "end": 121,
+            "quote": "到了第12至14小节，情绪明显往上涌，呼吸逐渐收紧，句子的“呼吸”越来越短，情绪开始赶在理智前面，自在的歌唱里浮现出对“接下来会怎样”的热切期待；"
+          }
+        ],
+        "reason": "12—16呼吸变短、情绪赶在理智前的内容保留；合并关系另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A036",
+      "original_meaning": "此时自我压抑为后面高潮释放建立前提",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9929,
+          "end": 10014,
+          "quote": "里面同时有满足和警惕。越亲密，越怕把它弄坏；越想倾诉，越会先压低声音。这种矛盾是后面巨大高潮能够成立的前提——因为那不是突然“变激昂”，而是最初被压住的东西终于不再压住。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "omitted",
+        "spans": [],
+        "reason": "正文只留先克制为后来留余地(A076)，没有当前压抑与后面高潮释放的具体关系。out_of_scope裁决过严：原稿是在解释当前自我约束，未声称高潮已在本段发生；仍计85分母。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [],
+          "decisions": [
+            {
+              "meaning_ids": [
+                "S02-A036"
+              ],
+              "status": "out_of_scope",
+              "reason": "“最初被压住的东西终于不再压住”说的是本段对后续大高潮的因果铺垫。S02可以保留当下渐弱和演奏先收力，却不能把不在mm.4—16内的释放当作本页已经发生的心理变化。"
+            }
+          ]
+        }
+      },
+      "flash": {
+        "status": "altered",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 64,
+            "end": 140,
+            "quote": "这种自我约束与压抑，正是后文巨大高潮能够成立的必要前提——后来的爆发不是突然变激昂，而是开端被深深刻意压住的情感，在历经流转后终于不再被压制而彻底释放。"
+          }
+        ],
+        "reason": "保留当前压抑与后面释放的原关系，但加成“必要前提”“深深刻意”“彻底释放”，把原稿听感解释强化成必然且彻底的情感剧情。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A037",
+      "original_meaning": "因为旁边有人，不必把声音投到远方，只需彼此听见",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 10608,
+          "end": 10799,
+          "quote": "到了这里，真正令人着迷的亲密感才出现。不是公开的抒情宣言，而像两个很熟悉的人在夜里说话；声音不需要投射给远处的人听，只需要彼此听见。Tomaszewski说这里的旋律带着明显的温柔，而且最初始终有所克制；十九世纪钢琴家 Tausig 更直接把这种双声部的写法听成“两个人、两个灵魂”的交谈——后者当然是诗意解释，而不是肖邦留下的节目说明。citeturn910194view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-3-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11022,
+          "end": 11198,
+          "quote": "船的摇摆感终于出现，而真正的歌声稍晚才浮出来。历史上的钢琴家 Carl Tausig 把右手那种成双成对的线条听成“两个人、两个灵魂”的持续对话，并把整首曲子理解为一次隐秘的恋人相会。这个说法当然不必当成剧情，但作为听觉比喻非常准确：**不是一个人向世界抒情，而像两个意识贴得很近，在彼此呼吸之间说话。** citeturn641898view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-r1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 79,
+            "end": 99,
+            "quote": "声音压低，是因为身边有人，只需彼此听见；"
+          }
+        ],
+        "reason": "因为旁边有人，只需彼此听见而不必远投，动因和声音方向保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 118,
+            "end": 180,
+            "quote": "这场景甚至不是给外人看的，声音不需要投射给远方，只需彼此听见，在夜聊中慢慢靠近，带着暖意与含蓄的诱惑，话说得不多却彼此都懂；"
+          }
+        ],
+        "reason": "因为旁边有人，只需彼此听见而不必远投，动因和声音方向保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A038",
+      "original_meaning": "幸福有教养有防备，靠近却不愿把全部重量压给对方或粗暴占有",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11309,
+          "end": 11395,
+          "quote": "所以 **mm.4–16 的幸福是有教养、甚至有点防备的幸福**：我很靠近你，但我还不肯把全部重量压上去。它里面已经有一种成熟感——真正珍惜一个东西，所以不敢粗暴地占有它。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-r1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 126,
+            "end": 161,
+            "quote": "另一层分寸是：即使靠得很近，也不把全部重量压到对方身上，不去粗暴占有。"
+          }
+        ],
+        "reason": "靠近却不压上全部重量、不粗暴占有的分寸保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 291,
+            "end": 335,
+            "quote": "然而，这种幸福始终是有教养、带防备的：我很靠近你，却不肯把全部重量压上去，不敢粗暴占有；"
+          }
+        ],
+        "reason": "靠近却不压上全部重量、不粗暴占有的分寸保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A039",
+      "original_meaning": "亲密也可独自沉浸于珍贵体验",
+      "dimension": "视角",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11536,
+          "end": 11604,
+          "quote": "主要的歌唱开始后，我听到的首先不是悲伤，而是一种很具体的幸福：一个人终于能够放松警惕，跟另一个人亲近，或独自沉浸在某种特别珍贵的体验中。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 54,
+            "end": 88,
+            "quote": "还有一种听法完全不设相会的人物，只是独自沉浸在一种特别珍贵的体验里。"
+          }
+        ],
+        "reason": "独自而非必有相会人物的珍贵沉浸读法存在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 395,
+            "end": 436,
+            "quote": "一个平时习惯克制自己的人，终于来到不必时刻保持警惕的地方，独自沉浸在珍贵体验之中；"
+          }
+        ],
+        "reason": "独自而非必有相会人物的珍贵沉浸读法存在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A040",
+      "original_meaning": "美好夜晚散步时多看对方一眼，为确认亲近真实",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11639,
+          "end": 11702,
+          "quote": "你可以想象两个人在一个很美好的晚上散步。彼此已经很亲近，不需要拼命找话说，但其中一个人偶尔会多看对方一眼，想确认这一切是真的。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 92,
+            "end": 126,
+            "quote": "还有人会想到美好的夜晚散步，忍不住多看对方一眼，只为确认亲近是真的。"
+          }
+        ],
+        "reason": "散步时多望一眼以确认亲近真实，与被望即满足的A047分开保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 245,
+            "end": 291,
+            "quote": "对方偶尔望你一眼，心里就已经很满足，或在美好夜晚散步时偶尔多看对方一眼，只为确认亲近的真实。"
+          }
+        ],
+        "reason": "散步时多望一眼以确认亲近真实，与被望即满足的A047分开保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A041",
+      "original_meaning": "幸福逐渐生依恋，希望此刻更久但还非痛苦",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11792,
+          "end": 11810,
+          "quote": "这还不是痛苦，而是幸福开始带来依恋。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/15/text",
+            "start": 61,
+            "end": 80,
+            "quote": "这份依恋刚从幸福里生出来，还没到痛苦。"
+          }
+        ],
+        "reason": "幸福初生依恋、盼更久及尚非痛苦是本项三个限制。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B16"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 286,
+            "end": 358,
+            "quote": "享受当下并隐约盼望长久，幸福开始催生依恋，满足却并未完全落地，每次快要安顿下来又舍不得停住——这时的渴望并非缺少什么，只是眼前的一切太值得留恋。"
+          }
+        ],
+        "reason": "幸福催生依恋与希望持续写出，但“这还不是痛苦”未保留；B06已进入疼，不能用该疼替代本项未痛苦的限定。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A042",
+      "original_meaning": "音乐开始流动后绷紧身体才慢慢松开",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12045,
+          "end": 12070,
+          "quote": "随后音乐开始流动，仿佛原来绷着的身体终于慢慢松开。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-2-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 69,
+            "end": 119,
+            "quote": "原先绷紧的身体随着流动慢慢松开，主动放弃双脚踏地的控制，把全身重量交给温热、深不可测而规律起伏的水。"
+          }
+        ],
+        "reason": "音乐开始流动后绷紧身体才逐渐松开，前后顺序保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 106,
+            "end": 185,
+            "quote": "随着水面流动，原来绷着的身体终于慢慢松开，听者不再用双脚踏实踩在地上，而是放弃对重力的控制，把整个身体的重量完全交托给身下那片深不可测、温热且规律起伏的水体。"
+          }
+        ],
+        "reason": "音乐开始流动后绷紧身体才逐渐松开，前后顺序保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A043",
+      "original_meaning": "已知此人此下午重要，不需做事，只盼时间慢些",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12323,
+          "end": 12384,
+          "quote": "像两个人坐在一起，不必拼命找话说。你知道眼前这个人、这个下午、这种亲近感，对你很重要。你甚至不想做什么，只希望时间慢一点。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/15/text",
+            "start": 0,
+            "end": 43,
+            "quote": "也可以完全从当下去听：眼前这个人、这个下午已经很重要，什么都不想做，只希望时间慢一点。"
+          }
+        ],
+        "reason": "此人此下午的重要、不需做事、只盼时间慢均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B16"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 227,
+            "end": 264,
+            "quote": "知道眼前的人、这个下午与这份亲近太重要，甚至不想做什么，只希望时间慢一点；"
+          }
+        ],
+        "reason": "此人此下午的重要、不需做事、只盼时间慢均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A044",
+      "original_meaning": "并未失去，因太喜欢就提前舍不得",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12426,
+          "end": 12472,
+          "quote": "不是已经失去了什么，而是**因为太喜欢眼前的东西，所以还没有失去，就已经生出一丝舍不得。**",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/15/text",
+            "start": 43,
+            "end": 61,
+            "quote": "因为太喜欢，还没有失去就开始舍不得。"
+          }
+        ],
+        "reason": "尚未失去，因为太喜欢已提前舍不得，时态及动因保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B16"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 264,
+            "end": 286,
+            "quote": "还没有失去，就已经因太喜欢而生出一丝舍不得；"
+          }
+        ],
+        "reason": "尚未失去，因为太喜欢已提前舍不得，时态及动因保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A045",
+      "original_meaning": "感情深却不愿完全暴露自己",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12474,
+          "end": 12509,
+          "quote": "这个阶段最重要的是克制。情绪明明很深，但始终不愿意把自己完全暴露出来。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 87,
+            "end": 106,
+            "quote": "又或者只是爱得深，不愿把自己完全暴露。"
+          }
+        ],
+        "reason": "感情深与不全暴露自己的自我保护保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 180,
+            "end": 261,
+            "quote": "小心地选择说话语气，不是因为用情不够，而是情绪明明很深，却生怕一个过重的动作破坏了珍贵的气氛，甚至怕自己的热情太明显而吓跑了这份美好，始终不愿把自己完全暴露出来。"
+          }
+        ],
+        "reason": "感情深与不全暴露自己的自我保护保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A046",
+      "original_meaning": "惯于自我克制的人终于进入不用时刻警惕的地方",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12646,
+          "end": 12698,
+          "quote": "不是兴高采烈，也不是没有烦恼的快乐。更像是一个平时习惯克制自己的人，终于来到一个不必时刻保持警惕的地方。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 91,
+            "end": 116,
+            "quote": "对于平时惯于克制的人，这样的地方终于不用时刻警惕；"
+          }
+        ],
+        "reason": "惯常克制与终于不用时时警惕的反差保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 395,
+            "end": 436,
+            "quote": "一个平时习惯克制自己的人，终于来到不必时刻保持警惕的地方，独自沉浸在珍贵体验之中；"
+          }
+        ],
+        "reason": "惯常克制与终于不用时时警惕的反差保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A047",
+      "original_meaning": "对方偶尔一望就已经很满足",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12700,
+          "end": 12755,
+          "quote": "你可以把它想成：和一个非常亲近的人坐在一起，不需要找话题，也不担心沉默。对方偶尔望你一眼，你心里就已经很满足。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 74,
+            "end": 91,
+            "quote": "对方偶尔望过来一眼，心里就已满足。"
+          }
+        ],
+        "reason": "对方主动望来便满足，未用我多望对方确认代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 245,
+            "end": 291,
+            "quote": "对方偶尔望你一眼，心里就已经很满足，或在美好夜晚散步时偶尔多看对方一眼，只为确认亲近的真实。"
+          }
+        ],
+        "reason": "对方主动望来便满足，未用我多望对方确认代替。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A048",
+      "original_meaning": "温柔是一种愿意信任和靠近的主动状态",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12757,
+          "end": 12788,
+          "quote": "这里的温柔不是软弱，而是一种**愿意信任、愿意靠近的状态**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 116,
+            "end": 133,
+            "quote": "温柔里还有主动愿意信任、愿意靠近。"
+          }
+        ],
+        "reason": "信任和靠近的主动意愿保留，不只是被动舒适。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 218,
+            "end": 245,
+            "quote": "温柔在这里不是软弱，而是一种愿意信任、主动靠近的状态；"
+          }
+        ],
+        "reason": "信任和靠近的主动意愿保留，不只是被动舒适。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A049",
+      "original_meaning": "满足临近落定又舍不得停，渴望并非缺少而是太值得留恋",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12857,
+          "end": 12890,
+          "quote": "这时的渴望还很轻。你并不是缺少什么，只是觉得眼前的一切太值得留恋。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/15/text",
+            "start": 80,
+            "end": 100,
+            "quote": "旋律每次仿佛快要安顿下来，却又舍不得停；"
+          }
+        ],
+        "reason": "将落定又舍不得停，渴望因太值得留恋而非缺少均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B16"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 286,
+            "end": 358,
+            "quote": "享受当下并隐约盼望长久，幸福开始催生依恋，满足却并未完全落地，每次快要安顿下来又舍不得停住——这时的渴望并非缺少什么，只是眼前的一切太值得留恋。"
+          }
+        ],
+        "reason": "将落定又舍不得停，渴望因太值得留恋而非缺少均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A050",
+      "original_meaning": "美好刚出现却不敢用力拥抱",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13044,
+          "end": 13072,
+          "quote": "### mm. 1–16：美好刚出现，人却不敢用力拥抱它",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 0,
+            "end": 36,
+            "quote": "美好刚出现，就有一种不敢用力拥抱的心情，像手掌托着极珍贵、极易碎的东西。"
+          }
+        ],
+        "reason": "美好初现却不敢用力拥抱，身体动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 164,
+            "end": 180,
+            "quote": "美好刚出现，人却不敢用力拥抱它；"
+          }
+        ],
+        "reason": "美好初现却不敢用力拥抱，身体动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A051",
+      "original_meaning": "怕自己的热情太明显而惊跑美好",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13231,
+          "end": 13303,
+          "quote": "我听到的更像是：一个人和非常珍惜的人待在一起，觉得此刻很好，却舍不得把这种感受说得太满。他不想破坏它，不想吓跑它，甚至有一点怕自己的热情太明显。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-1-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 66,
+            "end": 87,
+            "quote": "有时更怕自己的热情太明显，把眼前的好吓跑；"
+          }
+        ],
+        "reason": "害怕自己热情显露吓跑美好这一特殊动因保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 180,
+            "end": 261,
+            "quote": "小心地选择说话语气，不是因为用情不够，而是情绪明明很深，却生怕一个过重的动作破坏了珍贵的气氛，甚至怕自己的热情太明显而吓跑了这份美好，始终不愿把自己完全暴露出来。"
+          }
+        ],
+        "reason": "害怕自己热情显露吓跑美好这一特殊动因保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A052",
+      "original_meaning": "先欲倾诉又收回，再忍不住涌起，随后轻呼气回柔和",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13305,
+          "end": 13405,
+          "quote": "尤其在 **mm. 6–11**，旋律仿佛刚要向外倾诉，又收回一点。到了 **mm. 12–14**，感情终于忍不住往上涌了一次；但在 **mm. 14–16**，它又像轻轻呼出一口气，回到柔和之中。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-1-U05"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14145,
+          "end": 14212,
+          "quote": "mm. 12–15，音乐开始明显地向外伸展，仿佛原本谨慎的倾诉终于说得更热切了一些。到 mm. 14 前后，情绪有一次较为明显的抬升。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-2-U05"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/17/text",
+            "start": 0,
+            "end": 48,
+            "quote": "一条清楚的起伏是：第6—11小节，话刚要倾诉便轻轻收回；第12—14小节，感情终于忍不住向上涌。"
+          },
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/17/text",
+            "start": 79,
+            "end": 108,
+            "quote": "这段延续至第16小节的回落，也像轻轻呼出一口气，重新柔和。"
+          }
+        ],
+        "reason": "收回→上涌→呼气回柔和的时间顺序存在；Flash加串别种读法另记。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B18"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 0,
+            "end": 121,
+            "quote": "从谨慎倾诉到情绪上扬，乐句经历了一次完整的舒展与回退：在第6至11小节，旋律刚欲倾诉又屡屡收回；到了第12至14小节，情绪明显往上涌，呼吸逐渐收紧，句子的“呼吸”越来越短，情绪开始赶在理智前面，自在的歌唱里浮现出对“接下来会怎样”的热切期待；"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 241,
+            "end": 288,
+            "quote": "到第14至16小节，音乐就像轻轻吐出一口憋着的气、呼出一口气回到柔和之中，但还不是彻底的释然。"
+          }
+        ],
+        "reason": "收回→上涌→呼气回柔和的时间顺序存在；Flash加串别种读法另记。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A053",
+      "original_meaning": "4–5稳定摇曳先出现，6才开始真正歌唱",
+      "dimension": "音乐事实",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13655,
+          "end": 13696,
+          "quote": "到了 mm. 4–5，稳定、轻轻摇晃的声音出现。mm. 6 起，真正的歌唱开始了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-2-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14799,
+          "end": 14833,
+          "quote": "mm.4–5 开始有规律的轻轻摇晃；到 mm.6，真正的歌声出现了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-3-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11022,
+          "end": 11198,
+          "quote": "船的摇摆感终于出现，而真正的歌声稍晚才浮出来。历史上的钢琴家 Carl Tausig 把右手那种成双成对的线条听成“两个人、两个灵魂”的持续对话，并把整首曲子理解为一次隐秘的恋人相会。这个说法当然不必当成剧情，但作为听觉比喻非常准确：**不是一个人向世界抒情，而像两个意识贴得很近，在彼此呼吸之间说话。** citeturn641898view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-r1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 0,
+            "end": 15,
+            "quote": "第4—5小节，先有稳定的摇曳；"
+          }
+        ],
+        "reason": "伴奏先于第6小节歌唱的次序可由相邻块核实。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 0,
+            "end": 39,
+            "quote": "第4至5小节，左手标志性的12/8拍摇曳低音稳稳建立起来，真正的歌唱尚未浮现。"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 0,
+            "end": 42,
+            "quote": "第6小节起，全曲第一支完整的长旋律在升F大调上浮现，右手以三度和六度双音唱出主旋律。"
+          }
+        ],
+        "reason": "伴奏先于第6小节歌唱的次序可由相邻块核实。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A054",
+      "original_meaning": "谨慎选语气是怕重动作破坏珍惜的氛围，而非感情浅",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13736,
+          "end": 13800,
+          "quote": "像两个人已经很亲近，却仍然小心地选择说话的语气。那不是因为感情不够，而是因为他们太珍惜眼前的气氛，生怕一个过重的动作就会破坏它。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-2-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/11/text",
+            "start": 36,
+            "end": 66,
+            "quote": "两个人仔细挑说话的语气，怕一个重动作破坏气氛，并非感情不深。"
+          }
+        ],
+        "reason": "选语气怕重动作破坏珍贵氛围、并非感情浅均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B12"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 180,
+            "end": 261,
+            "quote": "小心地选择说话语气，不是因为用情不够，而是情绪明明很深，却生怕一个过重的动作破坏了珍贵的气氛，甚至怕自己的热情太明显而吓跑了这份美好，始终不愿把自己完全暴露出来。"
+          }
+        ],
+        "reason": "选语气怕重动作破坏珍贵氛围、并非感情浅均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A055",
+      "original_meaning": "最初幸福与尚未完全放心同时存在",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14648,
+          "end": 14682,
+          "quote": "## 一、最初的温柔：我很幸福，但还没有完全放下心（mm.1–34）",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-3-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 133,
+            "end": 155,
+            "quote": "还有一种感受，是满足与尚未完全放心同时存在。"
+          }
+        ],
+        "reason": "幸福和未完全放心同时存在，未变为先幸福后不安。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 0,
+            "end": 27,
+            "quote": "在最初的温柔中，听者感到很幸福，却始终没有完全放下心。"
+          }
+        ],
+        "reason": "幸福和未完全放心同时存在，未变为先幸福后不安。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A056",
+      "original_meaning": "两声彼此回应很近，又各自留空间，亲密不急证明",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14884,
+          "end": 14920,
+          "quote": "有时一个声音仿佛在回应另一个声音。它们靠得很近，却又各自保留了一点空间。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 46,
+            "end": 79,
+            "quote": "两条声线彼此回应、依偎，心照不宣，又各留一点空间，不急着证明什么。"
+          }
+        ],
+        "reason": "双声回应又留空间、亲密不急证明均写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 205,
+            "end": 240,
+            "quote": "两个声音彼此映照，靠得很近又各自保留了一点空间，亲密而不急于证明什么；"
+          }
+        ],
+        "reason": "双声回应又留空间、亲密不急证明均写出。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A057",
+      "original_meaning": "8–11本可停却想把同一感受说得更充分",
+      "dimension": "动因",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14943,
+          "end": 15038,
+          "quote": "但这种平静并非毫无波动。在 mm.8–11，歌声似乎一次次想把同一种感觉说得更充分：本来已经可以停下，却又忍不住接着说。到 mm.12–15，情绪明显往上涌，乐句越来越短，仿佛呼吸逐渐急促。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 74,
+            "end": 115,
+            "quote": "到了第8—11小节，句子明明可以停下，又忍不住接着说，想把同一个感受表达得更充分。"
+          }
+        ],
+        "reason": "本可停却继续说以充分表达同一感受，动因和范围保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B13"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 53,
+            "end": 101,
+            "quote": "在第8至11小节间，歌声似乎一次次想把同一种感受说得更充分：本来已经可以停下，却又忍不住接着说。"
+          }
+        ],
+        "reason": "本可停却继续说以充分表达同一感受，动因和范围保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A058",
+      "original_meaning": "16附近忽明忽暗，开始担心眼前美好会变",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15040,
+          "end": 15064,
+          "quote": "到了 mm.16 左右，又有一丝忽明忽暗的颜色。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/19/text",
+            "start": 59,
+            "end": 78,
+            "quote": "到第16小节附近，颜色有一丝忽明忽暗；"
+          }
+        ],
+        "reason": "16附近忽明忽暗并开始担心美好改变的层次保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B20"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 288,
+            "end": 348,
+            "quote": "到了第16小节左右，音响间泛起一丝忽明忽暗的色泽，在满足之中露出一抹细微的脆弱：眼前这样好，人反而开始在意它会不会改变。"
+          }
+        ],
+        "reason": "16附近忽明忽暗并开始担心美好改变的层次保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A059",
+      "original_meaning": "摇荡既舒服又暂悬，不怕且享受风景，却知道尚未到岸",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15304,
+          "end": 15437,
+          "quote": "- **mm. 1–20：安稳的摇荡里，藏着一点期待。**  \n  一开始并不像在诉苦，甚至有种从容、温暖的吸引力。但它也不全然轻松：那种一来一回的摇摆让人舒服，又像让人暂时停在半空，不急着抵达什么。可以想象夜里乘船：不害怕，甚至享受风景，只是心里知道自己还没到岸。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-1-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 64,
+            "end": 107,
+            "quote": "另一种乘船感受是舒服地悬在半空：不害怕，还能享受风景，却清楚自己尚未到岸，不急着抵达。"
+          }
+        ],
+        "reason": "舒服、悬空、不急抵达、享景不怕但未到岸须同时核；Flash缺悬空和不急抵达。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 304,
+            "end": 343,
+            "quote": "置身于一来一回的安稳摇荡中，人不害怕，甚至享受着风景，心底却知道自己还没到岸。"
+          }
+        ],
+        "reason": "保留舒服、不害怕、享景且知未到岸；删去暂时停在半空、不急抵达的状态，不能用未到岸推定不急抵达。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A060",
+      "original_meaning": "说话又收住的悲伤若有，是知道好时光不长而非绝望失恋",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15539,
+          "end": 15665,
+          "quote": "- **mm. 1–16：安稳里带着克制。**  \n  起初有种舒适、亲近的感觉，像和熟悉的人待在一起，不必急着说话。但这份安稳并不全然轻松：旋律像是有话想说，又把话收住了。若这里有悲伤，更像是“知道眼前的好时光不会永远停留”，不是绝望或失恋般的沉痛。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-2-U02"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/10/text",
+            "start": 155,
+            "end": 192,
+            "quote": "若说这里有悲伤，它也可以只是知道好时光不会永远停留，远非绝望或失恋的沉痛。"
+          },
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 59,
+            "end": 74,
+            "quote": "这种近乡情怯还没法自信地倾诉。"
+          }
+        ],
+        "reason": "知道好时光不长的悲伤限定及非绝望失恋，结合收住倾诉可还原。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B11"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 140,
+            "end": 227,
+            "quote": "这绝非绝望或失恋般的沉痛，而是经历过离别的成年人面对极致温柔时，泛起防卫性的预感：“这么美的一刻，能持续多久呢？”重见重要的人依然可以自然笑谈，但不再误以为这种时刻取之不尽；"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 0,
+            "end": 48,
+            "quote": "从谨慎倾诉到情绪上扬，乐句经历了一次完整的舒展与回退：在第6至11小节，旋律刚欲倾诉又屡屡收回；"
+          }
+        ],
+        "reason": "知道好时光不长的悲伤限定及非绝望失恋，结合收住倾诉可还原。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A061",
+      "original_meaning": "夜聊慢慢靠近，含蓄诱惑，话少却懂",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15773,
+          "end": 15863,
+          "quote": "- **mm. 4–11：亲近感出现。**摇摆的节奏托住一条像歌声的旋律，听起来有暖意，也有一点含蓄的诱惑。它不像大声表白，更像两个人在夜里慢慢聊近了；话说得不多，但彼此都听得懂。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 42,
+            "end": 74,
+            "quote": "也许是在夜里一点点聊近，话很少，却彼此听懂，还带一点含蓄的诱惑。"
+          }
+        ],
+        "reason": "夜聊渐近、暖意、含蓄诱惑、话少却懂均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 118,
+            "end": 180,
+            "quote": "这场景甚至不是给外人看的，声音不需要投射给远方，只需彼此听见，在夜聊中慢慢靠近，带着暖意与含蓄的诱惑，话说得不多却彼此都懂；"
+          }
+        ],
+        "reason": "夜聊渐近、暖意、含蓄诱惑、话少却懂均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A062",
+      "original_meaning": "愉悦加浓使情绪不必藏得那么好，但不能等同问题解决",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15996,
+          "end": 16283,
+          "quote": "- **mm. 12–34：愉悦越来越浓，却不是毫无阴影的快乐。**音乐一层层涨起来，像情绪终于不必藏得那么好。可它的起伏并不让人觉得“问题解决了”，反倒有种越美越舍不得的感觉。到 **m. 32**，这股情绪第一次像是完整地打开了；随后 **m. 34** 又放慢、退开，仿佛刚说出口的话在空气里回荡，人却安静下来。 [关于 m. 32 的高潮与 m. 34 的回落](https://www.belcanto.ru/chopin_op60.html)；[PTNA 对 m. 34 渐慢的说明](https://enc.piano.or.jp/en/musics/543)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/17/text",
+            "start": 28,
+            "end": 48,
+            "quote": "第12—14小节，感情终于忍不住向上涌。"
+          }
+        ],
+        "reason": "B18有感情上涌，未说愉悦越来越浓、终于不必藏好，亦未说起伏不等于解决。decision的“已写出”只能证实部分近义核心，不能算无损；跨至34不证明所有限定只能归32/34。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [],
+          "decisions": [
+            {
+              "meaning_ids": [
+                "S02-A062"
+              ],
+              "status": "partial",
+              "reason": "mm.12—16可听见愉悦增浓、倾诉比先前开放，已在段内起伏写出；但原句跨mm.12—34，“问题并未解决”的判断主要连着后面第32、34小节的情绪进退，无法在本页无损落实。"
+            }
+          ]
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 48,
+            "end": 121,
+            "quote": "到了第12至14小节，情绪明显往上涌，呼吸逐渐收紧，句子的“呼吸”越来越短，情绪开始赶在理智前面，自在的歌唱里浮现出对“接下来会怎样”的热切期待；"
+          }
+        ],
+        "reason": "B07有上涌，缺愉悦增浓使情绪不必藏得那么好及问题并未解决。decision把“不解决”主要归S04，源文却把它用于整段起伏；不能默默缩分母。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [],
+          "decisions": [
+            {
+              "meaning_ids": [
+                "S02-A062"
+              ],
+              "status": "partial",
+              "reason": "跨段范围裁决：SRC-luna-int-3-U04原标范围为mm.12–34。其中mm.12–15音乐层层涨起、情绪不必藏得那么好的上涌起伏已在S02-B07中完整保留；但该条所指“起伏并不让人觉得问题解决”以及在第32小节完全打开的完整高潮过程，属于S04（mm.24–34）的核心事实，无法在mm.4–16段内提前全盘坐实，故余项归入S04处理。"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "S02-A063",
+      "original_meaning": "感官陶醉里不敢相信亲近能持续",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16377,
+          "end": 16732,
+          "quote": "- **mm. 4–16：摇荡出现，歌声变得亲近；但这份亲近并不踏实。** 旋律在 mm. 6 左右浮现，听起来像有人把心事唱给一个很近的人听。这里的柔情不只是温柔或优美：它有一点感官上的陶醉，也有一点小心翼翼，像是很珍惜此刻的亲近，却还不敢完全相信它能持续。到 mm. 12–16，音乐的呼吸逐渐收紧，原本自在的歌里开始有“接下来会怎样”的期待。肖邦研究者 Mieczysław Tomaszewski 也形容开头的歌声先有所克制，再一层层扬起。[Tomaszewski 的作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Szklener 的研究](https://doi.org/10.2478/v10075-008-0015-7)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-1-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16819,
+          "end": 17162,
+          "quote": "- **mm. 4–16：柔情很近，却仍有所保留。** 主旋律像有人压低声音唱给另一个人听，温柔、亲昵，也有一点感官上的暖意。肖邦国际钢琴比赛的作品介绍特别听到这里的歌唱性、柔软和一波一波的起伏。可这不是毫无顾虑的幸福：旋律常像是刚想倾诉，就又轻轻收回去。到 **mm. 14–15**，音乐短暂地落稳；那一刻可以像一次终于得到回应的相视，但声音很快又漂起来，没有把心事彻底说死。[作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Kopp 对 mm. 14–15 的聆听与演奏分析](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-2-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 111,
+            "end": 137,
+            "quote": "感官上如此陶醉，心里却仍不敢完全相信这种亲近能持续。"
+          }
+        ],
+        "reason": "感官陶醉和不敢相信亲近持久同时保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 370,
+            "end": 403,
+            "quote": "像手掌托着珍贵易碎的东西，在感官陶醉中不敢完全相信亲近能长久持续；"
+          }
+        ],
+        "reason": "感官陶醉和不敢相信亲近持久同时保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A064",
+      "original_meaning": "12–16呼吸收紧并产生接下来会怎样的期待",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16377,
+          "end": 16732,
+          "quote": "- **mm. 4–16：摇荡出现，歌声变得亲近；但这份亲近并不踏实。** 旋律在 mm. 6 左右浮现，听起来像有人把心事唱给一个很近的人听。这里的柔情不只是温柔或优美：它有一点感官上的陶醉，也有一点小心翼翼，像是很珍惜此刻的亲近，却还不敢完全相信它能持续。到 mm. 12–16，音乐的呼吸逐渐收紧，原本自在的歌里开始有“接下来会怎样”的期待。肖邦研究者 Mieczysław Tomaszewski 也形容开头的歌声先有所克制，再一层层扬起。[Tomaszewski 的作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Szklener 的研究](https://doi.org/10.2478/v10075-008-0015-7)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-1-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/19/text",
+            "start": 0,
+            "end": 59,
+            "quote": "也有人在第12—16小节听到相反的呼吸：乐句越来越短，情绪仿佛赶在理智前面，原本自在的歌里生出“接下来会怎样”的期待。"
+          }
+        ],
+        "reason": "12—16呼吸收紧及对接下来变化的期待均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B20"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 48,
+            "end": 121,
+            "quote": "到了第12至14小节，情绪明显往上涌，呼吸逐渐收紧，句子的“呼吸”越来越短，情绪开始赶在理智前面，自在的歌唱里浮现出对“接下来会怎样”的热切期待；"
+          }
+        ],
+        "reason": "12—16呼吸收紧及对接下来变化的期待均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A065",
+      "original_meaning": "14–15短暂落稳像相视获回应，很快又漂起，未说死心事",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16819,
+          "end": 17162,
+          "quote": "- **mm. 4–16：柔情很近，却仍有所保留。** 主旋律像有人压低声音唱给另一个人听，温柔、亲昵，也有一点感官上的暖意。肖邦国际钢琴比赛的作品介绍特别听到这里的歌唱性、柔软和一波一波的起伏。可这不是毫无顾虑的幸福：旋律常像是刚想倾诉，就又轻轻收回去。到 **mm. 14–15**，音乐短暂地落稳；那一刻可以像一次终于得到回应的相视，但声音很快又漂起来，没有把心事彻底说死。[作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Kopp 对 mm. 14–15 的聆听与演奏分析](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-2-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/18/text",
+            "start": 0,
+            "end": 32,
+            "quote": "第14—15小节也可听成一次短暂落稳，像终于收到对方相视的回应；"
+          }
+        ],
+        "reason": "短暂落稳、相视获回应、又漂起且未说定心事均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B19"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 121,
+            "end": 241,
+            "quote": "与此同时，在第11至15小节间线条被拉长、抬高，并在第14至15小节第一次到达一个小小的顶点。在此处，音乐短暂地落稳，像一次终于得到回应的深情相视；然而它没有顺势爆发，而是马上像梯田一样一层层落下来，声音很快又漂浮起来，没有把心事彻底说死。"
+          }
+        ],
+        "reason": "短暂落稳、相视获回应、又漂起且未说定心事均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A066",
+      "original_meaning": "11–15呼吸逐渐拉长，抬高后松气但未彻底释然",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17258,
+          "end": 17527,
+          "quote": "- **mm. 4–16：温柔出现，但并不轻浮。**伴奏的摇摆感逐渐稳下来，主旋律大约从 m. 6 开始浮现。它听起来像一段亲密的对话：不是一个人高声倾诉，而是两条声音靠得很近、彼此映照。这里的甜美有克制，像一个人很珍惜当下，所以不愿把话说得太满。到 mm. 11–15，呼吸逐渐拉长，情绪抬高又松开；听起来像终于吐出一口憋着的气，但这还不是彻底的释然。[Kopp 对开头旋律及 mm. 14–15 的讨论](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-3-U04"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/18/text",
+            "start": 48,
+            "end": 109,
+            "quote": "另有一条关于呼吸的听法：第11—15小节，句子的呼吸逐渐拉长，情绪抬高又松开，像终于吐出一口憋着的气，却还谈不上彻底释然。"
+          }
+        ],
+        "reason": "原稿11—15呼吸拉长、抬高后吐气而非全释然；Flash把拉长改为线条，并把吐气重定至14—16。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B19"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "altered",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 121,
+            "end": 168,
+            "quote": "与此同时，在第11至15小节间线条被拉长、抬高，并在第14至15小节第一次到达一个小小的顶点。"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 241,
+            "end": 288,
+            "quote": "到第14至16小节，音乐就像轻轻吐出一口憋着的气、呼出一口气回到柔和之中，但还不是彻底的释然。"
+          }
+        ],
+        "reason": "11—15“呼吸逐渐拉长”被改成“线条被拉长”，吐出憋气又移接14—16；用“与此同时”拼接另一来源呼吸越来越短，牺牲呼吸主体和时间范围来求连续。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A067",
+      "original_meaning": "看黄昏时一边享受一边已难过将消逝，陪喜欢的人时内心有声音说时刻不多",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17911,
+          "end": 18100,
+          "quote": "**mm.5-26：第一次开口，但有所保留**\n歌声进来了，很长、很连，像一个人终于肯说话，慢慢把心里的话唱出来。好听，但不是没心没肺的好听。\n这是一种“知道会失去的温柔”：黄昏很好看，你一边看一边已经在难过它快没了；和喜欢的人坐着，你很享受，同时有个小声音说“这种时刻不多了”。\n所以唱得很美，却不放开，装饰也不多。像靠在船舷上，眼睛看着远处，不敢看太用力，怕把这片刻看碎了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/8/text",
+            "start": 0,
+            "end": 30,
+            "quote": "还有黄昏的另一种看法：光很好，一边欣赏就一边难过它快要消失；"
+          }
+        ],
+        "reason": "看黄昏同时享受和难过将逝、身旁喜欢之人及心中时刻不多均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B09"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 358,
+            "end": 407,
+            "quote": "它像看黄昏时一边享受一边难过晚霞快没了，与喜欢的人坐在一起，心底总有个声音在说“这种时刻不多了”；"
+          }
+        ],
+        "reason": "看黄昏同时享受和难过将逝、身旁喜欢之人及心中时刻不多均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A068",
+      "original_meaning": "靠船舷望远方，不敢用力看怕看碎此刻",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17911,
+          "end": 18100,
+          "quote": "**mm.5-26：第一次开口，但有所保留**\n歌声进来了，很长、很连，像一个人终于肯说话，慢慢把心里的话唱出来。好听，但不是没心没肺的好听。\n这是一种“知道会失去的温柔”：黄昏很好看，你一边看一边已经在难过它快没了；和喜欢的人坐着，你很享受，同时有个小声音说“这种时刻不多了”。\n所以唱得很美，却不放开，装饰也不多。像靠在船舷上，眼睛看着远处，不敢看太用力，怕把这片刻看碎了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/8/text",
+            "start": 57,
+            "end": 95,
+            "quote": "”一个更静的画面，是靠在船舷上望远处，连目光都不敢用力，仿佛会把这片刻看碎。"
+          }
+        ],
+        "reason": "船舷、望远、目光不敢用力怕看碎的独特细节保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B09"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/3/text",
+            "start": 403,
+            "end": 434,
+            "quote": "甚至像靠在船舷上望着远处，不敢看太用力，生怕把这片刻给看碎了。"
+          }
+        ],
+        "reason": "船舷、望远、目光不敢用力怕看碎的独特细节保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B04"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A069",
+      "original_meaning": "怀念已逝好过去，不想回去，只觉得有过真好而有过意味没了",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 18581,
+          "end": 18632,
+          "quote": "你想起一段很好的过去，你知道回不去了，但你此刻并不想回去，你只是觉得“有过真好，但有过就意味着没了”。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/16/text",
+            "start": 0,
+            "end": 58,
+            "quote": "也有人由温暖的长旋律想到一段美好的过去：明白回不去，此刻也不想回去，只觉得“有过真好”，又懂得“有过就意味着没了”。"
+          }
+        ],
+        "reason": "已逝好过去、回不去且不想回去、有过即已没了均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B17"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 407,
+            "end": 444,
+            "quote": "又像想起回不去的过去，并不想回去，只觉得“有过真好，但有过就意味着没了”。"
+          }
+        ],
+        "reason": "已逝好过去、回不去且不想回去、有过即已没了均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A070",
+      "original_meaning": "暖长旋律像摸头安慰，水上不停伴奏提醒这种东西托不住",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 18634,
+          "end": 18731,
+          "quote": "所以这里是矛盾的：抚慰和微痛同时存在。旋律线很连、很暖，像有人轻轻摸你的头；但底下摇晃的伴奏一直没停，提醒你这是在水上，是托不住的东西。不是少年的心碎，是成年人有分寸的怀念：不哭，但眼眶是热的。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/16/text",
+            "start": 58,
+            "end": 91,
+            "quote": "旋律像有人轻轻摸头安慰，下面不断的水上摇荡却提醒你，这东西托不住。"
+          },
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/16/text",
+            "start": 0,
+            "end": 58,
+            "quote": "也有人由温暖的长旋律想到一段美好的过去：明白回不去，此刻也不想回去，只觉得“有过真好”，又懂得“有过就意味着没了”。"
+          }
+        ],
+        "reason": "暖长旋律抚慰与不停水上摇荡提醒托不住的上下层关系保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B17"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 444,
+            "end": 484,
+            "quote": "连绵温暖的歌声宛如有人轻轻摸头安慰，底下不停的水声却时刻提醒这片安宁是托不住的；"
+          }
+        ],
+        "reason": "暖长旋律抚慰与不停水上摇荡提醒托不住的上下层关系保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A071",
+      "original_meaning": "成年人有分寸地怀念，不哭但眼眶发热",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 18634,
+          "end": 18731,
+          "quote": "所以这里是矛盾的：抚慰和微痛同时存在。旋律线很连、很暖，像有人轻轻摸你的头；但底下摇晃的伴奏一直没停，提醒你这是在水上，是托不住的东西。不是少年的心碎，是成年人有分寸的怀念：不哭，但眼眶是热的。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/16/text",
+            "start": 91,
+            "end": 111,
+            "quote": "那是成年人有分寸的怀念，不哭，眼眶却热。"
+          }
+        ],
+        "reason": "成年怀念、不哭、眼眶热的具体状态须保留；Flash将之移接到哄爱人的现在场景。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B17"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 484,
+            "end": 532,
+            "quote": "就像中年人哄着最爱的人，眼神是笑的，心里明白留不住，不哭，但眼眶是热的，依然要笑着把这一句唱完。"
+          }
+        ],
+        "reason": "“不哭，眼眶热”字面在B05，却移接在中年人哄爱人的场景；缺“成年人有分寸的怀念”限定，前面的过去回忆不足以让后段这个情绪归属唯一可还原。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A072",
+      "original_meaning": "首次完整长旋律在升F大调上歌唱",
+      "dimension": "音乐事实",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 18510,
+          "end": 18579,
+          "quote": "**mm.5-22：真正开口唱，温柔里带刺**\n这是全曲第一次完整的歌，升F大调上飘着的长旋律。很多人说“美”，具体点说，是这样一种感受：",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 15,
+            "end": 53,
+            "quote": "到第6小节，右手才唱起升F大调里第一条完整的长旋律，以三度、六度的双音并行。"
+          }
+        ],
+        "reason": "第一次完整长旋律及升F大调均明确。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 0,
+            "end": 42,
+            "quote": "第6小节起，全曲第一支完整的长旋律在升F大调上浮现，右手以三度和六度双音唱出主旋律。"
+          }
+        ],
+        "reason": "第一次完整长旋律及升F大调均明确。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A073",
+      "original_meaning": "中年人笑着哄爱人，心知留不住，仍要把歌唱完",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19258,
+          "end": 19317,
+          "quote": "这里的矛盾是：越美，越有点酸。你能感到他在珍惜，不敢用力。这种悲伤不是痛哭，是“眼眶有点热，但还是要笑着把这句唱完”。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-int-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/16/text",
+            "start": 111,
+            "end": 148,
+            "quote": "另一个画面像中年人笑着哄最爱的人，明知道留不住，眼眶发热也要笑着把歌唱完。"
+          }
+        ],
+        "reason": "中年人主动笑着哄爱人，知留不住仍眼热唱完的动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B17"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 484,
+            "end": 532,
+            "quote": "就像中年人哄着最爱的人，眼神是笑的，心里明白留不住，不哭，但眼眶是热的，依然要笑着把这一句唱完。"
+          }
+        ],
+        "reason": "中年人主动笑着哄爱人，知留不住仍眼热唱完的动作保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A074",
+      "original_meaning": "同一尾音三次从在此确认到是否还在此疑问，再到恐怕待不久",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19656,
+          "end": 19778,
+          "quote": "具体点：旋律走得很慢、绕来绕去，每一句结尾都落到同一个音上，但每次的意思都不一样。第一次是“我们在这里”，第二次是“我们还在这里吗”，第三次已经有点“恐怕待不久了”。所以甜，但底下一直有孤独感——明明是两个人唱，却像一个人分饰两角，怕吵醒水面。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/14/text",
+            "start": 0,
+            "end": 52,
+            "quote": "同样的三次停留，一种听法是先说“我们在这里”，再问“我们还在这里吗”，第三次已隐隐觉得“恐怕待不久了”。"
+          }
+        ],
+        "reason": "在此确认→还在吗→待不久的三次次序均完整；与其他三次读法的关系另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B15"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 181,
+            "end": 255,
+            "quote": "从话语的探问上看，每次的意思也悄然转变：第一次是“我们在这里”的确认，第二次变成了“我们还在这里吗”的迟疑，第三次则化为“恐怕待不久了”的期限预感。"
+          }
+        ],
+        "reason": "在此确认→还在吗→待不久的三次次序均完整；与其他三次读法的关系另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A075",
+      "original_meaning": "双人唱其实像一个人分饰两角，怕吵醒水面，甜中仍孤独",
+      "dimension": "视角",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19656,
+          "end": 19778,
+          "quote": "具体点：旋律走得很慢、绕来绕去，每一句结尾都落到同一个音上，但每次的意思都不一样。第一次是“我们在这里”，第二次是“我们还在这里吗”，第三次已经有点“恐怕待不久了”。所以甜，但底下一直有孤独感——明明是两个人唱，却像一个人分饰两角，怕吵醒水面。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/4/text",
+            "start": 21,
+            "end": 54,
+            "quote": "或虽像双人对唱，却仿佛一个人分饰两角，怕吵醒水面，甜美中仍有孤独。"
+          }
+        ],
+        "reason": "一人扮双角、怕吵醒水面及甜中孤独均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B05"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 320,
+            "end": 381,
+            "quote": "明明写成两个声部的对唱，听起来却像一个人分饰两角，在微晃的水面上因怕吵醒水面而压低声线，甜美底下始终潜藏着一份清醒的孤独。"
+          }
+        ],
+        "reason": "一人扮双角、怕吵醒水面及甜中孤独均在。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A076",
+      "original_meaning": "克制演奏为后文留发展余地，应抵抗直接做大",
+      "dimension": "表演条件",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19870,
+          "end": 19902,
+          "quote": "很多人弹这里会直接做大，但肖邦的意思是：先克制，后面才有地方去。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 115,
+            "end": 134,
+            "quote": "演奏时也要抵抗一升高便直接做大的冲动；"
+          }
+        ],
+        "reason": "抵抗直接做大、先克制为后文留余地均在；Flash作者意图断言另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B13"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/7/text",
+            "start": 0,
+            "end": 28,
+            "quote": "在演奏诠释上，必须抵抗旋律一上升就立刻把感情做大的冲动。"
+          }
+        ],
+        "reason": "抵抗直接做大、先克制为后文留余地均在；Flash作者意图断言另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B08"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A077",
+      "original_meaning": "女高音般的三六度歌有意大利歌剧质感",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20073,
+          "end": 20128,
+          "quote": "左手终于开始摇了，12/8拍，又长又绵。右手是三度六度的歌，像意大利歌剧里女高音在唱。很美，但美里一直有根刺。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 66,
+            "end": 88,
+            "quote": "另一种听觉颜色，则像意大利歌剧里女高音在唱。"
+          }
+        ],
+        "reason": "原意的独特主体是女高音；Flash保留歌剧风格却将主体换成二重唱。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "altered",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 40,
+            "end": 118,
+            "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；"
+          }
+        ],
+        "reason": "正文写“意大利歌剧里的二重唱”，女高音这一原意的发声主体消失且被双人改写；evidence里的“女高音”不能抵销正文缺失。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A078",
+      "original_meaning": "同尾音和声改变，安慰与叹气反复交替",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20130,
+          "end": 20225,
+          "quote": "你注意听：旋律每次结束都落在同一个音上，但配的底下不一样，一会儿是安慰，一会儿是叹气。一句话翻来覆去说三遍，一遍比一遍加的花更多。不是在炫技，是像一个人把同一段回忆越说越细，越说越舍不得停。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/13/text",
+            "start": 91,
+            "end": 124,
+            "quote": "另一种听法把和声的变色听作安慰与叹气的反复交替，并不只是越来越疼。"
+          }
+        ],
+        "reason": "同尾音和声变化的安慰/叹气交替内容均在，不能由此推成必然单向加痛。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B14"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 101,
+            "end": 120,
+            "quote": "伴奏在底层一会儿是安慰，一会儿是叹气。"
+          }
+        ],
+        "reason": "同尾音和声变化的安慰/叹气交替内容均在，不能由此推成必然单向加痛。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A079",
+      "original_meaning": "夏夜深绿近黑的水有浑浊凉意，行于其上又怕又爽",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20227,
+          "end": 20336,
+          "quote": "波兰诗人Iwaszkiewicz形容这里的水，不是清澈的蓝水，是夏夜深绿近黑的水，有点浑，有点凉。你走在上面，又怕又爽，他叫它“幸福的害怕”。这就是这段的悲伤：不是大哭，是一种**夜里一个人很清醒的想念，又暖又凉**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/9/text",
+            "start": 0,
+            "end": 32,
+            "quote": "也有一种水色截然不同：夏夜深绿近黑，微浑微凉，行在上面又怕又爽。"
+          }
+        ],
+        "reason": "夏夜深绿近黑、浑凉以及又怕又爽三个感官层次均需保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B10"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "partial",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 436,
+            "end": 489,
+            "quote": "如同夏夜深绿近黑的水，有点浑，有点凉，行于其上产生“幸福的害怕”，是一种夜里一个人极清醒的想念，又暖又凉。"
+          }
+        ],
+        "reason": "暗绿浑凉水色及幸福的害怕在正文，原文“又怕又爽”中的爽感没有独立表达，不能从害怕或幸福自动推回。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A080",
+      "original_meaning": "幸福的害怕是独自夜里清醒想念，暖凉同时",
+      "dimension": "视角",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20227,
+          "end": 20336,
+          "quote": "波兰诗人Iwaszkiewicz形容这里的水，不是清澈的蓝水，是夏夜深绿近黑的水，有点浑，有点凉。你走在上面，又怕又爽，他叫它“幸福的害怕”。这就是这段的悲伤：不是大哭，是一种**夜里一个人很清醒的想念，又暖又凉**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/9/text",
+            "start": 32,
+            "end": 63,
+            "quote": "“幸福的害怕”还可以落在夜里独自而清醒的想念，心里同时暖和凉。"
+          }
+        ],
+        "reason": "独处清醒想念与暖凉同时均在；GPT措辞暖和凉虽稍拗口，不判漏义。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B10"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 436,
+            "end": 489,
+            "quote": "如同夏夜深绿近黑的水，有点浑，有点凉，行于其上产生“幸福的害怕”，是一种夜里一个人极清醒的想念，又暖又凉。"
+          }
+        ],
+        "reason": "独处清醒想念与暖凉同时均在；GPT措辞暖和凉虽稍拗口，不判漏义。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A081",
+      "original_meaning": "恋人二重唱受到死亡威胁",
+      "dimension": "关系",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20878,
+          "end": 20965,
+          "quote": "mm.6左右，右手真正唱出主题，而且几乎一直是三度、六度双音。听感上就像两个人在贴着唱二重唱，严肃乐评里Marceli Szulc说这是“一对恋人被死亡威胁了一下的二重唱”。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/9/text",
+            "start": 63,
+            "end": 99,
+            "quote": "更阴暗的比喻则把双声听作一对恋人的二重唱，仿佛死亡曾突然威胁了他们一下。"
+          }
+        ],
+        "reason": "恋人二重唱的死亡威胁意象保留；署名与权威有效性另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B10"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/2/text",
+            "start": 240,
+            "end": 265,
+            "quote": "这首二重唱甚至被乐评形容为隐隐受到死亡威胁的交谈。"
+          }
+        ],
+        "reason": "恋人二重唱的死亡威胁意象保留；署名与权威有效性另查。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B03"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A082",
+      "original_meaning": "7、9、11同音三次先安慰、再犹豫、最后疼",
+      "dimension": "时间变化",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 21081,
+          "end": 21173,
+          "quote": "你注意听，旋律好几次落在同一个音上，mm.7、mm.9、mm.11那几次停留。在普通人耳朵里，就是同一句话说了三遍，但一次比一次心事重：第一次是安慰，第二次是犹豫，第三次已经有点疼了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/14/text",
+            "start": 52,
+            "end": 85,
+            "quote": "另一种听法则分得更细：第一次是安慰，第二次是犹豫，第三次才有点疼。"
+          },
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/13/text",
+            "start": 0,
+            "end": 51,
+            "quote": "第7、9、11小节的乐句几次停在同一个升A，底下伴奏的颜色却不断变，像同一句话随着水波和光影变了意思。"
+          }
+        ],
+        "reason": "安慰→犹豫→疼完整保留；GPT本块说同样三次、7/9/11定位在相邻B14。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B15"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/5/text",
+            "start": 120,
+            "end": 181,
+            "quote": "在普通人的耳朵里，就像同一句话翻来覆去说了三遍，但每一次的心事都层层加重：第一次是安慰，第二次是犹豫，第三次已经有点疼了；"
+          }
+        ],
+        "reason": "安慰→犹豫→疼完整保留；GPT本块说同样三次、7/9/11定位在相邻B14。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B06"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A083",
+      "original_meaning": "14–15小峰顶后像梯田逐层降落",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 21175,
+          "end": 21267,
+          "quote": "到mm.14-15第一次到达一个小小的顶点，又马上像梯田一样一层层落下来。然后mm.24开始同一首歌再唱一遍，装饰更多、更华丽，但本质还是“舍不得”。这是整首曲子里最后的、完整的平静。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/17/text",
+            "start": 48,
+            "end": 79,
+            "quote": "第14—15小节碰到一个不大的峰顶，接着像梯田一样一层层落下；"
+          }
+        ],
+        "reason": "小峰顶随后梯田般逐层降落的过程和范围保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B18"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 121,
+            "end": 168,
+            "quote": "与此同时，在第11至15小节间线条被拉长、抬高，并在第14至15小节第一次到达一个小小的顶点。"
+          },
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/6/text",
+            "start": 195,
+            "end": 241,
+            "quote": "然而它没有顺势爆发，而是马上像梯田一样一层层落下来，声音很快又漂浮起来，没有把心事彻底说死。"
+          }
+        ],
+        "reason": "小峰顶随后梯田般逐层降落的过程和范围保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B07"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A084",
+      "original_meaning": "千言万语涌来，出口第一句反而轻如叹息",
+      "dimension": "体验",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 6352,
+          "end": 6663,
+          "quote": "如果只是普通的抒情，旋律大可以大开大合地宣泄。但肖邦在 `m. 6` 旋律最高处写下的表情记号，**竟然是反直觉的“减弱”（diminuendo）**。这种处理传递出一种极其微妙的情绪矛盾：\n* **它不是毫无保留的自信，而是一种“近乡情怯”的战战兢兢。** 就像相爱的人终于在狭小的船舱里坐在一起，千言万语涌上心头，开口的第一句话却轻得像叹息。\n* 在这整段旋律里，乐句的尾端不断落在一个关键的音（升A音，如 `m. 7, 9, 11`）。在听觉心理上，这个音就像一个**温柔的刺**——它每一次出现，底下的水波和光影都在变，它既像是甜蜜的确认，又带着一种无法排遣的惆怅：当下的美太脆弱了，仿佛水面上的浮光，一碰就会散。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-web-3-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/12/text",
+            "start": 0,
+            "end": 59,
+            "quote": "第6小节的旋律向高处伸展，谱上却写着渐弱，像终于与相爱的人在船舱里相见，千言万语涌上心头，出口的第一句话却轻得像叹息。"
+          }
+        ],
+        "reason": "千言万语涌来与第一句反而轻如叹息的反差完整保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B13"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/1/text",
+            "start": 93,
+            "end": 164,
+            "quote": "这绝非毫无保留的自信抒情，而带着一种“近乡情怯”的战战兢兢：就像相爱的人终于在狭小船舱里坐在一起，千言万语涌上心头，开口第一句话却轻得像叹息。"
+          }
+        ],
+        "reason": "千言万语涌来与第一句反而轻如叹息的反差完整保留。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B02"
+          ],
+          "decisions": []
+        }
+      }
+    },
+    {
+      "id": "S02-A085",
+      "original_meaning": "左手摇曳像水流自己在呼吸",
+      "dimension": "意象",
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 2704,
+          "end": 3082,
+          "quote": "### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）\n* **核心意象**：下午斜照在水面的暖金光线，两个人肩并肩坐在摇晃的船舱里。\n* **情绪体验**：\n  左手开始建立起标志性的摇曳律动（像水流的呼吸），右手用三度与六度的双音唱出主题。双音在听觉上永远是“两对声线的依偎”——它不是一个人在独白，而是一种**心照不宣的双向亲密**。\n  \n  **这里的矛盾之处在于：它极度甜蜜，但这种甜蜜会让你鼻子发酸。**\n  为什么？因为年轻人的快乐是没心没肺的，而成年人经历过离别后，面对极致的温柔时，心里会泛起一种防卫性的预感：“这么美的一刻，能持续多久呢？”\n  * 到 **mm. 24–34** 左右，旋律开始生出细碎、繁密的装饰音，仿佛水面折射的光斑突然晃得人睁不开眼，那种心动被悄悄放大，情感从最初克制的倾诉，逐渐变成难以自抑的轻微颤动。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-2-U03"
+        }
+      ],
+      "gpt": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_G6_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 0,
+            "end": 44,
+            "quote": "第4—5小节，左手的12/8摇荡建立起来，像心跳，像没有尽头的水浪，也像水流自己在呼吸。"
+          }
+        ],
+        "reason": "水流自身呼吸的拟人主体保留，不用人体呼吸替代。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      },
+      "flash": {
+        "status": "full",
+        "spans": [
+          {
+            "file": "drafts/S02_FLASH_relations_r1.json",
+            "json_pointer": "/pages/0/blocks/0/text",
+            "start": 39,
+            "end": 65,
+            "quote": "这串律动像心跳，像无止境的水浪，也像水流本身的呼吸；"
+          }
+        ],
+        "reason": "水流自身呼吸的拟人主体保留，不用人体呼吸替代。",
+        "model_self_report_for_comparison_only": {
+          "blocks": [
+            "S02-B01"
+          ],
+          "decisions": []
+        }
+      }
+    }
+  ],
+  "summary": {
+    "gpt": {
+      "counts": {
+        "full": 82,
+        "partial": 1,
+        "omitted": 1,
+        "altered": 0,
+        "pending": 1
+      },
+      "full_fraction": "82/85",
+      "text_metrics": {
+        "block_count": 20,
+        "body_characters_including_punctuation": 2573,
+        "body_han_characters": 2238,
+        "visible_characters_title_intro_labels_body": 2721,
+        "block_text_characters": [
+          182,
+          124,
+          88,
+          140,
+          88,
+          133,
+          161,
+          137,
+          95,
+          99,
+          192,
+          170,
+          148,
+          124,
+          106,
+          126,
+          148,
+          108,
+          109,
+          95
+        ],
+        "longest_block_characters": 192,
+        "mean_block_characters": 128.7
+      }
+    },
+    "flash": {
+      "counts": {
+        "full": 74,
+        "partial": 7,
+        "omitted": 1,
+        "altered": 3,
+        "pending": 0
+      },
+      "full_fraction": "74/85",
+      "text_metrics": {
+        "block_count": 8,
+        "body_characters_including_punctuation": 2865,
+        "body_han_characters": 2527,
+        "visible_characters_title_intro_labels_body": 3005,
+        "block_text_characters": [
+          343,
+          261,
+          489,
+          434,
+          532,
+          318,
+          348,
+          140
+        ],
+        "longest_block_characters": 532,
+        "mean_block_characters": 358.1
+      }
+    }
+  },
+  "reverse_findings": [
+    {
+      "id": "RF01",
+      "model": "flash",
+      "category": "invented_co_reference_and_time",
+      "severity": "medium",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/2/text",
+          "start": 40,
+          "end": 180,
+          "quote": "下午斜照在水面的暖金光线中，两个人肩并肩坐在摇晃的船舱里，像意大利歌剧里的二重唱，两对声线依偎在一起，呼吸和肢体触碰同步，语调完全同频，亲密到容不下第三者；这场景甚至不是给外人看的，声音不需要投射给远方，只需彼此听见，在夜聊中慢慢靠近，带着暖意与含蓄的诱惑，话说得不多却彼此都懂；"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A007",
+        "S02-A037",
+        "S02-A061"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 2704,
+          "end": 3082,
+          "quote": "### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）\n* **核心意象**：下午斜照在水面的暖金光线，两个人肩并肩坐在摇晃的船舱里。\n* **情绪体验**：\n  左手开始建立起标志性的摇曳律动（像水流的呼吸），右手用三度与六度的双音唱出主题。双音在听觉上永远是“两对声线的依偎”——它不是一个人在独白，而是一种**心照不宣的双向亲密**。\n  \n  **这里的矛盾之处在于：它极度甜蜜，但这种甜蜜会让你鼻子发酸。**\n  为什么？因为年轻人的快乐是没心没肺的，而成年人经历过离别后，面对极致的温柔时，心里会泛起一种防卫性的预感：“这么美的一刻，能持续多久呢？”\n  * 到 **mm. 24–34** 左右，旋律开始生出细碎、繁密的装饰音，仿佛水面折射的光斑突然晃得人睁不开眼，那种心动被悄悄放大，情感从最初克制的倾诉，逐渐变成难以自抑的轻微颤动。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gflash-int-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 10608,
+          "end": 10799,
+          "quote": "到了这里，真正令人着迷的亲密感才出现。不是公开的抒情宣言，而像两个很熟悉的人在夜里说话；声音不需要投射给远处的人听，只需要彼此听见。Tomaszewski说这里的旋律带着明显的温柔，而且最初始终有所克制；十九世纪钢琴家 Tausig 更直接把这种双声部的写法听成“两个人、两个灵魂”的交谈——后者当然是诗意解释，而不是肖邦留下的节目说明。citeturn910194view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-3-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11022,
+          "end": 11198,
+          "quote": "船的摇摆感终于出现，而真正的歌声稍晚才浮出来。历史上的钢琴家 Carl Tausig 把右手那种成双成对的线条听成“两个人、两个灵魂”的持续对话，并把整首曲子理解为一次隐秘的恋人相会。这个说法当然不必当成剧情，但作为听觉比喻非常准确：**不是一个人向世界抒情，而像两个意识贴得很近，在彼此呼吸之间说话。** citeturn641898view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-r1-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15773,
+          "end": 15863,
+          "quote": "- **mm. 4–11：亲近感出现。**摇摆的节奏托住一条像歌声的旋律，听起来有暖意，也有一点含蓄的诱惑。它不像大声表白，更像两个人在夜里慢慢聊近了；话说得不多，但彼此都听得懂。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-3-U03"
+        }
+      ],
+      "judgment": "同一“其一”从午后暖金船舱一路写到夜聊，无“另一种画面”或换时标记；各画面单独有来源，午后的人就是夜聊的人以及同一场景的连续性没有来源。"
+    },
+    {
+      "id": "RF02",
+      "model": "flash",
+      "category": "invented_subject_link",
+      "severity": "medium",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/2/text",
+          "start": 395,
+          "end": 436,
+          "quote": "一个平时习惯克制自己的人，终于来到不必时刻保持警惕的地方，独自沉浸在珍贵体验之中；"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A039",
+        "S02-A046",
+        "S02-A079",
+        "S02-A080"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 11536,
+          "end": 11604,
+          "quote": "主要的歌唱开始后，我听到的首先不是悲伤，而是一种很具体的幸福：一个人终于能够放松警惕，跟另一个人亲近，或独自沉浸在某种特别珍贵的体验中。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-1-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 12646,
+          "end": 12698,
+          "quote": "不是兴高采烈，也不是没有烦恼的快乐。更像是一个平时习惯克制自己的人，终于来到一个不必时刻保持警惕的地方。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-int-3-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20227,
+          "end": 20336,
+          "quote": "波兰诗人Iwaszkiewicz形容这里的水，不是清澈的蓝水，是夏夜深绿近黑的水，有点浑，有点凉。你走在上面，又怕又爽，他叫它“幸福的害怕”。这就是这段的悲伤：不是大哭，是一种**夜里一个人很清醒的想念，又暖又凉**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20227,
+          "end": 20336,
+          "quote": "波兰诗人Iwaszkiewicz形容这里的水，不是清澈的蓝水，是夏夜深绿近黑的水，有点浑，有点凉。你走在上面，又怕又爽，他叫它“幸福的害怕”。这就是这段的悲伤：不是大哭，是一种**夜里一个人很清醒的想念，又暖又凉**。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        }
+      ],
+      "judgment": "把惯于克制者终于不用警惕，独自珍贵沉浸，夏夜暗水、独自想念并为同一人的同一读法。原稿A046是亲近他人的语境，A039只是另一个可选主体，A079/A080又来自另一来源；单项有据不支持这条绑定。"
+    },
+    {
+      "id": "RF03",
+      "model": "flash",
+      "category": "invented_equivalence_between_readings",
+      "severity": "high",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/5/text",
+          "start": 120,
+          "end": 255,
+          "quote": "在普通人的耳朵里，就像同一句话翻来覆去说了三遍，但每一次的心事都层层加重：第一次是安慰，第二次是犹豫，第三次已经有点疼了；从话语的探问上看，每次的意思也悄然转变：第一次是“我们在这里”的确认，第二次变成了“我们还在这里吗”的迟疑，第三次则化为“恐怕待不久了”的期限预感。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A074",
+        "S02-A078",
+        "S02-A082"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19656,
+          "end": 19778,
+          "quote": "具体点：旋律走得很慢、绕来绕去，每一句结尾都落到同一个音上，但每次的意思都不一样。第一次是“我们在这里”，第二次是“我们还在这里吗”，第三次已经有点“恐怕待不久了”。所以甜，但底下一直有孤独感——明明是两个人唱，却像一个人分饰两角，怕吵醒水面。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20130,
+          "end": 20225,
+          "quote": "你注意听：旋律每次结束都落在同一个音上，但配的底下不一样，一会儿是安慰，一会儿是叹气。一句话翻来覆去说三遍，一遍比一遍加的花更多。不是在炫技，是像一个人把同一段回忆越说越细，越说越舍不得停。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 21081,
+          "end": 21173,
+          "quote": "你注意听，旋律好几次落在同一个音上，mm.7、mm.9、mm.11那几次停留。在普通人耳朵里，就是同一句话说了三遍，但一次比一次心事重：第一次是安慰，第二次是犹豫，第三次已经有点疼了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "judgment": "安慰/叹气交替、确认/疑问/期限、安慰/犹豫/疼各有来源。B06将它们套入同一三次、同一层层加重，并称后者是话语层面的同一转变；这是新增等价关系。每条局部顺序仍可完整读到，故A074/A078/A082局部记full，关系错误在此另计。"
+    },
+    {
+      "id": "RF04",
+      "model": "flash",
+      "category": "invented_simultaneity_and_subject_change",
+      "severity": "high",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/6/text",
+          "start": 121,
+          "end": 168,
+          "quote": "与此同时，在第11至15小节间线条被拉长、抬高，并在第14至15小节第一次到达一个小小的顶点。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A035",
+        "S02-A064",
+        "S02-A066"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9715,
+          "end": 9869,
+          "quote": "关键是，它并不一上来就尽情歌唱。Kopp特别注意到，主旋律初次出现时，肖邦反而要求它先收弱，而不是顺势把情绪推出来——这使得开头的亲密感带有明显的自我约束。到了大约 mm.12–16，句子的“呼吸”又越来越短，情绪开始赶在理智前面。citeturn273646view0turn309366view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16377,
+          "end": 16732,
+          "quote": "- **mm. 4–16：摇荡出现，歌声变得亲近；但这份亲近并不踏实。** 旋律在 mm. 6 左右浮现，听起来像有人把心事唱给一个很近的人听。这里的柔情不只是温柔或优美：它有一点感官上的陶醉，也有一点小心翼翼，像是很珍惜此刻的亲近，却还不敢完全相信它能持续。到 mm. 12–16，音乐的呼吸逐渐收紧，原本自在的歌里开始有“接下来会怎样”的期待。肖邦研究者 Mieczysław Tomaszewski 也形容开头的歌声先有所克制，再一层层扬起。[Tomaszewski 的作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Szklener 的研究](https://doi.org/10.2478/v10075-008-0015-7)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-1-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17258,
+          "end": 17527,
+          "quote": "- **mm. 4–16：温柔出现，但并不轻浮。**伴奏的摇摆感逐渐稳下来，主旋律大约从 m. 6 开始浮现。它听起来像一段亲密的对话：不是一个人高声倾诉，而是两条声音靠得很近、彼此映照。这里的甜美有克制，像一个人很珍惜当下，所以不愿把话说得太满。到 mm. 11–15，呼吸逐渐拉长，情绪抬高又松开；听起来像终于吐出一口憋着的气，但这还不是彻底的释然。[Kopp 对开头旋律及 mm. 14–15 的讨论](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-3-U04"
+        }
+      ],
+      "judgment": "原稿有呼吸越来越短，也有另一来源呼吸逐渐拉长。Flash用与此同时、把后一呼吸换为线条，制造可同时成立的一条发展；这是消解来源分歧而非保存并列读法。"
+    },
+    {
+      "id": "RF05",
+      "model": "flash",
+      "category": "invented_sequence_between_alternative_movements",
+      "severity": "medium",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/6/text",
+          "start": 195,
+          "end": 241,
+          "quote": "然而它没有顺势爆发，而是马上像梯田一样一层层落下来，声音很快又漂浮起来，没有把心事彻底说死。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A052",
+        "S02-A065",
+        "S02-A083"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 13305,
+          "end": 13405,
+          "quote": "尤其在 **mm. 6–11**，旋律仿佛刚要向外倾诉，又收回一点。到了 **mm. 12–14**，感情终于忍不住往上涌了一次；但在 **mm. 14–16**，它又像轻轻呼出一口气，回到柔和之中。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-1-U05"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 14145,
+          "end": 14212,
+          "quote": "mm. 12–15，音乐开始明显地向外伸展，仿佛原本谨慎的倾诉终于说得更热切了一些。到 mm. 14 前后，情绪有一次较为明显的抬升。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt6w-web-2-U05"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 16819,
+          "end": 17162,
+          "quote": "- **mm. 4–16：柔情很近，却仍有所保留。** 主旋律像有人压低声音唱给另一个人听，温柔、亲昵，也有一点感官上的暖意。肖邦国际钢琴比赛的作品介绍特别听到这里的歌唱性、柔软和一波一波的起伏。可这不是毫无顾虑的幸福：旋律常像是刚想倾诉，就又轻轻收回去。到 **mm. 14–15**，音乐短暂地落稳；那一刻可以像一次终于得到回应的相视，但声音很快又漂起来，没有把心事彻底说死。[作品介绍](https://www.chopincompetition.pl/en/compositions/128)、[Kopp 对 mm. 14–15 的聆听与演奏分析](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-2-U04"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 21175,
+          "end": 21267,
+          "quote": "到mm.14-15第一次到达一个小小的顶点，又马上像梯田一样一层层落下来。然后mm.24开始同一首歌再唱一遍，装饰更多、更华丽，但本质还是“舍不得”。这是整首曲子里最后的、完整的平静。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "judgment": "落稳相视→漂起与峰顶→梯田落下各有来源；Flash加“然而…而是”，串成落稳→梯田下降→漂起的单一动作链，并增加“深情”相视。原A未给这两个读法的先后绑定。"
+    },
+    {
+      "id": "RF06",
+      "model": "flash",
+      "category": "causal_intensification",
+      "severity": "high",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/7/text",
+          "start": 64,
+          "end": 140,
+          "quote": "这种自我约束与压抑，正是后文巨大高潮能够成立的必要前提——后来的爆发不是突然变激昂，而是开端被深深刻意压住的情感，在历经流转后终于不再被压制而彻底释放。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A036",
+        "S02-A076"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9929,
+          "end": 10014,
+          "quote": "里面同时有满足和警惕。越亲密，越怕把它弄坏；越想倾诉，越会先压低声音。这种矛盾是后面巨大高潮能够成立的前提——因为那不是突然“变激昂”，而是最初被压住的东西终于不再压住。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19870,
+          "end": 19902,
+          "quote": "很多人弹这里会直接做大，但肖邦的意思是：先克制，后面才有地方去。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "judgment": "A036本来确有前瞻因果，不能全部说自造。但必要、深深刻意、彻底释放均加强原文；“肖邦的意图”虽复述原A，仍把解释变成作者意图断言。"
+    },
+    {
+      "id": "RF07",
+      "model": "flash",
+      "category": "unsupported_authority",
+      "severity": "medium",
+      "output_spans": [
+        {
+          "file": "drafts/S02_FLASH_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/2/text",
+          "start": 240,
+          "end": 265,
+          "quote": "这首二重唱甚至被乐评形容为隐隐受到死亡威胁的交谈。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A081"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 20878,
+          "end": 20965,
+          "quote": "mm.6左右，右手真正唱出主题，而且几乎一直是三度、六度双音。听感上就像两个人在贴着唱二重唱，严肃乐评里Marceli Szulc说这是“一对恋人被死亡威胁了一下的二重唱”。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "judgment": "死亡威胁的比喻确在原A；本次未外证Marceli Szulc归属。Flash保留“被乐评形容”的权威包装，不能从附件内有该说法便证实历史归属。属于继承的未核权威，不是凭空创造死亡意象。"
+    },
+    {
+      "id": "RF08",
+      "model": "gpt",
+      "category": "unsupported_duration",
+      "severity": "low",
+      "output_spans": [
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/6/text",
+          "start": 38,
+          "end": 78,
+          "quote": "也可以是共同生活多年的两个人，在一个普通晚上突然重又觉得：“这个人在这里，真好。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A032"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9110,
+          "end": 9500,
+          "quote": "### mm. 6–21：非常亲密，但不是毫无阴影的幸福\n\n真正的歌唱展开以后，第一感觉确实是温柔。\n\n但我觉得它不是“天真幸福”。\n\n更准确地说，是一种**已经知道幸福很珍贵，所以不敢粗暴触碰它的温柔**。\n\n这和年轻人第一次兴奋地爱上某个人不太一样。它比较像两个人已经共同生活过一段时间之后，在某个很普通的晚上突然重新意识到：“这个人在这里，真好。”\n\n因此这里的甜不是糖分很高的甜，而有一种珍惜感。\n\n而“珍惜”这个词本身就隐藏着它的反面：\n\n**只有知道某样东西不是理所当然的，人才能如此珍惜。**\n\n所以 mm. 6–21 里面，我一直能听到一种细微的矛盾：音乐非常亲密，却没有完全解除警觉；它愿意靠近，却仍然保留一点距离。\n\n像伸手抚摸一个人的脸，同时脑中极快地闪过一个念头：\n\n> 这样的时刻不可能永远存在。\n\n这个念头还没有成为悲伤，只是一层薄薄的阴影。\n\n---",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-int-r1-U03"
+        }
+      ],
+      "judgment": "原A只说共同生活过一段时间，GPT增写“多年”。关系核心保留，但年限无来源，是小幅具体化；不将该外围修辞单独推翻A032核心full。"
+    },
+    {
+      "id": "RF09",
+      "model": "gpt",
+      "category": "invented_hierarchy_between_readings",
+      "severity": "low",
+      "output_spans": [
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/14/text",
+          "start": 52,
+          "end": 85,
+          "quote": "另一种听法则分得更细：第一次是安慰，第二次是犹豫，第三次才有点疼。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A074",
+        "S02-A082"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19656,
+          "end": 19778,
+          "quote": "具体点：旋律走得很慢、绕来绕去，每一句结尾都落到同一个音上，但每次的意思都不一样。第一次是“我们在这里”，第二次是“我们还在这里吗”，第三次已经有点“恐怕待不久了”。所以甜，但底下一直有孤独感——明明是两个人唱，却像一个人分饰两角，怕吵醒水面。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 21081,
+          "end": 21173,
+          "quote": "你注意听，旋律好几次落在同一个音上，mm.7、mm.9、mm.11那几次停留。在普通人耳朵里，就是同一句话说了三遍，但一次比一次心事重：第一次是安慰，第二次是犹豫，第三次已经有点疼了。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-3-U03"
+        }
+      ],
+      "judgment": "两种三次尾音读法均完整、并列明确；“分得更细”却添加后者是更细一层的层级，原文只支持不同解释，并无细粗关系。“没有被…吞掉”又是审计话语漏进正文。"
+    },
+    {
+      "id": "RF10",
+      "model": "gpt",
+      "category": "unnecessary_opposition",
+      "severity": "low",
+      "output_spans": [
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/18/text",
+          "start": 48,
+          "end": 109,
+          "quote": "另有一条关于呼吸的听法：第11—15小节，句子的呼吸逐渐拉长，情绪抬高又松开，像终于吐出一口憋着的气，却还谈不上彻底释然。"
+        },
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/19/text",
+          "start": 0,
+          "end": 59,
+          "quote": "也有人在第12—16小节听到相反的呼吸：乐句越来越短，情绪仿佛赶在理智前面，原本自在的歌里生出“接下来会怎样”的期待。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A035",
+        "S02-A066"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9715,
+          "end": 9869,
+          "quote": "关键是，它并不一上来就尽情歌唱。Kopp特别注意到，主旋律初次出现时，肖邦反而要求它先收弱，而不是顺势把情绪推出来——这使得开头的亲密感带有明显的自我约束。到了大约 mm.12–16，句子的“呼吸”又越来越短，情绪开始赶在理智前面。citeturn273646view0turn309366view0",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 17258,
+          "end": 17527,
+          "quote": "- **mm. 4–16：温柔出现，但并不轻浮。**伴奏的摇摆感逐渐稳下来，主旋律大约从 m. 6 开始浮现。它听起来像一段亲密的对话：不是一个人高声倾诉，而是两条声音靠得很近、彼此映照。这里的甜美有克制，像一个人很珍惜当下，所以不愿把话说得太满。到 mm. 11–15，呼吸逐渐拉长，情绪抬高又松开；听起来像终于吐出一口憋着的气，但这还不是彻底的释然。[Kopp 对开头旋律及 mm. 14–15 的讨论](https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-web-3-U04"
+        }
+      ],
+      "judgment": "分开拉长与收紧有效，且本段时间部分重叠；但把不同来源直接称“相反”，会暗示必须对立，原稿允许并列而不必互斥。这比Flash改主体拼接轻，但仍有编辑附加关系。"
+    },
+    {
+      "id": "RF11",
+      "model": "gpt",
+      "category": "overstrict_scope_decision",
+      "severity": "high",
+      "output_spans": [
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/12/text",
+          "start": 134,
+          "end": 148,
+          "quote": "先克制，后面才有展开的余地。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A036",
+        "S02-A076"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 9929,
+          "end": 10014,
+          "quote": "里面同时有满足和警惕。越亲密，越怕把它弄坏；越想倾诉，越会先压低声音。这种矛盾是后面巨大高潮能够成立的前提——因为那不是突然“变激昂”，而是最初被压住的东西终于不再压住。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-gpt56w-web-2-U03"
+        },
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 19870,
+          "end": 19902,
+          "quote": "很多人弹这里会直接做大，但肖邦的意思是：先克制，后面才有地方去。",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-muse-web-1-U03"
+        }
+      ],
+      "judgment": "GPT把A036整项out_of_scope，留下A076。前者是“此时克制如何使后面释放成立”，属于解释当前段落，并非断言高潮现在发生；该裁决丢了不同于演奏留余地的意义。"
+    },
+    {
+      "id": "RF12",
+      "model": "gpt",
+      "category": "unsupported_scope_partition",
+      "severity": "medium",
+      "output_spans": [
+        {
+          "file": "drafts/S02_G6_relations_r1.json",
+          "json_pointer": "/pages/0/blocks/17/text",
+          "start": 28,
+          "end": 48,
+          "quote": "第12—14小节，感情终于忍不住向上涌。"
+        }
+      ],
+      "related_old_ids": [
+        "S02-A062"
+      ],
+      "source_spans": [
+        {
+          "file": "inputs/S02.txt",
+          "json_pointer": null,
+          "start": 15996,
+          "end": 16283,
+          "quote": "- **mm. 12–34：愉悦越来越浓，却不是毫无阴影的快乐。**音乐一层层涨起来，像情绪终于不必藏得那么好。可它的起伏并不让人觉得“问题解决了”，反倒有种越美越舍不得的感觉。到 **m. 32**，这股情绪第一次像是完整地打开了；随后 **m. 34** 又放慢、退开，仿佛刚说出口的话在空气里回荡，人却安静下来。 [关于 m. 32 的高潮与 m. 34 的回落](https://www.belcanto.ru/chopin_op60.html)；[PTNA 对 m. 34 渐慢的说明](https://enc.piano.or.jp/en/musics/543)",
+          "selection": "ledger_quote_verified_in_original_pool",
+          "uid": "SRC-luna-int-3-U04"
+        }
+      ],
+      "judgment": "GPT decision把“问题并未解决”主要归32/34；源文在谈整段起伏时已给这个限定，未限定仅在32/34。B18虽有起伏，却未无损恢复A062；Flash的同类裁决亦过窄。"
+    }
+  ],
+  "naturalness_and_length": {
+    "counting_rule": "字数不使用模型自报。body按所有block.text串联计Unicode字符（含标点和换行），另报汉字数；visible另加标题、intro、label。排除ID、引文、evidence、decisions、method_notes。无预设硬上限。",
+    "gpt": {
+      "judgment": "句子和块更短，画面切换较易读；20块带来标题和换块成本，仍显账本组织痕迹，不能因块多就判好。",
+      "issues": [
+        "B15“另一种听法则分得更细”附加层级；“没有被安慰或疼痛吞掉”像在答审计。",
+        "B20“相反的呼吸”把不同读法对立化。",
+        "B10“心里同时暖和凉”措辞不够顺。"
+      ],
+      "overall": "两份中更易读、跨来源关系更忠实，但仍需要编辑处理，非自然度已完全过关。"
+    },
+    "flash": {
+      "judgment": "8块外观紧凑，块内分号长链、反复“绝非/并不是”以及然而/与此同时连接显著；B03/B04/B05的大段列举要求读者自行分离时间、主体与动因。",
+      "issues": [
+        "B03同一双人耳语读法同时容纳午后与夜聊，B04连续抚脸/掌托/望船舷堆叠。",
+        "B05把前史、当下舍不得、逝去怀念、哄爱人串成一大段。",
+        "B07为求连贯改呼吸主体并拼合不同动作次序。"
+      ],
+      "overall": "信息量高但不能用8块声称阅读负担低；单块密度和自造联系损害自然度。"
+    },
+    "length_judgment": "两者都没有必要仅为字数删异质意思；先修关系和限定。GPT是否更短及幅度按summary实际字符计，不按视觉块数或模型自述。"
+  },
+  "key_five_differences": [
+    {
+      "topic": "女高音主体",
+      "ids": [
+        "S02-A077"
+      ],
+      "gpt": "女高音与双人二重唱明确分开，full。",
+      "flash": "以歌剧二重唱顶替女高音，altered；引文不能补正文。"
+    },
+    {
+      "topic": "互异呼吸的处理",
+      "ids": [
+        "S02-A035",
+        "S02-A064",
+        "S02-A066"
+      ],
+      "gpt": "拉长、收紧分开作为读法，A066 full，但“相反”仍多一层对立。",
+      "flash": "与此同时把呼吸拉长换成线条拉长，并改吐气范围，A066 altered。"
+    },
+    {
+      "topic": "人物与时间关系",
+      "ids": [
+        "S02-A007",
+        "S02-A039",
+        "S02-A046",
+        "S02-A061",
+        "S02-A079"
+      ],
+      "gpt": "更多用一幅/另一幅、也许、另种听法分开主体时间；A079又怕又爽完整。",
+      "flash": "午后与夜聊、克制者与独自暗水沉浸被绑定；A079还漏爽感。"
+    },
+    {
+      "topic": "三种尾音变化",
+      "ids": [
+        "S02-A074",
+        "S02-A078",
+        "S02-A082"
+      ],
+      "gpt": "三次顺序均保留，交替与另外两种听法分开；“更细”层级仍是附加。",
+      "flash": "三项也均能逐项恢复，并未漏中间犹豫，但把交替、加重和话语探问当同一变化的不同层面，新增等价关系。"
+    },
+    {
+      "topic": "克制与后文的关系及阅读负担",
+      "ids": [
+        "S02-A036",
+        "S02-A076",
+        "S02-A062"
+      ],
+      "gpt": "当前压抑解释后文高潮被过严裁成跨段，A036 omitted；A062 partial，不接受自报已保留。20块句子较短。",
+      "flash": "A036保留但强化成必要/刻意/彻底，altered；A062同样partial。8块较少却长链更重，不能直接以卡数判断自然度。"
+    }
+  ],
+  "mechanism_assessment": {
+    "useful_observed": [
+      "关系标注配合正文中的显式“另一种/也许/一幅…另一幅”，对防止一人双声/双人/独处，以及呼吸长短被串成同一剧情有用；GPT展示较好实例。",
+      "明确保护三次变化及中间项：两份均保住A082的犹豫，A074亦完整；不能将此说成GPT独有进步。",
+      "固定85分母＋原A到正文span＋反向逐句关系检查，能抓到Flash A077和A066以及GPT A036的自报偏差。"
+    ],
+    "not_sufficient": [
+      "仅kind=alternatives不能保证块内仍保持并列，Flash B03便在同一其一中混入午后夜聊。",
+      "仅meaning_ids齐全或evidence贴原句不证明正文full。",
+      "仅分小块改善密度不自动解决前瞻边界、年限增写和元审计措辞。"
+    ],
+    "causal_limit": "这是同一输入上的两份单次成品对比，未见对照消融，无法声称某条提示或机制单独导致结果。此处“有用”仅指成品中可见的作用，不推断整套pipeline或模型总体优劣。",
+    "overall": "此S02样本优先GPT作为关系组织更清楚的比较对象，但不以模型自报或full数代替审计；GPT的A036拒绝仍需明确指出，不能当全胜。"
+  },
+  "validation": {
+    "unique_old_ids": 85,
+    "model_judgments": 170,
+    "all_selected_quotes_exact": true,
+    "original_files_sha256_unchanged": true,
+    "gpt_parse_roundtrip_equal": true
+  }
+}

@@ -1,0 +1,61 @@
+test_backend_unknown_or_wrong_not_success (v5_inherited_mock_fixture.AdapterTests.test_backend_unknown_or_wrong_not_success) ... ok
+test_body_protection_words_are_content (v5_inherited_mock_fixture.AdapterTests.test_body_protection_words_are_content) ... ok
+test_cache_write_failure_never_resumes_unsealed_success (v5_inherited_mock_fixture.AdapterTests.test_cache_write_failure_never_resumes_unsealed_success) ... ok
+test_completed_strict_and_terminal_metadata_required (v5_inherited_mock_fixture.AdapterTests.test_completed_strict_and_terminal_metadata_required) ... ok
+test_hold_write_failure_next_job_stays_blocked (v5_inherited_mock_fixture.AdapterTests.test_hold_write_failure_next_job_stays_blocked) ... ERROR
+test_metadata_handles_never_persist (v5_inherited_mock_fixture.AdapterTests.test_metadata_handles_never_persist) ... ok
+test_missing_cache_no_resubmit (v5_inherited_mock_fixture.AdapterTests.test_missing_cache_no_resubmit) ... ok
+test_pending_without_cache_no_resubmit (v5_inherited_mock_fixture.AdapterTests.test_pending_without_cache_no_resubmit) ... ok
+test_post_submit_unknown_timeout_and_protection_hold (v5_inherited_mock_fixture.AdapterTests.test_post_submit_unknown_timeout_and_protection_hold) ... ok
+test_pre_submit_contract_not_just_phase (v5_inherited_mock_fixture.AdapterTests.test_pre_submit_contract_not_just_phase) ... ok
+test_real_gate_closed_and_route_blocked (v5_inherited_mock_fixture.AdapterTests.test_real_gate_closed_and_route_blocked) ... ok
+test_sensitive_body_rejected_not_rewritten (v5_inherited_mock_fixture.AdapterTests.test_sensitive_body_rejected_not_rewritten) ... ok
+test_success_resume_readonly_and_cache_reference (v5_inherited_mock_fixture.AdapterTests.test_success_resume_readonly_and_cache_reference) ... ok
+test_tampered_body (v5_inherited_mock_fixture.AdapterTests.test_tampered_body) ... ok
+test_tampered_source_and_finalization (v5_inherited_mock_fixture.AdapterTests.test_tampered_source_and_finalization) ... ok
+test_ticket_write_failure_never_launches (v5_inherited_mock_fixture.AdapterTests.test_ticket_write_failure_never_launches) ... ok
+test_wrapper_exact_rerun_zero_new_submissions (v5_inherited_mock_fixture.ExperimentTests.test_wrapper_exact_rerun_zero_new_submissions) ... ok
+test_wrapper_fake_log_and_parser_error_never_success (v5_inherited_mock_fixture.ExperimentTests.test_wrapper_fake_log_and_parser_error_never_success) ... ok
+test_backend_root_contract_only (v5_inherited_mock_fixture.IntegrityTests.test_backend_root_contract_only) ... ok
+test_body_preserved_or_rejected_not_scrubbed (v5_inherited_mock_fixture.IntegrityTests.test_body_preserved_or_rejected_not_scrubbed) ... ok
+test_cancelled_item_rejected (v5_inherited_mock_fixture.IntegrityTests.test_cancelled_item_rejected) ... ok
+test_handle_keys_and_strings_redacted (v5_inherited_mock_fixture.IntegrityTests.test_handle_keys_and_strings_redacted) ... ok
+test_policy (v5_inherited_mock_fixture.IntegrityTests.test_policy) ... ok
+test_strict_json (v5_inherited_mock_fixture.IntegrityTests.test_strict_json) ... ok
+test_success_and_after_terminal (v5_inherited_mock_fixture.IntegrityTests.test_success_and_after_terminal) ... ok
+test_ticket_survives_hold_disk_failure_cross_process (v5_inherited_mock_fixture.IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process) ... ERROR
+test_unknown_codex_events_rejected (v5_inherited_mock_fixture.IntegrityTests.test_unknown_codex_events_rejected) ... ok
+test_codex_success_exact_resume (v5_inherited_mock_fixture.RunnerTests.test_codex_success_exact_resume) ... ok
+test_final_argv_identity_contains_sandbox_and_images (v5_inherited_mock_fixture.RunnerTests.test_final_argv_identity_contains_sandbox_and_images) ... ok
+test_forbidden_tool_failed_with_complete_terminal (v5_inherited_mock_fixture.RunnerTests.test_forbidden_tool_failed_with_complete_terminal) ... ok
+test_hold_write_failure_retains_ticket (v5_inherited_mock_fixture.RunnerTests.test_hold_write_failure_retains_ticket) ... ok
+test_opencode_success_handles_redacted (v5_inherited_mock_fixture.RunnerTests.test_opencode_success_handles_redacted) ... ok
+test_real_gate_never_process (v5_inherited_mock_fixture.RunnerTests.test_real_gate_never_process) ... ok
+test_unknown_event_stops_later_provider_job (v5_inherited_mock_fixture.RunnerTests.test_unknown_event_stops_later_provider_job) ... ok
+
+======================================================================
+ERROR: test_hold_write_failure_next_job_stays_blocked (v5_inherited_mock_fixture.AdapterTests.test_hold_write_failure_next_job_stays_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_execution_integrity_v4.py", line 188, in test_hold_write_failure_next_job_stays_blocked
+    self.assertIn("OSError", first["hold_write_error"])
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 1149, in assertIn
+    if member not in container:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+======================================================================
+ERROR: test_ticket_survives_hold_disk_failure_cross_process (v5_inherited_mock_fixture.IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_execution_integrity_v4.py", line 109, in test_ticket_survives_hold_disk_failure_cross_process
+    self.assertIn("OSError", I.classify_stop(hold, "a", "run", "test"))
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\unittest\case.py", line 1149, in assertIn
+    if member not in container:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.606s
+
+FAILED (errors=2)

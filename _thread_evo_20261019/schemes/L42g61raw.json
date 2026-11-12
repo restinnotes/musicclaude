@@ -1,0 +1,127 @@
+{
+ "name": "L42g61raw",
+ "note": "L42g61raw：11-12 夜，猜想 A18：只把骨架的输入从洗过的体验性质换成珠子原文，其余同 L42g61",
+ "steps": [
+  {
+   "id": "A3",
+   "prompt_file": "Q6_A3.txt",
+   "replace": {
+    "{SEGMENTS}": "SEGMENTS",
+    "{BEADS_TEXT}": "BEADS_TEXT"
+   },
+   "model": "g6",
+   "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+  },
+  {
+   "id": "A1g6",
+   "prompt_file": "L42_g61_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER",
+    "{TARGETS}": [
+     {
+      "text": "（这一轮给你的不是洗过的体验性质，而是听感记录的原文。里面的画面、比喻、想象出来的人物动作和对白，都只是听的人的联想，不是这个人真的发生的事，一律不得写成他的经历，也不要把这些画面换个说法搬进来；只从中读出各段的滋味有什么不同、各自是什么质地。）\n"
+     },
+     "BEADS_TEXT"
+    ]
+   },
+   "model": "g6",
+   "append": "\n\n补充：每条路线的 route_id 一律以“G6-”开头（例如 G6-R1）。"
+  },
+  {
+   "id": "A1g56",
+   "prompt_file": "L42_g61_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER",
+    "{TARGETS}": [
+     {
+      "text": "（这一轮给你的不是洗过的体验性质，而是听感记录的原文。里面的画面、比喻、想象出来的人物动作和对白，都只是听的人的联想，不是这个人真的发生的事，一律不得写成他的经历，也不要把这些画面换个说法搬进来；只从中读出各段的滋味有什么不同、各自是什么质地。）\n"
+     },
+     "BEADS_TEXT"
+    ]
+   },
+   "model": "g56",
+   "append": "\n\n补充：每条路线的 route_id 一律以“G56-”开头（例如 G56-R1）。"
+  },
+  {
+   "id": "A1argon",
+   "prompt_file": "L42_g61_A1.txt",
+   "replace": {
+    "{NAME}": "WORK_INFO",
+    "{SECTIONS}": "SEGMENTS",
+    "{K}": {
+     "text": "3"
+    },
+    "{CENTER}": "CENTER",
+    "{TARGETS}": [
+     {
+      "text": "（这一轮给你的不是洗过的体验性质，而是听感记录的原文。里面的画面、比喻、想象出来的人物动作和对白，都只是听的人的联想，不是这个人真的发生的事，一律不得写成他的经历，也不要把这些画面换个说法搬进来；只从中读出各段的滋味有什么不同、各自是什么质地。）\n"
+     },
+     "BEADS_TEXT"
+    ]
+   },
+   "model": "argon",
+   "append": "\n\n补充：每条路线的 route_id 一律以“AR-”开头（例如 AR-R1）。"
+  },
+  {
+   "id": "A2",
+   "prompt_file": "L42_g61_A2.txt",
+   "replace": {
+    "{ROUTES}": [
+     {
+      "text": "\n\n【以下候选路线的编号以 G6- 开头】\n"
+     },
+     "step:A1g6",
+     {
+      "text": "\n\n【以下候选路线的编号以 G56- 开头】\n"
+     },
+     "step:A1g56",
+     {
+      "text": "\n\n【以下候选路线的编号以 AR- 开头】\n"
+     },
+     "step:A1argon"
+    ]
+   },
+   "model": "g6",
+   "append": "\n\n【候选路线】\n{ROUTES}"
+  },
+  {
+   "id": "A4",
+   "prompt_file": "L42_g61_A4.txt",
+   "replace": {
+    "{SECTIONS}": "SEGMENTS",
+    "{ROUTES}": [
+     {
+      "text": "\n\n【以下候选路线的编号以 G6- 开头】\n"
+     },
+     "step:A1g6",
+     {
+      "text": "\n\n【以下候选路线的编号以 G56- 开头】\n"
+     },
+     "step:A1g56",
+     {
+      "text": "\n\n【以下候选路线的编号以 AR- 开头】\n"
+     },
+     "step:A1argon",
+     {
+      "text": "\n\n【宏观评审结果】\n"
+     },
+     "step:A2"
+    ],
+    "{TARGETS}": "step:A3",
+    "{CENTER}": "CENTER"
+   },
+   "model": "g6"
+  }
+ ],
+ "final": "A4"
+}

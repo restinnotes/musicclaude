@@ -1,0 +1,38 @@
+{
+  "status": "verified_i14_stop_condition",
+  "i14": true,
+  "tag": "r54weave",
+  "verified_at": "2026-11-03T22:21:47.462381-05:00",
+  "rule": "Original I14: at least two consecutive actual rounds without acceptance, and one fresh unchanged I01 group has no new medium-or-higher specific findings relative to all frozen prior findings. Known unresolved issues remain unresolved. No perfection/generalization claim.",
+  "prospective_scope_sha256": "c4ca245fc0f367e25109b63c75e0ad4abdf520c84cef31ead1c668a1e5535a43",
+  "fresh_ten_complete_full_read_and_exact_bound": true,
+  "medium_instances": 28,
+  "specific_known_line_instances": 26,
+  "known_fixed_bead_instances": 1,
+  "new_unsupported_segment_coverage_claims": 1,
+  "new_valid_medium_or_higher_standard_defects": 0,
+  "no_acceptance_round_sources": [
+    "runs/_batches/round55_current/r55shell_final_disposition.json",
+    "runs/_batches/round55_current/r55restored_final_disposition.json",
+    "runs/_batches/round56_paired/r56paired_final_disposition.json",
+    "runs/_batches/round61_boundary/r61bridge_final_disposition.json"
+  ],
+  "latest_actual_failed_trials": [
+    "runs/_batches/round61_boundary/r61bridge_final_disposition.json",
+    "runs/_batches/round62_sample_checkpoint/r54sample_final_disposition.json"
+  ],
+  "all_original_review_and_adviser_collectors_terminal": true,
+  "new_I02_candidates": 0,
+  "no_repeated_favorable_I01_group_requested": true,
+  "evidence": [
+    "runs/_batches/i14_after_r62/audit_scope.json",
+    "runs/_batches/i14_after_r62/assessment.json",
+    "runs/_batches/i14_after_r62/specific_matches.json",
+    "runs/_batches/i14_after_r62/specific_subfinding_resolution.json",
+    "runs/_batches/round64_diagnosis/final_disposition.json"
+  ],
+  "quality_compliance_proven": false,
+  "global_best_or_generalization_proven": false,
+  "remaining": "原有重复、分析腔、相互需要/安心依据、体验未完全覆盖及全部严重/中等分歧仍存在；I14只终止本次已试搜索，不声称所有标准都已满足。固定起点r49直接8票仍未通过。",
+  "completion_still_requires": "Separate product/evidence/scheduling/document audit and script-generated final comparison MD."
+}

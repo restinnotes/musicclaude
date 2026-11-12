@@ -1,0 +1,25 @@
+8 drafts: ['d20f6_op61_r1', 'd20t6_op61_r1', 'd20p6_op61_r1', 'd20s6_op61_r1', 'd20f6_op60_r1', 'd20t6_op60_r1', 'd20f56_op61_r1', 'd20t56_op61_r1']
+[d20t56_op61_r1] FAILED rc=1 1s '{"completed": false, "error_code": "probridge_worker_failed_before_result", "error_type": "RuntimeError", "automatic_retry": false}\r\n'
+[d20t6_op60_r1] FAILED rc=1 1s '{"completed": false, "error_code": "probridge_worker_failed_before_result", "error_type": "RuntimeError", "automatic_retry": false}\r\n'
+GPT3 STOPPED: 2 in a row / 2 total failures (last d20t6_op60_r1)
+[d20t56_op61_r1] SKIPPED (2 in a row / 2 total failures (last d20t6_op60_r1))
+[d20s6_op61_r1] FAILED rc=1 1s '{"completed": false, "error_code": "probridge_worker_failed_before_result", "error_type": "RuntimeError", "automatic_retry": false}\r\n'
+[d20t6_op60_r1] SKIPPED (2 in a row / 2 total failures (last d20t6_op60_r1))
+GPT3 STOPPED: 3 in a row / 3 total failures (last d20s6_op61_r1)
+[d20s6_op61_r1] SKIPPED (3 in a row / 3 total failures (last d20s6_op61_r1))
+[d20t56_op61_r1_x] SKIPPED (3 in a row / 3 total failures (last d20s6_op61_r1))
+d20t56_op61_r1 FAILED (sections != segments)
+[d20t6_op60_r1_x] SKIPPED (3 in a row / 3 total failures (last d20s6_op61_r1))
+[d20s6_op61_r1_x] SKIPPED (3 in a row / 3 total failures (last d20s6_op61_r1))
+d20t6_op60_r1 FAILED (sections != segments)
+d20s6_op61_r1 FAILED (sections != segments)
+[d20f56_op61_r1] ok 119s 5311 chars
+d20f56_op61_r1 saved 13
+[d20t6_op61_r1] ok 499s 5968 chars
+d20t6_op61_r1 saved 13
+[d20f6_op60_r1] ok 624s 5714 chars
+d20f6_op60_r1 saved 14
+[d20p6_op61_r1] ok 638s 5832 chars
+d20p6_op61_r1 saved 13
+[d20f6_op61_r1] ok 716s 5842 chars
+d20f6_op61_r1 saved 13

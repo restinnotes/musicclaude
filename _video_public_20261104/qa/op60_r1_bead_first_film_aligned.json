@@ -1,0 +1,372 @@
+{
+ "music_path": "D:\\musicclaude\\_video_public_20261104\\input\\op60_music_aligned.json",
+ "alignment": {
+  "version": "score-events-anchors-v2",
+  "input": "D:\\musicclaude\\_video_public_20261104\\input\\op60_music_source.json",
+  "audio": "D:\\musicclaude\\bead_video\\remotion_b\\public\\audio.m4a",
+  "parameters": {
+   "radius_seconds": 2.5,
+   "sample_rate": 22050,
+   "hop": 256
+  },
+  "summary": {
+   "groups": 1695,
+   "median_shift_ms": 37,
+   "p90_shift_ms": 210,
+   "low_support_groups": 360,
+   "median_attack_support_before": 0.179,
+   "median_attack_support": 0.54
+  },
+  "opening_30s": {
+   "groups": 64,
+   "median_shift_ms": 62,
+   "p90_shift_ms": 299,
+   "low_support_groups": 3,
+   "median_attack_support_before": 0.147,
+   "median_attack_support": 0.671
+  },
+  "status": "REVIEW_REQUIRED",
+  "event_alignment": {
+   "method": "local-no-free-grace-runs",
+   "anchors": [],
+   "runs": [],
+   "unresolved_runs": []
+  },
+  "row_unit": "score_event",
+  "limitations": [
+   "Attack support is a fitting score, not measured timing error.",
+   "Pitch identities and measure/text timing are inherited from the input.",
+   "Score event metadata separates chords and grace notes; it does not establish whether the notated pitches match the performance."
+  ],
+  "input_anomalies": {
+   "same_pitch_overlaps": 47,
+   "examples": [
+    {
+     "pitch": 66,
+     "part": 1,
+     "previous_start": 36.17,
+     "previous_end": 40.559,
+     "start": 36.17
+    },
+    {
+     "pitch": 63,
+     "part": 1,
+     "previous_start": 43.441,
+     "previous_end": 48.725,
+     "start": 43.441
+    },
+    {
+     "pitch": 80,
+     "part": 1,
+     "previous_start": 46.43,
+     "previous_end": 55.75,
+     "start": 46.43
+    },
+    {
+     "pitch": 70,
+     "part": 1,
+     "previous_start": 47.58,
+     "previous_end": 48.97,
+     "start": 47.58
+    },
+    {
+     "pitch": 78,
+     "part": 1,
+     "previous_start": 47.58,
+     "previous_end": 55.875,
+     "start": 47.58
+    },
+    {
+     "pitch": 70,
+     "part": 1,
+     "previous_start": 78.93,
+     "previous_end": 80.02,
+     "start": 78.93
+    },
+    {
+     "pitch": 58,
+     "part": 1,
+     "previous_start": 103.12,
+     "previous_end": 122.12,
+     "start": 103.12
+    },
+    {
+     "pitch": 77,
+     "part": 1,
+     "previous_start": 110.67,
+     "previous_end": 112.875,
+     "start": 110.67
+    },
+    {
+     "pitch": 74,
+     "part": 1,
+     "previous_start": 120.92,
+     "previous_end": 139.92,
+     "start": 120.92
+    },
+    {
+     "pitch": 77,
+     "part": 1,
+     "previous_start": 133.88,
+     "previous_end": 134.809,
+     "start": 133.88
+    },
+    {
+     "pitch": 76,
+     "part": 1,
+     "previous_start": 134.809,
+     "previous_end": 135.559,
+     "start": 134.809
+    },
+    {
+     "pitch": 68,
+     "part": 1,
+     "previous_start": 135.559,
+     "previous_end": 137.9,
+     "start": 135.559
+    },
+    {
+     "pitch": 75,
+     "part": 1,
+     "previous_start": 135.559,
+     "previous_end": 135.891,
+     "start": 135.559
+    },
+    {
+     "pitch": 76,
+     "part": 1,
+     "previous_start": 135.891,
+     "previous_end": 154.891,
+     "start": 135.891
+    },
+    {
+     "pitch": 75,
+     "part": 1,
+     "previous_start": 137.059,
+     "previous_end": 137.55,
+     "start": 137.059
+    },
+    {
+     "pitch": 73,
+     "part": 1,
+     "previous_start": 148.2,
+     "previous_end": 149.15,
+     "start": 148.2
+    },
+    {
+     "pitch": 71,
+     "part": 1,
+     "previous_start": 159.32,
+     "previous_end": 178.32,
+     "start": 159.32
+    },
+    {
+     "pitch": 47,
+     "part": 0,
+     "previous_start": 173.15,
+     "previous_end": 173.441,
+     "start": 173.15
+    },
+    {
+     "pitch": 59,
+     "part": 1,
+     "previous_start": 173.15,
+     "previous_end": 173.441,
+     "start": 173.15
+    },
+    {
+     "pitch": 56,
+     "part": 1,
+     "previous_start": 187.25,
+     "previous_end": 187.5,
+     "start": 187.25
+    }
+   ]
+  }
+ },
+ "sections": [
+  {
+   "sec": "S01",
+   "seconds": 18.7,
+   "items": 3,
+   "chars": 42,
+   "cps": 2.24,
+   "min_gap": 6.18,
+   "locals": 0,
+   "max_drift": 0,
+   "max_outside": 0
+  },
+  {
+   "sec": "S02",
+   "seconds": 56.3,
+   "items": 9,
+   "chars": 143,
+   "cps": 2.54,
+   "min_gap": 2.56,
+   "locals": 4,
+   "max_drift": 0.15,
+   "max_outside": 0.0
+  },
+  {
+   "sec": "S03",
+   "seconds": 32.6,
+   "items": 5,
+   "chars": 84,
+   "cps": 2.58,
+   "min_gap": 3.2,
+   "locals": 1,
+   "max_drift": 0.15,
+   "max_outside": 0
+  },
+  {
+   "sec": "S04",
+   "seconds": 51.7,
+   "items": 9,
+   "chars": 154,
+   "cps": 2.98,
+   "min_gap": 2.59,
+   "locals": 4,
+   "max_drift": 1.97,
+   "max_outside": 1.47
+  },
+  {
+   "sec": "S05",
+   "seconds": 18.4,
+   "items": 3,
+   "chars": 55,
+   "cps": 2.99,
+   "min_gap": 4.76,
+   "locals": 0,
+   "max_drift": 0,
+   "max_outside": 0
+  },
+  {
+   "sec": "S06",
+   "seconds": 39.3,
+   "items": 7,
+   "chars": 126,
+   "cps": 3.2,
+   "min_gap": 3.52,
+   "locals": 1,
+   "max_drift": 0.1,
+   "max_outside": 0.0
+  },
+  {
+   "sec": "S07",
+   "seconds": 41.3,
+   "items": 7,
+   "chars": 123,
+   "cps": 2.98,
+   "min_gap": 5.87,
+   "locals": 0,
+   "max_drift": 0,
+   "max_outside": 0
+  },
+  {
+   "sec": "S08",
+   "seconds": 39.4,
+   "items": 7,
+   "chars": 107,
+   "cps": 2.72,
+   "min_gap": 2.94,
+   "locals": 2,
+   "max_drift": 0.15,
+   "max_outside": 0
+  },
+  {
+   "sec": "S09",
+   "seconds": 31.8,
+   "items": 5,
+   "chars": 88,
+   "cps": 2.77,
+   "min_gap": 2.74,
+   "locals": 1,
+   "max_drift": 0.15,
+   "max_outside": 0
+  },
+  {
+   "sec": "S10",
+   "seconds": 26.7,
+   "items": 4,
+   "chars": 65,
+   "cps": 2.44,
+   "min_gap": 6.28,
+   "locals": 0,
+   "max_drift": 0,
+   "max_outside": 0
+  },
+  {
+   "sec": "S11",
+   "seconds": 36.6,
+   "items": 6,
+   "chars": 108,
+   "cps": 2.95,
+   "min_gap": 2.88,
+   "locals": 1,
+   "max_drift": 2.55,
+   "max_outside": 2.05
+  },
+  {
+   "sec": "S12",
+   "seconds": 38.2,
+   "items": 6,
+   "chars": 108,
+   "cps": 2.83,
+   "min_gap": 3.02,
+   "locals": 1,
+   "max_drift": 2.36,
+   "max_outside": 1.86
+  },
+  {
+   "sec": "S13",
+   "seconds": 39.1,
+   "items": 7,
+   "chars": 120,
+   "cps": 3.07,
+   "min_gap": 2.59,
+   "locals": 2,
+   "max_drift": 1.5,
+   "max_outside": 0.0
+  },
+  {
+   "sec": "S14",
+   "seconds": 33.9,
+   "items": 6,
+   "chars": 115,
+   "cps": 3.39,
+   "min_gap": 3.31,
+   "locals": 4,
+   "max_drift": 0.61,
+   "max_outside": 0.11
+  }
+ ],
+ "glyph_missing": [],
+ "items": 84,
+ "chars": 1438,
+ "dur": 504.0213605442177,
+ "cps": 2.85,
+ "locals": 21,
+ "max_drift": 2.55,
+ "outside": [
+  {
+   "sec": "S04",
+   "text": "摇晃渐慢，刚说的话还在空气里回荡",
+   "by": 1.47
+  },
+  {
+   "sec": "S11",
+   "text": "音乐里悬着的期待，终于得到一次满足",
+   "by": 2.05
+  },
+  {
+   "sec": "S12",
+   "text": "旋律一次次上扬，末尾牵扯延迟后才释放",
+   "by": 1.86
+  },
+  {
+   "sec": "S14",
+   "text": "上扬和弦接住开头的话，铁锚般低音定住小船",
+   "by": 0.11
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "round28_extrac03",
+  "note": "可能性地形：内部表征改为人物感到还敞开、已承受、无法保证的生活余地，而非具体所求清单、体验品质配置、事实可信度账本或逐段新变化分类；人物在同一余地中承受不同分量也能推动故事。独立检验虚假终局、无源的确定断言和无新事实时的持续发展；可以单独试，但风险是把任意Center缩成抽象的“接受不确定性”或反复盘算，必须重点监看人话与主题宽度。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "Q6_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "Q6_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "round28_extrac03_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4"
+}

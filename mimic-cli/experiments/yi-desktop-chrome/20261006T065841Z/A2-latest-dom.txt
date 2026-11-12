@@ -1,0 +1,2117 @@
+- main:
+  - button "Save chat":
+  - button "切换摘要":
+  - heading "你说：" [level=4]
+  - generic: 有一个水杯配对游戏。共有 4 种不同颜色的水杯，每种颜色各有两个。将同色的两个水杯分别放在上下两层，因此上下两层各有 4 个水杯。下层 4 个水杯按某个未知顺序排列，挑战者无法看到它们；上层水杯的颜色和位置则完全可见。 游戏开始后，挑战者可以反复进行以下操作： 1. 向裁判询问当前有多少个位置满足“上下两个水杯颜色相同”。裁判只回答匹配位置的总数，不透露具体是哪些位置； 2. 根据目前获得的所有信息，挑战者可以选择交换上层任意两个相邻位置的水杯，注意只能是相邻，不能是任意两个。 当 4 个位置全部匹配时，游戏结束。 问题： 挑战者应采用何种策略，才能保证对于下层水杯的任意排列都能完成配对？ 所有能保证成功的策略中，最坏情况所需的交换次数最少是多少？ 回答时请不要进行联网搜索，也不要写代码来辅助计算（包括思考过程中）。 假设答案是 x，你需要给出严格的证明，为什么 x 可行，为什么小于 x 不可行。
+  - generic: …
+  - button "显示更多":
+    - generic: 显示更多
+  - button "复制消息":
+  - button "编辑消息":
+  - button "思考了 12m 1s"
+  - generic: 思考了 12m 1s
+  - heading "ChatGPT 说：" [level=4]
+  - paragraph: 答案是
+  - math:
+    - generic: x
+    - generic: =
+    - generic: "8"
+    - generic: .
+  - generic: x = 8
+  - text: .
+  - paragraph:
+    - text: 也就是说，存在一个策略，能保证无论下层 4 个杯子怎样排列，都在至多
+    - strong: 8 次相邻交换
+    - text: 内完成；而不存在最坏情况至多 7 次的策略。
+  - paragraph: 下面给出完整证明。
+  - separator
+  - heading "一、把问题写成排列问题" [level=2]
+  - paragraph: 把初始时上层从左到右的四种颜色依次编号为
+  - math:
+    - generic: "1234."
+  - generic: "1234."
+  - paragraph:
+    - text: 下层就是某个未知排列
+    - math:
+      - generic: p
+      - generic: ∈
+      - generic: S
+      - generic: "4"
+    - generic: p ∈
+    - text: S
+    - generic: "4"
+    - text: 。上层当前排列记作
+    - math:
+      - generic: q
+    - generic: q
+    - text: 。
+  - paragraph: 记
+  - math:
+    - generic: M
+    - generic: (
+    - generic: q
+    - generic: ","
+    - generic: p
+    - generic: )
+  - generic: M(q, p)
+  - paragraph: 为裁判回答的匹配位置数。
+  - paragraph:
+    - text: 再记
+    - math:
+      - generic: s
+      - generic: "1"
+      - generic: ","
+      - generic: s
+      - generic: "2"
+      - generic: ","
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "1"
+    - text: ","
+    - text: s
+    - generic: "2"
+    - text: ","
+    - text: s
+    - generic: "3"
+    - text: 分别表示交换第
+    - math:
+      - generic: "1"
+      - generic: ","
+      - generic: "2"
+    - generic: 1, 2
+    - text: 、第
+    - math:
+      - generic: "2"
+      - generic: ","
+      - generic: "3"
+    - generic: 2, 3
+    - text: 、第
+    - math:
+      - generic: "3"
+      - generic: ","
+      - generic: "4"
+    - generic: 3, 4
+    - text: 个上层杯子。
+  - paragraph:
+    - text: 例如从
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ，得到
+    - math:
+      - generic: "1324"
+    - generic: "1324"
+    - text: 。
+  - paragraph:
+    - text: 定义
+    - math:
+      - generic: d
+      - generic: (
+      - generic: q
+      - generic: ","
+      - generic: p
+      - generic: )
+    - generic: d(q, p)
+    - text: 为从排列
+    - math:
+      - generic: q
+    - generic: q
+    - text: 通过相邻交换变到
+    - math:
+      - generic: p
+    - generic: p
+    - text: 所需的最少交换数。它等于
+    - math:
+      - generic: q
+    - generic: q
+    - text: 与
+    - math:
+      - generic: p
+    - generic: p
+    - text: 中左右次序不同的颜色对数，也就是通常的逆序距离。
+  - paragraph: 有两个简单但关键的事实：
+  - math:
+    - generic: 每做一次相邻交换，
+    - generic: d
+    - generic: (
+    - generic: q
+    - generic: ","
+    - generic: p
+    - generic: )
+    - generic: 恰好增加或减少
+    - generic: "1."
+  - generic: 每做一次相邻交换，
+  - text: d(q, p)
+  - generic: 恰好增加或减少
+  - text: "1."
+  - paragraph: 以及
+  - math:
+    - generic: 从
+    - generic: "1234"
+    - generic: 到
+    - generic: p
+    - generic: 的任何交换次数，都与
+    - generic: d
+    - generic: (
+    - generic: "1234"
+    - generic: ","
+    - generic: p
+    - generic: )
+    - generic: 同奇偶。
+  - generic: 从
+  - text: "1234"
+  - generic: 到
+  - text: p
+  - generic: 的任何交换次数，都与
+  - text: d(1234, p)
+  - generic: 同奇偶。
+  - paragraph: 后面会反复使用。
+  - separator
+  - heading "二、先证明 8 次一定够" [level=1]
+  - paragraph: 策略是：每次交换以后立即询问新的匹配数。查询本身不计交换次数。
+  - paragraph: 初始匹配数只能是
+  - math:
+    - generic: "0"
+    - generic: ","
+    - generic: "1"
+    - generic: ","
+    - generic: "2"
+    - generic: ","
+    - generic: "4"
+  - generic: 0, 1, 2, 4
+  - paragraph: （不可能恰好有 3 个固定点）。
+  - separator
+  - heading "情形 A：初始匹配数为 4" [level=2]
+  - paragraph: 已经完成，不用交换。
+  - separator
+  - heading "情形 B：初始匹配数为 0" [level=2]
+  - paragraph: 先做
+  - math:
+    - generic: s
+    - generic: "2"
+    - generic: ":"
+    - generic: "1234"
+    - generic: →
+    - generic: "1324."
+  - text: s
+  - generic: "2"
+  - text: ":"
+  - generic: 1234 →
+  - generic: "1324."
+  - heading "B1. 此时回答 2" [level=3]
+  - paragraph: 唯一可能的下层排列是
+  - math:
+    - generic: "4321."
+  - generic: "4321."
+  - paragraph: 而
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "1324"
+    - generic: ","
+    - generic: "4321"
+    - generic: )
+    - generic: =
+    - generic: "5."
+  - generic: d(1324, 4321) =
+  - generic: "5."
+  - paragraph: 因此再走一条最短路即可，共
+  - math:
+    - generic: "1"
+    - generic: +
+    - generic: "5"
+    - generic: =
+    - generic: "6"
+  - generic: 1 +
+  - generic: 5 =
+  - generic: "6"
+  - paragraph: 次。
+  - separator
+  - heading "B2. 此时回答 1" [level=3]
+  - paragraph: 候选恰好是
+  - math:
+    - generic: "2341"
+    - generic: ","
+    - generic: "3421"
+    - generic: ","
+    - generic: "4123"
+    - generic: ","
+    - generic: "4312."
+  - generic: 2341, 3421, 4123, 4312.
+  - paragraph: 做
+  - math:
+    - generic: s
+    - generic: "1"
+    - generic: ":"
+    - generic: "1324"
+    - generic: →
+    - generic: "3124."
+  - text: s
+  - generic: "1"
+  - text: ":"
+  - generic: 1324 →
+  - generic: "3124."
+  - paragraph: 若此时回答为 0，则候选是
+  - math:
+    - generic: "2341"
+    - generic: ","
+    - generic: "4312"
+    - generic: ;
+  - text: 2341,
+  - text: 4312;
+  - paragraph: 若回答为 2，则候选是
+  - math:
+    - generic: "3421"
+    - generic: ","
+    - generic: "4123."
+  - text: 3421,
+  - text: "4123."
+  - paragraph: 接着不论是哪一组，都连续做
+  - math:
+    - generic: s
+    - generic: "3"
+    - generic: ","
+    - generic: s
+    - generic: "2"
+    - generic: ":"
+    - generic: "3124"
+    - generic: →
+    - generic: "3142"
+    - generic: →
+    - generic: "3412."
+  - text: s
+  - generic: "3"
+  - text: ","
+  - text: s
+  - generic: "2"
+  - text: ":"
+  - generic: 3124 →
+  - generic: 3142 →
+  - generic: "3412."
+  - paragraph:
+    - text: 在
+    - math:
+      - generic: "3412"
+    - generic: "3412"
+    - text: 处，结合前一次回答，四个目标完全区分：
+  - table:
+    - rowgroup:
+      - row "下层":
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3124"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3124, p)
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3412"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3412, p)
+        - columnheader "下层":
+          - text: 下层
+          - math:
+            - generic: p
+          - generic: p
+        - columnheader:
+          - math:
+            - generic: d
+            - generic: (
+            - generic: "3412"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: d(3412, p)
+    - rowgroup:
+      - row "0 0 3":
+        - cell "0"
+        - cell "0"
+        - cell:
+          - math:
+            - generic: "2341"
+          - generic: "2341"
+        - cell "3"
+      - row "0 2 1":
+        - cell "0"
+        - cell "2"
+        - cell:
+          - math:
+            - generic: "4312"
+          - generic: "4312"
+        - cell "1"
+      - row "2 2 1":
+        - cell "2"
+        - cell "2"
+        - cell:
+          - math:
+            - generic: "3421"
+          - generic: "3421"
+        - cell "1"
+      - row "2 0 3":
+        - cell "2"
+        - cell "0"
+        - cell:
+          - math:
+            - generic: "4123"
+          - generic: "4123"
+        - cell "3"
+  - button "复制表格":
+  - button "展开表格":
+  - paragraph:
+    - text: 到
+    - math:
+      - generic: "3412"
+    - generic: "3412"
+    - text: 一共用了 4 次交换，所以总数最多
+  - math:
+    - generic: "4"
+    - generic: +
+    - generic: "3"
+    - generic: =
+    - generic: "7."
+  - generic: 4 +
+  - generic: 3 =
+  - generic: "7."
+  - separator
+  - heading "B3. 在 时回答 0" [level=3]:
+    - text: B3. 在
+    - math:
+      - generic: "1324"
+    - generic: "1324"
+    - text: 时回答 0
+  - paragraph: 候选恰好是
+  - math:
+    - generic: "2143"
+    - generic: ","
+    - generic: "2413"
+    - generic: ","
+    - generic: "3142"
+    - generic: ","
+    - generic: "3412."
+  - generic: 2143, 2413, 3142, 3412.
+  - paragraph:
+    - text: 做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: 到
+    - math:
+      - generic: "3124"
+    - generic: "3124"
+    - text: 。此时：
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "0"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "2413"
+    - generic: ","
+  - generic: M =
+  - generic: 0 ⇒
+  - generic: p =
+  - generic: 2413,
+  - paragraph: 且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "3124"
+    - generic: ","
+    - generic: "2413"
+    - generic: )
+    - generic: =
+    - generic: "5"
+    - generic: ","
+  - generic: d(3124, 2413) =
+  - generic: 5,
+  - paragraph:
+    - text: 所以总共
+    - math:
+      - generic: "2"
+      - generic: +
+      - generic: "5"
+      - generic: =
+      - generic: "7"
+    - generic: 2 +
+    - generic: 5 =
+    - generic: "7"
+    - text: 次。
+  - paragraph: 若
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "2"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "3142"
+    - generic: ","
+  - generic: M =
+  - generic: 2 ⇒
+  - generic: p =
+  - generic: 3142,
+  - paragraph: 只差 1 次，总共 3 次。
+  - paragraph:
+    - text: 剩下
+    - math:
+      - generic: M
+      - generic: =
+      - generic: "1"
+    - generic: M =
+    - generic: "1"
+    - text: 时，
+  - math:
+    - generic: p
+    - generic: ∈
+    - generic: "{"
+    - generic: "2143"
+    - generic: ","
+    - generic: "3412"
+    - generic: "}"
+    - generic: .
+  - generic: p ∈
+  - generic: "{2143, 3412}."
+  - paragraph:
+    - text: 再做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ：
+  - math:
+    - generic: "3124"
+    - generic: →
+    - generic: "3214."
+  - generic: 3124 →
+  - generic: "3214."
+  - paragraph: 在这里
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "0"
+    - generic: ⇒
+    - generic: "2143"
+    - generic: ","
+    - generic: M
+    - generic: =
+    - generic: "2"
+    - generic: ⇒
+    - generic: "3412."
+  - generic: M =
+  - generic: 0 ⇒
+  - generic: 2143, M =
+  - generic: 2 ⇒
+  - generic: "3412."
+  - paragraph:
+    - text: 而两者距
+    - math:
+      - generic: "3214"
+    - generic: "3214"
+    - text: 都恰好为 3，所以总共
+  - math:
+    - generic: "3"
+    - generic: +
+    - generic: "3"
+    - generic: =
+    - generic: "6."
+  - generic: 3 +
+  - generic: 3 =
+  - generic: "6."
+  - paragraph: 因此初始匹配数为 0 时，最坏只需 7 次。
+  - separator
+  - heading "三、初始匹配数为 2" [level=1]
+  - paragraph:
+    - text: 这时下层与
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 相比，恰好交换了两个位置，共有 6 种可能。
+  - paragraph: 还是先做
+  - math:
+    - generic: s
+    - generic: "2"
+    - generic: ":"
+    - generic: "1234"
+    - generic: →
+    - generic: "1324."
+  - text: s
+  - generic: "2"
+  - text: ":"
+  - generic: 1234 →
+  - generic: "1324."
+  - paragraph: 此时：
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "4"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "1324"
+    - generic: ","
+  - generic: M =
+  - generic: 4 ⇒
+  - generic: p =
+  - generic: 1324,
+  - paragraph: 已经完成。
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "0"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "4231."
+  - generic: M =
+  - generic: 0 ⇒
+  - generic: p =
+  - generic: "4231."
+  - paragraph: 并且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "1324"
+    - generic: ","
+    - generic: "4231"
+    - generic: )
+    - generic: =
+    - generic: "6"
+    - generic: ","
+  - generic: d(1324, 4231) =
+  - generic: 6,
+  - paragraph: 所以总共
+  - math:
+    - generic: "1"
+    - generic: +
+    - generic: "6"
+    - generic: =
+    - generic: "7."
+  - generic: 1 +
+  - generic: 6 =
+  - generic: "7."
+  - paragraph:
+    - text: 若
+    - math:
+      - generic: M
+      - generic: =
+      - generic: "1"
+    - generic: M =
+    - generic: "1"
+    - text: ，候选为
+  - math:
+    - generic: "2134"
+    - generic: ","
+    - generic: "3214"
+    - generic: ","
+    - generic: "1432"
+    - generic: ","
+    - generic: "1243."
+  - generic: 2134, 3214, 1432, 1243.
+  - paragraph:
+    - text: 再做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: 到
+    - math:
+      - generic: "3124"
+    - generic: "3124"
+    - text: 。
+  - paragraph: 若回答 2，候选是
+  - math:
+    - generic: "2134"
+    - generic: ","
+    - generic: "3214"
+    - generic: ;
+  - text: 2134,
+  - text: 3214;
+  - paragraph: 若回答 0，候选是
+  - math:
+    - generic: "1432"
+    - generic: ","
+    - generic: "1243."
+  - text: 1432,
+  - text: "1243."
+  - paragraph:
+    - text: 再做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: 到
+    - math:
+      - generic: "3214"
+    - generic: "3214"
+    - text: 。完整区分如下：
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3124"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3124, p)
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3214"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3214, p)
+        - columnheader:
+          - math:
+            - generic: p
+          - generic: p
+        - columnheader:
+          - math:
+            - generic: d
+            - generic: (
+            - generic: "3214"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: d(3214, p)
+    - rowgroup:
+      - row "2 4 0":
+        - cell "2"
+        - cell "4"
+        - cell:
+          - math:
+            - generic: "3214"
+          - generic: "3214"
+        - cell "0"
+      - row "2 1 2":
+        - cell "2"
+        - cell "1"
+        - cell:
+          - math:
+            - generic: "2134"
+          - generic: "2134"
+        - cell "2"
+      - row "0 0 4":
+        - cell "0"
+        - cell "0"
+        - cell:
+          - math:
+            - generic: "1432"
+          - generic: "1432"
+        - cell "4"
+      - row "0 1 4":
+        - cell "0"
+        - cell "1"
+        - cell:
+          - math:
+            - generic: "1243"
+          - generic: "1243"
+        - cell "4"
+  - button "复制表格":
+  - button "展开表格":
+  - paragraph: 此时已经用了 3 次，因此最坏
+  - math:
+    - generic: "3"
+    - generic: +
+    - generic: "4"
+    - generic: =
+    - generic: "7."
+  - generic: 3 +
+  - generic: 4 =
+  - generic: "7."
+  - separator
+  - heading "四、初始匹配数为 1" [level=1]
+  - paragraph: 这是最困难的一类，也是最终需要 8 次的原因。
+  - paragraph: 8 个可能排列为
+  - math:
+    - generic: "1342"
+    - generic: ","
+    - generic: "1423"
+    - generic: ","
+    - generic: "3241"
+    - generic: ","
+    - generic: "4213"
+    - generic: ","
+    - generic: "2431"
+    - generic: ","
+    - generic: "4132"
+    - generic: ","
+    - generic: "2314"
+    - generic: ","
+    - generic: "3124."
+  - text: 1342,
+  - text: 1423,
+  - text: 3241,
+  - text: 4213,
+  - text: 2431,
+  - text: 4132,
+  - text: 2314,
+  - text: "3124."
+  - paragraph: 仍然先交换中间两个杯子：
+  - math:
+    - generic: s
+    - generic: "2"
+    - generic: ":"
+    - generic: "1234"
+    - generic: →
+    - generic: "1324."
+  - text: s
+  - generic: "2"
+  - text: ":"
+  - generic: 1234 →
+  - generic: "1324."
+  - paragraph: 此时答案只有 0 或 2。
+  - separator
+  - heading "C1. 回答 2" [level=2]
+  - paragraph: 候选是
+  - math:
+    - generic: "1342"
+    - generic: ","
+    - generic: "1423"
+    - generic: ","
+    - generic: "2314"
+    - generic: ","
+    - generic: "3124."
+  - generic: 1342, 1423, 2314, 3124.
+  - paragraph:
+    - text: 做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ：
+  - math:
+    - generic: "1324"
+    - generic: →
+    - generic: "3124."
+  - generic: 1324 →
+  - generic: "3124."
+  - paragraph: 这时：
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "4"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "3124"
+    - generic: ","
+  - generic: M =
+  - generic: 4 ⇒
+  - generic: p =
+  - generic: 3124,
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "0"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "1342."
+  - generic: M =
+  - generic: 0 ⇒
+  - generic: p =
+  - generic: "1342."
+  - paragraph: 后一种情况下
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "3124"
+    - generic: ","
+    - generic: "1342"
+    - generic: )
+    - generic: =
+    - generic: "2"
+    - generic: ","
+  - generic: d(3124, 1342) =
+  - generic: 2,
+  - paragraph: 总共 4 次即可。
+  - paragraph:
+    - text: 如果
+    - math:
+      - generic: M
+      - generic: =
+      - generic: "1"
+    - generic: M =
+    - generic: "1"
+    - text: ，只剩
+  - math:
+    - generic: p
+    - generic: ∈
+    - generic: "{"
+    - generic: "1423"
+    - generic: ","
+    - generic: "2314"
+    - generic: "}"
+    - generic: .
+  - generic: p ∈
+  - generic: "{1423, 2314}."
+  - paragraph:
+    - text: 再做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ：
+  - math:
+    - generic: "3124"
+    - generic: →
+    - generic: "3214."
+  - generic: 3124 →
+  - generic: "3214."
+  - paragraph: 于是
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "0"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "1423"
+    - generic: ","
+  - generic: M =
+  - generic: 0 ⇒
+  - generic: p =
+  - generic: 1423,
+  - math:
+    - generic: M
+    - generic: =
+    - generic: "2"
+    - generic: ⇒
+    - generic: p
+    - generic: =
+    - generic: "2314."
+  - generic: M =
+  - generic: 2 ⇒
+  - generic: p =
+  - generic: "2314."
+  - paragraph: 这里
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "3214"
+    - generic: ","
+    - generic: "1423"
+    - generic: )
+    - generic: =
+    - generic: "5"
+    - generic: ","
+    - generic: d
+    - generic: (
+    - generic: "3214"
+    - generic: ","
+    - generic: "2314"
+    - generic: )
+    - generic: =
+    - generic: "1."
+  - generic: d(3214, 1423) =
+  - generic: 5, d(3214, 2314) =
+  - generic: "1."
+  - paragraph: 所以最坏为
+  - math:
+    - generic: "3"
+    - generic: +
+    - generic: "5"
+    - generic: =
+    - generic: "8."
+  - generic: 3 +
+  - generic: 5 =
+  - generic: "8."
+  - separator
+  - heading "C2. 在 回答 0" [level=2]:
+    - text: C2. 在
+    - math:
+      - generic: "1324"
+    - generic: "1324"
+    - text: 回答 0
+  - paragraph: 候选是
+  - math:
+    - generic: "3241"
+    - generic: ","
+    - generic: "4213"
+    - generic: ","
+    - generic: "2431"
+    - generic: ","
+    - generic: "4132."
+  - generic: 3241, 4213, 2431, 4132.
+  - paragraph:
+    - text: 做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: 到
+    - math:
+      - generic: "3124"
+    - generic: "3124"
+    - text: ，再做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: 到
+    - math:
+      - generic: "3214"
+    - generic: "3214"
+    - text: 。
+  - paragraph: 两次回答即可完整区分：
+  - table:
+    - rowgroup:
+      - row:
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3124"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3124, p)
+        - columnheader:
+          - math:
+            - generic: M
+            - generic: (
+            - generic: "3214"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: M(3214, p)
+        - columnheader:
+          - math:
+            - generic: p
+          - generic: p
+        - columnheader:
+          - math:
+            - generic: d
+            - generic: (
+            - generic: "3214"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: d(3214, p)
+    - rowgroup:
+      - row "1 2 1":
+        - cell "1"
+        - cell "2"
+        - cell:
+          - math:
+            - generic: "3241"
+          - generic: "3241"
+        - cell "1"
+      - row "1 0 5":
+        - cell "1"
+        - cell "0"
+        - cell:
+          - math:
+            - generic: "4132"
+          - generic: "4132"
+        - cell "5"
+      - row "0 2 5":
+        - cell "0"
+        - cell "2"
+        - cell:
+          - math:
+            - generic: "4213"
+          - generic: "4213"
+        - cell "5"
+      - row "0 0 3":
+        - cell "0"
+        - cell "0"
+        - cell:
+          - math:
+            - generic: "2431"
+          - generic: "2431"
+        - cell "3"
+  - button "复制表格":
+  - button "展开表格":
+  - paragraph:
+    - text: 到
+    - math:
+      - generic: "3214"
+    - generic: "3214"
+    - text: 已交换 3 次，所以最坏
+  - math:
+    - generic: "3"
+    - generic: +
+    - generic: "5"
+    - generic: =
+    - generic: "8."
+  - generic: 3 +
+  - generic: 5 =
+  - generic: "8."
+  - paragraph: 至此已经证明：
+  - math:
+    - generic: x
+    - generic: ≤
+    - generic: "8"
+    - generic: .
+  - generic: x ≤ 8
+  - text: .
+  - separator
+  - heading "五、下面证明 7 次绝对不可能" [level=1]
+  - paragraph: 这是证明的核心。
+  - paragraph: 考虑初始询问得到
+  - math:
+    - generic: M
+    - generic: (
+    - generic: "1234"
+    - generic: ","
+    - generic: p
+    - generic: )
+    - generic: =
+    - generic: "1."
+  - generic: M(1234, p) =
+  - generic: "1."
+  - paragraph:
+    - text: 所有这样的
+    - math:
+      - generic: p
+    - generic: p
+    - text: 就是刚才的 8 个：
+  - table:
+    - rowgroup:
+      - row "名称":
+        - columnheader "名称"
+        - columnheader:
+          - math:
+            - generic: p
+          - generic: p
+        - columnheader:
+          - math:
+            - generic: d
+            - generic: (
+            - generic: "1234"
+            - generic: ","
+            - generic: p
+            - generic: )
+          - generic: d(1234, p)
+    - rowgroup:
+      - row "2":
+        - cell:
+          - math:
+            - generic: A
+          - generic: A
+        - cell:
+          - math:
+            - generic: "1342"
+          - generic: "1342"
+        - cell "2"
+      - row "2":
+        - cell:
+          - math:
+            - generic: B
+          - generic: B
+        - cell:
+          - math:
+            - generic: "1423"
+          - generic: "1423"
+        - cell "2"
+      - row "4":
+        - cell:
+          - math:
+            - generic: C
+          - generic: C
+        - cell:
+          - math:
+            - generic: "3241"
+          - generic: "3241"
+        - cell "4"
+      - row "4":
+        - cell:
+          - math:
+            - generic: D
+          - generic: D
+        - cell:
+          - math:
+            - generic: "4213"
+          - generic: "4213"
+        - cell "4"
+      - row "4":
+        - cell:
+          - math:
+            - generic: E
+          - generic: E
+        - cell:
+          - math:
+            - generic: "2431"
+          - generic: "2431"
+        - cell "4"
+      - row "4":
+        - cell:
+          - math:
+            - generic: F
+          - generic: F
+        - cell:
+          - math:
+            - generic: "4132"
+          - generic: "4132"
+        - cell "4"
+      - row "2":
+        - cell:
+          - math:
+            - generic: G
+          - generic: G
+        - cell:
+          - math:
+            - generic: "2314"
+          - generic: "2314"
+        - cell "2"
+      - row "2":
+        - cell:
+          - math:
+            - generic: H
+          - generic: H
+        - cell:
+          - math:
+            - generic: "3124"
+          - generic: "3124"
+        - cell "2"
+  - button "复制表格":
+  - button "展开表格":
+  - paragraph:
+    - text: 每一个都是一个 3-循环加一个固定点，因此全都是
+    - strong: 偶排列
+    - text: 。
+  - paragraph:
+    - text: 所以，从
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 到它们，无论采用什么路线，交换次数都必须是偶数。
+  - paragraph: 假设存在最坏不超过 7 次的策略，那么对于这 8 个排列，实际上必须全部在
+  - math:
+    - generic: "6"
+    - generic: 次以内
+  - text: "6"
+  - generic: 次以内
+  - paragraph: 完成。
+  - paragraph: 我们证明这是不可能的。
+  - separator
+  - heading "六、一个“紧预算”原则" [level=2]
+  - paragraph:
+    - text: 假设已经用了
+    - math:
+      - generic: t
+    - generic: t
+    - text: 次交换，当前为
+    - math:
+      - generic: q
+    - generic: q
+    - text: ，某个仍有可能的目标
+    - math:
+      - generic: p
+    - generic: p
+    - text: 满足
+  - math:
+    - generic: d
+    - generic: (
+    - generic: q
+    - generic: ","
+    - generic: p
+    - generic: )
+    - generic: =
+    - generic: "6"
+    - generic: −
+    - generic: t
+    - generic: .
+  - generic: d(q, p) =
+  - generic: 6 −
+  - generic: t.
+  - paragraph:
+    - text: 那么为了在总共 6 次内完成，下一步
+    - strong: 必须
+    - text: 使距离减少 1。
+  - paragraph: 因为若下一步使距离增加 1，则至少还需
+  - math:
+    - generic: d
+    - generic: (
+    - generic: q
+    - generic: ","
+    - generic: p
+    - generic: )
+    - generic: +
+    - generic: "1"
+  - generic: d(q, p) +
+  - generic: "1"
+  - paragraph: 步，总数就超过 6。
+  - paragraph: 也就是说，一旦某候选的“剩余距离 = 剩余交换额度”，只要这个候选还没被排除，所有后续动作都被迫沿它的最短路走。
+  - separator
+  - heading "七、第一次若交换中间两个位置，必败" [level=1]
+  - paragraph: 即第一步做
+  - math:
+    - generic: s
+    - generic: "2"
+    - generic: ":"
+    - generic: "1234"
+    - generic: →
+    - generic: "1324."
+  - text: s
+  - generic: "2"
+  - text: ":"
+  - generic: 1234 →
+  - generic: "1324."
+  - paragraph: 裁判可以回答 2。此时候选恰好为
+  - math:
+    - generic: A
+    - generic: =
+    - generic: "1342"
+    - generic: ","
+    - generic: B
+    - generic: =
+    - generic: "1423"
+    - generic: ","
+    - generic: G
+    - generic: =
+    - generic: "2314"
+    - generic: ","
+    - generic: H
+    - generic: =
+    - generic: "3124."
+  - generic: A =
+  - generic: 1342, B =
+  - generic: 1423, G =
+  - generic: 2314, H =
+  - generic: "3124."
+  - paragraph: 现在看策略的第二步。
+  - paragraph:
+    - text: 由于左右反射对称，只需分别考虑第二步为
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: 和
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ；
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: 与
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: 完全对称。
+  - separator
+  - heading "第二步做" [level=2]:
+    - text: 第二步做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+  - paragraph: 到达
+  - math:
+    - generic: "3124."
+  - generic: "3124."
+  - paragraph: 裁判可以回答 1，这时只剩
+  - math:
+    - generic: B
+    - generic: =
+    - generic: "1423"
+    - generic: ","
+    - generic: G
+    - generic: =
+    - generic: "2314."
+  - generic: B =
+  - generic: 1423, G =
+  - generic: "2314."
+  - paragraph: 已经用了 2 步。
+  - paragraph: 此时
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "3124"
+    - generic: ","
+    - generic: B
+    - generic: )
+    - generic: =
+    - generic: "4"
+    - generic: ","
+    - generic: d
+    - generic: (
+    - generic: "3124"
+    - generic: ","
+    - generic: G
+    - generic: )
+    - generic: =
+    - generic: "2."
+  - generic: d(3124, B) =
+  - generic: 4, d(3124, G) =
+  - generic: "2."
+  - paragraph:
+    - text: 因此，为了保证
+    - math:
+      - generic: B
+    - generic: B
+    - text: 在总共 6 步内完成，接下来必须始终沿一条从
+    - math:
+      - generic: "3124"
+    - generic: "3124"
+    - text: 到
+    - math:
+      - generic: B
+    - generic: B
+    - text: 的最短路走，直到
+    - math:
+      - generic: B
+    - generic: B
+    - text: 被排除。
+  - paragraph:
+    - text: 而从
+    - math:
+      - generic: "3124"
+    - generic: "3124"
+    - text: 到
+    - math:
+      - generic: B
+      - generic: =
+      - generic: "1423"
+    - generic: B =
+    - generic: "1423"
+    - text: 的所有最短路线，开头只有以下三种可能：
+  - math:
+    - generic: "3124"
+    - generic: →
+    - generic: "1324"
+    - generic: →
+    - generic: "1234"
+    - generic: →
+    - generic: "1243"
+    - generic: →
+    - generic: "1423"
+    - generic: ","
+  - generic: 3124 →
+  - generic: 1324 →
+  - generic: 1234 →
+  - generic: 1243 →
+  - generic: 1423,
+  - math:
+    - generic: "3124"
+    - generic: →
+    - generic: "1324"
+    - generic: →
+    - generic: "1342"
+    - generic: →
+    - generic: "1432"
+    - generic: →
+    - generic: "1423"
+    - generic: ","
+  - generic: 3124 →
+  - generic: 1324 →
+  - generic: 1342 →
+  - generic: 1432 →
+  - generic: 1423,
+  - math:
+    - generic: "3124"
+    - generic: →
+    - generic: "3142"
+    - generic: →
+    - generic: "1342"
+    - generic: →
+    - generic: "1432"
+    - generic: →
+    - generic: "1423."
+  - generic: 3124 →
+  - generic: 3142 →
+  - generic: 1342 →
+  - generic: 1432 →
+  - generic: "1423."
+  - paragraph:
+    - text: 现在比较目标
+    - math:
+      - generic: B
+    - generic: B
+    - text: 和
+    - math:
+      - generic: G
+    - generic: G
+    - text: 给出的回答。
+  - paragraph:
+    - text: 第一条路上，在到达
+    - math:
+      - generic: "1243"
+    - generic: "1243"
+    - text: 以前，两者的回答依次完全相同；到
+    - math:
+      - generic: "1243"
+    - generic: "1243"
+    - text: 才第一次分开：
+  - math:
+    - generic: M
+    - generic: (
+    - generic: "1243"
+    - generic: ","
+    - generic: B
+    - generic: )
+    - generic: =
+    - generic: "2"
+    - generic: ","
+    - generic: M
+    - generic: (
+    - generic: "1243"
+    - generic: ","
+    - generic: G
+    - generic: )
+    - generic: =
+    - generic: "0."
+  - generic: M(1243, B) =
+  - generic: 2, M(1243, G) =
+  - generic: "0."
+  - paragraph: 但此时已经用了 5 次交换，而且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "1243"
+    - generic: ","
+    - generic: G
+    - generic: )
+    - generic: =
+    - generic: "3"
+    - generic: ">"
+    - generic: "1."
+  - generic: d(1243, G) =
+  - generic: 3 >
+  - generic: "1."
+  - paragraph:
+    - text: 所以若真实目标是
+    - math:
+      - generic: G
+    - generic: G
+    - text: ，已经来不及在第 6 次完成。
+  - paragraph:
+    - text: 第二、第三条路都在
+    - math:
+      - generic: "1432"
+    - generic: "1432"
+    - text: 才把二者区分：
+  - math:
+    - generic: M
+    - generic: (
+    - generic: "1432"
+    - generic: ","
+    - generic: B
+    - generic: )
+    - generic: =
+    - generic: "2"
+    - generic: ","
+    - generic: M
+    - generic: (
+    - generic: "1432"
+    - generic: ","
+    - generic: G
+    - generic: )
+    - generic: =
+    - generic: "0"
+    - generic: ","
+  - generic: M(1432, B) =
+  - generic: 2, M(1432, G) =
+  - generic: 0,
+  - paragraph: 此时同样已用了 5 步，而且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "1432"
+    - generic: ","
+    - generic: G
+    - generic: )
+    - generic: =
+    - generic: "5."
+  - generic: d(1432, G) =
+  - generic: "5."
+  - paragraph: 也来不及。
+  - paragraph:
+    - text: 因此第二步若选
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，不存在 6 步保证策略。
+  - paragraph:
+    - text: 第二步若选
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: ，由左右对称性完全相同。
+  - separator
+  - heading "第二步若做 ，即撤销第一步" [level=2]:
+    - text: 第二步若做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ，即撤销第一步
+  - paragraph: 两步后重新回到
+  - math:
+    - generic: "1234"
+    - generic: ","
+  - generic: 1234,
+  - paragraph:
+    - text: 但候选仍然是
+    - math:
+      - generic: A
+      - generic: ","
+      - generic: B
+      - generic: ","
+      - generic: G
+      - generic: ","
+      - generic: H
+    - generic: A, B, G, H
+    - text: ，已经白白花掉两步，只剩 4 步。
+  - paragraph:
+    - text: 第三步若做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，裁判可让候选变成
+    - math:
+      - generic: A
+      - generic: ","
+      - generic: B
+    - generic: A, B
+    - text: 。此时在
+    - math:
+      - generic: "2134"
+    - generic: "2134"
+    - text: ：
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "2134"
+    - generic: ","
+    - generic: A
+    - generic: )
+    - generic: =
+    - generic: d
+    - generic: (
+    - generic: "2134"
+    - generic: ","
+    - generic: B
+    - generic: )
+    - generic: =
+    - generic: "3."
+  - generic: d(2134, A) =
+  - generic: d(2134, B) =
+  - generic: "3."
+  - paragraph: 只剩 3 步，所以接下来每一步都必须同时位于二者的最短路上。
+  - paragraph:
+    - text: 它们唯一共同允许的第一步是
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，于是又回到
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 。此时还剩两步，而
+  - math:
+    - generic: A
+    - generic: =
+    - generic: "1342"
+  - generic: A =
+  - generic: "1342"
+  - paragraph:
+    - text: 的两步最短路必须先走
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ；
+  - math:
+    - generic: B
+    - generic: =
+    - generic: "1423"
+  - generic: B =
+  - generic: "1423"
+  - paragraph:
+    - text: 的两步最短路必须先走
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: 。
+  - paragraph: 二者仍然没有被区分，因此必有一个失败。
+  - paragraph:
+    - text: 若第三步做
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: ，左右对称。
+  - paragraph:
+    - text: 若第三步再做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ，则在
+    - math:
+      - generic: "1324"
+    - generic: "1324"
+    - text: 可让候选保持为
+    - math:
+      - generic: B
+      - generic: ","
+      - generic: G
+    - generic: B, G
+    - text: 。两者到目标都还需 3 步，而它们唯一共同的最短第一步是撤销
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: 回到
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 。回去后只剩 2 步，但
+    - math:
+      - generic: B
+    - generic: B
+    - text: 必须先
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: ，
+    - math:
+      - generic: G
+    - generic: G
+    - text: 必须先
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，同样无法保证。
+  - paragraph: 所以：
+  - math:
+    - generic: 第一步走
+    - generic: s
+    - generic: "2"
+    - generic: 时，不可能 6 步保证成功。
+  - generic: 第一步走
+  - text: s
+  - generic: "2"
+  - generic: 时，不可能 6 步保证成功。
+  - separator
+  - heading "八、第一次若交换边上的两个位置，也必败" [level=1]
+  - paragraph: 只需考察
+  - math:
+    - generic: s
+    - generic: "1"
+    - generic: ":"
+    - generic: "1234"
+    - generic: →
+    - generic: "2134"
+    - generic: ","
+  - text: s
+  - generic: "1"
+  - text: ":"
+  - generic: 1234 →
+  - generic: 2134,
+  - paragraph:
+    - text: 因为
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: 与之左右对称。
+  - paragraph: 裁判回答 0。此时候选恰好是
+  - math:
+    - generic: A
+    - generic: =
+    - generic: "1342"
+    - generic: ","
+    - generic: B
+    - generic: =
+    - generic: "1423"
+    - generic: ","
+    - generic: C
+    - generic: =
+    - generic: "3241"
+    - generic: ","
+    - generic: D
+    - generic: =
+    - generic: "4213."
+  - generic: A =
+  - generic: 1342, B =
+  - generic: 1423, C =
+  - generic: 3241, D =
+  - generic: "4213."
+  - paragraph: 看第二步的三种选择。
+  - separator
+  - heading "第二步做" [level=2]:
+    - text: 第二步做
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+  - paragraph: 到
+  - math:
+    - generic: "2314."
+  - generic: "2314."
+  - paragraph: 裁判回答 1，可使候选只剩
+  - math:
+    - generic: A
+    - generic: ","
+    - generic: D
+    - generic: .
+  - text: A,
+  - text: D.
+  - paragraph: 此时已经 2 步，而且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "2314"
+    - generic: ","
+    - generic: A
+    - generic: )
+    - generic: =
+    - generic: d
+    - generic: (
+    - generic: "2314"
+    - generic: ","
+    - generic: D
+    - generic: )
+    - generic: =
+    - generic: "4."
+  - generic: d(2314, A) =
+  - generic: d(2314, D) =
+  - generic: "4."
+  - paragraph: 只剩 4 步，所以之后必须同时沿二者的最短路。
+  - paragraph:
+    - text: 在
+    - math:
+      - generic: "2314"
+    - generic: "2314"
+    - text: 处，它们唯一共同的“降距一步”是
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ，于是回到
+  - math:
+    - generic: "2134."
+  - generic: "2134."
+  - paragraph: 此时已经 3 步，二者都还距离 3。
+  - paragraph:
+    - text: 但在
+    - math:
+      - generic: "2134"
+    - generic: "2134"
+    - text: ：
+  - math:
+    - generic: A
+  - generic: A
+  - paragraph:
+    - text: 唯一能降距的相邻交换是
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ；
+  - math:
+    - generic: D
+  - generic: D
+  - paragraph:
+    - text: 唯一能降距的相邻交换是
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: 。
+  - paragraph: 而它们尚未被区分。
+  - paragraph: 所以必败。
+  - separator
+  - heading "第二步做" [level=2]:
+    - text: 第二步做
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+  - paragraph: 到
+  - math:
+    - generic: "2143."
+  - generic: "2143."
+  - paragraph:
+    - text: 四个
+    - math:
+      - generic: A
+      - generic: ","
+      - generic: B
+      - generic: ","
+      - generic: C
+      - generic: ","
+      - generic: D
+    - generic: A, B, C, D
+    - text: 的回答全都是 1，所以没有任何候选被排除。
+  - paragraph:
+    - text: 特别地，
+    - math:
+      - generic: A
+      - generic: ","
+      - generic: C
+    - generic: A, C
+    - text: 仍同时可能，而且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "2143"
+    - generic: ","
+    - generic: A
+    - generic: )
+    - generic: =
+    - generic: d
+    - generic: (
+    - generic: "2143"
+    - generic: ","
+    - generic: C
+    - generic: )
+    - generic: =
+    - generic: "4."
+  - generic: d(2143, A) =
+  - generic: d(2143, C) =
+  - generic: "4."
+  - paragraph: 只剩 4 步，必须同时走二者的最短路。
+  - paragraph:
+    - text: 它们唯一共同的降距交换是
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: ，即撤销刚才一步，回到
+    - math:
+      - generic: "2134"
+    - generic: "2134"
+    - text: 。
+  - paragraph: 这时两者都剩距离 3；但
+  - math:
+    - generic: A
+  - generic: A
+  - paragraph:
+    - text: 只能先走
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，而
+  - math:
+    - generic: C
+  - generic: C
+  - paragraph:
+    - text: 只能先走
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: 。
+  - paragraph: 仍然无法区分，必败。
+  - separator
+  - heading "第二步做 ，撤销第一步" [level=2]:
+    - text: 第二步做
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，撤销第一步
+  - paragraph:
+    - text: 两步以后重新回到
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 。
+  - paragraph:
+    - text: 候选中
+    - math:
+      - generic: C
+      - generic: ","
+      - generic: D
+    - generic: C, D
+    - text: 都还可能，并且
+  - math:
+    - generic: d
+    - generic: (
+    - generic: "1234"
+    - generic: ","
+    - generic: C
+    - generic: )
+    - generic: =
+    - generic: d
+    - generic: (
+    - generic: "1234"
+    - generic: ","
+    - generic: D
+    - generic: )
+    - generic: =
+    - generic: "4."
+  - generic: d(1234, C) =
+  - generic: d(1234, D) =
+  - generic: "4."
+  - paragraph: 只剩 4 步，所以必须同时沿它们的最短路。
+  - paragraph:
+    - text: 在
+    - math:
+      - generic: "1234"
+    - generic: "1234"
+    - text: 处，二者唯一共同的降距交换是
+    - math:
+      - generic: s
+      - generic: "1"
+    - text: s
+    - generic: "1"
+    - text: ，因此又到
+    - math:
+      - generic: "2134"
+    - generic: "2134"
+    - text: 。
+  - paragraph: 此时只剩 3 步，而
+  - math:
+    - generic: C
+  - generic: C
+  - paragraph:
+    - text: 必须先
+    - math:
+      - generic: s
+      - generic: "2"
+    - text: s
+    - generic: "2"
+    - text: ，
+  - math:
+    - generic: D
+  - generic: D
+  - paragraph:
+    - text: 必须先
+    - math:
+      - generic: s
+      - generic: "3"
+    - text: s
+    - generic: "3"
+    - text: 。
+  - paragraph: 二者仍不可区分，所以也必败。
+  - paragraph: 因此：
+  - math:
+    - generic: 第一步走边上的
+    - generic: s
+    - generic: "1"
+    - generic: 或
+    - generic: s
+    - generic: "3"
+    - generic: ，同样不可能 6 步保证成功。
+  - generic: 第一步走边上的
+  - text: s
+  - generic: "1"
+  - generic: 或
+  - text: s
+  - generic: "3"
+  - generic: ，同样不可能 6 步保证成功。
+  - paragraph: 三种可能的第一步全部排除。
+  - paragraph: 于是，当初始匹配数为 1 时，没有任何策略能保证 6 步完成。
+  - paragraph: 但这一类目标都是偶排列，所以若总上限是 7，它们又不可能恰好用 7 步，只可能用至多 6 步。
+  - paragraph: 矛盾。
+  - paragraph: 所以
+  - math:
+    - generic: x
+    - generic: ≥
+    - generic: "8"
+    - generic: .
+  - generic: x ≥ 8
+  - text: .
+  - paragraph: 结合前面构造出的 8 步策略，
+  - math:
+    - generic: x
+    - generic: =
+    - generic: "8"
+    - generic: .
+  - generic: x = 8
+  - text: .
+  - paragraph:
+    - text: 这里真正造成第 8 次交换的并不是几何上的最大距离——
+    - math:
+      - generic: S
+      - generic: "4"
+    - text: S
+    - generic: "4"
+    - text: 的相邻交换直径只有 6——而是
+    - strong: 两个仍无法区分的隐藏排列要求朝不同方向走最短路
+    - text: ；为了获得足够信息，挑战者有时不得不先走到一个对其中一个候选较远的位置。
+  - button "复制":
+  - button "评价回复":
+  - button "朗读":
+  - button "重新生成回复":
+  - generic: ChatGPT 可能会出错。工作空间数据不会用于训练模型。
+  - button "滚动到底部":
+  - heading "最新一条回复" [level=4]
+  - status
+  - button "添加文件等内容":
+  - textbox "询问 ChatGPT" [active]:
+    - paragraph: 询问 ChatGPT
+  - button "选择 ChatGPT 模型":
+    - generic: 5.6 Extra High
+  - button "听写":
+  - button "发送" [disabled]:
+- status
+- generic "flow-ai-assistant"
+- status
+- status
+- status
+- status
+- status: 回答已完成

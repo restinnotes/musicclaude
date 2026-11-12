@@ -1,0 +1,55 @@
+from pathlib import Path
+import json,html,hashlib
+R=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text(encoding='utf-8'))
+def esc(s):return html.escape(str(s),quote=True)
+def js(x):return json.dumps(x,ensure_ascii=False).replace('</','<\\/')
+def build():
+ data=read(R/'CONTENT.json'); pages=data['pages']
+ css='''*{box-sizing:border-box}html{background:#f5f2eb;color:#282923;font-family:"Microsoft YaHei","PingFang SC",sans-serif}body{margin:0}button,a{color:inherit}button{font:inherit;cursor:pointer}header{padding:15px 3.3vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6d5ca;gap:15px}header .work{font-family:Georgia,serif;letter-spacing:.08em;font-size:17px}nav{display:flex;gap:4px;flex-wrap:wrap}nav button{border:0;background:none;padding:8px;border-radius:4px;font-size:13px}nav button[aria-current=true]{background:#263e3d;color:white}header a{font-size:13px;text-decoration:none;white-space:nowrap}.sheet{display:none;padding:28px 3.3vw 28px;max-width:2100px;margin:auto}.sheet.active{display:block}.pagehead{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:22px}.pagehead h1{font-family:"Noto Serif CJK SC","Songti SC",SimSun,serif;font-size:34px;font-weight:500;margin:0;line-height:1.4}.bar{font-size:14px;color:#61726e;white-space:nowrap}.intro{font-size:21px;line-height:1.8;margin:0 0 22px;max-width:75em}.blocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 28px;align-items:start}.block{padding:17px 0 8px;border-top:2px solid #738780;break-inside:avoid}.block h2{font-size:16px;font-weight:500;color:#4d6760;letter-spacing:.03em;margin:0 0 10px}.block p{font-family:"Noto Serif CJK SC","Songti SC",SimSun,serif;font-size:22px;line-height:1.8;margin:0 0 9px;overflow-wrap:anywhere}.sequence{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0;padding:0}.sequence li{border-left:2px solid #a2afa5;padding-left:12px;font-family:SimSun,serif;font-size:22px;line-height:1.7}.sequence small{display:block;color:#61726e;font-family:inherit;font-size:14px}.block:has(.sequence){grid-column:1/-1}footer{display:flex;justify-content:space-between;color:#738078;font-size:12px;margin-top:24px;gap:20px}.controls{display:flex;gap:10px}.controls button{background:transparent;border:1px solid #c8ccc2;border-radius:3px;padding:4px 13px}.note{max-width:65em;margin:20px auto 45px;color:#65716a;line-height:1.8;font-size:13px;padding:0 20px}@media(min-width:1700px){.block p{font-size:25px}.intro{font-size:24px}.pagehead h1{font-size:40px}.blocks{gap:20px 38px}}@media(max-width:1100px){.blocks{grid-template-columns:repeat(2,minmax(0,1fr))}.block p{font-size:21px}header{flex-wrap:wrap}.pagehead h1{font-size:30px}}@media(max-width:650px){.blocks{grid-template-columns:1fr}.sheet{padding:22px 20px}.pagehead{display:block}.bar{display:block;margin-top:8px}.intro,.block p{font-size:20px}.sequence{gap:6px}.sequence li{font-size:19px}nav button{padding:6px}.work{display:none}footer{flex-wrap:wrap}}@media print{header,.controls,.note{display:none}.sheet{display:block!important;break-before:page}.blocks{grid-template-columns:repeat(2,1fr)}.block p{font-size:13pt}.pagehead h1{font-size:22pt}}'''
+ # Wide screens use the width to keep a section stable, without hiding meanings.
+ css+='''.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0}.step{border-left:2px solid #9aa99d;padding:3px 8px;font-size:inherit;line-height:1.6}.step+.step{position:relative}.step+.step:before{content:'›';position:absolute;left:-9px;color:#77867d;top:2px;font-family:Georgia,serif}@media(min-width:1700px){header{padding:10px 3vw}.sheet{padding:20px 3vw}.pagehead{margin-bottom:12px}.pagehead h1{font-size:34px}.intro{font-size:21px;line-height:1.65;margin-bottom:16px}.blocks{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 26px}.block{padding-top:12px}.block p{font-size:21px;line-height:1.65;margin-bottom:5px}.block h2{font-size:15px;margin-bottom:7px}footer{margin-top:16px}.note{margin-top:10px;margin-bottom:20px}}'''
+ sheets=[]
+ for p in pages:
+  blocks=[]
+  for b in p['blocks']:
+   paragraphs=''.join('<p>'+esc(t)+'</p>' for t in b.get('text','').split('\n\n') if t)
+   visual=b.get('visual')
+   if visual and visual['type']=='three_steps':
+    assert ''.join(visual['steps'])==visual['phrase']
+    assert b['kind']=='sequence' and visual['phrase'] in b['text']
+    paragraphs=paragraphs.replace(esc(visual['phrase']),'<span class="steps">'+''.join('<span class="step">'+esc(x)+'</span>' for x in visual['steps'])+'</span>')
+   items=''
+   if b.get('items'):items='<ol class="sequence">'+''.join('<li><small>'+esc(x['label'])+'</small>'+esc(x['text'])+'</li>' for x in b['items'])+'</ol>'
+   blocks.append(f'<article class="block" id="{esc(b["id"])}"><h2>{esc(b["label"])}</h2>{paragraphs}{items}</article>')
+  intro='<p class="intro">'+esc(p.get('intro',''))+'</p>' if p.get('intro') else ''
+  sheets.append(f'<section class="sheet" id="{p["segment"]}"><div class="pagehead"><h1>{esc(p["title"])}</h1><span class="bar">{p["segment"]} · 第 {esc(p["bars"])} 小节</span></div>{intro}<div class="blocks">'+''.join(blocks)+'</div><footer><span>肖邦 · 船歌 Op.60</span><div class="controls"><button data-step="-1" aria-label="上一段">←</button><button data-step="1" aria-label="下一段">→</button></div></footer></section>')
+ nav=''.join(f'<button data-segment="{p["segment"]}" aria-current="false">{p["segment"]}</button>' for p in pages)
+ script='''const ids=Array.from(document.querySelectorAll('.sheet')).map(x=>x.id);function show(){let id=location.hash.slice(1).split('-')[0];if(!ids.includes(id))id='S02';for(const el of document.querySelectorAll('.sheet'))el.classList.toggle('active',el.id===id);for(const b of document.querySelectorAll('[data-segment]'))b.setAttribute('aria-current',b.dataset.segment===id);document.title=id+' · 船歌';}document.querySelectorAll('[data-segment]').forEach(b=>b.onclick=()=>location.hash=b.dataset.segment);document.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>{let n=ids.indexOf(document.querySelector('.sheet.active').id);location.hash=ids[(n+Number(b.dataset.step)+ids.length)%ids.length];scrollTo(0,0)});addEventListener('hashchange',show);addEventListener('keydown',e=>{if(e.key==='ArrowRight')document.querySelector('.sheet.active [data-step="1"]').click();if(e.key==='ArrowLeft')document.querySelector('.sheet.active [data-step="-1"]').click()});show();'''
+ (R/'船歌·每段一页.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>船歌</title><style>'+css+'</style><header><span class="work">CHOPIN / BARCAROLLE</span><nav>'+nav+'</nav><a href="内容与原稿核对.html">内容与原稿核对 ↗</a></header><main>'+''.join(sheets)+'</main><div class="note">每段保留在同一页；并列的读法分别成立。当前为内容与版式实验，尚未绑定具体录音。全部文字均在页面内可见；超出屏幕时可滚动阅读。</div><script>'+script+'</script></html>',encoding='utf-8')
+ # This report displays claims as claims; semantic judgments remain refutable.
+ old={x['segment']:x for x in read(R.parent/'_bead_quality_20261017'/'editorial'/'FINAL_BEADS.json')}
+ rows=read(R/'COVERAGE.json') if (R/'COVERAGE.json').exists() else []
+ sections=[]
+ for p in pages:
+  body='\n\n'.join((b['label']+'\n'+b.get('text','')+'\n'+' / '.join(i['label']+'：'+i['text'] for i in b.get('items',[]))) for b in p['blocks'])
+  tr=[]
+  for x in rows:
+   if x.get('segment')!=p['segment']:continue
+   location='（正文位置：'+','.join(x['span_segment'])+'）' if x.get('span_segment') else ''
+   tr.append('<tr data-status="'+esc(x.get('status','unreviewed'))+'"><td>'+esc(x['id'])+'<br>'+esc(x.get('meaning',''))+'</td><td>'+esc(x.get('status','unreviewed'))+esc(location)+'</td><td>'+esc(x.get('span',''))+'</td><td>'+esc(x.get('reason',''))+'</td></tr>')
+  ev=[]
+  for b in p['blocks']:
+   for e in b.get('evidence',[]):ev.append('<p><code>'+esc(e['uid'])+'</code> '+esc(e['quote'])+'</p>')
+  sections.append('<section id="'+p['segment']+'"><h2>'+p['segment']+' '+esc(p['title'])+'</h2><div class="compare"><article><h3>上一版</h3><pre>'+esc(old[p['segment']]['body'])+'</pre></article><article><h3>本轮编辑版</h3><pre>'+esc(p.get('intro','')+'\n\n'+body)+'</pre></article></div><h3>取材原句</h3>'+''.join(ev)+'<h3>逐项语义复核</h3><table><thead><tr><th>原意</th><th>本轮状态</th><th>成品对应原句</th><th>判断／剩余差异</th></tr></thead><tbody>'+''.join(tr)+'</tbody></table></section>')
+ reportcss='body{max-width:1450px;margin:35px auto;padding:0 25px;background:#f8f6f0;color:#28332d;font:16px/1.8 "Microsoft YaHei",sans-serif}a{color:#28625b}section{padding:28px 0;border-top:1px solid #bbb}.compare{display:grid;grid-template-columns:1fr 1fr;gap:30px}pre{white-space:pre-wrap;font:inherit}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbd0c6;padding:10px;text-align:left;vertical-align:top}td:first-child{width:30%}td:nth-child(3){width:30%}code{font-size:12px;color:#667}@media(max-width:750px){.compare{grid-template-columns:1fr}table{display:block;overflow-x:auto}}'
+ stats=read(R/'VALIDATION.json') if (R/'VALIDATION.json').exists() else {}
+ links='<p><a href="原稿与旧版全量审计.html">完整原稿、原意和旧版审计</a> · <a href="合并与连接检查.html">本轮合并与连接检查</a> · <a href="模型实验判读.html">模型实验判读</a> · <a href="reviews/global_registry.html">全曲原意的去向</a></p>'
+ filters='<p>筛选：<select id="status"><option value="">全部状态</option>'+''.join('<option>'+s+'</option>' for s in ['full','partial','omitted','altered','pending','not_applicable','unreviewed'])+'</select> <input id="query" placeholder="搜索原意、独特词或ID" style="padding:6px;width:280px"></p>'
+ filtering="<script>function filter(){let s=document.querySelector('#status').value,q=document.querySelector('#query').value.trim();document.querySelectorAll('tr[data-status]').forEach(r=>r.hidden=!!((s&&r.dataset.status!==s)||(q&&!r.textContent.includes(q))))}document.querySelector('#status').onchange=filter;document.querySelector('#query').oninput=filter;</script>"
+ (R/'内容与原稿核对.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>内容与原稿核对</title><style>'+reportcss+'</style><h1>船歌 · 内容与原稿核对</h1><p><a href="船歌·每段一页.html#S02">打开阅读页</a> · '+ ' / '.join('<a href="#'+p['segment']+'">'+p['segment']+'</a>' for p in pages)+'</p><p>逐项核对“读者能否从成品恢复原意”。来源被引用、共有几个词，均不等于意义完整保留。状态由语义判断产生；脚本只验证引句、ID、映射、版本，不能证明语义判断正确。GLOBAL与待定位材料另列范围，不计入局部成品完整覆盖。</p><pre>'+esc(json.dumps(stats.get('coverage_summary',{}),ensure_ascii=False,indent=2))+'</pre>'+''.join(sections)+'</html>',encoding='utf-8')
+ target=R/'内容与原稿核对.html'
+ report=target.read_text(encoding='utf-8').replace('<pre>'+esc(json.dumps(stats.get('coverage_summary',{}),ensure_ascii=False,indent=2))+'</pre>',links+filters+'<pre>'+esc(json.dumps(stats.get('coverage_summary',{}),ensure_ascii=False,indent=2))+'</pre>')
+ target.write_text(report.replace('</html>',filtering+'</html>'),encoding='utf-8')
+ print('built',len(pages),'pages')
+if __name__=='__main__':build()

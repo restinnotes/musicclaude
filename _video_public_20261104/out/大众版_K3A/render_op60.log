@@ -1,0 +1,9 @@
+[in#0/rawvideo @ 0000019755fc7940] Error during demuxing: Cannot allocate memory
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\film_v8.py", line 120, in <module>
+    if x.cmd == 'render': film_v6.render(x.work, x.tag, x.start, x.end, x.out)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\film_v6.py", line 180, in render
+    for i in range(round(d*FPS)): p.stdin.write(f.frame(start+i/FPS).tobytes())
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+MemoryError

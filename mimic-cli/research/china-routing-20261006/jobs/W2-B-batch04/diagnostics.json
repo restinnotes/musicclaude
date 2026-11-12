@@ -1,0 +1,179 @@
+{
+  "job_id": "W2-B-batch04",
+  "timestamp": "2026-10-06T21:40:08.850597+00:00",
+  "profile": "yi",
+  "command": "research",
+  "requested_model": "gpt-5.6-sol",
+  "requested_reasoning_effort": "xhigh",
+  "prompt_sha256": "8f6846fe0405d98cd6401ff5d1b7cd8537683bcea341ec53a27f7682cb2da9d2",
+  "success": true,
+  "response": "## 1. 直接回答\n\n本批次仅研究 **C10/C11/C12**，形成 **9 个冻结前候选：每类2个国内头部 + 1个社区机会SKU**。未查询任何海外价格、销量、供货或跨境平台覆盖。所有京东未登录页面均未显示可核验数字价格，因此 **domestic_price 全部留 null**，不把“¥”占位符、社区文章报价或搜索摘要当成交价。观察日期均为 **2026-10-06**。\n\n分层规则预先固定：若公开页面能看到可比普通价，则按本品类候选普通价三分位划高/中/低；本轮数字价格被抑制，故暂用标题中可复现的定位词替代：含“旗舰/专业级/重型/工业”为高端，含“入门级/学生/家用小型”为低端，其余为中端，均属 **PROVISIONAL**，冻结前须用登录态普通价重算。\n\n## 2. 核心证据\n\n**C10**：京东当前“扫拖机器人排行榜”中，剔除明显属于手持洗地机的榜项后，石头 **P30 Pro A3060RR自动上下水版**为最靠前机器人候选（榜3），**P20 Max A2950RR**为榜5、公开显示10万+评论；另一个京东公开分类页显示追觅 **S60Pro水箱版**为自营且有2万+评论。观察：2026-10-06。[JD.com](https://www.jd.com/phb/key_7372189afc9d7feaefa.html) [https://www.jd.com/phb/key_7372189afc9d7feaefa.html](https://www.jd.com/phb/key_7372189afc9d7feaefa.html)\n\n**C11**：过滤掉错误混入的理发器后，京东电动工具榜中 **大有5209U**排有效工具第1/全榜2，**东成DZC1050-26BT**排全榜3；分别显示5万、2万级评论。观察：2026-10-06。[JD.com](https://www.jd.com/phb/key_98557dbd2cc9c2d402a0.html) [https://www.jd.com/phb/key_98557dbd2cc9c2d402a0.html](https://www.jd.com/phb/key_98557dbd2cc9c2d402a0.html)\n\n**C12**：京东当前微单榜显示 **Sony A7M5/ILCE-7M5 单机身**榜1，**A7C II 28-60银色套机**榜3且5万+评论；A7M5仅200级评论，说明榜位不能直接等同累计销量。观察：2026-10-06。[JD.com](https://www.jd.com/phb/key_652fd4713cf64b87260.html) [https://www.jd.com/phb/key_652fd4713cf64b87260.html](https://www.jd.com/phb/key_652fd4713cf64b87260.html)\n\n## 3. 一级来源\n\n本轮**没有把品牌官网当销量证据**。国内购买信号只采用实际打开的京东榜单/分类页；具体商品页多被动态渲染、风控或登录态挡住，因此 seller_id、实时普通价、会员价/定向券均不补猜。C12 的全画幅分类页还实际读到 A7C II 5万+评价、Z5II 单机列表17条评价。观察：2026-10-06。[JD.com](https://www.jd.com/chanpin/560334.html) [https://www.jd.com/chanpin/560334.html](https://www.jd.com/chanpin/560334.html)\n\n## 4. 社区证据\n\nC10 的机会层选 **追觅S60 Pro**：2026年10月知乎文章明确把它列为2026主推旗舰；只采用“社区正在讨论/推荐该型号”这一信号，不采文章中的补贴价格。观察：2026-10-06。[Zhihu Column](https://zhuanlan.zhihu.com/p/2068016618635056879) [https://zhuanlan.zhihu.com/p/2068016618635056879](https://zhuanlan.zhihu.com/p/2068016618635056879)\n\nC11 的 **WU385** 有什么值得买专题，页面日期 **2026-06-11**，并列出B站2026-04-30、05-02的WU385开箱来源；但该专题标注“AIGC文章”，因此机会证据降一档。[什么值得买](https://post.smzdm.com/p/a6z2nmd0/) [https://post.smzdm.com/p/a6z2nmd0/](https://post.smzdm.com/p/a6z2nmd0/)\n\nC12 的 **Nikon Z5II** 有2026-06-22同镜头实拍对比，作者明确称为非专业日常实拍，并报告高感/画质体验；足够作机会层，不足以证明销量领先。[什么值得买](https://post.smzdm.com/p/anvo929p/) [https://post.smzdm.com/p/anvo929p/](https://post.smzdm.com/p/anvo929p/)\n\n## 5. 反向证据\n\n京东榜单存在明显类目污染：C10 前两位出现手持洗地机，C11 榜首是飞科理发器，因此“榜几”只能作平台热卖信号，不能解释为严格类目市场份额。C12 又出现A7M5榜1但仅约200评论、A7C II榜3却5万+评论，提示新品、促销、排序算法会改变名次。[JD.com](https://www.jd.com/phb/key_7372189afc9d7feaefa.html)\n\n## 6. 置信度\n\n**C10：中高**，榜单、评论规模与机会SKU自营分类信号互相支持。**C11：中等**，头部SKU可验证，但类目污染明显，WU385社区证据又含AIGC汇总。**C12：中高**，当前榜与公开分类页一致支持A7C II；Z5II只是机会样本；A7M5的商品深页未成功核验。\n\n## 7. 数据缺口\n\n最大缺口是 **AUTHENTICATED DATA REQUIRED**：9个候选的实时普通价、会员价、定向券、旗舰店成交/销量、seller_id；另外需要天猫/淘宝交叉验证头部排序。由于未登录页面价格数字缺失，本轮不能完成真正基于人民币价格的高/中/低三分位冻结。\n\n## 8. 意外发现\n\n追觅S60Pro公开京东分类页在观察日已显示**水箱、平嵌、上下水多版本且均2万+评论、自营**，说明型号本身的国内消费存在性比早期搜索缓存更强；但这些版本必须分别视为不同 exact_variant，不能合并。[JD.com](https://www.jd.com/hprm/131868b1a09825341e2b.html?electedExtAttrSet=15348%2C\\&extAttrValue=expand_name%2C%40156984%3A%3A15348\\&sort_type=sort_default)\n\n## 9. 自我反驳\n\n本样本高度依赖京东，可能把京东平台结构误当成整个国内市场；评论数也不是销量。社区文章可能含联盟营销或作者偏好。因此这里得到的是**冻结前候选集**，不是中国市场份额排名，也不是最终SKU选择。\n\n## 10. 下一实验\n\n下一步只做三件事：登录态逐一补9个SKU的普通价/会员价/券、seller_id与旗舰店成交字段；用天猫/淘宝同型号做一次头部交叉验证；按登录态普通价重新计算高/中/低三分位。若任一型号无法精确对应版本，就继续保持 **PROVISIONAL**，不因海外可比性删除。\n\n```json\n{\n  \"job_id\": \"W2-B-batch04\",\n  \"parent_replicate\": \"W2-B\",\n  \"web_research_available\": true,\n  \"pre_freeze_compliance\": true,\n  \"categories\": [\n    {\n      \"category_id\": \"C10\",\n      \"name\": \"扫地机器人与家电\",\n      \"sampling_rule\": \"头部：实际打开的京东榜单中排除明显非自主扫地机器人后，取排名最前的两个可精确识别SKU；机会：2026国内社区明确讨论/推荐且京东公开页存在明确购买信号的非重复SKU。价格分层因未登录数值价格不可见而PROVISIONAL。\",\n      \"confidence\": \"medium\"\n    },\n    {\n      \"category_id\": \"C11\",\n      \"name\": \"电动工具与维修\",\n      \"sampling_rule\": \"先从京东电动工具榜排除理发器等错误品类，再取排名最前的两个维修/施工电动工具；机会SKU要求2026社区实测/开箱证据。定位词含重型/工业/专业视为高端，家用小型/入门视为低端，其余中端，待登录价重算。\",\n      \"confidence\": \"medium\"\n    },\n    {\n      \"category_id\": \"C12\",\n      \"name\": \"相机与视频设备\",\n      \"sampling_rule\": \"头部取当前京东微单榜中可精确识别的高排名机型，不以国际知名度筛选；机会取国内社区实拍支持且京东国内列表存在的型号。旗舰/专业级为高端、入门级为低端、其余暂列中端，待实际价格重算。\",\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"sku_candidates\": [\n    {\n      \"category_id\": \"C10\",\n      \"候选sku_id\": \"C10-H1\",\n      \"brand\": \"石头 roborock\",\n      \"model\": \"P30 Pro\",\n      \"exact_variant\": \"自动上下水版，A3060RR\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东扫拖机器人排行榜榜3；为榜页中排名最高的明确自主扫地机器人候选，公开显示10000+评论。\",\n      \"domestic_selection_rule\": \"排除榜1-2手持洗地机后取最高排名自主机器人；定位为高端/PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100299842625.html\",\n      \"item_id\": \"100299842625\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"mains_voltage_base_station\", \"app_firmware_dependency\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_RANK_AND_EXACT_VARIANT; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER\",\n      \"source_ids\": [\"S01\"]\n    },\n    {\n      \"category_id\": \"C10\",\n      \"候选sku_id\": \"C10-H2\",\n      \"brand\": \"石头 roborock\",\n      \"model\": \"P20 Max\",\n      \"exact_variant\": \"扫拖洗烘一体机，A2950RR，非页面另列的自动上下水版\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东扫拖机器人排行榜榜5，公开显示100000+评论。\",\n      \"domestic_selection_rule\": \"同一有效机器人榜中取第二个高购买信号且版本可区分的SKU；定位中端/PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100325625266.html\",\n      \"item_id\": \"100325625266\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"mains_voltage_base_station\", \"app_firmware_dependency\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_RANK_AND_EXACT_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER\",\n      \"source_ids\": [\"S01\"]\n    },\n    {\n      \"category_id\": \"C10\",\n      \"候选sku_id\": \"C10-O1\",\n      \"brand\": \"追觅 Dreame\",\n      \"model\": \"S60Pro\",\n      \"exact_variant\": \"高速滚筒水箱版，RVS52DE\",\n      \"sampling_stratum\": \"domestic_opportunity\",\n      \"domestic_evidence\": \"2026年10月国内社区文章将S60 Pro列为主推型号；京东公开分类页观察日显示S60Pro水箱版自营且20000+评论。\",\n      \"domestic_selection_rule\": \"社区当年明确推荐/讨论且公开京东页有实质中国消费者评论信号；不与头部SKU重复。\",\n      \"domestic_product_url\": \"https://item.jd.com/100232001485.html\",\n      \"item_id\": \"100232001485\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_category_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"mains_voltage_base_station\", \"app_firmware_dependency\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_MODEL_AND_WATER_TANK_VARIANT; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER\",\n      \"source_ids\": [\"S02\", \"S03\"]\n    },\n    {\n      \"category_id\": \"C11\",\n      \"候选sku_id\": \"C11-H1\",\n      \"brand\": \"大有 DEVON\",\n      \"model\": \"5209U\",\n      \"exact_variant\": \"JC系列12V无刷冲击手电钻/电动螺丝刀，塑盒装\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东电动工具榜全榜2；过滤榜首错误品类理发器后为排名最高有效维修电动工具，公开显示50000+评论。\",\n      \"domestic_selection_rule\": \"过滤非维修/施工工具后按榜位取首个有效SKU；中端/PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100109800710.html\",\n      \"item_id\": \"100109800710\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"battery_platform_compatibility\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_CURRENT_RANK_AND_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER\",\n      \"source_ids\": [\"S04\"]\n    },\n    {\n      \"category_id\": \"C11\",\n      \"候选sku_id\": \"C11-H2\",\n      \"brand\": \"东成\",\n      \"model\": \"DZC1050-26BT\",\n      \"exact_variant\": \"1050W电锤电镐两用，带安全离合\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东电动工具榜全榜3，公开显示20000+评论。\",\n      \"domestic_selection_rule\": \"过滤错误品类后取第二个排名最高有效维修/施工SKU；标题含重型施工用途，暂列高端/PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100182918074.html\",\n      \"item_id\": \"100182918074\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"mains_voltage\", \"plug_standard\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_CURRENT_RANK_AND_EXACT_MODEL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE_SELLER\",\n      \"source_ids\": [\"S04\"]\n    },\n    {\n      \"category_id\": \"C11\",\n      \"候选sku_id\": \"C11-O1\",\n      \"brand\": \"威克士 WORX\",\n      \"model\": \"WU385\",\n      \"exact_variant\": \"20V集尘锂电电锤，4.0Ah双电套装\",\n      \"sampling_stratum\": \"domestic_opportunity\",\n      \"domestic_evidence\": \"什么值得买2026-06-11专题围绕WU385集尘、重量与续航，并引用2026年B站开箱；京东存在对应WU385商品URL。\",\n      \"domestic_selection_rule\": \"要求2026国内社区出现型号级使用/开箱证据；因专题为AIGC汇总且具体4.0双电商品深页不可读，版本标PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100325574706.html\",\n      \"item_id\": \"100325574706\",\n      \"seller_id\": null,\n      \"access_state\": \"community_read_full_page_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"battery_platform_compatibility\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"PROVISIONAL_EXACT_PACKAGE; MODEL_VERIFIED; AUTHENTICATED_DATA_REQUIRED\",\n      \"source_ids\": [\"S05\"]\n    },\n    {\n      \"category_id\": \"C12\",\n      \"候选sku_id\": \"C12-H1\",\n      \"brand\": \"索尼 SONY\",\n      \"model\": \"ILCE-7M5 / Alpha 7 V\",\n      \"exact_variant\": \"A7M5单机身，官方标配\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东当前微单排行榜榜1，公开显示约200评论。\",\n      \"domestic_selection_rule\": \"当前微单榜最高排名、型号和机身版本明确；旗舰/高端定位。因商品链接风控失败，不用搜索到的其他卖家SKU替代。\",\n      \"domestic_product_url\": null,\n      \"item_id\": null,\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_link_failed\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"firmware_dependency\", \"lens_mount_compatibility\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_RANK_AND_VARIANT; PRODUCT_ITEM_ID_PROVISIONAL_NULL; AUTHENTICATED_DATA_REQUIRED\",\n      \"source_ids\": [\"S06\"]\n    },\n    {\n      \"category_id\": \"C12\",\n      \"候选sku_id\": \"C12-H2\",\n      \"brand\": \"索尼 SONY\",\n      \"model\": \"Alpha 7C II / A7C2 / A7CM2\",\n      \"exact_variant\": \"银色，FE 28-60mm镜头套装\",\n      \"sampling_stratum\": \"domestic_head\",\n      \"domestic_evidence\": \"京东当前微单排行榜榜3，公开显示50000+评论；全画幅分类页亦显示同一28-60银色套装50000+评价。\",\n      \"domestic_selection_rule\": \"当前榜高位且跨京东榜页/分类页重复出现并有高评论量；暂列中端/PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/100064843454.html\",\n      \"item_id\": \"100064843454\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_rank_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"firmware_dependency\", \"lens_mount_compatibility\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"VERIFIED_RANK_EXACT_KIT_AND_CROSS_PAGE_CONSUMER_SIGNAL; AUTHENTICATED_DATA_REQUIRED_FOR_PRICE\",\n      \"source_ids\": [\"S06\", \"S07\"]\n    },\n    {\n      \"category_id\": \"C12\",\n      \"候选sku_id\": \"C12-O1\",\n      \"brand\": \"尼康 Nikon\",\n      \"model\": \"Z5II / Z52\",\n      \"exact_variant\": \"全画幅微单单机，京东QY71列表版本\",\n      \"sampling_stratum\": \"domestic_opportunity\",\n      \"domestic_evidence\": \"京东全画幅分类页实际列出Z5II单机并有17条评价；什么值得买2026-06-22发布同镜头实拍对比，报告Z5II日常画质、高感与握持取舍。\",\n      \"domestic_selection_rule\": \"国内社区有型号级实拍、京东国内列表存在可购买SKU；因商品详情被风控且社区测试并非该卖家套餐，exact_variant保持PROVISIONAL。\",\n      \"domestic_product_url\": \"https://item.jd.com/10233781340201.html\",\n      \"item_id\": \"10233781340201\",\n      \"seller_id\": null,\n      \"access_state\": \"read_full_page_category_product_page_blocked\",\n      \"observation_date\": \"2026-10-06\",\n      \"domestic_price\": null,\n      \"price_type\": null,\n      \"feasibility_flags\": [\"lithium_battery\", \"firmware_dependency\", \"lens_mount_compatibility\", \"regional_warranty_unknown\"],\n      \"verification_status\": \"PROVISIONAL_EXACT_SELLER_PACKAGE; MODEL_AND_DOMESTIC_LISTING_VERIFIED\",\n      \"source_ids\": [\"S07\", \"S08\"]\n    }\n  ],\n  \"sources\": [\n    {\n      \"source_id\": \"S01\",\n      \"url\": \"https://www.jd.com/phb/key_7372189afc9d7feaefa.html\",\n      \"title\": \"扫拖机器人排行榜 - 京东\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"secondary\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"C10 P30 Pro与P20 Max当前榜位、精确型号/版本、公开评论量\", \"C10榜单类目污染\"]\n    },\n    {\n      \"source_id\": \"S02\",\n      \"url\": \"https://zhuanlan.zhihu.com/p/2068016618635056879\",\n      \"title\": \"2026年扫地机器人推荐(10月)，详说扫地机器人哪个品牌好,哪款好用？\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"community\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"追觅S60 Pro在2026年10月国内社区被列为主推型号\", \"科沃斯/追觅/石头社区讨论背景\"]\n    },\n    {\n      \"source_id\": \"S03\",\n      \"url\": \"https://www.jd.com/hprm/131868b1a09825341e2b.html?electedExtAttrSet=15348%2C&extAttrValue=expand_name%2C%40156984%3A%3A15348&sort_type=sort_default\",\n      \"title\": \"京东扫地机器人公开分类页\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"secondary\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"追觅S60Pro水箱版/上下水版/平嵌版均有国内自营列表\", \"观察日S60Pro版本公开显示20000+评论\"]\n    },\n    {\n      \"source_id\": \"S04\",\n      \"url\": \"https://www.jd.com/phb/key_98557dbd2cc9c2d402a0.html\",\n      \"title\": \"京东电动工具排行榜\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"secondary\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"大有5209U全榜2\", \"东成DZC1050-26BT全榜3\", \"榜首混入理发器导致类目污染\"]\n    },\n    {\n      \"source_id\": \"S05\",\n      \"url\": \"https://post.smzdm.com/p/a6z2nmd0/\",\n      \"title\": \"威克士WU385真能解决打孔灰大手酸？实测集尘效果与续航真相\",\n      \"published_at\": \"2026-06-11\",\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"community\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"WU385存在2026国内社区使用/开箱讨论\", \"该页为AIGC汇总并列出B站等原始参考来源\"]\n    },\n    {\n      \"source_id\": \"S06\",\n      \"url\": \"https://www.jd.com/phb/key_652fd4713cf64b87260.html\",\n      \"title\": \"微单排行榜 - 京东\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"secondary\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"A7M5当前榜1\", \"A7C II 28-60银色套机当前榜3及50000+评论\", \"榜位与累计评论不完全一致\"]\n    },\n    {\n      \"source_id\": \"S07\",\n      \"url\": \"https://www.jd.com/chanpin/560334.html\",\n      \"title\": \"全画幅微单数码相机 - 京东商城\",\n      \"published_at\": null,\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"secondary\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"A7C II 28-60银色套机50000+评价\", \"Nikon Z5II单机国内列表及17条评价\"]\n    },\n    {\n      \"source_id\": \"S08\",\n      \"url\": \"https://post.smzdm.com/p/anvo929p/\",\n      \"title\": \"尼康鸡头vs凤尾｜Z50Ⅱ对比Z5Ⅱ同镜头实测\",\n      \"published_at\": \"2026-06-22\",\n      \"retrieved_at\": \"2026-10-06\",\n      \"source_type\": \"community\",\n      \"access_state\": \"read_full_page\",\n      \"claims_supported\": [\"Z5II国内社区同镜头实拍体验\", \"作者明确标注非专业实拍测评\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim_id\": \"K01\",\n      \"claim\": \"C10可保留P30 Pro A3060RR与P20 Max A2950RR作为冻结前国内头部候选。\",\n      \"classification\": \"INFERENCE\",\n      \"source_ids\": [\"S01\"],\n      \"confidence\": \"medium\",\n      \"counterevidence\": \"京东扫拖榜前部混入手持洗地机，因此名次不是严格的自主扫地机器人市场份额。\"\n    },\n    {\n      \"claim_id\": \"K02\",\n      \"claim\": \"追觅S60Pro满足C10国内机会SKU门槛：有当年社区型号级推荐且京东自营公开页显示较强消费者评论信号。\",\n      \"classification\": \"FACT\",\n      \"source_ids\": [\"S02\", \"S03\"],\n      \"confidence\": \"medium\",\n      \"counterevidence\": \"社区文章可能含导购商业偏差；不同水箱/上下水/平嵌版本不能合并为一个SKU。\"\n    },\n    {\n      \"claim_id\": \"K03\",\n      \"claim\": \"过滤错误品类后，大有5209U与东成DZC1050-26BT是C11当前京东榜内最靠前的两个有效维修/施工电动工具。\",\n      \"classification\": \"FACT\",\n      \"source_ids\": [\"S04\"],\n      \"confidence\": \"high\",\n      \"counterevidence\": \"京东榜本身存在理发器等类目污染，不能外推为整个中国市场份额排名。\"\n    },\n    {\n      \"claim_id\": \"K04\",\n      \"claim\": \"WU385可作为C11机会样本，但证据等级应低于头部榜单样本。\",\n      \"classification\": \"INFERENCE\",\n      \"source_ids\": [\"S05\"],\n      \"confidence\": \"low\",\n      \"counterevidence\": \"主要可读社区来源明确标为AIGC汇总，B站原视频在本工具中被阻断。\"\n    },\n    {\n      \"claim_id\": \"K05\",\n      \"claim\": \"当前京东微单榜中A7M5榜1、A7C II 28-60银色套机榜3。\",\n      \"classification\": \"FACT\",\n      \"source_ids\": [\"S06\"],\n      \"confidence\": \"high\",\n      \"counterevidence\": \"A7M5评论量明显少于A7C II，榜位可能强烈受新品和促销排序影响。\"\n    },\n    {\n      \"claim_id\": \"K06\",\n      \"claim\": \"Nikon Z5II满足C12机会SKU标准：京东国内分类页有具体单机列表，且2026国内社区存在同型号实拍体验。\",\n      \"classification\": \"FACT\",\n      \"source_ids\": [\"S07\", \"S08\"],\n      \"confidence\": \"medium\",\n      \"counterevidence\": \"社区实拍不能证明该具体卖家套餐销量，商品深页又被京东风控拦截。\"\n    },\n    {\n      \"claim_id\": \"K07\",\n      \"claim\": \"本轮无法可靠记录任何候选的当前普通价、会员价或定向券。\",\n      \"classification\": \"FACT\",\n      \"source_ids\": [\"S01\", \"S03\", \"S04\", \"S06\", \"S07\"],\n      \"confidence\": \"high\",\n      \"counterevidence\": \"部分社区文章出现促销数字，但并非观察日可直接核验的京东登录态价格，故未采用。\"\n    }\n  ],\n  \"data_gaps\": [\n    \"AUTHENTICATED DATA REQUIRED：9个候选的观察日普通价、会员价、定向券/国补拆分。\",\n    \"AUTHENTICATED DATA REQUIRED：seller_id及旗舰店实际成交/销量字段；公开页评论数不能替代销量。\",\n    \"冻结前需用登录态普通价对每个品类重新执行高/中/低价格三分位；当前定位分层仅PROVISIONAL。\",\n    \"需对京东头部结果做一次天猫/淘宝同型号交叉验证，尤其C11榜单存在明显类目污染。\",\n    \"C12 A7M5榜单商品链接触发访问失败，因此item_id和具体seller保持null。\",\n    \"WU385的4.0Ah双电具体包装深页不可读，需登录态确认后才能从PROVISIONAL升级。\",\n    \"Z5II社区证据支持型号而非特定京东卖家套餐；冻结前需核对exact_variant与seller。\",\n    \"未扩展到其他15个品类，也未查询任何海外价格、销量、供货或Temu/AliExpress覆盖。\"\n  ]\n}\n```",
+  "diagnostics": {
+    "preparation_started_at": 1791322810.8031259,
+    "temporary_chat": {
+      "verified": true,
+      "url_flag": true,
+      "active_control": "Turn off temporary chat",
+      "verified_at": 1791322821.615781
+    },
+    "non_personalized": {
+      "verified": true,
+      "selected_label": "Unpersonalized",
+      "aria_checked": true,
+      "closed_label": "Unpersonalized",
+      "verified_at": 1791322821.7925818
+    },
+    "model": {
+      "model": "gpt-5.6-sol",
+      "requested_effort": "xhigh",
+      "actual_label": "5.6 Extra High",
+      "selected_effort": "xhigh",
+      "fallback_reason": null,
+      "verified_at": 1791322821.5906146,
+      "verification": "live_slider_and_closed_picker",
+      "cache_used": false,
+      "selected_model_label": "GPT-5.6 Sol",
+      "selected_effort_label": "Extra High",
+      "verification_stage": "immediately_before_submission",
+      "bound_page_object_id": 134308433162960,
+      "process_uid": 1000,
+      "process_pid": 1809,
+      "is_conversation": false
+    },
+    "verification_stage": "immediately_before_submission",
+    "authentication": {
+      "session_cookie_count": 1,
+      "expiries": [
+        1799098809.764983
+      ],
+      "device_cookie_present": true,
+      "device_cookie_sha256": "957b26137da59e2250494d31109c3f507728d7173f9e2f1ab1571192783859c8",
+      "site_cookie_count": 132,
+      "root_cookie_count": 129,
+      "cookie_header_bytes_estimate": 17117,
+      "temporary_cookie_count": 93
+    },
+    "storage_capacity": {
+      "cookie_count": 132,
+      "removed": 0
+    },
+    "submission_pacing": {
+      "minimum_interval_seconds": 5.0,
+      "waited_seconds": 0.0,
+      "send_attempt_at": 1791322821.8691845,
+      "previous_attempt_gap_seconds": 42.153
+    },
+    "prompt_content_verified": true,
+    "submitted_at": 1791322822.1838834,
+    "response_timeout_ms": 1800000,
+    "response_validation": {
+      "nonempty": true,
+      "transient_text": false,
+      "generation_active": false,
+      "response_characters": 17857
+    },
+    "screenshot_evidence": {
+      "directory": "/app/state/probe-artifacts/445e95a3da344d4f9e38cea7cf1ec9b7",
+      "stage": "response",
+      "request_id": "445e95a3da344d4f9e38cea7cf1ec9b7",
+      "captured_at": 1791323116.8178785,
+      "source": "live browser page owned by this standard request",
+      "files": [
+        {
+          "filename": "response-viewport.jpg",
+          "sha256": "10bf519fbace7daca0e0fd28398752f56bb0852212cd85fb860c9a3676661d15"
+        },
+        {
+          "filename": "response-full.jpg",
+          "sha256": "10bf519fbace7daca0e0fd28398752f56bb0852212cd85fb860c9a3676661d15"
+        }
+      ],
+      "thinking_time_ui_labels": [
+        "Worked for 3m 31s"
+      ],
+      "success": true,
+      "capture_seconds": 0.107
+    },
+    "prompt_submitted": true,
+    "response_complete": true,
+    "elapsed_seconds": 307.553,
+    "thread_id": "6ac56ac4-3808-83e9-9a20-5151e5ed7a11",
+    "conversation_restore": false,
+    "request_id": "445e95a3da344d4f9e38cea7cf1ec9b7",
+    "worker_page_id": 134308433162960,
+    "queue_seconds": 1.431,
+    "completed_at": 1791323116.8178043,
+    "concurrency": {
+      "max_concurrency": 8,
+      "in_flight": 5,
+      "available": 3,
+      "waiting": 0,
+      "max_active_tabs": 8,
+      "worker_tabs": 5,
+      "max_idle_worker_tabs": 2,
+      "max_queue": 16,
+      "queue_timeout_seconds": 240
+    },
+    "post_response": {
+      "temporary_url_flag": true,
+      "state_evidence_stage": "immediately_before_submission",
+      "controls_may_disappear_after_send": true
+    }
+  },
+  "prompt": "你是独立国内市场研究员 W2-B-batch04，所属独立复本 W2-B。\n仅研究下面3个品类，禁止扩大到其余15个品类。本复本按6个独立小批次覆盖全18品类；你看不到其他复本或批次的结果，不得假定其结论。\n本次范围：[{\"category_id\": \"C10\", \"name\": \"扫地机器人与家电\"}, {\"category_id\": \"C11\", \"name\": \"电动工具与维修\"}, {\"category_id\": \"C12\", \"name\": \"相机与视频设备\"}]。\n这是2026-10-06国内优先、冻结前选样阶段。必须使用真实网页搜索并实际打开来源，不能凭记忆伪装研究。不能浏览则明确WEB RESEARCH UNAVAILABLE。\n不得查询任何具体SKU在美国/海外的价格、销售、供货、Temu/AliExpress覆盖，也不得按国际知名度筛选。美国难运、重量、电池、固件、电压、保修、兼容性仅记录为独立可行性标记，不能据此删候选。\n每个品类尝试2个国内头部SKU和1个国内社区/消费证据支持的机会SKU，共至多9个，不为凑数编造。头部证据应来自京东/天猫/淘宝真实榜单、旗舰店销量或明确中国消费者购买证据。品牌官网只证明规格与存在，不证明销量。未登录可见的标价、榜单、卖家、型号不冒充登录态已核验成交数据；搜索摘要不能证明价格、具体型号或榜单。遇登录墙尽快记录AUTHENTICATED DATA REQUIRED和需要补的字段，不要反复耗时尝试访问。同款精确到型号、规格、版本；找不到精确规格则标PROVISIONAL，不强行给确定值。\n对每个候选保存category_id、候选sku_id、brand、model、exact_variant、sampling_stratum(domestic_head/domestic_opportunity)、domestic_evidence、domestic_selection_rule、domestic_product_url、item_id、seller_id、access_state、observation_date、domestic_price、price_type、feasibility_flags、verification_status、source_ids。未知字段null，普通价与会员/定向券分开。国内高端/中端/低端取样规则必须明确、可复现。预先允许排除仅假货、错误品类、完全无法定义版本、非实物、明确违法禁运；不得按缺少海外可比款排除。\n实际阅读少量关键可信国内来源即可，覆盖缺口如实报告。不要为增加引用数量或篇幅扩展研究。请在15分钟内完成这3个品类的有限研究；超过范围的疑问写到data_gaps，停止继续扩张。正文控制在约2000个汉字，十个简短章节：直接回答、核心证据、一级来源、社区证据、反向证据、置信度、数据缺口、意外发现、自我反驳、下一实验。每个关键论断附完整可点击来源URL和出版/观察日期。不要虚构检索时间。\n文末一个有效JSON代码块，schema：\n{\"job_id\":\"W2-B-batch04\",\"parent_replicate\":\"W2-B\",\"web_research_available\":true,\"pre_freeze_compliance\":true,\"categories\":[],\"sku_candidates\":[],\"sources\":[{\"source_id\":\"S01\",\"url\":\"https://...\",\"title\":\"...\",\"published_at\":null,\"retrieved_at\":null,\"source_type\":\"official|government|secondary|community\",\"access_state\":\"read_full_page|snippet_only|blocked|login_required\",\"claims_supported\":[]}],\"claims\":[{\"claim_id\":\"K01\",\"claim\":\"...\",\"classification\":\"FACT|INFERENCE|HYPOTHESIS\",\"source_ids\":[],\"confidence\":\"high|medium|low\",\"counterevidence\":\"...\"}],\"data_gaps\":[]}\ncategories必须包含且仅包含本次3个category_id，包括证据缺失的品类。sku_candidates按实际证据填，可少于9个；未核验的候选状态必须明确。正文与JSON避免大段重复解释。现在开始。\n",
+  "preflight": {
+    "health": "ok",
+    "target_model_present": true,
+    "model_ids": [
+      "mimicgate-browser",
+      "catgpt-browser",
+      "gpt-5.6-sol",
+      "gpt-5.6-sol-low",
+      "gpt-5.6-sol-medium",
+      "gpt-5.6-sol-high",
+      "gpt-5.6-sol-xhigh",
+      "gpt-5.6-sol-extra-high",
+      "gpt-5.6-sol-pro",
+      "gpt-5.5",
+      "gpt-5.5-low",
+      "gpt-5.5-medium",
+      "gpt-5.5-high",
+      "gpt-5.5-xhigh",
+      "gpt-5.5-thinking",
+      "gpt-5.5-extra-high",
+      "gpt-5.5-pro",
+      "5.5",
+      "5.5-low",
+      "5.5-medium",
+      "5.5-high",
+      "5.5-xhigh",
+      "5.5-instant",
+      "5.5-instant-low",
+      "5.5-instant-medium",
+      "5.5-instant-high",
+      "5.5-instant-xhigh"
+    ]
+  },
+  "http_status": 200,
+  "completion_id": "chatcmpl-8c581f538838432a8064f42b",
+  "actual_model": "gpt-5.6-sol",
+  "actual_reasoning_effort": "xhigh",
+  "local_screenshot_evidence": {
+    "complete": true,
+    "directory": "D:\\musicclaude\\mimic-cli\\research\\china-routing-20261006\\jobs\\W2-B-batch04\\screenshots",
+    "files": [
+      {
+        "filename": "response-viewport.jpg",
+        "sha256": "10bf519fbace7daca0e0fd28398752f56bb0852212cd85fb860c9a3676661d15"
+      },
+      {
+        "filename": "response-full.jpg",
+        "sha256": "10bf519fbace7daca0e0fd28398752f56bb0852212cd85fb860c9a3676661d15"
+      }
+    ],
+    "thinking_time_ui_labels": [
+      "Worked for 3m 31s"
+    ]
+  },
+  "elapsed_seconds": 308.422
+}

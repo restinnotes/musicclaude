@@ -1,0 +1,113 @@
+{
+  "schema": "v8-targeted-main-disposition/1",
+  "date": "2026-10-09",
+  "probe_sha256": "e480ef635bd7476df3e5922e93d60649221ae927716af201b154d8427a17481b",
+  "assertion_mapping": [
+    {
+      "source": "v4",
+      "mapped_methods": 34,
+      "missing_assertions": 0,
+      "changed_test_bodies": [
+        "AdapterTests.test_pre_submit_contract_not_just_phase",
+        "AdapterTests.test_success_resume_readonly_and_cache_reference",
+        "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process"
+      ]
+    },
+    {
+      "source": "v7",
+      "mapped_methods": 63,
+      "missing_assertions": 0,
+      "changed_test_bodies": [
+        "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process"
+      ]
+    }
+  ],
+  "semantic_diffs": [
+    {
+      "kind": "test",
+      "source": "v4",
+      "name": "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -7,7 +7,25 @@\n             self.assertTrue(ticket.is_file())\n             self.assertFalse(I.queue_open(hold))\n             script = \"import sys;sys.path.insert(0,sys.argv[1]);import execution_integrity_v8 as I;assert not I.queue_open(sys.argv[2])\"\n-            result = subprocess.run([sys.executable, \"-I\", \"-c\", script, str(TOOLS), str(hold)], capture_output=True)\n+            child_argv = [sys.executable, \"-X\", \"utf8\", \"-I\", \"-B\", \"-c\", script, str(TOOLS), str(hold)]\n+            child_started = time.perf_counter()\n+            result = subprocess.run(child_argv, capture_output=True)\n+            child_runtime = round(time.perf_counter() - child_started, 6)\n+            child_stdout = result.stdout.decode(\"utf-8\", \"replace\")\n+            child_stderr = result.stderr.decode(\"utf-8\", \"replace\")\n+            report_dir = TOOLS.parent / \"notes/research/integrity_v8_luna_impl_20261009_r1\"\n+            report_dir.mkdir(parents=True, exist_ok=True)\n+            I.write_json(report_dir / \"queue_child_run.json\", {\n+                \"argv\": child_argv, \"returncode\": result.returncode,\n+                \"elapsed_seconds\": child_runtime,\n+                \"stdout_bytes\": len(result.stdout),\n+                \"stdout_sha256\": hashlib.sha256(result.stdout).hexdigest(),\n+                \"stdout\": child_stdout,\n+                \"stderr_bytes\": len(result.stderr),\n+                \"stderr_sha256\": hashlib.sha256(result.stderr).hexdigest(),\n+                \"stderr\": child_stderr,\n+                \"purpose\": \"read-only queue_open cross-process check\",\n+            })\n             self.assertEqual(result.returncode, 0, result.stderr.decode())\n             with self.assertRaises(I.PolicyBlocked):\n                 I.submission_ticket(hold, Path(temp) / \"another\", \"b\", {\"fake\": False})"
+    },
+    {
+      "kind": "test",
+      "source": "v4",
+      "name": "AdapterTests.test_success_resume_readonly_and_cache_reference",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -11,3 +11,5 @@\n         self.assertEqual(cache[\"source_job_id\"], \"one\")\n         self.assertNotIn(\"response\", cache)\n         self.assertTrue(I.queue_open(A.HOLD_FILE))\n+        completion = I.strict_json((self.out / \"meta/one.json\").read_text(encoding=\"utf-8\"))\n+        self.assertEqual(completion[\"execution_argv_sha256\"], I.digest(completion[\"execution_argv\"]))"
+    },
+    {
+      "kind": "test",
+      "source": "v4",
+      "name": "AdapterTests.test_pre_submit_contract_not_just_phase",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -1,9 +1,27 @@\n def test_pre_submit_contract_not_just_phase(self):\n-        good = {\"completed\": False, \"phase\": \"pre_submit\", \"error_code\": \"headless_runner_or_evidence_failed\", \"automatic_retry\": False}\n-        self.process.return_value = subprocess.CompletedProcess([], 1, b\"\", json.dumps(good).encode())\n+        def source_bound_failure(argv, **kwargs):\n+            prompt_path = Path(argv[argv.index(\"--file\") + 1])\n+            prompt_text = prompt_path.read_text(encoding=\"utf-8\")\n+            producer = A.producer_identity()\n+            identity = A.request_identity(\"gpt56w\", \"max\", prompt_text, producer=producer,\n+                                          sampling_key=prompt_path.stem)\n+            proof = {\"schema\": I.PRE_SUBMIT_PROOF_SCHEMA, \"contract\": I.PRE_SUBMIT_CONTRACT,\n+                     \"provider_error_type\": \"ProviderError\", \"phase\": \"pre_submit\", \"retryable\": True,\n+                     \"ambiguous\": False, \"submit_callback_reached\": False, \"model_request_sent\": False,\n+                     \"automatic_retry\": False, \"request_identity_sha256\": I.identity_digest(identity),\n+                     \"producer_identity_sha256\": I.identity_digest(producer),\n+                     \"source_files\": producer[\"active_provider_sources\"][\"files\"]}\n+            good = {\"completed\": False, \"phase\": \"pre_submit\", \"error_code\": \"headless_runner_or_evidence_failed\",\n+                    \"automatic_retry\": False, \"model_request_sent\": False, \"pre_submit_proof\": proof}\n+            return subprocess.CompletedProcess(argv, 1, b\"\", json.dumps(good).encode())\n+        self.process.side_effect = source_bound_failure\n         meta = self.call()\n         self.assertTrue(meta[\"retry_safe\"])\n         self.assertFalse(meta[\"queue_stop\"])\n         self.assertTrue(I.queue_open(A.HOLD_FILE))\n-        for obj in ({\"phase\": \"pre_submit\"}, dict(good, model_request_sent=True), dict(good, automatic_retry=True)):\n+        for obj in ({\"phase\": \"pre_submit\"},\n+                    {\"completed\": False, \"phase\": \"pre_submit\", \"error_code\": \"headless_runner_or_evidence_failed\",\n+                     \"automatic_retry\": False, \"model_request_sent\": True},\n+                    {\"completed\": False, \"phase\": \"pre_submit\", \"error_code\": \"headless_runner_or_evidence_failed\",\n+                     \"automatic_retry\": True}):\n             self.assertFalse(A.pre_submit_payload(obj))"
+    },
+    {
+      "kind": "test",
+      "source": "v7",
+      "name": "IntegrityTests.test_ticket_survives_hold_disk_failure_cross_process",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -7,7 +7,25 @@\n             self.assertTrue(ticket.is_file())\n             self.assertFalse(I.queue_open(hold))\n             script = \"import sys;sys.path.insert(0,sys.argv[1]);import execution_integrity_v8 as I;assert not I.queue_open(sys.argv[2])\"\n-            result = subprocess.run([sys.executable, \"-B\", \"-I\", \"-c\", script, str(TOOLS), str(hold)], capture_output=True)\n+            child_argv = [sys.executable, \"-X\", \"utf8\", \"-I\", \"-B\", \"-c\", script, str(TOOLS), str(hold)]\n+            child_started = time.perf_counter()\n+            result = subprocess.run(child_argv, capture_output=True)\n+            child_runtime = round(time.perf_counter() - child_started, 6)\n+            child_stdout = result.stdout.decode(\"utf-8\", \"replace\")\n+            child_stderr = result.stderr.decode(\"utf-8\", \"replace\")\n+            report_dir = TOOLS.parent / \"notes/research/integrity_v8_luna_impl_20261009_r1\"\n+            report_dir.mkdir(parents=True, exist_ok=True)\n+            I.write_json(report_dir / \"queue_child_run.json\", {\n+                \"argv\": child_argv, \"returncode\": result.returncode,\n+                \"elapsed_seconds\": child_runtime,\n+                \"stdout_bytes\": len(result.stdout),\n+                \"stdout_sha256\": hashlib.sha256(result.stdout).hexdigest(),\n+                \"stdout\": child_stdout,\n+                \"stderr_bytes\": len(result.stderr),\n+                \"stderr_sha256\": hashlib.sha256(result.stderr).hexdigest(),\n+                \"stderr\": child_stderr,\n+                \"purpose\": \"read-only queue_open cross-process check\",\n+            })\n             self.assertEqual(result.returncode, 0, result.stderr.decode())\n             with self.assertRaises(I.PolicyBlocked):\n                 I.submission_ticket(hold, Path(temp) / \"another\", \"b\", {\"fake\": False})"
+    },
+    {
+      "kind": "helper",
+      "source": "v4",
+      "name": "payload",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -1,6 +1,6 @@\n def payload(completed=True, response=\"完整离线回答\", metadata=None):\n     meta = {\"headless\": True, \"provider_interface\": True, \"no_auto_retry\": True,\n-            \"model\": \"gpt-5-6-thinking\", \"response_sha256\": I.sha_text(response),\n+            \"model\": \"gpt-5-6-thinking\", \"thinking_effort\": \"max\", \"response_sha256\": I.sha_text(response),\n             \"prepared_response_validation\": {\"successful_assistant_terminal_observed\": True,\n                 \"unsupported_work_continuation_observed\": False},\n             \"server_metadata_summary\": {\"model_slug\": \"gpt-5-6-thinking\"}}"
+    },
+    {
+      "kind": "helper",
+      "source": "v4",
+      "name": "AdapterTests.setUp",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -10,6 +10,6 @@\n         self.stack.enter_context(mock.patch.object(A, \"HOLD_FILE\", self.root / \"slots/gpt2web/hold.json\"))\n         self.stack.enter_context(mock.patch.object(A, \"Slot\", side_effect=lambda *a, **kw: contextlib.nullcontext()))\n         self.stack.enter_context(mock.patch.object(A, \"producer_identity\", return_value={\"route\": \"MOCK_ONLY\", \"cli\": \"stub\",\n-            \"cli_version\": \"test\", \"cli_sha256\": \"1\" * 64, \"cli_source\": {\"missing\": False}, \"implementation\": \"v4\"}))\n+            \"cli_version\": \"test\", \"cli_sha256\": \"1\" * 64, \"cli_source\": {\"missing\": False}, \"active_provider_sources\": I.active_provider_source_binding(A.SAFECHAIN_ROOT), \"implementation\": \"v7\"}))\n         self.process = self.stack.enter_context(mock.patch.object(A, \"RUN_PROCESS\",\n             return_value=subprocess.CompletedProcess([], 0, payload(), b\"\")))"
+    },
+    {
+      "kind": "helper",
+      "source": "v4",
+      "name": "RunnerFixture.setUp",
+      "missing": false,
+      "diff": "--- \n+++ \n@@ -7,7 +7,5 @@\n         self.stack.enter_context(mock.patch.object(I, \"REAL_EXECUTION_APPROVED\", True))\n         self.stack.enter_context(mock.patch.object(R, \"SLOT_DIR\", self.root / \"slots\"))\n         self.stack.enter_context(mock.patch.object(R, \"Slot\", side_effect=lambda *a, **k: contextlib.nullcontext()))\n-        self.stack.enter_context(mock.patch.object(R.legacy, \"_build_task\", return_value=([str(Path(__file__).resolve()), \"-\"], \"raw\", \"MOCK_ONLY\")))\n-        self.stack.enter_context(mock.patch.object(R.legacy, \"_ensure_init\"))\n-        self.stack.enter_context(mock.patch.object(R.legacy, \"_STATE\", {\"env\": {\"PATH\": \"MOCK_ONLY\"}}))\n+        self.stack.enter_context(mock.patch.object(R, \"build_task\", return_value=([str(Path(__file__).resolve()), \"-\"], \"raw\", \"MOCK_ONLY\")))\n         self.process = self.stack.enter_context(mock.patch.object(R, \"RUN_PROCESS\", return_value=subprocess.CompletedProcess([], 0, codex(), b\"\")))"
+    }
+  ],
+  "duplicate_started": [
+    {
+      "case": "duplicate_started_complete_terminal",
+      "accepted": false,
+      "exception": "event stream must be text",
+      "events_sha256": "a50d6674c91653167242ecaf68bc4eb224cc715215b0d7a7ea63936436b2a2b7"
+    },
+    {
+      "case": "duplicate_started_incomplete_reasoning",
+      "accepted": false,
+      "exception": "event stream must be text",
+      "events_sha256": "ca905e94bbd9bea6c9e2b8bfc6f3776d8a642362e0acf90dbcd00310f61d1de5"
+    },
+    {
+      "case": "duplicate_started_no_turn_terminal",
+      "accepted": false,
+      "exception": "event stream must be text",
+      "events_sha256": "10b4c349663b3300f1084852b7f6212f2c3620478f019641c8fdaf4d994735a4"
+    }
+  ],
+  "duplicate_started_disposition": "Duplicate start is accepted with a genuine completed item/body/turn; missing pending completion or turn terminal stays rejected. Low-risk tightening residual, not fabricated successful terminal.",
+  "proxy_example": {
+    "url": "http://proxy.invalid:8080/%40token",
+    "username": null,
+    "password": null,
+    "path": "/%40token",
+    "query": "",
+    "is_userinfo_example": false,
+    "value_changed_identity": true,
+    "disposition": "The review example encodes @ in URL path, not userinfo. Do not infer a userinfo credential bypass from it. Broader URI/private config behavior remains unverified."
+  },
+  "protected_unchanged": true,
+  "real_model_submissions": 0,
+  "model_cli_invocations": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "limit": "Local finite parser/mapping checks only, no real protocol/service/backend validation."
+}

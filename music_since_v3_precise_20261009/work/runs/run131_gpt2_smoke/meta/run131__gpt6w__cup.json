@@ -1,0 +1,252 @@
+{
+  "job_id": "run131__gpt6w__cup",
+  "run_id": "run131_gpt2_smoke",
+  "route": "gpt2",
+  "adapter_version": "r1",
+  "model_key": "gpt6w",
+  "requested_effort": "max",
+  "prompt_file": "prompts/run131__gpt6w__cup.txt",
+  "prompt_chars": 407,
+  "prompt_sha256": "910d1e0c5f7f5b308d9e9ba01e44850582fb5b1d175301b4d5f085befa441309",
+  "output_file": "outputs/run131__gpt6w__cup.md",
+  "stdout_file": "outputs/raw/run131__gpt6w__cup.stdout.txt",
+  "stderr_file": "outputs/raw/run131__gpt6w__cup.stderr.txt",
+  "started": "2026-10-09T00:21:27",
+  "cli": "D:\\musicclaude\\gpt2agent-safechain\\bin\\gpt2.cmd",
+  "cli_version": "dfca0fd",
+  "cache_key": "99c773b61597d2862ba1c2304341602964a957739bdab8744544abd045942659",
+  "requested_model": "gpt-6-thinking",
+  "cache_hit": false,
+  "status": "ok",
+  "ended": "2026-10-09T00:28:26",
+  "seconds": 419.0,
+  "reported_model": "gpt-6-thinking",
+  "response_sha256": "832cc663807a024e32c2b8d8767e078ab7773fa4797adfd68520a76461b65ed3",
+  "returncode": 0,
+  "attempts": 1,
+  "output_chars": 10208,
+  "replacement_chars": 0,
+  "cli_metadata": {
+    "model": "gpt-6-thinking",
+    "thinking_effort": "max",
+    "headless": true,
+    "provider_interface": true,
+    "no_auto_retry": true,
+    "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-52d15cfc5ed0433fbe2c47be2a2bd304",
+    "response_sha256": "832cc663807a024e32c2b8d8767e078ab7773fa4797adfd68520a76461b65ed3",
+    "session_handle": "1fb8ef40-5560-4da6-bc36-9eb00dc8fbf3",
+    "prompt_normalization": "single_leading_BOM_removed_CRLF_or_CR_to_LF_and_trim_end",
+    "pre_submit_scope": null,
+    "initialization": {
+      "source": "native_pre_send_aborted_handoff",
+      "browser_assisted_initialization": true,
+      "native_browser_generation_sent": false,
+      "http_version": "auto",
+      "nonpersonalization_inherited": false,
+      "handoff_age_seconds": 0.991,
+      "state": "claimed"
+    },
+    "headless_initializer": {
+      "headless": true,
+      "native_browser_generation_sent": false,
+      "completed": true,
+      "browser_version": {
+        "type": "string",
+        "length": 13,
+        "sha256": "9722c94be680575b307b26183e1a423460d4568949ad7f3e7f985d33d9bf0e26"
+      },
+      "sealed_handoff_written": true,
+      "browser_closed": true,
+      "cloned_private_profile_removed": true,
+      "elapsed_seconds": 52.99
+    },
+    "stream_completion": {
+      "sse_done": true,
+      "message_completed": true,
+      "continuation_expected": false,
+      "handoff_seen": false,
+      "lifecycle_updates": 490,
+      "first_assistant_seconds": 13.312,
+      "first_text_seconds": 238.078,
+      "stream_seconds": 327.266,
+      "channel_update_counts": {
+        "final": 479
+      },
+      "bounded_server_observations": {
+        "scope": "http_sse",
+        "tool_message_observation_count": 0,
+        "truncated": false,
+        "scalar_patch_tool_role_inheritance": false,
+        "message_finished_successfully_is_tool_success": false,
+        "tool_result_observations": [],
+        "reasoning_observations": [
+          {
+            "reasoning_status": "unknown"
+          },
+          {
+            "finished_duration_sec": 298,
+            "reasoning_status": "reasoning_ended"
+          }
+        ]
+      }
+    },
+    "prepared_response_validation": {
+      "retained_message_count": 6,
+      "unsupported_work_continuation_observed": false,
+      "successful_assistant_terminal_observed": true
+    },
+    "server_metadata_summary": {
+      "server_ttfvt_ms": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
+        },
+        "value": 239138.20493099047
+      },
+      "conduit_prewarmed": true,
+      "plan_type": "team",
+      "plan_type_bucket": "teams",
+      "user_agent": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 11,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "39ae30333e06f52817bd4cb8771482f48a473105b92d588d4ca6a1cc7ba4bead"
+        }
+      },
+      "service": null,
+      "tool_name": null,
+      "tool_invoked": false,
+      "fast_convo": true,
+      "warmup_state": "warm",
+      "is_first_turn": true,
+      "cluster_region": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 9,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "e7bdb9fdeb9ed4765fdec0d39b07d1526070c818650314535091544beba913d9"
+        }
+      },
+      "model_slug": "gpt-6-thinking",
+      "requested_model_experience": "thinking",
+      "product_experience": "chat",
+      "region": null,
+      "is_multimodal": null,
+      "did_auto_switch_to_reasoning": false,
+      "auto_switcher_race_winner": null,
+      "is_autoswitcher_enabled": false,
+      "is_search": null,
+      "did_prompt_contain_image": false,
+      "search_tool_call_count": null,
+      "search_tool_query_types": null,
+      "message_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "8b9b185554c2f1c32e87390087d8144517f6de4f4ade1ea3987378261fb724da"
+        }
+      },
+      "request_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "7505442213fa47def006145ac8ff23ff5f0f901ae41d93a2fb4772cf27f0966c"
+        }
+      },
+      "turn_exchange_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "96b2bb6589e14e6f499e5e43bb93f8a2f8fd0b50a6430bb20542e9f37a8bd7d0"
+        }
+      },
+      "turn_trace_id": {
+        "type": {
+          "type": "string",
+          "length": 6,
+          "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+        },
+        "length": 36,
+        "sha256": {
+          "type": "string",
+          "length": 64,
+          "sha256": "168008c5ec020e18d827d5ee3e0d71459f0f6f39b084f0020b70cd930065d61d"
+        }
+      },
+      "resume_with_websockets": true,
+      "low_turn_topic_ttl": false,
+      "streaming_async_status": true,
+      "replace_stream_status": true,
+      "temporal_conversation_turn": false,
+      "pro_mode_turn_topic_streaming": true,
+      "turn_use_case": "thinking",
+      "turn_mode": "default"
+    },
+    "elapsed_seconds": 328.703,
+    "total_worker_seconds": 382.313,
+    "wrapper_seconds": 418.735
+  },
+  "stderr_tail": "",
+  "smoke": {
+    "prompt_name": "cup",
+    "resumed": false,
+    "elapsed_seconds": 419.0,
+    "prompt_chars": 407,
+    "output_chars": 10208,
+    "prompt_sha256": "910d1e0c5f7f5b308d9e9ba01e44850582fb5b1d175301b4d5f085befa441309",
+    "output_sha256": "832cc663807a024e32c2b8d8767e078ab7773fa4797adfd68520a76461b65ed3",
+    "reported_slugs": [
+      "gpt-6-thinking",
+      "thinking"
+    ],
+    "slug_fields": [
+      "model",
+      "server_metadata_summary.model_slug",
+      "server_metadata_summary.requested_model_experience"
+    ],
+    "slug_verdict": "mixed",
+    "cup_answer": 8,
+    "cup_candidates": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "cup_ok": true,
+    "suspect": true,
+    "suspect_reasons": [
+      "slug_mismatch"
+    ],
+    "protect_signal": null
+  }
+}

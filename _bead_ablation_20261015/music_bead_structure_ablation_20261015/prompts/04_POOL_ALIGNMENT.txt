@@ -1,0 +1,35 @@
+【通用提示词｜把研究原文关联到已经冻结的音乐段落 Pool】
+
+作品/范围：{{WORK_AND_SCOPE}}
+已经独立冻结的音乐结构段落：{{FROZEN_MACRO_SEGMENTS}}
+原始研究来源清单：{{SOURCE_MANIFEST}}
+当前处理的原始研究全文及单位（可分批；不得只给摘要）：{{RAW_DOCUMENTS_AND_UNITS}}
+该段历史上已存在的规范聚类（仅用于辅助）：{{HISTORICAL_CANON_OPTIONAL}}
+
+任务：给**每条研究材料**确定它与哪些固定音乐段落有关，并完整保留原文、来源及不确定性。不要产生新的音乐分段，不要改写 Bead 文案，不要在此时决定谁最终胜出。
+
+输入材料可能来自 A-int、A-web、T-int、T-web、H1–H5-int/web、独立音乐事实、不同模型和多个采样。每条必须带来源 ID；缺字段时标记 `MISSING_METADATA`。不能因为一份材料特别有故事性就默认更真实。
+
+逐条处理：
+1. 以原文给出的小节范围或明确可听证据关联固定结构段落。小范围错位或模糊定位，可以映射到最近的完整音乐段，同时记下 original_mm、mapped_mm 与不确定性；不能暗改原始编号。
+2. 横跨几个结构段落的长体验、持续的变化关系，完整原文只保存一次，关联多个段落，并标记 `CROSS_SEGMENT`；不得切掉句子前半段或把原文强制改写成两条不同情感。
+3. 缺少 mm 但内容可以经可靠音乐事实定位时，给出证据及 `inferred=true`；不能只凭“听起来像这个段落”就把来源写成已证实。
+4. 涉及整首、重听、要到未来才成立的 T/H3/H4/H5 内容，分类 `GLOBAL_CONTEXT` / `RETROSPECTIVE_ONLY` / `PREFIX_RISK`，不提前变成当前事实。
+5. 明显与时间/结构依据不符或来源不可信，标 `DISPUTED` / `UNSUPPORTED`，不默默删除。与其他候选意思相近也保留来源关系，由下一阶段去重。
+6. 音乐事实可帮助定位，但不要把纯音乐事实默认升级为 Affect 内容。
+
+每个候选新增标签：
+- `content_type`：`CURRENT_AFFECT / LOCAL_AUDIBLE_EVIDENCE / PAST_TO_NOW_RELATION / FUTURE_DEPENDENT / RETROSPECTIVE / GLOBAL_INTERPRETATION / UNKNOWN`；
+- `membership`：`PRIMARY / CROSS_SEGMENT / CONTEXTUAL / UNRESOLVED`；
+- `origin_branch`、`origin_model`、`origin_channel`（int/web）、`source_doc_id`、`source_unit_id`、`original_text`、`original_mm`、`assigned_macro_ids`、`evidence_for_assignment`、`confidence`；
+- `potential_role`（仅候选，不是最终结论）：`AFFECT_CORE_CANDIDATE / FACET_CANDIDATE / EVIDENCE_ONLY / LATER_THREAD_CANDIDATE / RETROSPECTIVE_ONLY`。
+
+**不能默认 T 和 H1–H5 都能改善 Bead，也不能从 Pool 里直接删掉它们。** 保留是为了后续做有/无对照。
+
+输出：
+A. 按段落列出 `A/T/H` 原文摘要目录和来源编号（概要不能替代存档原文）；
+B. 原始单元总数、关联数、跨段数、争议数及所有未覆盖来源列表（没有某个来源时必须解释原因）；
+C. 完整映射记录的 JSON 数组；
+D. 最多十条需要人看原文裁决的真正边界或语义争议。
+
+不要出 Bead，不编造外部来源，也不要为实现整齐的一段一池而牺牲研究中跨段持续的内容。

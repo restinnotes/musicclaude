@@ -1,0 +1,925 @@
+淘宝开放平台 - 文档中心
+淘宝开放平台
+解决方案
+开放版图
+新零售开放
+智慧门店
+智能硬件
+电商开放
+第三方工具
+千牛插件
+无线开放
+品牌号
+C2B
+互动营销
+天猫精灵
+国际化
+AliExpress
+ICBU
+Lazada
+其他
+钉钉
+飞猪
+盒马
+淘宝客
+文档中心
+文档目录
+API文档
+消息文档
+开发者服务
+支持中心
+开发者论坛
+控制台
+登录
+
+入驻百川
+客户端SDK基础集成
+服务端API使用
+淘宝交易服务
+TAE 2.0云服务
+多媒体服务
+即时通信服务
+云账号服务
+数据服务
+阿里百川消息服务
+常见问题
+文档中心
+> API列表
+
+API列表
+服务端API调用方法
+商品API
+taobao.tae.item.detail.get
+taobao.tae.items.list
+taobao.itempropvalues.get
+taobao.itemprops.get
+taobao.itemcats.get
+taobao.tae.exist.shop.coupon.get
+alibaba.orp.recommend
+淘客API
+taobao.atb.items.coupon.get
+taobao.atb.items.detail.get
+taobao.atb.items.get
+taobao.atb.items.relate.get
+消息通知API
+taobao.tmc.messages.consume
+taobao.tmc.messages.confirm
+常见问题
+taobao.tae.item.detail.get (商品详情数据接口)
+￥免费
+可选授权
+获取渲染详情的相关数据
+公共参数
+请求地址：
+环境
+HTTP请求地址
+HTTPS请求地址
+正式环境
+http://gw.api.taobao.com/router/rest
+https://eco.taobao.com/router/rest
+公共请求参数：
+名称
+类型
+是否必须
+描述
+method
+String
+是
+API接口名称。
+app_key
+String
+是
+TOP分配给应用的AppKey。
+target_app_key
+String
+否
+被调用的目标AppKey，仅当被调用的API为第三方ISV提供时有效。
+sign_method
+String
+是
+签名的摘要算法，可选值为：hmac，md5。
+sign
+String
+是
+API输入参数签名结果，签名算法介绍请点击这里。
+session
+String
+否
+用户登录授权成功后，TOP颁发给应用的授权信息，详细介绍请点击这里。当此API的标签上注明：“需要授权”，则此参数必传；“不需要授权”，则此参数不需要传；“可选授权”，则此参数为可选。
+timestamp
+String
+是
+时间戳，格式为yyyy-MM-dd HH:mm:ss，时区为GMT+8，例如：2015-01-01 12:00:00。淘宝API服务端允许客户端请求最大时间误差为10分钟。
+format
+String
+否
+响应格式。默认为xml格式，可选值：xml，json。
+v
+String
+是
+API协议版本，可选值：2.0。
+partner_id
+String
+否
+合作伙伴身份标识。
+simplify
+Boolean
+否
+是否采用精简JSON返回格式，仅当format=json时有效，默认值为：false。
+请求参数
+名称
+类型
+是否必须
+示例值
+更多限制
+描述
+buyer_ip
+String
+可选
+127.0.0.1
+用户所在位置ip
+fields
+String
+必须
+itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo
+区块信息，field 支持 itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo
+open_iid
+String
+可选
+AAF123A
+商品open_iid
+响应参数
+名称
+类型
+示例值
+描述
+data
+ItemDetailData
+{}
+详情业务模块数据
+ delivery_info
+DeliveryInfo
+物流信息
+ carriage_list
+Carriage
+[]
+运费信息
+└  name
+String
+5.0
+运费
+└  price
+String
+EMS
+快递公司
+└  destination
+String
+广东
+物流目的地
+└  location
+String
+浙江杭州
+所在地
+ desc_info
+DescInfo
+描述信息
+└  content
+String
+<p>hello</p>
+卖家发布的商品图文详情信息内容
+└  type
+String
+pc|mobile
+卖家发布的商品图文详情来源平台
+ item_info
+ItemInfo
+商品信息
+└  in_sale
+String
+true|false
+true:商品可以卖，false:商品不可卖
+ item_props
+ItemProperty
+[]
+商品属性
+└  name
+String
+颜色
+商品属性名
+└  value
+String
+红色
+商值属性值
+└  pics
+String
+[]
+http://xxxx.jpg
+商品图片，第一张主图
+└  sku_item
+String
+true|false
+true:sku商品买家购买需要选择sku,false:买家购买不需要选择sku
+└  start
+String
+1231312
+商品售卖时间，单位毫秒
+└  sub_title
+String
+来自深渊，无人迹，无污染
+商品子标题
+└  title
+String
+干净泥巴
+商品标题
+ mobile_desc_info
+MobileDescInfo
+移动描述信息
+ desc_list
+DescFragment
+[]
+无线描述信息
+└  content
+String
+http://item.taobao.com/item.htm?spm=a230r.1.14.84.OCEXYi&id=39932284103&ns=1&_u=ec8oo845019
+内容体目前支持支持图片url
+└  label
+String
+img
+内容label，目前支持支持图片txt,img
+ price_info
+DetailPriceInfo
+价格信息
+ item_price
+DetailPrice
+商品对应的价格
+ price
+PriceUnit
+商品价格
+└  name
+String
+价格
+价格Label
+└  price
+String
+123123.00
+售卖价格,单位元
+└  tips
+String
+淘金币减去50%
+price后面的tips
+ promotion_price
+PriceUnit
+商品促销价格
+└  name
+String
+价格
+价格Label
+└  price
+String
+123123.00
+售卖价格,单位元
+└  tips
+String
+淘金币减去50%
+price后面的tips
+ sku_price_list
+SkuPriceItem
+[]
+sku对应的价格列表
+ price
+PriceUnit
+sku一口价
+└  name
+String
+价格
+价格Label
+└  price
+String
+123123.00
+售卖价格,单位元
+└  tips
+String
+淘金币减去50%
+price后面的tips
+ promotion_price
+PriceUnit
+sku促销价
+└  name
+String
+价格
+价格Label
+└  price
+String
+123123.00
+售卖价格,单位元
+└  tips
+String
+淘金币减去50%
+price后面的tips
+└  sku_id
+String
+123123
+skuId
+ rate_info
+RateInfo
+评价信息
+ rate_list
+RateItem
+[]
+评价信息
+└  feedback
+String
+好吃不得了
+评价内容
+└  nick
+String
+飞儿
+评价人nick
+ seller_info
+SellerInfo
+卖家信息
+└  seller_nick
+String
+郭美美
+卖家昵称
+└  seller_type
+String
+taobao|tmall
+卖家类型
+└  shop_name
+String
+郭美美的店
+卖家店铺名称
+ sku_info
+SkuInfo
+sku信息
+ pv_map_sku_list
+PvMapSku
+[]
+属性sku映射
+└  pv
+String
+pid:vid;pid:vid
+用户选择的属性对
+└  sku_id
+String
+123123123
+sku id
+ sku_props
+SkuProperty
+[]
+SKU属性列
+└  prop_id
+String
+123123123
+sku属性id
+└  prop_name
+String
+颜色
+sku属性名称
+ values
+SkuPropertyValue
+[]
+SKU属性值
+└  img_url
+String
+http://xxxx.jpg
+sku属性url，地址：http://img02.taobaocdn.com/uploaded/i2/916162201/T2kvHcXqpXXXXXXXXX_!!916162201.jpg
+└  name
+String
+绿色
+sku属性值名称
+└  value_id
+String
+12312313
+sku属性值id
+ stock_info
+StockInfo
+库存信息
+└  item_quantity
+String
+1000
+商品库存
+ sku_quantity_list
+SkuQuantity
+[]
+sku库存列表
+└  quantity
+String
+123123
+库存数
+└  sku_id
+String
+123123
+sku id
+ store_info
+RetailStoreInfo
+门店信息
+ store_list
+RetailStore
+[]
+商品可售线下门店
+└  address
+String
+宜山路455号光启城
+地址
+└  posy
+String
+123.123123
+纬度
+└  telno_list
+String
+[]
+["123123123123","12312312"]
+联系电话
+└  posx
+String
+123123.123123
+经度
+└  name
+String
+星星
+门店名称
+└  store_id
+String
+123123123
+门店id
+ item_buy_info
+ItemBuyInfo
+购买约束信息
+└  cart_support
+String
+true|false
+是否支持购物车
+ coupon_info
+ShopCouponInfo
+优惠卷信息
+└  shop_coupon
+String
+true
+true|false 是否有优惠卷
+└  dev_info
+String
+detailskip123
+devInfo
+请求示例
+JAVA
+.NET
+PHP
+CURL
+Python
+C/C++
+NodeJS
+TaobaoClient client = new DefaultTaobaoClient(url, appkey, secret);
+TaeItemDetailGetRequest req = new TaeItemDetailGetRequest();
+req.setBuyerIp("127.0.0.1");
+req.setFields("itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo");
+req.setOpenIid("AAF123A");
+req.setId("AAF123A");
+TaeItemDetailGetResponse rsp = client.execute(req, sessionKey);
+System.out.println(rsp.getBody());
+ITopClient client = new DefaultTopClient(url, appkey, secret);
+TaeItemDetailGetRequest req = new TaeItemDetailGetRequest();
+req.BuyerIp = "127.0.0.1";
+req.Fields = "itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo";
+req.OpenIid = "AAF123A";
+req.Id = "AAF123A";
+TaeItemDetailGetResponse rsp = client.Execute(req, sessionKey);
+Console.WriteLine(rsp.Body);
+$c = new TopClient;
+$c->appkey = $appkey;
+$c->secretKey = $secret;
+$req = new TaeItemDetailGetRequest;
+$req->setBuyerIp("127.0.0.1");
+$req->setFields("itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo");
+$req->setOpenIid("AAF123A");
+$req->setId("AAF123A");
+$resp = $c->execute($req, $sessionKey);
+curl -X POST 'http://gw.api.taobao.com/router/rest' \
+-H 'Content-Type:application/x-www-form-urlencoded;charset=utf-8' \
+-d 'app_key=12129701' \
+-d 'format=json' \
+-d 'method=taobao.tae.item.detail.get' \
+-d 'partner_id=apidoc' \
+-d 'session=2d233b6a-39d3-4591-8e35-5247e2731bc7' \
+-d 'sign=D9480F22CE0B115417C7E28DE0626135' \
+-d 'sign_method=hmac' \
+-d 'timestamp=2026-10-07+07%3A05%3A35' \
+-d 'v=2.0' \
+-d 'buyer_ip=127.0.0.1' \
+-d 'fields=itemInfo%2CpriceInfo%2CskuInfo%2CstockInfo%2CrateInfo%2CdescInfo%2CsellerInfo%2CmobileDescInfo%2CdeliveryInfo%2CstoreInfo%2CitemBuyInfo%2CcouponInfo' \
+-d 'id=AAF123A' \
+-d 'open_iid=AAF123A'
+# -*- coding: utf-8 -*-
+import top.api
+req=top.api.TaeItemDetailGetRequest(url,port)
+req.set_app_info(top.appinfo(appkey,secret))
+req.buyer_ip="127.0.0.1"
+req.fields="itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo"
+req.open_iid="AAF123A"
+req.id="AAF123A"
+try:
+resp= req.getResponse(sessionkey)
+print(resp)
+except Exception,e:
+print(e)
+pTopRequest pRequest = alloc_top_request();
+pTopResponse pResponse = NULL;
+pTaobaoClient pClient = alloc_taobao_client(url, appkey, appsecret);
+set_api_name(pRequest,"taobao.tae.item.detail.get");
+add_param(pRequest,"buyer_ip","127.0.0.1");
+add_param(pRequest,"fields","itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo");
+add_param(pRequest,"open_iid","AAF123A");
+add_param(pRequest,"id","AAF123A");
+pResponse = top_execute(pClient,pRequest,sessionKey);
+printf("ret code:%d\n",pResponse->code);
+if(pResponse->code == 0){
+pTopResponseIterator ite = init_response_iterator(pResponse);
+pResultItem pResultItem = alloc_result_item();
+while(parseNext(ite, pResultItem) == 0){
+printf("%s:%s\n",pResultItem->key,pResultItem->value);
+}
+destroy_response_iterator(ite);
+destroy_result_item(pResultItem);
+}
+destroy_top_request(pRequest);
+destroy_top_response(pResponse);
+destroy_taobao_client(pClient);
+TopClient = require('./topClient').TopClient;
+var client = new TopClient({
+'appkey': 'appkey',
+'appsecret': 'secret',
+'url': 'http://gw.api.taobao.com/router/rest'
+});
+client.execute('taobao.tae.item.detail.get', {
+'buyer_ip':'127.0.0.1',
+'fields':'itemInfo,priceInfo,skuInfo,stockInfo,rateInfo,descInfo,sellerInfo,mobileDescInfo,deliveryInfo,storeInfo,itemBuyInfo,couponInfo',
+'open_iid':'AAF123A',
+'id':'AAF123A'
+}, function(error, response) {
+if (!error) console.log(response);
+else console.log(error);
+})
+响应示例
+XML示例
+JSON示例
+<tae_item_detail_get_response>
+<data>
+<delivery_info>
+<carriage_list>
+<carriage>
+<name>5.0</name>
+<price>EMS</price>
+</carriage>
+</carriage_list>
+<destination>广东</destination>
+<location>浙江杭州</location>
+</delivery_info>
+<desc_info>
+<content>&lt;p&gt;hello&lt;/p&gt;</content>
+<type>pc|mobile</type>
+</desc_info>
+<item_info>
+<in_sale>true|false</in_sale>
+<item_props>
+<item_property>
+<name>颜色</name>
+<value>红色</value>
+</item_property>
+</item_props>
+<pics>
+<string>http://xxxx.jpg</string>
+</pics>
+<sku_item>true|false</sku_item>
+<start>1231312</start>
+<sub_title>来自深渊，无人迹，无污染</sub_title>
+<title>干净泥巴</title>
+</item_info>
+<mobile_desc_info>
+<desc_list>
+<desc_fragment>
+<content>http://item.taobao.com/item.htm?spm=a230r.1.14.84.OCEXYi&amp;id=39932284103&amp;ns=1&amp;_u=ec8oo845019</content>
+<label>img</label>
+</desc_fragment>
+</desc_list>
+</mobile_desc_info>
+<price_info>
+<item_price>
+<price>
+<name>价格</name>
+<price>123123.00</price>
+<tips>淘金币减去50%</tips>
+</price>
+<promotion_price>
+<name>价格</name>
+<price>123123.00</price>
+<tips>淘金币减去50%</tips>
+</promotion_price>
+</item_price>
+<sku_price_list>
+<sku_price_item>
+<price>
+<name>价格</name>
+<price>123123.00</price>
+<tips>淘金币减去50%</tips>
+</price>
+<promotion_price>
+<name>价格</name>
+<price>123123.00</price>
+<tips>淘金币减去50%</tips>
+</promotion_price>
+<sku_id>123123</sku_id>
+</sku_price_item>
+</sku_price_list>
+</price_info>
+<rate_info>
+<rate_list>
+<rate_item>
+<feedback>好吃不得了</feedback>
+<nick>飞儿</nick>
+</rate_item>
+</rate_list>
+</rate_info>
+<seller_info>
+<seller_nick>郭美美</seller_nick>
+<seller_type>taobao|tmall</seller_type>
+<shop_name>郭美美的店</shop_name>
+</seller_info>
+<sku_info>
+<pv_map_sku_list>
+<pv_map_sku>
+<pv>pid:vid;pid:vid</pv>
+<sku_id>123123123</sku_id>
+</pv_map_sku>
+</pv_map_sku_list>
+<sku_props>
+<sku_property>
+<prop_id>123123123</prop_id>
+<prop_name>颜色</prop_name>
+<values>
+<sku_property_value>
+<img_url>http://xxxx.jpg</img_url>
+<name>绿色</name>
+<value_id>12312313</value_id>
+</sku_property_value>
+</values>
+</sku_property>
+</sku_props>
+</sku_info>
+<stock_info>
+<item_quantity>1000</item_quantity>
+<sku_quantity_list>
+<sku_quantity>
+<quantity>123123</quantity>
+<sku_id>123123</sku_id>
+</sku_quantity>
+</sku_quantity_list>
+</stock_info>
+<store_info>
+<store_list>
+<retail_store>
+<address>宜山路455号光启城</address>
+<posy>123.123123</posy>
+<telno_list>
+<string>[&quot;123123123123&quot;</string>
+<string>&quot;12312312&quot;]</string>
+</telno_list>
+<posx>123123.123123</posx>
+<name>星星</name>
+<store_id>123123123</store_id>
+</retail_store>
+</store_list>
+</store_info>
+<item_buy_info>
+<cart_support>true|false</cart_support>
+</item_buy_info>
+<coupon_info>
+<shop_coupon>true</shop_coupon>
+</coupon_info>
+<dev_info>detailskip123</dev_info>
+</data>
+</tae_item_detail_get_response>
+{
+"tae_item_detail_get_response":{
+"data":{
+"delivery_info":{
+"carriage_list":{
+"carriage":[
+{
+"name":"5.0",
+"price":"EMS"
+}
+]
+},
+"destination":"广东",
+"location":"浙江杭州"
+},
+"desc_info":{
+"content":"<p>hello<\/p>",
+"type":"pc|mobile"
+},
+"item_info":{
+"in_sale":"true|false",
+"item_props":{
+"item_property":[
+{
+"name":"颜色",
+"value":"红色"
+}
+]
+},
+"pics":{
+"string":[
+"http:\/\/xxxx.jpg"
+]
+},
+"sku_item":"true|false",
+"start":"1231312",
+"sub_title":"来自深渊，无人迹，无污染",
+"title":"干净泥巴"
+},
+"mobile_desc_info":{
+"desc_list":{
+"desc_fragment":[
+{
+"content":"http:\/\/item.taobao.com\/item.htm?spm=a230r.1.14.84.OCEXYi&id=39932284103&ns=1&_u=ec8oo845019",
+"label":"img"
+}
+]
+}
+},
+"price_info":{
+"item_price":{
+"price":{
+"name":"价格",
+"price":"123123.00",
+"tips":"淘金币减去50%"
+},
+"promotion_price":{
+"name":"价格",
+"price":"123123.00",
+"tips":"淘金币减去50%"
+}
+},
+"sku_price_list":{
+"sku_price_item":[
+{
+"price":{
+"name":"价格",
+"price":"123123.00",
+"tips":"淘金币减去50%"
+},
+"promotion_price":{
+"name":"价格",
+"price":"123123.00",
+"tips":"淘金币减去50%"
+},
+"sku_id":"123123"
+}
+]
+}
+},
+"rate_info":{
+"rate_list":{
+"rate_item":[
+{
+"feedback":"好吃不得了",
+"nick":"飞儿"
+}
+]
+}
+},
+"seller_info":{
+"seller_nick":"郭美美",
+"seller_type":"taobao|tmall",
+"shop_name":"郭美美的店"
+},
+"sku_info":{
+"pv_map_sku_list":{
+"pv_map_sku":[
+{
+"pv":"pid:vid;pid:vid",
+"sku_id":"123123123"
+}
+]
+},
+"sku_props":{
+"sku_property":[
+{
+"prop_id":"123123123",
+"prop_name":"颜色",
+"values":{
+"sku_property_value":[
+{
+"img_url":"http:\/\/xxxx.jpg",
+"name":"绿色",
+"value_id":"12312313"
+}
+]
+}
+}
+]
+}
+},
+"stock_info":{
+"item_quantity":"1000",
+"sku_quantity_list":{
+"sku_quantity":[
+{
+"quantity":"123123",
+"sku_id":"123123"
+}
+]
+}
+},
+"store_info":{
+"store_list":{
+"retail_store":[
+{
+"address":"宜山路455号光启城",
+"posy":"123.123123",
+"telno_list":{
+"string":[
+"[\"123123123123\"",
+"\"12312312\"]"
+]
+},
+"posx":"123123.123123",
+"name":"星星",
+"store_id":"123123123"
+}
+]
+}
+},
+"item_buy_info":{
+"cart_support":"true|false"
+},
+"coupon_info":{
+"shop_coupon":"true"
+},
+"dev_info":"detailskip123"
+}
+}
+}
+异常示例
+XML示例
+JSON示例
+<error_response>
+<code>50</code>
+<msg>Remote service error</msg>
+<sub_code>isv.invalid-parameter</sub_code>
+<sub_msg>非法参数</sub_msg>
+</error_response>
+{
+"error_response":{
+"msg":"Remote service error",
+"code":50,
+"sub_msg":"非法参数",
+"sub_code":"isv.invalid-parameter"
+}
+}
+错误码解释
+错误码
+错误描述
+解决方案
+00006
+商品不存在，商品已经被下架、被删除、或者被卖光。
+更换商品。
+00005
+依据入参的商品id，查询不到商品。
+更换商品id。
+00004
+入参商品id错误。
+请输入正确的商品id
+00001
+服务被限流。
+请稍后重试。
+API工具
+API测试工具
+错误码查询工具
+SDK下载
+如何获得此API
+FAQ
+我要提问
+返回
+顶部
+false
+false
+开放平台合作:点此反馈
+开放平台官方群：228708748
+2003 - 2016 Taobao 版权所有
+阿里巴巴集团
+淘宝网
+天猫
+聚划算
+全球速卖通
+阿里巴巴国际交易市场
+1688
+阿里妈妈
+阿里云计算
+YunOS
+万网
+淘宝旅行
+虾米
+来往
+支付宝

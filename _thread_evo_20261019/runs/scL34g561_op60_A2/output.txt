@@ -1,0 +1,355 @@
+<escape>{
+  "independent_reclassification": {
+    "R01": {
+      "actual_propositions": [
+        {
+          "proposition": "人物正在经历真实的亲密幸福",
+          "type": "事实",
+          "first_at": "S01"
+        },
+        {
+          "proposition": "人物希望这份幸福继续",
+          "type": "愿望",
+          "first_at": "S02"
+        },
+        {
+          "proposition": "人物知道自己的愿望不能保证幸福永久持续",
+          "type": "认识",
+          "first_at": "S03"
+        },
+        {
+          "proposition": "对有限性的认识使预期失去的痛楚进入当前幸福体验",
+          "type": "实际体验",
+          "first_at": "S04"
+        },
+        {
+          "proposition": "人物决定不因为预先感到失去而主动退出亲密",
+          "type": "决定",
+          "first_at": "S06"
+        },
+        {
+          "proposition": "幸福有限并不意味着它不真实或没有价值",
+          "type": "认识",
+          "first_at": "S11",
+          "qualification": "真实性已经在S01和S04成立，真正新增的是有限性不取消幸福价值这一层判断。"
+        }
+      ],
+      "claim_collisions": [
+        {
+          "proposition": "亲密幸福正在发生",
+          "first_at": "S01",
+          "later_positions": ["S02", "S05", "S07", "S09", "S11"],
+          "genuine_new_content": false,
+          "assessment": "均为原有事实的持续存在。S11对真实性的部分表述也不是新发现。"
+        },
+        {
+          "proposition": "对有限性的认识及其造成的失去感",
+          "first_at": "S03和S04",
+          "later_positions": ["S05", "S08", "S10", "S13"],
+          "genuine_new_content": false,
+          "assessment": "S05、S10、S13主要是持续。S08虽然位于决定之后，但幸福与失去感并存已经在S04成立，不能把痛楚继续存在当作一次全新的情绪发现。"
+        },
+        {
+          "proposition": "不因预期失去而退出亲密",
+          "first_at": "S06",
+          "later_positions": ["S07", "S08", "S10", "S12", "S13"],
+          "genuine_new_content": false,
+          "assessment": "S07是实行，其他位置是维持选择或描述其后果，没有重新作出决定。"
+        },
+        {
+          "proposition": "有限性不取消幸福的真实性与价值",
+          "first_at": "S11",
+          "later_positions": ["S12", "S13"],
+          "genuine_new_content": "部分成立",
+          "assessment": "价值不被有限性取消是新认识；S12的同时容纳是其延续和落实，S13没有产生进一步的新认识。"
+        }
+      ],
+      "reset_errors": [],
+      "misclassified_or_weak_deltas": [
+        {
+          "sec": "S08",
+          "issue": "把已经存在的失去感继续存在描述成决定之后的后果。",
+          "assessment": "可以作为状态延续，但不是强有力的新实际后果。"
+        },
+        {
+          "sec": "S10",
+          "issue": "再次描述已经作出的选择和已经存在的失去感。",
+          "assessment": "正文明确是维持原选择，不是重新决定；应视为延续。"
+        },
+        {
+          "sec": "S11",
+          "issue": "把幸福仍然真实与有限性不取消价值放在同一个新认识中。",
+          "assessment": "需要拆分命题，避免把已成立的真实性重新包装成发现。"
+        }
+      ],
+      "overall_assessment": "事实账本基本稳定。真正的变化有清晰顺序：幸福、愿望、有限性认识、失去感、继续留下的决定、对幸福价值的新理解。中间有较多重复状态，但大部分可以合理解释为延续。主要问题是抽象程度较高，后半段多次重复幸福与失去感并存，独立 Thread 的实际经历感稍弱。"
+    },
+    "R02": {
+      "actual_propositions": [
+        {
+          "proposition": "人物正在经历亲密幸福",
+          "type": "事实",
+          "first_at": "S01"
+        },
+        {
+          "proposition": "人物希望幸福持续并保持当前形态",
+          "type": "愿望",
+          "first_at": "S02"
+        },
+        {
+          "proposition": "人物开始反复在心里确认幸福，试图保存它",
+          "type": "行为",
+          "first_at": "S03"
+        },
+        {
+          "proposition": "保存行为使注意力转向可能的失去，妨碍对当下的完整体验",
+          "type": "实际后果",
+          "first_at": "S04"
+        },
+        {
+          "proposition": "人物认识到心理确认无法控制幸福的持续时间或保证其不发生改变",
+          "type": "认识",
+          "first_at": "S06"
+        },
+        {
+          "proposition": "人物决定停止通过反复确认来固定幸福",
+          "type": "决定",
+          "first_at": "S08"
+        },
+        {
+          "proposition": "停止保存行为后，人物不再持续被保存任务占据，能够重新直接体验当下",
+          "type": "实际后果",
+          "first_at": "S10"
+        }
+      ],
+      "claim_collisions": [
+        {
+          "proposition": "亲密幸福正在发生",
+          "first_at": "S01",
+          "later_positions": ["S02", "S05", "S09", "S11", "S12"],
+          "genuine_new_content": false,
+          "assessment": "都是原有事实的持续存在，没有把幸福重新当成第一次发生。"
+        },
+        {
+          "proposition": "希望幸福持续",
+          "first_at": "S02",
+          "later_positions": ["S13"],
+          "genuine_new_content": false,
+          "assessment": "S13是愿望继续有效，不是重新产生愿望。"
+        },
+        {
+          "proposition": "通过反复心理确认保存幸福",
+          "first_at": "S03",
+          "later_positions": ["S04", "S05", "S07"],
+          "genuine_new_content": false,
+          "assessment": "S04是行为后果，S05是后果延续，S07是认识到无效后旧习惯仍未立即停止。没有把同一个行为重新包装成新行为。"
+        },
+        {
+          "proposition": "保存行为使注意力离开当下",
+          "first_at": "S04",
+          "later_positions": ["S05", "S07"],
+          "genuine_new_content": false,
+          "assessment": "同一实际后果继续存在。S07没有声称出现第二种新的注意力问题。"
+        },
+        {
+          "proposition": "心理确认不能保证幸福延续",
+          "first_at": "S06",
+          "later_positions": ["S07", "S08"],
+          "genuine_new_content": false,
+          "assessment": "S07保留已成立的认识，S08以此为决定前提，没有重新发现方法无效。"
+        },
+        {
+          "proposition": "停止反复确认幸福",
+          "first_at": "S08",
+          "later_positions": ["S09", "S13"],
+          "genuine_new_content": false,
+          "assessment": "S09是实行，S13是维持原选择，没有第二次决定。"
+        },
+        {
+          "proposition": "停止保存后能够重新直接体验当下",
+          "first_at": "S10",
+          "later_positions": ["S11", "S12", "S13"],
+          "genuine_new_content": false,
+          "assessment": "这是一个真正的新实际后果，后续位置均为延续，没有重新宣布它是新发现。"
+        },
+        {
+          "proposition": "失去的痛楚没有消失",
+          "first_at": "S10",
+          "later_positions": ["S11", "S12", "S13"],
+          "genuine_new_content": false,
+          "assessment": "痛楚是原有失去担忧的延续，不应单独视为新的情绪变化。S10真正新增的是注意力获得释放。"
+        }
+      ],
+      "reset_errors": [],
+      "misclassified_or_weak_deltas": [
+        {
+          "sec": "S06",
+          "issue": "认识到心理确认不能延长幸福的依据不完全充分。",
+          "assessment": "S04直接证明了保存行为妨碍当下体验，但没有直接展示幸福的持续时间因此没有改变。不过，人物认识到心理确认无法控制未来，是可以成立的合理推断，不构成明显的时间错误。"
+        },
+        {
+          "sec": "S07",
+          "issue": "认识到方法无效后仍然沿用旧习惯。",
+          "assessment": "不是逻辑矛盾，也不是忘记了先前认识。认识与习惯改变不同步，是可信的实际状态。"
+        },
+        {
+          "sec": "S13",
+          "issue": "再次总结愿望、选择与直接体验当下。",
+          "assessment": "属于已有状态的综合延续，不应算新的心理变化。"
+        }
+      ],
+      "overall_assessment": "七个主要命题形成完整的行为因果链。人物先有愿望，再采取心理行动，行动产生具体代价，人物认识到行动的局限，随后停止行动，并获得新的实际体验。尤其重要的是，认识成立后旧习惯没有立即消失，这个中间阶段使人物不显得像按照预设步骤自动改变。后半段允许自然延续，没有强行制造新决定。"
+    },
+    "R03": {
+      "actual_propositions": [
+        {
+          "proposition": "人物正在经历亲密幸福",
+          "type": "事实",
+          "first_at": "S01"
+        },
+        {
+          "proposition": "人物害怕幸福终将失去",
+          "type": "恐惧",
+          "first_at": "S02"
+        },
+        {
+          "proposition": "人物通过克制投入来防备可能的失去",
+          "type": "行为",
+          "first_at": "S03"
+        },
+        {
+          "proposition": "克制投入使人物无法完整体验当前幸福",
+          "type": "实际后果",
+          "first_at": "S04"
+        },
+        {
+          "proposition": "克制投入不能真正保护人物免于未来的失去",
+          "type": "认识",
+          "first_at": "S06"
+        },
+        {
+          "proposition": "人物决定不再因为预先害怕失去而克制投入",
+          "type": "决定",
+          "first_at": "S08"
+        },
+        {
+          "proposition": "恐惧仍然存在，但不再自动支配人物退出亲密的行为",
+          "type": "实际后果或行为状态",
+          "first_at": "S10"
+        }
+      ],
+      "claim_collisions": [
+        {
+          "proposition": "亲密幸福正在发生",
+          "first_at": "S01",
+          "later_positions": ["S02", "S09", "S12"],
+          "genuine_new_content": false,
+          "assessment": "原有事实的持续存在。"
+        },
+        {
+          "proposition": "害怕幸福终将失去",
+          "first_at": "S02",
+          "later_positions": ["S05", "S10", "S11", "S13"],
+          "genuine_new_content": false,
+          "assessment": "同一个恐惧持续存在。S11所谓恐惧再次出现，没有新的触发事实，不能仅凭再次出现的措辞算作新体验。"
+        },
+        {
+          "proposition": "通过克制投入防备失去",
+          "first_at": "S03",
+          "later_positions": ["S04", "S05", "S07"],
+          "genuine_new_content": false,
+          "assessment": "同一防备行为及其持续状态，没有重新发生第二次行为。"
+        },
+        {
+          "proposition": "克制投入使人物无法完整体验幸福",
+          "first_at": "S04",
+          "later_positions": ["S05", "S06", "S08"],
+          "genuine_new_content": false,
+          "assessment": "S05是延续，S06和S08将它作为认识与决定的依据，没有新的体验对象。"
+        },
+        {
+          "proposition": "克制投入不能保护人物免于失去",
+          "first_at": "S06",
+          "later_positions": ["S07", "S08"],
+          "genuine_new_content": false,
+          "assessment": "认识已经成立，后文没有重新发现。"
+        },
+        {
+          "proposition": "不再提前撤回对亲密的投入",
+          "first_at": "S08",
+          "later_positions": ["S09", "S10", "S12", "S13"],
+          "genuine_new_content": false,
+          "assessment": "S09是实行，后续是维持选择，没有重新决定。"
+        },
+        {
+          "proposition": "恐惧存在时仍能保持亲近，不自动退回防备状态",
+          "first_at": "S10",
+          "later_positions": ["S11", "S12", "S13"],
+          "genuine_new_content": false,
+          "assessment": "这是关键结构性重复。S10已经明确说恐惧仍然存在，而且人物没有撤回继续投入的选择。S11再次把同一状态包装成一次新获得的实际经验。两者没有新的前提、新的触发事件、新的行为或新的实际后果。"
+        }
+      ],
+      "reset_errors": [
+        {
+          "sec": "S11",
+          "issue": "把S10已经成立的恐惧与继续亲近并存的事实重新写成首次实际经验。",
+          "assessment": "不是人物真正忘记了此前的决定，而是文本将已经成立的结果重新标记为新变化。C-C07的首次成立位置应当至少提前到S10，不能把S11当作独立的新经验。"
+        }
+      ],
+      "hard_gate": {
+        "pass": false,
+        "reason": "S10已经建立恐惧没有消失、人物没有撤回投入这一组合命题。S11没有提供新的恐惧触发因素或新的行为场景，却将同一个命题重新宣布为新经验。违反禁止重复命题冒充新变化的硬性要求。"
+      },
+      "overall_assessment": "前半段的因果关系非常清楚，防备行为及其实际代价也具有较强的人物可信度。问题集中在S10与S11：S10已经完成了恐惧仍在但行为不再受其支配的变化，S11却再次把它作为首次经验。S12和S13又继续描述同一结果。后半段因此出现人为增加变化次数的问题。即使删除或改写S11，这条路线才可能成为合格候选；当前版本不能通过硬性判断。"
+    }
+  },
+  "scores": {
+    "R01": {
+      "coherence": 8,
+      "forward_motion": 6,
+      "prerequisite_integrity": 8,
+      "non_repetition": 6,
+      "human_plausibility": 7,
+      "hard_gate": true
+    },
+    "R02": {
+      "coherence": 9,
+      "forward_motion": 8,
+      "prerequisite_integrity": 8,
+      "non_repetition": 8,
+      "human_plausibility": 8,
+      "hard_gate": true
+    },
+    "R03": {
+      "coherence": 8,
+      "forward_motion": 5,
+      "prerequisite_integrity": 7,
+      "non_repetition": 4,
+      "human_plausibility": 8,
+      "hard_gate": false
+    }
+  },
+  "selection": {
+    "ordered_routes": [
+      {
+        "rank": 1,
+        "route_id": "R02",
+        "status": "推荐",
+        "reason": "最像一条可以独立成立的真人经历。它有明确的心理行为、行为造成的实际代价、对行为局限的认识、停止行为的决定，以及停止之后出现的具体体验变化。人物没有因为认识成立就立即改变习惯，后续也没有反复宣布已经作出的决定。因果链最完整，事实账本最稳定。"
+      },
+      {
+        "rank": 2,
+        "route_id": "R01",
+        "status": "可选",
+        "reason": "时间顺序与事实账本基本稳定，有限性认识、失去感、继续留下的选择以及幸福价值的新认识之间有可解释的关系。它没有严重的命题重置，但抽象心理描述较多，S08、S10、S13的内容密度偏低，且S11部分重复已经成立的幸福真实性。相比R02，独立经历感和实际行为感较弱。"
+      }
+    ],
+    "excluded_routes": [
+      {
+        "route_id": "R03",
+        "reason": "触发硬性重复问题。S10已经成立恐惧与继续亲近并存，S11没有新事件或新行为，却将同一命题作为新的实际经验。不能因为前半段写得清楚、人物行为可信就忽略这一结构性问题。"
+      }
+    ],
+    "final_judgment": "R02明显优先于R01。R02不是因为变化更多而胜出，而是因为它的核心经历可以用一条普通、清楚的因果关系讲明白：我想留住一段幸福，于是不断在心里确认它；这种做法反而让我无法好好经历它；我发现确认不能控制未来，于是停止这种做法，重新把注意力放回眼前。R01可以作为第二选择，但更接近一段抽象的内心体会。R03当前版本不合格。"
+  }
+}</escape>

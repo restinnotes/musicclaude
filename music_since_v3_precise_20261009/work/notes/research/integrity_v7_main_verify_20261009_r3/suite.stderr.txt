@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\probes\integrity_v7_main_verify_20261009_r3.py", line 207, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\probes\integrity_v7_main_verify_20261009_r3.py", line 155, in main
+    return worker(root)
+           ^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\probes\integrity_v7_main_verify_20261009_r3.py", line 129, in worker
+    fixture = load(tools / "tests/test_execution_integrity_v7.py", "main_v7_r3_fixtures")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\probes\integrity_v7_main_verify_20261009_r3.py", line 23, in load
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924\tools\tests\test_execution_integrity_v7.py", line 10, in <module>
+    from unittest import mock
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 26, in <module>
+    import asyncio
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\asyncio\__init__.py", line 43, in <module>
+    from .windows_events import *
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 26, in <module>
+    from . import windows_utils
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_utils.py", line 125, in <module>
+    class Popen(subprocess.Popen):
+TypeError: function() argument 'code' must be code, not str

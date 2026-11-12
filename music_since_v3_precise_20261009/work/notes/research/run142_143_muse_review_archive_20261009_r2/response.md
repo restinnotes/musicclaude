@@ -1,0 +1,86 @@
+# 独立工程审查终局（只读，未改任何文件，未调模型/联网）
+
+本审查仅亲读源与主证据：`runs/run142_e7_flash_diag_r4/go.py`、`runs/run143_thread_resume_r4/go.py`、`tools/tests/test_run142_e7_flash_diag_r4.py`、`tools/tests/test_run143_thread_resume_r4.py`、`notes/research/run142_143_main_verify_20261009_r2/report.json`。旧r3/tests、冻结prompts/inputs/source未写只读。音乐实质（戏剧化、笃定、因果写满、单一故事）一律不扣分，本判断只谈工程保护。
+
+## 1. 主会话证据的确认范围
+
+`report.json`所记可确认，但不足以验收：
+
+- 两套各20项PASS、五命令rc正确（142 tests rc0、143 tests rc0、142 real rc3、143 strict rc0、143 real rc3）、`protected_files_unchanged=true`：与`commands[0..4]:returncode/expected_returncode/timed_out`一致，确认为**已观测事实**。
+- `report.json:115-119 limits`已自声明：仅本地离线mock、hash只是本地一致性、通过不关闭未覆盖需求。此自限有效，**驳回以“20/20+rc正确”直接验收**。
+- `test_inventory:old15/new20`只是AST名录（`scope:AST name inventory only`），主会话已亲读旧断言但本审查未见旧文件，故同名≠同断言。`run143:test_muse_return_needs...→test_muse_raw_return...`属合法更名+增强（加raw_unverified/CompletionPending/trusted receipt一维），但需逐项断言diff才能闭环，见矩阵#1。
+
+## 2. 保护覆盖矩阵（19项）
+
+| # | 保护 | 结论 | 证据类型 |
+|---|---|---|---|
+|1|原15+15不断言冒充；旧不安全默认（自动parse retry/caller schema）可改但逐项说明|部分|静态为主：名录确认15名保留+1更名，run142显式retry/default-stop有mock实证，缺断言级diff|
+|2|新RUNID/path独立，历史只读|覆盖|mock实证：`RUN_ID`不同+`_freeze_inputs/_load_history`+source tamper零提交|
+|3|real入口只读presence gate，缺/有皆blocked，0CLI0写，无exec/sys.path|覆盖|mock实证+静态：`real_preflight/check_v4`仅`is_file`，absent/present皆blocked+hash前后一致+patch `spec_from_file_location`，读源无exec|
+|4|v4 unverified/v5 partial/v6不自动采用|覆盖|mock实证：blocked+`present_unverified/partial_unusable/in_flight_not_auto_adopted`|
+|5|strict完整JSON/完整fence，拒杂文/第二value/duplicate/nonfinite/wrongtype，explains/confidence拒bool|部分|mock实证为主；run142 explains-bool仅静态代码（`go.py:303 type is not int`）无单测，需补|
+|6|schema来自frozen prompt不用caller keys；quote对mapped candidate，ranking/map unique合法|覆盖|mock实证：caller传`caller-selected/attacker`仍按frozen判（142测272，143测197）|
+|7|mock mode exact，producer/model/request/当前输入完整绑定，不用旧记录替当前身份|缺口（见C1）|run143绑定有mock实证，run142 model/version未比对 confirmed|
+|8|trusted Muse外部archive receipt绑source/task/request/raw/terminal/target；无verifier则pending/block；raw 0 real；不伪装mock为auth|部分/未决（见P1）|pending+raw0有mock实证；全维度绑定仅一维mock实证余静态|
+|9|fixed THREAD schema，confidence exact int，guess/fits合法unique|覆盖|mock实证|
+|10|complete parse fail默认STOP保留raw；explicit allow+budget+reason才新immutable attempt/new sampling|run142覆盖，run143缺口（见C2）|run142 mock实证；run143 mock实证反向（无保留）|
+|11|proven pre_submit retry safe预算闭环；ambiguous/queue_stop不retry持久阻断|缺口（见C3）|ambiguous/queue_stop阻塞有mock实证；pre_submit闭环仅静态|
+|12|lineage/hash/tamper/duplicate拒|覆盖|mock实证|
+|13|23 prefix及Center全链|覆盖|mock实证|
+|14|no_longer_valid exact source真实match集成；全[]不等验收|缺口（见C4）|静态+mock实证反向|
+|15|v2/v3 question3 sole change|部分|静态为主：`validate_prompt_pair`严但无负向测试|
+|16|canonical self review、匿名换位、actual expand/recap/stale retire|覆盖|mock实证|
+|17|mock不音乐/真实验收，pending/no DONE，不改宪法/CENTER/NONE/production|覆盖|mock实证|
+|18|import/strict 0副作用；保存first fail/supervisor/final attempt|部分|import/strict覆盖；first fail保存run142覆盖run143缺口|
+|19|重大验收需独立review|hold|本审查未完即不验收|
+
+## 3. Confirmed缺口（必须修+加回归才可谈验收）
+
+### C1 run142重用不校验当前model/prompt_version — confirmed，mock实证+静态
+- 位置：`runs/run142_e7_flash_diag_r4/go.py:843-879 execute`，`748-823 _verify_artifact`，`825-841 _make_record`。
+- 静态根因：`logical_id=step+sha(key)`不含model/version；prior重用环仅`_verify_artifact(record,prompt)`验内部自洽+prompt字节（783-784），从未比较`record[requested_model/prompt_version]`与本次`model/prompt_version`。`_verify_artifact:789-802`比的是meta与record自身，不是本次请求。
+- 可复现（主证据`report.json:286-308`已实证）：
+  - 先`execute("why",["run130:gpt56w",2],"gflash",'{"immutable prompt"}',"WHY_GATE_v4",parse_why)`成功attempt0；
+  - 再同step/key/prompt/parser，仅`model="luna_noweb"`或仅`prompt_version="different_version"`调用→错误结果`accepted/resumed=true attempt0 new_mock_submissions=0`，取gflash旧结果。
+- 最小修复：在prior环首加`if record[requested_model]!=model or record[prompt_version]!=prompt_version: raise IntegrityError`；prompt字节已由`_verify_artifact` covering，不动。
+- 新回归：`test_reused_record_rejects_changed_model_and_version`——改model、改version各一次，均判IntegrityError、0新提交、原artifact字节不变；同身份重跑仍0提交resumed。
+
+### C2 run143 complete parse失败无持久化、无显式重采样接口 — confirmed，mock实证+静态接口
+- 位置：`runs/run143_thread_resume_r4/go.py:532-552 execute_mock_task`，`490-529 _create_mock_artifact`（505先`_stage_parse`抛，522-525写文件在其后），`344-350 _stage_parse`，`470-487 _mock_response`。
+- 主实证`report.json:326-355`确认：invalid raw两次→`mock_submissions=2 metadata_index=0 saved_artifacts=[]`两次IntegrityError。这是本地mock行为，不冒充backend terminal，正确解读为“无保留、无STOP块、可无限重提”。
+- 接口静态确认：`execute_mock_task(evidence_dir,task,fingerprint,expected_meta_hashes,counters,metadata_index)`无`allow_new_sample_on_parse_failure/max_attempts/new_sample_reason`（对比run142 `go.py:843-846`有）。违反#10/#18。
+- 最小修复：仿run142——失败raw仍落 immutable prompt/output/meta（status parse_failed类）后默认抛STOP；仅`allow+budget(≤2)+reason`才新attempt/new sampling identity；`counters`只在落盘成功/失败attempt计一次，重跑命中failed即0新提交抛STOP。
+- 新回归：`test_completed_parse_failure_persists_raw_and_blocks_resubmit`+`test_explicit_resample_needs_budget_and_reason`。
+
+### C3 `transport_retry_allowed`未接入execute — confirmed，静态检查 only
+- 位置：`runs/run142_e7_flash_diag_r4/go.py:134-139`定义，`843-922 execute`内零引用；测试`tools/tests/test_run142...:596-607`仅调policy函数。
+- 错误结果：`pre_submit+retry_safe+64hex+budget>0→True`单测过，但caller异常路径`895-901`直接`append+save+raise`，无budget重试闭环；`ambiguous/queue_stop`不重试虽另有`queue_stop.json/run_stages`阻断（322-334有mock实证），但#11要求的“proved safe预算内执行闭环”无。
+- 最小修复：execute加transport重试预算参数，except路径仅当`transport_retry_allowed(...True...)`才新immutable attempt重试，否则持久阻断；`post_submit_ambiguous/queue_stop`永不重试。
+- 新回归：pre_submit safe+proof预算内重试一次闭环；ambiguous/queue_stop注入永不重试且第二调用0提交。
+
+### C4 NLV真实match删除无链集成，全[]链不等验收 — confirmed，静态+mock实证
+- 位置：`run143/go.py:473-478 _mock_response step恒no_longer_valid=[]`，`670 update_inventory(...,None)`恒走`323-324 early return`，`555-559 _apply_match_output`全文件无调用，`585-619 validate_chain`/`622-637 validate_center_link`从未见非空NLV。
+- 测试`tools/tests/test_run143...:404-417`仅单元级`update_inventory`一两条合成inventory，无bead/history/match stage贯通；`73-89 full_mock_chain PASS`全NLV空。
+- 最小修复/测试：加集成mock——某k返回`no_longer_valid=["old statement"]`+match `[{quote exact,match:1}]`走`_build_mock_chain→validate_chain`验`inventory_after`确删；另加否定断言“全[]链不满足#14”。
+
+## 4. Plausible/未决
+
+### P1 Muse trusted receipt全维度绑定 — plausible部分覆盖，需补矩阵
+- 位置：`run143/go.py:912-938 _validate_trusted_muse_receipt`（19字段 exact set+16值绑定+terminal非空+`reported_transport∉mock/file/unknown`），`941-962 validate_muse_return`（无verifier→CompletionPending，attested仍`real_return_count=0`正确），`898-909 raw_unverified`。
+- 已有mock实证仅一维：`test_run143:250-255`篡改`raw_response_sha256`拒；`228-248`用`TEST_ONLY_mock_terminal+mcp`走attested但仍0 real——此0 real正确，不算伪装auth，驳回“attested即冒充real”的误读。
+- 未覆盖（静态存在、无测试）：`source_sha256/template_sha256/mapping_sha256/prompt_sha256/task_id/terminal_id空/reported_transport=mock`等逐字段篡改；`target`绑定字段在receipt中无显式名，需先澄清target指谓再补。run142 `validate_external_review_results:1567-1652`带verifier的可行路径则零测试（仅434-441无verifier pending+twow hold）。
+- 新回归：receipt全字段逐一篡改矩阵均IntegrityError；任何attested仍`real0+MUSE NOT_PERFORMED`；无verifier永CompletionPending。
+
+### P2 v2/v3 sole-change负向 — 静态有代码无测试
+- `run143/go.py:138-162`严（单op、replace/insert、单句无换行/。、Q3行、行数不变），但测试无多改/非Q3/跨行拒例。补三例即可，不阻C类但须补才算#15闭环。`#5 explains-bool`同理补一例。
+
+## 5. Rejected（不成立的验收主张）
+
+- “20/20+rc正确+protected unchanged即可验收”——驳回。`report.json`自限已写明hash本地性与通过≠闭环，主探针缺口独立成立。
+- “run143 counter2=backend提交”——驳回。实为本地计数器先增后抛（`execute_mock_task:548`在`_create`前增），无backend terminal，不计real。
+- “run142同身份第二跑0提交是缺陷”——驳回。同身份0新提交+exact reuse是正确行为；缺陷仅在换身份仍0提交重用。
+- “Muse attested即音乐验收/production”——驳回。两run attested/pending均`real0/music NOT_PERFORMED/COMPLETION_PENDING`，代码正确保持hold。
+
+## 6. 剩余验收（不清hold）
+
+须依次交付：C1/C2/C3/C4修复+新回归（含P1全矩阵+P2负向+`#5 explains-bool`），双套离线重跑0回归失败，`--real/--strict`仍blocked rc3/0且0写，冻结hash与RUNID/path独立复验，再做一次独立review。当前处置：**NOT_ACCEPTED，继续HOLD，不作music acceptance与production ready声明。**

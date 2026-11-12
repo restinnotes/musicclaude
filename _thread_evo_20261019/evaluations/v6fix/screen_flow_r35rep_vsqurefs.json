@@ -1,0 +1,68 @@
+{
+  "tag": "r35rep",
+  "base": "qurefs",
+  "blind": {
+    "status": "reject",
+    "planned": 4,
+    "complete": 3,
+    "wins": 1,
+    "no_regress": 1,
+    "net_sums": {
+      "alone": -10,
+      "lean": 33,
+      "plain": 41,
+      "cover": -18
+    },
+    "missing": [
+      "v6b2_op61_g6_r35rep_vsqurefs"
+    ],
+    "invalid": [],
+    "remaining_segment_upper_bound": 13,
+    "reasons": [
+      "remaining votes cannot reach the required new-version wins"
+    ],
+    "rows": [
+      {
+        "rid": "v6b2_op60_g6_r35rep_vsqurefs",
+        "w": "op60",
+        "j": "g6",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -9,
+          "lean": 10,
+          "plain": 14,
+          "cover": -6
+        }
+      },
+      {
+        "rid": "v6b2_op61_g56_r35rep_vsqurefs",
+        "w": "op61",
+        "j": "g56",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 6,
+          "lean": 13,
+          "plain": 13,
+          "cover": -5
+        }
+      },
+      {
+        "rid": "v6b2_op60_g56_r35rep_vsqurefs",
+        "w": "op60",
+        "j": "g56",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -7,
+          "lean": 10,
+          "plain": 14,
+          "cover": -7
+        }
+      }
+    ]
+  },
+  "status": "reject",
+  "next": "archive_and_change_direction"
+}

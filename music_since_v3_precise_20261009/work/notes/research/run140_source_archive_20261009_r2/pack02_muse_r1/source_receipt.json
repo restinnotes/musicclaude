@@ -1,0 +1,66 @@
+{
+  "schema": "run140-source-receipt/1",
+  "client_request_id": "music-20261009-run140-pack02-muse-r1",
+  "pack_id": "pack02",
+  "reviewer_route": "muse",
+  "role": "review",
+  "mode": "async",
+  "requested_at": "2026-10-09T10:16:18.378Z",
+  "completed_at": "2026-10-09T10:23:15.558Z",
+  "requested_target": {
+    "model": "muse-spark-1.3-contributor-free",
+    "options": {
+      "effort": "xhigh"
+    },
+    "providerInstanceId": "claude-proxy"
+  },
+  "t3_reported_provider": "claude-proxy",
+  "t3_reported_model": "muse-spark-1.3-contributor-free",
+  "actual_backend_identity": "unattested",
+  "task_source": {
+    "kind": "successful delegate_task tool input",
+    "dispatcher_activity_position": 77,
+    "field": "input.task",
+    "sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211",
+    "utf8_bytes": 24899,
+    "equals_frozen_prompt_bytes": true,
+    "prompt_sha256": "9745925a131a30b08adb4e363c01f8989007d170fb0e1a3d1d971009f01c1211"
+  },
+  "terminal_source": {
+    "kind": "completed child terminal assistant_message",
+    "item_position": 2,
+    "item_updated_at": "2026-10-09T10:23:15.400Z",
+    "status": "completed",
+    "sha256": "bf9d6e643d88d54e4dc40c261d8415928690694c13b216e5bf7e3fa8ba720e7b",
+    "utf8_bytes": 22734,
+    "written_without_trimming": true
+  },
+  "task_status_tool_evidence": {
+    "dispatcher_activity_positions": [
+      115,
+      146,
+      200
+    ],
+    "position_200_reassembled": true,
+    "final_status": "completed",
+    "has_pending_child_runs": false
+  },
+  "wrapper_secondary_check": {
+    "wrapperExactPrefixInTitle": true,
+    "remainingTitlePrefixMatchesTask": true,
+    "titlePreviewLength": 72,
+    "fullChildUserTextExposed": false,
+    "limitation": "72-char subagent title preview only; full child-user message is not exposed"
+  },
+  "identity_limits": {
+    "t3_provider_and_model_are_app_reported": true,
+    "independent_remote_attestation": false,
+    "legacy_producer_identity": "unknown_in_legacy_record",
+    "canonical_model_labels_do_not_establish_self_review": true
+  },
+  "scope_limits": {
+    "music_judgment_performed": false,
+    "production_ready": false,
+    "schema_pass_is_not_quality_or_acceptance": true
+  }
+}

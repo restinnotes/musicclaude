@@ -1,0 +1,97 @@
+{
+  "schema": "generation-usage-v1",
+  "entry": "all",
+  "from_utc": "2026-10-25T19:29:30.417865+00:00",
+  "to_utc": "2026-10-25T22:29:30.417865+00:00",
+  "timezone": "UTC",
+  "database": "D:\\musicclaude\\gpt2agent-safechain\\state\\usage.sqlite3",
+  "starts": 249,
+  "submissions": 248,
+  "completed": {
+    "failure": 95,
+    "success": 140
+  },
+  "errors": {
+    "UPSTREAM_STREAM_ERROR": 3,
+    "LOCAL_EXCEPTION": 63,
+    "ASYNC_TOPIC_REQUIRED": 9,
+    "TOPIC_RECEIVE_TIMEOUT": 19,
+    "LOCAL_TRANSPORT_FAILURE": 1
+  },
+  "by_entry": {
+    "gpt3": 3,
+    "gpt4": 245
+  },
+  "by_source": {
+    "cli": 248
+  },
+  "by_account_sha256": {
+    "b3efb6361563c139233ed7b7ef61a7c9afe0bd48d4eb3525dbe31956b024d6da": 3,
+    "bbd4fd636d4b6714d2b42b89e341bdb5bbe7c34f7d141aec76b444be8343fe54": 245
+  },
+  "by_model": {
+    "gpt-6-thinking": 3,
+    "gpt-5-6-thinking": 245
+  },
+  "peak_rolling_60s": 12,
+  "peak_rolling_3600s": 246,
+  "submitted_gap_seconds": {
+    "min": 4.999,
+    "median": 5.003,
+    "below_5s": 9
+  },
+  "peak_concurrency_known_finished": 25,
+  "unresolved_submitted": 121,
+  "hourly_submissions": {
+    "2026-10-25T20:00:00Z": 2,
+    "2026-10-25T21:00:00Z": 177,
+    "2026-10-25T22:00:00Z": 69
+  },
+  "busiest_minutes": [
+    [
+      "2026-10-25T21:45:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:46:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:47:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:48:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:51:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:52:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:53:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:54:00Z",
+      12
+    ],
+    [
+      "2026-10-25T22:02:00Z",
+      12
+    ],
+    [
+      "2026-10-25T21:42:00Z",
+      11
+    ]
+  ],
+  "limitations": [
+    "Historical submission markers precede the network attempt; they do not prove server acceptance or billing.",
+    "Concurrency excludes unfinished requests whose end is unknown. Other computers and official website usage are not visible.",
+    "Calendar buckets and timestamps are UTC. No automatic throttling or model retry is enabled by this ledger."
+  ]
+}

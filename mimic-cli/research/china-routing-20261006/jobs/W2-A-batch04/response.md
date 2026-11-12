@@ -1,0 +1,516 @@
+## 1. 直接回答
+
+本批次仅覆盖 C10/C11/C12，保留 **9 个冻结前候选：每类 2 个 domestic_head + 1 个 domestic_opportunity**。C10：科沃斯 T90S PRO 自动上下水、石头 P30 Pro 自动上下水 A3060RR、云鲸 J6 超薄上下水；C11：德力西 DLX-KC01A、东成 WSM710-100、威克士 WU130X.1 单电；C12：DJI Osmo Pocket 3 标准版、Osmo Action 5 Pro 标准套装、Insta360 GO 3S 灵动白64G 标准版。
+
+价位层规则预先固定为：冻结日仅取同品类**公开普通价**的精确实体SKU，去重后按价格三分位分层，≤P33=低端、P33–P67=中端、>P67=高端；会员价和定向券不参与。若同品类普通价不足以形成分位，则标 `tier_unresolved`，**不因此删候选**。
+
+## 2. 核心证据
+
+C10 使用实际打开的京东销量排序 URL；排除明显洗地机后按型号族去重，T90S PRO、P30 Pro 是首先出现的两个扫地机器人型号族；同页还可钉住具体上下水版本。观察日 2026-10-06。[https://www.jd.com/hprm/7378d7ec2591dbbec6a.html?electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_totalsales15_desc](https://www.jd.com/hprm/7378d7ec2591dbbec6a.html?electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_totalsales15_desc) [JD.com](https://www.jd.com/hprm/7378d7ec2591dbbec6a.html?electedExtAttrSet=\&extAttrValue=expand_name%2C\&sort_type=sort_totalsales15_desc)
+
+C11 不把页面冒充“销量榜”：京东自营页实际可见 DLX-KC01A **20万+评论**、东成 WSM710-100 **20万+评论**、WU130X.1 单电 **5万+评论**，只作为国内购买/使用规模证据。观察日 2026-10-06。[https://www.jd.com/hotitem/9855e7740644d7597320.html](https://www.jd.com/hotitem/9855e7740644d7597320.html) [JD.com](https://www.jd.com/hotitem/9855e7740644d7597320.html)
+
+C12 同理：Pocket 3 标准版 50万+、Action 5 Pro 20万+、GO 3S 灵动白64G标准版 5万+评论，均显示自营；但该京东页面底层抓取副本约两个月旧，因此不解释成 2026-10-06 当日销量。[https://www.jd.com/hprm/652c1d9773a939fc954.html](https://www.jd.com/hprm/652c1d9773a939fc954.html) [JD.com](https://www.jd.com/hprm/652c1d9773a939fc954.html)
+
+## 3. 一级来源
+
+科沃斯官方商城实际打开后确认 **T90S PRO 自动上下水款**、4000mAh 锂电，并明确“仅限中国大陆地区销售及使用”；页面显示销量64。观察日 2026-10-06。[https://mall.ecovacs.cn/product-6407.html](https://mall.ecovacs.cn/product-6407.html) [Ecovacs Mall](https://mall.ecovacs.cn/product-6407.html)
+
+DJI 中国商城在强制 CN 地区后实际打开：Pocket 3 普通公开价 **¥2399**；Action 5 Pro **标准套装 ¥2198**。两者均作为普通价记录，未混入分期、优惠套装或券价。观察日 2026-10-06。[https://store.dji.com/cn/product/osmo-pocket-3?set_region=CN](https://store.dji.com/cn/product/osmo-pocket-3?set_region=CN) [https://store.dji.com/cn/product/osmo-action-5-pro?ch=launch-action5pro-dustin+dunnil&set_region=CN](https://store.dji.com/cn/product/osmo-action-5-pro?ch=launch-action5pro-dustin+dunnil&set_region=CN) [DJI Store](https://store.dji.com/cn/product/osmo-pocket-3?set_region=CN)
+
+影石官方参数页确认 GO 3S 单机 39.1g、4K/30fps、灵动白/星曜黑。观察日 2026-10-06。[https://www.insta360.com/cn/specs/go3s](https://www.insta360.com/cn/specs/go3s) [Insta360](https://www.insta360.com/cn/specs/go3s)
+
+## 4. 社区证据
+
+云鲸 J6 的 2026-09-15 社区实测称其使用两个月以上，并明确使用上下水版本；但该文 **0赞/0收藏/0评论**，所以只作低权重机会信号。[https://post.smzdm.com/p/a950m435/](https://post.smzdm.com/p/a950m435/) [什么值得买](https://post.smzdm.com/p/a950m435/)
+
+WU130X.1 的 2022-06-24 用户笔记认可短机身、狭窄空间和低档扭矩，同时认为响应弱于部分竞品并担忧耐用性；值得买百科实际打开还能看到精确的 WU130X.1 单电规格及8条商品口碑。[https://post.smzdm.com/talk/p/arqgo4wg/](https://post.smzdm.com/talk/p/arqgo4wg/) [https://wiki.smzdm.com/p/157erd3/](https://wiki.smzdm.com/p/157erd3/) [什么值得买](https://post.smzdm.com/talk/p/arqgo4wg/)
+
+C12 的机会款主要依赖京东 5万+评论这一消费证据；尝试打开的文字社区页出现解析/登录障碍，未把搜索摘要冒充全文证据。
+
+## 5. 反向证据
+
+累计评论量不是当期销量，尤其 C11/C12 不能据此声称“销量第一”。J6 社区样本互动极低；WU130X.1 的定性评价较旧；GO 3S 官方自己确认长时间录像可能触发过温保护，25°C、4K30 单机测试约29分钟触发过温。[https://onlinemanual.insta360.com/go3s/zh-cn/operating_tutorials/waterproof_heatdissipating/heat_up](https://onlinemanual.insta360.com/go3s/zh-cn/operating_tutorials/waterproof_heatdissipating/heat_up) [Insta360 Online Manual](https://onlinemanual.insta360.com/go3s/zh-cn/operating_tutorials/waterproof_heatdissipating/heat_up)
+
+另，科沃斯页出现“总价¥20.00”这一明显不适合解释为整机普通价的字段，因此**没有**把它录入价格。
+
+## 6. 置信度
+
+C10 头部筛选 **中高**：有明确销量排序 URL，但型号族和精确版本需两步映射。C11 **中高**：精确型号和大规模评论证据扎实，但非实时销量。C12 **中等**：精确型号、官方规格/两款官方价格可靠，但京东类目副本存在约两个月缓存。
+
+## 7. 数据缺口
+
+`AUTHENTICATED DATA REQUIRED`：京东具体 item 页此次仅返回页面空壳，需补 **当日普通价、PLUS/会员价、定向券、seller_id、可验证成交/销量字段**。另外需刷新 C12 京东类目页；补 C11 两个头部SKU的厂商精确规格页；补 GO 3S 可全文打开的国内社区实测。所有缺口均未触发候选删除。
+
+## 8. 意外发现
+
+T90S PRO 在京东销量排序页面位置很靠前，但科沃斯自营官方商城只显示64销量，说明不同渠道指标不可直接互换。Pocket 3、Action 5 Pro 在已有更新代产品同页存在时仍积累极高评论量，说明“累计国内消费者基础”与“当前新品排序”是两个不同维度。[Ecovacs Mall](https://mall.ecovacs.cn/product-6407.html)
+
+## 9. 自我反驳
+
+本轮样本明显偏向京东自营可公开读取数据；累计评论可能奖励老SKU，社区作者也可能存在商业激励。C10 的销量排序能够支持“该页面中的顺序”，不能外推为全中国市场份额。故这9个是**冻结前候选池，不是最终市场领导者判决**。
+
+## 10. 下一实验
+
+冻结前只做一次受控补数：同日登录京东分别打开这9个精确版本，记录 ordinary/member/coupon、seller_id、店铺名和可见销量/榜单字段；随后按上述三分位规则生成高/中/低层。若字段仍不可见即保持 `AUTHENTICATED DATA REQUIRED`，停止扩展，不触碰其余15类。
+
+```json
+{
+  "job_id": "W2-A-batch04",
+  "parent_replicate": "W2-A",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C10",
+      "name": "扫地机器人与家电",
+      "sampling_rule": {
+        "domestic_head": "在京东明确sort_totalsales15_desc页面中排除明显非扫地机器人实体，按型号族去重，取首先出现的两个型号族，再在同页钉住可定义的精确版本。",
+        "domestic_opportunity": "保留具有明确国内消费规模且有国内社区实际使用证据的非头部精确版本。",
+        "price_tier": "冻结日同品类公开普通价实体SKU去重后按价格三分位：<=P33低端，P33-P67中端，>P67高端；会员价/定向券不参与；价格不足则tier_unresolved且不删除。"
+      },
+      "selected_candidate_sku_ids": ["C10-H01", "C10-H02", "C10-O01"]
+    },
+    {
+      "category_id": "C11",
+      "name": "电动工具与维修",
+      "sampling_rule": {
+        "domestic_head": "京东自营页中筛选实体电动工具、标题含精确型号且可见评论量>=200000；分别保留钻拧和打磨/切割两个任务桶，避免头部样本全部同质。",
+        "domestic_opportunity": "精确型号、自营、可见评论量>=50000，并要求额外的国内社区或消费口碑证据。",
+        "price_tier": "冻结日同品类公开普通价实体SKU去重后按价格三分位：<=P33低端，P33-P67中端，>P67高端；会员价/定向券不参与；价格不足则tier_unresolved且不删除。"
+      },
+      "selected_candidate_sku_ids": ["C11-H01", "C11-H02", "C11-O01"]
+    },
+    {
+      "category_id": "C12",
+      "name": "相机与视频设备",
+      "sampling_rule": {
+        "domestic_head": "京东自营相机/摄像机页中筛选实体、精确型号且可见评论量>=200000，并优先选择可由中国官方页复核规格或普通价的型号。",
+        "domestic_opportunity": "自营、精确版本、可见评论量>=50000且形态/使用场景与头部样本有明显差异；社区全文缺失不因海外因素删除。",
+        "price_tier": "冻结日同品类公开普通价实体SKU去重后按价格三分位：<=P33低端，P33-P67中端，>P67高端；会员价/定向券不参与；价格不足则tier_unresolved且不删除。"
+      },
+      "selected_candidate_sku_ids": ["C12-H01", "C12-H02", "C12-O01"]
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-H01",
+      "brand": "科沃斯",
+      "model": "DEEBOT T90S PRO",
+      "exact_variant": "自动上下水款",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东销量排序页中T90S PRO型号族位于首批合格扫地机器人；同页有明确上下水款且5000+评论。科沃斯官方商城确认自动上下水精确版本并显示销量64。",
+      "domestic_selection_rule": "C10销量排序页排除洗地机并按型号族去重后的前两型号族之一，再选择同页可定义的自动上下水版本。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100301432687.html",
+      "item_id": "100301432687",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["CN_MAINLAND_ONLY_USE_NOTICE", "LITHIUM_BATTERY", "FIXED_WATER_INSTALLATION", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_EXACT_VARIANT; CURRENT_PRICE_UNVERIFIED; SELLER_ID_UNVERIFIED",
+      "source_ids": ["S01", "S02"]
+    },
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-H02",
+      "brand": "石头",
+      "model": "P30 Pro A3060RR",
+      "exact_variant": "自动上下水版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东销量排序页明确列出P30 Pro自动上下水版A3060RR，10000+评论，自营。",
+      "domestic_selection_rule": "C10销量排序页排除明显非机器人并按型号族去重后的前两型号族之一；使用标题中的A3060RR自动上下水版冻结规格。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100299842625.html",
+      "item_id": "100299842625",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["LITHIUM_BATTERY", "FIXED_WATER_INSTALLATION", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_RETAIL_EXACT_VARIANT; CURRENT_PRICE_UNVERIFIED; SELLER_ID_UNVERIFIED",
+      "source_ids": ["S01"]
+    },
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-O01",
+      "brand": "云鲸",
+      "model": "J6",
+      "exact_variant": "超薄上下水款",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东同页明确列出J6超薄上下水款，50000+评论，自营；2026-09-15国内社区文章称使用J6上下水版本两个多月。",
+      "domestic_selection_rule": "选择具有>=50000评论的精确自营版本，并要求额外国内长期使用文字证据；社区互动弱仅降低置信度，不删除。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100262001304.html",
+      "item_id": "100262001304",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["LITHIUM_BATTERY", "FIXED_WATER_INSTALLATION", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "RETAIL_EXACT_VARIANT_VERIFIED; COMMUNITY_MODEL_FAMILY_MATCH; CURRENT_PRICE_UNVERIFIED",
+      "source_ids": ["S01", "S03"]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-H01",
+      "brand": "德力西电气",
+      "model": "DLX-KC01A",
+      "exact_variant": "DLX-KC01A 12V锂电手电钻",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营电动工具页明确型号DLX-KC01A、12V、200000+评论、自营。",
+      "domestic_selection_rule": "钻拧任务桶中选择标题可定义精确型号且达到>=200000评论阈值的头部样本。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100018883229.html",
+      "item_id": "100018883229",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["LITHIUM_BATTERY", "CHARGER_VOLTAGE_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_RETAIL_EXACT_MODEL; CURRENT_PRICE_UNVERIFIED; SELLER_ID_UNVERIFIED",
+      "source_ids": ["S04"]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-H02",
+      "brand": "东成",
+      "model": "WSM710-100",
+      "exact_variant": "WSM710-100角磨机",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营电动工具页明确型号WSM710-100角磨机，200000+评论，自营。",
+      "domestic_selection_rule": "打磨/切割任务桶中选择标题可定义精确型号且达到>=200000评论阈值的头部样本。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100004849092.html",
+      "item_id": "100004849092",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["MAINS_VOLTAGE_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_RETAIL_EXACT_MODEL; CURRENT_PRICE_UNVERIFIED; SELLER_ID_UNVERIFIED",
+      "source_ids": ["S04"]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-O01",
+      "brand": "WORX威克士",
+      "model": "WU130X.1",
+      "exact_variant": "WU130X.1 单电版",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东自营页明确WU130X.1单电版、50000+评论；什么值得买精确规格页有8条商品口碑，另有实际使用笔记支持其小巧/扭矩优势并提出响应和耐用性担忧。",
+      "domestic_selection_rule": "型号明确、自营、>=50000评论且存在独立国内用户使用/口碑证据。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100018901232.html",
+      "item_id": "100018901232",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["LITHIUM_BATTERY", "CHARGER_VOLTAGE_CHECK", "BATTERY_PLATFORM_COMPATIBILITY_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_RETAIL_EXACT_VARIANT; COMMUNITY_SUPPORTED; CURRENT_PRICE_UNVERIFIED",
+      "source_ids": ["S04", "S05", "S06"]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-H01",
+      "brand": "DJI大疆",
+      "model": "Osmo Pocket 3",
+      "exact_variant": "标准版",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营页明确Pocket 3标准版、500000+评论；DJI中国商城实际打开后显示Osmo Pocket 3公开普通价2399元。",
+      "domestic_selection_rule": "精确相机型号、自营、>=200000评论，并由中国官方页复核版本/公开普通价。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100070499618.html",
+      "item_id": "100070499618",
+      "seller_id": null,
+      "access_state": "retail_listing_read_full_item_shell_official_page_read_full",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": 2399,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": "official_store_public_ordinary_price",
+      "feasibility_flags": ["LITHIUM_BATTERY", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_EXACT_VARIANT_AND_DOMESTIC_ORDINARY_PRICE; SELLER_ID_UNVERIFIED",
+      "source_ids": ["S07", "S08"]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-H02",
+      "brand": "DJI大疆",
+      "model": "Osmo Action 5 Pro",
+      "exact_variant": "标准套装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营页的Action 5 Pro型号族有200000+评论；DJI中国商城实际打开后明确标准套装并显示2198元。",
+      "domestic_selection_rule": "型号族达到>=200000评论的国内消费证据，并用中国官方商城钉住标准套装；不假设京东父listing与官方套装SKU一一对应。",
+      "domestic_product_url": "https:\/\/store.dji.com\/cn\/product\/osmo-action-5-pro?ch=launch-action5pro-dustin+dunnil&set_region=CN",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "official_page_read_full_retail_model_family_read_full",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": 2198,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": "official_store_public_ordinary_price",
+      "feasibility_flags": ["REMOVABLE_LITHIUM_BATTERY", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_OFFICIAL_EXACT_VARIANT_AND_PRICE; JD_MODEL_FAMILY_PURCHASE_EVIDENCE; JD_EXACT_ITEM_ID_UNRESOLVED",
+      "source_ids": ["S07", "S09"]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-O01",
+      "brand": "Insta360影石",
+      "model": "GO 3S",
+      "exact_variant": "灵动白64G 标准版",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东自营页明确灵动白64G标准版并有50000+评论；影石官方参数确认GO 3S形态和核心规格。文字社区全文存在访问缺口，因此机会证据以国内消费规模为主。",
+      "domestic_selection_rule": "精确版本、自营、>=50000评论，且拇指/第一视角形态与两个头部候选不同；社区全文缺口降低置信度但不删除。",
+      "domestic_product_url": "https:\/\/item.jd.com\/100116706326.html",
+      "item_id": "100116706326",
+      "seller_id": null,
+      "access_state": "listing_read_full_item_page_shell_official_specs_read_full",
+      "observation_date": "2026-10-06",
+      "domestic_price": {
+        "ordinary_cny": null,
+        "member_cny": null,
+        "targeted_coupon_cny": null
+      },
+      "price_type": null,
+      "feasibility_flags": ["LITHIUM_BATTERY", "THERMAL_OVERHEAT_PROTECTION", "APP_FIRMWARE_REGION_CHECK", "WARRANTY_REGION_CHECK"],
+      "verification_status": "VERIFIED_RETAIL_EXACT_VARIANT_AND_OFFICIAL_MODEL_SPECS; CURRENT_PRICE_UNVERIFIED",
+      "source_ids": ["S07", "S10", "S11"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https:\/\/www.jd.com\/hprm\/7378d7ec2591dbbec6a.html?electedExtAttrSet=&extAttrValue=expand_name%2C&sort_type=sort_totalsales15_desc",
+      "title": "扫地机器人推荐 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K03"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https:\/\/mall.ecovacs.cn\/product-6407.html",
+      "title": "地宝T90S PRO 自动上下水款 - 科沃斯官方商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https:\/\/post.smzdm.com\/p\/a950m435\/",
+      "title": "云鲸J6扫拖机器人实测体验",
+      "published_at": "2026-09-15",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https:\/\/www.jd.com\/hotitem\/9855e7740644d7597320.html",
+      "title": "京东自营电动工具排行 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https:\/\/post.smzdm.com\/talk\/p\/arqgo4wg\/",
+      "title": "威克士(Worx)工业级充电无刷电钻",
+      "published_at": "2022-06-24",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https:\/\/wiki.smzdm.com\/p\/157erd3\/",
+      "title": "WORX 威克士 WU130X.1 多功能手电钻 单电版",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https:\/\/www.jd.com\/hprm\/652c1d9773a939fc954.html",
+      "title": "京东自营摄影机 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K06", "K09"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https:\/\/store.dji.com\/cn\/product\/osmo-pocket-3?set_region=CN",
+      "title": "购买 Osmo Pocket 3 - 大疆商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https:\/\/store.dji.com\/cn\/product\/osmo-action-5-pro?ch=launch-action5pro-dustin+dunnil&set_region=CN",
+      "title": "购买 Osmo Action 5 Pro - 大疆商城",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K07"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https:\/\/www.insta360.com\/cn\/specs\/go3s",
+      "title": "产品参数 - GO 3S",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08", "K09"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https:\/\/onlinemanual.insta360.com\/go3s\/zh-cn\/operating_tutorials\/waterproof_heatdissipating\/heat_up",
+      "title": "GO系列：相机发热及过热保护机制",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K08", "K09"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "在实际打开的C10京东sort_totalsales15_desc页面中，排除明显洗地机并按扫地机器人型号族去重后，T90S PRO和P30 Pro是首先出现的两个型号族。",
+      "classification": "FACT",
+      "source_ids": ["S01"],
+      "confidence": "high",
+      "counterevidence": "页面排序动态变化，且型号族存在水箱/上下水等重复版本；不能外推为全市场份额。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "科沃斯官方商城确认DEEBOT T90S PRO自动上下水款的精确版本、4000mAh锂电配置和中国大陆限定使用提示。",
+      "classification": "FACT",
+      "source_ids": ["S02"],
+      "confidence": "high",
+      "counterevidence": "官方页显示的总价20元与整机正常商品价格语义不一致，因此未作为价格证据。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "云鲸J6具备较强国内消费证据，且存在2026-09-15发布、声称使用上下水版本两个多月的国内社区实测。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S03"],
+      "confidence": "medium",
+      "counterevidence": "该社区文章当时为0赞、0收藏、0评论，独立验证力度有限。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "京东自营电动工具页显示DLX-KC01A和东成WSM710-100均为200000+评论，WU130X.1单电版为50000+评论。",
+      "classification": "FACT",
+      "source_ids": ["S04"],
+      "confidence": "high",
+      "counterevidence": "评论量为累计消费证据，并非当前成交量或市场份额。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "WU130X.1有精确单电版社区商品页和用户口碑；实际使用笔记肯定其紧凑与扭矩，同时提出响应和耐用性担忧。",
+      "classification": "FACT",
+      "source_ids": ["S05", "S06"],
+      "confidence": "medium",
+      "counterevidence": "主要定性用户笔记发表于2022年，时效性不足。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "可读的京东自营摄影机页面显示Pocket 3标准版500000+评论、Action 5 Pro 200000+评论、GO 3S灵动白64G标准版50000+评论。",
+      "classification": "FACT",
+      "source_ids": ["S07"],
+      "confidence": "medium",
+      "counterevidence": "该页面底层抓取副本约两个月旧，不能解释为2026-10-06实时销售状态。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "2026-10-06实际打开的中国地区DJI商城显示Osmo Pocket 3公开普通价2399元、Osmo Action 5 Pro标准套装公开价2198元。",
+      "classification": "FACT",
+      "source_ids": ["S08", "S09"],
+      "confidence": "high",
+      "counterevidence": "这些是品牌中国官方商城公开价，不等同于京东当日成交价、会员价或券后价。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "影石官方资料确认GO 3S单机39.1g、最高4K/30fps等规格，并确认长时间录像可能触发过温保护。",
+      "classification": "FACT",
+      "source_ids": ["S10", "S11"],
+      "confidence": "high",
+      "counterevidence": "过温时间受环境、Wi-Fi、息屏和拍摄设置影响，不能机械外推到所有实际场景。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "GO 3S适合作为C12机会样本，因为其50000+国内评论提供消费证据，且拇指式第一视角形态明显区别于两个头部样本。",
+      "classification": "INFERENCE",
+      "source_ids": ["S07", "S10", "S11"],
+      "confidence": "medium",
+      "counterevidence": "可全文核验的近期国内社区评测不足，且发热/过温是明确反向信号。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "这9个SKU适合作为冻结前有限候选池，但不足以宣称为中国市场最终Top SKU。",
+      "classification": "INFERENCE",
+      "source_ids": ["S01", "S04", "S07"],
+      "confidence": "high",
+      "counterevidence": "样本偏向京东自营公开可读数据，且多个item的当日价格、seller_id和成交字段尚未取得。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：京东9个候选的当日普通价、PLUS/会员价、定向券、seller_id以及可核验成交/销量字段；本轮具体item页多返回页面空壳。",
+    "C12京东自营摄影机页的底层抓取副本约两个月旧，需要冻结日刷新后再确认消费者证据未发生结构性变化。",
+    "C11两个domestic_head尚缺厂商可完整打开的精确型号规格页；现阶段只使用京东精确型号标题，不补猜规格。",
+    "C11 WU130X.1的高质量定性社区证据偏旧，需要一条近期实际使用样本交叉验证，但不因此删除候选。",
+    "C12 GO 3S尝试访问的部分国内社区正文出现解析/登录障碍；当前机会判断主要依赖京东消费证据和官方规格。",
+    "各品类高/中/低价位层需在冻结日取得足够数量的精确SKU普通公开价后按三分位计算；当前不强行贴层级。"
+  ]
+}
+```

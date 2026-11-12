@@ -1,0 +1,176 @@
+这次新增的是一组**独立探索样本 N01–N11**，不并入旧 54 SKU 的任何分母。先给结论：旧样本本身不适合直接检验“China-head / US-middle-tail”；而新样本里，真正能做到两端 SKU 锁定、当前页面价可读的轻小件，已经出现一批很有信息量的**负对照**——不是 AliExpress 特指，而是品牌国际直销渠道已经把中国商品价差压得很薄。反过来，最符合 hypothesis 的几个中国高评论小件，恰恰仍缺一侧可靠当前交易价，不能把“有可能”写成“已发现套利”。
+
+### 一、为什么旧 54 SKU 不适合直接检验核心假设
+
+这不是说旧样本没价值；它更像 category/feasibility scan，而不是针对 “China-head / US-middle-tail gap” 设计的抽样框。
+
+| 问题 | 对假设检验的影响 |
+|---|---|
+| **没有把 China-head 作为准入条件** | 54 个 SKU 中大量 CN price clue 为空，而且没有统一的国内销量/评论量/官方旗舰店强度门槛。因此无法知道样本究竟是不是“中国已充分竞争、消费者已完成质量筛选”的商品。 |
+| **没有把 US-middle-tail 操作化** | 没有统一衡量美国购买意图、美国渠道卖家数量、分销稀疏度；因此即使发现价差，也不能归因于“美国 distribution middle-tail”。 |
+| **品类摩擦过重** | 手机、电脑、路由器、智能锁、扫地机等受 ROM/频段/电压/认证、保修、退货、重量等影响；帐篷、收纳箱、扫地机又有明显体积重。物流与兼容性会淹没你最想先测的 price-discovery 效应。 |
+| **混入全球高度有效率的品牌** | Apple、Samsung、Sony、Nike、LEGO 等本来就更可能有成熟全球价格体系；它们适合作为负对照，但不应占 hypothesis-targeted sample 很大比例。 |
+| **同款与替代品边界不稳定** | 大陆版、国际版、不同内存/颜色/附件/套装混在一起时，表面 price gap 可能只是 variant gap。 |
+| **基准价定义不统一** | 部分 clue 是优惠券、会员/定向或聚合变体价；不能作为普通美国用户可重复获得的当前公开基准。 |
+| **最关键：0/54 transaction verified，0/54 full landed** | 所以旧结果只说明“这轮证据链没有闭环”，**不能估计价差分布，更不能证伪产品假设**。 |
+
+因此更合适的下一层 sampling frame 应该是：**国内评论/销量信号强 + 单件轻小 + 无电池/低监管 + 型号/pack 可锁 + 美国存在购买需求但国际分销不一定成熟**。
+
+---
+
+## 二、新增独立探索集 N01–N11
+
+下面的“海外价格”只表示**本轮直接读到的可信渠道当前商品页价格**，不声称是全网绝对最低；运费未锁时我明确写未知。国内热销证据缺失也不补推断。
+
+| ID | 具体型号 | 为什么值得测 | 中国侧 | 海外侧 | 初判 |
+|---|---|---|---|---|---|
+| **N01** | **Ulanzi/Falcam F38B3404 Multi-hole Quick Release Kit** | 约 51.7g，纯机械摄影快拆，型号和规格清晰，兼容摩擦低 | 京东 Ulanzi 条目出现 F38 多孔快装套件，**10000+ 评论**；但本轮没有锁到该 SKU 的当前公开商品价。[JD.com](https://www.jd.com/brand/6527bc122438644f9b3.html?utm_source=chatgpt.com) | Ulanzi 官方 **Base & Plate Kit F38B3404 $36.99**；官网说明满 $79 才是页面所述 free shipping 条件，因此单件实际运费仍未知。另一个 eBay 精确 F38B3404 为 $33 + $19 运费，显然不是低 all-in。[ULANZI](https://www.ulanzi.com/collections/20-quick-release-system/products/falcam-f38-multi-hole-quick-release-kit-f38b3404?utm_source=chatgpt.com) | **高优先残留机会**：China-head 信号强、重量低，但国内当前价缺失，不能算 spread。 |
+| **N02** | **LAOA LA624601 6pc precision screwdriver set** | 轻小、无电池、标准小工具；不是典型国际大牌 | 京东精确型号 **LA624601**，可见 **1000+ 评价**。当前交易价未锁。[JD.com](https://www.jd.com/chanpin/1304050.html?utm_source=chatgpt.com) | LAOA 官方国际站有 “6PCS Precision screwdriver”，当前 **$7.02，Ships From China**；但该页文本未显示 LA624601 型号，因此只能视为高度相似官方产品，**不能升级成 exact-match**。[Laoa](https://www.laoa.com/products/laoa-6pcs-precision-screwdriver?utm_source=chatgpt.com) | **很符合 hypothesis 的 discovery candidate**，但 SKU identity 还差一环。 |
+| **N03** | **LEOBOG Graywood V4，100颗** | 中国本土机械键盘生态，pack 明确，无电池 | 京东旗舰/价格页能锁定“灰木轴 V4 线性轴 ×100颗”，**5000+ 评论**；当前商品价本轮没读到。[JD Mall](https://mall.jd.com/index-12835225.html?utm_source=chatgpt.com) | 本轮没有找到足够可信、可直接读当前价的独立海外 100-pack 同款页面。 | **本轮最像 residual opportunity 的候选之一**；但目前只能称“值得继续取证”，不能称套利成立。 |
+| **N04** | **Gateron Magnetic Jade Pro HE Switch** | 国内需求强、非常轻，但 Hall-effect 兼容性需单独校验 | 京东精确产品族 “磁玉轴 PRO” 有 **10000+ 评论**信号。推荐模块里的 ¥17.60 不是锁定产品页，**不采作交易价**。[JD.com](https://www.jd.com/brand/14065a156e4d002774d6b.html?utm_source=chatgpt.com) | Gateron 官方全球站当前显示 **$44.80**，但页面同时列 70/90pcs 选项，文本抓取无法可靠确认 $44.80 对应哪一 pack，因此**不拿来计算**。[Gateron](https://www.gateron.com/products/gateron-magnetic-jade-pro-switch-set?utm_source=chatgpt.com) | 更像**可能已国际化套利**的品种；Ali 精确 item 能定位，但本轮无法直接读其当前交易页价格，所以不把归档价当证据。 |
+| **N05** | **ORICO M2PV-C3 NVMe enclosure** | 小型存储外设，无电池；接口/型号可锁 | 京东精确页面显示 **ORICO M2PV-C3-BK-EP，¥65.90**，另有品牌官方页面确认 M2PV-C3 型号与 10Gbps 参数。¥65.90 是页面公开显示价，不等于登录后最终到手价。[JD.com](https://item.jd.com/product/xEji4cNYbpM3ze-dxtIr1g.html?utm_source=chatgpt.com) | `oricogear.shop` 的精确 M2PV-C3 页面当前显示 **$6.65，原价 $18.99，-65%**。该域名自称 ORICO Official Store，但我没有独立锁定其与 orico.cc 的授权关系，而且这是明显 promo，**不作为 ordinary-price baseline**。[Orico Gear](https://oricogear.shop/products/orico-10gbps-m-2-nvme-black-striped-ssd-enclosure?utm_source=chatgpt.com) | **强烈反例线索，但证据等级不足以定案**：当前促销价甚至低于中国公开商品价；需先解决渠道授权和促销可重复性。 |
+| **N06** | **Waveshare USB TO RS485 (B)** | 被动/简单接口型 maker 配件，型号清楚 | 京东 Waveshare 官方旗舰有精确 `USB TO RS485 (B)` 变体，但价格字段本轮为空，累计评价为 0；因此**没有 China-head 证据**。[JD.com](https://ic-item.jd.com/10078803441089.html?utm_source=chatgpt.com) | Waveshare 国际官方精确型号，SKU **22456，$7.99** 单件，运费未量化。[Waveshare](https://www.waveshare.com/usb-to-rs485-b.htm?utm_source=chatgpt.com) | 是很干净的 exact-SKU 对照，但**不符合 China-head**，优先级低于 N01–N03。 |
+| **N07** | **DFRobot DFR0052 Piezo Vibration Sensor** | 10g、简单 maker 模块，exact SKU | 中国官方 **DFR0052 ¥20.00**；10 reviews，页面销售量 0，因此不能称国内热销。[DFRobot](https://www.dfrobot.com.cn/goods-101.html?utm_source=chatgpt.com) | 国际官方 **DFR0052 $4.50** 单件。[DFRobot Electronics](https://www.dfrobot.com/product-399.html/?utm_source=chatgpt.com) | **负对照**：即便中国商品价较低，25% 空间只剩约 $0.39 给全部中国跨境附加成本。 |
+| **N08** | **DFRobot DFR0027 Digital Vibration Sensor** | exact SKU，轻小简单 | 中国官方 **¥15.00**；11 reviews、sales 0，非 China-head。[DFRobot](https://www.dfrobot.com.cn/goods-76.html?utm_source=chatgpt.com) | 国际官方 **$2.50**。[DFRobot Electronics](https://www.dfrobot.com/product-79.html/?utm_source=chatgpt.com) | **明显负对照**：仅商品价层面，中国端已经没有 25% 节省空间。 |
+| **N09** | **DFRobot SEN0290 Lightning Sensor** | exact SKU、无区域版本问题 | 中国官方 **¥149.00**；3 reviews、sales 0。[DFRobot](https://www.dfrobot.com.cn/goods-1889.html?utm_source=chatgpt.com) | 国际官方 **$21.90**。[DFRobot Electronics](https://www.dfrobot.com/product-1828.html?utm_source=chatgpt.com) | **强负对照**：中国商品价折美元已高于国际商品价。 |
+| **N10** | **DFRobot SEN0018 PIR Motion Sensor** | 25g 左右、成熟基础模块 | 中国官方 **¥25.00**；13 reviews、sales 0。[DFRobot](https://www.dfrobot.com.cn/goods-286.html?utm_source=chatgpt.com) | 国际官方 **$4.40**。[DFRobot Electronics](https://www.dfrobot.com/product-119.html?description=true\&search=SEN0018\&utm_source=chatgpt.com) | **负对照**：商品价层面不足 25% spread。 |
+| **N11** | **DFRobot DFR0034 Analog Sound Sensor** | exact SKU，简单 maker 模块 | 中国官方 **¥40.00**；23 reviews、sales 0。[DFRobot](https://www.dfrobot.com.cn/goods-85.html?utm_source=chatgpt.com) | 国际官方 **$4.40**。[DFRobot Electronics](https://www.dfrobot.com/product-83.html?utm_source=chatgpt.com) | **更强负对照**：中国商品价本身高于国际价。 |
+
+这里有一个重要的抽样解释：N07–N11 并不是因为 DFRobot 特别“有机会”，恰恰相反。我把它们作为一个**negative-control block**，因为同一个中国品牌在中/国际官方站都能锁到 exact SKU 和当前商品价，可以直接检查“只要是 China-native 轻小件就一定有巨大国内价差”这个错误直觉。
+
+---
+
+## 三、25% 节省门槛：四个以上候选的可容忍附加成本
+
+汇率采用欧洲央行 2026-10-06 reference-rate 表推导的交叉汇率：约 **1 CNY = 0.14915 USD**。这是汇率换算，不是信用卡实际结算价。[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.eu.html?utm_source=chatgpt.com)  
+
+
+我先严格区分两个量：
+
+- **商品价预筛 ceiling**：  
+  \[
+  F_{\max}=0.75\times P_{\text{overseas item}}-P_{\text{CN item in USD}}
+  \]
+  这里的 \(F\) 是中国 route 可再承受的**物流+税费+采购服务费+支付/FX 等全部附加成本**。
+- **严格 landed-net ceiling**：还需要美国侧的最终 shipping/tax，以及中国 route 的实际物流/税费。由于这些候选的 checkout all-in 都没有完全锁，本轮**没有一个可以声称完成最终 landed 25% 验证**。
+
+| SKU | CN 当前商品价 | 海外当前商品价 | CN 折美元 | 使 China-direct 仍便宜 25% 的商品价预筛 Fmax | 解读 |
+|---|---:|---:|---:|---:|---|
+| DFR0052 | ¥20 | $4.50 | $2.98 | **+$0.39** | 只剩 39 美分给所有跨境附加成本，单件 route 基本没有缓冲。 |
+| DFR0027 | ¥15 | $2.50 | $2.24 | **−$0.36** | 中国商品价本身就已经高于“海外价×75%”。 |
+| SEN0290 | ¥149 | $21.90 | $22.22 | **−$5.80** | 连 gross item-price arbitrage 都不存在。 |
+| SEN0018 | ¥25 | $4.40 | $3.73 | **−$0.43** | 不足 25% gross spread。 |
+| DFR0034 | ¥40 | $4.40 | $5.97 | **−$2.67** | 国际官方商品价反而更低。 |
+
+而且 DFRobot 自己当前 shipping policy 明确写到：Global site 的免费运输门槛是 $150，美国订单可能涉及从中国发货及进口费用；USA site 又有 US warehouse / China direct-line 等不同履约路线。换言之，**商品页价格绝不能直接等于 US all-in**。[DFRobot Electronics](https://www.dfrobot.com/shipping?utm_source=chatgpt.com)
+
+所以这些数字的正确使用方式是：**negative Fmax 可以快速淘汰很多候选；positive Fmax 只是值得继续拿 landed quote 的必要条件，不是成功证明。**
+
+---
+
+## 四、“Ali 已经套利”这次到底证明到哪一步
+
+这里必须比结论更保守。
+
+**观察：本轮没有 transaction-verify 出一个可直接读取、variant 锁定的 AliExpress 当前交易价。** Gateron 的 Ali item 可以定位到具体商品 URL，但页面在本轮检索中无法读取；第三方价格归档即使显示“当前价”，也混有历史时间序列，我没有拿它冒充 Ali 当前普通购买价。
+
+因此不能写成“已证明 Ali 已经套利了 N 个”。
+
+本轮真正能够说的是：
+
+> **更宽泛的“国际渠道已经套利/品牌自己已经国际化定价”反例很强。**
+
+DFRobot 的 5 个 exact-SKU 官方中/国际站对照中，4 个在商品价层面连 25% gross spread 都没有，另一个只剩约 $0.39 的全部跨境费用空间。这说明至少在已经建立英文官方直销渠道的 maker SKU 上，**China-native ≠ China-direct 有意义**。
+
+而 Ali-specific 的问题仍是**剩余缺口**，不是 0，也不是无货。
+
+Gateron 的具体 Ali 商品页：[AliExpress item 1005009119579232（本轮页面无法读取，未采价）](https://www.aliexpress.com/item/1005009119579232.html?utm_source=chatgpt.com)
+
+---
+
+# 五、我会如何分“同款价值”和“功能替代价值”
+
+这两类价值不应该混成一个 conversion 或 savings 指标。
+
+### A. Exact-match routing
+
+目标是证明：**用户原本准备买的这个 SKU，本来就存在更优中国路线。**
+
+身份键至少应同时锁：
+
+`manufacturer P/N + revision + pack count + connector/size/color + included accessories + regional version`
+
+例如 Gateron 70 颗与 90 颗、F38 “only plate” 与 “base & plate kit”、大陆版与国际版，都不能互相代替。
+
+验证指标建议直接定义为：
+
+> **Exact-match feasible share = 在满足身份完全一致、ETA/risk 可接受的购买意图中，China all-in 比美国最低可信 all-in 便宜 ≥25% 的比例。**
+
+这里最大的产品价值是**用户信任和零替代决策成本**：不是“我推荐另一个便宜东西”，而是“同一个东西有更便宜 route”。
+
+### B. Functional-substitute routing
+
+这是另一种产品：
+
+> 用户不执着 SKU，只要需求得到满足，系统在中国找到更便宜但功能等价的产品。
+
+它需要先定义不可妥协约束，例如摄影快拆的接口标准/承重/防脱结构，螺丝刀的批头规格与硬度，轴体的触发方式/行程/兼容 PCB，硬盘盒的协议、桥接芯片、散热和容量支持。
+
+这里的比较基准不能是“同关键词最低价”，而应该是：
+
+> **美国市场中最便宜的、达到同一需求阈值的可信替代品**。
+
+并单独报告：
+
+> **Substitute feasible share = 经质量/兼容性验收后的功能替代品中，China all-in 仍节省 ≥25% 的购买意图比例。**
+
+功能替代可能带来更大的 catalog opportunity，但也把产品从“价格路由器”推进到“推荐/质量判断系统”，匹配错误的成本明显更高。两类数字合并，会掩盖真正的 routing alpha。
+
+---
+
+# 六、这轮最值得继续追的不是负对照，而是这三个
+
+按“China-head × 轻小 × 兼容简单 × 国际价仍不透明”的组合，我会把下一轮取证顺序排成：
+
+1. **LEOBOG Graywood V4 100pcs** — 5000+ 国内评论、pack 明确、国际同款价格在本轮不容易直接锁；这是最符合“China-head / US-middle-tail”形状的候选。[JD.com](https://www.jd.com/jiage/6704448a9ae92f622f0.html?utm_source=chatgpt.com)
+2. **Ulanzi/Falcam F38B3404** — 国内 10000+ 评论、51.7g、纯机械接口；海外官方已到 $36.99，所以关键未知是**中国普通公开价是否低到足以留下 $10+ 的绝对空间**。[JD.com](https://www.jd.com/brand/6527bc122438644f9b3.html?utm_source=chatgpt.com)
+3. **LAOA LA624601** — 1000+ 国内评价、小工具、非国际大牌；当前最大缺口不是需求，而是把国际站 6pcs 产品与 LA624601 **型号身份彻底锁死**。[JD.com](https://www.jd.com/chanpin/1304050.html?utm_source=chatgpt.com)
+
+Gateron 则更适合当“**国内很 head，但国际渠道已经迅速跟上**”的潜在反例，而不是最优机会样本。
+
+---
+
+# Source ledger
+
+以下访问日期均为 **2026-10-06 美国东部时间**；“支持范围”只写该来源能证明什么，不外推。
+
+| Ledger | 直接来源 | 支持范围 | 剩余缺口 |
+|---|---|---|---|
+| S00 | [ECB Euro foreign-exchange reference rates](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.eu.html?utm_source=chatgpt.com) | 2026-10-06 EUR/USD、EUR/CNY 参考汇率；用于推导 CNY/USD | 不等于信用卡/支付机构实际 FX |
+| S01 | [Ulanzi F38B3404 official product](https://www.ulanzi.com/collections/20-quick-release-system/products/falcam-f38-multi-hole-quick-release-kit-f38b3404?utm_source=chatgpt.com) | F38B3404 exact model、$36.99 当前页面价、variant、约 51.7g | 单件实际 shipping 未结账确认 |
+| S02 | [JD Ulanzi/F38 listing evidence](https://www.jd.com/brand/6527bc122438644f9b3.html?utm_source=chatgpt.com) | F38 多孔快装套件、10000+ 评论、自营信号 | 不是锁定 SKU 的当前 transaction price |
+| S03 | [eBay exact F38B3404 listing](https://www.ebay.com/itm/405738416317?utm_source=chatgpt.com) | F38B3404、$33、$19 shipping、seller 信息；listing updated 2026-09-07 | 不证明全网最低 |
+| S04 | [JD LAOA LA624601](https://www.jd.com/chanpin/1304050.html?utm_source=chatgpt.com) | exact model LA624601、6件套、1000+评价 | 当前普通公开价未锁 |
+| S05 | [LAOA official 6PCS Precision Screwdriver](https://www.laoa.com/products/laoa-6pcs-precision-screwdriver?utm_source=chatgpt.com) | 当前 $7.02、Ships From China | 页面未显示 LA624601 P/N，不能当 exact match |
+| S06 | [JD Gateron Magnetic Jade Pro evidence](https://www.jd.com/brand/14065a156e4d002774d6b.html?utm_source=chatgpt.com) | 磁玉轴 PRO 国内 10000+ 评论需求信号 | pack-specific 当前商品价未锁 |
+| S07 | [Gateron official Magnetic Jade Pro HE Set](https://www.gateron.com/products/gateron-magnetic-jade-pro-switch-set?utm_source=chatgpt.com) | 官方 exact product family；当前页面显示 $44.80；70/90pcs options | 抓取文本无法锁定 $44.80 对应哪一 pack |
+| S08 | [JD LEOBOG Graywood V4 100pcs](https://www.jd.com/jiage/6704448a9ae92f622f0.html?utm_source=chatgpt.com) | 灰木轴 V4 100颗、5000+ 评论 | 当前价、可信海外同 pack 价缺失 |
+| S09 | [LEOBOG JD flagship](https://mall.jd.com/index-12835225.html?utm_source=chatgpt.com) | 品牌旗舰、100颗 variant 身份 | 页面当前价未读出 |
+| S10 | [JD ORICO M2PV-C3](https://item.jd.com/product/xEji4cNYbpM3ze-dxtIr1g.html?utm_source=chatgpt.com) | exact model M2PV-C3-BK-EP、公开显示 ¥65.90 | “登录后最终价”未知 |
+| S11 | [ORICO corporate M2PV-C3 specification](https://www.orico.cc/index/product/detail/2335.html?utm_source=chatgpt.com) | 官方型号/接口/规格身份 | 无交易价 |
+| S12 | [ORICO M2PV-C3 overseas promo listing](https://oricogear.shop/products/orico-10gbps-m-2-nvme-black-striped-ssd-enclosure?utm_source=chatgpt.com) | 页面当前 $6.65、原价 $18.99、-65% | 域名授权关系未独立锁定；promo 不能当 ordinary baseline |
+| S13 | [JD Waveshare USB TO RS485 (B)](https://ic-item.jd.com/10078803441089.html?utm_source=chatgpt.com) | exact variant、官方旗舰、评价为0 | 当前价空；国内 SKU 与全球 SKU 号仍需进一步 reconcile |
+| S14 | [Waveshare global USB TO RS485 (B)](https://www.waveshare.com/usb-to-rs485-b.htm?utm_source=chatgpt.com) | exact model、SKU22456、$7.99 当前单价 | shipping/all-in 未锁 |
+| S15 | [DFRobot CN DFR0052](https://www.dfrobot.com.cn/goods-101.html?utm_source=chatgpt.com) | exact SKU、¥20、review/销售字段 | 不代表全中国销量 |
+| S16 | [DFRobot global DFR0052](https://www.dfrobot.com/product-399.html/?utm_source=chatgpt.com) | exact SKU、$4.50 | final US all-in 未锁 |
+| S17 | [DFRobot CN DFR0027](https://www.dfrobot.com.cn/goods-76.html?utm_source=chatgpt.com) | exact SKU、¥15 | 同上 |
+| S18 | [DFRobot global DFR0027](https://www.dfrobot.com/product-79.html/?utm_source=chatgpt.com) | exact SKU、$2.50 | final US all-in 未锁 |
+| S19 | [DFRobot CN SEN0290](https://www.dfrobot.com.cn/goods-1889.html?utm_source=chatgpt.com) | exact SKU、¥149 | 中国 marketplace head 未证明 |
+| S20 | [DFRobot global SEN0290](https://www.dfrobot.com/product-1828.html?utm_source=chatgpt.com) | exact SKU、$21.90 | final US all-in 未锁 |
+| S21 | [DFRobot CN SEN0018](https://www.dfrobot.com.cn/goods-286.html?utm_source=chatgpt.com) | exact SKU、¥25 | 中国 marketplace head 未证明 |
+| S22 | [DFRobot global SEN0018](https://www.dfrobot.com/product-119.html?description=true&search=SEN0018&utm_source=chatgpt.com) | exact SKU、$4.40 | final US all-in 未锁 |
+| S23 | [DFRobot CN DFR0034](https://www.dfrobot.com.cn/goods-85.html?utm_source=chatgpt.com) | exact SKU、¥40 | 中国 marketplace head 未证明 |
+| S24 | [DFRobot global DFR0034](https://www.dfrobot.com/product-83.html?utm_source=chatgpt.com) | exact SKU、$4.40 | final US all-in 未锁 |
+| S25 | [DFRobot current shipping policy](https://www.dfrobot.com/shipping?utm_source=chatgpt.com) | 商家当前 Global/USA shipping threshold、US 发货路线与其自述的 duty handling | 不是美国海关法律来源，也不等同于某一 SKU checkout quote |
+
+**本轮最重要的更新不是“找到 X 个 25% 套利 SKU”，而是把 falsification 条件变得更干净了：**轻小、exact-SKU、低兼容摩擦并不足以保证中国路线有价差；一旦品牌已经建立低价英文直销，25% gross spread 可以直接消失。真正值得继续寻找的，是像 LEOBOG / LAOA / F38 这样**国内已经有明显消费验证、但国际 price discovery 仍不充分**的商品。AliExpress-specific 是否已经把这些异常完全压平，本轮在你的证据门槛下仍然是**未解决问题，而不是结论**。

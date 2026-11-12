@@ -1,0 +1,455 @@
+{
+  "model_sent": false,
+  "network_mode": "none",
+  "account_navigation": false,
+  "arbitrary_values_logged": false,
+  "completed": true,
+  "theme_model_visibility_rules": [],
+  "persisted_atom_state_present": true,
+  "persisted_atom_state_shape": {
+    "type": "object",
+    "fields": {
+      "plugin-oauth-install-reconciliation-by-state-v1": {
+        "type": "object",
+        "fields": {},
+        "field_count": 0
+      },
+      "chatgpt-sidebar-state-v2": {
+        "type": "object",
+        "fields": {
+          "<id>": {
+            "type": "object",
+            "fields": {
+              "flatConversations": {
+                "type": "list"
+              },
+              "flatTasks": {
+                "type": "list"
+              },
+              "pinnedConversations": {
+                "type": "list"
+              },
+              "pinnedProjects": {
+                "type": "list"
+              },
+              "projects": {
+                "type": "list"
+              }
+            },
+            "field_count": 5
+          }
+        },
+        "field_count": 1
+      },
+      "flat-project-sidebar-preferences-v1": {
+        "type": "object",
+        "fields": {
+          "chatSortMode": {
+            "type": "string",
+            "characters": 10
+          },
+          "initialized": {
+            "type": "bool",
+            "value": true
+          },
+          "mode": {
+            "type": "string",
+            "characters": 7
+          },
+          "projectSortMode": {
+            "type": "string",
+            "characters": 10
+          }
+        },
+        "field_count": 4
+      },
+      "browser-codex-discovered:<id>:user-<id>": {
+        "type": "bool",
+        "value": true
+      },
+      "space-page-pins-local-backup-v1": {
+        "type": "object",
+        "fields": {
+          "order": {
+            "type": "array",
+            "count": 0,
+            "items": []
+          },
+          "metadata": {
+            "type": "NoneType",
+            "value": null
+          }
+        },
+        "field_count": 2
+      },
+      "unified-sidebar-pinned-order-v1": {
+        "type": "array",
+        "count": 0,
+        "items": []
+      },
+      "space-page-pin-projection-owners-v1": {
+        "type": "object",
+        "fields": {
+          "<id>": {
+            "type": "string",
+            "characters": 29
+          }
+        },
+        "field_count": 1
+      },
+      "query-seed:space-list-v2:user-<id>:<id>": {
+        "type": "object",
+        "fields": {
+          "items": {
+            "type": "array",
+            "count": 0,
+            "items": []
+          },
+          "next_cursor": {
+            "type": "NoneType",
+            "value": null
+          },
+          "archive_retention_days": {
+            "type": "number"
+          }
+        },
+        "field_count": 3
+      },
+      "chatgpt-work-models-v1/user-<id>/<id>": {
+        "type": "object",
+        "fields": {
+          "fetchedAt": {
+            "type": "number"
+          },
+          "response": {
+            "type": "object",
+            "fields": {
+              "title": {
+                "type": "str"
+              },
+              "secondary_title": {
+                "type": "str"
+              },
+              "models": {
+                "type": "list"
+              },
+              "model_upgrades": {
+                "type": "dict"
+              },
+              "eligible_codex_model_slugs": {
+                "type": "list"
+              },
+              "slider_settings": {
+                "type": "list"
+              },
+              "default_slider_upgrades": {
+                "type": "list"
+              },
+              "internal_groups": {
+                "type": "NoneType"
+              },
+              "categories": {
+                "type": "list"
+              },
+              "versions": {
+                "type": "list"
+              },
+              "icons": {
+                "type": "NoneType"
+              },
+              "default_model_slug": {
+                "type": "str"
+              },
+              "workspace_model_policy": {
+                "type": "NoneType"
+              },
+              "model_picker_version": {
+                "type": "int"
+              }
+            },
+            "field_count": 14
+          }
+        },
+        "field_count": 2
+      },
+      "chatgpt-last-selected-model-v1": {
+        "type": "object",
+        "fields": {
+          "slug": {
+            "type": "string",
+            "characters": 16
+          },
+          "thinkingEffort": {
+            "type": "string",
+            "characters": 3
+          },
+          "versionId": {
+            "type": "string",
+            "characters": 3
+          }
+        },
+        "field_count": 3
+      },
+      "composer-prompt-drafts-v2": {
+        "type": "object",
+        "fields": {},
+        "field_count": 0
+      },
+      "chatgpt-conversation-prompt-drafts-v2": {
+        "type": "object",
+        "fields": {
+          "<redacted-key>": {
+            "type": "object",
+            "fields": {
+              "prompt": {
+                "type": "str"
+              },
+              "usedDictation": {
+                "type": "bool"
+              },
+              "files": {
+                "type": "NoneType"
+              },
+              "localRecordingIds": {
+                "type": "NoneType"
+              },
+              "dictationSegments": {
+                "type": "NoneType"
+              },
+              "homeConversationId": {
+                "type": "str"
+              },
+              "manualSystemHints": {
+                "type": "NoneType"
+              },
+              "manualSystemHintsRevision": {
+                "type": "str"
+              }
+            },
+            "field_count": 8
+          }
+        },
+        "field_count": 1
+      },
+      "prompt-history": {
+        "type": "object",
+        "fields": {
+          "global": {
+            "type": "array",
+            "count": 0,
+            "items": []
+          },
+          "chatgpt-global": {
+            "type": "array",
+            "count": 20,
+            "items": [
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              },
+              {
+                "type": "dict"
+              }
+            ]
+          }
+        },
+        "field_count": 2
+      },
+      "unified-floating-composer-dock-position-v1": {
+        "type": "string",
+        "characters": 12
+      },
+      "chatgpt-conversation-resume-tokens-v1": {
+        "type": "object",
+        "fields": {
+          "<redacted-key>": {
+            "type": "object",
+            "fields": {
+              "expiresAtMs": {
+                "type": "int"
+              },
+              "promptMessageId": {
+                "type": "str"
+              },
+              "token": {
+                "type": "str"
+              },
+              "turnTraceId": {
+                "type": "str"
+              }
+            },
+            "field_count": 4
+          }
+        },
+        "field_count": 1
+      },
+      "chatgpt-temporary-chat-personalization-v1": {
+        "type": "object",
+        "fields": {
+          "<redacted-key>": {
+            "type": "bool",
+            "value": false
+          }
+        },
+        "field_count": 1
+      },
+      "chatgpt-search-results-v2": {
+        "type": "object",
+        "fields": {
+          "<redacted-key>": {
+            "type": "object",
+            "fields": {
+              "accountId": {
+                "type": "str"
+              },
+              "userId": {
+                "type": "str"
+              },
+              "cachedAt": {
+                "type": "int"
+              },
+              "conversationMessages": {
+                "type": "list"
+              },
+              "item": {
+                "type": "dict"
+              }
+            },
+            "field_count": 5
+          }
+        },
+        "field_count": 1
+      }
+    },
+    "field_count": 17
+  },
+  "local_storage_count": 5,
+  "local_storage": [
+    {
+      "name": "statsig.session_id.<id>",
+      "key_sha256": "e4539eba5196706275d714e72f1108bd59a925c69b04da23aafba0d6fb61a7b8",
+      "value_shape": {
+        "type": "object",
+        "fields": {
+          "sessionID": {
+            "type": "string",
+            "characters": 36
+          },
+          "startTime": {
+            "type": "number"
+          },
+          "lastUpdate": {
+            "type": "number"
+          }
+        },
+        "field_count": 3
+      }
+    },
+    {
+      "name": "<id>",
+      "key_sha256": "c1da98d589202b259a87267651ff06dea8c7a5f94ec023721f05c3616e2d667d",
+      "value_shape": {
+        "type": "number"
+      }
+    },
+    {
+      "name": "oai/apps/tpp/default-tab-last-applied-recommendation/user-<id>",
+      "key_sha256": "b44671a8ccf9efca214e565065d8c7945b379a8ffc055768b3f89be0438b76d2",
+      "value_shape": {
+        "type": "object",
+        "fields": {
+          "recommendationRequestedAt": {
+            "type": "number"
+          },
+          "recommendationExpiresAt": {
+            "type": "number"
+          }
+        },
+        "field_count": 2
+      }
+    },
+    {
+      "name": "precise_location_identity",
+      "key_sha256": "b07e6b9cba481cac80fe0eca0d4befac863fdb721d66981db4cd0e3bcb24e9c2",
+      "value_shape": {
+        "type": "array",
+        "count": 2,
+        "items": [
+          {
+            "type": "string",
+            "characters": 36
+          },
+          {
+            "type": "string",
+            "characters": 29
+          }
+        ]
+      }
+    },
+    {
+      "name": "codex.browser.appThemes.v1",
+      "key_sha256": "d7d1a384d0879d8327b720a895c12e2b2c4e3718628dc2c1ef2a56e300028f00",
+      "value_shape": {
+        "type": "object",
+        "fields": {
+          "accountId": {
+            "type": "string",
+            "characters": 36
+          },
+          "userId": {
+            "type": "string",
+            "characters": 29
+          },
+          "css": {
+            "type": "string",
+            "characters": 12069
+          },
+          "light": {
+            "type": "bool",
+            "value": true
+          },
+          "dark": {
+            "type": "bool",
+            "value": true
+          }
+        },
+        "field_count": 5
+      }
+    }
+  ],
+  "browser_closed": true,
+  "owned_browser_process_binding_verified": false,
+  "no_live_browser_verified": true,
+  "memory_peak_bytes": 353759232,
+  "condition": "local_storage",
+  "utc": "2026-10-07T22:29:14.288876+00:00",
+  "source_browser_volume_mounted_read_only_only_in_copy": true,
+  "memory_before": {
+    "utc": "2026-10-07T22:29:08.213521+00:00",
+    "physical_load_percent": 96,
+    "total_physical_gib": 31.497,
+    "available_physical_gib": 1.005,
+    "total_commit_gib": 67.497,
+    "used_commit_gib": 61.292,
+    "available_commit_gib": 6.205,
+    "commit_load_percent": 90.8
+  },
+  "return_code": 0
+}

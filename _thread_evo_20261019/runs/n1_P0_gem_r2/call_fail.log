@@ -1,0 +1,18 @@
+{
+ "run_id": "n1_P0_gem_r2",
+ "command": "opencode run --standalone --format json --model antigravity-tools/gemini-3.8-flash-high",
+ "started": "2026-10-20T18:22:48",
+ "seconds": 268,
+ "exit_code": 1,
+ "completed": false,
+ "model": "gemini-3.8-flash-high",
+ "offline": true,
+ "error": "{\"type\": \"provider.invalid-output\", \"message\": \"OpenAI Chat received content after the finish reason\", \"status\": 200, \"response\": {\"body\": \"{\\\"id\\\":\\\"chatcmpl-e33ccbc8-8a81-44c2-91e4-a277397aa0ff\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"created\\\":1792534976,\\\"model\\\":\\\"gemini-3.8-flash-high\\\",\\\"choices\\\":[{\\\"index\\\":0,\\\"delta\\\":{\\\"content\\\":\\\"task ready\\\"},\\\"finish_reason\\\":\\\"stop\\\"}]}\"}}",
+ "message_chars": 786,
+ "meta": {
+  "stage": "node2",
+  "variant": "P0",
+  "writer": "gem"
+ },
+ "stderr_tail": ""
+}

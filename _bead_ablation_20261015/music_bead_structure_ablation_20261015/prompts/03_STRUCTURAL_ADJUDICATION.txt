@@ -1,0 +1,24 @@
+【通用提示词｜独立结构分段裁决｜在已完成的音乐研究之间做选择】
+
+作品与范围：{{WORK_AND_SCOPE}}
+独立外部结构分析 S1：{{STRUCTURAL_WEB_RESULT}}
+独立谱面/听觉研究 S2（可为空、须注明访问限制）：{{STRUCTURAL_SCORE_LISTEN_RESULT}}
+可信来源列表：{{SOURCE_MANIFEST}}
+
+你负责从**音乐证据本身**决定用于逐段构建 Bead Pool 的宏观音乐时间容器。你不能访问 Affect、T、H、History、Thread 或任何“用户以前喜欢几段”的信息；不能为了适配研究内容重新发明切点。
+
+裁决准则：
+- 优先边界可信、听者自然感到较大换气、完整乐段的 MACRO 切点；
+- 另存 SECONDARY，但不能自动升级为新的 Bead；
+- 若两份结构分析在几小节内近似且支持同一结构转换，尽量合并为一个边界候选并保留模糊范围，不得默默丢失版本差异；
+- 若不同来源确实矛盾，列出争议、各自依据、需要什么证据；不够明确可给 provisional 边界和低置信度；
+- 按乐章独立处理，不做“每首一定 N 段”的强制配额；
+- 不把纯技巧事件的密集程度当成换屏价值或情感分段；
+- macro 段之间应能连续覆盖全研究范围，不要制造无法定位的空白或重叠。若无法精确定位则明确 unresolved，不许编造。
+
+请生成：
+A. 一张人类可读的最终段落表（起/止、音乐上为什么这样切、对应来源和置信度）；
+B. 一张分歧表（S1/S2 谁在什么位置不同，采用何者及理由）；
+C. 一个符合 `schemas/STRUCTURE_OUTPUT_CONTRACT.json` 字段语义的 JSON 对象，含 `macro_segments`、`secondary_boundaries`、`source_links`、`unresolved_boundaries`。
+
+裁决完成后输出 `FREEZE_READY=true/false`：来源足够、时间坐标准确且结构可复核，才 true。结构未定时不要继续把 A/T/H 塞入杜撰的段落。

@@ -1,0 +1,559 @@
+{
+  "job_id": "W2-C-batch04",
+  "parent_replicate": "W2-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C10",
+      "name": "扫地机器人与家电",
+      "domestic_price_tier_rule": "冻结日以指定京东国内榜单综合排序前30个合格实物SKU为母样本；去除错误品类、无法定义版本及重复变体，仅使用未登录公开普通标价，nearest-rank P33及P67划分低/中/高；会员价、定向券、国补不计入普通价；有效公开价格少于10个则tier_unresolved。",
+      "price_tier_status": "tier_unresolved",
+      "candidate_count": 3
+    },
+    {
+      "category_id": "C11",
+      "name": "电动工具与维修",
+      "domestic_price_tier_rule": "冻结日以指定京东国内榜单综合排序前30个合格实物SKU为母样本；去除错误品类、无法定义版本及重复变体，仅使用未登录公开普通标价，nearest-rank P33及P67划分低/中/高；会员价、定向券、国补不计入普通价；有效公开价格少于10个则tier_unresolved。",
+      "price_tier_status": "tier_unresolved",
+      "candidate_count": 3
+    },
+    {
+      "category_id": "C12",
+      "name": "相机与视频设备",
+      "domestic_price_tier_rule": "冻结日以指定京东国内榜单综合排序前30个合格实物SKU为母样本；去除错误品类、无法定义版本及重复变体，仅使用未登录公开普通标价，nearest-rank P33及P67划分低/中/高；会员价、定向券、国补不计入普通价；有效公开价格少于10个则tier_unresolved。",
+      "price_tier_status": "tier_unresolved",
+      "candidate_count": 3
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-H1",
+      "brand": "石头 roborock",
+      "model": "P20 Max / A2950RR",
+      "exact_variant": "自动上下水版，自动集尘，热水洗拖布，A2950RR",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东扫地机器人排行榜TOP1，公开显示200000人评论。",
+      "domestic_selection_rule": "C10榜单先排除非自主扫地机器人，并对同品牌近重复变体限取一个；按榜单顺序选择。",
+      "domestic_product_url": "https://item.jd.com/100325565100.html",
+      "item_id": "100325565100",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_charging_base",
+        "automatic_water_plumbing_variant",
+        "app_firmware_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_RANK_AND_EXACT_VARIANT; PRICE_AND_SELLER_UNVERIFIED",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-H2",
+      "brand": "科沃斯 ECOVACS",
+      "model": "T90 PRO",
+      "exact_variant": "26年新款，水箱版，滚筒洗地，自动清洗/集尘，热水洗拖布",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东扫地机器人排行榜TOP7，公开显示50000人评论；在过滤非机器人及同品牌近重复变体后入选。",
+      "domestic_selection_rule": "C10榜单先排除非自主扫地机器人，并对同品牌近重复变体限取一个；按榜单顺序选择。",
+      "domestic_product_url": "https://item.jd.com/100324090416.html",
+      "item_id": "100324090416",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_charging_base",
+        "water_tank_base",
+        "app_firmware_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_RANK_AND_VARIANT; PRICE_AND_SELLER_UNVERIFIED",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "category_id": "C10",
+      "candidate_sku_id": "C10-O1",
+      "brand": "DJI 大疆",
+      "model": "ROMO P",
+      "exact_variant": "水箱版，透明机器人+透明基站",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开列表显示ROMO P水箱版、20000+评论、自营；自费国内社区实测提供正反使用证据；DJI官网确认规格及当前展示价。",
+      "domestic_selection_rule": "要求同时存在中国消费/社区实测证据和国内公开购买信号，并能由官方页确认准确变体。",
+      "domestic_product_url": "https://item.jd.com/100236550220.html",
+      "item_id": "100236550220",
+      "seller_id": null,
+      "access_state": "JD_listing_read_full_page; official_store_read_full_page",
+      "observation_date": "2026-10-06",
+      "domestic_price": 3699,
+      "price_type": "DJI_official_displayed_current_price; reference_price_6799_shown_separately; no_member_or_coupon_price_claimed",
+      "feasibility_flags": [
+        "lithium_battery",
+        "mains_charging_base",
+        "app_firmware_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_VARIANT_AND_PUBLIC_OFFICIAL_PRICE",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-H1",
+      "brand": "东成",
+      "model": "DCJZ2059iD",
+      "exact_variant": "20V无刷冲击锂电钻/手电钻；公开榜单标题未披露电池数量和容量",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东充电式手电钻通用排行榜TOP5，20000人评论；其之前若干条目未公开制造商型号代码。",
+      "domestic_selection_rule": "在通用榜单中仅接受标题可识别制造商明确型号代码的SKU，按榜单顺序取前两项。",
+      "domestic_product_url": "https://item.jd.com/100317846266.html",
+      "item_id": "100317846266",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "charger_voltage_compatibility",
+        "battery_ecosystem_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "PROVISIONAL_EXACT_BATTERY_BUNDLE; MODEL_AND_RANK_VERIFIED; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-H2",
+      "brand": "东成",
+      "model": "WJZ1601S",
+      "exact_variant": "16V双电套装",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东充电式手电钻通用排行榜TOP10，100000人评论；为榜单中下一款公开明确型号代码且套装规格清晰的SKU。",
+      "domestic_selection_rule": "在通用榜单中仅接受标题可识别制造商明确型号代码的SKU，按榜单顺序取前两项。",
+      "domestic_product_url": "https://item.jd.com/100009007521.html",
+      "item_id": "100009007521",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_blocked_by_frequency_control",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "charger_voltage_compatibility",
+        "battery_ecosystem_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_MODEL_VARIANT_AND_PURCHASE_SIGNAL; PRICE_AND_SELLER_UNVERIFIED",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "category_id": "C11",
+      "candidate_sku_id": "C11-O1",
+      "brand": "Worx 威克士",
+      "model": "WU130X.1",
+      "exact_variant": "12V，40Nm，2.0Ah单电",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东威克士品牌页明确列出WU130X.1 40Nm 2.0Ah单电并显示50000+评论、自营；国内购后社区笔记提供实际使用正反证据。",
+      "domestic_selection_rule": "社区实用性证据与国内公开购买信号同时存在，且型号、电压、扭矩和电池套装可区分。",
+      "domestic_product_url": "https://item.jd.com/100018901232.html",
+      "item_id": "100018901232",
+      "seller_id": null,
+      "access_state": "brand_listing_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "charger_voltage_compatibility",
+        "battery_ecosystem_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_VARIANT_AND_CONSUMER_EVIDENCE; PRICE_UNVERIFIED",
+      "source_ids": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-H1",
+      "brand": "Sony 索尼",
+      "model": "Alpha 7C II / A7CM2",
+      "exact_variant": "银色超值镜头套装，含FE 28-60mm镜头",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营微单排行榜TOP1，公开显示50000人评论。",
+      "domestic_selection_rule": "直接采用实际打开的京东自营微单榜中可明确到机身颜色和套装镜头的前两名。",
+      "domestic_product_url": "https://item.jd.com/100064843454.html",
+      "item_id": "100064843454",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "lens_mount_compatibility",
+        "firmware_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_RANK_AND_EXACT_KIT; PRICE_AND_SELLER_UNVERIFIED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-H2",
+      "brand": "Sony 索尼",
+      "model": "ZV-E10K",
+      "exact_variant": "黑色新升级标准镜头套装，E PZ 16-50mm F3.5-5.6 OSS II",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东自营微单排行榜TOP2，公开显示50000人评论。",
+      "domestic_selection_rule": "直接采用实际打开的京东自营微单榜中可明确到机身颜色和套装镜头的前两名。",
+      "domestic_product_url": "https://item.jd.com/100207538579.html",
+      "item_id": "100207538579",
+      "seller_id": null,
+      "access_state": "ranking_read_full_page; product_page_content_unavailable",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": "AUTHENTICATED DATA REQUIRED",
+      "feasibility_flags": [
+        "lithium_battery",
+        "lens_mount_compatibility",
+        "firmware_dependency",
+        "region_warranty_dependency"
+      ],
+      "verification_status": "VERIFIED_PUBLIC_RANK_AND_EXACT_KIT; PRICE_AND_SELLER_UNVERIFIED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "category_id": "C12",
+      "candidate_sku_id": "C12-O1",
+      "brand": "Insta360 影石",
+      "model": "Ace Pro 2",
+      "exact_variant": "冰川白，双电标准套装；2麦/3麦硬件修订随机发货，无法指定",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开商品页可见冰川白双电标准套装及2798元未登录标价，并有买家评价；国内社区文章讨论Vlog/骑行使用价值及短板；官网确认规格和硬件修订随机发货。",
+      "domestic_selection_rule": "要求国内公开购买页和独立社区使用证据并存；因官网明确修订版随机发货，保留候选但标PROVISIONAL。",
+      "domestic_product_url": "https://item.jd.com/product/GmFzyiVBlOPrnqykuQibcQ.html",
+      "item_id": null,
+      "seller_id": null,
+      "access_state": "read_full_page; logged_in_final_price_not_available",
+      "observation_date": "2026-10-06",
+      "domestic_price": 2798,
+      "price_type": "JD_logged_out_public_list_price; login_final_price_unverified; regional_subsidy_not_counted",
+      "feasibility_flags": [
+        "lithium_battery",
+        "USB_C_charging",
+        "app_firmware_dependency",
+        "microSD_dependency",
+        "region_warranty_dependency",
+        "hardware_revision_random_2mic_or_3mic"
+      ],
+      "verification_status": "PROVISIONAL_HARDWARE_REVISION_NOT_SELECTABLE",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/phb/key_737d1e8817233f2840d.html",
+      "title": "扫地机器人排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K01",
+        "K02",
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://www.jd.com/hotitem/737553fafdd68671691.html",
+      "title": "扫地擦地机排行 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://app-store.dji.com/cn/product/dji-romo-p-water-tank-version?from=site-nav&set_region=CN&vid=192291",
+      "title": "购买 DJI ROMO - 大疆首款旗舰扫拖机器人 - DJI Store",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://post.smzdm.com/p/arl9273q/",
+      "title": "大疆首款扫地机器人ROMO P版实测",
+      "published_at": "2025-08-13T15:56:30+08:00",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K03",
+        "K10"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.jd.com/phb/key_985558742fc7312639d9.html",
+      "title": "充电式手电钻排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K04",
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://www.jd.com/brand/98555eac2b4759341ece.html",
+      "title": "worx手电钻品牌及商品 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://post.smzdm.com/talk/p/arqgo4wg/",
+      "title": "威克士(Worx)工业级充电无刷电钻",
+      "published_at": "2022-06-24T13:32:18+08:00",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K05",
+        "K11"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://www.jd.com/phb/key_65261ae931053d78082.html",
+      "title": "京东自营微单排行榜 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K06",
+        "K09"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://item.jd.com/product/GmFzyiVBlOPrnqykuQibcQ.html",
+      "title": "影石Insta360 Ace Pro 2 双电标准套装 - 京东",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.insta360.com/cn/product/insta360-ace-pro2",
+      "title": "影石Insta360 Ace Pro 2 – AI 双芯，旗舰影像运动相机",
+      "published_at": null,
+      "retrieved_at": "2026-10-06",
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K08"
+      ]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://post.smzdm.com/p/arzqxmqg/",
+      "title": "影石Ace Pro 2值得买吗：8K运动相机的优势和短板都在这",
+      "published_at": "2026-10-01T22:08:30+08:00",
+      "retrieved_at": "2026-10-06",
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": [
+        "K07",
+        "K12"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "京东扫地机器人排行榜公开页将石头P20 Max自动上下水版A2950RR列为TOP1，并显示200000人评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "京东榜单和评论量不是审计后的全国成交量。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "同一公开榜单将科沃斯T90 PRO水箱版列为TOP7，并显示50000人评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S01"
+      ],
+      "confidence": "high",
+      "counterevidence": "榜单动态更新，不能外推全国市场份额。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "DJI ROMO P水箱版同时具有京东20000+评论购买信号、官方规格页和国内自费社区实测，满足机会SKU进入条件。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区实测指出低矮空间碰撞、边刷不抬升、耗水等问题；京东评论数不等于销量。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "在实际打开的京东充电式手电钻通用榜单中，按标题必须出现明确制造商型号代码的规则，DCJZ2059iD和WJZ1601S是顺序最靠前的两个可复现型号候选。",
+      "classification": "FACT",
+      "source_ids": [
+        "S05"
+      ],
+      "confidence": "medium",
+      "counterevidence": "榜单前部存在评论更多但没有公开型号代码的SKU；因此这里是版本可验证性筛选，不是销量总排名。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "WU130X.1在京东威克士品牌页公开为12V 40Nm 2.0Ah单电并显示50000+评论，且国内社区存在购后使用反馈，因此可作为C11机会样本。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区笔记较早且反馈中存在响应、同心度和耐用性担忧。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "京东自营微单榜公开页TOP1为Sony Alpha 7C II银色28-60套机，TOP2为Sony ZV-E10K黑色新版16-50 OSS II套机，两者均显示50000人评论。",
+      "classification": "FACT",
+      "source_ids": [
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "平台榜单不代表全中国相机市场销量排名。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "Ace Pro 2冰川白双电标准套装在京东未登录页面公开标价2798元，但最终到手价要求登录查看。",
+      "classification": "FACT",
+      "source_ids": [
+        "S09"
+      ],
+      "confidence": "high",
+      "counterevidence": "2798元不得解释为会员、补贴、定向券后或实际成交价格。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "Insta360官网明确自2026年7月起Ace Pro 2麦克风数量由3个调整为2个，新旧版本同时销售且随机发货、不支持指定版本。",
+      "classification": "FACT",
+      "source_ids": [
+        "S10"
+      ],
+      "confidence": "high",
+      "counterevidence": "官网称配置调整不影响正常功能和质保，但并未消除版本不可指定的问题。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "本批次把京东榜单排名及评论量作为国内购买信号，而不把它解释为审计销量或全国市场份额。",
+      "classification": "INFERENCE",
+      "source_ids": [
+        "S01",
+        "S05",
+        "S08"
+      ],
+      "confidence": "high",
+      "counterevidence": "取得登录态成交数据或第三方市场监测后可能改变头部样本排序。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "ROMO P社区实测支持其导航避障机会点，同时给出低矮区域碰撞、边刷不抬升和耗水偏高等反向证据。",
+      "classification": "FACT",
+      "source_ids": [
+        "S04"
+      ],
+      "confidence": "medium",
+      "counterevidence": "单一作者自费测试不能代表所有家庭环境。"
+    },
+    {
+      "claim_id": "K11",
+      "claim": "WU130X.1社区购后反馈支持短机身、换电方便和短时扭矩表现，同时提出响应和耐用性担忧。",
+      "classification": "FACT",
+      "source_ids": [
+        "S07"
+      ],
+      "confidence": "medium",
+      "counterevidence": "证据发布日期较早且样本量小。"
+    },
+    {
+      "claim_id": "K12",
+      "claim": "2026-10-01国内社区文章认为Ace Pro 2的翻转屏、8K裁切和骑行收音具有使用价值，但重量、暗光和高规格长录续航构成明显短板。",
+      "classification": "FACT",
+      "source_ids": [
+        "S11"
+      ],
+      "confidence": "medium",
+      "counterevidence": "社区评测不是实验室统一条件测试，其中部分性能判断引用其他评测。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：多数京东头部SKU需登录后补当前普通价、会员价、定向券/国补价及seller_id；未登录页面不冒充成交数据。",
+    "C10/C11/C12未登录公开普通价不足以在本轮实际计算各类P33/P67，因此高/中/低价格档位暂为tier_unresolved。",
+    "C11 DCJZ2059iD的公开榜单标题未显示电池数量/容量，具体电池套装需登录商品页或卖家数据复核，当前为PROVISIONAL。",
+    "Ace Pro 2当前2麦与3麦硬件修订无法按官网页面在下单时指定；需验证包装标签或序列号能否在发货前区分。",
+    "京东榜单为平台公开快照且可能动态更新；本轮未获得审计成交量，不能外推全国市场份额。",
+    "未查询任何美国/海外价格、销量、供货或Temu/AliExpress覆盖；相关跨境可行性只保留为独立flags，不参与候选淘汰。"
+  ]
+}

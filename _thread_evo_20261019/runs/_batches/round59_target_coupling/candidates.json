@@ -1,0 +1,50 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "name": "TargetVector",
+      "hypothesis": "改N05c和与之配套的A4输入处理。新的A3不再把每颗珠子主要压缩为一至三条笼统感受，而是更明确地保留不同体验维度及真正不能合并的听法；A4先判断这些性质分别能否落到现有经历，再写线。重点是避免把不同体验压成一个抽象情绪，也避免为了匹配某种听感增加故事事实。它不同于Grounded Spine：不动A1/A2，不建立人物事实来源账本，也不新增人物前史。与R54weave不同，它改变的是写线之前的体验信息组织，而不是写完之后重新安排段落。",
+      "risk": "这是两层依赖方案，成本高于只改A4。A3可能把体验性质拆得过细，导致A4机械填充每个维度；A4先建立对应关系，也可能让人物经历过度服从TARGETS。必须防止重演R54Ground中把画面里的地点或物件保留为体验性质的硬约束失败。本方案不新增人物事实账本，也不允许任何听感直接成为情节。",
+      "tag": "r59target",
+      "author": "r55_advisor_g6a",
+      "author_index": 1,
+      "mode": "affect",
+      "bead_input": "original_A3",
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "attempt": 1,
+      "downstream_required": "Any checkpoint survivor must rerun actual accepted affected N05e/N05f, then blind/floors versus actual then-current mainline; no checkpoint-only acceptance.",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "A3",
+          "path": "runs\\_batches\\round59_target_coupling\\prompts\\r59target_P1.txt",
+          "sha256": "389ef7a2df2064de3166f85190c33c403593db101c15cc229f8e58986f06d5ff",
+          "placeholders": [
+            "BEADS",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "A4",
+          "path": "runs\\_batches\\round59_target_coupling\\prompts\\r59target_P2.txt",
+          "sha256": "c6449e405783e6f8029957c9eadb7dbf8a1bca2937eefdb0809ea2010e0f74ed",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "distinct_hypothesis": "Actual new A3 plus jointly designed A4 mapping qualities/tensions. r58affect changed A3 only with original Q15 A4; its isolation failure does not test this dependency mechanism. Not counted as isolation or proof of A3 causal effect."
+}

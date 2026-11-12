@@ -1,0 +1,62 @@
+{
+  "name": "round28_extrac04",
+  "note": "整篇候选竞争：同一次A4在同一base_route下内部产生两份真正不同的完整实现，只按整篇质量选一份、不混写、不做事后编辑；改变的是搜索与选择单位，不是强化任一现有四种检查机制。历史已提出但未正式检验Best-of-N，值得独立小规模试验，尤其可对抗单次抽样噪声；风险是增加单次推理成本，且同一次调用的内部两案未必足够独立，不能当作真正的多次外部采样。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "Q6_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "Q6_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "round28_extrac04_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4"
+}

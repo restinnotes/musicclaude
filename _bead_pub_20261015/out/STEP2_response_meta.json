@@ -1,0 +1,251 @@
+{
+  "model": "gpt-6-thinking",
+  "thinking_effort": "max",
+  "headless": true,
+  "provider_interface": true,
+  "no_auto_retry": true,
+  "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-3b41f3ad80cc48ada08eda894f2510b1",
+  "response_sha256": "f725972fb1cfebd58ad7feb3f88b16630ec094e93b55d91bcc2c40184f934236",
+  "session_handle": "209e43dd-0e35-4503-a0fb-bf9e93e908e1",
+  "attachments": [
+    {
+      "name": "S5.md",
+      "size": 1806,
+      "sha256": "72dc1924e570495fd764ce7f9f81ba5e892ce32fc8263194794a95df05898f13"
+    },
+    {
+      "name": "S6.md",
+      "size": 1211,
+      "sha256": "f974e42bb39245d72c0c174d0102eebbb3b2af79bb6edf902453026a613f52de"
+    },
+    {
+      "name": "S7.md",
+      "size": 2153,
+      "sha256": "9faf96d86466959223dd4a63cf6d1215ddc9f187b6861bbfcf19f97c4bfbcc8f"
+    }
+  ],
+  "prompt_normalization": "single_leading_BOM_removed_CRLF_or_CR_to_LF_and_trim_end",
+  "pre_submit_scope": null,
+  "initialization": {
+    "source": "native_pre_send_aborted_handoff",
+    "browser_assisted_initialization": true,
+    "native_browser_generation_sent": false,
+    "http_version": "auto",
+    "nonpersonalization_inherited": true,
+    "handoff_age_seconds": 0.87,
+    "state": "claimed"
+  },
+  "headless_initializer": {
+    "headless": true,
+    "native_browser_generation_sent": false,
+    "completed": true,
+    "browser_version": {
+      "type": "string",
+      "length": 13,
+      "sha256": "9722c94be680575b307b26183e1a423460d4568949ad7f3e7f985d33d9bf0e26"
+    },
+    "bound_policy_inherited_verified": true,
+    "sealed_handoff_written": true,
+    "browser_closed": true,
+    "cloned_private_profile_removed": true,
+    "elapsed_seconds": 9.932
+  },
+  "stream_completion": {
+    "sse_done": true,
+    "message_completed": true,
+    "continuation_expected": false,
+    "handoff_seen": false,
+    "lifecycle_updates": 1573,
+    "first_assistant_seconds": 5.984,
+    "first_text_seconds": 5.984,
+    "stream_seconds": 442.266,
+    "channel_update_counts": {
+      "commentary": 89,
+      "final": 1432
+    },
+    "bounded_server_observations": {
+      "scope": "http_sse",
+      "tool_message_observation_count": 18,
+      "truncated": false,
+      "scalar_patch_tool_role_inheritance": false,
+      "message_finished_successfully_is_tool_success": false,
+      "tool_result_observations": [
+        {
+          "actual_tool_role_observed": true,
+          "tool_name": "api_tool",
+          "tool_content_type": "unknown",
+          "message_status": "finished_successfully"
+        },
+        {
+          "actual_tool_role_observed": true,
+          "tool_name": "api_tool",
+          "tool_content_type": "text",
+          "message_status": "finished_successfully"
+        },
+        {
+          "actual_tool_role_observed": true,
+          "tool_name": "unknown",
+          "tool_aggregate_status": "success",
+          "tool_content_type": "unknown",
+          "message_status": "finished_successfully"
+        },
+        {
+          "actual_tool_role_observed": true,
+          "tool_name": "web.run",
+          "tool_content_type": "text",
+          "message_status": "finished_successfully"
+        }
+      ],
+      "reasoning_observations": [
+        {
+          "reasoning_status": "unknown"
+        },
+        {
+          "finished_duration_sec": 356,
+          "reasoning_status": "reasoning_ended"
+        }
+      ]
+    }
+  },
+  "prepared_response_validation": {
+    "retained_message_count": 48,
+    "unsupported_work_continuation_observed": false,
+    "successful_assistant_terminal_observed": true
+  },
+  "server_metadata_summary": {
+    "server_ttfvt_ms": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
+      },
+      "value": 6222.650152049027
+    },
+    "conduit_prewarmed": true,
+    "plan_type": {
+      "type": "string",
+      "length": 3,
+      "sha256": "07ed400759a0f606a8b5bfa84712aabe7d1b1c45cb6536c8a5727446b6647b84"
+    },
+    "plan_type_bucket": {
+      "type": "string",
+      "length": 4,
+      "sha256": "268ad70eb5bc4737a2ae28162cbca30118cc94520e49ef1ac5f72c85d3f2caa9"
+    },
+    "user_agent": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 11,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "39ae30333e06f52817bd4cb8771482f48a473105b92d588d4ca6a1cc7ba4bead"
+      }
+    },
+    "service": null,
+    "tool_name": {
+      "type": "string",
+      "length": 13,
+      "sha256": "dcd3251ee4e5f12e58e1f9994e6a201f7ea3c04d300f18db51f397cbe9005a37"
+    },
+    "tool_invoked": true,
+    "fast_convo": true,
+    "warmup_state": "warm",
+    "is_first_turn": false,
+    "cluster_region": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 7,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "81de43b95bdc7796cdcd5e38285dcaf3d207a24e15f434ed0dd16ecce0541481"
+      }
+    },
+    "model_slug": "gpt-6-thinking",
+    "requested_model_experience": "thinking",
+    "product_experience": "chat",
+    "region": null,
+    "is_multimodal": null,
+    "did_auto_switch_to_reasoning": false,
+    "auto_switcher_race_winner": null,
+    "is_autoswitcher_enabled": false,
+    "is_search": null,
+    "did_prompt_contain_image": false,
+    "search_tool_call_count": null,
+    "search_tool_query_types": null,
+    "message_id": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 36,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "fd79455a26aec0ffe326e2d281b4050d0024a316d8c5ac2f625918c3cf730cfa"
+      }
+    },
+    "request_id": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 36,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "168e623ee13577273031dcd1065cb579817c9533764e755781984f3003cc7f09"
+      }
+    },
+    "turn_exchange_id": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 36,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "a5c686a6af1ca8b7495e92f1547db802decc5c9d60e942f80343bffcff6ea1eb"
+      }
+    },
+    "turn_trace_id": {
+      "type": {
+        "type": "string",
+        "length": 6,
+        "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+      },
+      "length": 36,
+      "sha256": {
+        "type": "string",
+        "length": 64,
+        "sha256": "e68c8cedf8dae5cc0056d7e0272e9ee1ce0c0e0e1396cfaaef3efb23b9c9e470"
+      }
+    },
+    "resume_with_websockets": true,
+    "low_turn_topic_ttl": false,
+    "streaming_async_status": true,
+    "replace_stream_status": true,
+    "temporal_conversation_turn": false,
+    "pro_mode_turn_topic_streaming": true,
+    "turn_use_case": {
+      "type": "string",
+      "length": 6,
+      "sha256": "9623c1ece5cf9eac8c087030d2c4be5747556cf40920ebfeba1fcc0cc976f123"
+    },
+    "turn_mode": "default"
+  },
+  "elapsed_seconds": 442.734,
+  "total_worker_seconds": 453.546,
+  "wrapper_seconds": 455.5
+}

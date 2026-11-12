@@ -1,0 +1,62 @@
+{
+  "name": "round28_extrac01",
+  "note": "双时钟假设：把“人的经历真正发生变化的叙事时钟”与SECTIONS的分段时钟分开，先决定少数真正改变后文条件的叙事位置，再把各SECTION映射到这些位置之间的停留、跨越或余波。它与证据准入的区别是核心不在判断某个认识能否被证明；与“具体所求”区别是核心不在句子写什么利害；与多层体验配置区别是没有先为每段配一组体验层；与全篇语义差分区别最大，因为它明确允许连续多段没有新的叙事节点。可检验地看，若同样段数下新变化数量明显下降、后半不再反复完成同一决定，同时TARGET覆盖和单独成立不降，这个机制就有效。值得单独运行；风险是叙事时钟设得过稀会使线变薄。",
+  "steps": [
+    {
+      "id": "A1",
+      "prompt_file": "Q6_A1.txt",
+      "replace": {
+        "{NAME}": "WORK_INFO",
+        "{SECTIONS}": "SEGMENTS",
+        "{K}": {
+          "text": "3"
+        },
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    },
+    {
+      "id": "A2",
+      "prompt_file": "Q6_A2.txt",
+      "replace": {
+        "{ROUTES}": "step:A1"
+      },
+      "model": "g6",
+      "append": "\n\n【候选路线】\n{ROUTES}",
+      "after": []
+    },
+    {
+      "id": "A3",
+      "prompt_file": "Q6_A3.txt",
+      "replace": {
+        "{SEGMENTS}": "SEGMENTS",
+        "{BEADS_TEXT}": "BEADS_TEXT"
+      },
+      "model": "g6",
+      "after": [
+        "A1"
+      ],
+      "append": "\n\n【段落】\n{SEGMENTS}\n\n【珠子】\n{BEADS_TEXT}"
+    },
+    {
+      "id": "A4",
+      "prompt_file": "round28_extrac01_A4.txt",
+      "replace": {
+        "{SECTIONS}": "SEGMENTS",
+        "{ROUTES}": [
+          "step:A1",
+          {
+            "text": "\n\n【宏观评审结果】\n"
+          },
+          "step:A2"
+        ],
+        "{TARGETS}": "step:A3",
+        "{CENTER}": "CENTER"
+      },
+      "model": "g6",
+      "after": []
+    }
+  ],
+  "final": "A4"
+}

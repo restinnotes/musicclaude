@@ -1,0 +1,16 @@
+[gr_RT1_tl2s_n6_op60_IB_own_r1_r1_gpt6] FAILED rc=1 9s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt3\pro-bridge-20261021T074830122639Z
+[gr_RT1_tl2s_n6_op60_IB_own_r1_r1_gpt6] FAILED rc=1 10s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt3\pro-bridge-20261021T074924564567Z
+[gr_RT1_tl2s_n6_op60_IB_own_r1_r1_gpt6] FAILED rc=1 9s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt3\pro-bridge-20261021T075020076599Z
+[gr_RT1_tl2s_n6_op60_IB_own_r1_r1_gpt6] FAILED rc=1 11s submitted=True job=D:\musicclaude\gpt2agent-safechain\runs\gpt3\pro-bridge-20261021T075114580127Z
+版本           因果题正确率    选E(没写到) Center(0-3)   像一件事   要自己补    字数
+A_显示层          100%         0%       2.50    7.0    3.4   906
+Traceback (most recent call last):
+  File "D:\musicclaude\_thread_evo_20261019\readertest.py", line 107, in <module>
+    f"{m('center'):10.2f} {m('one_thing'):6.1f} {m('fill_in'):6.1f} {m('chars'):5.0f}")
+       ^^^^^^^^^^^
+  File "D:\musicclaude\_thread_evo_20261019\readertest.py", line 105, in <lambda>
+    m = lambda k: mean([float(x[k]) for x in rs if x.get(k) is not None])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zuoyi\AppData\Local\Programs\Python\Python312\Lib\statistics.py", line 486, in mean
+    raise StatisticsError('mean requires at least one data point')
+statistics.StatisticsError: mean requires at least one data point

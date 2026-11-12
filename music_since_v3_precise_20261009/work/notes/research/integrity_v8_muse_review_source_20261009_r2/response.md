@@ -1,0 +1,132 @@
+# v8 独立只读工程审查报告（2026-10-09，新一轮）
+
+> 范围：仅 `tools/execution_integrity_v8.py`、`tools/gpt2_adapter_v8.py`、`tools/runner_v8.py`、`tools/experiment_calls_v8.py`、`tools/tests/test_execution_integrity_v8.py`。必要时只读对照 `execution_integrity_v7.py:267-309`、`experiment_calls_v7.py:57-81`、`execution_integrity_v3.py` 与主证据 `integrity_v7_main_verify_20261009_r2/r4/report.json`、`integrity_v8_luna_impl_20261009_r1/report.json`（前者因 464KB 超限仅读前 200 行）。
+>
+> 方法：只读调用链、断言 / fixture / 失败路径审查。未调用任何模型 CLI，未联网，未递归委派，未运行稳定 suite，未写任何文件。反例写入本报告文本，不执行。
+>
+> 音乐结论未涉及。戏剧化、笃定、因果写满、单一故事本身不扣分。
+
+---
+
+## 0. 终局分层结论（先说）
+
+- **确认修复（静态范围内成立，待主 suite 复核计数）：C1、C2 在代码层已按验收改对，且真实 adapter 路径走同一校验器，不存在“只修 synthetic、真路径仍宽松”的分叉。**
+- **无新确认驳回**：本次静态审查未发现可构造“输入状态 → 错误接受 / 错误重试 / 错误放行”的新 false-accept。
+- **可疑（须主验处置，不构成驳回）：测试历史写入边界 1 处；风格死码 1 处；低风险残留 3 处。**
+- **不得 ACCEPTED / 不得音乐验收 / 不得 production-ready**：41 hashes 不变、70PASS、v4-34 / v7-63 mapping 全保留等计数 claims，本轮未复跑，不背书；真实 CLI 事件 / proof 兼容、远端归一化、私有全局 / 外部 / Docker、全部音乐验收仍为已知未验（代码已显式声明为未冻结，非缺陷）。
+
+上轮 v7 Muse 独立 review 终局为 terminal 部分交付（仅 `tools_probe_p1.py`，结论为“probe 脚本已写，现在运行”），无可采纳结论，本报告不将其当 running，也不采纳其结论。
+
+---
+
+## 1. Prior findings 修复处置
+
+### C1：proof 五 flags `==` 误接受 int/float —— 已修复（确认）
+
+- 原缺陷位置：`tools/execution_integrity_v7.py:267-309`，`if any(proof.get(key) != value ...)`，Python `1==True`、`0==False`、`1.0==True` 全通过。
+- v8 修复位置：`tools/execution_integrity_v8.py:305-314`：
+  - `311: if any(type(proof.get(key)) is not bool ...): return False`，先做 exact type，`0/1/0.0/1.0/"false"/None/[]/{}` 全拒。
+  - `313: set(proof)!=set(required) or any(...!=...)` 再做值相等，此时 bool 类型已定，无 `==` 混淆。
+  - 外层 `315-318: retry_safe is not True / queue_stop is not False / terminal_verified is not False` 全用 `is`，`queue_stop=0`（int）亦拒。回归测试 `test_pre_submit_requires_complete_identity_source_and_verifier:951-952` 显式断言 `queue_stop=0` 拒。
+- 真实路径是否同校验器：`tools/gpt2_adapter_v8.py:108-134 pre_submit_payload` 唯一 proof 入口，最终委托 `I.verify_pre_submit_proof(candidate, identity)`；无第二套宽松校验。envelope 层 `114-118` 对 `completed/automatic_retry is not False`、`model_request_sent` 存在则须 `is False`，缺席允许——但缺席仍须过 proof 内 `model_request_sent is False`，不构成绕过。
+- 测试覆盖：`V8RegressionTests.test_pre_submit_flags_are_exact_booleans_for_each_field:901-918` 对 5 flags ×（9 malformed + 反 bool + 缺失）全断言 False；`test_pre_submit_requires_complete_identity_source_and_verifier:920-959` 覆盖 identity 四字段篡改、producer 篡改、digest-only 篡改、source 文件篡改、`submission_state=unknown_after_ticket` 拒、`pre_submit_payload(envelope)` 无 identity 拒 / 有 identity 受。
+- 反例（已堵住）：`proof={retryable:1, ambiguous:0, ...}` + 外层全对 → v7 返回 True（误接受并可重试）；v8 在 311 直接 False。静态确认。
+
+### C2：`allow=True + max_attempts=3` 错误接受并执行 —— 已修复（确认）
+
+- 原缺陷：`tools/experiment_calls_v7.py:57-81`，`if (max_attempts<2 ...)`，3 通过并执行 2 mock process、`new_sample_taken=True`。
+- v8 修复：`tools/experiment_calls_v8.py:66-73`，先 `type(max_attempts) is not int` 拒（含 `True/2.0`），再 `allow...: max_attempts!=2` 拒。`3/4/2.0/True` 全在写盘 / 执行前 `ValueError`。
+- 默认 transport 保留：`allow=False` 时仅要求正 int，`max_attempts=3` 默认保留；`test_default_three_attempt_transport_budget_remains_proof_bounded:1024-1035` 断言 3 次 proof-bounded transport、0 submissions、0 真 process。未把所有 transport 改成 ≤2。
+- 测试：`test_explicit_new_sample_budget_three_rejects_before_any_write_or_process:979-990` 断言 `out.exists()==False` 且双 process 计数全 0。静态确认预算不暗许。
+
+---
+
+## 2. 五项验收逐项覆盖
+
+### 1）parse_codex event/item 阶段与 status allowlist —— 覆盖
+
+`execution_integrity_v8.py:749-815`：
+
+- 未知 / 取消事件拒：`811-812 else: unknown/error/cancelled`，测试 `test_unknown_codex_events_rejected:53-56`（turn.cancelled/failed/error/thread.resumed/totally_unknown）。
+- item.completed + reasoning + in_progress 拒：`793-799`，completed 仅 allow `("completed",)`，`missing_ok` 仅对 `agent_message+{id,type,text}` 无 status 遗留 fixture 开口；reasoning 带 `in_progress` 走 `missing_ok=False` → 拒。回归 `test_codex_status_is_allowlisted_by_event_and_phase:454-465` 四行全拒。
+- item.started 带 completed 拒：`798-799` 要求 `("in_progress",)` 且 `missing_ok=False`。
+- turn.completed 带 failed 拒：`777-778` 仅 allow completed；缺 `usage`/pending 非空 / 空正文全拒 `779`。
+- after-terminal 拒：`758-759` + 测试 `64-67`。
+- IDs：completed 集合去重 `789`、pending 类型变化拒 `791-792`、agent 空正文拒 `806-807`。
+- forbidden-tools 由 `runner_v8.py:264-274` 计数（除 reasoning/todo_list 外）+ forbid 门执行，`test_forbidden_tool_failed_with_complete_terminal:416-422` 覆盖。
+
+残留（可疑，非驳回）：`item.started` 同 id 同 type 重复到达会被覆写接受（`800-802`），未拒。输入如 `item.started{id:X,type:reasoning,status:in_progress}` ×2 → 接受为一次 pending。后果仅多一次覆写，`turn.completed` 仍要求 pending 清空 + 终局正文，不产生 false terminal。建议主验记录为低风险收紧项，不判失败。
+
+### 2）completed parse-fail 默认 STOP；explicit 新 sample 仅 exact-2 —— 覆盖
+
+`experiment_calls_v8.py:70-89,109-113,170-208`：
+
+- 默认 `max_attempts=2 + allow=False` 下 complete parse-fail 只记 1 attempt、1 submission、1 process，不开新 sample：`test_default_parse_failure_stops_after_one_complete_sample:474-488`。
+- explicit 允许同冻结 prompt（`declared_new_prompt=prompt` 合法），但必须新 `sampling_key` 且 `new_sampling_key!=original_sampling_key`（`86-87`），两 attempt 身份 distinct：`test_explicit_new_sample_may_keep_prompt...:490-510` 断言 `request_identity_sha256` 去重数为 2。
+- 第二 sample 再失败仍存完整 attempt/reason/identity：`test_explicit_second_sample_parse_failure...:512-526` 断言两 attempt 全落盘、全 `parse_ok=False`、output 文件全存在。
+- parser 抛异常即失败不重提：`test_parser_exception...:528-537`。
+- 非法 opt-in（缺 reason/key、budget≠2）全 `ValueError` 且 0 process：`test_new_sample_requires_reason_key_and_budget:539-548`。
+
+### 3）proven pre_submit retry + 预算闭环；ambiguous/queue/unknown 永不 retry；hold 跨进程 —— 覆盖
+
+- `experiment_calls_v8.py:210-227`：仅 `pre_submit_valid and queue_stop is not True and total<max` 才 transport 重试；新 transport 沿用同 sampling identity（`111: sample_key` 不变，仅 `t` 递增，`job_id=...s0_t0/s0_t1`），prompt 字节相等由 `test_source_bound_pre_submit_retry...:792-837` 断言 `first_prompt.read_bytes()==second_prompt.read_bytes()`。
+- 缺第二 prompt 不误阻：transport 重试不要求 `new_sample_prompt`，该字段仅在 `allow=True` 新 sample 路径使用。
+- 默认无 new-sample `max_attempts=3` 保留且 proof-bounded：`1024-1035`。
+- ambiguous Timeout 永不重试：`test_ambiguous_post_submit_is_never_retried:550-558`（TimeoutExpired → 1 attempt、queue_stop、1 process）。
+- hold 跨进程：`I.classify_stop:678-686` 绑定本 revision `hold`（注释 679-680 声明 patch `execution_integrity_v8.hold` 即生产路径）；`hold` 写失败仅 `OSError` 转错误串，ticket 留存；`test_ticket_survives_hold_disk_failure_cross_process:106-136` 断言 ticket 留存 + 跨进程 `queue_open==False` + 同 / 异 run 全 `PolicyBlocked`。`test_hold_write_failure_retains_ticket`（Runner 397-403、Adapter 224-235）同理。
+- `queue_open:639-647` 扫描 `inflight_v4/v5/v6/v7 + inflight_v8`，旧 ticket 不改：`test_retained_v7_inflight_ticket_blocks_v8_without_mutation:968-977` 断言 `read_bytes` 不变；`release_ticket:688-693` 拒非 v8 父目录。
+
+### 4）cache/reserve exact seal/ownership —— 覆盖
+
+`execution_integrity_v8.py:407-522,599-636`：
+
+- legacy 缺 identity / 坏 schema / 坏 job_id / 缺 identity 全 fail-closed：`test_bad_and_legacy_ledger_shapes_fail_closed:595-609`（4 形状全 ArtifactConflict，0 process）。
+- non-object / 不可读 ledger 拒：`test_nonobject_and_unreadable_ledgers_fail_closed:611-620`（`[]`、`{broken`）。
+- prompt/output-only 孤儿拒：`test_orphan_prompt_and_output_fail_closed:622-633`。
+- 坏 seal 拒：`test_tampered_source_and_finalization:208-215`、`test_retained_legacy_seal_blocks_same_sample_after_ledgers_removed:584-593`（删 cache/pending/meta 留 finalized → 仍 Conflict，1 process）。
+- unrelated valid 不误封：`test_valid_unrelated_sample_does_not_block_new_identity:635-640`（2 次不同身份各 1 process）。
+- alias 不转移原 source：`test_cache_index_cannot_be_redirected_to_cache_alias:654-665`（改 `source_job_id→two` 后第三次 Conflict）、`test_cache_alias_does_not_overwrite_original_source:839-848`（cache 仍指 `one`）。
+- reserve 查 finalized：`reserve:602` 先 `_validate_inventory`（其内 `499-501` 缺 seal 即 Conflict，`501 _validate_meta→verify_finalization`），再查同身份非 retryable 证据，再查五类同 job 文件只读。`reserve` 对同身份纯 pre_submit 允许新 transport job（`603-604 _safe_pre_submit_only`），对 ok/ambiguous 全阻。
+
+### 5）use_cache=False 不得绕 ledger 再 submit —— 覆盖
+
+- `gpt2_adapter_v8.py:213-218` + `runner_v8.py:179-181`：`source is not None and not use_cache` → 只读返回 `dict(source, cache_hit=True, cache_requested=False, cache_bypassed=True, ...)`，不写新 meta/finalized，不建 alias。
+- 测试三处同断言：Runner `371-380`（`meta/two.json`、`finalized/two.json` 全不存在，1 process）、LedgerGap `642-652`、GPT2Experiment `780-790`。另 `test_missing_cache_no_resubmit:194-199`、`test_pending_without_cache_no_resubmit:201-206` 保证缺 cache / 悬空 pending 不重提。
+- “先 alias 再失败”被禁：use_cache=False 路径不调 `sample_record`；`sample_record:627-630` 同 digest 已有异 source 即 `cannot redirect`。
+
+---
+
+## 3. 继承保护核对
+
+| 保护 | v8 落点 | 静态结论 |
+|---|---|---|
+| v4-34 逐断言保留，不以同名代替 | tests 全类 + impl report mapping（34→63→70，7 new regress） | 抽查 Adapter success_resume（v8:178-192）在 v7 断言全留基础上只增 `execution_argv_sha256==digest(argv)`；未见删断言。**全量 AST 需主验复算，本轮不背书 70PASS。** |
+| v5-32PASS2ERROR 不洗白；seam2/2 | r2（5PASS6FAIL）/ r4（63PASS+6 guards）证据链在 impl report prior_evidence 中原样引用，未改旧文件 | 确认未动旧 revision（本轮五文件全为新 `_v8`，`implementation_identity:245-252` 含旧文件名仅哈希只读）。 |
+| classify_stop 绑定本 revision.hold，hold 落盘失败 ticket 跨进程 | `678-686` + 上述三测试 | 确认。`classify_stop` 仅捕 `OSError`，非 OSError（如编程错）上抛——属可接受显式行为，已在 §4 记为残留说明。 |
+| exact producer/request/input/prompt/output/terminal | adapter `159-164`（expected_identity 比对）、`241-248`（提交前重算 producer + cli_sha + complete 门）、`256-258`（argv/sha/cwd 落 meta）、runner `240-243`（重算比对） | 确认。`finish` 写后 `finalize` + 可选 `sample_record`，已写 meta 不可覆写（`191-192` / runner `209-210`）。 |
+| strictJSONL + fsync inflight + no fallback | `strict_json:32-37`（v3 去重/非有限 + 顶层 scalar 拒，多文档由 `json.loads` 拒）、`ndjson:717-730`、`_write_fsynced:130-139` + `write_text` 临时替换 + `exclusive_json` + `release_ticket` fsync；prompt 超 65536 抛不截断（adapter `152-155`） | 确认。 |
+| GPT2 effort exact max ≠ 远端认证；actual 只认 root server_metadata_summary | `terminal_payload:83-105`（`thinking_effort` 须 str 且 ==requested；`model` ==requested；三 `is True/False` 门）、`model_evidence:696-714`（仅 root 两字段，client/request 不认；normalize 后比对）、返回 contract 声明非 attestation；测试 `752-761`、`329-335`（未知/错 slug → failed 但 terminal_verified） | 确认。顶层 `model` / 嵌套 debug 全 `unverified`（test `91-99`）。 |
+| 非私密 env/argv/CLI/inline 绑定；unknownGPT2AGENT 拒；credential 不读；proxy userinfo/query 拒 | `environment_identity:208-242` + `_safe_env_value:197-205`；Guard 测试 `695-722`（未知 / 私有 session / inline config 全不读值）；代理 8 大小写全改变身份（`678-688`），`@/?` 拒（`690-693`） | 确认。残留：`%40` 编码 userinfo 未拒但仍哈希绑定（非绕过，见 §4）。 |
+| 活跃 provider 源绑定；private-global/external/Docker 未冻结；BOM/CRLF/rstrip 未验 | `active_provider_source_binding:255-266` + producer coverage 全 `False`（adapter `47-53`、runner `107-114`）、`environment_identity` coverage 字符串、`SEAL_LIMITATION:43-46` + 模块 docstring `1-7` | 确认“有意 closed / 显式未验”，不称已验真实路由。 |
+| 旧 hold/ticket 不迁移删除；SHA 可重算非 MAC | `INFLIGHT_OLD:42`、`queue_open` 只读扫描、`hold:667-676` 已存在即返、`release_ticket` 拒非 v8 | 确认。 |
+
+---
+
+## 4. 可疑与残留（非驳回，需主验处置）
+
+1. **测试历史写入边界（唯一须改测试 habits 项）**：`tests/test_execution_integrity_v8.py:121-133` 每次运行固定写 `TOOLS.parent/notes/research/integrity_v8_luna_impl_20261009_r1/queue_child_run.json`（`TOOLS=tools`，`TOOLS.parent=ROOT`，落点在历史 impl-report 目录内）。直接重跑 suite 会覆盖历史证据。主验须按 brief 将该唯一 helper process-local 重定向到新主目录；**不能默认接受历史写入，也不能把实现者自述的 run03 删除 / run04 改路径冒称为授权或主核。**
+2. **文末双 `unittest.main`（风格，无功能影响）**：`1060-1065` 第二个不可达（第一个 `main()` 即 `sys.exit`）。不机械报缺陷，仅记死码。
+3. **重复 `item.started` 同 id 同 type 覆写接受**（§2.1 已述）：建议收紧为拒，当前不产生 false terminal。
+4. **`classify_stop` 仅捕 `OSError`**：`I:678-686`。hold 磁盘满 / 权限失败（OSError 系）已覆盖；非 OSError 上抛为显式失败，不静默放行。可接受，建议文档保留。
+5. **代理编码 userinfo**：`http://proxy.invalid:8080/%40token` 类不触发 `@/?` 拒，但仍进 `sha_text` 绑定，换值即换身份，不构成绕过或静默跳过。
+6. **计数 claims 未复核**：70PASS、v4-34/v7-63 mapping 全保留、41 旧 hashes 不变、firsttest1 FAIL+1ERROR 经 fixture 修后 PASS——本轮静态抽查未见矛盾，但未执行，不采纳。待主 mock 主验。
+
+---
+
+## 5. 静态范围声明与剩余阻塞
+
+- 本报告为**纯静态只读审查**：逐行核对分支、类型检查（`is` vs `==`）、set 相等、digest 绑定、预算门、hold/ticket、cache/seal、env/argv 绑定；未运行 suite，未做字节 / AST 重算。
+- **C1/C2 在静态范围内确认修复**，且 adapter 真实提交路径（`call_web_gpt:239-308`）与 synthetic 测试走同一 `verify_pre_submit_proof` / 同一预算门，无分叉宽松路径。不以“尚无 real proof producer”泛化否定离线修复；亦不把 closed realgate / 已知未验归一化称为已验真实路由。
+- 剩余阻塞（须主会话独立验收）：主 mock suite（70 计数 + 6 negative guards 语义 + 1 read-only child 定向到新目录）、41 hashes 重算、v4-34 / v7-63 AST mapping 重算、历史 helper 重定向验证、真实 CLI / 远端 / 私有 / 外部 / Docker / 音乐验收（已知未验，不在本轮验收内）。
+- 本报告**不给出 ACCEPTED，不做音乐验收，不判 production-ready**。
+

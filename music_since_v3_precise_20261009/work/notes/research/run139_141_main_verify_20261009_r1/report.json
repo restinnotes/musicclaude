@@ -1,0 +1,136 @@
+{
+  "schema": "run139-141-main-offline-verification/1",
+  "date": "2026-10-09",
+  "commands": [
+    {
+      "label": "run139_tests",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests\\test_run139_e7_flash_diag_r3.py"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 32.59399999999732,
+      "stdout_bytes": 0,
+      "stderr_bytes": 3752,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1ac09e4c3632778e8d1d2ecd85d8e735010de305070fd3c86a9eca4a89769695",
+      "real_model_submissions": 0
+    },
+    {
+      "label": "run141_tests",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests\\test_run141_thread_resume_r3.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 14.859000000000378,
+      "stdout_bytes": 0,
+      "stderr_bytes": 2397,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "be7b16ed79eb242fd86cb1b3aae8c53f7c6f0834bed7917cae767c68413564dc",
+      "real_model_submissions": 0
+    },
+    {
+      "label": "run141_strict",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\runs\\run141_thread_resume_r3\\go.py",
+        "--strict"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.07800000000133878,
+      "stdout_bytes": 2642,
+      "stderr_bytes": 0,
+      "stdout_sha256": "2b96efe2870a3edf70b6b41e389a47cceb16bb7c4a1668907d916a1661d7931d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "real_model_submissions": 0
+    }
+  ],
+  "challenges": [
+    {
+      "check": "run139_json_prefix",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run141_json_prefix",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run139_json_trailer",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run141_json_trailer",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run139_json_duplicate",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run141_json_duplicate",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run139_json_nonfinite",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run141_json_nonfinite",
+      "accepted": true,
+      "scope": "synthetic text; complete-response boundary/strict JSON check"
+    },
+    {
+      "check": "run141_multiple_json",
+      "accepted": true,
+      "scope": "synthetic text; trailing second JSON silently ignored"
+    },
+    {
+      "check": "run139_mixed_valid_invalid_quotes",
+      "accepted": true,
+      "error": null,
+      "scope": "one exact quote masks an additional nonexistent quote"
+    },
+    {
+      "check": "run141_wrong_mock_request",
+      "accepted": false,
+      "error_type": "IntegrityError",
+      "error": "full job identity does not match its run/work/model/request slot",
+      "scope": "mixed and/or expression correctly rejects wrong request for mock_only"
+    },
+    {
+      "check": "run141_undeclared_execution_mode",
+      "accepted": true,
+      "scope": "unsupported-mode validation gap, not evidence of an actual real route"
+    },
+    {
+      "check": "run141_unattested_muse_labels_and_caller_schema",
+      "accepted": true,
+      "scope": "raw_unverified structural return only; caller labels and declared schema are not transport/provider authentication"
+    }
+  ],
+  "old_run_bytes_unchanged": true,
+  "real_model_submissions": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "limits": "Local fixtures/mock only. No real CLI protocol/authentication claim; no gate/hold changes."
+}

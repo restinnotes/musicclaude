@@ -1,0 +1,15 @@
+[PASS] mock_queue_built tasks=12 info={'trials_r06': 4, 'trials_r07': 4, 'trials_r08': 0, 'reviews_D': 2, 'reviews_G': 2, 'reviews_F': 0, 'ordered_total': 12, 'skipped': 0}
+[PASS] mock_main_no_nameerror rc=3
+[PASS] mock_terminal_written 
+[PASS] mock_all_terminal status=protection_paused_drained counts={'queued': 12, 'launched': 3, 'results': {'success': 3, 'confirmed_pre_submit_failure': 0, 'failure_or_ambiguous': 0, 'other': 0}}
+[PASS] mock_pause_engaged protection task must pause new submissions
+[PASS] mock_pause_no_new_spawn spawned=3 queued=12
+[PASS] mock_protect_live_before_exit live_signals=1 slow_notes=2
+[PASS] mock_peak_within_window peak=2
+[PASS] slow_holds_slot_no_kill status=success held=1.45s (budget=1s + 1.4s late stdout hold)
+[PASS] nomo_real_child_capture rc=0 out='v3-hidden-child-ok'
+[PASS] nomo_no_new_visible_window before=14 after=14 new=[]
+[PASS] nomo_no_cmd_in_argv python.exe gpt2_cli.py
+[PASS] nomo_real_cli_check_hidden rc=0 docker_ready=True
+[PASS] nomo_check_no_new_window before=14 after=14
+[PASS] nomo_cli_help_no_model rc=0

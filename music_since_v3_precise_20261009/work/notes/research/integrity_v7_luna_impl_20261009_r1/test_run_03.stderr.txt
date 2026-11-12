@@ -1,0 +1,124 @@
+python.exe : test_backend_unknown_or_wrong_not_success (test_execution_integrity_v7.AdapterTests.test_backend_unknown_o
+r_wrong_not_success) ... ok
+所在位置 行:4 字符: 1
++ & python -B -m unittest discover -s (Join-Path $root 'tools/tests') - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_backend_un...success) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_body_protection_words_are_content (test_execution_integrity_v7.AdapterTests.test_body_protection_words_are_content
+) ... ok
+test_cache_write_failure_never_resumes_unsealed_success (test_execution_integrity_v7.AdapterTests.test_cache_write_fail
+ure_never_resumes_unsealed_success) ... ok
+test_completed_strict_and_terminal_metadata_required (test_execution_integrity_v7.AdapterTests.test_completed_strict_an
+d_terminal_metadata_required) ... ok
+test_hold_write_failure_next_job_stays_blocked (test_execution_integrity_v7.AdapterTests.test_hold_write_failure_next_j
+ob_stays_blocked) ... ok
+test_metadata_handles_never_persist (test_execution_integrity_v7.AdapterTests.test_metadata_handles_never_persist) ... 
+ok
+test_missing_cache_no_resubmit (test_execution_integrity_v7.AdapterTests.test_missing_cache_no_resubmit) ... ok
+test_pending_without_cache_no_resubmit (test_execution_integrity_v7.AdapterTests.test_pending_without_cache_no_resubmit
+) ... ok
+test_post_submit_unknown_timeout_and_protection_hold (test_execution_integrity_v7.AdapterTests.test_post_submit_unknown
+_timeout_and_protection_hold) ... ok
+test_pre_submit_contract_not_just_phase (test_execution_integrity_v7.AdapterTests.test_pre_submit_contract_not_just_pha
+se) ... ok
+test_real_gate_closed_and_route_blocked (test_execution_integrity_v7.AdapterTests.test_real_gate_closed_and_route_block
+ed) ... ok
+test_sensitive_body_rejected_not_rewritten (test_execution_integrity_v7.AdapterTests.test_sensitive_body_rejected_not_r
+ewritten) ... ok
+test_success_resume_readonly_and_cache_reference (test_execution_integrity_v7.AdapterTests.test_success_resume_readonly
+_and_cache_reference) ... ok
+test_tampered_body (test_execution_integrity_v7.AdapterTests.test_tampered_body) ... ok
+test_tampered_source_and_finalization (test_execution_integrity_v7.AdapterTests.test_tampered_source_and_finalization) 
+... ok
+test_ticket_write_failure_never_launches (test_execution_integrity_v7.AdapterTests.test_ticket_write_failure_never_laun
+ches) ... ok
+test_inline_private_config_value_is_not_read_or_hashed (test_execution_integrity_v7.EnvironmentGapTests.test_inline_pri
+vate_config_value_is_not_read_or_hashed) ... ok
+test_known_private_session_variable_is_excluded_without_reading_value (test_execution_integrity_v7.EnvironmentGapTests.
+test_known_private_session_variable_is_excluded_without_reading_value) ... ok
+test_proxy_cases_and_known_behavior_values_change_identity (test_execution_integrity_v7.EnvironmentGapTests.test_proxy_
+cases_and_known_behavior_values_change_identity) ... ok
+test_proxy_userinfo_or_query_is_rejected_not_silently_skipped (test_execution_integrity_v7.EnvironmentGapTests.test_pro
+xy_userinfo_or_query_is_rejected_not_silently_skipped) ... ok
+test_seal_limitation_and_real_gate_are_explicit (test_execution_integrity_v7.EnvironmentGapTests.test_seal_limitation_a
+nd_real_gate_are_explicit) ... ok
+test_unknown_gpt2agent_name_refused_without_reading_value (test_execution_integrity_v7.EnvironmentGapTests.test_unknown
+_gpt2agent_name_refused_without_reading_value) ... ok
+test_wrapper_exact_rerun_zero_new_submissions (test_execution_integrity_v7.ExperimentTests.test_wrapper_exact_rerun_zer
+o_new_submissions) ... ok
+test_wrapper_fake_log_and_parser_error_never_success (test_execution_integrity_v7.ExperimentTests.test_wrapper_fake_log
+_and_parser_error_never_success) ... ok
+test_cache_alias_does_not_overwrite_original_source (test_execution_integrity_v7.GPT2ExperimentGapTests.test_cache_alia
+s_does_not_overwrite_original_source) ... ok
+test_nonempty_arbitrary_hash_is_not_source_bound_retry_proof (test_execution_integrity_v7.GPT2ExperimentGapTests.test_n
+onempty_arbitrary_hash_is_not_source_bound_retry_proof) ... ok
+test_requested_effort_must_match_exact_returned_string (test_execution_integrity_v7.GPT2ExperimentGapTests.test_request
+ed_effort_must_match_exact_returned_string) ... ok
+test_source_bound_pre_submit_retry_uses_same_frozen_prompt_new_attempt (test_execution_integrity_v7.GPT2ExperimentGapTe
+sts.test_source_bound_pre_submit_retry_uses_same_frozen_prompt_new_attempt) ... ok
+test_use_cache_false_never_creates_alias_or_resubmits (test_execution_integrity_v7.GPT2ExperimentGapTests.test_use_cach
+e_false_never_creates_alias_or_resubmits) ... ok
+test_ambiguous_post_submit_is_never_retried (test_execution_integrity_v7.GapClosureTests.test_ambiguous_post_submit_is_
+never_retried) ... ok
+test_codex_status_is_allowlisted_by_event_and_phase (test_execution_integrity_v7.GapClosureTests.test_codex_status_is_a
+llowlisted_by_event_and_phase) ... ok
+test_default_parse_failure_stops_after_one_complete_sample (test_execution_integrity_v7.GapClosureTests.test_default_pa
+rse_failure_stops_after_one_complete_sample) ... ok
+test_explicit_new_sample_may_keep_prompt_and_changes_sampling_identity (test_execution_integrity_v7.GapClosureTests.tes
+t_explicit_new_sample_may_keep_prompt_and_changes_sampling_identity) ... ok
+test_explicit_second_sample_parse_failure_is_recorded_without_success (test_execution_integrity_v7.GapClosureTests.test
+_explicit_second_sample_parse_failure_is_recorded_without_success) ... ok
+test_new_sample_requires_reason_key_and_budget (test_execution_integrity_v7.GapClosureTests.test_new_sample_requires_re
+ason_key_and_budget) ... ok
+test_opencode_conflicting_finish_status_rejected (test_execution_integrity_v7.GapClosureTests.test_opencode_conflicting
+_finish_status_rejected) ... ok
+test_parser_exception_is_failure_and_does_not_resubmit (test_execution_integrity_v7.GapClosureTests.test_parser_excepti
+on_is_failure_and_does_not_resubmit) ... ok
+test_backend_root_contract_only (test_execution_integrity_v7.IntegrityTests.test_backend_root_contract_only) ... ok
+test_body_preserved_or_rejected_not_scrubbed (test_execution_integrity_v7.IntegrityTests.test_body_preserved_or_rejecte
+d_not_scrubbed) ... ok
+test_cancelled_item_rejected (test_execution_integrity_v7.IntegrityTests.test_cancelled_item_rejected) ... ok
+test_handle_keys_and_strings_redacted (test_execution_integrity_v7.IntegrityTests.test_handle_keys_and_strings_redacted
+) ... ok
+test_policy (test_execution_integrity_v7.IntegrityTests.test_policy) ... ok
+test_strict_json (test_execution_integrity_v7.IntegrityTests.test_strict_json) ... ok
+test_success_and_after_terminal (test_execution_integrity_v7.IntegrityTests.test_success_and_after_terminal) ... ok
+test_ticket_survives_hold_disk_failure_cross_process (test_execution_integrity_v7.IntegrityTests.test_ticket_survives_h
+old_disk_failure_cross_process) ... ok
+test_unknown_codex_events_rejected (test_execution_integrity_v7.IntegrityTests.test_unknown_codex_events_rejected) ... 
+ok
+test_bad_and_legacy_ledger_shapes_fail_closed (test_execution_integrity_v7.LedgerGapTests.test_bad_and_legacy_ledger_sh
+apes_fail_closed) ... ok
+test_cache_index_cannot_be_redirected_to_cache_alias (test_execution_integrity_v7.LedgerGapTests.test_cache_index_canno
+t_be_redirected_to_cache_alias) ... ok
+test_finalize_or_cache_failure_cannot_be_reported_as_success (test_execution_integrity_v7.LedgerGapTests.test_finalize_
+or_cache_failure_cannot_be_reported_as_success) ... ok
+test_nonobject_and_unreadable_ledgers_fail_closed (test_execution_integrity_v7.LedgerGapTests.test_nonobject_and_unread
+able_ledgers_fail_closed) ... ok
+test_orphan_prompt_and_output_fail_closed (test_execution_integrity_v7.LedgerGapTests.test_orphan_prompt_and_output_fai
+l_closed) ... ok
+test_retained_legacy_seal_blocks_same_sample_after_ledgers_removed (test_execution_integrity_v7.LedgerGapTests.test_ret
+ained_legacy_seal_blocks_same_sample_after_ledgers_removed) ... ok
+test_use_cache_false_returns_exact_source_without_alias_or_submission (test_execution_integrity_v7.LedgerGapTests.test_
+use_cache_false_returns_exact_source_without_alias_or_submission) ... ok
+test_valid_unrelated_sample_does_not_block_new_identity (test_execution_integrity_v7.LedgerGapTests.test_valid_unrelate
+d_sample_does_not_block_new_identity) ... ok
+test_codex_success_exact_resume (test_execution_integrity_v7.RunnerTests.test_codex_success_exact_resume) ... ok
+test_final_argv_identity_contains_sandbox_and_images (test_execution_integrity_v7.RunnerTests.test_final_argv_identity_
+contains_sandbox_and_images) ... ok
+test_forbidden_tool_failed_with_complete_terminal (test_execution_integrity_v7.RunnerTests.test_forbidden_tool_failed_w
+ith_complete_terminal) ... ok
+test_hold_write_failure_retains_ticket (test_execution_integrity_v7.RunnerTests.test_hold_write_failure_retains_ticket)
+ ... ok
+test_opencode_success_handles_redacted (test_execution_integrity_v7.RunnerTests.test_opencode_success_handles_redacted)
+ ... ok
+test_real_gate_never_process (test_execution_integrity_v7.RunnerTests.test_real_gate_never_process) ... ok
+test_unknown_event_stops_later_provider_job (test_execution_integrity_v7.RunnerTests.test_unknown_event_stops_later_pro
+vider_job) ... ok
+
+----------------------------------------------------------------------
+Ran 61 tests in 4.832s
+
+OK

@@ -1,0 +1,147 @@
+{
+  "schema": "r7-main-worker/1",
+  "revision": "run148_e7_flash_diag_r7",
+  "mode": "suites",
+  "guard_negatives": [
+    {
+      "check": "model_cli_blocked",
+      "passed": true
+    },
+    {
+      "check": "isolated_python_still_blocked",
+      "passed": true
+    },
+    {
+      "check": "native_popen_bypass_blocked",
+      "passed": true
+    },
+    {
+      "check": "shell_blocked",
+      "passed": true
+    },
+    {
+      "check": "network_dns_blocked",
+      "passed": true
+    },
+    {
+      "check": "historical_report_write_blocked",
+      "passed": true
+    }
+  ],
+  "real_model_submissions": 0,
+  "provider_or_model_cli_invocations": 0,
+  "music_acceptance": "NOT_PERFORMED",
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "tests": [
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_cache_only_claim_without_exact_artifacts_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_compare_checks_every_quote_mapping_and_required_citation",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_config_and_canonical_self_flags_are_frozen",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_current_model_version_prompt_and_input_producer_conflicts_stop_before_write",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_default_parse_failure_stops_and_rerun_submits_zero_new_samples",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_direct_real_path_blocks_before_creating_real_run_outputs",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_duplicate_reviewer_and_order_identity_sets_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_exact_artifact_tamper_is_rejected_before_resume",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_execute_retries_one_proven_pre_submit_failure_then_reuses_same_sample",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_external_muse_sourcebound_receipt_valid_path_and_binding_rejections",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_full_collections_exact_identities_packs_and_reader_content",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_full_mock_rerun_adds_zero_submissions_and_stays_pending",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_import_has_no_environment_io_cli_or_source_import_effects",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_mech_explains_is_strict_int_set_and_rejects_bool_nested_duplicate_and_range",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_missing_terminal_identity_is_rejected_and_producer_stays_unknown",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_pack_missing_and_tamper_are_rejected_without_rebuilding",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_pack_validator_rejects_placeholder_and_missing_task_id",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_parser_failure_retry_appends_attempt_without_overwrite",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_queue_stop_blocks_every_following_submission_and_stage",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_raw_response_and_metadata_json_require_complete_strict_boundaries",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_source_tamper_is_rejected_using_an_isolated_fixture_root",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_transport_policy_needs_sourcebound_receipt_and_strict_budget",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_unproven_ambiguous_and_exhausted_transport_failures_hold_persistently",
+      "status": "PASS"
+    },
+    {
+      "test": "main_r7_fixtures.Run148Tests.test_v4_preflight_is_read_only_for_absent_and_present_unverified_entries",
+      "status": "PASS"
+    }
+  ],
+  "was_successful": true,
+  "first_full_mock_submissions": 126,
+  "guard_blocked_counts": {
+    "process": 4,
+    "network": 1,
+    "write": 1
+  },
+  "guard_scope": "Finite Python audit/class-preserving process guard, not OS sandbox or containment of malicious native code."
+}

@@ -1,0 +1,33 @@
+{
+  "version": "alignment-release-checks-v1",
+  "status": "REVIEW_REQUIRED",
+  "issues": [
+    {
+      "code": "weak_free_run_audio_evidence",
+      "detail": "grace-3",
+      "window": [
+        67.001179138322,
+        81.18857142857142
+      ]
+    },
+    {
+      "code": "internally_compressed_free_run",
+      "detail": "grace-3",
+      "window": [
+        67.001179138322,
+        81.18857142857142
+      ]
+    },
+    {
+      "code": "weak_free_run_audio_evidence",
+      "detail": "grace-5",
+      "window": [
+        509.5502947845805,
+        509.5851247165533
+      ]
+    }
+  ],
+  "notes_sha256": "2f971c57a3098de040c18a07b5472724643c553f899c3e21c9633c35fd7c42ac",
+  "audio_sha256": "9d166872bd778e0c7cafdb7bd6ce162ca2e0f0679fcc8fd688b6b45d0cadc7fd",
+  "limitation": "Passing these checks is not a measured timing-error guarantee; independent recording benchmarks remain necessary."
+}

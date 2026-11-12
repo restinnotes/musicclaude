@@ -1,0 +1,550 @@
+已完成。本批次仅覆盖 C01/C02/C03；未把评论量冒充销量，也未用品牌官网证明头部地位。所有未能由公开页面核实的实时价、卖家 ID、会员/定向优惠均保留为空。
+
+
+### 一、直接回答
+可形成 **9 个候选：6 个 domestic_head + 3 个 domestic_opportunity**。这里的“头部”严格定义为：**本次实际打开的京东国内自营公开候选池中，精确款型明确且评论量档位领先的购买/使用证据样本**，不等同于全市场销量排名。公开页显示：Mate 80 12+512 雪域白、Xiaomi 17 Pro 12+256 白色均为 20万+评论；战66 14 2026 为20万+、R9000P 2026 为10万+；MatePad Mini 12+256 曜石黑为10万+、Xiaomi Pad 8 12+256 黑为5万+。观察日均为 **2026-10-06**。:chatgpt-content-reference{index="0"}  
+来源：[https://www.jd.com/hprm/998798f39c6efd1fa6e4.html](https://www.jd.com/hprm/998798f39c6efd1fa6e4.html)；[https://www.jd.com/hprm/17329969fd646058e5007.html](https://www.jd.com/hprm/17329969fd646058e5007.html)；[https://www.jd.com/hprm/670acd349c33e9d0d3a.html](https://www.jd.com/hprm/670acd349c33e9d0d3a.html)。
+
+### 二、核心证据
+机会样本分别取 **vivo X300 12+256 惬意紫、华硕 a豆14 Air 2026 AI9 H465/32G/1T、拯救者 Y700 五代 12+256 碳晶黑**。X300 京东为10万+评论且 vivo 官方明确 V2509A 的 12+256 建议零售价 ¥4599；Y700 五代京东为2万+评论，联想商城公开 12+256 Wi-Fi 碳晶黑 ¥4299，且注明“国补至高减15%”，该补贴没有并入普通价。:chatgpt-content-reference{index="4"}  
+来源（观察2026-10-06）：[https://www.vivo.com.cn/vivo/param/x300](https://www.vivo.com.cn/vivo/param/x300)；[https://www.jd.com/brand/140653bba9610d2eaee81.html](https://www.jd.com/brand/140653bba9610d2eaee81.html)；[https://s.lenovo.com.cn/search/?key=%E6%8B%AF%E6%95%91%E8%80%85y700&type=home](https://s.lenovo.com.cn/search/?key=%E6%8B%AF%E6%95%91%E8%80%85y700&type=home)。
+
+### 三、一级来源
+华为官网确认 Mate 80 存在全网通 12GB+512GB 版本；MatePad Mini 官网确认 12GB/16GB、256GB/512GB/1TB，HarmonyOS 5.1 可升级 HarmonyOS 6，产品页标示系列 ¥3999 起，但**不能据此认定本次 12+256 曜石黑精确版本就是 ¥3999**。:chatgpt-content-reference{index="8"}  
+来源（观察2026-10-06）：[https://consumer.huawei.com/cn/support/content/zh-cn16075602/](https://consumer.huawei.com/cn/support/content/zh-cn16075602/)；[https://consumer.huawei.com/cn/tablets/matepad-mini/specs/](https://consumer.huawei.com/cn/tablets/matepad-mini/specs/)；[https://consumer.huawei.com/cn/tablets/matepad-mini/](https://consumer.huawei.com/cn/tablets/matepad-mini/)。
+
+### 四、社区证据
+X300 的国内长期使用文（2026-09-08）报告小屏、影像与日常使用体验，同时指出大型游戏/连续拍摄时会温热；这支持“差异化小屏影像机会”，不是销量证明。Y700 五代评测（2026-04-02）有 58赞/58收藏/16评论并围绕 8.8 英寸、高刷及游戏场景展开，社区场景信号比单纯规格页更强。:chatgpt-content-reference{index="12"}  
+来源：[https://post.smzdm.com/p/awwzn20p/](https://post.smzdm.com/p/awwzn20p/)；[https://post.smzdm.com/p/aggmm973/](https://post.smzdm.com/p/aggmm973/)。
+
+### 五、反向证据
+京东的“20万+ / 10万+评论”**不是成交件数，也可能存在同商品链接跨变体累积**，所以不能写成“销量20万”。此外，a豆14 Air 的京东精确 SKU 指向 AI9 H465/32G/1T，但华硕官网对应页本次打开返回 403，无法完成官方配置交叉核对，故该候选保持 **PROVISIONAL**。:chatgpt-content-reference{index="15"}  
+来源（观察2026-10-06）：[https://www.asus.com.cn/laptops/for-home/adolbooks/m5451ga/]()。
+
+### 六、置信度
+**C01：中高；C02：中；C03：中高。** 精确 JD item_id 与评论档位证据较强，但缺少登录态实时成交量；C02 又存在 HP 未完成官网交叉核验、a豆官网配置未闭环的问题。因此本批次适合“冻结前候选池”，不适合宣称“中国市场销售排名”。
+
+### 七、数据缺口
+`AUTHENTICATED DATA REQUIRED`：9 个京东 item 页的 **seller_id、登录态当前普通价、PLUS/会员价、定向券、实时成交件数**均未可靠暴露；精确 item 页抓取多为动态/阻断状态。R9000P 联想精确商品页本次打开超时；a豆官方页 403。按要求停止继续扩张，不以搜索摘要补这些字段。([Invalid URL]())
+
+### 八、意外发现
+公开价最清晰的是 Y700：联想商城同时显示 **¥4299 普通公开标价**与“国补至高减15%”，恰好说明冻结表必须把普通价与条件性补贴拆开。vivo X300 的 ¥4599 则是“官方建议零售价”，也不能冒充 2026-10-06 实际成交价。:chatgpt-content-reference{index="18"}
+
+### 九、自我反驳
+本批次容易高估“评论量=市场头部”。为降低偏差，我只把它当**清晰中国消费者购买/使用证据**，并限定结论到已打开的京东候选池；没有把网页默认顺序叫“销量榜”。价格分层也只是本项目的可复现操作定义：手机低/<2500、中/2500–4999、高/≥5000；笔记本低/<4000、中/4000–6999、高/≥7000；平板低/<2000、中/2000–3999、高/≥4000。会员、定向券、国补均不改变基础分层价。
+
+### 十、下一实验
+冻结前只需做一次登录/前端会话复核：逐一记录 9 个 item 的普通价、会员/定向优惠、seller_id，并确认评论是否跨变体聚合；同时单独补 a豆 AI9 H465 官方配置核验。除此之外不扩大品类、不查海外数据，也不因电池、重量、固件或兼容性删候选。
+
+```json
+{
+  "job_id": "W2-C-batch01",
+  "parent_replicate": "W2-C",
+  "web_research_available": true,
+  "pre_freeze_compliance": true,
+  "categories": [
+    {
+      "category_id": "C01",
+      "name": "手机",
+      "domestic_price_tiers": {
+        "low": "<2500 CNY",
+        "mid": "2500-4999 CNY",
+        "high": ">=5000 CNY"
+      },
+      "sampling_rule": "操作性阈值，非行业标准。仅用公开非会员单机价或明确官方建议零售价分层；会员价、定向券、国补不并入。head在本次实际打开的京东自营精确SKU池中按评论量档位优先并品牌去重选2个；opportunity要求有额外国内社区或消费场景证据。价格未知时不强行分层。"
+    },
+    {
+      "category_id": "C02",
+      "name": "笔记本电脑",
+      "domestic_price_tiers": {
+        "low": "<4000 CNY",
+        "mid": "4000-6999 CNY",
+        "high": ">=7000 CNY"
+      },
+      "sampling_rule": "操作性阈值，非行业标准。仅用公开非会员单机价或明确官方建议零售价分层；会员价、定向券、国补不并入。head在本次实际打开的京东自营精确SKU池中按评论量档位优先并品牌去重选2个；opportunity要求有额外国内社区或消费场景证据。价格未知时不强行分层。"
+    },
+    {
+      "category_id": "C03",
+      "name": "平板电脑",
+      "domestic_price_tiers": {
+        "low": "<2000 CNY",
+        "mid": "2000-3999 CNY",
+        "high": ">=4000 CNY"
+      },
+      "sampling_rule": "操作性阈值，非行业标准。仅用公开非会员单机价或明确官方建议零售价分层；会员价、定向券、国补不并入。head在本次实际打开的京东自营精确SKU池中按评论量档位优先并品牌去重选2个；opportunity要求有额外国内社区或消费场景证据。价格未知时不强行分层。"
+    }
+  ],
+  "sku_candidates": [
+    {
+      "category_id": "C01",
+      "candidate_sku_id": "C01-H1",
+      "brand": "HUAWEI",
+      "model": "Mate 80",
+      "exact_variant": "全网通版 12GB+512GB 雪域白",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示该精确款型20万+条评论；华为支持页确认Mate 80存在全网通12GB+512GB版本。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；20万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100224133317.html",
+      "item_id": "100224133317",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "HarmonyOS_6_china_variant"
+      ],
+      "verification_status": "VERIFIED_DOMESTIC_EXACT_VARIANT; PRICE_UNVERIFIED",
+      "source_ids": ["S01", "S02"]
+    },
+    {
+      "category_id": "C01",
+      "candidate_sku_id": "C01-H2",
+      "brand": "Xiaomi",
+      "model": "Xiaomi 17 Pro",
+      "exact_variant": "12GB+256GB 白色 5G",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示该精确款型20万+条评论。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；20万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100278751428.html",
+      "item_id": "100278751428",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "China_firmware_variant_not_separately_verified"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM; PRICE_UNVERIFIED",
+      "source_ids": ["S03"]
+    },
+    {
+      "category_id": "C01",
+      "candidate_sku_id": "C01-O1",
+      "brand": "vivo",
+      "model": "X300",
+      "exact_variant": "V2509A 全网通 12GB+256GB 惬意紫",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开自营精确款型10万+条评论；vivo官网确认12+256建议零售价4599元及惬意紫配色；国内社区有半年使用体验，强调小屏与影像场景。",
+      "domestic_selection_rule": "不按评论最大化；要求公开精确SKU且存在国内消费/社区差异化使用场景证据。",
+      "domestic_product_url": "https://item.jd.com/100278983618.html",
+      "item_id": "100278983618",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": 4599,
+      "price_type": "official_suggested_retail_price; not current transaction price",
+      "feasibility_flags": [
+        "integrated_battery",
+        "heavy_gaming_thermal_note_from_community"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM_AND_OFFICIAL_SPEC",
+      "source_ids": ["S04", "S05", "S06"]
+    },
+    {
+      "category_id": "C02",
+      "candidate_sku_id": "C02-H1",
+      "brand": "HP",
+      "model": "战66 14 2026",
+      "exact_variant": "14英寸 AMD Ryzen 7 H255 / 16GB / 512GB SSD；公开标题未给出颜色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示该精确item链接20万+条评论。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；20万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100252158679.html",
+      "item_id": "100252158679",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "Windows_11_configuration_not_officially_crosschecked"
+      ],
+      "verification_status": "PROVISIONAL_NO_OFFICIAL_SPEC_CROSSCHECK",
+      "source_ids": ["S07"]
+    },
+    {
+      "category_id": "C02",
+      "candidate_sku_id": "C02-H2",
+      "brand": "Lenovo",
+      "model": "拯救者 R9000P 2026",
+      "exact_variant": "AMD Ryzen 9 8945HX / 16GB / 1TB SSD / RTX 5060 8GB / 碳晶黑",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示该精确款型10万+条评论；联想精确商品页本次打开超时，未用搜索摘要补价格。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；10万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100349257480.html",
+      "item_id": "100349257480",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "gaming_laptop_form_factor"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM; OFFICIAL_PRICE_UNVERIFIED",
+      "source_ids": ["S07", "S08"]
+    },
+    {
+      "category_id": "C02",
+      "candidate_sku_id": "C02-O1",
+      "brand": "ASUS",
+      "model": "a豆14 Air 2026",
+      "exact_variant": "AMD Ryzen AI 9 H465 / 32GB / 1TB SSD / 2.8K / 风信子蓝",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开自营列表显示该精确SKU约2万+条评论，形成国内消费者证据；华硕M5451GA官网本次打开返回403，未以搜索摘要完成H465官方配置核验。",
+      "domestic_selection_rule": "机会层不要求最高评论量；选择具有超轻薄差异化定位且存在明确国内消费者评论证据的精确SKU。",
+      "domestic_product_url": "https://item.jd.com/100236629447.html",
+      "item_id": "100236629447",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; official_crosscheck_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "ultralight_990g_claim_requires_final_variant_crosscheck",
+        "official_configuration_crosscheck_blocked"
+      ],
+      "verification_status": "PROVISIONAL_OFFICIAL_CONFIG_NOT_CLOSED",
+      "source_ids": ["S07", "S09"]
+    },
+    {
+      "category_id": "C03",
+      "candidate_sku_id": "C03-H1",
+      "brand": "HUAWEI",
+      "model": "MatePad Mini",
+      "exact_variant": "SIM卡/全网通通话版 12GB+256GB 曜石黑",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示精确12+256曜石黑版本10万+条评论；华为官网确认MatePad Mini存在12GB和256GB配置并有曜石黑配色。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；10万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100206512503.html",
+      "item_id": "100206512503",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "cellular_variant",
+        "HarmonyOS_5.1_upgradable_to_6"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM_AND_OFFICIAL_FAMILY_SPEC; EXACT_PRICE_UNVERIFIED",
+      "source_ids": ["S10", "S11"]
+    },
+    {
+      "category_id": "C03",
+      "candidate_sku_id": "C03-H2",
+      "brand": "Xiaomi",
+      "model": "Xiaomi Pad 8",
+      "exact_variant": "12GB+256GB 黑色",
+      "sampling_stratum": "domestic_head",
+      "domestic_evidence": "京东公开自营列表显示该精确款型5万+条评论。",
+      "domestic_selection_rule": "已打开国内自营精确SKU池中按评论量档位优先；5万+档，品牌去重。",
+      "domestic_product_url": "https://item.jd.com/100279475542.html",
+      "item_id": "100279475542",
+      "seller_id": null,
+      "access_state": "listing_read_full_page; exact_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": null,
+      "price_type": null,
+      "feasibility_flags": [
+        "integrated_battery",
+        "China_OS_variant_not_separately_verified"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM; EXACT_PRICE_UNVERIFIED",
+      "source_ids": ["S12"]
+    },
+    {
+      "category_id": "C03",
+      "candidate_sku_id": "C03-O1",
+      "brand": "Lenovo",
+      "model": "拯救者 Y700 五代",
+      "exact_variant": "8.8英寸 / 12GB+256GB / Wi-Fi / 碳晶黑",
+      "sampling_stratum": "domestic_opportunity",
+      "domestic_evidence": "京东公开自营列表显示精确黑色12+256款2万+条评论；联想商城公开标价4299元；2026-04-02国内社区评测有58赞、58收藏、16评论并聚焦小尺寸电竞使用。",
+      "domestic_selection_rule": "机会层选择具有明确小尺寸游戏场景、公开消费者证据和社区讨论的差异化SKU。",
+      "domestic_product_url": "https://item.jd.com/100244991837.html",
+      "item_id": "100244991837",
+      "seller_id": null,
+      "access_state": "listing_and_official_store_read_full_page; exact_jd_item_page_blocked",
+      "observation_date": "2026-10-06",
+      "domestic_price": 4299,
+      "price_type": "Lenovo official mall public listed price; government subsidy up to 15% excluded",
+      "feasibility_flags": [
+        "integrated_battery",
+        "wifi_only",
+        "gaming_tablet_form_factor"
+      ],
+      "verification_status": "VERIFIED_JD_EXACT_ITEM_AND_LENOVO_PUBLIC_PRICE",
+      "source_ids": ["S13", "S14", "S15"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "url": "https://www.jd.com/hprm/998798f39c6efd1fa6e4.html",
+      "title": "京东 HUAWEI Mate 系列公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K08"]
+    },
+    {
+      "source_id": "S02",
+      "url": "https://consumer.huawei.com/cn/support/content/zh-cn16075602/",
+      "title": "HUAWEI Mate 80 用户指南适用产品",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K02"]
+    },
+    {
+      "source_id": "S03",
+      "url": "https://www.jd.com/hprm/17329969fd646058e5007.html",
+      "title": "京东 Xiaomi 17 系列公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K01", "K08"]
+    },
+    {
+      "source_id": "S04",
+      "url": "https://www.jd.com/hprm/6706f331bf4044a6c1b.html",
+      "title": "京东 vivo X300 公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S05",
+      "url": "https://www.vivo.com.cn/vivo/param/x300",
+      "title": "vivo X300 官方规格参数",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K03"]
+    },
+    {
+      "source_id": "S06",
+      "url": "https://post.smzdm.com/p/awwzn20p/",
+      "title": "vivo X300半年使用体验报告",
+      "published_at": "2026-09-08",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K04"]
+    },
+    {
+      "source_id": "S07",
+      "url": "https://www.jd.com/hprm/670acd349c33e9d0d3a.html",
+      "title": "京东笔记本电脑公开自营商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K05", "K06", "K08"]
+    },
+    {
+      "source_id": "S08",
+      "url": "https://item.lenovo.com.cn/product/1056553.html",
+      "title": "联想拯救者 R9000P 2026 商品页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K09"]
+    },
+    {
+      "source_id": "S09",
+      "url": "https://www.asus.com.cn/laptops/for-home/adolbooks/m5451ga/",
+      "title": "a豆14 Air 2026 M5451GA 官方页",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "blocked",
+      "claims_supported": ["K07", "K09"]
+    },
+    {
+      "source_id": "S10",
+      "url": "https://www.jd.com/hprm/9987cc1220ccf6c641d5.html",
+      "title": "京东 MatePad Mini 公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K10", "K08"]
+    },
+    {
+      "source_id": "S11",
+      "url": "https://consumer.huawei.com/cn/tablets/matepad-mini/specs/",
+      "title": "HUAWEI MatePad Mini 官方规格参数",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K10"]
+    },
+    {
+      "source_id": "S12",
+      "url": "https://www.jd.com/hprm/670ca81522efb20c111.html",
+      "title": "京东 Xiaomi Pad 8 公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K10", "K08"]
+    },
+    {
+      "source_id": "S13",
+      "url": "https://www.jd.com/brand/140653bba9610d2eaee81.html",
+      "title": "京东联想 Y700 公开商品列表",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "secondary",
+      "access_state": "read_full_page",
+      "claims_supported": ["K11"]
+    },
+    {
+      "source_id": "S14",
+      "url": "https://s.lenovo.com.cn/search/?key=%E6%8B%AF%E6%95%91%E8%80%85y700&type=home",
+      "title": "联想商城拯救者 Y700 搜索结果",
+      "published_at": null,
+      "retrieved_at": null,
+      "source_type": "official",
+      "access_state": "read_full_page",
+      "claims_supported": ["K11", "K12"]
+    },
+    {
+      "source_id": "S15",
+      "url": "https://post.smzdm.com/p/aggmm973/",
+      "title": "谁说小屏难称王？联想AI平板拯救者Y700五代评测！",
+      "published_at": "2026-04-02",
+      "retrieved_at": null,
+      "source_type": "community",
+      "access_state": "read_full_page",
+      "claims_supported": ["K11"]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "K01",
+      "claim": "在本次实际打开的京东国内公开自营候选池中，Mate 80 12+512雪域白与Xiaomi 17 Pro 12+256白色均显示20万+条评论，可作为强中国消费者购买/使用证据，但不是销量数据。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S03"],
+      "confidence": "medium",
+      "counterevidence": "评论数可能跨变体或历史时期累积，不能等同成交件数或全市场排名。"
+    },
+    {
+      "claim_id": "K02",
+      "claim": "华为官方支持页确认Mate 80存在全网通12GB+512GB版本。",
+      "classification": "FACT",
+      "source_ids": ["S02"],
+      "confidence": "high",
+      "counterevidence": "官方支持页证明版本存在，不证明销量或当前成交价。"
+    },
+    {
+      "claim_id": "K03",
+      "claim": "vivo X300 12GB+256GB在官方规格页的建议零售价为4599元，且京东精确款型存在10万+评论级购买/使用证据。",
+      "classification": "FACT",
+      "source_ids": ["S04", "S05"],
+      "confidence": "high",
+      "counterevidence": "4599元为建议零售价，不等同2026-10-06实时成交价。"
+    },
+    {
+      "claim_id": "K04",
+      "claim": "国内社区长期体验支持将vivo X300视为小屏影像差异化机会样本，同时报告重负载发热这一负向体验。",
+      "classification": "INFERENCE",
+      "source_ids": ["S06"],
+      "confidence": "medium",
+      "counterevidence": "单篇用户文章样本量有限，不能代表总体消费者满意度。"
+    },
+    {
+      "claim_id": "K05",
+      "claim": "京东公开列表中HP战66 14 2026精确item显示20万+评论，R9000P 2026精确item显示10万+评论。",
+      "classification": "FACT",
+      "source_ids": ["S07"],
+      "confidence": "medium",
+      "counterevidence": "评论量不是销量，且可能存在商品链接聚合。"
+    },
+    {
+      "claim_id": "K06",
+      "claim": "a豆14 Air 2026 AI9 H465/32GB/1TB精确京东item存在约2万+评论的国内消费证据，可列入机会层但不作为头部销量结论。",
+      "classification": "FACT",
+      "source_ids": ["S07"],
+      "confidence": "medium",
+      "counterevidence": "华硕官方精确配置核验未闭环。"
+    },
+    {
+      "claim_id": "K07",
+      "claim": "a豆14 Air 2026的官方配置交叉核验本次未完成，因此该候选应保持PROVISIONAL。",
+      "classification": "FACT",
+      "source_ids": ["S09"],
+      "confidence": "high",
+      "counterevidence": "京东精确item本身可定义商品，但不足以消除官网SKU矩阵差异风险。"
+    },
+    {
+      "claim_id": "K08",
+      "claim": "本次公开京东页面不能可靠提供9个候选的登录态实时成交件数、seller_id以及会员/定向优惠，因此这些字段不应猜测。",
+      "classification": "FACT",
+      "source_ids": ["S01", "S03", "S07", "S10", "S12"],
+      "confidence": "high",
+      "counterevidence": "登录后的前端会话可能提供更多字段，需要冻结前另行核验。"
+    },
+    {
+      "claim_id": "K09",
+      "claim": "R9000P联想精确商品页和a豆官方页面本次未能完整打开，因此不采用搜索摘要中的价格或配置作为已核验值。",
+      "classification": "FACT",
+      "source_ids": ["S08", "S09"],
+      "confidence": "high",
+      "counterevidence": "后续正常浏览器登录或页面恢复后可能可以完成核验。"
+    },
+    {
+      "claim_id": "K10",
+      "claim": "MatePad Mini 12+256曜石黑和Xiaomi Pad 8 12+256黑在京东公开自营页分别有10万+与5万+评论级证据；前者的容量组合又由华为官网规格页交叉确认。",
+      "classification": "FACT",
+      "source_ids": ["S10", "S11", "S12"],
+      "confidence": "medium",
+      "counterevidence": "评论量不等于成交量；Xiaomi Pad 8本批次未完成国内官网精确版本价格交叉核验。"
+    },
+    {
+      "claim_id": "K11",
+      "claim": "拯救者Y700五代12+256碳晶黑同时具有京东2万+评论、联想官方在售和国内社区小尺寸游戏场景讨论，因此适合作为平板机会样本。",
+      "classification": "INFERENCE",
+      "source_ids": ["S13", "S14", "S15"],
+      "confidence": "high",
+      "counterevidence": "机会样本代表差异化需求，不代表其总体销量高于其他候选。"
+    },
+    {
+      "claim_id": "K12",
+      "claim": "联想商城公开显示Y700五代12GB+256GB Wi-Fi碳晶黑标价4299元，同时另列国补至高减15%，两者应分开记录。",
+      "classification": "FACT",
+      "source_ids": ["S14"],
+      "confidence": "high",
+      "counterevidence": "补贴资格与最终支付价具有条件性，未计入domestic_price。"
+    }
+  ],
+  "data_gaps": [
+    "AUTHENTICATED DATA REQUIRED：9个京东item的seller_id、登录态实时普通价、PLUS/会员价、定向券和实时成交件数。",
+    "需确认京东评论量是否按精确SKU统计还是在父商品/多变体间聚合；当前不得将评论量解释为销量。",
+    "C01：Xiaomi 17 Pro 12GB+256GB白色的2026-10-06国内精确普通价未核验。",
+    "C02：HP战66 14 2026尚缺品牌官网精确配置交叉核验；公开标题未给出颜色。",
+    "C02：R9000P 2026联想精确商品页打开超时，官方当前精确普通价未核验。",
+    "C02：a豆14 Air 2026 AI9 H465/32GB/1TB的华硕官方SKU映射未闭环，保持PROVISIONAL。",
+    "C03：MatePad Mini 12GB+256GB曜石黑及Xiaomi Pad 8 12GB+256GB黑色的精确当前普通价均未核验。",
+    "未查询任何美国或其他海外价格、销量、供货或平台覆盖；海外可行性未参与候选删除。"
+  ]
+}
+```

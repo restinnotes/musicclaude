@@ -1,0 +1,92 @@
+{
+  "scope": "Existing historical artifacts only; adopted into formal30 by user instruction; earlier pilot28 stays separate; no new sampling.",
+  "candidates": [
+    {
+      "candidate_id": "CAND-gpt56w-int-2ee58aaa",
+      "replaces_excluded_source": "SRC-gpt56w-int-1",
+      "adopted_into_pilot": false,
+      "source_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-2ee58aaae2e043a7a531b3dd4047022d\\response.txt",
+      "prompt_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-2ee58aaae2e043a7a531b3dd4047022d\\prompt.txt",
+      "started_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-2ee58aaae2e043a7a531b3dd4047022d\\started.json",
+      "result_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-2ee58aaae2e043a7a531b3dd4047022d\\result.json",
+      "branch": "A-int",
+      "prompt_version": "A_int_v1",
+      "same_prompt_as_current_after_BOM_LF_rstrip": true,
+      "prompt_normalized_sha256": "c4c4f98386ab47efb54a4e9d6173ce2abd2a6e0038267903b242870fdaa61124",
+      "source_sha256_bytes": "20ff2e27bd7b4f8376d7b99291b33c114ae434a53cec368e2bfa622083fd6d8d",
+      "response_sha256_utf8": "20ff2e27bd7b4f8376d7b99291b33c114ae434a53cec368e2bfa622083fd6d8d",
+      "response_hash_matches_result": true,
+      "characters": 4581,
+      "requested_model": "gpt-5-6-thinking",
+      "server_model_slug": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "started_utc": "2026-10-11T18:51:14.840701+00:00",
+      "completed": true,
+      "stream_message_completed": true,
+      "continuation_expected": false,
+      "terminal_observed": true,
+      "tool_message_observation_count": 0,
+      "tool_result_observations": [],
+      "independence_evidence": {
+        "temporary": true,
+        "bound_temporary_session": false,
+        "allow_native_work_continuation": true,
+        "verification_only": false,
+        "probe": "none"
+      },
+      "limitations": [
+        "身份和源文件链路核实，不等于音乐事实已核对。",
+        "不复用被排除Sol的旧UID；若采用须以新SRC与新unit编号入库。"
+      ],
+      "adopted_into_formal30": true,
+      "formal_src_id": "SRC-gpt56w-int-r1"
+    },
+    {
+      "candidate_id": "CAND-gpt56w-web-3da49a4b",
+      "replaces_excluded_source": "SRC-gpt56w-web-1",
+      "adopted_into_pilot": false,
+      "source_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-3da49a4b00a34e89b9cf83236bc36645\\response.txt",
+      "prompt_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-3da49a4b00a34e89b9cf83236bc36645\\prompt.txt",
+      "started_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-3da49a4b00a34e89b9cf83236bc36645\\started.json",
+      "result_path": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-3da49a4b00a34e89b9cf83236bc36645\\result.json",
+      "branch": "A-web",
+      "prompt_version": "A_web_v2",
+      "same_prompt_as_current_after_BOM_LF_rstrip": true,
+      "prompt_normalized_sha256": "8066a8b43e47985d1956ecd57800d597268ed127cd56dc320bbbfc664eed8289",
+      "source_sha256_bytes": "d6c2de25e3e4ccb9497f02ccc84b868f71eeb2ca5b0ccab41008725ed50a6e26",
+      "response_sha256_utf8": "d6c2de25e3e4ccb9497f02ccc84b868f71eeb2ca5b0ccab41008725ed50a6e26",
+      "response_hash_matches_result": true,
+      "characters": 5616,
+      "requested_model": "gpt-5-6-thinking",
+      "server_model_slug": "gpt-5-6-thinking",
+      "thinking_effort": "max",
+      "started_utc": "2026-10-11T19:05:53.408116+00:00",
+      "completed": true,
+      "stream_message_completed": true,
+      "continuation_expected": false,
+      "terminal_observed": true,
+      "tool_message_observation_count": 19,
+      "tool_result_observations": [
+        {
+          "actual_tool_role_observed": true,
+          "tool_name": "web.run",
+          "message_status": "finished_successfully",
+          "tool_content_type": "text"
+        }
+      ],
+      "independence_evidence": {
+        "temporary": true,
+        "bound_temporary_session": false,
+        "allow_native_work_continuation": true,
+        "verification_only": false,
+        "probe": "none"
+      },
+      "limitations": [
+        "身份和源文件链路核实，不等于音乐事实已核对。",
+        "不复用被排除Sol的旧UID；若采用须以新SRC与新unit编号入库。"
+      ],
+      "adopted_into_formal30": true,
+      "formal_src_id": "SRC-gpt56w-web-r1"
+    }
+  ]
+}

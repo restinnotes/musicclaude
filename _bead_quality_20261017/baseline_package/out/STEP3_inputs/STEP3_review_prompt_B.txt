@@ -1,0 +1,487 @@
+【STEP3-v3·A 原文归段复核（分片 2/2；机械归段已完成，此处只做语义判定）】
+
+作品：肖邦《船歌》升F大调 Op.60（单乐章，共116小节）
+
+已冻结的文献结构段（不得更改；机械映射以逐字范围为准）：
+S01 1–3 序奏
+S02 4–16 第1主題
+S03 17–23 間句
+S04 24–34 第1主題（確保）
+S05 35–39 間句
+S06 40–50 第2主題前半
+S07 51–61 第2主題前半（確保）
+S08 62–71 第2主題後半
+S09 72–77 間句
+S10 78–83 挿入句
+S11 84–92 第1主題（再現）
+S12 93–102 第2主題後半（再現）
+S13 103–110 第2主題前半（再現）
+S14 111–116 終結句
+
+来源清单（36 份已采用研究；A 原文已由确定性切分器切成带 UID 的单元）：
+[SRC-gflash-int-1] gemini-3.8-flash-high | run05_saturation | int | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-int__A_int_v1__gflash__op60__s1.md | 6937 chars
+[SRC-gflash-int-2] gemini-3.8-flash-high | run05_saturation | int | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-int__A_int_v1__gflash__op60__s2.md | 6371 chars
+[SRC-gflash-int-3] gemini-3.8-flash-high | run05_saturation | int | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-int__A_int_v1__gflash__op60__s3.md | 6920 chars
+[SRC-gflash-web-1] gemini-3.8-flash-high | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gflash_web__op60__s1.md | 10684 chars
+[SRC-gflash-web-2] gemini-3.8-flash-high | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gflash_web__op60__s2.md | 8803 chars
+[SRC-gflash-web-3] gemini-3.8-flash-high | run37_pool_novelty | web | music_work_since_1008v3_20261009\runs\run37_pool_novelty\outputs\A-web__A_web_v2__gflash_web__op60__s3.md | 10893 chars
+[SRC-gpro-int-1] gemini-3.1-pro-high | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__gpro__op60__s1.md | 6201 chars
+[SRC-gpro-int-2] gemini-3.1-pro-high | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__gpro__op60__s2.md | 5100 chars
+[SRC-gpro-int-3] gemini-3.1-pro-high | run44_gpro | int | music_work_since_1008v3_20261009\runs\run44_gpro\outputs\A-int__A_int_v1__gpro__op60__s1.md | 4628 chars
+[SRC-gpro-web-1] gemini-3.1-pro-high | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gpro_web__op60__s1.md | 5484 chars
+[SRC-gpro-web-2] gemini-3.1-pro-high | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gpro_web__op60__s2.md | 5295 chars
+[SRC-gpro-web-3] gemini-3.1-pro-high | run44_gpro | web | music_work_since_1008v3_20261009\runs\run44_gpro\outputs\A-web__A_web_v2__gpro_web__op60__s1.md | 5643 chars
+[SRC-gpt56w-int-1] gpt-5.6-sol#xhigh (web, mimicgate) | run106_gpt56_material | int | music_work_since_1008v3_20261009\runs\run106_gpt56_material\outputs\A-int__A_int_v1__gpt56w__op60__s1.md | 10578 chars
+[SRC-gpt56w-int-2] gpt-5-6-thinking | A-int__A_int_v1__gpt56w__op60__f1 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__gpt56w__op60__f1.md | 4504 chars
+[SRC-gpt56w-int-3] gpt-5-6-thinking | A-int__A_int_v1__gpt56w__op60__f2 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__gpt56w__op60__f2.md | 4083 chars
+[SRC-gpt56w-web-1] gpt-5.6-sol#xhigh (web, mimicgate) | run106_gpt56_material | web | music_work_since_1008v3_20261009\runs\run106_gpt56_material\outputs\A-web__A_web_v2__gpt56w__op60__s1.md | 17598 chars
+[SRC-gpt56w-web-2] gpt-5-6-thinking | A-web__A_web_v2__gpt56w__op60__f1 | web | _bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt56w__op60__f1.md | 6805 chars
+[SRC-gpt56w-web-3] gpt-5-6-thinking | A-web__A_web_v2__gpt56w__op60__f2 | web | _bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt56w__op60__f2.md | 5666 chars
+[SRC-gpt6w-int-1] gpt-6-thinking | A-int__A_int_v1__gpt6w__op60__f1 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__gpt6w__op60__f1.md | 4472 chars
+[SRC-gpt6w-int-2] gpt-6-thinking | A-int__A_int_v1__gpt6w__op60__f2 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__gpt6w__op60__f2.md | 3142 chars
+[SRC-gpt6w-int-3] gpt-6-thinking | A-int__A_int_v1__gpt6w__op60__f3 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__gpt6w__op60__f3.md | 5086 chars
+[SRC-gpt6w-web-1] gpt-6-thinking | A-web__A_web_v2__gpt6w__op60__f1 | web | _bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f1.md | 7933 chars
+[SRC-gpt6w-web-2] gpt-6-thinking | A-web__A_web_v2__gpt6w__op60__f2 | web | _bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f2.md | 6808 chars
+[SRC-gpt6w-web-3] gpt-6-thinking | A-web__A_web_v2__gpt6w__op60__f3 | web | _bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f3.md | 8114 chars
+[SRC-luna-int-1] gpt-6-luna | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__luna_noweb__op60__s1.md | 2839 chars
+[SRC-luna-int-2] gpt-6-luna | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__luna_noweb__op60__s2.md | 2684 chars
+[SRC-luna-int-3] codex exec luna_noweb (tool-free) | A-int__A_int_v1__luna__op60__f1 | int | _bead_auto_20261016\research_fill\outputs\A-int__A_int_v1__luna__op60__f1.md | 2423 chars
+[SRC-luna-web-1] gpt-6-luna | run05_saturation | web | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-web__A_web_v2__luna__op60__s1.md | 8388 chars
+[SRC-luna-web-2] gpt-6-luna | run05_saturation | web | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-web__A_web_v2__luna__op60__s2.md | 8519 chars
+[SRC-luna-web-3] gpt-6-luna | run05_saturation | web | music_work_since_1008v3_20261009\runs\run05_saturation\outputs\A-web__A_web_v2__luna__op60__s3.md | 9081 chars
+[SRC-muse-int-1] opencode2api/muse-spark-1.3-contributor-free#xhigh | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__muse__op60__s1.md | 5099 chars
+[SRC-muse-int-2] opencode2api/muse-spark-1.3-contributor-free#xhigh | run08_final_models | int | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__muse__op60__s2.md | 5481 chars
+[SRC-muse-int-3] opencode2api/muse-spark-1.3-contributor-free#xhigh | run37_pool_novelty | int | music_work_since_1008v3_20261009\runs\run37_pool_novelty\outputs\A-int__A_int_v1__muse__op60__s3.md | 4852 chars
+[SRC-muse-web-1] opencode2api/muse-spark-1.3-contributor-free#xhigh | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__muse_web__op60__s1.md | 8134 chars
+[SRC-muse-web-2] opencode2api/muse-spark-1.3-contributor-free#xhigh | run08_final_models | web | music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__muse_web__op60__s2.md | 7120 chars
+[SRC-muse-web-3] opencode2api/muse-spark-1.3-contributor-free#xhigh | run37_pool_novelty | web | music_work_since_1008v3_20261009\runs\run37_pool_novelty\outputs\A-web__A_web_v2__muse_web__op60__s3.md | 7160 chars
+
+切分与机械映射规则回顾（这些不需要判定）:
+- 单元头行内所有 mm.X[-Y] 记号＝该单元的原始小节范围（多范围保留）。
+- 完全落在某一段 → PRIMARY 该段；与多段有交集 → 每段各留一条 CROSS，不剪断。
+- 无小节记号 → NO_RANGE；任一范围端点>116 → OUT_OF_BOUNDS。
+- 复核绝不修改任何 A 原文文字，只决定单元去向。
+
+任务：只对下列判断用例给出判定（两个分片互不重叠；只判定本片里出现的 uid；另一片不知情，不猜测、不补全）。
+
+## A 部分：NO_RANGE 单元（逐条全文）→ 每条一个判定
+可选值：GLOBAL（整曲全局底色/总述，进每段附件第五部分，不进读者正文）｜UNCERTAIN（无法确定，只留内部台账）｜DROP（与本批 A 素材无关或无内容价值，从 Pool 剔除）｜RANGE:mm.a-b（正文其实自带可靠小节信息；给出正确范围后按机械规则重新映射）
+===== SRC-gpt6w-web-1-U23 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f1 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f1.md
+标注小节范围：（无）
+## 主要参考资料
+
+这里的心理叙述是我的综合性聆听解释，并非任何一位研究者提出的固定故事。最重要的研究依据是：
+
+- <Link url="https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html" title="David Kopp, On Performing Chopin’s Barcarolle"/>，*Music Theory Online*，2014。尤其有助于理解开头的克制、mm. 78–83 的超脱感，以及结尾不应过早卸去力量的原因。
+- <Link url="https://www.chopincompetition.pl/en/compositions/128" title="Mieczysław Tomaszewski，《升F大调船歌》作品介绍"/>，肖邦国际钢琴比赛官方网站。汇集作品的接受史及 Gide、Piotrowska 等人的情感解读。
+- <Link url="https://www.researchgate.net/publication/249981365_Debussy%27s_L%27Isle_joyeuse_as_Territorial_Assemblage" title="Michael L. Klein, Debussy’s L’Isle joyeuse as Territorial Assemblage"/>，*19th-Century Music*，2007。特别揭示了《船歌》mm. 107–110 在圆满感之中出现的黑暗与危机。
+- <Link url="https://www.ladolcevolta.com/flipbook/LDV14/25/" title="钢琴家 Philippe Bianconi 的唱片文字"/>。从演奏者角度谈到时间的悬停、光线的变化与来之不易的安宁。
+- <Link url="https://www.barenreiter.co.uk/prefaces/9790006566105.pdf" title="Bärenreiter 原典版前言及演奏说明"/>。其中强调肖邦的强音应体现温暖和歌唱性的强度，而不是单纯的响亮。这也是为什么我认为后半段应听成强烈的情感倾诉，而非炫耀性的胜利。
+
+===== SRC-gpt6w-web-2-U01 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f2 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f2.md
+标注小节范围：（无）
+﻿# 肖邦《船歌》Op.60：一场从温柔、犹疑走向情感释放的内心旅程
+
+我觉得，这首《船歌》最动人的地方，是它写出了一种**幸福得并不完全安心、悲伤得又不愿放弃幸福**的精神状态。
+
+它不像在讲一个人遭遇了什么不幸，也不像单纯歌颂爱情或自然。更像是一个经历过很多事情的人，重新感受到生活的甜美。他想留住这份美好，却隐隐知道它不可能永远停留；他努力保持平静，但情感一次次涌上来，最后强烈到无法再用平静的方式表达。
+
+尤其特别的是：**音乐越往后，越不是从悲伤走向快乐，而是快乐和痛感都变得更深，最后几乎难以分开。**
+
+这不是肖邦留下的明确故事。肖邦研究者米耶奇斯瓦夫·托马谢夫斯基（Mieczysław Tomaszewski）梳理过这部作品极不相同的历史解读：有人听见秘密恋人的亲密，有人听见净化和狂喜，也有人在极大的幸福感中听见苦涩的反讽和告别世界的意味。它们未必互相排斥，反而共同揭示了这部作品情感上的复杂性。<Cite ref="turn868854view1"/>
+
+下面我把它当成一段连续发生的心理经历来讲。小节范围以乐谱为准，具体感受则是结合音乐学研究、演奏解释与聆听经验作出的综合理解，并不是声称每个人都会听到同一段故事。
+
+===== SRC-gpt6w-web-2-U15 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f2 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f2.md
+标注小节范围：（无）
+## 最后，我想强调一个最重要的理解
+
+这首《船歌》最特别的，并不是把人从不幸带向幸福。
+
+它更像是在描写一个人怎样逐渐发现：**真正深刻的幸福，往往同时意味着自己有能力受到伤害。**
+
+所以，它的核心不是「伤心之后终于想开了」，也不是「爱情战胜一切」。
+
+而是一个更成熟、也更复杂的精神过程：起初你珍惜美好，因此有所保留；后来你越陷越深，发现不可能只享受温柔而不承担牵挂；再后来，你短暂地放下控制，毫无保留地投入其中。到了最后，快乐和痛苦都达到极高的强度，而你不再试图把它们分开。
+
+这也是为什么，我认为 Op.60 有一种不同于许多早期浪漫主义作品的成熟感：它并不急于选择光明或者黑暗。它能够让两者同时存在。
+
+当然，不能因此断定肖邦写的是自己对死亡的预感、与某个恋人的告别，或者某个确定的故事。Szklener 特别提醒，这些文学性、传记性解读缺乏足以确定肖邦意图的历史证据。它们可以帮助聆听，却不能冒充作品的标准答案。<Cite ref="turn342489view0"/>
+
+===== SRC-gpt6w-web-2-U16 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f2 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f2.md
+标注小节范围：（无）
+## 这次解读主要依据的资料
+
+除核对了 <Link url="https://commons.wikimedia.org/wiki/File:Barcarolle,_Op.60_(IA_imslp-op60-chopin-frdric).pdf" title="《船歌》公开乐谱"/>，我重点参考了四项研究：<Link url="https://www.chopincompetition.pl/en/compositions/128" title="托马谢夫斯基的作品导赏"/>，提供了从温柔歌唱到神秘释放、情感升华的历史理解；<Link url="https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html" title="David Kopp《论肖邦〈船歌〉的演奏》（2014）"/>，详细讨论了各阶段情绪如何通过演奏呈现，并有录音对比；<Link url="https://www.researchgate.net/publication/272665783_Chopin's_Barcarole_in_F_sharp_major_Op_60_A_Sentimental_Song_or_a_Romantic_Poem" title="Artur Szklener《一首感伤的歌曲，还是一首浪漫主义诗篇？》（2009）"/>，尤其有助于理解后半段隐藏的戏剧与哀诉；以及 <Link url="https://academic.oup.com/princeton-scholarship-online/book/18838/chapter-abstract/177137927" title="James Parakilas《The Barcarolle and the Barcarolle》（2017）"/>，帮助理解音乐怎样把人从具体的歌唱带入不断变化的白日梦。
+
+如果用一句最贴近我聆听感受的话来结束：
+
+**这首《船歌》像一个人终于懂得，生命最值得留恋的东西，恰恰因为不能永远拥有，才会同时让人感到那么幸福，又那么难过。**
+
+===== SRC-gpt6w-web-3-U01 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f3 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f3.md
+标注小节范围：（无）
+﻿# 肖邦《船歌》Op.60：一场幸福到几乎令人心痛的内心体验
+
+我觉得，理解这首《船歌》最重要的一点是：
+
+**它写的不是单纯的幸福，也不是幸福破灭后的悲伤，而是一个人感受到极其珍贵的幸福时，内心同时产生的眷恋、渴望、不安，以及几乎无法承受的激动。**
+
+这是一种很复杂的状态：你很幸福，却不能完全安心；你想让此刻永远持续，又隐约知道它不可能永远持续；你越是全身心投入其中，越容易感到某种说不清的疼痛。
+
+这种理解并非凭空编造。肖邦研究者米耶奇斯瓦夫·托马谢夫斯基（Mieczysław Tomaszewski）把这首作品描述为从温柔、克制的歌唱，经过不安、神秘的舒展，走向情感的极致迸发。音乐学家 Artur Szklener 则特别指出：作品末尾除了爱情诗般的热烈，还存在一种越来越强烈、甚至近乎悲剧性的情绪，两者不能简单归为一种。<Cite refs={["turn238649view0","turn734661view0","turn734661view2"]}/>
+
+我会把全曲116小节当作一段逐渐变化的心理经历来谈。下面的 `mm.` 指小节编号，而不是演奏录音的分钟数。
+
+还有一个必要的界限：**这些不是能够证明的“肖邦当时在想什么”，而是有总谱、研究和演奏传统支持的听觉解读。** 它不需要一个明确的爱情故事才能成立。
+
+===== SRC-gpt6w-web-3-U18 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f3 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f3.md
+标注小节范围：（无）
+## 为什么同一首曲子会同时让人感到爱情、幸福、隐痛和告别？
+
+我认为，这里面有一个贯穿全曲、非常接近真实人生的矛盾：
+
+**人越深切地爱某件事，就越无法只用简单的快乐去感受它。**
+
+浅一点的快乐，通常不会让人感到心痛。你享受它，然后自然地转身离开。
+
+但有些幸福的分量非常重。你愿意把它当作自己生命中极其重要的一部分。于是，你会开始感受到它的脆弱、它的不可重复，以及自己无法完全把握它的事实。
+
+这并不意味着幸福是假的。恰恰相反，是因为它太真实、太重要，才会带来这么复杂的感受。
+
+在文学和音乐对《船歌》的解释史中，这两面始终存在。19世纪钢琴家卡尔·陶西格（Carl Tausig）把它想象成一对恋人在船上的亲密相会。音乐学家 Maria Piotrowska 则从中同时听出了极大的喜悦、对自身价值的确认，以及苦涩的反讽和与世界告别的意味。
+
+这两种理解不必强行选一边。但也不应该把它们说成肖邦亲自写下的故事。Szklener 强调，我们没有充分的传记证据证明那些具体情节；真正能够从音乐得到支持的，是**温柔的抒情与越来越强烈的内在戏剧之间持续存在的张力**。<Cite refs={["turn238649view0","turn998903view1","turn734661view2"]}/>
+
+===== SRC-gpt6w-web-3-U19 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f3 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f3.md
+标注小节范围：（无）
+### 如果让我用几句话概括整首曲子的精神变化
+
+它一开始是：**我很珍惜眼前的温柔，因此不愿惊动它。**
+
+随后是：**我发现，自己想要的远比这种安静相处更多；我开始不安，也开始向内心深处寻找。**
+
+到了中后段，它逐渐变成：**我终于愿意毫无保留地感受这一切，即使它会使我脆弱。**
+
+高潮之后则是：**原来真正强烈的幸福，能够同时包含悲伤、感激、眷恋，以及某种对有限生命的深切感受。**
+
+最终，不是所有矛盾都被消除了，而是这个人似乎已经能够承受它们，也能够从容地让音乐结束。
+
+所以我不会把《船歌》称为一首悲伤的作品，也不会只称它为一首赞美爱情的作品。
+
+**它更像是一首关于「一个人究竟能够多么深切地感受到幸福」的作品。深切到最后，幸福与心痛几乎不再能够分开。**
+
+---
+
+<text color="secondary" weight="medium" size="xs">资料依据与核对</text>
+
+上述解读主要综合了波兰肖邦研究专家 Tomaszewski 的<Link url="https://www.chopincompetition.pl/en/compositions/128" title="作品介绍"/>、Artur Szklener 2009年发表于《Annales Universitatis Mariae Curie-Skłodowska》的<Link url="https://www.researchgate.net/publication/272665783_Chopin%27s_Barcarole_in_F_sharp_major_Op_60_A_Sentimental_Song_or_a_Romantic_Poem" title="专项研究"/>，以及钢琴演奏者兼理论家 David Kopp 2014年发表于《Music Theory Online》的<Link url="https://mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html" title="演奏与分析研究"/>。小节位置同时参照了<Link url="https://enc.piano.or.jp/en/musics/543" title="日本钢琴教师协会作品条目"/>及<Link url="https://chopin-os.kdl.kcl.ac.uk/cfeo/browse/acview/da9f0baa3fc557fce914a55b56907691/" title="伦敦国王学院肖邦初版总谱档案"/>。
+
+其中最重要、也最值得保留开放性的分歧，是 **mm.103–110 究竟意味着情绪已经平息，还是更深的一次内心挣扎**。听不同钢琴家的演奏，尤其可以留意这里：它很可能改变你对整首《船歌》最终精神状态的理解。
+
+
+## B 部分：OUT_OF_BOUNDS 单元（逐条全文；范围中含>116的小节号）→ 每条一个判定
+可选值：DROP（无价值或错乱）｜KEEP_GLOBAL（材料本身是全局性叙述，按 GLOBAL 进入第五部分）｜RANGE:mm.a-b（能指出其中可靠的≤116子范围，之后机械重映射）
+===== SRC-muse-int-2-U11 | opencode2api/muse-spark-1.3-contributor-free#xhigh | int | run08_final_models | 路径：music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__muse__op60__s2.md
+标注小节范围：114-138
+**mm.114-138：尾声，先耳语，再决定燃烧**
+最后分两层。mm.114 开始很轻，几乎是自言自语，把前面的主题碎片再摸一遍，像睡前把一天过一遍。
+
+然后最后十几小节突然全部打开，一路冲到结尾的光里。这个结尾不是“从此幸福”，肖邦病到这个份上，写不出天真的大团圆。
+
+这是看透后的选择：知道船会沉、身体会坏、美会消失，但我此刻，选择用最大的力气去肯定。因为失去过，所以这份热烈里有重量，不是傻乐，是清醒的燃烧。
+
+整首听下来，精神弧线就是这样：
+
+漂浮 -> 沉浸在有刺痛的温柔里 -> 坐不住想逃 -> 逃不掉，拿玩笑盖焦虑 -> 屏息 -> 认领自己的感情，大声说出来 -> 和解 -> 清醒地选择热烈。
+
+所以《船歌》真正的底色不是悲伤，也不是宏伟。是一个明白自己 time 不多的人，不再自怜，也不再躲，用音乐证明自己还能如此完整地去爱。
+===== SRC-muse-int-3-U09 | opencode2api/muse-spark-1.3-contributor-free#xhigh | int | run37_pool_novelty | 路径：music_work_since_1008v3_20261009\runs\run37_pool_novelty\outputs\A-int__A_int_v1__muse__op60__s3.md
+标注小节范围：114-138
+**mm.114-138：最后的光，闪一下，然后站住**
+尾声是最后的波光。从mm.114开始一点点亮起来，到后面 `leggiermente` 那种飞快的闪，像水面碎金，一片记忆快速闪过：好的，坏的，都亮了一下。
+
+最后几小节的大和弦，不是在炫耀，是站稳。像船靠岸，人站起来，脚还有点晃，但站住了。心里那句话是：刚才那些都是真的，我都感受过了，可以了。
+
+所以整首走下来不是从悲到喜，而是：晃着进来 - 笑着珍惜 - 夜里缩进去 - 强迫自己轻 - 轻到兜不住 - 喊出来 - 喊完看开一点 - 最后闪一下站住。
+
+核心一直没变：一个人很清醒地知道美好留不住，但还是选择把这一段水面好好走完。
+===== SRC-luna-int-1-U07 | gpt-6-luna | int | run08_final_models | 路径：music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-int__A_int_v1__luna_noweb__op60__s1.md
+标注小节范围：111-143
+- **mm. 111–143：重新获得平静，但这份平静更清醒。**  
+  摇荡感再次变得从容，像重新找到呼吸和步伐。此时的温柔多了一层经历：不是因为从未动摇，所以能平静；而是动摇过之后，仍愿意保留柔软。结尾带着明朗和收束感，但不必听成一切问题都解决了。更像一个人接受了心里的复杂，终于能够安静地把这段路走完。
+
+如果用一句话概括：**《船歌》从带着期待的安宁出发，让期待慢慢长成渴望，再让渴望变得汹涌，最后回到一种经历过风浪、因此更有分量的平静。**
+
+## C 部分：长跨度 CROSS 单元（覆盖≥6段或跨≥40小节，可能是整曲后见之明叙述）→ 每条一个判定
+可选值：SPLIT_AS_GLOBAL（内容是整曲后见之明的评论/总结，按 GLOBAL 处理）｜OK_CROSS（确实是跨段连续叙述，保留在标注各段）｜DROP（与其他单元重复且无独特措辞）｜NARROW:mm.a-b（实际只属于这个小节范围，之后机械重映射）
+===== SRC-gflash-web-3-U04 | gemini-3.8-flash-high | web | run37_pool_novelty | 路径：music_work_since_1008v3_20261009\runs\run37_pool_novelty\outputs\A-web__A_web_v2__gflash_web__op60__s3.md
+标注小节范围：40-83
+覆盖段：S06,S07,S08,S09,S10
+### 第三阶段：异域日光与“灵魂出窍”（mm. 40–83）
+
+* **具体小节：`mm. 40–83`**
+* **心理体验：穿过光影明灭的运河，随后时间彻底凝固，抵达无重力的极乐。**
+
+从 `m. 40` 开始，调性猛然一转（进入A大调），给听者带来的心理感受是极其强烈的——**仿佛小船突然拐出幽暗狭窄的运河，迎面撞上了一片波光粼粼的开阔水面**。
+拉威尔形容这段音乐“迸发出一股极其纯正的意大利式抒情”。左手的波浪碎了，节奏变得细密促狭（`mm. 40–61`），两颗心的跳动明显加快，情绪带着一丝不安与渴望，像潮水一样一层层往上涌（`mm. 62–70`）。
+
+然而，波浪并没有直接冲上悬崖，反而渐渐平息下来（`mm. 71–77`）。随之而来的，是整部作品中最神奇、最超凡脱俗的一笔：
+
+===== SRC-gpro-web-1-U04 | gemini-3.1-pro-high | web | run08_final_models | 路径：music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gpro_web__op60__s1.md
+标注小节范围：35-77
+覆盖段：S05,S06,S07,S08,S09
+### 3. 向内心的潜行与暗流的积聚 (mm. 35-77)
+音乐进入中段，情绪变得极其私密，仿佛船驶入了一条狭窄、幽暗却宁静的河道。
+*   **听觉体验：** 这里的旋律变得更加舒展、如梦似幻。这是一种**极其脆弱的平静**，是人在极度疲惫后试图在内心强行构筑的一个避风港。
+*   **精神状态的变化：** 然而，这种平静并不持久。在这一段的后半部分，音符变得越来越密集，水波的起伏变大。你会感觉到水面下开始有暗流涌动，一种焦躁、渴望和不安正在快速积聚。这就像是一个人在试图催眠自己“一切都好”时，内心的真实痛楚与不甘却开始不受控制地翻涌上来，几乎要将人吞噬。
+
+===== SRC-gpro-web-2-U03 | gemini-3.1-pro-high | web | run08_final_models | 路径：music_work_since_1008v3_20261009\runs\run08_final_models\outputs\A-web__A_web_v2__gpro_web__op60__s2.md
+标注小节范围：34-77
+覆盖段：S04,S05,S06,S07,S08,S09
+### 2. 焦虑的独白与内心的暗礁（mm. 34-77）
+**听觉体验：** 随着音乐的发展，那种甜蜜的“双人对话”逐渐解体，变成了更加孤立、复杂的独白。水面不再平静，旋律开始在不同的情绪里游移，音乐变得起伏不定，充满试探。
+**精神状态：** 此时，船驶出了安全的港湾，进入了心理的暗礁区。这里表达的是一种**迷茫、躁动与痛苦的挣扎**。现实中的病痛和感情的撕裂开始无情地入侵梦境，美好的回忆被焦虑打断。在这个阶段，听者会感到一种不安和隐隐的焦灼，仿佛当事人正在一个没有出口的情感迷宫里徘徊，试图寻找出路却深感无力。
+
+===== SRC-gpt56w-web-2-U17 | gpt-5-6-thinking | web | A-web__A_web_v2__gpt56w__op60__f1 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt56w__op60__f1.md
+标注小节范围：1-3, 4-23, 24-39, 40-61, 62-70, 71-83, 84-103, 103-111, 111-116
+覆盖段：S01,S02,S03,S04,S05,S06,S07,S08,S09,S10,S11,S12,S13,S14
+**mm.1–3 是预感；mm.4–23 是克制的亲近和它留下的余味；mm.24–39 是第二次仍未完全成功的表白；mm.40–61 是陷入自身感觉的沉醉与不安；mm.62–70 是短暂、异常单纯的幸福；mm.71–83 是放下抵抗后的释放；mm.84–103 是终于毫无遮掩地承认；mm.103–111 是狂喜内部显露出的哀痛；mm.111–116 才是经历过一切以后获得的安定。**
+
+因此，我觉得这首曲子最深处的“精神状态”并不是浪漫的幸福，也不是怀旧或悲伤，而是：**一个人终于敢把一种感情完整地活到底——包括它的甜美、欲望、不确定、失控、狂喜，以及意识到这一切终究不能永久停留的疼痛——然后仍然接受它。**
+
+Tomaszewski所引述的 Maria Piotrowska 有一个很极端但很有启发性的说法：她在这首作品里同时听到“无边的欣悦、喜悦和安定”，又听到一种苦涩的反讽乃至告别感。我不会把这种说法当作肖邦的“隐藏剧情”，更不会把它硬套成传记，但它确实抓到了《船歌》后半最特别的一点：**越接近圆满，阴影反而越清楚；而阴影并没有取消圆满。** citeturn339030view1
+
+我参考的核心材料包括 Szklener 对“船歌式亲密”与“叙事性戏剧”冲突的研究、Kopp 从实际演奏出发的逐段讨论、Hood 关于长期期待与尾声的研究及录音比较，以及 James Parakilas 收入 Princeton University Press《Chopin and His World》的《The Barcarolle and the Barcarolle: Topic and Genre in Chopin》；后者的出版信息可在 Princeton Scholarship Online 核实。citeturn330406search0turn330406search10
+
+===== SRC-gpt6w-web-3-U07 | gpt-6-thinking | web | A-web__A_web_v2__gpt6w__op60__f3 | 路径：_bead_auto_20261016\research_fill\outputs\A-web__A_web_v2__gpt6w__op60__f3.md
+标注小节范围：35-83
+覆盖段：S05,S06,S07,S08,S09,S10
+## 二、从亲密的幸福，走向更深的渴望（mm.35–83）
+
+
+## D 部分：其余 CROSS 单元逐条紧凑表（只挑出有问题的）
+只在发现『范围与该单元正文自己的 mm 说法矛盾』或『明显整曲叙述被误标于某段』时，才在输出里给该 uid 判定（NARROW:mm.a-b 或 OK_CROSS 或 SPLIT_AS_GLOBAL 或 DROP）；没问题的不要出现在输出。uid | 覆盖段 | 范围 | 头行（截断显示）
+SRC-gflash-int-1-U02 | S01,S02 | 1-15 | ### 第一阶段：推离陆地与双人低语（mm. 1 – 15）
+SRC-gflash-int-1-U03 | S01,S02 | 1-4 | * **mm. 1–4：** 开头那个从低音沉沉坠下、又缓缓升起的琶音，就像一脚踏上小船时，木板微晃、水波在脚下荡开的失重感。陆地上的噪音、人际的琐碎与身体的沉重，在这一推之下全被
+SRC-gflash-int-1-U05 | S02,S03,S04,S05 | 16-39 | ### 第二阶段：水波下的暗涌与未尽之言（mm. 16 – 39）
+SRC-gflash-int-1-U06 | S02,S03 | 16-23 | * **mm. 16–23：** 旋律开始出现密集的装饰音和小颤音。这不再是平静的依偎，而是两人谈话深处触碰到了某些无法解开的结。思绪像被风吹碎的倒影，粼粼闪烁却难以拼凑完整。
+SRC-gflash-int-1-U09 | S06,S07 | 40-61 | ### 第三阶段：神圣的白日梦与生命欲求的苏醒（mm. 40 – 61）
+SRC-gflash-int-1-U12 | S08,S09,S10 | 62-83 | ### 第四阶段：情感风暴与极致的“叹息释怀”（mm. 62 – 83）
+SRC-gflash-int-1-U13 | S08,S09 | 62-75 | * **mm. 62–75：** 潮水彻底失控。右手的和弦层层堆叠，左手的水流变得汹涌急促，情感在这里被推向了近乎窒息的顶峰。这是一种承受不了的浓度，仿佛整个灵魂快要被澎湃的情感冲
+SRC-gflash-int-1-U14 | S09,S10 | 76-83 | * **mm. 76–83（核心的 *Dolce sfogato*）：** 在巨大风暴之后，肖邦没有让它坠入悲剧深渊，而是写下了全曲最著名的表情术语：*dolce sfogato*
+SRC-gflash-int-1-U15 | S11,S12 | 84-102 | ### 第五阶段：最后的狂喜与存在的确证（mm. 84 – 102）
+SRC-gflash-int-1-U18 | S13,S14 | 103-116 | ### 第六阶段：消散于无垠长夜（mm. 103 – 116，尾声）
+SRC-gflash-int-2-U03 | S02,S03,S04,S05 | 4-39 | ### 第二阶段：并肩低语与成年人的隐痛（mm. 4–39）
+SRC-gflash-int-2-U04 | S06,S07 | 40-61 | ### 第三阶段：月色、私语与透明的真空（mm. 40–61）
+SRC-gflash-int-2-U05 | S08,S09,S10 | 62-83 | ### 第四阶段：暗涌、焦灼与星光般的释怀（mm. 62–83）
+SRC-gflash-int-2-U07 | S11,S12 | 84-102 | ### 第五阶段：狂喜与极致的向死而生（mm. 84–102）
+SRC-gflash-int-2-U08 | S13,S14 | 103-116 | ### 第六阶段：余波、释怀与最后的抽离（mm. 103–116）
+SRC-gflash-int-3-U03 | S01,S02 | 1-5 | * **对应小节**：`mm. 1 – 5`
+SRC-gflash-int-3-U05 | S02,S03,S04,S05 | 6-39 | * **对应小节**：`mm. 6 – 39`
+SRC-gflash-int-3-U07 | S06,S07 | 40-61, 51-61 | * **对应小节**：`mm. 40 – 61`（核心高潮在 `mm. 51 – 61`）
+SRC-gflash-int-3-U09 | S08,S09,S10 | 62-83 | * **对应小节**：`mm. 62 – 83`
+SRC-gflash-int-3-U13 | S12,S13,S14 | 93-116 | * **对应小节**：`mm. 93 – 116`
+SRC-gpro-int-1-U02 | S01,S02 | 1-5 | ### 1. 推开沉重的记忆之门，将自己交托给命运 (mm. 1-5)
+SRC-gpro-int-1-U03 | S02,S03,S04 | 6-34 | ### 2. 带有痛感的温柔，与过往的隐秘对话 (mm. 6-34)
+SRC-gpro-int-1-U04 | S05,S06,S07 | 35-61 | ### 3. 阴霾逼近，失去重心的焦躁与摸索 (mm. 35-61)
+SRC-gpro-int-1-U05 | S08,S09 | 62-77 | ### 4. 灵魂出窍般的金色幻象 (mm. 62-77)
+SRC-gpro-int-1-U06 | S10,S11,S12,S13 | 78-103 | ### 5. 带着绝望的热爱，把生命燃烧到极致 (mm. 78-103)
+SRC-gpro-int-1-U07 | S13,S14 | 104-116 | ### 6. 烟花散尽，一声释怀的叹息与永恒的归宿 (mm. 104-116)
+SRC-gpro-int-2-U02 | S01,S02,S03,S04 | 1-32 | ### 1. 沉重的叹息与易碎的温存 (mm. 1 - 32)
+SRC-gpro-int-2-U04 | S02,S03,S04 | 4-32 | *   **mm. 4 - 32：** 水波开始摇曳，主旋律出现了。这时的情绪不是单纯的“优美浪漫”，而是一种**带有极度克制和心碎感的亲昵**。你会听到旋律经常是两个声部贴在一起
+SRC-gpro-int-2-U05 | S04,S05,S06,S07 | 33-61 | ### 2. 焦躁的渴望与拼命的挽留 (mm. 33 - 61)
+SRC-gpro-int-2-U06 | S04,S05,S06,S07 | 33-61 | *   **mm. 33 - 61：** 水面不再平静，内心的波澜开始扩大。之前那种温柔的窃窃私语，渐渐变成了一种焦急的倾诉。这是一种**极其矛盾的状态**：你一边沉浸在过往的美好
+SRC-gpro-int-2-U07 | S08,S09 | 62-77 | ### 3. 梦魇的侵袭与幽暗的深渊 (mm. 62 - 77)
+SRC-gpro-int-2-U08 | S08,S09 | 62-77 | *   **mm. 62 - 77：** 精神状态在这里发生了急剧的下坠。现实的病痛、内心的恐惧或者命运的压迫感突然降临。水面变成了漆黑的漩涡，旋律变得气喘吁吁、鬼影幢幢。这是一种
+SRC-gpro-int-2-U09 | S10,S11 | 78-92 | ### 4. 灵魂的出窍与极致的悬浮 (mm. 78 - 92)
+SRC-gpro-int-2-U10 | S10,S11 | 78-92 | *   **mm. 78 - 92：** 这是整首曲子（甚至可以说是肖邦所有作品中）最不可思议、最神奇的瞬间！肖邦在这里写下了一个词：*dolce sfogato*（甜美地倾吐/宣
+SRC-gpro-int-2-U11 | S12,S13 | 93-103 | ### 5. 燃尽生命的绝命狂舞 (mm. 93 - 103)
+SRC-gpro-int-2-U12 | S12,S13 | 93-103 | *   **mm. 93 - 103：** 最初的温柔主题在这里以雷霆万钧之势回归。但这一次，它不再是耳边的呢喃，而是**爆发出了极其痛苦、极其辉煌的生命意志**。
+SRC-gpro-int-2-U13 | S13,S14 | 104-116 | ### 6. 耗尽后的消散与猛然的清醒 (mm. 104 - 116)
+SRC-gpro-int-2-U14 | S13,S14 | 104-113 | *   **mm. 104 - 113：** 高潮过后，一切能量都耗尽了。大汗淋漓之后，是一种虚弱的平静。那艘承载着记忆的孤舟，开始在浓雾中越漂越远。情绪变成了一种深深的疲惫与最终
+SRC-gpro-int-3-U03 | S02,S03,S04 | 4-34 | ### 2. 微光中的温柔与隐痛 (mm. 4-34)
+SRC-gpro-int-3-U04 | S05,S06,S07 | 35-61 | ### 3. 情绪的下潜与渴望 (mm. 35-61)
+SRC-gpro-int-3-U05 | S08,S09,S10 | 62-83 | ### 4. 灵魂的震荡与失重感 (mm. 62-83)
+SRC-gpro-int-3-U06 | S11,S12,S13 | 84-103 | ### 5. 狂喜与含泪的拥抱 (mm. 84-103)
+SRC-gpro-int-3-U07 | S13,S14 | 104-116 | ### 6. 金色的余烬与终局 (mm. 104-116)
+SRC-muse-int-1-U02 | S01,S02 | 1-4 | **mm.1-4：船还没动，人先晃**
+SRC-muse-int-1-U03 | S02,S03,S04 | 5-26 | **mm.5-26：第一次开口，但有所保留**
+SRC-muse-int-1-U04 | S04,S05,S06 | 27-43 | **mm.27-43：想留住，于是抓得更紧**
+SRC-muse-int-1-U05 | S06,S07 | 44-61 | **mm.44-61：走神、找路**
+SRC-muse-int-1-U06 | S08,S09 | 62-77 | **mm.62-77：突然放晴，然后满到溢出来**
+SRC-muse-int-1-U07 | S10,S11 | 78-92 | **mm.78-92：翻掉，挣扎**
+SRC-muse-int-1-U09 | S13,S14 | 103-116 | **mm.103-116：放下，不是升天**
+SRC-muse-int-2-U02 | S01,S02 | 1-4 | **mm.1-4：还没开始想，只是身体先晃起来**
+SRC-muse-int-2-U03 | S02,S03 | 5-22 | **mm.5-22：真正开口唱，温柔里带刺**
+SRC-muse-int-2-U04 | S03,S04 | 23-32 | **mm.23-32：美开始晃，话说不顺了**
+SRC-muse-int-2-U05 | S04,S05,S06 | 33-46 | **mm.33-46：换了一个自己，变轻，想飞**
+SRC-muse-int-2-U06 | S06,S07 | 47-61 | **mm.47-61：梦被拽住，心跳加快**
+SRC-muse-int-2-U07 | S08,S09 | 62-77 | **mm.62-77：全曲最怪、最成年的一段**
+SRC-muse-int-2-U08 | S10,S11 | 78-84 | **mm.78-84：屏住呼吸，停在半空**
+SRC-muse-int-2-U09 | S11,S12 | 85-102 | **mm.85-102：同样的歌，但人变了，彻底放开唱**
+SRC-muse-int-2-U10 | S13,S14 | 103-113 | **mm.103-113：大喊之后，突然温柔了**
+SRC-muse-int-3-U02 | S01,S02 | 1-4 | **mm.1-4：还没坐稳，先晃起来**
+SRC-muse-int-3-U03 | S02,S03,S04 | 5-32 | **mm.5-32：轻轻地唱，但不敢唱太满**
+SRC-muse-int-3-U04 | S04,S05,S06,S07 | 33-61 | **mm.33-61：天暗下来，跟自己说话**
+SRC-muse-int-3-U05 | S08,S09 | 62-77 | **mm.62-77：突然开窗，强迫自己轻起来**
+SRC-muse-int-3-U06 | S10,S11 | 78-92 | **mm.78-92：兜不住了，水开始大**
+SRC-muse-int-3-U08 | S13,S14 | 103-113 | **mm.103-113：喊完以后，再看同样的水**
+SRC-luna-int-1-U02 | S01,S02,S03 | 1-20 | - **mm. 1–20：安稳的摇荡里，藏着一点期待。**
+SRC-luna-int-1-U03 | S03,S04,S05,S06 | 21-40 | - **mm. 21–40：期待变得更私密，也更渴望。**
+SRC-luna-int-1-U04 | S06,S07,S08 | 41-64 | - **mm. 41–64：心胸打开，显出更大胆的一面。**
+SRC-luna-int-1-U05 | S08,S09,S10,S11 | 65-88 | - **mm. 65–88：摇荡开始有了催促感。**
+SRC-luna-int-1-U06 | S11,S12,S13 | 89-110 | - **mm. 89–110：情绪到了顶点，然后开始换气。**
+SRC-luna-int-2-U02 | S01,S02 | 1-16 | - **mm. 1–16：安稳里带着克制。**
+SRC-luna-int-2-U03 | S03,S04,S05 | 17-36 | - **mm. 17–36：亲密感变得更明显，也更脆弱。**
+SRC-luna-int-2-U04 | S05,S06,S07 | 37-56 | - **mm. 37–56：优雅的表面下，开始有了急切。**
+SRC-luna-int-2-U05 | S07,S08 | 57-66 | - **mm. 57–66：情感冲到最无遮掩的地方。**
+SRC-luna-int-2-U06 | S08,S09,S10,S11 | 67-88 | - **mm. 67–88：熟悉的温柔回来，但人已经不是刚开始时的心情。**
+SRC-luna-int-2-U07 | S11,S12,S13,S14 | 89-112 | - **mm. 89–112：最后的闪耀与收束。**
+SRC-luna-int-3-U04 | S02,S03,S04 | 12-34 | - **mm. 12–34：愉悦越来越浓，却不是毫无阴影的快乐。**音乐一层层涨起来，像情绪终于不必藏得那么好。可它的起伏并不让人觉得“问题解决了”，反倒有种越美越舍不得的感觉。到
+SRC-luna-int-3-U05 | S05,S06 | 35-39, 35-40 | - **mm. 35–39：亲密的气氛忽然断了一下。**旋律变得孤零零的，像刚才那阵情绪过去后，一个人站在原地，想把感受理清，却还不知道该往哪儿走。可以把它想成离开熟悉的房间，走进
+SRC-luna-int-3-U06 | S06,S07 | 40-61 | - **mm. 40–61：人开始往前走，但心还没完全定下来。**摇摆变得更急、更不平稳，像一边被新鲜感吸引，一边又忍不住回头确认自己是不是走远了。这里的亮光和起伏带着兴奋，也带着
+SRC-luna-int-3-U08 | S08,S09,S10 | 71-77, 78-83 | - **mm. 71–77：像被打断后，突然不知道该说什么。**前面那股冲动没了，音乐带着迟疑，像人在心里反复问：“刚才那是真的吗？接下来怎么办？”到了 **mm. 78–83**
+SRC-luna-int-3-U09 | S11,S12,S13 | 84-102, 100-103 | - **mm. 84–102：熟悉的歌声回来，但人已经不一样了。**最初那种贴耳的亲密感，这次变得宽阔、有分量，像一个人终于有勇气把心里话说完整。它听起来很有力量，却不只是“胜利”
+SRC-luna-int-3-U10 | S13,S14 | 103-116, 110-111, 113-116 | - **mm. 103–116：结束前并没有立刻平静。**不少演奏会让这几小节逐渐收远，但也可以听见它仍在用力，像一场深谈结束后，身体里的激动还没散去；**mm. 110–111*
+SRC-gpt56w-int-1-U02 | S01,S02 | 1-4 | ### mm. 1–4：还没有真正开口，先让自己进入一种可以说话的状态
+SRC-gpt56w-int-1-U03 | S02,S03 | 5-20 | ### mm. 5–20：一种很成熟的幸福，但幸福里已经有距离感
+SRC-gpt56w-int-1-U04 | S03,S04,S05 | 21-38 | ### mm. 21–38：温柔开始不够用了，感情想突破原来的分寸
+SRC-gpt56w-int-1-U05 | S05,S06,S07 | 39-56 | ### mm. 39–56：第一次真正向内沉下去——不是绝望，而是亲密感里的孤独
+SRC-gpt56w-int-1-U06 | S07,S08,S09 | 57-77 | ### mm. 57–77：人开始重新抬头，但已经不能回到最初那种无忧的温柔
+SRC-gpt56w-int-1-U07 | S10,S11 | 78-85 | ### mm. 78–85：全曲最不可思议的时刻之一——不是激情爆发，而是终于不再防御
+SRC-gpt56w-int-1-U09 | S12,S13 | 93-104 | ### mm. 93–104：真正的高潮——幸福已经强烈到和痛苦几乎无法区别
+SRC-gpt56w-int-1-U10 | S13,S14 | 105-116 | ### mm. 105–116：不是梦醒了，而是重新回到现实；最后的坚定因此格外重要
+SRC-gpt56w-int-1-U11 | S01,S02,S03 | 1-20 | **mm.1–20 是“我可以温柔地拥有这种感情”；
+SRC-gpt56w-int-2-U03 | S02,S03 | 4-19 | ## mm. 4–19：一种成熟的亲密——快乐，但并不天真
+SRC-gpt56w-int-2-U04 | S03,S04,S05 | 20-38 | ## mm. 20–38：感情开始超过“可以轻松承受”的程度
+SRC-gpt56w-int-2-U05 | S05,S06,S07 | 39-51 | ## mm. 39–51：防备松了一层——不再只是“漂亮地表达”
+SRC-gpt56w-int-2-U07 | S08,S09 | 62-77 | ## mm. 62–77：从“占有一种感情”，慢慢变成“允许它存在”
+SRC-gpt56w-int-2-U09 | S11,S12 | 84-93 | ## mm. 84–93：回到熟悉的世界，可是已经不再是原来的自己
+SRC-gpt56w-int-2-U10 | S12,S13 | 94-103 | ## mm. 94–103：不再能够保持距离——幸福和痛苦黏在一起
+SRC-gpt56w-int-2-U14 | S01,S02,S03 | 1-19 | **mm. 1–19：我能够安静地拥有这种感觉。**
+SRC-gpt56w-int-2-U15 | S03,S04,S05 | 20-38 | **mm. 20–38：等等，它好像比我想象中重要。**
+SRC-gpt56w-int-2-U16 | S05,S06,S07 | 39-61 | **mm. 39–61：我开始承认自己其实非常脆弱。**
+SRC-gpt56w-int-2-U17 | S08,S09 | 62-77 | **mm. 62–77：我不再要求这种感情给我一个答案。**
+SRC-gpt56w-int-2-U19 | S11,S12,S13 | 84-103 | **mm. 84–103：可是当我重新看见它，我才真正知道自己可能失去什么。**
+SRC-gpt56w-int-3-U02 | S01,S02 | 1-4 | ### mm. 1–4：还没有开始倾诉，先确认自己敢不敢说
+SRC-gpt56w-int-3-U04 | S02,S03,S04 | 15-26 | ### mm. 15–26：越说越多，因为最重要的话其实还没有说完
+SRC-gpt56w-int-3-U05 | S04,S05 | 27-38 | ### mm. 27–38：温柔第一次带上“非要得到回应不可”的力量
+SRC-gpt56w-int-3-U06 | S05,S06,S07 | 39-51 | ### mm. 39–51：突然退后一步，看见自己的感情
+SRC-gpt56w-int-3-U07 | S07,S08 | 52-69 | ### mm. 52–69：平静并没有解决问题，内心重新开始活动
+SRC-gpt56w-int-3-U08 | S08,S09 | 70-77 | ### mm. 70–77：不再分析了，开始准备承担这份感情
+SRC-gpt56w-int-3-U09 | S10,S11,S12 | 78-93 | ## mm. 78–93：全曲最动人的地方之一——不是快乐，而是“终于不再抓紧”
+SRC-gpt56w-int-3-U10 | S12,S13 | 94-103 | ### mm. 94–103：平静的接受突然变成一种近乎身体性的狂喜
+SRC-gpt6w-int-1-U04 | S02,S03 | 4-21 | **mm. 4–21：温柔、亲近，但又小心地维持着一种平衡。**
+SRC-gpt6w-int-1-U05 | S03,S04,S05 | 22-39 | **mm. 22–39：从享受幸福，变成想抓住幸福。**
+SRC-gpt6w-int-1-U06 | S06,S07 | 40-61 | **mm. 40–61：情感往内收，出现一种更私密的脆弱。**
+SRC-gpt6w-int-1-U07 | S08,S09 | 62-77 | **mm. 62–77：情绪开始松动，仿佛不再能靠理智维持原来的姿态。**
+SRC-gpt6w-int-1-U09 | S11,S12 | 84-96 | **mm. 84–96：重新获得力量，但已经不是开头那种小心翼翼的温柔。**
+SRC-gpt6w-int-1-U10 | S12,S13 | 97-107 | **mm. 97–107：情感的顶点——几乎无法区分快乐与痛苦。**
+SRC-gpt6w-int-1-U11 | S13,S14 | 108-116 | **mm. 108–116：最后没有退回梦境，而是选择结束得坚定。**
+SRC-gpt6w-int-2-U02 | S01,S02 | 1-6 | ## 1. mm. 1–6：还没有开始幸福，就已经有一种等待
+SRC-gpt6w-int-2-U03 | S02,S03 | 7-22 | ## 2. mm. 7–22：温柔地沉醉，但还保留着分寸
+SRC-gpt6w-int-2-U04 | S03,S04,S05 | 23-39 | ## 3. mm. 23–39：仅仅安静地拥有，已经不够了
+SRC-gpt6w-int-2-U05 | S06,S07 | 40-61 | ## 4. mm. 40–61：忽然意识到，亲密之中仍然有无法消除的距离
+SRC-gpt6w-int-2-U06 | S08,S09 | 62-77 | ## 5. mm. 62–77：不再试图摆脱不安，而是带着不安继续靠近
+SRC-gpt6w-int-2-U07 | S10,S11 | 78-92 | ## 6. mm. 78–92：终于不再小心控制自己的感情
+SRC-gpt6w-int-2-U08 | S12,S13 | 93-105 | ## 7. mm. 93–105：幸福强烈到几乎令人难以承受
+SRC-gpt6w-int-2-U09 | S13,S14 | 106-116 | ## 8. mm. 106–116：不是一切终于安稳，而是决定把这份感情承担到底
+SRC-gpt6w-int-3-U04 | S03,S04 | 17-32 | ## 3. mm. 17–32：开始不满足于仅仅享受幸福
+SRC-gpt6w-int-3-U05 | S04,S05,S06 | 33-49 | ## 4. mm. 33–49：美好之中，第一次明显感到它的重量
+SRC-gpt6w-int-3-U06 | S06,S07,S08 | 50-66 | ## 5. mm. 50–66：从渴望被打动，变成渴望坦白
+SRC-gpt6w-int-3-U07 | S08,S09,S10 | 67-83 | ## 6. mm. 67–83：感情沉到深处，出现一种近乎失神的宁静
+SRC-gpt6w-int-3-U08 | S11,S12,S13 | 84-104 | ## 7. mm. 84–104：越来越灿烂，却也越来越承受不住
+SRC-gpt6w-int-3-U09 | S13,S14 | 105-116 | ## 8. mm. 105–116：不再要求永恒，但也不否认曾经的狂喜
+SRC-gflash-web-1-U03 | S02,S03,S04 | 4-34 | ### 第二阶段：双声的呢喃与黄昏的黏稠（mm. 4–34）
+SRC-gflash-web-1-U04 | S05,S06,S07 | 35-61 | ### 第三阶段：阴影水道、童年般的回忆与潜流的苏醒（mm. 35–61）
+SRC-gflash-web-1-U05 | S08,S09 | 62-77 | ### 第四阶段：欲望的涨潮与奇迹般的“屏息”（mm. 62–77）
+SRC-gflash-web-1-U07 | S11,S12 | 84-102 | ### 第六阶段：神化（Apotheosis）——从窃窃私语到宇宙级的狂喜（mm. 84–102）
+SRC-gflash-web-1-U08 | S13,S14 | 103-116 | ### 第七阶段：余烬、水滴与现实的重击（mm. 103–116）
+SRC-gflash-web-1-U09 | S13,S14 | 103-111 | * **mm. 103–111（尾声）：** 这里的每一次下行音符，就像船桨举起时，一滴滴重新落入水面的水珠。它带着一种浩劫过后的宁静与接受。听者在这里感受到的是一种极其深沉的**
+SRC-gflash-web-2-U03 | S02,S03,S04,S05 | 4-39 | ### 第二阶段：秘语与微醺——两个人的秘密宇宙（mm. 4–39）
+SRC-gflash-web-2-U04 | S06,S07 | 40-61 | ### 第三阶段：白昼隐退——梦境深处的纯净真空（mm. 40–61）
+SRC-gflash-web-2-U05 | S08,S09,S10 | 62-83 | ### 第四阶段：渴望的复苏与灵魂的“大呼气”（mm. 62–83）
+SRC-gflash-web-2-U06 | S11,S12 | 84-102 | ### 第五阶段：神化（Apotheosis）——明知必死而发起的生命狂欢（mm. 84–102）
+SRC-gflash-web-2-U07 | S13,S14 | 103-116 | ### 第六阶段：落潮与终局——平静的放手与离去（mm. 103–116）
+SRC-gflash-web-3-U02 | S01,S02 | 1-5 | ### 第一阶段：入水——现实与重力的剥离（mm. 1–5）
+SRC-gflash-web-3-U03 | S02,S03,S04,S05 | 6-39 | ### 第二阶段：双人低语——隐忍、羞怯与挥之不去的微痛（mm. 6–39）
+SRC-gflash-web-3-U06 | S11,S12 | 84-102 | ### 第四阶段：升华（Apotheosis）——情感的决堤与神化（mm. 84–102）
+SRC-gflash-web-3-U07 | S13,S14 | 103-116 | ### 第五阶段：余晖散尽与最后的告别（mm. 103–116）
+SRC-gpro-web-1-U03 | S02,S03,S04 | 4-34 | ### 2. 缱绻的痛楚与追忆 (mm. 4-34)
+SRC-gpro-web-1-U06 | S11,S12,S13 | 84-103 | ### 5. 生命力的狂放燃烧与狂喜 (mm. 84-103)
+SRC-gpro-web-1-U07 | S13,S14 | 104-116 | ### 6. 燃尽后的余晖与坦然 (mm. 104-116 尾声 Coda)
+SRC-gpro-web-2-U02 | S01,S02,S03,S04 | 1-33 | ### 1. 沉重的起航与易碎的幻梦（mm. 1-33）
+SRC-gpro-web-2-U05 | S11,S12 | 84-102 | ### 4. 绝望的壮丽与生命绝唱（mm. 84-102）
+SRC-gpro-web-3-U03 | S02,S03,S04,S05 | 4-38 | ### 2. 揉碎在水波里的追忆：一种“极度易碎”的悲伤 (mm. 4-38)
+SRC-gpro-web-3-U04 | S05,S06,S07,S08,S09 | 39-77 | ### 3. 向内向深的自我逼问与焦虑 (mm. 39-77)
+SRC-gpro-web-3-U06 | S11,S12,S13 | 84-103 | ### 5. 燃烧生命力的绝唱：悲壮的狂欢 (mm. 84-103)
+SRC-muse-web-1-U03 | S02,S03,S04 | 4-34 | ### 2. mm.4-34：两个人靠很近，小声唱第一次情歌
+SRC-muse-web-1-U04 | S05,S06,S07 | 35-61 | ### 3. mm.35-61：一条细线把你带到另一个更亮的地方，却坐立不安
+SRC-muse-web-1-U05 | S08,S09 | 62-77 | ### 4. mm.62-77：全曲最单纯的一首小歌，唱完就飘走了，然后迷路
+SRC-muse-web-1-U07 | S11,S12 | 84-102 | ### 6. mm.84-102：同样的歌回来，但换了个人唱
+SRC-muse-web-1-U08 | S13,S14 | 103-116 | ### 7. mm.103-116：不肯结束，抓住最后一截，再上岸
+SRC-muse-web-2-U03 | S02,S03,S04 | 4-34 | ### mm.4-34：摇起来了，温柔，但从没真正放松
+SRC-muse-web-2-U04 | S05,S06,S07 | 35-61 | ### mm.35-61：滑进另一个世界，又坐不住
+SRC-muse-web-2-U05 | S08,S09 | 62-77 | ### mm.62-77：好不容易站稳了，唱了首“赞歌”
+SRC-muse-web-2-U07 | S11,S12 | 84-102 | ### mm.84-102：回来，把含蓄的话大声喊出来
+SRC-muse-web-3-U02 | S01,S02 | 1-4 | ### 1. 水面还没决定要不要唱：mm.1-4
+SRC-muse-web-3-U03 | S02,S03,S04 | 5-34 | ### 2. 两个人互相依偎着唱，但不敢太大声：mm.5-34
+SRC-muse-web-3-U04 | S05,S06,S07 | 35-61 | ### 3. 漂到一个更亮但站不稳的地方：mm.35-61
+SRC-muse-web-3-U06 | S08,S09,S10 | 71-83 | ### 5. 时间停住的那两分钟：mm.71-83
+SRC-muse-web-3-U07 | S11,S12 | 84-102 | ### 6. 不再回忆，而是下决心：mm.84-102
+SRC-luna-web-1-U05 | S03,S04 | 17-34, 24-34 | - **mm. 17–34：熟悉的歌回来，像试着重温刚才的亲密。** 中间短暂离开后，mm. 24–34 再次听见熟悉的旋律，但它有了更多装饰，感觉不再是第一次开口时的单纯。可以把
+SRC-luna-web-1-U06 | S05,S06,S07 | 35-61, 35-39, 35-40, 40-61 | - **mm. 35–61：时间忽然松开，歌声变成更私密的对话。** mm. 35–39，原先的摇荡短暂消失，音乐像从水面飘开；随后 mm. 40–61 出现新的、较轻声的旋律。它
+SRC-luna-web-1-U07 | S08,S09 | 62-70, 62-77, 70-70, 71-77 | - **mm. 62–77：心情变得明亮、活络，却还没有真正安顿下来。** mm. 62–70 的歌唱性更明显，像是忽然有了调情、回应，甚至短暂相信幸福可以尽情展开的轻快感。不过，
+SRC-luna-web-1-U09 | S11,S12 | 84-102, 93-102 | - **mm. 84–102：回来的歌声更坚定，也更炽热；因此听起来不再天真。** 开头的旋律重现时，已经不只是熟悉的摇荡和柔情。经历过前面的松绑与等待后，它像终于敢把感情完整说出
+SRC-luna-web-1-U10 | S13,S14 | 103-111, 110-111 | - **mm. 103–111：高潮之后不是马上平静，而是更深的一层纠缠。** 很容易以为最强烈的高潮已经结束；但音乐没有立刻收手。它仍然向前推，旋律里反复出现像叹息一样的下行语气
+SRC-luna-web-2-U05 | S03,S04 | 17-34 | - **mm. 17–34：重听熟悉的话，感情却更深了一层。** 音乐回到相似的歌唱与摇荡，但装饰和流动感让它不再像单纯重来，更像同一句话说第二遍时，已经多了依恋，也多了一点舍不得
+SRC-luna-web-2-U06 | S05,S06 | 35-39, 35-40 | - **mm. 35–39：熟悉的梦境松开，孤独感露出来。** 先前的旋律像退到远处，一条较孤单的线在空中徘徊，之后才重新找到摇荡的步子。Kopp 用自己的听感形容这次转弯：音乐像
+SRC-luna-web-2-U07 | S06,S07 | 40-61 | - **mm. 40–61：最像“甜蜜中有隐痛”的一段。** 新旋律依然好听，却比开头更像是在心里唱；比赛的作品介绍把它形容为压低声音、同时又有些躁动，而且旁边有另一条声音在回应。
+SRC-luna-web-2-U08 | S08,S09 | 62-71, 62-77, 72-77 | - **mm. 62–77：盼着它能抵达，最后却只看见它飘走。** 音乐更活跃，旋律也更舒展，像情绪终于有力气向外伸展。可 **mm. 62–71** 的亮起来并不等于找到答案：旋
+SRC-luna-web-2-U10 | S11,S12,S13,S14 | 84-111, 84-102, 93-102 | - **mm. 84–102：回来时，已经不是最初那个轻声说话的人。** 开头的材料回来了，但情绪显得更直接、更有分量，像之前一直压着的话终于说出口。尤其 **mm. 93–102
+SRC-luna-web-2-U11 | S13,S14 | 103-111, 110-111 | - **mm. 103–111：以为说完了，却又多说了一遍。** **m. 103** 有很强的抵达感，像终于把长久悬着的心愿说出来；但音乐没有就此收住，而是继续向前。Kopp 指
+SRC-luna-web-3-U05 | S03,S04 | 17-34 | - **mm. 17–34：熟悉的幸福回来了，心事却还在。**前面的材料再次出现，带着更多装饰和新的起伏，像同一段记忆被反复回想：它仍然美，却已经不是第一次经历时那样单纯。尤其到 
+SRC-luna-web-3-U06 | S05,S06,S07 | 35-61, 35-39, 40-40 | - **mm. 35–61：换了一个更私密的角度。**mm. 35–39 像短暂离开原来的摇荡，旋律先自由地游走，再在 mm. 40 左右进入新的歌唱段落。这里的感觉不是换了一个景
+SRC-luna-web-3-U08 | S08,S09 | 71-77 | - **mm. 71–77：音乐停下来想了一会儿。**熟悉的摇摆感退到一旁，像说到要紧处时忽然沉默。听者可能会觉得时间暂时松开了，人物也不再往前走，而是在听自己刚才说了什么、接下来
+SRC-luna-web-3-U12 | S13,S14 | 103-111, 110-111 | - **mm. 103–111：高潮之后，露出更沉、更复杂的一面。**这段仍保持很强的力量，但它不只是继续高声欢呼；下行的旋律像叹息，底下持续的声音又让人感到心事还压在那里。Szk
+SRC-gpt56w-web-1-U04 | S02,S03 | 15-23 | 3. **mm.15–23：第一次出现“我不想再往前走了”。**
+SRC-gpt56w-web-1-U07 | S05,S06 | 39-50 | 6. **mm.39–50：不再需要一首完整的歌，只想沉浸在感觉本身。**
+SRC-gpt56w-web-1-U10 | S08,S09,S10 | 71-77, 78-83 | 9. **mm.71–77 → mm.78–83：不是高潮前的蓄力，而像“放弃用力”以后突然得到自由。**
+SRC-gpt56w-web-2-U04 | S02,S03 | 15-23 | ### mm. 15–23：第一次表达之后，没有答案，反而进入一种很长的余味
+SRC-gpt56w-web-2-U05 | S04,S05 | 24-39 | ### mm. 24–39：第二次尝试说清楚——但在快要抵达的时候，又退了回来
+SRC-gpt56w-web-2-U06 | S06,S07 | 40-61 | ### mm. 40–61：不是悲伤，而是越来越深的“沉进去”
+SRC-gpt56w-web-2-U09 | S08,S09,S10 | 71-77, 78-83 | ### mm. 71–77 → mm. 78–83：先屏住呼吸，然后才真正松开
+SRC-gpt56w-web-2-U10 | S08,S09 | 71-77 | **mm.71–77** 很像时间忽然变慢。前面的运动暂停下来，不急着表达，而是在听自己的余响。Szklener把这段看作一种静止和沉思。citeturn336616view1
+SRC-gpt56w-web-2-U12 | S12,S13 | 93-103 | ### mm. 93–103：不是“英雄式胜利”，而是感情从私人体验变成必须承担的事实
+SRC-gpt56w-web-2-U14 | S13,S14 | 103-111 | ### mm. 103–111：全曲最复杂的地方——已经抵达了，为什么反而像开始疼？
+SRC-gpt56w-web-3-U05 | S03,S04,S05 | 17-35 | **mm. 17–35：亲密开始变得越来越认真，而认真本身制造了不安。**
+SRC-gpt56w-web-3-U06 | S05,S06,S07 | 35-61 | **mm. 35–61：人暂时从热切的亲密里退出来，进入更私人的内心世界。**
+SRC-gpt56w-web-3-U08 | S08,S09,S10 | 71-83, 78-83 | **mm. 71–83：不是继续加热，而是突然失重；尤其 `mm. 78–83`，像一个人终于停止抵抗自己的感受。**
+SRC-gpt56w-web-3-U11 | S13,S14 | 103-111 | ### `mm. 103–111` 才是整首曲子最复杂、也最容易被误解的地方
+SRC-gpt6w-web-1-U03 | S01,S02 | 1-16 | ### mm. 1–16：美好刚出现，人却不敢用力拥抱它
+SRC-gpt6w-web-1-U06 | S03,S04,S05 | 17-39 | ### mm. 17–39：人开始不满足于仅仅享受眼前，而想把它留住
+SRC-gpt6w-web-1-U07 | S03,S04 | 17-34 | **mm. 17–34：原来的温柔还在，但渴望开始变得迫切。**
+SRC-gpt6w-web-1-U09 | S06,S07 | 40-61 | ### mm. 40–61：开始出现真正的心事——不是失去了什么，而是害怕留不住什么
+SRC-gpt6w-web-1-U10 | S06,S07 | 40-61 | **mm. 40–61：音乐变得低声、内向，却比前面更难平静。**
+SRC-gpt6w-web-1-U11 | S08,S09 | 62-77 | ### mm. 62–77：不想再压抑渴望，却突然被一种更大的寂静拦住
+SRC-gpt6w-web-1-U14 | S10,S11 | 78-92 | ### mm. 78–92：全曲最重要的转变——不是终于拥有了幸福，而是终于不再抓紧它
+SRC-gpt6w-web-1-U17 | S12,S13 | 93-110 | ### mm. 93–110：最明亮的胜利里，为什么又出现了一道阴影？
+SRC-gpt6w-web-2-U05 | S02,S03 | 12-23 | ### mm. 12–23：感情涌上来了，但人没有急着抓住它
+SRC-gpt6w-web-2-U06 | S04,S05 | 24-39 | ### mm. 24–39：试图重新把握刚才的幸福，却不知不觉走进另一个世界
+SRC-gpt6w-web-2-U07 | S06,S07 | 40-61 | ### mm. 40–61：从温柔的亲密，进入更隐秘、更不安的渴望
+SRC-gpt6w-web-2-U08 | S08,S09 | 62-77 | ### mm. 62–77：短暂地找到了表达自己的方式，随后又陷入沉思
+SRC-gpt6w-web-2-U13 | S13,S14 | 103-111 | ### mm. 103–111：最强烈的悲伤，可能恰恰藏在最灿烂的声音里
+SRC-gpt6w-web-3-U02 | S01,S02,S03,S04 | 1-34 | ## 一、最初的温柔：我很幸福，但还没有完全放下心（mm.1–34）
+SRC-gpt6w-web-3-U09 | S06,S07 | 40-61 | **mm.40–61：不是失恋的悲伤，而是想要靠近、却始终不能完全安心的渴望。**
+SRC-gpt6w-web-3-U11 | S08,S09 | 71-77 | **mm.71–77：忽然不知道接下来该怎么办。**
+SRC-gpt6w-web-3-U13 | S11,S12,S13,S14 | 84-116 | ## 三、情感终于全部爆发，但高潮之后还有更复杂的东西（mm.84–116）
+
+输出（只能输出一个 ```json 代码块，代码块外不要有文字）：```json
+{"NR": {"<uid>": "GLOBAL|UNCERTAIN|DROP|RANGE:mm.a-b"},
+ "OOB": {"<uid>": "DROP|KEEP_GLOBAL|RANGE:mm.a-b"},
+ "C":   {"<uid>": "SPLIT_AS_GLOBAL|OK_CROSS|DROP|NARROW:mm.a-b"},
+ "D_flags": {"<uid>": "NARROW:mm.a-b|OK_CROSS|SPLIT_AS_GLOBAL|DROP"},
+ "_notes": "≤300字中文，说明无法判定或有疑虑的单元及理由"}
+```
+
+硬性约束：绝不编造小节归属；对不上就 UNCERTAIN（D 中不确定就不输出该项）；不新增或改写任何 A 原文；本任务只是归段复核，不生成珠子。

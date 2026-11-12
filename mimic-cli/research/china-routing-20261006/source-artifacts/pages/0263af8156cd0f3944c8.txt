@@ -1,0 +1,248 @@
+taobao detail: 没有 SKU 输出，价格和可选规格在普通商品上都取错了（SSR 里数据是全的） · Issue #2391 · jackwener/OpenCLI · GitHub
+Skip to content
+Navigation Menu
+Sign in
+Appearance settings
+Platform
+AI CODE CREATION
+GitHub CopilotWrite better code with AI
+GitHub Copilot appDirect agents from issue to merge
+MCP RegistryIntegrate external tools
+DEVELOPER WORKFLOWS
+ActionsAutomate any workflow
+CodespacesInstant dev environments
+IssuesPlan and track work
+Code ReviewManage code changes
+Code QualityEnforce quality at merge
+APPLICATION SECURITY
+GitHub Advanced SecurityFind and fix vulnerabilities
+Code securitySecure your code as you build
+Secret protectionStop leaks before they start
+EXPLORE
+Why GitHub
+Documentation
+Blog
+Changelog
+Marketplace
+View all features
+Solutions
+BY COMPANY SIZE
+Enterprises
+Small and medium teams
+Startups
+Nonprofits
+BY USE CASE
+App Modernization
+DevSecOps
+DevOps
+CI/CD
+View all use cases
+BY INDUSTRY
+Healthcare
+Financial services
+Manufacturing
+Government
+View all industries
+View all solutions
+Resources
+EXPLORE BY TOPIC
+AI
+Software Development
+DevOps
+Security
+View all topics
+EXPLORE BY TYPE
+Customer stories
+Events & webinars
+Ebooks & reports
+Business insights
+GitHub Skills
+SUPPORT & SERVICES
+Documentation
+Customer support
+Community forum
+Trust center
+Partners
+View all resources
+Open Source
+COMMUNITY
+GitHub SponsorsFund open source developers
+PROGRAMS
+Security Lab
+Maintainer Community
+GitHub Stars
+Archive Program
+REPOSITORIES
+Topics
+Trending
+Collections
+Enterprise
+ENTERPRISE SOLUTIONS
+Enterprise platformAI-powered developer platform
+AVAILABLE ADD-ONS
+GitHub Advanced SecurityEnterprise-grade security features
+Copilot for BusinessEnterprise-grade AI features
+Premium SupportEnterprise-grade 24/7 support
+Pricing
+Search/
+Sign inSign up
+Appearance settings
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+Dismiss alert
+{{ message }}
+jackwener
+OpenCLI
+Repository navigation
+Code
+Issues116 (116)
+Pull requests203 (203)
+Actions
+Projects
+Security and quality
+Insights
+More items
+taobao detail: 没有 SKU 输出，价格和可选规格在普通商品上都取错了（SSR 里数据是全的） #2391
+New issueCopy link
+New issueCopy link
+Open
+Open
+taobao detail: 没有 SKU 输出，价格和可选规格在普通商品上都取错了（SSR 里数据是全的）#2391
+Copy link
+Description
+yubingjiaocn
+opened on Aug 25, 2026
+Issue body actions
+摘要 / Summary
+taobao detail 没法输出商品的 SKU（规格）列表。而且它现在输出的「价格」和「可选规格」两个字段，在一个普通的 item.taobao.com 商品上都是错的。
+三个问题的原因是同一个：适配器用正则去匹配 document.body.innerText，而没有读页面本身已经带过来的 SSR 数据。
+一个有 21 个规格的商品，detail 只给出一个价格（而且是错的），可选规格 里一个规格都没有。但页面的 SSR 数据里，21 个规格连价格、库存、skuId 都是齐的。
+这个和 #2162 有点像，但原因不同：#2162 是 detail.tmall.com 被服务端降级渲染、返回假价格。这里是一个正常的 item.taobao.com 商品，页面渲染完整、数据都在，只是没去读。
+taobao detail cannot output an item's SKU / variant list. The two fields it does emit — price and 可选规格 — are both wrong on an ordinary item.taobao.com item.
+All three problems have the same cause: the adapter regex-matches document.body.innerText instead of reading the SSR data the page already ships.
+For an item with 21 variants, detail returns one price (the wrong one) and zero actual specs. The page's SSR payload has all 21 variants with price, stock and skuId.
+Similar to #2162 but a different cause: #2162 is a server-side decoy price on gated detail.tmall.com renders. This is an ordinary item.taobao.com item, fully rendered, data present, just not read.
+环境 / Environment
+opencli 1.8.7, Node v24.14.0, Linux
+文件 / file: clis/taobao/detail.js
+已登录淘宝，中国大陆 IP，headful Chrome / logged in, CN mainland IP, headful Chrome
+测试商品 / test item: 561161468707 — item.taobao.com，21 个规格，普通商品（不是百亿补贴、不是天猫）
+问题 1：价格取成了优惠券金额 / Bug 1: price is a coupon amount
+输出 ¥0.5，实际价格是 ¥14.85。
+detail.js 取 innerText 里前三个 ¥ 数字，然后取最小值：
+const pricePattern = /[￥¥]\s*(\d+(?:\.\d{1,2})?)/g;
+const prices = [];
+while ((m = pricePattern.exec(text)) && prices.length < 3) {
+const p = parseFloat(m[1]);
+if (p > 0.1 && p < 100000) prices.push(p);
+}
+if (prices.length > 0) results.push({ field: '价格', value: '¥' + Math.min(...prices) });
+这个页面上三个匹配分别是：
+#
+数值
+innerText 里的上下文
+1
+14.35
+平台加补后 ￥14.35 起 — 补贴后的价
+2
+14.85
+热卖促销￥14.85起 — 真实价格
+3
+0.5
+已享受: ¥0.5首单礼金店铺新客专享 — 首单礼金优惠券
+Math.min 选中了 0.5。这个数字根本不是价格，是优惠券面额。p > 0.1 这个判断挡不住它，靠数值范围也挡不住——优惠券金额看起来就是个正常价格。
+另外，就算取到 14.85，Math.min 这个思路本身也分不清「最便宜的规格」、「补贴后价」和「优惠券」，它们在同一段文字里长得都一样。
+Reported ¥0.5, actual price ¥14.85. The three ¥ matches are the subsidy floor price, the real price, and a new-customer coupon face value. Math.min picks the coupon. The p > 0.1 guard cannot help, and no numeric threshold can — a coupon amount looks exactly like a valid price. Even if it picked 14.85, Math.min over promo text cannot distinguish "cheapest variant", "post-subsidy price" and "coupon" — they all look the same in that text block.
+问题 2：可选规格 只返回了标签 / Bug 2: 可选规格 returns only the label
+输出 可选规格: 颜色分类。这是维度名，21 个规格名一个都没有。
+const start = text.indexOf('颜色分类');
+const specSection = start >= 0 ? text.substring(start, start + 200) : '';
+const specs = specSection.split('\n').filter(l => l.trim().length > 2 && l.trim().length < 50).slice(0, 5);
+这里假设一行一个规格。但实际上 innerText 把整个规格列表放在同一行，用逗号连起来：
+line[0] = "颜色分类"
+line[1] = "外径25*内径20*厚3mm,外径34*内径18*厚4mm,外径34*内径24*厚10mm,外径40*内径24*厚4mm,…"   (被 200 字符截断)
+line[1] 远远超过 50 个字符，被 length < 50 过滤掉了。剩下唯一通过 length > 2 的就是标签 颜色分类。
+结果是：这个字段照样输出，看起来像有数据，其实一个规格都没有——不报错的失败。
+另外 substring(start, start + 200) 会把规格名截断到一半，就算行过滤修好了，列表也会被这个 200 字符窗口截断。
+Reported 可选规格: 颜色分类 — the dimension name, none of the 21 variants. The code assumes one spec per line, but innerText puts the whole list on one comma-joined line, which is far longer than 50 chars and gets dropped by the length < 50 filter. Only the label survives. The field still gets emitted and looks like data — a silent failure. The 200-char window also truncates mid-variant, so the list would stay capped even if the line filter were fixed.
+问题 3：被验证码拦住时不报错 / Bug 3: no error when blocked by CAPTCHA
+item.taobao.com 会弹滑块验证码。这时候 detail 不报错，而是把验证码页面当成商品返回：
+$ opencli taobao detail 561161468707 -f json
+[
+{ "field": "商品名称", "value": "CAPTCHA Verification" },
+{ "field": "ID",       "value": "561161468707" },
+{ "field": "链接",     "value": "https://item.taobao.com/item.htm?id=561161468707" }
+]
+exitCode 是 0。调用方拿到的是一条看起来正常的记录，只是商品名叫 "CAPTCHA Verification"。价格和规格字段直接消失了，而不是报「被拦了」。
+同一台机器上 opencli taobao whoami 返回 logged_in: true，opencli taobao cart 也能正常读到购物车——所以这不是登录或环境问题，是 item.taobao.com 这个域被风控拦了。
+item.taobao.com serves a slider CAPTCHA. detail does not error — it returns the CAPTCHA page as if it were the product, with exitCode 0. The caller gets a well-formed record whose product name is "CAPTCHA Verification"; price and spec fields just vanish instead of signalling "blocked". On the same machine whoami returns logged_in: true and cart reads the cart fine, so this is not a login or environment problem — just that item.taobao.com is gated.
+数据其实页面上就有 / The data is already on the page
+页面带了完整的 SSR 数据。读 window.__ICE_APP_CONTEXT__.loaderData.home.data.res 可以拿到三张能 join 的表：
+路径 / path
+内容 / contents
+skuBase.props[].values[]
+规格维度：vid、name、image、corner.cornerText（如 推荐）
+skuBase.skus[]
+propPath（"1627207:11471207583"）→ skuId
+skuCore.sku2info[skuId]
+price.priceText、quantity、saleable、subPrice
+join 之后这个商品的 21 个规格（dimensions: 颜色分类(21)、skuCount: 21、sku2info 22 条）：
+spec                          price    stock  skuId
+外径25*内径20*厚3mm （一件5片）    19.8      200  4184893211247
+外径34*内径18*厚4mm              14.85      200  4215337008250
+外径34*内径24*厚10mm              24.9      200  4054601015355
+外径40*内径24*厚4mm              17.28      200  4054601015350  [推荐]
+外径43*内径34*厚2.5mm            16.35      200  4184893211246
+外径44*内径17.7*厚4mm            15.54      200  4424135289495
+…
+外径114*内径96*厚9.5mm          198.24        7  4103052128428
+外径100*内径54*厚4mm               195        1  5755986541266
+外径118*内径78*厚8mm               216      200  5755986541267
+注意两点：¥14.85 就是问题 1 里被丢掉的那个数，它正好是最便宜的规格价，也是页面主价；库存 7、1 这种数据，靠文字匹配完全拿不到。
+Reading window.__ICE_APP_CONTEXT__.loaderData.home.data.res gives three joinable tables (above). Note ¥14.85 — the value Bug 1 discards — is exactly the cheapest SKU price and the headline price. Per-variant stock (7, 1) is not obtainable by text scraping at all.
+add-cart --spec 不能替代 / not a workaround
+add-cart 支持 --spec 模糊匹配，看起来像是已经读了 SKU 表。但看 clis/taobao/add-cart.js，它没有读，而是查 DOM 节点然后对文字做子串匹配：
+const items = document.querySelectorAll('[class*="valueItem--"]');
+const score = keywords.filter(kw => t.includes(kw)).length;
+所以目前完全没有读取规格的路径。--spec 只能对着调用方已经知道的字符串去点，看不到价格、库存、saleable 和 skuId。--dry-run 只是把关键词原样回显，不去页面上解析，所以也不能用来列规格。
+DOM 里确实有 21 个 [class*="valueItem--"] 节点，走 DOM 也能读——但混淆过的 class 前缀容易变，而且 DOM 里没有 skuId、价格和库存，除非每个规格都点一遍。SSR 一次读取就全有了。
+add-cart --spec looks like it parses the SKU table, but it doesn't — it queries DOM nodes and substring-matches their text. So there is currently no read path to variants at all. --spec can only target a string the caller already knows, with no visibility into price, stock, saleable or skuId. --dry-run echoes the keywords back without resolving them, so it can't enumerate variants either. The DOM does expose 21 [class*="valueItem--"] nodes, but obfuscated class prefixes are brittle and the DOM lacks skuId, price and stock unless every variant is clicked; SSR gives all of it in one read.
+建议 / Suggestions
+从 SSR 读规格，文字匹配只当兜底。输出规格表 —— 加一个 taobao sku <id> 命令，或者 detail --sku，看哪种更符合项目习惯。建议字段：spec、price、stock、sku_id。
+价格改从结构化数据取，不要用 Math.min 扫 innerText。这样也顺带解决了优惠券/补贴价混在一起的问题。
+拿不到数据的时候要报错。 按 taobao detail returns an anti-scrape decoy price for detail.tmall.com items — the decoy value is NOT fixed (not always ¥9999) #2162 的说法，降级渲染时 componentsVO.priceVO.extraPrice 会缺失；在这个正常商品上这个 key 是有的。这个可以当判断依据。被拦住时报「blocked / 需要验证」比返回一个优惠券金额或者空规格列表要好——后者看起来都像正常数据。
+不管 SKU 功能做不做，可选规格 那段的 length < 50 都该修掉，或者整段删掉。按现在的写法它只可能返回标签。
+我这边已经有一个能跑通上面这个 join 的提取脚本。如果 maintainer 定了用哪种形式（taobao sku 还是 detail --sku），我可以提 PR。
+Read variants from SSR, keep text scraping as fallback. Emit the table as a new taobao sku <id> command or detail --sku, whichever fits project conventions. Suggested columns: spec, price, stock, sku_id.
+Take price from structured data instead of Math.min over innerText, which also removes the coupon/subsidy ambiguity.
+Fail loudly when the data isn't there. Per taobao detail returns an anti-scrape decoy price for detail.tmall.com items — the decoy value is NOT fixed (not always ¥9999) #2162, a gated render drops componentsVO.priceVO.extraPrice; on this item the key is present, so that's a usable signal. Reporting "blocked / needs verification" beats emitting a coupon amount or an empty spec list — both look like valid data.
+Regardless of the SKU feature, the length < 50 filter in the 可选规格 branch should be fixed or the branch dropped. As written it can only return the label.
+I have a working extractor for the join above and can open a PR once maintainers pick the shape (taobao sku vs detail --sku).
+Reactions are currently unavailable
+Activity
+Sign up for free to join this conversation on GitHub. Already have an account? Sign in to comment
+Metadata
+Metadata
+AssigneesNo one assigned
+LabelsNo labels
+No labels
+ProjectsNo projects
+MilestoneNo milestone
+RelationshipsNone yet
+DevelopmentNo branches or pull requests
+Issue actions
+Open in GitHub Copilot app
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
+You can’t perform that action at this time.

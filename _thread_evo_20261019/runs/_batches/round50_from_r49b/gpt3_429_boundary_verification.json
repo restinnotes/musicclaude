@@ -1,0 +1,30 @@
+{
+  "network_calls": 0,
+  "cases": [
+    {
+      "case": "actual transport log with timestamp",
+      "expected_stop": false,
+      "actual_stop": false
+    },
+    {
+      "case": "HTTP429",
+      "expected_stop": true,
+      "actual_stop": true
+    },
+    {
+      "case": "structured429",
+      "expected_stop": true,
+      "actual_stop": true
+    },
+    {
+      "case": "explicit unusual",
+      "expected_stop": true,
+      "actual_stop": true
+    },
+    {
+      "case": "explicit suspicious",
+      "expected_stop": true,
+      "actual_stop": true
+    }
+  ]
+}

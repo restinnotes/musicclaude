@@ -1,0 +1,33 @@
+{
+  "name": "round30_forward",
+  "base": "qurefs",
+  "scheme": "schemes/round29_controlc01.json",
+  "count": 10,
+  "source_tags": [
+    "r27p2",
+    "qu",
+    "round29_controlc01"
+  ],
+  "workers": 4,
+  "advisors": [
+    {
+      "run_id": "batch_round30_forward_advisor_g6",
+      "judge": "g6",
+      "requested": 4,
+      "sha256": "b1a4cb6839a5eb86fc243430ad814a6595de56910353df16a506e4a6840e7358"
+    },
+    {
+      "run_id": "batch_round30_forward_advisor_g56",
+      "judge": "g56",
+      "requested": 3,
+      "sha256": "0bf4a2d47bb1ba59febe59045d3c65cd17bacd96c0b6ece8798541ed4f8bd52f"
+    },
+    {
+      "run_id": "batch_round30_forward_advisor_gem",
+      "judge": "gem",
+      "requested": 3,
+      "sha256": "0bf4a2d47bb1ba59febe59045d3c65cd17bacd96c0b6ece8798541ed4f8bd52f"
+    }
+  ],
+  "scheme_sha256": "a9bee72cadd0c8cb83ed13c371be61f72a02b8232e8ce6f6a3fa50160f82fa11"
+}

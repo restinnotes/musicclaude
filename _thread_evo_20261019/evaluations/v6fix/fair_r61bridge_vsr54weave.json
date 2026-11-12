@@ -1,0 +1,68 @@
+{
+  "tag": "r61bridge",
+  "base": "r54weave",
+  "complete": 4,
+  "wins": 2,
+  "no_regress": 4,
+  "net_sums": {
+    "alone": 2,
+    "lean": -1,
+    "plain": 1,
+    "cover": 2
+  },
+  "pass": false,
+  "rows": [
+    {
+      "w": "op60",
+      "j": "g6",
+      "seat": "newX",
+      "new_win": false,
+      "no_regress": true,
+      "net": {
+        "alone": 0,
+        "lean": 0,
+        "plain": 0,
+        "cover": 0
+      }
+    },
+    {
+      "w": "op60",
+      "j": "g56",
+      "seat": "newY",
+      "new_win": false,
+      "no_regress": true,
+      "net": {
+        "alone": 0,
+        "lean": 0,
+        "plain": 0,
+        "cover": 0
+      }
+    },
+    {
+      "w": "op61",
+      "j": "g6",
+      "seat": "newY",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 1,
+        "lean": 0,
+        "plain": 1,
+        "cover": 1
+      }
+    },
+    {
+      "w": "op61",
+      "j": "g56",
+      "seat": "newX",
+      "new_win": true,
+      "no_regress": true,
+      "net": {
+        "alone": 1,
+        "lean": -1,
+        "plain": 0,
+        "cover": 1
+      }
+    }
+  ]
+}

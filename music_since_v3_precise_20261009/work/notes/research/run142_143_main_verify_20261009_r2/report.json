@@ -1,0 +1,360 @@
+{
+  "schema": "run142-143-main-offline-verification/2",
+  "date": "2026-10-09",
+  "commands": [
+    {
+      "label": "run142_tests",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests\\test_run142_e7_flash_diag_r4.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 37.469,
+      "stdout_bytes": 0,
+      "stderr_bytes": 3273,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cf26d4992b52372c38cf34e1841ca32c06f0b8e47eb8fcab0f1c046d12b6518a",
+      "expected_exit_observed": true
+    },
+    {
+      "label": "run143_tests",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\tools\\tests\\test_run143_thread_resume_r4.py"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 20.125,
+      "stdout_bytes": 0,
+      "stderr_bytes": 3378,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fa1daa8933d8aa9183879ca55ea6db8e135b9d2aaf90485407cdba92f5aca051",
+      "expected_exit_observed": true
+    },
+    {
+      "label": "run142_real",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\runs\\run142_e7_flash_diag_r4\\go.py",
+        "--real"
+      ],
+      "returncode": 3,
+      "expected_returncode": 3,
+      "timed_out": false,
+      "elapsed_seconds": 0.063,
+      "stdout_bytes": 228,
+      "stderr_bytes": 0,
+      "stdout_sha256": "d7c3cb35b55b815990560b937753d76451096e263525d5a9f70023da8ad60a42",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_observed": true
+    },
+    {
+      "label": "run143_strict",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\runs\\run143_thread_resume_r4\\go.py",
+        "--strict"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 0.093,
+      "stdout_bytes": 2798,
+      "stderr_bytes": 0,
+      "stdout_sha256": "61ab62ff92d556ab80db1bbe25672829996a1a912d88fa8f69a226dcd276452c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_observed": true
+    },
+    {
+      "label": "run143_real",
+      "argv": [
+        "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "D:\\musicclaude\\unified_run_handoff_20260924\\unified_run_handoff_20260924\\runs\\run143_thread_resume_r4\\go.py",
+        "--real"
+      ],
+      "returncode": 3,
+      "expected_returncode": 3,
+      "timed_out": false,
+      "elapsed_seconds": 0.079,
+      "stdout_bytes": 2824,
+      "stderr_bytes": 0,
+      "stdout_sha256": "eae6d04ea4743dd9f1179854c1e61067c27775d76efb06877b1fbacf24ba4669",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_observed": true
+    }
+  ],
+  "music_acceptance": "NOT_PERFORMED",
+  "production_ready": false,
+  "real_gate": "not changed",
+  "two_w_hold": "not changed",
+  "real_model_submissions": 0,
+  "model_cli_invocations": 0,
+  "limits": [
+    "Only Python offline suites and injected local mock fixtures run.",
+    "Hashes are local consistency evidence, not backend authentication.",
+    "Passing existing suites does not close uncovered requirements."
+  ],
+  "test_inventory": {
+    "test_run142_e7_flash_diag_r4.py": {
+      "old_count": 15,
+      "new_count": 20,
+      "matches": [
+        {
+          "old": "test_cache_only_claim_without_exact_artifacts_is_rejected",
+          "new": "test_cache_only_claim_without_exact_artifacts_is_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_config_and_canonical_self_flags_are_frozen",
+          "new": "test_config_and_canonical_self_flags_are_frozen",
+          "name_present": true
+        },
+        {
+          "old": "test_direct_real_path_blocks_before_creating_real_run_outputs",
+          "new": "test_direct_real_path_blocks_before_creating_real_run_outputs",
+          "name_present": true
+        },
+        {
+          "old": "test_duplicate_reviewer_and_order_identity_sets_are_rejected",
+          "new": "test_duplicate_reviewer_and_order_identity_sets_are_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_exact_artifact_tamper_is_rejected_before_resume",
+          "new": "test_exact_artifact_tamper_is_rejected_before_resume",
+          "name_present": true
+        },
+        {
+          "old": "test_full_collections_exact_identities_packs_and_reader_content",
+          "new": "test_full_collections_exact_identities_packs_and_reader_content",
+          "name_present": true
+        },
+        {
+          "old": "test_full_mock_rerun_adds_zero_submissions_and_stays_pending",
+          "new": "test_full_mock_rerun_adds_zero_submissions_and_stays_pending",
+          "name_present": true
+        },
+        {
+          "old": "test_import_has_no_environment_io_cli_or_source_import_effects",
+          "new": "test_import_has_no_environment_io_cli_or_source_import_effects",
+          "name_present": true
+        },
+        {
+          "old": "test_missing_terminal_identity_is_rejected_and_producer_stays_unknown",
+          "new": "test_missing_terminal_identity_is_rejected_and_producer_stays_unknown",
+          "name_present": true
+        },
+        {
+          "old": "test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held",
+          "new": "test_muse_cannot_be_ingested_without_external_identity_verifier_and_twow_stays_held",
+          "name_present": true
+        },
+        {
+          "old": "test_pack_missing_and_tamper_are_rejected_without_rebuilding",
+          "new": "test_pack_missing_and_tamper_are_rejected_without_rebuilding",
+          "name_present": true
+        },
+        {
+          "old": "test_pack_validator_rejects_placeholder_and_missing_task_id",
+          "new": "test_pack_validator_rejects_placeholder_and_missing_task_id",
+          "name_present": true
+        },
+        {
+          "old": "test_parser_failure_retry_appends_attempt_without_overwrite",
+          "new": "test_parser_failure_retry_appends_attempt_without_overwrite",
+          "name_present": true
+        },
+        {
+          "old": "test_queue_stop_blocks_every_following_submission_and_stage",
+          "new": "test_queue_stop_blocks_every_following_submission_and_stage",
+          "name_present": true
+        },
+        {
+          "old": "test_source_tamper_is_rejected_using_an_isolated_fixture_root",
+          "new": "test_source_tamper_is_rejected_using_an_isolated_fixture_root",
+          "name_present": true
+        }
+      ],
+      "scope": "AST name inventory only. Main also read original assertions; names alone are not proof."
+    },
+    "test_run143_thread_resume_r4.py": {
+      "old_count": 15,
+      "new_count": 20,
+      "matches": [
+        {
+          "old": "test_ambiguous_success_sources_from_two_runs_are_rejected",
+          "new": "test_ambiguous_success_sources_from_two_runs_are_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_duplicate_success_in_same_slot_is_ambiguous",
+          "new": "test_duplicate_success_in_same_slot_is_ambiguous",
+          "name_present": true
+        },
+        {
+          "old": "test_full_identity_tamper_is_rejected",
+          "new": "test_full_identity_tamper_is_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit",
+          "new": "test_full_mock_chain_exact_disk_proof_and_second_run_zero_submit",
+          "name_present": true
+        },
+        {
+          "old": "test_import_has_no_environment_file_cli_or_write_side_effects",
+          "new": "test_import_has_no_environment_file_cli_or_write_side_effects",
+          "name_present": true
+        },
+        {
+          "old": "test_legacy_unknown_producer_is_preserved_without_fabrication",
+          "new": "test_legacy_unknown_producer_is_preserved_without_fabrication",
+          "name_present": true
+        },
+        {
+          "old": "test_missing_artifact_is_not_reused",
+          "new": "test_missing_artifact_is_not_reused",
+          "name_present": true
+        },
+        {
+          "old": "test_muse_return_needs_real_transport_schema_and_exact_quotes",
+          "new": "test_muse_raw_return_is_unverified_and_actual_entry_needs_trusted_archive_receipt",
+          "name_present": true
+        },
+        {
+          "old": "test_musepack_tampering_and_file_read_reference_are_rejected",
+          "new": "test_musepack_tampering_and_file_read_reference_are_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_no_longer_valid_without_match_evidence_blocks_history",
+          "new": "test_no_longer_valid_without_match_evidence_blocks_history",
+          "name_present": true
+        },
+        {
+          "old": "test_prompt_tamper_is_rejected",
+          "new": "test_prompt_tamper_is_rejected",
+          "name_present": true
+        },
+        {
+          "old": "test_queue_stop_stops_current_remaining_jobs_and_all_later_stages",
+          "new": "test_queue_stop_stops_current_remaining_jobs_and_all_later_stages",
+          "name_present": true
+        },
+        {
+          "old": "test_strict_preflight_is_pending_without_v4_and_writes_nothing",
+          "new": "test_strict_preflight_is_pending_without_v4_acceptance_and_writes_nothing",
+          "name_present": true
+        },
+        {
+          "old": "test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match",
+          "new": "test_strict_sets_detect_missing_extra_and_duplicate_even_when_counts_match",
+          "name_present": true
+        },
+        {
+          "old": "test_tampered_output_sha_is_rejected",
+          "new": "test_tampered_output_sha_is_rejected",
+          "name_present": true
+        }
+      ],
+      "scope": "AST name inventory only. Main also read original assertions; names alone are not proof."
+    }
+  },
+  "challenges": [
+    {
+      "check": "run142_changed_requested_model",
+      "accepted": true,
+      "resumed": true,
+      "prior_model": "gflash",
+      "requested_model_now": "luna_noweb",
+      "requested_version_now": "WHY_GATE_v4",
+      "new_mock_submissions": 0,
+      "result_attempt": 0,
+      "finding": "current caller identity is not checked against the reused record"
+    },
+    {
+      "check": "run142_changed_prompt_version",
+      "accepted": true,
+      "resumed": true,
+      "prior_model": "gflash",
+      "requested_model_now": "gflash",
+      "requested_version_now": "different_version",
+      "new_mock_submissions": 0,
+      "result_attempt": 0,
+      "finding": "current caller identity is not checked against the reused record"
+    },
+    {
+      "check": "run142_transport_retry_executor_interface",
+      "parameters": [
+        "step",
+        "key",
+        "model",
+        "prompt",
+        "prompt_version",
+        "parser",
+        "allow_new_sample_on_parse_failure",
+        "max_attempts",
+        "new_sample_reason"
+      ],
+      "policy_function_present": true,
+      "policy_used_in_execute": false,
+      "scope": "static interface and integration check; not a real transport test"
+    },
+    {
+      "check": "run143_completed_parse_failure_rerun",
+      "mock_submissions_after_two_calls": 2,
+      "metadata_index_records": 0,
+      "saved_artifact_files": [],
+      "errors": [
+        {
+          "exception": "IntegrityError",
+          "error": "response is not one complete strict JSON object/array: JSONDecodeError"
+        },
+        {
+          "exception": "IntegrityError",
+          "error": "response is not one complete strict JSON object/array: JSONDecodeError"
+        }
+      ],
+      "finding": "parse failure is raised before immutable output/meta are persisted; rerun resubmits the same slot"
+    },
+    {
+      "check": "run143_explicit_new_sample_interface",
+      "parameters": [
+        "evidence_dir",
+        "task",
+        "fingerprint",
+        "expected_meta_hashes",
+        "counters",
+        "metadata_index"
+      ],
+      "has_explicit_resample_option": false,
+      "scope": "interface check only; no new sample requested"
+    }
+  ],
+  "protected_files_unchanged": true,
+  "changed_protected_paths": [],
+  "main_disposition": "NOT_ACCEPTED_PENDING_INDEPENDENT_REVIEW_AND_UNCOVERED_REQUIREMENTS"
+}

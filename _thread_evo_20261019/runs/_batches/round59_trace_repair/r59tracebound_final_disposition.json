@@ -1,0 +1,409 @@
+{
+  "status": "archive",
+  "tag": "r59tracebound",
+  "base": "qu",
+  "checkpoint_only": true,
+  "actual_quality_productions": 2,
+  "last_author_return": {
+    "rid": "r59tracebound_feedback_g56_v3",
+    "input_sha256": "1357769ad5066ac599295dbfaa3b20c52d09c6f57b85de98646b28d2145f6114",
+    "output_sha256": "6d2a555d89051a976fc4410773c79e57ebfd0f11dfb3ac2773efdedeb744111f",
+    "attachment_bytes_sha256": "28a279ded8ef48804319f7c672ea3f956c2ba811e06f496f65ea857e661195f8"
+  },
+  "author_decision": {
+    "decision": "abandon",
+    "reason": "建议放弃第三次通用A4改版，但这不等于否定RecurrenceTrace的经历整理方向，也不等于判定现有r59tracebound已经通过最终验收。完整证据显示，当前方案相对qu的快筛取得4/4胜，alone、lean、plain净分分别为+25、+25、+11，cover净分为-5，no_regress为0。四份盲比全部指出了替换损失。这说明证据约束后的A4确实改善了独立成立、精简和自然表达，但并不是无损替换。需要特别注意，这些替换损失是相对qu而言，不能直接当作相对当前r54weave的退步，更不能不经来源核对就重新加入提示词。唯一确定的覆盖失败是op60/S06。这里的P1实际只有三个经历状态：对方仍然亲近使人物重新放松；对方不知道他刚才有多害怕被嫌弃，使他感到孤单；他猜测对方是否也舍不得结束亲近。当前A4已经分别表达这三个状态，并且正确保留了source_warnings要求的确定程度：人物对对方是否知情的判断没有升级为客观事实，对方是否舍不得也没有升级为双方已经确认的相互需要。覆盖评审指出的其余缺失，主要涉及纯净或初恋般的怀旧感、自我反复辩驳，以及身体性、感官性沉醉。它们并没有得到当前P1经历状态的充分支持。尤其S06-B4，A4将其列入uncovered_targets是正确的事实边界处理，不应为了提高覆盖数字而补造身体体验。具体覆盖上下界也支持这个判断：op60/g6的S06为baseline_clear=3、new_min=new_max=1；op60/g56为baseline_clear=4、new_min=new_max=2。这里存在真实的覆盖损失，但没有证据表明可以仅靠改变A4的通用措辞，在不增加经历事实的情况下可靠恢复这些听感。强行加入更积极的覆盖要求，反而可能破坏本次最重要的成果：不再让TARGETS成为新增心理事实的来源。op61/g56另外缺少S06-B5的独立覆盖记录。该组已经返回52颗，缺失项为S06-B5；其覆盖上下界为baseline_clear=3、new_min=3、new_max=4。不能把缺测记为0，也不能据此宣称通过。无论缺失项最终落在哪个界限，都不改变现有失败位置集合。不能为了这一个缺测补买诊断，也不能把它扩展成新的失败。四份比较中列出的其他损失也需要谨慎处理。部分意见要求恢复的内容并非当前r54weave中已经成立的事实，另一些则要求把人物对他人心意的推测提升为确定的相互需要。这与原始确定程度及P1的source_warnings直接冲突。op61实际P1中handling缺失的警告也已经由当前A4的条件式处理规则兼容，没有新的接口缺陷需要修补。综合来看，当前剩余问题不是发现了一个可以通过通用A4修订解决的系统性机制，而是固定P1事实边界下，部分TARGETS本来就缺少足够的经历依据。若为恢复这些覆盖而放松事实边界，会重新引入第一次质量退回已经识别的问题；若继续强化精简和证据筛选，则没有理由期待能够解决这个覆盖缺口。没有足够证据支持再消耗最后一次质量尝试。因此不提出第三版A4，不修改P1，也不修改标准、门槛或其他流水线环节。最后必须保留一个重要区别：本次4/4是相对qu的检查结果，不是最终验收。现有r59tracebound仍未完成受影响N05e/f及相对当前r54weave的正式验收，不能宣称通过。放弃的是缺乏可证实收益的进一步提示词修订，而不是把尚未完成的验收冒充为成功。",
+    "candidate": null
+  },
+  "floor_disposition": {
+    "status": "return_to_author",
+    "tag": "r59tracebound",
+    "base": "qu",
+    "quality_attempt": 2,
+    "next_attempt": 3,
+    "quick": {
+      "tag": "r59tracebound",
+      "base": "qu",
+      "complete": 4,
+      "pending": [],
+      "wins": 4,
+      "no_regress": 0,
+      "net_sums": {
+        "alone": 25,
+        "lean": 25,
+        "plain": 11,
+        "cover": -5
+      },
+      "pass": true,
+      "cannot_reach_3_wins": false,
+      "rows": [
+        {
+          "rid": "v6b3_op60_g6_r59tracebound_vsqu_newX",
+          "output_sha256": "38cc9a9b9098c5488a8e67915a14d5433bbe95c046db555074667822d1ab036e",
+          "input_sha256": "267e3154eddd82477c82acb7158db803799392148d975835cdb4eb306a717402",
+          "w": "op60",
+          "j": "g6",
+          "seat": "newX",
+          "new_win": true,
+          "no_regress": false,
+          "net": {
+            "alone": 8,
+            "lean": 8,
+            "plain": 8,
+            "cover": -3
+          }
+        },
+        {
+          "rid": "v6b3_op60_g56_r59tracebound_vsqu_newY",
+          "output_sha256": "f9addf67cc6bcca2498d1bcf1e9a8712b645d79d8f51a713cfb213802b5c2bc3",
+          "input_sha256": "88210736465c50327429c8f0c725e3f0bcee7b56e6c33b96782004aa6acd05a5",
+          "w": "op60",
+          "j": "g56",
+          "seat": "newY",
+          "new_win": true,
+          "no_regress": false,
+          "net": {
+            "alone": 7,
+            "lean": 4,
+            "plain": 8,
+            "cover": 2
+          }
+        },
+        {
+          "rid": "v6b3_op61_g6_r59tracebound_vsqu_newY",
+          "output_sha256": "495719b7330fa5900883d270d2771f2c671c9d222056f3f27113303a66df5e3b",
+          "input_sha256": "df563191fea93186e63b9219e5da9b3716811e69a6a4fc7f386645c95d6541e8",
+          "w": "op61",
+          "j": "g6",
+          "seat": "newY",
+          "new_win": true,
+          "no_regress": false,
+          "net": {
+            "alone": 5,
+            "lean": 8,
+            "plain": -2,
+            "cover": 3
+          }
+        },
+        {
+          "rid": "v6b3_op61_g56_r59tracebound_vsqu_newX",
+          "output_sha256": "6a8efc5651acdc128c83637f6141ecb65099a4faba19fb661ae67c7745186d9a",
+          "input_sha256": "fb05a0d250d754fa30c86a198af6f9a7c0c0100e8b02eb2a21eac7e14ceb3712",
+          "w": "op61",
+          "j": "g56",
+          "seat": "newX",
+          "new_win": true,
+          "no_regress": false,
+          "net": {
+            "alone": 5,
+            "lean": 5,
+            "plain": -3,
+            "cover": -7
+          }
+        }
+      ]
+    },
+    "coverage_complete": false,
+    "missing": [
+      "cov2_op61_g56_r59tracebound:S06-B5"
+    ],
+    "certain_failures": [
+      [
+        "op60",
+        "S06"
+      ]
+    ],
+    "possible_failures": [
+      [
+        "op60",
+        "S06"
+      ]
+    ],
+    "coverage_count_bounds": {
+      "op60": {
+        "g6": {
+          "S01": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S02": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S03": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S04": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S05": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S06": {
+            "base_clear": 3,
+            "new_min": 1,
+            "new_max": 1
+          },
+          "S07": {
+            "base_clear": 3,
+            "new_min": 1,
+            "new_max": 1
+          },
+          "S08": {
+            "base_clear": 3,
+            "new_min": 1,
+            "new_max": 1
+          },
+          "S09": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S10": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S11": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S12": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S13": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S14": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          }
+        },
+        "g56": {
+          "S01": {
+            "base_clear": 3,
+            "new_min": 1,
+            "new_max": 1
+          },
+          "S02": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S03": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S04": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S05": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S06": {
+            "base_clear": 4,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S07": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S08": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S09": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S10": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S11": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S12": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S13": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S14": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          }
+        }
+      },
+      "op61": {
+        "g6": {
+          "S01": {
+            "base_clear": 4,
+            "new_min": 5,
+            "new_max": 5
+          },
+          "S02": {
+            "base_clear": 5,
+            "new_min": 5,
+            "new_max": 5
+          },
+          "S03": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S04": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S05": {
+            "base_clear": 5,
+            "new_min": 5,
+            "new_max": 5
+          },
+          "S06": {
+            "base_clear": 4,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S07": {
+            "base_clear": 4,
+            "new_min": 5,
+            "new_max": 5
+          },
+          "S08": {
+            "base_clear": 3,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S09": {
+            "base_clear": 2,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S10": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S11": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S12": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S13": {
+            "base_clear": 4,
+            "new_min": 5,
+            "new_max": 5
+          }
+        },
+        "g56": {
+          "S01": {
+            "base_clear": 5,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S02": {
+            "base_clear": 5,
+            "new_min": 5,
+            "new_max": 5
+          },
+          "S03": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S04": {
+            "base_clear": 3,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S05": {
+            "base_clear": 5,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S06": {
+            "base_clear": 3,
+            "new_min": 3,
+            "new_max": 4
+          },
+          "S07": {
+            "base_clear": 4,
+            "new_min": 4,
+            "new_max": 4
+          },
+          "S08": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S09": {
+            "base_clear": 2,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S10": {
+            "base_clear": 4,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S11": {
+            "base_clear": 3,
+            "new_min": 3,
+            "new_max": 3
+          },
+          "S12": {
+            "base_clear": 3,
+            "new_min": 2,
+            "new_max": 2
+          },
+          "S13": {
+            "base_clear": 4,
+            "new_min": 5,
+            "new_max": 5
+          }
+        }
+      }
+    },
+    "reason": "Original quick passed; exactly one floor location fails even under all possible missing-vote outcomes. Return all actual completed evidence under I12; no extra diagnostic purchase, no claim complete floor or pass."
+  },
+  "reason": "Original confirmed single coverage floor failure, then original author explicitly abandons last permitted A4 revision. No further production/floors/remaining4/downstream, no promotion. Missing coverage judgment retained, no invented pass."
+}

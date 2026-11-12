@@ -1,0 +1,37 @@
+{
+  "argv": [
+    "C:\\Users\\zuoyi\\AppData\\Local\\Programs\\@openchamberelectron\\resources\\opencode-cli\\opencode.exe",
+    "run",
+    "--standalone",
+    "--format",
+    "json",
+    "--model",
+    "antigravity-tools/gemini-3.8-flash-high"
+  ],
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "tools": "deny",
+    "standalone": true,
+    "provider_timeout": false,
+    "effort": "high",
+    "provider_configuration_sha256": "7f8257c997d1d3fa3fa9001ec42699d575c438f80776d63b3c9ba30faf39088c",
+    "process_config": {
+      "permission": "deny",
+      "provider": {
+        "antigravity-tools": {
+          "options": {
+            "timeout": false
+          },
+          "models": {
+            "gemini-3.8-flash-high": {}
+          }
+        }
+      }
+    },
+    "upstream_safety_settings": "inherited_not_independently_verified",
+    "provider_internal_retry_behavior": "not_verified_runner_never_retries"
+  },
+  "stdin": "prompt.txt"
+}

@@ -1,0 +1,127 @@
+反杀熟的开源小工具 PriceDoge - V2EX
+Home
+Sign Up
+Sign In
+• 请不要在回答技术问题时复制粘贴 AI 生成的内容
+V2EX  ›  程序员
+反杀熟的开源小工具 PriceDoge
+1
+Tedko ·
+Tedko · Mar 22, 2019 · 6728 views
+This topic created in 2756 days ago, the information mentioned may be changed or developed.
+https://github.com/DimensionFoundation/PriceDoge
+这个 315 也说了不少了，做了一个未来要基于 p2p 的反杀熟比价小工具。有兴趣可以玩玩。
+pricedoge
+P2P
+工具
+比价23 replies  •  2019-03-23 14:24:28 +08:00
+1
+Tedko
+OP   Mar 22, 2019
+有别于惠惠等其他比价插件的是：我们的所有数据来源都来自本地机器对其他网站的 query，没有任何中心化服务，比如说，想要对比一个在某东上的商品在 TB 或 Amazon 或 Newegg （这是我们目前支持的四个电商，但可以很简单的拓展，我之后会说）上的价格，具体的 query 是把当前商品页面的商品名在其他的网站上进行搜索，然后返回的是其它网站上类似商品的价格信息。
+在我们不支持的网站上，用户可以自行贡献价格信息，具体操作是找到页面上的价格信息，选中之后右键点击 [这个 css/element 是价格] ，然后按照引导将商品名和缩略图的路径选中，就可以显示本产品的全网价格信息了。在同一个 domain 下的同类型网页只需做一次贡献，就可以自动适配其他页面了（具体方法就是记录价格 /商品名 /缩略图的 selector ）。
+对于真正的 P2P 价格分享（用户看到的价格可以直接分享给正在看相同 /相似商品的用户），我们暂时没有时间做了，由于没有足够多的用户量，所以没有办法直接一开始就用上用户的力量。更多的技术细节可以参考我们的 README。
+2
+bearqq
+Mar 22, 2019 via Android     1
+我想问个问题，怎么保证“用户”分享的数字是正确的？
+换个角度说，如果我有意抓包修改分享的数据，如何防范？
+3
+hellojay
+Mar 22, 2019 via iPhone
+惠惠也是去中心化都是用户端的价格
+4
+tj646
+Mar 22, 2019 via iPhone     5
+现在商家很贼的。价格一样但是领的优惠券不一样
+5
+ronman
+Mar 22, 2019 via Android
+@hellojay 但是惠惠有利益关系，一到 618，双 11 这种关键时期就不工作了
+6
+ronman
+Mar 22, 2019 via Android
+保持关注
+7
+hellojay
+Mar 22, 2019
+@ronman 这个和利益关系没关系。不工作有技术和法律方面的原因
+8
+fstab
+Mar 22, 2019 via Android
+@ronman 不工作是为了平时更好的工作，如果曝光了大型活动价格比平时还贵，不被电商封杀才怪。
+9
+letitbesqzr
+Mar 22, 2019
+@bearqq
+@hellojay #3
+实际测试结果是，如果服务器上已经有价格信息了，你传过去的价格发生了变化，别人的爬虫会自己来尝试请求是否真实变了，并不会完全信任用户传过来的值
+10
+missdeer
+Mar 22, 2019
+关注一下
+11
+letitbesqzr
+Mar 22, 2019
+我觉得这类工具没意义，很多促销活动的时候，都是靠什么优惠卷 满减 或者收货后返现来优惠，查到的历史价格也是偏高，比较热门的商品去 smzdm 查一下是最靠谱的。。
+12
+kylix
+Mar 22, 2019
+先 star 再慢慢看
+13
+tuding
+Mar 22, 2019
+不同规格用同一个商品 id, 这种就跪了
+14
+Tedko
+OP   Mar 22, 2019
+@letitbesqzr 优惠券可以直接 p2p exchange.（一般都是通用的，也就是一个字段）
+15
+Tedko
+OP   Mar 22, 2019
+@hellojay 对。我的意思是我们逐渐会没有中心化服务器的，这样就没有法律问题了（ you know ）
+16
+Tedko
+OP   Mar 22, 2019
+@tuding 不光用 id 区分，名字啥的都区分
+17
+lzlee
+Mar 22, 2019
+商家越来越鸡贼
+1. 最开始直接抢购价
+2. 后来价格不变, 放优惠券
+3. 再后来商品不停换内部 id
+我先 star 下
+18
+yisiliu
+Mar 22, 2019
+@lzlee @letitbesqzr 这个我来解释一下 我们有一个 feature 是想要做 跨平台（比如说 tb 和 jd ）购物车总价优化，结合不同平台的优惠券等方式来组合优化 但后来由于时间紧 所以就没有写这个逻辑 如果大家觉得有必要 我们可以继续开发下去
+19
+flowersing
+Mar 22, 2019 via iPhone
+购物党的比价数据挺好的
+20
+mattx
+Mar 22, 2019 via iPhone
+恶魔张大妈 信息比较靠谱
+21
+yisiliu
+Mar 22, 2019
+然后我们主要想做的是一个 去中心化的 serverless 的 用户互相共享信息的 工具
+现阶段的比价方式是用户本地 query 我们完全没有什么三方跳转之类的东西在 所以这还是有别于惠惠这类服务的 我们完全没有任何利益冲突 and 利益关系 所以更倾向于做成了一个工具而不是服务
+下一个阶段想要做的是在用户基数高一点之后 能够让用户贡献自己的信息 信任问题会出现在两个阶段：1. 中间人恶意抓包改包篡改信息 -> 这边我们的做法是做 ECDHE 保证通信端的安全 我们一开始让用户生成的 ECC 的 key pair 也是为了身份认证考虑的 2. “共享人”恶意发布虚假信息 -> 这点的话我觉得只要有人想做 我们一定是防不了的 我们这边有一个没做进来的 feature 是 每次在搜索价格的时候 会用干净的环境和 cookie query 当前页面来对比“熟客”和“新人”有没有差别 这个 feature 至少可以保障不会被更高的价格所“歧视” 如果”共享人“恶意发布更低的价格的话 我认为也不会对用户造成伤害
+这些是我们的一些思考 大家帮忙看看 谢谢～
+22
+lzlee
+Mar 22, 2019
+@yisiliu 先做个简单的吧, 一上来就想太复杂没有一点好处, 祝你们成功
+23
+Tedko
+OP   Mar 23, 2019
+@lzlee cool
+About   ·   Help   ·   Advertise   ·   Blog   ·   API   ·   FAQ   ·   Privacy   ·   Solana   ·   899 Online   Highest 6679   ·      Select Language
+创意工作者们的社区
+World is powered by solitude
+VERSION: 3.9.8.5 · 62ms · UTC 23:12 · PVG 07:12 · LAX 16:12 · JFK 19:12
+♥ Do have faith in what you're doing.
+❯

@@ -1,0 +1,60 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "checkpoint": "N05d/A4 normalized graph; same Q15 A1/A2/A3 sources and exact unchanged route/target strings. Compare only at matching A4 before N05e/f.",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r57anchor",
+      "author": "r55_advisor_g56",
+      "author_index": 0,
+      "name": "AnchorFirst",
+      "mode": "a4",
+      "hypothesis": "只改A4。核心机制是先确定人物经历中真正承重的具体支点，再决定这些支点如何承接不同段落的体验性质。重点不在给每段分配一个独特角色，而在跟踪同一个愿望、顾虑或关系事实在不同阶段究竟产生了什么不同后果。\n\n写作时先根据ROUTES确定整件事的事实和心理发展，再把TARGETS作为情境和感受的校准材料，而不是让每段TARGETS生成一个新的心理动作。允许一个具体顾虑持续存在，也允许同一段有并存感受。只有实际代价、对象、后果或选择发生变化，才写成新的发展。\n\n预期收益：保住人物的具体情感支点，减少逐段为音乐寻找不同心理阶段造成的回返，同时降低每条都解释一次前因后果的倾向。\n\n预期代价：有些段落会更接近延续和沉浸，模型可能因此写得不够充分；TARGETS的部分覆盖可能下降。不能为了覆盖率补造事实。",
+      "risk": "如果锚点链被模型理解为每段都必须重新解释一次支点，仍会产生分析腔。另一个风险是模型过度依赖ROUTES，忽略实际段落中不同体验性质的并存。它与R54role的区别是按全篇支点追踪，不给每段强行分配唯一角色；与R54sample的区别是改变实际写作机制，而不是内部择优。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "a4_anchor_first",
+          "path": "runs\\_batches\\round57_a4_checkpoint\\prompts\\r57anchor_P1.txt",
+          "sha256": "e1e3089fa682329cd6fafce2eb1d8cce877d2c6ae089e974f3c07091cc310bdb",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "r57delta",
+      "author": "r55_advisor_g6b",
+      "author_index": 0,
+      "name": "Delta-Gated A4",
+      "mode": "a4",
+      "hypothesis": "Q6_A1已经提供delta_type、delta、depends_on和established，但Q15_A4没有规定这些字段怎样约束正文；它容易把state中的多个并存状态都写成按时间推进的句子。Op.60 S04把同一犹豫拆成两三条，Op.61 S07–S11把同一去留疑问反复展开，都是state被当作待写清单、delta没有成为变化上限的可能表现。本方案把delta当作因果契约：只允许delta所述内容构成本段新增推进，state只提供处境和并存感受，still_open不自动变成每段都要重问的问题。预期减少伪推进和段内拆分，同时保留必要回响。",
+      "risk": "若A1路线本身把未经支持的前提写进delta，本方案可能把错误前提更牢地写入正文；它不能单独解决Op.60 R03相互需要的来源问题。若delta过于粗略，也可能压掉真正有意义的并存体验或回返。它与已失败的R54RoleMap不同：不另造逐段角色分类或全篇角色图，而是直接使用现有路线字段；与R53一致性检查不同：在写线时约束每段新增内容，不是写后检查句意。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "A4_delta_gate",
+          "path": "runs\\_batches\\round57_a4_checkpoint\\prompts\\r57delta_P1.txt",
+          "sha256": "6703d84c539cf5e16881b2b18917aab930e5c204948d28f5a4ebb97958806531",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "deduplication": "AnchorFirst tests concrete-anchor chain and no forced per-section novelty; Delta-Gated tests supplied delta as allowed new-change contract. RouteFirstFit overlaps AnchorFirst order, deferred.",
+  "acceptance_rule": "A4 quick versus qu is checkpoint screening only, never improvement over actual current final mainline. Survivors must rerun all affected accepted downstream steps with new input and exact appropriate feedback, then full8/floors versus then-current mainline. Do not reuse old r54 as new output."
+}

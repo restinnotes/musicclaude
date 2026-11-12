@@ -1,0 +1,1914 @@
+{
+  "schema_version": "1.0",
+  "title": "GLOBAL独立第二遍反查：遗漏、同义合并及metadata体验",
+  "date": "2026-10-17",
+  "inputs": {
+    "audit_global": {
+      "path": "D:\\musicclaude\\_bead_full_audit_20261017\\audit_global.json",
+      "sha256": "453373d25795e01c2b9b820f9c4c12e7f21491e850c602b688eb2acf53da51b1"
+    },
+    "remainder": {
+      "path": "D:\\musicclaude\\_bead_full_audit_20261017\\REMAINDER_INPUT.json",
+      "sha256": "872f0c7c4690619ec21ecc6b42bdbc74ae40be7cbcad9a486ff41ca4dc626f34"
+    },
+    "units": "D:\\musicclaude\\_bead_quality_20261017\\sources\\units.json",
+    "current": "D:\\musicclaude\\_bead_quality_20261017\\editorial\\FINAL_BEADS.json"
+  },
+  "scope": {
+    "fully_read_remainder_units": 56,
+    "reviewed_meanings": 71,
+    "reviewed_unit_reviews": 56,
+    "existing_merges_count": 0,
+    "method": "全文阅读56个remainder原文；对照71项meaning、全部证据与lost字段及56个unit_review；回查14段现稿。已有字段rationale/repair的通用模板不当成已覆盖证据。未检查或修正related_meaning_ids的编号。",
+    "not_done": [
+      "未合并audit_1/2/3/4等局部分段账本，故GLOBAL缺项不自动等于全项目缺项。",
+      "未外部核实书目、生平、录音、谱面；原文归因只按本地文本登记。",
+      "未生成新的全量唯一意义分母；本文件是补项与修订建议，不直接替换主账本。"
+    ]
+  },
+  "validation": {
+    "remainder_count": 56,
+    "all_remainder_text_equal_units": true,
+    "audit_meanings_at_snapshot": 71,
+    "audit_unit_reviews_at_snapshot": 56,
+    "all_existing_evidence_quotes_exact": true,
+    "all_existing_current_spans_exact": true,
+    "all_second_pass_evidence_quotes_exact": true,
+    "all_second_pass_current_spans_exact": true
+  },
+  "summary": {
+    "findings": 25,
+    "high_confidence": 23,
+    "medium_confidence": 2,
+    "type_counts": {
+      "metadata_contains_experience": 2,
+      "omitted_distinct_experience": 8,
+      "lossy_semantic_merge": 2,
+      "relation_flattened": 1,
+      "false_equivalence_risk": 1,
+      "omitted_relation": 2,
+      "omitted_interpretive_condition": 1,
+      "omitted_conditional_meaning": 1,
+      "omitted_sequence_step": 2,
+      "coverage_overclaim": 1,
+      "residual_understates_loss": 1,
+      "semantic_overstatement": 1,
+      "pending_scope_too_broad": 1,
+      "independent_facet_not_generic_metadata": 1
+    },
+    "key_points": [
+      "metadata中确有温暖、歌唱性强音的表演条件，不能整段排除。",
+      "白日梦的饱满狂喜与不愿醒来、恐惧带来甜蜜与甜怕共存、同时肉体亲密超脱与不同解释清单，须区分。",
+      "G-A048的full建议降为partial：前后对比有，听者记忆改变回归听感的因果不完整。",
+      "错误114–138只隔离定位与相关事实，不能吞掉玩笑盖焦虑、完整爱的能力等独特主观内容。",
+      "25条问题不等于25个新增意义；多项应split或expand旧记录，另有两个中置信候选。"
+    ]
+  },
+  "findings": [
+    {
+      "id": "GSP-01",
+      "type": "metadata_contains_experience",
+      "title": "参考书目中有“强音温暖而歌唱”的具体演奏条件",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-1-U23",
+          "quote": "其中强调肖邦的强音应体现温暖和歌唱性的强度，而不是单纯的响亮。这也是为什么我认为后半段应听成强烈的情感倾诉，而非炫耀性的胜利。",
+          "offset_start": 920,
+          "offset_end_exclusive": 983
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "演奏推进过强可能掩盖细腻诗意和安静。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A042",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-web-1-U12",
+              "quote": "过于强劲的处理可能让其中细腻的诗意与安静感被盖住。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "耳朵带着记忆听回归，坦白不只来自更响。",
+          "status_at_review": "full",
+          "locator_id_snapshot_only": "G-A048",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U16",
+              "quote": "于是你的耳朵有了记忆。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-2-U16",
+              "quote": "m.84 的旋律并不是因为“弹得更响”才比开头激动，而是因为你记得它最初多么谨慎。"
+            }
+          ],
+          "lost_at_review": ""
+        }
+      ],
+      "problem": "该UID被整体登记metadata。原句包含强音应怎样被听到、以及为何听为情感倾诉的关系；“推进过强盖住诗意”和“记忆改变回归”均不能替代温暖、歌唱性的强度。",
+      "proposed_action": "从metadata拆出表演条件意义；书目链接仍保留metadata。",
+      "proposed_meaning": "强音可体现温暖与歌唱性的强度，后半段由此听成倾诉，而非单靠响亮或炫耀胜利。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "声音很强，仍可以温暖、像人在唱；这份强度使后半段更像尽情倾诉。",
+      "scope_and_fact_boundary": "适用后半段的演奏解释；该版本前言的真实主张未外部核验，不能写成已核实规范。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-02",
+      "type": "metadata_contains_experience",
+      "title": "参考资料的“来之不易的安宁”不是纯书目字段",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-1-U23",
+          "quote": "从演奏者角度谈到时间的悬停、光线的变化与来之不易的安宁。",
+          "offset_start": 787,
+          "offset_end_exclusive": 815
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "情绪失去克制后收回；最后自持已经经过考验。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A006",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-int-2-U01",
+              "quote": "情绪逐渐失去克制、又慢慢收回来的过程"
+            },
+            {
+              "uid": "SRC-gpt56w-int-2-U01",
+              "quote": "最后又重新获得了自持——但这个自持已经不是开头那个未经考验的平静。"
+            }
+          ],
+          "lost_at_review": "身体平复不等于经过考验的新自持。"
+        },
+        {
+          "meaning_label_at_review": "同一感情被靠近、回避、沉溺、承认后承担，安定经历过一切才可能。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A047",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "同一种很私密的感情，被一次次靠近、回避、沉溺、重新承认，最后才被完整地承担起来。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "一种经历过这一切以后才可能有的安定。"
+            }
+          ],
+          "lost_at_review": "沉溺与坦白局部有；回避、承担以及安定来源没有完整。"
+        }
+      ],
+      "problem": "这句同时给出时间悬停、光线变化、来之不易的安宁。后者近于现有“经历一切才可能的安定”，可不新增总数；前两个感知维度不能随链接整块丢掉。证据简短，不能扩写它们之间的因果。",
+      "proposed_action": "改为mixed/accounted：保留一句带三个平行侧面的来源摘要，安宁可挂接已有意义；时间与光线须明确保留或说明已在何项登记。",
+      "proposed_meaning": "演奏感受包含时间悬停、光线变化，以及得来不易的安宁。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "时间像悬停了一会儿，光线也在变化；安宁是来之不易的。",
+      "scope_and_fact_boundary": "只有书目摘要的文本支持；不凭此编造具体小节、光线颜色或因果。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-03",
+      "type": "omitted_distinct_experience",
+      "title": "身体虚弱却感知敏锐的主体不等于生命尊严或避难所",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-1-U01",
+          "quote": "一个生命走到黄昏、身体极度虚弱、但灵魂却异常敏锐的人，在水面上进行的一场私密而炽烈的精神漂流。",
+          "offset_start": 55,
+          "offset_end_exclusive": 102
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "生命尊严：承认病弱与终结，仍拒绝自怜；漂流会终结不抹去曾有的金光。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A001",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gflash-int-1-U22",
+              "quote": "它承认痛苦、病弱与必逝的结局，却拒绝让自己沉溺在廉价的自怜中。"
+            },
+            {
+              "uid": "SRC-gflash-int-1-U22",
+              "quote": "即使生命的船注定要漂入永恒的黑夜，这趟漂流本身，也曾拥有过世界上最耀眼的金光。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "精神避难所与夏夜爱情幻梦。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A028",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gflash-web-1-U01",
+              "quote": "金色的精神避难所"
+            },
+            {
+              "uid": "SRC-gflash-web-1-U01",
+              "quote": "一场关于地中海夏夜与炽热爱情的终极幻梦"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "该UID以“相近复述”归账，但弱身体／敏锐灵魂的反差，以及私密而炽烈的漂流，既不在“拒绝自怜的尊严”中，也不等于避难所。不是修related编号的问题，而是已有意义内容未保住这个反差。",
+      "proposed_action": "新增主体感受的完整facet，或给已有主体项明确加独立差异子项；不能只补引用。",
+      "proposed_meaning": "身体极度虚弱，感知却异常敏锐，体验在水面展开为私密而炽烈的精神漂流。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "可以想成一个身体很虚弱、感受却格外敏锐的人，经历一场私密又炽烈的漂流。",
+      "scope_and_fact_boundary": "作为来源的主体想象保留；肖邦病情、创作意图不据此确认为事实。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-04",
+      "type": "omitted_distinct_experience",
+      "title": "硬撑着出门看一眼傍晚的水有独特行为",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-1-U01",
+          "quote": "整体上这不是少年的歌。是见过事情、身体也不太好的人，硬撑着出来看了一眼傍晚的水。",
+          "offset_start": 67,
+          "offset_end_exclusive": 107
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "想放松却不能全放松，陶醉同时含心酸与警觉。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A005",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "想放松，又不敢全放松；想快乐，又知道快乐留不住。"
+            },
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "温柔里掺着警觉，陶醉里掺着心酸。"
+            }
+          ],
+          "lost_at_review": "局部坐不住保留；全曲警觉与心酸并存未明确。"
+        },
+        {
+          "meaning_label_at_review": "心事很重的人想象自己再被水托住一次。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A038",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-web-1-U01",
+              "quote": "是一个心里装着太多东西的人，想象自己还能被水托住一次。"
+            }
+          ],
+          "lost_at_review": "托住有，心事很重与再一次的分量不见。"
+        }
+      ],
+      "problem": "全曲警觉心酸已记录，但“见过事情／身体不好／硬撑着出来／只看一眼”的行为负担没有记账。“心事重、想象水托住”并非同一动作。",
+      "proposed_action": "新增行为与身体体验facet，不并入一般成熟感。",
+      "proposed_meaning": "经历多、身体不适的人硬撑着出来，只为看一眼傍晚的水。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "像见过许多事、身体又不太好的人，还是硬撑着出来看了一眼傍晚的水。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-05",
+      "type": "lossy_semantic_merge",
+      "title": "感官饱满的白日梦不等于不愿醒来",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gflash-int-2-U01",
+          "quote": "一个自知生命与爱意都在倒计时的人，坐在钢琴前写的并不是绝望的呻吟，而是一场近乎奇迹的、充满感官饱满度与精神狂喜的“白日梦”。",
+          "offset_start": 111,
+          "offset_end_exclusive": 173
+        },
+        {
+          "uid": "SRC-gflash-int-3-U01",
+          "quote": "这种状态很像一个人在生命力即将耗尽前，把灵魂完全浸泡在一场不想醒来的白日梦里。",
+          "offset_start": 145,
+          "offset_end_exclusive": 184
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "生命将尽时不愿醒来的白日梦。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A004",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gflash-int-3-U01",
+              "quote": "把灵魂完全浸泡在一场不想醒来的白日梦里。"
+            },
+            {
+              "uid": "SRC-gflash-int-2-U01",
+              "quote": "充满感官饱满度与精神狂喜的“白日梦”"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "同项两个证据只共有白日梦。“生命与爱意倒计时仍生出感官饱满、精神狂喜”没有声明不想醒；“不想醒”是另一来源的留恋动机。主意义把前者当作后者证据，丢掉饱满和狂喜。",
+      "proposed_action": "split：分别登记白日梦的感官／精神丰度，与不愿醒来的留恋；共享意象可建立关系，勿当同义。",
+      "proposed_meaning": "A：生命与爱意倒计时之中出现感官饱满、精神狂喜的白日梦。B：生命力将耗尽，仍不想从白日梦醒来。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "一种白日梦充满感官的饱满和精神的狂喜；另一种特别强调浸在里面，不愿醒来。",
+      "scope_and_fact_boundary": "倒计时是来源的心理设定；不把有关生平推断当已证史实。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-06",
+      "type": "lossy_semantic_merge",
+      "title": "收回情绪与经过考验的新自持是两层意义",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-luna-int-2-U01",
+          "quote": "情绪逐渐失去克制、又慢慢收回来的过程",
+          "offset_start": 11,
+          "offset_end_exclusive": 29
+        },
+        {
+          "uid": "SRC-gpt56w-int-2-U01",
+          "quote": "一个本来很会控制自己的人，慢慢允许一种极深的感情进入意识；它一度变得毫无遮掩，甚至强烈到近乎疼痛，最后又重新获得了自持——但这个自持已经不是开头那个未经考验的平静。",
+          "offset_start": 38,
+          "offset_end_exclusive": 120
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "情绪失去克制后收回；最后自持已经经过考验。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A006",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-int-2-U01",
+              "quote": "情绪逐渐失去克制、又慢慢收回来的过程"
+            },
+            {
+              "uid": "SRC-gpt56w-int-2-U01",
+              "quote": "最后又重新获得了自持——但这个自持已经不是开头那个未经考验的平静。"
+            }
+          ],
+          "lost_at_review": "身体平复不等于经过考验的新自持。"
+        }
+      ],
+      "problem": "当前用一个partial包住两个不同维度：失去克制后收回的动态，与回到的自持已非原样。二者可有关联，但后一来源增加了身份变化，不能视为前者的同义复述；当前lost仅突出后一差别。",
+      "proposed_action": "split或明确两个独立子项分别给覆盖判断；不是认定两者互斥。",
+      "proposed_meaning": "A：情绪失去克制又慢慢收回。B：重新获得的自持经历过暴露与疼痛，因此不同于最初。",
+      "proposed_current_coverage": "partial",
+      "current_spans": [
+        {
+          "segment": "S14",
+          "quote": "刚才的热还在，呼吸却慢慢回到身体里。"
+        }
+      ],
+      "repair_candidate": "情绪逐渐失去克制，又收回来；在另一层读法里，人重新站稳了，但这份自持已受过考验。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-07",
+      "type": "omitted_distinct_experience",
+      "title": "“带来甜蜜的恐惧”被引用却未登记意义",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-r1-U01",
+          "quote": "Czaja 总结 Iwaszkiewicz 时甚至把这种根本矛盾概括为一种“带来甜蜜的恐惧”；",
+          "offset_start": 340,
+          "offset_end_exclusive": 387
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "爱情相会与自我价值确认/苦涩反讽/告别世界分别成立。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A058",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-3-U18",
+              "quote": "极大的喜悦、对自身价值的确认，以及苦涩的反讽和与世界告别的意味。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-r1-U01",
+              "quote": "一种“带来甜蜜的恐惧”"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "想放松却不能全放松，陶醉同时含心酸与警觉。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A005",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "想放松，又不敢全放松；想快乐，又知道快乐留不住。"
+            },
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "温柔里掺着警觉，陶醉里掺着心酸。"
+            }
+          ],
+          "lost_at_review": "局部坐不住保留；全曲警觉与心酸并存未明确。"
+        },
+        {
+          "meaning_label_at_review": "知道会失去仍全心投入；勇气没有消除害怕。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A018",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U01",
+              "quote": "他不是消除了这种不安，而是决定不再有所保留地投入其中。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-1-U13",
+              "quote": "害怕与热爱终于可以同时存在，彼此不再妨碍。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "但他决定不因此少爱一点。"
+            }
+          ],
+          "lost_at_review": "愿承担受伤保留；害怕与热爱不再妨碍、知道不能保有仍爱需明确。"
+        }
+      ],
+      "problem": "该句出现在“爱情相会、自我确认、苦涩反讽、告别”的证据里，但这些标签都没有恐惧带来甜蜜的方向。甜里有怕／怕与爱共存也不等于恐惧本身带来甜蜜。不是证据编号修正可以解决。",
+      "proposed_action": "单列具有方向的矛盾体验；保留原措辞，不改为“甜蜜中有恐惧”。",
+      "proposed_meaning": "恐惧本身带来甜蜜，而非仅在甜蜜旁边同时存在。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "这里甚至有一种“带来甜蜜的恐惧”：怕本身也参与了那份甜。",
+      "scope_and_fact_boundary": "只登记原文归纳的体验；不确认Czaja或Iwaszkiewicz真实原话。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-08",
+      "type": "relation_flattened",
+      "title": "肉体亲密与超脱的同时性被解释范围清单抹平",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-r1-U01",
+          "quote": "它们常常都落到同一个核心：**明亮与黑暗、肉体的亲密与超脱、安宁与不安同时存在。",
+          "offset_start": 297,
+          "offset_end_exclusive": 337
+        },
+        {
+          "uid": "SRC-gpt56w-web-r1-U12",
+          "quote": "所以有人把它听成恋人，有人听成夜水、死亡、宗教式的超越，有人听成“告别世界”，其实并不奇怪。",
+          "offset_start": 149,
+          "offset_end_exclusive": 195
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "肉体亲密与超脱，夜水死亡与宗教式超越都是解释范围。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A065",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-r1-U01",
+              "quote": "肉体的亲密与超脱"
+            },
+            {
+              "uid": "SRC-gpt56w-web-r1-U12",
+              "quote": "有人听成夜水、死亡、宗教式的超越，有人听成“告别世界”"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "第一来源强调几组感觉同时存在，第二来源列不同解释。账本把二者总称“都是解释范围”，丢掉肉体亲密与超脱同在的关系；也不可反向要求所有解释必然同在。",
+      "proposed_action": "split：同时矛盾facet与解释alternatives分开登记。",
+      "proposed_meaning": "A：肉体亲密与超脱同时存在。B：夜水、死亡、宗教式超越、告别世界可作为不同解释。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "一种读法能同时感到肉体的亲密与超脱；夜水、死亡、宗教式超越则可以分别作为另外的听法。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-09",
+      "type": "omitted_distinct_experience",
+      "title": "说不清对象的渴望不等于对象可有多种",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-3-U01",
+          "quote": "但很有意思的是，不同年代的听者确实一再从音乐里听到**亲密、神秘、陶醉、隐约恐惧，以及某种说不清对象的渴望**。",
+          "offset_start": 423,
+          "offset_end_exclusive": 479
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "对象不必是恋人，也可生命或再也回不去的时刻。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A025",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-3-U01",
+              "quote": "它也可能是对生命、对某个人、对某个再也回不去的时刻的深深眷恋。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "知道会失去仍全心投入；勇气没有消除害怕。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A018",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U01",
+              "quote": "他不是消除了这种不安，而是决定不再有所保留地投入其中。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-1-U13",
+              "quote": "害怕与热爱终于可以同时存在，彼此不再妨碍。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "但他决定不因此少爱一点。"
+            }
+          ],
+          "lost_at_review": "愿承担受伤保留；害怕与热爱不再妨碍、知道不能保有仍爱需明确。"
+        },
+        {
+          "meaning_label_at_review": "爱得越深越感到不能永久占有，这种认识反而加深爱。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A019",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U12",
+              "quote": "越深地爱一个东西，就越清楚地感觉到它的不可永久占有；但这种认识并没有削弱爱，反而使爱变得更深。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "他正是因为知道美好的东西留不住，才有能力如此深刻地爱它。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "该UID作为相近全曲复述归账。已有对象项是生命、某个人、回不去的时刻等可指认选项；这里则是对象本身说不清，同时有神秘、陶醉和隐约恐惧。该认识状态不能用“不是只有恋人”代替。",
+      "proposed_action": "新增无明确对象的渴望facet；神秘与隐约恐惧可随此完整语境保留，不拆散成孤立词。",
+      "proposed_meaning": "亲密、神秘与陶醉中有隐约恐惧，渴望却说不清针对什么。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "你能感到亲密、神秘、陶醉，也隐约有些怕，却说不清究竟在渴望什么。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-10",
+      "type": "false_equivalence_risk",
+      "title": "不能永远拥有同时使人幸福和难过，不等于因此爱得更深",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-2-U16",
+          "quote": "这首《船歌》像一个人终于懂得，生命最值得留恋的东西，恰恰因为不能永远拥有，才会同时让人感到那么幸福，又那么难过。",
+          "offset_start": 847,
+          "offset_end_exclusive": 903
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "爱得越深越感到不能永久占有，这种认识反而加深爱。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A019",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U12",
+              "quote": "越深地爱一个东西，就越清楚地感觉到它的不可永久占有；但这种认识并没有削弱爱，反而使爱变得更深。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "他正是因为知道美好的东西留不住，才有能力如此深刻地爱它。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "带甜味的惆怅来自享受同时知道留不住，并非绝望。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A007",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-int-3-U01",
+              "quote": "被某种美好的东西吸引，享受它，同时又隐约知道它留不住。"
+            },
+            {
+              "uid": "SRC-luna-int-3-U01",
+              "quote": "这更像带着甜味的惆怅，不是绝望的悲伤。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "幸福中对有限生命的感受来自生活本身美好。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A052",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-1-U22",
+              "quote": "因为真切地感到生活美好，所以同时感到生命的有限。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "现有关系项“不能占有使爱加深”不含同时幸福和难过这一因果结果。“享受同时知道留不住”也只写共存，“感到美好所以感到有限”则方向不同。该句不能仅按“有限性”大主题挂接成同义。",
+      "proposed_action": "新增或扩展一条明确双向结果的动因项；不要求新建重复的有限性主题。",
+      "proposed_meaning": "正因为最值得留恋的东西不能永远拥有，它才同时带来如此强的幸福与难过。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "正因为不能永远拥有，最值得留恋的东西才让人同时那么幸福、又那么难过。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-11",
+      "type": "omitted_relation",
+      "title": "爱情诗般热烈与悲剧情绪不能因同在末尾就合成喜痛",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-3-U01",
+          "quote": "音乐学家 Artur Szklener 则特别指出：作品末尾除了爱情诗般的热烈，还存在一种越来越强烈、甚至近乎悲剧性的情绪，两者不能简单归为一种。",
+          "offset_start": 296,
+          "offset_end_exclusive": 369
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "高潮后的幸福同时有悲伤、感激、眷恋和有限生命感。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A059",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-3-U19",
+              "quote": "原来真正强烈的幸福，能够同时包含悲伤、感激、眷恋，以及某种对有限生命的深切感受。"
+            }
+          ],
+          "lost_at_review": "感激、眷恋、有限生命感未全表达。"
+        },
+        {
+          "meaning_label_at_review": "光暗可以并存，不急于二选一。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A055",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-2-U15",
+              "quote": "它并不急于选择光明或者黑暗。它能够让两者同时存在。"
+            }
+          ],
+          "lost_at_review": "局部双面保留，全曲不选择一面的立场未明。"
+        },
+        {
+          "meaning_label_at_review": "肉体亲密与超脱，夜水死亡与宗教式超越都是解释范围。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A065",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-r1-U01",
+              "quote": "肉体的亲密与超脱"
+            },
+            {
+              "uid": "SRC-gpt56w-web-r1-U12",
+              "quote": "有人听成夜水、死亡、宗教式的超越，有人听成“告别世界”"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "该UID没有自己的meaning，以相近复述归账。原文特意说热烈与越来越强的悲剧情绪不能简单归为一种；“幸福包含悲伤”及“光暗共存”不保留两股表达不可归一的限制。",
+      "proposed_action": "登记关系限制，链接两个侧面；不能只增加“悲剧”关键词。",
+      "proposed_meaning": "末尾爱情诗般的热烈与逐渐增强的悲剧性是可辨认的两股表达，不能一概命名为喜痛融合。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "末尾仍有爱情诗般的热烈，另有越来越强的、近乎悲剧的情绪；两股表达都应听见。",
+      "scope_and_fact_boundary": "末尾宽范围的来源解释，不据此自行指定精确S或确认学者归因。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-12",
+      "type": "omitted_interpretive_condition",
+      "title": "明亮可听眷恋、不安可听期待，是具体的解释差异",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-int-1-U12",
+          "quote": "它之所以动人，恰恰因为这些感受始终有流动性：一处看似明亮的音乐，有人可能听到眷恋；一处看似不安的音乐，也可能听到期待。",
+          "offset_start": 997,
+          "offset_end_exclusive": 1056
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "爱得越深越感到不能永久占有，这种认识反而加深爱。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A019",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U12",
+              "quote": "越深地爱一个东西，就越清楚地感觉到它的不可永久占有；但这种认识并没有削弱爱，反而使爱变得更深。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "他正是因为知道美好的东西留不住，才有能力如此深刻地爱它。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "不同演奏可更像独自回忆或热烈告白。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A043",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-web-2-U13",
+              "quote": "同一首曲子可以更像独自回忆，也可以更像热烈告白。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "光暗可以并存，不急于二选一。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A055",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-2-U15",
+              "quote": "它并不急于选择光明或者黑暗。它能够让两者同时存在。"
+            }
+          ],
+          "lost_at_review": "局部双面保留，全曲不选择一面的立场未明。"
+        }
+      ],
+      "problem": "该UID余项用“解释开放性是元信息”概括。但这不是空泛“允许多读法”，而是具体声音表象与体验可不同：明亮→眷恋，不安→期待。演奏偏回忆／告白、光暗共存均不能替代。",
+      "proposed_action": "从通用方法残余中提取两个同级例子；登记为解释条件，不作为新的固定剧情。",
+      "proposed_meaning": "看似明亮的声音可以听到眷恋，看似不安的声音可以听到期待。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "明亮处也可以听见眷恋；不安处，也可能是期待。",
+      "scope_and_fact_boundary": "GLOBAL解释条件；没有源内小节定位，不强分配到某S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-13",
+      "type": "omitted_conditional_meaning",
+      "title": "不必先消除害怕才有资格幸福",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-r1-U12",
+          "quote": "mm. 78 以后则像突然发现：**也许根本不必先消除害怕，才有资格幸福。**",
+          "offset_start": 207,
+          "offset_end_exclusive": 246
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "知道会失去仍全心投入；勇气没有消除害怕。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A018",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U01",
+              "quote": "他不是消除了这种不安，而是决定不再有所保留地投入其中。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-1-U13",
+              "quote": "害怕与热爱终于可以同时存在，彼此不再妨碍。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-2-U10",
+              "quote": "但他决定不因此少爱一点。"
+            }
+          ],
+          "lost_at_review": "愿承担受伤保留；害怕与热爱不再妨碍、知道不能保有仍爱需明确。"
+        },
+        {
+          "meaning_label_at_review": "未必被安慰，而是内在空间变大，原不共存的东西能同住一人。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A062",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U12",
+              "quote": "人未必觉得“被安慰了”，却可能觉得**内在的空间变大了**。"
+            },
+            {
+              "uid": "SRC-gpt56w-int-r1-U12",
+              "quote": "爱与失去、满足与渴望、亲密与孤独、激情与清醒"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "成年人的丰盛感：哀伤不否定幸福，强欲望接受无法占有时间。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A063",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U12",
+              "quote": "成年人的**丰盛感**——幸福里面有哀伤，哀伤里面又没有否定幸福；欲望非常强烈，却又开始接受自己不能占有时间。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "害怕与热爱能共存已登记，但“有资格幸福不以先消除害怕为条件”是解除资格门槛的具体经验，非共存本身。该UID仅用丰盛感、内在空间概括，未明确保留这层条件。",
+      "proposed_action": "补为条件项，或在害怕与热爱项中单列差异，不将新项与旧项简单相加。",
+      "proposed_meaning": "幸福不以已经消除害怕为前提。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "原来不必先把害怕解决掉，才有资格感到幸福。",
+      "scope_and_fact_boundary": "源标78以后，可供S10起审计参考；不是证明之后每段都已消除控制。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-14",
+      "type": "omitted_sequence_step",
+      "title": "因逃不掉而用玩笑掩盖焦虑，不应随错误小节范围丢弃",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-2-U11",
+          "quote": "漂浮 -> 沉浸在有刺痛的温柔里 -> 坐不住想逃 -> 逃不掉，拿玩笑盖焦虑 -> 屏息 -> 认领自己的感情，大声说出来 -> 和解 -> 清醒地选择热烈。",
+          "offset_start": 228,
+          "offset_end_exclusive": 308
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "睡前回看一天般重新摸过主题碎片。",
+          "status_at_review": "pending",
+          "locator_id_snapshot_only": "G-A068",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-2-U11",
+              "quote": "把前面的主题碎片再摸一遍，像睡前把一天过一遍。"
+            }
+          ],
+          "lost_at_review": "原标114–138失效，主观比喻不能连带删除；待正确落点核实。"
+        },
+        {
+          "meaning_label_at_review": "清醒的燃烧：知道失去仍用最大力量肯定，因失去而有重量。",
+          "status_at_review": "pending",
+          "locator_id_snapshot_only": "G-A069",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-2-U11",
+              "quote": "因为失去过，所以这份热烈里有重量，不是傻乐，是清醒的燃烧。"
+            }
+          ],
+          "lost_at_review": "错误小节和生平推断不能作依据；可独立保留的心理读法未进入现稿。"
+        }
+      ],
+      "problem": "本UID只记录睡前回看与清醒燃烧。全曲链条中的“坐不住想逃→逃不掉，拿玩笑盖焦虑”有独特失败条件和行为，并非结尾燃烧的同义。“局部已有”需列具体对应，当前未指出。",
+      "proposed_action": "提取为GLOBAL待定位的来源读法；错误114–138不使整段心理内容失效。",
+      "proposed_meaning": "想逃却逃不掉，于是用玩笑盖住焦虑。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "有一种读法是坐不住、想逃，逃不掉便拿玩笑盖住焦虑。",
+      "scope_and_fact_boundary": "原UID含超出冻结116小节的标注；只保留全曲主观读法，精确段落pending，不据此确认音乐顺序。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-15",
+      "type": "omitted_distinct_experience",
+      "title": "不再躲，用音乐证明仍能完整地爱",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-2-U11",
+          "quote": "是一个明白自己 time 不多的人，不再自怜，也不再躲，用音乐证明自己还能如此完整地去爱。",
+          "offset_start": 332,
+          "offset_end_exclusive": 377
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "生命尊严：承认病弱与终结，仍拒绝自怜；漂流会终结不抹去曾有的金光。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A001",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gflash-int-1-U22",
+              "quote": "它承认痛苦、病弱与必逝的结局，却拒绝让自己沉溺在廉价的自怜中。"
+            },
+            {
+              "uid": "SRC-gflash-int-1-U22",
+              "quote": "即使生命的船注定要漂入永恒的黑夜，这趟漂流本身，也曾拥有过世界上最耀眼的金光。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "清醒的燃烧：知道失去仍用最大力量肯定，因失去而有重量。",
+          "status_at_review": "pending",
+          "locator_id_snapshot_only": "G-A069",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-2-U11",
+              "quote": "因为失去过，所以这份热烈里有重量，不是傻乐，是清醒的燃烧。"
+            }
+          ],
+          "lost_at_review": "错误小节和生平推断不能作依据；可独立保留的心理读法未进入现稿。"
+        },
+        {
+          "meaning_label_at_review": "爱情相会与自我价值确认/苦涩反讽/告别世界分别成立。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A058",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-web-3-U18",
+              "quote": "极大的喜悦、对自身价值的确认，以及苦涩的反讽和与世界告别的意味。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-r1-U01",
+              "quote": "一种“带来甜蜜的恐惧”"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "拒绝自怜已在别项，清醒肯定也已登记；但“不再躲”及通过音乐证明仍有完整去爱的能力，包含行动与自我证明对象，不能直接同义为生命尊严或最大力气肯定。",
+      "proposed_action": "补充能力确认的独立facet，保留与拒绝自怜的联系，不重复计算其共有部分。",
+      "proposed_meaning": "知道时间有限，不再躲，用音乐确认自己仍有完整去爱的能力。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "不再躲着，他要用音乐证明，自己仍能这样完整地去爱。",
+      "scope_and_fact_boundary": "原文的time有限是主体设定；不是已证肖邦心理。精确小节不定位。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-16",
+      "type": "omitted_sequence_step",
+      "title": "同一摇晃的变化漏了主动不再保持平静",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-int-3-U10",
+          "quote": "再后来，他不再试图保持平静，任由自己被感情推动、卷入、抬高。",
+          "offset_start": 1728,
+          "offset_end_exclusive": 1758
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "同样的摇晃由安全变不满足随波而行，最后不需水面平静也能安心。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A026",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-3-U10",
+              "quote": "起初，摇晃让他觉得安全，像被轻轻拥抱。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-3-U10",
+              "quote": "后来，同样的摇晃开始让他心神不宁，因为他已经无法满足于只是随波而行。"
+            },
+            {
+              "uid": "SRC-gpt6w-int-3-U10",
+              "quote": "到了最后，水依然在动，但他已经不再需要水面绝对平静，才能感到安心。"
+            }
+          ],
+          "lost_at_review": "同一摇晃在不同阶段的意义变换没有表达。"
+        }
+      ],
+      "problem": "现项登记安全→不满足随波→最后安心，跳过“主动不再维持平静、任由推动抬高”。这不是被动心神不宁，也不是最后不需水面平静；是主动改变控制姿态。",
+      "proposed_action": "expand既有序列，补齐中间一步；不新增整条摇晃曲线重复计数。",
+      "proposed_meaning": "在摇晃变成不安之后，人不再试图保持平静，任由感情推动、卷入和抬高。",
+      "proposed_current_coverage": "partial",
+      "current_spans": [
+        {
+          "segment": "S07",
+          "quote": "你知道自己被卷进去，却暂时不想出来。"
+        }
+      ],
+      "repair_candidate": "再后来，他不再费力保持平静，任由感情把自己推动、卷入、抬高。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-17",
+      "type": "coverage_overclaim",
+      "title": "“耳朵有了记忆”不宜凭主角变勇敢就判full",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-2-U16",
+          "quote": "肖邦其实没有不停地“换情绪”。相反，他经常让**同样或相近的东西回来**。但当它回来时，听者已经经历过一次未完成、一次沉溺、一次走神、一次短暂的纯真、一次释放。\n\n于是你的耳朵有了记忆。\n\n所以 m.84 的旋律并不是因为“弹得更响”才比开头激动，而是因为你记得它最初多么谨慎。现在它不再退缩，你才会听成一种坦白。",
+          "offset_start": 47,
+          "offset_end_exclusive": 204
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "耳朵带着记忆听回归，坦白不只来自更响。",
+          "status_at_review": "full",
+          "locator_id_snapshot_only": "G-A048",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U16",
+              "quote": "于是你的耳朵有了记忆。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-2-U16",
+              "quote": "m.84 的旋律并不是因为“弹得更响”才比开头激动，而是因为你记得它最初多么谨慎。"
+            }
+          ],
+          "lost_at_review": ""
+        }
+      ],
+      "problem": "现稿明确比较第一次收轻与这次敞开，也写人物不退缩，因此不能判全漏；但原文解释的是听者经历未完成、沉溺、走神、短暂纯真、释放以后形成记忆，记忆改变回归的意义。这一听者因果视角不等于人物终于敢表达。full将隐含联想当全部可读。",
+      "proposed_action": "建议由full限定为partial；保留已读出的前后对比，只补听者记忆这个解释层。",
+      "proposed_meaning": "同样旋律的改变也来自听者带着一路经历记得初次的谨慎，而非仅来自音量。",
+      "proposed_current_coverage": "partial",
+      "current_spans": [
+        {
+          "segment": "S11",
+          "quote": "原先向上伸去便收轻的地方，这次让歌声敞开。"
+        },
+        {
+          "segment": "S11",
+          "quote": "像一个人终于肯把感情放在眼前，不再说到一半就退回去。"
+        }
+      ],
+      "repair_candidate": "我们记得它第一次那么谨慎，又听过中间的走神与释放；所以同一旋律回来，才会像终于坦白。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-18",
+      "type": "residual_understates_loss",
+      "title": "耳语不能算保住贡多拉里的亲吻和拥抱",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-luna-web-3-U14",
+          "quote": "十九世纪钢琴家 Carl Tausig 曾把中段听成恋人躲在贡多拉里的亲吻与拥抱；另一些评论者则把它理解成净化、狂喜，或带着神秘感的风景。",
+          "offset_start": 176,
+          "offset_end_exclusive": 245
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "恋人亲吻拥抱、净化狂喜、神秘风景都是可分开的读法。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A046",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-luna-web-3-U14",
+              "quote": "恋人躲在贡多拉里的亲吻与拥抱；另一些评论者则把它理解成净化、狂喜，或带着神秘感的风景。"
+            }
+          ],
+          "lost_at_review": "恋人相近，净化与神秘风景没有作为替代读法露出。"
+        }
+      ],
+      "problem": "主项标题保留了亲吻拥抱，但lost只强调净化和神秘风景未见，把耳语当恋人分支“相近”。耳语／肩贴肩与躲在贡多拉里亲吻拥抱的身体动作不同；还应区分净化与狂喜，不让斜线式合称抹掉前者过程感。",
+      "proposed_action": "修订各分支覆盖判断：亲密耳语仅为相近背景，亲吻拥抱动作仍遗漏；可拆子项以确保同级展示。",
+      "proposed_meaning": "秘密贡多拉中的亲吻与拥抱，是区别于耳语的身体亲密读法；净化、狂喜、神秘风景另列。",
+      "proposed_current_coverage": "partial",
+      "current_spans": [
+        {
+          "segment": "S02",
+          "quote": "像两个紧挨着的人在耳语：肩膀贴着肩膀，声音放得极低，只要身边的人听见就够了。"
+        }
+      ],
+      "repair_candidate": "一种听法是恋人躲在贡多拉里亲吻和拥抱；也可以分别听成净化、狂喜，或带神秘感的风景。",
+      "scope_and_fact_boundary": "保留解释史中的读法，不确认Tausig史料，也不推定肖邦剧情。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-19",
+      "type": "semantic_overstatement",
+      "title": "时间不受内心影响继续前进，不必推出两者不同步",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-int-1-U13",
+          "quote": "**无论内心发生什么，外部的时间始终在往前走。**\n\n人在温柔地回忆时，它还在摇晃；人在犹疑、挣扎时，它还在摇晃；当情感几乎达到无法承受的程度时，那种流动也没有真正停止。",
+          "offset_start": 73,
+          "offset_end_exclusive": 158
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "外部时间持续前进，与内心变化不同步。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A020",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt6w-int-1-U13",
+              "quote": "无论内心发生什么，外部的时间始终在往前走。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "原文说无论内心处于哪种状态外部时间都继续走；账本添加“与内心变化不同步”。持续性不自动意味着速度或相位不同步，避免二次审计再次添关系。",
+      "proposed_action": "收窄意义表述，不增项，不删除时间这一侧面。",
+      "proposed_meaning": "无论人在回忆、犹疑、挣扎还是感情强烈时，外部时间仍持续前进。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "无论内心发生什么，外部的时间始终往前走。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-20",
+      "type": "omitted_relation",
+      "title": "可将感情完整活到底的范围不能只剩圆满与阴影",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-web-2-U17",
+          "quote": "一个人终于敢把一种感情完整地活到底——包括它的甜美、欲望、不确定、失控、狂喜，以及意识到这一切终究不能永久停留的疼痛——然后仍然接受它。",
+          "offset_start": 238,
+          "offset_end_exclusive": 306
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "越圆满阴影越清楚，但阴影不取消圆满。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A051",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U17",
+              "quote": "越接近圆满，阴影反而越清楚；而阴影并没有取消圆满。"
+            }
+          ],
+          "lost_at_review": "同时热烈和刺有；圆满与阴影的相互关系只部分。"
+        },
+        {
+          "meaning_label_at_review": "同一感情被靠近、回避、沉溺、承认后承担，安定经历过一切才可能。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A047",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "同一种很私密的感情，被一次次靠近、回避、沉溺、重新承认，最后才被完整地承担起来。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "一种经历过这一切以后才可能有的安定。"
+            }
+          ],
+          "lost_at_review": "沉溺与坦白局部有；回避、承担以及安定来源没有完整。"
+        },
+        {
+          "meaning_label_at_review": "同一感情以不同心理距离被经历：端详、沉入、失体面、不抵抗、清醒接受。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A061",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "同一种深厚的感情，被人以不同的心理距离经历了一遍。"
+            },
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "最开始，人还能端详它；后来开始沉进去；再后来几乎无法维持体面；然后突然不再抵抗；最后，激情并没有被“解决”，而是变成了一种更宽、更清醒的接受。"
+            }
+          ],
+          "lost_at_review": "沉入有；端详到清醒接受的心理距离转变未全。"
+        }
+      ],
+      "problem": "该UID仅记录圆满与阴影。其他大轨迹已记录靠近回避沉溺承担，但此句明确把欲望、不确定、失控和最终必逝之痛纳入“完整地活到底后仍接受”的承担范围；不能以轨迹大体相同就无说明地归为复述。",
+      "proposed_action": "优先expand已有“完整承担”项，列明承担范围尤其失控和不能永久停留的疼痛；不要另增一条泛泛接受幸福。",
+      "proposed_meaning": "完整经历一份感情，也包括欲望、不确定、失控与不能永久保留的疼痛，经历之后仍接受。",
+      "proposed_current_coverage": "partial",
+      "current_spans": [
+        {
+          "segment": "S07",
+          "quote": "你知道自己被卷进去，却暂时不想出来。"
+        },
+        {
+          "segment": "S12",
+          "quote": "快乐开始有一点疼；想笑和想哭还分不开，歌也还没有把那口气完全放下。"
+        }
+      ],
+      "repair_candidate": "把这份感情活到底，也包括它的欲望、失控和留不住的疼，然后仍然接受它。",
+      "scope_and_fact_boundary": "GLOBAL，不自动下放到某一S。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-21",
+      "type": "pending_scope_too_broad",
+      "title": "清醒燃烧的心理意义不必与错误小节一起全部pending",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-2-U11",
+          "quote": "这是看透后的选择：知道船会沉、身体会坏、美会消失，但我此刻，选择用最大的力气去肯定。因为失去过，所以这份热烈里有重量，不是傻乐，是清醒的燃烧。",
+          "offset_start": 138,
+          "offset_end_exclusive": 209
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "清醒的燃烧：知道失去仍用最大力量肯定，因失去而有重量。",
+          "status_at_review": "pending",
+          "locator_id_snapshot_only": "G-A069",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-2-U11",
+              "quote": "因为失去过，所以这份热烈里有重量，不是傻乐，是清醒的燃烧。"
+            }
+          ],
+          "lost_at_review": "错误小节和生平推断不能作依据；可独立保留的心理读法未进入现稿。"
+        }
+      ],
+      "problem": "主项明确说可独立保留心理读法却用一个pending覆盖全项。事实或小节定位待核与文本里的体验已经可读，应分开状态，否则容易继续遮蔽“因失去过而有重量”。这里不是建议把错误范围当真。",
+      "proposed_action": "将主观意义在现稿的覆盖登记为omitted/partial，定位和生平依赖单独pending；G-A068、G-A070如需同样处理，保留它们的局部定位待核。",
+      "proposed_meaning": "失去过使热烈有重量，明知会失去仍选择尽力肯定。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "因为失去过，这份热烈才有重量；明知美会消失，仍愿意尽力肯定它。",
+      "scope_and_fact_boundary": "114–138定位和生平判断仍pending；本建议只拆状态，不给正确小节。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-22",
+      "type": "independent_facet_not_generic_metadata",
+      "title": "心理潮汐的时间尺度与无固定剧情应区分",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "uid": "SRC-muse-int-3-U01",
+          "quote": "这首《船歌》不是讲一个故事，更像是记录一个人一下午到黄昏的心理潮汐。",
+          "offset_start": 0,
+          "offset_end_exclusive": 34
+        },
+        {
+          "uid": "SRC-muse-int-2-U01",
+          "quote": "肖邦《船歌》Op.60，不要把它听成一个故事，听成一个人在一下午里，情绪自己转了几道弯。",
+          "offset_start": 0,
+          "offset_end_exclusive": 44
+        }
+      ],
+      "existing_entries": [],
+      "problem": "两UID均metadata。不要当固定故事确为方法说明；但“一下午到黄昏的心理潮汐”含时段和潮汐式往复，“情绪自己转弯”含无外部事件驱动的自发性。是否作为全曲框架单列可由主线程决定，不能说整段只剩138小节错误与方法。",
+      "proposed_action": "候选补项，建议保留为GLOBAL体验框架或明确与已有内心天气同义关系；不据此规定真实时长和剧情，且不强加计数。",
+      "proposed_meaning": "心理变化可以像一下午到黄昏的潮汐，情绪自己转弯，而非外部事件推进故事。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "像一个人从下午到黄昏的心理潮汐，情绪自己转过几道弯。",
+      "scope_and_fact_boundary": "138小节事实继续隔离；下午到黄昏是比喻时间，不是作品演奏时长。",
+      "counting_note": "这是补审问题条目，不等于一个新增唯一意义；split或expand须更新原项后再计数。"
+    },
+    {
+      "id": "GSP-23",
+      "type": "omitted_distinct_experience",
+      "title": "不肯直接哭的表达选择，不等于笑疼并存",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-muse-web-2-U01",
+          "quote": "很多东西正在失去，又不肯直接哭。所以整首曲子的情绪都不是单色的，都是**一边笑着，一边疼**。",
+          "offset_start": 110,
+          "offset_end_exclusive": 157
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "自己造梦，再亲手叫醒；醒来具有主动性。",
+          "status_at_review": "altered",
+          "locator_id_snapshot_only": "G-A039",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-web-2-U01",
+              "quote": "给自己造的一个8分钟的梦：进去，变暖，飞起来，然后亲手把梦叫醒。"
+            }
+          ],
+          "lost_at_review": "突然醒来替代亲手叫醒的主动动作。"
+        },
+        {
+          "meaning_label_at_review": "想放松却不能全放松，陶醉同时含心酸与警觉。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A005",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "想放松，又不敢全放松；想快乐，又知道快乐留不住。"
+            },
+            {
+              "uid": "SRC-muse-int-1-U01",
+              "quote": "温柔里掺着警觉，陶醉里掺着心酸。"
+            }
+          ],
+          "lost_at_review": "局部坐不住保留；全曲警觉与心酸并存未明确。"
+        },
+        {
+          "meaning_label_at_review": "成年人的丰盛感：哀伤不否定幸福，强欲望接受无法占有时间。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A063",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U12",
+              "quote": "成年人的**丰盛感**——幸福里面有哀伤，哀伤里面又没有否定幸福；欲望非常强烈，却又开始接受自己不能占有时间。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "亲手叫醒已记；笑疼可与既有并存项关联，但“不肯直接哭”是对表达方式的主动保留，不能被心酸警觉或丰盛感代替。",
+      "proposed_action": "补独立facet或为近似旧项列明差异；不以大主题相近直接视作同义。",
+      "proposed_meaning": "面对正在失去的东西，不肯直接哭，笑与疼由这种表达选择同时显现。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "许多东西正在失去，却不肯直接哭出来；笑着的同时，也疼着。",
+      "scope_and_fact_boundary": "GLOBAL来源读法；不自动指定小节，不外部确认来源归因。",
+      "counting_note": "补审问题条目不等于新增唯一意义；与局部账本交叉后再计数。"
+    },
+    {
+      "id": "GSP-24",
+      "type": "omitted_distinct_experience",
+      "title": "具体的歌唱转入不断变化的白日梦",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt6w-web-2-U16",
+          "quote": "帮助理解音乐怎样把人从具体的歌唱带入不断变化的白日梦。",
+          "offset_start": 795,
+          "offset_end_exclusive": 822
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "同一感情以不同心理距离被经历：端详、沉入、失体面、不抵抗、清醒接受。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A061",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "同一种深厚的感情，被人以不同的心理距离经历了一遍。"
+            },
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "最开始，人还能端详它；后来开始沉进去；再后来几乎无法维持体面；然后突然不再抵抗；最后，激情并没有被“解决”，而是变成了一种更宽、更清醒的接受。"
+            }
+          ],
+          "lost_at_review": "沉入有；端详到清醒接受的心理距离转变未全。"
+        },
+        {
+          "meaning_label_at_review": "同一感情被靠近、回避、沉溺、承认后承担，安定经历过一切才可能。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A047",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "同一种很私密的感情，被一次次靠近、回避、沉溺、重新承认，最后才被完整地承担起来。"
+            },
+            {
+              "uid": "SRC-gpt56w-web-2-U01",
+              "quote": "一种经历过这一切以后才可能有的安定。"
+            }
+          ],
+          "lost_at_review": "沉溺与坦白局部有；回避、承担以及安定来源没有完整。"
+        },
+        {
+          "meaning_label_at_review": "精神避难所与夏夜爱情幻梦。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A028",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gflash-web-1-U01",
+              "quote": "金色的精神避难所"
+            },
+            {
+              "uid": "SRC-gflash-web-1-U01",
+              "quote": "一场关于地中海夏夜与炽热爱情的终极幻梦"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "参考资料说明中这句是听觉注意对象的迁移；心理距离、完整承担、金色避难所没有保住“具体的歌”逐渐退为梦的体验。不能因它位于书目段就抹掉。",
+      "proposed_action": "补独立facet或为近似旧项列明差异；不以大主题相近直接视作同义。",
+      "proposed_meaning": "聆听由具体的歌唱带入不断变化的白日梦。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "起初还能听着一支具体的歌，后来却被它带进不断变化的白日梦。",
+      "scope_and_fact_boundary": "GLOBAL来源读法；不自动指定小节，不外部确认来源归因。",
+      "counting_note": "补审问题条目不等于新增唯一意义；与局部账本交叉后再计数。"
+    },
+    {
+      "id": "GSP-25",
+      "type": "omitted_distinct_experience",
+      "title": "把经历收回体内，不只是清醒地收住",
+      "confidence": "high",
+      "evidence": [
+        {
+          "uid": "SRC-gpt56w-int-3-U13",
+          "quote": "→ 快乐与痛苦最终融成同一种极端的生命感  \n→ 把这份经历收回自己体内。",
+          "offset_start": 178,
+          "offset_end_exclusive": 215
+        }
+      ],
+      "existing_entries": [
+        {
+          "meaning_label_at_review": "从远处观察感情，发现理性不能解决它。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A015",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-3-U13",
+              "quote": "→ 暂时学会从远处看自己的感情  \n→ 发现理性并不能真正解决它"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "不再要求保证才获得巨大自由。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A016",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-3-U13",
+              "quote": "→ 接受它没有保证  \n→ 因为不再要求保证，反而获得巨大的自由"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        },
+        {
+          "meaning_label_at_review": "同一感情以不同心理距离被经历：端详、沉入、失体面、不抵抗、清醒接受。",
+          "status_at_review": "partial",
+          "locator_id_snapshot_only": "G-A061",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "同一种深厚的感情，被人以不同的心理距离经历了一遍。"
+            },
+            {
+              "uid": "SRC-gpt56w-int-r1-U01",
+              "quote": "最开始，人还能端详它；后来开始沉进去；再后来几乎无法维持体面；然后突然不再抵抗；最后，激情并没有被“解决”，而是变成了一种更宽、更清醒的接受。"
+            }
+          ],
+          "lost_at_review": "沉入有；端详到清醒接受的心理距离转变未全。"
+        },
+        {
+          "meaning_label_at_review": "最后平静来自能容纳幸福和失去可能，矛盾仍在。",
+          "status_at_review": "omitted",
+          "locator_id_snapshot_only": "G-A066",
+          "evidence_at_review": [
+            {
+              "uid": "SRC-gpt56w-web-r1-U12",
+              "quote": "最后的平静，不是因为矛盾消失了，而是因为他已经能够同时容纳幸福和失去幸福的可能。"
+            }
+          ],
+          "lost_at_review": "全曲层面的这层意思没有明确表达。"
+        }
+      ],
+      "problem": "当前保留此UID的占有欲、理性、保证和瞬间重要，却没有尾端的收回体内。“接受”“自持”“让音乐结束”都没有经历从外显重新内化的方向。",
+      "proposed_action": "补独立facet或为近似旧项列明差异；不以大主题相近直接视作同义。",
+      "proposed_meaning": "快乐痛苦融成极端生命感后，把经历重新收回自己体内。",
+      "proposed_current_coverage": "omitted",
+      "current_spans": [],
+      "repair_candidate": "经历过快乐与痛苦混在一起的强度，最后把这一切收回自己体内。",
+      "scope_and_fact_boundary": "GLOBAL来源读法；不自动指定小节，不外部确认来源归因。",
+      "counting_note": "补审问题条目不等于新增唯一意义；与局部账本交叉后再计数。"
+    }
+  ],
+  "unit_second_pass_reviews": [
+    {
+      "uid": "SRC-gflash-int-1-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-03"
+      ],
+      "review_note": "复核出身体虚弱而感知敏锐的反差，见补项；传记不升级为事实。"
+    },
+    {
+      "uid": "SRC-gflash-int-1-U22",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "生命尊严、拒绝自怜和终结不抹金光已有登记，本遍未新增。"
+    },
+    {
+      "uid": "SRC-gflash-int-2-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-05"
+      ],
+      "review_note": "主动沉入温柔已记；感官丰度与不愿醒来需拆。"
+    },
+    {
+      "uid": "SRC-gflash-int-3-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-05"
+      ],
+      "review_note": "疲倦痛楚动因已记；不愿醒与另一白日梦分支区分。"
+    },
+    {
+      "uid": "SRC-muse-int-1-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-04"
+      ],
+      "review_note": "警觉心酸已记，硬撑外出看一眼水遗漏。"
+    },
+    {
+      "uid": "SRC-muse-int-2-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-22"
+      ],
+      "review_note": "138小节隔离；情绪自己转弯为框架候选，不强计数。"
+    },
+    {
+      "uid": "SRC-muse-int-2-U11",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-14",
+        "GSP-15",
+        "GSP-21"
+      ],
+      "review_note": "回看主题和燃烧已有；逃不掉后以玩笑盖焦虑、完整爱的能力另补，定位待核。"
+    },
+    {
+      "uid": "SRC-muse-int-3-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-22"
+      ],
+      "review_note": "心理潮汐时段框架可保留，138小节不采用。"
+    },
+    {
+      "uid": "SRC-muse-int-3-U09",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "好坏记忆俱闪、脚晃仍站住已记；未新增同义靠岸项。"
+    },
+    {
+      "uid": "SRC-luna-int-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "主要为边界是路标及画面非剧情的方法说明，本遍同意metadata。"
+    },
+    {
+      "uid": "SRC-luna-int-2-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-06"
+      ],
+      "review_note": "收回情绪与经过考验自持需分维度。"
+    },
+    {
+      "uid": "SRC-luna-int-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "甜味惆怅及不能留住已有，本遍无明确新增。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-2-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-06"
+      ],
+      "review_note": "新自持已记，与一般收回情绪不能简单同义。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-2-U13",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "脆弱、距离、时间、体面需要、深爱而放手均已分别登记。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "六种感受逐渐融合已记，本遍未再拆原文明确融合关系。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-3-U13",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-25"
+      ],
+      "review_note": "占有欲、理性、保证、瞬间重要已记；尾端收回体内的方向另补，需与局部账本交叉。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "不安未消除仍投入已记。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-1-U12",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-12"
+      ],
+      "review_note": "爱深与不能占有反馈已记；明亮听眷恋／不安听期待遗漏。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-1-U13",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-19"
+      ],
+      "review_note": "时间、摇晃双面、害怕热爱共存已记；时间不同步表述过强。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-2-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "安享与加深强度的矛盾已记。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-2-U10",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "承受幸福与脆弱、放弃战胜一切已记，未重复新增。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "对象可为生命或回不去时刻已记，不等于对象说不清。"
+    },
+    {
+      "uid": "SRC-gpt6w-int-3-U10",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-16"
+      ],
+      "review_note": "摇晃序列漏主动不维持平静的一步。"
+    },
+    {
+      "uid": "SRC-gflash-web-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "避难所、夏夜幻梦、撕扯提纯燃尽梦醒已有；具体金色／地中海可在原项distinctive_terms补，不另计。"
+    },
+    {
+      "uid": "SRC-gflash-web-1-U11",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "自由、拥抱、宿命已记；五步总线与局部重复需主线程交叉，未加新总数。"
+    },
+    {
+      "uid": "SRC-gflash-web-2-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "肉体眷恋和甜酸幻灭动因已记。"
+    },
+    {
+      "uid": "SRC-gflash-web-2-U08",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "不靠岸、悲剧金光已记；深秋傍晚可保原项具体词，不认作新的无关意义。"
+    },
+    {
+      "uid": "SRC-gflash-web-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "脱节到出窍已记；极乐岛屿与艺术造水域同族时仍宜保阳光微波词。"
+    },
+    {
+      "uid": "SRC-gflash-web-3-U08",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "艺术造无痛永恒水域、高贵解脱已记。"
+    },
+    {
+      "uid": "SRC-muse-web-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "再被水托住已记，整体路线未强当新唯一故事。"
+    },
+    {
+      "uid": "SRC-muse-web-2-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-23"
+      ],
+      "review_note": "亲手叫醒已记；补核发现不肯直接哭是表达动机，不能只回挂笑疼并存。"
+    },
+    {
+      "uid": "SRC-muse-web-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "平静心慌至越来越用力已有完整序列。"
+    },
+    {
+      "uid": "SRC-luna-web-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "歌唱与叙事压力已记；引用不作外部证明。"
+    },
+    {
+      "uid": "SRC-luna-web-1-U12",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "推进盖住诗意已记，与温暖歌唱强音不是同一条件。"
+    },
+    {
+      "uid": "SRC-luna-web-2-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "余温告别已记；秘密恋人和危险可与已有风暴读法交叉，未强增。"
+    },
+    {
+      "uid": "SRC-luna-web-2-U13",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "未失即怀念、叠加而非替换、回忆告白演法均已登记。"
+    },
+    {
+      "uid": "SRC-luna-web-3-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "安心歌唱与悬而未决已有；不声称所有压力同义。"
+    },
+    {
+      "uid": "SRC-luna-web-3-U14",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-18"
+      ],
+      "review_note": "替代读法已记，但耳语未保住亲吻拥抱动作。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-2-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "完整承担和歌唱戏剧压力已记，可补承担范围而不另造大轨迹。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-2-U16",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-17"
+      ],
+      "review_note": "听者记忆full过强；得到后如何承受及未完成期待已记。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-2-U17",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-20"
+      ],
+      "review_note": "阴影圆满已记；完整活到底包括失控等范围需补入承担项。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-3-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-09"
+      ],
+      "review_note": "无明确对象的渴望未由已有相近项保全。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "价值不因必逝被否定与已有肯定读法近似；未因挂接数字另造问题。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-1-U22",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "有限生命与仍信价值已记；结构性聆听建议不另计体验。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-1-U23",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-01",
+        "GSP-02"
+      ],
+      "review_note": "metadata实含温暖歌唱强音；时间光线安宁摘要为次级补项。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-2-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "总线与喜痛加深可关联已有项，解释史已记；未仅按链接编号指错。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-2-U15",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "伤害能力、牵挂及光暗同在已有。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-2-U16",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-10",
+        "GSP-24"
+      ],
+      "review_note": "不能永久拥有同时致幸福难过，不等于爱因有限而加深。 本遍补核：具体的歌唱转入不断变化的白日梦。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-3-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-11"
+      ],
+      "review_note": "热烈与悲剧不可简单归一的关系未记。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-3-U07",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "单句提纲已有，可作框架不夸成独立剧情证据。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-3-U18",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "不可重复、不可把握、真实重要及解释史已记。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-3-U19",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "感激等并存、103–110分歧已记；保留各具体分量不简化成喜痛。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-r1-U01",
+      "read_full": true,
+      "finding_ids": [],
+      "review_note": "不同心理距离已有，原文明确同一感情，不强拆成不同主体。"
+    },
+    {
+      "uid": "SRC-gpt56w-int-r1-U12",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-13"
+      ],
+      "review_note": "丰盛和内在空间已记；不必先消怕才有资格幸福未明确。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-r1-U01",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-07",
+        "GSP-08"
+      ],
+      "review_note": "甜蜜恐惧被引用未登记；同时肉体亲密超脱与解释名单分开。"
+    },
+    {
+      "uid": "SRC-gpt56w-web-r1-U12",
+      "read_full": true,
+      "finding_ids": [
+        "GSP-08"
+      ],
+      "review_note": "能容纳幸福及失去可能已记；解释名单勿覆盖同时性。"
+    }
+  ],
+  "metadata_review": [
+    {
+      "uid": "SRC-muse-int-2-U01",
+      "decision": "mixed_candidate",
+      "note": "方法和错误小节为metadata/待核；情绪自发转弯为中置信体验框架候选。"
+    },
+    {
+      "uid": "SRC-muse-int-3-U01",
+      "decision": "mixed_candidate",
+      "note": "下午到黄昏的心理潮汐为中置信体验框架候选。"
+    },
+    {
+      "uid": "SRC-luna-int-1-U01",
+      "decision": "metadata_reasonable",
+      "note": "本遍未找到超出边界路标与画面非剧情的方法说明的独特体验断言。"
+    },
+    {
+      "uid": "SRC-gpt6w-web-1-U23",
+      "decision": "must_split_metadata_and_experience",
+      "note": "强音温暖歌唱是高置信补项；时间光线安宁摘要中置信，不扩写因果。"
+    }
+  ],
+  "notes": [
+    "C01连接审计已同步修正：谱面节奏未建立、演奏摇摆听感、身体被水接住不是同一层级，不能自动判竞争。",
+    "定位主账本项目时优先用meaning_label_at_review和UID；编号仅是当前快照定位，未花时间修related数字。",
+    "主账本merges为空；本文件只给有证据的重点合并问题，并不声称已审全部潜在合并。"
+  ],
+  "write_scope": [
+    "D:\\musicclaude\\_bead_full_audit_20261017\\GLOBAL_SECOND_PASS.json"
+  ],
+  "input_stability_at_write": {
+    "audit_global_same_as_reviewed_snapshot": true,
+    "remainder_same_as_reviewed_snapshot": true
+  }
+}

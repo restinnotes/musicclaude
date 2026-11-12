@@ -1,0 +1,11 @@
+UNFINISHED (rule: same job 3x consecutive confirmed pre-submit failure -> keep evidence, skip, continue rerun)
+
+- job: B02:r02:gpt6w (model_requested=gpt-6-thinking)
+- attempts: 3, all confirmed_pre_submit_failure, phase=pre_submit, error_code=headless_native_result_rejected
+  1. results/trials/gpt6w/B02/r02.attempt01.meta.json (+ .stderr.txt / .raw.json)
+  2. results/trials/gpt6w/B02/r02.attempt02.meta.json (+ .stderr.txt / .raw.json)
+  3. results/trials/gpt6w/B02/r02.meta.json (+ .stderr.txt / .raw.json, current)
+- runner diagnosis: HEALTHY at each retry (gpt2 check ready:true/docker_ready:true; sibling
+  B02:r02:gpt56w succeeded on same runner). No runner repair needed.
+- action: NO further retry for B02:r02:gpt6w. Main rerun PRESERVEs this evidence and continues.
+- recorded by: implementation sub-agent, 2026-10-10

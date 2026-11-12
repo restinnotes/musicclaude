@@ -1,0 +1,85 @@
+{
+  "job_id": "S04_MUSE_relations_r1",
+  "status": "failed",
+  "started": "2026-10-17T19:39:13.346304+00:00",
+  "channel": "opencode",
+  "requested_model": "opencode2api/muse-spark-1.3-contributor-free#xhigh",
+  "manifest_sha256": "d1738e695247c25d58f431b7a6d6f789b9ad0760e64329fd3f52f6e0291b0777",
+  "runner_sha256": "84d7323ee2da0a867c1d42685cc1a945b531d9b55bee9728be499b86e7ccf248",
+  "prompt_source": "D:\\musicclaude\\_bead_rebuild_20261017\\inputs\\S04.txt",
+  "attachments": [],
+  "automatic_retry": false,
+  "automatic_fallback": false,
+  "exit_code": 1,
+  "submission_state": "child_started_remote_acceptance_unknown",
+  "errors": [
+    "child_nonzero_exit",
+    "opencode_error_event",
+    "opencode_no_text",
+    "opencode_text_not_closed",
+    "response_empty_or_below_explicit_minimum"
+  ],
+  "labels": {
+    "segment": "S04",
+    "method": "source_distinctions_relations",
+    "round": 1
+  },
+  "prompt_sha256": "4ef1a3b87e00f2ab1b61b77bc1989ac947416935f6cb7b2587475623a5bc44d6",
+  "prompt_bytes": 81189,
+  "prompt_characters": 42161,
+  "normalized_prompt_sha256": "70f1cfb5de3c80f079decf49c76444498a9440391c2f3931f6fa990542c1d45f",
+  "normalized_prompt_bytes": 80649,
+  "normalized_prompt_characters": 41621,
+  "native_body_limit_bytes": 65536,
+  "policy": {
+    "automatic_retry": false,
+    "automatic_fallback": false,
+    "new_session": true,
+    "tools": "deny",
+    "standalone": true,
+    "provider_timeout": false,
+    "effort": "xhigh",
+    "provider_configuration_sha256": "7f8257c997d1d3fa3fa9001ec42699d575c438f80776d63b3c9ba30faf39088c",
+    "process_config": {
+      "permission": "deny",
+      "provider": {
+        "opencode2api": {
+          "options": {
+            "timeout": false
+          }
+        }
+      }
+    },
+    "upstream_safety_settings": "inherited_not_independently_verified",
+    "provider_internal_retry_behavior": "not_verified_runner_never_retries"
+  },
+  "observed": {
+    "events": [
+      {
+        "type": "error",
+        "timestamp": 1792265957130,
+        "sessionID": "ses_eb49fdc99ffeStst5jN6ZtDxwt",
+        "error": {
+          "type": "provider.invalid-request",
+          "message": "Model muse-spark-1.3-contributor-free has been deprecated.",
+          "status": 410,
+          "response": {
+            "body": "{\"type\":\"error\",\"error\":{\"type\":\"ModelDeprecated\",\"message\":\"Model muse-spark-1.3-contributor-free has been deprecated.\"},\"metadata\":{\"model\":\"muse-spark-1.3-contributor-free\"}}"
+          }
+        }
+      }
+    ],
+    "tool_events": [],
+    "completion_basis": "CLI_exit_0_and_text_time_end",
+    "server_completion_verified": false,
+    "actual_server_model_verified": false
+  },
+  "response_chars": 0,
+  "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout.raw_sha256": "80ba746ea9a0b52140c79d36bd8b6ea23497fc4d3290717c986c700cb15929a2",
+  "stdout.raw_bytes": 437,
+  "stderr.raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr.raw_bytes": 0,
+  "ended": "2026-10-17T19:39:17.821204+00:00",
+  "seconds": 4.484
+}

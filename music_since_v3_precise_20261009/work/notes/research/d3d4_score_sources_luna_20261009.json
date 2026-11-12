@@ -1,0 +1,199 @@
+{
+  "research_id": "d3d4_score_sources_luna_20261009",
+  "date": "2026-10-09",
+  "role": "independent score/source research sub-agent",
+  "scope": {
+    "works": [
+      {"work": "Chopin Barcarolle in F-sharp major, Op. 60", "measures": "16-35", "priority": "primary; focus 24-27"},
+      {"work": "Chopin Ballade No. 4 in F minor, Op. 52", "measures": "191-203"},
+      {"work": "Chopin Polonaise-Fantaisie, Op. 61", "measures": "24"}
+    ],
+    "stage": "Step A factual candidates only",
+    "allowed_fact_types": ["phrase", "voice", "texture", "rhythm", "register", "dynamics", "harmonic direction"],
+    "audio_listened": false,
+    "affect_boundary_decision": false,
+    "segmentation_boundary_proposed": false,
+    "H4_H5_Center_used": false,
+    "main_terminal_gate_or_real_music_hold_cleared": false
+  },
+  "evidence_labels": {
+    "web-verified": "Source page or indexed text was opened and checked.",
+    "score-example-verified": "Author score-example locator and stated measure span were checked; this alone does not establish a fresh note transcription.",
+    "full-score-verified": "Primary facsimile notation was visually inspected for the stated fact, except where explicitly limited to a page locator.",
+    "audio-unverified": "No audio was opened or listened to."
+  },
+  "claims": [
+    {
+      "id": "op60-pedal-return",
+      "work": "Op. 60",
+      "measures": "20-24",
+      "claim": "Kopp describes an extended A-sharp pedal in mm. 20-22 and a direct return to F-sharp at m. 24 after an A-sharp major triad.",
+      "status": ["web-verified"],
+      "source_ids": ["kopp-article", "cfeo-op60-first-french"],
+      "limit": "The harmonic wording is Kopp's analysis, not a fresh reduction."
+    },
+    {
+      "id": "op60-melody-retreat",
+      "work": "Op. 60",
+      "measures": "16-23",
+      "claim": "The wording that the main melody temporarily retreats is not established as literal disappearance/rest in checked Kopp prose. PTNA labels mm. 17-23 an Interlude as secondary section analysis.",
+      "status": ["web-verified"],
+      "source_ids": ["kopp-article", "ptna-op60"],
+      "limit": "No bar-by-bar claim of melody absence is made."
+    },
+    {
+      "id": "op60-theme-return-texture",
+      "work": "Op. 60",
+      "measures": "24-35",
+      "claim": "Kopp says theme A/A-prime returns at m. 24 with double trills, melodic diminution and textural amplification; Example 5 is labelled mm. 23-35.",
+      "status": ["web-verified", "score-example-verified"],
+      "source_ids": ["kopp-article", "kopp-examples", "cfeo-op60-first-french"],
+      "limit": "No separate event or boundary is inferred at m. 25, 26 or 27."
+    },
+    {
+      "id": "op60-mm24-27-cuts",
+      "work": "Op. 60",
+      "measures": "24-27",
+      "claim": "The sources support a return at m. 24 and a longer span, not multiple independently established segmentation boundaries within mm. 24-27.",
+      "status": ["web-verified", "score-example-verified"],
+      "source_ids": ["kopp-article", "kopp-examples"],
+      "limit": "No cut point is proposed."
+    },
+    {
+      "id": "op60-m34-rallent",
+      "work": "Op. 60",
+      "measures": "34",
+      "claim": "The 1846 French First Edition p. 4 visibly prints rallent. in the system containing m. 34. PTNA says the indication begins on beat 2. Kopp does not mention it.",
+      "status": ["full-score-verified", "web-verified"],
+      "source_ids": ["cfeo-op60-first-french", "ptna-op60"],
+      "limit": "The primary score mark is rallent.; this review found no basis for substituting rit."
+    },
+    {
+      "id": "op60-m35-chromatic-change",
+      "work": "Op. 60",
+      "measures": "35",
+      "claim": "Kopp says the inner-voice A-sharp 4 becomes A-natural on its fourth appearance at m. 35.",
+      "status": ["web-verified"],
+      "source_ids": ["kopp-article", "cfeo-op60-first-french"],
+      "limit": "No affect or boundary interpretation is made."
+    },
+    {
+      "id": "op52-texture-page-candidate",
+      "work": "Op. 52",
+      "measures": "191-203",
+      "claim": "CFEO maps mm. 185-202 to p. 11 and mm. 203-222 to p. 12. Inspected p. 11 shows upper-staff chord attacks over a running left-hand sixteenth-note arpeggiation and later more continuous figuration.",
+      "status": ["web-verified", "full-score-verified"],
+      "source_ids": ["cfeo-op52-first-french"],
+      "limit": "Page-level observation only; no feature is assigned to a specific bar. P. 12 was not legible and m. 203 notes were not read."
+    },
+    {
+      "id": "op61-m24-locator",
+      "work": "Op. 61",
+      "measures": "24",
+      "claim": "CFEO identifies French First Edition p. 2 as mm. 20-43, which includes m. 24.",
+      "status": ["web-verified"],
+      "source_ids": ["cfeo-op61-first-french"],
+      "limit": "The score image rendered blank/unsupported; notation at m. 24 is not full-score-verified. PTNA's section-A-at-m.24 statement is secondary only."
+    }
+  ],
+  "sources": [
+    {
+      "id": "kopp-article",
+      "type": "author article",
+      "title": "On Performing Chopin's Barcarolle",
+      "author": "David Kopp",
+      "publication": "Music Theory Online 20(4), December 2014",
+      "exact_url": "https://www.mtosmt.org/issues/mto.14.20.4/mto.14.20.4.kopp.html",
+      "checked_location": "paragraphs 16-18, especially 16-17",
+      "supports": ["Op. 60 mm. 20-22 pedal and m. 24 return", "theme return and texture", "m. 35 chromatic change"],
+      "does_not_support": ["m. 34 rallentando", "literal melody withdrawal in mm. 16-23"],
+      "short_quote_location": "Markdown source register"
+    },
+    {
+      "id": "kopp-examples",
+      "type": "author score-example PDF",
+      "title": "Kopp score examples PDF",
+      "exact_url": "https://www.mtosmt.org/issues/mto.14.20.4/kopp_examples.pdf",
+      "checked_location": "PDF p. 4, Example 5, theme A-prime, measures 23-35",
+      "source_edition_note": "Example credits Henle Urtext, E. Herttrich ed. (1978), a commercial modern edition.",
+      "asset_saved": false
+    },
+    {
+      "id": "ptna-op60",
+      "type": "secondary structure and practice commentary",
+      "title": "PTNA Chopin Barcarolle Op. 60",
+      "exact_url": "https://enc.piano.or.jp/en/musics/543",
+      "checked_location": "structure table lines 62-70; practice note lines 117-119",
+      "notes": "PTNA notes automatic English translation not reviewed by the original essay author. Practice note attributed to Kazurou Ooi, updated 2018. Page is commentary/catalogue, not the primary score image.",
+      "short_quote_location": "Markdown source register"
+    },
+    {
+      "id": "cfeo-op60-first-french",
+      "type": "public-domain first-edition facsimile",
+      "title": "Chopin's First Editions Online, Barcarolle Op. 60, 60-1-BR, French First Edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/barcarolle-opus-60/",
+      "impression_url": "https://chopinonline.ac.uk/aco/catalogue/barcarolle-opus-60/601-br/",
+      "record_url": "https://chopinonline.ac.uk/cfeo/browse/acview/b83b4b908573df94e513f900c19448e9/",
+      "page_views": [
+        {"page": 2, "measures": "14-23", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66643/"},
+        {"page": 3, "measures": "24-33", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66644/"},
+        {"page": 4, "measures": "34-45", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/66645/"}
+      ],
+      "source_institution": "British Library",
+      "bar_numbering": "Continuous numbering assigned by CFEO; not printed in the nineteenth-century score.",
+      "edition_public_domain_cross_check": "https://imslp.org/wiki/Barcarolle_Op.60_(Chopin,_Frederic)"
+    },
+    {
+      "id": "uconn-author-pdf",
+      "type": "author-hosted PDF requested for source check",
+      "exact_url": "https://musiclab.media.uconn.edu/wp-content/uploads/sites/290/2024/11/Memory-and-Expression-11-18-24.pdf",
+      "asset_path": "research_assets/d3d4_20261009_luna/uconn_author_pdf/Memory-and-Expression-11-18-24.pdf",
+      "use": "Opened and archived for provenance; not used for score facts or psychological interpretation.",
+      "publisher_metadata_cross_check": "https://doi.org/10.1177/10298649241241405",
+      "metadata_note": "SAGE identifies Musicae Scientiae 28(4), first online 2024-04-27; extracted PDF citation renders 24(4), so publisher record is used."
+    },
+    {
+      "id": "cfeo-op52-first-french",
+      "type": "public-domain first-edition facsimile",
+      "title": "Chopin's First Editions Online, Ballade Op. 52, 52-1-Sm, French First Edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/ballade-opus-52/",
+      "impression_url": "https://chopinonline.ac.uk/aco/catalogue/ballade-opus-52/521-sm/",
+      "record_url": "https://chopinonline.ac.uk/cfeo/browse/acview/57824927ad2172a9c09a90b5ee6750be/",
+      "page_views": [
+        {"page": 11, "measures": "185-202", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74780/", "image_checked": true},
+        {"page": 12, "measures": "203-222", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/74781/", "image_checked": false}
+      ],
+      "edition_public_domain_cross_check": "https://imslp.org/wiki/Ballade_No.4,_Op.52_(Chopin,_Frederic)"
+    },
+    {
+      "id": "cfeo-op61-first-french",
+      "type": "public-domain first-edition facsimile locator",
+      "title": "Chopin's First Editions Online, Polonaise-Fantaisie Op. 61, 61-1-BR, French First Edition",
+      "catalogue_url": "https://chopinonline.ac.uk/aco/catalogue/polonaise-fantasy-opus-61/",
+      "impression_url": "https://chopinonline.ac.uk/aco/catalogue/polonaise-fantasy-opus-61/611-br/",
+      "record_url": "https://chopinonline.ac.uk/cfeo/browse/acview/c6999061977dd3cd7be3afde0add4c91/",
+      "page_view": {"page": 2, "measures": "20-43", "exact_url": "https://chopinonline.ac.uk/cfeo/browse/pageview/61907/", "image_checked": false},
+      "source_institution": "University of Chicago Library",
+      "secondary_cross_check": "https://enc.piano.or.jp/en/musics/523",
+      "edition_public_domain_cross_checks": [
+        "https://imslp.org/wiki/Polonaise-Fantasie,_Op.61_(Chopin,_Frederic)",
+        "https://commons.wikimedia.org/wiki/File:Polonaise-fantaisie,_Op.61_(IA_imslp-op61-chopin-frdric).pdf"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "research_assets/d3d4_20261009_luna/uconn_author_pdf/Memory-and-Expression-11-18-24.pdf",
+      "bytes": 2200228,
+      "sha256": "D2364894B6BA53909795419D8E0DBC2DB0CD83599A5C179748B8D60830CDD1FB",
+      "source_url": "https://musiclab.media.uconn.edu/wp-content/uploads/sites/290/2024/11/Memory-and-Expression-11-18-24.pdf"
+    }
+  ],
+  "limitations": [
+    "No audio opened or listened to; sound-level hypotheses remain audio-unverified.",
+    "Op. 60 primary marking is rallent.; beat-2 onset is supported here by PTNA commentary.",
+    "Op. 52 p. 12 image was not legible; notes at m. 203 were not independently read.",
+    "Op. 61 p. 2 image was blank/unsupported; notes at m. 24 remain unverified.",
+    "This independent-source research route is not a music sample and does not clear the main terminal gate or real-music hold."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "archive",
+  "fully_read_quick": {
+    "tag": "r56paired",
+    "base": "r54weave",
+    "complete": 4,
+    "pending": [],
+    "wins": 3,
+    "no_regress": 1,
+    "net_sums": {
+      "alone": 14,
+      "lean": 16,
+      "plain": 9,
+      "cover": 26
+    },
+    "pass": true,
+    "cannot_reach_3_wins": false,
+    "rows": [
+      {
+        "rid": "v6b3_op60_g6_r56paired_vsr54weave_newX",
+        "output_sha256": "bf31dee8f637aefa58efe9fbe34b37acd2b30812b5fa8353f4fa6486f83b1460",
+        "input_sha256": "8b85b330b7e126a59f3609277d809f4585110bdb6b6f9fe3b0c103634cee80ab",
+        "w": "op60",
+        "j": "g6",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 11,
+          "lean": -4,
+          "plain": 5,
+          "cover": 10
+        }
+      },
+      {
+        "rid": "v6b3_op60_g56_r56paired_vsr54weave_newY",
+        "output_sha256": "04754700db5d88529b7c380e98414bbb3d5c9003e680188864b89cd7daaeaaa1",
+        "input_sha256": "43285fcbd6a52fb811796cb70551aa3b99ab10ab4f2ee08d7d52618db9f914bc",
+        "w": "op60",
+        "j": "g56",
+        "seat": "newY",
+        "new_win": true,
+        "no_regress": true,
+        "net": {
+          "alone": 4,
+          "lean": 8,
+          "plain": 6,
+          "cover": 10
+        }
+      },
+      {
+        "rid": "v6b3_op61_g6_r56paired_vsr54weave_newY",
+        "output_sha256": "e4a1ffa245af1f36303b2c6030add2cea761c55a05b9dfa96aee91dbb0387dc3",
+        "input_sha256": "f4e6878380da0eb712671e888145f981fe935afdd85b19aeae815f18774dd29d",
+        "w": "op61",
+        "j": "g6",
+        "seat": "newY",
+        "new_win": false,
+        "no_regress": false,
+        "net": {
+          "alone": -2,
+          "lean": 7,
+          "plain": 1,
+          "cover": 3
+        }
+      },
+      {
+        "rid": "v6b3_op61_g56_r56paired_vsr54weave_newX",
+        "output_sha256": "aa564f0b27b847419584663cb4fb111973e6bab59b864ff07df85c5f71037210",
+        "input_sha256": "dbaf5af19a30089ba40f203bef814d198c309cd789d4e820c5dce4e6d4093de3",
+        "w": "op61",
+        "j": "g56",
+        "seat": "newX",
+        "new_win": true,
+        "no_regress": false,
+        "net": {
+          "alone": 1,
+          "lean": 5,
+          "plain": -3,
+          "cover": 3
+        }
+      }
+    ]
+  },
+  "reason": "Original quick gate passed. Original final-eight no-regression threshold is mathematically impossible: only 1 of first 4 is no regression; at most 5/8, below 6/8. Archive without purchasing known-impossible continuation, not an added quick threshold.",
+  "original_final_gate_upper_bound": {
+    "observed_no_regress": 1,
+    "remaining": 4,
+    "max_possible": 5,
+    "required": 6
+  },
+  "all_already_submitted_reviews_collected": true,
+  "floors": "not_requested_after_known_failure",
+  "DAG_change": false,
+  "actual_comparison_base": "r54weave",
+  "accepted_mainline": "r54weave"
+}

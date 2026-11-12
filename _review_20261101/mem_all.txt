@@ -1,0 +1,1330 @@
+########## MEMORY.md
+- [CLI invocation](music-run-cli-invocation.md) — tested long-input calls for luna/agy/opencode
+- [No self candidate](no-self-candidate.md) — orchestrator must not generate content as a candidate
+- [Overview page style](overview-page-style.md) — plain-Chinese prompt-evolution page, Gemini summarizes, script computes facts
+- [Run method](music-run-method.md) — pick models only on frozen prompts; multi-model with attribution; free to add layers under the constitution
+- [Reply in Chinese](reply-in-chinese.md) — always Chinese, incl. tables, wrap-up box, buttons; no English sentences (10-27 repeated slip)
+- [Baseline anchor](baseline-anchor.md) — always blind-compare synthesis against original V2A Gemini output
+- [opencode2api deploy watchdog](opencode2api-deploy-watchdog.md) — redeploy must clear WARP watchdog seen list or 429s never rotate
+- [Stop when conclusive](stop-when-conclusive.md) — Gemini quota is plentiful; spend on anything possibly meaningful, skip only clearly useless re-measurement
+- [Style matters](style-matters-for-model-choice.md) — model choice weighs language style too; Sol/Luna write abstractly; word counts are not evidence
+- [Drama is not a flaw](drama-not-a-flaw.md) — dramatic/assertive/single-story writing never penalized; say so in every review prompt
+- [GPT-5.6 web route](gpt56-web-route.md) — gpt-5-6-thinking max via safechain; cup-probe degradation rule; campaign run31
+- [Luna research delegation](luna-research-delegation.md) — web research/asset sourcing/imagegen go to Luna Max via codex exec (workspace-write+network)
+- [Zip per round, no index](zip-per-round-no-index.md) — 10-03: stop updating index.html; zip each finished round into Downloads
+- [Notify only key events](notify-only-key-events.md) — 10-05: no per-progress messages; only failures/completions/conclusions
+- [GPT-5.6w paused](gpt56w-paused-20261005.md) — 10-05 pause lifted 10-06; Sol replaced by 5.6, no new Sol calls
+- [Sol dev agent + Opus subagents](dev-agent-sol-and-opus-subagents.md) — 10-09: Opus REVOKED (no Opus subagents or opus calls); Sol dev revoked 10-06; do dev yourself
+- [Self-judging OK](self-judging-ok.md) — 10-09: generators may judge themselves; full panel gpt56w/gpt6w/luna/gemini, report per judge
+- [Segmentation by Thread](segmentation-by-thread.md) — SUPERSEDED: segments from published structure (seg.py), beads from A sources; neither uses Center
+- [Final product is video](final-product-is-video.md) — 10-14: video, no expand/recap UI; "two chains" = beads (Affect) and line (Thread)
+- [gpt2 admission env](gpt2-admission-env.md) — 10-13: pre_submit instant failure = low RAM/init lock; MUSIC_GPT2_PSS=1280 + MUSIC_RESEARCH_COMMIT_AWARE_ADMISSION=1, wait-retry
+- [gpt3 Web CLI](gpt3-web-cli.md) — 10-18: GPT Web calls go through `gpt3` (PowerShell); `gpt3 help` for usage
+- [No Muse at all](no-muse.md) — 10-18: never call Muse, and do not use Muse historical materials either
+- [Thread prompt evolution 10-20](thread-prompt-evolution-20261020.md) — result overturned by user ranking; keep seg.py + infra only
+- [Beads not edited for music facts](beads-not-edited-for-music-facts.md) — 10-20: bead music slips are not key; never rewrite beads to fix them
+- [Thread taste calibration](thread-taste-calibration.md) — 10-20: invented plot / bead-copying = wrong; B0≈P0+D3 but neither endorsed; judge myself too
+- [Thread staging](thread-staging.md) — 10-20: full Thread first, no length cap; compress/select and bead integration are later steps
+- [No anonymizing for user](no-anonymizing-for-user.md) — 10-20: blind samples only for agent judges; give the user labeled samples
+- [Experiment autonomy](experiment-autonomy.md) — 10-20: experiment freely and boldly without asking; ignore quota
+- [Thread needs own logic](thread-needs-own-logic.md) — 10-21: Thread must explain why-now with its own logic (like B0); beads separate, interleave verbatim excerpts only
+- [Thread node sees no beads](thread-node-no-beads.md) — 10-21: main DAG Thread gets zero bead info (no bead-derived Center); beads only at align/assemble
+- [Self-driven, not music-driven](thread-self-driven-not-music-driven.md) — 10-21: Thread turns caused by prior inner experience, never by music events; no discrete per-segment openings; bar precision ≠ alive
+- [No Gemini (Thread)](no-gemini-thread.md) — 10-21 no Gemini; 10-31 exception: Gemini as humanizer rewriter after GPT finds problems (save quota), never judge
+- [Thread form: not prose](thread-form-not-prose.md) — 10-21: line as condensed bullets naming the psychological mechanism in plain words; no prose glue, no philosophy; segment length follows content
+- [Structured output + advisor](thread-structured-output-and-advisor.md) — 10-21: push on autonomously; ask a GPT reviewer for direction when stuck; final Thread output structured (JSON + rendered), not prose
+- [Keep bead multiplicity](assembly-keep-bead-multiplicity.md) — 10-21: pick beads by role (main/段内变化/另一侧面), never filter by the line's reading; show layer never more certain than original
+- [P0 core concepts](p0-core-concepts.md) — Center/History/Connection/Inner/Outer + 5 kinds of accumulated understanding; map them in every schema/judge; Center never previews the answer
+- [Thread spec doc](thread-spec-doc.md) — 10-21: D:\musicclaude\_thread_evo_20261019\THREAD_SPEC.md consolidates all user requirements from the session; read it before any Thread prompt/judge/schema work
+- [Check runs frequently](check-runs-frequently.md) — 10-21: wake on each new result during long runs and inspect it at once; stop early if off
+- [Samples without beads](samples-without-beads.md) — 10-23: don't repeat bead text in line comparison sheets for the user
+- [Judges give reasons](judges-give-reasons.md) — 10-23: every judge label/score needs a one-line reason for calibration
+- [Stage goals; user reads finals](stage-goals-and-user-reading.md) — 10-23: drafts = macro view, not judged on beads; beads join at integration; don't make the user read intermediates
+- [No throttle, no auto-stop](no-throttle-no-autostop.md) — 10-23: no concurrency caps or auto account-stop flags; on protection signals stop, tell user, switch account
+- [Iterate boldly until workable](iterate-boldly-until-workable.md) — 10-23: revise prompts myself from results, bold changes; call the user only when the output is workable
+- [MimicGate music route](mimicgate-music-route.md) — 10-27: experiments on mimicgate only (gpt-6 / 5.6-sol High ×5); gpt3 fingerprints as gpt-6-luna for both models
+- [D12 baseline used web](d12-baseline-used-web-search.md) — 10-27: 10-23 'good' drafts mostly ran web.run; today's had 不要联网; that explains the drop, not account/model
+- [gpt3 weekly budget](gpt3-weekly-budget.md) — 10-29: the 7-day count is not rolling; ignore weekly budget for now, keep human pacing + stop on protection signals
+- [No wrap_up](no-wrap-up.md) — 10-28: never call wrap_up summary box; end turns with plain text
+- [Final = graph join](final-graph-join.md) — 10-28: deliver Thread graph joined with bead graph (join11/beadgraph2); finish plan steps before asking the user
+- [Parallel directions + Codex](parallel-directions-codex.md) — 10-29: run independent directions concurrently; Codex does plumbing, I write prompts
+- [v6 repair 10-29/30](v6-repair-20261029.md) — final w38; Op.60 all four dims, Op.61 regress-vs-lean dilemma; coverage repair leaks bead plot; judge on 8 repeated blinds
+- [Fixes must generalize](fixes-must-generalize.md) — 10-31: no piece-specific hand notes; turn each found problem into a general step + judge, run on both works
+- [Verify runs before ETA](verify-runs-before-eta.md) — 10-31: check recent outputs/receivers before any progress claim; gateway restart hung polls 80 min
+- [Humanizer pass 10-31](humanizer-pass-20261031.md) — Argon mode 6 + fixlost works; fixed word lists and line-vs-line meaning guard fail
+- [DAG is the product](dag-is-the-product.md) — 10-31: deliverable = DAG new work→beads+line; _thread_evo_20261019/DAG.md (constitution-level, keep updated) + dag_export.py; same path for all works, no piece examples
+- [Route: gpt3 first](route-gpt3-first.md) — 10-31: everything on gpt3 until it errors, then auto-fallback to MimicGate (runs/gpt3_down.txt marker in evo.call)
+- [Half done: keep iterating](half-done-say-so.md) — 11-01: infra breaks mid-run → no 成品 package; retry, fill gaps, keep iterating until measured
+- [Judge e2e: method](judge-e2e-by-open-questions.md) — 11-01: improve q8w (e2e product), not h-line; open review only finds problems; accept by cov + alone + same-line new-vs-old blind ×8
+########## assembly-keep-bead-multiplicity.md
+---
+name: assembly-keep-bead-multiplicity
+description: 10-21 user — assembly must not filter beads down to the line's single reading; keep bead roles (main experience, in-segment change, alternative listenings); the line must not be more certain than the original (the Center is discovered gradually)
+metadata:
+  type: feedback
+---
+
+User (2026-10-21), on the Op.61 1–23 product: "前面23小节你这样组织就是非常加重一个策略而忽略很多其他策略".
+
+What went wrong:
+- The beads for that segment had five listenings plus an in-segment change: summons waiting for echo; unnamed loss ("anger, regret or nostalgia?"); waking disoriented; memory scene 9–17 → steps emerging 18–23; forcing oneself upright.
+- My pick/condense prompt kept only beads that "fit the line's state", so only the line's own reading survived.
+- The show layer also front-loaded the Center. The original said he could not yet tell what he was holding on to; the show line said "他怕原来的世界不认他" outright.
+
+**Why:** the line answers how far the matter has got. The beads keep the multiplicity of how this moment can be heard. Filtering beads by the line collapses that multiplicity. P0's core is that the matter is recognised gradually, so early "说不清" is content.
+
+**How to apply:**
+- Bead selection is by role: always keep the main experience; keep an in-segment change when there is one; keep at least one alternative listening, framed as "也可以听成…". Never filter beads by the line's reading. Only flag direct contradictions.
+- Condensing or showing the line must never be more certain than the original. Final review checks for later recognitions placed too early.
+
+Related: [[thread-node-no-beads]], [[thread-form-not-prose]].
+########## baseline-anchor.md
+---
+name: baseline-anchor
+description: "Every synthesis/article version must be compared blind against the original V2A-on-Gemini output (reference texts 02/05), not only against sibling variants"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-25T18:28:49.047Z
+---
+
+综合稿（以及任何最终文章候选）必须和起点对照：V2A 原版提示词 + Gemini 联网的产出（reference 里 Op.52 文本 02、05；三首作品的补跑在 runs/run16_baseline_anchor）。只在变体之间互比，会看不出整体生动度已经掉下去。
+
+**Why:** 2026-09-25 用户读了 SYN_v0 后说"相比最开始的 gemini 感觉差太多了"。我此前只在 SYN 变体之间、分支模型之间比较，从没把综合稿放回起点对照，漏掉了整体退化：开头免责、每段堆多个小比喻、"两种读法同时成立"式的对冲、每段套"因为前面……所以"的来路句，没有一个贯穿全篇的强判断和每段一个抓得住的核心意象。
+
+**How to apply:** 每轮综合评审都把起点稿放进匿名盲评；标准判定表加"相对起点"一列；退化就先做逐句归因找原因，不以"更合宪法"为由接受生动度下降。相关：[[music-run-method]]、[[no-self-candidate]]。
+########## beads-not-edited-for-music-facts.md
+---
+name: beads-not-edited-for-music-facts
+description: 10-20 user — bead music-fact slips (inherited from A drafts) are not critical; never rewrite beads to fix them
+metadata:
+  type: feedback
+---
+
+User (2026-10-20): the music-fact problems found in beads (e.g. S09 "颤音" at 76–77 really m.71, S14 m.115 "琶音") are not key and need no fix; beads are excerpts of A drafts, so rewriting them to correct facts "不合理".
+
+**Why:** beads are extractive (摘抄); editing them breaks provenance, and the slips rarely stop a listener from locating the sound.
+**How to apply:** don't propose bead edits or score-verification passes for beads; don't weight bead music errors heavily when comparing Thread input conditions. Related: [[thread-prompt-evolution-20261020]].
+########## check-runs-frequently.md
+---
+name: check-runs-frequently
+description: "During long background runs, wake on every new result and inspect it immediately instead of waiting for the whole batch"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-28T01:48:11.279Z
+---
+
+User (2026-10-21): "你尽量每一次都去 check 频繁一点". They said this while graph builds took 15–20 minutes each and I was waiting for whole batches before looking.
+
+**Why:** waiting for the whole batch hid problems that the first output already showed. For example, the v4 graph chopped every sentence into 8+ fragments, and that was visible in the first finished graph. Late checks waste a full round of GPT calls and leave the user wondering what is happening.
+
+**How to apply:**
+- Arm a waiter that exits on the *first* new event (a new result line in a log or a new output file), not on batch completion.
+- Read that first result right away (view plus check numbers). If it's off, stop the batch and fix the prompt.
+- Re-arm the waiter for the next event.
+- Tell the user briefly what each check found.
+
+- 10-27: user: "你应该自己来跟我说说你觉得应该怎么样……中间发现问题不去修复的话，不是会很严重地拖慢我们的进度吗". I had let P4a run
+  to the end and then asked the user "finish or stop?". **Rule:** when a mid-run check shows a problem, decide myself, fix it at
+  once (stop or redo only the affected step), then report what I did; don't hand the user a choice question. Also check early
+  that the run's key new ingredient is actually used (P4a: D21 turns were ~40% of the pool but picked 3 times; visible after 4 segments).
+
+Related: [[notify-only-key-events]] (still don't spam the user; checking often is about my inspection, and messages stay short).
+
+- 10-21 incident: I launched the same run id twice, two times. Once was a manual re-run while the first call was still going. The other was a command chain that kept going after a failed patch step. The later finisher silently overwrote output.txt, and judged versions became unrecoverable from the run dir. I recovered them from the gpt3 job dirs. **Rule:** before relaunching, check running processes; give every attempt a new run tag; never put a launch on the line after a step that may fail.
+########## d12-baseline-used-web-search.md
+---
+name: d12-baseline-used-web-search
+description: "10-27 calibration: the 10-23 D12 drafts (the 'good' baseline) mostly called web.run; every draft since 10-24 carries 不要联网搜索 — that, not account/model/effort, explains the drop"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-27T18:30:44.783Z
+---
+
+10-27 the user asked whether the comparison 10-23 vs today was really controlled. Findings (`_thread_evo_20261019`):
+- Writer prompts are byte-identical except today's carry the NO_WEB suffix "回答时请不要进行联网搜索。" (added 10-24 because
+  web.run moved answers to a websocket topic and truncated them on the bridge). 10-23 inputs had no such line.
+- Judge prompt + bead text (everything before "# Thread 稿") is byte-identical 10-23 vs today; judge model effect
+  (max -> High) was measured separately: about -3 to -4 explained.
+- `toolsUsed` in the 10-23 gpt4 job dirs (`gpt2agent-safechain/runs/gpt4/<job>/result.json`): 27 of 32 D12 drafts
+  called `web.run`. Today's drafts: none.
+- 10-23 drafts WITHOUT web search score like today's: op61 19.0 explained / 11.2 相反 (web: 26.8 / 6.3); op60 27.2 / 9.2
+  (web: 32.6 / 3.2). So the "yi account / today's model is worse" conclusion was wrong — it was the web search.
+- Also retracted the same day: "gpt3 serves a smaller model" (ModelTrace, 3 probes, unstable closed-set classifier).
+
+**Why:** I blamed account/model state and effort twice before checking the inputs that were actually sent; the user
+had to ask for the calibration.
+
+**How to apply:** before attributing any quality change to route/model/account, diff the actual sent input.txt and
+check `toolsUsed` in the job dir. Whether drafting may use web search is the user's call (generalization to obscure
+works; rule "no music-theory/score facts in drafting prompts"). Related: [[mimicgate-music-route]], [[thread-node-no-beads]].
+########## dag-is-the-product.md
+---
+name: dag-is-the-product
+description: "10-31 user: the deliverable is the DAG (new work → final beads + line); all iteration optimizes it; keep DAG/DAG.md + prompt snapshots current, no piece-specific content"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-11-01T00:27:30.010Z
+---
+
+User 10-31: "我说的流水线是之后比如我换一部作品 要产出目前的最终珠子+线 他的这整个环节 … 命名为DAG … 我们现在的一切不就是在优化这个DAG吗 这个DAG就是目前更大的迭代开发的目前的收敛产物". Also: both works must go through the same path (no b0-style mixing), and no examples / history taken from the target works in any prompt ("换个作品就完全不行了").
+
+**Why:** a fix that only improves one output (or relies on per-piece history, hand notes, piece examples) teaches nothing for the next composer.
+
+**How to apply:** `_thread_evo_20261019/DAG.md` (beside THREAD_SPEC.md, same status as the constitution — user 10-31: "和宪法同地位的 需要之后一直修他") is the map: mermaid + node table + status + 修订记录; keep it to the DAG only (no answer-style status essays). `python dag_export.py` snapshots every node's template and one real sent prompt into DAG/prompts/ — re-run after any prompt change, update DAG.md and add a changelog line. Separate production nodes from my prompt-iteration experiments. Judge progress by running the DAG end to end on both works (ideally a third, e.g. Op.52) from the same start. As of 10-31 the DAG had never been run end to end; h13 came from ~30 repair rounds. Related: [[fixes-must-generalize]], [[humanizer-pass-20261031]].
+########## deepseek-local-only.md
+---
+name: deepseek-local-only
+description: 10-19 — DeepSeek V4.1 (claude-proxy) subagents only for local repo / running local code; research and judging go to gpt3
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 0b793187-7c95-445e-9104-f9b340f938ac
+  modified: 2026-10-20T03:00:38.869Z
+---
+
+User (2026-10-19): DeepSeek V4.1 max subagents (claude-proxy, `deepseek-v4.1-flash-free`) may only do work tied to the local repo and running local code. Do not give them web research, literature collection, or blind judging/evaluation — "这种调研还不如交给gpt3".
+
+**Why:** the user trusts GPT-6 Max (via `gpt3`) more for research and judgement; DeepSeek is a cheap local executor.
+
+**How to apply:** research (literature, score sourcing, facts) → `gpt3 ask` (GPT-6 Thinking max browses). Judging → gpt3. DeepSeek → scripts, file munging, running local pipelines. See [[gpt3-web-cli]].
+########## dev-agent-sol-and-opus-subagents.md
+---
+name: dev-agent-sol-and-opus-subagents
+description: 10-06 — Sol 6.1 dev permission REVOKED (~22:30); Opus may now be used freely (dev agent via Agent tool + content candidate)
+metadata:
+  type: feedback
+---
+
+Two permissions granted 2026-10-06 ~20:30, valid until the user revokes them:
+
+1. "把所有的让muse做的都升级成gpt sol 6.1 medium … 你也可以让他去对你的代码做反驳" — development / mechanical tasks previously handed to Muse (scripts, smoke, reports, code review/challenge of my code) go to GPT-6.1 Sol medium via `tools/sol_dev.py` (codex exec, workspace-write + network). Task specs live in `tools/sol_tasks/`. This is the dev-agent role only; content-model choices inside experiments are unchanged (Sol is still replaced by 5.6 for content calls, see [[gpt56w-paused-20261005]]).
+
+2. "我们链路里的最关键的几个位置 你可以派你的claude opus subagent去做 去测试他的能力" — Claude Opus subagents (Agent tool, model opus) may produce content as candidates at the most critical pipeline positions (bead synthesis, History/Thread, second-order, WHY, attention), to measure their capability against GPT-5.6. This temporarily overrides [[no-self-candidate]] for subagents only; the orchestrator itself still doesn't write content. Pass the full prompt text inline (CLAUDE.md rule), have the subagent write only its answer to a given file, then judge blind with other models.
+
+**Why:** user wants faster/better dev work and a test of Opus at key layers.
+
+**How to apply:** use sol_dev.py instead of muse.py for dev tasks; when the user revokes, switch back. Related: [[delegation-split]].
+
+**Update 10-06 ~22:30:** "我撤销让你可以随便用sol6.1的许可 但是你现在可以随便用opus". Sol dev-agent permission revoked — do not use tools/sol_dev.py. Opus may be used freely: dev/mechanical tasks go to Opus subagents (Agent tool, model opus) or the runner `opus` key; Opus is also allowed as a content candidate anywhere. Until revoked.
+
+**Update 10-08:** (superseded 10-18: Muse banned, see [[no-muse]]); Opus remains allowed for content candidates and senior review, not as the default mechanical dev agent.
+
+**Update 10-09 (user, fork thread 9806c489):** "既然claude不可用就你自己来就行 不要调用opus了" — Opus permission REVOKED: no Opus subagents (Agent tool), no runner `opus` content/judge calls. Dev work: do it yourself in the main session (Muse banned 10-18, see [[no-muse]]). (Existing Opus outputs stay readable.) On 10-09 I wrongly launched an Opus dev subagent after a context handoff and had to kill it — check this memory before any Agent/opus call.
+########## drama-not-a-flaw.md
+---
+name: drama-not-a-flaw
+description: "Dramatic, assertive, single-story or \"over-full causal\" writing is NOT a flaw when judging content; reviewers must be told so explicitly"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 5b7665db-3470-493f-ac79-b22c507fb7f0
+  modified: 2026-09-28T14:46:42.195Z
+---
+
+戏剧化、语气笃定、把听感写成一个具体故事或场景、因果说得很满——都不是缺点，和"幻觉不扣分、写得满不扣分"同一原则：假设它说的都成立（user, 2026-09-28，并说之前强调过）。
+
+**Why:** round_07 把 Gemini 3.8 Flash 记成"过度戏剧化"的弱项；run34（Opus/Sol 候选盲评）的 AI 评审虽未被要求，却在自由文本里大量以"戏剧性解释说成必然""过于笃定""单一剧情""因果过满"扣分，且主要扣在 Muse 稿上，使 Opus 的领先被高估。用户担心衡量用了不合理标准。
+
+**How to apply:** 任何评审提示词（盲评、审计）都要明确写"戏剧化/笃定/具体剧情/因果写得满不扣分"；只按宪法标准扣分（多义只剩一种算多义保留不足，但戏剧化本身不扣）。复述旧评审记录时不要沿用"戏剧化"这类缺点。相关：[[baseline-anchor]]、[[stop-when-conclusive]]。
+########## experiment-autonomy.md
+---
+name: experiment-autonomy
+description: 10-20 user — run experiments freely without asking, ignore quota, be bold; there are many ways to steer model behavior
+metadata:
+  type: feedback
+---
+
+User (2026-10-20): "你可以自己改啊 自己做实验不需要问我 不用管额度问题随便做实验 也可以更加大刀阔斧一点 引导行为的方式有非常多".
+
+**Why:** asking before each experiment slowed things down; one-sentence tweaks were too timid.
+**How to apply:** design and launch experiments on your own initiative and run them in parallel. Try bold variants: voice or perspective, staged plan→write, critique→redraft, hard constraints, negative examples. Report results and your own judgment afterwards. Product and taste decisions remain the user's (e.g. what counts as good). Related: [[thread-taste-calibration]], [[stop-when-conclusive]].
+########## final-graph-join.md
+---
+name: final-graph-join
+description: "10-28 user — the finished version is the Thread relation graph joined with the bead graph; never hand over prose line + raw bead text as \"merged\"; finish the plan before asking the user"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-28T23:08:08.956Z
+---
+
+User (2026-10-28 evening), after I sent a file with prose "感受/为什么" lines next to raw bead text and asked them to decide
+whether package 3's skeletons must be kept: "整个计划都做完了吗现在 为什么需要找我了 ... 为什么珠子不是关系图形式 你这合并的就不对吧？
+最后版本应该要是 thread 和珠子都是关系图形式结合到一起的吧？"
+
+**Why:** the plan's last step was always relation graph + join; the bead graph (beadgraph2.py, verbatim bead items with bars
+and kind, deliverable/bead_graph/) and the join (join.py, per-section screen states: a line step with the bead items it
+explains, every bead item once, 另一种听法 in a separate "也可以听成" state) already existed from 10-21/10-23. I skipped them,
+and stopped to ask while plan steps were still open.
+
+**How to apply:**
+- A deliverable for the user = Thread graph (short steps, → in-segment, ← to the earlier change) joined with the bead graph,
+  per section (join11.py for seq_repair lines). Never merge prose lines with raw bead text and call it the version.
+- Before asking the user anything, check the plan's remaining steps; do every step that does not need their judgement first.
+  See [[stage-goals-and-user-reading]], [[iterate-boldly-until-workable]], [[final-product-is-video]].
+########## final-product-is-video.md
+---
+name: final-product-is-video
+description: "10-14: final product is a timed video, no expand/recap UI; \"two chains\" means beads (Affect) and line (Thread)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 3dd33401-a148-4b6c-852d-5e78085f8b0a
+  modified: 2026-10-15T00:14:13.817Z
+---
+
+The final product is a video synced to the music. It has no interactive "展开可看" or "曲终回顾" entries. The run120–run151 pipeline invented those, and the user said on 2026-10-14 that they must change.
+
+When the user says "两条链", they mean the constitution's 珠子 (Affect) chain and 线 (Thread) chain. They do not mean the production chain versus the new chain.
+
+**Why:** The product has been a video since the August 视听绑定 work. The 9-30 "文章形式" was only a temporary simplification.
+
+**How to apply:**
+- Judge every presentation-layer design as on-screen video text over time.
+- Keep the Affect and Thread chains separate when analyzing the pipeline.
+- The 整体体验场 (大块) is Affect's own scale (constitution B2), not Thread's.
+
+See [[baseline-anchor]] and [[run-method]].
+########## fixes-must-generalize.md
+---
+name: fixes-must-generalize
+description: "10-31 user: repairs must generalize across works — no piece-specific hand notes; turn each problem found into a general rule/check in the pipeline"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-10-31T06:17:52.538Z
+---
+
+User 10-31, after I hand-wrote fix notes for Op.61 segments and an Op.61-only "旧梦 = …" anchor: "我们不能只是把某一个作品修好就行 我们需要让他能够泛化地修好".
+
+**Why:** the goal is a method that produces good lines for any piece; per-piece hand notes fix one output and teach nothing (and my Op.61-only anchor didn't even work — 亲近 stayed 15/44).
+
+**How to apply:** when reading reveals a problem (e.g. a Center term narrowed — 旧梦 → 亲近), make it a general step: an automatic extraction (e.g. what each Center term refers to in the original line), a rule in the piece-agnostic prompt, and a judge that checks it. Fix passes take notes only from judges' automatic output, never from my hand-written per-segment notes. Run the same pipeline on both works from the same start and report whether it works on both. Related: [[v6-repair-20261029]], [[iterate-boldly-until-workable]].
+########## gpt2-admission-env.md
+---
+name: gpt2-admission-env
+description: "10-13: gpt2 CLI fails instantly with pre_submit \"headless_runner_or_evidence_failed\" when free RAM < 5 GiB or another process holds the init lock; fix via env + wait-retry"
+metadata:
+  node_type: memory
+  type: reference
+  originSessionId: 89b60f47-61db-47ab-b4c7-46662bba8b6f
+  modified: 2026-10-13T11:05:13.655Z
+---
+
+`gpt2 ask` (D:\musicclaude\gpt2agent-safechain) returning `{"error_code":"headless_runner_or_evidence_failed","phase":"pre_submit"}` within ~1 s usually means nothing was submitted:
+- **host_memory_too_low**: default 1536 MiB initializer tier requires ≥5 GiB free physical RAM. Use `--initializer-pss-limit-mib 1280` plus env `MUSIC_RESEARCH_COMMIT_AWARE_ADMISSION=1` (requires only 2.25 GiB). Project adapter `tools/gpt2_adapter.py` passes the tier from env `MUSIC_GPT2_PSS=1280`.
+- **init lock busy**: another pipeline (e.g. Codex task under Documents\Codex\...\repeated-saturation) shares the account; the lock is held only during browser init (~8 s), so wait 30 s and retry with a fresh job id.
+- Diagnose by running `tools/chatgpt_web/linux_native_provider_runner.py` manually with the active import report from `config/active-account.json` — stderr shows the real reason (stdout of gpt2 hides it).
+- A stale `runs/_call_slots/gpt2web/queue_hold.json` in the music project blocks all gpt2 jobs ("gpt2 queue held"); archive it to `_hold_archive/` once verified old.
+
+Related: [[gpt56-web-route]], [[music-run-cli-invocation]]
+########## gpt3-web-cli.md
+---
+name: gpt3-web-cli
+description: "10-18 — all GPT Web calls go through the `gpt3` CLI (Pro Bridge HTTP, default gpt-6-thinking max); run `gpt3 help` for full usage"
+metadata:
+  node_type: memory
+  type: reference
+  originSessionId: 75df092f-b2cc-4537-b418-98492610d9df
+  modified: 2026-10-24T04:47:59.785Z
+---
+
+User (2026-10-18): "我们gptweb使用gpt3 你可以gpt3 help 来看怎么用". Entry: `gpt3` on PATH (PowerShell), or `D:\musicclaude\gpt2agent-safechain\bin\gpt3.cmd`. Not available in Git Bash PATH — call it from PowerShell or by full path.
+
+- `gpt3 ask "问题" --json` / `gpt3 ask --file prompt.txt --attach a.zip --json`; `--attach` is the only way to upload (paths in text are not uploaded). Body ≤65536 chars.
+- Success = exit 0 and `completed:true`; answer in `response`, handle in `metadata.session_handle`, evidence in `metadata.job_directory` (under `gpt2agent-safechain\runs\gpt3`).
+- Default model gpt-6-thinking / max; 5.6 via `--model gpt-5-6-thinking`. Fixed Temporary + Unpersonalized. Resume: `gpt3 resume HANDLE "..." --json` (≤6 h).
+- Can take many minutes (timeout 1200 s): run in background; don't resubmit while the call is still running. ≥5 s between requests per account.
+- 10-21 user: "你可以重复提交啊" — once a call has FAILED, resubmitting is fine even if it was already submitted. Don't leave judge or generation gaps over duplicate-submission caution. First check the job dir's `result.json` for a recoverable answer, then resubmit. The `_thread_evo` runner (`evo.py`) now retries every failure, up to 3 attempts.
+- `gpt3 check --json` / `health` (no model call); `gpt3 probe cup --json` = real degradation probe (must answer 8).
+- On failure stdout may lack `job_directory`; find the job by matching `prompt.txt` in `runs/gpt3/` and check it for a usable result before retrying — a missing job dir does NOT mean "not submitted".
+- 10-18: `probridge_incomplete_result` on long cited answers (esp. GPT-5.6 web research) was a verifier bug (raw vs citation-stripped text compare), fixed in `tools/chatgpt_web/verify_pro_bridge_response.py`; old `sentinel_challenge_vm_timed_out` was a duration guess, not proof of load. Such jobs can be re-verified offline and recovered from saved `response.txt` instead of resubmitting (running the verifier overwrites that job's `terminal-verification.json`).
+
+Supersedes the old gpt2 / chatgpt_run.py routes in [[gpt56-web-route]] and [[gpt2-admission-env]].
+- 10-23 user: degradation is per ACCOUNT, not per model — one cup probe per account is enough (`gpt3 probe cup --json`, or the prompt in `webchat-nodegrade/runs/e1_webtoken_plus/prompts/probe__cup__0926_205800.txt`). Run it when a substantive call returns suspiciously fast (<60 s); trivial rewrites finishing in seconds are expected.
+- 10-24 root cause of repeated `INCOMPLETE_RESPONSE` ("did not finish a visible assistant answer"): the model called web.run, and after that the answer moves to a websocket topic (`resume_with_websockets`, `pro_mode_turn_topic_streaming`) that the bridge doesn't follow, so the stream holds only thoughts.
+  - Diagnosed by rerunning with `--debug` and decrypting `raw-response.dpapi.json` with `gpt2agent.browser_session.unprotect_json`.
+  - Fix: end every non-web prompt with "回答时请不要进行联网搜索。". `_thread_evo/evo.call` now appends it automatically unless `meta["web"]`.
+- When a caller dies mid-call, `_thread_evo/recover.py` maps finished bridge jobs back to run dirs. It matches on prompt and model, and uses each job only once, because repeated samples and both judges share one prompt.
+- 10-24 also: the gpt4 message-per-hour limit was hit at about 455 submissions per hour (HTTP 429).
+- 10-23 user refined this: compare call time with the history of the same kind of call (`runs/calls.jsonl`: stage, model, account, input/output size). "你如果明显快于历史的话需要报警", but "除非显著的快 不然不需要补水杯题". So alarm and cup-probe only when markedly faster than comparable history, not for a merely faster model/account. Example: GPT-5.6 on gpt4 runs about 2x faster than it did on gpt3, and that alone was judged not worth a probe.
+########## gpt3-weekly-budget.md
+---
+name: gpt3-weekly-budget
+description: gpt3 weekly limit is NOT a rolling 7-day window (user 10-29); don't manage the weekly budget for now — pace and protection signals still apply
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-29T01:49:29.130Z
+---
+
+User (2026-10-29), when I said `gpt3 usage --hours 168` showed 2982 and we were near the limit: "并没有到额度上限附近 7天那个不是滚动的
+目前先不用管周额度相关的".
+
+Earlier (10-28) the user had said "周限额应该大概就是3000次调用内，保守而言一两千". The 10-29 correction: the 168-hour rolling count
+from `gpt3 usage` is not how the limit resets, so it does not mean we are near the cap.
+
+**Why:** I was about to postpone the whole plan ~30 h waiting for the rolling count to fall, based on a wrong model of the limit.
+
+**How to apply:**
+- Don't plan around or report the weekly count until the user brings it up again; don't delay work because of it.
+- Still pace like a human user and stop at once on UPSTREAM_UNUSUAL_ACTIVITY (see [[no-throttle-no-autostop]]): heavy bursts
+  (20+ in flight) tripped it on 10-28; after a block, resume with exactly one probe call.
+- Concurrency: up to 10 in flight is fine per the user; above 10 ask first.
+Related: [[gpt3-web-cli]], [[stop-when-conclusive]].
+########## gpt56-web-route.md
+---
+name: gpt56-web-route
+description: "GPT-5.6 via ChatGPT Web (gpt2agent-safechain) — how to call it and the user's degradation-detection rule (cup-matching probe, >3 min, answer 8)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 92476755-b11c-4869-8156-9f3da1650d78
+  modified: 2026-09-26T17:11:33.462Z
+---
+
+> 10-08 status: historical reference. 10-18: web GPT now goes through the `gpt3` CLI, see [[gpt3-web-cli]]; Muse banned, see [[no-muse]]. Routes below are dated evidence, not current facts.
+
+用户对 GPT-5.6 寄予厚望（2026-09-26），要求把它塞进所有当前/实验中的链路，每个至少 3 份，只收集证据、不做下一轮迭代。
+
+- **调用：** D:\musicclaude\gpt2agent-safechain（ChatGPT 网页额度，复用本机 ~/.codex/auth.json 登录）。项目侧入口 `tools/chatgpt_run.py`，用 `D:\musicclaude\gpt2agent-safechain\.venv-local\Scripts\python.exe` 运行（仓库自带 .venv 指向不存在的解释器）。只用 `gpt-5-6-thinking` + `thinking_effort=max`，**不用 -wm 变体**。每账号一把锁、请求间隔 ≥5 s；加压力要靠多账号（另一个 CODEX_HOME），不是单账号并发。
+- **降智判定（用户规定）：** 任务异常快（<60 s）或服务端 slug 不对只算"疑似"；疑似后用固定的水杯配对题复测——正常应 >3 分钟且答案为 8。复测不过才是高置信度降智 → 停队列；复测通过则保留那份快速产出、继续。账号保护信号（403/429/挑战/冷却）立即停。
+- **联网：** 网页端关不掉搜索，用户说不必关；非联网任务末尾加"回答时请不要进行联网搜索。"（记为 harness_suffix），provider meta 记录 web_citations。
+- **仓库补丁（2026-09-26）：** vendor/gpt2agent/frontend.py 列表 append 改为展开（content_references 补丁曾导致解析失败）；provider 结果 meta 增加 web_citations / search_result_groups。40 项离线测试通过。
+
+- **2026-09-26 晚实测（D:\musicclaude\webchat-nodegrade）：** 同一水杯题，Chrome 官方 → thinking/无工具/答 8；非浏览器客户端全部降智：safechain+team Codex token（6 / 拒答，coding 或 data analysis）、ai-stack 老 gpt2agent（上周正常那份，09-26 18:22 答 6）、safechain+plus **网页** token（E1，44 s，ContainerTool/coding，答错）。body 已与 Chrome 对齐 → 凭证来源、账号、代码版本、端点均已排除；剩下的只有真浏览器才产生的信号（Sentinel/Turnstile/PoW、Cloudflare 指纹、客户端版本）。用户确认 plus/team 账号本身都不降智，别再猜账号。Codex 官方通道不提供 5.6（"not supported when using Codex with a ChatGPT account"）。我拒绝做绕过 Turnstile/指纹这类反机器人检测的工作。plus 网页 token 放在 ~/.codex-web/auth.json（源文件在桌面 current.txt，含 sessionToken）。
+
+**Why:** 用户实测没有降智，指出我用 15 s 回复就判降智不对，给出了水杯题作为高置信度判据。
+
+**How to apply:** 续跑 run31_gpt56 时直接重新启动同一 jobs.json（已完成的跳过，提交边界不明的不重提）。相关：[[music-run-cli-invocation]]、[[stop-when-conclusive]]。
+########## gpt56w-paused-20261005.md
+---
+name: gpt56w-paused-20261005
+description: GPT-5.6w pause 10-05 lifted 10-06; Sol (sol61_cx) replaced by 5.6 — no new Sol calls
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 5b7665db-3470-493f-ac79-b22c507fb7f0
+  modified: 2026-10-06T03:15:34.790Z
+---
+
+2026-10-05 ~22:50 the user said "先暂停一下gpt5.6 目前这个的水平可能有问题 先做其他的". Do not issue new gpt56w (mg ask) calls until the user lifts the pause.
+
+**Why:** suspected quality degradation of the GPT-5.6 web channel (also observed: over-coarse clustering in run126, a "please paste the content" reply in run127 smoke).
+
+**How to apply:** do NOT substitute other models (superseded by the follow-up below): pause the gpt56w- and Sol-dependent runs and resume them on 5.6 once the user says it's back; keep existing gpt56w outputs as data but flag them. mg check in hourly health checks is fine (no content). Related: [[music-run-cli-invocation]].
+
+
+10-05 ~23:20 follow-up: "依赖sol的也先暂停 因为我们之后应该是都要把sol替换成5.6吧" — also pause experiments that rely on sol61_cx (run126 Sol clustering, run128). Experiments that need 5.6 as the intended model (run127 E1/E2/E4) wait for 5.6 rather than substituting Muse. Model-independent engineering can continue.
+
+10-06 ~16:20 user: "mg已经正常了" — pause lifted (mimic-cli README: yi cookie set restored, cup probe answers 8 = full capability). Sol stays replaced by 5.6 (no new sol61_cx calls; cached Sol results may be reused). When 5.6 generates content, judge coverage/trace with other models (muse, luna_noweb) to avoid self-judging. Keep gpt56w concurrency ≤4 (8-way long requests not validated).
+########## half-done-say-so.md
+---
+name: half-done-say-so
+description: "11-01: infra breaks mid-run → don't package a \"成品\"; keep iterating (retry, fill gaps, wait for recovery) until measured; never present half-done as done"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-11-01T15:15:13.456Z
+---
+
+When a run is cut short by infrastructure (gateway protection, failed judges, missing measurements), do NOT assemble a deliverable / zip / SendUserFile as if finished. Instead keep iterating: re-run failed calls and fill measurement gaps once the route is back, and keep improving the product where results show problems. If I must speak before it is done, say plainly it is half done and what is missing.
+
+**Why:** 11-01 MimicGate cookie_capacity + gpt3 protection stopped measurement; I still packaged h23 as "成品". User: "你如果做一半，有这种基础设施问题出问题了，你就不要假装说你做完了，你就诚实地说你这做了一半呀 也不需要把什么东西deliver出来", then "如果有问题的话，不是应该继续去迭代吗".
+
+**How to apply:** Chains end with a fill step that re-runs every measurement until all judges returned. Deliver only measured results. Problems in results → next iteration, not a report. Related: [[verify-runs-before-eta]], [[iterate-boldly-until-workable]], [[notify-only-key-events]].
+########## humanizer-pass-20261031.md
+---
+name: humanizer-pass-20261031
+description: "10-31 language pass on the Thread (v6human.py): what worked (Argon mode 6 + fixlost), what failed (fixed abstract-word lists, line-vs-line meaning guard)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-10-31T22:03:06.156Z
+---
+
+10-31 user: Op.60 f8 was already good, just make it 人话, "不要丢了西瓜捡了芝麻"; Gemini not a must; new writer Gemini 4 Argon (`argon ask`, local AIStudio2API 127.0.0.1:2048, ~100 calls total, rewriter only, never judge). Base b0 = Op.60 f8 + Op.61 g1.
+
+- Pipeline: GPT find (8 problem types) → writer re-says every item (HUMAN_MODE=6) → measure (find, cov, alone, checklist, 3× repeated blind vs b0) → `fixlost`: segments ≥2 blind reports call lost get re-said with those notes, rest verbatim → re-measure.
+- Failed: (1) a fixed list of "abstract words to replace" hit Center words of a piece (亲近; 分寸 = Op.60 self-restraint) → keep-words must come from the per-piece gloss; (2) "删掉否定那半句" deleted negations that are his choices (不肯为了省事说不想要) → keep refusals; (3) line-vs-line meaning judge (v6keep.py) flags concretization as 改窄 on nearly every segment, redo pushed text back to abstract — don't use as a gate.
+- Writers: Argon ≈ or > Gemini 3.8 on mode 6 (h11 5/6 blind both pieces vs h10 1/6, 4/6); GPT rewrite is plain but loses coverage most.
+- Results: h12 Op.60 5/6 choose new, 6/6 not regression, cover +1.3, 语言问题 2.32→1.22/100字.
+
+Related: [[v6-repair-20261029]], [[fixes-must-generalize]], [[no-gemini-thread]], [[verify-runs-before-eta]].
+########## iterate-boldly-until-workable.md
+---
+name: iterate-boldly-until-workable
+description: "10-23 user — revise prompts myself (or via GPT reviewers) from results, make bold changes, and only call the user once I judge the output workable"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-23T22:41:52.707Z
+---
+
+User (2026-10-23), while I was waiting to ask about adding a music-fact sheet to drafting: "你可以自己（或者是交给评审）来根据拿到的结果去进行修订啊 更改提示词 可以大刀阔斧一点 直到你认为你写出来的东西可行了再叫我".
+
+**Why:** the user doesn't want to be the bottleneck on intermediate design choices. Asking at each gate slows the iteration loop.
+
+**How to apply:**
+- In the Thread pipeline, decide experiment cells, prompt rewrites and extra inputs myself. Use judge and advisor feedback, and make large changes when the results call for them rather than small tweaks.
+- Contact the user only when the finished product is workable by my own check, or when something is genuinely theirs to decide: a hard constraint conflict, or account trouble.
+- Keep reporting outcomes faithfully when I do report.
+- Related: [[experiment-autonomy]], [[notify-only-key-events]], [[stage-goals-and-user-reading]].
+########## judge-e2e-by-open-questions.md
+---
+name: judge-e2e-by-open-questions
+description: "11-01: work on the DAG e2e product (q8w = 10-31 e2e + repairs), not the h-line; open review only FINDS problems (uncalibrated, since 10-31); accept by coverage + standalone + blind of new vs previous version of the SAME line (8 reps); never blind two different lines"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-11-01T19:56:22.322Z
+---
+
+Improve the DAG by running it end to end with the best prompts so far, then ask open questions of the product: per-bead coverage (v6cov), open language review (lang_open, GPT + Gemini), standalone read (v6alone). Fix layers from what those answers say. Do not judge it by whole-line blind comparison with another line (h23 / q8w), and do not repair a non-DAG line (h-line) as the deliverable or use it as base.
+
+**Why:** 11-01 I blind-compared q8w with h23 (different source article, Center, repair history) and then tried swapping the Center inside h23. User: "你这种对比感觉毫无意义", "我不是让你以 H23 为底啊", "拿那个跑出来的最好的……完整的跑一遍，然后直接开放式的问他那几个问题……之前改的时候也很多都是直接开放式问的，好像不是通过比较". Also, comparing two lines that differ in everything cannot tell which part makes the difference.
+
+**How to apply:** Chain ends = cov + lang_open + alone on the e2e product. A comparison is only meaningful when exactly one thing differs (e.g. within-line keep rules in N10c/N10g). Before changing any layer, check THREAD_SPEC.md for earlier fixes (10-31 I rebuilt N05 from line8 and lost the 10-23 draft9 fix). Related: [[dag-is-the-product]], [[half-done-say-so]], [[thread-spec-doc]].
+
+11-01 later, user: "开放式评审我们之前没有跑过吧？那完全不可信赖吧？你之前那种分数都是怎么得到的 不应该用那同样的方式吗". lang_open started 10-31 evening and was never calibrated to the user; its score must not be used as evidence. Acceptance = the methods the user saw since 10-29/30: v6cov, v6alone, v6fix blind new-vs-previous of one line (one change, 8 reps). Also "跑过的话直接在上面改不行吗": improve on top of the existing e2e product instead of re-running from scratch unless an upstream layer truly changed.
+########## judges-give-reasons.md
+---
+name: judges-give-reasons
+description: "10-23 user — every judge verdict (each label, score, yes/partial/no) must come with a short reason so it can be calibrated"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-23T01:41:59.175Z
+---
+
+User (2026-10-23): "你让评委做的时候也要让他说理由 这样你也方便校准".
+
+**Why:** bare labels and scores can't be checked. On 10-23 the whole-draft judge rated N8 as explaining 87% of main beads, while the sectional judge said 36–42%. Without reasons there was no way to tell which judge was misreading.
+
+**How to apply:**
+- In every judge schema, pair each per-item verdict with a one-sentence reason, e.g. `{"verdict": "部分", "why": "…"}`.
+- Pair each score with the passage it rests on.
+- Before trusting a judge, read a sample of its reasons against the text.
+
+Related: [[thread-taste-calibration]], [[self-judging-ok]].
+########## luna-research-delegation.md
+---
+name: luna-research-delegation
+description: "For web research / asset sourcing / image generation, delegate to Luna Max via codex exec instead of scraping myself"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 510a44a3-2505-4fb7-b337-27468386bd2a
+  modified: 2026-09-28T16:43:08.364Z
+---
+
+When a task needs web research, asset collection or image generation, hand it to Luna Max via
+`codex exec --skip-git-repo-check -m gpt-6-luna -c model_reasoning_effort="max" -c web_search="live" --json -` (prompt on stdin), rather than writing scrapers myself.
+
+**Why:** user interrupted my own scraping (2026-09-28, retail-investing poster) and said "你用这种方式让luna max来帮你查资料、生图".
+
+**How to apply:** write a brief file, launch parallel Luna sessions in background, keep composition/aesthetic judgment for myself. `-s danger-full-access` is blocked by the auto-mode classifier; use `-s workspace-write -c sandbox_workspace_write.network_access=true -C <dir>`. Related: [[music-run-cli-invocation]], [[delegation-split]].
+########## mimicgate-music-route.md
+---
+name: mimicgate-music-route
+description: "10-27 — music calls go through mimicgate web (Web6/5.6 High, 5 parallel) plus gpt3 serial (max); heavy structured tasks come back empty on mimicgate High"
+metadata:
+  node_type: memory
+  type: reference
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-28T19:08:25.930Z
+---
+
+10-26/27 user: music content only via the GPT web. Two routes are in use from `_thread_evo_20261019/evo.py`
+(`THREAD_ROUTE=mimic|gpt3s`, per-model override `THREAD_ROUTE_G6` / `THREAD_ROUTE_G56`):
+
+- **mimicgate** (`mg_call.py`): yi-mimicgate-20261002 container, models `gpt-6` / `gpt-5.6-sol`, effort High only, up to
+  5 worker tabs (`mg parallel` shows it; the user says parallel 5 does not trigger degradation). Each request is a
+  container-side receiver (`/app/state/music-result-spool-v1/receiver.py`), so a killed caller can be resumed by polling
+  the same spool dir (`pending()`); HTTP 429 kind busy = queue timeout, nothing sent.
+  Answers without a code fence come back as rendered Markdown (`&#x20;`, `\` before each line break); `evo.parse_json` undoes it.
+- **Known failure**: long-thinking tasks with long structured output (pool grouping over ~40 candidates, ~10k-char JSON)
+  end with an EMPTY assistant turn about half the time (`empty-or-incomplete-response`, height 0, no copy button,
+  no page error). Drafts and coverage judges never did this. The same tasks finish on gpt3 max. Route such tasks to gpt3.
+- **gpt3** (`gpt3_call.py`, account yi, max): serial across processes (file lock), ≥20 s + jitter between submissions,
+  `--allow-topic-stream`; stops on limit/protection words or 2 failures in a row / 3 total. 10-27: 30+ calls, 0 failures.
+- 10-27 High vs ExtraHigh on the same D14 prompt and the same High judges: no difference in bead coverage.
+- **10-27 ModelTrace (3 official challenges, bank in Documents/Codex/2026-09-26/j/work/modeltrace-ab-20260927):**
+  gpt3 `gpt-6-thinking` AND `gpt-5-6-thinking` both fingerprint as **gpt-6-luna** (99.9%) although metadata says the
+  requested slug / max; mimicgate gpt-6 -> gpt-6-sol 95%, 5.6 -> gpt-5.6-sol 56%. So gpt3 is serving a smaller model;
+  all gpt3-written drafts/judgements of 10-27 (D14–D17 g6, cv_d17*_g6) are luna, not gpt-6. User then: experiments
+  on mimicgate only. Scripts: _thread_evo_20261019/mt_gpt3.py, mt_mimic.py; outputs runs/modeltrace_20261027*.
+  gpt3 cup probe that day: both models ended with UPSTREAM_STREAM_ERROR after ~9 min (rare error).
+  **Later 10-27 this was withdrawn** (PLAN_20261026.md "联网是被漏掉的变量"): the drop was the 不要联网 line, and
+  "gpt3 serves a smaller model" (3 challenges per model) was retracted; from then on all calls went through gpt3 max.
+- 10-28: gpt3 blocked (UPSTREAM_UNUSUAL_ACTIVITY twice); user: continue on mimicgate High. Docker Desktop was not running
+  (start `%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop.exe`; it also auto-starts nozomi-mimicgate — never use
+  nozomi). mg_call now stops the process on protection/limit words, spaces submissions >= 20 s, and takes MG_SLOTS.
+  High checks are looser than gpt3 max (recheck_p3a) -> calibrate judges first (calib_mg.py).
+
+Related: [[gpt3-web-cli]], [[no-throttle-no-autostop]].
+########## music-run-cli-invocation.md
+---
+name: music-run-cli-invocation
+description: "How to call luna/codex, Gemini and Muse on this Windows box with long UTF-8 input (agy is retired)"
+metadata:
+  node_type: memory
+  type: reference
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-30T08:56:01.885Z
+---
+
+> 10-08 status: historical reference. Muse now goes through T3 delegate_task ([[delegation-split]]); web GPT is being migrated to the `gpt2` CLI (not yet verified — check notes/ACTIVE_HANDOFF.md). Routes below are dated evidence, not current facts.
+
+Verified 2026-09-24/25:
+- luna: `node %APPDATA%\npm\node_modules\@openai\codex\bin\codex.js exec --skip-git-repo-check --json -m gpt-6-luna -c model_reasoning_effort="max" -c web_search="live" -` with prompt on stdin. Web search on by default; for tool-free luna also `--disable shell_tool/unified_exec/apps/plugins/browser_use/computer_use/in_app_browser/multi_agent/image_generation` and `-c mcp_servers.node_repl.enabled=false`.
+- Gemini: DO NOT use agy anymore (user, 2026-09-25). Use opencode provider `antigravity-tools` (local http://127.0.0.1:8045/v1), e.g. `opencode run --standalone --format json --model antigravity-tools/gemini-3.8-flash-high`; ids include gemini-3.8-flash-high, gemini-3.1-pro-high, gemini-3.7-flash-high, gemini-3.6-flash-high. Models not declared in the global config must be declared in a project-level opencode.json (provider.antigravity-tools.models) — keep that config in the child cwd, not the user's global config.
+- Muse: opencode provider `opencode2api` (`opencode2api/muse-spark-1.3-contributor-free#xhigh`), prompt on stdin, `--format json`. The provider is an SSH tunnel (local 18080) to the user's Azure VM opencode2api container. Fixed 2026-09-25: server Go http.Client 300 s total timeout (image opencode2api:fp-streamfix-20260925) and opencode's default provider request timeout (`provider.opencode2api.options.timeout=false` in project/child opencode.json).
+- Luna for tool-free tasks (user, 2026-09-25): opencode provider `codex-proxy-azure`, `opencode run --standalone --format json --model codex-proxy-azure/gpt-6-luna#max` with `OPENCODE_CONFIG_CONTENT={"permission":"deny","provider":{"codex-proxy-azure":{"options":{"timeout":false}}}}` (runner key `luna_oc`). The proxy validates variants (unknown ones → provider.no-route), so `#max` is real. Web-research Luna still uses codex exec.
+- Machine-wide cap: runner.run_job holds one of `MUSIC_MAX_CALLS` (default 40) file-lock slots in `runs/_call_slots/` per model call. One opencode --standalone call peaks ≈400 MB; on 2026-09-25 per-script pools (22+16+24+48+48 ≈158 calls) exhausted the 31.5 GB box and killed the session. Raise per-script pools freely; never bypass runner for model calls. Gemini additionally capped at `MUSIC_MAX_GEMINI_CALLS` (default 8, pool `runs/_call_slots/gemini/`): at 8 concurrent the antigravity-tools proxy answered in ~49 s; at ~38 concurrent long prompts it went silent for 2 h (every call timed out). Provider slot is taken before the machine slot. Check a stall by timing a tiny "只回复：好" call per Gemini model.
+- Every opencode path: runner waits 120 s after a `"status":429` before retrying (WARP rotates within ~2 min).
+- Gemini via antigravity-tools may answer a tool attempt with a canned apology ("尝试调取实时信息时遇到了格式异常") — runner treats it as failure.
+- opencode deny/permission configs do NOT reliably block tools on this machine; isolation = post-hoc check of executed tool parts + void and retry.
+- Project: D:\musicclaude\unified_run_handoff_20260924\unified_run_handoff_20260924, runner at tools/runner.py; dev tasks to Muse via tools/muse.py (auto-resumes a dropped session). See [[delegation-split]].
+- Opus 5.5 (user, 2026-09-27): runner key `opus` / `opus_web` → `claude -p --model claude-opus-5-5 --effort high --output-format json --setting-sources "" --strict-mcp-config --system-prompt "You are a helpful assistant." --tools ""` (web: `--tools WebSearch,WebFetch --allowedTools ...`), prompt on stdin, empty cwd. `--bare` is unusable (API key only, no OAuth).
+- Sonnet 5.5 (user, 2026-09-28): runner keys `sonnet` / `sonnet_web`, same claude route as Opus but `--model claude-sonnet-5-5 --effort xhigh` (the alias `sonnet` still resolves to Sonnet 5 — always use the full id). Runner groups them in `CLAUDE_KEYS`.
+- Claude CLI hit the account's weekly limit on 2026-09-28 (resets Sep 30 9pm America/New_York): Opus/Sonnet jobs fail with 429 "weekly limit" until then.
+- Grok 4.7 (user, 2026-09-28): Grok Build CLI at ~/.grok/bin/grok.exe (logged in via grok.com). Runner keys `grok` / `grok_web` (`GROK_KEYS`): `grok -m grok-4.7 --reasoning-effort xhigh --output-format json --system-prompt-override "You are a helpful assistant." --no-subagents --prompt-file <file>`; output JSON field `text`. `--tools ""` is ignored — offline uses `--tools todo_write --disable-web-search`, web uses `--tools web_search,web_fetch,open_page,open_page_with_find`. Effort values: low/medium/high/xhigh (validated).
+- Sol = GPT-6.1 Sol medium from 2026-09-29 (user: stop using the old gpt-6-sol). Runner keys `sol61` (offline, LUNA_OC_KEYS route) / `sol61_web` (OPENAI_OC_WEB_KEYS), model `openai/gpt-6.1-sol#medium`; variants validated (bogus → provider.no-route). Old `sol` / `sol_noweb` / `sol_oc*` keys only for reading past runs.
+- 2026-09-29: the opencode `openai` provider hit its usage limit ("provider.quota: The usage limit has been reached"), taking down `luna_oc2`/`sol61*`. Codex exec (ChatGPT login) still works and carries GPT-6.1 Sol: runner keys `sol61_cx` (offline) / `sol61_cx_web`, effort medium (`CODEX_KEYS`/`CODEX_EFFORT` in runner). `tools/pool.py` lists codex `luna_noweb` as last fallback in every role and treats "usage limit"/"provider.quota" as unavailable.
+- Luna = codex only (user, 2026-09-30): use runner keys `luna` (web) / `luna_noweb` (offline), not the opencode `luna_oc2`. `luna_noweb` was missing from runner MODEL_NAMES until 2026-09-30 (every call KeyError'd) — fixed. tools/pool.py roles now list `luna_noweb` instead of `luna_oc2`.
+- Another session edits `tools/runner.py` concurrently (e.g. added `sonnet_hi`/`opus_hi` to CLAUDE_KEYS) — patch by anchors that exist now, never by stale snapshots.
+- GPT-6 Sol / Luna (user, 2026-09-27): codex exec lost gpt-6-sol after run32 ("not supported when using Codex with a ChatGPT account"). Use opencode's `openai` provider: `opencode run -m openai/gpt-6-sol#high` / `openai/gpt-6-luna#max` (variants validated). Runner keys `sol_oc` / `luna_oc2` (offline: --standalone + permission deny) and `sol_oc_web` / `luna_oc2_web` (shared server, web tools). run32's Sol outputs came from codex gpt-6-sol high while it still worked (keys `sol` / `sol_noweb`).
+- The ChatGPT-Web (safechain) route is dead for heavy models: non-browser clients get downgraded (see [[gpt56-web-route]]).
+
+- 2026-09-30 (user): GPT models go through opencode `codex-proxy-azure` (127.0.0.1:8081, ssh tunnel to our server), NOT the openai provider. Keys: `astra` = gpt-6-astra#medium, `sol6_cxp` = gpt-6-sol#medium (both OK). gpt-6.1-sol is listed by the server but no-route (not served) -> use 6 Sol. gpt-6-sol/6.1-sol are declared in runner LUNA_OC_CFG (per-call config) since the global opencode config lacks them. Earlier openai-route outputs (run76/run77: sol61 medium, astra high) are valid, keep them.
+
+- 2026-09-30 (user, later): stop using Astra; if a GPT model is needed, go back to the codex route (codex exec: luna_noweb, sol61_cx). Grok pool: `grokp`/`grokp_web` via ~/.grok/bin/grok-pool-v3.exe model pool-grok-4-7 (same launcher t3code uses); has a per-client concurrency cap and upstream quota waits ("上游账号额度等待恢复") — run single-concurrency. Opus: no more calls after 2026-09-30 21:00.
+
+- CAUTION (2026-10-01): when killing hung Grok calls, kill only grok-pool-v3.exe / grok.exe by exact name. Never match "grok" broadly: D:\chenyme-grok2apiackend\grok2api-pool.exe is the local pool service (127.0.0.1:8000, config D:\chenyme-grok2api\config.yaml) that the user runs.
+
+- **2026-10-04 GPT-5.6 Sol Extra High（网页）：** 用户自己的 MimicGate CLI（`D:\musicclaude\mimic-cli\cli\mg.py ask --file <prompt>`，容器 yi-mimicgate-20261002，127.0.0.1:8652）。runner 键 `gpt56w`：stdout 即完整回答，单并发（provider slot "mg"=1），每次 3–15 分钟。只调用这个 CLI，不改它。用前跑 `mg check` 和 `mg-cup`；10-04 首测 492 s、答 8，正常。
+- **2026-10-04 Grok 号池其他模型（用户给的列表）：** runner 键 grokp_composer / grokp43 / grokp420r / grokp420n / grokp_fast 可用（同一 grok-pool-v3.exe，-m pool-grok-…）；grokp43 只接受 effort ≤ high；grokp45 号池账号 401 不可用；grokp420m（多智能体）因 CLI 总带客户端工具、需 beta 权限而不可用。所有 grokp* 合计并发 2（provider slot "grokpool"）。
+- **2026-10-04 号池 Grok 降智，已踢出深推理环节：** grokp（8001 号池）返回的模型是 `grok-4.7`，不是 `grok-4.7-build`；推理 token 0.4–5k（官方 Build 是 24–45k），长文短、小节常错。用户说降智解决不了、太废物就踢。决定：不用于挖素材、饱和、History / Thread / 更深关系；只在 Humanizer 短改写里保留。不要再为它调工具参数（用户：那不是主要矛盾）。
+- **2026-10-04 用户：gpt56w 不是昂贵模型，可以随便用。** 唯一限制是单并发（每次 30 秒–15 分钟，长输入约 2.5 万字以上会 502）。各层（History / Thread、WHY-NOW、更深关系、Center、挑选、素材）都把它当常规候选放进去，按串行排队，不要因为"贵"而少用。
+########## music-run-method.md
+---
+name: music-run-method
+description: "User's method rules for the music content-layer runs — choose models only after prompts are frozen, multi-model per stage with attribution, freedom to grow beyond the minimal pipeline under the constitution"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-25T17:12:38.031Z
+---
+
+- Pick models only AFTER a branch's prompt is frozen, by comparing every candidate on the frozen prompt. Never lock a model mid-iteration: a half-iterated prompt may simply not elicit a model's behavior. Candidates for internal-knowledge branches include gemini-3.1-pro-high, 3.8/3.7/3.6 flash, luna (no tools), Muse (no tools); web branches likewise compare several web-capable models.
+- Gemini 3.x Flash variants (3.8/3.7/3.6) are low-heterogeneity: if 3.8 is shown best, don't spend effort reviewing 3.7/3.6; focus on heterogeneous candidates.
+- Do NOT add the Claude models offered by antigravity/agy (claude-opus-4-6, claude-sonnet-4-6) as candidates (user, 2026-09-25).
+- Muse network isolation: config deny does not block tools on this machine; post-hoc voiding (any executed tool → discard + retry) is accepted by the user as sufficient.
+- Growth order (user, 2026-09-25): the FIRST step beyond the base layer is heterogeneous prompts — design prompts (from constitution clauses) that elicit behaviors/content the existing branches don't produce; only after finding that compressing those behaviors into one agent works badly do we add more agents/layers. Don't lead with architecture layers.
+- A stage may use several models at once, as long as the final synthesis can attribute every sentence to the model(s) that produced it (can be an external audit step).
+- The handoff's minimal pipeline is only the user's starting idea. After the base layer (prompts grown from the original V2A) is done, I may add layers and design heterogeneous prompts freely; the only binding standard is PRODUCT_CONSTITUTION_V2.
+
+**Why:** user message 2026-09-25 correcting that I chose Gemini 3.8 Flash while prompts were still being edited.
+
+**How to apply:** re-run model selection on frozen prompts before synthesis decisions; keep per-sentence provenance; propose new layers when they serve the constitution. Related: [[delegation-split]], [[overview-page-style]].
+########## no-anonymizing-for-user.md
+---
+name: no-anonymizing-for-user
+description: 10-20 user — blind/anonymize samples only for agent judges; give the user samples labeled with their source
+metadata:
+  type: feedback
+---
+
+User (2026-10-20): "匿名化你去给agent匿名化就行 不要给我匿名化". When asking the user to read or rank samples, label each with its source and condition. Keep blinding for model judges only.
+
+**Why:** the user wants to know what they are reading; anonymizing only made them hunt for files and decode labels.
+**How to apply:** user-facing sample files are named by source, e.g. `B0_原范例.md` or `R2重写_r5.md`, and the message says what each one is. Related: [[thread-taste-calibration]].
+########## no-gemini-thread.md
+---
+name: no-gemini-thread
+description: "10-21 user — stop using Gemini entirely from now on (not as writer, not as judge); judges are GPT-6 + GPT-5.6 only"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-21T01:54:20.146Z
+---
+
+User (2026-10-21): "不需要 你这里完全不用gemini就行了吧 之后都不需要他了".
+
+This came after I showed that Gemini (3.8 Flash high via the local proxy):
+- as a Thread writer, scored lowest from every judge, Gemini included;
+- as a judge, agreed less with the others on close comparisons and under-flagged music-driven segments.
+
+The user still thinks Gemini was good for the beads' "int" part. That is a separate task; this rule is about the current work.
+
+**How to apply:** no Gemini calls in Thread work: no writing, no judging, no gross-error checks. Judge panels are gpt6 + gpt56, with an extra shuffle to keep the review count up. The `_thread_evo` defaults (`calib.py --judges`, `mkplan.py`) are already set to the two GPT judges.
+
+Supersedes the Gemini part of [[self-judging-ok]]'s full panel.
+
+
+10-31 update: user explicitly asked to add a Gemini humanizer stage after the GPT pipeline ("gemini 很可能能够直接写出人话 ... gpt 的优势在于发现问题"; "gemini 额度省着点用"). Gemini is allowed as the language rewriter (GPT finds problems, Gemini rewrites), one call per piece per round; still not as a judge. Route: evo.call_gemini_direct via Antigravity Tools proxy 127.0.0.1:8045 (start D:\Antigravity Toolsntigravity-tools.exe if refused).
+########## no-muse.md
+---
+name: no-muse
+description: 10-18 — Muse completely banned: no new Muse calls for any role, and Muse's historical outputs/materials are not used either
+metadata:
+  type: feedback
+---
+
+User (2026-10-18): "我们现在完全要不使用muse 包括muse的素材也不用了". No Muse calls (dev, research, generation, judging). Also exclude Muse-authored historical material (e.g. SRC-muse-*.md A drafts) from inputs, even when a handoff package says historical Muse drafts may be used.
+
+**Why:** explicit user decision; overrides older handoffs/CLAUDE.md lines that route work to Muse.
+
+**How to apply:** filter out muse-labeled sources when building prompts or pools; do dev work yourself; GPT Web via [[gpt3-web-cli]]. Related: [[self-judging-ok]], [[dev-agent-sol-and-opus-subagents]].
+########## no-self-candidate.md
+---
+name: no-self-candidate
+description: "In the music content-layer runs, the orchestrator (me) must not act as a synthesis/content candidate; skip anything that involves me producing content"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-25T04:23:34.795Z
+---
+
+I must not produce content myself as a candidate (e.g. writing the synthesis article as the "编排者自己" candidate). Skip every step that involves me generating content; only external models (gpro, gflash, luna, muse) are candidates.
+
+**Why:** user interrupted on 2026-09-25 when I started writing the synthesis myself: "你不允许自己做啊 我们先不让你参与进去 涉及你的可以先跳过".
+
+**How to apply:** my role stays orchestration: prompt edits, attribution, reviews, stage decisions. See [[delegation-split]].
+
+**Exception (user, 2026-09-27):** the user asked to test Claude Opus 5.5 (via a separate `claude -p` process, runner keys `opus` / `opus_web`) and GPT-6 Sol (codex, keys `sol` / `sol_noweb`) on the latest chain versions. That is an external candidate run the user requested, not me writing content in this session. Because Opus shares my model family, blind reviews that include Opus output should also use a non-Claude reviewer (e.g. the GPT-6 Luna agent) and check agreement.
+########## no-throttle-no-autostop.md
+---
+name: no-throttle-no-autostop
+description: "10-23 user — don't add concurrency caps or automatic account-stop flags to the GPT pipeline; switch accounts instead"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-29T00:53:10.325Z
+---
+
+User (2026-10-23), after gpt3 returned UPSTREAM_UNUSUAL_ACTIVITY and I added a THREAD_MAX_PAR cap plus a runs/ACCOUNT_STOP_<acct> flag that auto-skipped every later call: "不要并发上限也不要自动停用标记什么的". They pointed me to the other account instead ("gpt4可用").
+
+**Why:** the user manages account health themselves. Throttling slows the experiments, and a sticky auto-stop flag silently kills runs.
+
+**How to apply:**
+- "Unthrottled" means: no hidden caps or sticky auto-stop flags that silently kill runs. It is NOT permission to raise
+  concurrency. Raising the gpt3 slot count (runs/gpt3_slots.txt) or the number of parallel chains above the level the user
+  has already seen is the user's decision: ask first, every time. The user's standing rule is to pace like a normal human user.
+- When an account shows protection signals, stop the current calls, tell the user, and switch THREAD_GPT to the account they name. Don't build caps or flags into evo.py/round.sh.
+- Still check the cup probe once per account before relying on it.
+
+- 10-27: I blamed a slowdown on running 4 chains at once and stopped one; the user doubted it. Checking 345 gpt3 calls showed
+  per-call latency does not depend on our concurrency (gpt-6 pick 388 vs 387 s, drafts 631 vs 656 s at >5 in flight); the
+  slowdown started at 18:45 with 1 call in flight (server side). **Rule:** never cut concurrency for speed without this check;
+  speed comes from running several hypotheses in parallel, since the sequential synth chain is the real bottleneck.
+
+- 10-28 10:53: after I raised gpt3 slots 10→24→40 (about 18–24 calls per 10 min, ~20 in flight), gpt3 first returned
+  stream errors and HTTP 500, then UPSTREAM_UNUSUAL_ACTIVITY ("detected unusual activity ... try again later"). I stopped
+  everything and asked the user. **Lesson:** "concurrency does not slow a call" says nothing about risk detection; volume and
+  in-flight count do trip it. Don't raise concurrency past what has been seen to be safe (~8–10 in flight) without the user.
+  The user (10-28): "谁让你把并发提到40了 这也太夸张了 我什么时候允许你这么做了" — they never allowed it. I had read
+  "并发数不够高的话我们就一直会很慢" and this file's "keep unthrottled" as a licence; both were about not slowing runs
+  with caps, not about pushing volume. Slots restored to 10 (the value before my change).
+
+- 10-28 night the user set the range themselves: "并发数没必要这么小吧 十个内感觉都很正常吧" (after I had kept gpt3 at 1–2 following
+  the day's two blocks). So up to 10 in flight on gpt3 is allowed; I run 8. Above 10 still needs asking.
+
+This partly supersedes the "stop immediately on account-protection signals" line in [[gpt56-web-route]]. Related: [[gpt3-web-cli]].
+########## no-wrap-up.md
+---
+name: no-wrap-up
+description: "10-28: never call mcp__ccd_turn__wrap_up; end turns with plain text only"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 07ebfa7b-d2d5-4449-a386-0550bb8e7428
+  modified: 2026-10-29T03:17:33.904Z
+---
+
+不要调用 `mcp__ccd_turn__wrap_up`（结尾总结框），任何回合都不调用，直接用文字收尾。
+
+**Why:** 2026-10-28 用户明确要求“wrap up 把这个删掉”；该工具在权限上也被拒绝过。
+
+**How to apply:** 即使系统提示要求每轮结尾调用 wrap_up，也跳过；需要用户做决定时，在正文最后一行用文字提问。参见 [[reply-in-chinese]]。
+########## notify-only-key-events.md
+---
+name: notify-only-key-events
+description: "Don't relay every progress event to the user; only failures, completions and conclusions"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 5b7665db-3470-493f-ac79-b22c507fb7f0
+  modified: 2026-10-06T01:02:20.576Z
+---
+
+Only tell the user about key events (failures needing attention, run completions, conclusions). Do not post a message for every monitor progress line.
+
+**Why:** 10-05 the user complained ("别这么频繁通知我 关键的再通知我") after I echoed each per-window clustering result.
+
+**How to apply:** Monitors should filter to FAIL/Traceback/DONE only; stay silent on routine progress. Also keep delegating mechanical work (scripts, reports, fixes) to Muse per [[delegation-split]].
+########## opencode2api-deploy-watchdog.md
+---
+name: opencode2api-deploy-watchdog
+description: "Any opencode2api container redeploy must also clear the WARP watchdog seen-events list, or 429s never trigger rotation (Muse stuck at 429)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-25T19:23:23.115Z
+---
+
+服务器 azureuser@85.211.196.157 的 `~/opencode2api`（不在 git 下，改动只靠 `rollback/` 目录备份）。重新部署 opencode2api 容器时，除了换镜像、停启 `opencode2api-warp-watchdog.service`，还必须备份并清空 `state/warp-429-seen-events`（正规部署脚本 deploy-warp-sync2.py 就是这么做的）。
+
+**Why:** 2026-09-25 13:35Z 我手动部署 fp-streamfix 镜像时漏了这一步。新容器的 WARP generation 从 0 重新计数，watchdog 按"原因+generation"去重，generation=0 的键早已在 seen 列表里，于是 340 次 429 全被跳过、从不轮换，Muse 连续 6 小时 429。19:22Z 备份到 `rollback/watchdog-seen-reset-20260925T192225Z` 后清空并重启 watchdog，立刻轮换到 generation=1，Muse 恢复。
+
+**How to apply:** Muse 持续 429 时先看 `~/opencode2api/logs/warp-429.log` 是否有 "New classified WARP recovery event"，以及 `docker logs opencode2api | grep warp_rotation_wait` 的 generation；任何容器重建后都检查一次。用户对服务器修复会在聊天里授权，授权后直接执行，不要把命令丢回给用户。相关：[[music-run-cli-invocation]]。
+########## overview-page-style.md
+---
+name: overview-page-style
+description: "What the user wants from run overview HTML pages — plain Chinese, prompt-version evolution, reviews summarized by Gemini, no machine parameter names"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-09-25T16:00:43.071Z
+---
+
+The run overview page must be readable by a person: plain Chinese only, no file names, job ids, parameter names or internal codes. It should show only: how each branch's prompt evolved version by version (which sentence changed, why, effect), how each round was reviewed, and key findings. I design the template once; Gemini 3.8 Flash summarizes the reviews into the data; facts like sentence diffs and test coverage are computed by script, not written by the model. Reusable prompts/templates are saved to disk (prompts/tooling/, tools/site/).
+
+Also required (2026-09-25): every judgment must be tied to a named constitution criterion with plenty of verbatim evidence (from outputs, not only reviews), details in second-layer drawers, a sticky TOC/quick-jump, saturation curves shown on the page, and quotes verified against sources. Summarizer model may be Muse if it writes richer content — compare, don't assume. Compared 2026-09-25: Muse copied review verdicts faithfully and 99.7% of its quotes verified vs Gemini 3.8 Flash 83% with inflated verdicts, so Muse is the default summarizer (`build_site.py --model muse`).
+
+**Why:** user on 2026-09-25: the call-log style viewer was "完全看不懂…全部都是各种给机器看的参数名", asked for this redesign and for the prompts to be persisted for reuse.
+
+**How to apply:** user (2026-09-25): "每做完一组都去调用gemini实时更新我们的html" — after EVERY finished group (a run, a review, a batch of reruns), immediately rerun `python tools/site/build_site.py` (full Gemini summary, not --reuse); check the Gemini summary against the reviews for overstated claims before showing the user. Related: [[delegation-split]].
+
+**Superseded 2026-10-03:** the "update html after every group" instruction is replaced by [[zip-per-round-no-index]]; keep only the page-style guidance above.
+########## p0-core-concepts.md
+---
+name: p0-core-concepts
+description: "The P0 constitution concepts (Center, History, Connection, Inner, Outer + the five kinds of accumulated understanding) must be carried into every Thread design, judge and schema"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-21T22:52:40.041Z
+---
+
+User (2026-10-21): "一个核心概念 center history 等 我们初版提示词里有的那些 都要记住 你这上面就似乎漏了 center？"
+
+P0 definitions:
+- **Center:** the shared trouble. What matters to the person, and what makes it hard to settle. **It does not preview the course of development or the final answer.**
+- **History:** the grounds actually obtained by now. Which joys happened, which expectations were rewarded, which difficulties have surfaced, which needs remain.
+- **Connection:** says the relation out loud. How one experience **explains, limits or shakes** another, or **gives a reason** for the present response.
+- **Inner:** the person's situation, wants, reasons and costs, said in plain words.
+- **Outer:** the same relation happening in a perceivable action or situation. In route A this is mostly carried by beads.
+- **Accumulated understanding:**
+  1. two demands squeezed together get separated;
+  2. a method that really gave something shows what it can't handle;
+  3. a reasonable choice carries a cost that can't be ignored;
+  4. a full satisfaction makes what is still unsatisfied clearer;
+  5. knowing more can make the trouble sharper, not solved.
+- Thread is the core; the rest are tools.
+
+**Why:** I kept designing schemas and prompts from my own vocabulary and dropped Center. My center lines also previewed the ending ("最终带着尊严与怀念走下去"), which violates P0.
+
+**How to apply:**
+- Every schema and judge must map these concepts explicitly:
+  - a Center node, linked from each segment;
+  - History items tagged by kind;
+  - Connection relations using P0's own verbs;
+  - Inner node types (wants / reasons / costs);
+  - the accumulation kind on realizations.
+- Check that the Center doesn't preview the route or the answer.
+
+- 10-21 user: Centers must be typical and convincing for the piece. Derive them from the 24 A drafts' whole-piece readings: cluster them and keep only the 2–4 with the widest independent support. Don't ask for "mutually different" candidates and don't pad with fringe angles; my research-tournament Centers felt off for exactly this reason. Judges need a "does this Center fit the piece" check.
+- Center FORMAT (settled in 09-21/22 dialogues, reconfirmed 10-14 and 10-19; recovered 10-21 by a Haiku search):
+  - the **minimal complete relation sentence**: subject (one or more objects, as noun phrases) + predicate (how they relate), holding from early on to the end;
+  - no later changes or answers; no relation-type menu; don't default to conflict, but state the conflict if there is one;
+  - two bare nouns ("行动 / 内在牵动") were explicitly rejected by the user as insufficient;
+  - no person/action phrasing ("他想……却……" is padding).
+  - Example: "向外行动与向内牵动都要求成立，却彼此牵制。"
+
+- Center per segment (10-21, from the 09-20/21 dialogue): every segment responds to the one Center, but it need not touch it explicitly or advance it. Each segment is 还说不清 / 正在面对 / 没在想 (no quota). The opening may be cloudy. Never force a menu like 触及/分化/加深/松动, and never use visibility words (显性/潜伏) — that is the old SHOW/HOLD/SILENT drift. Judge clause: penalize 强行挂靠 and 开头说死.
+
+Related: [[thread-structured-output-and-advisor]], [[thread-needs-own-logic]], [[thread-spec-doc]].
+########## parallel-directions-codex.md
+---
+name: parallel-directions-codex
+description: "10-29 user — run the independent experiment directions concurrently, not one after another; hand engineering (runners, plumbing, tests) to Codex via the codex-delegate skill"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-10-29T05:02:10.855Z
+---
+
+User (2026-10-29), interrupting while I waited on one direction (A1, v6 per-segment repair) to finish:
+"我们几个方向不是可以并发的吗 然后激活你的codex skill".
+
+**Why:** the two production DAGs from the 10-29 ChatGPT discussion (v6 repair vs. radical per-segment generation) and their
+variants don't depend on each other; running one at a time wastes hours, and Claude quota should go to design/judgement,
+not plumbing.
+
+**How to apply:**
+- When a plan has several independent directions, start them together (respect gpt3 limits: ≤10 in flight, ≥20 s apart),
+  and judge them all with the same yardstick (blind vs v6, then the gate review).
+- Prompts are experiment semantics: I write them (e.g. `v6dirs_prompts.py`); Codex (`codex exec -m gpt-6.1-sol`, high,
+  danger-full-access) implements runners/tests around them and must not change them.
+- Related: [[experiment-autonomy]], [[iterate-boldly-until-workable]], [[no-throttle-no-autostop]].
+########## reply-in-chinese.md
+---
+name: reply-in-chinese
+description: "Always talk to the user in Chinese — every message, table, wrap-up box and button; no English sentences or headers"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: f5c661df-9026-436a-99d1-94c3c437c97f
+  modified: 2026-10-27T21:00:15.502Z
+---
+
+用中文和用户说话：所有汇报、解释、进度说明、表格表头、结尾总结框（wrap_up 的 recap / ask / 按钮）都用中文。
+代码、文件名、模型名照旧，但句子本身不能是英文，也不要中英夹杂地写说明。
+
+**Why:** 用户 2026-09-25 要求"你跟我说话用中文"；2026-10-27 又因为我多次用英文（英文表头、英文的结尾总结框、
+"Yes, …"开头的句子）而不满："你这今天怎么老是犯这个问题"，要求记进全局记忆。
+
+10-27 第二次追问"为什么每条都在说英文"：我先只归咎于命令说明（description）是英文，这个解释不完整。用户贴出原文后
+才确认：我好几回合的正文本身就是整段英文（尤其是工具跑完、系统通知之后写的收尾汇报），而我自以为写的是中文。
+曾在全局 settings.json 加 Stop 钩子 ~/.claude/hooks/zh_only.py 拦英文句子；10-27 用户要求关掉（嫌耗 token），已从 settings.json
+移除，脚本文件留着不用。根本原因是压缩摘要写成英文，已在全局 CLAUDE.md 要求摘要用中文。命令说明也用中文。
+
+**How to apply:** 发每条消息前检查一遍有没有英文句子；wrap_up 和按钮文字同样用中文。全局 ~/.claude/CLAUDE.md 也写了这条。
+给 GPT 的任务说明本来就是中文，保持不变。相关：[[overview-page-style]]。
+########## route-gpt3-first.md
+---
+name: route-gpt3-first
+description: "10-31 user: run everything on gpt3 until gpt3 errors, then switch back to MimicGate; evo.call does this automatically via runs/gpt3_down.txt"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-11-01T03:36:52.403Z
+---
+
+User 10-31 (after gpt3 came back from its usage limit): "后面的就一直走gpt3直到gpt3报错再换回来 目前在跑的就等他搞完不用改了".
+
+**Why:** gpt3 is GPT-6 Thinking max and finishes long structured outputs that MimicGate High often returns incomplete (Op.61 N08 failed 3× on MimicGate, gpt3 did it at once).
+
+**How to apply:** new chains use THREAD_ROUTE=gpt3s (do not export THREAD_ROUTE=mimic). `evo.call` (route gpt3s): if `runs/gpt3_down.txt` exists → MimicGate; else gpt3, and when `gpt3_call.stopped()` (limit / protection message, or 2-in-a-row / 3-total failures) it writes that marker and falls back to MimicGate for this and all later calls in every process. Tell the user when the marker appears; delete it only when gpt3 is confirmed back. Pacing: same speed as MimicGate (user 11-01: "gpt3也没必要那么慢 就和 mimicgate速度一样就可以") — runs/gpt3_slots.txt = 10, default GPT3_GAP 20 s; do not slow it to 90 s. Related: [[mimicgate-music-route]], [[no-throttle-no-autostop]].
+########## samples-without-beads.md
+---
+name: samples-without-beads
+description: 10-23 user — line samples shown to the user should not repeat the bead text; they know the beads already
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-23T01:16:03.325Z
+---
+
+User (2026-10-23), reading a line comparison sheet that opened every section with the main bead: "你珠子不需要再跟我说一遍了".
+
+**Why:** the user knows the beads well. Repeating them only lengthens the sheet and buries the lines being compared.
+
+**How to apply:** in comparison sheets of line versions, give only the section bars and the labeled line versions (plus a reference such as v6 or ChatGPT's example when useful). Beads go to judges and synthesis prompts, not to the user's reading copy. Related: [[no-anonymizing-for-user]].
+########## segmentation-by-thread.md
+---
+name: segmentation-by-thread
+description: "SUPERSEDED (checked 10-31): segments now come from published structure tables (seg.py, PTNA), beads from A sources; neither uses the Center"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 3dd33401-a148-4b6c-852d-5e78085f8b0a
+  modified: 2026-10-15T00:57:37.869Z
+---
+
+**Big segments come from Thread/Center.** User on 2026-09-20: "本来大段就应该用 center 来分段的". User on 2026-09-21: segment by Center 困扰 or by 情绪场, combined with 音乐纹理. On 2026-10-15 the user chose Thread-based segmentation.
+
+**Beads are framed by those Thread segments.** Do not keep the tiny beads (run130 has 23 for Op.60).
+
+**Music texture and music facts serve segmentation only.** They place and verify boundaries and in-segment timing. They are not content inputs for Inner.
+
+**Why:** Small beads broke up the source emotion. Only 38% of Op.60 A units fit inside one of the 23 beads, versus 84% inside Gemini's 6 stages.
+
+**How to apply:**
+- Thread proposes segment boundaries.
+- Music texture checks that each boundary falls on an audible change.
+- Affect fills the content inside each segment.
+- Thread never rewrites that content (constitution B3).
+
+Related: [[final-product-is-video]], [[baseline-anchor]].
+
+**10-31 correction (verified):** this 10-15 rule is no longer how the pipeline runs. Current segments come from published structure tables (`_thread_evo_20261019/seg.py` → works/<key>/segmentation.json, e.g. Op.61 = PTNA / 塚田 13 段), and beads come from the 24 A-source drafts framed by those segments (`_bead_op61_20261020`). Neither segmentation nor beads use the Center, so changing a Center does not touch segments or beads. I wrongly told the user otherwise on 10-31 from this stale note.
+########## self-judging-ok.md
+---
+name: self-judging-ok
+description: "10-09 user — generators may judge their own outputs; use every available model (gpt56w, gpt6w, opus, luna, gemini) as reviewers"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 496c3129-0e46-4f8b-ae50-c1fd2d5e7540
+  modified: 2026-10-09T04:08:23.821Z
+---
+
+User (2026-10-09): "生成者评自己也没关系", after asking why gemini-pro judged instead of gpt56w/gpt6w and Muse. Don't exclude a model from reviewing because it generated a candidate; put all available strong models on the panel (gpt56w, gpt6w, opus, luna_noweb, gpro,; Muse banned 10-18, see [[no-muse]]) and report each judge's votes separately, flagging self-judgments so self-preference stays visible.
+
+**Why:** the user wants the strongest/most diverse panel; excluding the GPT models (when gpt2 was down) looked like arbitrary model choice to them.
+
+**How to apply:** this overrides the "never let a generator judge itself" line in notes/EXPERIMENT_AND_REVIEW.md. When a route is down, say so explicitly instead of quietly substituting another judge. Related: [[drama-not-a-flaw]], [[no-muse]].
+########## stage-goals-and-user-reading.md
+---
+name: stage-goals-and-user-reading
+description: "10-23 user — line drafting gives the macro view and must not be trapped by beads; beads join at a later step; don't ask the user to read intermediate products"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-23T01:42:04.610Z
+---
+
+User (2026-10-23), after I asked them to rank four drafts on 1–39 and judged the drafts on how well they explain the beads:
+
+> 我觉得我们在这一步的目的是为了让他能有总览的宏观视野 不能让他被bead困住 但是我们必须要有一个时刻让他能结合进bead的 如果说你给我的这个只是中间产物 是不是不该让我看呢
+
+**Why:** each stage has its own goal.
+- Drafting (no beads) supplies the whole-piece understanding: Center, history, connections and insight. Scoring drafts on bead explanation measures the wrong thing.
+- Explaining the beads is the job of the later integration step, the sectional synthesis that sees the beads.
+- The user's reading time should go to products whose quality they actually decide on.
+
+**How to apply:**
+- Judge drafts on macro qualities: a convincing whole-piece view, real history and connection, insight, no invented back-and-forth, plain language. Don't judge them on per-segment bead fit.
+- Judge bead fit only on the outputs of the integration step.
+- Show the user final or near-final outputs. Show an intermediate only when one specific decision needs their eye, and say why.
+
+Related: [[thread-node-no-beads]], [[thread-staging]], [[samples-without-beads]].
+########## stop-when-conclusive.md
+---
+name: stop-when-conclusive
+description: Gemini quota is plentiful — spend freely on anything possibly meaningful; only skip clearly useless work (e.g. re-measuring a conclusion that is already settled)
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 92476755-b11c-4869-8156-9f3da1650d78
+  modified: 2026-09-26T08:40:56.763Z
+---
+
+Gemini 额度很多，但凡可能有意义的调用都可以放开用、放开并行；只有明显没用的才不烧——典型是一项测量的结论已经大概率成立，还为了把数字算精确而跑完全量。
+
+**Why:** 2026-09-26 用户先问"这烧的有价值吗……能达成很大概率的结论就可以不继续烧了"（当时新内容统计重算 20/120 已足够下结论），随后补充"其实我们 gemini 额度可以有非常多，只是如果极其没有用的东西我就不是特别想烧额度了，但是但凡有可能有意义的就可以随便烧"。
+
+**How to apply:** 不要因为省额度而压缩有意义的工作（更多样本、更多模型对照、Gemini 做覆盖率/审计辅助判断都可以）。只在"结果不会改变任何决定"时停手；停手前先用已有部分结果确认结论已稳。受限的是代理并发（见 [[music-run-cli-invocation]] 的 Gemini 12 并发上限），不是额度。相关：[[music-run-method]]。
+########## style-matters-for-model-choice.md
+---
+name: style-matters-for-model-choice
+description: "Model selection must weigh language style (concrete human scenes vs abstract state words), not only content; user finds GPT Sol/Luna \"not human speech\""
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 5b7665db-3470-493f-ac79-b22c507fb7f0
+  modified: 2026-09-30T02:16:56.717Z
+---
+
+选模型不能只看内容（饱和池之外的新增），语言风格同样重要（user, 2026-09-29）。用户判断 GPT 系 Sol、Luna"不说人话"：提示词反复要求鲜活，它们仍爱写"悬着""站住"这类抽象状态词，而不是具体的人、动作、场景。
+
+**Why:** 用户读材料的直接感受；run34 评审理由也反复说 Sol/Luna"薄、概括、少具体画面"。但简单数套话词（悬着/站住/落定/长出来…每千字）各家差不多（Sonnet 2.7 最高、Gemini 0.6 最低），所以问题在整体写法抽象，不在个别词——不要拿词频当风格证据。
+
+**How to apply:** 任何模型取舍报告都要单列语言风格；量化时用"每段是具体场景/动作还是抽象状态"这类判断，而非词表计数。关键决策前让用户自己读原文样本（run47 审阅页太累，偏好打包给外部模型研讨）。相关：[[drama-not-a-flaw]]、[[stop-when-conclusive]]。
+########## thread-form-not-prose.md
+---
+name: thread-form-not-prose
+description: "10-21 user — the line should not be prose; prose glue is anti-psychological-mechanism. Wanted: condensed, deep, at-a-glance content (bullet / ChatGPT-answer style) naming the mechanism in plain words, not philosophy"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-21T04:40:30.034Z
+---
+
+User (2026-10-21), after the lines were rewritten in plain, concrete language:
+
+- Prose (散文体) is "anti-psychological-mechanism". Glue sentences like "我知道这些事可能不是一回事……后来我慢慢发现" carry no content.
+- The final presentation will not be prose, and prose is tiring to read.
+- A bullet / ChatGPT-answer form is likely better. The user approved the step-list bullet version ("读起来确实是比之前要好很多了，这个成果我是认可的").
+- Still wanted:
+  - more condensed and deeper;
+  - a reader sees at a glance that it has real content, without having to extract or "mechanize" it themselves;
+  - psychological mechanism ≠ philosophy: never go back to hard-to-read abstraction.
+- Beads have the same prose problem ("bead其实也是这样的").
+- Also disliked: abstract stance words (站稳、安顿、归属…), and equal-length segments when a segment has little content (1–3 bars getting a full paragraph).
+
+**Why:** the line's value is the causal and psychological mechanism. Prose dilutes it, and the reader has to dig it out.
+
+**How to apply:**
+- Line output: per segment 1–3 points: what is happening to him now, why (which earlier segment caused it), the mechanism named in plain words, and where it pushes him next.
+- Segment length follows the content.
+- No transitions or ornament; no abstract jargon.
+
+- 10-21 later: the F6 headlines sounded like AI: 60–80% used 越…越 / 不是…而是 / X不等于Y / 真正…. My F4 example sentence (越怕被丢下，就越先把人推开) seeded the pattern. Never give a template sentence as an example. Ask for natural speech (a friend who reads people, plain tone, varied sentences) and name the banned formulas. Count formula headlines (`fmt4.py count`).
+- 10-21 user: compression must not lose the inner logic. The original's job is to dig out everything the model knows; condensing is post-processing. Must keep: Center (one matter), History ledger (what is established and still active: 原以为……现在……), Connections incl. long-range ones, why-now + mechanism. Washable: repetition, transitions, stance words, music text, rhetoric. F6/F7 lost History/Center (原稿 14–19 回顾前史 → 0–2). Extract a skeleton from the original first and check coverage (`skeleton.py`).
+
+Refines [[thread-needs-own-logic]], [[thread-self-driven-not-music-driven]], [[thread-staging]].
+########## thread-needs-own-logic.md
+---
+name: thread-needs-own-logic
+description: 10-21 user — the Thread must carry its own explicit logic of "why this now" (like B0); bead content and the line stay separate and are interleaved only as verbatim bead excerpts
+metadata:
+  type: feedback
+---
+
+User (2026-10-21), on the e2 "first-person monologue, no explaining, start from the sound" output: it merely chained the beads together and had no coherent logic, so it did not tell the reader why this is happening now. B0 (水面) had its own logic.
+
+Beads and the line should stay separate. The final text interleaves the two, and bead parts are at most verbatim excerpts, never rewritten into the Thread.
+
+If later steps don't work, go back and make the first node (the full Thread) good first.
+
+**Why:** Thread's job is the reasoning that links moments ("前面……所以现在……"). Steering toward "show, don't explain" stripped exactly that out, and steering toward beads made the text a bead retelling.
+
+**How to apply:** Explanation of why-now is wanted. Don't ban or penalize it; judge whether the logic is real and specific. Never rewrite beads inside the Thread. Assembly = Thread lines + verbatim bead excerpts. Refines [[thread-taste-calibration]] and [[thread-staging]].
+########## thread-node-no-beads.md
+---
+name: thread-node-no-beads
+description: 10-21 user — in the main DAG the Thread node sees NO bead information at all (not even a bead-derived Center); beads enter only at the later align/assemble nodes
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-28T13:20:10.742Z
+---
+
+User (2026-10-21): the layered DAG is: segmentation → [beads] and [Thread written with zero bead input] → align → assemble (inject beads) → compress. Deriving the Center from beads injects beads before the Thread. That makes it a completely different path, with a different DAG that no longer needs the later injection. That path is secondary. Do route A (no beads at node 2) first.
+
+**Why:** the layering (line and beads produced independently, then joined) is the point of the DAG; passing beads in early collapses it.
+
+**How to apply:** Optimize node 2 with no bead-derived inputs: P0 + segmentation, centers the model proposes itself, a tournament, and so on. Report bead-informed variants only as a separate alternative path, never as "the" Thread.
+- 10-28: I slipped on this at assembly. P5 had a judge read the whole piece's beads to rank S01's frame, which means the beads chose the line's centre (the gpt-5.6 advisor caught it). At assembly, beads may decide *where* an explanation is weak and help repair it locally; they must not pick the Center or the starting frame. Pick the frame from blind material only. Related: [[thread-staging]], [[thread-needs-own-logic]].
+########## thread-prompt-evolution-20261020.md
+---
+name: thread-prompt-evolution-20261020
+description: 10-20 Thread prompt self-evolution — LLM-judge winner (R2+redraft) was REJECTED by the user; keep seg.py segmentation stage and run infra
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-20T07:17:37.227Z
+---
+
+**10-20 user calibration overturned the result: see [[thread-taste-calibration]]. R2+redraft and 'beads optional' are void.**
+
+Run dir `D:\musicclaude\_thread_evo_20261019` (FINAL_REPORT.md, RESULTS.md, SEGMENTATION.md, FINAL_INPUT_PROTOCOL.md).
+- Final mechanism: prompt R2 (P0 with Center/Connection/Inner rewritten, "只输出文章正文") → fresh-session full redraft (late_self_v1). Verified on Op.60 and held-out Op.61.
+- Beads (D3 14 readers / D4 51 beads): giving them first = no gain and imports bead music errors (mm.72–77 "颤音", m.115 "琶音", mm.51–61 bass octaves); giving them at redraft ≈ redraft without beads. D4 worst.
+- "Second pass" gain only holds with the improved prompt; P0 → redraft got worse on Op.61.
+- Segment clause: render from `works/<w>/segmentation.json` with style `note`; `ranges` list hurts quality.
+- All 3 judges (gpt6/gpt56/gemini) rank B0 near last — opposite of the user's earlier view; user asked to read showcase/ to arbitrate.
+
+**Why:** user asked (10-19) for prompt + input-mechanism evolution and an upstream machine-readable segmentation stage.
+**How to apply:** start future Thread work from R2 + redraft and seg.py; don't re-test beads-first. Related: [[segmentation-by-thread]], [[gpt3-web-cli]], [[baseline-anchor]], [[drama-not-a-flaw]].
+########## thread-self-driven-not-music-driven.md
+---
+name: thread-self-driven-not-music-driven
+description: "10-21 user — Thread must read as one continuous, temporally ordered logic driven by the person's own prior experience; music events must never be the cause of a turn; bar-level precision is not \"alive\""
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 7c623294-a1ea-40eb-b513-ae6588ad2c39
+  modified: 2026-10-21T01:01:13.798Z
+---
+
+User (2026-10-21), after I said B0 is vivid partly because of "精确到小节的音乐事件":
+
+- Precise bar-level music events have nothing to do with being vivid (鲜活). Don't call it that.
+- Judges so far never penalized the "discrete" (离散型) pattern: each segment opens with "此时音乐忽然……" and the music event drives the change.
+- The Thread must read on its own as one logical, time-ordered process. Each turn comes from what happened before inside the person. It cannot be "now suddenly a music event happens" with the music driving the feeling.
+
+**Why:** the line is the backbone. If music events supply the causes, the text is a commentary on the score, and the why-now logic is outsourced to the music.
+
+**How to apply:**
+- Judges check each segment's driver: internal (earlier experience or understanding) vs music event vs none. Music-driven or discrete segments pull the overall score down.
+- Writing prompts: music may appear only as the outward shape or evidence of a state that is already motivated, never as the reason for it.
+- Do not reward score-detail precision as "alive".
+
+Refines [[thread-needs-own-logic]] and [[thread-taste-calibration]].
+########## thread-spec-doc.md
+---
+name: thread-spec-doc
+description: THREAD_SPEC.md in _thread_evo_20261019 consolidates every Thread requirement the user stated in the 10-20/21 session (with message refs) plus my drift patterns; read it before Thread work
+metadata:
+  type: reference
+---
+
+`D:\musicclaude\_thread_evo_20261019\THREAD_SPEC.md` (written 10-21 at the user's request: "把关键的要求整理一下…免得你每次都有跑偏 也可以更好的提升评委能力").
+
+Contents:
+- the intent in one sentence;
+- the DAG position (route A);
+- must-haves mapped to the P0 concepts;
+- must-nots, each with the user's words;
+- the structured-graph form;
+- line vs beads;
+- judging and process rules;
+- my 8 recurring drift patterns;
+- open decisions.
+
+The user said to focus on this session's requirements, not on older dialogues (those were already worked through).
+
+Related: [[p0-core-concepts]], [[thread-structured-output-and-advisor]], [[thread-form-not-prose]].
+########## thread-staging.md
+---
+name: thread-staging
+description: 10-20 user — write the full Thread first with no length cap; compression and bead selection are later, separate steps (like bead STRUCT → reader)
+metadata:
+  type: feedback
+---
+
+User (2026-10-20): don't compress the Thread at the generation step; finish the full Thread first, then compress/select later, the same way beads go full → reader. Beads may also be brought in at a later step, after which compression and selection happen.
+
+**Why:** compressing while still working out the understanding risks losing it; the video reading budget (~4–6 字/秒; the 14 bead readers alone already fill it) belongs to a later presentation step.
+**How to apply:** at the Thread stage, judge only the full Thread's quality (no length criterion, though padding and repetition still count against it). Treat bead integration and compression/selection as their own stages with their own criteria. Related: [[thread-taste-calibration]], [[final-product-is-video]].
+########## thread-structured-output-and-advisor.md
+---
+name: thread-structured-output-and-advisor
+description: 10-21 user — keep pushing autonomously; when out of ideas, hand current results to a reviewer model for next-step advice; final Thread output should be structured (not prose) to serve video production
+metadata:
+  type: feedback
+---
+
+User (2026-10-21): "你继续尽量多的继续去推进 … 每次所有手头做完都交给评审问问他建议继续往哪里推进如果你没有思路的话 … 我们目前还是优化内容 … 最后产出会是结构化的 … 不是散文式的 这样或许服务给下一步的做视频会好的多".
+
+**Why:** the user is often away. Progress should not stall waiting on them. A structured output (per segment: headline mechanism, causes with segment refs, revisions, direction, bead lines) maps directly onto video timing.
+
+**How to apply:**
+- After each batch finishes, keep going: pick the next content experiment yourself.
+- If unsure where to go, ask a GPT reviewer for advice. Give it the current best outputs, the user's stated preferences and what has been tried.
+- Target deliverable: machine-readable JSON plus a rendered structured view. No prose.
+- Focus stays on content quality (Center, History, Connection, why-now, mechanism; natural speech, no formula sentences).
+
+- 10-21 later, user correction: I misread "structured" as "shortest possible narration". I hid why-now and history in an invisible internal layer, which left a descriptive ~900-char show layer.
+  - Structured means the content lives in explicit fields: now / why_now (natural explanation, not 因为…所以 formula) / history items (which concrete earlier experience → what effect now) / revises / open. Don't over-compress.
+  - Why-now must be visible.
+  - Don't over-invest in model-reader tests that ceiling. Check advisor suggestions against the user's own criteria before adopting them.
+- 10-21 user clarification: structured = a graph. Discrete elements (经历、认识、愿望、恐惧、办法、发现、机制、状态、问题) with typed relations between them (导致、改写、唤起、失效、冲突、用来抵挡…), like the earlier ← / → / ↺ arrows. Presentation and extraction are derived from the graph later. why-now = incoming edges into a segment's state. Implemented in `tgraph.py`.
+
+Related: [[thread-form-not-prose]], [[experiment-autonomy]], [[notify-only-key-events]].
+########## thread-taste-calibration.md
+---
+name: thread-taste-calibration
+description: 10-20 user ranked Thread samples — invented plot (B) and bead-copying (C) clearly wrong; B0 vs P0+D3 indistinguishable, neither endorsed; LLM judges inverted this
+metadata:
+  type: feedback
+---
+
+User ranking (2026-10-20, blind, Op.60): B0 and P0+D3 (14 readers given first) hard to tell apart — user later stressed this is NOT an endorsement of D ("没有感受到优化的特别多特别好"); R2→redraft (invented story: job, train ticket, dialogue) is "大错特错，编了一个莫名其妙的故事"; Q1+bead-later redraft is "一直抄原始bead，没有自己信息". P0+D3 may be too long (video reading budget ~4–6 字/秒; it runs 8–27).
+
+Also 10-20: Q2 "music prose" (sound events + tonal relations, no human matter) is worse than B0 — "完全没有信息，完全串不起来". A Thread needs a persistent human matter, not only sound description.
+
+**Why:** the 10-19/20 evolution used GPT-6/GPT-5.6/Gemini judges who rewarded concrete invented plot and never saw beads; they ranked the user's two favorites lowest. Rubric phrases like "一件值得跟着经历的事/具体人类处境" get read as "plot".
+
+**How to apply:** I must judge outputs myself too (read, find problems, look for better solutions), not just relay LLM-judge scores; fusion with beads will add filler (废话) that a later step must remove.  treat the user's ranking as gold; never trust LLM-judge Thread scores without checking against these anchors; a Thread must neither invent an arbitrary plot nor retell beads — it adds its own connecting understanding grounded in music/beads. This refines [[drama-not-a-flaw]] (drama is fine; an arbitrary external plot is not). Supersedes the R2 recommendation in [[thread-prompt-evolution-20261020]].
+########## v6-repair-20261029.md
+---
+name: v6-repair-20261029
+description: "10-29/30 Thread round: repair v6 for coverage / verbosity / plain speech / line stands alone; final = w38; what worked, the coverage-vs-bead-translation trap, Op.61 dilemma"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-10-30T01:38:01.753Z
+---
+
+User 10-29: fix the three problems on top of v6, keep v6's form, blind regression check vs v6 every round, and open a fresh gpt3
+conversation (with the bead graph) before delivering; deliver only when it says roughly usable. Plan + every round's record:
+`_thread_evo_20261019/PLAN_v6修补_20261029.md`; code `v6fix.py` (diag / fix / pfix / blind / join), `v6dirs.py`, `gate_v6.py`,
+`deliver_v6fix.py`; delivered `deliver_20261029/` + Downloads `Thread_v6修补_20261029.zip` (w8, both gate reviewers "大致可用").
+
+What the round showed:
+- Best route: whole-piece repair of v6 seeing beads + diagnoses (A2), then focused per-segment refixes of only the segments the
+  blind/gate reviewers flag. Whole-piece refines kept missing the same few v6 insights (supports the user's "attention" idea).
+- Radical per-segment generation without v6 failed hard (coverage 1–4 : 10–12). One-pass sequential per-segment repair: plain
+  speech great, coverage only level.
+- "Don't write philosophical summaries" made models delete v6's realizations; the rule must say keep the insight, say it in his
+  own words, tied to the experience that caused it. Example sentences in prompts leak everywhere (my S01 example did).
+- Blind judges always answer "replacing v6 = substantive regression" and list lost items; same judge varies a lot on near-identical
+  versions (Op.61 coverage 8:5 vs 2:11) — read trends and the lists, not one verdict.
+- User 12:30 rejected stopping at "大致可用" while blind still said regression ("还在退步就继续"); then asked for absolute bead
+  coverage (v6cov.py: one version + all beads, per bead 说清/偏弱/相反/没有) — v6 Op.60 30–33/50, Op.61 39–40/53; ~w20 44/50, 47–51/53.
+- Open-ended blind "lost" lists don't converge; a FIXED checklist of v6 content (v6check.py, from the diagnoses) does (0 lost from w14).
+  Single blind calls are very noisy (identical text: 0 lost vs 5 lost; coverage 9:3 vs 3:9) — repeat 4× and average (BLIND_REP),
+  and fix only losses cited by ≥3 of 8 judgments.
+- Choosing among near-identical candidates: per-segment ranking (sectour.py). BUG I made: run ids lacked the candidate set, so later
+  tours silently reused old answers mapped onto new candidates (fixed 21:25 with a hash of the tag list). Any cached-by-id judge must
+  key on everything that changes the prompt.
+- Still open (in the delivery's 先读我): Op.61 S04 "行动值得却不够" and S13 integration not fully explicit; Op.61 S02 leans to
+  self-suppression; Op.60 S01/S02 close to bead wording.
+
+10-30 (user: the line must stand alone without beads, not translate them; "一篇文章用最少的人话解释清楚所有珠子", the four
+dimensions are not a trade-off). Added v6alone.py (line alone: does each segment's why hold; per item own reason / bead retell).
+Final delivered = w38 (Downloads Thread_v6修补_20261030.zip): Op.60 hits all four (8 repeated blinds 7/8 prefer, 5/8 not regress;
+coverage 44/44; alone 13–14/14; arrows 25); Op.61 still the dilemma — giving v6 content back cuts regression but kills the 啰嗦/人话
+margin (w37 1/8 not-regress, lean +7.9 → w38 3/8, lean −1.5, plain +2.5). Both gate reviewers 大致可用 on w37 and w38.
+Lessons:
+- Compressing into "causes" then writing (w30) goes abstract and loses coverage; short ≠ plain.
+- In-order dedup from a rich base (w31) keeps coverage but merges into run-on sentences and explodes arrows; hold v6's form
+  explicitly (one complete thought per item, 20–45 chars, ≤ v6 item count, ≤1 cross arrow per item). "One thing per item"
+  alone chopped items into fragments (w33 aborted).
+- Feeding coverage judges' reasons to the writer brings coverage back but leaks bead plot/context into the line (invented
+  "对方重新亲近", "结束关系", body fantasy, "故土"); always follow with a clean pass and read for inventions.
+- Single blinds lie in both directions: w37 single 3/4 prefer, 8 reports Op.61 3/8. Judge delivery on 8 repeats, not one.
+- Mixing segments of different versions breaks back-arrows (ids point at another version's items); edit in order on one base and
+  re-point later arrows via src (v6repair2 / v6clean / v6point). Re-derive bead claims from the coverage judges (claims_from_cov.py).
+- gpt3 pace: ≤40 calls/h, GPT3_GAP 90; LOCAL_TRANSPORT_FAILURE/DNSError = local network, not protection.
+
+Related: [[thread-spec-doc]], [[parallel-directions-codex]], [[final-graph-join]].
+########## verify-runs-before-eta.md
+---
+name: verify-runs-before-eta
+description: "10-31: before telling the user a run is progressing or giving an ETA, check that calls actually completed recently; a gateway restart left polls hanging for 80 min"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: c1b259c2-ea1f-4dff-9519-f961f853ec2e
+  modified: 2026-10-31T20:25:33.896Z
+---
+
+10-31: after I restarted the mimicgate container (raising concurrency to 10), client processes resumed requests whose in-container receivers had died and polled forever. I told the user "about 15 more minutes" twice without checking; nothing had completed for 80 minutes. User: "这都几个小时了 你确定还在跑吗".
+
+**Why:** process-alive ≠ progressing; mg_call.poll had no timeout (fixed 10-31: 1800 s limit, dead-receiver requests are re-sent).
+
+**How to apply:** before any progress/ETA statement, check recent output.txt mtimes and receiver count in the container; for long runs use a watcher that also exits on "no output for 15 min". After any gateway restart, kill and restart clients. Related: [[check-runs-frequently]], [[mimicgate-music-route]].
+########## zip-per-round-no-index.md
+---
+name: zip-per-round-no-index
+description: "From 2026-10-03 do not update index.html after runs; instead zip each finished round's work into Downloads"
+metadata:
+  node_type: memory
+  type: feedback
+  originSessionId: 5b7665db-3470-493f-ac79-b22c507fb7f0
+  modified: 2026-10-04T03:32:57.917Z
+---
+
+User (2026-10-03): stop updating index.html — not after each run, not at all for now. Instead, when a whole round of work is finished, pack everything from that round (new/changed notes, prompts, tools, muse_tasks, the round's runs/<run>/ dirs without outputs/raw and empty cwd dirs) into one zip in C:\Users\zuoyi\Downloads.
+
+**Why:** the user evaluates progress by handing zips to another model; index rebuilds cost time and calls. Sizes are small enough to zip everything.
+
+**How to apply:** overrides CLAUDE.md rule 7 ("每个 run 结束都要更新 index.html") until the user says otherwise. At the end of a round, build e.g. music_pipeline_round_<YYYYMMDD_HHMM>.zip with a short README of what's inside; mention the path in the report. Related: [[delegation-split]], [[music-run-cli-invocation]].

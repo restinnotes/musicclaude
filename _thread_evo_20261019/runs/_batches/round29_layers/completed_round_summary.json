@@ -1,0 +1,182 @@
+{
+  "time_local": "2026-11-03 00:10 America/New_York",
+  "accepted": 0,
+  "mainline": "Q15/qu (qurefs restores citations only)",
+  "all_original_parents_terminal": true,
+  "formal_states": {
+    "round29_controlc01": {
+      "status": "reject",
+      "planned": 4,
+      "complete": 2,
+      "wins": 0,
+      "no_regress": 0,
+      "net_sums": {
+        "alone": -13,
+        "lean": -8,
+        "plain": -25,
+        "cover": 3
+      },
+      "missing": [
+        "v6b2_op60_g56_round29_controlc01_vsqurefs",
+        "v6b2_op61_g6_round29_controlc01_vsqurefs"
+      ],
+      "invalid": [],
+      "remaining_segment_upper_bound": 27,
+      "reasons": [
+        "remaining votes cannot reach the required new-version wins"
+      ],
+      "rows": [
+        {
+          "rid": "v6b2_op60_g6_round29_controlc01_vsqurefs",
+          "w": "op60",
+          "j": "g6",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -8,
+            "lean": -10,
+            "plain": -12,
+            "cover": -2
+          }
+        },
+        {
+          "rid": "v6b2_op61_g56_round29_controlc01_vsqurefs",
+          "w": "op61",
+          "j": "g56",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -5,
+            "lean": 2,
+            "plain": -13,
+            "cover": 5
+          }
+        }
+      ]
+    },
+    "round29_g6c01": {
+      "status": "reject",
+      "planned": 4,
+      "complete": 2,
+      "wins": 0,
+      "no_regress": 0,
+      "net_sums": {
+        "alone": -25,
+        "lean": -3,
+        "plain": -27,
+        "cover": 5
+      },
+      "missing": [
+        "v6b2_op60_g56_round29_g6c01_vsqurefs",
+        "v6b2_op61_g6_round29_g6c01_vsqurefs"
+      ],
+      "invalid": [],
+      "remaining_segment_upper_bound": 27,
+      "reasons": [
+        "remaining votes cannot reach the required new-version wins"
+      ],
+      "rows": [
+        {
+          "rid": "v6b2_op60_g6_round29_g6c01_vsqurefs",
+          "w": "op60",
+          "j": "g6",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -14,
+            "lean": -2,
+            "plain": -14,
+            "cover": 8
+          }
+        },
+        {
+          "rid": "v6b2_op61_g56_round29_g6c01_vsqurefs",
+          "w": "op61",
+          "j": "g56",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -11,
+            "lean": -1,
+            "plain": -13,
+            "cover": -3
+          }
+        }
+      ]
+    },
+    "round29_g6c02": {
+      "status": "reject",
+      "planned": 4,
+      "complete": 3,
+      "wins": 1,
+      "no_regress": 1,
+      "net_sums": {
+        "alone": -29,
+        "lean": -19,
+        "plain": -41,
+        "cover": 18
+      },
+      "missing": [
+        "v6b2_op61_g6_round29_g6c02_vsqurefs"
+      ],
+      "invalid": [],
+      "remaining_segment_upper_bound": 13,
+      "reasons": [
+        "remaining votes cannot reach the required new-version wins",
+        "alone: even every remaining segment winning leaves a negative net",
+        "lean: even every remaining segment winning leaves a negative net",
+        "plain: even every remaining segment winning leaves a negative net"
+      ],
+      "rows": [
+        {
+          "rid": "v6b2_op60_g6_round29_g6c02_vsqurefs",
+          "w": "op60",
+          "j": "g6",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -8,
+            "lean": -6,
+            "plain": -14,
+            "cover": 11
+          }
+        },
+        {
+          "rid": "v6b2_op61_g56_round29_g6c02_vsqurefs",
+          "w": "op61",
+          "j": "g56",
+          "new_win": true,
+          "no_regress": true,
+          "net": {
+            "alone": -7,
+            "lean": -3,
+            "plain": -13,
+            "cover": 5
+          }
+        },
+        {
+          "rid": "v6b2_op60_g56_round29_g6c02_vsqurefs",
+          "w": "op60",
+          "j": "g56",
+          "new_win": false,
+          "no_regress": false,
+          "net": {
+            "alone": -14,
+            "lean": -10,
+            "plain": -14,
+            "cover": 2
+          }
+        }
+      ]
+    }
+  },
+  "all_formal_reviews_full_read": 7,
+  "a4_completed_pairs": 4,
+  "hard_constraint_failed_pair": "round29_g56c01: Op61 S04-3 two complete sentences in one item",
+  "valid_empty_selection_pair": "round29_g56c02: both A2 outputs selected=[]; zero A4/formal calls",
+  "preproduction_rejected_gem": 2,
+  "saved_formal_votes": 5,
+  "failed_candidate_floor_calls": 0,
+  "round30_frozen_snapshot": "contains six complete formal votes plus the accurately pending g6c01 state at freeze; latest seventh vote is preserved separately, not falsely attributed to advisors",
+  "next": "R30 independent advisors original parent15284; read entire outputs, inspect generality/interface and compare latest late evidence before materializing. I14 not passed."
+}

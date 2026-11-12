@@ -1,0 +1,27 @@
+{
+  "cooldown_until": 1794300291.7065513,
+  "failed_at": 1794300231.7065513,
+  "failed_at_utc": "2026-11-10T08:43:51.706551+00:00",
+  "failed_run": "k25_op60_g68K25b_r3",
+  "reason": "CalledProcessError(3221225794, ['docker', 'exec', 'yi-mimicgate-20261002', 'sh', '-c', 'test -f /app/state/music-result-spool-v1/bf6ae0935a3e76bad5a1/request.json && echo y || echo n'])",
+  "resume_after_utc": "2026-11-10T08:44:51.706551+00:00",
+  "manual_retry": {
+    "authorized_by": "user: 再试试",
+    "authorized_at_utc": "2026-11-02T19:39:25.550847+00:00",
+    "previous_cooldown_until": 1793648854.0854735,
+    "run_id": "recovery_20261102_manual_1439",
+    "scope": "一次单请求恢复检查，失败后重新冷却一小时"
+  },
+  "last_submit": 1794267803.7493749,
+  "last_submit_utc": "2026-11-09T23:43:23.749375+00:00",
+  "last_run": "pub24OA2_op60_g56_g68K20_run1",
+  "cooldown_seconds": 60,
+  "retry_until": 1794300291.7065513,
+  "classified_failure_at": 1794300231.7065513,
+  "failure_kind": "transient_failure",
+  "cooldown_kind": "transient_failure",
+  "protection_until": 1794015056.8115876,
+  "protection_run": "pub25J_op60_g56_w23_r2_Lr79d",
+  "protection_reason": "{'type': 'suspicious_behavior', 'message': 'gpt3、gpt4 两个账号都在保护冷却'}",
+  "cleared_by_user": "11-06 晚 用户：就直接用gpt4啊 报异常就切换 两个都异常再说"
+}

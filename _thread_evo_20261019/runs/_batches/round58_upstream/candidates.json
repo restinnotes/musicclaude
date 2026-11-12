@@ -1,0 +1,180 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r58trace",
+      "author": "r55_advisor_g56",
+      "author_index": 1,
+      "name": "RecurrenceTrace",
+      "mode": "route_trace",
+      "hypothesis": "只改上游。增加一个不看珠子、不看TARGETS的经历结构整理步骤，使用已经验收的LINE作为唯一经历材料，重新提取具体情感支点及其跨段回返链，生成一个结构化ROUTES对象，供现有A4使用。\n\n它不重新构思一段全新的经历，也不写正文。重点是从已经成立的成品中识别：哪些愿望和顾虑是整件事持续存在的支点，哪些段落确实增加了后果或代价，哪些只是同一支点继续存在。\n\n预期收益：避免重新从抽象的state/delta账本构思路线，保留已经验收稿中的具体内容，同时让A4在接触TARGETS之前获得更清楚的经历主干。\n\n预期代价：输入本身已经包含现有结构问题，可能把原来的回环也带入ROUTES。它主要用于检验上游经历结构是否是剩余问题的重要来源。",
+      "risk": "如果LINE本身已经把某些回环写成了不同的发展，这一步可能只是把原来的错误分类重新登记，无法真正消除问题。A4仍保留Q15的不同生活切面、段内时序和终局决断要求，可能继续制造回环。这与R54ground不同：不增加事实来源门禁，不做反事实删除检验，也不把所有内容降为猜测；与R54role不同：不在写作前为每段分配独特角色，而是从已验收内容中追踪同一支点的真实变化。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "recurrence_trace",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58trace_P1.txt",
+          "sha256": "f1e3ba9bbcd7a41e0c12c52a578c8750c0564a9f860c30aa784e9508683d28cb",
+          "placeholders": [
+            "CENTER",
+            "LINE",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "original_Q15_A4",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58trace_P2.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "downstream_required": "Any survivor must rerun affected accepted N05e/N05f with actual new inputs and compare final against then-current accepted mainline; checkpoint wins are not final acceptance.",
+      "line_source": "r54weave",
+      "line_source_hashes": {
+        "op60": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+        "op61": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+      }
+    },
+    {
+      "tag": "r58stakes",
+      "author": "r55_advisor_g6a",
+      "author_index": 0,
+      "name": "StakeArc",
+      "mode": "upstream",
+      "hypothesis": "只改N05a（A1）。把经历构思从逐段寻找delta，改成先找人物在整件事中真正牵挂的具体东西，再沿着已有经历追踪愿望、顾虑、代价和后果。重点不是每段出现新认识，而是同一件事如何在不同阶段改变人物的具体处境。保留原A1输出字段，因此A2无需改提示词，但必须重新读取新路线并重新选择。它不同于R54 RoleMap：不在A4给每段分配角色；也不同于Grounded Spine：不增加claim_ledger、来源类别或事实门禁。预期改善Op.60愿意陪伴与害怕失去的具体关系，以及Op.61怀念旧生活、害怕孤单和不愿重新受委屈之间的真实联系。",
+      "risk": "可能把整件事过度收缩成一个愿望与一个顾虑，使其他真实感受变成附属内容。也可能因为仍然输出逐段delta和still_open，继续产生形式化填充。与失败的Grounded Spine不同，本方案不新增来源账本，不将事实全部分类为确定或猜测；与RoleMap不同，不规定每段承担某种特定功能。必须观察路线是否真正增加具体处境，而不是仅增加更精致的心理摘要。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "A1",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58stakes_P1.txt",
+          "sha256": "99e871051e93b5b6180b1b8dff648e65baf2257789b9c2cadd2e0f271b6460fd",
+          "placeholders": [
+            "CENTER",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "original_A2",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58stakes_P2.txt",
+          "sha256": "6fda01b61200d0bb61fd01735662fc6da60fd398acd5ec751c3a25a2f6fb3919",
+          "placeholders": [
+            "ROUTES"
+          ]
+        },
+        {
+          "id": "P3",
+          "author_id": "original_Q15_A4",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58stakes_P3.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "downstream_required": "Any survivor must rerun affected accepted N05e/N05f with actual new inputs and compare final against then-current accepted mainline; checkpoint wins are not final acceptance."
+    },
+    {
+      "tag": "r58affect",
+      "author": "r55_advisor_g6b",
+      "author_index": 1,
+      "name": "Affect Envelope",
+      "mode": "affect",
+      "hypothesis": "Q6_A3虽要求去掉比喻和人物事实，但实际qualities、compatible_bundle和temporal_shape仍会出现关系性心理解释与较具体的时间形状；Q15_A4又要求线的情感方向吻合TARGETS，可能让目标材料变成故事推进提示。此方案只重抽N05c：把每颗珠子改写为非叙事的体验范围，分别保留情感色调、强度、张力、注意状态、稳定度及不同听法；temporal_shape只保留珠子内部的体验变化，不表达人物经历。预期降低把听感误写成关系事实或人物动作的风险，并改善多种听感的并存。",
+      "risk": "体验性质可能被抽象得过头，A4失去足够具体的处境温度，覆盖分数下降；尤其关系性体验若只剩强度和色调，人物线可能无法找到相近的心理情境。它与历史R54RoleMap不同：不添加珠子角色标签或逐段叙事职责，不做来源账本；只改变TARGETS的抽象边界。与Q6_A3旧提示词相比，关键变化不是重复说不要搬比喻，而是明确禁止把主体、关系事实和段内时间形状转成故事因果。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "A3_affect_envelope",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58affect_P1.txt",
+          "sha256": "b989039d19f7fc4752ce47b4d222bfbf927f787d7122c936d34a87fff78bdcc3",
+          "placeholders": [
+            "BEADS",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "original_Q15_A4",
+          "path": "runs\\_batches\\round58_upstream\\prompts\\r58affect_P2.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "downstream_required": "Any survivor must rerun affected accepted N05e/N05f with actual new inputs and compare final against then-current accepted mainline; checkpoint wins are not final acceptance.",
+      "bead_input": "original_A3"
+    }
+  ],
+  "source_hashes": {
+    "op60": "1aadeabb00abf1c3108ee730fcdb4e99f9b3d0779de6a27746694d36f124c69d",
+    "op61": "bdb6c54c03ed1bd894123cfdb94fdb97c0a5837c8ac3c638ca3c97c7d388d386"
+  },
+  "reuse_proof": {
+    "scqu_op60_A1": {
+      "input_sha256": "f7d162387f6eec747e46660faa0e5b49b34ee0bc879874263a5fe1f13ffe4949",
+      "output_sha256": "9453f810f10f9aea47e862cbb215a24008c3bd82b63b8d25b473c4e25726cc40",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    },
+    "scqu_op60_A2": {
+      "input_sha256": "84b8e3f1e319ba29d0ca2231d2db166551bc8f776385e7573042fa7df524a3b0",
+      "output_sha256": "92f91836117f3c43d2f73850d66bf523e8b9d335d5d5e224a247cbe5bb0e4ec5",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    },
+    "scqu_op60_A3": {
+      "input_sha256": "b6f10db6eaedb7abac37aae1b1b04a5220403c92e279d07a50edd74ea50911c4",
+      "output_sha256": "b55de3eacd4d9ea2621bd6f17c3701d5dc1094ff9cdd328914fdfb6eadadba22",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    },
+    "scqu_op61_A1": {
+      "input_sha256": "e9835f5e0e7b050cb479635a1df352984582f6d58b34c920e72c5446eeb1b937",
+      "output_sha256": "d0a3affa43fcf324fb82791a6df8ab033dea7d13871ba03420ff83510260b25d",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    },
+    "scqu_op61_A2": {
+      "input_sha256": "9b8f16967c96e843b6cbc03e493a7df89af613912bb771540dcc968b210c2db8",
+      "output_sha256": "7ee7f16e916310e0c33294a8642bb06e470f40a7480fc5c69d44b3a6cb98ef0a",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    },
+    "scqu_op61_A3": {
+      "input_sha256": "255954579464409fe8658877d07ee4e0a22758887c13c2f41091c8b05966716b",
+      "output_sha256": "862cf3a2055ca34100e4414fb9e7ad50e9d5c0c0687900e419e61ff15af53cec",
+      "model": "gpt-6",
+      "effort": "high",
+      "route": "mimic"
+    }
+  },
+  "scope": "Separate upstream mechanisms at original A4 checkpoint; no current-work examples in generic prompts; no altered standards or thresholds. New A1 -> original A2 rerun, A3 exact reuse. New A3 -> original A1/A2 exact reuse. Trace reads accepted whole line only, no beads or targets."
+}

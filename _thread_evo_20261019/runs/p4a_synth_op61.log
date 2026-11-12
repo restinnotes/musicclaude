@@ -1,0 +1,61 @@
+P4a op61 S01 pass=False chosen=2 unexplained=['S01-B3:听感存疑', 'S01-B4:听感存疑']
+P4a op61 S01 back: none (当前消息里没有实际附上“前面各段的候选解释（以及当时选中的）”，因此无法判断哪一段能在不编造设定的前提下补出“曾短暂靠近)
+P4a op61 S02 pass=True chosen=2 unexplained=[]
+P4a op61 S02 back: none (没有。M9、M30等最多能提前确立“在乎指向具体的人、对方是否知道仍不确定”，但都没有在不编造的情况下提供“他曾认真试图)
+P4a op61 S03 pass=False chosen=1 unexplained=['S03-B1:池子太窄', 'S03-B2:池子太窄']
+P4a op61 S03 back to S02 via M20: rejected
+P4a op61 global@S03 ok=True problems=['S03', 'S03']
+P4a op61 S04 pass=True chosen=2 unexplained=['S04-B4:缺前提']
+P4a op61 S04 back: none (没有单条候选能合法补齐这个前提。最接近的是 S01-M12（有特定的人、旧日亲近主要从过去回来），但它自己就以前置事实“)
+P4a op61 S05 pass=False chosen=2 unexplained=[]
+P4a op61 S05 back: none (没有一条候选能单独、稳妥地补齐这整个前提。最接近的是 S01-M12（具体的人、过去的亲近、如今不确定是否仍属两人），但)
+P4a op61 S06 pass=True chosen=2 unexplained=[]
+[syP4a_op61_S06_C2] ok 137s 239 chars
+P4a op61 S06 back: none (没有。S01-M12、S04-M12、S05-M15等看似能补上这一前提的候选，都已将过去与具体的人亲近或如今无法相伴写)
+[syP4a_op61_S07_A] ok 387s 6155 chars
+[syP4a_op61_S07_B] ok 180s 779 chars
+P4a op61 S07 pass=True chosen=2 unexplained=['S07-B2:池子太窄', 'S07-B4:池子太窄', 'S07-B5:池子太窄']
+[syP4a_op61_S07_C2] ok 92s 211 chars
+[syP4a_op61_S06_b2_A] ok 324s 5541 chars
+[syP4a_op61_S06_b2_B] ok 261s 261 chars
+[syP4a_op61_S07_b2_A] ok 383s 5212 chars
+[syP4a_op61_S07_b2_B] ok 199s 796 chars
+[syP4a_op61_S07_b2_A2] ok 620s 5856 chars
+[syP4a_op61_S07_b2_B2] ok 332s 1008 chars
+P4a op61 S07_b2 pass=False chosen=2 unexplained=['S07-B1:池子太窄', 'S07-B5:池子太窄']
+P4a op61 S07 back to S06 via M3: rejected
+[syP4a_op61_S07_G] ok 178s 1683 chars
+P4a op61 global@S07 ok=True problems=['S03', 'S05']
+[syP4a_op61_S08_A] ok 433s 4680 chars
+[syP4a_op61_S08_B] ok 186s 283 chars
+P4a op61 S08 pass=True chosen=1 unexplained=[]
+[syP4a_op61_S08_C3] ok 77s 222 chars
+[syP4a_op61_S06_b3_A] ok 458s 6118 chars
+[syP4a_op61_S06_b3_B] ok 368s 805 chars
+P4a op61 S08 back to S06 via M56: rejected
+[syP4a_op61_S09_A] ok 361s 5793 chars
+[syP4a_op61_S09_B] ok 205s 1073 chars
+[syP4a_op61_S09_A2] ok 424s 5197 chars
+[syP4a_op61_S09_B2] ok 166s 639 chars
+P4a op61 S09 pass=False chosen=2 unexplained=[]
+[syP4a_op61_S10_A] ok 366s 5651 chars
+[syP4a_op61_S10_B] ok 237s 712 chars
+[syP4a_op61_S10_A2] ok 388s 5277 chars
+[syP4a_op61_S10_B2] ok 280s 1011 chars
+P4a op61 S10 pass=False chosen=1 unexplained=['S10-B2:池子太窄']
+[syP4a_op61_S11_A] ok 339s 5727 chars
+[syP4a_op61_S11_B] FAST 60s -> cup probe
+[syP4a_op61_S11_B] ok 60s 259 chars
+P4a op61 S11 pass=True chosen=2 unexplained=[]
+[syP4a_op61_S11_G] ok 122s 1704 chars
+P4a op61 global@S11 ok=True problems=['S04', 'S06', 'S09']
+[syP4a_op61_S12_A] ok 438s 5336 chars
+[syP4a_op61_S12_B] ok 203s 641 chars
+[syP4a_op61_S12_A2] ok 333s 4903 chars
+[syP4a_op61_S12_B2] ok 92s 241 chars
+P4a op61 S12 pass=True chosen=1 unexplained=[]
+[syP4a_op61_S13_A] ok 376s 5249 chars
+[syP4a_op61_S13_B] ok 215s 235 chars
+P4a op61 S13 pass=True chosen=1 unexplained=[]
+[syP4a_op61_S13_G] ok 136s 1982 chars
+P4a op61 global@S13 ok=True problems=['S09', 'S13']

@@ -1,0 +1,11 @@
+[rev2_b/S01] FAILED rc=1 0s submitted=True
+DONE; failed: [('final_b', 'S01'), ('rev2_b', 'S01')]
+Traceback (most recent call last):
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 573, in <module>
+    main()
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 548, in main
+    return production(a)
+           ^^^^^^^^^^^^^
+  File "D:\musicclaude\_bead_op61_20261020\chain.py", line 521, in production
+    raise RuntimeError("final_b incomplete: stop before whole-piece review")
+RuntimeError: final_b incomplete: stop before whole-piece review

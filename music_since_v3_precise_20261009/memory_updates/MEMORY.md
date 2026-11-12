@@ -1,0 +1,19 @@
+- [Delegation split](delegation-split.md) — 10-08: Muse via T3 delegate_task claude-proxy/muse-spark xhigh, zero cost; HTML to gemini-3.8-flash
+- [CLI invocation](music-run-cli-invocation.md) — tested long-input calls for luna/agy/opencode
+- [No self candidate](no-self-candidate.md) — orchestrator must not generate content as a candidate
+- [Overview page style](overview-page-style.md) — plain-Chinese prompt-evolution page, Gemini summarizes, script computes facts
+- [Run method](music-run-method.md) — pick models only on frozen prompts; multi-model with attribution; free to add layers under the constitution
+- [Reply in Chinese](reply-in-chinese.md) — always talk to the user in Chinese
+- [Baseline anchor](baseline-anchor.md) — always blind-compare synthesis against original V2A Gemini output
+- [opencode2api deploy watchdog](opencode2api-deploy-watchdog.md) — redeploy must clear WARP watchdog seen list or 429s never rotate
+- [Stop when conclusive](stop-when-conclusive.md) — Gemini quota is plentiful; spend on anything possibly meaningful, skip only clearly useless re-measurement
+- [Style matters](style-matters-for-model-choice.md) — model choice weighs language style too; Sol/Luna write abstractly; word counts are not evidence
+- [Drama is not a flaw](drama-not-a-flaw.md) — dramatic/assertive/single-story writing never penalized; say so in every review prompt
+- [GPT-5.6 web route](gpt56-web-route.md) — gpt-5-6-thinking max via safechain; cup-probe degradation rule; campaign run31
+- [Luna research delegation](luna-research-delegation.md) — web research/asset sourcing/imagegen go to Luna Max via codex exec (workspace-write+network)
+- [Zip per round, no index](zip-per-round-no-index.md) — 10-03: stop updating index.html; zip each finished round into Downloads
+- [Notify only key events](notify-only-key-events.md) — 10-05: no per-progress messages; only failures/completions/conclusions
+- [GPT-5.6w paused](gpt56w-paused-20261005.md) — 10-05 pause lifted 10-06; Sol replaced by 5.6, no new Sol calls
+- [Sol dev agent + Opus subagents](dev-agent-sol-and-opus-subagents.md) — 10-09: Opus REVOKED (no Opus subagents or opus calls); Sol dev revoked 10-06; do dev yourself or via Muse
+- [Muse early stop](muse-delegate-early-stop.md) — 10-08: Muse delegate_task ends turns mid-engineering; use for research; do multi-file dev yourself (Opus banned 10-09); never let Muse own long runs
+- [Self-judging OK](self-judging-ok.md) — 10-09: generators may judge themselves; full panel gpt56w/gpt6w/opus/luna/gemini + Muse, report per judge

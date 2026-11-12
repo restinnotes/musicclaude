@@ -1,0 +1,83 @@
+{
+  "base": "r54weave",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r55shell",
+      "author": "r55_advisor_g56",
+      "author_index": 2,
+      "name": "AnchorShell",
+      "mode": "edits",
+      "hypothesis": "只改postwrite。保留r54weave的整体经历和具体心理支点，不再重新规划全篇，而是把每条文字拆成实际经历内容与解释性外壳。\n\n实际经历内容包括人物的具体所求、顾虑、关系事实、选择、代价和并存感受；解释性外壳包括已经说清的原因再次解释、对同一心理状态的总结、把人物的念头翻译成抽象结论，以及对前文的重复回顾。\n\n对于确实有新后果的回返，保留它；对于只是重新解释的部分，删掉解释性文字或改成直接念头。一个条目同时包含支点和解释时，保留支点，不整条删除。\n\n预期收益：专门处理r54weave目前最明显的解释腔和重复说明，同时避免R52简单删减造成的实质内容损失。\n\n预期代价：它不重新分配全篇段落职责。如果回环已经写进段落结构，仅删解释外壳可能不够。它更适合作为有限的写后语言与局部结构修订，不取代整体经历设计。",
+      "risk": "可能出现过度保护支点、只删解释而没有真正消除跨段回环的情况。也可能把必要的心理连接误判为解释性外壳，导致后文虽然更短，却失去独立成立的前因。它与R52的区别是先识别并保护支点，再处理外壳，不是简单删除重复条目；与R54reader的区别是不重新建立全篇读者因果图、不全面重写，而是针对解释性句子进行受保护的局部编辑。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "anchor_shell_edit",
+          "path": "runs\\_batches\\round55_current\\prompts\\r55shell_P1.txt",
+          "sha256": "85a54cf306080e68c2d09ab456ad09117b09a4a485698c247f3a224f13aae5bc",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "LINE",
+            "REVIEWS",
+            "SECTIONS"
+          ]
+        }
+      ],
+      "bead_input": "N03i_display",
+      "include_parent_blind": false
+    },
+    {
+      "tag": "r55repair",
+      "author": "r55_advisor_g6a",
+      "author_index": 3,
+      "name": "RepairRestore",
+      "mode": "edits",
+      "hypothesis": "只改写后修订层，直接以r54weave为基底，采用已在r50progress1rr验证过的有限修订加完整反馈回补。第一步处理有充分证据的局部重复、分析腔和具体情境偏移；第二步把完整正反比较中的实质损失交回模型，检查第一步是否削弱了原有心理依据、具体所求或独有的体验落脚处，只恢复真正必要的内容。它不重写A1—A4，不重复GlobalReweave，也不是单纯删句或抽象一致性检查。预期在保留r54weave整体结构的同时修复当前开放评审已明确指出的局部问题。",
+      "risk": "这条路线已经在r50progress1rr上成功，但尚未在r54weave上验证。局部编辑无法真正移动跨段语义单元，也不能修改引用和覆盖元数据。如果问题根源是段落职责分配错误，可能修不彻底。第二轮也可能把第一轮删掉的重复内容重新加回来。必须两步都测，不能仅凭人话或啰嗦提升接纳，也不能把r50progress1rr的历史成绩直接算作r54weave的新成绩。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "P1_repair",
+          "path": "runs\\_batches\\round55_current\\prompts\\r55repair_P1.txt",
+          "sha256": "471dea32b70d7ba529d576f4b8b62fb083efbfe11db9d0eb061af84fbc5b8cc4",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "LINE",
+            "REVIEWS",
+            "SECTIONS"
+          ]
+        }
+      ],
+      "bead_input": "N03i_display",
+      "include_parent_blind": true,
+      "feedback_continuation": {
+        "step": {
+          "id": "P2",
+          "author_id": "P2_restore",
+          "path": "runs\\_batches\\round55_current\\prompts\\r55repair_P2.txt",
+          "sha256": "21f3f5dc6e55ba67ac2e8d33d333d43923a873cb17634072d99192a1783485e6",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "ORIGINAL",
+            "REVIEWS",
+            "REVISED",
+            "SECTIONS"
+          ]
+        },
+        "condition": "Run only after P1 has balanced4 fully read; pass or original near-pass condition, with actual P1 comparison reasons added. Obvious failures archive, no restore. Separate candidate/provenance, do not overwrite P1."
+      }
+    }
+  ],
+  "source_hashes": {
+    "op60": "04789be209416c27d5fd48375708b099ea09e6789cdbe24aab9739950d8d0959",
+    "op61": "e07e53dadb69e997fafb911348b1386d42886f15025bd4191de05c4791a2c67e"
+  },
+  "selection": "Two distinct postwrite mechanisms from fully read advisers; last independent adviser is still being collected, so no claim all ten considered. Additional distinct upstream/A4 mechanisms stay for next batch and require same-position screening and rerun affected downstream. Current final baseline r54weave unchanged.",
+  "production_route": "mimic GPT6/High; same frozen-input gpt3 fallback only for ordinary missing tasks",
+  "quick_base": "r54weave",
+  "stopping": "No convergence claim; this is first post-acceptance actual batch."
+}

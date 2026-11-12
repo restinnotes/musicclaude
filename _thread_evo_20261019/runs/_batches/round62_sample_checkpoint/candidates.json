@@ -1,0 +1,62 @@
+{
+  "base": "qu",
+  "final_mainline": "r54weave",
+  "candidates": [
+    {
+      "tag": "r54sample",
+      "author": "r54_advisor_g6a",
+      "author_index": 3,
+      "name": "BestOfTwo",
+      "mode": "sample",
+      "hypothesis": "不改变Q15_A4提示词，改变取样与选择机制。同一份已经通过的A1/A2/A3输入，由GPT-6/High独立生成两份完整A4线，再由一个只负责选择、不写正文、不改正文的选择步骤比较两份。选择步骤依据标准、硬约束和四个维度，选择更可能单独成立、简洁、人话且接得上珠子的版本；如果两份都不合格或无法区分，允许不选，不拼接。它不是新写作机制，而是利用已经观察到的抽样差异降低单次抽样风险。历史上qh和qo使用同一套Q5提示词，前者未过、后者过验收，已经说明单次抽样结果不能代表提示词本身。Best-of-N曾被提出但尚未真正作为独立选择流程测试，因此没有被历史否定。预期改善成品稳定性，但不能修复同一提示词的系统性偏差。",
+      "risk": "它解决的是抽样方差，不是系统性提示词缺陷。若两份都继承A1中未经支持的事实、A4中把TARGETS时间形状翻译成心理过程的倾向，选择机制无法根治。选择者也可能偏爱更长、更丰富或更有戏剧性的文本，必须按标准约束。它与历史上的同提示词重抽不同：历史只观察单次重抽结果，没有一个事先固定的双样本盲选规则；本方案必须在正式生成前固定选择规则，并且选择结果仍须走原来的验收，不能把内部择优当成通过验收。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "sample_A",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P1.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "sample_B",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P2.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        },
+        {
+          "id": "P3",
+          "author_id": "a4_blind_selector",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P3.txt",
+          "sha256": "9143941214e1d7bdb7817ec1a6393551c37f54474be11495a346e584518d542d",
+          "placeholders": [
+            "CANDIDATES",
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ],
+      "checkpoint_base": "qu",
+      "final_mainline_at_freeze": "r54weave",
+      "reuse_only": true,
+      "new_production_calls": 0,
+      "downstream_required": "Would require affected N05e/N05f and final acceptance versus current mainline, but corrected quick4 fails so none are run."
+    }
+  ],
+  "workers": 4,
+  "reuse_only": true,
+  "scope": "Reporting receipt for the existing exact selected pair; no production collector or new sampling in this batch."
+}

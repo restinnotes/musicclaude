@@ -1,0 +1,107 @@
+"""11-01 (user: "或许我们四个维度还是需要用开放评审试试？"): open review over all four goals of the end product, not only
+language. Same spirit as lang_open v2 (no problem categories, quotes as evidence, boundary, no score used), but the reader
+gets the four goals in plain words and the beads, in two passes: the line alone first (stands on its own / lean / plain),
+then line + beads (beads attach / the line only translates beads). Finds problems only; acceptance stays with cov / alone / blind.
+ids eo_<w>_<tag>_<judge>_r<k>.  usage: E2E_TAG=m6w python e2e_open.py run [--gem] | report"""
+import json, os, sys
+import covjudge, evo, v6fix as V
+
+P = """下面是一首音乐作品的“成品”的两部分，请你作为第一次读到它的普通中文读者，找出它没做好的地方。
+
+【它是什么】
+- “线”：一个人在这首曲子里经历的一件事，按音乐的段落写成条目。〔〕表示这句话接着前面哪一段的哪一条。每段标题后的括号是这一段他和整件事的关系：“没在想”是他这时没去想那件事，“还说不清”是他隐约感到却说不清，“正在面对”是他在直面它。
+- “珠子”：逐段的音乐听感记录，写这一段听起来像什么、让人想到什么。成品里线和珠子放在一起读：线讲他自己的经历，用来把珠子串起来。
+
+【它想做到的四件事】
+1. 线单独读也成立：只读线、不看珠子，每一段他为什么此刻这样，都能由前面已经发生在他身上的事说明，读得出一条往前走的路。
+2. 不啰嗦：每一句都有它自己的用处。删掉也不丢东西的话、把前面已经说过的再说一遍的话，都是啰嗦。这一段真正发生得少，就该写得短。
+3. 像人话：读起来像一个人平平常常地讲自己的经历，不像心理分析或提纲。
+4. 接得上珠子：每颗珠子的听感，都能在线里找到和它情境相近的原因或处境（只要相关即可，不需要逐颗解释）；但线讲的是他自己的经历，不是把珠子里的画面、比喻、情节翻译成心理。
+
+戏剧化、主观、只讲一个故事都不算缺点。允许含蓄，不要求补造具体人物、事件或场景。你不知道作者修改过什么，不要预先假定它有哪些毛病；某件事做得好就不用提，不要为了凑数挑毛病。
+
+【怎么读】
+第一遍：先只读线，从头读到尾，把它当一段完整的经历。看第 1、2、3 件事。
+第二遍：再对照珠子逐段读。看第 4 件事。
+
+对每个问题：引用原文（可以引几处），说清它为什么没做到、影响有多大（轻微 / 中等 / 严重），再给一个改进的方向或示范。一种写法反复出现，单句没错也可能是问题；但要讲清楚连起来为什么不好，以及同类写法在哪些地方是自然、必要的。
+
+最后说：最影响这份成品的三个问题是什么，哪些只是次要的。
+
+只输出 json，不要在 json 外写字：
+```json
+{{
+  "problems": [
+    {{"goal": "1 / 2 / 3 / 4 中的一个", "where": "段号或位置", "quotes": ["原文"], "why": "为什么没做到", "severity": "轻微 / 中等 / 严重", "suggestion": "改进方向或示范"}}
+  ],
+  "top3": ["最影响成品的三个问题"],
+  "minor": "哪些只是次要的"
+}}
+```
+
+========== 线 ==========
+{LINE}
+
+========== 珠子 ==========
+{BEADS}"""
+
+TAG = os.environ.get("E2E_TAG", "m6w")
+NM = {"g6": "gpt-6", "g56": "5.6", "gem": "Gemini 3.8"}
+GOAL = {"1": "单独成立", "2": "不啰嗦", "3": "人话", "4": "接得上珠子"}
+
+
+def msg(w):
+    return P.format(LINE=V.view(V.graph_of(w, TAG), center=False), BEADS=covjudge.bead_text(w))
+
+
+def rid(w, j, k):
+    return f"eo_{w}_{TAG}_{j}_r{k}"
+
+
+def runs():
+    for w in ("op60", "op61"):
+        for j in list(V.JUDGES) + ["gem"]:
+            for k in ((1,) if j == "gem" else (1, 2)):
+                yield w, j, k
+
+
+def report():
+    md = [f"# 四个维度的开放评审（{TAG}）", "", "只用来找问题，不打分；验收仍看覆盖、单独读、同线新旧盲比。", ""]
+    cnt = {}
+    for w in ("op60", "op61"):
+        md += [f"## {w}", ""]
+        for _, j, k in [x for x in runs() if x[0] == w]:
+            e = V.parse(rid(w, j, k)) or {}
+            if not e:
+                md += [f"### {NM[j]} 第{k}次：没有结果", ""]; continue
+            P_ = e.get("problems") or []
+            by = {}
+            for p in P_:
+                g = str(p.get("goal", "")).strip()[:1]
+                by.setdefault(g, []).append(p); cnt.setdefault((w, g), []).append(p.get("severity"))
+            md += [f"### {NM[j]} 第{k}次：{len(P_)} 处", "", "- 最影响的三个：" + "；".join(e.get("top3") or []), f"- 次要：{e.get('minor', '')}", ""]
+            for g in sorted(by):
+                md.append(f"**{g} {GOAL.get(g, '')}**")
+                md += [f"- （{p.get('severity')}）[{p.get('where')}]「{'」「'.join(p.get('quotes') or [])}」——{p.get('why')} → {p.get('suggestion')}" for p in by[g]]
+                md.append("")
+    md += ["## 各维度问题数（所有评委合计）", "", "| 作品 | 维度 | 问题数 | 其中严重/中等 |", "|---|---|---|---|"]
+    md += [f"| {w} | {g} {GOAL.get(g, '')} | {len(v)} | {sum(s in ('严重', '中等') for s in v)} |" for (w, g), v in sorted(cnt.items())]
+    fn = V.OUT / f"e2e_open_{TAG}.md"
+    fn.write_text("\n".join(md), encoding="utf-8")
+    print("->", fn); print("\n".join(l for l in md if l.startswith(("### ", "- 最影响", "| "))))
+
+
+if __name__ == "__main__":
+    if sys.argv[1] == "run":
+        jobs = []
+        for w, j, k in runs():
+            r = rid(w, j, k)
+            if evo.done(r) or (j == "gem") != ("--gem" in sys.argv):
+                continue
+            m = msg(w) + ("\n" if k == 2 else "")
+            if j == "gem":
+                jobs.append((r, (lambda r=r, m=m: evo.call_gemini_direct(r, m, meta={"stage": "e2e_open"}))))
+            else:
+                jobs.append((r, (lambda r=r, m=m, mo=V.JUDGES[j]: evo.call(r, m, model=mo, meta={"stage": "e2e_open"}))))
+        evo.run_parallel(jobs, 8)
+    report()

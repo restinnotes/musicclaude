@@ -1,0 +1,176 @@
+{
+  "base": "r50progress1rr",
+  "workers": 4,
+  "candidates": [
+    {
+      "tag": "r54role",
+      "author": "r54_advisor_g6a",
+      "author_index": 0,
+      "name": "RoleMap",
+      "mode": "rolemap",
+      "hypothesis": "只改A4。在一次正式写线之前，先在模型内部建立全篇的经历角色图和已成立事实账本，再写正文。每段先确定它在整件事中的独立作用：首次成立、已有事实的后果、愿望或顾虑的具体化、回到旧处但意义改变、延续、沉浸或最终态度。一个已经成立的认识可以在后面继续影响人物，但不能重新宣布为第一次成立。TARGETS只负责检验情境是否接住多种体验性质，不负责强迫人物按珠子的时间形状发生变化。与历史Q5/Q8的主要区别不是再增加一组禁令，而是让A4在生成前先决定每段的叙事职责，并在全篇层面检查事实依据和重复成立。预期改善Op.60的S06至S14以及Op.61的中后段分工，同时保住有价值的情绪回返。得失是上游无需重跑，但如果路线本身包含未经支持的事实，A4仍可能继承。",
+      "risk": "如果角色规划变成固定的段落功能模板，模型可能为每段凑出一个新认识，重演A1/A2的过度结构化；如果事实来源检查过严，又可能把已有事实全部降成猜测。它不同于R53coherence2：不是写完后检查前后语义一致，而是在写之前安排各段的不同叙事职责，并允许真实延续。快筛应重点看单独成立、啰嗦、人话及覆盖是否同时保住。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "a4_rolemap",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54role_P1.txt",
+          "sha256": "0861a94017ca2580e414481167002db34ecf28de1e3ea6be380c022a678197d9",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "r54ground",
+      "author": "r54_advisor_g6b",
+      "author_index": 0,
+      "name": "Grounded Spine",
+      "mode": "upstream",
+      "hypothesis": "改A1和A2，不改A3、A4。新机制是给经历路线建立事实来源账本，并用反事实因果检验筛选路线。Q6_A1的established只登记首次成立位置，不登记来源；本方案补上来源与确定度，但不把所有心理事实机械降为猜测。A2不再只看逻辑是否自洽，还检验删去一个段落后哪些后续认识会失去依据，以及重复出现的同一认识是否真的改变了后果或作用。\n\n预期收益：减少把无依据的他人心理、关系事实和前史当作既定前提；让后续推进更多依靠人物自己已经经历的事情；在写线之前排除结构上看似丰富、实际只是重复命名的路线。\n\n预期代价：A1/A2可能过于谨慎，导致人物经历变薄；反事实删除检验也可能低估沉浸、延续和情绪余韵的作用。A3仍然会在综合阶段进入，A4仍然负责完整覆盖体验性质，因此这不是完全不看珠子的写线方案。",
+      "risk": "最大的风险是把来源审查做成事实门禁，结果只剩少量内省，丢掉人物经历的具体所求和顾虑。P2/Q2的完全无珠子成品路线已经失败，因此本方案只让A1/A2不看珠子，A3/A4仍按原流程综合，不能扩大为全程无珠子。A2的反事实检验也可能把合理的沉浸和情绪延续判成冗余。必须检查claim_ledger是否被模型形式化填充，以及新增字段是否能由现有管线完整传给A4。它与R29的记忆链方案不同：核心不是阅读记忆或词义碰撞，而是事实来源、因果必要性和认识首次成立位置的联合审查。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "a1_provenance_routes",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54ground_P1.txt",
+          "sha256": "7306e582d915f0e9a7e0e1a53ea2208bde99b523b928ee114a31430a231b24da",
+          "placeholders": [
+            "CENTER",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "a2_counterfactual_select",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54ground_P2.txt",
+          "sha256": "8ccd9204f8cef3ed3c46422d6267221ce26f61ba3468a15bf30be92fae033b83",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS"
+          ]
+        },
+        {
+          "id": "P3",
+          "author_id": "A4",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54ground_P3.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "r54weave",
+      "author": "r54_advisor_g6a",
+      "author_index": 2,
+      "name": "GlobalReweave",
+      "mode": "fullgraph",
+      "hypothesis": "只改postwrite，将已经写成的整条线作为可重新组织的语义材料，而不是继续逐条修补。它读取完整LINE、BEADS和REVIEWS，先识别所有独立的事实、所求、顾虑、认识、后果和选择，再建立跨段作用图。随后重新分配每段的叙事职责，允许合并、移动、重写、删除和必要的重新落点。重点不是删掉相似句，而是让同一个主题在不同段落中承担不同作用：初次成立、后果、回返时的新意义、实际选择或单纯延续。与N09d不同，它不是把开放评审的累积意见交给模型逐条改句；与R52不同，它不是只删重复；与R53不同，它不是抽象的一致性检查。它是一次整篇结构吸收和跨段重新组织。预期能同时处理Op.60后半段与Op.61中段、结尾的重复分工。允许改变原结尾，不受最多8条和不能更长的实验限制，但不得新增人物事实或改变珠子。风险是全篇重组可能损失原稿已有的具体内容，因此必须先建立语义库存，再重新输出完整结构。",
+      "risk": "这是四套中结构变化最大、也最容易损失内容的一套。N09d、整篇压缩以及R52/R53的失败说明，只把意见交给模型或者只做删除、抽象一致性检查，容易把具体经历压薄。此方案必须真正建立语义库存和跨段职责，而不是重新自由创作。如果模型无法稳定区分必要回响与重复成立，可能再次出现删过头、覆盖下降或心理内容变抽象。它与旧N09d的差别在于，修改对象是全篇语义单元的职责和位置，不是逐条替换原句；但是否真能产生差异必须用双曲实测，不能预先认定有效。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "postwrite_global_reweave",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54weave_P1.txt",
+          "sha256": "2f2825abf65cb36d607e9ad1800f93505278deb2ff77cae252d0cd9efa29bd51",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "LINE",
+            "REVIEWS",
+            "SECTIONS"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "r54reader",
+      "author": "r54_advisor_g6b",
+      "author_index": 2,
+      "name": "Reader Rebuild",
+      "mode": "edits",
+      "hypothesis": "只改写后修订层。不是再让模型按照评委意见逐条改句，也不是单纯删减或做前后一致性检查，而是让它先从读者实际读到的整条线重建一张叙事因果图，再依据这张图决定哪些原条目需要重新承担不同的叙事功能。\n\n新机制是把每条内容拆成事实、本人感受、愿望、顾虑、推测、后果和选择，并把跨段反复出现的同一认识放到一起比较。重点不是减少出现次数，而是判断每次出现有没有新的因果作用。对于真正有发展但表达重复的内容，保留发展、重写其不同作用；对于没有新增作用的内容，才考虑合并或删除。\n\n预期收益：直接利用r50progress1rr已经验收的正文，不重新抽取上游路线；能够同时检查人物经历是否成立、跨段是否真正推进、珠子是否找到相近处境，以及评委意见是否把不同层次误判成重复。\n\n预期代价：模型仍然看着旧稿，可能被旧结构锁住；全篇因果图也可能被模型过度解释。与R52简单删减、R53一致性修订不同，本方案不以某一类问题为焦点，而是重建整条线的读者理解链，只有因果功能发生变化的地方才编辑。",
+      "risk": "最大的风险是模型虽然画出了因果图，实际仍然只是把旧句换一种说法；这与N09d、h27的失败存在邻近风险。另一个风险是评审过拟合：某位评委把有意义的情绪回返判为重复，模型可能删掉原有发展。该方案因此要求先区分重复内容的叙事功能，而不是先服从评审建议。编辑接口只能replace/delete，不能修改cite数组或relation标签；涉及这些元数据的修改必须交现有校验流程，不能把文本编辑冒充完整修复。它与R52简单删减、R53一致性检查的区别在于，核心判断对象是全篇叙事依赖关系和重复主题的功能变化，不是字数、句意一致或单个问题清单。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "postwrite_reader_graph",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54reader_P1.txt",
+          "sha256": "c411b74e6e4bc2609c2dbbc12ea62162193fceb57af2dae6894e0651beb9e128",
+          "placeholders": [
+            "BEADS",
+            "CENTER",
+            "LINE",
+            "REVIEWS",
+            "SECTIONS"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "r54sample",
+      "author": "r54_advisor_g6a",
+      "author_index": 3,
+      "name": "BestOfTwo",
+      "mode": "sample",
+      "hypothesis": "不改变Q15_A4提示词，改变取样与选择机制。同一份已经通过的A1/A2/A3输入，由GPT-6/High独立生成两份完整A4线，再由一个只负责选择、不写正文、不改正文的选择步骤比较两份。选择步骤依据标准、硬约束和四个维度，选择更可能单独成立、简洁、人话且接得上珠子的版本；如果两份都不合格或无法区分，允许不选，不拼接。它不是新写作机制，而是利用已经观察到的抽样差异降低单次抽样风险。历史上qh和qo使用同一套Q5提示词，前者未过、后者过验收，已经说明单次抽样结果不能代表提示词本身。Best-of-N曾被提出但尚未真正作为独立选择流程测试，因此没有被历史否定。预期改善成品稳定性，但不能修复同一提示词的系统性偏差。",
+      "risk": "它解决的是抽样方差，不是系统性提示词缺陷。若两份都继承A1中未经支持的事实、A4中把TARGETS时间形状翻译成心理过程的倾向，选择机制无法根治。选择者也可能偏爱更长、更丰富或更有戏剧性的文本，必须按标准约束。它与历史上的同提示词重抽不同：历史只观察单次重抽结果，没有一个事先固定的双样本盲选规则；本方案必须在正式生成前固定选择规则，并且选择结果仍须走原来的验收，不能把内部择优当成通过验收。",
+      "steps": [
+        {
+          "id": "P1",
+          "author_id": "sample_A",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P1.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        },
+        {
+          "id": "P2",
+          "author_id": "sample_B",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P2.txt",
+          "sha256": "7eebbda4f6743833e5411584aa629c8151f282445d91bbe94bc6db528abb1fd5",
+          "placeholders": [
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        },
+        {
+          "id": "P3",
+          "author_id": "a4_blind_selector",
+          "path": "runs\\_batches\\round54_broader\\prompts\\r54sample_P3.txt",
+          "sha256": "9143941214e1d7bdb7817ec1a6393551c37f54474be11495a346e584518d542d",
+          "placeholders": [
+            "CANDIDATES",
+            "CENTER",
+            "ROUTES",
+            "SECTIONS",
+            "TARGETS"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "op60": "7941a01cabf6dcf5a0861fc294c508850b894c890d1e51577afeefdbd9a9ffe9",
+    "op61": "63b413e14e3dd5efcc9cbe3aa3d3840ac545a929f8489dea558462587f52b64d"
+  },
+  "deduplication": "10 proposals collapse to role planning, upstream provenance, global reweave, unrestricted causal post-edit, and two-sample selection. SourceChain/EvidenceRoute overlap Grounded Spine; ArcFirst/ArcWeave overlap RoleMap; RoleRepair overlaps Reader Rebuild. Do not buy synonymous schemes to reach 10.",
+  "sample_interface_correction": "Sampling uses actual Q15_A4.txt verbatim, not adviser rewritten sample prompt; selector unchanged. Independent source hashes recorded.",
+  "next": "full read each new stage, apply only reviewed pairs, balanced quick4 against current mainline; no automatic advancement"
+}

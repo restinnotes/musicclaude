@@ -1,0 +1,12 @@
+[pub24UB_op60_g6_g68K27q1] ok 159s 2191 chars
+[pub24UB_op60_g56_g68K27q1] ok 190s 2191 chars
+[pub24UB_op61_g56_g68K27q1] ok 140s 2557 chars
+[pub24UB_op61_g6_g68K27q1] ok 119s 2557 chars
+Traceback (most recent call last):
+  File "D:\musicclaude\_video_public_20261104\line_r79o\units2.py", line 181, in <module>
+    r, lost, part, nj = score(w, t); b, bl, bn = big_score(w, t) if not t.startswith('w') else (None, [], 0)
+                        ^^^^^^^^^^^
+  File "D:\musicclaude\_video_public_20261104\line_r79o\units2.py", line 137, in score
+    lost = [u['uid'] for u in us if u['tier'] == '核心' and sum(x == 0 for x in votes[u['uid']]) > len(js)/2]
+                                                                                ~~~~~^^^^^^^^^^
+KeyError: 'S01-u1'

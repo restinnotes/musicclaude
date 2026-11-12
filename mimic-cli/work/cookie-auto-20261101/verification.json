@@ -1,0 +1,56 @@
+{
+  "status": "deployed_and_live_cleanup_verified",
+  "container": "yi-mimicgate-20261002",
+  "focused_tests_passed": 13,
+  "ten_way_concurrency_test": "offline_fake_browser",
+  "existing_unrelated_test_failures": {
+    "completion_signal": 2,
+    "standard_contract": 1,
+    "reproduced_on_unmodified_runtime": true,
+    "cli_guard_test": "staging cli directory absent"
+  },
+  "concurrency": {
+    "max_concurrency": 10,
+    "in_flight": 0,
+    "cookie_maintenance": false,
+    "available": 10,
+    "waiting": 0,
+    "max_active_tabs": 10,
+    "worker_tabs": 0,
+    "max_idle_worker_tabs": 2,
+    "max_queue": 16,
+    "queue_timeout_seconds": 240
+  },
+  "live_cleanup_events": [
+    {
+      "utc": "2026-11-01T15:03:36.589283+00:00",
+      "event": "cookie_maintenance_wait",
+      "cookie_count": 162,
+      "in_flight": 0,
+      "recycle_at": 136
+    },
+    {
+      "utc": "2026-11-01T15:03:37.724948+00:00",
+      "event": "temporary_cookie_retention",
+      "cookie_count_before": 162,
+      "cookie_count": 100,
+      "removed": 62,
+      "authentication_modified": false
+    },
+    {
+      "utc": "2026-11-01T15:03:37.725070+00:00",
+      "event": "cookie_maintenance_complete",
+      "in_flight": 0,
+      "authentication_modified": false
+    }
+  ],
+  "disk_cookie_metadata": {
+    "total": 100,
+    "auth_cookie_count": 2
+  },
+  "diagnostic_chat_request": {
+    "generation_submitted": false,
+    "result": "existing model/effort picker guard refused before submission"
+  },
+  "new_browser_or_container_created": false
+}

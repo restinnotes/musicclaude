@@ -1,0 +1,65 @@
+{
+  "run_id": "run135_gpt2_recheck",
+  "route_healthy": false,
+  "records": [
+    {
+      "job_id": "run135__gpt56w__short_q",
+      "model": "gpt56w",
+      "prompt_name": "short_q",
+      "source": "runs/run131_gpt2_smoke/prompts/short_q.txt",
+      "source_sha256": "dee7d157010a1f41f97481f684d69b1f4b45bb90d98495a82f8e5ef96de927c2",
+      "status": "ok",
+      "healthy": true,
+      "complete_marker": true,
+      "server_terminal": {
+        "retained_message_count": 2,
+        "unsupported_work_continuation_observed": false,
+        "successful_assistant_terminal_observed": true
+      },
+      "model_evidence": {
+        "verdict": "match",
+        "server_slugs": [
+          "gpt-5-6-thinking"
+        ],
+        "fields": [
+          "server_metadata_summary.model_slug"
+        ],
+        "client_requested_model": "gpt-5-6-thinking",
+        "requested_experience": "thinking"
+      },
+      "seconds": 60.5,
+      "chars": 173,
+      "error": null,
+      "retry_safe": null,
+      "queue_stop": null,
+      "meta_file": "meta/run135__gpt56w__short_q.json"
+    },
+    {
+      "job_id": "run135__gpt6w__short_q",
+      "model": "gpt6w",
+      "prompt_name": "short_q",
+      "source": "runs/run131_gpt2_smoke/prompts/short_q.txt",
+      "source_sha256": "dee7d157010a1f41f97481f684d69b1f4b45bb90d98495a82f8e5ef96de927c2",
+      "status": "failed",
+      "healthy": false,
+      "complete_marker": false,
+      "server_terminal": {},
+      "model_evidence": null,
+      "seconds": 66.3,
+      "chars": 0,
+      "error": "exit 1: {\"completed\": false, \"error_code\": \"headless_native_result_rejected\", \"phase\": \"post_submit_ambiguous\", \"automatic_retry\": false}\r\n",
+      "retry_safe": false,
+      "queue_stop": true,
+      "meta_file": "meta/run135__gpt6w__short_q.json"
+    },
+    {
+      "job_id": "run135__gpt56w__long_sum",
+      "status": "skipped_queue_stop"
+    },
+    {
+      "job_id": "run135__gpt6w__long_sum",
+      "status": "skipped_queue_stop"
+    }
+  ],
+  "meaning": "路由/长输入/编码完成性，不等于音乐质量或真实推理深度通过"
+}

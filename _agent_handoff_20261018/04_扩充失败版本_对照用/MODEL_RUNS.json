@@ -1,0 +1,517 @@
+[
+  {
+    "job_id": "S02_FLASH_relations_r1",
+    "status": "ok",
+    "requested_model": "antigravity-tools/gemini-3.8-flash-high",
+    "prompt_sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3",
+    "prompt_characters": 45104,
+    "response_chars": 10380,
+    "seconds": 354.219,
+    "errors": [],
+    "observed": {
+      "events": [
+        {
+          "type": "step_start",
+          "timestamp": 1792265611125,
+          "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+          "part": {
+            "id": "prt_14b5ae775001p9RF52Oy8nf4Gi",
+            "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+            "messageID": "msg_14b5acf78001nC2liQ64vf5m9Y",
+            "type": "step-start"
+          }
+        },
+        {
+          "type": "text",
+          "timestamp": 1792265952462,
+          "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+          "part": {
+            "id": "prt_14b5fa0680016RSUZ9iAHfSrnt",
+            "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+            "messageID": "msg_14b5acf78001nC2liQ64vf5m9Y",
+            "type": "text",
+            "time": {
+              "start": 1792265920616,
+              "end": 1792265952462
+            }
+          }
+        },
+        {
+          "type": "step_finish",
+          "timestamp": 1792265952467,
+          "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+          "part": {
+            "id": "prt_14b601cd3001mM3PAdmDZ6Hb5A",
+            "sessionID": "ses_eb4a54180ffeRJm1qDAwxe0913",
+            "messageID": "msg_14b5acf78001nC2liQ64vf5m9Y",
+            "type": "step-finish",
+            "reason": "stop",
+            "cost": 0,
+            "tokens": {
+              "input": 27433,
+              "output": 0,
+              "reasoning": 54733,
+              "cache": {
+                "read": 0,
+                "write": 0
+              }
+            }
+          }
+        }
+      ],
+      "tool_events": [],
+      "completion_basis": "explicit_terminal",
+      "server_completion_verified": true,
+      "actual_server_model_verified": false
+    }
+  },
+  {
+    "job_id": "S02_G6_relations_r1_attachment",
+    "status": "ok",
+    "requested_model": "gpt-6-thinking",
+    "prompt_sha256": "c03bde1072e11d46072bd4abba1c618ff6a3f184a99bcb3a11055b95158a1077",
+    "prompt_characters": 83,
+    "response_chars": 15020,
+    "seconds": 665.813,
+    "errors": [],
+    "observed": {
+      "provider_metadata": {
+        "model": "gpt-6-thinking",
+        "thinking_effort": "max",
+        "code_version": "13bea67766ffb436cf21923150e88abedc0e2029d6ae736b4cfca2742457f927",
+        "health_evidence_recorded": true,
+        "concurrency_limit": 2,
+        "admission_queue_seconds": 0.0,
+        "headless": true,
+        "provider_interface": true,
+        "no_auto_retry": true,
+        "job_directory": "D:\\musicclaude\\gpt2agent-safechain\\runs\\yi-cookie-repair-20261006\\job-dd44fd5c5001400a89e07748a043a066",
+        "response_sha256": "cf1250bcb8ceb3eeddec375e6a3caca07638846afb3b99593d38acc9b28ae45a",
+        "session_handle": "[REDACTED]",
+        "attachments": [
+          {
+            "name": "S02.txt",
+            "size": 88016,
+            "sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3"
+          }
+        ],
+        "prompt_normalization": "single_leading_BOM_removed_CRLF_or_CR_to_LF_and_trim_end",
+        "pre_submit_scope": null,
+        "initialization": {
+          "source": "native_pre_send_aborted_handoff",
+          "browser_assisted_initialization": true,
+          "native_browser_generation_sent": false,
+          "http_version": "auto",
+          "nonpersonalization_inherited": false,
+          "handoff_age_seconds": 1.566,
+          "state": "claimed"
+        },
+        "headless_initializer": {
+          "headless": true,
+          "native_browser_generation_sent": false,
+          "completed": true,
+          "browser_version": {
+            "type": "string",
+            "length": 13,
+            "sha256": "9722c94be680575b307b26183e1a423460d4568949ad7f3e7f985d33d9bf0e26"
+          },
+          "sealed_handoff_written": true,
+          "browser_closed": true,
+          "cloned_private_profile_removed": true,
+          "elapsed_seconds": 10.865
+        },
+        "stream_completion": {
+          "sse_done": true,
+          "message_completed": true,
+          "continuation_expected": false,
+          "handoff_seen": false,
+          "lifecycle_updates": 746,
+          "first_assistant_seconds": 20.422,
+          "first_text_seconds": 534.438,
+          "stream_seconds": 646.953,
+          "channel_update_counts": {
+            "final": 725
+          },
+          "bounded_server_observations": {
+            "scope": "http_sse",
+            "tool_message_observation_count": 6,
+            "truncated": false,
+            "scalar_patch_tool_role_inheritance": false,
+            "message_finished_successfully_is_tool_success": false,
+            "tool_result_observations": [
+              {
+                "actual_tool_role_observed": true,
+                "tool_name": "api_tool",
+                "tool_content_type": "unknown",
+                "message_status": "finished_successfully"
+              },
+              {
+                "actual_tool_role_observed": true,
+                "tool_name": "api_tool",
+                "tool_content_type": "text",
+                "message_status": "finished_successfully"
+              },
+              {
+                "actual_tool_role_observed": true,
+                "tool_name": "unknown",
+                "tool_aggregate_status": "success",
+                "tool_content_type": "unknown",
+                "message_status": "finished_successfully"
+              }
+            ],
+            "reasoning_observations": [
+              {
+                "reasoning_status": "unknown"
+              },
+              {
+                "finished_duration_sec": 534,
+                "reasoning_status": "reasoning_ended"
+              }
+            ]
+          }
+        },
+        "prepared_response_validation": {
+          "retained_message_count": 14,
+          "unsupported_work_continuation_observed": false,
+          "successful_assistant_terminal_observed": true
+        },
+        "server_metadata_summary": {
+          "server_ttfvt_ms": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "12886f9d00055adf24c40579e22d31b2b45f2023f892954ffd5567beb60825f8"
+            },
+            "value": 534847.3483630223
+          },
+          "conduit_prewarmed": true,
+          "plan_type": {
+            "type": "string",
+            "length": 3,
+            "sha256": "07ed400759a0f606a8b5bfa84712aabe7d1b1c45cb6536c8a5727446b6647b84"
+          },
+          "plan_type_bucket": {
+            "type": "string",
+            "length": 4,
+            "sha256": "268ad70eb5bc4737a2ae28162cbca30118cc94520e49ef1ac5f72c85d3f2caa9"
+          },
+          "user_agent": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 11,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "39ae30333e06f52817bd4cb8771482f48a473105b92d588d4ca6a1cc7ba4bead"
+            }
+          },
+          "service": null,
+          "tool_name": {
+            "type": "string",
+            "length": 13,
+            "sha256": "dcd3251ee4e5f12e58e1f9994e6a201f7ea3c04d300f18db51f397cbe9005a37"
+          },
+          "tool_invoked": true,
+          "fast_convo": true,
+          "warmup_state": "warm",
+          "is_first_turn": true,
+          "cluster_region": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 7,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "81de43b95bdc7796cdcd5e38285dcaf3d207a24e15f434ed0dd16ecce0541481"
+            }
+          },
+          "model_slug": "gpt-6-thinking",
+          "requested_model_experience": "thinking",
+          "product_experience": "chat",
+          "region": null,
+          "is_multimodal": null,
+          "did_auto_switch_to_reasoning": false,
+          "auto_switcher_race_winner": null,
+          "is_autoswitcher_enabled": false,
+          "is_search": null,
+          "did_prompt_contain_image": false,
+          "search_tool_call_count": null,
+          "search_tool_query_types": null,
+          "message_id": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 36,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "6b948a890cd8662182f6542536c04c68104a6851b16af777eddd81abbda80db9"
+            }
+          },
+          "request_id": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 36,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "e226b61c82d5c831849c33c4189d0ea485fe69455062c5ebb90926641d4c323a"
+            }
+          },
+          "turn_exchange_id": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 36,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "36facccd2c0a2fc782f4b89f327b74d2fc175653a1225ce37b9a46a3273d0cb9"
+            }
+          },
+          "turn_trace_id": {
+            "type": {
+              "type": "string",
+              "length": 6,
+              "sha256": "473287f8298dba7163a897908958f7c0eae733e25d2e027992ea2edc9bed2fa8"
+            },
+            "length": 36,
+            "sha256": {
+              "type": "string",
+              "length": 64,
+              "sha256": "1d696ed6eb2960577d4b8e0fd03a1dbfa8cbd7f82b102f62378951f6897fbe9c"
+            }
+          },
+          "resume_with_websockets": true,
+          "low_turn_topic_ttl": false,
+          "streaming_async_status": true,
+          "replace_stream_status": true,
+          "temporal_conversation_turn": false,
+          "pro_mode_turn_topic_streaming": true,
+          "turn_use_case": {
+            "type": "string",
+            "length": 6,
+            "sha256": "9623c1ece5cf9eac8c087030d2c4be5747556cf40920ebfeba1fcc0cc976f123"
+          },
+          "turn_mode": "default"
+        },
+        "elapsed_seconds": 647.64,
+        "total_worker_seconds": 660.015,
+        "wrapper_seconds": 665.031
+      },
+      "server_model_slugs": [
+        "gpt-6-thinking"
+      ],
+      "completion_basis": "SSE_DONE_and_assistant_terminal_and_response_hash",
+      "attachment_upload_verified": true
+    }
+  },
+  {
+    "job_id": "S02_MUSE_relations_r1",
+    "status": "failed",
+    "requested_model": "opencode2api/muse-spark-1.3-contributor-free#xhigh",
+    "prompt_sha256": "97754098f854e3bcc3b5ff75dd6e696a1401876fc69431aac76eeb961e74a2d3",
+    "prompt_characters": 45104,
+    "response_chars": 0,
+    "seconds": 1.719,
+    "errors": [
+      "child_nonzero_exit",
+      "opencode_no_text",
+      "opencode_text_not_closed",
+      "response_empty_or_below_explicit_minimum"
+    ],
+    "observed": {
+      "events": [],
+      "tool_events": [],
+      "completion_basis": "CLI_exit_0_and_text_time_end",
+      "server_completion_verified": false,
+      "actual_server_model_verified": false
+    }
+  },
+  {
+    "job_id": "S04_FLASH_relations_r1",
+    "status": "ok",
+    "requested_model": "antigravity-tools/gemini-3.8-flash-high",
+    "prompt_sha256": "4ef1a3b87e00f2ab1b61b77bc1989ac947416935f6cb7b2587475623a5bc44d6",
+    "prompt_characters": 42161,
+    "response_chars": 10242,
+    "seconds": 360.594,
+    "errors": [],
+    "observed": {
+      "events": [
+        {
+          "type": "step_start",
+          "timestamp": 1792265610448,
+          "sessionID": "ses_eb4a53d89ffenE01Y9ZL335EsR",
+          "part": {
+            "id": "prt_14b5ae4d0001VohsQtW66QOM7Q",
+            "sessionID": "ses_eb4a53d89ffenE01Y9ZL335EsR",
+            "messageID": "msg_14b5acba2001lOx7DrR8aJ41hA",
+            "type": "step-start"
+          }
+        },
+        {
+          "type": "text",
+          "timestamp": 1792265960442,
+          "sessionID": "ses_eb4a53d89ffenE01Y9ZL335EsR",
+          "part": {
+            "id": "prt_14b5acba2001lOx7DrR8aJ41hA_text-0",
+            "sessionID": "ses_eb4a53d89ffenE01Y9ZL335EsR",
+            "messageID": "msg_14b5acba2001lOx7DrR8aJ41hA",
+            "type": "text",
+            "time": {
+              "start": 1792265604012,
+              "end": 1792265960442
+            }
+          }
+        }
+      ],
+      "tool_events": [],
+      "completion_basis": "CLI_exit_0_and_text_time_end",
+      "server_completion_verified": false,
+      "actual_server_model_verified": false
+    }
+  },
+  {
+    "job_id": "S04_MUSE_relations_r1",
+    "status": "failed",
+    "requested_model": "opencode2api/muse-spark-1.3-contributor-free#xhigh",
+    "prompt_sha256": "4ef1a3b87e00f2ab1b61b77bc1989ac947416935f6cb7b2587475623a5bc44d6",
+    "prompt_characters": 42161,
+    "response_chars": 0,
+    "seconds": 4.484,
+    "errors": [
+      "child_nonzero_exit",
+      "opencode_error_event",
+      "opencode_no_text",
+      "opencode_text_not_closed",
+      "response_empty_or_below_explicit_minimum"
+    ],
+    "observed": {
+      "events": [
+        {
+          "type": "error",
+          "timestamp": 1792265957130,
+          "sessionID": "ses_eb49fdc99ffeStst5jN6ZtDxwt",
+          "error": {
+            "type": "provider.invalid-request",
+            "message": "Model muse-spark-1.3-contributor-free has been deprecated.",
+            "status": 410,
+            "response": {
+              "body": "{\"type\":\"error\",\"error\":{\"type\":\"ModelDeprecated\",\"message\":\"Model muse-spark-1.3-contributor-free has been deprecated.\"},\"metadata\":{\"model\":\"muse-spark-1.3-contributor-free\"}}"
+            }
+          }
+        }
+      ],
+      "tool_events": [],
+      "completion_basis": "CLI_exit_0_and_text_time_end",
+      "server_completion_verified": false,
+      "actual_server_model_verified": false
+    }
+  },
+  {
+    "job_id": "S07_FLASH_relations_r1",
+    "status": "ok",
+    "requested_model": "antigravity-tools/gemini-3.8-flash-high",
+    "prompt_sha256": "6c47244b4d5c15b2067f36a694ac5d21b6ec0587532d8a59403e28669bd6ddd2",
+    "prompt_characters": 34804,
+    "response_chars": 7340,
+    "seconds": 193.0,
+    "errors": [],
+    "observed": {
+      "events": [
+        {
+          "type": "step_start",
+          "timestamp": 1792265965257,
+          "sessionID": "ses_eb49fcb91ffeB4zIrtQGx08XKv",
+          "part": {
+            "id": "prt_14b604ec9001IgT0rHhmi7pcpF",
+            "sessionID": "ses_eb49fcb91ffeB4zIrtQGx08XKv",
+            "messageID": "msg_14b6036f3001iibTpcZJPTRfX1",
+            "type": "step-start"
+          }
+        },
+        {
+          "type": "text",
+          "timestamp": 1792266150094,
+          "sessionID": "ses_eb49fcb91ffeB4zIrtQGx08XKv",
+          "part": {
+            "id": "prt_14b6036f3001iibTpcZJPTRfX1_text-0",
+            "sessionID": "ses_eb49fcb91ffeB4zIrtQGx08XKv",
+            "messageID": "msg_14b6036f3001iibTpcZJPTRfX1",
+            "type": "text",
+            "time": {
+              "start": 1792265959164,
+              "end": 1792266150094
+            }
+          }
+        }
+      ],
+      "tool_events": [],
+      "completion_basis": "CLI_exit_0_and_text_time_end",
+      "server_completion_verified": false,
+      "actual_server_model_verified": false
+    }
+  },
+  {
+    "job_id": "S07_MUSE_relations_r1",
+    "status": "failed",
+    "requested_model": "opencode2api/muse-spark-1.3-contributor-free#xhigh",
+    "prompt_sha256": "6c47244b4d5c15b2067f36a694ac5d21b6ec0587532d8a59403e28669bd6ddd2",
+    "prompt_characters": 34804,
+    "response_chars": 0,
+    "seconds": 3.453,
+    "errors": [
+      "child_nonzero_exit",
+      "opencode_error_event",
+      "opencode_no_text",
+      "opencode_text_not_closed",
+      "response_empty_or_below_explicit_minimum"
+    ],
+    "observed": {
+      "events": [
+        {
+          "type": "step_start",
+          "timestamp": 1792265964011,
+          "sessionID": "ses_eb49fbd8effezk7tkPKwiXSbKm",
+          "part": {
+            "id": "prt_14b6049eb001XfO5Kq5gscw2c1",
+            "sessionID": "ses_eb49fbd8effezk7tkPKwiXSbKm",
+            "messageID": "msg_14b604508001g2kG9pdAwha1gf",
+            "type": "step-start"
+          }
+        },
+        {
+          "type": "error",
+          "timestamp": 1792265964013,
+          "sessionID": "ses_eb49fbd8effezk7tkPKwiXSbKm",
+          "error": {
+            "type": "provider.invalid-request",
+            "message": "Model muse-spark-1.3-contributor-free has been deprecated.",
+            "status": 410,
+            "response": {
+              "body": "{\"type\":\"error\",\"error\":{\"type\":\"ModelDeprecated\",\"message\":\"Model muse-spark-1.3-contributor-free has been deprecated.\"},\"metadata\":{\"model\":\"muse-spark-1.3-contributor-free\"}}"
+            }
+          }
+        }
+      ],
+      "tool_events": [],
+      "completion_basis": "CLI_exit_0_and_text_time_end",
+      "server_completion_verified": false,
+      "actual_server_model_verified": false
+    }
+  }
+]
